@@ -1,0 +1,131 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../card/component.njk" import card %}
+{% from "../button/component.njk" import button %}
+{% from "./component.njk" import card_group %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['components/card','components/button'] %}
+
+{% block content %}
+{% set mediaCardItem = card(
+        {
+            'title': 'Asperiores doloribus id dolore',
+            'description': 'Consectetur adipisicing elit',
+            'media': {
+                'alt': 'YaaS product thumbnail',
+                'image': 'https://techne.yaas.io/images/product-thumbnail-wide.png'
+            }
+        },
+        modifier={ media: "fill" },
+        aria={ role: 'button' })
+ %}
+
+
+{% set cardItem = card(
+            { title: 'Lorem ipsum dolor quam placeat numquam repellendus', description: 'Tenetur quam placeat obcaecati molestias voluptatibus dolorum ut molestias voluptatibus dolorum ut.', status: '<span class="tn-has-color-status-1">Voluptate quis adipisci sit</span>' },
+            modifier={ block: [] },
+            aria={ role: 'button' }
+    )
+%}
+{% set cardItem2 = card(
+            { title: 'Lorem ipsum dolor quam placeat numquam repellendus', description: 'Tenetur quam  dolorum ut.', status: '' },
+            modifier={ block: [] },
+            aria={ role: 'button' }
+    )
+%}
+{% set btn = button(
+        {
+            label: 'View'
+        },
+        modifier={ block: "small" }
+    )
+ %}
+{% set actionCardItem = card(
+            { title: 'Lorem ipsum dolor quam placeat numquam repellendus', description: 'Tenetur quam  dolorum ut.', status: 'VOLUPTATE QUIS ADIPISCI SIT',
+            actions: btn },
+            modifier={ block: [] },
+            aria={  }
+    )
+%}
+{% set productCardItem =
+    card(
+            {
+                'title': 'Asperiores doloribus id dolore',
+                'description': 'Consectetur adipisicing elit',
+                'status': '<span class="tn-has-color-status-1">Cumque itaque</span>',
+                'media': {
+                    'alt': 'YaaS product thumbnail',
+                    'image': 'https://techne.yaas.io/images/product-thumbnail-wide.png'
+                }
+            },
+            modifier={ block: ['vertical'] },
+            aria={ role: 'button' })
+     %}
+    <h1>card-group</h1>
+
+    <!-- output the component example and the code snippet -->
+    {% set example %}
+    {{  card_group(
+            properties={
+                items: [
+                cardItem2, mediaCardItem, actionCardItem, cardItem, cardItem2
+                ]
+            },
+            modifier={
+                block: []
+            },
+            state={},
+            aria={}
+        )
+    }}
+    {% endset %}
+    {{ format(example) }}
+
+<br><br>
+
+<h1>2 cols</h1>
+
+{% set example %}
+{{  card_group(
+        properties={
+            items: [
+            actionCardItem, cardItem, mediaCardItem, cardItem2, cardItem
+            ]
+        },
+        modifier={
+            block: ["2col"]
+        },
+        state={},
+        aria={}
+    )
+}}
+{% endset %}
+{{ format(example) }}
+
+
+<br><br>
+
+<h1>4 cols</h1>
+
+{% set example %}
+{{  card_group(
+        properties={
+            items: [
+            productCardItem, productCardItem, productCardItem, productCardItem, productCardItem
+            ]
+        },
+        modifier={
+            block: ["4col"]
+        },
+        state={},
+        aria={}
+    )
+}}
+{% endset %}
+{{ format(example) }}
+
+
+
+
+{% endblock %}

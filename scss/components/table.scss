@@ -1,0 +1,67 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+/*!
+.tn-table
+    thead
+    tbody
+        tr+([aria-selected])
+*/
+$block: ns(table);
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $tn-table-border-color: tn-color(neutral, 3) !default;
+    $tn-table-cell-spacing: $tn-width--gutter !default;
+    $tn-table-cell-padding: tn-space(3) !default;
+    $tn-table-transition-params: $tn-animation--speed ease-in !default;
+
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    @include reset;
+    @include tn-last-child;
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin-bottom: $tn-margin-bottom;
+    border-top: solid 1px $tn-table-border-color;
+    tr {
+        transition: background-color $tn-table-transition-params;
+        &:hover {
+            background-color: lighten(tn-color(neutral, 3), 10);
+        }
+        &.is-selected,
+        &[aria-selected="true"] {
+            background-color: lighten(tn-color(neutral, 3), 5);
+        }
+    }
+    thead {
+        @include tn-type(-1);
+        color: tn-color(text, 2);
+        tr {
+            &:hover {
+                background-color: inherit;
+            }
+        }
+        td,
+        th {
+            border: none;
+        }
+    }
+    td,
+    th {
+        text-align: left;
+        padding: $tn-table-cell-padding $tn-table-cell-spacing $tn-table-cell-padding 0;
+        &:first-child {
+            padding-left: $tn-table-cell-spacing;
+        }
+        border-style: solid;
+        border-width: 1px 0;
+        border-color: $tn-table-border-color;
+    }
+
+
+
+}

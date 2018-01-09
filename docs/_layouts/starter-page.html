@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+    <meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
+    <title>{{ page.title }} | {{ site.site_title }}</title>
+    <link rel="stylesheet" href="css/techne.css">
+</head>
+<body class="tn-ui tn-ui--techne">
+
+{{content}}
+
+<script type="text/javascript">
+//dropdown
+var els = document.querySelectorAll("[aria-controls]");
+for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    el.addEventListener('click', function(e) {
+        var targetId = this.getAttribute("aria-controls");
+        var target = document.getElementById(targetId);
+        //alert
+        var isAlert = this.parentElement.getAttribute("role") === "alert";
+        if (isAlert) {
+            //remove or hide if we want some animation
+            // target.setAttribute("aria-hidden", true);
+            target.remove();
+            return;
+        }
+        //dropdown
+        var isDropdown = this.getAttribute("aria-haspopup") === "true";
+        if (isDropdown) {
+            //trigger
+            var isExpanded = this.getAttribute("aria-expanded") === "true";
+            this.setAttribute("aria-expanded", !isExpanded);
+            //target
+            var targetIsHidden = target.getAttribute("aria-hidden") == "true";
+            target.setAttribute("aria-hidden", isExpanded);
+            return;
+        }
+    })
+}
+</script>
+</body>
+</html>

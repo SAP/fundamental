@@ -1,0 +1,131 @@
+{% extends "./layouts/module.njk" %}
+{% set page_title = "Details 2" %}
+{% set page_intro = "" %}
+{% set is_landing_page = false %}
+{% set is_editable_page = true %}
+{% set show_toolbar = false %}
+
+{% import "../layout/component.njk" as layout %}
+{% from "../tabs/component.njk" import tabs %}
+{% from "../form/component.njk" import form_item %}
+
+{# SET CONTENT #}
+{# tabs_data #}
+{% set tabs_data = {
+    items: [
+        { label: "Home", selected: true },
+        { label: "Profile" },
+        { label: "Account" },
+        { label: "Settings" }
+    ]
+} %}
+{# home_panel #}
+{%- set home_panel %}
+{%- call layout.container() -%}
+{%- call layout.col(6) %}
+{{ form_item(properties={
+        label: "Identifier",
+        value: "version 2.1.0" },
+        state={ readonly: true })
+}}
+{{ form_item("textarea", { label: "Description" }) }}
+{{ form_item(properties={
+        label: "YaaS Client",
+        value: "subscriber.buildermodule123" },
+        state={ readonly: true })
+}}
+{{ form_item(properties={
+        label: "Last Updated",
+        value: "Nov 7, 2017" },
+        state={ readonly: true })
+}}
+{%- endcall %}
+{%- call layout.col(6) %}
+{{ form_item(properties={
+        label: "Display Name",
+        placeholder: "My Module",
+        message: "Enter name of the module, which will be displayed in Builder" },
+        state={ required: true },
+        modifier={
+            message: "help"
+        })
+}}
+{{ form_item(properties={
+        label: "Description",
+        placeholder: "https://example.com/module.json",
+        message: "The absolute path URL of Builder Modules JSON file" },
+        state={ required: true },
+        modifier={
+            message: "help"
+        })
+}}
+{{ form_item(properties={
+        label: "Owner",
+        value: "username" },
+        state={ readonly: true })
+}}
+{%- endcall %}
+{%- endcall %}
+{%- endset %}
+{# col_card #}
+{% set col_card %}
+<div class="tn-card" role="button">
+    <div class="tn-card__media tn-card__media--round" style="background-image: url(https://techne.yaas.io/images/product-thumbnail-wide.png)" aria-label="YaaS product thumbnail"></div>
+    <div class="tn-card__content">
+         <h2 class="tn-card__header">
+             Asperiores doloribus id dolore
+         </h2>
+         <p class="tn-card__description">
+             Consectetur adipisicing elit
+         </p>
+         <p class="tn-card__status">
+             <span class="tn-has-color-status-1">Cumque itaque</span>
+         </p>
+    </div>
+</div>
+{% endset %}
+{# col_panel #}
+{% set col_panel %}
+{% call layout.panel() -%}
+    {% call layout.panel_header({  title: "Panel Title" }) -%}
+        {% call layout.panel_actions() -%}
+        <button class="tn-button tn-button--text tn-button--small">
+            <span class="tn-icon tn-icon--add" role="presentation"></span>
+            Add
+        </button>
+        {%- endcall %}
+    {%- endcall %}
+{{ col_card }}
+{{ col_card }}
+{{ col_card }}
+    {% call layout.panel_footer() -%}
+<a href="#" class="tn-button tn-button--link">See All</a>
+    {%- endcall %}
+{%- endcall %}
+{% endset %}
+
+
+{% block page_content %}
+{%- call layout.section() %}
+{{  tabs(
+        properties={
+            items: tabs_data.items,
+            panels: [ { content: home_panel }, { content: "" }, { content: "" }, { content: "" } ]
+        }
+    )
+}}
+{%- endcall %}
+{%- call layout.section() %}
+{% call layout.container() -%}
+{% call layout.col(6) -%}
+{{ col_panel }}
+{%- endcall %}
+{% call layout.col(6) -%}
+{{ col_panel }}
+{%- endcall %}
+{%- endcall %}
+{%- endcall %}
+
+
+
+{% endblock %}

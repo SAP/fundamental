@@ -1,0 +1,54 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "./component.njk" import spinner %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['layout','components/card', 'components/card-group'] %}
+
+{% block content %}
+
+    <h1>spinner</h1>
+<p>Toggle the <code>aria-hidden</code> attribute to hide/show the spinner.</p>
+    <!-- output the component example and the code snippet -->
+    {% set example %}
+    {{  spinner(
+            properties=data.properties,
+            modifier=data.modifier,
+            state=data.state,
+            aria=data.aria
+        )
+    }}
+    {% endset %}
+    {{ format(example) }}
+<br><br>
+<h2>[aria-busy="true"]</h2>
+<p>The spinnner is most often used within another component to indicate the loading state. Any container (even <code>ui-, app-, and page-level</code>) can be "activated" by setting <code>aria-busy="true"</code>.
+</p>
+<p>The spinner should be included inside the container. Its visibility can be toggled in relation to the <code>aria-busy</code> attribute. They should always be opposites, i.e, if currently loading, <code>section[aria-busy="true"]</code>, <code>.tn-spinner[aria-hidden="false"]</code>, once the content is loaded, toggle to false and true respectively.</p>
+
+    {% set example %}
+<div class="tn-panel" aria-busy="true">
+    {{  spinner(
+            properties=data.properties,
+            modifier=data.modifier,
+            state=data.state,
+            aria=data.aria
+        ) | indent(4)
+    }}
+    <div class="tn-panel__header">
+        <h1 class="tn-panel__title">Lorem ipsum</h1>
+    </div>
+    <!-- Loaded content goes here -->
+    <div class="tn-panel__footer">
+        <p><em>Etiam pulvinar turpis sed velit porttitor vel adipiscing velit fringilla.</em></p>
+    </div>
+</div>
+
+    {% endset %}
+    {{ format(example) }}
+
+
+
+
+{% endblock %}

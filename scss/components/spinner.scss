@@ -1,0 +1,125 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+/*!
+.tn-spinner+(.is-hidden|[aria-hidden=true])
+
+Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
+* Copyright 2015 Daniel Cardoso <@DanielCardoso>
+* Licensed under MIT
+*/
+$block: ns(spinner);
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $tn-spinner-background-color: tn-color(action, 1) !default;
+    $tn-spinner-height: 40px !default;
+    $tn-spinner-width--bar: 5px !default;
+    $tn-spinner-width--gutter: 3px !default;
+    $tn-spinner-animation-speed: 1s !default;
+    $tn-spinner-backdrop-background-color: rgba(tn-color(background, 1),0.95) !default;
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+
+    $_width: $tn-spinner-width--bar*4 + $tn-spinner-width--gutter*3;
+    $_height: $tn-spinner-height;
+
+    position: relative;
+    width: $_width;
+    height: $_height;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    &.is-hidden,
+    &[aria-hidden="true"] {
+        display: none;
+    }
+
+    //this is the only globally-applied instance of aria and state classes, may want to rethink this, maybe require a class like .tn-spinner-backdrop to be used in conjunction with the state
+    @at-root {
+        .is-busy,
+        [aria-busy="true"] {
+            position: relative;
+            min-height: $_height;
+            &::before {
+                position: absolute;
+                background-color: $tn-spinner-backdrop-background-color;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                content: "";
+            }
+            .#{$block} {
+                position: absolute;
+                z-index: 2;
+                left: calc(50% - #{$_width}/2);
+                top: calc(50% - #{$_height}/2);
+            }
+        }
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: relative;
+        width: $tn-spinner-width--bar;
+        height: 100%;
+        background-color: $tn-spinner-background-color;
+    }
+    div {
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: $tn-spinner-width--bar;
+            height: 100%;
+            background-color: $tn-spinner-background-color;
+        }
+        &::before {
+            left: $tn-spinner-width--bar + $tn-spinner-width--gutter;
+        }
+        &::after {
+            right: $tn-spinner-width--bar + $tn-spinner-width--gutter;
+        }
+    }
+
+    //1
+    &::before {
+        animation: line-scale $tn-spinner-animation-speed infinite ease;
+        animation-delay: -($tn-spinner-animation-speed);
+    }
+    div {
+        //2
+        &::before {
+            animation: line-scale $tn-spinner-animation-speed infinite ease;
+            animation-delay: -($tn-spinner-animation-speed - .1s);
+        }
+        //3
+        &::after {
+            animation: line-scale $tn-spinner-animation-speed infinite ease;
+            animation-delay: -($tn-spinner-animation-speed - .2s);
+        }
+    }
+    //4
+    &::after {
+        animation: line-scale $tn-spinner-animation-speed infinite ease;
+        animation-delay: -($tn-spinner-animation-speed - .3s);
+    }
+
+}
+
+@keyframes line-scale {
+    0%,
+    40%,
+    100% {
+        transform: scaleY(.4);
+    }
+    80% {
+        transform: scaleY(1);
+    }
+}

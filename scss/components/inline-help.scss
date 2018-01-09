@@ -1,0 +1,105 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+/*!
+.tn-tooltip
+    .tn-tooltip__content+(left, right, bottom-left, bottom-right)
+*/
+$block: ns(inline-help);
+
+.#{$block} {
+
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $tn-tooltip-content-background-color: tn-color(text, 3) !default;
+    $tn-tooltip-content-color: tn-color(text-inverse, 1) !default;
+    $tn-tooltip-padding: tn-space(s) !default;
+    $tn-tooltip-arrow-offset: (tn-space(s)) - 2 !default ;
+    $tn-tooltip-arrow-width: $tn-tooltip-arrow-offset !default;
+    $tn-tooltip-icon-size: 18px;
+    $tn-tooltip-transition-params: $tn-animation--speed ease-in !default;
+    $tn-tooltip-min-width: 350px;
+
+    //BLOCK BASE *******************************************
+    @include tn-type(-1);
+    position: relative;
+    //margin-left: tn-space(xs);
+    display: inline-block;
+    width: $tn-tooltip-icon-size;
+    height: $tn-tooltip-icon-size;
+    top: 3px;
+
+    &::before {
+        content: "?";
+        width: $tn-tooltip-icon-size;
+        height: $tn-tooltip-icon-size;
+        font-style: normal;
+        position: absolute;
+        left: 0;
+        color: tn-color(text-inverse);
+        border-radius: 50%;
+        background-color: tn-color(text, 3);
+        text-align: center;
+    }
+
+    //ELEMENTS *******************************************
+    &__content {
+        @include tn-type(-2)
+        background: $tn-tooltip-content-background-color;
+        padding: $tn-tooltip-padding;
+        display: block;
+        position: absolute;
+        color: $tn-tooltip-content-color;
+        top: $tn-tooltip-padding * 2.5;
+        right: -$tn-tooltip-padding;
+        min-width: $tn-tooltip-min-width;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity $tn-tooltip-transition-params;
+        text-align: left;
+        z-index: 1;
+        &::before {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 $tn-tooltip-arrow-width $tn-tooltip-arrow-width $tn-tooltip-arrow-width;
+            border-color: transparent transparent $tn-tooltip-content-background-color transparent;
+            position: absolute;
+            content: "";
+            top: -($tn-tooltip-arrow-offset);
+            right: $tn-tooltip-arrow-offset;
+        }
+        &--left{
+            top: -$tn-tooltip-padding;
+            left: $tn-tooltip-padding * 2.5;
+            &::before{
+                top: $tn-tooltip-arrow-offset + 5;
+                left: -($tn-tooltip-arrow-offset + 5);
+                transform: rotate(-90deg);
+            }
+        }
+        &--right{
+            top: -$tn-tooltip-padding;
+            right: $tn-tooltip-padding * 2.5;
+            &::before{
+                top: $tn-tooltip-arrow-offset + 5;
+                right: -($tn-tooltip-arrow-offset + 5);
+                transform: rotate(90deg);
+            }
+        }
+        &--bottom-left{
+            left: -$tn-tooltip-arrow-offset;
+            &::before{
+                top: -($tn-tooltip-arrow-offset);
+                left: $tn-tooltip-arrow-offset;
+            }
+        }
+    }
+    &:hover{
+        .#{$block}__content{
+            visibility: visible;
+            opacity: 1;
+            overflow: visible;
+        }
+    }
+}

@@ -1,0 +1,126 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+@import "./mixins";
+
+/*!
+.tn-tree+(--header)
+    .tn-tree__group+(--sublevel-1...-6, ([aria-hidden] | .is-hidden))
+    .tn-tree__item
+        .tn-tree__row+(--header, ([aria-selected] | .is-selected))
+            .tn-tree__col+(--control, --actions)
+                .tn-tree__control+([aria-pressed] | .is-pressed)
+*/
+$block: ns(tree);
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $tn-tree-border-color: tn-color(neutral, 3) !default;
+    $tn-tree-cell-spacing: $tn-width--gutter !default;
+    $tn-tree-cell-padding: tn-space(3) !default;
+    $tn-tree-control-width: 18px !default;
+    $tn-tree-control-margin-right: tn-space(2) !default;
+    $tn-tree-transition-params: $tn-animation--speed ease-in !default;
+
+    @include reset;
+    @include tn-last-child;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    border-bottom: solid 1px $tn-tree-border-color;
+    margin-bottom: $tn-margin-bottom;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &--header {
+        border-bottom: 0;
+        border-top: solid 1px $tn-tree-border-color;
+        margin-bottom: 0;
+    }
+    &__group {
+        //see addt'l group classes under __col--first below
+        transition: opacity $tn-animation--speed linear;
+        max-height: auto;
+        opacity: 1;
+        margin-bottom: 0;
+        &.is-hidden,
+        &[aria-hidden="true"] {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+    }
+    &__item {
+        border-top: solid 1px $tn-tree-border-color;
+        margin-bottom: 0;
+        list-style: none;
+    }
+    &__row {
+        padding: 0 $tn-tree-cell-spacing;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: background-color $tn-tree-transition-params;
+        &:hover {
+            background-color: lighten(tn-color(neutral, 3), 10);
+        }
+        &--header {
+            @include tn-type(-1);
+            @include tn-weight(bold);
+            color: tn-color(text, 2);
+            &:hover {
+                background-color: transparent;
+            }
+        }
+        &.is-selected,
+        &[aria-selected="true"] {
+            background-color: lighten(tn-color(neutral, 3), 5);
+        }
+    }
+    $_row_padding: $tn-tree-control-width + $tn-tree-control-margin-right + 4;
+    &__col {
+        flex: 1;
+        padding: $tn-tree-cell-padding 0;
+        //pad to account for control
+        padding-left: $_row_padding;
+        &--control {
+            flex: auto;
+            width: 25%;
+            //sets 8 sublevels of indentation based on __group level
+            @at-root {
+                @each $i in 1,2,3,4,5,6,7,8 {
+                    .#{$block}__group--sublevel-#{$i} & {
+                        padding-left: $_row_padding * ($i + 1);
+                    }
+                }
+
+            }
+        }
+        &--actions {
+            padding-top: 0;
+            padding-bottom: 0;
+            text-align: right;
+        }
+    }
+
+    &__control {
+        @include tn-button-reset;
+        position: absolute;
+        top: calc(50% - #{$tn-tree-control-width}/2);
+        margin-left: -#{$_row_padding};
+        width: $tn-tree-control-width;
+        height: $tn-tree-control-width;
+        margin-right: tn-space(3);
+        background: url($tn-forms-select-background-image--active) no-repeat 50%;
+        background-size: contain;
+        transform: rotate(-90deg);
+        vertical-align: middle;
+        transition: transform $tn-animation--speed linear;
+        &[aria-pressed="true"],
+        &.is-pressed {
+            transform: rotate(0);
+        }
+    }
+
+
+}

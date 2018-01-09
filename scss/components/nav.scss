@@ -1,0 +1,38 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+/*!
+.tn-nav+(--vertical)
+    .tn-nav__item
+    .tn-nav__link+((.is-selected|[aria-selected=true]),(.is-disabled|[aria-disabled=true]))
+*/
+$block: ns(nav);
+
+.#{$block} {
+    $tn-nav-link-padding: tn-space(2);
+    @include reset;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    //MODIFIERS *******************************************
+    &--vertical {
+        flex-direction: column;
+    }
+
+    //ELEMENTS *******************************************
+    &__item {
+
+    }
+    &__link {
+        display: block;
+        padding: $tn-nav-link-padding;
+        &.is-selected,
+        &[aria-selected="true"] {
+            color: $tn-color;
+        }
+    }
+
+}

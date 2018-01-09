@@ -1,0 +1,102 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+@import "../components/button";
+@import "../icons";
+@import "mixins";
+
+/*!
+.tn-pagination
+*/
+
+$block: ns(pagination);
+
+.#{$block} {
+  $tn-pagination-color: tn-color(text-inverse, 2) !default;
+  $tn-pagination-color--text: $tn-color--link !default;
+  $tn-pagination-color--active: $tn-pagination-color !default;
+  $tn-pagination-color--disabled: tn-color(text, 1) !default;
+  $tn-pagination-nav-color--disabled: tn-color(text, 2) !default;
+
+  @include reset;
+  @include tn-type(-1);
+  display: inline-block;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  &__link {
+    color: $tn-pagination-color--text;
+    background-color: transparent;
+    padding-left: tn-space(3);
+    padding-right: tn-space(3);
+    position: relative;
+    &::after {
+        content: "";
+        border-bottom: solid 2px transparent;
+        width: calc(100% - #{tn-space(2)}*2);;
+        height: 2px;
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        margin-left: tn-space(2);
+    }
+    &:hover,
+    &:focus {
+      color: darken($tn-pagination-color--text, 5);
+      text-decoration: none;
+      &::after {
+          border-bottom-color: darken($tn-pagination-color--text, 5);
+      }
+    }
+    &:active,
+    &[aria-selected="true"],
+    &.is-selected{
+      background-color: transparent;
+      outline: none;
+      box-shadow: none;
+      &::after {
+          border-bottom-color: transparent;
+      }
+    }
+    &[aria-disabled="true"],
+    &.is-disabled {
+      color: $tn-pagination-nav-color--disabled;
+      text-decoration: none;
+      cursor: default;
+      &::after {
+          border-bottom-color: transparent;
+      }
+    }
+    &:active,
+    &[aria-selected="true"],
+    &.is-selected {
+      color: $tn-pagination-color--disabled;
+      text-decoration: none;
+      cursor: default;
+    }
+  }
+
+  &__item{
+    display: inline-block;
+    .tn-icon--chevron-back{
+      @extend .tn-icon--chevron;
+      @include rotate(180);
+    }
+  }
+  &__more{
+    @include tn-type(-3);
+    color: $tn-pagination-color--disabled;
+    vertical-align: sub;
+    padding-left: tn-space(3);
+    padding-right: tn-space(3);
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: $tn-pagination-color--disabled;
+      cursor: default;
+    }
+  }
+  &__total{
+    color: $tn-pagination-nav-color--disabled;
+  }
+}

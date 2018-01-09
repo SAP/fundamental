@@ -1,0 +1,150 @@
+.docs-home{
+
+    $docs-home-white-color: docs-color(background, 1);
+    $docs-home-dark-color: docs-color(text, 1);
+
+    &_hero{
+        text-align: center;
+        background-image: url('../images/home-hero-bg.png');
+        background-size: cover;
+        background-position: center;
+        color: $docs-home-white-color;
+        padding: 160px;
+        font-family: 'Lato', sans-serif;
+
+        &-heading{
+            font-size: 50px;
+            font-weight: bold;
+            line-height: 0.76;
+            text-shadow: 1px 3px 6px rgba(0, 0, 0, 0.09);
+        }
+
+        &-description{
+            font-size: 15px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        &-btn{
+            font-size: 16px;
+            font-weight: bold;
+            background-color: $docs-home-dark-color;
+            display: inline-block;
+            margin:36px 0 26px 0;
+
+            &:hover{
+                background-color: $accent-color;
+            }
+        }
+
+        &-version{
+            display: inline-block;
+            text-transform: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: normal;
+        }
+    }
+
+    &_getting-started{
+        width: 50%;
+        float: left;
+        padding: 160px 50px;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        display: inline-block;
+        transition: all 0.5s ease;
+        color:$docs-home-dark-color;
+
+        &:hover{
+            color:$docs-home-dark-color;
+        }
+
+        &-label{
+            margin-top: 30px;
+            display: block;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        &--designer{
+            background-image: url('../images/home-designers-bg.png');
+            border-right: 1px solid docs-color(neturals, 2);
+        }
+
+        &--developer{
+            background-image: url('../images/home-developers-bg.png');
+       }
+    }
+
+    &_ui-guidelines{
+        text-align: center;
+        background-color: docs-color(background, 3);
+        color: $docs-home-white-color;
+        padding: 160px 0;
+
+        &-heading{
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        &-description{
+            font-size: 14px;
+        }
+
+        &-img{
+            height: 120px;
+            vertical-align: baseline;
+            position: relative;
+            margin-bottom: 30px;
+
+            img{
+                position: absolute;
+                bottom: 0;
+                left:0;
+                right:0;
+                margin-left:auto;
+                margin-right:auto;
+            }
+        }
+
+        &-link{
+            width: 200px;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $docs-home-white-color;
+
+            &:hover{
+                color: $docs-home-white-color;
+            }
+        }
+    }
+
+    &_support{
+        width: 60%;
+        margin: 160px auto;
+        display: flex;
+
+        &-link{
+            width: 50%;
+            float: left;
+            text-align: center;
+            color: docs-color(text, 2);
+
+            &:hover{
+                color: docs-color(text, 2);
+            }
+
+            img{
+                display: block;
+                margin: 30px auto;
+                width: 80px;
+            }
+        }
+    }
+
+}

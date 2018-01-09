@@ -1,0 +1,111 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+@import "mixins";
+
+/*!
+.tn-dropdown+()
+    .tn-dropdown__control+([disabled])
+    .tn-dropdown__menu+()
+*/
+$block: ns(dropdown);
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $tn-dropdown-menu-color: solid 1px $tn-forms-color !default;
+    $tn-dropdown-menu-border: solid 1px $tn-forms-border-color !default;
+    $tn-dropdown-menu-z-index: 2 !default;
+    $tn-dropdown-menu-background-color: tn-color(background) !default;
+    $tn-dropdown-menu-shadow: 0 0 4px 1px rgba(tn-color(neutral, 4), 0.2) !default;
+    //items
+    $tn-dropdown-menu-item-color: $tn-dropdown-menu-color !default;
+    $tn-dropdown-menu-item-color--hover: tn-color(text-inverse) !default;
+    $tn-dropdown-menu-item-background-color: $tn-dropdown-menu-background-color !default;
+    $tn-dropdown-menu-item-background-color--hover: darken(tn-color(action), 5%) !default;
+    $tn-dropdown-menu-item-padding: tn-space(3) tn-space(4) !default;
+    //anim
+    $tn-dropdown-menu-item-transition-params: $tn-animation--speed ease-in !default;
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    @include reset;
+    position: relative;
+    display: inline-block;
+
+    &__control {
+        @include tn-button-reset;
+        @include tn-form-select;
+        position: relative;
+        line-height: $tn-forms-height--input-text;
+        &[aria-expanded="true"],
+        &.is-expanded {
+            border-color: $tn-forms-border-color--focus;
+            z-index: $tn-dropdown-menu-z-index + 1;
+            box-shadow: $tn-dropdown-menu-shadow;
+        }
+        &--no-border {
+            border-color: transparent;
+            &[aria-disabled="true"],
+            &.is-disabled,
+            &:disabled {
+                border-color: transparent;
+            }
+        }
+    }
+    &__icon {
+        margin-right: tn-space(3);
+        vertical-align: middle;
+        transform: translateY(-2px);
+    }
+    &__menu,
+    &__options {
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+        min-width: 100%;
+        border: $tn-dropdown-menu-border;
+        background: $tn-dropdown-menu-background-color;
+        position: absolute;
+        white-space: nowrap;
+        z-index: $tn-dropdown-menu-z-index;
+        transform: translateY(-1px);
+        box-shadow: $tn-dropdown-menu-shadow;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity $tn-dropdown-menu-item-transition-params;
+        &[aria-hidden="true"],
+        &.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    &__group {
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+    }
+    &__item,
+    &__option {
+        @include reset;
+        @include tn-type(-1,body);
+        display: block;
+        padding-left: 0;
+        list-style: none;
+        padding: $tn-dropdown-menu-item-padding;
+        &:hover {
+            color: $tn-dropdown-menu-item-color--hover;
+            background-color: $tn-dropdown-menu-item-background-color--hover;
+            text-decoration: none;
+        }
+    }
+    &__separator {
+        @include reset;
+        @include tn-type(-3, body, reg, none);
+        display: block;
+        color: tn-color(text, 2);
+        padding: $tn-dropdown-menu-item-padding;
+        padding-top: tn-space(4);
+        border-top: solid 1px tn-color(neutral, 3);
+    }
+
+}

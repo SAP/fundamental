@@ -1,0 +1,33 @@
+{% import "../forms.njk" as forms %}
+{% from "../button/component.njk" import button %}
+{% from "../icon/component.njk" import icon %}
+<!--
+modal:
+    properties={},
+-->
+{% macro modal(properties={}) %}
+
+<div class="tn-modal">
+  <div class="tn-modal__content">
+      <div class="tn-modal__header">
+          <button class="tn-button tn-button--text tn-button--icon tn-button--small" aria-label="close">
+            <span class="tn-icon tn-icon--close" role="presentation"></span>
+          </button>
+          <h4 class="tn-modal__title">{{properties.header}}</h4>
+      </div>
+      <div class="tn-modal__body">
+            {{properties.body}}
+      </div>
+      <footer class="tn-modal__footer-items">
+        {%- for item in properties.footerActions %}
+          {%- if item.type === "primary" %}
+            <button class="tn-modal__button-primary">{{item.label}}</button>
+          {%- else %}
+            <button class="tn-modal__button-secondary">{{item.label}}</button>
+          {%- endif %}
+        {%- endfor %}
+      </footer>
+  </div>
+</div>
+
+{%- endmacro %}

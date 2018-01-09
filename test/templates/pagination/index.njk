@@ -1,0 +1,62 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "./component.njk" import pagination %}
+{% from "../button/component.njk" import button %}
+{% from "../icon/component.njk" import icon %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['components/pagination','icons'] %}
+
+{% block content %}
+
+<h1>pagination</h1>
+
+<!-- output the component example and the code snippet -->
+{% set example %}
+{{  pagination(
+        properties={
+            totalItems: 30,
+            itemsPerPage: 10,
+            currentPage: 1
+        }
+    )
+}}
+{{  pagination(
+        properties={
+            totalItems: 30,
+            itemsPerPage: 10,
+            currentPage: 2
+        }
+    )
+}}
+{{  pagination(
+        properties={
+            totalItems: 500,
+            itemsPerPage: 10,
+            currentPage: 2
+        }
+    )
+}}
+{{  pagination(
+        properties={
+            totalItems: 500,
+            itemsPerPage: 10,
+            currentPage: 22
+        }
+    )
+}}
+{{  pagination(
+        properties={
+            totalItems: 500,
+            itemsPerPage: 10,
+            currentPage: 50
+        }
+    )
+}}
+
+
+{% endset %}
+
+{{- format(example) -}}
+
+{% endblock %}

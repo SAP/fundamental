@@ -1,0 +1,55 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+@import "../components/button";
+/*!
+.tn-modal
+    .tn-modal__header
+        .tn-form__title
+    .tn-form__body
+    .tn-form__footer-items
+      .tn-modal__button-primary
+      .tn-modal__button-secondary
+*/
+$block: ns(modal);
+  $tn-modal-border-color: tn-color(neutral, 3) !default;
+  $tn-modal-inner-padding: tn-space(10) !default;
+  $tn-modal-inner-content-background: tn-color(background, 1) !default;
+
+
+.#{$block} {
+  width: 700px;
+  margin: tn-space(8) auto;
+  &__content{
+    background-color: $tn-modal-inner-content-background;
+    button{
+      float: right;
+    }
+  }
+  &__header{
+    border-bottom: 1px solid $tn-modal-border-color;
+    padding-left: $tn-modal-inner-padding;
+    padding-top: $tn-modal-inner-padding;
+    padding-right: $tn-modal-inner-padding/2;
+  }
+  &__title{
+      @include tn-type(4,header, med);
+  }
+  &__body{
+    padding: $tn-modal-inner-padding;
+  }
+  &__footer-items {
+    display: block;
+    overflow: auto;
+    border-top: 1px solid $tn-modal-border-color;
+    padding: $tn-modal-inner-padding;
+    padding-top: $tn-modal-inner-padding/2;
+  }
+  &__button-primary {
+    @extend .tn-button;
+  }
+  &__button-secondary {
+    @extend .tn-button;
+    @extend .tn-button--text;
+  }
+}

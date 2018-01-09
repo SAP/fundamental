@@ -1,0 +1,72 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+/*!
+.tn-tabs+()
+    .tn-tabs__item?
+    .tn-tabs__link+((.is-selected|[aria-selected=true]),(.is-disabled|[aria-disabled=true]))
+.tn-tabs__panel+([aria-expanded]|.is-expanded)
+*/
+
+$block: ns(tabs);
+
+.#{$block} {
+    $tn-tabs-margin-bottom: tn-space(m) !default;
+    $tn-tabs-border-width: 1px !default;
+    $tn-tabs-border-color: tn-color(neutral, 3) !default;
+    $tn-tabs-link-padding: tn-space(3) !default;
+    $tn-tabs-link-padding--side: tn-space(5) !default;
+    $tn-tabs-link-border-width: 2px !default;
+    $tn-tabs-link-border-color: tn-color(action, 1) !default;
+    $tn-tabs-link-transition-params: $tn-animation--speed ease-in !default;
+
+    @include reset;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: $tn-tabs-margin-bottom;
+    list-style: none;
+    border-bottom: solid $tn-tabs-border-width $tn-tabs-border-color;
+
+    &__item {
+
+    }
+    &__link {
+        display: block;
+        padding: $tn-tabs-link-padding $tn-tabs-link-padding--side;
+        @include tn-type(1,header,med,uppercase);
+        color: $tn-color--link;
+        border-bottom: solid $tn-tabs-link-border-width transparent;
+        transition: all $tn-tabs-link-transition-params;
+        cursor: pointer;
+        &:hover {
+            border-bottom: solid $tn-tabs-link-border-width $tn-tabs-link-border-color;
+            color: $tn-color--link-hover;
+        }
+        &.is-selected,
+        &[aria-selected="true"] {
+            color: $tn-color;
+            border-bottom: solid $tn-tabs-link-border-width $tn-tabs-link-border-color;
+        }
+        &.is-disabled,
+        &[aria-disabled="true"] {
+            color: $tn-color--link-disabled;
+            cursor: not-allowed;
+            &:hover {
+                border-bottom-color: transparent;
+            }
+        }
+    }
+    &__panel {
+        &[aria-expanded="false"] {
+            display: none;
+        }
+        &.is-expanded,
+        &[aria-expanded="true"] {
+            display: block;
+        }
+
+    }
+
+}

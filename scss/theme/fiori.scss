@@ -1,0 +1,63 @@
+@import "../core/functions";
+
+//fonts
+$tn-fonts: (
+    body: #{Arial, Helvetica, sans-serif},
+    header: #{Arial, Helvetica, sans-serif},
+    code: #{"Courier", sans-serif},
+);
+
+
+$tn-colors: (
+    primary: (
+        1: #b4cbe1,
+        2: #27394f,
+    ),
+    text: (
+        1: #21262c,
+        2: #7f90a4,
+        3: #63758b,
+    ),
+    text-inverse: (
+        1: #ffffff,
+        2: #f6f8f9,
+        3: #eef1f3,
+    ),
+    action: (
+        1: #479acc,
+        2: #00a5ec,
+        3: #0093d1,
+       	4: #008ac4
+    ),
+    neutral: (
+        1: #f7f7f7,
+        2: #3f3f3f,
+        3: #ccdaeb,
+        4: #8a8fa1,
+        5: #c2d1ea,
+        6: #a8bfe3
+    ),
+    background: (
+        1: #ffffff
+    ),
+    status: (
+        1: #619b62,
+        2: lighten(#619b62, 25),
+        3: #e96b1a,
+        4: lighten(#e96b1a, 25),
+        5: #df1919,
+        6: lighten(#df1919, 25),
+    )
+);
+
+body {
+    background: url("/static/bkgd-fiori@2x.png") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+$tn-ui-header-background-color: rgba(white, 0.1);
+$tn-ui-sidebar-background-color: transparent;
+$tn-card-background-color: rgba(tn-color(background), 0.2);
+$tn-card-background-color-hover: rgba(tn-color(background), 0.4);
+$tn-forms-background-color: rgba(tn-color(background), 0.4);

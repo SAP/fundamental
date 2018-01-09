@@ -1,0 +1,14 @@
+<!--
+card_group:
+    properties={ items: [] },
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{% macro card_group(properties={}, modifier={}, state={}, aria={}) -%}
+<div class="tn-card-group{{ modifier.block | modifier('card-group') }}">
+{% for item in properties.items -%}
+{{ item | trim | indent(4, true) }}
+{%- endfor -%}
+</div>
+{%- endmacro %}

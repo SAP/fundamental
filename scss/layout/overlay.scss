@@ -1,0 +1,30 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+$block: ns(overlay);
+
+/*!
+.tn-overlay
+
+*/
+
+
+.#{$block} {
+    $tn-overlay-background-color: rgba(black,0.8) !default;
+
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        background: $tn-overlay-background-color;
+        z-index: 1000;
+        color: tn-color(text-inverse);
+        &[aria-hidden="true"] {
+            display: none;
+        }
+
+}

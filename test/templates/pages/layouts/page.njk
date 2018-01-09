@@ -1,0 +1,41 @@
+{% extends "./app.njk" %}
+{# ui-level vars #}
+{%- set hide_ui_footer = hide_ui_footer or false %}
+{%- set fix_ui_footer = fix_ui_footer or false %}
+{%- set show_ui_overlay = show_ui_overlay or false %}
+{# app-level vars #}
+{%- set hide_app_sidebar = hide_app_sidebar or false %}
+{# page-level vars #}
+{%- set hide_page_header = hide_page_header or false %}
+{%- set hide_page_footer = hide_page_footer or false %}
+
+{# app-level blocks #}
+{% block app_sidebar %}
+{% endblock %}
+{% block app_main -%}
+<article class="tn-page">
+    {% if hide_page_header !== true %}
+    <header class="tn-page__header">
+        {% block page_header -%}
+        {%- endblock %}
+    </header>
+    {% endif %}
+    {% if page_intro %}
+    <div class="tn-page__intro">
+        <p><em>{{ page_intro }}</em></p>
+    </div>
+    {% endif %}
+    <div class="tn-page__content">
+    {% block page_content -%}
+    {%- endblock %}
+    </div>
+</article>
+{%- endblock %}
+
+{# ui-level blocks #}
+{% block ui_header -%}
+{%- endblock %}
+{% block ui_footer -%}
+{%- endblock %}
+{% block ui_overlay -%}
+{%- endblock %}

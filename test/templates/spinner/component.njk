@@ -1,0 +1,12 @@
+<!--
+spinner:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{% macro spinner(properties={}, modifier={}, state={}, aria={}) -%}
+<div class="tn-spinner{{ modifier.block | modifier('spinner') }}{{ state | state }}"{{ aria | aria }}>
+    <div></div>
+</div>
+{%- endmacro %}

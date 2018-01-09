@@ -1,0 +1,159 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+/*!
+.tn-form
+    .tn-form__set?
+        .tn-form__legend(.is-required)
+        .tn-form__group?
+            .tn-form__item+(--check, --inline)
+                .tn-form__label(.is-required)
+                .tn-form__control
+            .tn-form__message(--help, --error, --warning)
+*/
+$block: ns(form);
+
+.#{$block} {
+    //LOCAL VARS (set all vars used in component, always include !default)
+    $tn-form-label-font-size: -1 !default;
+    $tn-form-label-font-size--check: 0 !default;
+    $tn-form-label-color: tn-color(text, 3) !default;
+    $tn-form-message-font-size: -1 !default;
+    $tn-form-message-color: tn-color(text, 2) !default;
+    $tn-form-item-gutter: $tn-width--gutter !default;
+    $tn-form-item-margin-bottom: tn-space(8) !default;
+
+    &__group {
+        @include tn-clearfix;
+        @include tn-last-child;
+        .#{$block}__item {
+            @include tn-last-child;
+            margin-right: $tn-form-item-gutter;
+        }
+    }
+    &__set {
+        margin-bottom: $tn-form-item-margin-bottom;
+        .#{$block}__item {
+            &--inline {
+                margin-bottom: 0;
+            }
+        }
+        .#{$block}__message {
+            margin-top: tn-space(2);
+        }
+    }
+    &__item {
+        @include tn-last-child;
+        margin-bottom: $tn-form-item-margin-bottom;
+        &--check {
+            @include tn-clearfix;
+            position: relative;
+            display: block;
+            .#{$block}__label {
+                @include tn-type($tn-form-label-font-size--check);
+                margin-bottom: 0;
+                vertical-align: middle;
+                display: flex;
+                align-items: center;
+                line-height: $tn-forms-height--input-check;
+            }
+            .#{$block}__control {
+                float: left;
+                vertical-align: middle;
+                margin-right: tn-space(3);
+            }
+            .#{$block}__help {
+                float: none;
+                margin-left: tn-space(3);
+            }
+        }
+        &--inline {
+            float: left;
+            .#{$block}__label {
+                margin-top: tn-space(1);
+                width: auto;
+            }
+        }
+    }
+    &__label, &__legend {
+        @include tn-type($tn-form-label-font-size);
+        display: block;
+        margin-bottom: tn-space(2);
+        border: 0;
+        color: $tn-form-label-color;
+        &.is-required {
+            @include tn-weight(bold);
+        }
+    }
+    &__control {
+        min-width: $tn-forms-height--input-check;
+    }
+    &__legend {
+        margin-bottom: tn-space(5);
+    }
+    &__help {
+        float: right;
+    }
+    &__message {
+        clear: both;
+        display: block;
+        @include tn-type($tn-form-message-font-size);
+        color: $tn-form-message-color;
+        padding: tn-space(1) 0;
+        font-style: italic;
+        position: relative;
+        //adjust for checks
+        @at-root {
+            .#{$block}__item--check + & {
+                transform: translateY(-(tn-space(3)));
+                margin-bottom: -(tn-space(3));
+            }
+            .#{$block}__item--inline.#{$block}__item--check + & {
+                transform: translateY(tn-space(2));
+                margin-bottom: tn-space(2);
+            }
+        }
+        &::before {
+            width: 18px;
+            height: 18px;
+            font-style: normal;
+            position: absolute;
+            left: 0;
+            color: tn-color(text-inverse);
+            border-radius: 50%;
+            background-color: tn-color(text, 3);
+            text-align: center;
+        }
+        &--help {
+            padding-left: tn-space(7);
+            &::before {
+                content: "?";
+            }
+        }
+        &--warning, &--error {
+            padding-left: tn-space(9);
+            color: tn-color(text);
+            &::before {
+                content: "!";
+                left: tn-space(2);
+            }
+        }
+        &--warning {
+            background-color: scale-color($tn-color--warning, $lightness: 70%);
+            &::before {
+                background-color: transparent;
+                border-radius: 0;
+                @include triangle(20px 18px, $tn-color--warning, up);
+                text-indent: -0.1em;
+            }
+        }
+        &--error {
+            background-color: scale-color($tn-color--error, $lightness: 70%);
+            &::before {
+                background-color: $tn-color--error;
+                color: tn-color(text-inverse);
+            }
+        }
+    }
+}

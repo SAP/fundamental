@@ -1,0 +1,54 @@
+@import "../core/settings";
+@import "../core/functions";
+@import "../core/mixins";
+
+/*!
+.tn-section+(--full-bleed, --no-border)
+    .tn-section__header
+        .tn-section__title
+        .tn-section__actions
+    .tn-section__footer
+*/
+
+$block: ns(section);
+.#{$block} {
+
+    $tn-section-border-color: tn-color(neutral, 3) !default;
+    $tn-section-padding: $tn-padding--ui !default;
+    $tn-section-padding--top: tn-space(m) !default;
+    $tn-section-padding--bottom: tn-space(reg) !default;
+
+    @include tn-clearfix;
+    padding: $tn-section-padding--top $tn-section-padding $tn-section-padding--bottom;
+    border-bottom: solid 2px $tn-section-border-color;
+    &:last-child,
+    &--no-border {
+        border-bottom: 0;
+    }
+    &--full-bleed {
+        padding-right: 0;
+        padding-left: 0;
+        .#{$block}__header, .#{$block}__footer {
+            margin-left: $tn-section-padding;
+            margin-right: $tn-section-padding;
+        }
+    }
+    &__header {
+        min-height: tn-space(10);
+        display: flex;
+        align-items: center;
+        margin-bottom: tn-space(4);
+    }
+    &__title {
+        @include tn-type(3);
+        flex: 1;
+        margin-bottom: 0;
+    }
+    &__actions {
+        margin-left: auto;
+    }
+    &__footer {
+        display: flex;
+        justify-content: center;
+    }
+}

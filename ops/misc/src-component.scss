@@ -1,0 +1,58 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+/*!
+.tn-__COMPONENT_ID__+(--no-border)
+    .tn-__COMPONENT_ID____content+()
+    .tn-__COMPONENT_ID____title+()
+*/
+$block: ns(__COMPONENT_ID__);
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $tn-__COMPONENT_ID__-border-color: tn-color(primary, 1) !default;
+    $tn-__COMPONENT_ID__-content-border-color: tn-color(neutral, 4) !default;
+    $tn-__COMPONENT_ID__-border-color--selected: tn-color(primary) !default;
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    @include reset;
+    border: solid 20px $tn-__COMPONENT_ID__-border-color;
+
+    //BLOCK MODIFIERS ************
+    //e.g., $tn-__COMPONENT_ID__--no-border
+    &--no-border {
+        border-color: transparent;
+    }
+
+    //ELEMENTS *******************************************
+    //set all ELEMENT baseline styles
+    //e.g., $tn-__COMPONENT_ID____content
+    &__content {
+        border: solid 10px $tn-__COMPONENT_ID__-content-border-color;
+
+        //ELEMENT MODIFIERS ************
+        //e.g., $tn-__COMPONENT_ID____content--no-border
+        &--no-border {
+            border-color: transparent;
+        }
+    }
+    &__title {
+
+
+    }
+
+    //STATES *******************************************
+    &.is-disabled,
+    &[disabled] {
+        opacity: 0.5;
+    }
+    &[aria-selected="true"] {
+        border-color: $tn-__COMPONENT_ID__-border-color--selected;
+    }
+
+
+
+
+}

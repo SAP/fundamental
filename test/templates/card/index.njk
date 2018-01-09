@@ -1,0 +1,204 @@
+{% extends "layout.njk" %}
+{% from "./component.njk" import card %}
+{% from "../button/component.njk" import button %}
+{% from "./../format.njk" import format %}
+{% set css_deps = ['helpers','icons','components/button'] %}
+
+
+{% block content %}
+
+<h1>Card</h1>
+{% set example %}
+    {{  card(
+            {
+                'title': 'Primary Value',
+                'description': 'Secondary Value aute irure dolor in reprehenderit in voluptate',
+                'status': 'Status'
+            })
+    }}
+{% endset %}
+{{ format(example) }}
+
+
+<h1>Button Card</h1>
+{% set example %}
+    {{  card(
+            {
+                'title': 'Lorem ipsum dolor quam placeat numquam repellendus',
+                'description': 'Tenetur quam placeat obcaecati molestias voluptatibus dolorum ut.',
+                'status': '<span class="tn-has-color-status-1">Voluptate quis adipisci sit</span>'
+            },
+            modifier={
+                block: ['button']
+            },
+            aria={
+                role: 'button'
+            })
+    }}
+{% endset %}
+{{ format(example) }}
+
+
+<h1>Disabled Card</h1>
+{% set example %}
+    {{  card(
+            {
+                'title': 'Repellendus obcaecati molestias',
+                'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit aute irure dolor in reprehenderit in voluptate',
+                'status': '<span>Voluptate quis adipisci sit</span> | <span>Voluptate quis adipisci sit</span>'
+            },
+            modifier={
+                block: ['button']
+            },
+            state={
+                disabled: true
+            },
+            aria={
+                role: 'button'
+            })
+    }}
+{% endset %}
+{{ format(example) }}
+
+<hr>
+
+<h1>Actions Card</h1>
+{% set example %}
+    {{  card(
+            {
+                'title': 'Lorem ipsum dolor quam placeat numquam repellendus',
+                'description': 'Tenetur quam placeat ipsum dolor sit amet obcaecati molestias voluptatibus dolorum ut',
+                'status': '<span class="tn-has-color-status-1">Voluptate quis adipisci sit</span>',
+                'actions': button(
+                        { icon: 'more' },
+                        modifier={ block: ['icon','text','small'] },
+                        aria={ label: 'BUTTON_LABEL' }
+                    )
+            },
+            modifier={
+                block: ['button']
+            })
+    }}
+{% endset %}
+{{ format(example) }}
+
+<hr>
+
+<h1>Media Card</h1>
+{% set example %}
+    {{  card(
+            {
+                'title': 'Asperiores doloribus id dolore',
+                'description': 'Consectetur adipisicing elit',
+                'status': '<span class="tn-has-color-status-1">Cumque itaque</span>',
+                'media': {
+                    'alt': 'YaaS product thumbnail',
+                    'image': 'https://techne.yaas.io/images/product-thumbnail-wide.png'
+                }
+            },
+            aria={
+                role: 'button'
+            })
+    }}
+{% endset %}
+{{ format(example) }}
+
+
+<h1>Media Card with Round Image</h1>
+{% set example %}
+    {{  card(
+            {
+                'title': 'Asperiores doloribus id dolore',
+                'description': 'Consectetur adipisicing elit',
+                'status': '<span class="tn-has-color-status-1">Cumque itaque</span>',
+                'media': {
+                    'alt': 'YaaS product thumbnail',
+                    'image': 'https://techne.yaas.io/images/product-thumbnail-wide.png'
+                }
+            },
+            modifier={
+                media: ['round']
+            },
+            aria={
+                role: 'button'
+            })
+    }}
+{% endset %}
+{{ format(example) }}
+
+<h1>Media Card with Fill Image</h1>
+{% set example %}
+    {{  card(
+            {
+                'title': 'Asperiores doloribus id dolore',
+                'description': 'Consectetur adipisicing elit',
+                'status': '<span class="tn-has-color-status-1">Cumque itaque</span>',
+                'media': {
+                    'alt': 'YaaS product thumbnail',
+                    'image': 'https://techne.yaas.io/images/product-thumbnail-wide.png'
+                }
+            },
+            modifier={
+                media: ['fill']
+            },
+            aria={
+                role: 'button'
+            })
+    }}
+{% endset %}
+{{ format(example) }}
+
+<h1>Vertical Media Card</h1>
+{% set example %}
+    {{  card(
+            {
+                'title': 'Asperiores doloribus id dolore',
+                'description': 'Consectetur adipisicing elit',
+                'status': '<span class="tn-has-color-status-1">Cumque itaque</span>',
+                'media': {
+                    'alt': 'YaaS product thumbnail',
+                    'image': 'https://techne.yaas.io/images/product-thumbnail-wide.png'
+                }
+            },
+            modifier={
+                block: ['vertical']
+            },
+            aria={
+                role: 'button'
+            })
+    }}
+{% endset %}
+{{ format(example) }}
+
+<hr>
+<h1>Custom Content Card</h1>
+{% set body %}
+        <span class="tn-has-color-text-3 tn-has-type-minus-2">Client I.D.</span>
+        <p>*******************</p>
+        <span class="tn-has-color-text-3 tn-has-type-minus-2">Client Secret</span>
+        <p>*******************</p>
+        <span class="tn-has-color-text-3 tn-has-type-minus-2">Creation Date</span>
+        <p>Consectetur adipisicing</p>
+        <span class="tn-has-color-text-3 tn-has-type-minus-2">Tenant (Project Identifier)</span>
+        <p>Lorem ipsum</p>
+{%- endset %}
+{% set example %}
+    {{  card(
+            {
+                body: body,
+                actions: button(
+                        { label: 'Generate Access Token' },
+                        modifier={ block: ['link','small'] },
+                        aria={  }
+                    )
+            })
+    }}
+{% endset %}
+{{ format(example) }}
+
+
+
+
+
+
+{% endblock %}

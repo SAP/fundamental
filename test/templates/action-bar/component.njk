@@ -1,0 +1,29 @@
+<!--
+action_bar:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{%- macro action_bar(properties={}, modifier={}, state={}, aria={}) %}
+<div class="tn-action-bar{{ modifier.block | modifier('action-bar') }}">
+{%- if properties.navigation %}
+    <div class="tn-action-bar__navigation">
+        {{ properties.navigation | indent(8) }}
+    </div>
+{%- endif %}
+    <h1 class="tn-action-bar__title">
+        {{ properties.title }}
+    </h1>
+    {%- if properties.actions %}
+    {%- set actions = properties.actions %}
+    <div class="tn-action-bar__actions"{{ actions.aria | aria }}>
+        {%- for item in actions.properties.items %}
+        <div class="tn-action-bar__action-item">
+            {{item | indent(12) }}
+        </div>
+        {%- endfor %}
+    </div>
+    {%- endif %}
+</div>
+{%- endmacro %}

@@ -1,0 +1,33 @@
+@import "../core/settings";
+//set namespace using function to avoid hardcoding it
+$ns: ns();
+.#{$ns}has-margin-none {
+    margin: 0;
+}
+.#{$ns}has-padding-none {
+    padding: 0;
+}
+@each $item in top, right, bottom, left {
+    .#{$ns}has-margin-#{$item}-none {
+        margin-#{$item}: 0;
+    }
+    .#{$ns}has-padding-#{$item}-none {
+        padding-#{$item}: 0;
+    }
+}
+@each $key, $value in $tn-spacing {
+    .#{$ns}has-margin-#{$key} {
+        margin: #{$value};
+    }
+    .#{$ns}has-padding-#{$key} {
+        padding: #{$value};
+    }
+    @each $item in top, right, bottom, left {
+        .#{$ns}has-margin-#{$item}-#{$key} {
+            margin-#{$item}: #{$value};
+        }
+        .#{$ns}has-padding-#{$item}-#{$key} {
+            padding-#{$item}: #{$value};
+        }
+    }
+}

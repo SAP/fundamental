@@ -1,0 +1,127 @@
+{% extends "./layouts/module.njk" %}
+{% set page_title = "Details 1" %}
+{% set page_intro = "Page level help message goes here" %}
+{% set is_landing_page = false %}
+{% set is_editable_page = true %}
+{% set show_toolbar = false %}
+
+{% import "../layout/component.njk" as layout %}
+{% from "../tabs/component.njk" import tabs %}
+{% from "../table/component.njk" import table %}
+{% from "../image/component.njk" import image %}
+{% from "../badge/component.njk" import badge %}
+{% from "../card-group/component.njk" import card_group %}
+{% from "../form/component.njk" import form_item %}
+
+{# SET CONTENT #}
+{# col_card #}
+{% set col_card %}
+<div class="tn-card" role="button">
+    <div class="tn-card__media">
+{{  image(
+        properties={},
+        modifier={
+            block: ["m", "circle", "profile"]
+        },
+        aria=data.image.aria
+    )
+}}
+    </div>
+    <div class="tn-card__content">
+         <h2 class="tn-card__header">
+             user.name@email.com
+         </h2>
+         <p class="tn-card__description">
+             First name Last name
+         </p>
+         <p class="tn-card__status">
+<span class="tn-label">Inactive</span>
+         </p>
+    </div>
+</div>
+{% endset %}
+
+{% block page_content %}
+{%- call layout.section() %}
+{% call layout.container() -%}
+{% call layout.col(2) -%}
+{{  image(
+        properties={},
+        modifier={
+            block: ["xxl", "circle", "profile"]
+        },
+        aria=data.image.aria
+    )
+}}
+{%- endcall %}
+{% call layout.col(10) -%}
+{% call layout.container() -%}
+{% call layout.col(12) -%}
+{{  badge({label: "Active"},
+        modifier={block: ["success","pill"]})
+}}
+{%- endcall %}
+{%- endcall %}
+{% call layout.col(6) -%}
+{{ form_item(properties={
+        label: "Label",
+        value: "Non-editable value" },
+        state={ readonly: true })
+}}
+{{ form_item(properties={
+        label: "Label",
+        placeholder: "Field placholder value",
+        message: "Start with a letter, use only alphanumeric characters 3-16 characters",
+        help: "Lorem ipsim dolor sit amet" })
+}}
+{%- endcall %}
+{% call layout.col(6) -%}
+{{ form_item(properties={
+        label: "Creation Date",
+        value: "12/04/15" },
+        state={ readonly: true })
+}}
+{{ form_item(properties={
+        label: "Version",
+        placeholder: "Field placholder value",
+        help: "Lorem ipsim dolor sit amet" })
+}}
+{%- endcall %}
+{%- endcall %}
+{%- endcall %}
+{%- endcall %}
+
+{% call layout.section() -%}
+    {% call layout.section_header({  title: "Section Title" }) -%}
+    {%- endcall %}
+    {{  card_group(
+            properties={
+                items: [
+                col_card, col_card, col_card, col_card, col_card, col_card
+                ]
+            }
+        )
+    }}
+    {% call layout.section_footer() -%}
+<a href="#" class="tn-button tn-button--link">See All</a>
+    {%- endcall %}
+{%- endcall %}
+{%- set table_image = image(
+        modifier={
+            block: ["s", "circle", "profile"]
+        },
+        aria=data.image.aria
+    )
+%}
+{%- set headers = ["", "Column Header", "Column Header", "Column Header", "Column Header"] %}
+{%- set image_row = [table_image, '<a class="tn-has-font-weight-semi">user.name@email.com</a>', 'First Name', 'Last Name', '01/26/17'] %}
+{% call layout.section(modifier="full-bleed") -%}
+    {% call layout.section_header({  title: "Table Title" }) -%}
+    {%- endcall %}
+    {{  table({
+            headers: headers,
+            rows: [image_row, image_row, image_row]
+        })
+    }}
+{%- endcall %}
+{% endblock %}
