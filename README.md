@@ -1,8 +1,8 @@
 
 # IMPORTANT
-This is an in-development, experimental version of SAP Hybris Techne. It should **NOT** be used for production. Refer to the [Techne website](https://techne.yaas.io) for details about the current version.
+This is an in-development, experimental version of Fundamental UI.
 
-> If you are interested in testing beta releases, please contact the [Techne team](mailto:techne@sap.com).
+> If you are interested in testing beta releases, please contact the [Fundamental team](mailto:fundamental@sap.com).
 
 [![Build Status](https://travis-ci.org/SAP/techne.svg?branch=v2.0)](https://travis-ci.org/SAP/techne)
 
