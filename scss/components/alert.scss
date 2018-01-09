@@ -1,0 +1,51 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+@import "../components/mixins";
+
+/*!
+.tn-alert+(--warning. --error)
+    .tn-alert__close
+*/
+$block: ns(alert);
+
+.#{$block} {
+    //SETTINGS
+    $tn-alert-background-color: tn-color(text, 3) !default;
+    $tn-alert-background-color--warning: tn-color(status, 2) !default;
+    $tn-alert-background-color--error: tn-color(status, 3) !default;
+    $tn-alert-color--warning: tn-color(text, 1) !default;
+    $tn-alert-color: tn-color(text-inverse, 1) !default;
+    $tn-alert-border-color: tn-color(neutral, 2) !default;
+    $tn-alert-height: tn-space(13) !default;
+    $tn-alert-action--clerance: 50px;
+
+    // Block
+    color: $tn-alert-color;
+    border: solid 1px $tn-alert-border-color;
+    background-color: $tn-alert-background-color;
+    min-height: $tn-alert-height;
+    padding: tn-space(s);
+
+    // Elements
+    &__close {
+        @include tn-button-reset;  //removes default button chrome
+        color: tn-color(text-inverse, 1);
+        width: tn-space(m); //best practice hit space
+        height: tn-space(m);
+        float: right;
+        margin: - (tn-space(s)/2);
+    }
+
+    // Modifiers
+    &--warning {
+      background-color: $tn-alert-background-color--warning;
+      color: $tn-alert-color--warning;
+
+    }
+    &--error {
+      background-color: $tn-alert-background-color--error;
+    }
+
+
+}

@@ -1,0 +1,121 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+$block: ns(ui);
+
+/*!
+.tn-ui+(--fixed)
+    .tn-ui__header+(--fixed)
+    .tn-ui__app
+    .tn-ui__footer+(--fixed)
+    .tn-ui__overlay
+*/
+
+.#{$block} {
+    //these vars can be set globally to lock all pages
+    //also, --fixed modifiers can be used in the HTML to set per template configurations
+    $tn-ui-fixed: false !default;
+    $tn-ui-header-fixed: false !default;
+    $tn-ui-footer-fixed: false !default;
+
+    $tn-ui-header-height: 50px !default;
+    $tn-ui-header-background-color: tn-color(primary) !default;
+    $tn-ui-footer-height: 40px !default;
+    $tn-ui-footer-background-color: tn-color(primary, 2) !default;
+
+    $_ui-is-fixed: $tn-ui-fixed or ($tn-ui-header-fixed and $tn-ui-footer-fixed);
+    position: absolute;
+    min-height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    &--fixed {
+        display: flex;
+        flex-direction: column;
+        max-height: 100vh;
+        .#{$block}__header {
+            flex: 0 0 $tn-ui-header-height;
+            position: static;
+        }
+        & .#{$block}__footer {
+            flex: 0 0 $tn-ui-footer-height;
+            position: static;
+        }
+        & .#{$block}__app {
+            overflow: scroll;
+            margin-top: 0;
+            flex: 1;
+            min-height: auto;
+        }
+    }
+    @if $_ui-is-fixed {
+        display: flex;
+        flex-direction: column;
+        max-height: 100vh;
+    }
+    &__header {
+        position: absolute;
+        z-index: 1;
+        background: $tn-ui-header-background-color;
+        width: 100%;
+        min-height: $tn-ui-header-height;
+        height: $tn-ui-header-height;
+        &--fixed {
+            position: fixed;
+        }
+        @if $_ui-is-fixed {
+            position: static;
+            flex: 0 0 $tn-ui-header-height;
+        } @else {
+            @if $tn-ui-header-fixed {
+                position: fixed;
+            }
+        }
+    }
+    &__footer {
+        background: $tn-ui-footer-background-color;
+        width: 100%;
+        min-height: $tn-ui-footer-height;
+        height: $tn-ui-footer-height;
+        &--fixed {
+            position: fixed;
+            bottom: 0;
+        }
+        @if $_ui-is-fixed {
+            position: static;
+            flex: 0 0 $tn-ui-footer-height;
+        } @else {
+            @if $tn-ui-footer-fixed {
+                position: fixed;
+                bottom: 0;
+            }
+        }
+    }
+    &__app {
+        margin-top: $tn-ui-header-height;
+        min-height: calc(100vh - #{$tn-ui-footer-height} - #{$tn-ui-header-height});
+        width: 100%;
+        display: flex;
+        position: relative;
+        @if $_ui-is-fixed {
+            overflow: scroll;
+            flex: 1;
+            margin-top: 0;
+        } @else {
+            @if $tn-ui-header-fixed {
+                min-height: calc(100vh - #{$tn-ui-footer-height});
+            }
+            @if $tn-ui-footer-fixed {
+                padding-bottom: $tn-ui-footer-height;
+            }
+        }
+    }
+    &__main {
+        @if $_ui-is-fixed {
+            overflow: scroll;
+        }
+    }
+    &__overlay {
+        position: absolute;
+    }
+}

@@ -1,0 +1,135 @@
+{% extends "./layouts/page.njk" %}
+{% from "./../format.njk" import format, code %}
+{% import "../layout/component.njk" as layout %}
+
+{% from "../tree/component.njk" import tree %}
+{% from "../table/component.njk" import table %}
+
+{% set hide_app_sidebar = false %}
+{% set hide_page_header = true %}
+{% block page_content %}
+
+{% set panel %}
+{% call layout.panel() -%}
+    {% call layout.panel_header({ title: ".tn-panel__title" }) -%}
+        {% call layout.panel_actions() -%}
+.tn-panel__actions
+        {%- endcall %}
+    {%- endcall %}
+
+<h1>.tn-panel</h1>
+<p>Very much like a <code>.tn-section</code> but intended to be used inside of a column.</p>
+<p>A <code>.tn-panel</code> should only be used when a title, actions and/or footer are needed with the content, otherwise the content can be placed directly inside the <code>.tn-col</code></p>
+
+    {% call layout.panel_footer() -%}
+.tn-panel__footer
+    {%- endcall %}
+{%- endcall %}
+{% endset %}
+
+
+
+<div class="tn-has-background-color-neutral-2">
+{% call layout.section() -%}
+{% call layout.container() -%}
+    {% call layout.col(6) -%}
+
+{{panel}}
+
+    {%- endcall %}
+    {% call layout.col(6) -%}
+
+{{panel}}
+
+    {%- endcall %}
+
+{%- endcall %}
+{%- endcall %}
+</div>
+
+{% set badgetitle %}
+Vivamus sagittis <span class="tn-badge tn-badge--success">Active</span>
+{% endset %}
+{% set card %}
+<div class="tn-card" role="button">
+    <div class="tn-card__media tn-card__media--round" style="background-image: url(https://techne.yaas.io/images/product-thumbnail-wide.png)" aria-label="YaaS product thumbnail"></div>
+    <div class="tn-card__content">
+         <h2 class="tn-card__header">
+             Asperiores doloribus id dolore
+         </h2>
+         <p class="tn-card__description">
+             Consectetur adipisicing elit
+         </p>
+         <p class="tn-card__status">
+             <span class="tn-has-color-status-1">Cumque itaque</span>
+         </p>
+    </div>
+</div>
+{% endset %}
+
+{% set panel_2 %}
+{% call layout.panel() -%}
+    {% call layout.panel_header({  title: badgetitle }) -%}
+        {% call layout.panel_actions() -%}
+        <button class="tn-button tn-button--text tn-button--small">
+            <span class="tn-icon tn-icon--add" role="presentation"></span>
+            Add New Item
+        </button>
+        {%- endcall %}
+    {%- endcall %}
+{{ card }}
+{{ card }}
+{{ card }}
+    {% call layout.panel_footer() -%}
+<a href="#" class="tn-button tn-button--link">See All</a>
+    {%- endcall %}
+{%- endcall %}
+{% endset %}
+
+{% call layout.section() -%}
+
+{% call layout.container() -%}
+    {% call layout.col(6) -%}
+
+{{panel_2}}
+
+    {%- endcall %}
+    {% call layout.col(6) -%}
+
+{{panel_2}}
+
+    {%- endcall %}
+
+{%- endcall %}
+{%- endcall %}
+
+
+<hr>
+
+<section class="tn-section">
+    <div class="tn-section__header">
+        <h1 class="tn-section__title">
+            Code
+        </h1>
+    </div>
+
+{%- set code_example %}
+{% call layout.panel() -%}
+    {% call layout.panel_header({ title: "//title (optional)" }) -%}
+        {% call layout.panel_actions() -%}
+//buttons (optional)
+        {%- endcall %}
+    {%- endcall %}
+
+//panel content
+    {% call layout.panel_footer() -%}
+//link or info (optional)
+    {%- endcall %}
+{%- endcall %}
+{% endset %}
+<pre>
+{{code_example | e | trim }}
+</pre>
+
+
+{% endblock %}

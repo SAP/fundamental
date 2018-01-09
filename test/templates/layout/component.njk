@@ -1,0 +1,94 @@
+
+<!--
+section:
+    modifier=[],
+    classes=[],
+    aria={}
+-->
+{%- macro section(modifier=[], aria={}, classes=[]) %}
+<section class="tn-section{{ classes | classes }}{{ modifier | modifier("section") }}"{{aria | aria}}>
+    {{- caller() | indent -}}
+</section>
+{%- endmacro %}
+
+{%- macro section_header(properties={}, modifier=[], aria={}, classes=[]) %}
+<header class="tn-section__header{{ classes | classes }}{{ modifier | modifier("section__header") }}">
+    {%- if properties.title %}
+    <h1 class="tn-section__title">
+        {{ properties.title }}
+    </h1>
+    {%- endif %}
+    {{- caller() | indent -}}
+</header>
+{%- endmacro %}
+
+{%- macro section_footer(properties={}, modifier=[], aria={}, classes=[]) %}
+<footer class="tn-section__footer">
+    {{ caller() }}
+</footer>
+{%- endmacro %}
+
+{%- macro section_actions(properties={}, modifier=[], aria={}, classes=[]) %}
+<div class="tn-section__actions">
+    {{ caller() }}
+</div>
+{%- endmacro %}
+
+<!--
+container:
+    modifier=[],
+    classes=[],
+    aria={}
+-->
+{%- macro container(modifier=[], aria={}, classes=[]) %}
+<div class="tn-container{{ classes | classes }}{{ modifier | modifier("container") }}"{{aria | aria}}>
+    {{- caller() }}
+</div>
+{%- endmacro %}
+
+<!--
+col:
+    span=12,
+    modifier=[],
+    classes=[],
+    aria={}
+-->
+{%- macro col(span=12, modifier=[], aria={}, classes=[]) %}
+    <div class="tn-col{{'--' + span if span > 0}}{{ modifier | modifier("col") }}{{ classes | classes }}"{{aria | aria}}>{{ caller() }}</div>
+{%- endmacro %}
+
+
+<!--
+panel:
+    modifier=[],
+    classes=[],
+    aria={}
+-->
+{%- macro panel(modifier=[], aria={}, classes=[]) %}
+<div class="tn-panel{{ classes | classes }}{{ modifier | modifier("panel") }}"{{aria | aria}}>
+    {{- caller() | indent -}}
+</div>
+{%- endmacro %}
+
+{%- macro panel_header(properties={}, modifier=[], aria={}, classes=[]) %}
+<div class="tn-panel__header{{ classes | classes }}{{ modifier | modifier("panel__header") }}">
+    {%- if properties.title %}
+    <h1 class="tn-panel__title">
+        {{ properties.title }}
+    </h1>
+    {%- endif %}
+    {{- caller() | indent -}}
+</div>
+{%- endmacro %}
+
+{%- macro panel_footer(properties={}, modifier=[], aria={}, classes=[]) %}
+<div class="tn-panel__footer">
+    {{ caller() | indent -}}
+</div>
+{%- endmacro %}
+
+{%- macro panel_actions(properties={}, modifier=[], aria={}, classes=[]) %}
+<div class="tn-panel__actions">
+    {{ caller() }}
+</div>
+{%- endmacro %}

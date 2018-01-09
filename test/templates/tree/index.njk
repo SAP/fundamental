@@ -1,0 +1,53 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "./component.njk" import tree %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['helpers','icons','components/label','components/button'] %}
+
+{% block content %}
+    <h1>tree</h1>
+
+    <!-- output the component example and the code snippet -->
+    {% set example %}
+{{ tree(data.properties) }}
+    {% endset %}
+    {{ format(example) }}
+
+<br><br>
+
+    {% set example %}
+{{ tree({
+    headers: data.properties.headers,
+    items: data.properties.items,
+    expandedItems: [
+        true,
+        false,
+        false
+    ]
+
+}) }}
+    {% endset %}
+    {{ format(example) }}
+
+<br><br>
+
+    {% set example %}
+{{ tree({
+    headers: data.properties.headers,
+    items: data.properties.items,
+    expandedItems: [
+        [true,
+            [true, false]
+        ],
+        true,
+        false
+    ]
+
+}) }}
+    {% endset %}
+    {{ format(example) }}
+
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "./component.njk" import alert %}
+
+<!-- include add'tl css from src/styles/ -->
+{% set css_deps = ['icons', 'components/button'] %}
+
+{% block content %}
+
+<h1>alert</h1>
+
+<!-- output the component example and the code snippet -->
+{% set example %}
+{{  alert(
+        properties={
+            text: "default_alert_text",
+            id: "defautl-alert"
+        },
+        modifier={
+            block: []
+        }
+    )
+}}
+<br>
+{{  alert(
+        properties={
+            text: "warning_alert_text",
+            id: "warning-alert"
+
+        },
+        modifier={
+            block: ["warning"]
+        }
+    )
+}}
+<br>
+{{  alert(
+        properties={
+            text: "error_alert_text",
+            id: "error-alert"
+        },
+        modifier={
+            block: ["error"]
+        }
+    )
+}}
+
+{% endset %}
+{{- format(example) -}}
+
+
+
+{% endblock %}

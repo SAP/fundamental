@@ -1,0 +1,102 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "./component.njk" import tabs %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['components/nav'] %}
+
+{% block content %}
+
+    <h1>tabs</h1>
+    <p>NOTE: The <code>.tn-tabs__item</code> container is optional. You can use <code>nav</code> and <code>a</code> elements to the same effect.</p>
+
+
+{% set example %}
+{{  tabs(
+        properties=data.properties,
+        modifier={
+            block: []
+        },
+        state={},
+        aria={}
+    )
+}}
+{% endset %}
+{{ format(example) }}
+
+{% set example %}
+<nav class="tn-tabs" role="tablist">
+    <a class="tn-tabs__link" aria-controls="kf8369" href="#kf8369" role="tab">Link</a>
+    <a class="tn-tabs__link" aria-controls="9uQ282" aria-selected="true" href="#9uQ282" role="tab">Selected</a>
+    <a class="tn-tabs__link" aria-controls="DGl707" href="#DGl707" role="tab">Link</a>
+    <a class="tn-tabs__link" aria-controls="98q398" aria-disabled="true" role="tab">Disabled</a>
+</nav>
+<div class="tn-tabs__panel" aria-expanded="false" id="kf8369" role="tabpanel">
+    Lorem ipsum
+</div>
+<div class="tn-tabs__panel" aria-expanded="true" id="9uQ282" role="tabpanel">
+    Dolor sit
+</div>
+<div class="tn-tabs__panel" aria-expanded="false" id="DGl707" role="tabpanel">
+    Nullam ut
+</div>
+<div class="tn-tabs__panel" aria-expanded="false" id="98q398" role="tabpanel">
+    Tincidunt nunc
+</div>
+{% endset %}
+{{ format(example) }}
+
+<script>
+(function() {
+    //climb up DOM to get block element
+    function getBlock(control) {
+        var block = control.parentNode;
+        while (block.getAttribute("role") !== "tablist") {
+            block = block.parentNode;
+        }
+        return block;
+    }
+    //get all tablists
+    var tablists = document.querySelectorAll('[role="tablist"]');
+    //handle each tablist
+    for (var i = 0; i < tablists.length; i++) {
+        var tablist = tablists[i];
+        //get all the tabs
+        var tabs = tablist.querySelectorAll("[aria-controls]");
+        for (var j = 0; j < tabs.length; j++) {
+            var el = tabs[j];
+            el.addEventListener('click', function(e) {
+                e.preventDefault();
+                //check states
+                var isDisabled = this.getAttribute("aria-disabled") === "true";
+                var isSelected = this.getAttribute("aria-selected") === "true";
+                if (isDisabled || isSelected) {
+                    return;
+                }
+                //get all controls in grouping
+                var block = getBlock(this);
+                var controls = block.querySelectorAll("[aria-controls]");
+                //handle each controls
+                for (var k = 0; k < controls.length; k++) {
+                    var control = controls[k];
+                    //new selected tab
+                    var isTriggerTab = control === this;
+                    //get panel
+                    var panelId = control.getAttribute("aria-controls");
+                    var panel = document.getElementById(panelId);
+                    //set states
+                    control.setAttribute("aria-selected", isTriggerTab);
+                    control.classList.remove('is-selected');
+                    panel.setAttribute("aria-expanded", isTriggerTab);
+                    panel.classList.remove('is-expanded');
+                }
+            })
+        }
+    }
+
+
+})();
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,89 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+/*!
+.tn-toggle+(--no-border)
+    .tn-toggle__content+()
+    .tn-toggle__title+()
+*/
+$block: ns(toggle);
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $tn-toggle-height: tn-space(10) !default;
+    $tn-toggle-height--small: tn-space(8) !default;
+    $tn-toggle-height--large: tn-space(13) !default;
+    $tn-toggle-background-color: $tn-forms-border-color !default;
+    $tn-toggle-background-color--checked: $tn-forms-background-color--check !default;
+    $tn-toggle-switch-background-color: tn-color(background, 1) !default;
+    $tn-toggle-switch-background-color--disabled: tn-color(neutral, 2) !default;
+    $tn-toggle-transition-params: $tn-animation--speed ease-in !default;
+
+    @include reset;
+    position: relative;
+    display: inline-block;
+    height: $tn-toggle-height;
+    width: $tn-toggle-height * 2 - 4px;
+    &__switch {
+        height: $tn-toggle-height - 8px;
+        width: $tn-toggle-height - 8px;
+        border-radius: 50%;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        background-color: white;
+        transition: left $tn-toggle-transition-params;
+        pointer-events: none;
+    }
+    input {
+        background-color: $tn-toggle-background-color;
+        border-radius: $tn-toggle-height/2;
+        width: 100%;
+        height: 100%;
+        border-color: transparent;
+        vertical-align: middle;
+        &:checked {
+            &::after {
+                display: none;
+            }
+            & + .#{$block}__switch {
+                left: calc(50% + 2px);
+            }
+        }
+        &[disabled],
+        &.is-disabled,
+        &[aria-disabled="true"] {
+            border-color: $tn-forms-border-color;
+            & + .#{$block}__switch {
+                background-color: $tn-toggle-switch-background-color--disabled;
+            }
+        }
+    }
+    &--small {
+        height: $tn-toggle-height--small;
+        width: $tn-toggle-height--small * 2 - 4px;
+        input {
+            border-radius: $tn-toggle-height--small/2;
+        }
+        .#{$block}__switch {
+            height: $tn-toggle-height--small - 8px;
+            width: $tn-toggle-height--small - 8px;
+        }
+    }
+    &--large {
+        height: $tn-toggle-height--large;
+        width: $tn-toggle-height--large * 2 - 4px;
+        input {
+            border-radius: $tn-toggle-height--large/2;
+        }
+        .#{$block}__switch {
+            height: $tn-toggle-height--large - 8px;
+            width: $tn-toggle-height--large - 8px;
+        }
+    }
+
+
+
+
+}

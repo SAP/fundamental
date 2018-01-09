@@ -1,0 +1,74 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "./component.njk" import inline_help %}
+{% import "./../utils.njk" as utils %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['components/button', 'components/form'] %}
+
+{% block content %}
+
+<h1>Inline Help</h1>
+<div style="text-align:center;">
+
+<!-- output the component example and the code snippet -->
+{% set example %}
+{%- set _id = utils.id() %}
+
+Bottom Right (Default)
+{{  inline_help(
+        properties={
+            content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
+        },
+        modifier={
+            content: ["bottom-right"]
+        }
+    )
+}}
+
+<br><br>
+
+Bottom Left
+{{  inline_help(
+        properties={
+            content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
+        },
+        modifier={
+            content: ["bottom-left"]
+        }
+    )
+}}
+
+<br><br>
+
+Right
+{{  inline_help(
+        properties={
+            content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
+        },
+        modifier={
+            content: ["right"]
+        }
+    )
+}}
+
+<br><br>
+
+Left
+{{  inline_help(
+        properties={
+            content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
+        },
+        modifier={
+            content: ["left"]
+        }
+    )
+}}
+
+{% endset %}
+{{- format(example) -}}
+
+{% endblock %}
+
+</div>

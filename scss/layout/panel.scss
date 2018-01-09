@@ -1,0 +1,34 @@
+@import "../core/settings";
+@import "../core/functions";
+@import "../core/mixins";
+
+/*!
+.tn-panel
+    .tn-panel__header
+        .tn-panel__title
+        .tn-panel__actions
+    .tn-panel__footer
+*/
+
+$block: ns(panel);
+.#{$block} {
+    @include tn-clearfix;
+    &__header {
+        min-height: tn-space(10);
+        display: flex;
+        align-items: center;
+        margin-bottom: tn-space(4);
+    }
+    &__title {
+        @include tn-type(3);
+        flex: 1;
+        margin-bottom: 0;
+    }
+    &__actions {
+        margin-left: auto;
+    }
+    &__footer {
+        display: flex;
+        justify-content: center;
+    }
+}

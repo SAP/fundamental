@@ -1,0 +1,22 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+/*!
+.tn-label+(--success | --warning | --error)
+*/
+$block: ns(label);
+
+.#{$block} {
+    @include reset;
+    @include tn-type(-3);
+    &--success {
+        color: $tn-color--success;
+    }
+    &--warning {
+        color: $tn-color--warning;
+    }
+    &--error {
+        color: $tn-color--error;
+    }
+}

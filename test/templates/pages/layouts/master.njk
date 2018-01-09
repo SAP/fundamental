@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <!--[if IE]><![endif]-->
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ id }}</title>
+    <style media="screen">
+    {% set core_sass = 'all.scss' %}
+    {{ core_sass | sass_to_css }}
+    </style>
+</head>
+<body>
+
+<div class="tn-ui tn-ui--{{ app.id }}">
+    <div class="tn-ui__header">
+        <code class="tn-has-color-inverse">&nbsp;</code>
+    </div>
+    <div class="tn-ui__app" id="tn-ui-app">
+        .tn-ui__app
+        {# <div class="tn-ui__sidebar" style="width: 200px;">
+            <code class="tn-has-color-inverse">&nbsp;</code>
+        </div>
+        <main class="tn-ui__main"> #}
+            {% block content %}
+            {% endblock %}
+        {# </main> #}
+    </div>
+    <div class="tn-overlay" aria-hidden="true" id="tn-ui-overlay">
+        .tn-overlay
+    </div>
+</div>
+
+</body>
+</html>

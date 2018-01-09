@@ -1,0 +1,52 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+@import "../components/mixins";
+
+/*!
+.tn-list-group
+  .tn-list-group__item
+      .tn-list-group__action
+*/
+$block: ns(list-group);
+
+.#{$block} {
+    //LOCAL VARS (set all vars used in component, always include !default)
+    $tn-list-group-border-color: lighten(tn-color(neutral, 2), 5%) !default;
+    $tn-list-group-background-color: none !default;
+    $tn-list-group-background-color--hover: lighten(tn-color(neutral, 3), 10) !default;
+    $tn-list-group-item-padding: tn-space(4) !default;
+    $tn-list-group-action-height: tn-space(10) !default;
+    $tn-list-group-transition-params: $tn-animation--speed ease-in !default;
+
+    @include reset;
+
+    margin-left: 0;
+    &__item {
+        list-style: none;
+        border: 1px solid $tn-list-group-border-color;
+        border-top: none;
+        padding: $tn-list-group-item-padding;
+        display: flex;
+        position: relative;
+        background-color: $tn-list-group-background-color;
+        transition: background-color $tn-list-group-transition-params;
+        &:first-child {
+            border-top: 1px solid $tn-list-group-border-color;
+        }
+        &:hover{
+            background-color: $tn-list-group-background-color--hover;
+        }
+    }
+    &__action {
+        flex: 1;
+        text-align: right;
+        position: relative;
+        display: inline-block;
+        max-height: $tn-list-group-action-height;
+        padding-top: tn-space(base);
+        top: -$tn-list-group-item-padding;
+        margin-bottom: -$tn-list-group-item-padding * 2;
+        right: -$tn-list-group-item-padding;
+    }
+}

@@ -1,0 +1,50 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "./component.njk" import badge %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = [] %}
+
+{% block content %}
+<style media="screen">
+    .tn-badge { margin-right: 20px; }
+</style>
+
+    <h1>badge</h1>
+
+    <!-- output the component example and the code snippet -->
+    {% set example %}
+{{  badge({label: "Default"}) }}
+{{  badge({label: "Default"},
+        modifier={block: ["success"]})
+}}
+{{  badge({label: "Default"},
+        modifier={block: ["warning"]})
+}}
+{{  badge({label: "Default"},
+        modifier={block: ["error"]})
+}}
+    {% endset %}
+    {{ format(example) }}
+
+
+    {% set example %}
+{{  badge(
+        {label: "Default"},
+        modifier={ block: ["pill"] }
+    )
+}}
+{{  badge({label: "Default"},
+        modifier={block: ["success", "pill"]})
+}}
+{{  badge({label: "Default"},
+        modifier={block: ["warning", "pill"]})
+}}
+{{  badge({label: "Default"},
+        modifier={block: ["error", "pill"]})
+}}
+    {% endset %}
+    {{ format(example) }}
+
+{% endblock %}

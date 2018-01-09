@@ -1,0 +1,47 @@
+{% import "../forms.njk" as forms %}
+{% from "../button/component.njk" import button %}
+{#
+    see ./data.json for object structure
+#}
+{% macro input_group(
+    type="text",
+    properties={
+        input: {
+            properties: {},
+            state: {},
+            aria: {}
+        },
+        before: "",
+        after: ""
+    },
+    modifier={
+        block: [],
+        before: [],
+        after: []
+    })
+%}
+{%- set input = properties.input %}
+<div class="tn-input-group{{ modifier.block | modifier('input-group') }}">
+    {%- if properties.before %}
+    <span class="tn-input-group__addon{{ modifier.before | modifier('input-group__addon') }}">
+{{ properties.before | trim | indent(8, true) }}
+    </span>
+    {%- endif %}
+    {{ forms.text(type,input.properties,state=input.state,aria=input.aria) }}
+    {%- if properties.after %}
+    <span class="tn-input-group__addon{{ modifier.after | modifier('input-group__addon') }}">
+{{ properties.after | trim | indent(8, true) }}
+    </span>
+    {%- endif %}
+    {%- if type === "number" or type === "search" %}
+    <span class="tn-input-group__addon tn-input-group__addon--button">
+        {%- if type === "number" %}
+        <button class="tn-input-group__button tn-input-group__button--step-up" aria-label="Step up" onclick="document.getElementById('{{input.properties.id}}').stepUp();"></button>
+        <button class="tn-input-group__button tn-input-group__button--step-down" aria-label="Step down" onclick="document.getElementById('{{input.properties.id}}').stepDown();"></button>
+        {%- else %}
+        <button class="tn-input-group__button tn-input-group__button--clear" aria-label="Clear" onclick="document.getElementById('{{input.properties.id}}').value = '';"></button>
+        {%- endif %}
+    </span>
+    {%- endif %}
+</div>
+{%- endmacro %}

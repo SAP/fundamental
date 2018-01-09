@@ -1,0 +1,17 @@
+<!--
+__COMPONENT_METHOD__:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{% macro __COMPONENT_METHOD__(properties={}, modifier={}, state={}, aria={}) -%}
+<div class="tn-__COMPONENT_ID__{{ modifier.block | modifier('__COMPONENT_ID__') }}{{ state | state }}"{{ aria | aria }}>
+    <div class="tn-__COMPONENT_ID____content{{ modifier.content | modifier('__COMPONENT_ID____content') }}">
+        <h1 class="tn-__COMPONENT_ID____title">{{ properties.title }}</h1>
+        {%- if properties.description %}
+            {{ properties.description }}
+        {%- endif %}
+    </div>
+</div>
+{%- endmacro %}

@@ -1,0 +1,70 @@
+@function color($key: reg) {
+    @if map-has-key($colors, $key) {
+        @return map-get($colors, $key);
+    } @else {
+        @warn "Unknown `#{$key}` in $colors map";
+        @return black;
+    }
+}
+@function ns($str: "") {
+	$ns: #{$tn-namespace}-;
+    @return $ns + $str;
+}
+
+//if
+@function tn-if($bool, $poss) {
+    @if $bool {
+        @return nth($poss, 1);
+    }
+    @return nth($poss, 2);
+}
+
+//space helper
+@function tn-modify-space_($size) {
+    $_size: $size;
+    @if $tn-space-modify == compact {
+        $_size: $_size / 2;
+    }
+    @return $_size;
+}
+
+//accepts size key or increment, modify enables on tn-space-modifier
+@function tn-space($size: reg, $modifiable: false) {
+    $_map: $tn-spacing;
+    //set base
+    $_size: map-get($_map, base);
+    @if type-of($size) == number {
+        //multiply
+        $_size: $_size * $size;
+    } @else {
+        @if map-has-key($_map, $size) {
+            $_size: map-get($_map, $size);
+        } @else {
+            @warn "Invalid $size of `#{$size}`. Valid $size values are #{map-keys($_map)}. Returning default `#{$_size}`.";
+        }
+    }
+    @if $modifiable {
+        $_size: tn-modify-space_($_size);
+    }
+    @return $_size;
+}
+
+
+@function tn-color($type: text, $shade: 1) {
+    $_map: $tn-colors;
+    //check type
+    @if map-has-key($_map, $type) {
+        $_group: map-get($_map, $type);
+        //check shade
+        @if map-has-key($_group, $shade) {
+            $_color: map-get($_group, $shade);
+            @return $_color;
+        } @else {
+            @warn "Invalid $shade of `#{$shade}` in the map $type of `#{$type}`. Valid $shade values are #{map-keys($_group)}. Returning `black`.";
+            @return black;
+        }
+    } @else {
+        @warn "Invalid map $type of `#{$type}`. Valid $type values are #{map-keys($_map)}. Returning `black`.";
+        @return black;
+    }
+}

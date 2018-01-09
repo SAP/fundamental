@@ -1,0 +1,40 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "./component.njk" import table %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['helpers'] %}
+
+{% block content %}
+
+    <h1>table</h1>
+{% set headers = ["", "Column Header", "Column Header", "Column Header", "Column Header"] %}
+{% set image_row = ['<img src="http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png" class="tn-has-border-radius-50percent" width="32" height="32">', '<a class="tn-has-font-weight-semi">user.name@email.com</a>', 'First Name', 'Last Name', '01/26/17'] %}
+
+{% set checkbox_row = ['<input type="checkbox">', '<a class="tn-has-font-weight-semi">user.name@email.com</a>', 'First Name', 'Last Name', '01/26/17'] %}
+{% set checkbox_row_selected = ['<input type="checkbox" checked>', '<a class="tn-has-font-weight-semi">user.name@email.com</a>', 'First Name', 'Last Name', '01/26/17'] %}
+
+
+    <!-- output the component example and the code snippet -->
+    {% set example %}
+    {{  table({
+            headers: headers,
+            rows: [image_row, image_row, image_row]
+        })
+    }}
+    {% endset %}
+    {{ format(example) }}
+
+    {% set example %}
+    {{  table({
+            headers: headers,
+            rows: [checkbox_row_selected, checkbox_row, checkbox_row],
+            selectedRow: 1
+        })
+    }}
+    {% endset %}
+    {{ format(example) }}
+
+
+{% endblock %}

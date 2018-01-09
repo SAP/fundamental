@@ -1,0 +1,15 @@
+{% import "./../utils.njk" as utils %}
+<!--
+toggle:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{% macro toggle(properties={}, modifier={}, state={}, aria={}, classes=[]) -%}
+{%- set _id = properties.id or utils.id() -%}
+<span class="tn-toggle{{ modifier.block | modifier('toggle') }}{{ classes | classes }}"{{ aria | aria }}>
+    <input type="checkbox" name="" value="" id="{{ _id }}"{{ ' disabled' if state.disabled }}{{ ' checked' if state.checked }}>
+    <span class="tn-toggle__switch" role="presentation"></span>
+</span>
+{%- endmacro %}

@@ -1,0 +1,31 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+/*!
+.tn-badge+(( --success | --warning | --error ), --pill)
+*/
+$block: ns(badge);
+
+.#{$block} {
+    @include reset;
+    @include tn-type(-3);
+    line-height: tn-space(reg);
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    padding: tn-space(1) tn-space(2);
+    vertical-align: middle;
+    &--pill {
+        border-radius: 12.5px;
+    }
+    &--success {
+        color: $tn-color--success;
+    }
+    &--warning {
+        color: $tn-color--warning;
+    }
+    &--error {
+        color: $tn-color--error;
+    }
+}

@@ -1,0 +1,23 @@
+{% extends "./layouts/module.njk" %}
+{% set page_title = "Empty Page" %}
+{% set page_intro = "Page level help message goes here" %}
+{% set is_landing_page = false %}
+{% set show_toolbar = false %}
+
+{% import "../layout/component.njk" as layout %}
+{# {% from "../tree/component.njk" import tree %} #}
+
+
+{% block page_content %}
+
+{%- call layout.section() -%}
+        <p class="tn-has-text-align-center tn-has-font-style-italic">
+            <strong>There are no items on this page.</strong><br>
+            <button class="tn-button tn-button--text tn-button--action-bar">
+                <span class="tn-icon tn-icon--add tn-icon--medium" role="presentation"></span>
+                ADD NEW ITEM
+            </button>
+        </p>
+{%- endcall %}
+
+{% endblock %}
