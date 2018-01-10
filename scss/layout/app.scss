@@ -5,41 +5,41 @@
 $block: ns(app);
 
 /*!
-.tn-app
-    .tn-app__sidebar
-    .tn-app__main
+.fd-app
+    .fd-app__sidebar
+    .fd-app__main
 */
 
 .#{$block} {
-    $tn-app-sidebar-width: 250px !default;
-    $tn-app-sidebar-height--minimized: 40px !default;
-    $tn-app-sidebar-width--minimized: 80px !default;
-    $tn-app-sidebar-background-color: tn-color(primary, 2) !default;
+    $fd-app-sidebar-width: 250px !default;
+    $fd-app-sidebar-height--minimized: 40px !default;
+    $fd-app-sidebar-width--minimized: 80px !default;
+    $fd-app-sidebar-background-color: fd-color(primary, 2) !default;
     width: 100%;
-    @include tn-screen(s) {
+    @include fd-screen(s) {
         display: flex;
     }
     &__sidebar {
-        background-color: $tn-app-sidebar-background-color;
+        background-color: $fd-app-sidebar-background-color;
         width: 100vw;
-        max-height: $tn-app-sidebar-height--minimized;
+        max-height: $fd-app-sidebar-height--minimized;
         &:hover {
             position: absolute;
             min-height: 100%;
         }
-        @include tn-screen(s) {
-            width: $tn-app-sidebar-width--minimized;
+        @include fd-screen(s) {
+            width: $fd-app-sidebar-width--minimized;
             max-height: 100%;
             &:hover {
-                width: $tn-app-sidebar-width;
+                width: $fd-app-sidebar-width;
                 position: relative;
                 margin-right: -200px;
             }
         }
-        @include tn-screen(l) {
-            width: $tn-app-sidebar-width;
+        @include fd-screen(l) {
+            width: $fd-app-sidebar-width;
             &:hover {
-                width: $tn-app-sidebar-width;
+                width: $fd-app-sidebar-width;
                 margin-right: 0;
             }
         }

@@ -3,24 +3,24 @@
 @import "../core/mixins";
 
 /*!
-.tn-panel
-    .tn-panel__header
-        .tn-panel__title
-        .tn-panel__actions
-    .tn-panel__footer
+.fd-panel
+    .fd-panel__header
+        .fd-panel__title
+        .fd-panel__actions
+    .fd-panel__footer
 */
 
 $block: ns(panel);
 .#{$block} {
-    @include tn-clearfix;
+    @include fd-clearfix;
     &__header {
-        min-height: tn-space(10);
+        min-height: fd-space(10);
         display: flex;
         align-items: center;
-        margin-bottom: tn-space(4);
+        margin-bottom: fd-space(4);
     }
     &__title {
-        @include tn-type(3);
+        @include fd-type(3);
         flex: 1;
         margin-bottom: 0;
     }

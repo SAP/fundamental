@@ -9,11 +9,11 @@
 
 {% block content %}
 
-<h1>.tn-form</h1>
-<p>Form elements are unique in that they can be used independently. In most cases, you will not need a <code>.tn-form</code> wrapper, it can be inferred.</p>
+<h1>.fd-form</h1>
+<p>Form elements are unique in that they can be used independently. In most cases, you will not need a <code>.fd-form</code> wrapper, it can be inferred.</p>
 
-<h2>.tn-form__item</h2>
-<p>A form item is the basic unit for the layout of a form field, which includes a <code>.tn-form__label</code> and <code>.tn-form__control</code> (the field) bound by an id.</p>
+<h2>.fd-form__item</h2>
+<p>A form item is the basic unit for the layout of a form field, which includes a <code>.fd-form__label</code> and <code>.fd-form__control</code> (the field) bound by an id.</p>
 
 <ul>
     <li>— Indicate a required field with the <code>is-required</code> class on the label.</li>
@@ -50,8 +50,8 @@
 <br><br>
 
 
-<h2>.tn-form__item--check</h2>
-<p>Use a <code>--check</code> modifier for <code>radio</code> and <code>checkbox</code> form fields. The same state attributes as above apply. Note: Most often, mutiple radio and checkbox form item elements will be used together. See <code><a href="#form-set">.tn-form__set</a></code> for grouping check-type forms fields.</p>
+<h2>.fd-form__item--check</h2>
+<p>Use a <code>--check</code> modifier for <code>radio</code> and <code>checkbox</code> form fields. The same state attributes as above apply. Note: Most often, mutiple radio and checkbox form item elements will be used together. See <code><a href="#form-set">.fd-form__set</a></code> for grouping check-type forms fields.</p>
 
 {% set example %}
 {{ form_item("radio") }}
@@ -75,8 +75,8 @@
 
 <br><br>
 
-<h3>.tn-form__message</h3>
-<p>An optional <code>.tn-form__message</code> element is available inside the form item. A form field class of "is-invalid" or "is-warning" should be included to match the message modifier for "error" and "warning" respectively.</p>
+<h3>.fd-form__message</h3>
+<p>An optional <code>.fd-form__message</code> element is available inside the form item. A form field class of "is-invalid" or "is-warning" should be included to match the message modifier for "error" and "warning" respectively.</p>
 {% set example %}
 {{ form_item(
     properties={
@@ -122,8 +122,8 @@
 {{ format(example) }}
 <br><br>
 
-<h3>.tn-form__help</h3>
-<p>An optional <code>.tn-form__help</code> element is available which should include a <code><a href="inline-help">.tn-inline-help</a></code> component.</p>
+<h3>.fd-form__help</h3>
+<p>An optional <code>.fd-form__help</code> element is available which should include a <code><a href="inline-help">.fd-inline-help</a></code> component.</p>
 {% set example %}
 {{ form_item(
     properties={
@@ -146,8 +146,8 @@
 <br><br>
 
 
-<h2 id="form-set">.tn-form__set</h2>
-<p>A form set should be used when multiple form items are needed. Most often this will be used for checked elements and grouped form fields like city, state, zip addresses. Use an addt'l <code>.tn-form__group</code> container to wrap the items, e.g., multiple checkboxes. An optional <code>.tn-form__legend</code> can be used as a header.</p>
+<h2 id="form-set">.fd-form__set</h2>
+<p>A form set should be used when multiple form items are needed. Most often this will be used for checked elements and grouped form fields like city, state, zip addresses. Use an addt'l <code>.fd-form__group</code> container to wrap the items, e.g., multiple checkboxes. An optional <code>.fd-form__legend</code> can be used as a header.</p>
 
 
 {% set example %}
@@ -173,8 +173,8 @@
 {{ format(example) }}
 <br><br>
 
-<h3>.tn-form__message</h3>
-<p>Like a <code>.tn-form__item</code> a message can be included for the entire set.</p>
+<h3>.fd-form__message</h3>
+<p>Like a <code>.fd-form__item</code> a message can be included for the entire set.</p>
 
 {% set example %}
 {% call form_set(properties={

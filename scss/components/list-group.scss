@@ -4,38 +4,38 @@
 @import "../components/mixins";
 
 /*!
-.tn-list-group
-  .tn-list-group__item
-      .tn-list-group__action
+.fd-list-group
+  .fd-list-group__item
+      .fd-list-group__action
 */
 $block: ns(list-group);
 
 .#{$block} {
     //LOCAL VARS (set all vars used in component, always include !default)
-    $tn-list-group-border-color: lighten(tn-color(neutral, 2), 5%) !default;
-    $tn-list-group-background-color: none !default;
-    $tn-list-group-background-color--hover: lighten(tn-color(neutral, 3), 10) !default;
-    $tn-list-group-item-padding: tn-space(4) !default;
-    $tn-list-group-action-height: tn-space(10) !default;
-    $tn-list-group-transition-params: $tn-animation--speed ease-in !default;
+    $fd-list-group-border-color: lighten(fd-color(neutral, 2), 5%) !default;
+    $fd-list-group-background-color: none !default;
+    $fd-list-group-background-color--hover: lighten(fd-color(neutral, 3), 10) !default;
+    $fd-list-group-item-padding: fd-space(4) !default;
+    $fd-list-group-action-height: fd-space(10) !default;
+    $fd-list-group-transition-params: $fd-animation--speed ease-in !default;
 
     @include reset;
 
     margin-left: 0;
     &__item {
         list-style: none;
-        border: 1px solid $tn-list-group-border-color;
+        border: 1px solid $fd-list-group-border-color;
         border-top: none;
-        padding: $tn-list-group-item-padding;
+        padding: $fd-list-group-item-padding;
         display: flex;
         position: relative;
-        background-color: $tn-list-group-background-color;
-        transition: background-color $tn-list-group-transition-params;
+        background-color: $fd-list-group-background-color;
+        transition: background-color $fd-list-group-transition-params;
         &:first-child {
-            border-top: 1px solid $tn-list-group-border-color;
+            border-top: 1px solid $fd-list-group-border-color;
         }
         &:hover{
-            background-color: $tn-list-group-background-color--hover;
+            background-color: $fd-list-group-background-color--hover;
         }
     }
     &__action {
@@ -43,10 +43,10 @@ $block: ns(list-group);
         text-align: right;
         position: relative;
         display: inline-block;
-        max-height: $tn-list-group-action-height;
-        padding-top: tn-space(base);
-        top: -$tn-list-group-item-padding;
-        margin-bottom: -$tn-list-group-item-padding * 2;
-        right: -$tn-list-group-item-padding;
+        max-height: $fd-list-group-action-height;
+        padding-top: fd-space(base);
+        top: -$fd-list-group-item-padding;
+        margin-bottom: -$fd-list-group-item-padding * 2;
+        right: -$fd-list-group-item-padding;
     }
 }

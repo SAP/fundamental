@@ -9,11 +9,11 @@
 {% block content %}
 
     <style media="screen">
-    .tn-container {
+    .fd-container {
         min-height: 20px;
         background: lightblue;
     }
-    [class*="tn-col"] {
+    [class*="fd-col"] {
         min-height: 20px;
         outline: solid 1px gray;
     }
@@ -25,7 +25,7 @@
 <p>A box with left and right padding built in, most useful with columns where you want consistent space around the content.</p>
 
 {% call container() -%}
-<code>.tn-container</code><br>
+<code>.fd-container</code><br>
 <small>Max width at 1290px (default)</small>
 {%- endcall %}
 {% call code() -%}
@@ -33,7 +33,7 @@
 {%- endcall %}
 {#
 {% call container(modifier="bleed") -%}
-<code>.tn-container--bleed</code><br>
+<code>.fd-container--bleed</code><br>
 <small>No left and right padding</small>
 {%- endcall %}
 {% call code() -%}
@@ -41,7 +41,7 @@
 {%- endcall %} #}
 
 {% call container(modifier="fluid") -%}
-<code>.tn-container--fluid</code><br>
+<code>.fd-container--fluid</code><br>
 <small>No max width</small>
 {%- endcall %}
 {% call code() -%}
@@ -50,7 +50,7 @@
 
 
 {% call container(modifier=["centered"]) -%}
-<code>.tn-container--centered</code><br>
+<code>.fd-container--centered</code><br>
 <small>Auto left and right margin, this does NOT center content</small>
 {%- endcall %}
 {% call code() -%}
@@ -59,7 +59,7 @@
 
 
 {% call container(modifier=["flex"]) -%}
-<code>.tn-container--flex</code>
+<code>.fd-container--flex</code>
 <small>Display<br>flex</small>
 {%- endcall %}
 {% call code() -%}
@@ -165,7 +165,7 @@
 
     <h1>Flex widths</h1>
     <strong>4 col (9,flex,flex,flex)</strong>
-    <p>Inside flex containers, use .tn-col to evenly fill the left over space</p>
+    <p>Inside flex containers, use .fd-col to evenly fill the left over space</p>
     {% set example %}
     {%- call container(modifier="flex") -%}
         {%- call col(9) -%}{%- endcall %}
@@ -177,7 +177,7 @@
     {{ format(example) }}
 
     <strong>3 col (flex,flex,flex)</strong>
-    <p>Inside flex containers, use .tn-col to distirbute space with no margin</p>
+    <p>Inside flex containers, use .fd-col to distirbute space with no margin</p>
     {% set example %}
     {%- call container(modifier="flex") -%}
         {%- call col(0) -%}{%- endcall %}

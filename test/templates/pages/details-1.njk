@@ -16,8 +16,8 @@
 {# SET CONTENT #}
 {# col_card #}
 {% set col_card %}
-<div class="tn-card" role="button">
-    <div class="tn-card__media">
+<div class="fd-card" role="button">
+    <div class="fd-card__media">
 {{  image(
         properties={},
         modifier={
@@ -27,15 +27,15 @@
     )
 }}
     </div>
-    <div class="tn-card__content">
-         <h2 class="tn-card__header">
+    <div class="fd-card__content">
+         <h2 class="fd-card__header">
              user.name@email.com
          </h2>
-         <p class="tn-card__description">
+         <p class="fd-card__description">
              First name Last name
          </p>
-         <p class="tn-card__status">
-<span class="tn-label">Inactive</span>
+         <p class="fd-card__status">
+<span class="fd-label">Inactive</span>
          </p>
     </div>
 </div>
@@ -103,7 +103,7 @@
         )
     }}
     {% call layout.section_footer() -%}
-<a href="#" class="tn-button tn-button--link">See All</a>
+<a href="#" class="fd-button fd-button--link">See All</a>
     {%- endcall %}
 {%- endcall %}
 {%- set table_image = image(
@@ -114,7 +114,7 @@
     )
 %}
 {%- set headers = ["", "Column Header", "Column Header", "Column Header", "Column Header"] %}
-{%- set image_row = [table_image, '<a class="tn-has-font-weight-semi">user.name@email.com</a>', 'First Name', 'Last Name', '01/26/17'] %}
+{%- set image_row = [table_image, '<a class="fd-has-font-weight-semi">user.name@email.com</a>', 'First Name', 'Last Name', '01/26/17'] %}
 {% call layout.section(modifier="full-bleed") -%}
     {% call layout.section_header({  title: "Table Title" }) -%}
     {%- endcall %}

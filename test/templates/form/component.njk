@@ -17,11 +17,11 @@ form-set:
     },
     modifier=[])
 -%}
-<fieldset class="tn-form__set">
+<fieldset class="fd-form__set">
     {%- if properties.legend %}
-        <legend class="tn-form__legend{{ ' is-required' if state.required === true }}">{{ properties.legend }}</legend>
+        <legend class="fd-form__legend{{ ' is-required' if state.required === true }}">{{ properties.legend }}</legend>
     {%- endif %}
-    <div class="tn-form__group">
+    <div class="fd-form__group">
         {{ caller() }}
     </div>
     {%- if properties.message %}
@@ -55,22 +55,22 @@ form-item:
     aria={})
 -%}
 {%- set _id = utils.id() %}
-<div class="tn-form__item{{ modifier.item | modifier('form__item') }}{{ ' tn-form__item--check' if type == "checkbox" or type == "radio" or type == "toggle" }}">
+<div class="fd-form__item{{ modifier.item | modifier('form__item') }}{{ ' fd-form__item--check' if type == "checkbox" or type == "radio" or type == "toggle" }}">
     {%- if type == "checkbox" or type == "radio" or type == "toggle" %}
-    <label class="tn-form__label{{ ' is-required' if state.required }}" for="{{_id}}">
+    <label class="fd-form__label{{ ' is-required' if state.required }}" for="{{_id}}">
         {{ form_control(type,_id,properties,state=state,aria=aria,modifier=modifier.control) }}
         {{ properties.label }}
         {%- if properties.help %}
-        <span class="tn-form__help">
+        <span class="fd-form__help">
             {{ inline_help({ content: properties.help }) }}
         </span>
         {%- endif %}
     </label>
     {%- else %}
-    <label class="tn-form__label{{ ' is-required' if state.required }}" for="{{_id}}">
+    <label class="fd-form__label{{ ' is-required' if state.required }}" for="{{_id}}">
         {{properties.label}}
         {%- if properties.help %}
-        <span class="tn-form__help">
+        <span class="fd-form__help">
             {{ inline_help({ content: properties.help }) }}
         </span>
         {%- endif %}
@@ -94,7 +94,7 @@ form-message:
     },
     modifier="help")
 -%}
-<span class="tn-form__message{{ modifier | modifier('form__message') }}">
+<span class="fd-form__message{{ modifier | modifier('form__message') }}">
     {{properties.message}}
 </span>
 {%- endmacro %}
@@ -162,28 +162,28 @@ form-control:
     },
     aria={})
 -%}
-<{{ 'fieldset' if (type !== 'text' and type !== 'select') else 'div' }} class="tn-form__group{{ modifier.block | modifier('form__group') }}">
+<{{ 'fieldset' if (type !== 'text' and type !== 'select') else 'div' }} class="fd-form__group{{ modifier.block | modifier('form__group') }}">
 {%- if properties.legend %}
-    <legend class="tn-form__legend{{ ' is-required' if state.required === true }}">{{ properties.legend }}</legend>
+    <legend class="fd-form__legend{{ ' is-required' if state.required === true }}">{{ properties.legend }}</legend>
 {%- endif %}
 {%- for item in properties.items %}
-    <div class="tn-form__item{{ modifier.item | modifier('form__item') }}{{ ' tn-form__item--check' if type == "checkbox" or type == "radio" }}">
+    <div class="fd-form__item{{ modifier.item | modifier('form__item') }}{{ ' fd-form__item--check' if type == "checkbox" or type == "radio" }}">
         {%- if type == "checkbox" or type == "radio" %}
         {{ form_control(type,properties=item.properties,state=item.state,aria=item.aria) | trim }}
-        <label class="tn-form__label{{ ' is-required' if item.state.required === true }}" for="{{ item.properties.id }}">{{item.properties.label}}</label>
+        <label class="fd-form__label{{ ' is-required' if item.state.required === true }}" for="{{ item.properties.id }}">{{item.properties.label}}</label>
         {%- else %}
-        <label class="tn-form__label{{ ' is-required' if item.state.required === true }}" for="{{ item.properties.id }}">{{item.properties.label}}</label>
+        <label class="fd-form__label{{ ' is-required' if item.state.required === true }}" for="{{ item.properties.id }}">{{item.properties.label}}</label>
         {{ form_control(type,properties=item.properties,state=item.state,aria=item.aria) | trim }}
         {%- endif %}
         {%- if item.properties.message %}
-        <span class="tn-form__message{{ item.modifier.message | modifier('form__message') }}">
+        <span class="fd-form__message{{ item.modifier.message | modifier('form__message') }}">
             {{item.properties.message}}
         </span>
         {%- endif %}
     </div>
 {%- endfor %}
 {%- if properties.message %}
-<div class="tn-form__message {{ modifier.message | modifier('form__message') }}">
+<div class="fd-form__message {{ modifier.message | modifier('form__message') }}">
     {{properties.message}}
 </div>
 {%- endif %}

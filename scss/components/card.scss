@@ -3,11 +3,11 @@
 @import "../core/functions";
 /*!
     card structure
-    .tn-card+(--button,--vertical)+(.is-disabled|[aria-disabled=true])
-        .tn-card__media+(--round,--fill)
-        .tn-card__content
-            .tn-card__header, .tn-card__description, .tn-card__status
-        .tn-card__actions
+    .fd-card+(--button,--vertical)+(.is-disabled|[aria-disabled=true])
+        .fd-card__media+(--round,--fill)
+        .fd-card__content
+            .fd-card__header, .fd-card__description, .fd-card__status
+        .fd-card__actions
 */
 
 //set component name using namespace function, then use #{$block} below
@@ -16,28 +16,28 @@ $block: ns(card);
     @include reset;
 
     //dimensions
-    $tn-card-media-width: 75px !default;
+    $fd-card-media-width: 75px !default;
     //colors
-    $tn-card-color-border: tn-color(neutral, 3) !default;
-    $tn-card-color-border-disabled: lighten(tn-color(neutral, 2), 5%) !default;
-    $tn-card-color-disabled: tn-color(text, 3) !default;
-    $tn-card-background-color: tn-color(background) !default;
-    $tn-card-background-color-disabled: tn-color(neutral, 1) !default;
-    $tn-card-background-color-hover: $tn-card-background-color !default;
-    $tn-card-shadow-hover: 0 0 5px 0 rgba(138, 143, 161, 0.4) !default;
-    $tn-card-padding: tn-space(reg, true) !default;
-    $tn-card-color-link: $tn-color--link !default;
-    $tn-card-margin-bottom: $tn-margin-bottom !default;
+    $fd-card-color-border: fd-color(neutral, 3) !default;
+    $fd-card-color-border-disabled: lighten(fd-color(neutral, 2), 5%) !default;
+    $fd-card-color-disabled: fd-color(text, 3) !default;
+    $fd-card-background-color: fd-color(background) !default;
+    $fd-card-background-color-disabled: fd-color(neutral, 1) !default;
+    $fd-card-background-color-hover: $fd-card-background-color !default;
+    $fd-card-shadow-hover: 0 0 5px 0 rgba(138, 143, 161, 0.4) !default;
+    $fd-card-padding: fd-space(reg, true) !default;
+    $fd-card-color-link: $fd-color--link !default;
+    $fd-card-margin-bottom: $fd-margin-bottom !default;
     //anim
-    $tn-card-transition-params: $tn-animation--speed ease-in !default;
-    $tn-card-time-hover: $tn-animation--speed!default;
+    $fd-card-transition-params: $fd-animation--speed ease-in !default;
+    $fd-card-time-hover: $fd-animation--speed!default;
 
     display: flex;
-    margin-bottom: $tn-card-margin-bottom;
+    margin-bottom: $fd-card-margin-bottom;
     border-style: solid;
     border-width: 1px;
-    border-color: $tn-card-color-border;
-    background-color: $tn-card-background-color;
+    border-color: $fd-card-color-border;
+    background-color: $fd-card-background-color;
     //MODIFICATIONS
     &--vertical {
         display: block;
@@ -51,19 +51,19 @@ $block: ns(card);
     &[role="button"] {
         cursor: default;
         .#{$block}__header {
-            color: $tn-card-color-link;
+            color: $fd-card-color-link;
         }
     }
     &--compact {
         .#{$block}__media {
-            margin: $tn-card-padding/2 0 $tn-card-padding/2 $tn-card-padding/2;
+            margin: $fd-card-padding/2 0 $fd-card-padding/2 $fd-card-padding/2;
             &--fill {
                 margin: 0;
-                width: $tn-card-media-width + $tn-card-padding*3/2;
+                width: $fd-card-media-width + $fd-card-padding*3/2;
             }
         }
         .#{$block}__content {
-            padding: $tn-card-padding/2 $tn-card-padding/2;
+            padding: $fd-card-padding/2 $fd-card-padding/2;
         }
         @at-root &.#{$block}--vertical {
             .#{$block}__media {
@@ -75,11 +75,11 @@ $block: ns(card);
     &--button,
     &[role="button"] {
         cursor: pointer;
-        transition: background-color $tn-card-transition-params, border-color $tn-card-transition-params, box-shadow $tn-card-transition-params;
+        transition: background-color $fd-card-transition-params, border-color $fd-card-transition-params, box-shadow $fd-card-transition-params;
         &:hover {
-            border-color: $tn-card-color-link;
-            background-color: $tn-card-background-color-hover;
-            box-shadow: $tn-card-shadow-hover;
+            border-color: $fd-card-color-link;
+            background-color: $fd-card-background-color-hover;
+            box-shadow: $fd-card-shadow-hover;
             text-decoration: none;
             color: inherit;
         }
@@ -88,12 +88,12 @@ $block: ns(card);
     //STATES *******************************************
     &[aria-disabled="true"],
     &.is-disabled {
-        background-color: $tn-card-background-color-disabled !important;
-        border-color: $tn-card-color-border-disabled !important;
+        background-color: $fd-card-background-color-disabled !important;
+        border-color: $fd-card-color-border-disabled !important;
         box-shadow: none !important;
         cursor: default;
         * {
-            color: $tn-card-color-disabled !important;
+            color: $fd-card-color-disabled !important;
         }
     }
 
@@ -102,16 +102,16 @@ $block: ns(card);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-        min-width: $tn-card-media-width;
-        min-height: $tn-card-media-width;
-        margin: $tn-card-padding 0 $tn-card-padding $tn-card-padding;
+        min-width: $fd-card-media-width;
+        min-height: $fd-card-media-width;
+        margin: $fd-card-padding 0 $fd-card-padding $fd-card-padding;
         //ELEMENT MODIFIERS
         &--fill {
             margin: 0;
-            width: $tn-card-media-width + $tn-card-padding*3;
+            width: $fd-card-media-width + $fd-card-padding*3;
             background-size: cover;
             & + .#{$block}__content {
-                padding-left: $tn-card-padding/2;
+                padding-left: $fd-card-padding/2;
             }
         }
         &--round {
@@ -119,19 +119,19 @@ $block: ns(card);
         }
     }
     &__content {
-        padding: ($tn-card-padding) $tn-card-padding;
+        padding: ($fd-card-padding) $fd-card-padding;
         max-width: 100%;
         flex: 1;
         overflow: hidden;
     }
     &__header {
-        color: $tn-color;
-        @include tn-type(1);
+        color: $fd-color;
+        @include fd-type(1);
         margin-bottom: 1px;
     }
     &__description {
-        @include tn-type(-2);
-        margin-bottom: tn-space(s);
+        @include fd-type(-2);
+        margin-bottom: fd-space(s);
         //TODO: This is breaking the card group layouts, need a different approach
         //white-space: nowrap;
         //max-width: 100%;
@@ -140,9 +140,9 @@ $block: ns(card);
         text-overflow: ellipsis;
     }
     &__status {
-        @include tn-type(-3);
+        @include fd-type(-3);
     }
     &__actions {
-        padding: $tn-card-padding $tn-card-padding/2;
+        padding: $fd-card-padding $fd-card-padding/2;
     }
 }

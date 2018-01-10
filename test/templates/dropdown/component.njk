@@ -9,8 +9,8 @@ dropdown:
 -->
 {%- macro dropdown(properties={}, modifier={}, state={}, aria={}) %}
 {%- set _id = utils.id() %}
-<div class="tn-dropdown{{ modifier.block | modifier('dropdown') }}">
-    <button class="tn-dropdown__control{{ modifier.control | modifier('dropdown__control') }}" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}>
+<div class="fd-dropdown{{ modifier.block | modifier('dropdown') }}">
+    <button class="fd-dropdown__control{{ modifier.control | modifier('dropdown__control') }}" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}>
         {%- if properties.icon %}
         {{ icon(glyph=properties.icon, classes="dropdown__icon") }}
         {%- endif %}
@@ -21,11 +21,11 @@ dropdown:
 {%- endmacro %}
 
 {%- macro option(properties={}) -%}
-<li><a href="#" class="tn-dropdown__item">{{ properties.label }}</a></li>
+<li><a href="#" class="fd-dropdown__item">{{ properties.label }}</a></li>
 {%- endmacro %}
 
 {%- macro menu(properties={}, modifier=[], classes=[]) -%}
-<ul class="tn-dropdown__menu{{ modifier | modifier('dropdown__menu') }}{{ classes | classes }}" aria-hidden="true" id="{{ properties.id }}">
+<ul class="fd-dropdown__menu{{ modifier | modifier('dropdown__menu') }}{{ classes | classes }}" aria-hidden="true" id="{{ properties.id }}">
     {%- for item in properties.items %}
     {%- if item.items %}
     {{ optgroup(item) }}
@@ -37,8 +37,8 @@ dropdown:
 {%- endmacro %}
 
 {% macro optgroup(properties={}) -%}
-<ul class="tn-dropdown__group">
-    <span class="tn-dropdown__separator" role="separator">{{ properties.label }}</span>
+<ul class="fd-dropdown__group">
+    <span class="fd-dropdown__separator" role="separator">{{ properties.label }}</span>
     {%- for item in properties.items %}
     {{ option(item) }}
     {%- endfor %}
@@ -51,14 +51,14 @@ dropdown:
 
 {% macro dropdown_alt(properties={}, modifier={}, state={}, aria={}) -%}
 {%- set _id = utils.id() %}
-<div class="tn-dropdown{{ modifier.block | modifier('dropdown') }}{{ state | state }}"{{ aria | aria }}>
-    <button class="tn-dropdown__control" aria-controls="{{ _id }}" aria-expanded="false">
+<div class="fd-dropdown{{ modifier.block | modifier('dropdown') }}{{ state | state }}"{{ aria | aria }}>
+    <button class="fd-dropdown__control" aria-controls="{{ _id }}" aria-expanded="false">
         {%- if properties.icon %}
         {{ icon(glyph=properties.icon, classes="dropdown__icon") }}
         {%- endif %}
         {{ properties.label }}
     </button>
-    <div class="tn-dropdown__menu" aria-hidden="true">
+    <div class="fd-dropdown__menu" aria-hidden="true">
         {%- for item in properties.items %}
         {%- if item.items %}
         {{ optgroup_alt(item) | indent(8) }}
@@ -71,12 +71,12 @@ dropdown:
 {%- endmacro %}
 
 {%- macro option_alt(properties={}, modifier={}, state={}, aria={}) -%}
-<a href="#" class="tn-dropdown__item">{{ properties.label }}</a>
+<a href="#" class="fd-dropdown__item">{{ properties.label }}</a>
 {%- endmacro %}
 
 {% macro optgroup_alt(properties={}, modifier={}, state={}, aria={}) -%}
-<div class="tn-dropdown__group">
-    <span class="tn-dropdown__separator" role="separator">{{ properties.label }}</span>
+<div class="fd-dropdown__group">
+    <span class="fd-dropdown__separator" role="separator">{{ properties.label }}</span>
     {%- for item in properties.items %}
     {{ option_alt(item) }}
     {%- endfor %}

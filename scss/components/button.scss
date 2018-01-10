@@ -4,83 +4,83 @@
 @import "mixins";
 
 /*!
-.tn-button+( (--small | --large), --icon, --text, --link, --action-bar)+( (.is-disabled | [aria-disabled=true]) | (.is-selected | [aria-selected=true] | (.is-pressed | [aria-pressed=true]))
+.fd-button+( (--small | --large), --icon, --text, --link, --action-bar)+( (.is-disabled | [aria-disabled=true]) | (.is-selected | [aria-selected=true] | (.is-pressed | [aria-pressed=true]))
 */
 
 //set component name using namespace function, then use #{$block} below
 $block: ns(button);
 .#{$block} {
     //SETTINGS
-    $tn-button-color: tn-color(text-inverse, 2) !default;
-    $tn-button-color--hover: $tn-button-color !default;
-    $tn-button-color--text: $tn-color--link !default;
-    $tn-button-color--active: $tn-button-color !default;
-    $tn-button-color--disabled: tn-color(text, 2) !default;
-    $tn-button-background-color: tn-color(action) !default;
-    $tn-button-background-color--hover: darken($tn-button-background-color, 5) !default;
-    $tn-button-background-color--active: darken($tn-button-background-color,10) !default;
-    $tn-button-background-color--disabled: tn-color(neutral) !default;
-    $tn-button-shadow--focus: 0 0 4px 1px rgba(tn-color(neutral, 4), 1) !default;
+    $fd-button-color: fd-color(text-inverse, 2) !default;
+    $fd-button-color--hover: $fd-button-color !default;
+    $fd-button-color--text: $fd-color--link !default;
+    $fd-button-color--active: $fd-button-color !default;
+    $fd-button-color--disabled: fd-color(text, 2) !default;
+    $fd-button-background-color: fd-color(action) !default;
+    $fd-button-background-color--hover: darken($fd-button-background-color, 5) !default;
+    $fd-button-background-color--active: darken($fd-button-background-color,10) !default;
+    $fd-button-background-color--disabled: fd-color(neutral) !default;
+    $fd-button-shadow--focus: 0 0 4px 1px rgba(fd-color(neutral, 4), 1) !default;
 
     //sizes
-    $tn-button-height: tn-space(13) !default;
-    $tn-button-height--small: tn-space(10) !default;
-    $tn-button-height--large: tn-space(19) !default;
-    $tn-button-height--link: tn-space(7) !default;
-    $tn-button-height--link-small: tn-space(6) !default;
-    $tn-button-icon-height: 26px !default;
-    $tn-button-icon-height--small: 18px !default;
-    $tn-button-icon-height--large: 32px !default;
+    $fd-button-height: fd-space(13) !default;
+    $fd-button-height--small: fd-space(10) !default;
+    $fd-button-height--large: fd-space(19) !default;
+    $fd-button-height--link: fd-space(7) !default;
+    $fd-button-height--link-small: fd-space(6) !default;
+    $fd-button-icon-height: 26px !default;
+    $fd-button-icon-height--small: 18px !default;
+    $fd-button-icon-height--large: 32px !default;
     //anim
-    $tn-button-transition-params: $tn-animation--speed ease-in !default;
+    $fd-button-transition-params: $fd-animation--speed ease-in !default;
 
     //BASE
     //set all reset and baseline block styles
-    @include tn-button-reset;
-    @include tn-type(1, header, med);
+    @include fd-button-reset;
+    @include fd-type(1, header, med);
     display: inline-block;
-    background-color: $tn-button-background-color;
-    transition: background-color $tn-button-transition-params;
-    color: $tn-button-color;
-    max-height: $tn-button-height;
-    height: $tn-button-height;
-    line-height: $tn-button-height;
-    padding-left: tn-space(5);
-    padding-right: tn-space(5);
+    background-color: $fd-button-background-color;
+    transition: background-color $fd-button-transition-params;
+    color: $fd-button-color;
+    max-height: $fd-button-height;
+    height: $fd-button-height;
+    line-height: $fd-button-height;
+    padding-left: fd-space(5);
+    padding-right: fd-space(5);
     text-align: center;
     text-transform: uppercase;
     border-radius: 0;
     //MODIFIERS
     &--small {
-        @include tn-type(0);
-        @include tn-weight(semi);
-        max-height: $tn-button-height--small;
-        height: $tn-button-height--small;
-        line-height: $tn-button-height--small;
-        padding-left: tn-space(4);
-        padding-right: tn-space(4);
+        @include fd-type(0);
+        @include fd-weight(semi);
+        max-height: $fd-button-height--small;
+        height: $fd-button-height--small;
+        line-height: $fd-button-height--small;
+        padding-left: fd-space(4);
+        padding-right: fd-space(4);
     }
     &--large {
-        @include tn-type(2);
-        max-height: $tn-button-height--large;
-        height: $tn-button-height--large;
-        line-height: $tn-button-height--large;
-        padding-left: tn-space(7);
-        padding-right: tn-space(7);
+        @include fd-type(2);
+        max-height: $fd-button-height--large;
+        height: $fd-button-height--large;
+        line-height: $fd-button-height--large;
+        padding-left: fd-space(7);
+        padding-right: fd-space(7);
         &.#{$block}--icon {
-            //padding-left: tn-space(5);
-            //padding-right: tn-space(5);
+            //padding-left: fd-space(5);
+            //padding-right: fd-space(5);
         }
     }
     &:hover {
-        background-color: $tn-button-background-color--hover;
-        color: $tn-button-color--hover;
+        background-color: $fd-button-background-color--hover;
+        color: $fd-button-color--hover;
         text-decoration: none;
     }
     &:focus {
-        color: $tn-button-color--hover;
-        box-shadow: $tn-button-shadow--focus;
-        outline: solid 2px lighten($tn-button-background-color, 15);
+        color: $fd-button-color--hover;
+        box-shadow: $fd-button-shadow--focus;
+        outline: solid 2px lighten($fd-button-background-color, 15);
     }
     &:active,
     &.is-active,
@@ -88,25 +88,25 @@ $block: ns(button);
     &.is-selected,
     &[aria-pressed="true"],
     &.is-pressed {
-        background-color: $tn-button-background-color--active;
-        color: $tn-button-color--active;
+        background-color: $fd-button-background-color--active;
+        color: $fd-button-color--active;
     }
     &[aria-disabled="true"],
     &.is-disabled,
     &:disabled {
-        outline: solid 1px tn-color(neutral, 2);
-        color: $tn-button-color--disabled;
-        background-color: $tn-button-background-color--disabled;
+        outline: solid 1px fd-color(neutral, 2);
+        color: $fd-button-color--disabled;
+        background-color: $fd-button-background-color--disabled;
         cursor: not-allowed;
     }
     &--text,
     &--link {
-        color: $tn-button-color--text;
+        color: $fd-button-color--text;
         background-color: transparent;
         &:hover,
         &:focus {
             background-color: transparent;
-            color: darken($tn-button-color--text, 5);
+            color: darken($fd-button-color--text, 5);
         }
         &:active,
         &[aria-selected="true"],
@@ -125,35 +125,35 @@ $block: ns(button);
         &.is-selected,
         &[aria-pressed="true"],
         &.is-pressed {
-            color: darken($tn-button-color--text, 10);
+            color: darken($fd-button-color--text, 10);
         }
         &[aria-disabled="true"],
         &.is-disabled,
         &:disabled {
-            color: $tn-button-color--disabled;
+            color: $fd-button-color--disabled;
         }
     }
     &--link {
-        height: $tn-button-height--link;
-        line-height: $tn-button-height--link;
-        padding-left: tn-space(4);
-        padding-right: tn-space(4);
+        height: $fd-button-height--link;
+        line-height: $fd-button-height--link;
+        padding-left: fd-space(4);
+        padding-right: fd-space(4);
         position: relative;
         //adjustment for small button
         &.#{$block}--small {
-            height: $tn-button-height--link-small;
-            line-height: $tn-button-height--link-small;
+            height: $fd-button-height--link-small;
+            line-height: $fd-button-height--link-small;
         }
         &::after {
             content: "";
             border-bottom: solid 2px transparent;
-            width: calc(100% - #{tn-space(4)}*2);
+            width: calc(100% - #{fd-space(4)}*2);
             height: 2px;
             position: absolute;
             bottom: 1px;
             left: 0;
-            margin-left: tn-space(4);
-            transition: border-bottom-color $tn-button-transition-params;
+            margin-left: fd-space(4);
+            transition: border-bottom-color $fd-button-transition-params;
         }
         &:focus {
             outline: none;
@@ -167,7 +167,7 @@ $block: ns(button);
         &[aria-pressed="true"],
         &.is-pressed {
             &::after {
-                border-bottom-color: $tn-button-color--text;
+                border-bottom-color: $fd-button-color--text;
             }
         }
         &[aria-disabled="true"],
@@ -182,35 +182,35 @@ $block: ns(button);
     & > * {
         display: inline-block;
         vertical-align: top;
-        margin-right: tn-space(3);
+        margin-right: fd-space(3);
         @at-root {
             .#{$block}--icon > * {
                 margin-left: auto;
                 margin-right: auto;
             }
         }
-        margin-top: $tn-button-height / 2 - $tn-button-icon-height / 2;
+        margin-top: $fd-button-height / 2 - $fd-button-icon-height / 2;
         @at-root {
             .#{$block}--small > * {
-                margin-top: $tn-button-height--small / 2 - $tn-button-icon-height--small / 2;
+                margin-top: $fd-button-height--small / 2 - $fd-button-icon-height--small / 2;
             }
         }
         @at-root {
             .#{$block}--large > * {
-                margin-top: $tn-button-height--large / 2 - $tn-button-icon-height--large / 2;
+                margin-top: $fd-button-height--large / 2 - $fd-button-icon-height--large / 2;
             }
         }
     }
     //special flavor
     &--action-bar {
         @extend .#{$block}--large;
-        @include tn-type(-3);
+        @include fd-type(-3);
         min-width: 135px;
-        line-height: $tn-button-height--large - $tn-button-icon-height--large - tn-space(3);
+        line-height: $fd-button-height--large - $fd-button-icon-height--large - fd-space(3);
         vertical-align: middle;
         & > * {
             display: block !important;
-            margin-top: tn-space(3);
+            margin-top: fd-space(3);
             margin-left: auto;
             margin-right: auto;
         }

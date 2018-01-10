@@ -5,30 +5,30 @@
 @import "./contextual-menu";
 
 /*!
-.tn-action-bar
-	.tn-action-bar__navigation
-	.tn-action-bar__title
-	.tn-action-bar__actions+(.is-disabled | aria-hidden)?
-        .tn-action-bar__action-item
+.fd-action-bar
+	.fd-action-bar__navigation
+	.fd-action-bar__title
+	.fd-action-bar__actions+(.is-disabled | aria-hidden)?
+        .fd-action-bar__action-item
 */
 $block: ns(action-bar);
 
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $tn-action-bar-background-color: tn-color(background, 2) !default;
-    $tn-action-bar-border-color: tn-color(neutral, 3) !default;
+    $fd-action-bar-background-color: fd-color(background, 2) !default;
+    $fd-action-bar-border-color: fd-color(neutral, 3) !default;
 
-    $tn-action-bar-height: tn-space(19) !default;
-    $tn-action-bar-transition-params: 0.25s ease-in !default;
+    $fd-action-bar-height: fd-space(19) !default;
+    $fd-action-bar-transition-params: 0.25s ease-in !default;
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
     @include reset;
-    height: $tn-action-bar-height;
-    background-color: $tn-action-bar-background-color;
+    height: $fd-action-bar-height;
+    background-color: $fd-action-bar-background-color;
     border-style: solid;
     border-width: 1px 0;
-    border-color: $tn-action-bar-border-color;
+    border-color: $fd-action-bar-border-color;
     display: flex;
     align-items: center;
     &__navigation {
@@ -36,17 +36,17 @@ $block: ns(action-bar);
     }
     &__title {
         @include reset;
-        @include tn-type(3, header, med);
+        @include fd-type(3, header, med);
         flex: 1;
         margin-bottom: 0;
         &:first-child {
-            padding-left: tn-space(6);
+            padding-left: fd-space(6);
         }
     }
     &__actions {
         @include reset;
         display: flex;
-        transition: opacity $tn-action-bar-transition-params;
+        transition: opacity $fd-action-bar-transition-params;
         visibility: visible;
         &.is-disabled,
         &[aria-hidden="true"] {

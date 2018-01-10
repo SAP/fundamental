@@ -11,25 +11,25 @@
 
 {% set panel %}
 {% call layout.panel() -%}
-    {% call layout.panel_header({ title: ".tn-panel__title" }) -%}
+    {% call layout.panel_header({ title: ".fd-panel__title" }) -%}
         {% call layout.panel_actions() -%}
-.tn-panel__actions
+.fd-panel__actions
         {%- endcall %}
     {%- endcall %}
 
-<h1>.tn-panel</h1>
-<p>Very much like a <code>.tn-section</code> but intended to be used inside of a column.</p>
-<p>A <code>.tn-panel</code> should only be used when a title, actions and/or footer are needed with the content, otherwise the content can be placed directly inside the <code>.tn-col</code></p>
+<h1>.fd-panel</h1>
+<p>Very much like a <code>.fd-section</code> but intended to be used inside of a column.</p>
+<p>A <code>.fd-panel</code> should only be used when a title, actions and/or footer are needed with the content, otherwise the content can be placed directly inside the <code>.fd-col</code></p>
 
     {% call layout.panel_footer() -%}
-.tn-panel__footer
+.fd-panel__footer
     {%- endcall %}
 {%- endcall %}
 {% endset %}
 
 
 
-<div class="tn-has-background-color-neutral-2">
+<div class="fd-has-background-color-neutral-2">
 {% call layout.section() -%}
 {% call layout.container() -%}
     {% call layout.col(6) -%}
@@ -48,20 +48,20 @@
 </div>
 
 {% set badgetitle %}
-Vivamus sagittis <span class="tn-badge tn-badge--success">Active</span>
+Vivamus sagittis <span class="fd-badge fd-badge--success">Active</span>
 {% endset %}
 {% set card %}
-<div class="tn-card" role="button">
-    <div class="tn-card__media tn-card__media--round" style="background-image: url(https://techne.yaas.io/images/product-thumbnail-wide.png)" aria-label="YaaS product thumbnail"></div>
-    <div class="tn-card__content">
-         <h2 class="tn-card__header">
+<div class="fd-card" role="button">
+    <div class="fd-card__media fd-card__media--round" style="background-image: url(https://techne.yaas.io/images/product-thumbnail-wide.png)" aria-label="YaaS product thumbnail"></div>
+    <div class="fd-card__content">
+         <h2 class="fd-card__header">
              Asperiores doloribus id dolore
          </h2>
-         <p class="tn-card__description">
+         <p class="fd-card__description">
              Consectetur adipisicing elit
          </p>
-         <p class="tn-card__status">
-             <span class="tn-has-color-status-1">Cumque itaque</span>
+         <p class="fd-card__status">
+             <span class="fd-has-color-status-1">Cumque itaque</span>
          </p>
     </div>
 </div>
@@ -71,8 +71,8 @@ Vivamus sagittis <span class="tn-badge tn-badge--success">Active</span>
 {% call layout.panel() -%}
     {% call layout.panel_header({  title: badgetitle }) -%}
         {% call layout.panel_actions() -%}
-        <button class="tn-button tn-button--text tn-button--small">
-            <span class="tn-icon tn-icon--add" role="presentation"></span>
+        <button class="fd-button fd-button--text fd-button--small">
+            <span class="fd-icon fd-icon--add" role="presentation"></span>
             Add New Item
         </button>
         {%- endcall %}
@@ -81,7 +81,7 @@ Vivamus sagittis <span class="tn-badge tn-badge--success">Active</span>
 {{ card }}
 {{ card }}
     {% call layout.panel_footer() -%}
-<a href="#" class="tn-button tn-button--link">See All</a>
+<a href="#" class="fd-button fd-button--link">See All</a>
     {%- endcall %}
 {%- endcall %}
 {% endset %}
@@ -106,9 +106,9 @@ Vivamus sagittis <span class="tn-badge tn-badge--success">Active</span>
 
 <hr>
 
-<section class="tn-section">
-    <div class="tn-section__header">
-        <h1 class="tn-section__title">
+<section class="fd-section">
+    <div class="fd-section__header">
+        <h1 class="fd-section__title">
             Code
         </h1>
     </div>

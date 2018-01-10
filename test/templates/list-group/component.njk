@@ -5,12 +5,12 @@
     see ./data.json for object structure
 #}
 {% macro list_group(properties={}, action={}) %}
-<ul class="tn-list-group">
+<ul class="fd-list-group">
     {%- for item in properties.items %}
-    <li class="tn-list-group__item">
+    <li class="fd-list-group__item">
         {{item}}
         {%- if properties.action %}
-        <span class="tn-list-group__action">
+        <span class="fd-list-group__action">
             {{ button(
                 { icon: properties.action.icon },
                 modifier={ block: ['icon','text','small'] },

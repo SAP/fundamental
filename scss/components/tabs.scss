@@ -3,55 +3,55 @@
 @import "../core/functions";
 
 /*!
-.tn-tabs+()
-    .tn-tabs__item?
-    .tn-tabs__link+((.is-selected|[aria-selected=true]),(.is-disabled|[aria-disabled=true]))
-.tn-tabs__panel+([aria-expanded]|.is-expanded)
+.fd-tabs+()
+    .fd-tabs__item?
+    .fd-tabs__link+((.is-selected|[aria-selected=true]),(.is-disabled|[aria-disabled=true]))
+.fd-tabs__panel+([aria-expanded]|.is-expanded)
 */
 
 $block: ns(tabs);
 
 .#{$block} {
-    $tn-tabs-margin-bottom: tn-space(m) !default;
-    $tn-tabs-border-width: 1px !default;
-    $tn-tabs-border-color: tn-color(neutral, 3) !default;
-    $tn-tabs-link-padding: tn-space(3) !default;
-    $tn-tabs-link-padding--side: tn-space(5) !default;
-    $tn-tabs-link-border-width: 2px !default;
-    $tn-tabs-link-border-color: tn-color(action, 1) !default;
-    $tn-tabs-link-transition-params: $tn-animation--speed ease-in !default;
+    $fd-tabs-margin-bottom: fd-space(m) !default;
+    $fd-tabs-border-width: 1px !default;
+    $fd-tabs-border-color: fd-color(neutral, 3) !default;
+    $fd-tabs-link-padding: fd-space(3) !default;
+    $fd-tabs-link-padding--side: fd-space(5) !default;
+    $fd-tabs-link-border-width: 2px !default;
+    $fd-tabs-link-border-color: fd-color(action, 1) !default;
+    $fd-tabs-link-transition-params: $fd-animation--speed ease-in !default;
 
     @include reset;
     display: flex;
     flex-wrap: wrap;
     padding-left: 0;
-    margin-bottom: $tn-tabs-margin-bottom;
+    margin-bottom: $fd-tabs-margin-bottom;
     list-style: none;
-    border-bottom: solid $tn-tabs-border-width $tn-tabs-border-color;
+    border-bottom: solid $fd-tabs-border-width $fd-tabs-border-color;
 
     &__item {
 
     }
     &__link {
         display: block;
-        padding: $tn-tabs-link-padding $tn-tabs-link-padding--side;
-        @include tn-type(1,header,med,uppercase);
-        color: $tn-color--link;
-        border-bottom: solid $tn-tabs-link-border-width transparent;
-        transition: all $tn-tabs-link-transition-params;
+        padding: $fd-tabs-link-padding $fd-tabs-link-padding--side;
+        @include fd-type(1,header,med,uppercase);
+        color: $fd-color--link;
+        border-bottom: solid $fd-tabs-link-border-width transparent;
+        transition: all $fd-tabs-link-transition-params;
         cursor: pointer;
         &:hover {
-            border-bottom: solid $tn-tabs-link-border-width $tn-tabs-link-border-color;
-            color: $tn-color--link-hover;
+            border-bottom: solid $fd-tabs-link-border-width $fd-tabs-link-border-color;
+            color: $fd-color--link-hover;
         }
         &.is-selected,
         &[aria-selected="true"] {
-            color: $tn-color;
-            border-bottom: solid $tn-tabs-link-border-width $tn-tabs-link-border-color;
+            color: $fd-color;
+            border-bottom: solid $fd-tabs-link-border-width $fd-tabs-link-border-color;
         }
         &.is-disabled,
         &[aria-disabled="true"] {
-            color: $tn-color--link-disabled;
+            color: $fd-color--link-disabled;
             cursor: not-allowed;
             &:hover {
                 border-bottom-color: transparent;

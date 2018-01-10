@@ -5,54 +5,54 @@
 @import "./dropdown";
 // @import "../icons";
 /*!
-.tn-toolbar+()
-    .tn-toolbar__row
-        .tn-toolbar__group
-        .tn-toolbar__item
+.fd-toolbar+()
+    .fd-toolbar__row
+        .fd-toolbar__group
+        .fd-toolbar__item
 */
 $block: ns(toolbar);
 
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $tn-toolbar-background-color: tn-color(background, 2) !default;
-    $tn-toolbar-border-color: tn-color(neutral, 3) !default;
-    $tn-toolbar-group-height: tn-space(13) !default;
+    $fd-toolbar-background-color: fd-color(background, 2) !default;
+    $fd-toolbar-border-color: fd-color(neutral, 3) !default;
+    $fd-toolbar-group-height: fd-space(13) !default;
     //anim
-    $tn-toolbar-row-transition-params: 0.15s ease-in !default;
+    $fd-toolbar-row-transition-params: 0.15s ease-in !default;
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
     @include reset;
-    min-height: $tn-toolbar-group-height;
-    background-color: $tn-toolbar-background-color;
-    border-color: $tn-toolbar-border-color;
+    min-height: $fd-toolbar-group-height;
+    background-color: $fd-toolbar-background-color;
+    border-color: $fd-toolbar-border-color;
     border-style: solid;
     border-width: 1px 0;
-    //margin-bottom: tn-space(m);
+    //margin-bottom: fd-space(m);
 
     & [role="separator"] {
         display: inline-block;
         vertical-align: middle;
         max-width: 1px;
         //white-space: nowrap;
-        height: $tn-toolbar-group-height;
-        border-left: solid 1px $tn-toolbar-border-color;
+        height: $fd-toolbar-group-height;
+        border-left: solid 1px $fd-toolbar-border-color;
     }
 
     display: flex;
     flex-wrap: wrap;
     &__group {
-        min-height: $tn-toolbar-group-height;
-        // max-height: $tn-toolbar-group-height;
+        min-height: $fd-toolbar-group-height;
+        // max-height: $fd-toolbar-group-height;
         overflow: visible;
-        transition: all $tn-toolbar-row-transition-params;
+        transition: all $fd-toolbar-row-transition-params;
         width: 100%;
         &--view {
             order: 5;
             display: flex;
             align-items: center;
-            border-top: solid 1px $tn-toolbar-border-color;
-            @include tn-screen(s) {
+            border-top: solid 1px $fd-toolbar-border-color;
+            @include fd-screen(s) {
                 border-top: none;
             }
         }
@@ -60,15 +60,15 @@ $block: ns(toolbar);
             display: flex;
         }
         &--filter-options {
-            background-color: tn-color(background, 1);
-            border-top: solid 1px $tn-toolbar-border-color;
+            background-color: fd-color(background, 1);
+            border-top: solid 1px $fd-toolbar-border-color;
         }
         &--applied-filters {
-            border-top: solid 1px $tn-toolbar-border-color;
+            border-top: solid 1px $fd-toolbar-border-color;
             display: flex;
             align-items: center;
         }
-        @include tn-screen(s) {
+        @include fd-screen(s) {
             &--filter {
                 width: auto;
             }
@@ -89,40 +89,40 @@ $block: ns(toolbar);
     }
     &__pagination {
         margin: 0 auto;
-        @include tn-screen(s) {
-            margin-right: tn-space(5);
+        @include fd-screen(s) {
+            margin-right: fd-space(5);
         }
     }
     &__view-as {
         display: none;
-        @include tn-screen(s) {
+        @include fd-screen(s) {
             display: block;
-            border-left: solid 1px $tn-toolbar-border-color;
+            border-left: solid 1px $fd-toolbar-border-color;
         }
     }
     &__button {
         &[aria-expanded="true"] {
-            background-color: tn-color(background, 1);
+            background-color: fd-color(background, 1);
         }
     }
     //filter
     &__applied-filter-list {
-        margin-left: tn-space(5);
+        margin-left: fd-space(5);
         list-style: none;
         margin-bottom: 0;
         flex-wrap: wrap;
-        @include tn-screen(xs) {
+        @include fd-screen(xs) {
             display: inline-flex;
             align-items: center;
         }
     }
     &__applied-filter-item {
-        @include tn-type(-3, body, reg, none);
+        @include fd-type(-3, body, reg, none);
         line-height: inherit;
         display: flex;
         align-items: center;
-        margin-right: tn-space(5);
-        @include tn-screen(xs) {
+        margin-right: fd-space(5);
+        @include fd-screen(xs) {
             display: inline-flex;
         }
         &::after {
@@ -135,7 +135,7 @@ $block: ns(toolbar);
         }
     }
     &__applied-filter-clear {
-        @include tn-type(-3, body, semi);
+        @include fd-type(-3, body, semi);
     }
 
 }

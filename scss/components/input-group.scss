@@ -4,9 +4,9 @@
 @import "mixins";
 
 /*!
-.tn-input-group+(--inline)
-    .tn-input-group__addon+()
-        .tn-input-group__button
+.fd-input-group+(--inline)
+    .fd-input-group__addon+()
+        .fd-input-group__button
 */
 $block: ns(input-group);
 
@@ -19,7 +19,7 @@ $block: ns(input-group);
     @include reset;
     display: flex;
     vertical-align: bottom;
-    max-height: $tn-forms-height--input-text;
+    max-height: $fd-forms-height--input-text;
 
     //ELEMENTS *******************************************
     //set all ELEMENT baseline styles
@@ -34,9 +34,9 @@ $block: ns(input-group);
     & [type="search"] {
         background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNiIgaGVpZ2h0PSIyNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjNEQ1QTZDIiBkPSJNOS43NTQgMTkuNDk2YTkuNjg0IDkuNjg0IDAgMCAwIDYuMDk3LTIuMTU4bDguMjg5IDguMzRhMS4wODQgMS4wODQgMCAwIDAgMS41MzUtMS41MjlsLTguMy04LjM1YTkuNjg5IDkuNjg5IDAgMCAwIDIuMTItNi4wNTRjMC01LjM3Ny00LjM2OS05Ljc1MS05Ljc0MS05Ljc1MVMuMDEzIDQuMzY4LjAxMyA5Ljc0NXM0LjM2OSA5Ljc1MSA5Ljc0MSA5Ljc1MXptMC0xNy4zMzVjNC4xNzcgMCA3LjU3NyAzLjQwMiA3LjU3NyA3LjU4NCAwIDQuMTgyLTMuNCA3LjU4NC03LjU3NyA3LjU4NC00LjE3OCAwLTcuNTc3LTMuNDAyLTcuNTc3LTcuNTg0IDAtNC4xODIgMy4zOTktNy41ODQgNy41NzctNy41ODR6Ii8+PC9zdmc+');
         background-repeat: no-repeat;
-        background-position: tn-space(4) center;
-        padding-left: tn-space(15);
-        padding-right: tn-space(15);
+        background-position: fd-space(4) center;
+        padding-left: fd-space(15);
+        padding-right: fd-space(15);
         &::-webkit-search-decoration {
             -webkit-appearance: none;
             margin: 0;
@@ -56,13 +56,13 @@ $block: ns(input-group);
         }
     }
     &__addon {
-        @include tn-type(-2, body, bold, normal);
-        color: tn-color(text, 3);
-        padding: 0 tn-space(4);
+        @include fd-type(-2, body, bold, normal);
+        color: fd-color(text, 3);
+        padding: 0 fd-space(4);
         border-style: solid;
         border-width: 1px;
-        border-color: $tn-forms-border-color;
-        background-color: tn-color(neutral, 1);
+        border-color: $fd-forms-border-color;
+        background-color: fd-color(neutral, 1);
         justify-content: center;
         display: flex;
         flex-direction: column;
@@ -93,11 +93,11 @@ $block: ns(input-group);
 
     }
     &__button {
-        @include tn-button-reset;
+        @include fd-button-reset;
         flex: 1;
         width: 100%;
         display: block;
-        min-width: tn-space(12);
+        min-width: fd-space(12);
         &--step-up, &--step-down  {
             font-size: 10px;
             &::after {
@@ -106,7 +106,7 @@ $block: ns(input-group);
             }
         }
         &--step-up {
-            border-bottom: solid 1px $tn-forms-border-color;
+            border-bottom: solid 1px $fd-forms-border-color;
             &::after {
                 @include triangle(13px 8px, black, up);
                 top: -10px;
@@ -123,7 +123,7 @@ $block: ns(input-group);
             background-repeat: no-repeat;
             background-position: center;
             position: relative;
-            left: -(tn-space(13));
+            left: -(fd-space(13));
         }
     }
 

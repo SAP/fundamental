@@ -6,7 +6,7 @@ table:
     aria={}
 -->
 {% macro table(properties={}, modifier={}, state={}, aria={}) -%}
-<table class="tn-table{{ modifier.block | modifier('table') }}{{ state | state }}"{{ aria | aria }}>
+<table class="fd-table{{ modifier.block | modifier('table') }}{{ state | state }}"{{ aria | aria }}>
     <thead>
         <tr>
             {%- for header in properties.headers %}

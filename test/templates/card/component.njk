@@ -2,28 +2,28 @@
     see ./data.json for object structure
 #}
 {% macro card(properties={}, modifier={}, state={}, aria={}) %}
-<div class="tn-card{{ modifier.block | modifier('card') }}{{ ' is-disabled' if state.disabled }}"{{ ' aria-disabled="'+ state.disabled +'"' if state.disabled }}{{ ' role="' + aria.role +'"' if aria.role }}>
+<div class="fd-card{{ modifier.block | modifier('card') }}{{ ' is-disabled' if state.disabled }}"{{ ' aria-disabled="'+ state.disabled +'"' if state.disabled }}{{ ' role="' + aria.role +'"' if aria.role }}>
     {%- if properties.media %}{{ card_media(modifier=modifier.media, properties=properties.media) | trim }}
     {%- endif %}
-    <div class="tn-card__content">
+    <div class="fd-card__content">
         {%- if properties.body -%}
              {{ properties.body }}
          {%- else %}
-         <h2 class="tn-card__header">
+         <h2 class="fd-card__header">
              {{ properties.title }}
          </h2>
-         <p class="tn-card__description">
+         <p class="fd-card__description">
              {{ properties.description }}
          </p>
          {%- if properties.status %}
-         <p class="tn-card__status">
+         <p class="fd-card__status">
              {{ properties.status }}
          </p>
          {%- endif -%}
      {%- endif %}
     </div>
     {%- if properties.actions %}
-    <div class="tn-card__actions">
+    <div class="fd-card__actions">
         {{ properties.actions }}
     </div>
     {%- endif %}
@@ -31,5 +31,5 @@
 {%- endmacro %}
 
 {% macro card_media(modifier=[], properties={}) %}
-<div class="tn-card__media{{ modifier | modifier('card__media') }}" style="background-image: url({{ properties.image }})" aria-label="{{ properties.alt }}"></div>
+<div class="fd-card__media{{ modifier | modifier('card__media') }}" style="background-image: url({{ properties.image }})" aria-label="{{ properties.alt }}"></div>
 {% endmacro %}

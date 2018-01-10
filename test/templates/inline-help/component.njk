@@ -6,8 +6,8 @@ inline-help:
 {% macro inline_help(properties={
         content: "Lorem ipsum dolor sit amet."
     }, modifier={}, state={}, aria={}) -%}
-<span class="tn-inline-help"{{ aria | aria }}>
-    <span class="tn-inline-help__content{{ modifier.content | modifier('inline-help__content') }}">
+<span class="fd-inline-help"{{ aria | aria }}>
+    <span class="fd-inline-help__content{{ modifier.content | modifier('inline-help__content') }}">
         {{ properties.content }}
     </span>
 </span>

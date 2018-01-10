@@ -9,35 +9,35 @@
 {% set hide_page_header = true %}
 {% block page_content %}
 
-<div class="tn-has-background-color-neutral-2">
+<div class="fd-has-background-color-neutral-2">
 {% call layout.section() -%}
-    {% call layout.section_header({ title: ".tn-section__title" }) -%}
+    {% call layout.section_header({ title: ".fd-section__title" }) -%}
         {% call layout.section_actions() -%}
-.tn-section__actions
+.fd-section__actions
         {%- endcall %}
     {%- endcall %}
     <div style="height: 100px;">
-        <h1>.tn-section</h1>
-        <p>Use for .tn-container, .tn-card-group and other content that requires the built-in left and right page padding.</p>
+        <h1>.fd-section</h1>
+        <p>Use for .fd-container, .fd-card-group and other content that requires the built-in left and right page padding.</p>
     </div>
     {% call layout.section_footer() -%}
-.tn-section__footer
+.fd-section__footer
     {%- endcall %}
 {%- endcall %}
 </div>
-<div class="tn-has-background-color-status-1">
+<div class="fd-has-background-color-status-1">
 {% call layout.section(modifier="full-bleed") -%}
-    {% call layout.section_header({ title: ".tn-section__title" }) -%}
+    {% call layout.section_header({ title: ".fd-section__title" }) -%}
         {% call layout.section_actions() -%}
-.tn-section__actions
+.fd-section__actions
         {%- endcall %}
     {%- endcall %}
     <div style="height: 100px;">
-        <h1>.tn-section--full-bleed</h1>
-        <p>Use for .tn-table, .tn-tree and other content that must bleed to the edge.</p>
+        <h1>.fd-section--full-bleed</h1>
+        <p>Use for .fd-table, .fd-tree and other content that must bleed to the edge.</p>
     </div>
     {% call layout.section_footer() -%}
-.tn-section__footer
+.fd-section__footer
     {%- endcall %}
 {%- endcall %}
 </div>
@@ -50,7 +50,7 @@
 
 
 {% set badgetitle %}
-Vivamus sagittis <span class="tn-badge tn-badge--success">Active</span>
+Vivamus sagittis <span class="fd-badge fd-badge--success">Active</span>
 {% endset %}
 
     {% call layout.section(classes="") -%}
@@ -58,39 +58,39 @@ Vivamus sagittis <span class="tn-badge tn-badge--success">Active</span>
 
         {%- endcall %}
 
-<div class="tn-container">
+<div class="fd-container">
 
-    <div class="tn-col--6">
+    <div class="fd-col--6">
 
-        <div class="tn-form__group">
-            <div class="tn-form__item">
-                <label class="tn-form__label" for="input-1">Field Label</label>
-                <input class="tn-form__control" type="text" id="input-1" name="" value="" placeholder="Field placeholder text">
+        <div class="fd-form__group">
+            <div class="fd-form__item">
+                <label class="fd-form__label" for="input-1">Field Label</label>
+                <input class="fd-form__control" type="text" id="input-1" name="" value="" placeholder="Field placeholder text">
             </div>
         </div>
-        <fieldset class="tn-form__group">
-            <legend class="tn-form__legend">Select an option</legend>
-            <div class="tn-form__item tn-form__item--inline tn-form__item--check">
-                <input class="tn-form__control" type="radio" id="radio-13" name="radio-name-5" value="" checked>
-                <label class="tn-form__label" for="radio-13">Option One</label>
+        <fieldset class="fd-form__group">
+            <legend class="fd-form__legend">Select an option</legend>
+            <div class="fd-form__item fd-form__item--inline fd-form__item--check">
+                <input class="fd-form__control" type="radio" id="radio-13" name="radio-name-5" value="" checked>
+                <label class="fd-form__label" for="radio-13">Option One</label>
             </div>
-            <div class="tn-form__item tn-form__item--inline tn-form__item--check">
-                <input class="tn-form__control" type="radio" id="radio-14" name="radio-name-5" value="">
-                <label class="tn-form__label" for="radio-14">Option Two</label>
+            <div class="fd-form__item fd-form__item--inline fd-form__item--check">
+                <input class="fd-form__control" type="radio" id="radio-14" name="radio-name-5" value="">
+                <label class="fd-form__label" for="radio-14">Option Two</label>
             </div>
-            <div class="tn-form__item tn-form__item--inline tn-form__item--check">
-                <input class="tn-form__control" type="radio" id="radio-15" name="radio-name-5" value="">
-                <label class="tn-form__label" for="radio-15">Option Three</label>
+            <div class="fd-form__item fd-form__item--inline fd-form__item--check">
+                <input class="fd-form__control" type="radio" id="radio-15" name="radio-name-5" value="">
+                <label class="fd-form__label" for="radio-15">Option Three</label>
             </div>
         </fieldset>
 
     </div>
-        <div class="tn-col--6">
+        <div class="fd-col--6">
 
-            <fieldset class="tn-form__group">
-                <div class="tn-form__item">
-                    <label class="tn-form__label" for="textarea-1">Field Label</label>
-                    <textarea class="tn-form__control" id="textarea-1" name="" >Pellentesque metus lacus commodo eget justo ut rutrum varius nunc. Sed non rhoncus risus. Morbi sodales gravida pulvinar. Duis malesuada odio volutpat elementum vulputate massa magna scelerisque ante et accumsan tellus nunc in sem.</textarea>
+            <fieldset class="fd-form__group">
+                <div class="fd-form__item">
+                    <label class="fd-form__label" for="textarea-1">Field Label</label>
+                    <textarea class="fd-form__control" id="textarea-1" name="" >Pellentesque metus lacus commodo eget justo ut rutrum varius nunc. Sed non rhoncus risus. Morbi sodales gravida pulvinar. Duis malesuada odio volutpat elementum vulputate massa magna scelerisque ante et accumsan tellus nunc in sem.</textarea>
                 </div>
             </fieldset>
 
@@ -112,8 +112,8 @@ Vivamus sagittis <span class="tn-badge tn-badge--success">Active</span>
 
         {% call layout.section_header({ title: "Table" }) -%}
             {% call layout.section_actions() -%}
-            <button class="tn-button tn-button--text tn-button--small">
-                <span class="tn-icon tn-icon--add" role="presentation"></span>
+            <button class="fd-button fd-button--text fd-button--small">
+                <span class="fd-icon fd-icon--add" role="presentation"></span>
                 Add
             </button>
             {%- endcall %}
@@ -122,7 +122,7 @@ Vivamus sagittis <span class="tn-badge tn-badge--success">Active</span>
     {{ table(data.table.properties) }}
 
         {% call layout.section_footer() -%}
-        <a href="#" class="tn-button tn-button--link">See All</a>
+        <a href="#" class="fd-button fd-button--link">See All</a>
         {%- endcall %}
     {%- endcall %}
 
@@ -135,9 +135,9 @@ Vivamus sagittis <span class="tn-badge tn-badge--success">Active</span>
 
     <hr>
 
-    <section class="tn-section">
-        <div class="tn-section__header">
-            <h1 class="tn-section__title">
+    <section class="fd-section">
+        <div class="fd-section__header">
+            <h1 class="fd-section__title">
                 Code
             </h1>
         </div>
@@ -150,7 +150,7 @@ Vivamus sagittis <span class="tn-badge tn-badge--success">Active</span>
         {%- endcall %}
     {%- endcall %}
 
-//content (.tn-container, .tn-card-group)
+//content (.fd-container, .fd-card-group)
     {% call layout.section_footer() -%}
 //link or info (optional)
     {%- endcall %}
@@ -163,7 +163,7 @@ Vivamus sagittis <span class="tn-badge tn-badge--success">Active</span>
         {%- endcall %}
     {%- endcall %}
 
-//content (.tn-table, .tn-tree)
+//content (.fd-table, .fd-tree)
     {% call layout.section_footer() -%}
 //link or info (optional)
     {%- endcall %}

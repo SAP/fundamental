@@ -4,5 +4,5 @@
     instead of more complex modifier.block options
 #}
 {%- macro icon(glyph="", size="", classes="") -%}
-<span class="tn-icon{{ (glyph if size == "" else [glyph, size]) | modifier('icon') }}{{ classes | classes }}" role="presentation"></span>
+<span class="fd-icon{{ (glyph if size == "" else [glyph, size]) | modifier('icon') }}{{ classes | classes }}" role="presentation"></span>
 {%- endmacro %}

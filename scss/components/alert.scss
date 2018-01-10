@@ -4,47 +4,47 @@
 @import "../components/mixins";
 
 /*!
-.tn-alert+(--warning. --error)
-    .tn-alert__close
+.fd-alert+(--warning. --error)
+    .fd-alert__close
 */
 $block: ns(alert);
 
 .#{$block} {
     //SETTINGS
-    $tn-alert-background-color: tn-color(text, 3) !default;
-    $tn-alert-background-color--warning: tn-color(status, 2) !default;
-    $tn-alert-background-color--error: tn-color(status, 3) !default;
-    $tn-alert-color--warning: tn-color(text, 1) !default;
-    $tn-alert-color: tn-color(text-inverse, 1) !default;
-    $tn-alert-border-color: tn-color(neutral, 2) !default;
-    $tn-alert-height: tn-space(13) !default;
-    $tn-alert-action--clerance: 50px;
+    $fd-alert-background-color: fd-color(text, 3) !default;
+    $fd-alert-background-color--warning: fd-color(status, 2) !default;
+    $fd-alert-background-color--error: fd-color(status, 3) !default;
+    $fd-alert-color--warning: fd-color(text, 1) !default;
+    $fd-alert-color: fd-color(text-inverse, 1) !default;
+    $fd-alert-border-color: fd-color(neutral, 2) !default;
+    $fd-alert-height: fd-space(13) !default;
+    $fd-alert-action--clerance: 50px;
 
     // Block
-    color: $tn-alert-color;
-    border: solid 1px $tn-alert-border-color;
-    background-color: $tn-alert-background-color;
-    min-height: $tn-alert-height;
-    padding: tn-space(s);
+    color: $fd-alert-color;
+    border: solid 1px $fd-alert-border-color;
+    background-color: $fd-alert-background-color;
+    min-height: $fd-alert-height;
+    padding: fd-space(s);
 
     // Elements
     &__close {
-        @include tn-button-reset;  //removes default button chrome
-        color: tn-color(text-inverse, 1);
-        width: tn-space(m); //best practice hit space
-        height: tn-space(m);
+        @include fd-button-reset;  //removes default button chrome
+        color: fd-color(text-inverse, 1);
+        width: fd-space(m); //best practice hit space
+        height: fd-space(m);
         float: right;
-        margin: - (tn-space(s)/2);
+        margin: - (fd-space(s)/2);
     }
 
     // Modifiers
     &--warning {
-      background-color: $tn-alert-background-color--warning;
-      color: $tn-alert-color--warning;
+      background-color: $fd-alert-background-color--warning;
+      color: $fd-alert-color--warning;
 
     }
     &--error {
-      background-color: $tn-alert-background-color--error;
+      background-color: $fd-alert-background-color--error;
     }
 
 

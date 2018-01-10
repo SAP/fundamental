@@ -4,27 +4,27 @@
 @import "mixins";
 
 /*!
-.tn-dropdown+()
-    .tn-dropdown__control+([disabled])
-    .tn-dropdown__menu+()
+.fd-dropdown+()
+    .fd-dropdown__control+([disabled])
+    .fd-dropdown__menu+()
 */
 $block: ns(dropdown);
 
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $tn-dropdown-menu-color: solid 1px $tn-forms-color !default;
-    $tn-dropdown-menu-border: solid 1px $tn-forms-border-color !default;
-    $tn-dropdown-menu-z-index: 2 !default;
-    $tn-dropdown-menu-background-color: tn-color(background) !default;
-    $tn-dropdown-menu-shadow: 0 0 4px 1px rgba(tn-color(neutral, 4), 0.2) !default;
+    $fd-dropdown-menu-color: solid 1px $fd-forms-color !default;
+    $fd-dropdown-menu-border: solid 1px $fd-forms-border-color !default;
+    $fd-dropdown-menu-z-index: 2 !default;
+    $fd-dropdown-menu-background-color: fd-color(background) !default;
+    $fd-dropdown-menu-shadow: 0 0 4px 1px rgba(fd-color(neutral, 4), 0.2) !default;
     //items
-    $tn-dropdown-menu-item-color: $tn-dropdown-menu-color !default;
-    $tn-dropdown-menu-item-color--hover: tn-color(text-inverse) !default;
-    $tn-dropdown-menu-item-background-color: $tn-dropdown-menu-background-color !default;
-    $tn-dropdown-menu-item-background-color--hover: darken(tn-color(action), 5%) !default;
-    $tn-dropdown-menu-item-padding: tn-space(3) tn-space(4) !default;
+    $fd-dropdown-menu-item-color: $fd-dropdown-menu-color !default;
+    $fd-dropdown-menu-item-color--hover: fd-color(text-inverse) !default;
+    $fd-dropdown-menu-item-background-color: $fd-dropdown-menu-background-color !default;
+    $fd-dropdown-menu-item-background-color--hover: darken(fd-color(action), 5%) !default;
+    $fd-dropdown-menu-item-padding: fd-space(3) fd-space(4) !default;
     //anim
-    $tn-dropdown-menu-item-transition-params: $tn-animation--speed ease-in !default;
+    $fd-dropdown-menu-item-transition-params: $fd-animation--speed ease-in !default;
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
@@ -33,15 +33,15 @@ $block: ns(dropdown);
     display: inline-block;
 
     &__control {
-        @include tn-button-reset;
-        @include tn-form-select;
+        @include fd-button-reset;
+        @include fd-form-select;
         position: relative;
-        line-height: $tn-forms-height--input-text;
+        line-height: $fd-forms-height--input-text;
         &[aria-expanded="true"],
         &.is-expanded {
-            border-color: $tn-forms-border-color--focus;
-            z-index: $tn-dropdown-menu-z-index + 1;
-            box-shadow: $tn-dropdown-menu-shadow;
+            border-color: $fd-forms-border-color--focus;
+            z-index: $fd-dropdown-menu-z-index + 1;
+            box-shadow: $fd-dropdown-menu-shadow;
         }
         &--no-border {
             border-color: transparent;
@@ -53,7 +53,7 @@ $block: ns(dropdown);
         }
     }
     &__icon {
-        margin-right: tn-space(3);
+        margin-right: fd-space(3);
         vertical-align: middle;
         transform: translateY(-2px);
     }
@@ -63,16 +63,16 @@ $block: ns(dropdown);
         padding-left: 0;
         list-style: none;
         min-width: 100%;
-        border: $tn-dropdown-menu-border;
-        background: $tn-dropdown-menu-background-color;
+        border: $fd-dropdown-menu-border;
+        background: $fd-dropdown-menu-background-color;
         position: absolute;
         white-space: nowrap;
-        z-index: $tn-dropdown-menu-z-index;
+        z-index: $fd-dropdown-menu-z-index;
         transform: translateY(-1px);
-        box-shadow: $tn-dropdown-menu-shadow;
+        box-shadow: $fd-dropdown-menu-shadow;
         opacity: 1;
         visibility: visible;
-        transition: opacity $tn-dropdown-menu-item-transition-params;
+        transition: opacity $fd-dropdown-menu-item-transition-params;
         &[aria-hidden="true"],
         &.is-hidden {
             opacity: 0;
@@ -87,25 +87,25 @@ $block: ns(dropdown);
     &__item,
     &__option {
         @include reset;
-        @include tn-type(-1,body);
+        @include fd-type(-1,body);
         display: block;
         padding-left: 0;
         list-style: none;
-        padding: $tn-dropdown-menu-item-padding;
+        padding: $fd-dropdown-menu-item-padding;
         &:hover {
-            color: $tn-dropdown-menu-item-color--hover;
-            background-color: $tn-dropdown-menu-item-background-color--hover;
+            color: $fd-dropdown-menu-item-color--hover;
+            background-color: $fd-dropdown-menu-item-background-color--hover;
             text-decoration: none;
         }
     }
     &__separator {
         @include reset;
-        @include tn-type(-3, body, reg, none);
+        @include fd-type(-3, body, reg, none);
         display: block;
-        color: tn-color(text, 2);
-        padding: $tn-dropdown-menu-item-padding;
-        padding-top: tn-space(4);
-        border-top: solid 1px tn-color(neutral, 3);
+        color: fd-color(text, 2);
+        padding: $fd-dropdown-menu-item-padding;
+        padding-top: fd-space(4);
+        border-top: solid 1px fd-color(neutral, 3);
     }
 
 }
