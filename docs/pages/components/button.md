@@ -15,15 +15,15 @@ The Buttons are components that let the user perform an actions. For example: sa
 Uses the main action color and perform the most important or primary actions on screen. It also support icons along with the caption text, or the icon alone.
 
 {% capture button-standard %}
-<button class="tn-button">
+<button class="fd-button">
     Button
 </button>
-<button class="tn-button">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
     Button
 </button>
-<button class="tn-button tn-button--icon" aria-label="BUTTON_LABEL">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--icon" aria-label="BUTTON_LABEL">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
 </button>
 {% endcapture %}
 {% include display-component.html component=button-standard %}
@@ -34,37 +34,37 @@ Uses the main action color and perform the most important or primary actions on 
 The buttons can be set to three sizes: **small**, **default** and **large**.
 
 {% capture button-standard-sizes %}
-<button class="tn-button tn-button--small">
+<button class="fd-button fd-button--small">
     Small Button
 </button>
-<button class="tn-button tn-button--small">
-    <span class="tn-icon tn-icon--checked tn-icon--small" role="presentation"></span>
+<button class="fd-button fd-button--small">
+    <span class="fd-icon fd-icon--checked fd-icon--small" role="presentation"></span>
     Small Button
 </button>
-<button class="tn-button tn-button--icon tn-button--small" aria-label="BUTTON_LABEL">
-    <span class="tn-icon tn-icon--checked tn-icon--small" role="presentation"></span>
+<button class="fd-button fd-button--icon fd-button--small" aria-label="BUTTON_LABEL">
+    <span class="fd-icon fd-icon--checked fd-icon--small" role="presentation"></span>
 </button>
 
-<button class="tn-button">
+<button class="fd-button">
     Default Button
 </button>
-<button class="tn-button">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
     Default Button
 </button>
-<button class="tn-button tn-button--icon" aria-label="BUTTON_LABEL">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--icon" aria-label="BUTTON_LABEL">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
 </button>
 
-<button class="tn-button tn-button--large">
+<button class="fd-button fd-button--large">
     Large Button
 </button>
-<button class="tn-button tn-button--large">
-    <span class="tn-icon tn-icon--checked tn-icon--large" role="presentation"></span>
+<button class="fd-button fd-button--large">
+    <span class="fd-icon fd-icon--checked fd-icon--large" role="presentation"></span>
     Large Button
 </button>
-<button class="tn-button tn-button--icon tn-button--large" aria-label="BUTTON_LABEL">
-    <span class="tn-icon tn-icon--checked tn-icon--large" role="presentation"></span>
+<button class="fd-button fd-button--icon fd-button--large" aria-label="BUTTON_LABEL">
+    <span class="fd-icon fd-icon--checked fd-icon--large" role="presentation"></span>
 </button>
 {% endcapture %}
 {% include display-component.html component=button-standard-sizes %}
@@ -79,37 +79,37 @@ The buttons can also be set to a state:
 * **Disabled**: It cannot be clicked/tapped. One use of this state is to disable the "Save" button on a form, until all the data is entered correctly and the form can be saved.
 
 {% capture button-standard-state %}
-<button class="tn-button">
+<button class="fd-button">
     Button
 </button>
-<button class="tn-button">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
     Button
 </button>
-<button class="tn-button tn-button--icon" aria-label="BUTTON_LABEL">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--icon" aria-label="BUTTON_LABEL">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
 </button>
 
-<button class="tn-button" aria-selected="true">
+<button class="fd-button" aria-selected="true">
     Button
 </button>
-<button class="tn-button" aria-selected="true">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button" aria-selected="true">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
     Button
 </button>
-<button class="tn-button tn-button--icon" aria-selected="true" aria-label="BUTTON_LABEL">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--icon" aria-selected="true" aria-label="BUTTON_LABEL">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
 </button>
 
-<button class="tn-button" aria-disabled="true" disabled>
+<button class="fd-button" aria-disabled="true" disabled>
     Button
 </button>
-<button class="tn-button" aria-disabled="true" disabled>
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button" aria-disabled="true" disabled>
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
     Button
 </button>
-<button class="tn-button tn-button--icon" aria-disabled="true" disabled aria-label="BUTTON_LABEL">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--icon" aria-disabled="true" disabled aria-label="BUTTON_LABEL">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
 </button>
 {% endcapture %}
 {% include display-component.html component=button-standard-state %}
@@ -120,15 +120,15 @@ The buttons can also be set to a state:
 The text button is used to let the user perform other actions that are less important that the primary actions; secondary actions.
 
 {% capture text-buttons %}
-<button class="tn-button tn-button--text">
+<button class="fd-button fd-button--text">
     Text Button
 </button>
-<button class="tn-button tn-button--text">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--text">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
     Text Button
 </button>
-<button class="tn-button tn-button--text tn-button--icon">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--text fd-button--icon">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
 </button>
 {% endcapture %}
 
@@ -140,37 +140,37 @@ The text button is used to let the user perform other actions that are less impo
 The text button support the same sizes as the Standard button.
 
 {% capture text-button-sizes %}
-<button class="tn-button tn-button--text tn-button--small">
+<button class="fd-button fd-button--text fd-button--small">
     Small Text Button
 </button>
-<button class="tn-button tn-button--text tn-button--small">
-    <span class="tn-icon tn-icon--checked tn-icon--small" role="presentation"></span>
+<button class="fd-button fd-button--text fd-button--small">
+    <span class="fd-icon fd-icon--checked fd-icon--small" role="presentation"></span>
     Small Text Button
 </button>
-<button class="tn-button tn-button--text tn-button--icon tn-button--small" aria-label="BUTTON_LABEL">
-    <span class="tn-icon tn-icon--checked tn-icon--small" role="presentation"></span>
+<button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="BUTTON_LABEL">
+    <span class="fd-icon fd-icon--checked fd-icon--small" role="presentation"></span>
 </button>
 
-<button class="tn-button tn-button--text">
+<button class="fd-button fd-button--text">
     Default Text Button
 </button>
-<button class="tn-button tn-button--text">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--text">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
     Default Text Button
 </button>
-<button class="tn-button tn-button--text tn-button--icon" aria-label="BUTTON_LABEL">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--text fd-button--icon" aria-label="BUTTON_LABEL">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
 </button>
 
-<button class="tn-button tn-button--text tn-button--large">
+<button class="fd-button fd-button--text fd-button--large">
     Large Text Button
 </button>
-<button class="tn-button tn-button--text tn-button--large">
-    <span class="tn-icon tn-icon--checked tn-icon--large" role="presentation"></span>
+<button class="fd-button fd-button--text fd-button--large">
+    <span class="fd-icon fd-icon--checked fd-icon--large" role="presentation"></span>
     Large Text Button
 </button>
-<button class="tn-button tn-button--text tn-button--icon tn-button--large" aria-label="BUTTON_LABEL">
-    <span class="tn-icon tn-icon--checked tn-icon--large" role="presentation"></span>
+<button class="fd-button fd-button--text fd-button--icon fd-button--large" aria-label="BUTTON_LABEL">
+    <span class="fd-icon fd-icon--checked fd-icon--large" role="presentation"></span>
 </button>
 {% endcapture %}
 
@@ -182,37 +182,37 @@ The text button support the same sizes as the Standard button.
 The text button can be set to: **normal**, **selected** and **disabled** state.
 
 {% capture text-button-state %}
-<button class="tn-button tn-button--text">
+<button class="fd-button fd-button--text">
     Text Button
 </button>
-<button class="tn-button tn-button--text">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--text">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
     Text Button
 </button>
-<button class="tn-button tn-button--text tn-button--icon" aria-label="BUTTON_LABEL">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--text fd-button--icon" aria-label="BUTTON_LABEL">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
 </button>
 
-<button class="tn-button tn-button--text" aria-selected="true">
+<button class="fd-button fd-button--text" aria-selected="true">
     Text Button
 </button>
-<button class="tn-button tn-button--text" aria-selected="true">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--text" aria-selected="true">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
     Text Button
 </button>
-<button class="tn-button tn-button--text tn-button--icon" aria-selected="true" aria-label="BUTTON_LABEL">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--text fd-button--icon" aria-selected="true" aria-label="BUTTON_LABEL">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
 </button>
 
-<button class="tn-button tn-button--text" aria-disabled="true" disabled>
+<button class="fd-button fd-button--text" aria-disabled="true" disabled>
     Text Button
 </button>
-<button class="tn-button tn-button--text" aria-disabled="true" disabled>
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--text" aria-disabled="true" disabled>
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
     Text Button
 </button>
-<button class="tn-button tn-button--text tn-button--icon" aria-disabled="true" disabled aria-label="BUTTON_LABEL">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--text fd-button--icon" aria-disabled="true" disabled aria-label="BUTTON_LABEL">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
 </button>
 {% endcapture %}
 
@@ -224,10 +224,10 @@ The text button can be set to: **normal**, **selected** and **disabled** state.
 When displaying various actions together, they can be prioritized by using a **Standard button** for the Primary Action and a **Text button** for the other actions. The Primary action should be always on the right side.
 
 {% capture button-priority %}
-<button class="tn-button tn-button--text">
+<button class="fd-button fd-button--text">
     Cancel
 </button>
-<button class="tn-button">
+<button class="fd-button">
     Save
 </button>
 {% endcapture %}
@@ -240,7 +240,7 @@ When displaying various actions together, they can be prioritized by using a **S
 The link button let the user navigate to a different page instead of performing an action.
 
 {% capture link-button %}
-<button class="tn-button tn-button--link">
+<button class="fd-button fd-button--link">
     Link Button
 </button>
 {% endcapture %}
@@ -253,16 +253,16 @@ The link button let the user navigate to a different page instead of performing 
 The ActionBar button is used on the **ActionBar** Component. It can also be used for standalone actions.
 
 {% capture icon-button %}
-<button class="tn-button tn-button--text tn-button--action-bar">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--text fd-button--action-bar">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
     Button
 </button>
-<button class="tn-button tn-button--text tn-button--action-bar">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--text fd-button--action-bar">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
     Button
 </button>
-<button class="tn-button tn-button--action-bar">
-    <span class="tn-icon tn-icon--checked tn-icon--medium" role="presentation"></span>
+<button class="fd-button fd-button--action-bar">
+    <span class="fd-icon fd-icon--checked fd-icon--medium" role="presentation"></span>
     Button
 </button>
 {% endcapture %}
@@ -275,14 +275,14 @@ The ActionBar button is used on the **ActionBar** Component. It can also be used
 The “more” contextual menu is used with Cards or Tables when there is additional functionality available for the data shown in the Card or Table row, and trying to expose that functionality would clutter the interface.
 
 {% capture contextual-button %}
-<div class="tn-dropdown">
-    <button class="tn-button tn-button--icon tn-button--text" aria-controls="nH3Yk786" aria-haspopup="true" aria-label="More">
-        <span class="tn-icon tn-icon--more tn-icon--medium" role="presentation"></span>
+<div class="fd-dropdown">
+    <button class="fd-button fd-button--icon fd-button--text" aria-controls="nH3Yk786" aria-haspopup="true" aria-label="More">
+        <span class="fd-icon fd-icon--more fd-icon--medium" role="presentation"></span>
     </button>
-    <ul class="tn-dropdown__menu tn-contextual-menu" aria-hidden="true" id="nH3Yk786">
-        <li><a href="#" class="tn-dropdown__item">Pellentesque metus</a></li>
-        <li><a href="#" class="tn-dropdown__item">Duis malesuada odio volutpat</a></li>
-        <li><a href="#" class="tn-dropdown__item">Suspendisse</a></li>
+    <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="nH3Yk786">
+        <li><a href="#" class="fd-dropdown__item">Pellentesque metus</a></li>
+        <li><a href="#" class="fd-dropdown__item">Duis malesuada odio volutpat</a></li>
+        <li><a href="#" class="fd-dropdown__item">Suspendisse</a></li>
     </ul>
 </div>
 {% endcapture %}
@@ -296,9 +296,9 @@ The “more” contextual menu is used with Cards or Tables when there is additi
 It can be also be set to a **disabled** state.
 
 {% capture contextual-button-disabled %}
-<div class="tn-dropdown">
-    <button class="tn-button tn-button--icon tn-button--text is-disabled" aria-controls="V9HDS171" aria-haspopup="true" aria-label="More">
-        <span class="tn-icon tn-icon--more tn-icon--medium" role="presentation"></span>
+<div class="fd-dropdown">
+    <button class="fd-button fd-button--icon fd-button--text is-disabled" aria-controls="V9HDS171" aria-haspopup="true" aria-label="More">
+        <span class="fd-icon fd-icon--more fd-icon--medium" role="presentation"></span>
     </button>
 </div>
 {% endcapture %}

@@ -93,13 +93,13 @@ Inline `code` has `back-ticks around` it.
 <div class="panel-body">
     <h4>Service One</h4>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <a href="#" class="btn btn-primary">Learn More</a>
+    <a href="#" class="btn bfd-primary">Learn More</a>
 </div>
 ```html
 <div class="panel-body">
     <h4>Service One</h4>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    <a href="#" class="btn btn-primary">Learn More</a>
+    <a href="#" class="btn bfd-primary">Learn More</a>
 </div>
 ```
 

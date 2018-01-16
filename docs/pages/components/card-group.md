@@ -16,69 +16,69 @@ The Card Group is used to display a collection of Cards representing objects of 
 The default layout of the Cards group is a three columns layout. The three cards per row will adjust to fill the width of the container element.
 
 {% capture default-card %}
-<div class="tn-card-group">
-  <div class="tn-card" role="button">
-      <div class="tn-card__content">
-           <h2 class="tn-card__header">
+<div class="fd-card-group">
+  <div class="fd-card" role="button">
+      <div class="fd-card__content">
+           <h2 class="fd-card__header">
                Title/Primary info
            </h2>
-           <p class="tn-card__description">
+           <p class="fd-card__description">
                Secondary info.
            </p>
-           <p class="tn-card__status">
-               <span class="tn-has-color-status-1">STATUS</span>
+           <p class="fd-card__status">
+               <span class="fd-has-color-status-1">STATUS</span>
            </p>
       </div>
   </div>
-    <div class="tn-card" role="button">
-        <div class="tn-card__content">
-           <h2 class="tn-card__header">
+    <div class="fd-card" role="button">
+        <div class="fd-card__content">
+           <h2 class="fd-card__header">
                Title/Primary info
            </h2>
-           <p class="tn-card__description">
+           <p class="fd-card__description">
                Secondary info.
            </p>
-           <p class="tn-card__status">
-               <span class="tn-has-color-status-1">STATUS</span>
+           <p class="fd-card__status">
+               <span class="fd-has-color-status-1">STATUS</span>
            </p>
         </div>
     </div>
-    <div class="tn-card" role="button">
-        <div class="tn-card__content">
-           <h2 class="tn-card__header">
+    <div class="fd-card" role="button">
+        <div class="fd-card__content">
+           <h2 class="fd-card__header">
                Title/Primary info
            </h2>
-           <p class="tn-card__description">
+           <p class="fd-card__description">
                Secondary info.
            </p>
-            <p class="tn-card__status">
-                <span class="tn-has-color-status-1">STATUS</span>
+            <p class="fd-card__status">
+                <span class="fd-has-color-status-1">STATUS</span>
             </p>
         </div>
     </div>
-    <div class="tn-card" role="button">
-        <div class="tn-card__content">
-           <h2 class="tn-card__header">
+    <div class="fd-card" role="button">
+        <div class="fd-card__content">
+           <h2 class="fd-card__header">
                Title/Primary info
            </h2>
-           <p class="tn-card__description">
+           <p class="fd-card__description">
                Secondary info.
            </p>
-           <p class="tn-card__status">
-               <span class="tn-has-color-status-1">STATUS</span>
+           <p class="fd-card__status">
+               <span class="fd-has-color-status-1">STATUS</span>
            </p>
         </div>
     </div>
-    <div class="tn-card" role="button">
-        <div class="tn-card__content">
-           <h2 class="tn-card__header">
+    <div class="fd-card" role="button">
+        <div class="fd-card__content">
+           <h2 class="fd-card__header">
                Title/Primary info
            </h2>
-           <p class="tn-card__description">
+           <p class="fd-card__description">
                Secondary info.
            </p>
-           <p class="tn-card__status">
-               <span class="tn-has-color-status-1">STATUS</span>
+           <p class="fd-card__status">
+               <span class="fd-has-color-status-1">STATUS</span>
            </p>
         </div>
     </div>
@@ -94,72 +94,72 @@ The default layout of the Cards group is a three columns layout. The three cards
 Depending of the content of the cards you can use the Card Group with a two columns layout.
 
 {% capture two-column %}
-<div class="tn-card-group tn-card-group--2col">
-    <div class="tn-card">
-        <div class="tn-card__content">
-             <h2 class="tn-card__header">
+<div class="fd-card-group fd-card-group--2col">
+    <div class="fd-card">
+        <div class="fd-card__content">
+             <h2 class="fd-card__header">
                  Card Primary info
              </h2>
-             <p class="tn-card__description">
+             <p class="fd-card__description">
                  Tenetur quam  dolorum ut.
              </p>
-             <p class="tn-card__status">
+             <p class="fd-card__status">
                  STATUS
              </p>
         </div>
-        <div class="tn-card__actions">
-            <button class="tn-button tn-button--small">
+        <div class="fd-card__actions">
+            <button class="fd-button fd-button--small">
         View
     </button>
         </div>
     </div>
-    <div class="tn-card" role="button">
-        <div class="tn-card__content">
-             <h2 class="tn-card__header">
+    <div class="fd-card" role="button">
+        <div class="fd-card__content">
+             <h2 class="fd-card__header">
                  Lorem ipsum dolor quam placeat numquam repellendus
              </h2>
-             <p class="tn-card__description">
+             <p class="fd-card__description">
                  Tenetur quam placeat obcaecati molestias voluptatibus dolorum
                  ut molestias voluptatibus dolorum ut.
              </p>
-             <p class="tn-card__status">
-                 <span class="tn-has-color-status-1">STATUS</span>
+             <p class="fd-card__status">
+                 <span class="fd-has-color-status-1">STATUS</span>
              </p>
         </div>
     </div>
-    <div class="tn-card" role="button"><div class="tn-card__media tn-card__media--fill"
+    <div class="fd-card" role="button"><div class="fd-card__media fd-card__media--fill"
      style="background-image: url(https://techne.yaas.io/images/product-thumbnail.png)"
     aria-label="YaaS product thumbnail"></div>
-        <div class="tn-card__content">
-             <h2 class="tn-card__header">
+        <div class="fd-card__content">
+             <h2 class="fd-card__header">
                  Asperiores doloribus id dolore
              </h2>
-             <p class="tn-card__description">
+             <p class="fd-card__description">
                  Consectetur adipisicing elit
              </p>
         </div>
     </div>
-    <div class="tn-card" role="button">
-        <div class="tn-card__content">
-             <h2 class="tn-card__header">
+    <div class="fd-card" role="button">
+        <div class="fd-card__content">
+             <h2 class="fd-card__header">
                  Lorem ipsum dolor quam placeat numquam repellendus
              </h2>
-             <p class="tn-card__description">
+             <p class="fd-card__description">
                  Tenetur quam  dolorum ut.
              </p>
         </div>
     </div>
-    <div class="tn-card" role="button">
-        <div class="tn-card__content">
-             <h2 class="tn-card__header">
+    <div class="fd-card" role="button">
+        <div class="fd-card__content">
+             <h2 class="fd-card__header">
                  Lorem ipsum dolor quam placeat numquam repellendus
              </h2>
-             <p class="tn-card__description">
+             <p class="fd-card__description">
                  Tenetur quam placeat obcaecati molestias voluptatibus dolorum
                  ut molestias voluptatibus dolorum ut.
              </p>
-             <p class="tn-card__status">
-                 <span class="tn-has-color-status-1">STATUS</span>
+             <p class="fd-card__status">
+                 <span class="fd-has-color-status-1">STATUS</span>
              </p>
         </div>
     </div>
@@ -175,113 +175,113 @@ Depending of the content of the cards you can use the Card Group with a two colu
 This layout shows more cards per row. The content on the cards should not be too dense.
 
 {% capture four-column %}
-<div class="tn-card-group tn-card-group--4col">
-    <div class="tn-card tn-card--vertical" role="button">
-        <div class="tn-card__media"
+<div class="fd-card-group fd-card-group--4col">
+    <div class="fd-card fd-card--vertical" role="button">
+        <div class="fd-card__media"
              style="background-image: url(https://techne.yaas.io/images/product-thumbnail.png)"
              aria-label="YaaS product thumbnail"></div>
-        <div class="tn-card__content">
-             <h2 class="tn-card__header">
+        <div class="fd-card__content">
+             <h2 class="fd-card__header">
                  Asperiores doloribus id dolore
              </h2>
-             <p class="tn-card__description">
+             <p class="fd-card__description">
                  Consectetur adipisicing elit
              </p>
-             <p class="tn-card__status">
-                 <span class="tn-has-color-status-1">Cumque itaque</span>
+             <p class="fd-card__status">
+                 <span class="fd-has-color-status-1">Cumque itaque</span>
              </p>
         </div>
     </div>
-    <div class="tn-card tn-card--vertical" role="button">
-        <div class="tn-card__media"
+    <div class="fd-card fd-card--vertical" role="button">
+        <div class="fd-card__media"
              style="background-image: url(https://techne.yaas.io/images/product-thumbnail.png)"
              aria-label="YaaS product thumbnail"></div>
-        <div class="tn-card__content">
-             <h2 class="tn-card__header">
+        <div class="fd-card__content">
+             <h2 class="fd-card__header">
                  Asperiores doloribus id dolore
              </h2>
-             <p class="tn-card__description">
+             <p class="fd-card__description">
                  Consectetur adipisicing elit
              </p>
-             <p class="tn-card__status">
-                 <span class="tn-has-color-status-1">Cumque itaque</span>
+             <p class="fd-card__status">
+                 <span class="fd-has-color-status-1">Cumque itaque</span>
              </p>
         </div>
     </div>
-    <div class="tn-card tn-card--vertical" role="button">
-        <div class="tn-card__media"
+    <div class="fd-card fd-card--vertical" role="button">
+        <div class="fd-card__media"
              style="background-image: url(https://techne.yaas.io/images/product-thumbnail.png)"
              aria-label="YaaS product thumbnail"></div>
-        <div class="tn-card__content">
-             <h2 class="tn-card__header">
+        <div class="fd-card__content">
+             <h2 class="fd-card__header">
                  Asperiores doloribus id dolore
              </h2>
-             <p class="tn-card__description">
+             <p class="fd-card__description">
                  Consectetur adipisicing elit
              </p>
-             <p class="tn-card__status">
-                 <span class="tn-has-color-status-1">Cumque itaque</span>
+             <p class="fd-card__status">
+                 <span class="fd-has-color-status-1">Cumque itaque</span>
              </p>
         </div>
     </div>
-    <div class="tn-card tn-card--vertical" role="button">
-        <div class="tn-card__media"
+    <div class="fd-card fd-card--vertical" role="button">
+        <div class="fd-card__media"
              style="background-image: url(https://techne.yaas.io/images/product-thumbnail.png)"
              aria-label="YaaS product thumbnail"></div>
-        <div class="tn-card__content">
-             <h2 class="tn-card__header">
+        <div class="fd-card__content">
+             <h2 class="fd-card__header">
                  Asperiores doloribus id dolore
              </h2>
-             <p class="tn-card__description">
+             <p class="fd-card__description">
                  Consectetur adipisicing elit
              </p>
-             <p class="tn-card__status">
-                 <span class="tn-has-color-status-1">Cumque itaque</span>
+             <p class="fd-card__status">
+                 <span class="fd-has-color-status-1">Cumque itaque</span>
              </p>
         </div>
     </div>
-    <div class="tn-card tn-card--vertical" role="button"><div class="tn-card__media"
+    <div class="fd-card fd-card--vertical" role="button"><div class="fd-card__media"
          style="background-image: url(https://techne.yaas.io/images/product-thumbnail.png)"
          aria-label="YaaS product thumbnail"></div>
-        <div class="tn-card__content">
-             <h2 class="tn-card__header">
+        <div class="fd-card__content">
+             <h2 class="fd-card__header">
                  Asperiores doloribus id dolore
              </h2>
-             <p class="tn-card__description">
+             <p class="fd-card__description">
                  Consectetur adipisicing elit
              </p>
-             <p class="tn-card__status">
-                 <span class="tn-has-color-status-1">Cumque itaque</span>
+             <p class="fd-card__status">
+                 <span class="fd-has-color-status-1">Cumque itaque</span>
              </p>
         </div>
     </div>
-    <div class="tn-card tn-card--vertical" role="button"><div class="tn-card__media"
+    <div class="fd-card fd-card--vertical" role="button"><div class="fd-card__media"
          style="background-image: url(https://techne.yaas.io/images/product-thumbnail.png)"
          aria-label="YaaS product thumbnail"></div>
-        <div class="tn-card__content">
-             <h2 class="tn-card__header">
+        <div class="fd-card__content">
+             <h2 class="fd-card__header">
                  Asperiores doloribus id dolore
              </h2>
-             <p class="tn-card__description">
+             <p class="fd-card__description">
                  Consectetur adipisicing elit
              </p>
-             <p class="tn-card__status">
-                 <span class="tn-has-color-status-1">Cumque itaque</span>
+             <p class="fd-card__status">
+                 <span class="fd-has-color-status-1">Cumque itaque</span>
              </p>
         </div>
     </div>
-    <div class="tn-card tn-card--vertical" role="button"><div class="tn-card__media"
+    <div class="fd-card fd-card--vertical" role="button"><div class="fd-card__media"
          style="background-image: url(https://techne.yaas.io/images/product-thumbnail.png)"
          aria-label="YaaS product thumbnail"></div>
-        <div class="tn-card__content">
-             <h2 class="tn-card__header">
+        <div class="fd-card__content">
+             <h2 class="fd-card__header">
                  Asperiores doloribus id dolore
              </h2>
-             <p class="tn-card__description">
+             <p class="fd-card__description">
                  Consectetur adipisicing elit
              </p>
-             <p class="tn-card__status">
-                 <span class="tn-has-color-status-1">Cumque itaque</span>
+             <p class="fd-card__status">
+                 <span class="fd-has-color-status-1">Cumque itaque</span>
              </p>
         </div>
     </div>

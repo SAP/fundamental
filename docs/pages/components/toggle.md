@@ -21,31 +21,31 @@ The toggle can be set to 3 sizes: **small**, **normal** and **large**. When used
 
 
 {% capture default %}
-<div class="tn-form__item tn-form__item--check">
-    <label class="tn-form__label" for="Yj07w605">
-        <span class="tn-toggle tn-toggle--small tn-form__control">
+<div class="fd-form__item fd-form__item--check">
+    <label class="fd-form__label" for="Yj07w605">
+        <span class="fd-toggle fd-toggle--small fd-form__control">
             <input type="checkbox" name="" value="" id="Yj07w605">
-            <span class="tn-toggle__switch" role="presentation"></span>
+            <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Small toggle
     </label>
 </div>
 
-<div class="tn-form__item tn-form__item--check">
-    <label class="tn-form__label" for="Yj07w606">
-        <span class="tn-toggle tn-form__control">
+<div class="fd-form__item fd-form__item--check">
+    <label class="fd-form__label" for="Yj07w606">
+        <span class="fd-toggle fd-form__control">
             <input type="checkbox" name="" value="" id="Yj07w606" checked>
-            <span class="tn-toggle__switch" role="presentation"></span>
+            <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Normal toggle
     </label>
 </div>
 
-<div class="tn-form__item tn-form__item--check">
-    <label class="tn-form__label" for="Yj07w607">
-        <span class="tn-toggle tn-toggle--large tn-form__control">
+<div class="fd-form__item fd-form__item--check">
+    <label class="fd-form__label" for="Yj07w607">
+        <span class="fd-toggle fd-toggle--large fd-form__control">
             <input type="checkbox" name="" value="" id="Yj07w607">
-            <span class="tn-toggle__switch" role="presentation"></span>
+            <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Large toggle
     </label>
@@ -61,31 +61,31 @@ The toggle can be set to 3 sizes: **small**, **normal** and **large**. When used
 The toggle can be set to the disable state and still indicate if the element is active or inactive. For that just add the `disabled` parameter to the input element.
 
 {% capture toggle-disabled %}
-<div class="tn-form__item tn-form__item--check">
-    <label class="tn-form__label" for="zj07w605">
-        <span class="tn-toggle tn-toggle--small tn-form__control">
+<div class="fd-form__item fd-form__item--check">
+    <label class="fd-form__label" for="zj07w605">
+        <span class="fd-toggle fd-toggle--small fd-form__control">
             <input type="checkbox" name="" value="" id="zj07w605" disabled>
-            <span class="tn-toggle__switch" role="presentation"></span>
+            <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Small toggle
     </label>
 </div>
 
-<div class="tn-form__item tn-form__item--check">
-    <label class="tn-form__label" for="zj07w606">
-        <span class="tn-toggle tn-form__control">
+<div class="fd-form__item fd-form__item--check">
+    <label class="fd-form__label" for="zj07w606">
+        <span class="fd-toggle fd-form__control">
             <input type="checkbox" name="" value="" id="zj07w606" checked disabled>
-            <span class="tn-toggle__switch" role="presentation"></span>
+            <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Normal toggle
     </label>
 </div>
 
-<div class="tn-form__item tn-form__item--check">
-    <label class="tn-form__label" for="zj07w607">
-        <span class="tn-toggle tn-toggle--large tn-form__control">
+<div class="fd-form__item fd-form__item--check">
+    <label class="fd-form__label" for="zj07w607">
+        <span class="fd-toggle fd-toggle--large fd-form__control">
             <input type="checkbox" name="" value="" id="zj07w607" disabled>
-            <span class="tn-toggle__switch" role="presentation"></span>
+            <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Large toggle
     </label>

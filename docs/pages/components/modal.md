@@ -18,15 +18,15 @@ Used when you need to inform the user but the [Alert Component](alert.html) does
 
 {% capture default-modal %}
 <div class="modal-demo-bg">
-<div class="tn-modal">
-    <div class="tn-modal__content">
-        <div class="tn-modal__header">
-            <button class="tn-button tn-button--text tn-button--icon tn-button--small" aria-label="close">
-                <span class="tn-icon tn-icon--close" role="presentation"></span>
+<div class="fd-modal">
+    <div class="fd-modal__content">
+        <div class="fd-modal__header">
+            <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="close">
+                <span class="fd-icon fd-icon--close" role="presentation"></span>
             </button>
-            <h4 class="tn-modal__title">Product Added</h4>
+            <h4 class="fd-modal__title">Product Added</h4>
         </div>
-        <div class="tn-modal__body">
+        <div class="fd-modal__body">
             <b>Thew new product have been added to your catalog.</b><br/>
             <br/>
             Automatic Product ID: <b>PD-3465334</b><br/>
@@ -49,20 +49,20 @@ Used to confirm with the user before continuing with destructive or complex acti
 
 {% capture default-confirmation %}
 <div class="modal-demo-bg">
-<div class="tn-modal">
-    <div class="tn-modal__content">
-        <div class="tn-modal__header">
-            <button class="tn-button tn-button--text tn-button--icon tn-button--small" aria-label="close">
-                <span class="tn-icon tn-icon--close" role="presentation"></span>
+<div class="fd-modal">
+    <div class="fd-modal__content">
+        <div class="fd-modal__header">
+            <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="close">
+                <span class="fd-icon fd-icon--close" role="presentation"></span>
             </button>
-            <h4 class="tn-modal__title">Delete</h4>
+            <h4 class="fd-modal__title">Delete</h4>
         </div>
-        <div class="tn-modal__body">
+        <div class="fd-modal__body">
             Do you want to delete item <b>X</b>?
         </div>
-        <footer class="tn-modal__footer-items">
-            <button class="tn-modal__button-primary">Yes</button>
-            <button class="tn-modal__button-secondary">No</button>
+        <footer class="fd-modal__footer-items">
+            <button class="fd-modal__button-primary">Yes</button>
+            <button class="fd-modal__button-secondary">No</button>
         </footer>
     </div>
 </div>
@@ -79,25 +79,25 @@ Used to collect simple information from the user. Please use with care and don't
 
 {% capture default-form %}
 <div class="modal-demo-bg">
-<div class="tn-modal">
-    <div class="tn-modal__content">
-        <div class="tn-modal__header">
-            <button class="tn-button tn-button--text tn-button--icon tn-button--small" aria-label="close">
-                <span class="tn-icon tn-icon--close" role="presentation"></span>
+<div class="fd-modal">
+    <div class="fd-modal__content">
+        <div class="fd-modal__header">
+            <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="close">
+                <span class="fd-icon fd-icon--close" role="presentation"></span>
             </button>
-            <h4 class="tn-modal__title">Invite user</h4>
+            <h4 class="fd-modal__title">Invite user</h4>
         </div>
-        <div class="tn-modal__body">
-        <div class="tn-form__group">
-            <div class="tn-form__item">
-                <label class="tn-form__label is-required" for="input-2">Email*</label>
-                <input class="tn-form__control" type="text" id="input-2">
+        <div class="fd-modal__body">
+        <div class="fd-form__group">
+            <div class="fd-form__item">
+                <label class="fd-form__label is-required" for="input-2">Email*</label>
+                <input class="fd-form__control" type="text" id="input-2">
             </div>
         </div>
         </div>
-        <footer class="tn-modal__footer-items">
-            <button class="tn-modal__button-primary">Invite</button>
-            <button class="tn-modal__button-secondary">Cancel</button>
+        <footer class="fd-modal__footer-items">
+            <button class="fd-modal__button-primary">Invite</button>
+            <button class="fd-modal__button-secondary">Cancel</button>
         </footer>
     </div>
 </div>

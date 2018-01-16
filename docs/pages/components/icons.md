@@ -13,9 +13,9 @@ Icons are used throughout the UI to save space, allow for visual clarity and foc
 
 ## Icon usage
 {% highlight html %}
-<span class="tn-icon tn-icon--{icon-name}"></span>
-<span class="tn-icon tn-icon--{icon-name} tn-icon--medium"></span>
-<span class="tn-icon tn-icon--{icon-name} tn-icon--large"></span>
+<span class="fd-icon fd-icon--{icon-name}"></span>
+<span class="fd-icon fd-icon--{icon-name} fd-icon--medium"></span>
+<span class="fd-icon fd-icon--{icon-name} fd-icon--large"></span>
 {% endhighlight %}
 
 <br />
@@ -23,9 +23,9 @@ Icons are used throughout the UI to save space, allow for visual clarity and foc
 ## Available Icons
 {% for icon in site.data.icons %}
 <div class="demo-icon-wrapper">
-  <span class="tn-icon tn-icon--{{ icon.name }}"></span>
-  <span class="tn-icon tn-icon--{{ icon.name }} tn-icon--medium"></span>
-  <span class="tn-icon tn-icon--{{ icon.name }} tn-icon--large"></span>
-  <h4>.tn-icon--{{ icon.name }}</h4>
+  <span class="fd-icon fd-icon--{{ icon.name }}"></span>
+  <span class="fd-icon fd-icon--{{ icon.name }} fd-icon--medium"></span>
+  <span class="fd-icon fd-icon--{{ icon.name }} fd-icon--large"></span>
+  <h4>.fd-icon--{{ icon.name }}</h4>
 </div>
 {% endfor %}

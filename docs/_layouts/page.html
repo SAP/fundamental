@@ -39,7 +39,7 @@ layout: default
 
     {% if site.github_editme_path %}
 
-    <a target="_blank" href="https://github.com/{{site.github_editme_path}}{% unless page.url contains "index.html" %}pages/{% endunless %}{{page.folder}}{{page.url | remove: ".html" | append: ".md"}}" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/{{site.github_editme_path}}{% unless page.url contains "index.html" %}pages/{% endunless %}{{page.folder}}{{page.url | remove: ".html" | append: ".md"}}" class="btn bfd-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     {% endif %}
 
@@ -51,7 +51,7 @@ layout: default
         {% assign projectTags = site.data.tags.allowed-tags %}
         {% for tag in page.tags %}
         {% if projectTags contains tag %}
-        <a href="{{ "tag_" | append: tag | append: ".html" }}" class="btn btn-default navbar-btn cursorNorm" role="button">{{page.tagName}}{{tag}}</a>
+        <a href="{{ "tag_" | append: tag | append: ".html" }}" class="btn bfd-default navbar-btn cursorNorm" role="button">{{page.tagName}}{{tag}}</a>
         {% endif %}
         {% endfor %}
         {% endif %}

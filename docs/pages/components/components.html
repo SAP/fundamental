@@ -15,13 +15,13 @@ folder: components
     {% for folder in entry.folders %}
         {% if folder.output contains "web" %}
             <!-- <h3><a href="{{folder.url}}" class="text-large">{{ folder.title }}</a></h3> -->
-            <div class="tn-card-group">
+            <div class="fd-card-group">
                 {% for folderitem in folder.folderitems %}
                     {% if folderitem.output contains "web" %}
-                        <a href="{{folderitem.url | remove: "/"}}" class="tn-card tn-card--vertical tn-card--button" role="button">
-                            <div class="tn-card__media tn-card__media--fill" style="background-color: #f0f0f0;" aria-label=""></div>
-                            <div class="tn-card__content">
-                                <h2 class="tn-card__header">{{folderitem.title}}</h2>
+                        <a href="{{folderitem.url | remove: "/"}}" class="fd-card fd-card--vertical fd-card--button" role="button">
+                            <div class="fd-card__media fd-card__media--fill" style="background-color: #f0f0f0;" aria-label=""></div>
+                            <div class="fd-card__content">
+                                <h2 class="fd-card__header">{{folderitem.title}}</h2>
                             </div>
                         </a>
                     {% endif %}
@@ -32,5 +32,5 @@ folder: components
 {% endfor %}
 
 <style>
-    .tn-card.tn-card--vertical .tn-card__media { height: 200px; }
+    .fd-card.fd-card--vertical .fd-card__media { height: 200px; }
 </style>
