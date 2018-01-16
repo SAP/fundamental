@@ -6,15 +6,15 @@ section:
     aria={}
 -->
 {%- macro section(modifier=[], aria={}, classes=[]) %}
-<section class="tn-section{{ classes | classes }}{{ modifier | modifier("section") }}"{{aria | aria}}>
+<section class="fd-section{{ classes | classes }}{{ modifier | modifier("section") }}"{{aria | aria}}>
     {{- caller() | indent -}}
 </section>
 {%- endmacro %}
 
 {%- macro section_header(properties={}, modifier=[], aria={}, classes=[]) %}
-<header class="tn-section__header{{ classes | classes }}{{ modifier | modifier("section__header") }}">
+<header class="fd-section__header{{ classes | classes }}{{ modifier | modifier("section__header") }}">
     {%- if properties.title %}
-    <h1 class="tn-section__title">
+    <h1 class="fd-section__title">
         {{ properties.title }}
     </h1>
     {%- endif %}
@@ -23,13 +23,13 @@ section:
 {%- endmacro %}
 
 {%- macro section_footer(properties={}, modifier=[], aria={}, classes=[]) %}
-<footer class="tn-section__footer">
+<footer class="fd-section__footer">
     {{ caller() }}
 </footer>
 {%- endmacro %}
 
 {%- macro section_actions(properties={}, modifier=[], aria={}, classes=[]) %}
-<div class="tn-section__actions">
+<div class="fd-section__actions">
     {{ caller() }}
 </div>
 {%- endmacro %}
@@ -41,7 +41,7 @@ container:
     aria={}
 -->
 {%- macro container(modifier=[], aria={}, classes=[]) %}
-<div class="tn-container{{ classes | classes }}{{ modifier | modifier("container") }}"{{aria | aria}}>
+<div class="fd-container{{ classes | classes }}{{ modifier | modifier("container") }}"{{aria | aria}}>
     {{- caller() }}
 </div>
 {%- endmacro %}
@@ -54,7 +54,7 @@ col:
     aria={}
 -->
 {%- macro col(span=12, modifier=[], aria={}, classes=[]) %}
-    <div class="tn-col{{'--' + span if span > 0}}{{ modifier | modifier("col") }}{{ classes | classes }}"{{aria | aria}}>{{ caller() }}</div>
+    <div class="fd-col{{'--' + span if span > 0}}{{ modifier | modifier("col") }}{{ classes | classes }}"{{aria | aria}}>{{ caller() }}</div>
 {%- endmacro %}
 
 
@@ -65,15 +65,15 @@ panel:
     aria={}
 -->
 {%- macro panel(modifier=[], aria={}, classes=[]) %}
-<div class="tn-panel{{ classes | classes }}{{ modifier | modifier("panel") }}"{{aria | aria}}>
+<div class="fd-panel{{ classes | classes }}{{ modifier | modifier("panel") }}"{{aria | aria}}>
     {{- caller() | indent -}}
 </div>
 {%- endmacro %}
 
 {%- macro panel_header(properties={}, modifier=[], aria={}, classes=[]) %}
-<div class="tn-panel__header{{ classes | classes }}{{ modifier | modifier("panel__header") }}">
+<div class="fd-panel__header{{ classes | classes }}{{ modifier | modifier("panel__header") }}">
     {%- if properties.title %}
-    <h1 class="tn-panel__title">
+    <h1 class="fd-panel__title">
         {{ properties.title }}
     </h1>
     {%- endif %}
@@ -82,13 +82,13 @@ panel:
 {%- endmacro %}
 
 {%- macro panel_footer(properties={}, modifier=[], aria={}, classes=[]) %}
-<div class="tn-panel__footer">
+<div class="fd-panel__footer">
     {{ caller() | indent -}}
 </div>
 {%- endmacro %}
 
 {%- macro panel_actions(properties={}, modifier=[], aria={}, classes=[]) %}
-<div class="tn-panel__actions">
+<div class="fd-panel__actions">
     {{ caller() }}
 </div>
 {%- endmacro %}

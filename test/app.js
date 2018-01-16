@@ -10,10 +10,10 @@ const PUBLIC_DIRECTORY = path.join(__dirname, 'public');
 const SASS_DIRECTORY = path.join(__dirname, '..', 'scss');
 
 const GLOBALS = {
-    namespace: 'tn'
+    namespace: 'fd'
 };
 const config = {
-    id: "techne"
+    id: "fundamental"
 }
 // looks for html in templates folder, static resources in public
 var env = nunjucks.configure([TEMPLATE_DIRECTORY,PUBLIC_DIRECTORY], {
@@ -34,7 +34,7 @@ env.addFilter('sass_to_css', function(sassFile="app.scss") {
     }
 });
 // convert an array to classes
-// returns [ tn-element--mod ]
+// returns [ fd-element--mod ]
 env.addFilter('modifier', function(array=[],element="") {
     //is string
     if (typeof array === "string") {
@@ -47,7 +47,7 @@ env.addFilter('modifier', function(array=[],element="") {
     return mods.join('') ;
 });
 // convert an array to classes
-// returns [ tn-cls ]
+// returns [ fd-cls ]
 env.addFilter('classes', function(array=[]) {
     if (!array) {
         return;

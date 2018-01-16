@@ -14,7 +14,7 @@
 } %}
 
 
-<div class="tn-container">
+<div class="fd-container">
 
     <h1>Type</h1>
 
@@ -22,17 +22,17 @@
     {% for i in ["-3","-2","-1","0","1","2","3","4","5"] | reverse %}
     {% set type = specs[i] %}
         <p><strong>{{i}}</strong> — {{ "Roboto" if type[2] == "header" else "Open Sans" }} {{ type[3] | capitalize }}{{ "bold" if type[2] == "medium" }} {{ type[0] }}px | Line-height {{ type[1] }}px</p>
-        <p class="tn-has-type{{ '-minus' if i < 0 }}-{{ i | abs if i != 0 else 'base' }}">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+        <p class="fd-has-type{{ '-minus' if i < 0 }}-{{ i | abs if i != 0 else 'base' }}">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
 
     {% endfor %}
 
     <h2>Mixins</h2>
-    <h3><code>@mixin tn-type($size, $font, $weight, $transform)</code></h3>
+    <h3><code>@mixin fd-type($size, $font, $weight, $transform)</code></h3>
     <p>Each type size has default family, weight and transform rules built in. Passing the size alone will return all default rules.</p>
     <p>Example:<br>
     <pre>
     .foo {
-        @include tn-type(5);
+        @include fd-type(5);
     }
     </pre>
     </p>
@@ -42,7 +42,7 @@
     <p>Example:<br>
     <pre>
     .small-header {
-        @include tn-type(-3,header,reg,none);
+        @include fd-type(-3,header,reg,none);
     }
     </pre>
     <table>
@@ -71,7 +71,7 @@
 
 
 
-    <h3><code>@mixin tn-weight($weight)</code></h3>
+    <h3><code>@mixin fd-weight($weight)</code></h3>
     <p>
     Mofify the font-weight independently.
     </p>
@@ -96,7 +96,7 @@
 
     {% for i in [-3,-2,-1,0,1,2,3,4,5] | reverse %}
     <p>
-          <code>.tn-has-type{{ '-minus' if i < 0 }}-{{ i | abs }}{% if i == 0 %}, .tn-has-type-base{% endif %}</code>
+          <code>.fd-has-type{{ '-minus' if i < 0 }}-{{ i | abs }}{% if i == 0 %}, .fd-has-type-base{% endif %}</code>
         <br>
     </p>
     {% endfor %}
@@ -107,9 +107,9 @@
         {% for i in ['header', 'body', 'code'] %}
 
             <span>
-                 <code>.tn-has-font-family-{{ i }}</code>
+                 <code>.fd-has-font-family-{{ i }}</code>
             </span>
-            <p class="tn-has-font-family-{{ i }}">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+            <p class="fd-has-font-family-{{ i }}">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
 
         {% endfor %}
 

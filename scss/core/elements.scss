@@ -1,8 +1,8 @@
 @import "settings";
 
 // Required variables:
-// 	$tn-background-color
-// 	$tn-color
+// 	$fd-background-color
+// 	$fd-color
 $elements__headers: h1, h2, h3, h4, h5, h6;
 $elements__blocks: p, ul, ol, blockquote, table, figure;
 $elements__interactive: a, audio\[controls\], button, details, embed, iframe, img\[usemap\], input, keygen, label, object\[usemap\], select, textarea, video\[controls\];
@@ -17,9 +17,9 @@ html {
 }
 html,
 body {
-    font-size: $tn-font-size;
-    font-family: $tn-font-family;
-    line-height: $tn-line-height;
+    font-size: $fd-font-size;
+    font-family: $fd-font-family;
+    line-height: $fd-line-height;
 }
 * {
     box-sizing: inherit;
@@ -30,9 +30,9 @@ body {
 }
 body {
     margin: 0;
-    background-color: $tn-background-color;
+    background-color: $fd-background-color;
     -webkit-font-smoothing: antialiased;
-    color: $tn-color;
+    color: $fd-color;
 }
 
 /**
@@ -41,7 +41,7 @@ body {
 */
 #{$elements__headers} {
     text-rendering: optimizeLegibility;
-    margin-bottom: $tn-margin-bottom;
+    margin-bottom: $fd-margin-bottom;
     margin-top: 0;
 }
 
@@ -51,7 +51,7 @@ body {
 */
 #{$elements__blocks} {
     margin-top: 0;
-    margin-bottom: $tn-margin-bottom;
+    margin-bottom: $fd-margin-bottom;
     &:last-child {
         margin-bottom: 0;
     }
@@ -77,19 +77,19 @@ img {
 }
 
 a {
-    color: $tn-color--link;
+    color: $fd-color--link;
     text-decoration: none;
     &:hover {
-        color: $tn-color--link-hover;
+        color: $fd-color--link-hover;
     }
     &:active,
     &:focus {
-        color: $tn-color--link-hover;
+        color: $fd-color--link-hover;
         outline: none;
     }
     &[aria-disabled="true"],
     &.is-disabled {
-        color: $tn-color--link-disabled;
+        color: $fd-color--link-disabled;
         cursor: not-allowed;
     }
 }

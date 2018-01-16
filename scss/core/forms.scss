@@ -2,19 +2,19 @@
 @import "mixins";
 
 //els
-$tn-elements-inputs--text: "input[type=text]", "input[type=password]", "input[type=email]", "input[type=url]", "input[type=search]", "input[type=tel]", "input[type=number]", "input[type=date]";
-$tn-elements-inputs--check: "input[type=radio]", "input[type=checkbox]";
+$fd-elements-inputs--text: "input[type=text]", "input[type=password]", "input[type=email]", "input[type=url]", "input[type=search]", "input[type=tel]", "input[type=number]", "input[type=date]";
+$fd-elements-inputs--check: "input[type=radio]", "input[type=checkbox]";
 //anim
-$tn-forms-transition-params: $tn-animation--speed ease-in !default;
+$fd-forms-transition-params: $fd-animation--speed ease-in !default;
 
 %form-field-base {
-    @include tn-form-base;
-    transition: border-color $tn-forms-transition-params, background-color $tn-forms-transition-params, background-image $tn-forms-transition-params;
+    @include fd-form-base;
+    transition: border-color $fd-forms-transition-params, background-color $fd-forms-transition-params, background-image $fd-forms-transition-params;
     &::after {
-        transition: border-color $tn-forms-transition-params;
+        transition: border-color $fd-forms-transition-params;
     }
     &::placeholder {
-        color: $tn-forms-color--placeholder;
+        color: $fd-forms-color--placeholder;
     }
 }
 fieldset {
@@ -22,40 +22,40 @@ fieldset {
     padding: 0;
     margin: 0;
 }
-#{$tn-elements-inputs--text},
+#{$fd-elements-inputs--text},
 textarea {
-    @include tn-form-text;
+    @include fd-form-text;
     width: 100%;
 }
 textarea {
-    height: $tn-forms-height--input-text * 2;
-    padding-top: $tn-forms-padding;
+    height: $fd-forms-height--input-text * 2;
+    padding-top: $fd-forms-padding;
 }
 select {
-    @include tn-form-select;
+    @include fd-form-select;
     width: 100%;
     &[multiple] {
-        height: $tn-forms-height--input-text * 3;
+        height: $fd-forms-height--input-text * 3;
         background-image: none;
-        padding-top: $tn-forms-padding;
+        padding-top: $fd-forms-padding;
     }
 }
-#{$tn-elements-inputs--check} {
+#{$fd-elements-inputs--check} {
     @extend %form-field-base;
-    height: $tn-forms-height--input-check;
-    width: $tn-forms-height--input-check;
+    height: $fd-forms-height--input-check;
+    width: $fd-forms-height--input-check;
     margin: 0;
     vertical-align: middle;
     position: relative;
     &:checked {
-        border-color: $tn-forms-border-color--check;
-        background-color: $tn-forms-border-color--check;
+        border-color: $fd-forms-border-color--check;
+        background-color: $fd-forms-border-color--check;
     }
     &[disabled],
     &[aria-disabled="true"],
     &.is-disabled {
-        border-color: $tn-forms-border-color--disabled;
-        background-color: $tn-forms-background-color--disabled;
+        border-color: $fd-forms-border-color--disabled;
+        background-color: $fd-forms-background-color--disabled;
     }
 }
 input[type="checkbox"] {
@@ -64,7 +64,7 @@ input[type="checkbox"] {
             content: "";
             width: 16px;
             height: 6px;
-            border-color: $tn-forms-background-color;
+            border-color: $fd-forms-background-color;
             border-style: solid;
             border-width: 0 0 1px 1px;
             transform: rotate(-45deg);
@@ -77,7 +77,7 @@ input[type="checkbox"] {
         &[aria-disabled="true"],
         &.is-disabled {
             &::after {
-                border-color: $tn-forms-background-color--check-disabled;
+                border-color: $fd-forms-background-color--check-disabled;
             }
         }
     }
@@ -85,7 +85,7 @@ input[type="checkbox"] {
 input[type="radio"] {
     border-radius: 50%;
     &::after {
-        $check-size_: tn-space(4);
+        $check-size_: fd-space(4);
         content: "";
         border-radius: 50%;
         width: $check-size_;
@@ -95,19 +95,19 @@ input[type="radio"] {
         right: 0;
         top: calc(50% - (#{$check-size_}/2));
         left: calc(50% - (#{$check-size_}/2));
-        transition: background-color $tn-forms-transition-params;
+        transition: background-color $fd-forms-transition-params;
         background-color: transparent;
     }
     &:checked {
-        background-color: $tn-forms-background-color;
+        background-color: $fd-forms-background-color;
         &::after {
-            background-color: $tn-forms-background-color--check;
+            background-color: $fd-forms-background-color--check;
         }
         &[disabled],
         &[aria-disabled="true"],
         &.is-disabled {
             &::after {
-                background-color: $tn-forms-background-color--check-disabled;
+                background-color: $fd-forms-background-color--check-disabled;
             }
         }
     }

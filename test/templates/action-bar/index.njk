@@ -10,7 +10,7 @@
 
 {% block content %}
 <style media="screen">
-    .tn-action-bar {
+    .fd-action-bar {
         margin-bottom: 20px;
     }
 </style>
@@ -38,7 +38,7 @@
 }}{%- endset %}
 {%- set contextmenu %}
 {% set _id = utils.id() %}
-<div class="tn-dropdown">
+<div class="fd-dropdown">
     {{  button(
         { label: 'More', icon: 'more' },
         modifier={ block: ['text','action-bar'] },
@@ -162,7 +162,7 @@
     <script type="text/javascript">
         var button = document.getElementById("button");
         var toggles = document.getElementById("toggles");
-        var actions = toggles.querySelectorAll(".tn-action-bar__actions");
+        var actions = toggles.querySelectorAll(".fd-action-bar__actions");
         function doDirty() {
             for (var i = 0; i < actions.length; i++) {
                 var item = actions[i];

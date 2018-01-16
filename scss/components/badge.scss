@@ -3,29 +3,29 @@
 @import "../core/functions";
 
 /*!
-.tn-badge+(( --success | --warning | --error ), --pill)
+.fd-badge+(( --success | --warning | --error ), --pill)
 */
 $block: ns(badge);
 
 .#{$block} {
     @include reset;
-    @include tn-type(-3);
-    line-height: tn-space(reg);
+    @include fd-type(-3);
+    line-height: fd-space(reg);
     border-radius: 5px;
     border-width: 1px;
     border-style: solid;
-    padding: tn-space(1) tn-space(2);
+    padding: fd-space(1) fd-space(2);
     vertical-align: middle;
     &--pill {
         border-radius: 12.5px;
     }
     &--success {
-        color: $tn-color--success;
+        color: $fd-color--success;
     }
     &--warning {
-        color: $tn-color--warning;
+        color: $fd-color--warning;
     }
     &--error {
-        color: $tn-color--error;
+        color: $fd-color--error;
     }
 }

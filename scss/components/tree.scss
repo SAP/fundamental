@@ -4,42 +4,42 @@
 @import "./mixins";
 
 /*!
-.tn-tree+(--header)
-    .tn-tree__group+(--sublevel-1...-6, ([aria-hidden] | .is-hidden))
-    .tn-tree__item
-        .tn-tree__row+(--header, ([aria-selected] | .is-selected))
-            .tn-tree__col+(--control, --actions)
-                .tn-tree__control+([aria-pressed] | .is-pressed)
+.fd-tree+(--header)
+    .fd-tree__group+(--sublevel-1...-6, ([aria-hidden] | .is-hidden))
+    .fd-tree__item
+        .fd-tree__row+(--header, ([aria-selected] | .is-selected))
+            .fd-tree__col+(--control, --actions)
+                .fd-tree__control+([aria-pressed] | .is-pressed)
 */
 $block: ns(tree);
 
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $tn-tree-border-color: tn-color(neutral, 3) !default;
-    $tn-tree-cell-spacing: $tn-width--gutter !default;
-    $tn-tree-cell-padding: tn-space(3) !default;
-    $tn-tree-control-width: 18px !default;
-    $tn-tree-control-margin-right: tn-space(2) !default;
-    $tn-tree-transition-params: $tn-animation--speed ease-in !default;
+    $fd-tree-border-color: fd-color(neutral, 3) !default;
+    $fd-tree-cell-spacing: $fd-width--gutter !default;
+    $fd-tree-cell-padding: fd-space(3) !default;
+    $fd-tree-control-width: 18px !default;
+    $fd-tree-control-margin-right: fd-space(2) !default;
+    $fd-tree-transition-params: $fd-animation--speed ease-in !default;
 
     @include reset;
-    @include tn-last-child;
+    @include fd-last-child;
     position: relative;
     width: 100%;
     max-width: 100%;
-    border-bottom: solid 1px $tn-tree-border-color;
-    margin-bottom: $tn-margin-bottom;
+    border-bottom: solid 1px $fd-tree-border-color;
+    margin-bottom: $fd-margin-bottom;
     &:last-child {
         margin-bottom: 0;
     }
     &--header {
         border-bottom: 0;
-        border-top: solid 1px $tn-tree-border-color;
+        border-top: solid 1px $fd-tree-border-color;
         margin-bottom: 0;
     }
     &__group {
         //see addt'l group classes under __col--first below
-        transition: opacity $tn-animation--speed linear;
+        transition: opacity $fd-animation--speed linear;
         max-height: auto;
         opacity: 1;
         margin-bottom: 0;
@@ -51,36 +51,36 @@ $block: ns(tree);
         }
     }
     &__item {
-        border-top: solid 1px $tn-tree-border-color;
+        border-top: solid 1px $fd-tree-border-color;
         margin-bottom: 0;
         list-style: none;
     }
     &__row {
-        padding: 0 $tn-tree-cell-spacing;
+        padding: 0 $fd-tree-cell-spacing;
         display: flex;
         align-items: center;
         position: relative;
-        transition: background-color $tn-tree-transition-params;
+        transition: background-color $fd-tree-transition-params;
         &:hover {
-            background-color: lighten(tn-color(neutral, 3), 10);
+            background-color: lighten(fd-color(neutral, 3), 10);
         }
         &--header {
-            @include tn-type(-1);
-            @include tn-weight(bold);
-            color: tn-color(text, 2);
+            @include fd-type(-1);
+            @include fd-weight(bold);
+            color: fd-color(text, 2);
             &:hover {
                 background-color: transparent;
             }
         }
         &.is-selected,
         &[aria-selected="true"] {
-            background-color: lighten(tn-color(neutral, 3), 5);
+            background-color: lighten(fd-color(neutral, 3), 5);
         }
     }
-    $_row_padding: $tn-tree-control-width + $tn-tree-control-margin-right + 4;
+    $_row_padding: $fd-tree-control-width + $fd-tree-control-margin-right + 4;
     &__col {
         flex: 1;
-        padding: $tn-tree-cell-padding 0;
+        padding: $fd-tree-cell-padding 0;
         //pad to account for control
         padding-left: $_row_padding;
         &--control {
@@ -104,18 +104,18 @@ $block: ns(tree);
     }
 
     &__control {
-        @include tn-button-reset;
+        @include fd-button-reset;
         position: absolute;
-        top: calc(50% - #{$tn-tree-control-width}/2);
+        top: calc(50% - #{$fd-tree-control-width}/2);
         margin-left: -#{$_row_padding};
-        width: $tn-tree-control-width;
-        height: $tn-tree-control-width;
-        margin-right: tn-space(3);
-        background: url($tn-forms-select-background-image--active) no-repeat 50%;
+        width: $fd-tree-control-width;
+        height: $fd-tree-control-width;
+        margin-right: fd-space(3);
+        background: url($fd-forms-select-background-image--active) no-repeat 50%;
         background-size: contain;
         transform: rotate(-90deg);
         vertical-align: middle;
-        transition: transform $tn-animation--speed linear;
+        transition: transform $fd-animation--speed linear;
         &[aria-pressed="true"],
         &.is-pressed {
             transform: rotate(0);

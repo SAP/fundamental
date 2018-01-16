@@ -6,46 +6,46 @@
 @import "mixins";
 
 /*!
-.tn-pagination
+.fd-pagination
 */
 
 $block: ns(pagination);
 
 .#{$block} {
-  $tn-pagination-color: tn-color(text-inverse, 2) !default;
-  $tn-pagination-color--text: $tn-color--link !default;
-  $tn-pagination-color--active: $tn-pagination-color !default;
-  $tn-pagination-color--disabled: tn-color(text, 1) !default;
-  $tn-pagination-nav-color--disabled: tn-color(text, 2) !default;
+  $fd-pagination-color: fd-color(text-inverse, 2) !default;
+  $fd-pagination-color--text: $fd-color--link !default;
+  $fd-pagination-color--active: $fd-pagination-color !default;
+  $fd-pagination-color--disabled: fd-color(text, 1) !default;
+  $fd-pagination-nav-color--disabled: fd-color(text, 2) !default;
 
   @include reset;
-  @include tn-type(-1);
+  @include fd-type(-1);
   display: inline-block;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
   &__link {
-    color: $tn-pagination-color--text;
+    color: $fd-pagination-color--text;
     background-color: transparent;
-    padding-left: tn-space(3);
-    padding-right: tn-space(3);
+    padding-left: fd-space(3);
+    padding-right: fd-space(3);
     position: relative;
     &::after {
         content: "";
         border-bottom: solid 2px transparent;
-        width: calc(100% - #{tn-space(2)}*2);;
+        width: calc(100% - #{fd-space(2)}*2);;
         height: 2px;
         position: absolute;
         bottom: -6px;
         left: 0;
-        margin-left: tn-space(2);
+        margin-left: fd-space(2);
     }
     &:hover,
     &:focus {
-      color: darken($tn-pagination-color--text, 5);
+      color: darken($fd-pagination-color--text, 5);
       text-decoration: none;
       &::after {
-          border-bottom-color: darken($tn-pagination-color--text, 5);
+          border-bottom-color: darken($fd-pagination-color--text, 5);
       }
     }
     &:active,
@@ -60,7 +60,7 @@ $block: ns(pagination);
     }
     &[aria-disabled="true"],
     &.is-disabled {
-      color: $tn-pagination-nav-color--disabled;
+      color: $fd-pagination-nav-color--disabled;
       text-decoration: none;
       cursor: default;
       &::after {
@@ -70,7 +70,7 @@ $block: ns(pagination);
     &:active,
     &[aria-selected="true"],
     &.is-selected {
-      color: $tn-pagination-color--disabled;
+      color: $fd-pagination-color--disabled;
       text-decoration: none;
       cursor: default;
     }
@@ -78,25 +78,25 @@ $block: ns(pagination);
 
   &__item{
     display: inline-block;
-    .tn-icon--chevron-back{
-      @extend .tn-icon--chevron;
+    .fd-icon--chevron-back{
+      @extend .fd-icon--chevron;
       @include rotate(180);
     }
   }
   &__more{
-    @include tn-type(-3);
-    color: $tn-pagination-color--disabled;
+    @include fd-type(-3);
+    color: $fd-pagination-color--disabled;
     vertical-align: sub;
-    padding-left: tn-space(3);
-    padding-right: tn-space(3);
+    padding-left: fd-space(3);
+    padding-right: fd-space(3);
     &:hover,
     &:focus {
       background-color: transparent;
-      color: $tn-pagination-color--disabled;
+      color: $fd-pagination-color--disabled;
       cursor: default;
     }
   }
   &__total{
-    color: $tn-pagination-nav-color--disabled;
+    color: $fd-pagination-nav-color--disabled;
   }
 }

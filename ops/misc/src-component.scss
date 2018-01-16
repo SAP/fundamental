@@ -3,37 +3,37 @@
 @import "../core/functions";
 
 /*!
-.tn-__COMPONENT_ID__+(--no-border)
-    .tn-__COMPONENT_ID____content+()
-    .tn-__COMPONENT_ID____title+()
+.fd-__COMPONENT_ID__+(--no-border)
+    .fd-__COMPONENT_ID____content+()
+    .fd-__COMPONENT_ID____title+()
 */
 $block: ns(__COMPONENT_ID__);
 
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $tn-__COMPONENT_ID__-border-color: tn-color(primary, 1) !default;
-    $tn-__COMPONENT_ID__-content-border-color: tn-color(neutral, 4) !default;
-    $tn-__COMPONENT_ID__-border-color--selected: tn-color(primary) !default;
+    $fd-__COMPONENT_ID__-border-color: fd-color(primary, 1) !default;
+    $fd-__COMPONENT_ID__-content-border-color: fd-color(neutral, 4) !default;
+    $fd-__COMPONENT_ID__-border-color--selected: fd-color(primary) !default;
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
     @include reset;
-    border: solid 20px $tn-__COMPONENT_ID__-border-color;
+    border: solid 20px $fd-__COMPONENT_ID__-border-color;
 
     //BLOCK MODIFIERS ************
-    //e.g., $tn-__COMPONENT_ID__--no-border
+    //e.g., $fd-__COMPONENT_ID__--no-border
     &--no-border {
         border-color: transparent;
     }
 
     //ELEMENTS *******************************************
     //set all ELEMENT baseline styles
-    //e.g., $tn-__COMPONENT_ID____content
+    //e.g., $fd-__COMPONENT_ID____content
     &__content {
-        border: solid 10px $tn-__COMPONENT_ID__-content-border-color;
+        border: solid 10px $fd-__COMPONENT_ID__-content-border-color;
 
         //ELEMENT MODIFIERS ************
-        //e.g., $tn-__COMPONENT_ID____content--no-border
+        //e.g., $fd-__COMPONENT_ID____content--no-border
         &--no-border {
             border-color: transparent;
         }
@@ -49,7 +49,7 @@ $block: ns(__COMPONENT_ID__);
         opacity: 0.5;
     }
     &[aria-selected="true"] {
-        border-color: $tn-__COMPONENT_ID__-border-color--selected;
+        border-color: $fd-__COMPONENT_ID__-border-color--selected;
     }
 
 

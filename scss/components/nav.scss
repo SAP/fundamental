@@ -3,14 +3,14 @@
 @import "../core/functions";
 
 /*!
-.tn-nav+(--vertical)
-    .tn-nav__item
-    .tn-nav__link+((.is-selected|[aria-selected=true]),(.is-disabled|[aria-disabled=true]))
+.fd-nav+(--vertical)
+    .fd-nav__item
+    .fd-nav__link+((.is-selected|[aria-selected=true]),(.is-disabled|[aria-disabled=true]))
 */
 $block: ns(nav);
 
 .#{$block} {
-    $tn-nav-link-padding: tn-space(2);
+    $fd-nav-link-padding: fd-space(2);
     @include reset;
     display: flex;
     flex-wrap: wrap;
@@ -28,10 +28,10 @@ $block: ns(nav);
     }
     &__link {
         display: block;
-        padding: $tn-nav-link-padding;
+        padding: $fd-nav-link-padding;
         &.is-selected,
         &[aria-selected="true"] {
-            color: $tn-color;
+            color: $fd-color;
         }
     }
 

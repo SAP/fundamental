@@ -3,24 +3,24 @@
 @import "../core/mixins";
 
 /*!
-.tn-section+(--full-bleed, --no-border)
-    .tn-section__header
-        .tn-section__title
-        .tn-section__actions
-    .tn-section__footer
+.fd-section+(--full-bleed, --no-border)
+    .fd-section__header
+        .fd-section__title
+        .fd-section__actions
+    .fd-section__footer
 */
 
 $block: ns(section);
 .#{$block} {
 
-    $tn-section-border-color: tn-color(neutral, 3) !default;
-    $tn-section-padding: $tn-padding--ui !default;
-    $tn-section-padding--top: tn-space(m) !default;
-    $tn-section-padding--bottom: tn-space(reg) !default;
+    $fd-section-border-color: fd-color(neutral, 3) !default;
+    $fd-section-padding: $fd-padding--ui !default;
+    $fd-section-padding--top: fd-space(m) !default;
+    $fd-section-padding--bottom: fd-space(reg) !default;
 
-    @include tn-clearfix;
-    padding: $tn-section-padding--top $tn-section-padding $tn-section-padding--bottom;
-    border-bottom: solid 2px $tn-section-border-color;
+    @include fd-clearfix;
+    padding: $fd-section-padding--top $fd-section-padding $fd-section-padding--bottom;
+    border-bottom: solid 2px $fd-section-border-color;
     &:last-child,
     &--no-border {
         border-bottom: 0;
@@ -29,18 +29,18 @@ $block: ns(section);
         padding-right: 0;
         padding-left: 0;
         .#{$block}__header, .#{$block}__footer {
-            margin-left: $tn-section-padding;
-            margin-right: $tn-section-padding;
+            margin-left: $fd-section-padding;
+            margin-right: $fd-section-padding;
         }
     }
     &__header {
-        min-height: tn-space(10);
+        min-height: fd-space(10);
         display: flex;
         align-items: center;
-        margin-bottom: tn-space(4);
+        margin-bottom: fd-space(4);
     }
     &__title {
-        @include tn-type(3);
+        @include fd-type(3);
         flex: 1;
         margin-bottom: 0;
     }

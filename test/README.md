@@ -7,7 +7,7 @@ The component test framework loads only `core.scss` and individual component `.s
 - Go to [localhost:3030](http://localhost:3030)
 
 ### Get started
-> Read about the `gulp create` task at [Contributing Components](https://github.com/SAP/techne/tree/v2.0/ops#contributing-components) which can automatically generate the required component files.
+> Read about the `gulp create` task at [Contributing Components](https://github.com/SAP/fundamental/tree/develop/ops#contributing-components) which can automatically generate the required component files.
 
 To get started add a new directory matching the component block with an `index.njk` file inside.
 
@@ -51,7 +51,7 @@ If you have never setup the project, you need to do a few things first.
 **Using macOS**
 - Install node from https://nodejs.org/en/
 - Install the [Github desktop application](https://desktop.github.com)
-- Choose "Clone a repository" and input URL `https://github.com/SAP/techne.git`
+- Choose "Clone a repository" and input URL `https://github.com/SAP/fundamental.git`
 - Change "Current Branch" to `v2.0`
 - From the macOS menu bar, select "Repository > Open in Terminal"
 - Type `npm install`

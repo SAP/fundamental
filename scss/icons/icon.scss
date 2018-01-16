@@ -11,7 +11,7 @@
 }
 
 //icon map
-$tn-icons: (
+$fd-icons: (
 
     add: "\ea01",
 
@@ -98,13 +98,13 @@ $block: ns(icon);
 
 //TODO: finish mixin
 // @mixin icon($key, $size) {
-//     @if map-has-key($tn-icons, $size) {
+//     @if map-has-key($fd-icons, $size) {
 //         &::before {
-//             content: map-get($tn-icons, $key);
+//             content: map-get($fd-icons, $key);
 //             @content;
 //         }
 //     } @else {
-//         @warn "Unknown `#{$key}` in $tn-icons map";
+//         @warn "Unknown `#{$key}` in $fd-icons map";
 //     }
 // }
 
@@ -113,10 +113,10 @@ $block: ns(icon);
 // }
 
 .#{$block} {
-    $tn-icon-size: 1.125rem !default;         //18px
-    $tn-icon-size--medium: 1.625rem !default; //26px
-    $tn-icon-size--large: 2rem !default;      //32px
-    font-size: $tn-icon-size;
+    $fd-icon-size: 1.125rem !default;         //18px
+    $fd-icon-size--medium: 1.625rem !default; //26px
+    $fd-icon-size--large: 2rem !default;      //32px
+    font-size: $fd-icon-size;
     font-family: "TechneIcons";
     line-height: 1;
     font-style: normal;
@@ -129,17 +129,17 @@ $block: ns(icon);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     &--medium {
-        font-size: $tn-icon-size--medium;
+        font-size: $fd-icon-size--medium;
     }
     &--large {
-        font-size: $tn-icon-size--large;
+        font-size: $fd-icon-size--large;
     }
     &::before {
         display: inline;
         text-align: center;
     }
 
-    @each $key, $value in $tn-icons {
+    @each $key, $value in $fd-icons {
         &--#{$key} {
             &::before {
                 content: $value;

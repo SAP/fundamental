@@ -13,7 +13,7 @@
 		display: none;
 	}
 	@if $direction = horizontal {
-	    @include tn-clearfix;
+	    @include fd-clearfix;
 		margin: 0;
 		li {
 			float: left;
@@ -66,15 +66,15 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 
 */
 
-$flow_width_of_gutter: $tn-width--gutter;
+$flow_width_of_gutter: $fd-width--gutter;
 
 //Apply to outer container
-@mixin tn-flow-box {
-  @include tn-clearfix;
+@mixin fd-flow-box {
+  @include fd-clearfix;
 }
 
 //Apply to "columned" containers
-@mixin tn-flow($span: 12, $cols: 12) {
+@mixin fd-flow($span: 12, $cols: 12) {
   float: left;
 
   //set margin for gutter
@@ -105,7 +105,7 @@ $flow_width_of_gutter: $tn-width--gutter;
 }
 
 //Indents content
-@mixin tn-flow-shift($span, $cols: 12) {
+@mixin fd-flow-shift($span, $cols: 12) {
 
   //calc width without gutters
   $num_of_gutters: $cols - 1;

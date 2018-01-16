@@ -6,7 +6,7 @@ card_group:
     aria={}
 -->
 {% macro card_group(properties={}, modifier={}, state={}, aria={}) -%}
-<div class="tn-card-group{{ modifier.block | modifier('card-group') }}">
+<div class="fd-card-group{{ modifier.block | modifier('card-group') }}">
 {% for item in properties.items -%}
 {{ item | trim | indent(4, true) }}
 {%- endfor -%}

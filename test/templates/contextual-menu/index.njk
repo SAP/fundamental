@@ -17,7 +17,7 @@
     <!-- output the component example and the code snippet -->
     {% set example %}
 {%- set _id = utils.id() %}
-<div class="tn-dropdown">
+<div class="fd-dropdown">
     {{ button({ icon: "more" }, modifier={ block: ["icon","text"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
     {{  menu(properties={
             id: _id,
@@ -34,12 +34,12 @@
 </div>
 
 {% set _id = utils.id() %}
-<div class="tn-dropdown">
+<div class="fd-dropdown">
 {{ button({ icon: "more" }, state={ disabled: true }, modifier={ block: ["icon","text"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
 </div>
 
 {% set _id = utils.id() %}
-<div class="tn-dropdown">
+<div class="fd-dropdown">
 {{  button(
         { label: 'More', icon: 'more' },
         modifier={ block: ['text','action-bar'] },
