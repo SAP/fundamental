@@ -8,10 +8,10 @@ const paths = {
 	dest: './docs/css'
 }
 
-let techneCss = environment.production ? 'techne.min.css' : 'techne.css';
+let fundamentalCss = environment.production ? 'fundamental-ui.min.css' : 'fundamental-ui.css';
 
 const task = (cb) => {
-    return gulp.src([`${paths.src}/${techneCss}`])
+    return gulp.src([`${paths.src}/${fundamentalCss}`])
 		.pipe(gulp.dest(paths.dest));
 
 }
@@ -20,4 +20,4 @@ gulp.task('docs-css', task);
 module.exports = task;
 
 
-// this task is possibally obsolete. investigate and remove 
+// this task is possibally obsolete. investigate and remove
