@@ -1,0 +1,15 @@
+
+{% for group in site.data.colors.group %}
+    <div class="docs-colors_container">
+        <p><strong>{{ group.name }}</strong></p>
+        <ul class="docs-colors_plaque">
+        {% for colors in group.colors %}
+            <li style="background-color: #{{ colors.colorvalue }}; color: #{{colors.textcolor}}; border: 1px solid #{{colors.bordercolor}}" class="docs-colors_plaque_color">
+               <span class="docs-colors_plaque_color-name">{{ group.name }} {{ colors.colorname }}</span>
+                #{{ colors.colorvalue }}
+            </li>
+        {% endfor %}
+        </ul>
+        <br style="clear:both">
+    </div>
+{% endfor %}

@@ -1,0 +1,111 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+@import "mixins";
+
+/*!
+.fd-dropdown+()
+    .fd-dropdown__control+([disabled])
+    .fd-dropdown__menu+()
+*/
+$block: ns(dropdown);
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-dropdown-menu-color: solid 1px $fd-forms-color !default;
+    $fd-dropdown-menu-border: solid 1px $fd-forms-border-color !default;
+    $fd-dropdown-menu-z-index: 2 !default;
+    $fd-dropdown-menu-background-color: fd-color(background) !default;
+    $fd-dropdown-menu-shadow: 0 0 4px 1px rgba(fd-color(neutral, 4), 0.2) !default;
+    //items
+    $fd-dropdown-menu-item-color: $fd-dropdown-menu-color !default;
+    $fd-dropdown-menu-item-color--hover: fd-color(text-inverse) !default;
+    $fd-dropdown-menu-item-background-color: $fd-dropdown-menu-background-color !default;
+    $fd-dropdown-menu-item-background-color--hover: darken(fd-color(action), 5%) !default;
+    $fd-dropdown-menu-item-padding: fd-space(3) fd-space(4) !default;
+    //anim
+    $fd-dropdown-menu-item-transition-params: $fd-animation--speed ease-in !default;
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    @include reset;
+    position: relative;
+    display: inline-block;
+
+    &__control {
+        @include fd-button-reset;
+        @include fd-form-select;
+        position: relative;
+        line-height: $fd-forms-height--input-text;
+        &[aria-expanded="true"],
+        &.is-expanded {
+            border-color: $fd-forms-border-color--focus;
+            z-index: $fd-dropdown-menu-z-index + 1;
+            box-shadow: $fd-dropdown-menu-shadow;
+        }
+        &--no-border {
+            border-color: transparent;
+            &[aria-disabled="true"],
+            &.is-disabled,
+            &:disabled {
+                border-color: transparent;
+            }
+        }
+    }
+    &__icon {
+        margin-right: fd-space(3);
+        vertical-align: middle;
+        transform: translateY(-2px);
+    }
+    &__menu,
+    &__options {
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+        min-width: 100%;
+        border: $fd-dropdown-menu-border;
+        background: $fd-dropdown-menu-background-color;
+        position: absolute;
+        white-space: nowrap;
+        z-index: $fd-dropdown-menu-z-index;
+        transform: translateY(-1px);
+        box-shadow: $fd-dropdown-menu-shadow;
+        opacity: 1;
+        visibility: visible;
+        transition: opacity $fd-dropdown-menu-item-transition-params;
+        &[aria-hidden="true"],
+        &.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    &__group {
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+    }
+    &__item,
+    &__option {
+        @include reset;
+        @include fd-type(-1,body);
+        display: block;
+        padding-left: 0;
+        list-style: none;
+        padding: $fd-dropdown-menu-item-padding;
+        &:hover {
+            color: $fd-dropdown-menu-item-color--hover;
+            background-color: $fd-dropdown-menu-item-background-color--hover;
+            text-decoration: none;
+        }
+    }
+    &__separator {
+        @include reset;
+        @include fd-type(-3, body, reg, none);
+        display: block;
+        color: fd-color(text, 2);
+        padding: $fd-dropdown-menu-item-padding;
+        padding-top: fd-space(4);
+        border-top: solid 1px fd-color(neutral, 3);
+    }
+
+}

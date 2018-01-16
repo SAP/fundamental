@@ -1,0 +1,31 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+/*!
+.fd-badge+(( --success | --warning | --error ), --pill)
+*/
+$block: ns(badge);
+
+.#{$block} {
+    @include reset;
+    @include fd-type(-3);
+    line-height: fd-space(reg);
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    padding: fd-space(1) fd-space(2);
+    vertical-align: middle;
+    &--pill {
+        border-radius: 12.5px;
+    }
+    &--success {
+        color: $fd-color--success;
+    }
+    &--warning {
+        color: $fd-color--warning;
+    }
+    &--error {
+        color: $fd-color--error;
+    }
+}

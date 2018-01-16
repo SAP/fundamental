@@ -1,0 +1,33 @@
+{% import "../forms.njk" as forms %}
+{% from "../button/component.njk" import button %}
+{% from "../icon/component.njk" import icon %}
+<!--
+modal:
+    properties={},
+-->
+{% macro modal(properties={}) %}
+
+<div class="fd-modal">
+  <div class="fd-modal__content">
+      <div class="fd-modal__header">
+          <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="close">
+            <span class="fd-icon fd-icon--close" role="presentation"></span>
+          </button>
+          <h4 class="fd-modal__title">{{properties.header}}</h4>
+      </div>
+      <div class="fd-modal__body">
+            {{properties.body}}
+      </div>
+      <footer class="fd-modal__footer-items">
+        {%- for item in properties.footerActions %}
+          {%- if item.type === "primary" %}
+            <button class="fd-modal__button-primary">{{item.label}}</button>
+          {%- else %}
+            <button class="fd-modal__button-secondary">{{item.label}}</button>
+          {%- endif %}
+        {%- endfor %}
+      </footer>
+  </div>
+</div>
+
+{%- endmacro %}

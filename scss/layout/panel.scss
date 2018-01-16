@@ -1,0 +1,34 @@
+@import "../core/settings";
+@import "../core/functions";
+@import "../core/mixins";
+
+/*!
+.fd-panel
+    .fd-panel__header
+        .fd-panel__title
+        .fd-panel__actions
+    .fd-panel__footer
+*/
+
+$block: ns(panel);
+.#{$block} {
+    @include fd-clearfix;
+    &__header {
+        min-height: fd-space(10);
+        display: flex;
+        align-items: center;
+        margin-bottom: fd-space(4);
+    }
+    &__title {
+        @include fd-type(3);
+        flex: 1;
+        margin-bottom: 0;
+    }
+    &__actions {
+        margin-left: auto;
+    }
+    &__footer {
+        display: flex;
+        justify-content: center;
+    }
+}

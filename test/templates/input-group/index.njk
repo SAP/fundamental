@@ -1,0 +1,280 @@
+{% extends "layout.njk" %}
+{% from "./component.njk" import input_group %}
+{% from "../button/component.njk" import button %}
+{% from "../icon/component.njk" import icon %}
+{% from "./../format.njk" import format %}
+{% set css_deps = ['helpers','components/button','icons'] %}
+
+{% block content %}
+<style media="screen">
+    .fd-input-group {
+        margin-bottom: 20px;
+    }
+</style>
+
+<h1>Input Group — Text addon</h1>
+{% set example %}
+{{ input_group(
+    properties={
+        after: "km/h",
+        input: {
+            properties: {
+                placeholder: "Field placeholder text"
+            }
+        }
+    },
+    modifier={
+        block: "inline"
+    })
+}}
+{{ input_group(
+    properties={
+        after: "km/h",
+        input: {
+            properties: {
+                value: "19387309"
+            }
+        }
+    })
+}}
+{{ input_group(
+    properties={
+        after: "€",
+        input: {
+            properties: {
+                value: "19387309"
+            }
+        }
+    })
+}}
+{{ input_group(
+    properties={
+        after: "$",
+        input: {
+            properties: {
+                value: "19387309"
+            }
+        }
+    })
+}}
+{{ input_group(
+    properties={
+        before: "km/h",
+        input: {
+            properties: {
+                value: "19387309"
+            }
+        }
+    })
+}}
+{{ input_group(
+    properties={
+        before: "€",
+        input: {
+            properties: {
+                value: "19387309"
+            }
+        }
+    })
+}}
+{{ input_group(
+    properties={
+        before: "$",
+        input: {
+            properties: {
+                value: "19387309"
+            }
+        }
+    })
+}}
+{{ input_group(
+    properties={
+        after: "50",
+        input: {
+            properties: {
+                value: "19387309"
+            }
+        }
+    })
+}}
+
+{% endset %}
+{{ format(example) }}
+
+<br><br>
+<h2>Input Group — Inline</h2>
+{% set example %}
+{{ input_group(
+    properties={
+        after: "phone",
+        input: {
+            properties: {
+                placeholder: "Field placeholder text"
+            }
+        }
+    },
+    modifier={
+        block: "inline"
+    })
+}}
+{{ input_group(
+    properties={
+        after: "fax",
+        input: {
+            properties: {
+                placeholder: "Field placeholder text"
+            }
+        }
+    },
+    modifier={
+        block: "inline"
+    })
+}}
+{% endset %}
+{{ format(example) }}
+
+
+<h1>Input Group — Special addon</h1>
+
+{% set example %}
+{{ input_group(
+    type="number",
+    properties={
+        input: {
+            properties: {
+                value: "1000000", id: "spinner-1"
+            }
+        }
+    })
+}}
+{{ input_group(
+    type="search",
+    properties={
+        input: {
+            properties: {
+                value: "1000008980283748972894732979327592739572394752397594657843657868436029840932840927349236572635876347239875283472893742980", id: "search-1"
+            }
+        }
+    })
+}}
+{% endset %}
+{{ format(example) }}
+
+
+
+<br><br>
+
+<h1>Input Group — Icon addon</h1>
+
+{% set example %}
+{{ input_group(
+    properties={
+        input: {
+            properties: {
+                value: "1000000"
+            }
+        },
+        before: icon("localization")
+    })
+}}
+{{ input_group(
+    properties={
+        input: {
+            properties: {
+                value: "1000000"
+            }
+        },
+        after: icon("visibilityoff")
+    })
+}}
+{% endset %}
+{{ format(example) }}
+
+
+
+
+<br><br>
+
+<h1>Input Group — Button addon</h1>
+
+{%- set iconbtn %}{{  button(
+        {
+            label: '',
+            icon: 'chevron'
+        },
+        modifier={
+            block: ['icon','text']
+        })
+}}{%- endset %}
+{%- set btn %}{{  button(
+        {
+            label: 'Button'
+        },
+        modifier={
+            block: []
+        })
+}}{%- endset %}
+
+{% set example %}
+
+{{ input_group(
+    modifier={
+        after: "button"
+    },
+    properties={
+        input: {
+            properties: {
+                value: "1000000"
+            }
+        },
+        after: iconbtn
+    })
+}}
+{{ input_group(
+    modifier={
+        after: "button"
+    },
+    properties={
+        input: {
+            state: {
+                readonly: true
+            },
+            properties: {
+                value: "1000000"
+            }
+        },
+        after: iconbtn
+    })
+}}
+{{ input_group(
+    modifier={
+        after: "button"
+    },
+    properties={
+        input: {
+            properties: {
+                value: "1000000"
+            }
+        },
+        after: btn
+    })
+}}
+{{ input_group(
+    modifier={
+        after: "button"
+    },
+    properties={
+        input: {
+            properties: {
+                value: "1000000"
+            }
+        },
+        after: button({ icon: 'chevron' }, modifier={ block: 'icon' })
+    })
+}}
+{% endset %}
+{{ format(example) }}
+
+
+
+{% endblock %}

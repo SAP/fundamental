@@ -1,0 +1,29 @@
+{% extends "./ui.njk" %}
+{# ui-level vars #}
+{%- set hide_ui_footer = hide_ui_footer or false %}
+{%- set fix_ui_footer = fix_ui_footer or false %}
+{%- set show_ui_overlay = show_ui_overlay or false %}
+{# app-level vars #}
+{% set hide_app_sidebar = hide_app_sidebar or false %}
+
+{# ui-level blocks #}
+{% block ui_header -%}
+{%- endblock %}
+{% block ui_footer -%}
+{%- endblock %}
+{% block ui_overlay -%}
+{%- endblock %}
+{% block ui_app -%}
+<div class="fd-app">
+    {% if hide_app_sidebar !== true %}
+    <div class="fd-app__sidebar">
+        {% block app_sidebar -%}
+        {%- endblock %}
+    </div>
+    {% endif %}
+    <main class="fd-app__main">
+        {% block app_main -%}
+        {%- endblock %}
+    </main>
+</div>
+{%- endblock %}

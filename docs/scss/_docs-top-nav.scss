@@ -1,0 +1,27 @@
+.docs-top-nav {
+    background-color: docs-color(text, 1);
+    height: 50px;
+    &__logo{
+        padding-top: 5px;
+        padding-left: 15px;
+        display: inline-block;
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+ 
+    &__support{
+        @include tn-type(-1);
+        color: #fff !important;
+        padding: 7px;
+        display: inline-block;
+
+        .tn-dropdown__menu { 
+            margin-left: -70px;
+        }
+    }
+}

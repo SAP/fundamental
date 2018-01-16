@@ -1,0 +1,171 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "./component.njk" import image %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = [] %}
+
+{% block content %}
+{% set sizes = ["xs","s","m","l","xl","xxl"] %}
+    <h1>image</h1>
+
+    <h2>default</h2>
+    {%- set example %}
+{%- for size in sizes %}
+{{  image(
+        properties=data.properties,
+        modifier={
+            block: size
+        },
+        aria=data.aria
+    )
+}}
+{% endfor %}
+    {%- endset %}
+    {{ format(example) }}
+<br><br>
+
+    <h2>rounded</h2>
+    {%- set example %}
+{% for size in sizes %}
+{{  image(
+        properties=data.properties,
+        modifier={
+            block: [size, "rounded"]
+        },
+        aria=data.aria
+    )
+}}
+{% endfor %}
+    {%- endset %}
+    {{ format(example) }}
+
+<br><br>
+    <h2>circle</h2>
+    {%- set example %}
+{% for size in sizes %}
+{{  image(
+        properties=data.properties,
+        modifier={
+            block: [size, "circle"]
+        },
+        aria=data.aria
+    )
+}}
+{% endfor %}
+    {%- endset %}
+    {{ format(example) }}
+
+<br><br>
+<h1>placeholder images</h1>
+
+    <h2>profile</h2>
+    {%- set example %}
+{% for size in sizes %}
+{{  image(
+        properties={},
+        modifier={
+            block: [size, "profile"]
+        },
+        aria={
+            label: "John Smith"
+        }
+    )
+}}
+{% endfor %}
+    {%- endset %}
+    {{ format(example) }}
+
+<br>
+{%- set example %}
+{% for size in sizes %}
+{{  image(
+    properties={},
+    modifier={
+        block: [size, "rounded", "profile"]
+    },
+    aria={
+        label: "John Smith"
+    }
+)
+}}
+{% endfor %}
+{%- endset %}
+{{ format(example) }}
+
+<br>
+
+{%- set example %}
+{% for size in sizes %}
+{{  image(
+    properties={},
+    modifier={
+        block: [size, "circle", "profile"]
+    },
+    aria={
+        label: "John Smith"
+    }
+)
+}}
+{% endfor %}
+{%- endset %}
+{{ format(example) }}
+
+    <br><br>
+    <h2>product</h2>
+
+    {%- set example %}
+{% for size in sizes %}
+{{  image(
+        properties={},
+        modifier={
+            block: [size, "product"]
+        },
+        aria={
+            label: "Product name"
+        }
+    )
+}}
+{% endfor %}
+    {%- endset %}
+    {{ format(example) }}
+
+<br>
+{%- set example %}
+{% for size in sizes %}
+{{  image(
+    properties={},
+    modifier={
+        block: [size, "rounded", "product"]
+    },
+    aria={
+        label: "Product name"
+    }
+)
+}}
+{% endfor %}
+{%- endset %}
+{{ format(example) }}
+
+<br>
+
+{%- set example %}
+{% for size in sizes %}
+{{  image(
+    properties={},
+    modifier={
+        block: [size, "circle", "product"]
+    },
+    aria={
+        label: "Product name"
+    }
+)
+}}
+{% endfor %}
+{%- endset %}
+{{ format(example) }}
+
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "./component.njk" import __COMPONENT_METHOD__ %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = [] %}
+
+{% block content %}
+
+    <h1>__COMPONENT_ID__</h1>
+
+    <!-- output the component example and the code snippet -->
+    {% set example %}
+    {{  __COMPONENT_METHOD__(
+            properties={
+                title: "Sed bibendum sapien",
+                description: "Morbi sodales gravida pulvinar. Duis malesuada odio volutpat elementum vulputate massa magna scelerisque ante et accumsan."
+            },
+            modifier={
+                block: []
+            },
+            state={},
+            aria={}
+        )
+    }}
+    {{  __COMPONENT_METHOD__(
+            properties=data.properties,
+            modifier={
+                block: data.modifier.block
+            },
+            state=data.state,
+            aria=data.aria
+        )
+    }}
+    {% endset %}
+    {{ format(example) }}
+
+
+{% endblock %}

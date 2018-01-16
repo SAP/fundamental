@@ -1,0 +1,54 @@
+{% extends "layout.njk" %}
+{% import "./../utils.njk" as utils %}
+{% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "../dropdown/component.njk" import dropdown, menu %}
+{% from "../form/component.njk" import form_control %}
+{% from "../input-group/component.njk" import input_group %}
+{% from "./component.njk" import toolbar %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['icons/icons', 'components/input-group', 'components/pagination','helpers'] %}
+
+{% block content %}
+
+<style media="screen">
+    .fd-toolbar {
+        margin-bottom: 40px;
+    }
+</style>
+
+
+
+    <h1>toolbar</h1>
+
+    <!-- output the component example and the code snippet -->
+    {% set example %}
+
+        {{  toolbar(
+                properties=data.properties,
+                modifier={
+                    block: data.modifier.block
+                },
+                state=data.state,
+                aria=data.aria
+            )
+        }}
+
+        {{  toolbar(
+                properties={
+                    "pagination": {
+                        "total": 283,
+                        "number": 20,
+                        "page": 10
+                    }
+
+                }
+            )
+        }}
+
+    {% endset %}
+    {{ format(example) }}
+
+
+{% endblock %}

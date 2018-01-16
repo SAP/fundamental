@@ -1,0 +1,34 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+//set namespace using function to avoid hardcoding it
+$ns: ns();
+@each $key, $value in $fd-type {
+    @if $key > 0 {
+        .#{$ns}has-type-#{$key} {
+            @include fd-type($key);
+        }
+    } @else if $key < 0 {
+        .#{$ns}has-type-minus#{$key} {
+            @include fd-type($key);
+        }
+    } @else {
+        .#{$ns}has-type-base,
+        .#{$ns}has-type-#{$key} {
+            @include fd-type($key);
+        }
+    }
+}
+
+@each $key, $value in $fd-fonts {
+    .#{$ns}has-font-family-#{$key} {
+        font-family: $value;
+    }
+}
+
+@each $key, $value in $fd-weights {
+    .#{$ns}has-font-weight-#{$key} {
+        font-weight: $value;
+    }
+}

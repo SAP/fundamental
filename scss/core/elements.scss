@@ -1,0 +1,105 @@
+@import "settings";
+
+// Required variables:
+// 	$fd-background-color
+// 	$fd-color
+$elements__headers: h1, h2, h3, h4, h5, h6;
+$elements__blocks: p, ul, ol, blockquote, table, figure;
+$elements__interactive: a, audio\[controls\], button, details, embed, iframe, img\[usemap\], input, keygen, label, object\[usemap\], select, textarea, video\[controls\];
+
+/*!
+* @section Root Element
+* Default styles for root elements
+*/
+html {
+    box-sizing: border-box;
+    min-height: 100%;
+}
+html,
+body {
+    font-size: $fd-font-size;
+    font-family: $fd-font-family;
+    line-height: $fd-line-height;
+}
+* {
+    box-sizing: inherit;
+    &::before,
+    &::after {
+        box-sizing: inherit;
+    }
+}
+body {
+    margin: 0;
+    background-color: $fd-background-color;
+    -webkit-font-smoothing: antialiased;
+    color: $fd-color;
+}
+
+/**
+* @section Header Elements
+* Default styles for header elements
+*/
+#{$elements__headers} {
+    text-rendering: optimizeLegibility;
+    margin-bottom: $fd-margin-bottom;
+    margin-top: 0;
+}
+
+/*!
+* @section Block Elements
+* Default styles for block elements
+*/
+#{$elements__blocks} {
+    margin-top: 0;
+    margin-bottom: $fd-margin-bottom;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/*!
+* @section List Elements
+* Default styles for lists
+*/
+ul, ol {
+    padding-left: 0;
+    //list-style: none;
+}
+
+
+/*!
+* @section Phrases Elements
+* Default styles for phrase elements
+*/
+img {
+    line-height: 0;
+    vertical-align: middle;
+}
+
+a {
+    color: $fd-color--link;
+    text-decoration: none;
+    &:hover {
+        color: $fd-color--link-hover;
+    }
+    &:active,
+    &:focus {
+        color: $fd-color--link-hover;
+        outline: none;
+    }
+    &[aria-disabled="true"],
+    &.is-disabled {
+        color: $fd-color--link-disabled;
+        cursor: not-allowed;
+    }
+}
+
+/*!
+* @section Button Elements
+* Default styles for button elements
+*/
+button::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}

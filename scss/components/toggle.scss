@@ -1,0 +1,89 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+/*!
+.fd-toggle+(--no-border)
+    .fd-toggle__content+()
+    .fd-toggle__title+()
+*/
+$block: ns(toggle);
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-toggle-height: fd-space(10) !default;
+    $fd-toggle-height--small: fd-space(8) !default;
+    $fd-toggle-height--large: fd-space(13) !default;
+    $fd-toggle-background-color: $fd-forms-border-color !default;
+    $fd-toggle-background-color--checked: $fd-forms-background-color--check !default;
+    $fd-toggle-switch-background-color: fd-color(background, 1) !default;
+    $fd-toggle-switch-background-color--disabled: fd-color(neutral, 2) !default;
+    $fd-toggle-transition-params: $fd-animation--speed ease-in !default;
+
+    @include reset;
+    position: relative;
+    display: inline-block;
+    height: $fd-toggle-height;
+    width: $fd-toggle-height * 2 - 4px;
+    &__switch {
+        height: $fd-toggle-height - 8px;
+        width: $fd-toggle-height - 8px;
+        border-radius: 50%;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        background-color: white;
+        transition: left $fd-toggle-transition-params;
+        pointer-events: none;
+    }
+    input {
+        background-color: $fd-toggle-background-color;
+        border-radius: $fd-toggle-height/2;
+        width: 100%;
+        height: 100%;
+        border-color: transparent;
+        vertical-align: middle;
+        &:checked {
+            &::after {
+                display: none;
+            }
+            & + .#{$block}__switch {
+                left: calc(50% + 2px);
+            }
+        }
+        &[disabled],
+        &.is-disabled,
+        &[aria-disabled="true"] {
+            border-color: $fd-forms-border-color;
+            & + .#{$block}__switch {
+                background-color: $fd-toggle-switch-background-color--disabled;
+            }
+        }
+    }
+    &--small {
+        height: $fd-toggle-height--small;
+        width: $fd-toggle-height--small * 2 - 4px;
+        input {
+            border-radius: $fd-toggle-height--small/2;
+        }
+        .#{$block}__switch {
+            height: $fd-toggle-height--small - 8px;
+            width: $fd-toggle-height--small - 8px;
+        }
+    }
+    &--large {
+        height: $fd-toggle-height--large;
+        width: $fd-toggle-height--large * 2 - 4px;
+        input {
+            border-radius: $fd-toggle-height--large/2;
+        }
+        .#{$block}__switch {
+            height: $fd-toggle-height--large - 8px;
+            width: $fd-toggle-height--large - 8px;
+        }
+    }
+
+
+
+
+}
