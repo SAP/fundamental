@@ -13,7 +13,7 @@ const task = (cb) => {
     return gulp.src([
 			`${paths.src}/*.woff`,
 			`${paths.src}/*.woff2`,
-			`${paths.src}/techne.min.css`
+			`${paths.src}/fundamental-ui.min.css`
 		])
 		.pipe(gulp.dest(paths.dest));
 }

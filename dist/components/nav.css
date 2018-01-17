@@ -1,0 +1,37 @@
+/*!
+* Fundamental-UI v1.0.0-beta
+* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
+*/
+/*!
+.fd-nav+(--vertical)
+    .fd-nav__item
+    .fd-nav__link+((.is-selected|[aria-selected=true]),(.is-disabled|[aria-disabled=true]))
+*/
+.fd-nav {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #21262c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none
+}
+.fd-nav--vertical {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column
+}
+.fd-nav__link {
+  display: block;
+  padding: 8px
+}
+.fd-nav__link.is-selected,
+.fd-nav__link[aria-selected=true] {
+  color: #21262c
+}

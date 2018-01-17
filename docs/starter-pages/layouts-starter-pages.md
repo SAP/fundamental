@@ -9,17 +9,17 @@ summary:
 ---
 
 <br><br>
-<div class="tn-card-group tn-card-group--2col docs-cards">
-    <a class="tn-card" role="button" href="layouts.html">
-        <div class="tn-card__content tn-has-text-align-center">
-             <h2 class="tn-card__header">
+<div class="fd-card-group fd-card-group--2col docs-cards">
+    <a class="fd-card" role="button" href="layouts.html">
+        <div class="fd-card__content fd-has-text-align-center">
+             <h2 class="fd-card__header">
                  Layouts
              </h2>
         </div>
     </a>
-    <a class="tn-card" href="starter-pages.html" role="button">
-        <div class="tn-card__content tn-has-text-align-center">
-             <h2 class="tn-card__header">
+    <a class="fd-card" href="starter-pages.html" role="button">
+        <div class="fd-card__content fd-has-text-align-center">
+             <h2 class="fd-card__header">
                  Starter Pages
              </h2>
         </div>

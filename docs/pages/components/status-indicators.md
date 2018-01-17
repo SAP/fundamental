@@ -21,42 +21,42 @@ The following color options are avialable for fast recognition of the status:
 ## Indicators
 
 {% capture badge %}
-<span class="tn-label">
+<span class="fd-label">
     Default
 </span>
-<span class="tn-label tn-label--success">
+<span class="fd-label fd-label--success">
     Success
 </span>
-<span class="tn-label tn-label--warning">
+<span class="fd-label fd-label--warning">
     Warning
 </span>
-<span class="tn-label tn-label--error">
+<span class="fd-label fd-label--error">
     Error
 </span>
 
-<span class="tn-badge">
+<span class="fd-badge">
     Default
 </span>
-<span class="tn-badge tn-badge--success">
+<span class="fd-badge fd-badge--success">
     Success
 </span>
-<span class="tn-badge tn-badge--warning">
+<span class="fd-badge fd-badge--warning">
     Warning
 </span>
-<span class="tn-badge tn-badge--error">
+<span class="fd-badge fd-badge--error">
     Error
 </span>
 
-<span class="tn-badge tn-badge--pill">
+<span class="fd-badge fd-badge--pill">
     Default
 </span>
-<span class="tn-badge tn-badge--success tn-badge--pill">
+<span class="fd-badge fd-badge--success fd-badge--pill">
     Success
 </span>
-<span class="tn-badge tn-badge--warning tn-badge--pill">
+<span class="fd-badge fd-badge--warning fd-badge--pill">
     Warning
 </span>
-<span class="tn-badge tn-badge--error tn-badge--pill">
+<span class="fd-badge fd-badge--error fd-badge--pill">
     Error
 </span>
 {% endcapture %}
@@ -64,7 +64,7 @@ The following color options are avialable for fast recognition of the status:
 {% include display-component.html component=badge %}
 
 <style>
-.tn-badge, .tn-label {
+.fd-badge, .fd-label {
     margin-right: 20px;
 }
 </style>

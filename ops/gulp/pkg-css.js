@@ -22,9 +22,9 @@ const paths = {
 var d = new Date();
 var y = d.getFullYear();
 var banner = `/*!
-* Techne v${pkg.version}
+* Fundamental-UI v${pkg.version}
 * Copyright (c) ${y} SAP SE or an SAP affiliate company.
-* Licensed under Apache License 2.0 (https://github.com/SAP/techne/blob/master/LICENSE)
+* Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */\n`;
 
 //compile top-level files
