@@ -39,7 +39,7 @@ For example, to use only the cards
 ````
 
 # The project
-Techne 2.0 is a design system and pattern library package. This project packages the library for `npm` and generates the documentation as a static website.
+Fumdamental is a design system and pattern library package. This project packages the library for `npm` and generates the documentation as a static website.
 
 We rely on several core technologies.
 

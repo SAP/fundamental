@@ -2,8 +2,8 @@
 This directory is the project control center and holds all `gulp` tasks and other scripts to build the documentation, generate icons, package the library, etc.
 
 The project is organized around two primary outputs:
-1. The Techne package available for `node`
-2. The Techne documentation website
+1. The Fundamental package available for `node`
+2. The Fundamental documentation website
 
 Each output has specific needs that involve coordinating multiple tasks, e.g., optimizing SVGs, compiling SASS, copying resources, etc.
 
@@ -73,7 +73,7 @@ Assuming "foo" is the component, the following are created:
 * `test/templates/foo/component.njk` is Nunjucks macro with a basic constructor
 * `test/templates/foo/index.njk` imports above macro and data file to output the base component
 
-> Read more about the `test` framework and [Simple visual testing](https://github.com/SAP/techne/blob/v2.0/test/README.md#simple-visual-testing)
+> Read more about the `test` framework and [Simple visual testing](https://github.com/SAP/fundamental/blob/develop/test/README.md#simple-visual-testing)
 
 Run `npm test`. Navigate to [`localhost:3030/foo`](localhost:3030/foo) to see the page.
 
