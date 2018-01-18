@@ -28,7 +28,7 @@ const prepareDeploy = (cb) => {
 const ghDeploy = (cb) => {
 
     ghPages.publish(paths.destPrepare, {
-        repo: 'git@github.com:SAP/techne.git'
+        repo: 'git@github.com:SAP/fundamental.git'
     }, cb);
 }
 
