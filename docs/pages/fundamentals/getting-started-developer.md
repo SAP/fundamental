@@ -26,6 +26,13 @@ Install the library.
 ````
 npm install techne@{{site.library_version}} --save
 ````
+<h3 class="docs-header-h3">Bundle</h3>
+Install Bundle dependencies from `docs` directory
+
+````
+cd docs
+bundle install
+````
 
 <h3 class="docs-header-h3">Usage</h3>
 Include the full library.
