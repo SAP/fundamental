@@ -16,6 +16,7 @@ $block: ns(tree);
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-tree-border-color: fd-color(neutral, 3) !default;
+    $fd-tree-link-color: fd-color(action, 1) !default;
     $fd-tree-cell-spacing: $fd-width--gutter !default;
     $fd-tree-cell-padding: fd-space(3) !default;
     $fd-tree-control-width: 18px !default;
@@ -29,6 +30,7 @@ $block: ns(tree);
     max-width: 100%;
     border-bottom: solid 1px $fd-tree-border-color;
     margin-bottom: $fd-margin-bottom;
+    margin-left: 0;
     &:last-child {
         margin-bottom: 0;
     }
@@ -43,6 +45,7 @@ $block: ns(tree);
         max-height: auto;
         opacity: 1;
         margin-bottom: 0;
+        margin-left: 0;
         &.is-hidden,
         &[aria-hidden="true"] {
             max-height: 0;
@@ -121,6 +124,11 @@ $block: ns(tree);
             transform: rotate(0);
         }
     }
-
+    a {
+        color: $fd-tree-link-color;
+        &:hover{
+            color: $fd-tree-link-color;
+        }
+    }
 
 }

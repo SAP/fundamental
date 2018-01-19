@@ -19,6 +19,7 @@ $block: ns(card);
     $fd-card-media-width: 75px !default;
     //colors
     $fd-card-color-border: fd-color(neutral, 3) !default;
+    $fd-card-link-color: fd-color(action, 1) !default;
     $fd-card-color-border-disabled: lighten(fd-color(neutral, 2), 5%) !default;
     $fd-card-color-disabled: fd-color(text, 3) !default;
     $fd-card-background-color: fd-color(background) !default;
@@ -144,5 +145,11 @@ $block: ns(card);
     }
     &__actions {
         padding: $fd-card-padding $fd-card-padding/2;
+    }
+    a {
+        color: $fd-card-link-color;
+        &:hover{
+            color: $fd-card-link-color;
+        }
     }
 }
