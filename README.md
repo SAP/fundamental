@@ -19,6 +19,15 @@ Install the library.
 ````
 npm install techne@2.0.0-alpha-7 --save
 ````
+
+## Bundle
+Install Bundle dependencies from `docs` directory
+
+````
+cd docs
+bundle install
+````
+
 ## Usage
 Include the full library.
 
