@@ -13,10 +13,10 @@ $block: ns(table);
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-table-border-color: fd-color(neutral, 3) !default;
+    $fd-table-link-color: fd-color(action, 1) !default;
     $fd-table-cell-spacing: $fd-width--gutter !default;
     $fd-table-cell-padding: fd-space(3) !default;
     $fd-table-transition-params: $fd-animation--speed ease-in !default;
-
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
@@ -61,7 +61,11 @@ $block: ns(table);
         border-width: 1px 0;
         border-color: $fd-table-border-color;
     }
-
-
+    a {
+        color: $fd-table-link-color;
+        &:hover{
+            color: $fd-table-link-color;
+        }
+    }
 
 }
