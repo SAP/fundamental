@@ -27,26 +27,21 @@ module.exports = iconTask = (cb) => {
 
             //process the CSS template
             gulp.src(config.tasks.icons.css.template)
-                .pipe(consolidate('lodash', {
-                    className: config.tasks.icons.iconfont.className,
-                    fontName: config.tasks.icons.iconfont.fontName,
-                    fontPath: '/fonts/',
-                    glyphs: glyphs.map(mapGlyphs)
-                }))
+                .pipe(consolidate('lodash', options))
                 .pipe(rename(config.tasks.icons.css.outputName))
                 .pipe(gulp.dest(config.tasks.icons.css.dest))
 
-            // //process the data template
-            // gulp.src(config.tasks.icons.data.template)
-            //     .pipe(consolidate('lodash'))
-            //     .pipe(rename(config.tasks.icons.data.outputName))
-            //     .pipe(gulp.dest(config.tasks.icons.data.dest))
-            //
-            // // //process the yml template
-            // gulp.src(config.tasks.icons.yml.template)
-            //     .pipe(consolidate('lodash'))
-            //     .pipe(rename(config.tasks.icons.yml.outputName))
-            //     .pipe(gulp.dest(config.tasks.icons.yml.dest))
+            //process the data template
+            gulp.src(config.tasks.icons.data.template)
+                .pipe(consolidate('lodash', options))
+                .pipe(rename(config.tasks.icons.data.outputName))
+                .pipe(gulp.dest(config.tasks.icons.data.dest))
+
+            // //process the yml template
+            gulp.src(config.tasks.icons.yml.template)
+                .pipe(consolidate('lodash', options))
+                .pipe(rename(config.tasks.icons.yml.outputName))
+                .pipe(gulp.dest(config.tasks.icons.yml.dest))
         })
         .pipe(gulp.dest(config.tasks.icons.css.dest));
 }
