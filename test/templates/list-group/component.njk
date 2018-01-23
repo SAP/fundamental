@@ -1,0 +1,25 @@
+{% import "../forms.njk" as forms %}
+{% from "../button/component.njk" import button %}
+{% from "../icon/component.njk" import icon %}
+{#
+    see ./data.json for object structure
+#}
+{% macro list_group(properties={}, action={}) %}
+<ul class="fd-list-group">
+    {%- for item in properties.items %}
+    <li class="fd-list-group__item">
+        {{item}}
+        {%- if properties.action %}
+        <span class="fd-list-group__action">
+            {{ button(
+                { icon: properties.action.icon },
+                modifier={ block: ['icon','text','small'] },
+                aria={ label: properties.action.label }
+                )
+            }}
+        </span>
+        {%- endif %}
+    </li>
+    {%- endfor %}
+</ul>
+{%- endmacro %}

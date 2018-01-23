@@ -1,0 +1,22 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+
+/*!
+.fd-label+(--success | --warning | --error)
+*/
+$block: ns(label);
+
+.#{$block} {
+    @include reset;
+    @include fd-type(-3);
+    &--success {
+        color: $fd-color--success;
+    }
+    &--warning {
+        color: $fd-color--warning;
+    }
+    &--error {
+        color: $fd-color--error;
+    }
+}

@@ -1,0 +1,61 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "../dropdown/component.njk" import menu %}
+{% import "./../utils.njk" as utils %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['icons','components/button'] %}
+
+{% block content %}
+
+    <h1>contextual-menu</h1>
+
+<p>This is not a standalone component. It use a "more" icon button and the dropdown menu.</p>
+
+
+    <!-- output the component example and the code snippet -->
+    {% set example %}
+{%- set _id = utils.id() %}
+<div class="fd-dropdown">
+    {{ button({ icon: "more" }, modifier={ block: ["icon","text"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
+    {{  menu(properties={
+            id: _id,
+            items: [
+                { "label": "Pellentesque metus" },
+                { "label": "Duis malesuada odio volutpat" },
+                { "label": "Suspendisse" },
+                { "label": "Donec mattis arcu et velit" }
+            ]
+        },
+        classes="contextual-menu"
+        ) | indent(4)
+    }}
+</div>
+
+{% set _id = utils.id() %}
+<div class="fd-dropdown">
+{{ button({ icon: "more" }, state={ disabled: true }, modifier={ block: ["icon","text"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
+</div>
+
+{% set _id = utils.id() %}
+<div class="fd-dropdown">
+{{  button(
+        { label: 'More', icon: 'more' },
+        modifier={ block: ['text','action-bar'] },
+        aria={ controls: _id, haspopup: true, expanded: false, label: "More" }
+    ) | indent(4)
+}}
+{{  menu(properties={
+        id: _id,
+        items: data.properties.items
+    },
+    classes="contextual-menu") | indent(4)
+}}
+</div>
+    {% endset %}
+    {{ format(example) }}
+
+
+
+{% endblock %}

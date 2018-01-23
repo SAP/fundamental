@@ -1,0 +1,122 @@
+{% extends "./layouts/master.njk" %}
+{% block content %}
+
+{% set specs = {
+    "-3": [ 12, 16, "body", "bold", "uppercase" ],
+    "-2": [ 13, 20, "body", "reg", "none" ],
+    "-1": [ 14, 20, "body", "reg", "none" ],
+    "0": [ 16, 24, "body", "reg", "none" ],
+    "1": [ 18, 24, "body", "semi", "none" ],
+    "2": [ 20, 28, "body", "semi", "none" ],
+    "3": [ 26, 32, "header", "medium", "none" ],
+    "4": [ 35, 44, "header", "bold", "none" ],
+    "5": [ 45, 52, "header", "medium", "none" ]
+} %}
+
+
+<div class="fd-container">
+
+    <h1>Type</h1>
+
+    <h2>Sizes</h2>
+    {% for i in ["-3","-2","-1","0","1","2","3","4","5"] | reverse %}
+    {% set type = specs[i] %}
+        <p><strong>{{i}}</strong> — {{ "Roboto" if type[2] == "header" else "Open Sans" }} {{ type[3] | capitalize }}{{ "bold" if type[2] == "medium" }} {{ type[0] }}px | Line-height {{ type[1] }}px</p>
+        <p class="fd-has-type{{ '-minus' if i < 0 }}-{{ i | abs if i != 0 else 'base' }}">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+
+    {% endfor %}
+
+    <h2>Mixins</h2>
+    <h3><code>@mixin fd-type($size, $font, $weight, $transform)</code></h3>
+    <p>Each type size has default family, weight and transform rules built in. Passing the size alone will return all default rules.</p>
+    <p>Example:<br>
+    <pre>
+    .foo {
+        @include fd-type(5);
+    }
+    </pre>
+    </p>
+    <p>
+    Additional arguments can be passed to the mixin.
+    </p>
+    <p>Example:<br>
+    <pre>
+    .small-header {
+        @include fd-type(-3,header,reg,none);
+    }
+    </pre>
+    <table>
+        <tr>
+            <td colspan="2">
+                Acceptable arguments
+            </td>
+        </tr>
+        <tr>
+            <td>$size</td>
+            <td>-3,-2,-1,0 (default),1,2,3,4,5</td>
+        </tr>
+        <tr>
+            <td>$font</td>
+            <td>body (default), header, code</td>
+        </tr>
+        <tr>
+            <td>$weight</td>
+            <td>reg (default), med, semi</td>
+        </tr>
+        <tr>
+            <td>$transform</td>
+            <td>none (default), uppercase, lowercase</td>
+        </tr>
+    </table>
+
+
+
+    <h3><code>@mixin fd-weight($weight)</code></h3>
+    <p>
+    Mofify the font-weight independently.
+    </p>
+    <table>
+        <tr>
+            <td colspan="2">
+                Acceptable arguments
+            </td>
+        </tr>
+        <tr>
+            <td>$weight</td>
+            <td>light, reg (default), med, semi, bold</td>
+        </tr>
+    </table>
+
+
+    <h2>Helpers</h2>
+    <p>These classes are also available to apply all default rules. Use sparingly.</p>
+
+
+    <h3>Sizes</h3>
+
+    {% for i in [-3,-2,-1,0,1,2,3,4,5] | reverse %}
+    <p>
+          <code>.fd-has-type{{ '-minus' if i < 0 }}-{{ i | abs }}{% if i == 0 %}, .fd-has-type-base{% endif %}</code>
+        <br>
+    </p>
+    {% endfor %}
+
+
+    <h3>Fonts</h3>
+
+        {% for i in ['header', 'body', 'code'] %}
+
+            <span>
+                 <code>.fd-has-font-family-{{ i }}</code>
+            </span>
+            <p class="fd-has-font-family-{{ i }}">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+
+        {% endfor %}
+
+
+
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+<!--
+table:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{% macro table(properties={}, modifier={}, state={}, aria={}) -%}
+<table class="fd-table{{ modifier.block | modifier('table') }}{{ state | state }}"{{ aria | aria }}>
+    <thead>
+        <tr>
+            {%- for header in properties.headers %}
+            <th>{{header}}</th>
+            {%- endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {%- for row in properties.rows %}
+        <tr {% if properties.selectedRow === loop.index %} aria-selected="true"{% endif %}>
+            {%- for item in row %}
+            <td>{{item}}</td>
+            {%- endfor %}
+        </tr>
+        {%- endfor %}
+    </tbody>
+</table>
+{%- endmacro %}

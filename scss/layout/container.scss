@@ -1,0 +1,27 @@
+@import "../core/settings";
+@import "../core/functions";
+@import "../core/mixins";
+
+$block: ns(container);
+.#{$block} {
+    @include fd-clearfix;
+    //padding: 0 $fd-padding--ui;
+    margin-bottom: $fd-margin-bottom;
+    max-width: $fd-max-width--ui;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &--fluid {
+        max-width: 100%;
+    }
+    // &--bleed {
+    //     padding: 0;
+    // }
+    &--flex {
+        display: flex;
+    }
+    &--centered {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

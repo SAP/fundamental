@@ -1,0 +1,37 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "./component.njk" import icon %}
+
+{% block content %}
+
+<style>
+	.demo-icon-wrapper{
+		padding: 20px;
+		float: left;
+		width: 25%;
+		text-align: center;
+	}
+	.demo-icon-wrapper span {
+		margin: 20px;
+	}
+</style>
+
+
+{% for glyph in data.properties.glyphs %}
+<div class="demo-icon-wrapper">
+	<h2>.fd-icon--{{glyph}}</h2>
+    {% set example %}
+    {{ icon(glyph) }}
+    {%- for size in data.modifier.block %}
+        {{ icon(glyph, size) }}
+    {%- endfor %}
+    {% endset %}
+    {{ format(example) }}
+
+
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

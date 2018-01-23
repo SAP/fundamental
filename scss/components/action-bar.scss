@@ -1,0 +1,60 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+@import "./button";
+@import "./contextual-menu";
+
+/*!
+.fd-action-bar
+	.fd-action-bar__navigation
+	.fd-action-bar__title
+	.fd-action-bar__actions+(.is-disabled | aria-hidden)?
+        .fd-action-bar__action-item
+*/
+$block: ns(action-bar);
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-action-bar-background-color: fd-color(background, 2) !default;
+    $fd-action-bar-border-color: fd-color(neutral, 3) !default;
+
+    $fd-action-bar-height: fd-space(19) !default;
+    $fd-action-bar-transition-params: 0.25s ease-in !default;
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    @include reset;
+    height: $fd-action-bar-height;
+    background-color: $fd-action-bar-background-color;
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: $fd-action-bar-border-color;
+    display: flex;
+    align-items: center;
+    &__navigation {
+
+    }
+    &__title {
+        @include reset;
+        @include fd-type(3, header, med);
+        flex: 1;
+        margin-bottom: 0;
+        &:first-child {
+            padding-left: fd-space(6);
+        }
+    }
+    &__actions {
+        @include reset;
+        display: flex;
+        transition: opacity $fd-action-bar-transition-params;
+        visibility: visible;
+        &.is-disabled,
+        &[aria-hidden="true"] {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    &__action-item {
+
+    }
+}
