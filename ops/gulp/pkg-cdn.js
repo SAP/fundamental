@@ -20,3 +20,5 @@ const task = (cb) => {
 
 gulp.task('pkg-cdn', task);
 module.exports = task;
+
+// this task is no longer used since we are using unpkg.com for CDN
