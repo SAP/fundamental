@@ -17,14 +17,14 @@ summary: This is an in-development, beta version. Refer to the Fundamental websi
 <p>Latest minified file is Available via CDN below</p>
 
 ```
-https://techne.yaas.io/libs/techne/{{site.library_version}}/techne.min.css
+https://unpkg.com/fundamental-ui@{{site.library_version}}/dist/fundamental-ui.min.css
 ```
 
 <h3 class="docs-header-h3">NPM</h3>
 Install the library.
 
 ````
-npm install techne@{{site.library_version}} --save
+npm install fundamental --save
 ````
 <h3 class="docs-header-h3">Bundle</h3>
 Install Bundle dependencies from `docs` directory
