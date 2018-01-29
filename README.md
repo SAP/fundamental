@@ -11,13 +11,13 @@ This is an in-development, experimental version of Fundamental UI.
 Latest minified file is Available via CDN below
 
 ```
-https://techne.yaas.io/libs/techne/2.0.0-alpha-7/techne.min.css
+https://unpkg.com/fundamental-ui@1.0.0-beta/dist/fundamental-ui.min.css
 ```
 ### NPM
 Install the library.
 
 ````
-npm install techne@2.0.0-alpha-7 --save
+npm install fundamental --save
 ````
 
 ## Bundle
