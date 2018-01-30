@@ -143,7 +143,7 @@ git checkout -b bug/000
 git checkout -b hotfix/000
 ```
 
-Create a pull request against branch  v2.0  and assign it for review.
+Create a pull request against branch  develop  and assign it for review.
 
 When accepted, the reviewer will merge and delete the branch.
 
