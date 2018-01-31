@@ -17,14 +17,14 @@ summary: This is an in-development, beta version. Refer to the Fundamental websi
 <p>Latest minified file is Available via CDN below</p>
 
 ```
-https://techne.yaas.io/libs/techne/{{site.library_version}}/techne.min.css
+https://unpkg.com/fundamental-ui@{{site.library_version}}/dist/fundamental-ui.min.css
 ```
 
 <h3 class="docs-header-h3">NPM</h3>
 Install the library.
 
 ````
-npm install techne@{{site.library_version}} --save
+npm install fundamental-ui --save
 ````
 <h3 class="docs-header-h3">Bundle</h3>
 Install Bundle dependencies from `docs` directory
@@ -38,11 +38,11 @@ bundle install
 Include the full library.
 
 ```html
-<link href="node_modules/techne/dist/techne.min.css" rel="stylesheet" />
+<link href="node_modules/fundamental-ui/dist/fundamental-ui.min.css" rel="stylesheet" />
 ```
 
 <h3 class="docs-header-h3">Stand alone components</h3>
-The components can be used without loading the whole library. Take a look at the [Available Techne Components](https://github.com/SAP/techne/wiki/Techne-Components) and the individual files at:
+The components can be used without loading the whole library. 
 
 ```
 /dist/components/
@@ -50,7 +50,7 @@ The components can be used without loading the whole library. Take a look at the
 
 For example, to use only the cards
 ```html
-<link href="node_modules/techne/components/card.min.css" rel="stylesheet" />
+<link href="node_modules/fundamental-ui/dist/components/card.min.css" rel="stylesheet" />
 ````
 
 <hr>
