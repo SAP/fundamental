@@ -6,33 +6,13 @@ toc: false
 permalink: components2.html
 folder: components
 ---
-<style media="screen">
-.componnet-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1px;
-    background: #cfdbe7;
-    border:1px solid #cfdbe7;
-    border-left: none;
-    border-right: none;
-}
 
-.componnet-grid > a{
-    background: #fff;
-    padding: 40px 10px;
-    display: block;
-    text-align: center;
-}
-
-
-</style>
-
-<div class="componnet-grid">
+<div class="docs-component-grid">
     {% for component in site.data.components.items %}
-        <a href="{{component.meta}}.html">
-            <img src="images/component-visual/{{component.meta}}.png" alt="{{component.title}}" width="60%">
+        <a href="{{component.meta}}.html" class="docs-component-grid--item">
+            <img src="images/component-visual/{{component.meta}}.png" alt="{{component.title}}" width="60%" class="docs-component-grid--img">
             <br>
-            {{component.title}}
+            <h3 class="docs-component-grid--lable">{{component.title}}</h3>
         </a>
     {% endfor %}
 </div>

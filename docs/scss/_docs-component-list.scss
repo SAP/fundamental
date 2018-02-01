@@ -1,8 +1,34 @@
 .docs-component-grid {
     display: grid;
-    grid-template-columns: 200px 200px 200px;
-    
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1px;
+    background: #cfdbe7;
+    border:1px solid #cfdbe7;
+    border-left: none;
+    border-right: none;
+
     &--item{
+        background: #fff;
+        padding: 40px 10px;
+        display: block;
+        text-align: center;
+        &:hover{
+            border-color: #009cdf;
+            background-color: #ffffff;
+            box-shadow: 0 0 5px 0 rgba(138, 143, 161, 0.4);
+            text-decoration: none;
+        }
+    }
+    &--img{
+
+    }
+    &--lable{
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.56;
+        text-align: center;
+        color: #21262c;
+        margin-top: 30px;
 
     }
 }
