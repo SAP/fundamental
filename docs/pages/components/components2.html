@@ -1,0 +1,38 @@
+---
+title: Components
+keywords: components
+sidebar: left-navigation-sidebar
+toc: false
+permalink: components2.html
+folder: components
+---
+<style media="screen">
+.componnet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1px;
+    background: #cfdbe7;
+    border:1px solid #cfdbe7;
+    border-left: none;
+    border-right: none;
+}
+
+.componnet-grid > a{
+    background: #fff;
+    padding: 40px 10px;
+    display: block;
+    text-align: center;
+}
+
+
+</style>
+
+<div class="componnet-grid">
+    {% for component in site.data.components.items %}
+        <a href="{{component.meta}}.html">
+            <img src="images/component-visual/{{component.meta}}.png" alt="{{component.title}}" width="60%">
+            <br>
+            {{component.title}}
+        </a>
+    {% endfor %}
+</div>
