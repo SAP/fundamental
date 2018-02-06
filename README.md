@@ -2,6 +2,8 @@
 
 Fundamental UI is a coherent Design System accompanied by a collection of HTML/CSS Components. Consumable as a library that can be used independently of the Front-End Technology or Framework. It is used to build Modern User Experiences for Products with the SAP look and feel.
 
+Learn more about this project at - http://sap.github.io/fundamental/
+
 # Current version
 ````
 v1.0.0-beta
