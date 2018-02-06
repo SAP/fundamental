@@ -1,7 +1,6 @@
 # What is Fundamental UI?
 
-Fundamental UI is a unified, flexible design system and pattern library package. It solves complex UI/UX
-problems in a meaningful way and creates a simple intuitive experience. The package includes CSS and HTML markup for individual components that are technology agnostic.
+Fundamental UI is a coherent Design System accompanied by a collection of HTML/CSS Components. Consumable as a library that can be used independently of the Front-End Technology or Framework. It is used to build Modern User Experiences for Products with the SAP look and feel.
 
 # Current version
 ````
