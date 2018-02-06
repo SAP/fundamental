@@ -6,7 +6,7 @@ Learn more about this project at - http://sap.github.io/fundamental/
 
 # Current version
 ````
-v1.0.0-beta
+v1.0.0-beta-1
 ````
 
 # The Product Structure
