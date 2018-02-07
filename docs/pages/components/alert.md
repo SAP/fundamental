@@ -26,7 +26,7 @@ Use to let people know there is something happening, but you can dismiss and act
 
 {% include display-component.html component=default-alert %}
 
-## Notification
+## Warning
 Use to let people know about some information or action that happened, but no action is needed on their part, e.g. the service will be deprecated at a future date. It’s recommended to use the dark blue treatment for Notifications. Notifications should display for 3 seconds, and disappear on their own or by clicking or tapping X.
 
 Add the modifier class `fd-alert--warning` for Notification alert.
