@@ -7,7 +7,7 @@
     {% for folder in entry.folders %}
         {% if folder.output contains "web" %}
             <li class="side-nav__headers">
-                <span class="side-nav__headers-link">{{ folder.title }}</span>
+                <a class="side-nav__headers-link" href="{{folder.url}}">{{ folder.title }}</a>
                 <ul >
                     {% for folderitem in folder.folderitems %}
                     {% if folderitem.output contains "web" %}
