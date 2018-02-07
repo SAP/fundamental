@@ -1,35 +1,39 @@
 
 $gird-border-color: #cfdbe7;
 $grid-item-bg-color: #fff;
-$grid-lable-color: tn-color(text, 1);
+$grid-label-color: tn-color(text, 1);
+$grid-transition-delay: 100ms;
 .docs-component-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1px;
     background: $gird-border-color;
-    border:1px solid $gird-border-color;
+    border: 1px solid $gird-border-color;
     border-left: none;
     border-right: none;
     margin: 0 -40px -125px -40px;
 
 
     &--item{
-        background:$grid-item-bg-color;
+        background: $grid-item-bg-color;
         padding: 40px 10px;
         display: block;
         text-align: center;
         position: relative;
         height: 280px;
+        z-index: 1;
+        transition: all ease-in-out $grid-transition-delay;
 
         &:hover{
-            border-color: #009cdf;
             background-color: $grid-item-bg-color;
-            box-shadow: 0 0 5px 0 rgba(138, 143, 161, 0.4);
+            box-shadow: 0 0 20px 0 rgba(138, 143, 161, 0.4);
             text-decoration: none;
+            z-index: 2;
+            transition: all ease-in-out $grid-transition-delay;
         }
     }
 
-    &--lable{
+    &--label {
         font-size: 18px;
         font-weight: 600;
         line-height: 1.56;
