@@ -13,13 +13,9 @@
 
 <ul class="fd-pagination">
     <span class="fd-pagination__total">{{totalItems}} items</span>
-    <li class="fd-pagination__item">
-        {%- if currentPage === 1 %}
-        <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
-        {%- else %}
-        <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous">
-        {%- endif %}
-            <span class="fd-icon fd-icon--chevron-back fd-icon--small" role="presentation"></span>
+    <li class="fd-pagination__item fd-pagination__item--previous">
+        <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous"{%- if currentPage === 1 %} aria-disabled="true"{%- endif %}>
+            <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
         </button>
     </li>
     {%- if pages < 4 %}
@@ -104,14 +100,9 @@
         {%- endfor %}
     {%- endif %}
     <li class="fd-pagination__item">
-        {%- if currentPage === pages | round(0) %}
-        <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Next" aria-disabled="true">
-        {%- else %}
-        <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Next">
-        {%- endif %}
+        <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Next"{%- if currentPage === pages | round(0) %} aria-disabled="true"{%- endif %}>
             <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
         </button>
     </li>
 </ul>
-<br>
 {% endmacro %}
