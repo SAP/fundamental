@@ -2,10 +2,16 @@
 @import "../core/mixins";
 @import "../core/functions";
 
+$scssIconPath : ""!default;
+
+@if variable-exists(iconsPath) {
+    $scssIconPath : $iconsPath ;
+}
+
 @font-face {
     font-family: "FundamentalIcons";
-    src: url("FundamentalIcons.woff2") format("woff2"),
-        url("FundamentalIcons.woff") format("woff");
+    src: url("#{$scssIconPath}FundamentalIcons.woff2") format("woff2"),
+        url("#{$scssIconPath}FundamentalIcons.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
