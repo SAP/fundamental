@@ -24,6 +24,7 @@ $block: ns(form);
     $fd-form-item-gutter: $fd-width--gutter !default;
     $fd-form-item-margin-bottom: fd-space(8) !default;
 
+    @include fd-reset;
     &__group {
         @include fd-clearfix;
         @include fd-last-child;
@@ -77,6 +78,7 @@ $block: ns(form);
         }
     }
     &__label, &__legend {
+        @include fd-reset;
         @include fd-type($fd-form-label-font-size);
         display: block;
         margin-bottom: fd-space(2);
