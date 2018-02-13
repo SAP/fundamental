@@ -2,10 +2,16 @@
 @import "../core/mixins";
 @import "../core/functions";
 
+$fd-scss-icons-path : ""!default;
+
+@if variable-exists(iconsPath) {
+    $fd-scss-icons-path : $icons-path ;
+}
+
 @font-face {
     font-family: "<%= fontName %>";
-    src: url("<%= fontName %>.woff2") format("woff2"),
-        url("<%= fontName %>.woff") format("woff");
+    src: url("#{$fd-scss-icons-path}<%= fontName %>.woff2") format("woff2"),
+        url("#{$fd-scss-icons-path}<%= fontName %>.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -37,10 +43,10 @@ $block: ns(<%= className %>);
 // }
 
 .#{$block} {
-    $tn-icon-size: 1.125rem !default;         //18px
-    $tn-icon-size--medium: 1.625rem !default; //26px
-    $tn-icon-size--large: 2rem !default;      //32px
-    font-size: $tn-icon-size;
+    $fd-icon-size: 1.125rem !default;         //18px
+    $fd-icon-size--medium: 1.625rem !default; //26px
+    $fd-icon-size--large: 2rem !default;      //32px
+    font-size: $fd-icon-size;
     font-family: "<%= fontName %>";
     line-height: 1;
     font-style: normal;
@@ -53,10 +59,10 @@ $block: ns(<%= className %>);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     &--medium {
-        font-size: $tn-icon-size--medium;
+        font-size: $fd-icon-size--medium;
     }
     &--large {
-        font-size: $tn-icon-size--large;
+        font-size: $fd-icon-size--large;
     }
     &::before {
         display: inline;
