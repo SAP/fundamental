@@ -2,17 +2,18 @@
 
 $ns: ns();
 //utils
-@mixin reset {
+@mixin fd-reset {
     font-size: $fd-font-size;
     line-height: $fd-line-height;
     color: $fd-color;
+    font-family: $fd-font-family;
 }
 
 
 
 //els
 @mixin fd-form-base {
-    @include reset;
+    @include fd-reset;
     @include fd-type(0, body);
     appearance: none;
     -webkit-appearance: textfield;
