@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.0.0-beta
+* Fundamental-UI v1.0.0-beta-2
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -15,11 +15,13 @@
   font-size: 1rem;
   line-height: 1.5;
   color: #21262c;
+  font-family: sans-serif;
   position: relative;
   width: 100%;
   max-width: 100%;
   border-bottom: solid 1px #ccdaeb;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  margin-left: 0
 }
 .fd-tree:last-child {
   margin-bottom: 0;
@@ -38,7 +40,8 @@
   transition: opacity 125ms linear;
   max-height: auto;
   opacity: 1;
-  margin-bottom: 0
+  margin-bottom: 0;
+  margin-left: 0
 }
 .fd-tree__group.is-hidden,
 .fd-tree__group[aria-hidden=true] {
@@ -161,4 +164,10 @@
 .fd-tree__control[aria-pressed=true] {
   -webkit-transform: rotate(0);
   transform: rotate(0)
+}
+.fd-tree a {
+  color: #009cdf
+}
+.fd-tree a:hover {
+  color: #009cdf
 }

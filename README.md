@@ -6,10 +6,10 @@ Learn more about this project at - http://sap.github.io/fundamental/
 
 # Current version
 ````
-v1.0.0-beta-1
+v1.0.0-beta-2
 ````
 
-# The Product Structure
+# The Project Structure
 
 * dist - distribution folder that contains combined and individual CSS files for all component
 * docs - Static Documentation site for the library
