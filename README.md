@@ -6,10 +6,10 @@ Learn more about this project at - http://sap.github.io/fundamental/
 
 # Current version
 ````
-v1.0.0-beta-1
+v1.0.0-beta-2
 ````
 
-# The Product Structure
+# The Project Structure
 
 * dist - distribution folder that contains combined and individual CSS files for all component
 * docs - Static Documentation site for the library
@@ -131,7 +131,16 @@ At the time this version was released, there are no known limitations
 
 # Known Issues
 
-At the time this version was released, there are no known issues.
+### Configuring icons path when importing SCSS
+
+If you are importing .scss files in your project, the icons path needs to be configured in your project's .scss file before the Fundamental UI scss import as described below. Please note that the path variable name has to be `$fd-icons-path` in order to override the default value set in `scss/icons/icon.scss`.
+
+```
+$fd-icons-path : "../node_modules/fundamental-ui/scss/icons/"; // should be declared before the scss import
+
+@import "../node_modules/fundamental-ui/scss/all.scss";
+
+```
 
 
 # How to obtain support
@@ -141,7 +150,7 @@ If you encounter an issue, you can [create a ticket](https://github.com/SAP/fund
 
 # Contributing
 
-Details of where and how to start developing the new component can be found in test/README.MD file.
+Details of where and how to start developing the new component can be found in `test/README.MD` file.
 New branches should include the type (feature, bug, or hotfix) and the issue number or release number.
 
 ```
