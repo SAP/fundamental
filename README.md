@@ -42,7 +42,7 @@ We rely on several core technologies.
 You can quickly include the latest minified file available via CDN link below
 
 ```
-https://unpkg.com/fundamental-ui@1.0.0-beta/dist/fundamental-ui.min.css
+https://unpkg.com/fundamental-ui@1.0.0-beta-2/dist/fundamental-ui.min.css
 ```
 
 ### NPM
