@@ -39,9 +39,9 @@ This is the look and feel of the Toolbar when all the components are used.
         <div class="fd-toolbar__pagination">
             <ul class="fd-pagination">
                 <span class="fd-pagination__total">30 items</span>
-                <li class="fd-pagination__item">
+                <li class="fd-pagination__item fd-pagination__item--previous">
                     <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
-                        <span class="fd-icon fd-icon--chevron-back fd-icon--small" role="presentation"></span>
+                        <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
                     </button>
                 </li>
                 <li class="fd-pagination__item">
@@ -235,9 +235,9 @@ The Toolbar is also used to support [pagination elements](pagination.html). They
         <div class="fd-toolbar__pagination">
             <ul class="fd-pagination">
                 <span class="fd-pagination__total">30 items</span>
-                <li class="fd-pagination__item">
+                <li class="fd-pagination__item fd-pagination__item--previous">
                     <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
-                        <span class="fd-icon fd-icon--chevron-back fd-icon--small" role="presentation"></span>
+                        <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
                     </button>
                 </li>
                 <li class="fd-pagination__item">
@@ -287,9 +287,9 @@ For some collections the user can choose the type of view the items are represen
         <div class="fd-toolbar__pagination">
             <ul class="fd-pagination">
                 <span class="fd-pagination__total">30 items</span>
-                <li class="fd-pagination__item">
+                <li class="fd-pagination__item fd-pagination__item--previous">
                     <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
-                        <span class="fd-icon fd-icon--chevron-back fd-icon--small" role="presentation"></span>
+                        <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
                     </button>
                 </li>
                 <li class="fd-pagination__item">
@@ -334,9 +334,9 @@ At the bottom of a collection is recommended to show a toolbar with the paginati
         <div class="fd-toolbar__pagination">
             <ul class="fd-pagination">
                 <span class="fd-pagination__total">30 items</span>
-                <li class="fd-pagination__item">
+                <li class="fd-pagination__item fd-pagination__item--previous">
                     <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
-                        <span class="fd-icon fd-icon--chevron-back fd-icon--small" role="presentation"></span>
+                        <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
                     </button>
                 </li>
                 <li class="fd-pagination__item">

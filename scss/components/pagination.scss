@@ -1,8 +1,7 @@
 @import "../core/settings";
 @import "../core/mixins";
 @import "../core/functions";
-@import "../components/button";
-@import "../icons";
+@import "./button";
 @import "mixins";
 
 /*!
@@ -20,7 +19,6 @@ $block: ns(pagination);
 
   @include fd-reset;
   @include fd-type(-1);
-  display: inline-block;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
@@ -78,13 +76,13 @@ $block: ns(pagination);
 
   &__item{
     display: inline-block;
-    .fd-icon--chevron-back{
-      @extend .fd-icon--chevron;
-      @include rotate(180);
+    &--previous {
+      transform: rotate(180deg);
     }
   }
   &__more{
     @include fd-type(-3);
+    font-family: sans-serif;
     color: $fd-pagination-color--disabled;
     vertical-align: sub;
     padding-left: fd-space(3);

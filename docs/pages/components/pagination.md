@@ -18,9 +18,9 @@ When the first page is active, the previous link should be disabled.
 {% capture pagination %}
 <ul class="fd-pagination">
     <span class="fd-pagination__total">30 items</span>
-    <li class="fd-pagination__item">
+    <li class="fd-pagination__item fd-pagination__item--previous">
         <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
-            <span class="fd-icon fd-icon--chevron-back fd-icon--small" role="presentation"></span>
+            <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
         </button>
     </li>
     <li class="fd-pagination__item">
@@ -50,9 +50,9 @@ Example with second page active.
 {% capture pagination-second %}
 <ul class="fd-pagination">
     <span class="fd-pagination__total">30 items</span>
-    <li class="fd-pagination__item fd-pagination__navigation">
+    <li class="fd-pagination__item fd-pagination__item--previous">
         <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
-            <span class="fd-icon fd-icon--chevron-back fd-icon--small" role="presentation"></span>
+            <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
         </button>
     </li>
     <li class="fd-pagination__item">
@@ -81,9 +81,9 @@ Example with second page active.
 {% capture pagination-more %}
 <ul class="fd-pagination">
     <span class="fd-pagination__total">500 items</span>
-    <li class="fd-pagination__item fd-pagination__navigation">
+    <li class="fd-pagination__item fd-pagination__item--previous">
         <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
-            <span class="fd-icon fd-icon--chevron-back fd-icon--small" role="presentation"></span>
+            <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
         </button>
     </li>
     <li class="fd-pagination__item">
@@ -121,9 +121,9 @@ Example with second page active.
 {% capture pagination-more-between %}
 <ul class="fd-pagination">
     <span class="fd-pagination__total">500 items</span>
-    <li class="fd-pagination__item fd-pagination__navigation">
+    <li class="fd-pagination__item fd-pagination__item--previous">
         <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
-            <span class="fd-icon fd-icon--chevron-back fd-icon--small" role="presentation"></span>
+            <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
         </button>
     </li>
     <li class="fd-pagination__item">
@@ -171,9 +171,9 @@ On the last page, the next link should be disabled.
 {% capture pagination-last %}
 <ul class="fd-pagination">
     <span class="fd-pagination__total">500 items</span>
-    <li class="fd-pagination__item fd-pagination__navigation">
+    <li class="fd-pagination__item fd-pagination__item--previous">
         <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
-            <span class="fd-icon fd-icon--chevron-back fd-icon--small" role="presentation"></span>
+            <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
         </button>
     </li>
     <li class="fd-pagination__item">
