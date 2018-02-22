@@ -20,6 +20,7 @@ summary: The following step-by-step guide will covers how to install Fundamental
 
 ## Perquisites and Requirements
 
+- Fimalarity using terminal or command prompt
 - This guides assumes that the project is using [Angular 2](https://angular.io/){:target="_blank"} or higher and initial setup was doing using [Angular CLI](https://cli.angular.io/){:target="_blank"}
 - [NPM](https://www.npmjs.com/){:target="_blank"} is installed globally
 
@@ -48,8 +49,8 @@ To set the angular project to use SCSS:
 
 Fundamental UI is currently available as an [NPM package](https://www.npmjs.com/package/fundamental-ui){:target="_blank"} and a compiled and minified [CDN file](https://unpkg.com/fundamental-ui@1.0.0-beta-2/dist/fundamental-ui.min.css){:target="_blank"}. The following steps will cover how to install it via NPM.
 
-1. Type `npm install fundamental-ui --save-dev`
-2. Verify the installation by typing `npm list fundamental-ui`
+1. Type `npm install fundamental-ui --save-dev`. This will install the package as a dev dependency.
+2. Verify the installation was successful by typing `npm list fundamental-ui`
 3. Fundamental UI installation is now complete
 
 <br>
@@ -57,13 +58,13 @@ Fundamental UI is currently available as an [NPM package](https://www.npmjs.com/
 ## Configuring and Importing SCSS source
 
 1. Open `scss/app.scss` file
-2. Define the icons path `$fd-icons-path: "~fundamental-ui/scss/icons/";`
-3. Import scss source file `@import "~fundamental-ui/scss/all.scss";`
+2. Add the following line of code to define the icons path - <br><br> `$fd-icons-path: "~fundamental-ui/scss/icons/";`
+3. Add the following linke of code to tmport scss source file - <br><br> `@import "~fundamental-ui/scss/all.scss";`
 4. Importing Fundamental UI SCSS is now complete
 
 > **Note:** In order to render the icons correctly, you need to define the `$fd-icons-path` variable.
 
-at this point, the contents of your `scss/app.scss` should look like this
+At this point, the contents of your `scss/app.scss` should look like this -
 
 {% highlight css %}
 
@@ -77,9 +78,9 @@ You can continue to build out your SCSS workflow based on your project needs.
 <br>
 
 ## Selective Imports
-Fundamental UI is broken down into several core pieces and also by each component. You can also import key features selectively so reduce the SCSS overhead on your project.
+Fundamental UI is divided into several functional pieces. You may choose to import key features selectively to reduce the SCSS overhead in your project.
 
-Here is an overview of the SCSS structure:
+Here is an overview of the SCSS structure -
 
 {% highlight css %}
 scss/
@@ -98,19 +99,19 @@ scss/
 {% endhighlight %}
 
 - all.scss - includes everything
-- components.scss - SCSS source for each each components. In most cases, the components are self encapsulated with little or no dependency on other components
+- components.scss - SCSS source for each each components. The components are decoupled  with little or no dependency on other components.
 - core.scss - Gives you core functionality such as access to settings, functions and mix-ins.
 - helpers.scss - includes various helper functions
 - icons.scss - Fundamental UI's custom icon library
 - layout.scss - App level layout components such as top Overview of Core features bar, side nav, containers, panels, etc.
 
-To reduce the overhead, you can choose to selectively import parts of the library that best fits your need. Please note that components, icons, layout and helpers have a dependency on `core.scss`. Therefore, `core.scss` should always be included in the if you are not importing `all.scss`
+You can choose to selectively import parts of the library that best fits the need of your project. Please note that components, icons, layout and helpers have a dependency on `core.scss`. Therefore, `core.scss` should always be included in case if you are not importing `all.scss`
 
 <br>
 
 ## Core Functions
 
-Fundamental UI comes with some very useful built-in functions to help maintain consistency, quality of your SCSS source. We recommend that you utilize these functions instead of hard coding colors, spacing, fonts, etc. in your code. Utilizing functions also helps in retaining the integrity of the theming options make makes easy for you to switch between different such as a high-contrast theme for accessibility or a brand specific theme.
+Fundamental UI comes with some very useful built-in functions to help maintain consistency and quality of your SCSS source. We recommend that you utilize these functions instead of hard coding colors, spacing, fonts, etc. in your code to keep CSS low specificity. Utilizing functions also helps in retaining the integrity of the theming options and makes it easy to switch between different themes such as a high-contrast theme for accessibility or a brand specific theme.
 
 <br>
 
@@ -125,7 +126,7 @@ If you have a need to apply a color to any of your scss/css class, you can use t
 }
 {% endhighlight %}
 
-You can refer to the [colors page](colors.html){:target="_blank"} for the complete list of the avialable color options.
+You can refer to the [colors page](colors.html){:target="_blank"} for the complete list of the available color options.
 
 <br>
 
@@ -149,3 +150,5 @@ reg: $fd-spacing--base * 5, //20
 m: $fd-spacing--base * 10,  //40
 l: $fd-spacing--base * 25,  //100
 xl: $fd-spacing--base * 37, //148
+
+#### Type Function
