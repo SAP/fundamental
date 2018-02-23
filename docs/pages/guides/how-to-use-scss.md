@@ -9,16 +9,16 @@ summary: The following step-by-step guide will covers how to install Fundamental
 ---
 
 ## Table of contents
-- [Perquisites and Requirements](#perquisites-and-requirements)
-- [Configuring Angular Project to use SCSS](#configuring-angular-project-to-use-scss)
-- [Installing Fundamental UI via NPM](#installing-fundamental-ui-via-npm)
-- [Configuring and Importing SCSS source](#configuring-and-importing-scss-source)
-- [Selective Imports](#selective-imports)
-- [Core Functions and Mix-ins](#core-functions-and-mix-ins)
+1. [Prerequisites and Requirements](#prerequisites-and-requirements)
+1. [Configuring Angular Project to use SCSS](#configuring-angular-project-to-use-scss)
+1. [Installing Fundamental UI via NPM](#installing-fundamental-ui-via-npm)
+1. [Configuring and Importing SCSS source](#configuring-and-importing-scss-source)
+1. [Selective Imports](#selective-imports)
+1. [Core Functions and Mix-ins](#core-functions-and-mix-ins)
 
 <br>
 
-## Perquisites and Requirements
+## Prerequisites and Requirements
 
 - Fimalarity using terminal or command prompt
 - This guides assumes that the project is using [Angular 2](https://angular.io/){:target="_blank"} or higher and initial setup was doing using [Angular CLI](https://cli.angular.io/){:target="_blank"}
@@ -41,7 +41,7 @@ To set the angular project to use SCSS:
 
 4. Create a folder named `scss` under the `src` folder and a also create the main SCSS file named `app.scss`
 
-5. The Basic SCSS configuration is now complete.
+The Basic SCSS configuration is now complete.
 
 <br>
 
@@ -51,20 +51,22 @@ Fundamental UI is currently available as an [NPM package](https://www.npmjs.com/
 
 1. Type `npm install fundamental-ui --save-dev`. This will install the package as a dev dependency.
 2. Verify the installation was successful by typing `npm list fundamental-ui`
-3. Fundamental UI installation is now complete
+
+Fundamental UI installation is now complete
 
 <br>
 
 ## Configuring and Importing SCSS source
 
 1. Open `scss/app.scss` file
-2. Add the following line of code to define the icons path - <br><br> `$fd-icons-path: "~fundamental-ui/scss/icons/";`
-3. Add the following linke of code to tmport scss source file - <br><br> `@import "~fundamental-ui/scss/all.scss";`
-4. Importing Fundamental UI SCSS is now complete
+2. Add the following line of code to define the icons path: <br><br> `$fd-icons-path: "~fundamental-ui/scss/icons/";`
+3. Add the following link of code to import scss source file: <br><br> `@import "~fundamental-ui/scss/all.scss";`
+
+Importing Fundamental UI SCSS is now complete
 
 > **Note:** In order to render the icons correctly, you need to define the `$fd-icons-path` variable.
 
-At this point, the contents of your `scss/app.scss` should look like this -
+At this point, the contents of your `scss/app.scss` should look like this:
 
 {% highlight css %}
 
@@ -98,12 +100,12 @@ scss/
  layout.scss
 {% endhighlight %}
 
-- all.scss - includes everything
-- components.scss - SCSS source for each each components. The components are decoupled  with little or no dependency on other components.
-- core.scss - Gives you core functionality such as access to settings, functions and mix-ins.
-- helpers.scss - includes various helper functions
-- icons.scss - Fundamental UI's custom icon library
-- layout.scss - App level layout components such as top Overview of Core features bar, side nav, containers, panels, etc.
+- `all.scss`  includes everything
+- `components.scss` SCSS source for each each components. The components are decoupled  with little or no dependency on other components.
+- `core.scss` Gives you core functionality such as access to settings, functions and mix-ins.
+- `helpers.scss` includes various helper functions
+- `icons.scss` Fundamental UI's custom icon library
+- `layout.scss` App level layout components such as top Overview of Core features bar, side nav, containers, panels, etc.
 
 You can choose to selectively import parts of the library that best fits the need of your project. Please note that components, icons, layout and helpers have a dependency on `core.scss`. Therefore, `core.scss` should always be included in case if you are not importing `all.scss`
 
@@ -120,7 +122,7 @@ Fundamental UI comes with some very useful built-in functions and mix-ins to hel
 If you have a need to apply a color to any of your scss/css class, you can use the built-in color function - <br> `fd-color(color-group, color-num)`
 
 {% highlight css %}
-.foo{
+.foo {
   background-color: fd-color(neutral, 3); /* renders #ccdaeb */
   color: fd-color(text, 1); /* renders #21262c */
 }
@@ -136,7 +138,7 @@ Spacing function can be utilized for padding, margins and other positioning need
 `tn-space(value)`
 
 {% highlight css %}
-.foo{
+.foo {
   padding: tn-space(xs); /* renders 8px */
   margin-bottom: tn-space(reg); /* renders 20px */
 }
