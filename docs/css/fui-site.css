@@ -2401,7 +2401,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     tbody
         tr+([aria-selected])
 */
-.fd-table {
+.fd-table, .spacing-function-table {
   font-size: 1rem;
   line-height: 1.5;
   color: #21262c;
@@ -2411,38 +2411,38 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   border-collapse: collapse;
   margin-bottom: 20px;
   border-top: solid 1px #ccdaeb; }
-  .fd-table:last-child {
+  .fd-table:last-child, .spacing-function-table:last-child {
     margin-bottom: 0;
     margin-right: 0; }
-  .fd-table tr {
+  .fd-table tr, .spacing-function-table tr {
     transition: background-color 0.125s ease-in; }
-    .fd-table tr:hover {
+    .fd-table tr:hover, .spacing-function-table tr:hover {
       background-color: #f1f5f9; }
-    .fd-table tr.is-selected, .fd-table tr[aria-selected="true"] {
+    .fd-table tr.is-selected, .spacing-function-table tr.is-selected, .fd-table tr[aria-selected="true"], .spacing-function-table tr[aria-selected="true"] {
       background-color: #dee7f2; }
-  .fd-table thead {
+  .fd-table thead, .spacing-function-table thead {
     font-size: 0.875rem;
     line-height: 1.42858;
     font-weight: 400;
     color: #7f90a4; }
-    .fd-table thead tr:hover {
+    .fd-table thead tr:hover, .spacing-function-table thead tr:hover {
       background-color: inherit; }
-    .fd-table thead td,
-    .fd-table thead th {
+    .fd-table thead td, .spacing-function-table thead td,
+    .fd-table thead th, .spacing-function-table thead th {
       border: none; }
-  .fd-table td,
-  .fd-table th {
+  .fd-table td, .spacing-function-table td,
+  .fd-table th, .spacing-function-table th {
     text-align: left;
     padding: 12px 32px 12px 0;
     border-style: solid;
     border-width: 1px 0;
     border-color: #ccdaeb; }
-    .fd-table td:first-child,
-    .fd-table th:first-child {
+    .fd-table td:first-child, .spacing-function-table td:first-child,
+    .fd-table th:first-child, .spacing-function-table th:first-child {
       padding-left: 32px; }
-  .fd-table a {
+  .fd-table a, .spacing-function-table a {
     color: #009cdf; }
-    .fd-table a:hover {
+    .fd-table a:hover, .spacing-function-table a:hover {
       color: #009cdf; }
 
 /*!
@@ -3794,6 +3794,10 @@ hr {
 .docs-landing-page {
   width: 100%;
   min-width: 1024px; }
+
+.spacing-function-table {
+  border: 1px solid #ccdaeb;
+  width: auto; }
 
 .docs-top-nav {
   background-color: #424e5a;

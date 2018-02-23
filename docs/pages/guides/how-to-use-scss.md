@@ -8,13 +8,13 @@ folder: guides
 summary: The following step-by-step guide will covers how to install Fundamental UI in your angular project, import SCSS in your workflow and explain some built-in functions.
 ---
 
-## Table to contents
+## Table of contents
 - [Perquisites and Requirements](#perquisites-and-requirements)
 - [Configuring Angular Project to use SCSS](#configuring-angular-project-to-use-scss)
 - [Installing Fundamental UI via NPM](#installing-fundamental-ui-via-npm)
 - [Configuring and Importing SCSS source](#configuring-and-importing-scss-source)
 - [Selective Imports](#selective-imports)
-- [Core Functions](#core-functions)
+- [Core Functions and Mix-ins](#core-functions-and-mix-ins)
 
 <br>
 
@@ -109,15 +109,15 @@ You can choose to selectively import parts of the library that best fits the nee
 
 <br>
 
-## Core Functions
+## Core Functions and Mix-ins
 
-Fundamental UI comes with some very useful built-in functions to help maintain consistency and quality of your SCSS source. We recommend that you utilize these functions instead of hard coding colors, spacing, fonts, etc. in your code to keep CSS low specificity. Utilizing functions also helps in retaining the integrity of the theming options and makes it easy to switch between different themes such as a high-contrast theme for accessibility or a brand specific theme.
+Fundamental UI comes with some very useful built-in functions and mix-ins to help maintain consistency and quality of your SCSS source. We recommend that you utilize these functions instead of hard coding colors, spacing, fonts, etc. in your code to keep CSS low specificity. Utilizing functions also helps in retaining the integrity of the theming options and makes it easy to switch between different themes such as a high-contrast theme for accessibility or a brand specific theme.
 
 <br>
 
 #### Color Function
 
-If you have a need to apply a color to any of your scss/css class, you can use the built-in color function - <br> `fd-color(color-group, color-num)`.
+If you have a need to apply a color to any of your scss/css class, you can use the built-in color function - <br> `fd-color(color-group, color-num)`
 
 {% highlight css %}
 .foo{
@@ -137,18 +137,45 @@ Spacing function can be utilized for padding, margins and other positioning need
 
 {% highlight css %}
 .foo{
-  padding: tn-space();
-  margin-bottom: tn-space();
+  padding: tn-space(xs); /* renders 8px */
+  margin-bottom: tn-space(reg); /* renders 20px */
 }
 {% endhighlight %}
 
-the following spacing options are avialable -
-base: $fd-spacing--base,    //4
-xs: $fd-spacing--base * 2,  //8
-s: $fd-spacing--base * 3,   //12
-reg: $fd-spacing--base * 5, //20
-m: $fd-spacing--base * 10,  //40
-l: $fd-spacing--base * 25,  //100
-xl: $fd-spacing--base * 37, //148
+The following spacing options are available -
 
-#### Type Function
+{:.spacing-function-table}
+| Option        | Value         | Rendered Value |
+| ------------- | ------------- | -------------- |
+| base          | tn-space()    |  4px           |
+| xs            | tn-space(xs)  |  8px           |
+| s             | tn-space(s)   |  12px          |
+| reg           | tn-space(reg) |  20px          |
+| m             | tn-space(m)   |  40px          |
+| l             | tn-space(l)   |  100px         |
+| xl            | tn-space(xl)  |  148px         |
+
+<br>
+
+#### Type Mixin
+
+You can utilize the type mixin to render size, line height, face, weight and transformation - <br> `fd-type(size, font, weight, transform)`
+
+{% highlight css %}
+.foo {
+    @include fd-type(3, header, med, uppercase); /* renders the css below */
+    /* font-size: 1.125rem; */
+    /* line-height: 1.33334; */
+    /* font-family: sans-serif; */
+    /* font-weight: 500; */
+    /* text-transform: uppercase; */
+}
+{% endhighlight %}
+
+{:.spacing-function-table}
+| Option    | Value                        |
+| --------- | ---------------------------- |
+| size      | -3, -2, -1, 0, 1, 2, 3, 4, 5 |
+| font      | body, header, code           |
+| weight    | reg, med, semi               |
+| transform | none, uppercase, lowercase   |
