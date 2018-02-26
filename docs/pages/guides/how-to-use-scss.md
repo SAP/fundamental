@@ -146,7 +146,7 @@ Spacing function can be utilized for padding, margins and other positioning need
 
 The following spacing options are available -
 
-{:.spacing-function-table}
+{:.docs-table}
 | Option        | Value         | Rendered Value |
 | ------------- | ------------- | -------------- |
 | base          | tn-space()    |  4px           |
@@ -174,7 +174,7 @@ You can utilize the type mixin to render size, line height, face, weight and tra
 }
 {% endhighlight %}
 
-{:.spacing-function-table}
+{:.docs-table}
 | Option    | Value                        |
 | --------- | ---------------------------- |
 | size      | -3, -2, -1, 0, 1, 2, 3, 4, 5 |

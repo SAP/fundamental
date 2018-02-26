@@ -1,9 +1,70 @@
 ---
-title: Design System Cheat Sheet
+title: Design System Utilities
 keywords: design system cheat sheet
 sidebar: left-navigation-sidebar
 toc: false
-permalink: design-system-cheat-sheet.html
+permalink: design-system-utilities.html
 folder: guides
-summary: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+summary: The following guide give you a quick list of all the utility features of the Fundamental UI design system
 ---
+
+## Text Utilities
+
+{% capture text-util %}
+<p class="fd-has-font-weight-bold">This text is bold</p>
+<p class="fd-has-font-style-italic">This text is italic</p>
+<p class="fd-has-text-align-center">This text is centered</p>
+<p class="fd-has-text-align-right">This text is right</p>
+<p class="fd-text-transform-none">text with no transformation</p>
+{% endcapture %}
+{% include display-example.html component=text-util %}
+
+<br>
+
+## Floats
+
+{% capture float-util %}
+<p class="fd-has-float-left">This text is floating on left</p>
+<p class="fd-has-float-right">This text is floating on right</p>
+{% endcapture %}
+{% include display-example.html component=float-util %}
+
+<br>
+
+## Type Sizes
+{% capture type-util %}
+<p class="fd-has-type-minus-3">This is text type size -3</p>
+<p class="fd-has-type-minus-2">This is text type size -2</p>
+<p class="fd-has-type-minus-1">This is text type size -1</p>
+<p class="fd-has-type-base">This is text type size base</p>
+<p class="fd-has-type-2">This is text type size 2</p>
+<p class="fd-has-type-3">This is text type size 3</p>
+<p class="fd-has-type-4">This is text type size 4</p>
+<p class="fd-has-type-5">This is text type size 5</p>
+{% endcapture %}
+{% include display-example.html component=type-util %}
+
+<br>
+
+## Type Face
+`fd-has-font-family-body` renders Open-Sans font.
+`fd-has-font-family-header` renders Roboto font. 
+{% capture type-face %}
+<p class="fd-has-font-family-body">This is body text</p>
+<p class="fd-has-font-family-header">This is header text</p>
+<p class="fd-has-font-family-code">This is code text</p>
+{% endcapture %}
+{% include display-example.html component=type-face %}
+
+<br>
+
+## Type Weights
+used with `fd-has-font-family-header` for illustrate weight variants
+{% capture type-weight %}
+<p class="fd-has-font-family-header fd-has-font-weight-light">This is font with weight light</p>
+<p class="fd-has-font-family-header fd-has-font-weight-reg">This is font with weight regular</p>
+<p class="fd-has-font-family-header fd-has-font-weight-med">This is font with weight medium</p>
+<p class="fd-has-font-family-header fd-has-font-weight-semi">This is font with weight semi-bold</p>
+<p class="fd-has-font-family-header fd-has-font-weight-bold">This is font with weight bold</p>
+{% endcapture %}
+{% include display-example.html component=type-weight %}
