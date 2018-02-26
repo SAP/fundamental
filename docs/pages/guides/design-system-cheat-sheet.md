@@ -9,19 +9,19 @@ summary: The following guide give you a quick list of all the utility features o
 ---
 
 ## Text Utilities
+{: .docs-header-h2}
 
 {% capture text-util %}
 <p class="fd-has-font-weight-bold">This text is bold</p>
 <p class="fd-has-font-style-italic">This text is italic</p>
 <p class="fd-has-text-align-center">This text is centered</p>
-<p class="fd-has-text-align-right">This text is right</p>
+<p class="fd-has-text-align-right">This text is right aligned</p>
 <p class="fd-text-transform-none">text with no transformation</p>
 {% endcapture %}
 {% include display-example.html component=text-util %}
 
-<br>
-
 ## Floats
+{: .docs-header-h2}
 
 {% capture float-util %}
 <p class="fd-has-float-left">This text is floating on left</p>
@@ -29,9 +29,9 @@ summary: The following guide give you a quick list of all the utility features o
 {% endcapture %}
 {% include display-example.html component=float-util %}
 
-<br>
-
 ## Type Sizes
+{: .docs-header-h2}
+
 {% capture type-util %}
 <p class="fd-has-type-minus-3">This is text type size -3</p>
 <p class="fd-has-type-minus-2">This is text type size -2</p>
@@ -44,9 +44,9 @@ summary: The following guide give you a quick list of all the utility features o
 {% endcapture %}
 {% include display-example.html component=type-util %}
 
-<br>
-
 ## Type Face
+{: .docs-header-h2}
+
 `fd-has-font-family-body` renders Open-Sans font.
 `fd-has-font-family-header` renders Roboto font.
 {% capture type-face %}
@@ -56,9 +56,9 @@ summary: The following guide give you a quick list of all the utility features o
 {% endcapture %}
 {% include display-example.html component=type-face %}
 
-<br>
-
 ## Type Weights
+{: .docs-header-h2}
+
 used with `fd-has-font-family-header` for illustrate weight variants
 {% capture type-weight %}
 <p class="fd-has-font-family-header fd-has-font-weight-light">This is font with weight light</p>
@@ -69,13 +69,20 @@ used with `fd-has-font-family-header` for illustrate weight variants
 {% endcapture %}
 {% include display-example.html component=type-weight %}
 
-<br>
-
 ## Colors
-Helper classes are available as a foreground color class `fd-has-color-{color-group}-{color-number}` or as a background color `fd-has-background-color-{color-group}-{color-number}`.
+{: .docs-header-h2}
+
+### Color Function
+{: .docs-header-h3}
+
+Colors can be accessed via color function [`fd-color({group}, {shade})`](how-to-use-scss.html#core-functions-and-mix-ins)
+
+### Color Helper classes
+{: .docs-header-h3}
+Helper classes are available as a foreground color class `fd-has-color-{group}-{shade}` or as a background color `fd-has-background-color-{group}-{shade}`.
 A foreground color class applies the color property to the element for example `.fd-has-color-primary` results in `color: ##006fbb !important`
 
-Colors can be accessed via color function [`fd-color(color-group, color-numer)`](how-to-use-scss.html#core-functions-and-mix-ins)
+
 
 {% capture color %}
 <p class="fd-has-color-primary">.fd-has-color-primary</p>
@@ -91,52 +98,65 @@ Colors can be accessed via color function [`fd-color(color-group, color-numer)`]
 <p class="fd-has-background-color-text fd-has-color-text-inverse">.fd-has-color-text-inverse</p>
 <p class="fd-has-background-color-text fd-has-color-text-inverse-2">.fd-has-color-text-inverse-2</p>
 <p class="fd-has-background-color-text fd-has-color-text-inverse-3">.fd-has-color-text-inverse-3</p>
+<br>
+<p class="fd-has-background-color-background fd-has-color-text">.fd-has-color-background (white)</p>
+<p class="fd-has-background-color-background-2 fd-has-color-text">.fd-has-color-background-2</p>
+<br>
+<p class="fd-has-background-color-neutral fd-has-color-text">.fd-has-background-color-netural-1</p>
+<p class="fd-has-background-color-neutral-2 fd-has-color-text">.fd-has-background-color-netural-2</p>
+<p class="fd-has-background-color-neutral-3 fd-has-color-text">.fd-has-background-color-netural-3</p>
+<p class="fd-has-background-color-neutral-4 fd-has-color-text-1">.fd-has-background-color-netural-4</p>
+<br>
+<p class="fd-has-background-color-status fd-has-color-text">.fd-has-background-color-status-1</p>
+<p class="fd-has-background-color-status-2 fd-has-color-text">.fd-has-background-color-status-2</p>
+<p class="fd-has-background-color-status-3 fd-has-color-text">.fd-has-background-color-status-3</p>
 
 {% endcapture %}
 {% include display-example.html component=color %}
 
+## Margin
+{: .docs-header-h2}
+
+Padding helper classes are available as additive or subtractive on all side or selectively.
+
+### Additive Margin
+{: .docs-header-h3}
+
+{: .docs-table}
+| Class structure       | Result |
+| --------------------- | ------ |
+| `.fd-has-margin-base` | 4px    |
+| `.fd-has-margin-xs`   | 8px    |
+| `.fd-has-margin-xs`   | 12px   |
+| `.fd-has-margin-reg`  | 20px   |
+| `.fd-has-margin-m`    | 40px   |
+| `.fd-has-margin-l`    | 100px  |
+| `.fd-has-margin-xl`   | 148px  |
+
+{% capture margin %}
+<span class="fd-has-margin-base"> .fd-has-margin-base </span>
+<span class="fd-has-margin-xs"> .fd-has-margin-xs </span>
+<span class="fd-has-margin-s"> .fd-has-margin-s </span>
+<span class="fd-has-margin-reg"> .fd-has-margin-reg </span>
+<span class="fd-has-margin-m"> .fd-has-margin-m </span>
+<span class="fd-has-margin-l"> .fd-has-margin-l </span>
+<span class="fd-has-margin-xl"> .fd-has-margin-xl </span>
+{% endcapture %}
+
+{% include display-example.html component=margin %}
 
 
-.fd-has-color-text-inverse,
-.fd-has-color-text-inverse-1 {
-  color: #fff!important
-}
-.fd-has-color-text-inverse-2 {
-  color: #f6f8f9!important
-}
-.fd-has-color-text-inverse-3 {
-  color: #eef1f3!important
-}
-.fd-has-color-background,
-.fd-has-color-background-1 {
-  color: #fff!important
-}
-.fd-has-color-background-2 {
-  color: #f0f5ff!important
-}
-.fd-has-color-background-3 {
-  color: #000!important
-}
-.fd-has-color-neutral,
-.fd-has-color-neutral-1 {
-  color: #f9fbfc!important
-}
-.fd-has-color-neutral-2 {
-  color: #d7d7d7!important
-}
-.fd-has-color-neutral-3 {
-  color: #ccdaeb!important
-}
-.fd-has-color-neutral-4 {
-  color: #8a8fa1!important
-}
-.fd-has-color-status,
-.fd-has-color-status-1 {
-  color: #61bf33!important
-}
-.fd-has-color-status-2 {
-  color: #e97326!important
-}
-.fd-has-color-status-3 {
-  color: #df1919!important
-}
+### Selective Subtractive Margin
+{: .docs-header-h3}
+
+{% capture margin %}
+<span class="fd-has-margin-m fd-has-margin-top-none"></span>
+<span class="fd-has-margin-m fd-has-margin-right-none"></span>
+<span class="fd-has-margin-m fd-has-margin-bottom-none"></span>
+<span class="fd-has-margin-m fd-has-margin-left-none"></span>
+{% endcapture %}
+
+{% include display-example.html component=margin %}
+
+
+.fd-has-margin-base
