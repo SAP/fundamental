@@ -9,6 +9,7 @@ summary: The following step-by-step guide will covers how to install Fundamental
 ---
 
 ## Table of contents
+{:.docs-header-h2}
 1. [Prerequisites and Requirements](#prerequisites-and-requirements)
 1. [Configuring Angular Project to use SCSS](#configuring-angular-project-to-use-scss)
 1. [Installing Fundamental UI via NPM](#installing-fundamental-ui-via-npm)
@@ -16,19 +17,17 @@ summary: The following step-by-step guide will covers how to install Fundamental
 1. [Selective Imports](#selective-imports)
 1. [Core Functions and Mix-ins](#core-functions-and-mix-ins)
 
-<br>
-
 ## Prerequisites and Requirements
+{:.docs-header-h2}
 
-- Fimalarity using terminal or command prompt
-- This guides assumes that the project is using [Angular 2](https://angular.io/){:target="_blank"} or higher and initial setup was doing using [Angular CLI](https://cli.angular.io/){:target="_blank"}
+- Familiarity using terminal or command prompt
+- This guides assumes that the initial setup was done using [Angular 4](https://angular.io/){:target="_blank"} or higher and initial setup was doing using [Angular CLI](https://cli.angular.io/){:target="_blank"}
 - [NPM](https://www.npmjs.com/){:target="_blank"} is installed globally
 
 
-
-<br>
-
 ## Configuring Angular Project to use SCSS
+{:.docs-header-h2}
+
 Angular CLI does not configure the project to process SCSS files by default. Instead it is set to a CSS file located at the root of `src` folder. We recommend that you use keep all your SCSS files in one place under `src/scss/`.
 
 To set the angular project to use SCSS:
@@ -41,11 +40,13 @@ To set the angular project to use SCSS:
 
 4. Create a folder named `scss` under the `src` folder and a also create the main SCSS file named `app.scss`
 
+5. Remove the src/styles.css file. It will not be used.
+
 The Basic SCSS configuration is now complete.
 
-<br>
 
 ## Installing Fundamental UI via NPM
+{:.docs-header-h2}
 
 Fundamental UI is currently available as an [NPM package](https://www.npmjs.com/package/fundamental-ui){:target="_blank"} and a compiled and minified [CDN file](https://unpkg.com/fundamental-ui@1.0.0-beta-2/dist/fundamental-ui.min.css){:target="_blank"}. The following steps will cover how to install it via NPM.
 
@@ -54,13 +55,12 @@ Fundamental UI is currently available as an [NPM package](https://www.npmjs.com/
 
 Fundamental UI installation is now complete
 
-<br>
-
 ## Configuring and Importing SCSS source
+{:.docs-header-h2}
 
 1. Open `scss/app.scss` file
 2. Add the following line of code to define the icons path: <br><br> `$fd-icons-path: "~fundamental-ui/scss/icons/";`
-3. Add the following link of code to import scss source file: <br><br> `@import "~fundamental-ui/scss/all.scss";`
+3. Add the following line of code to import SCSS source file: <br><br> `@import "~fundamental-ui/scss/all.scss";`
 
 Importing Fundamental UI SCSS is now complete
 
@@ -77,9 +77,9 @@ $fd-icons-path: "~fundamental-ui/scss/icons/";
 
 You can continue to build out your SCSS workflow based on your project needs.
 
-<br>
-
 ## Selective Imports
+{:.docs-header-h2}
+
 Fundamental UI is divided into several functional pieces. You may choose to import key features selectively to reduce the SCSS overhead in your project.
 
 Here is an overview of the SCSS structure -
@@ -100,26 +100,51 @@ scss/
  layout.scss
 {% endhighlight %}
 
-- `all.scss`  includes everything
-- `components.scss` SCSS source for each each components. The components are decoupled  with little or no dependency on other components.
-- `core.scss` Gives you core functionality such as access to settings, functions and mix-ins.
-- `helpers.scss` includes various helper functions
-- `icons.scss` Fundamental UI's custom icon library
-- `layout.scss` App level layout components such as top Overview of Core features bar, side nav, containers, panels, etc.
+- `all.scss`: Includes everything.
+- `components.scss`: SCSS source for each components. The components are decoupled  with little or no dependency on other components.
+- `core.scss`: The main purpose of core is elements and forms. It's like the reset and foundation.
+- `helpers.scss`: Includes various helper functions.
+- `icons.scss`: Fundamental UI's custom icon library.
+- '/theme/fundamental.scss': Includes fonts.
+- `layout.scss`: App level layout components such as top Overview of Core features bar, side nav, containers, panels, etc.
 
-You can choose to selectively import parts of the library that best fits the need of your project. Please note that components, icons, layout and helpers have a dependency on `core.scss`. Therefore, `core.scss` should always be included in case if you are not importing `all.scss`
+You can choose to selectively import parts of the library that best fits the need of your project. Please note that components, icons, layout and helpers have a dependency on `settings.scss`. Therefore, `settings.scss` should always be included in case if you are not importing `all.scss`. For fonts, make sure you are importing `theme/fundamental.scss`
 
-<br>
+For selective import your `app.scss` content should look like this:
 
-## Core Functions and Mix-ins
+{% highlight css %}
+$fd-icons-path: "~fundamental-ui/scss/icons/";
+@import "~fundamental-ui/scss/theme/fundamental";
+@import "~fundamental-ui/scss/core";
+@import "~fundamental-ui/scss/{feature}";
 
-Fundamental UI comes with some very useful built-in functions and mix-ins to help maintain consistency and quality of your SCSS source. We recommend that you utilize these functions instead of hard coding colors, spacing, fonts, etc. in your code to keep CSS low specificity. Utilizing functions also helps in retaining the integrity of the theming options and makes it easy to switch between different themes such as a high-contrast theme for accessibility or a brand specific theme.
+{% endhighlight %}
 
-<br>
+### Angular components
+{:.docs-header-h3}
 
-#### Color Function
+If you are writing angular components using Fundamental UI toolkit, you will need to import the following in your component's scss file:
 
-If you have a need to apply a color to any of your scss/css class, you can use the built-in color function - <br> `fd-color(color-group, color-num)`
+{% highlight css %}
+@import "~fundamental-ui/scss/core/settings";
+@import "~fundamental-ui/scss/core/mixins";
+@import "~fundamental-ui/scss/core/functions";
+{% endhighlight %}
+
+
+## Core Functions and Mixins
+{:.docs-header-h2}
+
+Fundamental UI comes with some very useful built-in functions and mixins to help maintain consistency and quality of your SCSS source files. We recommend that you utilize these functions instead of hard coding colors, spacing, fonts, etc. in your code to keep CSS low specificity. Utilizing functions also helps in retaining the integrity of the theming options and makes it easy to switch between different themes such as a high-contrast theme for accessibility or a brand specific theme.
+
+> **Note:** In order to use the functions and mixins, please ensure that you are importing the functions SCSS files <br>
+> `@import "~fundamental-ui/scss/core/functions";` <br>
+> `@import "~fundamental-ui/scss/core/mixins";`
+
+### Color Function
+{:.docs-header-h3}
+
+If you have a need to apply a color to any of your scss/css class, you can use the built-in color function - <br> `fd-color(group, shade)`
 
 {% highlight css %}
 .foo {
@@ -130,9 +155,8 @@ If you have a need to apply a color to any of your scss/css class, you can use t
 
 You can refer to the [colors page](colors.html){:target="_blank"} for the complete list of the available color options.
 
-<br>
-
-#### Spacing Function
+### Spacing Function
+{:.docs-header-h3}
 
 Spacing function can be utilized for padding, margins and other positioning needs - <br>
 `tn-space(value)`
@@ -146,20 +170,20 @@ Spacing function can be utilized for padding, margins and other positioning need
 
 The following spacing options are available -
 
-{:.docs-table}
-| Option        | Value         | Rendered Value |
-| ------------- | ------------- | -------------- |
-| base          | tn-space()    |  4px           |
-| xs            | tn-space(xs)  |  8px           |
-| s             | tn-space(s)   |  12px          |
-| reg           | tn-space(reg) |  20px          |
-| m             | tn-space(m)   |  40px          |
-| l             | tn-space(l)   |  100px         |
-| xl            | tn-space(xl)  |  148px         |
+{:.spacing-function-table}
+| Option        | Value           | Rendered Value |
+| ------------- | --------------- | -------------- |
+| `base`        | `tn-space()`    |  4px           |
+| `xs`          | `tn-space(xs)`  |  8px           |
+| `s`           | `tn-space(s)`   |  12px          |
+| `reg`         | `tn-space(reg)` |  20px          |
+| `m`           | `tn-space(m)`   |  40px          |
+| `l`           | `tn-space(l)`   |  100px         |
+| `xl`          | `tn-space(xl)`  |  148px         |
 
-<br>
 
-#### Type Mixin
+### Type Mixin
+{:.docs-header-h3}
 
 You can utilize the type mixin to render size, line height, face, weight and transformation - <br> `fd-type(size, font, weight, transform)`
 
@@ -174,10 +198,10 @@ You can utilize the type mixin to render size, line height, face, weight and tra
 }
 {% endhighlight %}
 
-{:.docs-table}
-| Option    | Value                        |
-| --------- | ---------------------------- |
-| size      | -3, -2, -1, 0, 1, 2, 3, 4, 5 |
-| font      | body, header, code           |
-| weight    | reg, med, semi               |
-| transform | none, uppercase, lowercase   |
+{:.spacing-function-table}
+| Option      | Value                          |
+| ----------- |------------------------------- |
+| `size`      | `-3, -2, -1, 0, 1, 2, 3, 4, 5` |
+| `font`      | `body, header, code`           |
+| `weight`    | `reg, med, semi`               |
+| `transform` | `none, uppercase, lowercase`   |
