@@ -5,7 +5,7 @@ sidebar: left-navigation-sidebar
 toc: false
 permalink: design-system-utilities.html
 folder: guides
-summary: The following guide give you a quick list of all the utility features of the Fundamental UI design system
+summary: The following guide covers all the major utility features of the Fundamental UI (FDUI) design system toolkit. We recommend that you utilize these functions, mixins and helper classes to maintain consistency throughout your application. Using the toolkit features will ensure that you application will remain compatible and easy to upgrade with the future versions of FDUI, transition between themes and customization. 
 ---
 
 ## Text Utilities
@@ -82,8 +82,14 @@ Colors can be accessed via color function [`fd-color({group}, {shade})`](how-to-
 Helper classes are available as a foreground color class `fd-has-color-{group}-{shade}` or as a background color `fd-has-background-color-{group}-{shade}`.
 A foreground color class applies the color property to the element for example `.fd-has-color-primary` results in `color: ##006fbb !important`
 
+{: .docs-table}
+| Class structure                 | {group}-{shade} options |
+| ------------------------------- | ----------------------- |
+| Foreground Class: <br> `.fd-has-color-{group}-{shade}` <br><br> Background Class:<br>`.fd-has-background-color-{group}-{shade}` | `primary` - `1`, `2` <br> `action` - `1`, `2` <br> `text` - `1`, `2`, `3` <br> `text-inverse` - `1`, `2`, `3` <br> `background` - `1`, `2`, `3` <br> `neutral` - `1`, `2`, `3`, `4`  <br> `status` - `1`, `2`, `3` |
 
+Please check the [colors page](colors.html){:target="_blank"} to see full color pallet.
 
+Some examples of color helper classes.
 {% capture color %}
 <p class="fd-has-color-primary">.fd-has-color-primary</p>
 <p class="fd-has-color-primary-2">.fd-has-color-primary-2</p>
@@ -114,24 +120,29 @@ A foreground color class applies the color property to the element for example `
 {% endcapture %}
 {% include display-example.html component=color %}
 
-## Margin
+## Margin and Padding
 {: .docs-header-h2}
 
-Padding helper classes are available as additive or subtractive on all side or selectively.
-
-### Additive Margin
-{: .docs-header-h3}
+You can add margin and/or padding on all sides on an element with the following helper classes. The both helper classes are structured as `.fd-has-margin-{size}` and `.fd-has-padding-{size}`. The following talbes list all the available options for `{size}` and it's respective value.
 
 {: .docs-table}
-| Class structure       | Result |
-| --------------------- | ------ |
-| `.fd-has-margin-base` | 4px    |
-| `.fd-has-margin-xs`   | 8px    |
-| `.fd-has-margin-xs`   | 12px   |
-| `.fd-has-margin-reg`  | 20px   |
-| `.fd-has-margin-m`    | 40px   |
-| `.fd-has-margin-l`    | 100px  |
-| `.fd-has-margin-xl`   | 148px  |
+| {size} options | Value |
+| -------------- | ----- |
+| `none`         | 0     |
+| `base`         | 4px   |
+| `xs`           | 8px   |
+| `s`            | 12px  |
+| `reg`          | 20px  |
+| `m`            | 40px  |
+| `l`            | 100px |
+| `xl`           | 148px |
+
+Similar to adding margin or padding on all sides of an element, you can use the `{side}` option to selectively add to a single side. The helper classes for a specific side is structured as `.fd-has-margin-{side}-{size}` and `.fd-has-padding-{side}-{size}`. For example to add margin to the bottom on an element you could use a helper class `.fd-has-margin-bottom-m`. To remove margin from the left size of an element you can use the class `.fd-has-margin-left-none`. The following table lists all the avialable options for `{side}` an `{size}` options
+
+{: .docs-table}
+| Class structure                | {side} options                    | {size} options                            |
+| ------------------------------ | --------------------------------- | ----------------------------------------- |
+| `.fd-has-margin-{side}-{size}` | `top`, `right`, `bottom`, `left`, | `none`, `base`, `xs`, `s`, `m`, `l`, `xl` |
 
 {% capture margin %}
 <span class="fd-has-margin-base"> .fd-has-margin-base </span>
@@ -141,20 +152,8 @@ Padding helper classes are available as additive or subtractive on all side or s
 <span class="fd-has-margin-m"> .fd-has-margin-m </span>
 <span class="fd-has-margin-l"> .fd-has-margin-l </span>
 <span class="fd-has-margin-xl"> .fd-has-margin-xl </span>
-{% endcapture %}
 
-{% include display-example.html component=margin %}
-</div>
-</div>
-
-
-
-
-
-### Selective Subtractive Margin
-{: .docs-header-h3}
-
-{% capture margin %}
+<h3> Removing Margins</h3>
 <span class="fd-has-margin-m fd-has-margin-top-none"></span>
 <span class="fd-has-margin-m fd-has-margin-right-none"></span>
 <span class="fd-has-margin-m fd-has-margin-bottom-none"></span>
@@ -162,6 +161,3 @@ Padding helper classes are available as additive or subtractive on all side or s
 {% endcapture %}
 
 {% include display-example.html component=margin %}
-
-
-.fd-has-margin-base
