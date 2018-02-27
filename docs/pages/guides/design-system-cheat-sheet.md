@@ -144,6 +144,11 @@ Padding helper classes are available as additive or subtractive on all side or s
 {% endcapture %}
 
 {% include display-example.html component=margin %}
+</div>
+</div>
+
+
+
 
 
 ### Selective Subtractive Margin
