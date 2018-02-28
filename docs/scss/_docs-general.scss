@@ -3,9 +3,9 @@ body{
 }
 
 a{
-    color: docs-color(action, 1);
+    color: docs-color(action, 3);
     &:hover{
-        color: docs-color(action, 1);
+        color: docs-color(action, 3);
     }
 }
 
@@ -25,11 +25,12 @@ hr{
 }
 
 .docs-cards{
+    $docs-cards-color: docs-color(action, 3)
     .fd-card[role="button"]:hover{
-        border-color: $accent-color;
+        border-color: $docs-cards-color;
     }
     .fd-card__header{
-        color: $accent-color !important;
+        color: $docs-cards-color !important;
     }
     a:hover{
         color: inherit;
@@ -51,3 +52,12 @@ hr{
     width: 100%;
     min-width: 1024px;
 }
+
+.spacing-function-table{
+    @extend .fd-table;
+    border:1px solid fd-color(neutral, 3);
+    width:auto;
+}
+
+
+@debug fd-space(13);
