@@ -3,7 +3,7 @@ title: Panel
 keywords: panel
 sidebar: left-navigation-sidebar
 toc: false
-permalink: panel.html
+permalink: components/panel.html
 folder: components
 summary:
 ---

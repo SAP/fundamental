@@ -3,7 +3,7 @@ title: Status Indicators
 keywords: status indicators, status, indicators, badge, label
 sidebar: left-navigation-sidebar
 toc: false
-permalink: status-indicators.html
+permalink: components/status-indicators.html
 folder: components
 ---
 

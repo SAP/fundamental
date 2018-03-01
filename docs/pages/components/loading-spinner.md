@@ -3,7 +3,7 @@ title: Loading Spinner
 keywords: loading, spinner
 sidebar: left-navigation-sidebar
 toc: false
-permalink: loading-spinner.html
+permalink: components/loading-spinner.html
 folder: components
 summary:
 ---

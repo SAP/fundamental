@@ -3,7 +3,7 @@ title: Dropdown
 keywords: dropdown, dropdowns
 sidebar: left-navigation-sidebar
 toc: false
-permalink: dropdown.html
+permalink: components/dropdown.html
 folder: components
 ---
 

@@ -3,7 +3,7 @@ title: Modal
 keywords: modal, modals
 sidebar: left-navigation-sidebar
 toc: false
-permalink: modal.html
+permalink: components/modal.html
 folder: components
 summary:
 ---

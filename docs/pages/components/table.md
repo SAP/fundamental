@@ -3,7 +3,7 @@ title: Table
 keywords: table
 sidebar: left-navigation-sidebar
 toc: false
-permalink: table.html
+permalink: components/table.html
 folder: components
 ---
 

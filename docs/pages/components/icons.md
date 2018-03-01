@@ -3,7 +3,7 @@ title: Icons
 keywords: icon, icons
 sidebar: left-navigation-sidebar
 toc: false
-permalink: icons.html
+permalink: components/icons.html
 folder: components
 summary:
 ---
