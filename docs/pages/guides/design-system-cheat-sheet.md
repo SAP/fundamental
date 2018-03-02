@@ -36,6 +36,8 @@ The float helper classes are used to control the element floats in the HTML elem
 ## Type Sizes
 {: .docs-header-h2}
 
+Use these CSS classes to control the text size. Used mainly for content text, all standard components have the right text size by default.
+
 {% capture type-util %}
 <p class="fd-has-type-minus-3">This is text type size -3</p>
 <p class="fd-has-type-minus-2">This is text type size -2</p>
