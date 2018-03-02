@@ -11,6 +11,8 @@ summary: The following guide covers all the major utility features of the Fundam
 ## Text Utilities
 {: .docs-header-h2}
 
+Use the text utilities to set the text style and the justification.
+
 {% capture text-util %}
 <p class="fd-has-font-weight-bold">This text is bold</p>
 <p class="fd-has-font-style-italic">This text is italic</p>
@@ -22,6 +24,8 @@ summary: The following guide covers all the major utility features of the Fundam
 
 ## Floats
 {: .docs-header-h2}
+
+The float helper classes are used to control the element floats in the HTML element.
 
 {% capture float-util %}
 <p class="fd-has-float-left">This text is floating on left</p>
@@ -71,6 +75,8 @@ used with `fd-has-font-family-header` for illustrate weight variants
 
 ## Colors
 {: .docs-header-h2}
+
+All colors on the [color pallet](colors.html). Can be accessed via SCSS function and respective CSS classes.
 
 ### Color Function
 {: .docs-header-h3}
