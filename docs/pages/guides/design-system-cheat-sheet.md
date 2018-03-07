@@ -18,7 +18,7 @@ Use the text utilities to set the text style and the justification.
 <p class="fd-has-font-style-italic">This text is italic</p>
 <p class="fd-has-text-align-center">This text is centered</p>
 <p class="fd-has-text-align-right">This text is right aligned</p>
-<p class="fd-text-transform-none">text with no transformation</p>
+<p class="fd-has-text-transform-none">text with no transformation</p>
 {% endcapture %}
 {% include display-example.html component=text-util %}
 
@@ -214,8 +214,6 @@ Similar to adding margin or padding on all sides of an element, you can use the 
 
 ## Other Utilities
 {: .docs-header-h2}
-
-
 
 ### Clearfix
 {: .docs-header-h3}
