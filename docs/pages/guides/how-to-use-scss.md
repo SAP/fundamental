@@ -161,12 +161,12 @@ You can refer to the [colors page](colors.html){:target="_blank"} for the comple
 {:.docs-header-h3}
 
 Spacing function can be utilized for padding, margins and other positioning needs - <br>
-`tn-space(value)`
+`fd-space(value)`
 
 {% highlight css %}
 .foo {
-  padding: tn-space(xs); /* renders 8px */
-  margin-bottom: tn-space(reg); /* renders 20px */
+  padding: fd-space(xs); /* renders 8px */
+  margin-bottom: fd-space(reg); /* renders 20px */
 }
 {% endhighlight %}
 
@@ -175,13 +175,13 @@ The following spacing options are available -
 {:.spacing-function-table}
 | Option        | Value           | Rendered Value |
 | ------------- | --------------- | -------------- |
-| `base`        | `tn-space()`    |  4px           |
-| `xs`          | `tn-space(xs)`  |  8px           |
-| `s`           | `tn-space(s)`   |  12px          |
-| `reg`         | `tn-space(reg)` |  20px          |
-| `m`           | `tn-space(m)`   |  40px          |
-| `l`           | `tn-space(l)`   |  100px         |
-| `xl`          | `tn-space(xl)`  |  148px         |
+| `base`        | `fd-space()`    |  4px           |
+| `xs`          | `fd-space(xs)`  |  8px           |
+| `s`           | `fd-space(s)`   |  12px          |
+| `reg`         | `fd-space(reg)` |  20px          |
+| `m`           | `fd-space(m)`   |  40px          |
+| `l`           | `fd-space(l)`   |  100px         |
+| `xl`          | `fd-space(xl)`  |  148px         |
 
 
 ### Type Mixin
