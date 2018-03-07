@@ -8,16 +8,14 @@ folder: guides
 summary:
 ---
 
+<br>
 
 <div class="fd-card-group fd-card-group--2col docs-cards">
-    <a class="fd-card" role="button" href="cards-starter-page.html" target="_blank">
+    <a class="fd-card" role="button" href="how-to-use-scss.html">
         <div class="fd-card__content fd-has-text-align-center">
              <h2 class="fd-card__header">
-                 Cards
+                 How to use SCSS
              </h2>
-             <p class="fd-card__description">
-                 This starter page have an <strong>ActionBar</strong>, <strong>ToolBar</strong> and <strong>Cards group</strong>.
-             </p>
         </div>
     </a>
 </div>

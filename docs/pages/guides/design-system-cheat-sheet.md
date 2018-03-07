@@ -8,8 +8,6 @@ folder: guides
 summary: The following guide covers all the major utility features of the Fundamental UI (FDUI) design system toolkit. We recommend that you utilize these functions, mixins and helper classes to maintain consistency throughout your application. Using the toolkit features will ensure that you application will remain compatible and easy to upgrade with the future versions of FDUI, transition between themes and customization.
 ---
 
-
-
 ## Text Utilities
 {: .docs-header-h2}
 

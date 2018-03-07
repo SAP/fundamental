@@ -17,6 +17,7 @@ summary: The following step-by-step guide will covers how to install Fundamental
 1. [Selective Imports](#selective-imports)
 1. [Core Functions and Mixins](#core-functions-and-mixins)
 
+
 ## Prerequisites and Requirements
 {:.docs-header-h2}
 
@@ -100,6 +101,7 @@ scss/
  layout.scss
 {% endhighlight %}
 
+
 - `all.scss`: Includes all components.
 - `components.scss`: SCSS source for each components. The components are decoupled  with little or no dependency on other components.
 - `core.scss`: The main purpose of core is elements and forms. It's like the reset and foundation.
@@ -159,12 +161,12 @@ You can refer to the [colors page](colors.html){:target="_blank"} for the comple
 {:.docs-header-h3}
 
 Spacing function can be utilized for padding, margins and other positioning needs - <br>
-`tn-space(value)`
+`fd-space(value)`
 
 {% highlight css %}
 .foo {
-  padding: tn-space(xs); /* renders 8px */
-  margin-bottom: tn-space(reg); /* renders 20px */
+  padding: fd-space(xs); /* renders 8px */
+  margin-bottom: fd-space(reg); /* renders 20px */
 }
 {% endhighlight %}
 
@@ -173,13 +175,13 @@ The following spacing options are available -
 {:.spacing-function-table}
 | Option        | Value           | Rendered Value |
 | ------------- | --------------- | -------------- |
-| `base`        | `tn-space()`    |  4px           |
-| `xs`          | `tn-space(xs)`  |  8px           |
-| `s`           | `tn-space(s)`   |  12px          |
-| `reg`         | `tn-space(reg)` |  20px          |
-| `m`           | `tn-space(m)`   |  40px          |
-| `l`           | `tn-space(l)`   |  100px         |
-| `xl`          | `tn-space(xl)`  |  148px         |
+| `base`        | `fd-space()`    |  4px           |
+| `xs`          | `fd-space(xs)`  |  8px           |
+| `s`           | `fd-space(s)`   |  12px          |
+| `reg`         | `fd-space(reg)` |  20px          |
+| `m`           | `fd-space(m)`   |  40px          |
+| `l`           | `fd-space(l)`   |  100px         |
+| `xl`          | `fd-space(xl)`  |  148px         |
 
 
 ### Type Mixin
@@ -199,9 +201,11 @@ You can utilize the type mixin to render size, line height, face, weight and tra
 {% endhighlight %}
 
 {:.spacing-function-table}
+
 | Option      | Value                                          |
 | ----------- |----------------------------------------------- |
 | `size`      | `-3`, `-2`, `-1`, `0`, `1`, `2`, `3`, `4`, `5` |
 | `font`      | `body`, `header`, `code`                       |
 | `weight`    | `reg`, `med`, `semi`                           |
 | `transform` | `none`, `uppercase`, `lowercase`               |
+
