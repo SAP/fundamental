@@ -12,7 +12,7 @@ summary:
 
 <div class="fd-card-group fd-card-group--2col docs-cards">
     <a class="fd-card" role="button" href="how-to-use-scss.html">
-        <div class="fd-card__content fd-has-text-align-center">
+        <div class="fd-card__content">
              <h2 class="fd-card__header">
                  How to use SCSS
              </h2>
