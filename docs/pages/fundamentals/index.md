@@ -8,7 +8,9 @@ folder: guides
 summary:
 ---
 
-<br>
+<p>Fundamental UI is an unified, flexible design system that solves complex 
+problems in a meaningful way and creates simple intuitive experience.
+</p>
 
 <div class="fd-card-group fd-card-group--2col docs-cards">
     <a class="fd-card" role="button" href="getting-started-designers.html">
