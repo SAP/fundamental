@@ -3,7 +3,7 @@ title: Forms
 keywords: form
 sidebar: left-navigation-sidebar
 toc: false
-permalink: form.html
+permalink: components/form.html
 folder: components
 ---
 

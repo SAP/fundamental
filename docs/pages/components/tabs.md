@@ -3,7 +3,7 @@ title: Tabs
 keywords: tab, tabs
 sidebar: left-navigation-sidebar
 toc: false
-permalink: tabs.html
+permalink: components/tabs.html
 folder: components
 summary:
 ---

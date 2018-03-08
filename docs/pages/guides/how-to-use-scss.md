@@ -3,7 +3,7 @@ title: How to use Fundamental UI SCSS with Angular
 keywords: how to use scss
 sidebar: left-navigation-sidebar
 toc: false
-permalink: how-to-use-scss.html
+permalink: guides/how-to-use-scss.html
 folder: guides
 summary: The following step-by-step guide will covers how to install Fundamental UI in your angular project, import SCSS in your workflow and explain some built-in functions.
 ---
@@ -16,6 +16,7 @@ summary: The following step-by-step guide will covers how to install Fundamental
 1. [Configuring and Importing SCSS source](#configuring-and-importing-scss-source)
 1. [Selective Imports](#selective-imports)
 1. [Core Functions and Mixins](#core-functions-and-mixins)
+
 
 ## Prerequisites and Requirements
 {:.docs-header-h2}
@@ -99,6 +100,7 @@ scss/
  icons.scss
  layout.scss
 {% endhighlight %}
+
 
 - `all.scss`: Includes all components.
 - `components.scss`: SCSS source for each components. The components are decoupled  with little or no dependency on other components.
@@ -199,9 +201,11 @@ You can utilize the type mixin to render size, line height, face, weight and tra
 {% endhighlight %}
 
 {:.spacing-function-table}
+
 | Option      | Value                                          |
 | ----------- |----------------------------------------------- |
 | `size`      | `-3`, `-2`, `-1`, `0`, `1`, `2`, `3`, `4`, `5` |
 | `font`      | `body`, `header`, `code`                       |
 | `weight`    | `reg`, `med`, `semi`                           |
 | `transform` | `none`, `uppercase`, `lowercase`               |
+

@@ -3,7 +3,7 @@ title: Toolbar
 keywords: toolbar
 sidebar: left-navigation-sidebar
 toc: false
-permalink: toolbar.html
+permalink: components/toolbar.html
 folder: components
 ---
 

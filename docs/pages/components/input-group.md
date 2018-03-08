@@ -3,7 +3,7 @@ title: Input Group
 keywords: input group, input groups, input, groups
 sidebar: left-navigation-sidebar
 toc: false
-permalink: input-group.html
+permalink: components/input-group.html
 folder: components
 ---
 

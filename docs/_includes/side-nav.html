@@ -2,11 +2,20 @@
 
 {% include search-box.html %}
 
+
+
 <ul class="side-nav__links-container">
 {% for entry in sidebar %}
     {% for folder in entry.folders %}
         {% if folder.output contains "web" %}
+
+        {% assign folder-name = folder.title | downcase %}
+
+            {% if page.url contains folder-name %}
+            <li class="side-nav__headers active">
+            {% else %}
             <li class="side-nav__headers">
+            {% endif %}
                 <a class="side-nav__headers-link" href="{{folder.url}}">{{ folder.title }}</a>
                 <ul >
                     {% for folderitem in folder.folderitems %}
@@ -17,11 +26,11 @@
                     </li>
                     {% elsif page.url == folderitem.url %}
                     <li class="side-nav__links active">
-                        <a href="{{folderitem.url | remove: "/"}}" class="side-nav__links-link">{{folderitem.title}}</a>
+                        <a href="{{folderitem.url}}" class="side-nav__links-link">{{folderitem.title}}</a>
                     </li>
                     {% else %}
                     <li class="side-nav__links">
-                        <a href="{{folderitem.url | remove: "/"}}" class="side-nav__links-link">{{folderitem.title}}</a>
+                        <a href="{{folderitem.url}}" class="side-nav__links-link">{{folderitem.title}}</a>
                     </li>
                     {% endif %}
                     {% for subfolders in folderitem.subfolders %}

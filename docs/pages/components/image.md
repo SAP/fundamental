@@ -3,7 +3,7 @@ title: Image
 keywords: image
 sidebar: left-navigation-sidebar
 toc: false
-permalink: image.html
+permalink: components/image.html
 folder: components
 summary:
 ---
@@ -31,7 +31,7 @@ Sizes helper classes are named from `fd-image-xs` to `fd-image-xxl`.
 
 ## Shapes
 
-The images can also have different shapes. The default been square when you don't specify the shape. Also you can use rounded corners with `fd-image--rounded` or a full circle shape `fd-image--circle`. 
+The images can also have different shapes. The default been square when you don't specify the shape. Also you can use rounded corners with `fd-image--rounded` or a full circle shape `fd-image--circle`.
 
 {% capture shapes %}
 <span class="fd-image fd-image--xxl" aria-label="Image label" style="background-image: url('https://placeimg.com/400/400/nature');"></span>
