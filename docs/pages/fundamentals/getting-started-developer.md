@@ -9,6 +9,8 @@ summary: Fundamental UI is a coherent Design System accompanied by a collection 
 
 ---
 
+<hr>
+
 ## Current version
 {:.docs-header-h2}
 
