@@ -4,7 +4,7 @@ title: Empty Starter Page
 keywords: empty starter page
 search: exclude
 toc: false
-permalink: empty-starter-page.html
+permalink: starter-pages/empty-starter-page.html
 ---
 
 {% include starter-page-components/action-bar.html %}

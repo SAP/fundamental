@@ -3,8 +3,8 @@ title: Starter Pages
 keywords: starter page
 toc: false
 sidebar: left-navigation-sidebar
-permalink: starter-pages.html
-folder: components
+permalink: starter-pages/index.html
+folder: starter-pages
 summary:
 ---
 

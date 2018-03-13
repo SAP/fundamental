@@ -26,8 +26,13 @@ hr{
 
 .docs-cards{
     $docs-cards-color: docs-color(action, 3);
-    .fd-card[role="button"]:hover{
-        border-color: $docs-cards-color;
+    .fd-card[role="button"]{
+        &:hover{
+            border-color: $docs-cards-color;
+        }
+        &:active, :focus{
+            border-color: $docs-cards-color;
+        }
     }
     .fd-card__header{
         color: $docs-cards-color !important;
