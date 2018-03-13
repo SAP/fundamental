@@ -3,7 +3,7 @@ title: Toggle
 keywords: toggle`
 sidebar: left-navigation-sidebar
 toc: false
-permalink: toggle.html
+permalink: components/toggle.html
 folder: components
 ---
 

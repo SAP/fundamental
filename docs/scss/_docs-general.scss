@@ -25,7 +25,7 @@ hr{
 }
 
 .docs-cards{
-    $docs-cards-color: docs-color(action, 3)
+    $docs-cards-color: docs-color(action, 3);
     .fd-card[role="button"]:hover{
         border-color: $docs-cards-color;
     }
@@ -46,6 +46,7 @@ hr{
     margin-left: 0;
     width: 100%;
     display: flex;
+    min-height: 100vh;
 }
 
 .docs-landing-page{
@@ -53,11 +54,12 @@ hr{
     min-width: 1024px;
 }
 
-.spacing-function-table{
+.docs-table{
     @extend .fd-table;
     border:1px solid fd-color(neutral, 3);
     width:auto;
+    td{
+        vertical-align: top;
+    }
+
 }
-
-
-@debug fd-space(13);

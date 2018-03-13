@@ -3,7 +3,7 @@ title: Card Group
 keywords: card group
 sidebar: left-navigation-sidebar
 toc: false
-permalink: card-group.html
+permalink: components/card-group.html
 folder: components
 ---
 
