@@ -4,7 +4,7 @@ title: Table Starter Page
 keywords: table starter page
 search: exclude
 toc: false
-permalink: table-starter-page.html
+permalink: starter-pages/table-starter-page.html
 ---
 
 {% include starter-page-components/action-bar.html %}
