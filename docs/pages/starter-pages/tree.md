@@ -4,7 +4,7 @@ title: Tree Starter Page
 keywords: tree starter page
 search: exclude
 toc: false
-permalink: tree-starter-page.html
+permalink: starter-pages/tree-starter-page.html
 ---
 
 {% include starter-page-components/action-bar.html %}

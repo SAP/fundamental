@@ -4,7 +4,7 @@ title: Detail 2 Starter Page
 keywords: detail 2 starter page
 search: exclude
 toc: false
-permalink: detail-2-starter-page.html
+permalink: starter-pages/detail-2-starter-page.html
 ---
 
 {% include starter-page-components/action-bar.html %}
