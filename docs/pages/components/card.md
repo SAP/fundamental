@@ -3,7 +3,7 @@ title: Card
 keywords: card
 sidebar: left-navigation-sidebar
 toc: false
-permalink: card.html
+permalink: components/card.html
 folder: components
 ---
 

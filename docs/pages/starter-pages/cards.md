@@ -4,7 +4,7 @@ title: Cards Starter Page
 keywords: cards starter page
 search: exclude
 toc: false
-permalink: cards-starter-page.html
+permalink: starter-pages/cards-starter-page.html
 ---
 
 {% include starter-page-components/action-bar.html %}

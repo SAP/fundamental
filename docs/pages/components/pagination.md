@@ -3,7 +3,7 @@ title: Pagination
 keywords: pagination
 sidebar: left-navigation-sidebar
 toc: false
-permalink: pagination.html
+permalink: components/pagination.html
 folder: components
 summary:
 ---

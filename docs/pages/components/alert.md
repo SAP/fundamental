@@ -3,7 +3,7 @@ title: Alerts
 keywords: alert, alerts
 sidebar: left-navigation-sidebar
 toc: false
-permalink: alert.html
+permalink: components/alert.html
 folder: components
 summary:
 ---

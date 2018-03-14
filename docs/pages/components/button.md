@@ -3,7 +3,7 @@ title: Buttons
 keywords: button, buttons
 sidebar: left-navigation-sidebar
 toc: false
-permalink: button.html
+permalink: components/button.html
 folder: components
 ---
 

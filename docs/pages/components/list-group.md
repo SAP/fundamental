@@ -3,7 +3,7 @@ title: List
 keywords: list group, lists group, list, lists, groups
 sidebar: left-navigation-sidebar
 toc: false
-permalink: list-group.html
+permalink: components/list-group.html
 folder: components
 ---
 

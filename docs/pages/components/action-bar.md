@@ -3,7 +3,7 @@ title: Action Bar
 keywords: action bar, action, bar
 sidebar: left-navigation-sidebar
 toc: false
-permalink: action-bar.html
+permalink: components/action-bar.html
 folder: components
 ---
 The Action Bar is located at the top of the page and is used for three main functions:

@@ -3,11 +3,13 @@ title: Developers
 keywords: getting started
 sidebar: left-navigation-sidebar
 toc: false
-permalink: getting-started-developers.html
+permalink: /fundamentals/getting-started-developers.html
 folder: fundamentals
 summary: Fundamental UI is a coherent Design System accompanied by a collection of HTML/CSS Components. Consumable as a library that can be used independently of the Front-End Technology or Framework. It is used to build Modern User Experiences for Products with the SAP look and feel.
 
 ---
+
+<hr>
 
 ## Current version
 {:.docs-header-h2}
@@ -15,6 +17,7 @@ summary: Fundamental UI is a coherent Design System accompanied by a collection 
 ````
 {{site.library_version}}
 ````
+
 
 ## The Project Structure
 {:.docs-header-h2}

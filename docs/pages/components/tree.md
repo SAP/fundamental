@@ -3,7 +3,7 @@ title: Tree
 keywords: tree
 sidebar: left-navigation-sidebar
 toc: false
-permalink: tree.html
+permalink: components/tree.html
 folder: components
 ---
 
