@@ -224,7 +224,7 @@ As a container element, the card can display all types of information inside the
         <p>Lorem ipsum</p>
     </div>
     <div class="fd-card__actions">
-        <a class="fd-has-type-1 fd-has-font-family-header">GENERATE ACCESS TOKEN</a>
+        <a class="fd-has-type-1 fd-has-font-family-header" href="">GENERATE ACCESS TOKEN</a>
     </div>
 </div>
 {% endcapture %}
