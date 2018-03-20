@@ -23,7 +23,7 @@ $block: ns(dropdown);
     $fd-dropdown-menu-item-background-color: $fd-dropdown-menu-background-color !default;
     $fd-dropdown-menu-item-background-color--hover: darken(fd-color(action), 5%) !default;
     $fd-dropdown-menu-item-padding: fd-space(3) fd-space(4) !default;
-    $fd-dropdown-menu-item-disabled-color: fd-color(text, 2);
+    $fd-dropdown-menu-item-color--disabled: fd-color(text, 2);
     //anim
     $fd-dropdown-menu-item-transition-params: $fd-animation--speed ease-in !default;
 
@@ -102,7 +102,7 @@ $block: ns(dropdown);
         &[disabled],
         &[aria-disabled="true"]:hover{
             background: none;
-            color: $fd-dropdown-menu-item-disabled-color;
+            color: $fd-dropdown-menu-item-color--disabled;
             cursor: not-allowed;
         }
 
