@@ -11,7 +11,7 @@ summary:
 <br>
 
 <div class="fd-card-group fd-card-group--2col docs-cards">
-    <a class="fd-card" role="button" href="app-layout.html">
+    <a class="fd-card" role="button" href="application-layout.html">
         <div class="fd-card__content">
              <h2 class="fd-card__header">
                  Application Layout
