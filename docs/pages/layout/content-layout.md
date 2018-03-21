@@ -90,7 +90,7 @@ The following page example inlcudes the [action bar](/components/action-bar.html
 * `.fd-section` - This is the wrapper container for the section
   * `.fd-section__title` - This will hold the title of the section
   * `.fd-section__actions` - This can hold the action buttons for the section such as a add, remove or a contextual menu.
-  * `.fd-container` - This container holds the page page content
+  * `.fd-section__footer` - This is the optional footer of the section
 
 
 ```
@@ -124,6 +124,9 @@ The following page example inlcudes the [action bar](/components/action-bar.html
 
 {% endcapture %}
 {% include display-example.html component=section-layout %}
+
+### Section Example
+{: .docs-header-h3}
 
 {% capture section-layout-example %}
 <section class="fd-section">
@@ -200,3 +203,35 @@ The following page example inlcudes the [action bar](/components/action-bar.html
 </section>
 {% endcapture %}
 {% include display-component.html component=section-layout-example %}
+
+## Panel Layout
+{: .docs-header-h2}
+
+a section of a page can further be broken down into a panel. You have have multiple
+panels withing a section in verticle columns or horizaontal rows.
+
+### Panel Structure
+{: .docs-header-h3}
+
+{% capture panel-layout%}
+<div class="docs-example__panel">
+    <div class="fd-panel">
+        <div class="fd-panel__header">
+            <h1 class="fd-panel__title">
+                fd-panel__title
+            </h1>
+            <div class="fd-panel__actions">
+                fd-panel__actions
+            </div>
+        </div>
+        <p>Very much like a <code>.fd-section</code> but intended to be used inside of a column.</p>
+        <p>A <code>.fd-panel</code> should only be used when a title, actions and/or footer are needed
+            with the content, otherwise the content can be placed directly inside the <code>.fd-col</code></p>
+        <div class="fd-panel__footer">
+            fd-panel__footer
+        </div>
+    </div>
+</div>
+
+{% endcapture %}
+{% include display-example.html component=panel-layout %}
