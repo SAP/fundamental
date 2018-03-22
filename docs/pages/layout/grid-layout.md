@@ -68,10 +68,11 @@ Default container has a max-width of `1290px`
 {% endcapture %}
 {% include display-example.html component=container-flex class="container" %}
 
-## Columns
+## Equal width Columns
 {: .docs-header-h2}
 
 ### 12 columns
+{: .docs-header-h3}
 
 `.fd-col--1`
 
@@ -89,6 +90,133 @@ Default container has a max-width of `1290px`
     <div class="fd-col--1"></div>
     <div class="fd-col--1"></div>
     <div class="fd-col--1"></div>
+</div>
+{% endcapture %}
+{% include display-example.html component=container-flex class="container" %}
+
+### 6 columns
+{: .docs-header-h3}
+
+`.fd-col--2`
+
+{% capture container-flex %}
+<div class="fd-container fd-container--fluid">
+    <div class="fd-col--2"></div>
+    <div class="fd-col--2"></div>
+    <div class="fd-col--2"></div>
+    <div class="fd-col--2"></div>
+    <div class="fd-col--2"></div>
+    <div class="fd-col--2"></div>
+</div>
+{% endcapture %}
+{% include display-example.html component=container-flex class="container" %}
+
+### 4 columns
+{: .docs-header-h3}
+
+`.fd-col--3`
+
+{% capture container-flex %}
+<div class="fd-container fd-container--fluid">
+    <div class="fd-col--3"></div>
+    <div class="fd-col--3"></div>
+    <div class="fd-col--3"></div>
+    <div class="fd-col--3"></div>
+</div>
+{% endcapture %}
+{% include display-example.html component=container-flex class="container" %}
+
+### 3 columns
+{: .docs-header-h3}
+
+`.fd-col--4`
+
+{% capture container-flex %}
+<div class="fd-container fd-container--fluid">
+    <div class="fd-col--4"></div>
+    <div class="fd-col--4"></div>
+    <div class="fd-col--4"></div>
+</div>
+{% endcapture %}
+{% include display-example.html component=container-flex class="container" %}
+
+### 2 columns
+{: .docs-header-h3}
+
+`.fd-col--6`
+
+{% capture container-flex %}
+<div class="fd-container fd-container--fluid">
+    <div class="fd-col--6"></div>
+    <div class="fd-col--6"></div>
+</div>
+{% endcapture %}
+{% include display-example.html component=container-flex class="container" %}
+
+## Unequal width columns
+{: .docs-header-h2}
+
+### 2 col (3/9)
+{: .docs-header-h3}
+
+{% capture container-flex %}
+<div class="fd-container fd-container--centered">
+    <div class="fd-col--3"></div>
+    <div class="fd-col--9"></div>
+</div>
+{% endcapture %}
+{% include display-example.html component=container-flex class="container" %}
+
+### 3 col (3/6/3)
+{: .docs-header-h3}
+
+{% capture container-flex %}
+<div class="fd-container fd-container--centered">
+    <div class="fd-col--3"></div>
+    <div class="fd-col--6"></div>
+    <div class="fd-col--3"></div>
+</div>
+{% endcapture %}
+{% include display-example.html component=container-flex class="container" %}
+
+### 1 col, shifted 3 cols (9)
+{: .docs-header-h3}
+
+{% capture container-flex %}
+<div class="fd-container fd-container--centered">
+    <div class="fd-col--9 fd-col--shift-3"></div>
+</div>
+{% endcapture %}
+{% include display-example.html component=container-flex class="container" %}
+
+## Flex width Columns
+{: .docs-header-h2}
+
+### 4 col (9,flex,flex,flex)
+{: .docs-header-h3}
+
+Inside flex containers, use .fd-col to evenly fill the left over space
+
+{% capture container-flex %}
+<div class="fd-container fd-container--centered fd-container--flex">
+    <div class="fd-col--9"></div>
+    <div class="fd-col"></div>
+    <div class="fd-col"></div>
+    <div class="fd-col"></div>
+</div>
+{% endcapture %}
+{% include display-example.html component=container-flex class="container" %}
+
+### 3 col (flex,flex,flex)
+{: .docs-header-h3}
+
+Inside flex containers, use .fd-col to distirbute space with no margin
+
+{% capture container-flex %}
+<div class="fd-container fd-container--centered fd-container--flex">
+    <div class="fd-col"></div>
+    <div class="fd-col"></div>
+    <div class="fd-col"></div>
 </div>
 {% endcapture %}
 {% include display-example.html component=container-flex class="container" %}
