@@ -569,7 +569,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-app__main
 */
 .fd-app {
-  width: 100%; }
+  width: 100%;
+  min-height: 100vh; }
   @media (min-width: 800px) {
     .fd-app {
       display: flex; } }
@@ -618,7 +619,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     border-bottom: solid 1px #ccdaeb;
     margin-bottom: -1px; }
   .fd-page__content {
-    flex-grow: 1; }
+    flex-grow: 1;
+    margin-bottom: 40px; }
 
 /*!
 .fd-section+(--full-bleed, --no-border)
@@ -1016,6 +1018,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       color: #ffffff;
       background-color: #008ac6;
       text-decoration: none; }
+    .fd-dropdown__item.is-disabled:hover, .fd-dropdown__item[disabled]:hover, .fd-dropdown__item[aria-disabled="true"]:hover, .fd-dropdown__option.is-disabled:hover, .fd-dropdown__option[disabled]:hover, .fd-dropdown__option[aria-disabled="true"]:hover {
+      background: none;
+      color: #7f90a4;
+      cursor: not-allowed; }
   .fd-dropdown__separator {
     font-size: 1rem;
     line-height: 1.5;
@@ -1104,7 +1110,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   border-width: 1px;
   border-style: solid;
   padding: 4px 8px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  display: inline-block;
+  padding: 3px 8px; }
   .fd-badge--pill {
     border-radius: 12.5px; }
   .fd-badge--success {
@@ -1327,7 +1335,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     font-size: 1.125rem;
     line-height: 1.33334;
     font-weight: 600;
-    margin-bottom: 1px; }
+    margin-bottom: 4px; }
   .fd-card__description {
     font-size: 0.8125rem;
     line-height: 1.53847;
@@ -1521,6 +1529,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       color: #ffffff;
       background-color: #008ac6;
       text-decoration: none; }
+    .fd-dropdown__item.is-disabled:hover, .fd-dropdown__item[disabled]:hover, .fd-dropdown__item[aria-disabled="true"]:hover, .fd-dropdown__option.is-disabled:hover, .fd-dropdown__option[disabled]:hover, .fd-dropdown__option[aria-disabled="true"]:hover {
+      background: none;
+      color: #7f90a4;
+      cursor: not-allowed; }
   .fd-dropdown__separator {
     font-size: 1rem;
     line-height: 1.5;
@@ -1795,7 +1807,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-size: 0.75rem;
   line-height: 1.33334;
   font-weight: 700;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 3px 8px; }
   .fd-label--success {
     color: #61bf33; }
   .fd-label--warning {
@@ -2069,6 +2083,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       color: #ffffff;
       background-color: #008ac6;
       text-decoration: none; }
+    .fd-dropdown__item.is-disabled:hover, .fd-dropdown__item[disabled]:hover, .fd-dropdown__item[aria-disabled="true"]:hover, .fd-dropdown__option.is-disabled:hover, .fd-dropdown__option[disabled]:hover, .fd-dropdown__option[aria-disabled="true"]:hover {
+      background: none;
+      color: #7f90a4;
+      cursor: not-allowed; }
   .fd-dropdown__separator {
     font-size: 1rem;
     line-height: 1.5;
