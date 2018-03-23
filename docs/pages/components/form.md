@@ -1,6 +1,6 @@
 ---
 title: Forms
-keywords: form
+keywords: form, forms, checkboxes, input, inputs, input help elemnts, input sates, select, radio buttons,
 sidebar: left-navigation-sidebar
 toc: false
 permalink: components/form.html
@@ -230,17 +230,25 @@ Are used to let the user select only one of various options. All options are vis
 
 <fieldset class="fd-form__set">
     <legend class="fd-form__legend">Inline Radio buttons</legend>
-    <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-        <input class="fd-form__control" type="radio" id="radio-13" name="radio-name-5" value="" checked>
-        <label class="fd-form__label" for="radio-13">Option One</label>
-    </div>
-    <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-        <input class="fd-form__control" type="radio" id="radio-14" name="radio-name-5" value="">
-        <label class="fd-form__label" for="radio-14">Option Two</label>
-    </div>
-    <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-        <input class="fd-form__control" type="radio" id="radio-15" name="radio-name-5" value="">
-        <label class="fd-form__label" for="radio-15">Option Three</label>
+    <div class="fd-form__group">
+        <div class="fd-form__item fd-form__item--inline fd-form__item--check">
+            <label class="fd-form__label" for="radio-13">
+                <input class="fd-form__control" type="radio" id="radio-13" name="radio-name-5" value="" checked>
+                Option One
+            </label>
+        </div>
+        <div class="fd-form__item fd-form__item--inline fd-form__item--check">
+            <label class="fd-form__label" for="radio-14">
+                <input class="fd-form__control" type="radio" id="radio-14" name="radio-name-5" value="">
+                Option Two
+            </label>
+        </div>
+        <div class="fd-form__item fd-form__item--inline fd-form__item--check">
+            <label class="fd-form__label" for="radio-15">
+                <input class="fd-form__control" type="radio" id="radio-15" name="radio-name-5" value="">
+                Option Three
+            </label>
+        </div>
     </div>
 </fieldset>
 {% endcapture %}
@@ -252,7 +260,7 @@ Are used to let the user select only one of various options. All options are vis
 ## Checkbox
 Checkboxes let the user select multiple options, while all the options been displayed. This component can be set **disabled** and also displayed in a row.
 
-{% capture checkbox %}    
+{% capture checkbox %}
 <fieldset class="fd-form__set">
     <legend class="fd-form__legend">Checkboxes</legend>
     <div class="fd-form__item fd-form__item--check">
@@ -287,17 +295,25 @@ Checkboxes let the user select multiple options, while all the options been disp
 
 <fieldset class="fd-form__set">
     <legend class="fd-form__legend">Checkboxes inline</legend>
-    <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-        <input class="fd-form__control" type="checkbox" id="checkbox-7" name="checkbox-name-3" checked>
-        <label class="fd-form__label" for="checkbox-7">Option One</label>
-    </div>
-    <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-        <input class="fd-form__control" type="checkbox" id="checkbox-8" name="checkbox-name-3" >
-        <label class="fd-form__label" for="checkbox-8">Option Two</label>
-    </div>
-    <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-        <input class="fd-form__control" type="checkbox" id="checkbox-9" name="checkbox-name-4">
-        <label class="fd-form__label" for="checkbox-9">Option Three</label>
+    <div class="fd-form__group">
+        <div class="fd-form__item fd-form__item--inline fd-form__item--check">
+            <label class="fd-form__label" for="checkbox-7">
+                <input class="fd-form__control" type="checkbox" id="checkbox-7" name="checkbox-name-3" checked>
+                Option One
+            </label>
+        </div>
+        <div class="fd-form__item fd-form__item--inline fd-form__item--check">
+            <label class="fd-form__label" for="checkbox-8">
+                <input class="fd-form__control" type="checkbox" id="checkbox-8" name="checkbox-name-3" >
+                Option Two
+            </label>
+        </div>
+        <div class="fd-form__item fd-form__item--inline fd-form__item--check">
+            <label class="fd-form__label" for="checkbox-9">
+                <input class="fd-form__control" type="checkbox" id="checkbox-9" name="checkbox-name-4">
+                Option Three
+            </label>
+        </div>
     </div>
 </fieldset>{% endcapture %}
 

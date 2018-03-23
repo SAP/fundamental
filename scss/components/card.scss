@@ -128,7 +128,7 @@ $block: ns(card);
     &__header {
         color: $fd-color;
         @include fd-type(1);
-        margin-bottom: 1px;
+        margin-bottom: fd-space(xxs);
     }
     &__description {
         @include fd-type(-2);
@@ -145,11 +145,12 @@ $block: ns(card);
     }
     &__actions {
         padding: $fd-card-padding $fd-card-padding/2;
-    }
-    a {
-        color: $fd-card-link-color;
-        &:hover{
+
+        &>a {
             color: $fd-card-link-color;
+            &:hover{
+                color: $fd-card-link-color;
+            }
         }
     }
 }
