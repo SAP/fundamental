@@ -3,7 +3,7 @@ title: Grid Layouts
 keywords: grid layouts
 toc: false
 sidebar: left-navigation-sidebar
-permalink: /layout/grid-layout.html
+permalink: /layouts/grid-layouts.html
 folder: guides
 summary:
 ---

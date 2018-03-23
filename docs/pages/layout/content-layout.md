@@ -3,11 +3,11 @@ title: Content Layouts
 keywords: content layouts
 toc: false
 sidebar: left-navigation-sidebar
-permalink: /layout/content-layout.html
+permalink: /layouts/content-layouts.html
 folder: guides
 summary:
 ---
-Content Layouts consists of three main component: 
+Content Layouts consists of three main component:
 * `.fd-page`: is the main element that contains all elements present in the page.
 * `.fd-section`: used to encapsulate aeas of content. In can contain actions that can be performed for the object the section is representing.
 * `.fd-panel`: used for encapsulating information objects and can contain actions.

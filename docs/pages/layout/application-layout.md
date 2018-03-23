@@ -3,7 +3,7 @@ title: Application Layouts
 keywords: application layouts
 toc: false
 sidebar: left-navigation-sidebar
-permalink: /layout/application-layout.html
+permalink: /layouts/application-layouts.html
 folder: guides
 summary:
 ---

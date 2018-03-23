@@ -3,20 +3,20 @@ title: Layouts
 keywords: layouts
 toc: false
 sidebar: left-navigation-sidebar
-permalink: /layout/index.html
+permalink: /layouts/index.html
 folder: guides
 summary:
 ---
 
 Layouts in Fundamental UI are for structuring the main parts of your application. Organized in three main categories
-* **Application Layouts**: can be used to construct the main skeleton of your application. 
-* **Content Layout**: used to position and arrange the content inside the main element of your application. 
+* **Application Layouts**: can be used to construct the main skeleton of your application.
+* **Content Layout**: used to position and arrange the content inside the main element of your application.
 * **Grid Layout**: permit you to make complex layouts inside the content of your application.
 
 <br>
 
 <div class="fd-card-group fd-card-group--2col docs-cards">
-    <a class="fd-card" role="button" href="application-layout.html">
+    <a class="fd-card" role="button" href="application-layouts.html">
         <div class="fd-card__content">
              <h2 class="fd-card__header">
                  Application Layouts
@@ -27,7 +27,7 @@ Layouts in Fundamental UI are for structuring the main parts of your application
              </p>
         </div>
     </a>
-    <a class="fd-card" role="button" href="content-layout.html">
+    <a class="fd-card" role="button" href="content-layouts.html">
         <div class="fd-card__content">
              <h2 class="fd-card__header">
                  Content Layouts
@@ -38,7 +38,7 @@ Layouts in Fundamental UI are for structuring the main parts of your application
              </p>
         </div>
     </a>
-    <a class="fd-card" role="button" href="grid-layout.html">
+    <a class="fd-card" role="button" href="grid-layouts.html">
         <div class="fd-card__content">
              <h2 class="fd-card__header">
                  Grid
