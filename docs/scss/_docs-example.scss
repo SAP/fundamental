@@ -1,24 +1,149 @@
 
 .docs-example{
 
-    &__card{
-        margin-bottom: -28px;
-        border-radius: 4px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        padding-bottom: 8px;
-        border-color: #ccc;
+    $docs-example-bg-color: fd-color(text-inverse, 3);
 
-        span{
-            display: block;
-            border: 1px solid fd-color(neutral, 3);
-            background: fd-color(neutral, 1);
+    margin-bottom: -28px;
+    border-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-bottom: 8px;
+    border-color: #ccc;
+
+    span{
+        display: block;
+        border: 1px solid fd-color(neutral, 3);
+        background: fd-color(neutral, 1);
+    }
+    p{
+        @extend .fd-has-padding-xs;
+    }
+
+    &__app{
+        height: 500px;
+        color: #fff;
+
+        .fd-ui__app, .fd-ui, .fd-app{
+            width: 880px;
+            min-height: 360px;
         }
-        p{
-            @extend .fd-has-padding-xs;
+
+        .fd-ui__header,
+        .fd-app__sidebar,
+        .fd-ui__footer,
+        .fd-app__main{
+            padding: 10px;
+            text-align: center;
+            color: #000;
+        }
+        .fd-ui__header, .fd-ui__footer{
+            background-color: fd-color(neutral, 3);
+        }
+        .fd-app__sidebar{
+            width:250px;
+            background-color: fd-color(background, 2);
+
+        }
+        .fd-app__main{
+            background-color: fd-color(neutral, 1);
+        }
+
+    }
+
+    &__page{
+        .fd-page,
+        .fd-page__header,
+        .fd-page__intro,
+        .fd-page__content{
+            padding: 20px;
+        }
+
+        .fd-page{
+            background-color: fd-color(text-inverse, 3);
+        }
+        .fd-page__header, .fd-page__content{
+            background-color: fd-color(background, 1);
+        }
+
+
+    }
+
+    &__section{
+        .fd-section,
+        .fd-section__header,
+        .fd-section__title,
+        .fd-section__actions,
+        .fd-section__footer,
+        .fd-container{
+            padding:10px;
+        }
+        .fd-section{
+            background-color: $docs-example-bg-color;
+        }
+        .fd-section__header{
+            background-color: fd-color(background, 1);
+        }
+        .fd-section__title{
+            background-color: fd-color(text-inverse, 2);
+        }
+        .fd-section__actions{
+            background-color: fd-color(text-inverse, 3);
+            padding:14px 10px;
+        }
+        .fd-section__footer{
+            background-color: fd-color(background, 1);
+        }
+        .fd-container{
+            background-color: fd-color(background, 1);
         }
     }
 
+    &__panel{
+        .fd-panel,
+        .fd-panel__header,
+        .fd-panel__title,
+        .fd-panel__actions,
+        .fd-panel__footer,
+        .fd-container{
+            padding:10px;
+        }
+        .fd-panel{
+            background-color: $docs-example-bg-color;
+        }
+        .fd-panel__header{
+            background-color: fd-color(background, 1);
+        }
+        .fd-panel__title{
+            background-color: fd-color(text-inverse, 2);
+        }
+        .fd-panel__actions{
+            background-color: fd-color(text-inverse, 3);
+            padding:14px 10px;
+        }
+        .fd-panel__footer{
+            background-color: fd-color(background, 1);
+        }
+        .fd-container{
+            background-color: fd-color(background, 1);
+        }
+    }
 
+    &__container{
+        .fd-container{
+            background-color: $docs-example-bg-color;
+            padding: 20px;
+            max-width: 800px;
+        }
+        .fd-container--fluid{
+            max-width: 100%;
+        }
+        [class^="fd-col"]{
+            background-color: fd-color(background, 1);
+            height: 70px;
+            border: 1px solid fd-color(neutral, 3);
+            text-align: center;
+            padding: 10px 5px;
+        }
+    }
 
 }
