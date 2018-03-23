@@ -4,7 +4,7 @@ keywords: layouts
 toc: false
 sidebar: left-navigation-sidebar
 permalink: /layouts/index.html
-folder: guides
+folder: layouts
 summary:
 ---
 

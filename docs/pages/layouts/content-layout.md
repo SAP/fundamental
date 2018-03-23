@@ -4,7 +4,7 @@ keywords: content layouts
 toc: false
 sidebar: left-navigation-sidebar
 permalink: /layouts/content-layouts.html
-folder: guides
+folder: layouts
 summary:
 ---
 Content Layouts consists of three main component:

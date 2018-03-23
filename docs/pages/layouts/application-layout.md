@@ -4,7 +4,7 @@ keywords: application layouts
 toc: false
 sidebar: left-navigation-sidebar
 permalink: /layouts/application-layouts.html
-folder: guides
+folder: layouts
 summary:
 ---
 Application layouts is the shell that holds your app. It consists of a global header, sidebar, the main app and a footer.

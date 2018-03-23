@@ -1,5 +1,5 @@
-# Global settings applied to the whole site.  
-# 
+# Global settings applied to the whole site.
+#
 # “publish” is the directory to publish (relative to root of your repo),
 # “command” is your build command,
 # “base” is directory to change to before starting build. if you set base:
@@ -8,10 +8,9 @@
 [build]
   base    = "docs/"
   publish = "docs/_site"
-  command = "jekyll build"
+  command = "bundle exec jekyll build"
 
 # Production context: All deploys to the main
 # repository branch will inherit these settings.
 [context.production]
-  command = "jekyll build"
-
+  command = "bundle exec jekyll build"

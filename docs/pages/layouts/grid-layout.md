@@ -4,7 +4,7 @@ keywords: grid layouts
 toc: false
 sidebar: left-navigation-sidebar
 permalink: /layouts/grid-layouts.html
-folder: guides
+folder: layouts
 summary:
 ---
 
