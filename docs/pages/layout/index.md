@@ -1,6 +1,6 @@
 ---
-title: Layout
-keywords: layout
+title: Layouts
+keywords: layouts
 toc: false
 sidebar: left-navigation-sidebar
 permalink: /layout/index.html
@@ -19,7 +19,7 @@ Layouts in Fundamental UI are for structuring the main parts of your application
     <a class="fd-card" role="button" href="application-layout.html">
         <div class="fd-card__content">
              <h2 class="fd-card__header">
-                 Application Layout
+                 Application Layouts
              </h2>
             <br/>
              <p class="fd-card__description">
@@ -30,7 +30,7 @@ Layouts in Fundamental UI are for structuring the main parts of your application
     <a class="fd-card" role="button" href="content-layout.html">
         <div class="fd-card__content">
              <h2 class="fd-card__header">
-                 Content Layout
+                 Content Layouts
              </h2>
             <br/>
              <p class="fd-card__description">
@@ -41,7 +41,7 @@ Layouts in Fundamental UI are for structuring the main parts of your application
     <a class="fd-card" role="button" href="grid-layout.html">
         <div class="fd-card__content">
              <h2 class="fd-card__header">
-                 Grid Layout
+                 Grid
              </h2>
             <br/>
              <p class="fd-card__description">
