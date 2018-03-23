@@ -1,25 +1,27 @@
 ---
-title: Content Layout
-keywords: content layout
+title: Content Layouts
+keywords: content layouts
 toc: false
 sidebar: left-navigation-sidebar
 permalink: /layout/content-layout.html
 folder: guides
 summary:
 ---
-Content Layout consists of three main component: `.fd-page`, `.fd-section`, and `.fd-panel`.
+Content Layouts consists of three main component: 
+* `.fd-page`: is the main element that contains all elements present in the page.
+* `.fd-section`: used to encapsulate aeas of content. In can contain actions that can be performed for the object the section is representing.
+* `.fd-panel`: used for encapsulating information objects and can contain actions.
 
-## Page Layout
+## Page Layout Structure
 {: .docs-header-h2}
 
-* `.fd-page`: This is the page level layout it consists of a header, intro and content.
-  * `.fd-page__header`: This is the page level heading
-  * `.fd-page__intro`: This can hold page intro or help text
-  * `.fd-page__content`: This container holds the page page content
+The elements used to construct a page are:
+* `.fd-page`: is the page level layout it consists of a header, intro and content.
+  * `.fd-page__header`: the page level heading
+  * `.fd-page__intro`: can hold page intro or help text
+  * `.fd-page__content`: holds the page page content
 
-
-### Page Structure
-{: .docs-header-h3}
+<br/>
 
 {% capture page-layout %}
 <article class="fd-page">
@@ -36,10 +38,12 @@ Content Layout consists of three main component: `.fd-page`, `.fd-section`, and 
 {% endcapture %}
 {% include display-example.html component=page-layout  class="page"%}
 
-### Page Example
+<br/>
+
+### App Structure Example
 {: .docs-header-h3}
 
-The following page example inlcudes the [action bar](/components/action-bar.html) componnet in the `fd-page__header`
+The following page example includes the [action bar](/components/action-bar.html) component in the `fd-page__header`
 
 {% capture page-layout-example %}
 <article class="fd-page">
@@ -83,14 +87,15 @@ The following page example inlcudes the [action bar](/components/action-bar.html
 ## Section Layout
 {: .docs-header-h2}
 
-`fd-section` are used to divide a page into different section. For example, a form and table or list view on the same page can be split into different page `sections`.
+`fd-section` are used to divide a page into different sections. For example, a form and table or list view on the same page can be split into different page sections.
 
-* `.fd-section`: This is the wrapper container for the section.
-  * `.fd-section__header`: This is a wrapper div that hold the section title and action buttons.
-  * `.fd-section__title`: This will hold the title of the section.
-  * `.fd-section__actions`: This can hold the action buttons for the section such as a add, remove or a contextual menu.
-  * `.fd-section__footer`: This is the optional footer of the section.
+* `.fd-section`: the wrapper container for the section.
+  * `.fd-section__header`: is a wrapper div that hold the section title and action buttons.
+  * `.fd-section__title`: hold the title of the section.
+  * `.fd-section__actions`: can hold the action buttons for the section such as a add, remove or a contextual menu.
+  * `.fd-section__footer`: the optional footer of the section.
 
+<br/>
 
 {% capture section-layout %}
 <section class="fd-section">
@@ -115,7 +120,9 @@ The following page example inlcudes the [action bar](/components/action-bar.html
 ### Section Example
 {: .docs-header-h3}
 
-Example with a `form` and `table` sections
+Example with two sections, one containing a `form` and the other a `table`.
+
+The section containing the form have a contextual menu as main actions container. The section containing the table have a "add" action.
 
 {% capture section-layout-example %}
 <section class="fd-section">
@@ -245,18 +252,17 @@ Example with a `form` and `table` sections
 {: .docs-header-h2}
 
 A section of a page can be further broken down into one or more panels. You can have multiple
-panels within a section as verticle columns or horizaontal rows.
-
-
-### Panel Structure
-{: .docs-header-h3}
-The panel strucutre is similar to a section
+panels within a section as vertical columns or horizontal rows.
 
 * `.fd-panel`: This is the wrapper container for the panel.
   * `.fd-panel__header`: This is wrapper container that will hold the panel title and actions buttons.
   * `.fd-panel__title`: This will hold the title of the panel.
   * `.fd-panel__actions`: This can hold the action buttons for the panel such as a add, remove or a contextual menu.
   * `.fd-panel__footer`: This is the optional footer of the panel.
+
+The panel structure is similar to a section.
+
+<br/>
 
 {% capture panel-layout%}
 <div class="fd-container">
@@ -303,7 +309,7 @@ The panel strucutre is similar to a section
 ### Panel Example
 {: .docs-header-h3}
 
-Two `panels` size-by-side in a `section`.
+Two `panels` size-by-side inside a `section` contained a cards groups and corresponding actions.
 
 {% capture panel-example%}
 <div class="fd-container">
