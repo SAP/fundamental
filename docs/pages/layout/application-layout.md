@@ -7,7 +7,7 @@ permalink: /layout/application-layout.html
 folder: guides
 summary:
 ---
-Application layout is the shell that holds your app. it consists of a global header, sidebar, the main app and a footer.
+Application layout is the shell that holds your app. It consists of a global header, sidebar, the main app and a footer.
 
 ## Application Layout Structure
 {: .docs-header-h2}

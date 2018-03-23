@@ -7,12 +7,12 @@ permalink: /layout/content-layout.html
 folder: guides
 summary:
 ---
-Content Layout requires three main component: `.fd-page`, `.fd-section`, and `.fd-panel`.
+Content Layout consists of three main component: `.fd-page`, `.fd-section`, and `.fd-panel`.
 
 ## Page Layout
 {: .docs-header-h2}
 
-* `.fd-page`: this is the page level layout it consists of a header, intro and content.
+* `.fd-page`: This is the page level layout it consists of a header, intro and content.
   * `.fd-page__header`: This is the page level heading
   * `.fd-page__intro`: This can hold page intro or help text
   * `.fd-page__content`: This container holds the page page content
@@ -83,7 +83,7 @@ The following page example inlcudes the [action bar](/components/action-bar.html
 ## Section Layout
 {: .docs-header-h2}
 
-`fd-section` are used to divide a page into different section. For example, a form and table or list view on the same page can be split into difference page `sections`.
+`fd-section` are used to divide a page into different section. For example, a form and table or list view on the same page can be split into different page `sections`.
 
 * `.fd-section`: This is the wrapper container for the section.
   * `.fd-section__header`: This is a wrapper div that hold the section title and action buttons.
@@ -244,7 +244,7 @@ Example with a `form` and `table` sections
 ## Panel Layout
 {: .docs-header-h2}
 
-A section of a page can be further broken down into a panel. You can have multiple
+A section of a page can be further broken down into one or more panels. You can have multiple
 panels within a section as verticle columns or horizaontal rows.
 
 
@@ -316,7 +316,7 @@ Two `panels` size-by-side in a `section`.
                 <div class="fd-panel__actions">
                     <button class="fd-button fd-button--text fd-button--small">
                         <span class="fd-icon fd-icon--add" role="presentation"></span>
-                        Add New Item
+                        Add
                     </button>
                 </div>
             </div>
@@ -377,12 +377,12 @@ Two `panels` size-by-side in a `section`.
         <div class="fd-panel">
             <div class="fd-panel__header">
                 <h1 class="fd-panel__title">
-                    Vivamus sagittis 
+                    Vivamus sagittis
                 </h1>
                 <div class="fd-panel__actions">
                     <button class="fd-button fd-button--text fd-button--small">
                         <span class="fd-icon fd-icon--add" role="presentation"></span>
-                        Add New Item
+                        Add
                     </button>
                 </div>
             </div>
