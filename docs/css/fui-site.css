@@ -1342,10 +1342,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     text-transform: uppercase; }
   .fd-card__actions {
     padding: 20px 10px; }
-  .fd-card a {
-    color: #009cdf; }
-    .fd-card a:hover {
+    .fd-card__actions > a {
       color: #009cdf; }
+      .fd-card__actions > a:hover {
+        color: #009cdf; }
 
 /*!
 .fd-card-group+(--2col | --4col)
@@ -2643,7 +2643,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   line-height: 1.5;
   color: #21262c;
   font-family: 'Open Sans', sans-serif;
-  width: 700px;
+  max-width: 700px;
   margin: 32px auto; }
   .fd-modal__content {
     background-color: #ffffff; }
@@ -3917,7 +3917,7 @@ hr {
   flex-direction: column; }
 
 .post-content {
-  padding: 40px 40px 80px 40px;
+  padding: 40px 40px 80px 60px;
   min-width: 1024px;
   max-width: 1600px;
   width: 80%;
@@ -4056,6 +4056,20 @@ hr {
   margin-bottom: 10px;
   margin-top: 40px; }
 
+.docs-header-h4 {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.88;
+  margin-bottom: 10px;
+  margin-top: 40px; }
+
+.docs-header--open-sans {
+  font-family: 'Open-Sans', sans-serif; }
+
+.docs-header--roboto {
+  font-family: Roboto; }
+
 .docs-colors_container {
   width: 12%;
   float: left;
@@ -4128,7 +4142,7 @@ hr {
 .docs-type_drop-cap {
   float: left;
   font-size: 150px;
-  padding: 10px 20px 10px 0;
+  padding: 16px 20px 10px 0;
   margin-left: -10px;
   line-height: 80px;
   font-weight: bold; }
