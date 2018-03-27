@@ -1,16 +1,44 @@
 {% extends "./layouts/master.njk" %}
 {% block content %}
 
+{% set colors = {
+  "action": [ "#0a6ed1",  "#0857a6"],
+  "text": [ "#32363b",  "#515559"],
+  "background": [ "#f3f4f5",  "#ffffff"],
+  "neutral": [ "#fafafa",  "#eeeeef", "#dededf"],
+  "status": [ "#359c46",  "#f59518", "#ee0000"]
+} %}
+
+
+<div class="fd-container">
+
+    <h1>Color</h1>
+{% for group, values in colors %}
+  <h2>{{ group }}</h2>
+  {% for item in values %}
+    <div style="height: 20px;" class="fd-has-background-color-{{ group }}-{{ loop.index }}">
+    </div>
+    <p>{{ loop.index }} — {{item}}</p>
+  {% endfor %}
+{% endfor %}
+
+<h2>Mixins</h2>
+<h3><code>@mixin fd-color($group, $shade)</code></h3>
+
+
+</div>
+
+
 {% set specs = {
-    "-3": [ 12, 16, "body", "bold", "uppercase" ],
-    "-2": [ 13, 20, "body", "reg", "none" ],
-    "-1": [ 14, 20, "body", "reg", "none" ],
-    "0": [ 16, 24, "body", "reg", "none" ],
-    "1": [ 18, 24, "body", "semi", "none" ],
-    "2": [ 20, 28, "body", "semi", "none" ],
-    "3": [ 26, 32, "header", "medium", "none" ],
-    "4": [ 35, 44, "header", "bold", "none" ],
-    "5": [ 45, 52, "header", "medium", "none" ]
+    "-3": [ 11, 16, "body", "bold", "none" ],
+    "-2": [ 12, 16, "body", "reg", "none" ],
+    "-1": [ 13, 16, "body", "reg", "none" ],
+    "0": [ 14, 20, "body", "reg", "none" ],
+    "1": [ 16, 20, "body", "reg", "none" ],
+    "2": [ 19, 24, "body", "reg", "none" ],
+    "3": [ 23, 32, "body", "reg", "none" ],
+    "4": [ 30, 36, "body", "reg", "none" ],
+    "5": [ 45, 52, "header", "reg", "none" ]
 } %}
 
 
@@ -19,12 +47,30 @@
     <h1>Type</h1>
 
     <h2>Sizes</h2>
+
     {% for i in ["-3","-2","-1","0","1","2","3","4","5"] | reverse %}
     {% set type = specs[i] %}
-        <p><strong>{{i}}</strong> — {{ "Roboto" if type[2] == "header" else "Open Sans" }} {{ type[3] | capitalize }}{{ "bold" if type[2] == "medium" }} {{ type[0] }}px | Line-height {{ type[1] }}px</p>
-        <p class="fd-has-type{{ '-minus' if i < 0 }}-{{ i | abs if i != 0 else 'base' }}">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+        <p><strong>{{i}}</strong> — {{ "72Condensed" if type[2] == "header" else "72" }} {{ type[3] | capitalize }}{{ "bold" if type[2] == "medium" }} {{ type[0] }}px | Line-height {{ type[1] }}px</p>
+        <p class="fd-has-type{{ '-minus' if i < 0 }}-{{ i | abs if i != 0 else 'base' }}">
+          {% if i == "5" %}
+            <s>
+          {% endif %}Grumpy wizards make toxic brew for the evil Queen and Jack wizards make toxic brew for the evil Queen and Jack
+          {% if i == "5" %}
+        </s>
+          {% endif %}
+        </p>
 
     {% endfor %}
+
+
+        <p>
+    Nullam ut tincidunt nunc. Pellentesque metus lacus commodo eget justo ut rutrum varius nunc. Sed non rhoncus risus. Morbi sodales gravida pulvinar. Duis malesuada odio volutpat elementum vulputate massa magna scelerisque ante et accumsan tellus nunc in sem. Donec mattis arcu et velit aliquet non sagittis justo vestibulum. Suspendisse volutpat felis lectus nec consequat ipsum mattis id.
+    </p><p>
+    Donec dapibus vehicula facilisis. In tincidunt mi nisi nec faucibus tortor euismod nec. Suspendisse ante ligula aliquet vitae libero eu vulputate dapibus libero. Sed bibendum sapien at posuere interdum libero est sollicitudin magna ac gravida tellus purus eu ipsum. Proin ut quam arcu.
+
+        </p>
+
+
 
     <h2>Mixins</h2>
     <h3><code>@mixin fd-type($size, $font, $weight, $transform)</code></h3>
@@ -32,7 +78,7 @@
     <p>Example:<br>
     <pre>
     .foo {
-        @include fd-type(5);
+        @include fd-type("5");
     }
     </pre>
     </p>
@@ -42,7 +88,7 @@
     <p>Example:<br>
     <pre>
     .small-header {
-        @include fd-type(-3,header,reg,none);
+        @include fd-type("-3",header,reg,none);
     }
     </pre>
     <table>

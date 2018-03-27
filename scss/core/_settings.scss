@@ -26,70 +26,74 @@ $fd-spacing: (
 
 //type
 $fd-type--base: 16px !default;
-$fd-type: (
-    -3: 0.75rem 1.33334 body bold uppercase,    //12/16
-    -2: 0.8125rem 1.53847 body reg none,	    //13/20
-    -1: 0.875rem 1.42858 body reg none,	        //14/20
-    0: 1rem 1.5 body reg none,     	            //16/24
-    1: 1.125rem 1.33334 body semi none,   	    //18/24
-    2: 1.25rem 1.4 body semi none,   	        //20/28
-    3: 1.625rem 1.23077 header semi none,	    //26/32
-    4: 2.1875rem 1.25715 header bold none,	    //35/44
-    5: 2.8125rem 1.15556 header med none,       //45/52
-) !default;
+$fd-type: () !default;
+$fd-type: map-merge((
+    "-3": 0.75rem 1.33334 body bold uppercase,    //12/16
+    "-2": 0.8125rem 1.53847 body reg none,	    //13/20
+    "-1": 0.875rem 1.42858 body reg none,	        //14/20
+    "0": 1rem 1.5 body reg none,     	            //16/24
+    "1": 1.125rem 1.33334 body semi none,   	    //18/24
+    "2": 1.25rem 1.4 body semi none,   	        //20/28
+    "3": 1.625rem 1.23077 header semi none,	    //26/32
+    "4": 2.1875rem 1.25715 header bold none,	    //35/44
+    "5": 2.8125rem 1.15556 header med none,       //45/52
+), $fd-type);
 
 //fonts
-$fd-fonts: (
-    body: #{sans-serif},
-    header: #{sans-serif},
-    code: #{monospace},
-) !default;
+$fd-fonts: () !default;
+$fd-fonts: map-merge((
+    "body": #{sans-serif},
+    "header": #{sans-serif},
+    "code": #{monospace},
+), $fd-fonts);
 
-$fd-weights: (
+$fd-weights: () !default;
+$fd-weights: map-merge((
     light: 300,
     reg: 400,
     med: 500,
     semi: 600,
     bold: 700
-) !default;
+), $fd-weights);
 
 //colors
-$fd-colors: (
-    primary: (
+$fd-colors: () !default;
+$fd-colors: map-merge((
+    "primary": (
         1: #006fbb,
         2: #27394f,
     ),
-    action: (
+    "action": (
         1: #009cdf,
         2: #8D9DBC
     ),
-    text: (
+    "text": (
         1: #21262c,
         2: #7f90a4,
         3: #63758b,
     ),
-    text-inverse: (
+    "text-inverse": (
         1: #ffffff,
         2: #f6f8f9,
         3: #eef1f3,
     ),
-    background: (
+    "background": (
         1: #ffffff,
         2: #f0f5ff,
         3: #000000
     ),
-    neutral: (
+    "neutral": (
         1: #f9fbfc,
         2: #d7d7d7,
         3: #ccdaeb,
         4: #8a8fa1,
     ),
-    status: (
+    "status": (
         1: #61bf33,
         2: #e97326,
         3: #df1919,
     )
-) !default;
+), $fd-colors);
 
 
 //features
@@ -104,11 +108,11 @@ $fd-max-width--ui: 1290px !default;
 $fd-width--gutter: fd-space(8) !default;
 
 //type
-$fd-font-family: map-get($fd-fonts,body) !default;
-$fd-font-family--header: map-get($fd-fonts,header) !default;
-$fd-font-family--code: map-get($fd-fonts,code) !default;
-$fd-font-size: nth(map-get($fd-type,0), 1) !default;
-$fd-line-height: nth(map-get($fd-type,0), 2) !default;
+$fd-font-family: map-get($fd-fonts, "body") !default;
+$fd-font-family--header: map-get($fd-fonts, "header") !default;
+$fd-font-family--code: map-get($fd-fonts, "code") !default;
+$fd-font-size: nth(map-get($fd-type, "0"), 1) !default;
+$fd-line-height: nth(map-get($fd-type, "0"), 2) !default;
 
 //baseline
 $fd-color: fd-color(text) !default;

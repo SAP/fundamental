@@ -4,12 +4,14 @@
 
 //set namespace using function to avoid hardcoding it
 $ns: ns();
+
 @each $key, $value in $fd-type {
-    @if $key > 0 {
+    $is_minus: str-index($key, "-") == 1;
+    @if $is_minus == false {
         .#{$ns}has-type-#{$key} {
             @include fd-type($key);
         }
-    } @else if $key < 0 {
+    } @else if $is_minus == true{
         .#{$ns}has-type-minus#{$key} {
             @include fd-type($key);
         }
@@ -19,6 +21,7 @@ $ns: ns();
             @include fd-type($key);
         }
     }
+
 }
 
 @each $key, $value in $fd-fonts {

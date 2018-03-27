@@ -127,11 +127,11 @@ $block: ns(card);
     }
     &__header {
         color: $fd-color;
-        @include fd-type(1);
-        margin-bottom: fd-space(xxs);
+        @include fd-type("1");
+        margin-bottom: fd-space(base);
     }
     &__description {
-        @include fd-type(-2);
+        @include fd-type("-2");
         margin-bottom: fd-space(s);
         //TODO: This is breaking the card group layouts, need a different approach
         //white-space: nowrap;
@@ -141,7 +141,7 @@ $block: ns(card);
         text-overflow: ellipsis;
     }
     &__status {
-        @include fd-type(-3);
+        @include fd-type("-3");
     }
     &__actions {
         padding: $fd-card-padding $fd-card-padding/2;

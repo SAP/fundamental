@@ -1,4 +1,4 @@
-@import "settings";
+//@import "functions";
 
 $ns: ns();
 //utils
@@ -9,12 +9,10 @@ $ns: ns();
     font-family: $fd-font-family;
 }
 
-
-
 //els
 @mixin fd-form-base {
     @include fd-reset;
-    @include fd-type(0, body);
+    @include fd-type("0", body);
     appearance: none;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
@@ -194,7 +192,9 @@ $ns: ns();
         font-weight: 600;
     } @else if $weight == bold {
         font-weight: 700;
-    }
+    } @else if $weight == black {
+       font-weight: 900;
+   }
 }
 
 

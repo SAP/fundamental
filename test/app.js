@@ -120,6 +120,9 @@ app.use('/static', express.static(path.join(__dirname, 'resources')));
 router.get('/(*/)?FundamentalIcons:key', (req, res) => {
     res.sendFile(path.join(__dirname, '..', `scss/icons/FundamentalIcons${req.params.key}`));
 });
+router.get('/(*/)?72/72-:key', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', `scss/fonts/72/72-${req.params.key}`));
+});
 
 router.all('/', function (req, res, next) {
   //console.log('request initiated!');

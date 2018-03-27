@@ -1,6 +1,7 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
+//@import "../core/settings";
+@import "../theme";
+@import "../mixins";
+@import "../functions";
 @import "./button";
 @import "./contextual-menu";
 
@@ -36,7 +37,7 @@ $block: ns(action-bar);
     }
     &__title {
         @include fd-reset;
-        @include fd-type(3, header, med);
+        @include fd-type("3", header, med);
         flex: 1;
         margin-bottom: 0;
         &:first-child {

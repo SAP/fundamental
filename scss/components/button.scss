@@ -37,7 +37,7 @@ $block: ns(button);
     //BASE
     //set all reset and baseline block styles
     @include fd-button-reset;
-    @include fd-type(1, header, med);
+    @include fd-type("1", header, med);
     display: inline-block;
     background-color: $fd-button-background-color;
     transition: background-color $fd-button-transition-params;
@@ -52,7 +52,7 @@ $block: ns(button);
     border-radius: 0;
     //MODIFIERS
     &--small {
-        @include fd-type(0);
+        @include fd-type("0");
         @include fd-weight(semi);
         max-height: $fd-button-height--small;
         height: $fd-button-height--small;
@@ -61,7 +61,7 @@ $block: ns(button);
         padding-right: fd-space(4);
     }
     &--large {
-        @include fd-type(2);
+        @include fd-type("2");
         max-height: $fd-button-height--large;
         height: $fd-button-height--large;
         line-height: $fd-button-height--large;
@@ -204,7 +204,7 @@ $block: ns(button);
     //special flavor
     &--action-bar {
         @extend .#{$block}--large;
-        @include fd-type(-3);
+        @include fd-type("-3");
         min-width: 135px;
         line-height: $fd-button-height--large - $fd-button-icon-height--large - fd-space(3);
         vertical-align: middle;

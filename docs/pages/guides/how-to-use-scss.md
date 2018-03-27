@@ -187,7 +187,7 @@ The following spacing options are available -
 ### Type Mixin
 {:.docs-header-h3}
 
-You can utilize the type mixin to render size, line height, face, weight and transformation - <br> `fd-type(size, font, weight, transform)`
+You can utilize the type mixin to render size, line height, face, weight and transformation - <br> `fd-type("size", font, weight, transform)`
 
 {% highlight css %}
 .foo {
