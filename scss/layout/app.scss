@@ -24,18 +24,9 @@ $block: ns(app);
         background-color: $fd-app-sidebar-background-color;
         width: 100vw;
         max-height: $fd-app-sidebar-height--minimized;
-        &:hover {
-            position: absolute;
-            min-height: 100%;
-        }
         @include fd-screen(s) {
-            width: $fd-app-sidebar-width--minimized;
+            width: $fd-app-sidebar-width;
             max-height: 100%;
-            &:hover {
-                width: $fd-app-sidebar-width;
-                position: relative;
-                margin-right: -200px;
-            }
         }
         @include fd-screen(l) {
             width: $fd-app-sidebar-width;
