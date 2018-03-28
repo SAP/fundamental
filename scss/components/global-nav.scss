@@ -1,0 +1,54 @@
+@import "../core/settings";
+@import "../core/mixins";
+@import "../core/functions";
+@import "../components/mixins";
+
+
+/*!
+.fd-global-nav+(--no-border)
+    .fd-global-nav__content+()
+    .fd-global-nav__title+()
+*/
+$block: ns(global-nav);
+
+.#{$block} {
+
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-global-nav-border-color: fd-color(primary, 1) !default;
+    $fd-global-nav-background-color: fd-color(background, 1) !default;
+    $fd-global-nav-height: fd-space(12.5);
+
+    //BLOCK BASE *******************************************
+    @include fd-reset;
+    border-bottom: solid 1px $fd-global-nav-border-color;
+    background: $fd-global-nav-background-color;
+    height: $fd-global-nav-height;
+    padding: fd-space(3) fd-space(4);
+
+    //ELEMENTS *******************************************
+    &__logo{
+        float: left;
+    }
+
+    &__back{
+        float: left;
+        @include fd-button-reset;  //removes default button chrome
+        width: fd-space(m); //best practice hit space
+        height: fd-space(m);
+        margin: - (fd-space(s)/2);
+        transform: rotate(180deg);
+
+    }
+
+    //STATES *******************************************
+    &.is-disabled,
+    &[disabled] {
+        opacity: 0.5;
+    }
+    &[aria-selected="true"] {
+    }
+
+
+
+
+}

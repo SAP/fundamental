@@ -1,0 +1,27 @@
+<!--
+global_nav:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+
+{% from "../icon/component.njk" import icon %}
+{% macro global_nav(properties={}, modifier={}, state={}, aria={}) -%}
+<div class="fd-global-nav{{ modifier.block | modifier('global-nav') }}{{ state | state }}"{{ aria | aria }}>
+    <div class="fd-global-nav__logo">
+        Sap Hybris [y]
+    </div>
+    <button class="fd-global-nav__back" aria-controls="{{properties.id}}">
+      {{ icon('chevron') }}
+    </button>
+
+    </div>
+    <div class="fd-global-nav__content{{ modifier.content | modifier('global-nav__content') }}">
+
+        {%- if properties.description %}
+            {{ properties.description }}
+        {%- endif %}
+    </div>
+</div>
+{%- endmacro %}
