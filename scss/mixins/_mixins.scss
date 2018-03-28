@@ -87,9 +87,6 @@
     }
     @content;
 }
-
-
-
 @mixin fd-clearfix {
     &::after {
         content: "";
@@ -97,7 +94,6 @@
         clear: both;
     }
 }
-
 @mixin fd-last-child {
     &:last-child {
         margin-bottom: 0;
@@ -111,7 +107,6 @@
         @content;
     }
 }
-
 @mixin fd-screen($size, $dimension: width) {
   @if map-has-key($fd-breakpoints, $size) {
     @media (min-#{$dimension}: map-get($fd-breakpoints, $size)) {
@@ -121,19 +116,16 @@
     @warn "Unknown `#{$size}` in $fd-breakpoints map";
   }
 }
-
 @mixin fd-print() {
 	@media print {
 		@content;
 	}
 }
-
 //$size: -3,-2,-1,0,1,2,3,4,5
 //$font: body, header, code
 //$weight: reg, med, semi
 //$transform: none, uppercase, lowercase
 @mixin fd-type($size: "0", $font: default, $weight: default, $transform: default) {
-
     //get type map — set default to 0
     $list: map-get($fd-type, "0");
     @if map-has-key($fd-type, $size) {
@@ -177,8 +169,6 @@
         }
     }
 }
-
-
 @mixin fd-weight($weight: reg) {
     @if $weight == light {
         font-weight: 300;
@@ -194,8 +184,6 @@
        font-weight: 900;
    }
 }
-
-
 //Taken from https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/library/_triangle.scss
 @mixin triangle($size, $color, $direction) {
   $width: nth($size, 1);
@@ -260,10 +248,8 @@
     border-width: $width $height;
   }
 }
-
 @mixin rotate($deg: 90){
     $sDeg: #{$deg}deg;
-
     -webkit-transform: rotate($sDeg);
     -moz-transform: rotate($sDeg);
     -ms-transform: rotate($sDeg);

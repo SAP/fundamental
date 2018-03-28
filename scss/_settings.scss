@@ -62,8 +62,8 @@ $fd-weights: map-merge((
 $fd-colors: () !default;
 $fd-colors: map-merge((
   "primary": (
-    1: #006fbb,
-    2: #27394f,
+    1: crimson,
+    2: darkred,
   ),
   "action": (
     1: #0a6ed1,
@@ -72,12 +72,12 @@ $fd-colors: map-merge((
   "text": (
     1: #32363b,
     2: #515559,
-    3: magenta,
+    3: darkviolet,
   ),
   "text-inverse": (
-    1: magenta,
-    2: magenta,
-    3: magenta,
+    1: chartreuse,
+    2: springgreen,
+    3: limegreen,
   ),
   "background": (
     1: #f3f4f5,
@@ -88,7 +88,7 @@ $fd-colors: map-merge((
     1: #fafafa,
     2: #eeeeef,
     3: #dededf,
-    4: magenta,
+    4: tomato,
   ),
   "status": (
     1: #359c46,
@@ -97,13 +97,13 @@ $fd-colors: map-merge((
   )
 ), $fd-colors);
 
-$fd-colors-primary: map-get($fd-colors, "primary");
-$fd-colors-action: map-get($fd-colors, "action");
-$fd-colors-text: map-get($fd-colors, "text");
-$fd-colors-text-inverse: map-get($fd-colors, "text-inverse");
-$fd-colors-background: map-get($fd-colors, "background");
-$fd-colors-neutral: map-get($fd-colors, "neutral");
-$fd-colors-status: map-get($fd-colors, "status");
+$fd-colors-primary: map-get($fd-colors, "primary") !default;
+$fd-colors-action: map-get($fd-colors, "action") !default;
+$fd-colors-text: map-get($fd-colors, "text") !default;
+$fd-colors-text-inverse: map-get($fd-colors, "text-inverse") !default;
+$fd-colors-background: map-get($fd-colors, "background") !default;
+$fd-colors-neutral: map-get($fd-colors, "neutral") !default;
+$fd-colors-status: map-get($fd-colors, "status") !default;
 
 //features
 $fd-space-modify: normal !default; //normal, compact
