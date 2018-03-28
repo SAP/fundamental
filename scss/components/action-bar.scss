@@ -1,9 +1,6 @@
-@import "./../theme";
+@import "./../settings";
 @import "./../mixins";
 @import "./../functions";
-// @import "./button";
-// @import "./contextual-menu";
-
 /*!
 .fd-action-bar
 	.fd-action-bar__navigation
@@ -14,8 +11,8 @@
 $block: #{$fd-namespace}-action-bar;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-action-bar-background-color: fd-color(background, 2) !default;
-    $fd-action-bar-border-color: fd-color(neutral, 3) !default;
+    $fd-action-bar-background-color: fd-color("background", 2) !default;
+    $fd-action-bar-border-color: fd-color("neutral", 3) !default;
 
     $fd-action-bar-height: fd-space(19) !default;
     $fd-action-bar-transition-params: 0.25s ease-in !default;
