@@ -1,6 +1,8 @@
 {% extends "layout.njk" %}
+{% import "./../utils.njk" as utils %}
 {% from "./../format.njk" import format %}
 {% from "../button/component.njk" import button %}
+{% from "../dropdown/component.njk" import dropdown, menu %}
 {% from "./component.njk" import global_nav %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
@@ -13,15 +15,12 @@
     <!-- output the component example and the code snippet -->
     {% set example %}
     {{  global_nav(
-            properties={
-                title: "Sed bibendum sapien",
-                description: "Morbi sodales gravida pulvinar. Duis malesuada odio volutpat elementum vulputate massa magna scelerisque ante et accumsan."
-            },
+            properties=data.properties,
             modifier={
-                block: []
+                block: data.properties
             },
-            state={},
-            aria={}
+            state=data.state,
+            aria=data.aria
         )
     }}
 

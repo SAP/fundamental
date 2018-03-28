@@ -17,6 +17,8 @@ $block: ns(global-nav);
     $fd-global-nav-border-color: fd-color(primary, 1) !default;
     $fd-global-nav-background-color: fd-color(background, 1) !default;
     $fd-global-nav-height: fd-space(12.5);
+    $fd-global-nav-group-height: fd-space(13) !default;
+    $fd-global-nav-background-color: fd-color(background, 2) !default;
 
     //BLOCK BASE *******************************************
     @include fd-reset;
@@ -25,8 +27,26 @@ $block: ns(global-nav);
     height: $fd-global-nav-height;
     padding: fd-space(3) fd-space(4);
 
+    & [role="separator"] {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 1px;
+        //white-space: nowrap;
+        height: $fd-global-nav-group-height;
+        border-left: solid 1px $fd-global-nav-border-color;
+    }
+
     //ELEMENTS *******************************************
-    &__logo{
+    &__group{
+        &--branding{
+            float: left;
+        }
+        &--actions{
+            float: right;
+        }
+    }
+
+    &__logo, &__app-logo{
         float: left;
     }
 

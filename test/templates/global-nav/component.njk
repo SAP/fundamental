@@ -1,3 +1,8 @@
+{% from "../button/component.njk" import button %}
+{% from "../icon/component.njk" import icon %}
+{% from "../dropdown/component.njk" import dropdown, menu %}
+{% import "./../utils.njk" as utils %}
+
 <!--
 global_nav:
     properties={},
@@ -6,22 +11,32 @@ global_nav:
     aria={}
 -->
 
-{% from "../icon/component.njk" import icon %}
+
 {% macro global_nav(properties={}, modifier={}, state={}, aria={}) -%}
-<div class="fd-global-nav{{ modifier.block | modifier('global-nav') }}{{ state | state }}"{{ aria | aria }}>
-    <div class="fd-global-nav__logo">
-        Sap Hybris [y]
+<nav class="fd-global-nav{{ modifier.block | modifier('global-nav') }}{{ state | state }}"{{ aria | aria }}>
+    <div class="fd-global-nav__group fd-global-nav__group--branding">
+        <div class="fd-global-nav__logo">
+            Sap Hybris [y]
+        </div>
+        <button class="fd-global-nav__back" aria-controls="{{properties.id}}">
+          {{ icon('chevron') }}
+        </button>
+        <div class="fd-global-nav__app-logo">
+            SAP Hybris Application Logo
+        </div>
     </div>
-    <button class="fd-global-nav__back" aria-controls="{{properties.id}}">
-      {{ icon('chevron') }}
-    </button>
+
+    <span role="separator"></span>
+{{ dropdown(properties.launchpad, modifier={ control: "no-border" }) | indent(12) }}
+    <span role="separator"></span>
+
+
+    <div class="fd-global-nav__group fd-global-nav__group--actions">
+        <div class="fd-global-nav-">
+
+        </div>
 
     </div>
-    <div class="fd-global-nav__content{{ modifier.content | modifier('global-nav__content') }}">
 
-        {%- if properties.description %}
-            {{ properties.description }}
-        {%- endif %}
-    </div>
-</div>
+</nav>
 {%- endmacro %}
