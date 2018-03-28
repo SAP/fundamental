@@ -1,44 +1,41 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-
-$block: ns(app);
-
+@import "./../settings";
+@import "./../functions";
+@import "./../mixins";
 /*!
 .fd-app
     .fd-app__sidebar
     .fd-app__main
 */
-
+$block: #{$fd-namespace}-app;
 .#{$block} {
-    $fd-app-sidebar-width: 250px !default;
-    $fd-app-sidebar-height--minimized: 40px !default;
-    $fd-app-sidebar-width--minimized: 80px !default;
-    $fd-app-sidebar-background-color: fd-color(primary, 2) !default;
-    width: 100%;
-    min-height: 100vh;
+  $fd-app-sidebar-width: 250px !default;
+  $fd-app-sidebar-height--minimized: 40px !default;
+  $fd-app-sidebar-width--minimized: 80px !default;
+  $fd-app-sidebar-background-color: fd-color("primary", 2) !default;
+  width: 100%;
+  min-height: 100vh;
+  @include fd-screen(s) {
+    display: flex;
+  }
+  &__sidebar {
+    background-color: $fd-app-sidebar-background-color;
+    width: 100vw;
+    max-height: $fd-app-sidebar-height--minimized;
     @include fd-screen(s) {
-        display: flex;
+      width: $fd-app-sidebar-width;
+      max-height: 100%;
     }
-    &__sidebar {
-        background-color: $fd-app-sidebar-background-color;
-        width: 100vw;
-        max-height: $fd-app-sidebar-height--minimized;
-        @include fd-screen(s) {
-            width: $fd-app-sidebar-width;
-            max-height: 100%;
-        }
-        @include fd-screen(l) {
-            width: $fd-app-sidebar-width;
-            &:hover {
-                width: $fd-app-sidebar-width;
-                margin-right: 0;
-            }
-        }
-        overflow: scroll;
+    @include fd-screen(l) {
+      width: $fd-app-sidebar-width;
+      &:hover {
+        width: $fd-app-sidebar-width;
+        margin-right: 0;
+      }
     }
-    &__main {
-        flex: 1;
-        overflow: scroll;
-    }
+    overflow: scroll;
+  }
+  &__main {
+    flex: 1;
+    overflow: scroll;
+  }
 }

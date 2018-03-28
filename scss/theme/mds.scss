@@ -1,13 +1,14 @@
 // @import "../core/functions";
 // @import "../core/mixins";
 
+
 $fd-fonts: (
     "body": #{"'72'", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"},
     "header": #{"'72Condensed'", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"}
 );
 
 //colors
-$fd-colors: (
+$fd-colors: map-merge((
     "action": (
         1: #0a6ed1,
         2: #8D9DBC
@@ -33,7 +34,7 @@ $fd-colors: (
         2: #f59518,
         3: #ee0000,
     )
-);
+), $fd-colors);
 
 //sets HTML el
 $fd-font-size: 14px;
@@ -53,4 +54,4 @@ $fd-type: (
     "5": 2.8125rem 1.15556 "header" reg none, //
 );
 
-@import "../core/settings";
+@import "./../core/settings";

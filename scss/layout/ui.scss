@@ -1,9 +1,6 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-
-$block: ns(ui);
-
+@import "./../settings";
+@import "./../functions";
+@import "./../mixins";
 /*!
 .fd-ui+(--fixed)
     .fd-ui__header+(--fixed)
@@ -11,7 +8,7 @@ $block: ns(ui);
     .fd-ui__footer+(--fixed)
     .fd-ui__overlay
 */
-
+$block: #{$fd-namespace}-ui;
 .#{$block} {
     //these vars can be set globally to lock all pages
     //also, --fixed modifiers can be used in the HTML to set per template configurations
@@ -20,9 +17,9 @@ $block: ns(ui);
     $fd-ui-footer-fixed: false !default;
 
     $fd-ui-header-height: 50px !default;
-    $fd-ui-header-background-color: fd-color(primary) !default;
+    $fd-ui-header-background-color: fd-color("primary") !default;
     $fd-ui-footer-height: 40px !default;
-    $fd-ui-footer-background-color: fd-color(primary, 2) !default;
+    $fd-ui-footer-background-color: fd-color("primary", 2) !default;
 
     $_ui-is-fixed: $fd-ui-fixed or ($fd-ui-header-fixed and $fd-ui-footer-fixed);
     position: absolute;

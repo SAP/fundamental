@@ -1,7 +1,6 @@
-@import "../core/settings";
-@import "../core/functions";
-@import "../core/mixins";
-
+@import "./../settings";
+@import "./../functions";
+@import "./../mixins";
 /*!
 .fd-panel
     .fd-panel__header
@@ -10,7 +9,7 @@
     .fd-panel__footer
 */
 
-$block: ns(panel);
+$block: #{$fd-namespace}-panel;
 .#{$block} {
     @include fd-clearfix;
     &__header {
