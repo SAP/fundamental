@@ -1,9 +1,8 @@
-//@import "../core/settings";
 @import "../theme";
 @import "../mixins";
 @import "../functions";
-@import "./button";
-@import "./contextual-menu";
+// @import "./button";
+// @import "./contextual-menu";
 
 /*!
 .fd-action-bar
@@ -12,8 +11,7 @@
 	.fd-action-bar__actions+(.is-disabled | aria-hidden)?
         .fd-action-bar__action-item
 */
-$block: ns(action-bar);
-
+$block: #{$fd-namespace}-action-bar;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-action-bar-background-color: fd-color(background, 2) !default;

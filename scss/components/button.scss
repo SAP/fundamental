@@ -1,14 +1,12 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
+@import "../theme";
+@import "../mixins";
+@import "../functions";
 @import "mixins";
 
 /*!
 .fd-button+( (--small | --large), --icon, --text, --link, --action-bar)+( (.is-disabled | [aria-disabled=true]) | (.is-selected | [aria-selected=true] | (.is-pressed | [aria-pressed=true]))
 */
-
-//set component name using namespace function, then use #{$block} below
-$block: ns(button);
+$block: #{$fd-namespace}-button;
 .#{$block} {
     //SETTINGS
     $fd-button-color: fd-color(text-inverse, 2) !default;

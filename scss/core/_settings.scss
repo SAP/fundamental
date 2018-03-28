@@ -14,7 +14,8 @@ $fd-breakpoints: (
 
 //spacing
 $fd-spacing--base: 4px !default;
-$fd-spacing: (
+$fd-spacing: () !default;
+$fd-spacing: map-merge((
     base: $fd-spacing--base,    //4
     xs: $fd-spacing--base * 2,  //8
     s: $fd-spacing--base * 3,   //12
@@ -22,7 +23,7 @@ $fd-spacing: (
     m: $fd-spacing--base * 10,  //40
     l: $fd-spacing--base * 25,  //100
     xl: $fd-spacing--base * 37, //148
-) !default;
+), $fd-spacing);
 
 //type
 $fd-type--base: 16px !default;
