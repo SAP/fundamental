@@ -1,7 +1,6 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-
+@import "./../theme";
+@import "./../mixins";
+@import "./../functions";
 /*!
 .fd-badge+(( --success | --warning | --error ), --pill)
 */
@@ -9,6 +8,7 @@ $block: #{$fd-namespace}-badge;
 .#{$block} {
     @include fd-reset;
     @include fd-type("-3");
+    text-transform: uppercase;
     line-height: fd-space(reg);
     border-radius: 5px;
     border-width: 1px;
