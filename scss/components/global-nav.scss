@@ -9,6 +9,7 @@
     .fd-global-nav__content+()
     .fd-global-nav__title+()
 */
+
 $block: ns(global-nav);
 
 .#{$block} {
@@ -17,64 +18,74 @@ $block: ns(global-nav);
     $fd-global-nav-border-color: fd-color(primary, 1) !default;
     $fd-global-nav-background-color: fd-color(background, 1) !default;
     $fd-global-nav-height: fd-space(12.5);
-    $fd-global-nav-group-height: fd-space(13) !default;
     $fd-global-nav-background-color: fd-color(background, 2) !default;
+    $fd-global-nav-btn-color: fd-color(action, 1);
+    $fd-global-nav-height: 50px;
 
     //BLOCK BASE *******************************************
     @include fd-reset;
     border-bottom: solid 1px $fd-global-nav-border-color;
     background: $fd-global-nav-background-color;
     height: $fd-global-nav-height;
-    padding: fd-space(3) fd-space(4);
-    display: flex;
+    // display: flex;
+
     & [role="separator"] {
         display: inline-block;
         vertical-align: middle;
         max-width: 1px;
-        //white-space: nowrap;
-        height: $fd-global-nav-group-height;
+        height: $fd-global-nav-height;
         border-left: solid 1px $fd-global-nav-border-color;
     }
 
     //ELEMENTS *******************************************
     &__group{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        min-height: $fd-global-nav-height;
 
         &--branding, &--actions{
-            flex:0 0 auto;
-            width:300px;
+        }
+
+        &--branding{
+            width: auto;
+            padding: fd-space(3) fd-space(4);
+            float: left;
         }
 
         &--launchpad{
-            flex:1 1 auto;
+            text-align: center;
+            padding-top: 0;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         &--actions{
+            float: right;
 
         }
     }
 
     &__logo, &__app-logo{
-        float: left;
+        display: inline-block;
     }
 
-    &__launchpad{
-        margin: 0 auto;
+    &__actions, &__context-menu{
+        float: right;
     }
 
     &__btn{
-        float: left;
         @include fd-button-reset;  //removes default button chrome
         width: fd-space(m); //best practice hit space
         height: fd-space(m);
+        color: $fd-global-nav-btn-color;
 
         &--back{
             margin: - (fd-space(s)/2);
             transform: rotate(180deg);
         }
 
+    }
+
+    .fd-dropdown__control{
+        height: $fd-global-nav-height;
     }
 
     //STATES *******************************************
@@ -84,7 +95,6 @@ $block: ns(global-nav);
     }
     &[aria-selected="true"] {
     }
-
 
 
 

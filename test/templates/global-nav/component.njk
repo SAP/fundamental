@@ -11,8 +11,8 @@ global_nav:
     aria={}
 -->
 
-
 {% macro global_nav(properties={}, modifier={}, state={}, aria={}) -%}
+
 <nav class="fd-global-nav{{ modifier.block | modifier('global-nav') }}{{ state | state }}"{{ aria | aria }}>
 
     <div class="fd-global-nav__group fd-global-nav__group--branding">
@@ -27,16 +27,7 @@ global_nav:
         </div>
     </div>
 
-    <div class="fd-global-nav__group fd-global-nav__group--launchapd">
-        {{ dropdown(properties.launchpad, modifier={ control: "no-border" }) | indent(12) }}
-    </div>
-
     <div class="fd-global-nav__group fd-global-nav__group--actions">
-        <div class="fd-global-nav__context-menu">
-            <span role="separator"></span>
-            {{ dropdown(properties.contextMenu, modifier={ control: "no-border" }) | indent(12) }}
-            <span role="separator"></span>
-        </div>
 
         <div class="fd-global-nav__actions">
             <button class="fd-global-nav__btn fd-global-nav__btn--search">
@@ -53,7 +44,19 @@ global_nav:
             </button>
         </div>
 
+        <div class="fd-global-nav__context-menu">
+            <span role="separator"></span>
+            {{ dropdown(properties.contextMenu, modifier={ control: "no-border" }) | indent(12) }}
+            <span role="separator"></span>
+        </div>
+
     </div>
+
+    <div class="fd-global-nav__group fd-global-nav__group--launchpad">
+        {{ dropdown(properties.launchpad, modifier={ control: "no-border" }) | indent(12) }}
+    </div>
+
+
 
 </nav>
 {%- endmacro %}
