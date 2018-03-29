@@ -39,14 +39,20 @@ $block: ns(global-nav);
     //ELEMENTS *******************************************
     &__group{
         display: flex;
-        &--branding{
-            position: absolute;
-            left: 20px;
+        justify-content: space-between;
+        align-items: center;
 
+        &--branding, &--actions{
+            flex:0 0 auto;
+            width:300px;
         }
+
+        &--launchpad{
+            flex:1 1 auto;
+        }
+
         &--actions{
-            position: absolute;
-            right: 20px;;
+
         }
     }
 
@@ -58,13 +64,16 @@ $block: ns(global-nav);
         margin: 0 auto;
     }
 
-    &__back{
+    &__btn{
         float: left;
         @include fd-button-reset;  //removes default button chrome
         width: fd-space(m); //best practice hit space
         height: fd-space(m);
-        margin: - (fd-space(s)/2);
-        transform: rotate(180deg);
+
+        &--back{
+            margin: - (fd-space(s)/2);
+            transform: rotate(180deg);
+        }
 
     }
 
