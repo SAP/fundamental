@@ -6,7 +6,7 @@
 {% from "./component.njk" import global_nav %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['icons', 'components/button'] %}
+{% set css_deps = ['icons', 'components/button', 'component/dropdown',  'helpers'] %}
 
 {% block content %}
 
@@ -15,7 +15,17 @@
     <!-- output the component example and the code snippet -->
     {% set example %}
     {{  global_nav(
-            properties=data.properties,
+            properties={
+                "launchpad": {
+                    "label": "Home",
+                    "icon": "sort",
+                    "items": [
+                        { "label": "Option 1" },
+                        { "label": "Option 2" },
+                        { "label": "Option 3" }
+                    ]
+                }
+            },
             modifier={
                 block: data.properties
             },
