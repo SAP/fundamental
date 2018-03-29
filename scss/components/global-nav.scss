@@ -26,7 +26,7 @@ $block: ns(global-nav);
     background: $fd-global-nav-background-color;
     height: $fd-global-nav-height;
     padding: fd-space(3) fd-space(4);
-
+    display: flex;
     & [role="separator"] {
         display: inline-block;
         vertical-align: middle;
@@ -38,16 +38,24 @@ $block: ns(global-nav);
 
     //ELEMENTS *******************************************
     &__group{
+        display: flex;
         &--branding{
-            float: left;
+            position: absolute;
+            left: 20px;
+
         }
         &--actions{
-            float: right;
+            position: absolute;
+            right: 20px;;
         }
     }
 
     &__logo, &__app-logo{
         float: left;
+    }
+
+    &__launchpad{
+        margin: 0 auto;
     }
 
     &__back{
