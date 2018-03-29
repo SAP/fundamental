@@ -23,7 +23,7 @@ Bellow are the main elements that conform an application build with Fundamental 
             * `.fd-app__main`: Main app content
     * `.fd_ui__footer`: Global footer for the application
         * `.fd-ui__footer--fixed`: Modifier to make the footer persistent (sticky)
-* `.fd-overlay`: Overlay class can be used to dim out the application UI when a modal is open
+* `.fd-overlay`: Overlay element that is used to dim out the application UI when a modal is open
 
 ## Application with Sidebar
 {: .docs-header-h2}
@@ -80,7 +80,9 @@ Use this layout when your application is very simple and doesn't need a sidebar 
 ## Application Overlay
 {: .docs-header-h2}
 
-You can utilize the '.fd-overlay' to block out the UI when a is open and the user needs to take an action in order to move forward.
+You can use the `.fd-overlay` to block out the UI when a is open and the user needs to take an action in order to move forward. 
+
+Then put inside other components like [modals](/components/modal.html).
 
 {% capture app-layout-no-sidebar %}
 <div class="fd-ui fd-ui--fundamental">
@@ -98,6 +100,20 @@ You can utilize the '.fd-overlay' to block out the UI when a is open and the use
         fd-ui_footer
     </div>
 </div>
-<div class="fd-overlay"></div>
+<div class="fd-overlay">
+    <div class="fd-modal">
+        <div class="fd-modal__content">
+            <div class="fd-modal__header">
+                <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="close">
+                    <span class="fd-icon fd-icon--close" role="presentation"></span>
+                </button>
+                <h4 class="fd-modal__title">Modal</h4>
+            </div>
+            <div class="fd-modal__body">
+                <p>Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endcapture %}
 {% include display-example.html component=app-layout-no-sidebar class="app" %}
