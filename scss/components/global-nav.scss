@@ -27,22 +27,10 @@ $block: ns(global-nav);
     border-bottom: solid 1px $fd-global-nav-border-color;
     background: $fd-global-nav-background-color;
     height: $fd-global-nav-height;
-    // display: flex;
-
-    & [role="separator"] {
-        display: inline-block;
-        vertical-align: middle;
-        max-width: 1px;
-        height: $fd-global-nav-height;
-        border-left: solid 1px $fd-global-nav-border-color;
-    }
 
     //ELEMENTS *******************************************
     &__group{
         min-height: $fd-global-nav-height;
-
-        &--branding, &--actions{
-        }
 
         &--branding{
             width: auto;
@@ -58,12 +46,20 @@ $block: ns(global-nav);
 
         &--actions{
             float: right;
-
         }
     }
 
     &__logo, &__app-logo, &__side-menu{
         display: inline-block;
+    }
+
+    &__logo{
+        padding-left: 12px;
+        font-weight: bold;
+    }
+
+    &__app-logo{
+        @include fd-type(-1, body, semi);
     }
 
     &__side-menu{
@@ -72,13 +68,14 @@ $block: ns(global-nav);
     }
     &__actions, &__context-menu{
         float: right;
+        border-left: 1px solid $fd-global-nav-border-color;
     }
 
     &__btn{
         @include fd-button-reset;  //removes default button chrome
-        width: fd-space(m); //best practice hit space
         height: $fd-global-nav-height;
         color: $fd-global-nav-btn-color;
+        width: 48px;
 
         &--back{
             margin: - (fd-space(s)/2);
@@ -89,6 +86,8 @@ $block: ns(global-nav);
 
     .fd-dropdown__control{
         height: $fd-global-nav-height;
+        font-size: 14px;
+        background-position-y: 22px;
     }
 
     //STATES *******************************************
