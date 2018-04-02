@@ -29,6 +29,39 @@
 </div>
 
 
+
+
+{% set spaces = {
+  "base": 3,
+  "xs": 6,
+  "s": 12,
+  "reg": 18,
+  "m": 24,
+  "l": 30,
+  "xl": 60
+} %}
+
+
+<div class="fd-container">
+
+    <h1>Spacing</h1>
+{% for key, value in spaces %}
+    <h2>{{ key }}</h2>
+    <div style="height: {{ value }}px; background-color: pink;">
+    </div>
+    <p>{{ value }}px</p>
+{% endfor %}
+
+<h2>Mixins</h2>
+<h3><code>@mixin fd-space($size)</code></h3>
+
+
+</div>
+
+
+
+
+
 {% set specs = {
     "-3": [ 11, 16, "body", "bold", "none" ],
     "-2": [ 12, 16, "body", "reg", "none" ],
