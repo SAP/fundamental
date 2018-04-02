@@ -13,7 +13,7 @@
 */
 .fd-section {
   padding: 40px 20px 20px;
-  border-bottom: solid 2px #ccdaeb
+  border-bottom: solid 2px #dededf
 }
 .fd-section::after {
   content: "";
@@ -44,10 +44,9 @@
   margin-bottom: 16px
 }
 .fd-section__title {
-  font-size: 1.625rem;
-  line-height: 1.23077;
-  font-family: sans-serif;
-  font-weight: 600;
+  font-size: 1.64286rem;
+  line-height: 1.3913;
+  font-weight: 400;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -284,7 +283,7 @@
 .fd-ui__header {
   position: absolute;
   z-index: 1;
-  background: #006fbb;
+  background: #dc143c;
   width: 100%;
   min-height: 50px;
   height: 50px
@@ -293,7 +292,7 @@
   position: fixed
 }
 .fd-ui__footer {
-  background: #27394f;
+  background: #8b0000;
   width: 100%;
   min-height: 40px;
   height: 40px
@@ -320,7 +319,8 @@
     .fd-app__main
 */
 .fd-app {
-  width: 100%
+  width: 100%;
+  min-height: 100vh
 }
 @media (min-width:800px) {
   .fd-app {
@@ -330,24 +330,15 @@
   }
 }
 .fd-app__sidebar {
-  background-color: #27394f;
+  background-color: #8b0000;
   width: 100vw;
   max-height: 40px;
   overflow: scroll
 }
-.fd-app__sidebar:hover {
-  position: absolute;
-  min-height: 100%
-}
 @media (min-width:800px) {
   .fd-app__sidebar {
-    width: 80px;
-    max-height: 100%
-  }
-  .fd-app__sidebar:hover {
     width: 250px;
-    position: relative;
-    margin-right: -200px
+    max-height: 100%
   }
 }
 @media (min-width:1440px) {
@@ -377,24 +368,25 @@
   width: 100%
 }
 .fd-page__header {
-  border-bottom: solid 1px #ccdaeb;
-  background-color: #f0f5ff;
+  border-bottom: solid 1px #dededf;
+  background-color: #fff;
   height: 76px
 }
 .fd-page__intro {
-  font-size: .875rem;
-  line-height: 1.42858;
+  font-size: .92857rem;
+  line-height: 1.23077;
   font-weight: 400;
   padding: 16px 20px;
-  background-color: #f0f5ff;
+  background-color: #fff;
   text-align: center;
-  border-bottom: solid 1px #ccdaeb;
+  border-bottom: solid 1px #dededf;
   margin-bottom: -1px
 }
 .fd-page__content {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
-  flex-grow: 1
+  flex-grow: 1;
+  margin-bottom: 40px
 }
 /*!
 .fd-section+(--full-bleed, --no-border)
@@ -405,7 +397,7 @@
 */
 .fd-section {
   padding: 40px 20px 20px;
-  border-bottom: solid 2px #ccdaeb
+  border-bottom: solid 2px #dededf
 }
 .fd-section::after {
   content: "";
@@ -436,10 +428,9 @@
   margin-bottom: 16px
 }
 .fd-section__title {
-  font-size: 1.625rem;
-  line-height: 1.23077;
-  font-family: sans-serif;
-  font-weight: 600;
+  font-size: 1.64286rem;
+  line-height: 1.3913;
+  font-weight: 400;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -479,10 +470,9 @@
   margin-bottom: 16px
 }
 .fd-panel__title {
-  font-size: 1.625rem;
-  line-height: 1.23077;
-  font-family: sans-serif;
-  font-weight: 600;
+  font-size: 1.64286rem;
+  line-height: 1.3913;
+  font-weight: 400;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -501,7 +491,6 @@
 }
 /*!
 .fd-overlay
-
 */
 .fd-overlay {
   position: fixed;
@@ -519,7 +508,7 @@
   top: 0;
   background: rgba(0,0,0,.8);
   z-index: 1000;
-  color: #fff
+  color: #7fff00
 }
 .fd-overlay[aria-hidden=true] {
   display: none

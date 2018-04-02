@@ -65,6 +65,30 @@ var componentsTask = (cb) => {
 }
 gulp.task('pkg-css-components', componentsTask);
 
+//compile font sass files
+var fontTask = (cb) => {
+    let prefix = config.tasks.css.prefix;
+    let files = environment.production ?  `${paths.src}/fonts/*.${config.tasks.css.extensions}` : `!${paths.src}/all.scss`;
+
+    var isAllCss = function (file) {
+      return file.path.includes('all') ;
+    }
+    return gulp.src(files)
+        .pipe(gulpif(environment.development, sourcemaps.init()))
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer(config.tasks.css.autoprefixer))
+        .pipe(gulpif(environment.production, cleanCSS(config.tasks.css.cleanCSS)))
+        // .pipe(rename({
+        //     prefix: `${prefix}-`
+        // }))
+        .pipe(gulpif(isAllCss, rename({
+            basename: prefix
+        })))
+        .pipe(gulpif(environment.development, sourcemaps.write()))
+        .pipe(gulp.dest(paths.dest))
+}
+gulp.task('pkg-sass', sassTask);
+
 //create minify versions
 var minifyTask = (cb) => {
     return gulp.src([`${paths.dest}/**/*.css`])
