@@ -1,6 +1,7 @@
 {% from "../button/component.njk" import button %}
 {% from "../icon/component.njk" import icon %}
 {% from "../dropdown/component.njk" import dropdown, menu %}
+{% from "../nav/component.njk" import nav %}
 {% import "./../utils.njk" as utils %}
 
 <!--
@@ -24,9 +25,6 @@ global_nav:
         <div class="fd-global-nav__logo">
             Sap Hybris [y]
         </div>
-        <button class="fd-global-nav__btn fd-global-nav__btn--back">
-          {{ icon('chevron') }}
-        </button>
         <div class="fd-global-nav__app-logo">
             SAP Hybris Application Logo
         </div>
@@ -35,16 +33,16 @@ global_nav:
     <div class="fd-global-nav__group fd-global-nav__group--actions">
 
         <div class="fd-global-nav__actions">
-            <button class="fd-global-nav__btn fd-global-nav__btn--search">
+            <button class="fd-button fd-button--text fd-button--icon fd-global-nav__btn">
               {{ icon('search') }}
             </button>
-            <button class="fd-global-nav__btn fd-global-nav__btn--support">
+            <button class="fd-button fd-button--text fd-button--icon fd-global-nav__btn">
               {{ icon('feedback') }}
             </button>
-            <button class="fd-global-nav__btn fd-global-nav__btn--options">
+            <button class="fd-button fd-button--text fd-button--icon fd-global-nav__btn">
               {{ icon('options') }}
             </button>
-            <button class="fd-global-nav__btn fd-global-nav__btn--profile">
+            <button class=" fd-button fd-button--text fd-button--icon fd-global-nav__btn">
               {{ icon('noimage') }}
             </button>
         </div>
@@ -59,7 +57,27 @@ global_nav:
         {{ dropdown(properties.launchpad, modifier={ control: "no-border" }) | indent(12) }}
     </div>
 
+</nav>
+<nav class="fd-global-nav__subnav">
 
+    <div class="fd-global-nav__subnav__links fd-has-float-left">
+        {{ nav(properties.subNav) | indent(12) }}
+    </div>
 
+    <div class="fd-global-nav__subnav__actions fd-has-float-right">
+        {{ button({ icon: "more" }, modifier={ block: ["icon","text", "small"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More", cssclass: "test" }) | indent(4) }}
+        {{  menu(properties={
+                id: _id,
+                items: [
+                    { "label": "Pellentesque metus" },
+                    { "label": "Duis malesuada odio volutpat" },
+                    { "label": "Suspendisse" },
+                    { "label": "Donec mattis arcu et velit" }
+                ]
+            },
+            classes="contextual-menu"
+            ) | indent(4)
+        }}
+    </div>
 </nav>
 {%- endmacro %}

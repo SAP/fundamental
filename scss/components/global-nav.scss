@@ -17,10 +17,9 @@ $block: ns(global-nav);
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-global-nav-border-color: #d6d6d7;
     $fd-global-nav-background-color: fd-color(background, 1) !default;
-    $fd-global-nav-height: fd-space(12.5);
+    $fd-global-nav-height: fd-space(13);
     $fd-global-nav-background-color: fd-color(background, 2) !default;
     $fd-global-nav-btn-color: fd-color(action, 1);
-    $fd-global-nav-height: 50px;
 
     //BLOCK BASE *******************************************
     @include fd-reset;
@@ -54,11 +53,12 @@ $block: ns(global-nav);
     }
 
     &__logo{
-        padding-left: 12px;
+        padding-left: fd-space(4);
         font-weight: bold;
     }
 
     &__app-logo{
+        padding-left: fd-space(4);
         @include fd-type(-1, body, semi);
     }
 
@@ -76,19 +76,24 @@ $block: ns(global-nav);
         height: $fd-global-nav-height;
         color: $fd-global-nav-btn-color;
         width: 48px;
+        padding-left: fd-space(3);
+    }
 
-        &--back{
-            margin: - (fd-space(s)/2);
-            transform: rotate(180deg);
+    &__subnav{
+        background: $fd-global-nav-background-color;
+        height: $fd-global-nav-height;
+        border-bottom: solid 1px $fd-global-nav-border-color;
+
+        &__links{
+            padding: fd-space(2) fd-space(4);
+        }
+
+        &__actions{
+            border-left: solid 1px $fd-global-nav-border-color;
         }
 
     }
 
-    .fd-dropdown__control{
-        height: $fd-global-nav-height;
-        font-size: 14px;
-        background-position-y: 22px;
-    }
 
     //STATES *******************************************
     &.is-disabled,

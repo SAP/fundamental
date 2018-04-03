@@ -3,10 +3,11 @@
 {% from "./../format.njk" import format %}
 {% from "../button/component.njk" import button %}
 {% from "../dropdown/component.njk" import dropdown, menu %}
+{% from "../nav/component.njk" import nav %}
 {% from "./component.njk" import global_nav %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['icons', 'components/button', 'components/dropdown',  'helpers'] %}
+{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'helpers'] %}
 
 {% block content %}
 
@@ -35,7 +36,17 @@
                         { "label": "Option 2" },
                         { "label": "Option 3" }
                     ]
-                }
+                },
+                "subNav": {
+                    "items": [
+                            { "label": "Link text" },
+                            { "label": "Selected link", "selected": true },
+                            { "label": "Link text" },
+                            { "label": "Link text" },
+                            { "label": "Link text" },
+                            { "label": "Link text" }
+                        ]
+                    }
             },
             modifier={
                 block: data.properties
