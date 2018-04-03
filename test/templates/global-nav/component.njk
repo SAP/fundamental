@@ -18,9 +18,13 @@ global_nav:
 
     <div class="fd-global-nav__group fd-global-nav__group--branding">
         <div class="fd-global-nav__side-menu">
-            <button class="fd-global-nav__btn">
-              {{ icon('list') }}
-            </button>
+            {{  button(
+                    { icon: 'list' },
+                    modifier={ block: ['icon', 'text'] },
+                    aria={ label: 'BUTTON_LABEL' },
+                    classes='global-nav__btn'
+                )
+            }}
         </div>
         <div class="fd-global-nav__logo">
             Sap Hybris [y]
@@ -33,18 +37,30 @@ global_nav:
     <div class="fd-global-nav__group fd-global-nav__group--actions">
 
         <div class="fd-global-nav__actions">
-            <button class="fd-button fd-button--text fd-button--icon fd-global-nav__btn">
-              {{ icon('search') }}
-            </button>
-            <button class="fd-button fd-button--text fd-button--icon fd-global-nav__btn">
-              {{ icon('feedback') }}
-            </button>
-            <button class="fd-button fd-button--text fd-button--icon fd-global-nav__btn">
-              {{ icon('options') }}
-            </button>
-            <button class=" fd-button fd-button--text fd-button--icon fd-global-nav__btn">
-              {{ icon('noimage') }}
-            </button>
+            {{  button(
+                    { icon: 'search' },
+                    modifier={ block: ['small','icon', 'text'] },
+                    aria={ label: 'BUTTON_LABEL' }
+                )
+            }}
+            {{  button(
+                    { icon: 'feedback' },
+                    modifier={ block: ['small','icon', 'text'] },
+                    aria={ label: 'BUTTON_LABEL' }
+                )
+            }}
+            {{  button(
+                    { icon: 'options' },
+                    modifier={ block: ['small','icon', 'text'] },
+                    aria={ label: 'BUTTON_LABEL' }
+                )
+            }}
+            {{  button(
+                    { icon: 'noimage' },
+                    modifier={ block: ['small','icon', 'text'] },
+                    aria={ label: 'BUTTON_LABEL' }
+                )
+            }}
         </div>
 
         <div class="fd-global-nav__context-menu">
