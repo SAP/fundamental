@@ -33,15 +33,12 @@ $fd-colors: (
         3: #ccdaeb,
         4: #8a8fa1,
     ),
-    "background": (
-        1: #ffffff
-    ),
     "status": (
         1: #619b62,
         2: #e96b1a,
         3: #df1919,
     )
-) !default;
+);
 
 //BRING IN DEFAULT SETTINGS so you have access to the full system when defining overrides
 @import "./../functions";
@@ -51,9 +48,11 @@ body {
     background: url("https://blogs.sap.com/wp-content/uploads/2017/05/Design-Studio-New-Launchpad-Issue.png") no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    background-position: center -100px;
 }
 
 //NO !default flags
+$fd-background-color: fd-color("primary");
 $fd-ui-header-background-color: rgba(white, 0.1);
 $fd-ui-sidebar-background-color: transparent;
 $fd-card-background-color: rgba(fd-color("background"), 0.2);
