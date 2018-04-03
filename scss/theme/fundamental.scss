@@ -1,12 +1,12 @@
 //fonts
-$fd-fonts: map-merge($fd-fonts, (
+$fd-fonts: (
     "body": #{"'Open Sans'", sans-serif},
     "header": #{"Roboto", sans-serif},
     "code": #{"'Courier New'", monospace},
-));
+);
 
 //colors
-$fd-colors: map-merge($fd-colors, (
+$fd-colors: (
     "primary": (
         1: #006fbb,
         2: #27394f,
@@ -41,8 +41,7 @@ $fd-colors: map-merge($fd-colors, (
         2: #e97326,
         3: #df1919,
     )
-));
-
+);
 
 //breakpoints
 $fd-breakpoints: (
@@ -81,13 +80,6 @@ $fd-type: (
     "5": 2.8125rem 1.15556 "header" med none,       //45/52
 );
 
-//fonts
-$fd-fonts: (
-    body: #{"'Open Sans'", sans-serif},
-    header: #{"Roboto", sans-serif},
-    code: #{"'Courier New'", monospace},
-);
-
 $fd-weights: (
     light: 300,
     reg: 400,
@@ -96,8 +88,11 @@ $fd-weights: (
     bold: 700
 );
 
-
+//BRING IN DEFAULT SETTINGS so you have access to the full system when defining overrides
+@import "./../functions";
 @import "./../settings";
+
+//NO !default flags
 
 //features
 $fd-space-modify: normal; //normal, compact

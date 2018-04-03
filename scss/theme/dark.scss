@@ -1,5 +1,5 @@
 //colors
-$fd-colors: map-merge((
+$fd-colors: (
   "primary": (
     1: black,
     2: darkblue,
@@ -34,4 +34,12 @@ $fd-colors: map-merge((
     2: #f59518,
     3: #ee0000,
   )
-), $fd-colors);
+) !default;
+
+//BRING IN DEFAULT SETTINGS so you have access to the full system when defining overrides
+@import "./../functions";
+@import "./../settings";
+
+//NO !default flags
+$fd-background-color: fd-color("background", 3);
+$fd-card-background-color: fd-color("background",2);
