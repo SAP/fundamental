@@ -40,25 +40,29 @@ global_nav:
             {{  button(
                     { icon: 'search' },
                     modifier={ block: ['icon', 'text'] },
-                    aria={ label: 'BUTTON_LABEL' }
+                    aria={ label: 'BUTTON_LABEL' },
+                    classes='global-nav__btn'
                 )
             }}
             {{  button(
                     { icon: 'feedback' },
                     modifier={ block: ['icon', 'text'] },
-                    aria={ label: 'BUTTON_LABEL' }
+                    aria={ label: 'BUTTON_LABEL' },
+                    classes='global-nav__btn'
                 )
             }}
             {{  button(
                     { icon: 'options' },
                     modifier={ block: ['icon', 'text'] },
-                    aria={ label: 'BUTTON_LABEL' }
+                    aria={ label: 'BUTTON_LABEL' },
+                    classes='global-nav__btn'
                 )
             }}
             {{  button(
                     { icon: 'noimage' },
                     modifier={ block: ['icon', 'text'] },
-                    aria={ label: 'BUTTON_LABEL' }
+                    aria={ label: 'BUTTON_LABEL' },
+                    classes='global-nav__btn'
                 )
             }}
         </div>
@@ -81,7 +85,14 @@ global_nav:
     </div>
 
     <div class="fd-global-nav__subnav__actions fd-has-float-right">
-        {{ button({ icon: "more" }, modifier={ block: ["icon","text", "small"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More", cssclass: "test" }) | indent(4) }}
+        {{  button(
+                { icon: 'more' },
+                modifier={ block: ['icon', 'text'] },
+                aria={ label: 'BUTTON_LABEL' },
+                classes='global-nav__btn'
+            )
+        }}
+
         {{  menu(properties={
                 id: _id,
                 items: [
