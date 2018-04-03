@@ -1,11 +1,9 @@
 @import "./../settings";
 
-$fd-scss-font-path: "" !default;
-
-@if variable-exists(fd-font-path) {
-    $fd-scss-font-path: $fd-font-path;
+$fd-scss-font-path: "fonts/" !default;
+@if variable-exists(fd-fonts-path) {
+    $fd-scss-font-path: $fd-fonts-path;
 }
-
 @font-face {
   font-family: '72Condensed';
   src: url('#{$fd-scss-font-path}72/72-Condensed.woff2') format('woff2'),

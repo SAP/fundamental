@@ -1,8 +1,48 @@
-$fd-fonts: (
+//fonts
+$fd-fonts: map-merge($fd-fonts, (
     "body": #{"'Open Sans'", sans-serif},
     "header": #{"Roboto", sans-serif},
     "code": #{"'Courier New'", monospace},
-);
+));
+
+//colors
+$fd-colors: map-merge($fd-colors, (
+    "primary": (
+        1: #006fbb,
+        2: #27394f,
+    ),
+    "action": (
+        1: #009cdf,
+        2: #8D9DBC
+    ),
+    "text": (
+        1: #21262c,
+        2: #7f90a4,
+        3: #63758b,
+    ),
+    "text-inverse": (
+        1: #ffffff,
+        2: #f6f8f9,
+        3: #eef1f3,
+    ),
+    "background": (
+        1: #ffffff,
+        2: #f0f5ff,
+        3: #000000
+    ),
+    "neutral": (
+        1: #f9fbfc,
+        2: #d7d7d7,
+        3: #ccdaeb,
+        4: #8a8fa1,
+    ),
+    "status": (
+        1: #61bf33,
+        2: #e97326,
+        3: #df1919,
+    )
+));
+
 
 //breakpoints
 $fd-breakpoints: (
@@ -56,43 +96,6 @@ $fd-weights: (
     bold: 700
 );
 
-//colors
-$fd-colors: (
-    "primary": (
-        1: #006fbb,
-        2: #27394f,
-    ),
-    "action": (
-        1: #009cdf,
-        2: #8D9DBC
-    ),
-    "text": (
-        1: #21262c,
-        2: #7f90a4,
-        3: #63758b,
-    ),
-    "text-inverse": (
-        1: #ffffff,
-        2: #f6f8f9,
-        3: #eef1f3,
-    ),
-    "background": (
-        1: #ffffff,
-        2: #f0f5ff,
-        3: #000000
-    ),
-    "neutral": (
-        1: #f9fbfc,
-        2: #d7d7d7,
-        3: #ccdaeb,
-        4: #8a8fa1,
-    ),
-    "status": (
-        1: #61bf33,
-        2: #e97326,
-        3: #df1919,
-    )
-);
 
 @import "./../settings";
 
