@@ -13,9 +13,9 @@
   line-height: 1.42857;
   color: #32363b;
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #7fff00;
+  color: #fff;
   border: solid 1px #eeeeef;
-  background-color: #9400d3;
+  background-color: #7b7d80;
   min-height: 39px;
   padding: 12px
 }
@@ -38,7 +38,7 @@
   vertical-align: middle;
   white-space: nowrap;
   background-color: transparent;
-  color: #7fff00;
+  color: #fff;
   width: 24px;
   height: 24px;
   float: right;
@@ -172,14 +172,14 @@
   background-color: #0a6ed1;
   -webkit-transition: background-color 125ms ease-in;
   transition: background-color 125ms ease-in;
-  color: #00ff7f;
+  color: #fff;
   max-height: 39px;
   height: 39px;
   line-height: 39px;
   padding-left: 15px;
   padding-right: 15px;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: normal;
   border-radius: 0
 }
 .fd-button--small {
@@ -206,11 +206,11 @@
 }
 .fd-button:hover {
   background-color: #0961b9;
-  color: #00ff7f;
+  color: #fff;
   text-decoration: none
 }
 .fd-button:focus {
-  color: #00ff7f;
+  color: #fff;
   -webkit-box-shadow: 0 0 4px 1px tomato;
   box-shadow: 0 0 4px 1px tomato;
   outline: solid 2px #3294f5
@@ -222,7 +222,7 @@
 .fd-button[aria-pressed=true],
 .fd-button[aria-selected=true] {
   background-color: #0854a0;
-  color: #00ff7f
+  color: #fff
 }
 .fd-button.is-disabled,
 .fd-button:disabled,
@@ -378,7 +378,7 @@
   border-style: solid;
   border-width: 1px;
   border-color: #dededf;
-  background-color: #f3f4f5
+  background-color: #fff
 }
 .fd-card--vertical {
   display: block
@@ -420,7 +420,7 @@
 .fd-card--button:hover,
 .fd-card[role=button]:hover {
   border-color: #0a6ed1;
-  background-color: #f3f4f5;
+  background-color: #fff;
   -webkit-box-shadow: 0 0 5px 0 rgba(138,143,161,.4);
   box-shadow: 0 0 5px 0 rgba(138,143,161,.4);
   text-decoration: none;
@@ -436,7 +436,7 @@
 }
 .fd-card.is-disabled *,
 .fd-card[aria-disabled=true] * {
-  color: #9400d3!important
+  color: #7b7d80!important
 }
 .fd-card__media {
   background-repeat: no-repeat;
@@ -642,7 +642,7 @@
 .fd-dropdown__control:disabled,
 .fd-dropdown__control[aria-disabled=true] {
   cursor: not-allowed;
-  color: #9400d3;
+  color: #7b7d80;
   border-color: #ebebec;
   background-color: #fafafa
 }
@@ -735,7 +735,7 @@
 }
 .fd-dropdown__item:hover,
 .fd-dropdown__option:hover {
-  color: #7fff00;
+  color: #fff;
   background-color: #0961b9;
   text-decoration: none
 }
@@ -791,7 +791,7 @@
   margin-right: 0
 }
 .fd-form__group .fd-form__item {
-  margin-right: 24px
+  margin-right: 18px
 }
 .fd-form__group .fd-form__item:last-child {
   margin-bottom: 0;
@@ -864,7 +864,7 @@
   display: block;
   margin-bottom: 6px;
   border: 0;
-  color: #9400d3
+  color: #7b7d80
 }
 .fd-form__label.is-required,
 .fd-form__legend.is-required {
@@ -906,9 +906,9 @@
   font-style: normal;
   position: absolute;
   left: 0;
-  color: #7fff00;
+  color: #fff;
   border-radius: 50%;
-  background-color: #9400d3;
+  background-color: #7b7d80;
   text-align: center
 }
 .fd-form__message--help {
@@ -945,7 +945,7 @@
 }
 .fd-form__message--error::before {
   background-color: #e00;
-  color: #7fff00
+  color: #fff
 }
 /*!
 .fd-input-group+(--inline)
@@ -1001,7 +1001,7 @@
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 700;
   text-transform: normal;
-  color: #9400d3;
+  color: #7b7d80;
   padding: 0 12px;
   border-style: solid;
   border-width: 1px;
@@ -1381,8 +1381,8 @@
   display: inline-block
 }
 .fd-pagination__item--previous {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg)
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1)
 }
 .fd-pagination__total {
   color: #515559
@@ -1435,14 +1435,14 @@
 .fd-table td,
 .fd-table th {
   text-align: left;
-  padding: 9px 24px 9px 0;
+  padding: 9px 18px 9px 0;
   border-style: solid;
   border-width: 1px 0;
   border-color: #dededf
 }
 .fd-table td:first-child,
 .fd-table th:first-child {
-  padding-left: 24px
+  padding-left: 18px
 }
 .fd-table a {
   color: #0a6ed1
@@ -1607,7 +1607,7 @@
   list-style: none
 }
 .fd-tree__row {
-  padding: 0 24px;
+  padding: 0 18px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1792,20 +1792,20 @@
   font-style: normal;
   position: absolute;
   left: 0;
-  color: #7fff00;
+  color: #fff;
   border-radius: 50%;
-  background-color: #9400d3;
+  background-color: #7b7d80;
   text-align: center
 }
 .fd-inline-help__content {
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
-  background: #9400d3;
+  background: #7b7d80;
   padding: 12px;
   display: block;
   position: absolute;
-  color: #7fff00;
+  color: #fff;
   top: 30px;
   right: -12px;
   min-width: 350px;
@@ -1821,7 +1821,7 @@
   height: 0;
   border-style: solid;
   border-width: 0 10px 10px 10px;
-  border-color: transparent transparent #9400d3 transparent;
+  border-color: transparent transparent #7b7d80 transparent;
   position: absolute;
   content: "";
   top: -10px;

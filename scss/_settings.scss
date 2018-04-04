@@ -72,10 +72,10 @@ $fd-colors: map-merge((
   "text": (
     1: #32363b,
     2: #515559,
-    3: darkviolet,
+    3: #7b7d80, //?
   ),
   "text-inverse": (
-    1: chartreuse,
+    1: #ffffff, //?
     2: springgreen,
     3: limegreen,
   ),
@@ -109,7 +109,7 @@ $fd-colors-status: map-get($fd-colors, "status") !default;
 $fd-space-modify: normal !default; //normal, compact
 
 //ui
-$fd-padding--ui: map-get($fd-spacing, "reg") !default;
+$fd-padding--ui: $fd-spacing--base * 15 !default;
 
 //$fd-max-width--ui: map-get($fd-breakpoints,xl) !default;
 $fd-max-width--ui: 1290px !default;

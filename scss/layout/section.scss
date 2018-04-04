@@ -14,6 +14,8 @@ $block: #{$fd-namespace}-section;
     $fd-section-padding: $fd-padding--ui !default;
     $fd-section-padding--top: fd-space(m) !default;
     $fd-section-padding--bottom: fd-space(reg) !default;
+    $fd-section-header-margin--bottom: fd-space(reg) !default;
+    $fd-section-title-color: fd-color("text",2) !default;
 
     @include fd-clearfix;
     padding: $fd-section-padding--top $fd-section-padding $fd-section-padding--bottom;
@@ -34,10 +36,11 @@ $block: #{$fd-namespace}-section;
         min-height: fd-space(10);
         display: flex;
         align-items: center;
-        margin-bottom: fd-space(4);
+        margin-bottom: $fd-section-header-margin--bottom;
     }
     &__title {
         @include fd-type("3");
+        color: $fd-section-title-color;
         flex: 1;
         margin-bottom: 0;
     }

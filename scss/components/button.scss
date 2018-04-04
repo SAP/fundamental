@@ -9,7 +9,7 @@
 $block: #{$fd-namespace}-button;
 .#{$block} {
     //SETTINGS
-    $fd-button-color: fd-color(text-inverse, 2) !default;
+    $fd-button-color: fd-color("text-inverse", 1) !default;
     $fd-button-color--hover: $fd-button-color !default;
     $fd-button-color--text: $fd-color--link !default;
     $fd-button-color--active: $fd-button-color !default;
@@ -31,6 +31,7 @@ $block: #{$fd-namespace}-button;
     $fd-button-icon-height--large: 32px !default;
     //anim
     $fd-button-transition-params: $fd-animation--speed ease-in !default;
+    $fd-button-text-transform: normal !default;
 
     //BASE
     //set all reset and baseline block styles
@@ -46,7 +47,7 @@ $block: #{$fd-namespace}-button;
     padding-left: fd-space(5);
     padding-right: fd-space(5);
     text-align: center;
-    text-transform: uppercase;
+    text-transform: $fd-button-text-transform;
     border-radius: 0;
     //MODIFIERS
     &--small {
