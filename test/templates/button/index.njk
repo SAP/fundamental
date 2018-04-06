@@ -11,6 +11,14 @@
             label: 'BUTTON_LABEL'
         },
         modifier={
+            block: ['x-small']
+        })
+}}
+{{  button(
+        {
+            label: 'BUTTON_LABEL'
+        },
+        modifier={
             block: ['small']
         })
 }}
@@ -27,6 +35,14 @@
         },
         modifier={
             block: ['large']
+        })
+}}
+{{  button(
+        {
+            label: 'BUTTON_LABEL'
+        },
+        modifier={
+            block: ['x-large']
         })
 }}
 {% endset %}
@@ -58,11 +74,45 @@
 {% endset %}
 {{ format(example) }}
 
+
+<br><hr><br>
+
+
+<h1>Secondary Button</h1>
+{% set example %}
+{{  button(
+        { label: 'BUTTON_LABEL' },
+        modifier={ block: ['secondary','x-small'] })
+}}
+{{  button(
+        { label: 'BUTTON_LABEL' },
+        modifier={ block: ['secondary','small'] })
+}}
+{{  button(
+        { label: 'BUTTON_LABEL' },
+        modifier={ block: ['secondary'] })
+}}
+{{  button(
+        { label: 'BUTTON_LABEL' },
+        modifier={ block: ['secondary','large'] })
+}}
+{{  button(
+        { label: 'BUTTON_LABEL' },
+        modifier={ block: ['secondary','x-large'] })
+}}
+{% endset %}
+{{ format(example) }}
+
+
 <br><hr><br>
 
 
 <h1>Text Button</h1>
 {% set example %}
+{{  button(
+        { label: 'BUTTON_LABEL' },
+        modifier={ block: ['text','x-small'] })
+}}
 {{  button(
         { label: 'BUTTON_LABEL' },
         modifier={ block: ['text','small'] })
@@ -74,6 +124,10 @@
 {{  button(
         { label: 'BUTTON_LABEL' },
         modifier={ block: ['text','large'] })
+}}
+{{  button(
+        { label: 'BUTTON_LABEL' },
+        modifier={ block: ['text','x-large'] })
 }}
 {% endset %}
 {{ format(example) }}

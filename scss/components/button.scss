@@ -21,14 +21,19 @@ $block: #{$fd-namespace}-button;
     $fd-button-shadow--focus: 0 0 4px 1px rgba(fd-color(neutral, 4), 1) !default;
 
     //sizes
-    $fd-button-height: fd-space(13) !default;
-    $fd-button-height--small: fd-space(10) !default;
-    $fd-button-height--large: fd-space(19) !default;
-    $fd-button-height--link: fd-space(7) !default;
-    $fd-button-height--link-small: fd-space(6) !default;
+    $fd-button-height: $fd-forms-height--input-text !default; //13
+    $fd-button-height--x-small: $fd-forms-height--input-text - $fd-spacing--base*2 !default; //10
+    $fd-button-height--small: $fd-forms-height--input-text - $fd-spacing--base !default; //10
+    $fd-button-height--large: $fd-forms-height--input-text + $fd-spacing--base !default; //19
+    $fd-button-height--x-large: $fd-forms-height--input-text + $fd-spacing--base*2 !default; //19
+
+    $fd-button-height--link: fd-space("reg") !default; //7
+    $fd-button-height--link-small: fd-space("reg") - $fd-spacing--base !default;
     $fd-button-icon-height: 26px !default;
+    //$fd-button-icon-height--x-small: 16px !default;
     $fd-button-icon-height--small: 18px !default;
     $fd-button-icon-height--large: 32px !default;
+    //$fd-button-icon-height--x-large: 32px !default;
     //anim
     $fd-button-transition-params: $fd-animation--speed ease-in !default;
     $fd-button-text-transform: uppercase !default;
@@ -36,7 +41,7 @@ $block: #{$fd-namespace}-button;
     //BASE
     //set all reset and baseline block styles
     @include fd-button-reset;
-    @include fd-type("1", header, med);
+    @include fd-type("0");
     display: inline-block;
     background-color: $fd-button-background-color;
     transition: background-color $fd-button-transition-params;
@@ -48,11 +53,17 @@ $block: #{$fd-namespace}-button;
     padding-right: fd-space(5);
     text-align: center;
     text-transform: $fd-button-text-transform;
-    border-radius: 0;
+    border-radius: $fd-border-radius;
     //MODIFIERS
+    &--x-small {
+        @include fd-type("-1");
+        max-height: $fd-button-height--x-small;
+        height: $fd-button-height--x-small;
+        line-height: $fd-button-height--x-small;
+        padding-left: fd-space(4);
+        padding-right: fd-space(4);
+    }
     &--small {
-        @include fd-type("0");
-        @include fd-weight(semi);
         max-height: $fd-button-height--small;
         height: $fd-button-height--small;
         line-height: $fd-button-height--small;
@@ -60,7 +71,6 @@ $block: #{$fd-namespace}-button;
         padding-right: fd-space(4);
     }
     &--large {
-        @include fd-type("2");
         max-height: $fd-button-height--large;
         height: $fd-button-height--large;
         line-height: $fd-button-height--large;
@@ -70,6 +80,13 @@ $block: #{$fd-namespace}-button;
             //padding-left: fd-space(5);
             //padding-right: fd-space(5);
         }
+    }
+    &--x-large {
+        max-height: $fd-button-height--x-large;
+        height: $fd-button-height--x-large;
+        line-height: $fd-button-height--x-large;
+        padding-left: fd-space(7);
+        padding-right: fd-space(7);
     }
     &:hover {
         background-color: $fd-button-background-color--hover;
@@ -98,6 +115,7 @@ $block: #{$fd-namespace}-button;
         background-color: $fd-button-background-color--disabled;
         cursor: not-allowed;
     }
+    &--secondary,
     &--text,
     &--link {
         color: $fd-button-color--text;
@@ -131,6 +149,11 @@ $block: #{$fd-namespace}-button;
         &:disabled {
             color: $fd-button-color--disabled;
         }
+    }
+    &--secondary {
+      background-color: fd-color("background",1);
+      color: fd-color("text");
+      border: solid 1px fd-color("neutral",3)
     }
     &--link {
         height: $fd-button-height--link;
