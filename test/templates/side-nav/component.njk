@@ -1,0 +1,17 @@
+<!--
+side_nav:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{% macro side_nav(properties={}, modifier={}, state={}, aria={}) -%}
+<div class="fd-side-nav{{ modifier.block | modifier('side-nav') }}{{ state | state }}"{{ aria | aria }}>
+    <div class="fd-side-nav__content{{ modifier.content | modifier('side-nav__content') }}">
+        <h1 class="fd-side-nav__title">{{ properties.title }}</h1>
+        {%- if properties.description %}
+            {{ properties.description }}
+        {%- endif %}
+    </div>
+</div>
+{%- endmacro %}

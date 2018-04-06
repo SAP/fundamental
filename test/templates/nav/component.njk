@@ -1,3 +1,4 @@
+
 <!--
 nav:
     properties={},
@@ -5,8 +6,8 @@ nav:
     state={},
     aria={}
 -->
-{% macro nav(properties={ items: [] }, modifier={}, state={}, aria={}) -%}
-<ul class="fd-nav{{ modifier.block | modifier('nav') }}{{ state | state }}"{{ aria | aria }}>
+{% macro nav(properties={ items: [] }, modifier={}, state={}, aria={}, classes="") -%}
+<ul class="fd-nav{{ modifier.block | modifier('nav') }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>
     {%- for item in properties.items %}
     <li class="fd-nav__item{{ modifier.item | modifier('nav__item') }}">
         {%- set state = { selected: item.selected, disabled: item.disabled } %}

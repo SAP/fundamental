@@ -1,0 +1,31 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../nav/component.njk" import nav %}
+{% from "./component.njk" import side_nav %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['components/nav'] %}
+
+{% block content %}
+
+<div style="background-color: #f3f4f5; margin:-20px; padding:20px;">
+    <h1>side-nav</h1>
+
+    <!-- output the component example and the code snippet -->
+    {% set example %}
+    {{  nav(
+            data.properties,
+            modifier={
+                block: "vertical"
+            },
+            classes="side-nav"
+        )
+    }}
+
+    {% endset %}
+    {{ format(example) }}
+
+
+{% endblock %}
+
+</div>
