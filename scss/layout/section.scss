@@ -12,14 +12,14 @@ $block: #{$fd-namespace}-section;
 .#{$block} {
     $fd-section-border-color: fd-color("neutral", 3) !default;
     $fd-section-padding: $fd-padding--ui !default;
-    $fd-section-padding--top: fd-space(m) !default;
+    $fd-section-padding--top: fd-space(s) !default;
     $fd-section-padding--bottom: fd-space(reg) !default;
     $fd-section-header-margin--bottom: fd-space(reg) !default;
     $fd-section-title-color: fd-color("text",2) !default;
 
     @include fd-clearfix;
     padding: $fd-section-padding--top $fd-section-padding $fd-section-padding--bottom;
-    border-bottom: solid 2px $fd-section-border-color;
+    border-bottom: none;
     &:last-child,
     &--no-border {
         border-bottom: 0;

@@ -11,16 +11,28 @@ $fd-breakpoints: (
 ) !default;
 
 //spacing
-$fd-spacing--base: 3px !default;
+// $fd-spacing--base: 3px !default;
+// $fd-spacing: () !default;
+// $fd-spacing: map-merge((
+//     base: $fd-spacing--base,    //3
+//     xs: $fd-spacing--base * 2,  //6
+//     s: $fd-spacing--base * 4,   //12
+//     reg: $fd-spacing--base * 6, //18
+//     m: $fd-spacing--base * 8,  //24
+//     l: $fd-spacing--base * 10,  //30
+//     xl: $fd-spacing--base * 20, //60
+// ), $fd-spacing);
+
+$fd-spacing--base: 4px !default;
 $fd-spacing: () !default;
 $fd-spacing: map-merge((
-    base: $fd-spacing--base,    //3
-    xs: $fd-spacing--base * 2,  //6
-    s: $fd-spacing--base * 4,   //12
-    reg: $fd-spacing--base * 6, //18
-    m: $fd-spacing--base * 8,  //24
-    l: $fd-spacing--base * 10,  //30
-    xl: $fd-spacing--base * 20, //60
+    base: $fd-spacing--base,    //4
+    xs: $fd-spacing--base * 2,  //8
+    s: $fd-spacing--base * 3,   //12
+    reg: $fd-spacing--base * 5, //20
+    m: $fd-spacing--base * 8,  //32
+    l: $fd-spacing--base * 10,  //40
+    xl: $fd-spacing--base * 15, //60
 ), $fd-spacing);
 
 //type
@@ -45,7 +57,7 @@ $fd-type: map-merge((
 $fd-fonts: () !default;
 $fd-fonts: map-merge((
     "body": #{"'72'", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"},
-    "header": #{"'72Condensed'", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"},
+    "header": #{"'72'", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"},
     "code": #{monospace},
 ), $fd-fonts);
 
@@ -72,12 +84,12 @@ $fd-colors: map-merge((
   "text": (
     1: #32363b,
     2: #515559,
-    3: #7b7d80, //?
+    3: #66696c, //?
   ),
   "text-inverse": (
-    1: #ffffff, //?
-    2: springgreen,
-    3: limegreen,
+    1: #ffffff,
+    2: #f5f5f5,
+    3: #ebebeb,
   ),
   "background": (
     1: #f3f4f5,
@@ -85,7 +97,7 @@ $fd-colors: map-merge((
     3: magenta,
   ),
   "neutral": (
-    1: #fafafa,
+    1: #f5f5f5,
     2: #eeeeef,
     3: #dededf,
     4: tomato,
@@ -109,7 +121,7 @@ $fd-colors-status: map-get($fd-colors, "status") !default;
 $fd-space-modify: normal !default; //normal, compact
 
 //ui
-$fd-padding--ui: $fd-spacing--base * 15 !default;
+$fd-padding--ui: $fd-spacing--base * 10 !default;
 
 //$fd-max-width--ui: map-get($fd-breakpoints,xl) !default;
 $fd-max-width--ui: 1290px !default;
@@ -150,7 +162,7 @@ $fd-animation--speed: 0.125s !default;
 
 //FORMS
 //dimensions
-$fd-forms-height--input-text: $fd-spacing--base * 13 !default;
+$fd-forms-height--input-text: $fd-spacing--base * 9 !default;
 $fd-forms-height--input-check: $fd-spacing--base * 7 !default;
 $fd-forms-padding: $fd-spacing--base * 4 !default;
 //colors

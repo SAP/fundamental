@@ -1,16 +1,36 @@
 {% extends "./layouts/master.njk" %}
 {% block content %}
 
+
+{% set breakpoints = {
+  "xs": 320,
+  "s": 800,
+  "m": 1024,
+  "l": 1440,
+  "xl": 1580
+} %}
+<style>
+{% for size,width in breakpoints %}
+@media screen and (min-width: {{width}}px) {
+  .fd-ui__header::before {
+    content: "{{size}}: {{width}}px";
+    font-size: 2em;
+    background-color: white;
+  }
+}
+{% endfor %}
+</style>
+
 {% set colors = {
   "action": [ "#0a6ed1",  "#0857a6"],
-  "text": [ "#32363b",  "#515559"],
+  "text": [ "#32363b",  "#515559", "#66696c"],
+  "text-inverse": [ "#ffffff",  "#f5f5f5", "#ebebeb"],
   "background": [ "#f3f4f5",  "#ffffff"],
-  "neutral": [ "#fafafa",  "#eeeeef", "#dededf"],
+  "neutral": [ "#f5f5f5",  "#ebebeb", "#d7d7d7"],
   "status": [ "#359c46",  "#f59518", "#ee0000"]
 } %}
 
-
-<div class="fd-container">
+<div class="fd-container" style="flex:1">
 
     <h1>Color</h1>
 {% for group, values in colors %}
@@ -21,28 +41,25 @@
     <p>{{ loop.index }} — {{item}}</p>
   {% endfor %}
 {% endfor %}
-
+{#
 <h2>Mixins</h2>
 <h3><code>@mixin fd-color($group, $shade)</code></h3>
-
+ #}
 
 </div>
 
-
-
-
 {% set spaces = {
-  "base": 3,
-  "xs": 6,
+  "base": 4,
+  "xs": 8,
   "s": 12,
-  "reg": 18,
-  "m": 24,
-  "l": 30,
+  "reg": 20,
+  "m": 32,
+  "l": 40,
   "xl": 60
 } %}
 
 
-<div class="fd-container">
+<div class="fd-container" style="flex:1">
 
     <h1>Spacing</h1>
 {% for key, value in spaces %}
@@ -51,10 +68,10 @@
     </div>
     <p>{{ value }}px</p>
 {% endfor %}
-
+{#
 <h2>Mixins</h2>
 <h3><code>@mixin fd-space($size)</code></h3>
-
+ #}
 
 </div>
 
@@ -75,7 +92,7 @@
 } %}
 
 
-<div class="fd-container">
+<div class="fd-container" style="flex:1">
 
     <h1>Type</h1>
 
@@ -86,16 +103,18 @@
         <p><strong>{{i}}</strong> — {{ "72Condensed" if type[2] == "header" else "72" }} {{ type[3] | capitalize }}{{ "bold" if type[2] == "medium" }} {{ type[0] }}px | Line-height {{ type[1] }}px</p>
         <p class="fd-has-type{{ '-minus' if i < 0 }}-{{ i | abs if i != 0 else 'base' }}">
           {% if i == "5" %}
-            <s>
+            {# <s> #}
           {% endif %}Grumpy wizards make toxic brew for the evil Queen and Jack wizards make toxic brew for the evil Queen and Jack
           {% if i == "5" %}
-        </s>
+        {# </s> #}
           {% endif %}
         </p>
 
     {% endfor %}
 
-
+<p>
+  <strong>P</strong> — 72 Reg 14px | Line height 20px
+</p>
         <p>
     Nullam ut tincidunt nunc. Pellentesque metus lacus commodo eget justo ut rutrum varius nunc. Sed non rhoncus risus. Morbi sodales gravida pulvinar. Duis malesuada odio volutpat elementum vulputate massa magna scelerisque ante et accumsan tellus nunc in sem. Donec mattis arcu et velit aliquet non sagittis justo vestibulum. Suspendisse volutpat felis lectus nec consequat ipsum mattis id.
     </p><p>
@@ -104,7 +123,7 @@
         </p>
 
 
-
+{#
     <h2>Mixins</h2>
     <h3><code>@mixin fd-type($size, $font, $weight, $transform)</code></h3>
     <p>Each type size has default family, weight and transform rules built in. Passing the size alone will return all default rules.</p>
@@ -178,19 +197,25 @@
           <code>.fd-has-type{{ '-minus' if i < 0 }}-{{ i | abs }}{% if i == 0 %}, .fd-has-type-base{% endif %}</code>
         <br>
     </p>
-    {% endfor %}
+    {% endfor %} #}
 
 
-    <h3>Fonts</h3>
 
-        {% for i in ['header', 'body', 'code'] %}
+</div>
 
-            <span>
-                 <code>.fd-has-font-family-{{ i }}</code>
-            </span>
-            <p class="fd-has-font-family-{{ i }}">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+<div class="fd-container" style="flex:1">
 
-        {% endfor %}
+
+      <h1>Fonts</h1>
+
+          {% for i in ['header', 'body', 'code'] %}
+
+              <span>
+                   <code>.fd-has-font-family-{{ i }}</code>
+              </span>
+              <p class="fd-has-type-3 fd-has-font-family-{{ i }}">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+
+          {% endfor %}
 
 
 
