@@ -12,7 +12,7 @@ $fd-colors: (
         2: #27394f,
     ),
     "text": (
-        1: #21262c,
+        1: #333333,
         2: #7f90a4,
         3: #63758b,
     ),
@@ -21,15 +21,20 @@ $fd-colors: (
         2: #f6f8f9,
         3: #eef1f3,
     ),
+    "background": (
+      1: #f3f4f5,
+      2: #ffffff,
+      3: #427cac,
+    ),
     "action": (
-        1: #479acc,
+        1: #346187,
         2: #00a5ec,
         3: #0093d1,
        	4: #008ac4
     ),
     "neutral": (
         1: #f7f7f7,
-        2: #3f3f3f,
+        2: #f3f4f5,
         3: #ccdaeb,
         4: #8a8fa1,
     ),
@@ -45,18 +50,22 @@ $fd-colors: (
 @import "./../settings";
 
 body {
-    background: url("https://blogs.sap.com/wp-content/uploads/2017/05/Design-Studio-New-Launchpad-Issue.png") no-repeat;
+    background: linear-gradient(to bottom,#a9c4df,#e7ecf0);
     background-size: cover;
     background-attachment: fixed;
-    background-position: center -100px;
 }
 
 //NO !default flags
 $fd-background-color: fd-color("primary");
 $fd-border-radius: 0;
-$fd-ui-header-background-color: rgba(white, 0.1);
+$fd-ui-header-background-color: transparent;
 $fd-ui-sidebar-background-color: transparent;
+
+$fd-app-sidebar-background-color: none;
+
+$fd-section-title-color: $fd-color;
 $fd-card-background-color: rgba(fd-color("background"), 0.2);
-$fd-panel-background-color: fd-color("primary",1);
+//$fd-panel-background-color: fd-color("primary",1);
 $fd-card-background-color-hover: rgba(fd-color("background"), 0.4);
 $fd-forms-background-color: rgba(fd-color("background"), 0.4);
+$fd-list-group-border-color: none;
