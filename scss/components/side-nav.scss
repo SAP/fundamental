@@ -15,6 +15,7 @@ $block: ns(side-nav);
     $fd-side-nav-selected-background-color: fd-color(background, 2);
     $fd-side-nav-link-color: fd-color(text, 1);
     $fd-side-nav-max-width: 250px;
+    $fd-side-nav-group-padding: fd-space(5);
 
 
     //BLOCK BASE *******************************************
@@ -34,6 +35,15 @@ $block: ns(side-nav);
         padding: fd-space(4);
         @include fd-type(-1, body, semi);
         color: $fd-side-nav-link-color;
+    }
+
+    .fd-nav__group{
+        list-style: none;
+        padding-left: $fd-side-nav-group-padding;
+        margin-bottom: 0;
+        .fd-nav__link{
+            font-weight: normal;
+        }
     }
 
     .is-selected{

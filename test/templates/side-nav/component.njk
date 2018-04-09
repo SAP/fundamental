@@ -6,9 +6,18 @@ side_nav:
     aria={}
 -->
 {% macro side_nav(properties={}, modifier={}, state={}, aria={}) -%}
+<h1 class="fd-side-nav__title">{{ properties.title }} test</h1>
 <div class="fd-side-nav{{ modifier.block | modifier('side-nav') }}{{ state | state }}"{{ aria | aria }}>
+    {{  side_nav(
+            data.properties,
+            modifier={
+                block: "vertical"
+            },
+            classes="side-nav"
+        )
+    }}
+
     <div class="fd-side-nav__content{{ modifier.content | modifier('side-nav__content') }}">
-        <h1 class="fd-side-nav__title">{{ properties.title }}</h1>
         {%- if properties.description %}
             {{ properties.description }}
         {%- endif %}
