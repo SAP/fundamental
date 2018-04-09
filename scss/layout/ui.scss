@@ -13,11 +13,12 @@ $block: #{$fd-namespace}-ui;
     //these vars can be set globally to lock all pages
     //also, --fixed modifiers can be used in the HTML to set per template configurations
     $fd-ui-fixed: false !default;
+    $fd-ui-background: none !default;
     $fd-ui-header-fixed: false !default;
     $fd-ui-footer-fixed: false !default;
 
     $fd-ui-header-height: 50px !default;
-    $fd-ui-header-background-color: fd-color("background",2) !default;
+    $fd-ui-header-background-color: $fd-background-color--header !default;
     $fd-ui-footer-height: 40px !default;
     $fd-ui-footer-background-color: fd-color("background") !default;
 
@@ -26,6 +27,9 @@ $block: #{$fd-namespace}-ui;
     min-height: 100vh;
     width: 100vw;
     max-width: 100vw;
+    background: $fd-ui-background;
+    background-size: cover;
+    background-attachment: fixed;
     &--fixed {
         display: flex;
         flex-direction: column;

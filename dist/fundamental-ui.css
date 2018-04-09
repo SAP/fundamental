@@ -952,7 +952,10 @@ input[type=radio]:checked[disabled]::after {
   position: absolute;
   min-height: 100vh;
   width: 100vw;
-  max-width: 100vw
+  max-width: 100vw;
+  background: 0 0;
+  background-size: cover;
+  background-attachment: fixed
 }
 .fd-ui--fixed {
   display: -webkit-box;
@@ -1069,11 +1072,12 @@ input[type=radio]:checked[disabled]::after {
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100%;
-  width: 100%
+  width: 100%;
+  background-color: #f3f4f5
 }
 .fd-page__header {
   border-bottom: solid 1px #dededf;
-  background-color: #fff;
+  background-color: #f3f4f5;
   height: auto
 }
 .fd-page__intro {
@@ -1933,8 +1937,8 @@ input[type=radio]:checked[disabled]::after {
 .fd-dropdown__control[aria-expanded=true] {
   border-color: #0a6ed1;
   z-index: 3;
-  -webkit-box-shadow: 0 0 4px 1px rgba(255,99,71,.2);
-  box-shadow: 0 0 4px 1px rgba(255,99,71,.2)
+  -webkit-box-shadow: 0 0 4px 1px #eeeeef;
+  box-shadow: 0 0 4px 1px #eeeeef
 }
 .fd-dropdown__control--no-border {
   border-color: transparent
@@ -1963,8 +1967,8 @@ input[type=radio]:checked[disabled]::after {
   z-index: 2;
   -webkit-transform: translateY(-1px);
   transform: translateY(-1px);
-  -webkit-box-shadow: 0 0 4px 1px rgba(255,99,71,.2);
-  box-shadow: 0 0 4px 1px rgba(255,99,71,.2);
+  -webkit-box-shadow: 0 0 4px 1px #eeeeef;
+  box-shadow: 0 0 4px 1px #eeeeef;
   opacity: 1;
   visibility: visible;
   -webkit-transition: opacity 125ms ease-in;
