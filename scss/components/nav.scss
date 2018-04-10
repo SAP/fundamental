@@ -35,7 +35,7 @@ $block: #{$fd-namespace}-nav;
         &.is-selected,
         &[aria-selected="true"] {
             color: $fd-color;
-            .fd-icon{
+            .fd-nav__link-icon--expand{
                 float: right;
                 transform: rotate(90deg);
             }
@@ -45,9 +45,13 @@ $block: #{$fd-namespace}-nav;
         &[aria-disabled="true"] {
             color: $fd-nav-link-disbled-color;
         }
-        .fd-icon{
+        &-icon--expand{
             float: right;
             transform: rotate(-90deg);
+        }
+        &-icon{
+            vertical-align: text-bottom;
+            padding-right: fd-space(2.5);
         }
     }
 

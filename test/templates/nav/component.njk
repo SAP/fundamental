@@ -20,9 +20,12 @@ nav:
             <span class="fd-nav__header">{{ properties.label }}</span>
         {%- else -%}
             <a class="fd-nav__link{{ modifier.link | modifier('nav__link') }}{{ state | state }}"{{ aria | aria }} href="{{ item.href or '#' }}">
+                {%- if properties.icon %}
+                    {{ icon(glyph=properties.icon, classes="nav__link-icon") }}
+                {%- endif %}
                 {{ properties.label }}
                 {%- if properties.haschild %}
-                {{ icon(glyph="chevron") }}
+                {{ icon(glyph="chevron", classes="nav__link-icon--expand") }}
                 {%- endif %}
             </a>
         {%- endif %}
