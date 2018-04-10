@@ -1,4 +1,4 @@
-
+{% from "./../icon/component.njk" import icon %}
 <!--
 nav:
     properties={},
@@ -16,7 +16,16 @@ nav:
         {%- elif properties.disabled %}
             {%- set aria = { disabled: properties.disabled } %}
         {%- endif %}
-        <a class="fd-nav__link{{ modifier.link | modifier('nav__link') }}{{ state | state }}"{{ aria | aria }} href="{{ item.href or '#' }}">{{ properties.label }}</a>
+        {%- if properties.navheader %}
+            <span class="fd-nav__header">{{ properties.label }}</span>
+        {%- else -%}
+            <a class="fd-nav__link{{ modifier.link | modifier('nav__link') }}{{ state | state }}"{{ aria | aria }} href="{{ item.href or '#' }}">
+                {{ properties.label }}
+                {%- if properties.haschild %}
+                {{ icon(glyph="chevron") }}
+                {%- endif %}
+            </a>
+        {%- endif %}
     </li>
 {%- endmacro %}
 
@@ -31,7 +40,7 @@ nav:
 {% macro nav(properties={ items: [] }, modifier={}, state={}, aria={}, classes="") -%}
     <ul class="fd-nav{{ modifier.block | modifier('nav') }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>
         {%- for item in properties.items %}
-            {%- if item.items %}
+            {%- if item.items and item.selected %}
                 {{ navitem(item) }}
                 {{ navgroup(item) }}
             {%- else %}

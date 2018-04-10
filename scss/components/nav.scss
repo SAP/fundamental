@@ -9,6 +9,7 @@
 $block: #{$fd-namespace}-nav;
 .#{$block} {
     $fd-nav-link-padding: fd-space(2);
+    $fd-nav-link-disbled-color: fd-color(text,2);
     @include fd-reset;
     display: flex;
     flex-wrap: wrap;
@@ -21,8 +22,12 @@ $block: #{$fd-namespace}-nav;
     }
 
     //ELEMENTS *******************************************
-    &__item {
-
+    &__header {
+        display: block;
+        padding: fd-space(4);
+        padding-bottom: 0;
+        @include fd-type(-3, body, reg, uppercase);
+        color: $fd-nav-link-disbled-color;
     }
     &__link {
         display: block;
@@ -30,6 +35,19 @@ $block: #{$fd-namespace}-nav;
         &.is-selected,
         &[aria-selected="true"] {
             color: $fd-color;
+            .fd-icon{
+                float: right;
+                transform: rotate(90deg);
+            }
+
+        }
+        &.is-disabled,
+        &[aria-disabled="true"] {
+            color: $fd-nav-link-disbled-color;
+        }
+        .fd-icon{
+            float: right;
+            transform: rotate(-90deg);
         }
     }
 
