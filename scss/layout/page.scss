@@ -6,6 +6,8 @@ $block: #{$fd-namespace}-page;
 .#{$block} {
   $fd-page-background-color: $fd-background-color !default;
   $fd-page-header-height: auto !default;
+  $fd-page-header-border-color: fd-color("neutral", 3) !default;
+  $fd-page-header-border-width: 0 0 1px 0 !default;
   $fd-page-intro-background-color: fd-color("background", 2) !default;
   $fd-page-intro-padding: fd-space(4) !default;
   display: flex;
@@ -14,7 +16,9 @@ $block: #{$fd-namespace}-page;
   width: 100%;
   background-color: $fd-page-background-color;
   &__header {
-    border-bottom: solid 1px fd-color("neutral", 3);
+    border-style: solid;
+    border-width: $fd-page-header-border-width;
+    border-color: $fd-page-header-border-color;
     background-color: $fd-page-background-color;
     height: $fd-page-header-height;
   }

@@ -12,15 +12,18 @@
 $block: #{$fd-namespace}-panel;
 .#{$block} {
     @include fd-clearfix;
+    $fd-panel-border: none !default;
     $fd-panel-background-color: fd-color("background",2) !default;
     $fd-panel-box-shadow: 0 5px 20px 0 rgba(fd-color("text"), 0.08) !default;
     $fd-panel-border-radius: $fd-border-radius !default;
-    $fd-panel-header-border: solid 1px fd-color("neutral",2) !default;
+    $fd-panel-header-border-color: fd-color("neutral",2) !default;
+    $fd-panel-header-border: solid 1px $fd-panel-header-border-color !default;
     $fd-panel-padding: fd-space("reg") fd-space("reg") !default;
+    $fd-panel-title-color: fd-color("text") !default;
     background-color: $fd-panel-background-color;
     box-shadow: $fd-panel-box-shadow;
     border-radius: $fd-border-radius;
-
+    border: $fd-panel-border;
     &__header {
         min-height: fd-space(10);
         display: flex;
@@ -33,12 +36,18 @@ $block: #{$fd-namespace}-panel;
         @include fd-type("3");
         flex: 1;
         margin-bottom: 0;
+        color: $fd-panel-title-color;
     }
     &__actions {
         margin-left: auto;
     }
     &__body {
         padding: $fd-panel-padding;
+        &--full-bleed,
+        &--bleed {
+          padding-left: 0;
+          padding-right: 0;
+        }
     }
     &__footer {
         display: flex;

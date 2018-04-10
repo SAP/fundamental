@@ -13,7 +13,7 @@ $block: #{$fd-namespace}-action-bar;
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-action-bar-background-color: fd-color("background", 2) !default;
     $fd-action-bar-border-color: fd-color("neutral", 3) !default;
-
+    $fd-action-bar-border-width: 0 !default;
     $fd-action-bar-height: fd-space(19) !default;
     $fd-action-bar-transition-params: 0.25s ease-in !default;
 
@@ -23,7 +23,7 @@ $block: #{$fd-namespace}-action-bar;
     height: $fd-action-bar-height;
     background-color: $fd-action-bar-background-color;
     border-style: solid;
-    border-width: 1px 0;
+    border-width: $fd-action-bar-border-width;
     border-color: $fd-action-bar-border-color;
     display: flex;
     align-items: center;

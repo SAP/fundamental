@@ -19,6 +19,7 @@ $block: #{$fd-namespace}-ui;
 
     $fd-ui-header-height: 50px !default;
     $fd-ui-header-background-color: $fd-background-color--header !default;
+    $fd-ui-header-border-bottom: solid 1px fd-color("neutral",3) !default;
     $fd-ui-footer-height: 40px !default;
     $fd-ui-footer-background-color: fd-color("background") !default;
 
@@ -30,6 +31,7 @@ $block: #{$fd-namespace}-ui;
     background: $fd-ui-background;
     background-size: cover;
     background-attachment: fixed;
+
     &--fixed {
         display: flex;
         flex-direction: column;
@@ -61,6 +63,7 @@ $block: #{$fd-namespace}-ui;
         width: 100%;
         min-height: $fd-ui-header-height;
         height: $fd-ui-header-height;
+        border-bottom: $fd-ui-header-border-bottom;
         &--fixed {
             position: fixed;
         }

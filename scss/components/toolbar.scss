@@ -11,6 +11,7 @@ $block: #{$fd-namespace}-toolbar;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-toolbar-background-color: fd-color(background, 2) !default;
+    $fd-toolbar-border-width: 0 0 1px 0 !default;
     $fd-toolbar-border-color: fd-color(neutral, 3) !default;
     $fd-toolbar-group-height: fd-space(13) !default;
     //anim
@@ -23,7 +24,7 @@ $block: #{$fd-namespace}-toolbar;
     background-color: $fd-toolbar-background-color;
     border-color: $fd-toolbar-border-color;
     border-style: solid;
-    border-width: 1px 0;
+    border-width: $fd-toolbar-border-width;
     //margin-bottom: fd-space(m);
 
     & [role="separator"] {

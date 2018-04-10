@@ -9,6 +9,10 @@
 {% from "../tabs/component.njk" import tabs %}
 {% from "../form/component.njk" import form_item %}
 {% from "../table/component.njk" import table %}
+{% from "../action-bar/component.njk" import action_bar %}
+{% from "../button/component.njk" import button %}
+{% from "../toolbar/component.njk" import toolbar %}
+{% from "../tree/component.njk" import tree %}
 
 {# SET CONTENT #}
 {# tabs_data #}
@@ -130,8 +134,97 @@
 {%- endcall %}
 {% endset %}
 
+{% block page_header -%}
+{%- set backbtn %}{{
+    button(
+            { icon: 'backarrow' },
+            modifier={ block: ['text','icon','large'] },
+            aria={ label: 'Back' }
+        )
+}}{%- endset %}
+{%- set actionbtn %}{{
+    button(
+            { label: 'Cancel', icon: 'close' },
+            modifier={ block: ['text','action-bar'] }
+        )
+}}{%- endset %}
+{%- set primarybtn %}{{
+    button(
+            { label: 'Save', icon: 'checked' },
+            modifier={ block: ['action-bar'] }
+        )
+}}{%- endset %}
+{{  action_bar(
+        properties={
+            navigation: backbtn,
+            title: "Nulla Facilisi",
+            actions: {
+                properties: {
+                    items: [actionbtn,actionbtn,actionbtn,primarybtn]
+                }
+            }
+        },
+        modifier={
+            block: []
+        },
+        state={},
+        aria={}
+    )
+}}
 
+{%- endblock %}
 {% block page_content %}
+
+{{  toolbar(
+  {
+    "filters": {
+        "items": [
+            {
+                "label": "Color",
+                "items": [
+                    { "label": "Option 1" },
+                    { "label": "Option 2" },
+                    { "label": "Option 3" }
+                ]
+            },
+            {
+                "label": "Size",
+                "items": [
+                    { "label": "Option 1" },
+                    { "label": "Option 2" },
+                    { "label": "Option 3" }
+                ]
+            }
+
+        ]
+    },
+    "search": {
+        "placeholder": "Filter by Keyword"
+    },
+    "sort": {
+        "label": "Newest",
+        "icon": "sort",
+        "items": [
+            { "label": "Option 1" },
+            { "label": "Option 2" },
+            { "label": "Option 3" }
+        ]
+    },
+    "pagination": {
+        "total": 283,
+        "number": 20,
+        "page": 10
+    },
+    "view": {
+        "items": [
+            { "label": "View as grid", "icon": "grid" },
+            { "label": "View as list", "icon": "list" }
+        ]
+    }
+  }
+    )
+}}
+
 {%- call layout.section() %}
 {{  tabs(
         properties={
@@ -153,6 +246,23 @@
   </div>
 
 {%- endcall %}
+{%- call layout.section() %}
+{% call layout.container() -%}
+<div class="fd-panel" aria-busy="true">
+    <div class="fd-spinner" aria-hidden="false" aria-label="Loading">
+        <div></div>
+    </div>
+
+    <div class="fd-panel__header">
+        <h1 class="fd-panel__title">Lorem ipsum</h1>
+    </div>
+    <!-- Loaded content goes here -->
+    <div class="fd-panel__footer">
+        <p><em>Etiam pulvinar turpis sed velit porttitor vel adipiscing velit fringilla.</em></p>
+    </div>
+</div>
+{%- endcall %}
+{%- endcall %}
 
 {%- call layout.section() %}
 {% call layout.container() -%}
@@ -164,6 +274,20 @@
 {%- endcall %}
 {%- endcall %}
 {%- endcall %}
+
+
+{%- call layout.section() %}
+{% call layout.container() -%}
+{% call layout.panel() -%}
+  {%- call layout.panel_header({title: "Details"}) %}
+  {%- endcall %}
+  {% call layout.panel_body(modifier=['full-bleed']) -%}
+  {{ tree(data.tree.properties) }}
+  {%- endcall %}
+{%- endcall %}
+{%- endcall %}
+{%- endcall %}
+
 
 
 
