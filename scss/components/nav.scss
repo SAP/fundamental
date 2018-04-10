@@ -8,14 +8,19 @@
 */
 $block: #{$fd-namespace}-nav;
 .#{$block} {
+
+    //LOCAL VARS
     $fd-nav-link-padding: fd-space(2);
     $fd-nav-link-disbled-color: fd-color(text,2);
+
+    //BLOCK BASE *******************************************
     @include fd-reset;
     display: flex;
     flex-wrap: wrap;
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
+
     //MODIFIERS *******************************************
     &--vertical {
         flex-direction: column;
@@ -29,9 +34,11 @@ $block: #{$fd-namespace}-nav;
         @include fd-type(-3, body, reg, uppercase);
         color: $fd-nav-link-disbled-color;
     }
+
     &__link {
         display: block;
         padding: $fd-nav-link-padding;
+
         &.is-selected,
         &[aria-selected="true"] {
             color: $fd-color;
@@ -39,20 +46,21 @@ $block: #{$fd-namespace}-nav;
                 float: right;
                 transform: rotate(90deg);
             }
-
         }
+
         &.is-disabled,
         &[aria-disabled="true"] {
             color: $fd-nav-link-disbled-color;
         }
+
         &-icon--expand{
             float: right;
             transform: rotate(-90deg);
         }
+
         &-icon{
             vertical-align: text-bottom;
-            padding-right: fd-space(2.5);
+            padding-right: fd-space(2);
         }
     }
-
 }

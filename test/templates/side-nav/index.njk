@@ -1,18 +1,25 @@
 {% extends "layout.njk" %}
 {% from "./../format.njk" import format %}
 {% from "../nav/component.njk" import nav %}
-{% from "./component.njk" import side_nav %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
 {% set css_deps = ['components/nav', 'icons'] %}
 
 {% block content %}
 
+<style media="screen">
+    .fd-side-nav{
+        float: left;
+        margin: 0 30px 50px 0;
+    }
+</style>
+
 <div style="background-color: #f3f4f5; margin:-20px; padding:20px;">
     <h1>side-nav</h1>
 
     <!-- output the component example and the code snippet -->
     {% set example %}
+
     {{  nav(
             data.properties,
             modifier={
@@ -21,6 +28,52 @@
             classes="side-nav"
         )
     }}
+
+    {{ nav(
+            properties = {
+                "items": [
+                    { "label": "Link One" },
+                    { "label": "Link Two" },
+                    { "label": "Link Three" },
+                    { "label": "Link Four" },
+                    { "label": "Link Five" },
+                    { "label": "Link One" },
+                    { "label": "Link Two" },
+                    { "label": "Link Three" },
+                    { "label": "Link Four" },
+                    { "label": "Link Five" }
+                ]
+            },
+            modifier={
+                block: "vertical"
+            },
+            classes="side-nav"
+
+        )
+    }}
+
+    {{ nav(
+            properties = {
+                "items": [
+                    { "label": "Nav Header", "navheader": true },
+                    { "label": "Link One" },
+                    { "label": "Link Two" },
+                    { "label": "Link Three" },
+                    { "label": "Nav Header", "navheader": true },
+                    { "label": "Link One" },
+                    { "label": "Link Two" },
+                    { "label": "Link Three" }
+                ]
+            },
+            modifier={
+                block: "vertical"
+            },
+            classes="side-nav"
+
+        )
+    }}
+
+
 
     {% endset %}
     {{ format(example) }}

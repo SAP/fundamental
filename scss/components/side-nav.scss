@@ -10,45 +10,42 @@
 $block: ns(side-nav);
 
 .#{$block} {
-    //LOCAL VARS (set all themeable properties, always include !default)
+
+    //LOCAL VARS
     $fd-side-nav-background-color: fd-color(background, 1);
     $fd-side-nav-selected-background-color: fd-color(background, 2);
     $fd-side-nav-link-color: fd-color(text, 1);
     $fd-side-nav-max-width: 250px;
-    $fd-side-nav-group-padding: fd-space(5);
+    $fd-side-nav-link-padding: fd-space(5);
 
     //BLOCK BASE *******************************************
-    //set all BLOCK reset and baseline styles
     background-color: $fd-side-nav-background-color;
-    max-width: $fd-side-nav-max-width;
-
-
-    //BLOCK MODIFIERS ************
-    //e.g., $fd-side-nav--no-border
-
+    min-width: $fd-side-nav-max-width;
 
     //ELEMENTS *******************************************
-    //set all ELEMENT baseline styles
-    //e.g., $fd-side-nav__content
     .fd-nav__link{
-        padding: fd-space(4);
+        padding: $fd-side-nav-link-padding;
         @include fd-type(-1, body, semi);
         color: $fd-side-nav-link-color;
+
+        &:hover{
+            background-color: $fd-side-nav-selected-background-color;
+        }
     }
 
     .fd-nav__group{
         list-style: none;
-        padding-left: $fd-side-nav-group-padding;
         margin-bottom: 0;
+
         .fd-nav__link{
             font-weight: normal;
+            padding-left: $fd-side-nav-link-padding * 2;
         }
     }
 
+    //STATES *******************************************
     .is-selected{
         background-color: $fd-side-nav-selected-background-color;
     }
-
-    //STATES *******************************************
 
 }
