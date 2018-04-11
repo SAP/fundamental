@@ -25,12 +25,19 @@ $block: #{$fd-namespace}-nav;
     &--vertical {
         flex-direction: column;
     }
+    &--vertical-icons {
+        flex-direction: column;
+        min-width: auto;
+
+        .fd-nav__link-icon{
+            padding-right: 0;
+        }
+    }
 
     //ELEMENTS *******************************************
     &__header {
         display: block;
         padding: fd-space(4);
-        padding-bottom: 0;
         @include fd-type(-3, body, reg, uppercase);
         color: $fd-nav-link-disbled-color;
     }

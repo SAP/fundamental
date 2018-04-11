@@ -43,7 +43,7 @@ nav:
 {% macro nav(properties={ items: [] }, modifier={}, state={}, aria={}, classes="") -%}
     <ul class="fd-nav{{ modifier.block | modifier('nav') }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>
         {%- for item in properties.items %}
-            {%- if item.items and item.selected %}
+            {%- if item.items and item.selected or item.expanded %}
                 {{ navitem(item) }}
                 {{ navgroup(item) }}
             {%- else %}

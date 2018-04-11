@@ -20,8 +20,18 @@
     <!-- output the component example and the code snippet -->
     {% set example %}
 
-    {{  nav(
-            data.properties,
+    {{ nav(
+            properties = {
+                "items": [
+                { "label": "Link Item", "selected": true },
+                { "label": "Link Item" },
+                { "label": "Link Item", "haschild": true },
+                { "label": "Link Item", "haschild": true },
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item" }
+                ]
+            },
             modifier={
                 block: "vertical"
             },
@@ -32,52 +42,164 @@
     {{ nav(
             properties = {
                 "items": [
-                    { "label": "Link One" },
-                    { "label": "Link Two" },
-                    { "label": "Link Three" },
-                    { "label": "Link Four" },
-                    { "label": "Link Five" },
-                    { "label": "Link One" },
-                    { "label": "Link Two" },
-                    { "label": "Link Three" },
-                    { "label": "Link Four" },
-                    { "label": "Link Five" }
+                { "label": "Text", "navheader": true },
+                { "label": "Link Item", "selected": true },
+                { "label": "Link Item" },
+                { "label": "Link Item", "haschild": true },
+                { "label": "Text", "navheader": true },
+                { "label": "Link Item", "haschild": true },
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item" }
                 ]
             },
             modifier={
                 block: "vertical"
             },
             classes="side-nav"
-
         )
     }}
 
     {{ nav(
             properties = {
                 "items": [
-                    { "label": "Nav Header", "navheader": true },
-                    { "label": "Link One" },
-                    { "label": "Link Two" },
-                    { "label": "Link Three" },
-                    { "label": "Nav Header", "navheader": true },
-                    { "label": "Link One" },
-                    { "label": "Link Two" },
-                    { "label": "Link Three" }
+                { "label": "Text", "navheader": true },
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item", "haschild": true },
+                {
+                    "label": "Link Item",
+                    "haschild": true,
+                    "expanded": true,
+                    "items": [
+                        { "label": "Link" },
+                        { "label": "Link" },
+                        { "label": "Link" }
+                    ]
+                },
+
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item" }
                 ]
             },
             modifier={
                 block: "vertical"
             },
             classes="side-nav"
-
         )
     }}
 
+    {{ nav(
+            properties = {
+                "items": [
+                { "label": "Text", "navheader": true },
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item", "haschild": true },
+                {
+                    "label": "Link Item",
+                    "haschild": true,
+                    "selected": true,
+                    "items": [
+                        { "label": "Link" },
+                        { "label": "Link" },
+                        { "label": "Link" }
+                    ]
+                },
 
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item" }
+                ]
+            },
+            modifier={
+                block: "vertical"
+            },
+            classes="side-nav"
+        )
+    }}
+
+    {{ nav(
+            properties = {
+                "items": [
+                { "label": "Text", "navheader": true },
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item", "haschild": true },
+                {
+                    "label": "Link Item",
+                    "haschild": true,
+                    "expanded": true,
+                    "items": [
+                        { "label": "Sub Item", "selected": true },
+                        { "label": "Sub Item" },
+                        { "label": "Sub Item" }
+                    ]
+                },
+
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item" }
+                ]
+            },
+            modifier={
+                block: "vertical"
+            },
+            classes="side-nav"
+        )
+    }}
 
     {% endset %}
     {{ format(example) }}
 
+    <br><br>
+
+    {% set exampletwo %}
+
+    {{ nav(
+            properties = {
+                "items": [
+                { "label": "Link Item", "icon": "edit" },
+                { "label": "Link Item", "icon": "edit", "haschild": true },
+                { "label": "Link Item", "icon": "edit" },
+                { "label": "Link Item", "icon": "edit" },
+                { "label": "Link Item", "icon": "edit", "haschild": true },
+                { "label": "Link Item", "icon": "edit" },
+                { "label": "Link Item", "icon": "edit", "haschild": true },
+                { "label": "Link Item", "icon": "edit" },
+                { "label": "Link Item", "icon": "edit" }
+                ]
+            },
+            modifier={
+                block: "vertical"
+            },
+            classes="side-nav"
+        )
+    }}
+
+    {{ nav(
+            properties = {
+                "items": [
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" }
+                ]
+            },
+            modifier={
+                block: "vertical-icons"
+            },
+            classes="side-nav"
+        )
+    }}
+    {% endset %}
+    {{ format(exampletwo) }}
 
 {% endblock %}
 
