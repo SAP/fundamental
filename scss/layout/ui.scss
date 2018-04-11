@@ -21,8 +21,8 @@ $block: #{$fd-namespace}-ui;
     $fd-ui-header-background-color: $fd-background-color--header !default;
     $fd-ui-header-border-bottom: solid 1px fd-color("neutral",3) !default;
     $fd-ui-footer-height: 40px !default;
-    $fd-ui-footer-background-color: fd-color("background") !default;
-
+    $fd-ui-footer-background-color: $fd-background-color--footer !default;
+    $fd-ui-footer-border-top: solid 1px fd-color("neutral",3) !default;
     $_ui-is-fixed: $fd-ui-fixed or ($fd-ui-header-fixed and $fd-ui-footer-fixed);
     position: absolute;
     min-height: 100vh;
@@ -81,6 +81,7 @@ $block: #{$fd-namespace}-ui;
         width: 100%;
         min-height: $fd-ui-footer-height;
         height: $fd-ui-footer-height;
+        border-top: $fd-ui-footer-border-top;
         &--fixed {
             position: fixed;
             bottom: 0;

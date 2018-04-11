@@ -30,7 +30,7 @@ toolbar:
 {{ filterbutton | indent(12) }}
         <span role="separator"></span>
         {%- if properties.sort %}
-{{ dropdown(properties.sort, modifier={ }) | indent(12) }}
+{{ dropdown(properties.sort, modifier={ control: "no-border" }) | indent(12) }}
         <span role="separator"></span>
         {%- endif %}
        {# {%- if properties.search %}
@@ -67,9 +67,9 @@ toolbar:
     {%- if properties.filters %}
         {%- if show_filter_options_row %}
     <!-- FILTER OPTIONS ROW -->
-    <div class="fd-toolbar__group fd-toolbar__group--filter-options" id="{{ _filter_id }}" aria-hidden="true">
+    <div class="fd-toolbar__group fd-toolbar__group--filter-options fd-has-display-flex" id="{{ _filter_id }}" aria-hidden="true">
         {%- for item in properties.filters.items %}
-{{ dropdown(item, modifier={  }) | indent(8) }}
+{{ dropdown(item, modifier={ control: "no-border" }) | indent(8) }}
         <span role="separator"></span>
         {%- endfor %}
     </div>

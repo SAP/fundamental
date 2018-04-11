@@ -12,6 +12,7 @@ $block: #{$fd-namespace}-app;
   $fd-app-sidebar-height--minimized: 40px !default;
   $fd-app-sidebar-width--minimized: 80px !default;
   $fd-app-sidebar-background-color: $fd-background-color--sidebar !default;
+  $fd-app-sidebar-border-bottom: solid 1px fd-color("neutral",3) !default;
   width: 100%;
   min-height: 100vh;
   @include fd-screen(s) {
@@ -21,6 +22,7 @@ $block: #{$fd-namespace}-app;
     background-color: $fd-app-sidebar-background-color;
     width: 100vw;
     max-height: $fd-app-sidebar-height--minimized;
+    border-right: $fd-app-sidebar-border-bottom;
     @include fd-screen(s) {
       width: $fd-app-sidebar-width;
       max-height: 100%;
