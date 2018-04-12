@@ -36,9 +36,11 @@
 {% for group, values in colors %}
   <h2>{{ group }}</h2>
   {% for item in values %}
-    <div style="height: 20px;" class="fd-has-background-color-{{ group }}-{{ loop.index }}">
+    <div style="height: 30px;" class="fd-has-background-color-{{ group }}-{{ loop.index }}">
     </div>
-    <p>{{ loop.index }} — {{item}}</p>
+    <p>{{ loop.index }}
+      {# — {{item}} #}
+    </p>
   {% endfor %}
 {% endfor %}
 {#
@@ -64,9 +66,9 @@
     <h1>Spacing</h1>
 {% for key, value in spaces %}
     <h2>{{ key }}</h2>
-    <div style="height: {{ value }}px; background-color: pink;">
+    <div class="fd-has-height-{{ key }}" style="background-color: pink;">
     </div>
-    <p>{{ value }}px</p>
+    {# <p>{{ value }}px</p> #}
 {% endfor %}
 {#
 <h2>Mixins</h2>
@@ -100,7 +102,9 @@
 
     {% for i in ["-3","-2","-1","0","1","2","3","4","5"] | reverse %}
     {% set type = specs[i] %}
-        <p><strong>{{i}}</strong> — {{ "72Condensed" if type[2] == "header" else "72" }} {{ type[3] | capitalize }}{{ "bold" if type[2] == "medium" }} {{ type[0] }}px | Line-height {{ type[1] }}px</p>
+        <p><strong>{{i}}</strong>
+           {# — {{ "72Condensed" if type[2] == "header" else "72" }} {{ type[3] | capitalize }}{{ "bold" if type[2] == "medium" }} {{ type[0] }}px | Line-height {{ type[1] }}px #}
+         </p>
         <p class="fd-has-type{{ '-minus' if i < 0 }}-{{ i | abs if i != 0 else 'base' }}">
           {% if i == "5" %}
             {# <s> #}
@@ -113,7 +117,8 @@
     {% endfor %}
 
 <p>
-  <strong>P</strong> — 72 Reg 14px | Line height 20px
+  <strong>body</strong>
+   {# — 72 Reg 14px | Line height 20px #}
 </p>
         <p>
     Nullam ut tincidunt nunc. Pellentesque metus lacus commodo eget justo ut rutrum varius nunc. Sed non rhoncus risus. Morbi sodales gravida pulvinar. Duis malesuada odio volutpat elementum vulputate massa magna scelerisque ante et accumsan tellus nunc in sem. Donec mattis arcu et velit aliquet non sagittis justo vestibulum. Suspendisse volutpat felis lectus nec consequat ipsum mattis id.
