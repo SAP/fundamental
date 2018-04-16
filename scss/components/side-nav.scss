@@ -1,31 +1,31 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
+@import "../settings";
+@import "../mixins";
+@import "../functions";
 
 /*!
 .fd-side-nav+(--no-border)
     .fd-side-nav__content+()
     .fd-side-nav__title+()
 */
-$block: ns(side-nav);
+$block: #{$fd-namespace}-side-nav;
 
 .#{$block} {
 
     //LOCAL VARS
-    $fd-side-nav-background-color: fd-color(background, 1);
-    $fd-side-nav-selected-background-color: fd-color(background, 2);
-    $fd-side-nav-link-color: fd-color(text, 1);
+    $fd-side-nav-background-color: fd-color("background", 1);
+    $fd-side-nav-selected-background-color: fd-color("background", 2);
+    $fd-side-nav-link-color: fd-color("text", 1);
     $fd-side-nav-max-width: 250px;
-    $fd-side-nav-link-padding: fd-space(5);
+    $fd-side-nav-link-padding: fd-space(4);
 
     //BLOCK BASE *******************************************
-    background-color: $fd-side-nav-background-color;
+    background-color: $fd-side-nav-background-color !important;
     min-width: $fd-side-nav-max-width;
 
     //ELEMENTS *******************************************
     .fd-nav__link{
         padding: $fd-side-nav-link-padding;
-        @include fd-type(-1, body, semi);
+        @include fd-type("-1", "body", "semi");
         color: $fd-side-nav-link-color;
 
         &:hover{

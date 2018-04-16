@@ -10,8 +10,8 @@ $block: #{$fd-namespace}-nav;
 .#{$block} {
 
     //LOCAL VARS
-    $fd-nav-link-padding: fd-space(2);
-    $fd-nav-link-disbled-color: fd-color(text,2);
+    $fd-nav-link-padding: fd-space("s");
+    $fd-nav-link-disabled-color: fd-color("text",2);
 
     //BLOCK BASE *******************************************
     @include fd-reset;
@@ -38,8 +38,8 @@ $block: #{$fd-namespace}-nav;
     &__header {
         display: block;
         padding: fd-space(4);
-        @include fd-type(-3, body, reg, uppercase);
-        color: $fd-nav-link-disbled-color;
+        @include fd-type("-3", "body", "reg", "uppercase");
+        color: $fd-nav-link-disabled-color;
     }
 
     &__link {
@@ -57,7 +57,7 @@ $block: #{$fd-namespace}-nav;
 
         &.is-disabled,
         &[aria-disabled="true"] {
-            color: $fd-nav-link-disbled-color;
+            color: $fd-nav-link-disabled-color;
         }
 
         &-icon--expand{
