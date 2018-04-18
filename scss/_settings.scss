@@ -23,6 +23,14 @@ $fd-spacing: map-merge((
     xl: $fd-spacing--base * 15, //60
 ), $fd-spacing);
 
+//fonts
+$fd-fonts: () !default;
+$fd-fonts: map-merge((
+    "body": #{"'72'", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"},
+    "header": #{"'72Condensed'", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"},
+    "code": #{monospace},
+), $fd-fonts);
+
 //type
 //sets HTML el
 $fd-font-size: 14px !default;
@@ -41,14 +49,7 @@ $fd-type: map-merge((
   "5": 2.8125rem 1.15556 "header" reg none,
 ), $fd-type);
 
-//fonts
-$fd-fonts: () !default;
-$fd-fonts: map-merge((
-    "body": #{"'72'", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"},
-    "header": #{"'72'", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"},
-    "code": #{monospace},
-), $fd-fonts);
-
+//weights
 $fd-weights: () !default;
 $fd-weights: map-merge((
     light: 300,
