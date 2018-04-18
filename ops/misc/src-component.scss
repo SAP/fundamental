@@ -1,13 +1,13 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
 
 /*!
 .fd-__COMPONENT_ID__+(--no-border)
     .fd-__COMPONENT_ID____content+()
     .fd-__COMPONENT_ID____title+()
 */
-$block: ns(__COMPONENT_ID__);
+$block: #{$fd-namespace}-__COMPONENT_ID__;
 
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
@@ -17,7 +17,7 @@ $block: ns(__COMPONENT_ID__);
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
-    @include reset;
+    @include fd-reset;
     border: solid 20px $fd-__COMPONENT_ID__-border-color;
 
     //BLOCK MODIFIERS ************
