@@ -1,42 +1,49 @@
 @import "./../settings";
-@import "./../mixins";
 @import "./../layout/mixins";
+@import "./../mixins";
 @import "./../functions";
 
 /*!
 .fd-breadcrumb
     .fd-breadcrumb__item
-    .fd-breadcrumb__item--active
+    .fd-breadcrump__link
 */
 $block: #{$fd-namespace}-breadcrumb;
-
 .#{$block} {
 
-    //LOCAL VARS (set all themeable properties, always include !default)
+    //LOCAL VARS *******************************************
     $fd-breadcrumb-background-color: fd-color(background, 2)!default;
     $fd-breadcrumb-border-bottom-color: fd-color(neutral, 3)!default;
-    $fd-breadcrumb-item-color: fd-color(action, 1)!default;
     $fd-breadcrumb-height: fd-space(10)!default;
     $fd-breadcrumb-padding: fd-space(3) fd-space(4)!default;
-
+    $fd-breadcrumb-link-margin: fd-space(4);
 
     //BLOCK BASE *******************************************
     @include fd-reset;
-    @include navlist(vertical);
+    @include fd-type('-1');
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
     background-color: $fd-breadcrumb-background-color;
     height: $fd-breadcrumb-height;
     padding: $fd-breadcrumb-padding;
-    font-size: 12px;
     border-bottom: 1px solid $fd-breadcrumb-border-bottom-color;
 
     //ELEMENTS *******************************************
-    &__items {
-        color: $fd-breadcrumb-item-color ;
-
-        //ELEMENT MODIFIERS ************
-        &--active {
-            border-color: transparent;
+    &__item {
+        &:after{
+            content: "/";
+            margin-right: $fd-breadcrumb-link-margin;
         }
+        &:last-child:after{
+            content: none;
+        }
+    }
+
+    &__link {
+        margin-right: $fd-breadcrumb-link-margin;
     }
 
 }

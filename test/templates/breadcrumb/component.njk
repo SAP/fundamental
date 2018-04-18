@@ -1,15 +1,16 @@
 <!--
 breadcrumb:
-    properties={},
-    modifier={ block: [] },
-    state={},
-    aria={}
+    properties={}
 -->
 {% macro breadcrumb(properties={}, modifier={}, state={}, aria={}) -%}
 <ul class="fd-breadcrumb{{ modifier.block | modifier('breadcrumb') }}{{ state | state }}"{{ aria | aria }}>
     {%- for item in properties.items %}
-    <li >
-        <a href="{{ item.link }}" class="fd-breadcrumb__item{{ modifier.content | modifier('breadcrumb__content') }}">{{ item.label }}</a>
+    <li class="fd-breadcrumb__item{{ modifier.content | modifier('breadcrumb__content') }}">
+        {%- if loop.last %}
+        {{ item.label }}
+        {%- else %}
+        <a class="fd-breadcrumb__link{{ modifier.content | modifier('breadcrumb__content') }}" href="{{ item.href or '#' }}">{{ item.label }}</a>
+        {%- endif %}
     </li>
     {% endfor %}
 </ul>
