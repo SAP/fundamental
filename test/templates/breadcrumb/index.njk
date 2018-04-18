@@ -7,23 +7,13 @@
 {% set css_deps = [] %}
 
 {% block content %}
+<div style="background: #f3f4f5; margin:-20px; padding:20px;">
 
     <h1>breadcrumb</h1>
 
     <!-- output the component example and the code snippet -->
     {% set example %}
-    {{  breadcrumb(
-            properties={
-                title: "Sed bibendum sapien",
-                description: "Morbi sodales gravida pulvinar. Duis malesuada odio volutpat elementum vulputate massa magna scelerisque ante et accumsan."
-            },
-            modifier={
-                block: []
-            },
-            state={},
-            aria={}
-        )
-    }}
+
     {{  breadcrumb(
             properties=data.properties,
             modifier={
@@ -36,5 +26,6 @@
     {% endset %}
     {{ format(example) }}
 
+</div>
 
 {% endblock %}

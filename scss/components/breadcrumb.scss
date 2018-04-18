@@ -1,59 +1,42 @@
 @import "./../settings";
 @import "./../mixins";
+@import "./../layout/mixins";
 @import "./../functions";
-@import "./mixins";
 
 /*!
-.fd-breadcrumb+(--no-border)
-    .fd-breadcrumb__content+()
-    .fd-breadcrumb__title+()
+.fd-breadcrumb
+    .fd-breadcrumb__item
+    .fd-breadcrumb__item--active
 */
-$block: ns(breadcrumb);
+$block: #{$fd-namespace}-breadcrumb;
 
 .#{$block} {
+
     //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-breadcrumb-border-color: fd-color(primary, 1) !default;
-    $fd-breadcrumb-content-border-color: fd-color(neutral, 4) !default;
-    $fd-breadcrumb-border-color--selected: fd-color(primary) !default;
+    $fd-breadcrumb-background-color: fd-color(background, 2)!default;
+    $fd-breadcrumb-border-bottom-color: fd-color(neutral, 3)!default;
+    $fd-breadcrumb-item-color: fd-color(action, 1)!default;
+    $fd-breadcrumb-height: fd-space(10)!default;
+    $fd-breadcrumb-padding: fd-space(3) fd-space(4)!default;
+
 
     //BLOCK BASE *******************************************
-    //set all BLOCK reset and baseline styles
-    @include reset;
-    border: solid 20px $fd-breadcrumb-border-color;
-
-    //BLOCK MODIFIERS ************
-    //e.g., $fd-breadcrumb--no-border
-    &--no-border {
-        border-color: transparent;
-    }
+    @include fd-reset;
+    @include navlist(vertical);
+    background-color: $fd-breadcrumb-background-color;
+    height: $fd-breadcrumb-height;
+    padding: $fd-breadcrumb-padding;
+    font-size: 12px;
+    border-bottom: 1px solid $fd-breadcrumb-border-bottom-color;
 
     //ELEMENTS *******************************************
-    //set all ELEMENT baseline styles
-    //e.g., $fd-breadcrumb__content
-    &__content {
-        border: solid 10px $fd-breadcrumb-content-border-color;
+    &__items {
+        color: $fd-breadcrumb-item-color ;
 
         //ELEMENT MODIFIERS ************
-        //e.g., $fd-breadcrumb__content--no-border
-        &--no-border {
+        &--active {
             border-color: transparent;
         }
     }
-    &__title {
-
-
-    }
-
-    //STATES *******************************************
-    &.is-disabled,
-    &[disabled] {
-        opacity: 0.5;
-    }
-    &[aria-selected="true"] {
-        border-color: $fd-breadcrumb-border-color--selected;
-    }
-
-
-
 
 }
