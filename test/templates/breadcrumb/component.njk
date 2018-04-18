@@ -1,0 +1,17 @@
+<!--
+breadcrumb:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{% macro breadcrumb(properties={}, modifier={}, state={}, aria={}) -%}
+<div class="fd-breadcrumb{{ modifier.block | modifier('breadcrumb') }}{{ state | state }}"{{ aria | aria }}>
+    <div class="fd-breadcrumb__content{{ modifier.content | modifier('breadcrumb__content') }}">
+        <h1 class="fd-breadcrumb__title">{{ properties.title }}</h1>
+        {%- if properties.description %}
+            {{ properties.description }}
+        {%- endif %}
+    </div>
+</div>
+{%- endmacro %}

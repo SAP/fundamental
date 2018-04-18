@@ -1,0 +1,59 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+@import "./mixins";
+
+/*!
+.fd-breadcrumb+(--no-border)
+    .fd-breadcrumb__content+()
+    .fd-breadcrumb__title+()
+*/
+$block: ns(breadcrumb);
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-breadcrumb-border-color: fd-color(primary, 1) !default;
+    $fd-breadcrumb-content-border-color: fd-color(neutral, 4) !default;
+    $fd-breadcrumb-border-color--selected: fd-color(primary) !default;
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    @include reset;
+    border: solid 20px $fd-breadcrumb-border-color;
+
+    //BLOCK MODIFIERS ************
+    //e.g., $fd-breadcrumb--no-border
+    &--no-border {
+        border-color: transparent;
+    }
+
+    //ELEMENTS *******************************************
+    //set all ELEMENT baseline styles
+    //e.g., $fd-breadcrumb__content
+    &__content {
+        border: solid 10px $fd-breadcrumb-content-border-color;
+
+        //ELEMENT MODIFIERS ************
+        //e.g., $fd-breadcrumb__content--no-border
+        &--no-border {
+            border-color: transparent;
+        }
+    }
+    &__title {
+
+
+    }
+
+    //STATES *******************************************
+    &.is-disabled,
+    &[disabled] {
+        opacity: 0.5;
+    }
+    &[aria-selected="true"] {
+        border-color: $fd-breadcrumb-border-color--selected;
+    }
+
+
+
+
+}
