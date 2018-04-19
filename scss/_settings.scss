@@ -15,12 +15,13 @@ $fd-spacing--base: 4px !default;
 $fd-spacing: () !default;
 $fd-spacing: map-merge((
     base: $fd-spacing--base,    //4
-    xs: $fd-spacing--base * 2,  //8
-    s: $fd-spacing--base * 3,   //12
+    xxs: $fd-spacing--base * 2,  //8
+    xs: $fd-spacing--base * 3,  //12
+    s: $fd-spacing--base * 4,   //16
     reg: $fd-spacing--base * 5, //20
     m: $fd-spacing--base * 8,  //32
-    l: $fd-spacing--base * 10,  //40
-    xl: $fd-spacing--base * 15, //60
+    l: $fd-spacing--base * 9,  //36
+    xl: $fd-spacing--base * 10, //40
 ), $fd-spacing);
 
 //fonts
@@ -62,34 +63,27 @@ $fd-weights: map-merge((
 //colors
 $fd-colors: () !default;
 $fd-colors: map-merge((
-  "primary": (
-    1: crimson,
-    2: darkred,
-  ),
   "action": (
-    1: #0a6ed1,
-    2: #8D9DBC
+    1: #0a6ed1
   ),
   "text": (
-    1: #32363b,
+    1: #32363a,
     2: #515559,
     3: #66696c, //?
   ),
   "text-inverse": (
     1: #ffffff,
-    2: #f5f5f5,
-    3: #ebebeb,
+    2: #f5f5f5, //consider removing
+    3: #ebebeb, //consider removing
   ),
   "background": (
     1: #f3f4f5,
-    2: #ffffff,
-    3: magenta,
+    2: #ffffff
   ),
   "neutral": (
-    1: #f5f5f5,
+    1: #fafafa,
     2: #eeeeef,
-    3: #dededf,
-    4: tomato,
+    3: #dededf
   ),
   "status": (
     1: #359c46,
