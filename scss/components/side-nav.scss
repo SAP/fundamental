@@ -12,28 +12,61 @@ $block: #{$fd-namespace}-side-nav;
 .#{$block} {
 
     //LOCAL VARS
-    $fd-side-nav-background-color: fd-color("background", 1);
-    $fd-side-nav-selected-background-color: fd-color("background", 2);
+    $fd-side-nav-background-color: fd-color("background", 2);
+    $fd-side-nav-selected-background-color: fd-color("background", 1);
     $fd-side-nav-link-color: fd-color("text", 1);
     $fd-side-nav-max-width: 250px;
     $fd-side-nav-link-padding: fd-space(4);
 
     //BLOCK BASE *******************************************
-    background-color: $fd-side-nav-background-color !important;
+    background-color: $fd-side-nav-background-color;
     min-width: $fd-side-nav-max-width;
 
     //ELEMENTS *******************************************
-    .fd-nav__link{
+    &__header {
+        display: block;
+        padding: fd-space(4);
+        @include fd-type("-3", "body", "reg", "uppercase");
+        color: $fd-nav-link-disabled-color;
+    }
+
+    &__link {
         padding: $fd-side-nav-link-padding;
         @include fd-type("-1", "body", "semi");
         color: $fd-side-nav-link-color;
+        display: block;
+        padding: $fd-nav-link-padding;
 
-        &:hover{
+        &:hover {
             background-color: $fd-side-nav-selected-background-color;
+        }
+
+        &.is-selected,
+        &[aria-selected="true"] {
+            color: $fd-color;
+            .fd-nav__link-icon--expand{
+                float: right;
+                transform: rotate(90deg);
+            }
+        }
+
+        &.is-disabled,
+        &[aria-disabled="true"] {
+            color: $fd-nav-link-disabled-color;
+        }
+
+        &-icon--expand {
+            float: right;
+            transform: rotate(-90deg);
+        }
+
+        &-icon {
+            vertical-align: text-bottom;
+            padding-right: fd-space(2);
         }
     }
 
-    .fd-nav__group{
+    &__group {
         list-style: none;
         margin-bottom: 0;
 
@@ -43,8 +76,18 @@ $block: #{$fd-namespace}-side-nav;
         }
     }
 
+    &--vertical-icons {
+        flex-direction: column;
+        min-width: auto;
+
+        .fd-nav__link-icon {
+            padding-right: 0;
+        }
+    }
+
+
     //STATES *******************************************
-    .is-selected{
+    .is-selected {
         background-color: $fd-side-nav-selected-background-color;
     }
 

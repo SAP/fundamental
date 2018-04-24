@@ -25,49 +25,5 @@ $block: #{$fd-namespace}-nav;
     &--vertical {
         flex-direction: column;
     }
-    &--vertical-icons {
-        flex-direction: column;
-        min-width: auto;
 
-        .fd-nav__link-icon{
-            padding-right: 0;
-        }
-    }
-
-    //ELEMENTS *******************************************
-    &__header {
-        display: block;
-        padding: fd-space(4);
-        @include fd-type("-3", "body", "reg", "uppercase");
-        color: $fd-nav-link-disabled-color;
-    }
-
-    &__link {
-        display: block;
-        padding: $fd-nav-link-padding;
-
-        &.is-selected,
-        &[aria-selected="true"] {
-            color: $fd-color;
-            .fd-nav__link-icon--expand{
-                float: right;
-                transform: rotate(90deg);
-            }
-        }
-
-        &.is-disabled,
-        &[aria-disabled="true"] {
-            color: $fd-nav-link-disabled-color;
-        }
-
-        &-icon--expand{
-            float: right;
-            transform: rotate(-90deg);
-        }
-
-        &-icon{
-            vertical-align: text-bottom;
-            padding-right: fd-space(2);
-        }
-    }
 }
