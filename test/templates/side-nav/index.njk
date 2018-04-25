@@ -1,6 +1,6 @@
 {% extends "layout.njk" %}
 {% from "./../format.njk" import format %}
-{% from "../nav/component.njk" import nav %}
+{% from "./component.njk" import side_nav %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
 {% set css_deps = ['components/nav', 'icons'] %}
@@ -14,12 +14,12 @@
     }
 </style>
 
-    <h1>side-nav</h1>
+    <h1>side_nav</h1>
 
     <!-- output the component example and the code snippet -->
     {% set example %}
 
-    {{ nav(
+    {{ side_nav(
             properties = {
                 "items": [
                 { "label": "Link Item", "selected": true },
@@ -30,15 +30,11 @@
                 { "label": "Link Item" },
                 { "label": "Link Item" }
                 ]
-            },
-            modifier={
-                block: "vertical"
-            },
-            classes="side-nav"
+            }
         )
     }}
 
-    {{ nav(
+    {{ side_nav(
             properties = {
                 "items": [
                 { "label": "Text", "navheader": true },
@@ -51,15 +47,11 @@
                 { "label": "Link Item" },
                 { "label": "Link Item" }
                 ]
-            },
-            modifier={
-                block: "vertical"
-            },
-            classes="side-nav"
+            }
         )
     }}
 
-    {{ nav(
+    {{ side_nav(
             properties = {
                 "items": [
                 { "label": "Text", "navheader": true },
@@ -81,15 +73,11 @@
                 { "label": "Link Item" },
                 { "label": "Link Item" }
                 ]
-            },
-            modifier={
-                block: "vertical"
-            },
-            classes="side-nav"
+            }
         )
     }}
 
-    {{ nav(
+    {{ side_nav(
             properties = {
                 "items": [
                 { "label": "Text", "navheader": true },
@@ -111,15 +99,11 @@
                 { "label": "Link Item" },
                 { "label": "Link Item" }
                 ]
-            },
-            modifier={
-                block: "vertical"
-            },
-            classes="side-nav"
+            }
         )
     }}
 
-    {{ nav(
+    {{ side_nav(
             properties = {
                 "items": [
                 { "label": "Text", "navheader": true },
@@ -141,11 +125,7 @@
                 { "label": "Link Item" },
                 { "label": "Link Item" }
                 ]
-            },
-            modifier={
-                block: "vertical"
-            },
-            classes="side-nav"
+            }
         )
     }}
 
@@ -156,7 +136,7 @@
 
     {% set exampletwo %}
 
-    {{ nav(
+    {{ side_nav(
             properties = {
                 "items": [
                 { "label": "Link Item", "icon": "edit" },
@@ -169,15 +149,11 @@
                 { "label": "Link Item", "icon": "edit" },
                 { "label": "Link Item", "icon": "edit" }
                 ]
-            },
-            modifier={
-                block: "vertical"
-            },
-            classes="side-nav"
+            }
         )
     }}
 
-    {{ nav(
+    {{ side_nav(
             properties = {
                 "items": [
                 { "icon": "edit" },
@@ -190,11 +166,7 @@
                 { "icon": "edit" },
                 { "icon": "edit" }
                 ]
-            },
-            modifier={
-                block: "vertical-icons"
-            },
-            classes="side-nav"
+            }
         )
     }}
     {% endset %}

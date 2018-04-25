@@ -13,21 +13,32 @@ $block: #{$fd-namespace}-side-nav;
 
     //LOCAL VARS
     $fd-side-nav-background-color: fd-color("background", 2);
-    $fd-side-nav-selected-background-color: fd-color("background", 1);
+    $fd-side-nav-selected-background-color: fd-color("neutral", 2);
     $fd-side-nav-link-color: fd-color("text", 1);
     $fd-side-nav-max-width: 250px;
     $fd-side-nav-link-padding: fd-space(4);
+    $fd-side-nav-link-padding: fd-space("s");
+    $fd-side-nav-link-disabled-color: fd-color("text",2);
+    $fd-side-nav-link-padding: fd-space("s");
+
 
     //BLOCK BASE *******************************************
+    @include fd-reset;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
     background-color: $fd-side-nav-background-color;
     min-width: $fd-side-nav-max-width;
+    list-style:  none;
+    flex-direction: column;
 
     //ELEMENTS *******************************************
     &__header {
         display: block;
         padding: fd-space(4);
         @include fd-type("-3", "body", "reg", "uppercase");
-        color: $fd-nav-link-disabled-color;
+        color: $fd-side-nav-link-disabled-color;
     }
 
     &__link {
@@ -35,7 +46,7 @@ $block: #{$fd-namespace}-side-nav;
         @include fd-type("-1", "body", "semi");
         color: $fd-side-nav-link-color;
         display: block;
-        padding: $fd-nav-link-padding;
+        padding: $fd-side-nav-link-padding;
 
         &:hover {
             background-color: $fd-side-nav-selected-background-color;
@@ -43,7 +54,6 @@ $block: #{$fd-namespace}-side-nav;
 
         &.is-selected,
         &[aria-selected="true"] {
-            color: $fd-color;
             .fd-nav__link-icon--expand{
                 float: right;
                 transform: rotate(90deg);
@@ -52,7 +62,7 @@ $block: #{$fd-namespace}-side-nav;
 
         &.is-disabled,
         &[aria-disabled="true"] {
-            color: $fd-nav-link-disabled-color;
+            color: $fd-side-nav-link-disabled-color;
         }
 
         &-icon--expand {
@@ -70,7 +80,7 @@ $block: #{$fd-namespace}-side-nav;
         list-style: none;
         margin-bottom: 0;
 
-        .fd-nav__link{
+        .fd-side-nav__link{
             font-weight: normal;
             padding-left: $fd-side-nav-link-padding * 2;
         }
