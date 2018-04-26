@@ -1,6 +1,6 @@
-@import "../settings";
-@import "../mixins";
-@import "../functions";
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
 
 /*!
 .fd-side-nav+(--no-border)
@@ -13,7 +13,7 @@ $block: #{$fd-namespace}-side-nav;
 
     //LOCAL VARS
     $fd-side-nav-background-color: fd-color("background", 2);
-    $fd-side-nav-selected-background-color: fd-color("neutral", 2);
+    $fd-side-nav-selected-background-color: lighten( fd-color("action", 1), 50%);
     $fd-side-nav-link-color: fd-color("text", 1);
     $fd-side-nav-max-width: 250px;
     $fd-side-nav-link-padding: fd-space(4);
@@ -21,43 +21,58 @@ $block: #{$fd-namespace}-side-nav;
     $fd-side-nav-link-disabled-color: fd-color("text",2);
     $fd-side-nav-link-padding: fd-space("s");
 
-
     //BLOCK BASE *******************************************
-    @include fd-reset;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    background-color: $fd-side-nav-background-color;
-    min-width: $fd-side-nav-max-width;
-    list-style:  none;
-    flex-direction: column;
+
 
     //ELEMENTS *******************************************
-    &__header {
+    &__group {
+        list-style: none;
+        margin-bottom: 0;
+
+    }
+
+    &__title {
         display: block;
         padding: fd-space(4);
         @include fd-type("-3", "body", "reg", "uppercase");
         color: $fd-side-nav-link-disabled-color;
     }
 
+    &__list {
+        @include fd-reset;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-bottom: 0;
+        background-color: $fd-side-nav-background-color;
+        min-width: $fd-side-nav-max-width;
+        list-style:  none;
+        flex-direction: column;
+    }
+
+    &__item{
+
+    }
+
     &__link {
         padding: $fd-side-nav-link-padding;
-        @include fd-type("-1", "body", "semi");
+        @include fd-type("-1", "body", "bold");
         color: $fd-side-nav-link-color;
         display: block;
         padding: $fd-side-nav-link-padding;
 
-        &:hover {
+
+        //STATES *******************************************
+        &:hover,
+        &.is-selected,
+        &[aria-selected="true"] {
             background-color: $fd-side-nav-selected-background-color;
         }
 
-        &.is-selected,
-        &[aria-selected="true"] {
-            .fd-nav__link-icon--expand{
-                float: right;
-                transform: rotate(90deg);
-            }
+        &.has-child{
+            background-image: url(#{$fd-forms-select-background-image});
+            background-repeat: no-repeat;
+            background-position: calc(100% - #{$fd-forms-select-width--background-image}) center;
         }
 
         &.is-disabled,
@@ -76,15 +91,11 @@ $block: #{$fd-namespace}-side-nav;
         }
     }
 
-    &__group {
-        list-style: none;
-        margin-bottom: 0;
-
-        .fd-side-nav__link{
-            font-weight: normal;
-            padding-left: $fd-side-nav-link-padding * 2;
-        }
+    &__sublink{
+        font-weight: normal;
+        padding-left: $fd-side-nav-link-padding * 2;
     }
+
 
     &--vertical-icons {
         flex-direction: column;
@@ -96,9 +107,8 @@ $block: #{$fd-namespace}-side-nav;
     }
 
 
-    //STATES *******************************************
     .is-selected {
-        background-color: $fd-side-nav-selected-background-color;
+
     }
 
 }

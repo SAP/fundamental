@@ -1,10 +1,14 @@
 {% from "./../icon/component.njk" import icon %}
 <!--
-nav:
-    properties={},
-    modifier={ block: [] },
-    state={},
-    aria={}
+nav.fd-side-nav
+    div.fd-side-nav__group
+        h1.fd-side-nav__title
+        ul.fd-side-nav__list
+            li.fd-side-nav__item
+                a.fd-side-nav__link (.has-child, .is-active, .is-expanded)
+                ul.fd-side-nav__sublist
+                    li.fd-side-nav__sublink
+                    a.fd-size-nav__sublink
 -->
 
 {%- macro navitem(properties={}, modifier={}, state={}, aria={}, classes="") -%}
@@ -24,15 +28,15 @@ nav:
                     {{ icon(glyph=properties.icon, classes="nav__link-icon") }}
                 {%- endif %}
                 {{ properties.label }}
-                {%- if properties.haschild %}
+                {# {%- if properties.haschild %}
                 {{ icon(glyph="chevron", classes="nav__link-icon--expand") }}
-                {%- endif %}
+                {%- endif %} #}
             </a>
         {%- endif %}
     </li>
 {%- endmacro %}
 
-{%- macro navgroup(properties={ }) -%}
+{%- macro navgroup(properties={}) -%}
     <ul class="fd-side-nav__group{{ modifier.item | modifier('nav__group') }}">
         {%- for item in properties.items %}
             {{ navitem(item) }}
@@ -41,14 +45,25 @@ nav:
 {%- endmacro %}
 
 {% macro side_nav(properties={ items: [] }, modifier={}, state={}, aria={}, classes="") -%}
-    <ul class="fd-side-nav{{ modifier.block | modifier('nav') }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>
-        {%- for item in properties.items %}
-            {%- if item.items and item.selected or item.expanded %}
-                {{ navitem(item) }}
-                {{ navgroup(item) }}
-            {%- else %}
-                {{ navitem(item) }}
+    <nav class="fd-side-nav{{ modifier.block | modifier('nav') }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>
+        <div class="fd-side-nav__group">
+
+            {%- if properties.title %}
+                <h1 class="fd-side-nav__title">
+                    {{ properties.label }}
+                </h1>
             {%- endif %}
-        {%- endfor %}
-    </ul>
+
+            <ul class="fd-side-nav__list">
+                {%- for item in properties.items %}
+                    {%- if item.items and item.selected or item.expanded %}
+                        {{ navitem(item) }}
+                        {{ navgroup(item) }}
+                    {%- else %}
+                        {{ navitem(item) }}
+                    {%- endif %}
+                {%- endfor %}
+            </ul>
+        </div>
+    </nav>
 {%- endmacro %}
