@@ -13,7 +13,7 @@ $block: #{$fd-namespace}-side-nav;
 
     //LOCAL VARS
     $fd-side-nav-background-color: fd-color("background", 2);
-    $fd-side-nav-selected-background-color: lighten( fd-color("action", 1), 50%);
+    $fd-side-nav-selected-background-color: lighten( fd-color("action", 1), 52%);
     $fd-side-nav-link-color: fd-color("text", 1);
     $fd-side-nav-max-width: 250px;
     $fd-side-nav-link-padding: fd-space(4);
@@ -22,30 +22,33 @@ $block: #{$fd-namespace}-side-nav;
     $fd-side-nav-link-padding: fd-space("s");
 
     //BLOCK BASE *******************************************
-
+    background-color: $fd-side-nav-background-color;
+    min-width: $fd-side-nav-max-width;
+    margin: 0;
+    padding: 0;
 
     //ELEMENTS *******************************************
     &__group {
         list-style: none;
         margin-bottom: 0;
-
     }
 
     &__title {
         display: block;
+        margin-bottom: 0;
         padding: fd-space(4);
-        @include fd-type("-3", "body", "reg", "uppercase");
+        padding-bottom: 0;
+        @include fd-type("-3", "body", "reg", uppercase);
         color: $fd-side-nav-link-disabled-color;
     }
 
-    &__list {
+    &__list,
+    &__sublist {
         @include fd-reset;
         display: flex;
         flex-wrap: wrap;
         padding-left: 0;
         margin-bottom: 0;
-        background-color: $fd-side-nav-background-color;
-        min-width: $fd-side-nav-max-width;
         list-style:  none;
         flex-direction: column;
     }
@@ -54,25 +57,18 @@ $block: #{$fd-namespace}-side-nav;
 
     }
 
-    &__link {
+    &__link,
+    &__sublink {
         padding: $fd-side-nav-link-padding;
-        @include fd-type("-1", "body", "bold");
         color: $fd-side-nav-link-color;
         display: block;
-        padding: $fd-side-nav-link-padding;
-
 
         //STATES *******************************************
         &:hover,
         &.is-selected,
         &[aria-selected="true"] {
+            color: $fd-side-nav-link-color;
             background-color: $fd-side-nav-selected-background-color;
-        }
-
-        &.has-child{
-            background-image: url(#{$fd-forms-select-background-image});
-            background-repeat: no-repeat;
-            background-position: calc(100% - #{$fd-forms-select-width--background-image}) center;
         }
 
         &.is-disabled,
@@ -80,22 +76,28 @@ $block: #{$fd-namespace}-side-nav;
             color: $fd-side-nav-link-disabled-color;
         }
 
-        &-icon--expand {
-            float: right;
-            transform: rotate(-90deg);
+    }
+
+    &__link {
+        @include fd-type("-1", "body", "bold");
+
+        &.has-child{
+            background-image: url(#{$fd-forms-select-background-image});
+            background-repeat: no-repeat;
+            background-position: calc(100% - #{$fd-forms-select-width--background-image}) center;
         }
 
-        &-icon {
-            vertical-align: text-bottom;
-            padding-right: fd-space(2);
+        &.is-expanded{
+            background-image: url(#{$fd-forms-select-background-image--expanded});
         }
+
+
     }
 
     &__sublink{
         font-weight: normal;
         padding-left: $fd-side-nav-link-padding * 2;
     }
-
 
     &--vertical-icons {
         flex-direction: column;
