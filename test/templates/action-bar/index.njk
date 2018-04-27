@@ -12,6 +12,7 @@
 <style media="screen">
     .fd-action-bar {
         margin-bottom: 20px;
+        outline: solid 1px whitesmoke;
     }
 </style>
 
@@ -26,22 +27,28 @@
 }}{%- endset %}
 {%- set actionbtn %}{{
     button(
-            { label: 'Cancel', icon: 'close' },
-            modifier={ block: ['text','action-bar'] }
+            { label: 'Cancel' },
+            modifier={ block: ['text'] }
         )
 }}{%- endset %}
 {%- set primarybtn %}{{
     button(
-            { label: 'Save', icon: 'checked' },
-            modifier={ block: ['action-bar'] }
+            { label: 'Save' },
+            modifier={ }
         )
+}}{%- endset %}
+{%- set secbtn %}{{
+  button(
+          { label: 'Copy' },
+          modifier={ block: ['secondary'] }
+      )
 }}{%- endset %}
 {%- set contextmenu %}
 {% set _id = utils.id() %}
 <div class="fd-dropdown">
     {{  button(
-        { label: 'More', icon: 'more' },
-        modifier={ block: ['text','action-bar'] },
+        { icon: 'more' },
+        modifier={ block: ['text'] },
         aria={ controls: _id, haspopup: true, expanded: false, label: "More" }
     ) | indent(4)
 }}
@@ -93,7 +100,7 @@
                 title: data.properties.title,
                 actions: {
                     properties: {
-                        items: [actionbtn,actionbtn,actionbtn,primarybtn]
+                        items: [actionbtn,secbtn,primarybtn]
                     }
                 }
             },
@@ -122,7 +129,18 @@
         )
     }}
 
-
+    {{  action_bar(
+            properties={
+                title: data.properties.title,
+                subtitle: data.properties.subtitle
+            },
+            modifier={
+                block: []
+            },
+            state={},
+            aria={}
+        )
+    }}
     {% endset %}
     {{ format(example) }}
 <br><br>
