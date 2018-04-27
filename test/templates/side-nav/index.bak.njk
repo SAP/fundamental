@@ -1,0 +1,175 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "./component.njk" import side_nav %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['components/nav', 'icons'] %}
+
+{% block content %}
+
+<style media="screen">
+    .fd-side-nav{
+        float: left;
+        margin: 0 30px 50px 0;
+    }
+</style>
+
+    <h1>side_nav</h1>
+
+    <!-- output the component example and the code snippet -->
+    {% set example %}
+
+    {{ side_nav(
+            properties = {
+                "items": [
+                { "label": "Link Item", "selected": true },
+                { "label": "Link Item" },
+                { "label": "Link Item", "haschild": true },
+                { "label": "Link Item", "haschild": true },
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item" }
+                ]
+            }
+        )
+    }}
+
+    {{ side_nav(
+            properties = {
+                "items": [
+                { "label": "Text", "navheader": true },
+                { "label": "Link Item", "selected": true },
+                { "label": "Link Item" },
+                { "label": "Link Item", "haschild": true },
+                { "label": "Text", "navheader": true },
+                { "label": "Link Item", "haschild": true },
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item" }
+                ]
+            }
+        )
+    }}
+
+    {{ side_nav(
+            properties = {
+                "items": [
+                { "label": "Text", "navheader": true },
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item", "haschild": true },
+                {
+                    "label": "Link parent",
+                    "haschild": true,
+                    "expanded": true,
+                    "items": [
+                        { "label": "Link" },
+                        { "label": "Link" },
+                        { "label": "Link" }
+                    ]
+                },
+
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item" }
+                ]
+            }
+        )
+    }}
+
+    {{ side_nav(
+            properties = {
+                "items": [
+                { "label": "Text", "navheader": true },
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item", "haschild": true },
+                {
+                    "label": "Link Item",
+                    "haschild": true,
+                    "selected": true,
+                    "items": [
+                        { "label": "Link" },
+                        { "label": "Link" },
+                        { "label": "Link" }
+                    ]
+                },
+
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item" }
+                ]
+            }
+        )
+    }}
+
+    {{ side_nav(
+            properties = {
+                "items": [
+                { "label": "Text", "navheader": true },
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item", "haschild": true },
+                {
+                    "label": "Link Item",
+                    "haschild": true,
+                    "expanded": true,
+                    "items": [
+                        { "label": "Sub Item", "selected": true },
+                        { "label": "Sub Item" },
+                        { "label": "Sub Item" }
+                    ]
+                },
+
+                { "label": "Link Item" },
+                { "label": "Link Item" },
+                { "label": "Link Item" }
+                ]
+            }
+        )
+    }}
+
+    {% endset %}
+    {{ format(example) }}
+
+    <br><br>
+
+    {% set exampletwo %}
+
+    {{ side_nav(
+            properties = {
+                "items": [
+                { "label": "Link Item", "icon": "edit" },
+                { "label": "Link Item", "icon": "edit", "haschild": true },
+                { "label": "Link Item", "icon": "edit" },
+                { "label": "Link Item", "icon": "edit" },
+                { "label": "Link Item", "icon": "edit", "haschild": true },
+                { "label": "Link Item", "icon": "edit" },
+                { "label": "Link Item", "icon": "edit", "haschild": true },
+                { "label": "Link Item", "icon": "edit" },
+                { "label": "Link Item", "icon": "edit" }
+                ]
+            }
+        )
+    }}
+
+    {{ side_nav(
+            properties = {
+                "items": [
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" },
+                { "icon": "edit" }
+                ]
+            }
+        )
+    }}
+    {% endset %}
+    {{ format(exampletwo) }}
+
+{% endblock %}
