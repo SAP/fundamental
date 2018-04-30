@@ -35,13 +35,14 @@ env.addFilter('sass_to_css', function(sassFile="app.scss") {
 });
 // convert an array to classes
 // returns [ fd-element--mod ]
-env.addFilter('modifier', function(array=[],element="") {
+env.addFilter('modifier', function(array=[],element="",namespace="") {
+    var _ns = namespace || GLOBALS.namespace;
     //is string
     if (typeof array === "string") {
-        return ` ${GLOBALS.namespace}-${element}--${array}`;
+        return ` ${_ns}-${element}--${array}`;
     }
     var mods = array.map((mod) => {
-         return ` ${GLOBALS.namespace}-${element}--${mod}`;
+         return ` ${_ns}-${element}--${mod}`;
     })
     //console.log(mods.join());
     return mods.join('') ;
@@ -119,6 +120,12 @@ app.use('/static', express.static(path.join(__dirname, 'resources')));
 //load font files
 router.get('/(*/)?FundamentalIcons:key', (req, res) => {
     res.sendFile(path.join(__dirname, '..', `scss/icons/FundamentalIcons${req.params.key}`));
+});
+router.get('/(*/)?SAP-icons:key', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', `scss/icons/SAP-icons${req.params.key}`));
+});
+router.get('/(*/)?72/72-:key', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', `scss/fonts/72/72-${req.params.key}`));
 });
 
 router.all('/', function (req, res, next) {

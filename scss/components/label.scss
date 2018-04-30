@@ -1,15 +1,14 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
 /*!
 .fd-label+(--success | --warning | --error)
 */
-$block: ns(label);
-
+$block: #{$fd-namespace}-label;
 .#{$block} {
     @include fd-reset;
-    @include fd-type(-3);
+    @include fd-type("-3");
+    text-transform: uppercase;
     display: inline-block;
     padding: fd-space(1)-1px fd-space(2);
     &--success {

@@ -1,15 +1,13 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-@import "./button";
-@import "mixins";
-
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+@import "./mixins";
+//@import "./button";
 /*!
 .fd-pagination
 */
 
-$block: ns(pagination);
-
+$block: #{$fd-namespace}-pagination;
 .#{$block} {
   $fd-pagination-color: fd-color(text-inverse, 2) !default;
   $fd-pagination-color--text: $fd-color--link !default;
@@ -18,7 +16,7 @@ $block: ns(pagination);
   $fd-pagination-nav-color--disabled: fd-color(text, 2) !default;
 
   @include fd-reset;
-  @include fd-type(-1);
+  @include fd-type("-1");
   &__list{
       padding-left: 0;
       margin-left: 0;
@@ -77,7 +75,7 @@ $block: ns(pagination);
       cursor: default;
     }
     &--more{
-      @include fd-type(-3);
+      @include fd-type("-3");
       font-family: sans-serif;
       color: $fd-pagination-color--disabled;
       vertical-align: sub;
@@ -98,7 +96,7 @@ $block: ns(pagination);
   &__item{
     display: inline-block;
     &--previous {
-      transform: rotate(180deg);
+      transform: scaleX(-1);
     }
   }
 

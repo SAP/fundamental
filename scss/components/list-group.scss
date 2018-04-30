@@ -1,15 +1,13 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-@import "../components/mixins";
-
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+@import "./mixins";
 /*!
 .fd-list-group
   .fd-list-group__item
       .fd-list-group__action
 */
-$block: ns(list-group);
-
+$block: #{$fd-namespace}-list-group;
 .#{$block} {
     //LOCAL VARS (set all vars used in component, always include !default)
     $fd-list-group-border-color: lighten(fd-color(neutral, 2), 5%) !default;

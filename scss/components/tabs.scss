@@ -1,7 +1,6 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
 /*!
 .fd-tabs+()
     .fd-tabs__item?
@@ -9,8 +8,7 @@
 .fd-tabs__panel+([aria-expanded]|.is-expanded)
 */
 
-$block: ns(tabs);
-
+$block: #{$fd-namespace}-tabs;
 .#{$block} {
     $fd-tabs-margin-bottom: fd-space(m) !default;
     $fd-tabs-border-width: 1px !default;
@@ -35,7 +33,7 @@ $block: ns(tabs);
     &__link {
         display: block;
         padding: $fd-tabs-link-padding $fd-tabs-link-padding--side;
-        @include fd-type(1,header,med,uppercase);
+        @include fd-type("1",header,med,uppercase);
         color: $fd-color--link;
         border-bottom: solid $fd-tabs-link-border-width transparent;
         transition: all $fd-tabs-link-transition-params;

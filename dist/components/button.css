@@ -25,56 +25,65 @@
   vertical-align: middle;
   white-space: nowrap;
   background-color: transparent;
-  font-size: 1.125rem;
-  line-height: 1.33334;
-  font-family: sans-serif;
-  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.42857;
+  font-weight: 400;
   display: inline-block;
-  background-color: #009cdf;
+  background-color: #0a6ed1;
   -webkit-transition: background-color 125ms ease-in;
   transition: background-color 125ms ease-in;
-  color: #f6f8f9;
-  max-height: 52px;
-  height: 52px;
-  line-height: 52px;
+  color: #fff;
+  max-height: 36px;
+  height: 36px;
+  line-height: 36px;
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
   text-transform: uppercase;
-  border-radius: 0
+  border-radius: 4px
+}
+.fd-button--x-small {
+  font-size: .92857rem;
+  line-height: 1.23077;
+  font-weight: 400;
+  max-height: 28px;
+  height: 28px;
+  line-height: 28px;
+  padding-left: 16px;
+  padding-right: 16px
 }
 .fd-button--small {
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: 400;
-  font-weight: 600;
-  max-height: 40px;
-  height: 40px;
-  line-height: 40px;
+  max-height: 32px;
+  height: 32px;
+  line-height: 32px;
   padding-left: 16px;
   padding-right: 16px
 }
 .fd-button--action-bar,
 .fd-button--large {
-  font-size: 1.25rem;
-  line-height: 1.4;
-  font-weight: 600;
-  max-height: 76px;
-  height: 76px;
-  line-height: 76px;
+  max-height: 40px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 28px;
+  padding-right: 28px
+}
+.fd-button--x-large {
+  max-height: 44px;
+  height: 44px;
+  line-height: 44px;
   padding-left: 28px;
   padding-right: 28px
 }
 .fd-button:hover {
-  background-color: #008ac6;
-  color: #f6f8f9;
+  background-color: #0961b9;
+  color: #fff;
   text-decoration: none
 }
 .fd-button:focus {
-  color: #f6f8f9;
-  -webkit-box-shadow: 0 0 4px 1px #8a8fa1;
-  box-shadow: 0 0 4px 1px #8a8fa1;
-  outline: solid 2px #2dc0ff
+  color: #fff;
+  -webkit-box-shadow: 0 0 4px 1px #dededf;
+  box-shadow: 0 0 4px 1px #dededf;
+  outline: solid 2px #3294f5
 }
 .fd-button.is-active,
 .fd-button.is-pressed,
@@ -82,28 +91,31 @@
 .fd-button:active,
 .fd-button[aria-pressed=true],
 .fd-button[aria-selected=true] {
-  background-color: #0078ac;
-  color: #f6f8f9
+  background-color: #0854a0;
+  color: #fff
 }
 .fd-button.is-disabled,
 .fd-button:disabled,
 .fd-button[aria-disabled=true] {
-  outline: solid 1px #d7d7d7;
-  color: #7f90a4;
-  background-color: #f9fbfc;
+  outline: solid 1px #eeeeef;
+  color: #515559;
+  background-color: #fafafa;
   cursor: not-allowed
 }
 .fd-button--link,
+.fd-button--secondary,
 .fd-button--text {
-  color: #009cdf;
+  color: #0a6ed1;
   background-color: transparent
 }
 .fd-button--link:focus,
 .fd-button--link:hover,
+.fd-button--secondary:focus,
+.fd-button--secondary:hover,
 .fd-button--text:focus,
 .fd-button--text:hover {
   background-color: transparent;
-  color: #008ac6
+  color: #0961b9
 }
 .fd-button--link.is-disabled,
 .fd-button--link.is-pressed,
@@ -113,6 +125,14 @@
 .fd-button--link[aria-disabled=true],
 .fd-button--link[aria-pressed=true],
 .fd-button--link[aria-selected=true],
+.fd-button--secondary.is-disabled,
+.fd-button--secondary.is-pressed,
+.fd-button--secondary.is-selected,
+.fd-button--secondary:active,
+.fd-button--secondary:disabled,
+.fd-button--secondary[aria-disabled=true],
+.fd-button--secondary[aria-pressed=true],
+.fd-button--secondary[aria-selected=true],
 .fd-button--text.is-disabled,
 .fd-button--text.is-pressed,
 .fd-button--text.is-selected,
@@ -131,31 +151,44 @@
 .fd-button--link:active,
 .fd-button--link[aria-pressed=true],
 .fd-button--link[aria-selected=true],
+.fd-button--secondary.is-pressed,
+.fd-button--secondary.is-selected,
+.fd-button--secondary:active,
+.fd-button--secondary[aria-pressed=true],
+.fd-button--secondary[aria-selected=true],
 .fd-button--text.is-pressed,
 .fd-button--text.is-selected,
 .fd-button--text:active,
 .fd-button--text[aria-pressed=true],
 .fd-button--text[aria-selected=true] {
-  color: #0078ac
+  color: #0854a0
 }
 .fd-button--link.is-disabled,
 .fd-button--link:disabled,
 .fd-button--link[aria-disabled=true],
+.fd-button--secondary.is-disabled,
+.fd-button--secondary:disabled,
+.fd-button--secondary[aria-disabled=true],
 .fd-button--text.is-disabled,
 .fd-button--text:disabled,
 .fd-button--text[aria-disabled=true] {
-  color: #7f90a4
+  color: #515559
+}
+.fd-button--secondary {
+  background-color: #f3f4f5;
+  color: #32363a;
+  border: solid 1px #dededf
 }
 .fd-button--link {
-  height: 28px;
-  line-height: 28px;
+  height: 20px;
+  line-height: 20px;
   padding-left: 16px;
   padding-right: 16px;
   position: relative
 }
 .fd-button--link.fd-button--small {
-  height: 24px;
-  line-height: 24px
+  height: 16px;
+  line-height: 16px
 }
 .fd-button--link::after {
   content: "";
@@ -181,7 +214,7 @@
 .fd-button--link:hover::after,
 .fd-button--link[aria-pressed=true]::after,
 .fd-button--link[aria-selected=true]::after {
-  border-bottom-color: #009cdf
+  border-bottom-color: #0a6ed1
 }
 .fd-button--link.is-disabled::after,
 .fd-button--link:disabled::after,
@@ -192,26 +225,25 @@
   display: inline-block;
   vertical-align: top;
   margin-right: 12px;
-  margin-top: 13px
+  margin-top: 5px
 }
 .fd-button--icon > * {
   margin-left: auto;
   margin-right: auto
 }
 .fd-button--small > * {
-  margin-top: 11px
+  margin-top: 7px
 }
 .fd-button--action-bar > *,
 .fd-button--large > * {
-  margin-top: 22px
+  margin-top: 4px
 }
 .fd-button--action-bar {
-  font-size: .75rem;
-  line-height: 1.33334;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-size: .78571rem;
+  line-height: 1.45455;
+  font-weight: 400;
   min-width: 135px;
-  line-height: 32px;
+  line-height: -4px;
   vertical-align: middle
 }
 .fd-button--action-bar > * {

@@ -1,6 +1,4 @@
-@import "settings";
 
-$ns: ns();
 //utils
 @mixin fd-reset {
     font-size: $fd-font-size;
@@ -9,12 +7,10 @@ $ns: ns();
     font-family: $fd-font-family;
 }
 
-
-
 //els
 @mixin fd-form-base {
     @include fd-reset;
-    @include fd-type(0, body);
+    @include fd-type("0", body);
     appearance: none;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
@@ -24,7 +20,7 @@ $ns: ns();
     border-style: solid;
     border-width: 1px;
     border-color: $fd-forms-border-color;
-    border-radius: 0;
+    border-radius: $fd-border-radius;
     color: $fd-forms-color;
     //background-color: $fd-forms-background-color;
     background-color: transparent;
@@ -91,9 +87,6 @@ $ns: ns();
     }
     @content;
 }
-
-
-
 @mixin fd-clearfix {
     &::after {
         content: "";
@@ -101,7 +94,6 @@ $ns: ns();
         clear: both;
     }
 }
-
 @mixin fd-last-child {
     &:last-child {
         margin-bottom: 0;
@@ -115,7 +107,6 @@ $ns: ns();
         @content;
     }
 }
-
 @mixin fd-screen($size, $dimension: width) {
   @if map-has-key($fd-breakpoints, $size) {
     @media (min-#{$dimension}: map-get($fd-breakpoints, $size)) {
@@ -125,19 +116,16 @@ $ns: ns();
     @warn "Unknown `#{$size}` in $fd-breakpoints map";
   }
 }
-
 @mixin fd-print() {
 	@media print {
 		@content;
 	}
 }
-
 //$size: -3,-2,-1,0,1,2,3,4,5
 //$font: body, header, code
 //$weight: reg, med, semi
 //$transform: none, uppercase, lowercase
 @mixin fd-type($size: "0", $font: default, $weight: default, $transform: default) {
-
     //get type map — set default to 0
     $list: map-get($fd-type, "0");
     @if map-has-key($fd-type, $size) {
@@ -181,8 +169,6 @@ $ns: ns();
         }
     }
 }
-
-
 @mixin fd-weight($weight: reg) {
     @if $weight == light {
         font-weight: 300;
@@ -194,10 +180,10 @@ $ns: ns();
         font-weight: 600;
     } @else if $weight == bold {
         font-weight: 700;
-    }
+    } @else if $weight == black {
+       font-weight: 900;
+   }
 }
-
-
 //Taken from https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/library/_triangle.scss
 @mixin triangle($size, $color, $direction) {
   $width: nth($size, 1);
@@ -262,10 +248,8 @@ $ns: ns();
     border-width: $width $height;
   }
 }
-
 @mixin rotate($deg: 90){
     $sDeg: #{$deg}deg;
-
     -webkit-transform: rotate($sDeg);
     -moz-transform: rotate($sDeg);
     -ms-transform: rotate($sDeg);

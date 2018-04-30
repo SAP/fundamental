@@ -1,20 +1,17 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-@import "./button";
-@import "./dropdown";
-// @import "../icons";
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
 /*!
 .fd-toolbar+()
     .fd-toolbar__row
         .fd-toolbar__group
         .fd-toolbar__item
 */
-$block: ns(toolbar);
-
+$block: #{$fd-namespace}-toolbar;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-toolbar-background-color: fd-color(background, 2) !default;
+    $fd-toolbar-border-width: 0 0 1px 0 !default;
     $fd-toolbar-border-color: fd-color(neutral, 3) !default;
     $fd-toolbar-group-height: fd-space(13) !default;
     //anim
@@ -27,7 +24,7 @@ $block: ns(toolbar);
     background-color: $fd-toolbar-background-color;
     border-color: $fd-toolbar-border-color;
     border-style: solid;
-    border-width: 1px 0;
+    border-width: $fd-toolbar-border-width;
     //margin-bottom: fd-space(m);
 
     & [role="separator"] {
@@ -117,7 +114,7 @@ $block: ns(toolbar);
         }
     }
     &__applied-filter-item {
-        @include fd-type(-3, body, reg, none);
+        @include fd-type("-3", body, reg, none);
         line-height: inherit;
         display: flex;
         align-items: center;
@@ -135,7 +132,7 @@ $block: ns(toolbar);
         }
     }
     &__applied-filter-clear {
-        @include fd-type(-3, body, semi);
+        @include fd-type("-3", body, semi);
     }
 
 }

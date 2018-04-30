@@ -1,14 +1,12 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
 /*!
 .fd-toggle+(--no-border)
     .fd-toggle__content+()
     .fd-toggle__title+()
 */
-$block: ns(toggle);
-
+$block: #{$fd-namespace}-toggle;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-toggle-height: fd-space(10) !default;

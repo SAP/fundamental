@@ -1,32 +1,31 @@
-@import "../core/settings";
+@import "./../settings";
 //set namespace using function to avoid hardcoding it
-$ns: ns();
-.#{$ns}has-background-image {
+.#{$fd-namespace}-has-background-image {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 }
-.#{$ns}has-background-fixed {
+.#{$fd-namespace}-has-background-fixed {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
 }
-.#{$ns}has-background-size-contain {
+.#{$fd-namespace}-has-background-size-contain {
     background-size: contain !important;
 }
-.#{$ns}has-background-size-cover {
+.#{$fd-namespace}-has-background-size-cover {
     background-size: cover !important;
 }
 @each $type, $shades in $fd-colors {
     @each $shade, $value in $shades {
         @if $shade == 1 {
             //set default selector for convenience
-            .#{$ns}has-background-color-#{$type},
-            .#{$ns}has-background-color-#{$type}-#{$shade} {
+            .#{$fd-namespace}-has-background-color-#{$type},
+            .#{$fd-namespace}-has-background-color-#{$type}-#{$shade} {
                 background-color: $value !important;
             }
         } @else {
-            .#{$ns}has-background-color-#{$type}-#{$shade} {
+            .#{$fd-namespace}-has-background-color-#{$type}-#{$shade} {
                 background-color: $value !important;
             }
         }

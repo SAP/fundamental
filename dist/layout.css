@@ -12,8 +12,8 @@
     .fd-section__footer
 */
 .fd-section {
-  padding: 40px 20px 20px;
-  border-bottom: solid 2px #ccdaeb
+  padding: 16px 40px 20px;
+  border-bottom: none
 }
 .fd-section::after {
   content: "";
@@ -24,14 +24,17 @@
 .fd-section:last-child {
   border-bottom: 0
 }
+.fd-section--bleed,
 .fd-section--full-bleed {
   padding-right: 0;
   padding-left: 0
 }
+.fd-section--bleed .fd-section__footer,
+.fd-section--bleed .fd-section__header,
 .fd-section--full-bleed .fd-section__footer,
 .fd-section--full-bleed .fd-section__header {
-  margin-left: 20px;
-  margin-right: 20px
+  margin-left: 40px;
+  margin-right: 40px
 }
 .fd-section__header {
   min-height: 40px;
@@ -41,13 +44,13 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-bottom: 16px
+  margin-bottom: 20px
 }
 .fd-section__title {
-  font-size: 1.625rem;
-  line-height: 1.23077;
-  font-family: sans-serif;
-  font-weight: 600;
+  font-size: 1.71429rem;
+  line-height: 1.33333;
+  font-weight: 400;
+  color: #515559;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -65,7 +68,7 @@
   justify-content: center
 }
 .fd-container {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   max-width: 1290px
 }
 .fd-container::after {
@@ -99,136 +102,136 @@
 @media (min-width:800px) {
   .fd-col--1 {
     float: left;
-    margin-right: 32px;
-    width: calc((((100% - 352px)/ 12) * 1) + 0px)
+    margin-right: 24px;
+    width: calc((((100% - 264px)/ 12) * 1) + 0px)
   }
   .fd-col--1:last-child {
     margin-right: 0
   }
   .fd-col--2 {
     float: left;
-    margin-right: 32px;
-    width: calc((((100% - 352px)/ 12) * 2) + 32px)
+    margin-right: 24px;
+    width: calc((((100% - 264px)/ 12) * 2) + 24px)
   }
   .fd-col--2:last-child {
     margin-right: 0
   }
   .fd-col--3 {
     float: left;
-    margin-right: 32px;
-    width: calc((((100% - 352px)/ 12) * 3) + 64px)
+    margin-right: 24px;
+    width: calc((((100% - 264px)/ 12) * 3) + 48px)
   }
   .fd-col--3:last-child {
     margin-right: 0
   }
   .fd-col--4 {
     float: left;
-    margin-right: 32px;
-    width: calc((((100% - 352px)/ 12) * 4) + 96px)
+    margin-right: 24px;
+    width: calc((((100% - 264px)/ 12) * 4) + 72px)
   }
   .fd-col--4:last-child {
     margin-right: 0
   }
   .fd-col--5 {
     float: left;
-    margin-right: 32px;
-    width: calc((((100% - 352px)/ 12) * 5) + 128px)
+    margin-right: 24px;
+    width: calc((((100% - 264px)/ 12) * 5) + 96px)
   }
   .fd-col--5:last-child {
     margin-right: 0
   }
   .fd-col--6 {
     float: left;
-    margin-right: 32px;
-    width: calc((((100% - 352px)/ 12) * 6) + 160px)
+    margin-right: 24px;
+    width: calc((((100% - 264px)/ 12) * 6) + 120px)
   }
   .fd-col--6:last-child {
     margin-right: 0
   }
   .fd-col--7 {
     float: left;
-    margin-right: 32px;
-    width: calc((((100% - 352px)/ 12) * 7) + 192px)
+    margin-right: 24px;
+    width: calc((((100% - 264px)/ 12) * 7) + 144px)
   }
   .fd-col--7:last-child {
     margin-right: 0
   }
   .fd-col--8 {
     float: left;
-    margin-right: 32px;
-    width: calc((((100% - 352px)/ 12) * 8) + 224px)
+    margin-right: 24px;
+    width: calc((((100% - 264px)/ 12) * 8) + 168px)
   }
   .fd-col--8:last-child {
     margin-right: 0
   }
   .fd-col--9 {
     float: left;
-    margin-right: 32px;
-    width: calc((((100% - 352px)/ 12) * 9) + 256px)
+    margin-right: 24px;
+    width: calc((((100% - 264px)/ 12) * 9) + 192px)
   }
   .fd-col--9:last-child {
     margin-right: 0
   }
   .fd-col--10 {
     float: left;
-    margin-right: 32px;
-    width: calc((((100% - 352px)/ 12) * 10) + 288px)
+    margin-right: 24px;
+    width: calc((((100% - 264px)/ 12) * 10) + 216px)
   }
   .fd-col--10:last-child {
     margin-right: 0
   }
   .fd-col--11 {
     float: left;
-    margin-right: 32px;
-    width: calc((((100% - 352px)/ 12) * 11) + 320px)
+    margin-right: 24px;
+    width: calc((((100% - 264px)/ 12) * 11) + 240px)
   }
   .fd-col--11:last-child {
     margin-right: 0
   }
   .fd-col--12 {
     float: left;
-    margin-right: 32px;
-    width: calc((((100% - 352px)/ 12) * 12) + 352px)
+    margin-right: 24px;
+    width: calc((((100% - 264px)/ 12) * 12) + 264px)
   }
   .fd-col--12:last-child {
     margin-right: 0
   }
   .fd-col--shift-1 {
-    margin-left: calc((((100% - 352px)/ 12) * 1) + 32px)
+    margin-left: calc((((100% - 264px)/ 12) * 1) + 24px)
   }
   .fd-col--shift-2 {
-    margin-left: calc((((100% - 352px)/ 12) * 2) + 64px)
+    margin-left: calc((((100% - 264px)/ 12) * 2) + 48px)
   }
   .fd-col--shift-3 {
-    margin-left: calc((((100% - 352px)/ 12) * 3) + 96px)
+    margin-left: calc((((100% - 264px)/ 12) * 3) + 72px)
   }
   .fd-col--shift-4 {
-    margin-left: calc((((100% - 352px)/ 12) * 4) + 128px)
+    margin-left: calc((((100% - 264px)/ 12) * 4) + 96px)
   }
   .fd-col--shift-5 {
-    margin-left: calc((((100% - 352px)/ 12) * 5) + 160px)
+    margin-left: calc((((100% - 264px)/ 12) * 5) + 120px)
   }
   .fd-col--shift-6 {
-    margin-left: calc((((100% - 352px)/ 12) * 6) + 192px)
+    margin-left: calc((((100% - 264px)/ 12) * 6) + 144px)
   }
   .fd-col--shift-7 {
-    margin-left: calc((((100% - 352px)/ 12) * 7) + 224px)
+    margin-left: calc((((100% - 264px)/ 12) * 7) + 168px)
   }
   .fd-col--shift-8 {
-    margin-left: calc((((100% - 352px)/ 12) * 8) + 256px)
+    margin-left: calc((((100% - 264px)/ 12) * 8) + 192px)
   }
   .fd-col--shift-9 {
-    margin-left: calc((((100% - 352px)/ 12) * 9) + 288px)
+    margin-left: calc((((100% - 264px)/ 12) * 9) + 216px)
   }
   .fd-col--shift-10 {
-    margin-left: calc((((100% - 352px)/ 12) * 10) + 320px)
+    margin-left: calc((((100% - 264px)/ 12) * 10) + 240px)
   }
   .fd-col--shift-11 {
-    margin-left: calc((((100% - 352px)/ 12) * 11) + 352px)
+    margin-left: calc((((100% - 264px)/ 12) * 11) + 264px)
   }
 }
 [class^=fd-col] {
-  margin-bottom: 20px
+  margin-bottom: 12px
 }
 [class^=fd-col]:last-child {
   margin-bottom: 0
@@ -249,7 +252,10 @@
   position: absolute;
   min-height: 100vh;
   width: 100vw;
-  max-width: 100vw
+  max-width: 100vw;
+  background: 0 0;
+  background-size: cover;
+  background-attachment: fixed
 }
 .fd-ui--fixed {
   display: -webkit-box;
@@ -284,19 +290,21 @@
 .fd-ui__header {
   position: absolute;
   z-index: 1;
-  background: #006fbb;
+  background: #fff;
   width: 100%;
   min-height: 50px;
-  height: 50px
+  height: 50px;
+  border-bottom: solid 1px #dededf
 }
 .fd-ui__header--fixed {
   position: fixed
 }
 .fd-ui__footer {
-  background: #27394f;
+  background: #fff;
   width: 100%;
   min-height: 40px;
-  height: 40px
+  height: 40px;
+  border-top: solid 1px #dededf
 }
 .fd-ui__footer--fixed {
   position: fixed;
@@ -320,7 +328,8 @@
     .fd-app__main
 */
 .fd-app {
-  width: 100%
+  width: 100%;
+  min-height: 100vh
 }
 @media (min-width:800px) {
   .fd-app {
@@ -330,24 +339,16 @@
   }
 }
 .fd-app__sidebar {
-  background-color: #27394f;
+  background-color: #fff;
   width: 100vw;
   max-height: 40px;
+  border-right: solid 1px #dededf;
   overflow: scroll
-}
-.fd-app__sidebar:hover {
-  position: absolute;
-  min-height: 100%
 }
 @media (min-width:800px) {
   .fd-app__sidebar {
-    width: 80px;
-    max-height: 100%
-  }
-  .fd-app__sidebar:hover {
     width: 250px;
-    position: relative;
-    margin-right: -200px
+    max-height: 100%
   }
 }
 @media (min-width:1440px) {
@@ -374,27 +375,31 @@
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100%;
-  width: 100%
+  width: 100%;
+  background-color: #f3f4f5
 }
 .fd-page__header {
-  border-bottom: solid 1px #ccdaeb;
-  background-color: #f0f5ff;
-  height: 76px
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: #dededf;
+  background-color: #f3f4f5;
+  height: auto
 }
 .fd-page__intro {
-  font-size: .875rem;
-  line-height: 1.42858;
+  font-size: .92857rem;
+  line-height: 1.23077;
   font-weight: 400;
-  padding: 16px 20px;
-  background-color: #f0f5ff;
+  padding: 16px 40px;
+  background-color: #fff;
   text-align: center;
-  border-bottom: solid 1px #ccdaeb;
+  border-bottom: solid 1px #dededf;
   margin-bottom: -1px
 }
 .fd-page__content {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
-  flex-grow: 1
+  flex-grow: 1;
+  margin-bottom: 32px
 }
 /*!
 .fd-section+(--full-bleed, --no-border)
@@ -404,8 +409,8 @@
     .fd-section__footer
 */
 .fd-section {
-  padding: 40px 20px 20px;
-  border-bottom: solid 2px #ccdaeb
+  padding: 16px 40px 20px;
+  border-bottom: none
 }
 .fd-section::after {
   content: "";
@@ -416,14 +421,17 @@
 .fd-section:last-child {
   border-bottom: 0
 }
+.fd-section--bleed,
 .fd-section--full-bleed {
   padding-right: 0;
   padding-left: 0
 }
+.fd-section--bleed .fd-section__footer,
+.fd-section--bleed .fd-section__header,
 .fd-section--full-bleed .fd-section__footer,
 .fd-section--full-bleed .fd-section__header {
-  margin-left: 20px;
-  margin-right: 20px
+  margin-left: 40px;
+  margin-right: 40px
 }
 .fd-section__header {
   min-height: 40px;
@@ -433,13 +441,13 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-bottom: 16px
+  margin-bottom: 20px
 }
 .fd-section__title {
-  font-size: 1.625rem;
-  line-height: 1.23077;
-  font-family: sans-serif;
-  font-weight: 600;
+  font-size: 1.71429rem;
+  line-height: 1.33333;
+  font-weight: 400;
+  color: #515559;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -463,6 +471,13 @@
         .fd-panel__actions
     .fd-panel__footer
 */
+.fd-panel {
+  background-color: #fff;
+  -webkit-box-shadow: 0 5px 20px 0 rgba(50,54,58,.08);
+  box-shadow: 0 5px 20px 0 rgba(50,54,58,.08);
+  border-radius: 4px;
+  border: none
+}
 .fd-panel::after {
   content: "";
   display: table;
@@ -476,20 +491,29 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-bottom: 16px
+  border-bottom: solid 1px #eeeeef;
+  padding: 20px 20px
 }
 .fd-panel__title {
-  font-size: 1.625rem;
-  line-height: 1.23077;
-  font-family: sans-serif;
-  font-weight: 600;
+  font-size: 1.71429rem;
+  line-height: 1.33333;
+  font-weight: 400;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  margin-bottom: 0
+  margin-bottom: 0;
+  color: #32363a
 }
 .fd-panel__actions {
   margin-left: auto
+}
+.fd-panel__body {
+  padding: 20px 20px
+}
+.fd-panel__body--bleed,
+.fd-panel__body--full-bleed {
+  padding-left: 0;
+  padding-right: 0
 }
 .fd-panel__footer {
   display: -webkit-box;
@@ -497,11 +521,11 @@
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center
+  justify-content: center;
+  padding-bottom: 20px
 }
 /*!
 .fd-overlay
-
 */
 .fd-overlay {
   position: fixed;

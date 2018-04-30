@@ -1,17 +1,14 @@
-@import "../core/settings";
-@import "../core/functions";
-//set namespace using function to avoid hardcoding it
-$ns: ns();
+@import "./../settings";
 @each $type, $shades in $fd-colors {
     @each $shade, $value in $shades {
         @if $shade == 1 {
             //set default selector for convenience
-            .#{$ns}has-color-#{$type},
-            .#{$ns}has-color-#{$type}-#{$shade} {
+            .#{$fd-namespace}-has-color-#{$type},
+            .#{$fd-namespace}-has-color-#{$type}-#{$shade} {
                 color: $value !important;
             }
         } @else {
-            .#{$ns}has-color-#{$type}-#{$shade} {
+            .#{$fd-namespace}-has-color-#{$type}-#{$shade} {
                 color: $value !important;
             }
         }

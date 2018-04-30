@@ -1,15 +1,13 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
 /*!
 .fd-table
     thead
     tbody
         tr+([aria-selected])
 */
-$block: ns(table);
-
+$block: #{$fd-namespace}-table;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-table-border-color: fd-color(neutral, 3) !default;
@@ -38,8 +36,10 @@ $block: ns(table);
         }
     }
     thead {
-        @include fd-type(-1);
-        color: fd-color(text, 2);
+        @include fd-type("-2");
+        color: fd-color("text", 3);
+        background-color: fd-color("background",1);
+        text-transform: uppercase;
         tr {
             &:hover {
                 background-color: inherit;
@@ -48,6 +48,7 @@ $block: ns(table);
         td,
         th {
             border: none;
+            @include fd-weight();
         }
     }
     td,

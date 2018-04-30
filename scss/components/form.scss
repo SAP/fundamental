@@ -1,7 +1,6 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
 /*!
 .fd-form
     .fd-form__set?
@@ -12,12 +11,11 @@
                 .fd-form__control
             .fd-form__message(--help, --error, --warning)
 */
-$block: ns(form);
-
+$block: #{$fd-namespace}-form;
 .#{$block} {
     //LOCAL VARS (set all vars used in component, always include !default)
-    $fd-form-label-font-size: -1 !default;
-    $fd-form-label-font-size--check: 0 !default;
+    $fd-form-label-font-size: "-1" !default;
+    $fd-form-label-font-size--check: "0" !default;
     $fd-form-label-color: fd-color(text, 3) !default;
     $fd-form-message-font-size: -1 !default;
     $fd-form-message-color: fd-color(text, 2) !default;
@@ -52,7 +50,7 @@ $block: ns(form);
             position: relative;
             display: block;
             .#{$block}__label {
-                @include fd-type($fd-form-label-font-size--check);
+                @include fd-type(#{$fd-form-label-font-size--check});
                 margin-bottom: 0;
                 vertical-align: middle;
                 display: flex;
@@ -79,7 +77,7 @@ $block: ns(form);
     }
     &__label, &__legend {
         @include fd-reset;
-        @include fd-type($fd-form-label-font-size);
+        @include fd-type(#{$fd-form-label-font-size});
         display: block;
         margin-bottom: fd-space(2);
         border: 0;
@@ -100,7 +98,7 @@ $block: ns(form);
     &__message {
         clear: both;
         display: block;
-        @include fd-type($fd-form-message-font-size);
+        @include fd-type(#{$fd-form-message-font-size});
         color: $fd-form-message-color;
         padding: fd-space(1) 0;
         font-style: italic;

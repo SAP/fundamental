@@ -1,7 +1,7 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-@import "../components/button";
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+//@import "../components/button";
 /*!
 .fd-modal
     .fd-modal__header
@@ -11,7 +11,7 @@
       .fd-modal__button-primary
       .fd-modal__button-secondary
 */
-$block: ns(modal);
+$block: #{$fd-namespace}-modal;
   $fd-modal-border-color: fd-color(neutral, 3) !default;
   $fd-modal-inner-padding: fd-space(10) !default;
   $fd-modal-inner-content-background: fd-color(background, 1) !default;
@@ -34,7 +34,7 @@ $block: ns(modal);
     padding-right: $fd-modal-inner-padding/2;
   }
   &__title{
-      @include fd-type(4,header, med);
+      @include fd-type("4",header, med);
   }
   &__body{
     padding: $fd-modal-inner-padding;
@@ -45,12 +45,5 @@ $block: ns(modal);
     border-top: 1px solid $fd-modal-border-color;
     padding: $fd-modal-inner-padding;
     padding-top: $fd-modal-inner-padding/2;
-  }
-  &__button-primary {
-    @extend .fd-button;
-  }
-  &__button-secondary {
-    @extend .fd-button;
-    @extend .fd-button--text;
   }
 }

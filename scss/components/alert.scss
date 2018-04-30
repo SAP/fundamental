@@ -1,14 +1,12 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-@import "../components/mixins";
-
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+@import "./mixins";
 /*!
 .fd-alert+(--warning. --error)
     .fd-alert__close
 */
-$block: ns(alert);
-
+$block: #{$fd-namespace}-alert;
 .#{$block} {
     //SETTINGS
     $fd-alert-background-color: fd-color(text, 3) !default;

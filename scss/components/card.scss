@@ -1,6 +1,6 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
 /*!
     card structure
     .fd-card+(--button,--vertical)+(.is-disabled|[aria-disabled=true])
@@ -9,9 +9,7 @@
             .fd-card__header, .fd-card__description, .fd-card__status
         .fd-card__actions
 */
-
-//set component name using namespace function, then use #{$block} below
-$block: ns(card);
+$block: #{$fd-namespace}-card;
 .#{$block} {
     @include fd-reset;
 
@@ -22,7 +20,7 @@ $block: ns(card);
     $fd-card-link-color: fd-color(action, 1) !default;
     $fd-card-color-border-disabled: lighten(fd-color(neutral, 2), 5%) !default;
     $fd-card-color-disabled: fd-color(text, 3) !default;
-    $fd-card-background-color: fd-color(background) !default;
+    $fd-card-background-color: fd-color("background",2) !default;
     $fd-card-background-color-disabled: fd-color(neutral, 1) !default;
     $fd-card-background-color-hover: $fd-card-background-color !default;
     $fd-card-shadow-hover: 0 0 5px 0 rgba(138, 143, 161, 0.4) !default;
@@ -39,6 +37,9 @@ $block: ns(card);
     border-width: 1px;
     border-color: $fd-card-color-border;
     background-color: $fd-card-background-color;
+    &:last-child {
+        margin-bottom: 0;
+    }
     //MODIFICATIONS
     &--vertical {
         display: block;
@@ -127,11 +128,11 @@ $block: ns(card);
     }
     &__header {
         color: $fd-color;
-        @include fd-type(1);
-        margin-bottom: fd-space(xxs);
+        @include fd-type("1");
+        margin-bottom: fd-space(base);
     }
     &__description {
-        @include fd-type(-2);
+        @include fd-type("-2");
         margin-bottom: fd-space(s);
         //TODO: This is breaking the card group layouts, need a different approach
         //white-space: nowrap;
@@ -141,7 +142,7 @@ $block: ns(card);
         text-overflow: ellipsis;
     }
     &__status {
-        @include fd-type(-3);
+        @include fd-type("-3");
     }
     &__actions {
         padding: $fd-card-padding $fd-card-padding/2;
