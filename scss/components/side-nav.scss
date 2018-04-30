@@ -3,10 +3,17 @@
 @import "./../functions";
 
 /*!
-.fd-side-nav+(--no-border)
-    .fd-side-nav__content+()
-    .fd-side-nav__title+()
+.fd-side-nav
+    .fd-side-nav__group
+        .fd-side-nav__title
+        .fd-side-nav__list
+            .fd-side-nav__item
+                .fd-side-nav__link (.has-child, .is-active, .is-expanded)
+                .fd-side-nav__sublist
+                    .fd-side-nav__subitem
+                    .fd-side-nav__sublink (.is-active)
 */
+
 $block: #{$fd-namespace}-side-nav;
 
 .#{$block} {
@@ -53,10 +60,6 @@ $block: #{$fd-namespace}-side-nav;
         flex-direction: column;
     }
 
-    &__item{
-
-    }
-
     &__link,
     &__sublink {
         padding: $fd-side-nav-link-padding;
@@ -81,6 +84,7 @@ $block: #{$fd-namespace}-side-nav;
     &__link {
         @include fd-type("-1", "body", "bold");
 
+        //STATES *******************************************
         &.has-child{
             background-image: url(#{$fd-forms-select-background-image});
             background-repeat: no-repeat;
