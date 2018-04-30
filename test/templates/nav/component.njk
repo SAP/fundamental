@@ -32,7 +32,7 @@ nav:
     </li>
 {%- endmacro %}
 
-{%- macro navgroup(properties={ }) -%}
+{%- macro navgroup(properties={}) -%}
     <ul class="fd-nav__group{{ modifier.item | modifier('nav__group') }}">
         {%- for item in properties.items %}
             {{ navitem(item) }}
