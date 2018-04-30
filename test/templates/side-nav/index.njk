@@ -19,6 +19,33 @@
     <!-- output the component example and the code snippet -->
     {% set example %}
 
+        {{ side_nav(
+                properties = {
+                    "items": [
+                    { "label": "Link Item"},
+                    { "label": "Link Item" },
+                    {
+                        "label": "item link",
+                        "state": {
+                            "haschild": true,
+                            "selected": true
+                        },
+                        "items": [
+                            { "label": "Link" },
+                            { "label": "Link" },
+                            { "label": "Link" }
+                        ]
+                     },
+                    { "label": "Link Item" },
+                    { "label": "Link Item" },
+                    { "label": "Link Item" },
+                    { "label": "Link Item" }
+                    ]
+                }
+            )
+        }}
+
+
         {{ side_nav(properties=data.properties) }}
 
     {% endset %}
