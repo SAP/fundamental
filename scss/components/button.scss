@@ -2,101 +2,115 @@
 @import "./../mixins";
 @import "./../functions";
 @import "./mixins";
+@import "./../icons/mixins";
 
 /*!
 .fd-button+( (--small | --large), --icon, --text, --link, --action-bar)+( (.is-disabled | [aria-disabled=true]) | (.is-selected | [aria-selected=true] | (.is-pressed | [aria-pressed=true]))
 */
+
 $block: #{$fd-namespace}-button;
 .#{$block} {
-    //SETTINGS
-    $fd-button-color: fd-color("text-inverse", 1) !default;
-    $fd-button-color--hover: $fd-button-color !default;
-    $fd-button-color--text: $fd-color--link !default;
-    $fd-button-color--active: $fd-button-color !default;
-    $fd-button-color--disabled: fd-color(text, 2) !default;
-    $fd-button-background-color: fd-color(action) !default;
-    $fd-button-background-color--hover: darken($fd-button-background-color, 5) !default;
-    $fd-button-background-color--active: darken($fd-button-background-color,10) !default;
-    $fd-button-background-color--disabled: fd-color("neutral") !default;
-    $fd-button-shadow--focus: 0 0 4px 1px rgba(fd-color("neutral", 3), 1) !default;
+  //SETTINGS
+  //SIZES — size: height "text size" "icon size"
+  $fd-button-sizes: (
+      "default": $fd-forms-height "0" "l", //36px
+      "compact": fd-space(8) "0" "m", //32px
+      "xs": fd-space(6) "-2" "s", //24px
+      "s": fd-space(7) "0" "m", //28px
+      "l": fd-space(10) "0" "l", //40px
+  ) !default;
 
-    //sizes
-    $fd-button-height: $fd-forms-height--input-text !default; //13
-    $fd-button-height--x-small: $fd-forms-height--input-text - $fd-spacing--base*2 !default; //10
-    $fd-button-height--small: $fd-forms-height--input-text - $fd-spacing--base !default; //10
-    $fd-button-height--large: $fd-forms-height--input-text + $fd-spacing--base !default; //19
-    $fd-button-height--x-large: $fd-forms-height--input-text + $fd-spacing--base*2 !default; //19
+  //default
+  $fd-button-color: fd-color("action", 1) !default;
+  $fd-button-background-color: transparent !default;
+  $fd-button-border-color: fd-color("action", 1) !default;
 
-    $fd-button-height--link: fd-space("reg") !default; //7
-    $fd-button-height--link-small: fd-space("reg") - $fd-spacing--base !default;
-    $fd-button-icon-height: 26px !default;
-    //$fd-button-icon-height--x-small: 16px !default;
-    $fd-button-icon-height--small: 18px !default;
-    $fd-button-icon-height--large: 32px !default;
-    //$fd-button-icon-height--x-large: 32px !default;
-    //anim
-    $fd-button-transition-params: $fd-animation--speed ease-in !default;
-    $fd-button-text-transform: uppercase !default;
+  //main
+  $fd-button-color--main: fd-color("text-inverse", 1) !default;
+  $fd-button-background-color--main: fd-color("action", 1) !default;
+  $fd-button-border-color--main: fd-color("action", 1) !default;
 
-    //BASE
-    //set all reset and baseline block styles
-    @include fd-button-reset;
-    @include fd-type("0");
-    display: inline-block;
-    background-color: $fd-button-background-color;
-    transition: background-color $fd-button-transition-params;
-    color: $fd-button-color;
-    max-height: $fd-button-height;
-    height: $fd-button-height;
-    line-height: $fd-button-height;
-    padding-left: fd-space(5);
-    padding-right: fd-space(5);
-    text-align: center;
-    text-transform: $fd-button-text-transform;
-    border-radius: $fd-border-radius;
-    //MODIFIERS
-    &--x-small {
-        @include fd-type("-1");
-        max-height: $fd-button-height--x-small;
-        height: $fd-button-height--x-small;
-        line-height: $fd-button-height--x-small;
-        padding-left: fd-space(4);
-        padding-right: fd-space(4);
-    }
-    &--small {
-        max-height: $fd-button-height--small;
-        height: $fd-button-height--small;
-        line-height: $fd-button-height--small;
-        padding-left: fd-space(4);
-        padding-right: fd-space(4);
-    }
-    &--large {
-        max-height: $fd-button-height--large;
-        height: $fd-button-height--large;
-        line-height: $fd-button-height--large;
-        padding-left: fd-space(7);
-        padding-right: fd-space(7);
-        &.#{$block}--icon {
-            //padding-left: fd-space(5);
-            //padding-right: fd-space(5);
+  //secondary
+  $fd-button-color--secondary: fd-color("action", 1) !default;
+  $fd-button-background-color--secondary: transparent !default;
+  $fd-button-border-color--secondary: transparent !default;
+
+  //toolbar
+  $fd-button-color--toolbar: fd-color("text", 2) !default;
+  $fd-button-background-color--toolbar: fd-color("neutral", 1) !default;
+  $fd-button-border-color--toolbar: lighten(fd-color("text", 2),30) !default;
+  $fd-button-shadow--toolbar: 0 1px 0 0 rgba(lighten(fd-color("text", 2),50), 1) !default;
+
+  //anim
+  $fd-button-transition-params: $fd-animation--speed ease-in !default;
+
+  //spacing
+  $fd-button-padding-x: fd-space(3)/1.2 !default;
+
+
+  //BASE
+  //set all reset and baseline block styles
+  $defaults: map-get($fd-button-sizes, "default");
+  @at-root {
+    [class*="#{$block}"] {
+      @include fd-button-reset;
+      background-color: $fd-button-background-color;
+      color: $fd-button-color;
+      border: solid 1px $fd-button-border-color;
+      padding-left: $fd-button-padding-x;
+      padding-right: $fd-button-padding-x;
+      @include fd-type(nth($defaults, 2));
+      height: nth($defaults, 1);
+      max-height: nth($defaults, 1);
+      line-height: nth($defaults, 1);
+      @include fd-icon-size(nth($defaults, 3));
+      transition: all $fd-button-transition-params;
+      &::before {
+        margin-right: fd-space(2);
+        //line-height: inherit !important;
+        vertical-align: middle;
+      }
+      &[aria-disabled="true"],
+      &.is-disabled,
+      &:disabled {
+        opacity: 0.4;
+      }
+      &:empty {
+        &::before {
+          margin-right: 0;
         }
+      }
     }
-    &--x-large {
-        max-height: $fd-button-height--x-large;
-        height: $fd-button-height--x-large;
-        line-height: $fd-button-height--x-large;
-        padding-left: fd-space(7);
-        padding-right: fd-space(7);
-    }
+  }
+
+  //DEFAULT
+  &:hover {
+    background-color: darken($fd-button-background-color, 7);
+    border-color: darken($fd-button-border-color, 7);
+  }
+  &:active,
+  &.is-active,
+  &[aria-selected="true"],
+  &.is-selected,
+  &[aria-pressed="true"],
+  &.is-pressed {
+    border-color: darken($fd-button-border-color, 10);
+    background-color: fd-color("action",1);
+    color: fd-color("text-inverse",1);
+  }
+  &[aria-disabled="true"],
+  &.is-disabled,
+  &:disabled {
+    background-color: $fd-button-background-color;
+    color: $fd-button-color;
+  }
+
+  //TYPES
+  &--positive {
+    color: $fd-color--success;
+    border-color: $fd-color--success;
     &:hover {
-        background-color: $fd-button-background-color--hover;
-        color: $fd-button-color--hover;
-        text-decoration: none;
-    }
-    &:focus {
-        color: $fd-button-color--hover;
-        box-shadow: $fd-button-shadow--focus;
-        outline: solid 2px lighten($fd-button-background-color, 15);
+      border-color: $fd-color--success;
     }
     &:active,
     &.is-active,
@@ -104,137 +118,155 @@ $block: #{$fd-namespace}-button;
     &.is-selected,
     &[aria-pressed="true"],
     &.is-pressed {
-        background-color: $fd-button-background-color--active;
-        color: $fd-button-color--active;
+      color: $fd-color--success;
+      border-color: $fd-color--success;
+      background-color: $fd-button-background-color;
+    }
+  }
+  &--negative {
+    color: $fd-color--error;
+    border-color: $fd-color--error;
+    &:hover {
+      border-color: $fd-color--error;
+    }
+    &:active,
+    &.is-active,
+    &[aria-selected="true"],
+    &.is-selected,
+    &[aria-pressed="true"],
+    &.is-pressed {
+      color: $fd-color--error;
+      border-color: $fd-color--error;
+      background-color: $fd-button-background-color;
+    }
+  }
+
+  &--main {
+    color: $fd-button-color--main;
+    background-color: $fd-button-background-color--main;
+    border: solid 1px $fd-button-border-color--main;
+    &:hover {
+      background-color: darken($fd-button-background-color--main, 7);
+      border-color: darken($fd-button-border-color--main, 7);
+    }
+    &:active,
+    &.is-active,
+    &[aria-selected="true"],
+    &.is-selected,
+    &[aria-pressed="true"],
+    &.is-pressed {
+      background-color: darken($fd-button-background-color--main, 10);
     }
     &[aria-disabled="true"],
     &.is-disabled,
     &:disabled {
-        outline: solid 1px fd-color("neutral", 2);
-        color: $fd-button-color--disabled;
-        background-color: $fd-button-background-color--disabled;
-        cursor: not-allowed;
+      background-color: $fd-button-background-color--main;
+      color: $fd-button-color--main;
+      opacity: 0.4;
     }
-    &--secondary,
-    &--text,
-    &--link {
-        color: $fd-button-color--text;
-        background-color: transparent;
-        &:hover,
-        &:focus {
-            background-color: transparent;
-            color: darken($fd-button-color--text, 5);
-        }
-        &:active,
-        &[aria-selected="true"],
-        &.is-selected,
-        &[aria-pressed="true"],
-        &.is-pressed,
-        &[aria-disabled="true"],
-        &.is-disabled,
-        &:disabled {
-            background-color: transparent;
-            outline: none;
-            box-shadow: none;
-        }
-        &:active,
-        &[aria-selected="true"],
-        &.is-selected,
-        &[aria-pressed="true"],
-        &.is-pressed {
-            color: darken($fd-button-color--text, 10);
-        }
-        &[aria-disabled="true"],
-        &.is-disabled,
-        &:disabled {
-            color: $fd-button-color--disabled;
-        }
+    &.#{$block}--positive {
+      background-color: $fd-color--success;
+      border-color: $fd-color--success;
+      &:active,
+      &.is-active,
+      &[aria-selected="true"],
+      &.is-selected,
+      &[aria-pressed="true"],
+      &.is-pressed {
+        color: $fd-button-color--main;
+      }
     }
-    &--secondary {
-      background-color: fd-color("background",1);
-      color: fd-color("text");
-      border: solid 1px fd-color("neutral",3)
+    &.#{$block}--negative {
+      background-color: $fd-color--error;
+      border-color: $fd-color--error;
+      &:active,
+      &.is-active,
+      &[aria-selected="true"],
+      &.is-selected,
+      &[aria-pressed="true"],
+      &.is-pressed {
+        color: $fd-button-color--main;
+      }
     }
-    &--link {
-        height: $fd-button-height--link;
-        line-height: $fd-button-height--link;
-        padding-left: fd-space(4);
-        padding-right: fd-space(4);
-        position: relative;
-        //adjustment for small button
-        &.#{$block}--small {
-            height: $fd-button-height--link-small;
-            line-height: $fd-button-height--link-small;
-        }
-        &::after {
-            content: "";
-            border-bottom: solid 2px transparent;
-            width: calc(100% - #{fd-space(4)}*2);
-            height: 2px;
-            position: absolute;
-            bottom: 1px;
-            left: 0;
-            margin-left: fd-space(4);
-            transition: border-bottom-color $fd-button-transition-params;
-        }
-        &:focus {
-            outline: none;
-            box-shadow: none;
-        }
-        &:hover,
-        &:focus,
-        &:active,
-        &[aria-selected="true"],
-        &.is-selected,
-        &[aria-pressed="true"],
-        &.is-pressed {
-            &::after {
-                border-bottom-color: $fd-button-color--text;
-            }
-        }
-        &[aria-disabled="true"],
-        &.is-disabled,
-        &:disabled {
-            &::after {
-                display: none;
-            }
-        }
+  }
+
+  &--secondary {
+    color: $fd-button-color--secondary;
+    background-color: $fd-button-background-color--secondary;
+    border: solid 1px $fd-button-border-color--secondary;
+    &:hover {
+      background-color: fd-color("neutral",1);
+      border-color: darken($fd-button-border-color--secondary, 7);
     }
-    //ELEMENTS
-    & > * {
-        display: inline-block;
-        vertical-align: top;
-        margin-right: fd-space(3);
-        @at-root {
-            .#{$block}--icon > * {
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-        margin-top: $fd-button-height / 2 - $fd-button-icon-height / 2;
-        @at-root {
-            .#{$block}--small > * {
-                margin-top: $fd-button-height--small / 2 - $fd-button-icon-height--small / 2;
-            }
-        }
-        @at-root {
-            .#{$block}--large > * {
-                margin-top: $fd-button-height--large / 2 - $fd-button-icon-height--large / 2;
-            }
-        }
+    &:active,
+    &.is-active,
+    &[aria-selected="true"],
+    &.is-selected,
+    &[aria-pressed="true"],
+    &.is-pressed {
+      color: $fd-button-color--secondary;
+      background-color: fd-color("neutral",2);
+      border-color: transparent;
     }
-    //special flavor
-    &--action-bar {
-        @extend .#{$block}--large;
-        @include fd-type("-3");
-        min-width: 135px;
-        line-height: $fd-button-height--large - $fd-button-icon-height--large - fd-space(3);
-        vertical-align: middle;
-        & > * {
-            display: block !important;
-            margin-top: fd-space(3);
-            margin-left: auto;
-            margin-right: auto;
-        }
+    &[aria-disabled="true"],
+    &.is-disabled,
+    &:disabled {
+      background-color: $fd-button-background-color--secondary;
     }
+  }
+  &--toolbar {
+    color: $fd-button-color--toolbar;
+    background-color: $fd-button-background-color--toolbar;
+    border: solid 1px $fd-button-border-color--toolbar;
+    box-shadow: $fd-button-shadow--toolbar;
+    &:hover {
+      background-color: darken($fd-button-background-color--toolbar, 7);
+      border-color: darken($fd-button-border-color--toolbar, 7);
+    }
+    &:active,
+    &.is-active,
+    &[aria-selected="true"],
+    &.is-selected,
+    &[aria-pressed="true"],
+    &.is-pressed {
+      //color: $fd-button-color--toolbar;
+      background-color: darken($fd-button-background-color--toolbar, 10);
+      border-color: transparent;
+    }
+    &[aria-disabled="true"],
+    &.is-disabled,
+    &:disabled {
+      background-color: $fd-button-background-color--secondary;
+    }
+  }
+
+  //SIZES
+  @each $key, $list in $fd-button-sizes {
+    @if $key != "default" {
+      &--#{$key} {
+        @include fd-type(nth($list, 2));
+        height: nth($list,1);
+        max-height: nth($list, 1);
+        line-height: nth($list, 1);
+        @include fd-icon-size(nth($list, 3));
+        @if $key == "xs" {
+          padding-left: $fd-button-padding-x / 1.25;
+          padding-right: $fd-button-padding-x / 1.25;
+          &::before {
+            vertical-align: baseline;
+          }
+        }
+        @if $key == "l" {
+          padding-left: $fd-button-padding-x * 1.2;
+          padding-right: $fd-button-padding-x * 1.2;
+        }
+        @if $key == "xs" or $key == "s" or $key == "compact"  {
+          &::before {
+            margin-right: fd-space(2) / 1.333;
+          }
+        }
+      }
+    }
+  }
+
 }
