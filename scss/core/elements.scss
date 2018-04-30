@@ -77,29 +77,30 @@ img {
 }
 
 a {
-    color: $fd-link-color;
     text-decoration: none;
     display: inline-block;
-    border-bottom: $fd-link-border;
     transition: all $fd-animation--speed ease-in;
-    &:hover {
-        color: $fd-link-color--hover;
-        border-bottom-color: $fd-link-color--hover;
-    }
-    &:active,
-    &:focus {
-        color: $fd-link-color--active;
-        border-bottom-color: $fd-link-color--active;
-        outline: none;
+    &:link {
+      color: $fd-link-color;
     }
     &:visited {
-        color: $fd-link-color--visited;
-        border-bottom-color: $fd-link-color--visited;
+      color: $fd-link-color--visited;
+    }
+    &:hover {
+      color: $fd-link-color--hover;
+    }
+    &:active,
+    &[aria-selected="true"],
+    &.is-selected,
+    &[aria-pressed="true"],
+    &.is-pressed,
+    &:focus {
+        color: $fd-link-color--active;
+        outline: none;
     }
     &[aria-disabled="true"],
     &.is-disabled {
         color: $fd-link-color--disabled;
-        border-bottom-color: $fd-link-color--disabled;
         cursor: not-allowed;
     }
 }
