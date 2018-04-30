@@ -45,6 +45,125 @@
             )
         }}
 
+        {{ side_nav(
+            properties = {
+              "title": "Group Title",
+              "navgroups": [
+                {
+                  "title": "Group Name",
+                  "items": [
+                    { "label": "item link" },
+                    {
+                        "label": "item link",
+                        "state":{ "haschild": true }
+                     },
+                    { "label": "item link" },
+                    { "label": "item link" },
+                    { "label": "item link" }
+                  ]
+                },
+                {
+                    "title": "Group Name",
+                    "items": [
+                      { "label": "item link" },
+                      {
+                          "label": "item link",
+                          "state": { "haschild": true }
+                       },
+                      { "label": "item link" },
+                      { "label": "item link" },
+                      { "label": "item link" }
+                  ]
+                }
+              ]
+            }
+        )}}
+
+        {{ side_nav(
+            properties = {
+              "title": "Group Title",
+              "navgroups": [
+                {
+                  "title": "Group Name",
+                  "items": [
+                    { "label": "item link" },
+                    {
+                        "label": "item link",
+                        "state":{
+                            "haschild": true,
+                            "isexpanded": true
+                        },
+                        "items": [
+                            { "label": "Link" },
+                            { "label": "Link" },
+                            { "label": "Link" }
+                        ]
+                     },
+                    { "label": "item link" },
+                    { "label": "item link" },
+                    { "label": "item link" }
+                  ]
+                },
+                {
+                    "title": "Group Name",
+                    "items": [
+                      { "label": "item link" },
+                      {
+                          "label": "item link",
+                          "state": { "haschild": true }
+                       },
+                      { "label": "item link" },
+                      { "label": "item link" },
+                      { "label": "item link" }
+                  ]
+                }
+              ]
+            }
+        )}}
+
+        {{ side_nav(
+            properties = {
+              "title": "Group Title",
+              "navgroups": [
+                {
+                  "title": "Group Name",
+                  "items": [
+                    { "label": "item link" },
+                    {
+                        "label": "item link",
+                        "state":{
+                            "haschild": true,
+                            "isactive": true,
+                            "isexpanded": true
+                        },
+                        "items": [
+                            { "label": "Link" },
+                            { "label": "Link" },
+                            { "label": "Link" }
+                        ]
+                     },
+                    { "label": "item link" },
+                    { "label": "item link" },
+                    { "label": "item link" }
+                  ]
+                },
+                {
+                    "title": "Group Name",
+                    "items": [
+                      { "label": "item link" },
+                      {
+                          "label": "item link",
+                          "state": { "haschild": true }
+                       },
+                      { "label": "item link" },
+                      { "label": "item link" },
+                      { "label": "item link" }
+                  ]
+                }
+              ]
+            }
+        )}}
+
 
         {{ side_nav(properties=data.properties) }}
 

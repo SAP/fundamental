@@ -36,7 +36,13 @@ nav.fd-side-nav
                         {%- set haschild = "" %}
                     {%- endif -%}
 
-                    <a class="fd-side-nav__link {{ selected }} {{ haschild }}"{{ aria | aria }} href="{{ item.href or '#' }}">
+                    {%- if item.state.isexpanded -%}
+                        {%- set isexpanded = "is-expanded" %}
+                    {%- else -%}
+                        {%- set isexpanded = "" %}
+                    {%- endif -%}
+
+                    <a class="fd-side-nav__link {{ selected }} {{ haschild }} {{ isexpanded }}"{{ aria | aria }} href="{{ item.href or '#' }}">
                         {{ item.label }}
                     </a>
                     {%- if item.items -%}
@@ -80,7 +86,14 @@ nav.fd-side-nav
                     {%- set haschild = "" %}
                 {%- endif -%}
 
-                <a class="fd-side-nav__link {{ selected }} {{ haschild }}"{{ aria | aria }} href="{{ item.href or '#' }}">
+                {%- if item.state.isexpanded -%}
+                    {%- set isexpanded = "is-expanded" %}
+                {%- else -%}
+                    {%- set isexpanded = "" %}
+                {%- endif -%}
+
+
+                <a class="fd-side-nav__link {{ selected }} {{ haschild }} {{ isexpanded }}"{{ aria | aria }} href="{{ item.href or '#' }}">
                     {{ item.label }}
                 </a>
                 {%- if item.items -%}
