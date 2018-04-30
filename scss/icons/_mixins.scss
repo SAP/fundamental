@@ -1,0 +1,30 @@
+@import "./settings";
+
+//size mixin
+@mixin fd-icon-size($size: default) {
+  @if $size != default {
+    //explicitly
+    @if map-has-key($fd-icons-sizes, $size) {
+      font-size: map-get($fd-icons-sizes, $size);
+    } @else {
+        @warn "Unknown `#{$fd-icons-sizes}` in $fd-icons-sizes map";
+    }
+    line-height: 1;
+  } @else {
+    //implicity
+    font-size: map-get($fd-icons-sizes, default);
+    line-height: $fd-line-height;
+  }
+}
+
+//icon mixin
+@mixin fd-icon($key) {
+  @if map-has-key($fd-icons, $key) {
+    &::before {
+      content: map-get($fd-icons, $key);
+      @content;
+    }
+  } @else {
+      @warn "Unknown `#{$key}` in $fd-icons map";
+  }
+}
