@@ -34,13 +34,13 @@ $block: #{$fd-namespace}-tabs;
         display: block;
         padding: $fd-tabs-link-padding $fd-tabs-link-padding--side;
         @include fd-type("1",header,med,uppercase);
-        color: $fd-color--link;
+        color: $fd-link-color;
         border-bottom: solid $fd-tabs-link-border-width transparent;
         transition: all $fd-tabs-link-transition-params;
         cursor: pointer;
         &:hover {
             border-bottom: solid $fd-tabs-link-border-width $fd-tabs-link-border-color;
-            color: $fd-color--link-hover;
+            color: $fd-link-color--hover;
         }
         &.is-selected,
         &[aria-selected="true"] {
@@ -49,7 +49,7 @@ $block: #{$fd-namespace}-tabs;
         }
         &.is-disabled,
         &[aria-disabled="true"] {
-            color: $fd-color--link-disabled;
+            color: $fd-link-color--disabled;
             cursor: not-allowed;
             &:hover {
                 border-bottom-color: transparent;

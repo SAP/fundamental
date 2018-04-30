@@ -1,19 +1,21 @@
 @import "./settings";
 
 //size mixin
-@mixin fd-icon-size($size: default) {
-  @if $size != default {
-    //explicitly
-    @if map-has-key($fd-icons-sizes, $size) {
-      font-size: map-get($fd-icons-sizes, $size);
+@mixin fd-icon-size($size: "default") {
+  &::before {
+    @if $size != "default" {
+      //explicitly
+      @if map-has-key($fd-icons-sizes, $size) {
+        font-size: map-get($fd-icons-sizes, $size);
+      } @else {
+          @warn "Unknown `#{$fd-icons-sizes}` in $fd-icons-sizes map";
+      }
+      line-height: 1;
     } @else {
-        @warn "Unknown `#{$fd-icons-sizes}` in $fd-icons-sizes map";
+      //implicity
+      font-size: map-get($fd-icons-sizes, "default");
+      line-height: $fd-line-height;
     }
-    line-height: 1;
-  } @else {
-    //implicity
-    font-size: map-get($fd-icons-sizes, default);
-    line-height: $fd-line-height;
   }
 }
 
