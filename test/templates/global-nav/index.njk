@@ -17,7 +17,8 @@
 
     <!-- output the component example and the code snippet -->
     {% set example %}
-    {{  global_nav(
+    
+    {# {{  global_nav(
             properties={
                 "launchpad": {
                     "label": "Home",
@@ -48,6 +49,16 @@
                         ]
                     }
             },
+            modifier={
+                block: data.properties
+            },
+            state=data.state,
+            aria=data.aria
+        )
+    }} #}
+
+    {{  global_nav(
+            properties= data.properties,
             modifier={
                 block: data.properties
             },
