@@ -13,16 +13,16 @@ nav.fd-side-nav
 
 {%- macro navitem(properties={}) -%}
     <li class="fd-side-nav__item">
-        {%- set selected, haschild, isexpanded = "false" -%}
-        {%- if properties.state.selected -%}
-            {%- set selected = "true" %}
-        {%- endif -%}
-        {%- if properties.state.haschild -%}
-            {%- set haschild = "has-child" %}
-        {%- endif -%}
-        {%- if properties.state.isexpanded -%}
-            {%- set isexpanded = "is-expanded" %}
-        {%- endif -%}
+
+
+        {%- set state = { selected: properties.selected, disabled: properties.disabled } %}
+        {%- set aria = {} %}
+        {%- if properties.selected %}
+            {%- set aria = { selected: properties.selected } %}
+        {%- elif properties.disabled %}
+            {%- set aria = { disabled: properties.disabled } %}
+        {%- endif %}
+
 
         {%- if properties.items -%}
         <a class="fd-side-nav__link {{ selected }} {{ haschild }} {{ isexpanded }}" href="{{ properties.href or '#' }}" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ aria | aria }}>
@@ -32,18 +32,27 @@ nav.fd-side-nav
         <ul class="fd-side-nav__sublist" aria-hidden="true" id="{{ properties.id }}">
             {%- for subitem in properties.items %}
                 <li class="fd-side-nav__subitem">
-                    {%- set subselected = "false" %}
+                    {%- set state = { selected: properties.selected, disabled: properties.disabled } %}
+                    {%- set aria = {} %}
+
+                    {%- if properties.selected %}
+                        {%- set aria = { selected: properties.selected } %}
+                    {%- elif properties.disabled %}
+                        {%- set aria = { disabled: properties.disabled } %}
+                    {%- endif %}
+
+                    {# {%- set subselected = "false" %}
                     {%- if subitem.state.selected -%}
                         {%- set subselected = "true" %}
-                    {%- endif -%}
-                    <a class="fd-side-nav__sublink {{ subselected }}" aria-selected="{{ subselected }}" {{ aria | aria }} href="{{ item.href or '#' }}">
+                    {%- endif -%} #}
+                    <a class="fd-side-nav__sublink{{ modifier.link | modifier('nav__sublink') }}{{ state | state }} has-child"{{ aria | aria }} href="{{ item.href or '#' }}">
                         {{ subitem.label }}
                     </a>
                 </li>
             {%- endfor -%}
         </ul>
         {%- else -%}
-        <a class="fd-side-nav__link" aria-selected="{{ selected }}" href="{{ properties.href or '#' }}" {{ aria | aria }}>
+        <a class="fd-side-nav__link{{ modifier.link | modifier('nav__link') }}{{ state | state }}"{{ aria | aria }} href="{{ properties.href or '#' }}">
             {{ properties.label }}
         </a>
 

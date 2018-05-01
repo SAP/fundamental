@@ -1,0 +1,39 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+
+/*!
+.fd-link
+*/
+$block: #{$fd-namespace}-link;
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-link-border: solid 1px $fd-link-color !default;
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    &:link {
+      border-bottom: $fd-link-border;
+    }
+    &:visited {
+      border-bottom-color: $fd-link-color--visited;
+    }
+    &:hover {
+      border-bottom-color: $fd-link-color--hover;
+    }
+    &:active,
+    &[aria-selected="true"],
+    &.is-selected,
+    &[aria-pressed="true"],
+    &.is-pressed,
+    &:focus {
+        border-bottom-color: $fd-link-color--active;
+    }
+    &[aria-disabled="true"],
+    &.is-disabled {
+        border-bottom-color: $fd-link-color--disabled;
+    }
+
+
+}

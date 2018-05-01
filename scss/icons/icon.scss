@@ -16,21 +16,6 @@ $fd-scss-icons-path: "" !default;
 
 $block: sap-icon;
 
-%fd-icon-base {
-  font-family: "SAP-icons";
-  @include fd-icon-size;
-  font-style: normal;
-  font-weight: normal;
-  text-align: center;
-  display: inline-block;
-  text-decoration: inherit;
-  text-transform: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  speak: none;
-}
-
 /* data attributes for inserting icons
   <span data-sap-icon="\e001"> My Account</span>
 */
@@ -40,30 +25,30 @@ $block: sap-icon;
 // }
 
 /* class per icon */
-[class^="#{$block}-"]::before, [class*=" #{$block}-"]::before {
-  @extend %fd-icon-base;
+[class*="#{$block}"] {
+  @include fd-icon-base;
 }
 
 .#{$block} {
-  &--s::before,
-  &--small::before {
-    @include fd-icon-size(s);
+  &--s,
+  &--small {
+    @include fd-icon-size("s");
   }
-  &--m::before,
-  &--medium::before {
-    @include fd-icon-size(m);
+  &--m,
+  &--medium {
+    @include fd-icon-size("m");
   }
-  &--l::before,
-  &--large::before {
-    @include fd-icon-size(l);
+  &--l,
+  &--large {
+    @include fd-icon-size("l");
   }
-  &--xl::before,
-  &--xlarge::before {
-    @include fd-icon-size(xl);
+  &--xl,
+  &--xlarge {
+    @include fd-icon-size("xl");
   }
   @each $key, $value in $fd-icons {
       &--#{$key} {
-        @include fd-icon($key);
+        @include fd-icon-glyph($key);
       }
   }
 }

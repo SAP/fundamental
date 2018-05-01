@@ -8,21 +8,29 @@
 */
 $block: #{$fd-namespace}-nav;
 .#{$block} {
+  $fd-nav-link-padding-x: fd-space("s") !default;
+  $fd-nav-link-padding-y: fd-space("xs") !default;
+  $fd-nav-margin-bottom: 0 !default;
+  @include fd-reset;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: $fd-nav-margin-bottom;
+  list-style: none;
+  //MODIFIERS *******************************************
+  &--vertical {
+    flex-direction: column;
+  }
+  //ELEMENTS *******************************************
+  &__item {
 
-    //LOCAL VARS
-
-
-    //BLOCK BASE *******************************************
-    @include fd-reset;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-
-    //MODIFIERS *******************************************
-    &--vertical {
-        flex-direction: column;
+  }
+  &__link {
+    display: block;
+    padding: $fd-nav-link-padding-y $fd-nav-link-padding-x;
+    &.is-selected,
+    &[aria-selected="true"] {
+      color: $fd-color;
     }
-
+  }
 }
