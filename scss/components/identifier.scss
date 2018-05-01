@@ -1,6 +1,7 @@
 @import "./../settings";
 @import "./../mixins";
 @import "./../functions";
+@import "./../icons/mixins";
 /*!
 .fd-image+((--rounded|--circle), (--xs|--s|--m|--l|--xl|--xxl), (--product|--profile))
 */
@@ -13,50 +14,60 @@ $block: #{$fd-namespace}-identifier;
         l: 48px
     ) !default;
     $fd-identifier-border-radius: $fd-border-radius !default;
-
-
-    $fd-identifier-background: fd-color(neutral, 2) !default;
-
+    $fd-identifier-background: fd-color("text", 3) !default;
     $fd-identifier-background--placeholder: fd-color("accent", 1) !default;
 
-    $fd-identifier-background-image--profile: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTIiIGhlaWdodD0iNTIiIHZpZXdCb3g9IjAgMCA1MiA1MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+dG4taW1hZ2UtYmFja2dyb3VuZC1pbWFnZS0tcHJvZmlsZTwvdGl0bGU+PHBhdGggZD0iTTI2IDM5di0xaDExYy0yLjc1NC42NjctNi40MiAxLTExIDF6bTAgMGMtMi4xNDggMC01LjgxNS0uMzMzLTExLTFoMTF2MXptMTEtMUgxNWMwLTUuNTU4IDMuNDY0LTEwLjIzNCA4LjE2NS0xMS41OThBNy4wMDIgNy4wMDIgMCAwIDEgMjYgMTNhNyA3IDAgMCAxIDIuODM1IDEzLjQwMkMzMy41MzYgMjcuNzY2IDM3IDMyLjQ0MiAzNyAzOHoiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRiIvPjwvc3ZnPg==" !default;
-    $fd-identifier-background-image--product: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTIiIGhlaWdodD0iNTIiIHZpZXdCb3g9IjAgMCA1MiA1MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+dG4taW1hZ2UtYmFja2dyb3VuZC1pbWFnZS0tcHJvZHVjdDwvdGl0bGU+PHBhdGggZD0iTTEzLjg3NiAxOC4yMjNsNS44NzQtMi41NTUgMTEgNS45MzQtNS4yOTEgMi4xNzgtMTEuNTgzLTUuNTU3ek0xMyAzMy4wNDN2LTE0LjAzbDExLjkxNyA1LjcxdjE0LjA5MWwtMTEuNTktNS4yNzVhLjU0LjU0IDAgMCAxLS4zMjctLjQ5N3ptMy4yNS05LjIwOXY1LjQxN2EuNTQuNTQgMCAwIDAgLjMxNy40OTNsNS40MTcgMi43MDhjLjM1OC4xNjMuNzY2LS4xLjc2Ni0uNDkzdi01LjQxN2EuNTQyLjU0MiAwIDAgMC0uMzE3LS40OTJsLTUuNDE3LTIuNzA5YS41NDIuNTQyIDAgMCAwLS43NjYuNDkzem05Ljc1Ljg4OWwxMy01LjcxdjE0LjAzYS41NC41NCAwIDAgMS0uMzI2LjQ5NkwyNiAzOC44MTVWMjQuNzIzem0xMi4xMjQtNi41bC02LjE0IDIuODEzLTEwLjk3LTUuOTE3IDQuNzctMi4wNzNhLjUzNi41MzYgMCAwIDEgLjQzMiAwbDExLjkwOCA1LjE3N3oiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRiIvPjwvc3ZnPg==" !default;
-
     //BLOCK BASE *******************************************
-    @include fd-reset;
-    display: inline-block;
-    vertical-align: middle;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
-
+    @at-root {
+      [class*="#{$block}"] {
+        @include fd-reset;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+        border-radius: $fd-identifier-border-radius;
+        background-color: $fd-identifier-background;
+        color: fd-color("text-inverse", 1);
+      }
+    }
     //BLOCK MODIFIERS ************
     //sizes
     @each $size, $value in $fd-identifier-sizes {
-        &--#{$size} {
-            width: $value;
-            height: $value;
+      &--#{$size} {
+        width: $value;
+        height: $value;
+        max-width: $value;
+        max-height: $value;
+        min-width: $value;
+        min-height: $value;
+        @if $size == s {
+          @include fd-type("-3");
+          @include fd-weight("bold");
+          font-stretch: condensed;
+          @include fd-icon-size("s") {
+            line-height: $value;
+          }
         }
+        @if $size == m {
+          @include fd-type("0");
+          @include fd-icon-size("l") {
+            line-height: $value;
+          }
+        }
+        @if $size == l {
+          @include fd-type("2");
+          @include fd-icon-size("xl") {
+            line-height: $value;
+          }
+        }
+        line-height: $value;
+      }
     }
     //borders
-    &--rounded {
-        border-radius: 8px;
-        &.#{$block}--xs,
-        &.#{$block}--s {
-            border-radius: 4px;
-        }
-    }
     &--circle {
-        border-radius: 50%;
+      border-radius: 50%;
     }
-    //placeholders
-    &--profile, &--product {
-        background-color: $fd-identifier-background--placeholder;
-    }
-    &--profile {
-        background-image: url($fd-identifier-background-image--profile);
-    }
-    &--product {
-        background-image: url($fd-identifier-background-image--product);
-    }
+
 }
