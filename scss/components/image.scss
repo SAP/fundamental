@@ -8,12 +8,9 @@ $block: #{$fd-namespace}-image;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-image-sizes: (
-        xs: 20px,
-        s: 36px,
-        m: 52px,
-        l: 72px,
-        xl: 92px,
-        xxl: 120px,
+      s: 24px,
+      m: 36px,
+      l: 48px
     ) !default;
     $fd-image-background: transparent !default;
     $fd-image-background--placeholder: fd-color(neutral, 2) !default;
@@ -30,6 +27,7 @@ $block: #{$fd-namespace}-image;
 
     //BLOCK MODIFIERS ************
     //sizes
+    border-radius: $fd-border-radius;
     @each $size, $value in $fd-image-sizes {
         &--#{$size} {
             width: $value;
@@ -37,13 +35,6 @@ $block: #{$fd-namespace}-image;
         }
     }
     //borders
-    &--rounded {
-        border-radius: 8px;
-        &.#{$block}--xs,
-        &.#{$block}--s {
-            border-radius: 4px;
-        }
-    }
     &--circle {
         border-radius: 50%;
     }

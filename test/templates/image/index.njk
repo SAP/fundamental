@@ -7,7 +7,7 @@
 {% set css_deps = ['fonts'] %}
 
 {% block content %}
-{% set sizes = ["xs","s","m","l","xl","xxl"] %}
+{% set sizes = ["s","m","l"] %}
     <h1>image</h1>
 
     <h2>default</h2>
@@ -26,7 +26,7 @@
     {{ format(example) }}
 <br><br>
 
-    <h2>rounded</h2>
+    {# <h2>rounded</h2>
     {%- set example %}
 {% for size in sizes %}
 {{  image(
@@ -41,7 +41,7 @@
     {%- endset %}
     {{ format(example) }}
 
-<br><br>
+<br><br> #}
     <h2>circle</h2>
     {%- set example %}
 {% for size in sizes %}
