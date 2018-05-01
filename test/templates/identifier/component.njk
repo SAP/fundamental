@@ -1,0 +1,17 @@
+<!--
+identifier:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{% macro identifier(properties={}, modifier={}, state={}, aria={}) -%}
+<div class="fd-identifier{{ modifier.block | modifier('identifier') }}{{ state | state }}"{{ aria | aria }}>
+    <div class="fd-identifier__content{{ modifier.content | modifier('identifier__content') }}">
+        <h1 class="fd-identifier__title">{{ properties.title }}</h1>
+        {%- if properties.description %}
+            {{ properties.description }}
+        {%- endif %}
+    </div>
+</div>
+{%- endmacro %}
