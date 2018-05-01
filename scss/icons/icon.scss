@@ -16,22 +16,6 @@ $fd-scss-icons-path: "" !default;
 
 $block: sap-icon;
 
-%fd-icon-base {
-  &::before {
-    font-family: "SAP-icons";
-    font-style: normal;
-    font-weight: normal;
-    text-align: center;
-    display: inline-block;
-    text-decoration: inherit;
-    text-transform: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    speak: none;
-  }
-}
-
 /* data attributes for inserting icons
   <span data-sap-icon="\e001"> My Account</span>
 */
@@ -42,7 +26,7 @@ $block: sap-icon;
 
 /* class per icon */
 [class*="#{$block}"] {
-  @extend %fd-icon-base;
+  @include fd-icon-base;
 }
 
 .#{$block} {
@@ -64,7 +48,7 @@ $block: sap-icon;
   }
   @each $key, $value in $fd-icons {
       &--#{$key} {
-        @include fd-icon($key);
+        @include fd-icon-glyph($key);
       }
   }
 }
