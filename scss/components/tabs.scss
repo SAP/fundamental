@@ -10,61 +10,70 @@
 
 $block: #{$fd-namespace}-tabs;
 .#{$block} {
-    $fd-tabs-margin-bottom: fd-space(m) !default;
-    $fd-tabs-border-width: 1px !default;
-    $fd-tabs-border-color: fd-color(neutral, 3) !default;
-    $fd-tabs-link-padding: fd-space(3) !default;
-    $fd-tabs-link-padding--side: fd-space(5) !default;
-    $fd-tabs-link-border-width: 2px !default;
-    $fd-tabs-link-border-color: fd-color(action, 1) !default;
-    $fd-tabs-link-transition-params: $fd-animation--speed ease-in !default;
+  $fd-tabs-margin-bottom: $fd-margin-bottom !default;
+  $fd-tabs-border-width: 1px !default;
+  $fd-tabs-border-color: fd-color(neutral, 3) !default;
+  $fd-tabs-link-padding-y: fd-space("s") !default;
+  $fd-tabs-link-padding-x: fd-space("s") !default;
+  $fd-tabs-link-border-width: 3px !default;
+  $fd-tabs-link-border-color: fd-color(action, 1) !default;
+  $fd-tabs-link-transition-params: $fd-animation--speed ease-in !default;
 
-    @include fd-reset;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: $fd-tabs-margin-bottom;
-    list-style: none;
-    border-bottom: solid $fd-tabs-border-width $fd-tabs-border-color;
+  @include fd-reset;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: $fd-tabs-margin-bottom;
+  list-style: none;
+  border-bottom: solid $fd-tabs-border-width $fd-tabs-border-color;
+  &__item {
 
-    &__item {
-
+  }
+  &__link {
+    display: block;
+    position: relative;
+    padding: $fd-tabs-link-padding-y $fd-tabs-link-padding-x;
+    @include fd-type("0");
+    cursor: pointer;
+    color: $fd-color;
+    &:link {
+      color: $fd-color;
     }
-    &__link {
-        display: block;
-        padding: $fd-tabs-link-padding $fd-tabs-link-padding--side;
-        @include fd-type("1",header,med,uppercase);
-        color: $fd-link-color;
-        border-bottom: solid $fd-tabs-link-border-width transparent;
-        transition: all $fd-tabs-link-transition-params;
-        cursor: pointer;
-        &:hover {
-            border-bottom: solid $fd-tabs-link-border-width $fd-tabs-link-border-color;
-            color: $fd-link-color--hover;
-        }
-        &.is-selected,
-        &[aria-selected="true"] {
-            color: $fd-color;
-            border-bottom: solid $fd-tabs-link-border-width $fd-tabs-link-border-color;
-        }
-        &.is-disabled,
-        &[aria-disabled="true"] {
-            color: $fd-link-color--disabled;
-            cursor: not-allowed;
-            &:hover {
-                border-bottom-color: transparent;
-            }
-        }
+    &::after {
+      transition: all $fd-tabs-link-transition-params;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: inline-block;
+      height: $fd-tabs-link-border-width;
+      width: 100%;
+      background-color: transparent;
+      border-radius: $fd-border-radius $fd-border-radius 0 0;
     }
-    &__panel {
-        &[aria-expanded="false"] {
-            display: none;
-        }
-        &.is-expanded,
-        &[aria-expanded="true"] {
-            display: block;
-        }
-
+    &:hover {
+      color: $fd-link-color--hover;
     }
-
+    &.is-selected,
+    &[aria-selected="true"] {
+      color: $fd-link-color;
+      &::after {
+        background-color: $fd-tabs-link-border-color;
+      }
+    }
+    &.is-disabled,
+    &[aria-disabled="true"] {
+      color: $fd-link-color--disabled;
+      cursor: not-allowed;
+    }
+  }
+  &__panel {
+    &[aria-expanded="false"] {
+      display: none;
+    }
+    &.is-expanded,
+    &[aria-expanded="true"] {
+      display: block;
+    }
+  }
 }
