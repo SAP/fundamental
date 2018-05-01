@@ -60,6 +60,12 @@ $block: #{$fd-namespace}-side-nav;
         flex-direction: column;
     }
 
+    &__sublist{
+        &[aria-hidden="true"] {
+            display: none;
+        }
+    }
+
     &__link,
     &__sublink {
         padding: $fd-side-nav-link-padding;
@@ -69,7 +75,9 @@ $block: #{$fd-namespace}-side-nav;
         //STATES *******************************************
         &:hover,
         &.is-selected,
-        &[aria-selected="true"] {
+        &.is-expanded,
+        &[aria-selected="true"],
+        &[aria-expanded="true"]{
             color: $fd-side-nav-link-color;
             background-color: $fd-side-nav-selected-background-color;
         }

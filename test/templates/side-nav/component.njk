@@ -15,37 +15,40 @@ nav.fd-side-nav
     <li class="fd-side-nav__item">
 
 
-        {%- set state = { selected: properties.selected, disabled: properties.disabled } %}
-        {%- set aria = {} %}
+        {%- set state = { selected: properties.selected, expanded: properties.expanded } %}
+        {%- set aria = { } %}
         {%- if properties.selected %}
             {%- set aria = { selected: properties.selected } %}
-        {%- elif properties.disabled %}
-            {%- set aria = { disabled: properties.disabled } %}
+        {%- elseif properties.expanded %}
+            {%- set aria = { expanded: properties.expanded } %}
         {%- endif %}
 
-
         {%- if properties.items -%}
-        <a class="fd-side-nav__link {{ selected }} {{ haschild }} {{ isexpanded }}" href="{{ properties.href or '#' }}" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ aria | aria }}>
+        <a class="fd-side-nav__link{{ modifier.link | modifier('nav__link') }}{{ state | state }} has-child"{{ aria | aria }} href="{{ properties.href or '#' }}" aria-controls="{{ _id }}">
             {{ properties.label }}
         </a>
 
-        <ul class="fd-side-nav__sublist" aria-hidden="true" id="{{ properties.id }}">
+        {%- set sublisthidden = "true" %}
+        {%- if properties.expanded %}
+            {%- set sublisthidden = "false" %}
+        {%- endif %}
+        <ul class="fd-side-nav__sublist" id="{{ properties.id }}" aria-hidden="{{ sublisthidden }}">
             {%- for subitem in properties.items %}
                 <li class="fd-side-nav__subitem">
-                    {%- set state = { selected: properties.selected, disabled: properties.disabled } %}
+                    {%- set state = { selected: subitem.selected, disabled: subitem.disabled } %}
                     {%- set aria = {} %}
 
-                    {%- if properties.selected %}
-                        {%- set aria = { selected: properties.selected } %}
-                    {%- elif properties.disabled %}
-                        {%- set aria = { disabled: properties.disabled } %}
+                    {%- if subitem.selected %}
+                        {%- set aria = { selected: subitem.selected } %}
+                    {%- elif subitem.disabled %}
+                        {%- set aria = { disabled: subitem.disabled } %}
                     {%- endif %}
 
                     {# {%- set subselected = "false" %}
                     {%- if subitem.state.selected -%}
                         {%- set subselected = "true" %}
                     {%- endif -%} #}
-                    <a class="fd-side-nav__sublink{{ modifier.link | modifier('nav__sublink') }}{{ state | state }} has-child"{{ aria | aria }} href="{{ item.href or '#' }}">
+                    <a class="fd-side-nav__sublink{{ modifier.link | modifier('nav__sublink') }}{{ state | state }}"{{ aria | aria }} href="{{ item.href or '#' }}">
                         {{ subitem.label }}
                     </a>
                 </li>

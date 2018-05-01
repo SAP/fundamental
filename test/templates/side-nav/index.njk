@@ -76,14 +76,12 @@
               "title": "Group Title",
               "navgroups": [
                 {
-                  "title": "Group test",
+                  "title": "Group Name",
                   "items": [
                     { "label": "item link" },
                     {
                         "label": "item link",
                         "haschild": true,
-                        "isexpanded": true,
-                        "selected": true,
                         "items": [
                             { "label": "Link" },
                             { "label": "Link" },
@@ -117,14 +115,13 @@
               "title": "Group Title",
               "navgroups": [
                 {
-                  "title": "Group Name",
+                  "title": "Group test",
                   "items": [
                     { "label": "item link" },
                     {
                         "label": "item link",
                         "haschild": true,
-                        "isactive": true,
-                        "isexpanded": true,
+                        "expanded": true,
                         "items": [
                             { "label": "Link" },
                             { "label": "Link" },
@@ -154,7 +151,9 @@
         )}}
 
 
-        {{ side_nav(properties=data.properties) }}
+
+
+        {# {{ side_nav(properties=data.properties) }} #}
 
     {% endset %}
     {{ format(example) }}
