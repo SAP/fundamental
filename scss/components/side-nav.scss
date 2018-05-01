@@ -91,7 +91,9 @@ $block: #{$fd-namespace}-side-nav;
             background-position: calc(100% - #{$fd-forms-select-width--background-image}) center;
         }
 
-        &.is-expanded{
+        &.is-expanded,
+        &[aria-expanded="true"]
+        {
             background-image: url(#{$fd-forms-select-background-image--expanded});
         }
     }
@@ -99,6 +101,9 @@ $block: #{$fd-namespace}-side-nav;
     &__sublink{
         font-weight: normal;
         padding-left: $fd-side-nav-link-padding * 2;
+        &[aria-hidden="true"]{
+            display: none;
+        }
     }
 
     &--vertical-icons {

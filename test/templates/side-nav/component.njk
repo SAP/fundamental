@@ -13,9 +13,9 @@ nav.fd-side-nav
 
 {%- macro navitem(properties={}) -%}
     <li class="fd-side-nav__item">
-        {%- set selected, haschild, isexpanded = "" -%}
+        {%- set selected, haschild, isexpanded = "false" -%}
         {%- if properties.state.selected -%}
-            {%- set selected = "is-selected" %}
+            {%- set selected = "true" %}
         {%- endif -%}
         {%- if properties.state.haschild -%}
             {%- set haschild = "has-child" %}
@@ -24,25 +24,31 @@ nav.fd-side-nav
             {%- set isexpanded = "is-expanded" %}
         {%- endif -%}
 
-        <a class="fd-side-nav__link {{ selected }} {{ haschild }} {{ isexpanded }}"{{ aria | aria }} href="{{ properties.href or '#' }}">
+        {%- if properties.items -%}
+        <a class="fd-side-nav__link {{ selected }} {{ haschild }} {{ isexpanded }}" href="{{ properties.href or '#' }}" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ aria | aria }}>
             {{ properties.label }}
         </a>
-        {%- if properties.items -%}
-        <ul class="fd-side-nav__sublist" aria-hidden="true">
+
+        <ul class="fd-side-nav__sublist" aria-hidden="true" id="{{ properties.id }}">
             {%- for subitem in properties.items %}
                 <li class="fd-side-nav__subitem">
+                    {%- set subselected = "false" %}
                     {%- if subitem.state.selected -%}
-                        {%- set subselected = "is-selected" %}
-                    {%- else -%}
-                        {%- set subselected = "" %}
+                        {%- set subselected = "true" %}
                     {%- endif -%}
-                    <a class="fd-side-nav__sublink {{ subselected }}"{{ aria | aria }} href="{{ item.href or '#' }}">
+                    <a class="fd-side-nav__sublink {{ subselected }}" aria-selected="{{ subselected }}" {{ aria | aria }} href="{{ item.href or '#' }}">
                         {{ subitem.label }}
                     </a>
                 </li>
             {%- endfor -%}
         </ul>
+        {%- else -%}
+        <a class="fd-side-nav__link" aria-selected="{{ selected }}" href="{{ properties.href or '#' }}" {{ aria | aria }}>
+            {{ properties.label }}
+        </a>
+
         {%- endif -%}
+
     </li>
 {%- endmacro %}
 
