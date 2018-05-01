@@ -1,58 +1,62 @@
 @import "./../settings";
 @import "./../mixins";
 @import "./../functions";
-
 /*!
-.fd-identifier+(--no-border)
-    .fd-identifier__content+()
-    .fd-identifier__title+()
+.fd-image+((--rounded|--circle), (--xs|--s|--m|--l|--xl|--xxl), (--product|--profile))
 */
 $block: #{$fd-namespace}-identifier;
-
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-identifier-border-color: fd-color(primary, 1) !default;
-    $fd-identifier-content-border-color: fd-color(neutral, 4) !default;
-    $fd-identifier-border-color--selected: fd-color(primary) !default;
+    $fd-identifier-sizes: (
+        s: 24px,
+        m: 36px,
+        l: 48px
+    ) !default;
+    $fd-identifier-border-radius: $fd-border-radius !default;
+
+
+    $fd-identifier-background: fd-color(neutral, 2) !default;
+
+    $fd-identifier-background--placeholder: fd-color("accent", 1) !default;
+
+    $fd-identifier-background-image--profile: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTIiIGhlaWdodD0iNTIiIHZpZXdCb3g9IjAgMCA1MiA1MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+dG4taW1hZ2UtYmFja2dyb3VuZC1pbWFnZS0tcHJvZmlsZTwvdGl0bGU+PHBhdGggZD0iTTI2IDM5di0xaDExYy0yLjc1NC42NjctNi40MiAxLTExIDF6bTAgMGMtMi4xNDggMC01LjgxNS0uMzMzLTExLTFoMTF2MXptMTEtMUgxNWMwLTUuNTU4IDMuNDY0LTEwLjIzNCA4LjE2NS0xMS41OThBNy4wMDIgNy4wMDIgMCAwIDEgMjYgMTNhNyA3IDAgMCAxIDIuODM1IDEzLjQwMkMzMy41MzYgMjcuNzY2IDM3IDMyLjQ0MiAzNyAzOHoiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRiIvPjwvc3ZnPg==" !default;
+    $fd-identifier-background-image--product: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTIiIGhlaWdodD0iNTIiIHZpZXdCb3g9IjAgMCA1MiA1MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+dG4taW1hZ2UtYmFja2dyb3VuZC1pbWFnZS0tcHJvZHVjdDwvdGl0bGU+PHBhdGggZD0iTTEzLjg3NiAxOC4yMjNsNS44NzQtMi41NTUgMTEgNS45MzQtNS4yOTEgMi4xNzgtMTEuNTgzLTUuNTU3ek0xMyAzMy4wNDN2LTE0LjAzbDExLjkxNyA1LjcxdjE0LjA5MWwtMTEuNTktNS4yNzVhLjU0LjU0IDAgMCAxLS4zMjctLjQ5N3ptMy4yNS05LjIwOXY1LjQxN2EuNTQuNTQgMCAwIDAgLjMxNy40OTNsNS40MTcgMi43MDhjLjM1OC4xNjMuNzY2LS4xLjc2Ni0uNDkzdi01LjQxN2EuNTQyLjU0MiAwIDAgMC0uMzE3LS40OTJsLTUuNDE3LTIuNzA5YS41NDIuNTQyIDAgMCAwLS43NjYuNDkzem05Ljc1Ljg4OWwxMy01LjcxdjE0LjAzYS41NC41NCAwIDAgMS0uMzI2LjQ5NkwyNiAzOC44MTVWMjQuNzIzem0xMi4xMjQtNi41bC02LjE0IDIuODEzLTEwLjk3LTUuOTE3IDQuNzctMi4wNzNhLjUzNi41MzYgMCAwIDEgLjQzMiAwbDExLjkwOCA1LjE3N3oiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0ZGRiIvPjwvc3ZnPg==" !default;
 
     //BLOCK BASE *******************************************
-    //set all BLOCK reset and baseline styles
     @include fd-reset;
-    border: solid 20px $fd-identifier-border-color;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
 
     //BLOCK MODIFIERS ************
-    //e.g., $fd-identifier--no-border
-    &--no-border {
-        border-color: transparent;
-    }
-
-    //ELEMENTS *******************************************
-    //set all ELEMENT baseline styles
-    //e.g., $fd-identifier__content
-    &__content {
-        border: solid 10px $fd-identifier-content-border-color;
-
-        //ELEMENT MODIFIERS ************
-        //e.g., $fd-identifier__content--no-border
-        &--no-border {
-            border-color: transparent;
+    //sizes
+    @each $size, $value in $fd-identifier-sizes {
+        &--#{$size} {
+            width: $value;
+            height: $value;
         }
     }
-    &__title {
-
-
+    //borders
+    &--rounded {
+        border-radius: 8px;
+        &.#{$block}--xs,
+        &.#{$block}--s {
+            border-radius: 4px;
+        }
     }
-
-    //STATES *******************************************
-    &.is-disabled,
-    &[disabled] {
-        opacity: 0.5;
+    &--circle {
+        border-radius: 50%;
     }
-    &[aria-selected="true"] {
-        border-color: $fd-identifier-border-color--selected;
+    //placeholders
+    &--profile, &--product {
+        background-color: $fd-identifier-background--placeholder;
     }
-
-
-
-
+    &--profile {
+        background-image: url($fd-identifier-background-image--profile);
+    }
+    &--product {
+        background-image: url($fd-identifier-background-image--product);
+    }
 }

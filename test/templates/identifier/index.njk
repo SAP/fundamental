@@ -4,37 +4,168 @@
 {% from "./component.njk" import identifier %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = [] %}
+{% set css_deps = ['fonts','icons'] %}
 
 {% block content %}
-
+{% set sizes = ["s","m","l"] %}
     <h1>identifier</h1>
 
-    <!-- output the component example and the code snippet -->
-    {% set example %}
-    {{  identifier(
-            properties={
-                title: "Sed bibendum sapien",
-                description: "Morbi sodales gravida pulvinar. Duis malesuada odio volutpat elementum vulputate massa magna scelerisque ante et accumsan."
-            },
-            modifier={
-                block: []
-            },
-            state={},
-            aria={}
-        )
-    }}
-    {{  identifier(
-            properties=data.properties,
-            modifier={
-                block: data.modifier.block
-            },
-            state=data.state,
-            aria=data.aria
-        )
-    }}
-    {% endset %}
+    <h2>default</h2>
+    {%- set example %}
+{%- for size in sizes %}
+{{  identifier(
+        properties=data.properties,
+        modifier={
+            block: size
+        },
+        aria=data.aria
+    )
+}}
+{% endfor %}
+    {%- endset %}
     {{ format(example) }}
+<br><br>
+{#
+    <h2>rounded</h2>
+    {%- set example %}
+{% for size in sizes %}
+{{  identifier(
+        properties=data.properties,
+        modifier={
+            block: [size, "rounded"]
+        },
+        aria=data.aria
+    )
+}}
+{% endfor %}
+    {%- endset %}
+    {{ format(example) }}
+
+<br><br> #}
+    <h2>circle</h2>
+    {%- set example %}
+{% for size in sizes %}
+{{  identifier(
+        properties=data.properties,
+        modifier={
+            block: [size, "circle"]
+        },
+        aria=data.aria
+    )
+}}
+{% endfor %}
+    {%- endset %}
+    {{ format(example) }}
+
+<br><br>
+<h1>placeholder images</h1>
+
+    <h2>profile</h2>
+    {%- set example %}
+{% for size in sizes %}
+{{  identifier(
+        properties={},
+        modifier={
+            block: [size, "profile"]
+        },
+        aria={
+            label: "John Smith"
+        }
+    )
+}}
+{% endfor %}
+    {%- endset %}
+    {{ format(example) }}
+
+<br>
+{%- set example %}
+{% for size in sizes %}
+{{  identifier(
+    properties={},
+    modifier={
+        block: [size, "rounded", "profile"]
+    },
+    aria={
+        label: "John Smith"
+    }
+)
+}}
+{% endfor %}
+{%- endset %}
+{{ format(example) }}
+
+<br>
+
+{%- set example %}
+{% for size in sizes %}
+{{  identifier(
+    properties={},
+    modifier={
+        block: [size, "circle", "profile"]
+    },
+    aria={
+        label: "John Smith"
+    }
+)
+}}
+{% endfor %}
+{%- endset %}
+{{ format(example) }}
+
+    <br><br>
+    <h2>product</h2>
+
+    {%- set example %}
+{% for size in sizes %}
+{{  identifier(
+        properties={},
+        modifier={
+            block: [size, "product"]
+        },
+        aria={
+            label: "Product name"
+        }
+    )
+}}
+{% endfor %}
+    {%- endset %}
+    {{ format(example) }}
+
+<br>
+{%- set example %}
+{% for size in sizes %}
+{{  identifier(
+    properties={},
+    modifier={
+        block: [size, "rounded", "product"]
+    },
+    aria={
+        label: "Product name"
+    }
+)
+}}
+{% endfor %}
+{%- endset %}
+{{ format(example) }}
+
+<br>
+
+{%- set example %}
+{% for size in sizes %}
+{{  identifier(
+    properties={},
+    modifier={
+        block: [size, "circle", "product"]
+    },
+    aria={
+        label: "Product name"
+    }
+)
+}}
+{% endfor %}
+{%- endset %}
+{{ format(example) }}
+
 
 
 {% endblock %}
