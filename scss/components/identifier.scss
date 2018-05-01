@@ -3,7 +3,7 @@
 @import "./../functions";
 @import "./../icons/mixins";
 /*!
-.fd-image+((--rounded|--circle), (--xs|--s|--m|--l|--xl|--xxl), (--product|--profile))
+.fd-image+((--circle), (--s|--m|--l))
 */
 $block: #{$fd-namespace}-identifier;
 .#{$block} {
@@ -15,7 +15,6 @@ $block: #{$fd-namespace}-identifier;
     ) !default;
     $fd-identifier-border-radius: $fd-border-radius !default;
     $fd-identifier-background: fd-color("text", 3) !default;
-    $fd-identifier-background--placeholder: fd-color("accent", 1) !default;
 
     //BLOCK BASE *******************************************
     @at-root {
