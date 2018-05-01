@@ -4,7 +4,7 @@
 {% from "./component.njk" import alert %}
 
 <!-- include add'tl css from src/styles/ -->
-{% set css_deps = ['fonts', 'icons', 'components/button'] %}
+{% set css_deps = ['fonts', 'icons', 'components/button', 'components/link'] %}
 
 
 
@@ -15,8 +15,7 @@
 {% set example %}
 {{  alert(
         properties={
-            text: "default_alert_text",
-            id: "defautl-alert"
+            text: 'Vivamus sagittis diam in vehicula lobortis sapien arcu mattis erat vel aliquet sem urna et. <a href="#" class="fd-link">Pellentesque <span class="sap-icon--arrow-right sap-icon--s"></span></a>'
         },
         modifier={
             block: []
@@ -26,9 +25,7 @@
 <br>
 {{  alert(
         properties={
-            text: "warning_alert_text",
-            id: "warning-alert"
-
+            text: 'Suspendisse potenti. Donec ante velit ornare at augue quis tristique laoreet sem.'
         },
         modifier={
             block: ["warning"]
@@ -38,8 +35,47 @@
 <br>
 {{  alert(
         properties={
-            text: "error_alert_text",
-            id: "error-alert"
+            text: 'Pellentesque metus lacus commodo eget justo ut rutrum varius nunc. Sed non rhoncus risus. <a href="#" class="fd-link">Metus <span class="sap-icon--arrow-right sap-icon--s"></span></a>'
+        },
+        modifier={
+            block: ["error"]
+        }
+    )
+}}
+{% endset %}
+{{- format(example) -}}
+
+<br><br>
+
+<h1>dismissible</h1>
+
+{% set example %}
+{{  alert(
+        properties={
+            text: 'Vivamus sagittis diam in vehicula lobortis sapien arcu mattis erat vel aliquet sem urna et mattis erat vel aliquet in sem urna et sagittis diam in vehicula.',
+            dismissible: true
+        },
+        modifier={
+            block: []
+        }
+    )
+}}
+<br>
+{{  alert(
+        properties={
+            text: 'Vivamus sagittis diam in vehicula lobortis sapien arcu mattis erat vel aliquet sem urna et. <a href="#" class="fd-link">Metus <span class="sap-icon--arrow-right sap-icon--s"></span></a>',
+            dismissible: true
+        },
+        modifier={
+            block: ["warning"]
+        }
+    )
+}}
+<br>
+{{  alert(
+        properties={
+            text: 'Vivamus sagittis diam in vehicula lobortis sapien arcu mattis erat vel aliquet sem urna et. Pellentesque metus in sem lacus commodo eget justo ut rutrum varius nunc. Sed non rhoncus risus. <a href="#" class="fd-link">Pellentesque <span class="sap-icon--arrow-right sap-icon--s"></span></a>',
+            dismissible: true
         },
         modifier={
             block: ["error"]
