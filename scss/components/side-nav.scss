@@ -19,16 +19,20 @@ $block: #{$fd-namespace}-side-nav;
 .#{$block} {
 
     //LOCAL VARS
+    $fd-side-nav-text-size: fd-type(1);
     $fd-side-nav-background-color: fd-color("background", 2);
-    $fd-side-nav-selected-background-color: lighten( fd-color("action", 1), 52%);
-    $fd-side-nav-link-color: fd-color("text", 1);
+    $fd-side-nav-selected-background-color: rgba(fd-color("action", 1), .07);
+    $fd-side-nav-hover-background-color: fd-color("neutral", 1);
+    $fd-side-nav-link-color: fd-color("text", 2);
     $fd-side-nav-max-width: 250px;
-    $fd-side-nav-link-padding: fd-space(4);
-    $fd-side-nav-link-padding: fd-space("s");
-    $fd-side-nav-link-disabled-color: fd-color("text", 2);
-    $fd-side-nav-link-padding: fd-space("s");
+    $fd-side-nav-link-padding: fd-space(3) fd-space(5);
+    $fd-side-nav-title-padding: fd-space(2) fd-space(5);
+    $fd-side-nav-link-disabled-color: fd-color("text", 3);
+    $fd-side-nav-title-background-color: fd-color("neutral", 1);
+
 
     //BLOCK BASE *******************************************
+
     background-color: $fd-side-nav-background-color;
     min-width: $fd-side-nav-max-width;
     margin: 0;
@@ -43,10 +47,11 @@ $block: #{$fd-namespace}-side-nav;
     &__title {
         display: block;
         margin-bottom: 0;
-        padding: fd-space(4);
-        padding-bottom: 0;
+        padding: $fd-side-nav-title-padding;
         @include fd-type("-3", "body", "reg", uppercase);
         color: $fd-side-nav-link-disabled-color;
+        background:$fd-side-nav-title-background-color;
+
     }
 
     &__list,
@@ -68,19 +73,25 @@ $block: #{$fd-namespace}-side-nav;
 
     &__link,
     &__sublink {
-        padding: $fd-side-nav-link-padding;
+        padding: $fd-side-nav-title-padding;
         color: $fd-side-nav-link-color;
         display: block;
+        @include fd-type("0", "body", "reg");
 
         //STATES *******************************************
-        &:hover,
+        &:hover{
+            background-color: $fd-side-nav-hover-background-color;
+        }
         &.is-selected,
         &.is-expanded,
         &[aria-selected="true"],
         &[aria-expanded="true"]{
             color: $fd-side-nav-link-color;
             background-color: $fd-side-nav-selected-background-color;
+            font-weight: bold;
         }
+
+
 
         &.is-disabled,
         &[aria-disabled="true"] {
@@ -90,7 +101,6 @@ $block: #{$fd-namespace}-side-nav;
     }
 
     &__link {
-        @include fd-type("-1", "body", "bold");
 
         //STATES *******************************************
         &.has-child{
@@ -108,7 +118,7 @@ $block: #{$fd-namespace}-side-nav;
 
     &__sublink{
         font-weight: normal;
-        padding-left: $fd-side-nav-link-padding * 2;
+        padding-left: fd-space(5) * 2;
         &[aria-hidden="true"]{
             display: none;
         }
