@@ -13,10 +13,10 @@ $block: #{$fd-namespace}-global-nav;
 .#{$block} {
 
     //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-global-nav-border-color: #d6d6d7;
-    $fd-global-nav-background-color: fd-color(background, 1) !default;
-    $fd-global-nav-height: fd-space(13);
+    $fd-global-nav-color: fd-color(text, 2);
     $fd-global-nav-background-color: fd-color(background, 2) !default;
+    $fd-global-nav-border-color: fd-color(neutral, 2);
+    $fd-global-nav-height: fd-space(13);
     $fd-global-nav-btn-color: fd-color(action, 1);
 
     //BLOCK BASE *******************************************
@@ -24,6 +24,8 @@ $block: #{$fd-namespace}-global-nav;
     border-bottom: solid 1px $fd-global-nav-border-color;
     background: $fd-global-nav-background-color;
     height: $fd-global-nav-height;
+    display: flex;
+    color: $fd-global-nav-color;
 
     //ELEMENTS *******************************************
     &__group{
@@ -31,10 +33,12 @@ $block: #{$fd-namespace}-global-nav;
 
         &--branding{
             width: auto;
-            float: left;
+            display: flex;
+            flex-direction: row;
         }
 
         &--launchpad{
+            display: flex;
             text-align: center;
             padding-top: 0;
             max-width: 400px;
@@ -42,28 +46,41 @@ $block: #{$fd-namespace}-global-nav;
         }
 
         &--actions{
-            float: right;
+            display: flex;
         }
     }
 
-    &__logo, &__app-logo, &__side-menu{
-        display: inline-block;
+    &__side-menu, &__logo, &__product-name{
+        display: flex;
+        height: $fd-global-nav-height - 2;
+        align-items: center;
+    }
+
+    &__side-menu{
+
+        button {
+            height: $fd-global-nav-height - 2;
+            min-height: $fd-global-nav-height - 2;
+            padding: 0 20px;
+        }
+
     }
 
     &__logo{
         padding-left: fd-space(4);
         font-weight: bold;
+        background-image: url(#{$fd-hybris-logo});
+        background-repeat: no-repeat;
+        background-position: left 17px;
+        width: 91px;
     }
 
-    &__app-logo{
+    &__product-name{
         padding-left: fd-space(4);
         @include fd-type("-1", "body", "semi");
     }
 
-    &__side-menu{
-        width: $fd-global-nav-height;
 
-    }
     &__actions, &__context-menu{
         float: right;
         border-left: 1px solid $fd-global-nav-border-color;
