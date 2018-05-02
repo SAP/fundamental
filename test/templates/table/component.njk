@@ -16,7 +16,7 @@ table:
     </thead>
     <tbody>
         {%- for row in properties.rows %}
-        <tr {% if properties.selectedRow === loop.index %} aria-selected="true"{% endif %}>
+        <tr{% if properties.selectedRow === loop.index %} aria-selected="true"{% endif %}>
             {%- for item in row %}
             <td>{{item}}</td>
             {%- endfor %}
