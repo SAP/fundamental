@@ -44,12 +44,12 @@
                 {
                   "title": "Group Name",
                   "items": [
-                    { "label": "item link" },
+                    { "label": "icon link"},
                     {
                         "label": "item link",
                         "haschild": true
                      },
-                    { "label": "item link" },
+                    { "label": "icon link"},
                     { "label": "item link" },
                     { "label": "item link" }
                   ]
@@ -150,7 +150,36 @@
             }
         )}}
 
+        {{ side_nav(
+                properties = {
+                    "items": [
+                    { "label": "Link icon", "icon": "home"},
+                    { "label": "Link icon", "icon": "home"},
+                    { "label": "Link icon", "icon": "home"},
+                    { "label": "Link icon", "icon": "home"},
+                    { "label": "Link icon", "icon": "home"},
+                    { "label": "Link icon", "icon": "home"}
+                    ]
+                }
+            )
+        }}
 
+        {{ side_nav(
+                properties = {
+                    "items": [
+                    { "icon": "home"},
+                    { "icon": "home"},
+                    { "icon": "home"},
+                    { "icon": "home"},
+                    { "icon": "home"},
+                    { "icon": "home"}
+                    ]
+                },
+                modifier={
+                    block: ["icons"]
+                }
+            )
+        }}
 
 
         {# {{ side_nav(properties=data.properties) }} #}
