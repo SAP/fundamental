@@ -12,35 +12,22 @@
 <style media="screen">
     .fd-action-bar {
         margin-bottom: 20px;
-        outline: solid 1px whitesmoke;
     }
 </style>
 
-    <h1>action-bar</h1>
+<h1>action-bar</h1>
 
-{%- set backbtn %}{{
-    button(
-            { icon: 'nav-back' },
-            modifier={ block: ['secondary','icon','large'] },
-            aria={ label: 'Back' }
-        )
-}}{%- endset %}
-{%- set actionbtn %}{{
-    button(
-            { label: 'Cancel' },
-            modifier={ block: ['text'] }
-        )
-}}{%- endset %}
 {%- set primarybtn %}{{
     button(
             { label: 'Save' },
-            modifier={ }
+            modifier={block: [ 'main', 'l'] }
         )
 }}{%- endset %}
+
 {%- set secbtn %}{{
   button(
           { label: 'Copy' },
-          modifier={ block: ['secondary'] }
+          modifier={ block: ['secondary', 'l'] }
       )
 }}{%- endset %}
 {%- set contextmenu %}
@@ -48,7 +35,7 @@
 <div class="fd-dropdown">
     {{  button(
         { icon: 'vertical-grip' },
-        modifier={ block: ['secondary', 'large'] },
+        modifier={ block: ['secondary', 'l'] },
         aria={ controls: _id, haspopup: true, expanded: false, label: "More" }
     ) | indent(4)
 }}
@@ -70,37 +57,13 @@
 
     <!-- output the component example and the code snippet -->
     {% set example %}
-    {{  action_bar(
-            properties={
-                title: data.properties.title
-            },
-            modifier={
-                block: []
-            },
-            state={},
-            aria={}
-        )
-    }}
-
-    {{  action_bar(
-            properties={
-                navigation: backbtn,
-                title: data.properties.title
-            },
-            modifier={
-                block: []
-            },
-            state={},
-            aria={}
-        )
-    }}
 
     {{  action_bar(
             properties={
                 title: data.properties.title,
                 actions: {
                     properties: {
-                        items: [actionbtn,secbtn,primarybtn]
+                        items: [secbtn,primarybtn]
                     }
                 }
             },
@@ -129,18 +92,6 @@
         )
     }}
 
-    {{  action_bar(
-            properties={
-                title: data.properties.title,
-                subtitle: data.properties.subtitle
-            },
-            modifier={
-                block: []
-            },
-            state={},
-            aria={}
-        )
-    }}
     {% endset %}
     {{ format(example) }}
 <br><br>
@@ -159,7 +110,7 @@
                 title: data.properties.title,
                 actions: {
                     properties: {
-                        items: [actionbtn,primarybtn]
+                        items: [secbtn,primarybtn]
                     },
                     aria: {
                         hidden: true

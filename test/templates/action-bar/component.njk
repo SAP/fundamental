@@ -7,18 +7,10 @@ action_bar:
 -->
 {%- macro action_bar(properties={}, modifier={}, state={}, aria={}) %}
 <div class="fd-action-bar{{ modifier.block | modifier('action-bar') }}">
-{%- if properties.navigation %}
-    <div class="fd-action-bar__navigation">
-        {{ properties.navigation | indent(8) }}
-    </div>
-{%- endif %}
     <div class="fd-action-bar__header">
       <h1 class="fd-action-bar__title">
           {{ properties.title }}
       </h1>
-      {%- if properties.subtitle %}
-      <p class="fd-action-bar__subtitle">Subtitle line</p>  
-      {%- endif %}
     </div>
     {%- if properties.actions %}
     {%- set actions = properties.actions %}
