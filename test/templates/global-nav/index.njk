@@ -17,8 +17,8 @@
 
     <!-- output the component example and the code snippet -->
     {% set example %}
-    
-    {# {{  global_nav(
+
+    {{  global_nav(
             properties={
                 "launchpad": {
                     "label": "Home",
@@ -29,7 +29,7 @@
                         { "label": "Option 3" }
                     ]
                 },
-                "contextMenu": {
+                {# "contextMenu": {
                     "label": "Context Name",
                     "icon": "",
                     "items": [
@@ -37,7 +37,7 @@
                         { "label": "Option 2" },
                         { "label": "Option 3" }
                     ]
-                },
+                }, #}
                 "subNav": {
                     "items": [
                             { "label": "Link text" },
@@ -55,9 +55,9 @@
             state=data.state,
             aria=data.aria
         )
-    }} #}
+    }}
 
-    {{  global_nav(
+    {# {{  global_nav(
             properties= data.properties,
             modifier={
                 block: data.properties
@@ -65,7 +65,7 @@
             state=data.state,
             aria=data.aria
         )
-    }}
+    }} #}
 
     {% endset %}
     {{ format(example) }}
