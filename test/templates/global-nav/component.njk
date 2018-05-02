@@ -17,6 +17,7 @@ global_nav:
 <nav class="fd-global-nav{{ modifier.block | modifier('global-nav') }}{{ state | state }}"{{ aria | aria }}>
 
     <div class="fd-global-nav__group fd-global-nav__group--branding">
+        {%- if properties.sidemenu -%}
         <div class="fd-global-nav__side-menu">
             {{  button(
                     { icon: 'menu2' },
@@ -26,9 +27,11 @@ global_nav:
                 )
             }}
         </div>
-        <div class="fd-global-nav__logo">
+        <div class="fd-global-nav__logo fd-has-margin-left-none"></div>
+        {%- else -%}
+        <div class="fd-global-nav__logo"></div>
+        {%- endif -%}
 
-        </div>
         <div class="fd-global-nav__product-name">
             Product Name
         </div>
