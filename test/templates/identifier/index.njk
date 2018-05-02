@@ -1,0 +1,220 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "./component.njk" import identifier %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['fonts','icons','helpers'] %}
+
+{% block content %}
+
+
+
+<h1>specs</h1>
+<p>Three sizes, default matches the base font size (14px)</p>
+<table>
+  <tr>
+    <td style="padding-right: 20px;">
+      {{  identifier(
+              properties={ icon: data.properties.icon },
+              modifier={ block: ["s"] },
+              classes="has-background-color-accent-12"
+          )
+      }}
+    </td>
+    <td>
+      <span>small (s) - 24px
+    </td>
+    <td>
+<code>.fd-identifier--s</code>
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+      {{  identifier(
+              properties={ icon: data.properties.icon },
+              modifier={ block: ["m"] },
+              classes="has-background-color-accent-12"
+          )
+      }}
+    </td>
+    <td>
+
+  medium (m) - 36px
+    </td>
+    <td>
+<code>.fd-identifier--m</code>
+
+    </td>
+
+  </tr>
+  <tr>
+    <td style="padding-right: 20px;">
+      {{  identifier(
+              properties={ icon: data.properties.icon },
+              modifier={ block: ["l"] },
+              classes="has-background-color-accent-12"
+          )
+      }}
+    </td>
+    <td>
+
+  large (l) - 48px
+    </td>
+    <td>
+<code>.fd-identifier--l</code>
+
+    </td>
+
+  </tr>
+
+</table>
+
+<br><hr><br>
+
+
+
+
+
+
+
+
+{% set sizes = ["s","m","l"] %}
+    <h1>identifier</h1>
+
+    <h2>icon</h2>
+    <p>
+Include <code>role="presentation"</code> when the identifier is only used for illustrative purposes. For example, if the icon sits right next to a label then use the role ... <br>
+< {{  identifier(
+        properties={
+          icon: "washing-machine"
+        },
+        modifier={
+            block: ["s"]
+        },
+        aria={
+          role: "presentation"
+        }
+    )
+}} Washing machine >. An icon used alone should include the <code>aria-label</code> attribute to give it meaning as in the initials examples.
+    </p>
+    {%- set example %}
+{%- for size in sizes %}
+{{  identifier(
+        properties={
+          icon: "washing-machine"
+        },
+        modifier={
+            block: size
+        },
+        aria={
+          role: "presentation"
+        }
+    )
+}}
+{%- endfor %}
+    {%- endset %}
+    {{ format(example) }}
+<br><br>
+
+<h2>initials</h2>
+<p>Include <code>aria-label</code> when there is no text equivalent of the identifier. It is not necessary if the identfier is illustrative only.</p>
+{%- set example %}
+{%- for size in sizes %}
+{{  identifier(
+    properties={
+      initials: "WW"
+    },
+    modifier={
+        block: size
+    },
+    aria=data.aria
+)
+}}
+{%- endfor %}
+{%- endset %}
+{{ format(example) }}
+<br><br>
+
+    <h2>circle</h2>
+{%- set example %}
+{% for size in sizes %}
+{{  identifier(
+        properties={
+                icon: "money-bills"
+        },
+        modifier={
+            block: [size, "circle"]
+        },
+        aria={
+          role: "presentation"
+        }
+    )
+}}
+{%- endfor %}
+<br><br>
+{% for size in sizes %}
+{{  identifier(
+        properties={
+                initials: "WW"
+        },
+        modifier={
+            block: [size, "circle"]
+        },
+        aria=data.aria
+    )
+}}
+{%- endfor %}
+
+    {%- endset %}
+    {{ format(example) }}
+
+<br><br>
+
+<h2>accent colors</h2>
+<p>Use helpers classes tp change the background colors, e.g., <code>.fd-has-background-color-accent-10</code>
+</p>
+{%- set example %}
+{% for num in [1,2,3,4,5,6,7,8,9,10,11,12] %}
+{%- set cls = "has-background-color-accent-"+num %}
+{{  identifier(
+    properties={
+            icon: "money-bills"
+    },
+    modifier={
+        block: ["m"]
+    },
+    aria={
+      role: "presentation"
+    },
+    classes=cls
+)
+}}
+{%- endfor %}
+<br><br>
+{% for num in [1,2,3,4,5,6,7,8,9,10,11,12] | reverse %}
+{%- set cls = "has-background-color-accent-"+num %}
+{{  identifier(
+    properties={
+            initials: "WW"
+    },
+    modifier={
+        block: ["m", "circle"]
+    },
+    aria=data.aria,
+    classes=cls
+)
+}}
+{%- endfor %}
+
+
+
+<br>
+
+{%- endset %}
+{{ format(example) }}
+
+
+
+{% endblock %}

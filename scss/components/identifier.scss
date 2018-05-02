@@ -1,0 +1,72 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+@import "./../icons/mixins";
+/*!
+.fd-image+((--circle), (--s|--m|--l))
+*/
+$block: #{$fd-namespace}-identifier;
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-identifier-sizes: (
+        s: 24px,
+        m: 36px,
+        l: 48px
+    ) !default;
+    $fd-identifier-border-radius: $fd-border-radius !default;
+    $fd-identifier-background: fd-color("text", 3) !default;
+
+    //BLOCK BASE *******************************************
+    @at-root {
+      [class*="#{$block}"] {
+        @include fd-reset;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+        border-radius: $fd-identifier-border-radius;
+        background-color: $fd-identifier-background;
+        color: fd-color("text-inverse", 1);
+      }
+    }
+    //BLOCK MODIFIERS ************
+    //sizes
+    @each $size, $value in $fd-identifier-sizes {
+      &--#{$size} {
+        width: $value;
+        height: $value;
+        max-width: $value;
+        max-height: $value;
+        min-width: $value;
+        min-height: $value;
+        @if $size == s {
+          @include fd-type("-3");
+          @include fd-weight("bold");
+          font-stretch: condensed;
+          @include fd-icon-size("s") {
+            line-height: $value;
+          }
+        }
+        @if $size == m {
+          @include fd-type("0");
+          @include fd-icon-size("l") {
+            line-height: $value;
+          }
+        }
+        @if $size == l {
+          @include fd-type("2");
+          @include fd-icon-size("xl") {
+            line-height: $value;
+          }
+        }
+        line-height: $value;
+      }
+    }
+    //borders
+    &--circle {
+      border-radius: 50%;
+    }
+
+}
