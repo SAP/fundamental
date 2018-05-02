@@ -10,10 +10,21 @@
 $block: #{$fd-namespace}-table;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-table-border-color: fd-color(neutral, 3) !default;
+    $fd-table-border-color: transparent !default;
+    $fd-table-border-width: 0 !default;
     $fd-table-link-color: fd-color(action, 1) !default;
     $fd-table-cell-spacing: $fd-width--gutter !default;
-    $fd-table-cell-padding: fd-space(3) !default;
+    $fd-table-cell-padding: fd-space("xs") !default;
+
+
+    $fd-table-header-background-color: fd-color("neutral", 2) !default;
+    $fd-table-row-background-color--hover: lighten($fd-table-header-background-color,4) !default;
+    $fd-table-row-background-color--selected: lighten($fd-table-link-color,50) !default;
+
+
+
+    $fd-table-cell-spacing: $fd-width--gutter !default;
+    $fd-table-cell-padding: fd-space("s") !default;
     $fd-table-transition-params: $fd-animation--speed ease-in !default;
 
     //BLOCK BASE *******************************************
@@ -24,21 +35,21 @@ $block: #{$fd-namespace}-table;
     max-width: 100%;
     border-collapse: collapse;
     margin-bottom: $fd-margin-bottom;
-    border-top: solid 1px $fd-table-border-color;
+    border-top: solid $fd-table-border-width $fd-table-border-color;
     tr {
         transition: background-color $fd-table-transition-params;
         &:hover {
-            background-color: lighten(fd-color(neutral, 3), 10);
+            background-color: $fd-table-row-background-color--hover;
         }
         &.is-selected,
         &[aria-selected="true"] {
-            background-color: lighten(fd-color(neutral, 3), 5);
+            background-color: $fd-table-row-background-color--selected;
         }
     }
     thead {
         @include fd-type("-2");
         color: fd-color("text", 3);
-        background-color: fd-color("background",1);
+        background-color: fd-color("neutral",2);
         text-transform: uppercase;
         tr {
             &:hover {
@@ -54,12 +65,15 @@ $block: #{$fd-namespace}-table;
     td,
     th {
         text-align: left;
-        padding: $fd-table-cell-padding $fd-table-cell-spacing $fd-table-cell-padding 0;
+        padding: $fd-table-cell-padding $fd-table-cell-spacing/2;
         &:first-child {
             padding-left: $fd-table-cell-spacing;
         }
+        &:last-child {
+            padding-right: $fd-table-cell-spacing;
+        }
         border-style: solid;
-        border-width: 1px 0;
+        border-width: $fd-table-border-width;
         border-color: $fd-table-border-color;
     }
     a {
