@@ -2,8 +2,8 @@
 {% from "../label/component.njk" import label %}
 {% from "../button/component.njk" import button %}
 {% set btn = button(
-        { icon: 'more' },
-        modifier={ block: ['icon','text'] },
+        { icon: 'vertical-grip' },
+        modifier={ block: ['secondary'] },
         aria={ label: 'More' }
     )
 %}
@@ -58,7 +58,7 @@ tree:
                 {%- if _is_parent %}
                 <button class="fd-tree__control" aria-label="Expand" aria-controls="{{_id}}" aria-pressed="{{item_expanded}}"></button>
                 {%- endif %}
-                <a class="fd-has-font-weight-semi">{{ item.name }}</a>
+                {{ item.name }}
             </div>
             <div class="fd-tree__col">
                 Secondary Value
