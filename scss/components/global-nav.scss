@@ -1,7 +1,6 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-@import "../components/mixins";
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
 
 
 /*!
@@ -9,8 +8,7 @@
     .fd-global-nav__content+()
     .fd-global-nav__title+()
 */
-
-$block: ns(global-nav);
+$block: #{$fd-namespace}-global-nav;
 
 .#{$block} {
 
@@ -59,7 +57,7 @@ $block: ns(global-nav);
 
     &__app-logo{
         padding-left: fd-space(4);
-        @include fd-type(-1, body, semi);
+        @include fd-type("-1", "body", "semi");
     }
 
     &__side-menu{
