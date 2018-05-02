@@ -15,3 +15,27 @@
   background-color: transparent;
   border-radius: $fd-border-radius;
 }
+
+@mixin fd-link($color: $fd-link-color) {
+  &:link {
+    border-bottom: solid 1px $fd-link-color;
+  }
+  &:visited {
+    border-bottom-color: $fd-link-color--visited;
+  }
+  &:hover {
+    border-bottom-color: $fd-link-color--hover;
+  }
+  &:active,
+  &[aria-selected="true"],
+  &.is-selected,
+  &[aria-pressed="true"],
+  &.is-pressed,
+  &:focus {
+      border-bottom-color: $fd-link-color--active;
+  }
+  &[aria-disabled="true"],
+  &.is-disabled {
+      border-bottom-color: $fd-link-color--disabled;
+  }
+}
