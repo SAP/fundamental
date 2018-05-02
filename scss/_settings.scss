@@ -28,7 +28,7 @@ $fd-spacing: map-merge((
 $fd-fonts: () !default;
 $fd-fonts: map-merge((
     "body": #{"'72'", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"},
-    "header": #{"'72Condensed'", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"},
+    "header": #{"'72'", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"},
     "code": #{monospace},
 ), $fd-fonts);
 
@@ -89,6 +89,20 @@ $fd-colors: map-merge((
     1: #359c46,
     2: #f59518,
     3: #ee0000,
+  ),
+  "accent": (
+    1: #f91f1f,
+    2: #ff6000,
+    3: #ff9600,
+    4: #acd62f,
+    5: #33cc78,
+    6: #24cacc,
+    7: #00b6ff,
+    8: #9b72ec,
+    9: #b802eb,
+    10: #ff00d0,
+    11: #ff009a,
+    12: #db0f76
   )
 ), $fd-colors);
 
@@ -129,12 +143,6 @@ $fd-background-color--footer: map-get($fd-colors-background, 2) !default;
 //positioning
 $fd-margin-bottom: map-get($fd-spacing, "xs") !default;
 
-//interactive
-$fd-color--link: map-get($fd-colors-action, 1) !default;
-$fd-color--link-hover: darken($fd-color--link, 5) !default;
-$fd-color--link-active: darken($fd-color--link, 10) !default;
-$fd-color--link-disabled: map-get($fd-colors-text, 2) !default;
-
 //states
 $fd-color--error: map-get($fd-colors-status, 3) !default;
 $fd-color--warning: map-get($fd-colors-status, 2) !default;
@@ -146,9 +154,17 @@ $fd-border-radius: 4px !default;
 //animation speed
 $fd-animation--speed: 0.125s !default;
 
+//LINKS
+$fd-link-color: map-get($fd-colors-action, 1) !default;
+$fd-link-color--hover: darken($fd-link-color, 7) !default;
+$fd-link-color--active: darken($fd-link-color, 10) !default;
+$fd-link-color--visited: adjust-hue($fd-link-color, 45deg) !default;
+$fd-link-color--disabled: rgba($fd-link-color, 0.4) !default;
+
 //FORMS
 //dimensions
-$fd-forms-height--input-text: $fd-spacing--base * 9 !default;
+$fd-forms-height: $fd-spacing--base * 9 !default;
+$fd-forms-height--input-text: $fd-forms-height !default;
 $fd-forms-height--input-check: $fd-spacing--base * 7 !default;
 $fd-forms-padding: $fd-spacing--base * 4 !default;
 //colors

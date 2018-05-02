@@ -8,29 +8,29 @@
 */
 $block: #{$fd-namespace}-nav;
 .#{$block} {
-    $fd-nav-link-padding: fd-space(2);
-    @include fd-reset;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    //MODIFIERS *******************************************
-    &--vertical {
-        flex-direction: column;
-    }
+  $fd-nav-link-padding-x: fd-space("s") !default;
+  $fd-nav-link-padding-y: fd-space("xs") !default;
+  $fd-nav-margin-bottom: 0 !default;
+  @include fd-reset;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: $fd-nav-margin-bottom;
+  list-style: none;
+  //MODIFIERS *******************************************
+  &--vertical {
+    flex-direction: column;
+  }
+  //ELEMENTS *******************************************
+  &__item {
 
-    //ELEMENTS *******************************************
-    &__item {
-
+  }
+  &__link {
+    display: block;
+    padding: $fd-nav-link-padding-y $fd-nav-link-padding-x;
+    &.is-selected,
+    &[aria-selected="true"] {
+      color: $fd-color;
     }
-    &__link {
-        display: block;
-        padding: $fd-nav-link-padding;
-        &.is-selected,
-        &[aria-selected="true"] {
-            color: $fd-color;
-        }
-    }
-
+  }
 }

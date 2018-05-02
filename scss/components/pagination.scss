@@ -2,6 +2,7 @@
 @import "./../mixins";
 @import "./../functions";
 @import "./mixins";
+@import "./../icons/mixins";
 //@import "./button";
 /*!
 .fd-pagination
@@ -9,98 +10,52 @@
 
 $block: #{$fd-namespace}-pagination;
 .#{$block} {
-  $fd-pagination-color: fd-color(text-inverse, 2) !default;
-  $fd-pagination-color--text: $fd-color--link !default;
-  $fd-pagination-color--active: $fd-pagination-color !default;
-  $fd-pagination-color--disabled: fd-color(text, 1) !default;
-  $fd-pagination-nav-color--disabled: fd-color(text, 2) !default;
+  $fd-pagination-link-color: $fd-link-color !default;
+  $fd-pagination-link-color--active: fd-color("text", 2) !default;
+  $fd-pagination-total-color: fd-color("text", 2) !default;
 
   @include fd-reset;
-  @include fd-type("-1");
-  &__list{
-      padding-left: 0;
-      margin-left: 0;
-      list-style: none;
-      margin-bottom: 0;
-      display: inline-block;
+  @include fd-type("0");
+  &__total {
+    color: $fd-pagination-total-color;
+    margin-right: fd-space("xxs");
+  }
+  &__nav {
+    display: inline-block;
+    padding-left: 0;
+    margin-left: 0;
+    list-style: none;
+    margin-bottom: 0;
   }
   &__link {
-    color: $fd-pagination-color--text;
+    color: $fd-pagination-link-color;
     background-color: transparent;
-    padding-left: fd-space(3);
-    padding-right: fd-space(3);
+    padding-left: fd-space(1);
+    padding-right: fd-space(1);
     position: relative;
-    &::after {
-        content: "";
-        border-bottom: solid 2px transparent;
-        width: calc(100% - #{fd-space(2)}*2);;
-        height: 2px;
-        position: absolute;
-        bottom: -6px;
-        left: 0;
-        margin-left: fd-space(2);
-    }
-    &:hover,
-    &:focus {
-      color: darken($fd-pagination-color--text, 5);
-      text-decoration: none;
-      &::after {
-          border-bottom-color: darken($fd-pagination-color--text, 5);
-      }
-    }
-    &:active,
-    &[aria-selected="true"],
-    &.is-selected{
-      background-color: transparent;
-      outline: none;
-      box-shadow: none;
-      &::after {
-          border-bottom-color: transparent;
-      }
-    }
-    &[aria-disabled="true"],
-    &.is-disabled {
-      color: $fd-pagination-nav-color--disabled;
-      text-decoration: none;
-      cursor: default;
-      &::after {
-          border-bottom-color: transparent;
-      }
-    }
     &:active,
     &[aria-selected="true"],
     &.is-selected {
-      color: $fd-pagination-color--disabled;
+      color: $fd-pagination-link-color--active;
       text-decoration: none;
       cursor: default;
+      @include fd-weight("bold");
     }
-    &--more{
-      @include fd-type("-3");
-      font-family: sans-serif;
-      color: $fd-pagination-color--disabled;
-      vertical-align: sub;
-      padding-left: fd-space(3);
-      padding-right: fd-space(3);
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        color: $fd-pagination-color--disabled;
-        cursor: default;
-        &:after{
-            border-bottom-color: transparent;
-        }
-      }
+    &--previous,
+    &--next {
+      @include fd-icon("nav-back","s");
+      padding-left: fd-space(2);
+      padding-right: fd-space(2);
     }
-  }
-
-  &__item{
-    display: inline-block;
-    &--previous {
+    &--next {
       transform: scaleX(-1);
     }
-  }
-
-  &__total{
-    color: $fd-pagination-nav-color--disabled;
+    &--more {
+      &::before {
+        content: "...";
+        color: fd-color("action", 1);
+        @include fd-weight("bold");
+      }
+    }
   }
 }

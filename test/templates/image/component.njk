@@ -6,5 +6,5 @@ image:
     aria={}
 -->
 {% macro image(properties={}, modifier={}, state={}, aria={}) -%}
-<span class="fd-image{{ modifier.block | modifier('image') }}{{ state | state }}"{{ aria | aria }}{{ ' style="background-image: url(\'' + properties.url + '\');"' if properties.url }}></span>
+<span class="{{ modifier.block | modifier('image') }}{{ state | state }}"{{ aria | aria }}{{ ' style="background-image: url(\'' + properties.url + '\');"' if properties.url }}></span>
 {%- endmacro %}

@@ -1,18 +1,14 @@
 {#
     see ./data.json for object structure
 #}
+{% import "./../utils.njk" as utils %}
 
-{% from "../icon/component.njk" import icon %}
 {% macro alert(properties={}, modifier={}) -%}
-<div class="fd-alert{{ modifier.block | modifier('alert') }}" role="alert" id="{{properties.id}}">
-  {%- if properties.text %}
-  <button class="fd-alert__close" aria-controls="{{properties.id}}">
-    {{ icon('close') }}
-  </button>
+{%- set _id = utils.id() %}
+<div class="fd-alert{{ modifier.block | modifier('alert') }}{{ 'dismissible' | modifier('alert') if properties.dismissible }}" role="alert"{{ ' id="'+_id+'"' if properties.dismissible }}>
+  {%- if properties.dismissible %}
+  <button class="fd-alert__close" aria-controls="{{ _id }}" aria-label="Close"></button>
   {%- endif %}
-  {%- if properties.text %}
   {{ properties.text }}
-  {%- endif %}
 </div>
-
 {%- endmacro %}
