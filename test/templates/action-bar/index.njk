@@ -20,8 +20,8 @@
 
 {%- set backbtn %}{{
     button(
-            { icon: 'backarrow' },
-            modifier={ block: ['text','icon','large'] },
+            { icon: 'nav-back' },
+            modifier={ block: ['secondary','icon','large'] },
             aria={ label: 'Back' }
         )
 }}{%- endset %}
@@ -47,8 +47,8 @@
 {% set _id = utils.id() %}
 <div class="fd-dropdown">
     {{  button(
-        { icon: 'more' },
-        modifier={ block: ['text'] },
+        { icon: 'vertical-grip' },
+        modifier={ block: ['secondary', 'large'] },
         aria={ controls: _id, haspopup: true, expanded: false, label: "More" }
     ) | indent(4)
 }}
