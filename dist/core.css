@@ -4,11 +4,8 @@
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 :root {
-  --color-primary-1: crimson;
-  --color-primary-2: darkred;
   --color-action-1: #0a6ed1;
-  --color-action-2: #8D9DBC;
-  --color-text-1: #32363b;
+  --color-text-1: #32363a;
   --color-text-2: #515559;
   --color-text-3: #66696c;
   --color-text-inverse-1: #ffffff;
@@ -16,11 +13,9 @@
   --color-text-inverse-3: #ebebeb;
   --color-background-1: #f3f4f5;
   --color-background-2: #ffffff;
-  --color-background-3: magenta;
-  --color-neutral-1: #f5f5f5;
+  --color-neutral-1: #fafafa;
   --color-neutral-2: #eeeeef;
   --color-neutral-3: #dededf;
-  --color-neutral-4: tomato;
   --color-status-1: #359c46;
   --color-status-2: #f59518;
   --color-status-3: #ee0000
@@ -53,7 +48,7 @@ body {
   margin: 0;
   background-color: #f3f4f5;
   -webkit-font-smoothing: antialiased;
-  color: #32363b
+  color: #32363a
 }
 h1,
 h2,
@@ -62,7 +57,7 @@ h4,
 h5,
 h6 {
   text-rendering: optimizeLegibility;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   margin-top: 0
 }
 /*!
@@ -76,7 +71,7 @@ p,
 table,
 ul {
   margin-top: 0;
-  margin-bottom: 20px
+  margin-bottom: 12px
 }
 blockquote:last-child,
 figure:last-child,
@@ -119,6 +114,10 @@ a[aria-disabled=true] {
   color: #515559;
   cursor: not-allowed
 }
+code,
+pre {
+  font-family: monospace
+}
 /*!
 * @section Button Elements
 * Default styles for button elements
@@ -132,7 +131,7 @@ input[type=checkbox],
 input[type=radio] {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363b;
+  color: #32363a;
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -149,7 +148,7 @@ input[type=radio] {
   border-width: 1px;
   border-color: #dededf;
   border-radius: 4px;
-  color: #32363b;
+  color: #32363a;
   background-color: transparent;
   -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
@@ -183,13 +182,13 @@ input[type=radio]:disabled {
   cursor: not-allowed;
   color: #66696c;
   border-color: #ebebec;
-  background-color: #f5f5f5
+  background-color: #fafafa
 }
 input.is-readonly[type=checkbox],
 input.is-readonly[type=radio],
 input[readonly][type=checkbox],
 input[readonly][type=radio] {
-  color: #32363b;
+  color: #32363a;
   border-color: #ebebec;
   border-width: 0 0 1px
 }
@@ -230,7 +229,7 @@ input[type=url],
 textarea {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363b;
+  color: #32363a;
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -247,7 +246,7 @@ textarea {
   border-width: 1px;
   border-color: #dededf;
   border-radius: 4px;
-  color: #32363b;
+  color: #32363a;
   background-color: transparent;
   -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
@@ -339,7 +338,7 @@ textarea[aria-disabled=true] {
   cursor: not-allowed;
   color: #66696c;
   border-color: #ebebec;
-  background-color: #f5f5f5
+  background-color: #fafafa
 }
 input[type=date].is-readonly,
 input[type=date][readonly],
@@ -359,7 +358,7 @@ input[type=url].is-readonly,
 input[type=url][readonly],
 textarea.is-readonly,
 textarea[readonly] {
-  color: #32363b;
+  color: #32363a;
   border-color: #ebebec;
   border-width: 0 0 1px
 }
@@ -370,7 +369,7 @@ textarea {
 select {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363b;
+  color: #32363a;
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -387,7 +386,7 @@ select {
   border-width: 1px;
   border-color: #dededf;
   border-radius: 4px;
-  color: #32363b;
+  color: #32363a;
   background-color: transparent;
   -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
@@ -422,11 +421,11 @@ select[aria-disabled=true] {
   cursor: not-allowed;
   color: #66696c;
   border-color: #ebebec;
-  background-color: #f5f5f5
+  background-color: #fafafa
 }
 select.is-readonly,
 select[readonly] {
-  color: #32363b;
+  color: #32363a;
   border-color: #ebebec;
   border-width: 0 0 1px
 }
@@ -468,7 +467,7 @@ input[type=radio].is-disabled,
 input[type=radio][aria-disabled=true],
 input[type=radio][disabled] {
   border-color: #ebebec;
-  background-color: #f5f5f5
+  background-color: #fafafa
 }
 input[type=checkbox]:checked::after {
   content: "";

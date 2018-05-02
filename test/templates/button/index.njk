@@ -1,457 +1,734 @@
 {% extends "layout.njk" %}
-{% from "./component.njk" import button %}
 {% from "./../format.njk" import format %}
+{% from "./component.njk" import button %}
 {% set css_deps = ['fonts','helpers','icons'] %}
 
 {% block content %}
-<h1>Button</h1>
-{% set example %}
-{{  button(
-        {
-            label: 'BUTTON_LABEL'
-        },
-        modifier={
-            block: ['x-small']
-        })
-}}
-{{  button(
-        {
-            label: 'BUTTON_LABEL'
-        },
-        modifier={
-            block: ['small']
-        })
-}}
-{{  button(
-        {
-            label: 'BUTTON_LABEL'
-        },
-        modifier={
-        })
-}}
-{{  button(
-        {
-            label: 'BUTTON_LABEL'
-        },
-        modifier={
-            block: ['large']
-        })
-}}
-{{  button(
-        {
-            label: 'BUTTON_LABEL'
-        },
-        modifier={
-            block: ['x-large']
-        })
-}}
-{% endset %}
-{{ format(example) }}
+<style media="screen">
+  button {
+    margin-bottom: 4px !important;
+    margin-right: 4px !important;
+  }
+</style>
 
-<h2>States — Selected, Disabled</h2>
+
+Primary
+<button class="fd-button sap-icon--save">Button</button>
+<button class="fd-button">Button</button>
+<button class="fd-button fd-button--positive sap-icon--accept">Approve</button>
+<button class="fd-button fd-button--negative sap-icon--decline">Reject</button><br>
+
+Main
+<button class="fd-button--main sap-icon--save">Button</button>
+<button class="fd-button--main">Button</button>
+<button class="fd-button--main fd-button--positive sap-icon--accept">Approve</button>
+<button class="fd-button--main fd-button--negative sap-icon--decline">Reject</button><br>
+
+Secondary
+<button class="fd-button--secondary sap-icon--save">Button</button>
+<button class="fd-button--secondary">Button</button><br>
+
+Toolbar
+<button class="fd-button--toolbar sap-icon--save">Button</button>
+<button class="fd-button--toolbar">Button</button><br>
+
+
+
+<br>
+<hr>
+<br>
+
+
+<h1>Button</h1>
+<p>Default button</p>
 {% set example %}
 {{  button(
-        { label: 'BUTTON_LABEL' },
+        {
+            label: 'Button Label'
+        },
+        modifier={
+            block: ['xs']
+        })
+}}
+{{  button(
+        {
+            label: 'Button Label'
+        },
+        modifier={
+            block: ['s']
+        })
+}}
+{{  button(
+        {
+            label: 'Button Label'
+        },
+        modifier={
+          block: ['compact']
+        })
+}}
+{{  button(
+        {
+            label: 'Button Label'
+        },
+        modifier={
+
+        })
+}}
+{{  button(
+        {
+            label: 'Button Label'
+        },
+        modifier={
+            block: ['l']
+        })
+}}
+<br>
+{{  button(
+        {
+            label: 'Accept',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['xs']
+        })
+}}
+{{  button(
+        {
+            label: 'Accept',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['s']
+        })
+}}
+{{  button(
+        {
+            label: 'Accept',
+            icon: 'accept'
+        },
+        modifier={
+          block: ['compact']
+        })
+}}
+{{  button(
+        {
+            label: 'Accept',
+            icon: 'accept'
+        },
+        modifier={
+
+        })
+}}
+{{  button(
+        {
+            label: 'Accept',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['l']
+        })
+}}
+<br>
+{{  button(
+        {
+            icon: 'add-favorite'
+        },
+        modifier={
+            block: ['xs']
+        },
+        aria={ label: 'Add favorite' })
+}}
+{{  button(
+        {
+            icon: 'add-favorite'
+        },
+        modifier={
+            block: ['s']
+        },
+        aria={ label: 'Add favorite' })
+}}
+{{  button(
+        {
+            icon: 'add-favorite'
+        },
+        modifier={
+          block: ['compact']
+        },
+        aria={ label: 'Add favorite' })
+}}
+{{  button(
+        {
+            icon: 'add-favorite'
+        },
+        modifier={
+
+        },
+        aria={ label: 'Add favorite' })
+}}
+{{  button(
+        {
+            icon: 'add-favorite'
+        },
+        modifier={
+            block: ['l']
+        },
+        aria={ label: 'Add favorite' })
+}}
+<br>
+{{  button(
+        { label: 'Selected' },
         state={ selected: true }
     )
 }}
 {{  button(
-        { label: 'BUTTON_LABEL' },
+        { label: 'Selected' },
         aria={ selected: true }
     )
 }}
 
 {{  button(
-        { label: 'BUTTON_LABEL' },
+        { label: 'Disabled' },
         state={ disabled: true }
     )
 }}
 {{  button(
-        { label: 'BUTTON_LABEL' },
+        { label: 'Disabled' },
         aria={ disabled: true }
     )
 }}
+
+<br>
+{{  button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['xs','positive']
+        })
+}}
+{{  button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['s','positive']
+        })
+}}
+{{  button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+          block: ['compact','positive']
+        })
+}}
+{{  button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+block: ['positive']
+        })
+}}
+{{  button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['l','positive']
+        })
+}}
+<br>
+{{  button(
+        {
+            label: 'Reject',
+            icon: 'decline'
+        },
+        modifier={
+            block: ['xs','negative']
+        })
+}}
+{{  button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+            block: ['s','negative']
+        })
+}}
+{{  button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+          block: ['compact','negative']
+        })
+}}
+{{  button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+block: ['negative']
+        })
+}}
+{{  button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+            block: ['l','negative']
+        })
+}}
+
+
+
+{% endset %}
+{{ format(example) }}
+
+<br><br>
+
+
+<h1>Main Button</h1>
+<p>The main action, only one should be on a page</p>
+{% set example %}
+{{  button(
+        { label: 'Button' },
+        modifier={ block: ['main','xs'] })
+}}
+{{  button(
+        { label: 'Button' },
+        modifier={ block: ['main','s'] })
+}}
+{{  button(
+        { label: 'Button' },
+        modifier={ block: ['main','compact'] })
+}}
+{{  button(
+        { label: 'Button' },
+        modifier={ block: ['main'] })
+}}
+{{  button(
+        { label: 'Button' },
+        modifier={ block: ['main','l'] })
+}}
+<br>
+{{  button(
+        { label: 'Add to Cart',
+          icon: 'cart' },
+        modifier={ block: ['main','xs'] })
+}}
+{{  button(
+        { label: 'Add to Cart',
+          icon: 'cart' },
+        modifier={ block: ['main','s'] })
+}}
+{{  button(
+  { label: 'Add to Cart',
+    icon: 'cart' },
+        modifier={ block: ['main','compact'] })
+}}
+{{  button(
+  { label: 'Add to Cart',
+    icon: 'cart' },
+        modifier={ block: ['main'] })
+}}
+{{  button(
+  { label: 'Add to Cart',
+    icon: 'cart' },
+        modifier={ block: ['main','l'] })
+}}
+<br>
+{{  button(
+        {
+          icon: 'attachment' },
+        modifier={ block: ['main','xs'] },
+        aria={ label: 'Add Attachment' })
+}}
+{{  button(
+        {  icon: 'attachment' },
+        modifier={ block: ['main','s'] },
+        aria={ label: 'Add Attachment' })
+}}
+{{  button(
+  {
+    icon: 'attachment' },
+        modifier={ block: ['main','compact'] },
+        aria={ label: 'Add Attachment' })
+}}
+{{  button(
+  {
+    icon: 'attachment' },
+        modifier={ block: ['main'] },
+        aria={ label: 'Add Attachment' })
+}}
+{{  button(
+  {
+    icon: 'attachment' },
+        modifier={ block: ['main','l'] },
+        aria={ label: 'Add Attachment' })
+}}
+<br>
+{{  button(
+        { label: 'Selected' },
+        modifier={ block: ['main'] },
+        state={ selected: true }
+    )
+}}
+{{  button(
+  { label: 'Selected' },
+  modifier={ block: ['main'] },
+        aria={ selected: true }
+    )
+}}
+
+{{  button(
+  { label: 'Disabled' },
+  modifier={ block: ['main'] },
+        state={ disabled: true }
+    )
+}}
+{{  button(
+  { label: 'Disabled' },
+  modifier={ block: ['main'] },
+        aria={ disabled: true }
+    )
+}}
+
+
+
+<br>
+{{  button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['xs','main','positive']
+        })
+}}
+{{  button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['s','main','positive']
+        })
+}}
+{{  button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+          block: ['compact','main','positive']
+        })
+}}
+{{  button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+block: ['main','positive']
+        })
+}}
+{{  button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['l','main','positive']
+        })
+}}
+<br>
+{{  button(
+        {
+            label: 'Reject',
+            icon: 'decline'
+        },
+        modifier={
+            block: ['xs','main','negative']
+        })
+}}
+{{  button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+            block: ['s','main','negative']
+        })
+}}
+{{  button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+          block: ['compact','main','negative']
+        })
+}}
+{{  button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+block: ['main','negative']
+        })
+}}
+{{  button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+            block: ['l','main','negative']
+        })
+}}
+
 {% endset %}
 {{ format(example) }}
 
 
-<br><hr><br>
 
+
+<br><br>
 
 <h1>Secondary Button</h1>
 {% set example %}
+
 {{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['secondary','x-small'] })
+        { label: 'Button' },
+        modifier={ block: ['secondary','xs'] })
 }}
 {{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['secondary','small'] })
+        { label: 'Button' },
+        modifier={ block: ['secondary','s'] })
 }}
 {{  button(
-        { label: 'BUTTON_LABEL' },
+        { label: 'Button' },
+        modifier={ block: ['secondary','compact'] })
+}}
+{{  button(
+        { label: 'Button' },
         modifier={ block: ['secondary'] })
 }}
 {{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['secondary','large'] })
+        { label: 'Button' },
+        modifier={ block: ['secondary','l'] })
 }}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['secondary','x-large'] })
-}}
-{% endset %}
-{{ format(example) }}
-
-
-<br><hr><br>
-
-
-<h1>Text Button</h1>
-{% set example %}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['text','x-small'] })
-}}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['text','small'] })
-}}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['text'] })
-}}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['text','large'] })
-}}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['text','x-large'] })
-}}
-{% endset %}
-{{ format(example) }}
-
-<h2>States — Selected, Disabled</h2>
-{% set example %}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['text','small'] },
-        aria={ selected: true })
-}}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['text','small'] },
-        state={ selected: true })
-}}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['text','small'] },
-        aria={ disabled: true })
-}}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['text','small'] },
-        state={ disabled: true })
-}}
-{% endset %}
-{{ format(example) }}
-
-
-
-<br><hr><br>
-
-
-<h1>Link Button</h1>
-{% set example %}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['link','small'] })
-}}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['link'] })
-}}
-{% endset %}
-{{ format(example) }}
-
-<h2>States — Selected, Disabled</h2>
-{% set example %}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['link'] },
-        aria={ selected: true })
-}}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['link'] },
-        state={ selected: true })
-}}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['link'] },
-        aria={ disabled: true })
-}}
-{{  button(
-        { label: 'BUTTON_LABEL' },
-        modifier={ block: ['link'] },
-        state={ disabled: true })
-}}
-{% endset %}
-{{ format(example) }}
-
-
-<br><hr><br>
-
-
-<h1>Button w/ Icon</h1>
-{% set example %}
-{{  button(
-        {
-            label: 'BUTTON_LABEL',
-            icon: 'checked'
-        },
-        modifier={
-            block: ['small']
-        })
-}}
-{{  button(
-        {
-            label: 'BUTTON_LABEL',
-            icon: 'checked'
-        },
-        modifier={
-            block: []
-        })
-}}
-{{  button(
-        {
-            label: 'BUTTON_LABEL',
-            icon: 'checked'
-        },
-        modifier={
-            block: ['large']
-        })
-}}
-<br><br>
-{{  button(
-        {
-            label: 'BUTTON_LABEL',
-            icon: 'checked',
-            after: false
-        },
-        modifier={
-            block: ['text','small']
-        })
-}}
-{{  button(
-        {
-            label: 'BUTTON_LABEL',
-            icon: 'checked'
-        },
-        modifier={
-            block: ['text']
-        })
-}}
-{{  button(
-        {
-            label: 'BUTTON_LABEL',
-            icon: 'checked'
-        },
-        modifier={
-            block: ['text','large']
-        })
-}}
-{% endset %}
-{{ format(example) }}
-
 <br>
-
-<h2>States — Selected, Disabled</h2>
-
-{% set example %}
 {{  button(
-        { label: 'BUTTON_LABEL', icon: 'checked' },
-        modifier={ block: [] },
-        aria={ selected: true }
-    )
+        { label: 'Cancel',
+          icon: 'cancel' },
+        modifier={ block: ['secondary','xs'] })
 }}
 {{  button(
-        { label: 'BUTTON_LABEL', icon: 'checked' },
-        modifier={ block: [] },
-        aria={ disabled: true }
-    )
-}}
-<br><br>
-{{  button(
-        { label: 'BUTTON_LABEL', icon: 'checked' },
-        modifier={ block: ['text'] },
-        aria={ selected: true }
-    )
+  { label: 'Cancel',
+    icon: 'cancel' },
+        modifier={ block: ['secondary','s'] })
 }}
 {{  button(
-        { label: 'BUTTON_LABEL', icon: 'checked' },
-        modifier={ block: ['text'] },
-        aria={ disabled: true }
-    )
-}}
-{% endset %}
-{{ format(example) }}
-
-
-
-
-<br><hr><br>
-
-
-<h1>Icon Button</h1>
-{% set example %}
-{{  button(
-        { icon: 'checked' },
-        modifier={ block: ['small','icon'] },
-        aria={ label: 'BUTTON_LABEL' }
-    )
+  { label: 'Cancel',
+    icon: 'cancel' },
+        modifier={ block: ['secondary','compact'] })
 }}
 {{  button(
-        { icon: 'checked' },
-        modifier={ block: ['icon'] },
-        aria={ label: 'BUTTON_LABEL' }
-    )
+  { label: 'Cancel',
+    icon: 'cancel' },
+        modifier={ block: ['secondary'] })
 }}
 {{  button(
-        { icon: 'checked' },
-        modifier={ block: ['large','icon'] },
-        aria={ label: 'BUTTON_LABEL' }
-    )
+  { label: 'Cancel',
+    icon: 'cancel' },
+        modifier={ block: ['secondary','l'] })
 }}
-<br><br>
-{{  button(
-        { icon: 'checked' },
-        modifier={ block: ['text','small','icon'] },
-        aria={ label: 'BUTTON_LABEL' }
-    )
-}}
-{{  button(
-        { icon: 'checked' },
-        modifier={ block: ['text','icon'] },
-        aria={ label: 'BUTTON_LABEL' }
-    )
-}}
-{{  button(
-        { icon: 'checked' },
-        modifier={ block: ['text','large','icon'] },
-        aria={ label: 'BUTTON_LABEL' }
-    )
-}}
-{% endset %}
-{{ format(example) }}
-
-
 <br>
-
-<h2>States — Selected, Disabled</h2>
-{% set example %}
 {{  button(
-        { icon: 'checked' },
-        modifier={ block: ['icon'] },
-        aria={ label: 'BUTTON_LABEL', selected: true }
-    )
+        {
+          icon: 'edit' },
+        modifier={ block: ['secondary','xs'] },
+        aria={ label: 'Edit' })
 }}
 {{  button(
-        { icon: 'checked' },
-        modifier={ block: ['large','icon'] },
-        aria={ label: 'BUTTON_LABEL', selected: true }
-    )
+        {  icon: 'edit' },
+        modifier={ block: ['secondary','s'] },
+        aria={ label: 'Edit' })
 }}
 {{  button(
-        { icon: 'checked' },
-        modifier={ block: ['icon'] },
-        aria={ label: 'BUTTON_LABEL', disabled: true }
-    )
+  {
+    icon: 'edit' },
+        modifier={ block: ['secondary','compact'] },
+        aria={ label: 'Edit' })
 }}
 {{  button(
-        { icon: 'checked' },
-        modifier={ block: ['large','icon'] },
-        aria={ label: 'BUTTON_LABEL', disabled: true }
-    )
-}}
-<br><br>
-{{  button(
-        { icon: 'checked' },
-        modifier={ block: ['text','icon'] },
-        aria={ label: 'BUTTON_LABEL', selected: true }
-    )
+  {
+    icon: 'edit' },
+        modifier={ block: ['secondary'] },
+        aria={ label: 'Edit' })
 }}
 {{  button(
-        { icon: 'checked' },
-        modifier={ block: ['text','large','icon'] },
-        aria={ label: 'BUTTON_LABEL', selected: true }
-    )
+  {
+    icon: 'edit' },
+        modifier={ block: ['secondary','l'] },
+        aria={ label: 'Edit' })
 }}
-{{  button(
-        { icon: 'checked' },
-        modifier={ block: ['text','icon'] },
-        aria={ label: 'BUTTON_LABEL', disabled: true }
-    )
-}}
-{{  button(
-        { icon: 'checked' },
-        modifier={ block: ['text','large','icon'] },
-        aria={ label: 'BUTTON_LABEL', disabled: true }
-    )
-}}
-{% endset %}
-{{ format(example) }}
-
-<br><hr><br>
-
-<h1>Action Bar Button</h1>
-{% set example %}
-{{  button(
-        { label: 'BUTTON_LABEL', icon: 'checked' },
-        modifier={ block: ['action-bar'] }
-    )
-}}
-{{  button(
-        { label: 'BUTTON_LABEL', icon: 'checked' },
-        modifier={ block: ['text','action-bar'] }
-    )
-}}
-{% endset %}
-{{ format(example) }}
-
-
 <br>
+{{  button(
+        { label: 'Selected' },
+        modifier={ block: ['secondary'] },
+        state={ selected: true }
+    )
+}}
+{{  button(
+  { label: 'Selected' },
+  modifier={ block: ['secondary'] },
+        aria={ selected: true }
+    )
+}}
 
-<h2>States — Selected, Disabled</h2>
-{% set example %}
 {{  button(
-        { label: 'BUTTON_LABEL', icon: 'checked' },
-        modifier={ block: ['action-bar'] },
-        aria={ selected: true }
+  { label: 'Disabled' },
+  modifier={ block: ['secondary'] },
+        state={ disabled: true }
     )
 }}
 {{  button(
-        { label: 'BUTTON_LABEL', icon: 'checked' },
-        modifier={ block: ['action-bar'] },
+  { label: 'Disabled' },
+  modifier={ block: ['secondary'] },
         aria={ disabled: true }
     )
 }}
-{{  button(
-        { label: 'BUTTON_LABEL', icon: 'checked' },
-        modifier={ block: ['text','action-bar'] },
-        aria={ selected: true }
-    )
-}}
-{{  button(
-        { label: 'BUTTON_LABEL', icon: 'checked' },
-        modifier={ block: ['text','action-bar'] },
-        aria={ disabled: true }
-    )
-}}
+
 {% endset %}
 {{ format(example) }}
 
+
+
+
+<br><br>
+
+<h1>Toolbar Button</h1>
+{% set example %}
+
+{{  button(
+        { label: 'Button' },
+        modifier={ block: ['toolbar','xs'] })
+}}
+{{  button(
+        { label: 'Button' },
+        modifier={ block: ['toolbar','s'] })
+}}
+{{  button(
+        { label: 'Button' },
+        modifier={ block: ['toolbar','compact'] })
+}}
+{{  button(
+        { label: 'Button' },
+        modifier={ block: ['toolbar'] })
+}}
+{{  button(
+        { label: 'Button' },
+        modifier={ block: ['toolbar','l'] })
+}}
+<br>
+{{  button(
+  { label: 'Sort',
+    icon: 'alphabetical-order' },
+        modifier={ block: ['toolbar','xs'] })
+}}
+{{  button(
+  { label: 'Sort',
+    icon: 'alphabetical-order' },
+        modifier={ block: ['toolbar','s'] })
+}}
+{{  button(
+  { label: 'Sort',
+    icon: 'alphabetical-order' },
+        modifier={ block: ['toolbar','compact'] })
+}}
+{{  button(
+  { label: 'Sort',
+    icon: 'alphabetical-order' },
+        modifier={ block: ['toolbar'] })
+}}
+{{  button(
+  { label: 'Sort',
+    icon: 'alphabetical-order' },
+        modifier={ block: ['toolbar','l'] })
+}}
+<br>
+{{  button(
+        {
+          icon: 'filter' },
+        modifier={ block: ['toolbar','xs'] },
+        aria={ label: 'Filter' })
+}}
+{{  button(
+        {  icon: 'filter' },
+        modifier={ block: ['toolbar','s'] },
+        aria={ label: 'Filter' })
+}}
+{{  button(
+  {
+    icon: 'filter' },
+        modifier={ block: ['toolbar','compact'] },
+        aria={ label: 'Filter' })
+}}
+{{  button(
+  {
+    icon: 'filter' },
+        modifier={ block: ['toolbar'] },
+        aria={ label: 'Filter' })
+}}
+{{  button(
+  {
+    icon: 'filter' },
+        modifier={ block: ['toolbar','l'] },
+        aria={ label: 'Filter' })
+}}
+<br>
+{{  button(
+        { label: 'Selected' },
+        modifier={ block: ['toolbar'] },
+        state={ selected: true }
+    )
+}}
+{{  button(
+  { label: 'Selected' },
+  modifier={ block: ['toolbar'] },
+        aria={ selected: true }
+    )
+}}
+
+{{  button(
+  { label: 'Disabled' },
+  modifier={ block: ['toolbar'] },
+        state={ disabled: true }
+    )
+}}
+{{  button(
+  { label: 'Disabled' },
+  modifier={ block: ['toolbar'] },
+        aria={ disabled: true }
+    )
+}}
+
+{% endset %}
+{{ format(example) }}
 
 
 
