@@ -6,18 +6,23 @@
 */
 $block: #{$fd-namespace}-label;
 .#{$block} {
-    @include fd-reset;
-    @include fd-type("-3");
-    text-transform: uppercase;
-    display: inline-block;
-    padding: fd-space(1)-1px fd-space(2);
-    &--success {
-        color: $fd-color--success;
-    }
-    &--warning {
-        color: $fd-color--warning;
-    }
-    &--error {
-        color: $fd-color--error;
-    }
+  @include fd-reset;
+  @include fd-type("-2");
+  @include fd-weight("bold");
+  color: fd-color("text", 3);
+  text-transform: uppercase;
+  line-height: fd-space(6);
+  vertical-align: middle;
+  display: inline-block;
+  padding-left: fd-space(2);
+  padding-right: fd-space(2);
+  &--success {
+    color: $fd-color--success;
+  }
+  &--warning {
+    color: $fd-color--warning;
+  }
+  &--error {
+    color: $fd-color--error;
+  }
 }
