@@ -27,55 +27,56 @@ global_nav:
             }}
         </div>
         <div class="fd-global-nav__logo">
+
         </div>
         <div class="fd-global-nav__product-name">
             Product Name
         </div>
     </div>
 
-    <div class="fd-global-nav__group fd-global-nav__group--actions">
+	<div class="fd-global-nav__group fd-global-nav__launchpad">
+		{{ dropdown(
+            properties.launchpad,
+            modifier={ control: "no-border" }
+        ) | indent(12) }}
+	</div>
 
+	<div class="fd-global-nav__context-menu">
+		{{ dropdown(properties.context, modifier={ control: "no-border" }) | indent(12) }}
+	</div>
+
+    <div class="fd-global-nav__group fd-global-nav__actions">
         <div class="fd-global-nav__actions">
             {{  button(
                     { icon: 'search' },
-                    modifier={ block: ['icon', 'text'] },
+                    modifier={ block: ['secondary', 'm'] },
                     aria={ label: 'BUTTON_LABEL' },
                     classes='global-nav__btn'
                 )
             }}
             {{  button(
-                    { icon: 'feedback' },
-                    modifier={ block: ['icon', 'text'] },
+                    { icon: 'notification-2' },
+                    modifier={ block: ['secondary', 'm'] },
                     aria={ label: 'BUTTON_LABEL' },
                     classes='global-nav__btn'
                 )
             }}
             {{  button(
-                    { icon: 'options' },
-                    modifier={ block: ['icon', 'text'] },
+                    { icon: 'action-settings' },
+                    modifier={ block: ['secondary', 'm'] },
                     aria={ label: 'BUTTON_LABEL' },
                     classes='global-nav__btn'
                 )
             }}
             {{  button(
-                    { icon: 'noimage' },
-                    modifier={ block: ['icon', 'text'] },
+                    { icon: 'customer' },
+                    modifier={ block: ['secondary', 'm'] },
                     aria={ label: 'BUTTON_LABEL' },
                     classes='global-nav__btn'
                 )
             }}
         </div>
-
-        <div class="fd-global-nav__context-menu">
-            {{ dropdown(properties.contextMenu, modifier={ control: "no-border" }) | indent(12) }}
-        </div>
-
     </div>
-
-    <div class="fd-global-nav__group fd-global-nav__group--launchpad">
-        {{ dropdown(properties.launchpad, modifier={ control: "no-border" }) | indent(12) }}
-    </div>
-
 </nav>
 
 

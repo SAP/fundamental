@@ -16,7 +16,7 @@ $block: #{$fd-namespace}-global-nav;
     $fd-global-nav-color: fd-color(text, 2);
     $fd-global-nav-background-color: fd-color(background, 2) !default;
     $fd-global-nav-border-color: fd-color(neutral, 2);
-    $fd-global-nav-height: fd-space(13);
+    $fd-global-nav-height: fd-space(12.5);
     $fd-global-nav-btn-color: fd-color(action, 1);
 
     //BLOCK BASE *******************************************
@@ -28,45 +28,34 @@ $block: #{$fd-namespace}-global-nav;
     color: $fd-global-nav-color;
 
     //ELEMENTS *******************************************
-    &__group{
+    &__group {
         min-height: $fd-global-nav-height;
 
-        &--branding{
+        &--branding {
             width: auto;
             display: flex;
             flex-direction: row;
         }
 
-        &--launchpad{
-            display: flex;
-            text-align: center;
-            padding-top: 0;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        &--actions{
-            display: flex;
-        }
     }
 
-    &__side-menu, &__logo, &__product-name{
+    &__side-menu,
+    &__logo,
+    &__product-name {
         display: flex;
-        height: $fd-global-nav-height - 2;
+        height: $fd-global-nav-height;
         align-items: center;
     }
 
-    &__side-menu{
-
+    &__side-menu {
         button {
-            height: $fd-global-nav-height - 2;
-            min-height: $fd-global-nav-height - 2;
+            height: $fd-global-nav-height;
+            min-height: $fd-global-nav-height;
             padding: 0 20px;
         }
-
     }
 
-    &__logo{
+    &__logo {
         padding-left: fd-space(4);
         font-weight: bold;
         background-image: url(#{$fd-hybris-logo});
@@ -75,45 +64,41 @@ $block: #{$fd-namespace}-global-nav;
         width: 91px;
     }
 
-    &__product-name{
+    &__product-name {
         padding-left: fd-space(4);
         @include fd-type("-1", "body", "semi");
     }
 
+    &__launchpad{
+        display: flex;
+        text-align: center;
+        padding-top: 0;
+        max-width: 400px;
+        margin: 0 auto;
 
-    &__actions, &__context-menu{
-        float: right;
+        button{
+            height: $fd-global-nav-height - 2;
+        }
+
+    }
+
+    &__context-menu {
         border-left: 1px solid $fd-global-nav-border-color;
-    }
+        border-right: 1px solid $fd-global-nav-border-color;
 
-    &__btn{
-        // @include fd-button-reset;  //removes default button chrome
-        // height: $fd-global-nav-height;
-        // color: $fd-global-nav-btn-color;
-        // width: 48px;
-        // padding-left: fd-space(3);
-
-        & .fd-icon{
-            font-size: 1.125rem;
-            line-height: 1.4;
+        button{
+            height: $fd-global-nav-height - 2;
         }
     }
 
-    &__subnav{
-        background: $fd-global-nav-background-color;
-        height: $fd-global-nav-height;
-        border-bottom: solid 1px $fd-global-nav-border-color;
-
-        &__links{
-            padding: fd-space(2) fd-space(4);
+    &__actions {
+        display: flex;
+        button {
+            height: $fd-global-nav-height - 2;
+            min-height: $fd-global-nav-height - 2;
+            padding: 0 10px;
         }
-
-        &__actions{
-            border-left: solid 1px $fd-global-nav-border-color;
-        }
-
     }
-
 
     //STATES *******************************************
     &.is-disabled,
@@ -122,7 +107,5 @@ $block: #{$fd-namespace}-global-nav;
     }
     &[aria-selected="true"] {
     }
-
-
 
 }

@@ -18,7 +18,34 @@
     <!-- output the component example and the code snippet -->
     {% set example %}
 
-    {{  global_nav() }}
+    {{  global_nav(
+        properties = {
+            "title": "Global Nav Label",
+            "description": "Global Nav Description",
+            "launchpad": {
+                "label": "Application Name",
+                "classes": "fd-global-nav__launchpad",
+                "items": [
+                    { "label": "Link Name" },
+                    { "label": "Link Name" },
+                    { "label": "Link Name" },
+                    { "label": "Link Name" },
+                    { "label": "Link Name" }
+                ]
+            },
+            "context": {
+                "label": "Context Switcher",
+                "classes": "fd-global-nav__launchpad",
+                "items": [
+                    { "label": "Link Name" },
+                    { "label": "Link Name" },
+                    { "label": "Link Name" },
+                    { "label": "Link Name" },
+                    { "label": "Link Name" }
+                ]
+            }
+        }
+    ) }}
 
     {# {{  global_nav(
             properties= data.properties,
