@@ -10,11 +10,13 @@
 $block: #{$fd-namespace}-action-bar;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-action-bar-background-color: transparent !default;
     $fd-action-bar-height: fd-space(16) !default;
     $fd-action-bar-transition-params: 0.25s ease-in !default;
 
     //BLOCK BASE *******************************************
     @include fd-reset;
+    background-color: $fd-action-bar-background-color;
     min-height: $fd-action-bar-height;
     display: flex;
     align-items: stretch;
