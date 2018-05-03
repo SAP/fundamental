@@ -9,42 +9,36 @@
 */
 $block: #{$fd-namespace}-list-group;
 .#{$block} {
-    //LOCAL VARS (set all vars used in component, always include !default)
-    $fd-list-group-border-color: lighten(fd-color(neutral, 2), 5%) !default;
-    $fd-list-group-background-color: none !default;
-    $fd-list-group-background-color--hover: lighten(fd-color(neutral, 3), 10) !default;
-    $fd-list-group-item-padding: fd-space(4) !default;
-    $fd-list-group-action-height: fd-space(10) !default;
-    $fd-list-group-transition-params: $fd-animation--speed ease-in !default;
+  //LOCAL VARS (set all vars used in component, always include !default)
+  $fd-list-group-background-color: none !default;
+  $fd-list-group-background-color--hover: lighten(fd-color("neutral", 3), 10) !default;
+  $fd-list-group-item-padding-x: fd-space(4) !default;
+  $fd-list-group-item-padding-y: fd-space(2) + 2px !default;
+  $fd-list-group-action-height: fd-space(10) !default;
+  $fd-list-group-transition-params: $fd-animation--speed ease-in !default;
 
-    @include fd-reset;
-
-    margin-left: 0;
-    &__item {
-        list-style: none;
-        border: 1px solid $fd-list-group-border-color;
-        border-top: none;
-        padding: $fd-list-group-item-padding;
-        display: flex;
-        position: relative;
-        background-color: $fd-list-group-background-color;
-        transition: background-color $fd-list-group-transition-params;
-        &:first-child {
-            border-top: 1px solid $fd-list-group-border-color;
-        }
-        &:hover{
-            background-color: $fd-list-group-background-color--hover;
-        }
+  @include fd-reset;
+  margin-left: 0;
+  &__item {
+    list-style: none;
+    padding: $fd-list-group-item-padding-y $fd-list-group-item-padding-x;
+    display: flex;
+    position: relative;
+    background-color: $fd-list-group-background-color;
+    transition: background-color $fd-list-group-transition-params;
+    &:hover{
+      background-color: $fd-list-group-background-color--hover;
     }
-    &__action {
-        flex: 1;
-        text-align: right;
-        position: relative;
-        display: inline-block;
-        max-height: $fd-list-group-action-height;
-        padding-top: fd-space(base);
-        top: -$fd-list-group-item-padding;
-        margin-bottom: -$fd-list-group-item-padding * 2;
-        right: -$fd-list-group-item-padding;
-    }
+  }
+  &__action {
+    flex: 1;
+    text-align: right;
+    position: relative;
+    display: inline-block;
+    max-height: $fd-list-group-action-height;
+    padding-top: 0;
+    top: -($fd-list-group-item-padding-y);
+    margin-bottom: -($fd-list-group-item-padding-y * 2);
+    right: -$fd-list-group-item-padding-x;
+  }
 }
