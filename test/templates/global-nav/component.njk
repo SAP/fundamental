@@ -1,7 +1,7 @@
 {% from "../button/component.njk" import button %}
 {% from "../icon/component.njk" import icon %}
 {% from "../dropdown/component.njk" import dropdown, menu %}
-{% from "../nav/component.njk" import nav %}
+{% from "../form/component.njk" import form_control %}
 {% import "./../utils.njk" as utils %}
 
 <!--
@@ -57,6 +57,11 @@ global_nav:
                     classes='global-nav__btn'
                 )
             }}
+
+            {{ form_control(
+                    type='text'
+            ) }}
+
             {{  button(
                     { icon: 'notification-2' },
                     modifier={ block: ['secondary', 'm'] },
