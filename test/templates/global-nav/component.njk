@@ -50,17 +50,25 @@ global_nav:
 
     <div class="fd-global-nav__group fd-global-nav__actions">
         <div class="fd-global-nav__actions">
-            {{  button(
-                    { icon: 'search' },
-                    modifier={ block: ['secondary', 'm'] },
-                    aria={ label: 'BUTTON_LABEL' },
-                    classes='global-nav__btn'
-                )
-            }}
+            <div class="fd-global-nav__search">
 
-            {{ form_control(
-                    type='text'
-            ) }}
+                {{  button(
+                        { icon: 'search' },
+                        modifier={ block: ['secondary', 'm'] },
+                        aria={ label: 'BUTTON_LABEL', controls: '1234', haspopup: true, expanded: false },
+                        classes='global-nav__btn'
+                    )
+                }}
+
+                {{ form_control(
+                        type='text',
+                        id='1234',
+                        properties={ placeholder: "Search... " },
+                        aria={ hidden: true }
+                ) }}
+
+            </div>
+
 
             {{  button(
                     { icon: 'notification-2' },

@@ -18,6 +18,8 @@ $block: #{$fd-namespace}-global-nav;
     $fd-global-nav-border-color: fd-color(neutral, 2);
     $fd-global-nav-height: fd-space(12.5);
     $fd-global-nav-btn-color: fd-color(action, 1);
+    $fd-global-nav-search-box-background-color: fd-color(background, 2);
+    $fd-global-nav-search-box-width: fd-space(44);
 
     //BLOCK BASE *******************************************
     @include fd-reset;
@@ -100,6 +102,24 @@ $block: #{$fd-namespace}-global-nav;
             padding: 0 10px;
         }
     }
+
+    &__search{
+        position: relative;
+
+        input{
+            position: absolute;
+            left: -$fd-global-nav-search-box-width;
+            top: 0;
+            background:$fd-global-nav-search-box-background-color;
+            border-radius: 0;
+            border:none;
+            min-width:$fd-global-nav-search-box-width;
+            border-bottom: 1px solid $fd-global-nav-border-color;
+            height: $fd-global-nav-height - 2;
+
+        }
+    }
+
 
     //STATES *******************************************
     &.is-disabled,
