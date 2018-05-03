@@ -16,9 +16,7 @@ action_bar:
     {%- set actions = properties.actions %}
     <div class="fd-action-bar__actions"{{ actions.aria | aria }}>
         {%- for item in actions.properties.items %}
-        <div class="fd-action-bar__action-item">
-            {{item | indent(12) }}
-        </div>
+        {{ item }}
         {%- endfor %}
     </div>
     {%- endif %}

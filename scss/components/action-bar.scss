@@ -40,6 +40,7 @@ $block: #{$fd-namespace}-action-bar;
     &__actions {
         @include fd-reset;
         display: flex;
+        align-items: center;
         transition: opacity $fd-action-bar-transition-params;
         visibility: visible;
         &.is-disabled,
@@ -47,9 +48,11 @@ $block: #{$fd-namespace}-action-bar;
             opacity: 0;
             visibility: hidden;
         }
-    }
-
-    &__action-item {
-      margin-left: fd-space(2);
+        & > * {
+          margin-left: fd-space(2);
+          &:first-child {
+            margin-left: 0;
+          }
+        }
     }
 }

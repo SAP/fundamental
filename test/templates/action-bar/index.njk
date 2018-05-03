@@ -26,12 +26,12 @@
 
 {%- set secbtn %}{{
   button(
-          { label: 'Copy' },
+          { label: 'Cancel' },
           modifier={ block: ['secondary', 'l'] }
       )
 }}{%- endset %}
 {%- set contextmenu %}
-{% set _id = utils.id() %}
+{%- set _id = utils.id() %}
 <div class="fd-dropdown">
     {{  button(
         { icon: 'vertical-grip' },
@@ -39,17 +39,17 @@
         aria={ controls: _id, haspopup: true, expanded: false, label: "More" }
     ) | indent(4)
 }}
-    {{  menu(properties={
-        id: _id,
-        items: [
-            { "label": "Edit" },
-            { "label": "Delete" },
-            { "label": "Assign" },
-            { "label": "Expire" },
-            { "label": "Archive" }
-        ]
-    },
-    classes="contextual-menu") | indent(4)
+  {{  menu(properties={
+    id: _id,
+    items: [
+        { "label": "Edit" },
+        { "label": "Delete" },
+        { "label": "Assign" },
+        { "label": "Expire" },
+        { "label": "Archive" }
+    ]
+},
+classes="contextual-menu") | indent(4)
 }}
 </div>
 {%- endset %}
