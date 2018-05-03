@@ -48,6 +48,10 @@
   font-weight: normal;
   font-style: normal; }
 
+/* data attributes for inserting icons
+  <span data-sap-icon="\e001"> My Account</span>
+*/
+/* class per icon */
 [class*="sap-icon"]::before {
   font-family: "SAP-icons";
   font-style: normal;
@@ -61,10 +65,6 @@
   -moz-osx-font-smoothing: grayscale;
   speak: none; }
 
-/* data attributes for inserting icons
-  <span data-sap-icon="\e001"> My Account</span>
-*/
-/* class per icon */
 .sap-icon--s::before, .sap-icon--small::before {
   font-size: 0.85714rem;
   line-height: 1; }
@@ -2699,12 +2699,15 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   line-height: 1.42857;
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  color: #ffffff;
-  border: solid 1px #eeeeef;
-  background-color: #66696c;
-  min-height: 52px;
-  padding: 16px; }
+  color: #32363a;
+  border: solid 1px #dededf;
+  background-color: #fafafa;
+  padding: 8px 12px;
+  border-radius: 4px; }
   .fd-alert__close {
+    position: absolute;
+    right: 4px;
+    top: 0;
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -2720,16 +2723,35 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     white-space: nowrap;
     background-color: transparent;
     border-radius: 4px;
-    color: #ffffff;
-    width: 32px;
-    height: 32px;
-    float: right;
-    margin: -8px; }
+    color: #32363a;
+    width: 36px;
+    height: 36px; }
+    .fd-alert__close::before {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none; }
+    .fd-alert__close::before {
+      content: ""; }
+    .fd-alert__close::before {
+      font-size: 1.42857rem;
+      line-height: 1; }
   .fd-alert--warning {
-    background-color: #f59518;
-    color: #32363a; }
+    border-color: #f59518;
+    background-color: rgba(245, 149, 24, 0.07); }
   .fd-alert--error {
-    background-color: #ee0000; }
+    border-color: #ee0000;
+    background-color: rgba(238, 0, 0, 0.07); }
+  .fd-alert--dismissible {
+    position: relative;
+    padding-right: 48px; }
 
 /*!
 .fd-action-bar
@@ -2986,6 +3008,79 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-button--l::before {
     font-size: 1.42857rem;
     line-height: 1; }
+
+/*
+WHY THIS:
+Other semantic grids don't eaily allow for fixed gutter widths
+nor do they take advantage of the CSS calc function
+and they can get kind of confusing.
+This is meant for simple layout problems — 
+i.e., you have a box and you need three cols inside of equal widths
+with gutters between.
+
+The FLOW terminology is meant to be netural outside of rows and columns
+and comes from the HTML5 spec referring to elements that can contain other elements
+http://w3c.github.io/html/dom.html#kinds-of-content-flow-content
+
+USAGE:
+— Outer containers should contain the `@include flow-box` base styles
+— Columns get `@include flow` with `$span` and `$cols` params
+
+EXAMPLE MARKUP:
+<section>
+  <div class="box">x</div>
+  <div class="box">x</div>
+  <div class="box">x</div>
+  <div class="box">x</div>
+</section>
+
+EXAMPLE CSS:
+section {
+  @include flow-box()
+  .box {
+    @include flow(2);
+    &:first-child {
+      @include flow-shift(2);
+    }
+  }
+}
+
+OUTPUT:
+This will render 4 boxes spanning 2 cols each indented 2 cols
+(based on defaults)
+
+|--| |--| |--| |--| |--| |--| |--| |--| |--| |--| |--| |--|
+          |  box  | |  box  | |  box  | |  box  |
+
+*/
+/*!
+.fd-breadcrumb
+    .fd-breadcrumb__item
+    .fd-breadcrump__link
+*/
+.fd-breadcrumb {
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #32363a;
+  font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-size: 0.92857rem;
+  line-height: 1.23077;
+  font-weight: 400;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  background-color: #ffffff;
+  padding: 12px 16px;
+  border-bottom: 1px solid #dededf; }
+  .fd-breadcrumb__item:after {
+    content: "/";
+    margin-right: 16px; }
+  .fd-breadcrumb__item:last-child:after {
+    content: none; }
+  .fd-breadcrumb__link {
+    margin-right: 16px; }
 
 /*!
     card structure
@@ -3801,32 +3896,40 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
-  margin-bottom: 32px;
+  margin-bottom: 12px;
   list-style: none;
   border-bottom: solid 1px #dededf; }
   .fd-tabs__link {
     display: block;
-    padding: 12px 20px;
-    font-size: 1.14286rem;
-    line-height: 1.25;
-    font-family: '72Condensed', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #0a6ed1;
-    border-bottom: solid 2px transparent;
-    transition: all 0.125s ease-in;
-    cursor: pointer; }
+    position: relative;
+    padding: 16px 16px;
+    font-size: 1rem;
+    line-height: 1.42857;
+    font-weight: 400;
+    cursor: pointer;
+    color: #32363a; }
+    .fd-tabs__link:link {
+      color: #32363a; }
+    .fd-tabs__link::after {
+      transition: all 0.125s ease-in;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: inline-block;
+      height: 3px;
+      width: 100%;
+      background-color: transparent;
+      border-radius: 4px 4px 0 0; }
     .fd-tabs__link:hover {
-      border-bottom: solid 2px #0a6ed1;
       color: #085caf; }
     .fd-tabs__link.is-selected, .fd-tabs__link[aria-selected="true"] {
-      color: #32363a;
-      border-bottom: solid 2px #0a6ed1; }
+      color: #0a6ed1; }
+      .fd-tabs__link.is-selected::after, .fd-tabs__link[aria-selected="true"]::after {
+        background-color: #0a6ed1; }
     .fd-tabs__link.is-disabled, .fd-tabs__link[aria-disabled="true"] {
       color: rgba(10, 110, 209, 0.4);
       cursor: not-allowed; }
-      .fd-tabs__link.is-disabled:hover, .fd-tabs__link[aria-disabled="true"]:hover {
-        border-bottom-color: transparent; }
   .fd-tabs__panel[aria-expanded="false"] {
     display: none; }
   .fd-tabs__panel.is-expanded, .fd-tabs__panel[aria-expanded="true"] {
@@ -4126,7 +4229,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     flex-direction: column; }
   .fd-nav__link {
     display: block;
-    padding: 8px; }
+    padding: 12px 16px; }
     .fd-nav__link.is-selected, .fd-nav__link[aria-selected="true"] {
       color: #32363a; }
 
@@ -4144,32 +4247,40 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
-  margin-bottom: 32px;
+  margin-bottom: 12px;
   list-style: none;
   border-bottom: solid 1px #dededf; }
   .fd-tabs__link {
     display: block;
-    padding: 12px 20px;
-    font-size: 1.14286rem;
-    line-height: 1.25;
-    font-family: '72Condensed', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #0a6ed1;
-    border-bottom: solid 2px transparent;
-    transition: all 0.125s ease-in;
-    cursor: pointer; }
+    position: relative;
+    padding: 16px 16px;
+    font-size: 1rem;
+    line-height: 1.42857;
+    font-weight: 400;
+    cursor: pointer;
+    color: #32363a; }
+    .fd-tabs__link:link {
+      color: #32363a; }
+    .fd-tabs__link::after {
+      transition: all 0.125s ease-in;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: inline-block;
+      height: 3px;
+      width: 100%;
+      background-color: transparent;
+      border-radius: 4px 4px 0 0; }
     .fd-tabs__link:hover {
-      border-bottom: solid 2px #0a6ed1;
       color: #085caf; }
     .fd-tabs__link.is-selected, .fd-tabs__link[aria-selected="true"] {
-      color: #32363a;
-      border-bottom: solid 2px #0a6ed1; }
+      color: #0a6ed1; }
+      .fd-tabs__link.is-selected::after, .fd-tabs__link[aria-selected="true"]::after {
+        background-color: #0a6ed1; }
     .fd-tabs__link.is-disabled, .fd-tabs__link[aria-disabled="true"] {
       color: rgba(10, 110, 209, 0.4);
       cursor: not-allowed; }
-      .fd-tabs__link.is-disabled:hover, .fd-tabs__link[aria-disabled="true"]:hover {
-        border-bottom-color: transparent; }
   .fd-tabs__panel[aria-expanded="false"] {
     display: none; }
   .fd-tabs__panel.is-expanded, .fd-tabs__panel[aria-expanded="true"] {

@@ -1,5 +1,6 @@
 @import "./../settings";
 @import "./../mixins";
+@import "./../functions";
 
 //els
 $fd-elements-inputs--text: "input[type=text]", "input[type=password]", "input[type=email]", "input[type=url]", "input[type=search]", "input[type=tel]", "input[type=number]", "input[type=date]";
@@ -47,6 +48,7 @@ select {
     margin: 0;
     vertical-align: middle;
     position: relative;
+    cursor: pointer;
     &:checked {
         border-color: $fd-forms-border-color--check;
         background-color: $fd-forms-border-color--check;
@@ -58,41 +60,37 @@ select {
         background-color: $fd-forms-background-color--disabled;
     }
 }
-input[type="checkbox"] {
-    &:checked {
-        &::after {
-            content: "";
-            width: 16px;
-            height: 6px;
-            border-color: $fd-forms-background-color;
-            border-style: solid;
-            border-width: 0 0 1px 1px;
-            transform: rotate(-45deg);
-            position: absolute;
-            z-index: 2;
-            top: calc(50% - 5px);
-            left: calc(50% - 16px/2);
-        }
-        &[disabled],
-        &[aria-disabled="true"],
-        &.is-disabled {
-            &::after {
-                border-color: $fd-forms-background-color--check-disabled;
-            }
-        }
+input[type="checkbox"]:checked + label {
+    &::before {
+        content: "";
+        width: 10px;
+        height: 5px;
+        border-color: $fd-forms-background-color;
+        border-style: solid;
+        border-width: 0 0 2px 2px;
+        transform: rotate(-45deg);
+        position: absolute;
+        z-index: 2;
+        top: calc(50% - 4px);
+        left: calc(50% - 10px/2);
     }
+    // &[disabled],
+    // &[aria-disabled="true"],
+    // &.is-disabled {
+    //     &::before {
+    //         border-color: $fd-forms-background-color--check-disabled;
+    //     }
+    // }
 }
 input[type="radio"] {
     border-radius: 50%;
     &::after {
-        $check-size_: fd-space(4);
+        $check-size_: fd-space(2);
         content: "";
         border-radius: 50%;
         width: $check-size_;
         height: $check-size_;
         position: absolute;
-        bottom: 0;
-        right: 0;
         top: calc(50% - (#{$check-size_}/2));
         left: calc(50% - (#{$check-size_}/2));
         transition: background-color $fd-forms-transition-params;
