@@ -60,7 +60,7 @@ select {
         background-color: $fd-forms-background-color--disabled;
     }
 }
-input[type="checkbox"]:checked + label {
+input[type="checkbox"] {
     &::before {
         content: "";
         width: 10px;
@@ -74,13 +74,13 @@ input[type="checkbox"]:checked + label {
         top: calc(50% - 4px);
         left: calc(50% - 10px/2);
     }
-    // &[disabled],
-    // &[aria-disabled="true"],
-    // &.is-disabled {
-    //     &::before {
-    //         border-color: $fd-forms-background-color--check-disabled;
-    //     }
-    // }
+    &[disabled],
+    &[aria-disabled="true"],
+    &.is-disabled {
+        &::before {
+            border-color: $fd-forms-background-color--check-disabled;
+        }
+    }
 }
 input[type="radio"] {
     border-radius: 50%;
