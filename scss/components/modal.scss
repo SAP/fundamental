@@ -1,7 +1,8 @@
 @import "./../settings";
 @import "./../mixins";
 @import "./../functions";
-//@import "../components/button";
+@import "./../icons/mixins";
+@import "./mixins";
 /*!
 .fd-modal
     .fd-modal__header
@@ -12,38 +13,49 @@
       .fd-modal__button-secondary
 */
 $block: #{$fd-namespace}-modal;
-  $fd-modal-border-color: fd-color(neutral, 3) !default;
-  $fd-modal-inner-padding: fd-space(10) !default;
-  $fd-modal-inner-content-background: fd-color(background, 1) !default;
+  $fd-modal-width: 460px !default;
+  //these are used only to roughly calculate body overflow on compact screens - this can be improved with a flex or grid solution
+  $fd-modal-header-height: 60px !default;
+  $fd-modal-footer-height: 68px !default;
 
+  $fd-modal-border-color: fd-color("neutral", 2) !default;
+  $fd-modal-padding-x: $fd-width--gutter !default;
+  $fd-modal-padding-y: fd-space(4) !default;
+  $fd-modal-inner-content-background: fd-color("background", 2) !default;
 
 .#{$block} {
   @include fd-reset;
-  max-width: 700px;
-  margin: fd-space(8) auto;
+  max-width: $fd-modal-width;
   &__content{
+    border-radius: $fd-border-radius;
     background-color: $fd-modal-inner-content-background;
-    button{
-      float: right;
-    }
   }
-  &__header{
+  &__header {
+    position: relative;
     border-bottom: 1px solid $fd-modal-border-color;
-    padding-left: $fd-modal-inner-padding;
-    padding-top: $fd-modal-inner-padding;
-    padding-right: $fd-modal-inner-padding/2;
+    padding: $fd-modal-padding-y $fd-modal-padding-x;
   }
   &__title{
-      @include fd-type("4",header, med);
+    @include fd-type("1");
+    margin-bottom: 0;
+  }
+  &__close {
+    position: absolute;
+    right: fd-space(1);
+    top: fd-space(2);
+    @include fd-icon("decline", "l");
+    @include fd-button-reset;
+    color: fd-color("text", 1);
+    width: fd-space(9);
+    height: fd-space(9);
   }
   &__body{
-    padding: $fd-modal-inner-padding;
+    padding: $fd-modal-padding-y $fd-modal-padding-x;
+    max-height: calc(100vh - #{$fd-modal-header-height} - #{$fd-modal-footer-height});
+    overflow: scroll;
   }
-  &__footer-items {
-    display: block;
-    overflow: auto;
-    border-top: 1px solid $fd-modal-border-color;
-    padding: $fd-modal-inner-padding;
-    padding-top: $fd-modal-inner-padding/2;
+  &__footer {
+    padding: $fd-modal-padding-y $fd-modal-padding-x;
+    text-align: right;
   }
 }
