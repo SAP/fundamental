@@ -3,45 +3,43 @@
 @import "./../functions";
 /*!
 .fd-action-bar
-	.fd-action-bar__navigation
-	.fd-action-bar__title
+\	.fd-action-bar__title
 	.fd-action-bar__actions+(.is-disabled | aria-hidden)?
         .fd-action-bar__action-item
 */
 $block: #{$fd-namespace}-action-bar;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-action-bar-background-color: fd-color("background", 2) !default;
-    $fd-action-bar-border-color: fd-color("neutral", 3) !default;
-    $fd-action-bar-border-width: 0 !default;
-    $fd-action-bar-height: fd-space(19) !default;
+    $fd-action-bar-background-color: transparent !default;
+    $fd-action-bar-height: fd-space(16) !default;
     $fd-action-bar-transition-params: 0.25s ease-in !default;
 
     //BLOCK BASE *******************************************
-    //set all BLOCK reset and baseline styles
     @include fd-reset;
-    height: $fd-action-bar-height;
     background-color: $fd-action-bar-background-color;
-    border-style: solid;
-    border-width: $fd-action-bar-border-width;
-    border-color: $fd-action-bar-border-color;
+    min-height: $fd-action-bar-height;
     display: flex;
-    align-items: center;
-    &__navigation {
+    align-items: stretch;
+    padding-right: fd-space("reg");
+    padding-left: fd-space("reg");
 
-    }
-    &__title {
+    &__header {
         @include fd-reset;
-        @include fd-type("3", header, med);
         flex: 1;
         margin-bottom: 0;
-        &:first-child {
-            padding-left: fd-space(6);
-        }
+        padding-top: fd-space("s");
+        padding-bottom: fd-space("s");
     }
+
+    &__title {
+        @include fd-type("3");
+        margin-bottom: 0;
+    }
+
     &__actions {
         @include fd-reset;
         display: flex;
+        align-self: center;
         transition: opacity $fd-action-bar-transition-params;
         visibility: visible;
         &.is-disabled,
@@ -50,7 +48,11 @@ $block: #{$fd-namespace}-action-bar;
             visibility: hidden;
         }
     }
-    &__action-item {
 
+    &__action-item {
+      margin-right: fd-space("s");
+      &:last-child {
+        margin-right: 0;
+      }
     }
 }
