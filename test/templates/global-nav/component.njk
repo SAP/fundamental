@@ -13,11 +13,11 @@ global_nav:
 -->
 
 {% macro global_nav(properties={}, modifier={}, state={}, aria={}) -%}
-
+{%- set _id = utils.id() %}
 <nav class="fd-global-nav{{ modifier.block | modifier('global-nav') }}{{ state | state }}"{{ aria | aria }}>
 
     <div class="fd-global-nav__group fd-global-nav__group--branding">
-        {%- if properties.sidemenu -%}
+        {%- if properties.side_menu -%}
         <div class="fd-global-nav__side-menu">
             {{  button(
                     { icon: 'menu2' },
@@ -44,9 +44,11 @@ global_nav:
         ) | indent(12) }}
 	</div>
 
+    {%- if properties.context_menu -%}
 	<div class="fd-global-nav__context-menu">
-		{{ dropdown(properties.context, modifier={ control: "no-border" }) | indent(12) }}
+		{{ dropdown(properties.context_menu, modifier={ control: "no-border" }) | indent(12) }}
 	</div>
+    {%- endif -%}
 
     <div class="fd-global-nav__group fd-global-nav__actions">
         <div class="fd-global-nav__actions">
@@ -55,14 +57,14 @@ global_nav:
                 {{  button(
                         { icon: 'search' },
                         modifier={ block: ['secondary', 'm'] },
-                        aria={ label: 'BUTTON_LABEL', controls: '1234', haspopup: true, expanded: false },
+                        aria={ label: 'BUTTON_LABEL', controls: _id, haspopup: true, expanded: false },
                         classes='global-nav__btn'
                     )
                 }}
 
                 {{ form_control(
                         type='text',
-                        id='1234',
+                        id=_id,
                         properties={ placeholder: "Search... " },
                         aria={ hidden: true }
                 ) }}

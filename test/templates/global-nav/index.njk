@@ -11,6 +11,12 @@
 
 {% block content %}
 
+<style media="screen">
+    .fd-global-nav{
+        margin: 40px 0;
+    }
+</style>
+
 <div style="background-color: #f3f4f5; margin:-20px; padding:20px;">
 
     <h1>global-nav</h1>
@@ -22,7 +28,25 @@
         properties = {
             "title": "Global Nav Label",
             "description": "Global Nav Description",
-            "sidemenu": true,
+            "launchpad": {
+                "label": "Application Name",
+                "classes": "fd-global-nav__launchpad",
+                "items": [
+                    { "label": "Link Name" },
+                    { "label": "Link Name" },
+                    { "label": "Link Name" },
+                    { "label": "Link Name" },
+                    { "label": "Link Name" }
+                ]
+            }
+        }
+    ) }}
+
+    {{  global_nav(
+        properties = {
+            "title": "Global Nav Label",
+            "description": "Global Nav Description",
+            "side_menu": true,
             "launchpad": {
                 "label": "Application Name",
                 "classes": "fd-global-nav__launchpad",
@@ -34,7 +58,7 @@
                     { "label": "Link Name" }
                 ]
             },
-            "context": {
+            "context_menu": {
                 "label": "Context Switcher",
                 "classes": "fd-global-nav__launchpad",
                 "items": [

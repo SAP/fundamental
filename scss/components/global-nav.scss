@@ -38,7 +38,6 @@ $block: #{$fd-namespace}-global-nav;
             display: flex;
             flex-direction: row;
         }
-
     }
 
     &__side-menu,
@@ -109,17 +108,20 @@ $block: #{$fd-namespace}-global-nav;
         input{
             position: absolute;
             left: -$fd-global-nav-search-box-width;
-            top: 0;
+            top: 5px;
             background:$fd-global-nav-search-box-background-color;
             border-radius: 0;
             border:none;
             min-width:$fd-global-nav-search-box-width;
             border-bottom: 1px solid $fd-global-nav-border-color;
-            height: $fd-global-nav-height - 2;
+            height: $fd-global-nav-height - 11;
+            box-shadow: 0 5px #fff,  0px -5px #fff;
+            &[aria-hidden="true"] {
+                display: none;
+            }
 
         }
     }
-
 
     //STATES *******************************************
     &.is-disabled,
