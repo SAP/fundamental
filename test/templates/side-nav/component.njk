@@ -1,4 +1,5 @@
 {% from "./../icon/component.njk" import icon %}
+{% import "./../utils.njk" as utils %}
 <!--
 nav.fd-side-nav
     div.fd-side-nav__group
@@ -12,6 +13,7 @@ nav.fd-side-nav
 -->
 
 {%- macro navitem(properties={}) -%}
+{%- set _id = utils.id() %}
 <li class="fd-side-nav__item">
     {%- set state = { selected: properties.selected, expanded: properties.expanded } %}
     {%- set aria = { } %}
@@ -22,7 +24,7 @@ nav.fd-side-nav
     {%- endif %}
 
     {%- if properties.items -%}
-    <a class="fd-side-nav__link{{ modifier.link | modifier('nav__link') }}{{ state | state }} has-child"{{ aria | aria }} href="{{ properties.href or '#' }}" aria-controls="{{ _id }}">
+    <a class="fd-side-nav__link{{ modifier.link | modifier('nav__link') }}{{ state | state }} has-child"{{ aria | aria }} href="{{ properties.href or '#' }}" aria-controls="{{ _id }}" aria-haspopup="true">
         {%- if properties.icon -%}
             {{ navicon(properties.icon) }}
         {%- endif %}
@@ -33,7 +35,7 @@ nav.fd-side-nav
     {%- if properties.expanded %}
         {%- set sublisthidden = "false" %}
     {%- endif %}
-    <ul class="fd-side-nav__sublist" id="{{ properties.id }}" aria-hidden="{{ sublisthidden }}">
+    <ul class="fd-side-nav__sublist" id="{{ _id }}" aria-hidden="{{ sublisthidden }}">
         {%- for subitem in properties.items %}
             <li class="fd-side-nav__subitem">
                 {%- set state = { selected: subitem.selected, disabled: subitem.disabled } %}
