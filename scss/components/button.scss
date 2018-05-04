@@ -52,7 +52,7 @@ $block: #{$fd-namespace}-button;
   //set all reset and baseline block styles
   $defaults: map-get($fd-button-sizes, "default");
   @at-root {
-    [class*="#{$block}"] {
+    .#{$block}, [class*="#{$block}--"] {
       @include fd-button-reset;
       background-color: $fd-button-background-color;
       color: $fd-button-color;
@@ -214,7 +214,8 @@ $block: #{$fd-namespace}-button;
       background-color: $fd-button-background-color--secondary;
     }
   }
-  &--toolbar {
+  &--toolbar,
+  &--grouped {
     color: $fd-button-color--toolbar;
     background-color: $fd-button-background-color--toolbar;
     border: solid 1px $fd-button-border-color--toolbar;
@@ -237,6 +238,19 @@ $block: #{$fd-namespace}-button;
     &.is-disabled,
     &:disabled {
       background-color: $fd-button-background-color--secondary;
+    }
+  }
+  &--grouped {
+    &:active,
+    &.is-active,
+    &[aria-selected="true"],
+    &.is-selected,
+    &[aria-pressed="true"],
+    &.is-pressed {
+      color: $fd-button-color--main;
+      background-color: $fd-button-background-color--main;
+      //border-color: $fd-button-background-color--main;
+      border-color: $fd-button-border-color--toolbar;
     }
   }
 

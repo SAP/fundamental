@@ -6,6 +6,10 @@
     color: $fd-color;
     font-family: $fd-font-family;
 }
+@mixin fd-reset-spacing {
+  padding: 0;
+  margin: 0;
+}
 
 //els
 @mixin fd-form-base {
@@ -54,6 +58,7 @@
         //background-color: $fd-forms-background-color;
         border-color: $fd-forms-border-color--disabled;
         border-width: 0 0 1px;
+        border-radius: 0;
     }
     @content;
 }
