@@ -5,7 +5,7 @@
 {% from "./component.njk" import card_group %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['fonts','components/card','components/button'] %}
+{% set css_deps = ['fonts','helpers','components/card','components/button','components/badge'] %}
 
 {% block content %}
 {% set mediaCardItem = card(
@@ -23,7 +23,17 @@
 
 
 {% set cardItem = card(
-            { title: 'Lorem ipsum dolor quam placeat numquam repellendus', description: 'Tenetur quam placeat obcaecati molestias voluptatibus dolorum ut molestias voluptatibus dolorum ut.', status: '<span class="fd-has-color-status-1">Voluptate quis adipisci sit</span>' },
+            { title: 'Lorem ipsum dolor quam placeat numquam repellendus', description: 'Tenetur quam placeat obcaecati molestias voluptatibus dolorum ut molestias voluptatibus dolorum ut.', status: '<span class="fd-badge fd-badge--success">Adipisci</span>' },
+            modifier={ block: [] },
+            aria={ role: 'button' }
+    )
+%}
+{% set cardItemEmpty = card(
+
+    )
+%}
+{% set cardItemMin = card(
+            { title: 'Lorem ipsum dolor', description: 'Tenetur quam placeat' },
             modifier={ block: [] },
             aria={ role: 'button' }
     )
@@ -64,12 +74,13 @@
      %}
     <h1>card-group</h1>
 
+<h2>3-col (default)</h2>
     <!-- output the component example and the code snippet -->
     {% set example %}
     {{  card_group(
             properties={
                 items: [
-                cardItem2, mediaCardItem, actionCardItem, cardItem, cardItem2
+                cardItem, cardItem, cardItem, cardItem, cardItem, cardItem
                 ]
             },
             modifier={
@@ -90,7 +101,7 @@
 {{  card_group(
         properties={
             items: [
-            actionCardItem, cardItem, mediaCardItem, cardItem2, cardItem
+            actionCardItem, actionCardItem, actionCardItem, actionCardItem
             ]
         },
         modifier={
@@ -107,12 +118,11 @@
 <br><br>
 
 <h1>4 cols</h1>
-
 {% set example %}
 {{  card_group(
         properties={
             items: [
-            productCardItem, productCardItem, productCardItem, productCardItem, productCardItem
+            cardItemMin, cardItemMin, cardItemMin, cardItemMin, cardItemMin, cardItemMin, cardItemMin, cardItemMin
             ]
         },
         modifier={
@@ -125,7 +135,47 @@
 {% endset %}
 {{ format(example) }}
 
+<br><br>
+
+<h1>5 cols</h1>
+{% set example %}
+{{  card_group(
+        properties={
+            items: [
+            cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty,
+            cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty
+            ]
+        },
+        modifier={
+            block: ["5col"]
+        },
+        state={},
+        aria={}
+    )
+}}
+{% endset %}
+{{ format(example) }}
 
 
+<br><br>
+
+<h1>6 cols</h1>
+{% set example %}
+{{  card_group(
+        properties={
+            items: [
+            cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty,
+            cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty
+            ]
+        },
+        modifier={
+            block: ["6col"]
+        },
+        state={},
+        aria={}
+    )
+}}
+{% endset %}
+{{ format(example) }}
 
 {% endblock %}
