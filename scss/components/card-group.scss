@@ -9,12 +9,12 @@ $block: #{$fd-namespace}-card-group;
   //VARS
   $fd-card-group-border-color: fd-color("background") !default;
   $fd-card-group-items-per-group: 3 !default;
-display: flex;
-flex-wrap: wrap;
-flex-direction: column;
-  & > .fd-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  & > * {
     margin-bottom: 0;
-    border-radius: 0;
+    border-radius: 0 !important;
     &::after {
       content: "";
       top: 0;
@@ -38,9 +38,9 @@ flex-direction: column;
 
     //BLOCK MODIFIERS ************
     @each $n in 2, 3, 4, 5, 6 {
-        &--#{$n}col {
-          grid-template-columns: repeat(auto-fill, minmax(calc(100% / #{$n}), 1fr));
-        }
+      &--#{$n}col {
+        grid-template-columns: repeat(auto-fill, minmax(calc(100% / #{$n}), 1fr));
+      }
     }
   }
 
