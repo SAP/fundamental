@@ -2,22 +2,12 @@
 {% from "./../format.njk" import format %}
 {% from "../card/component.njk" import card %}
 {% from "../button/component.njk" import button %}
-{% from "./component.njk" import card_group %}
+{% from "./component.njk" import card_grid %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['fonts','icons','helpers','components/card', 'components/link','components/alert','components/button','components/badge'] %}
+{% set css_deps = ['fonts','helpers','components/card','components/button','components/badge'] %}
 
 {% block content %}
-
-
-<div class="fd-alert fd-alert--error" role="alert">
-  Renamed to <code>.fd-card-grid</code> to better match the layout. <a href="/card-grid" class="fd-link">See <code>.fd-card-grid</code> <span class="sap-icon--arrow-right sap-icon--s"></span></a>
-</div>
-
-<br><br>
-
-
-
 {% set cardItem = card(
             { title: 'Lorem ipsum dolor quam placeat numquam repellendus', description: 'Tenetur quam placeat obcaecati molestias voluptatibus dolorum ut molestias voluptatibus dolorum ut.', status: '<span class="fd-badge fd-badge--success">Adipisci</span>' },
             modifier={ block: [] },
@@ -46,12 +36,14 @@
     )
 %}
 
-    <h1>card-group</h1>
+    <h1>card-grid</h1>
 
 <h2>3-col grid (default)</h2>
+<p>Also available as a modifier class <code>--3col</code>
+</p>
     <!-- output the component example and the code snippet -->
     {% set example %}
-    {{  card_group(
+    {{  card_grid(
             properties={
                 items: [
                 cardItem, cardItem, cardItem, cardItem, cardItem, cardItem
@@ -69,10 +61,10 @@
 
 <br><br>
 
-<h1>2 col grid</h1>
+<h2>2 col grid</h2>
 
 {% set example %}
-{{  card_group(
+{{  card_grid(
         properties={
             items: [
             actionCardItem, actionCardItem, actionCardItem, actionCardItem
@@ -91,9 +83,9 @@
 
 <br><br>
 
-<h1>4 col grid</h1>
+<h2>4 col grid</h2>
 {% set example %}
-{{  card_group(
+{{  card_grid(
         properties={
             items: [
             cardItemMin, cardItemMin, cardItemMin, cardItemMin, cardItemMin, cardItemMin, cardItemMin, cardItemMin
@@ -111,9 +103,9 @@
 
 <br><br>
 
-<h1>5 col grid</h1>
+<h2>5 col grid</h2>
 {% set example %}
-{{  card_group(
+{{  card_grid(
         properties={
             items: [
             cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty,
@@ -133,14 +125,14 @@
 
 <br><br>
 
-<h1>6 col grid</h1>
+<h2>6 col grid</h2>
 {% set span %}
 <div style="grid-row: span 2;">
   {{cardItemEmpty}}
 </div>
 {% endset %}
 {% set example %}
-{{  card_group(
+{{  card_grid(
         properties={
             items: [
 cardItemEmpty,cardItemEmpty,
@@ -160,11 +152,11 @@ cardItemEmpty,cardItemEmpty,
 
 <br><br>
 
-<h1>6 col grid w/ span helpers</h1>
+<h2>6 col grid w/ span helpers</h2>
 <p>Shows use of helper classes <code>.fd-has-grid-row-span-2</code> and <code>.fd-has-grid-column-span-2</code>.
 </p>
 {% set example %}
-{{  card_group(
+{{  card_grid(
         properties={
             items: [
             card({ body: "" },classes=['has-grid-row-span-2','has-background-color-accent-7']),
