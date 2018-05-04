@@ -56,6 +56,7 @@ $block: #{$fd-namespace}-form;
                 display: flex;
                 align-items: center;
                 line-height: $fd-forms-height--input-check;
+                cursor: pointer;
             }
             .#{$block}__control {
                 float: left;
@@ -100,8 +101,7 @@ $block: #{$fd-namespace}-form;
         display: block;
         @include fd-type(#{$fd-form-message-font-size});
         color: $fd-form-message-color;
-        padding: fd-space(1) 0;
-        font-style: italic;
+        padding: fd-space(2) 0;
         position: relative;
         //adjust for checks
         @at-root {
@@ -124,33 +124,36 @@ $block: #{$fd-namespace}-form;
             border-radius: 50%;
             background-color: fd-color(text, 3);
             text-align: center;
+            line-height: 18px;
+        }
+        &--warning, &--error, &--help {
+            padding-left: fd-space(6);
+            &::before {
+                left: 0;
+                top: 7px;
+            }
         }
         &--help {
-            padding-left: fd-space(7);
+            color: fd-color(text);
             &::before {
                 content: "?";
             }
         }
-        &--warning, &--error {
-            padding-left: fd-space(9);
-            color: fd-color(text);
+        &--warning {
+            color: $fd-color--warning;
             &::before {
                 content: "!";
-                left: fd-space(2);
-            }
-        }
-        &--warning {
-            background-color: scale-color($fd-color--warning, $lightness: 70%);
-            &::before {
                 background-color: transparent;
                 border-radius: 0;
                 @include triangle(20px 18px, $fd-color--warning, up);
-                text-indent: -0.1em;
+                text-indent: -0.15em;
+                line-height: 22px;
             }
         }
         &--error {
-            background-color: scale-color($fd-color--error, $lightness: 70%);
+            color: $fd-color--error;
             &::before {
+                content: "!";
                 background-color: $fd-color--error;
                 color: fd-color(text-inverse);
             }
