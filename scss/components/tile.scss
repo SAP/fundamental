@@ -1,0 +1,35 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+
+/*!
+.fd-tile+(--no-border)
+    .fd-tile__content+()
+    .fd-tile__title+()
+*/
+$block: #{$fd-namespace}-tile;
+
+.#{$block} {
+  //VARS
+  $fd-card-content-padding: fd-space(4) fd-space("reg") !default;
+
+  @include fd-reset;
+  display: flex;
+  &__media {
+    //padding: $fd-card-content-padding;
+    background-color: yellow;
+  }
+
+  &__content {
+    padding: $fd-card-content-padding;
+  }
+
+  &__actions {
+    //padding: $fd-card-content-padding;
+    background-color: yellow;
+  }
+
+
+
+
+}
