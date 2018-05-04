@@ -11,36 +11,107 @@ $block: #{$fd-namespace}-mega-menu;
 
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-mega-menu-border-color: fd-color(primary, 1) !default;
-    $fd-mega-menu-content-border-color: fd-color(neutral, 4) !default;
-    $fd-mega-menu-border-color--selected: fd-color(primary) !default;
+    $fd-mega-menu-text-size: fd-type(1);
+    $fd-mega-menu-background-color: fd-color("background", 2);
+    $fd-mega-menu-selected-background-color: rgba(fd-color("action", 1), .07);
+    $fd-mega-menu-hover-background-color: fd-color("neutral", 1);
+    $fd-mega-menu-link-color: fd-color("text", 2);
+    $fd-mega-menu-max-width: 250px;
+    $fd-mega-menu-link-padding: fd-space(2.5) fd-space(5);
+    $fd-mega-menu-title-padding: fd-space(2) fd-space(5);
+    $fd-mega-menu-icon-right-padding: fd-space(2.5);
+    $fd-mega-menu-link-disabled-color: fd-color("text", 3);
+    $fd-mega-menu-title-background-color: fd-color("neutral", 1);
 
     //BLOCK BASE *******************************************
-    //set all BLOCK reset and baseline styles
     @include fd-reset;
-    border: solid 20px $fd-mega-menu-border-color;
+    background-color: $fd-mega-menu-background-color;
+    max-width: $fd-mega-menu-max-width;
+    margin: 0;
+    padding: 0;
 
-    //BLOCK MODIFIERS ************
-    //e.g., $fd-mega-menu--no-border
-    &--no-border {
-        border-color: transparent;
-    }
 
     //ELEMENTS *******************************************
-    //set all ELEMENT baseline styles
-    //e.g., $fd-mega-menu__content
-    &__content {
-        border: solid 10px $fd-mega-menu-content-border-color;
 
-        //ELEMENT MODIFIERS ************
-        //e.g., $fd-mega-menu__content--no-border
-        &--no-border {
-            border-color: transparent;
+    &__header{
+        @include fd-icon($key, $size: "default")
+    }
+    &__group {
+        list-style: none;
+        margin-bottom: 0;
+    }
+
+    &__title {
+        display: block;
+        margin-bottom: 0;
+        padding: $fd-mega-menu-title-padding;
+        @include fd-type("-3", "body", "reg", uppercase);
+        color: $fd-mega-menu-link-disabled-color;
+        background:$fd-mega-menu-title-background-color;
+
+    }
+
+    &__list,
+    &__sublist {
+        @include fd-reset;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style:  none;
+        flex-direction: column;
+    }
+    &__link,
+    &__sublink {
+        padding: $fd-mega-menu-link-padding;
+        color: $fd-mega-menu-link-color;
+        display: block;
+        @include fd-type("0", "body", "reg");
+
+        //STATES *******************************************
+        &:hover{
+            background-color: $fd-mega-menu-hover-background-color;
+        }
+        &.is-selected,
+        &.is-expanded,
+        &[aria-selected="true"],
+        &[aria-expanded="true"]{
+            color: $fd-mega-menu-link-color;
+            background-color: $fd-mega-menu-selected-background-color;
+            font-weight: bold;
+        }
+
+
+
+        &.is-disabled,
+        &[aria-disabled="true"] {
+            color: $fd-mega-menu-link-disabled-color;
+        }
+
+    }
+
+    &__link {
+
+        //STATES *******************************************
+        &.has-child{
+            background-image: url(#{$fd-forms-select-background-image});
+            background-repeat: no-repeat;
+            background-position: calc(100% - #{$fd-forms-select-width--background-image}) center;
+        }
+
+        &.is-expanded,
+        &[aria-expanded="true"]
+        {
+            background-image: url(#{$fd-forms-select-background-image--expanded});
         }
     }
-    &__title {
 
-
+    &__sublink{
+        font-weight: normal;
+        padding-left: fd-space(5) * 2;
+        &[aria-hidden="true"]{
+            display: none;
+        }
     }
 
     //STATES *******************************************
@@ -48,11 +119,5 @@ $block: #{$fd-namespace}-mega-menu;
     &[disabled] {
         opacity: 0.5;
     }
-    &[aria-selected="true"] {
-        border-color: $fd-mega-menu-border-color--selected;
-    }
-
-
-
 
 }
