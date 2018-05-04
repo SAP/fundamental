@@ -1,0 +1,58 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+
+/*!
+.fd-mega-menu+(--no-border)
+    .fd-mega-menu__content+()
+    .fd-mega-menu__title+()
+*/
+$block: #{$fd-namespace}-mega-menu;
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-mega-menu-border-color: fd-color(primary, 1) !default;
+    $fd-mega-menu-content-border-color: fd-color(neutral, 4) !default;
+    $fd-mega-menu-border-color--selected: fd-color(primary) !default;
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    @include fd-reset;
+    border: solid 20px $fd-mega-menu-border-color;
+
+    //BLOCK MODIFIERS ************
+    //e.g., $fd-mega-menu--no-border
+    &--no-border {
+        border-color: transparent;
+    }
+
+    //ELEMENTS *******************************************
+    //set all ELEMENT baseline styles
+    //e.g., $fd-mega-menu__content
+    &__content {
+        border: solid 10px $fd-mega-menu-content-border-color;
+
+        //ELEMENT MODIFIERS ************
+        //e.g., $fd-mega-menu__content--no-border
+        &--no-border {
+            border-color: transparent;
+        }
+    }
+    &__title {
+
+
+    }
+
+    //STATES *******************************************
+    &.is-disabled,
+    &[disabled] {
+        opacity: 0.5;
+    }
+    &[aria-selected="true"] {
+        border-color: $fd-mega-menu-border-color--selected;
+    }
+
+
+
+
+}

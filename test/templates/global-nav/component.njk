@@ -16,7 +16,7 @@ global_nav:
 {%- set _id = utils.id() %}
 <nav class="fd-global-nav{{ modifier.block | modifier('global-nav') }}{{ state | state }}"{{ aria | aria }}>
 
-    <div class="fd-global-nav__group fd-global-nav__group--branding">
+    <div class="fd-global-nav__group fd-global-nav__group--left">
         {%- if properties.side_menu -%}
         <div class="fd-global-nav__side-menu">
             {{  button(
@@ -43,7 +43,6 @@ global_nav:
             modifier={ control: "no-border" }
         ) | indent(12) }}
 	</div>
-
 
     <div class="fd-global-nav__group fd-global-nav__group--right">
 

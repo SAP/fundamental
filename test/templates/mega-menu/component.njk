@@ -1,0 +1,17 @@
+<!--
+mega_menu:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{% macro mega_menu(properties={}, modifier={}, state={}, aria={}) -%}
+<div class="fd-mega-menu{{ modifier.block | modifier('mega-menu') }}{{ state | state }}"{{ aria | aria }}>
+    <div class="fd-mega-menu__content{{ modifier.content | modifier('mega-menu__content') }}">
+        <h1 class="fd-mega-menu__title">{{ properties.title }}</h1>
+        {%- if properties.description %}
+            {{ properties.description }}
+        {%- endif %}
+    </div>
+</div>
+{%- endmacro %}
