@@ -10,7 +10,11 @@
 $block: #{$fd-namespace}-mega-menu;
 
 .#{$block} {
-    //LOCAL VARS (set all themeable properties, always include !default)
+
+    //LOCAL VARS
+    $fd-mega-menu-border: none !default;
+    $fd-mega-menu-background-color: fd-color("background",2) !default;
+    $fd-mega-menu-box-shadow: 0 5px 20px 0 rgba(fd-color("text"), 0.08) !default;
     $fd-mega-menu-text-size: fd-type(1);
     $fd-mega-menu-background-color: fd-color("background", 2);
     $fd-mega-menu-selected-background-color: rgba(fd-color("action", 1), .07);
@@ -23,19 +27,33 @@ $block: #{$fd-namespace}-mega-menu;
     $fd-mega-menu-link-disabled-color: fd-color("text", 3);
     $fd-mega-menu-title-background-color: fd-color("neutral", 1);
 
+
     //BLOCK BASE *******************************************
     @include fd-reset;
     background-color: $fd-mega-menu-background-color;
     max-width: $fd-mega-menu-max-width;
     margin: 0;
     padding: 0;
-
+    background-color: $fd-mega-menu-background-color;
+    box-shadow: $fd-mega-menu-box-shadow;
+    border-radius: $fd-border-radius;
+    border: $fd-mega-menu-border;
 
     //ELEMENTS *******************************************
-
     &__header{
-        // @include fd-icon('home', $size: "default");
+        box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.07);
+        &-link{
+            padding: 10px 20px;
+            color: $fd-mega-menu-link-color;
+
+            &:before{
+                padding-right: 10px;
+                font-size: 22px;
+                vertical-align: sub;
+            }
+        }
     }
+
     &__group {
         list-style: none;
         margin-bottom: 0;
@@ -48,7 +66,6 @@ $block: #{$fd-namespace}-mega-menu;
         @include fd-type("-3", "body", "reg", uppercase);
         color: $fd-mega-menu-link-disabled-color;
         background:$fd-mega-menu-title-background-color;
-
     }
 
     &__list,
@@ -61,6 +78,7 @@ $block: #{$fd-namespace}-mega-menu;
         list-style:  none;
         flex-direction: column;
     }
+
     &__link,
     &__sublink {
         padding: $fd-mega-menu-link-padding;
@@ -72,6 +90,7 @@ $block: #{$fd-namespace}-mega-menu;
         &:hover{
             background-color: $fd-mega-menu-hover-background-color;
         }
+
         &.is-selected,
         &.is-expanded,
         &[aria-selected="true"],
@@ -81,22 +100,20 @@ $block: #{$fd-namespace}-mega-menu;
             font-weight: bold;
         }
 
-
-
         &.is-disabled,
         &[aria-disabled="true"] {
             color: $fd-mega-menu-link-disabled-color;
         }
-
     }
 
     &__link {
 
         //STATES *******************************************
         &.has-child{
-            background-image: url(#{$fd-forms-select-background-image});
+            background-image: url(#{$fd-link-has-child-background-image});
             background-repeat: no-repeat;
-            background-position: calc(100% - #{$fd-forms-select-width--background-image}) center;
+            background-position: calc(100% - 12px) center;
+            background-size: 8px;
         }
 
         &.is-expanded,
