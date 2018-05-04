@@ -11,8 +11,10 @@ $block: #{$fd-namespace}-button-group;
 .#{$block} {
 
   @include fd-reset-spacing;
-  display: flex;
+  display: inline-flex;
+  vertical-align: middle;
   & > * {
+    margin: 0;
     &:not(:first-child):not(:last-child) {
       border-radius: 0;
     }
