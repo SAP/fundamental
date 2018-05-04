@@ -21,6 +21,8 @@ $block: #{$fd-namespace}-mega-menu;
     $fd-mega-menu-hover-background-color: fd-color("neutral", 1);
     $fd-mega-menu-link-color: fd-color("text", 2);
     $fd-mega-menu-max-width: 250px;
+    $fd-mega-menu-sub-list-max-width: $fd-mega-menu-max-width - 50px;
+
     $fd-mega-menu-link-padding: fd-space(2.5) fd-space(5);
     $fd-mega-menu-title-padding: fd-space(2) fd-space(5);
     $fd-mega-menu-icon-right-padding: fd-space(2.5);
@@ -79,6 +81,20 @@ $block: #{$fd-namespace}-mega-menu;
         flex-direction: column;
     }
 
+    &__list{
+        position: relative;
+    }
+
+    &__sublist{
+        width: $fd-mega-menu-sub-list-max-width;
+        background-color: $fd-mega-menu-background-color;
+        box-shadow: $fd-mega-menu-box-shadow;
+        border-radius: $fd-border-radius;
+        position: absolute;
+        right: -$fd-mega-menu-sub-list-max-width;
+        top: 0;
+    }
+
     &__link,
     &__sublink {
         padding: $fd-mega-menu-link-padding;
@@ -119,7 +135,7 @@ $block: #{$fd-namespace}-mega-menu;
         &.is-expanded,
         &[aria-expanded="true"]
         {
-            background-image: url(#{$fd-forms-select-background-image--expanded});
+            // background-image: url(#{$fd-forms-select-background-image--expanded});
         }
     }
 
