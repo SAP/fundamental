@@ -1,3 +1,4 @@
+{% from "./../icon/component.njk" import icon %}
 <!--
 mega_menu:
     properties={},
@@ -7,7 +8,7 @@ mega_menu:
 -->
 {% macro mega_menu(properties={}, modifier={}, state={}, aria={}) -%}
 <nav class="fd-mega-menu{{ modifier.block | modifier('mega-menu') }}{{ state | state }}"{{ aria | aria }}>
-    <div class="fd-mega-menu__header">
+    <div class="fd-mega-menu__header sap-icon--home">
         SAP Hybris Home
     </div>
     <div class="fd-mega-menu__group">
