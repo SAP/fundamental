@@ -12,55 +12,60 @@ nav.fd-side-nav
 -->
 
 {%- macro navitem(properties={}) -%}
-    <li class="fd-side-nav__item">
+<li class="fd-side-nav__item">
+    {%- set state = { selected: properties.selected, expanded: properties.expanded } %}
+    {%- set aria = { } %}
+    {%- if properties.selected %}
+        {%- set aria = { selected: properties.selected } %}
+    {%- elseif properties.expanded %}
+        {%- set aria = { expanded: properties.expanded } %}
+    {%- endif %}
 
-
-        {%- set state = { selected: properties.selected, expanded: properties.expanded } %}
-        {%- set aria = { } %}
-        {%- if properties.selected %}
-            {%- set aria = { selected: properties.selected } %}
-        {%- elseif properties.expanded %}
-            {%- set aria = { expanded: properties.expanded } %}
-        {%- endif %}
-
-        {%- if properties.items -%}
-        <a class="fd-side-nav__link{{ modifier.link | modifier('nav__link') }}{{ state | state }} has-child"{{ aria | aria }} href="{{ properties.href or '#' }}" aria-controls="{{ _id }}">
+    {%- if properties.items -%}
+    <a class="fd-side-nav__link{{ modifier.link | modifier('nav__link') }}{{ state | state }} has-child"{{ aria | aria }} href="{{ properties.href or '#' }}" aria-controls="{{ _id }}">
+        {%- if properties.icon -%}
             {{ navicon(properties.icon) }}
-            {{ properties.label }}
-        </a>
-
-        {%- set sublisthidden = "true" %}
-        {%- if properties.expanded %}
-            {%- set sublisthidden = "false" %}
         {%- endif %}
-        <ul class="fd-side-nav__sublist" id="{{ properties.id }}" aria-hidden="{{ sublisthidden }}">
-            {%- for subitem in properties.items %}
-                <li class="fd-side-nav__subitem">
-                    {%- set state = { selected: subitem.selected, disabled: subitem.disabled } %}
-                    {%- set aria = {} %}
+        {{ properties.label }}
+    </a>
 
-                    {%- if subitem.selected %}
-                        {%- set aria = { selected: subitem.selected } %}
-                    {%- elif subitem.disabled %}
-                        {%- set aria = { disabled: subitem.disabled } %}
-                    {%- endif %}
+    {%- set sublisthidden = "true" %}
+    {%- if properties.expanded %}
+        {%- set sublisthidden = "false" %}
+    {%- endif %}
+    <ul class="fd-side-nav__sublist" id="{{ properties.id }}" aria-hidden="{{ sublisthidden }}">
+        {%- for subitem in properties.items %}
+            <li class="fd-side-nav__subitem">
+                {%- set state = { selected: subitem.selected, disabled: subitem.disabled } %}
+                {%- set aria = {} %}
 
-                    <a class="fd-side-nav__sublink{{ modifier.link | modifier('nav__sublink') }}{{ state | state }}"{{ aria | aria }} href="{{ item.href or '#' }}">
+                {%- if subitem.selected %}
+                    {%- set aria = { selected: subitem.selected } %}
+                {%- elif subitem.disabled %}
+                    {%- set aria = { disabled: subitem.disabled } %}
+                {%- endif %}
+
+                <a class="fd-side-nav__sublink{{ modifier.link | modifier('nav__sublink') }}{{ state | state }}"{{ aria | aria }} href="{{ item.href or '#' }}">
+                    {%- if subitem.icon -%}
                         {{ navicon(subitem.icon) }}
-                        {{ subitem.label }}
-                    </a>
-                </li>
-            {%- endfor -%}
-        </ul>
-        {%- else -%}
-        <a class="fd-side-nav__link{{ modifier.link | modifier('nav__link') }}{{ state | state }}"{{ aria | aria }} href="{{ properties.href or '#' }}">
+                    {%- endif %}
+                    {{ subitem.label }}
+                </a>
+            </li>
+        {%- endfor -%}
+    </ul>
+    {%- else -%}
+    <a class="fd-side-nav__link{{ modifier.link | modifier('nav__link') }}{{ state | state }}"{{ aria | aria }} href="{{ properties.href or '#' }}">
+        {%- if properties.icon -%}
             {{ navicon(properties.icon) }}
-            {{ properties.label }}
-        </a>
+        {%- endif %}
 
-        {%- endif -%}
+        {{ properties.label }}
+    </a>
 
-    </li>
+    {%- endif -%}
+
+</li>
 {%- endmacro %}
 
 {%- macro navlist(properties={}) -%}
@@ -80,18 +85,16 @@ nav.fd-side-nav
     {%- endfor -%}
 {%- endmacro %}
 
-{%- macro navicon(icon={}) -%}
-    {%- if icon -%}
-        <span class="fd-side-nav__icon sap-icon--{{icon}} sap-icon--l" role="presentation"></span>
-    {%- endif -%}
+{%- macro navicon(properties={}) -%}
+    <span class="fd-side-nav__icon sap-icon--{{properties}} sap-icon--l" role="presentation"></span>
 {%- endmacro %}
 
 {%- macro side_nav(properties={}, modifier={}, state={}, aria={}, classes="") -%}
-    <nav class="fd-side-nav{{ modifier.block | modifier('side-nav') }}">
-        {%- if properties.navgroups  %}
-            {{ navgroup(properties.navgroups) }}
-        {%- else -%}
-            {{ navlist(properties.items) }}
-        {%- endif -%}
-    </nav>
+<nav class="fd-side-nav{{ modifier.block | modifier('side-nav') }}">
+{%- if properties.navgroups  %}
+    {{ navgroup(properties.navgroups) }}
+{%- else -%}
+    {{ navlist(properties.items) }}
+{%- endif -%}
+</nav>
 {%- endmacro -%}
