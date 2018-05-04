@@ -20,6 +20,8 @@ $block: #{$fd-namespace}-global-nav;
     $fd-global-nav-btn-color: fd-color(action, 1);
     $fd-global-nav-search-box-background-color: fd-color(background, 2);
     $fd-global-nav-search-box-width: fd-space(44);
+    $fd-side-nav-launchpad-background-color: rgba(fd-color("action", 1), .07);
+    $fd-side-nav-launchpad-hover-background-color: fd-color(neutral, 1);
 
     //BLOCK BASE *******************************************
     @include fd-reset;
@@ -28,24 +30,35 @@ $block: #{$fd-namespace}-global-nav;
     height: $fd-global-nav-height;
     display: flex;
     color: $fd-global-nav-color;
+    position: relative;
 
     //ELEMENTS *******************************************
     &__group {
         min-height: $fd-global-nav-height;
 
         &--branding {
-            width: auto;
-            display: flex;
-            flex-direction: row;
+            position: absolute;
+            left: 0;
+            top: 0;
+            // width: auto;
+            // display: flex;
+            // flex-direction: row;
+        }
+
+        &--right{
+            position: absolute;
+            right: 0;
+            top: 0;
         }
     }
 
     &__side-menu,
     &__logo,
     &__product-name {
-        display: flex;
+        display: inline-block;
         height: $fd-global-nav-height;
-        align-items: center;
+        vertical-align: middle;
+        // align-items: center;
     }
 
     &__side-menu {
@@ -67,12 +80,12 @@ $block: #{$fd-namespace}-global-nav;
     }
 
     &__product-name {
-        padding-left: fd-space(4);
+        padding: fd-space(5) 0 0 fd-space(5);
         @include fd-type("-1", "body", "semi");
     }
 
     &__launchpad{
-        display: flex;
+        // display: flex;
         text-align: center;
         padding-top: 0;
         max-width: 400px;
@@ -80,6 +93,16 @@ $block: #{$fd-namespace}-global-nav;
 
         button{
             height: $fd-global-nav-height - 2;
+
+            &:hover{
+                border-color: transparent;
+                background-color:  $fd-side-nav-launchpad-hover-background-color
+            }
+            &:focus,
+            &[aria-expanded="true"]{
+                border-color: transparent;
+                background-color: $fd-side-nav-launchpad-background-color;
+            }
         }
 
     }
@@ -94,7 +117,7 @@ $block: #{$fd-namespace}-global-nav;
     }
 
     &__actions {
-        display: flex;
+        // display: flex;
         button {
             height: $fd-global-nav-height - 2;
             min-height: $fd-global-nav-height - 2;
@@ -104,6 +127,7 @@ $block: #{$fd-namespace}-global-nav;
 
     &__search{
         position: relative;
+        display: inline-block;
 
         input{
             position: absolute;
