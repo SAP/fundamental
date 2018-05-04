@@ -17,14 +17,15 @@
 }
 
 @mixin fd-link($color: $fd-link-color) {
-  &:link {
-    border-bottom: solid 1px $fd-link-color;
+  color: $fd-link-color;
+  border-bottom: solid 1px $fd-link-color;
+  &:hover {
+    color: $fd-link-color--hover;
+    border-bottom-color: $fd-link-color--hover;
   }
   &:visited {
+    color: $fd-link-color--visited;
     border-bottom-color: $fd-link-color--visited;
-  }
-  &:hover {
-    border-bottom-color: $fd-link-color--hover;
   }
   &:active,
   &[aria-selected="true"],
@@ -32,10 +33,12 @@
   &[aria-pressed="true"],
   &.is-pressed,
   &:focus {
+      color: $fd-link-color--active;
       border-bottom-color: $fd-link-color--active;
   }
   &[aria-disabled="true"],
   &.is-disabled {
+      color: $fd-link-color--disabled;
       border-bottom-color: $fd-link-color--disabled;
   }
 }
