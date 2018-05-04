@@ -1,7 +1,8 @@
 {% from "../button/component.njk" import button %}
 {% from "../icon/component.njk" import icon %}
-{% from "../dropdown/component.njk" import dropdown, menu %}
+{% from "../dropdown/component.njk" import dropdown %}
 {% from "../form/component.njk" import form_control %}
+{% from "../mega-menu/component.njk" import mega_menu %}
 {% import "./../utils.njk" as utils %}
 
 <!--
@@ -38,10 +39,16 @@ global_nav:
     </div>
 
 	<div class="fd-global-nav__group fd-global-nav__launchpad">
-		{{ dropdown(
+		{# {{ dropdown(
             properties.launchpad,
             modifier={ control: "no-border" }
-        ) | indent(12) }}
+        ) | indent(12) }} #}
+
+        {{ mega_menu(
+            properties.launchpad
+            
+            )
+        }}
 	</div>
 
     <div class="fd-global-nav__group fd-global-nav__group--right">
