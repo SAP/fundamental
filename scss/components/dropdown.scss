@@ -1,5 +1,6 @@
 @import "./../settings";
 @import "./../mixins";
+@import "./../icons/mixins";
 @import "./../functions";
 @import "./mixins";
 
@@ -33,10 +34,12 @@ $block: #{$fd-namespace}-dropdown;
     display: inline-block;
 
     &__control {
-        @include fd-button-reset;
+        // @include fd-button-reset;
         @include fd-form-select;
         position: relative;
-        line-height: $fd-forms-height--input-text;
+  //      line-height: $fd-forms-height--input-text;
+//@include fd-icon("navigation-down-arrow");
+
         &[aria-expanded="true"],
         &.is-expanded {
             border-color: $fd-forms-border-color--focus;
