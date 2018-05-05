@@ -157,6 +157,7 @@ function getStarterData() {
         "tree": require(`./templates/tree/data.json`),
         "table": require(`./templates/table/data.json`),
         "tabs": require(`./templates/tabs/data.json`),
+        "pagination": require(`./templates/pagination/data.json`),
         "image": require(`./templates/image/data.json`)
     }
     return data;

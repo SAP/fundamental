@@ -1,16 +1,18 @@
 @import "./settings";
 
 //icon mixin
-@mixin fd-icon($key, $size: "default") {
-  @include fd-icon-base;
-  @include fd-icon-glyph($key);
-  @include fd-icon-size($size);
+@mixin fd-icon($key, $size: "default", $position: "before") {
+  @include fd-icon-base($position);
+  @include fd-icon-glyph($key, $position);
+  @include fd-icon-size($size,$position);
+  &::#{$position} {
+    @content;
+  }
 }
 
 //icon base mixin
-@mixin fd-icon-base {
-  color: $fd-icon-color;
-  &::before {
+@mixin fd-icon-base($position: "before") {
+  &::#{$position} {
     font-family: "SAP-icons";
     font-style: normal;
     font-weight: normal;
@@ -26,8 +28,8 @@
 }
 
 //size mixin
-@mixin fd-icon-size($size: "default") {
-  &::before {
+@mixin fd-icon-size($size: "default", $position: "before") {
+  &::#{$position} {
     @if $size != "default" {
       //explicitly
       @if map-has-key($fd-icons-sizes, $size) {
@@ -46,9 +48,9 @@
 }
 
 //icon glyph mixin
-@mixin fd-icon-glyph($glyph) {
+@mixin fd-icon-glyph($glyph, $position: "before") {
   @if map-has-key($fd-icons, $glyph) {
-    &::before {
+    &::#{$position} {
       content: map-get($fd-icons, $glyph);
     }
   } @else {
