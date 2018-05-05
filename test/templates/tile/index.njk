@@ -3,12 +3,15 @@
 {% from "../button/component.njk" import button %}
 {% from "../image/component.njk" import image %}
 {% from "../identifier/component.njk" import identifier %}
-{% from "./component.njk" import tile, tile_content, tile_media %}
+{% from "./component.njk" import tile, tile_content, tile_media, tile_actions %}
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
 {% set css_deps = ['fonts','helpers','components/button','icons','components/identifier','components/image'] %}
 
 {% block content %}
 <style media="screen">
+main {
+  background-color: lightgray;
+}
   .fd-tile {
     margin-bottom: 10px;
   }
@@ -35,67 +38,148 @@
   aria={ label: data.properties.media.alt }
 ) %}
 
-
 {%- set tile_default %}
-  {% call tile() -%}
+{% call tile() -%}
+  {% call tile_content({ title: data.properties.title }) -%}
+  {%- endcall %}
+{%- endcall %}
+{% endset %}
+
+{%- set tile_button %}
+  {% call tile(aria={role: 'button'}) -%}
     {% call tile_content({ title: data.properties.title }) -%}
     {%- endcall %}
   {%- endcall %}
-{% endset %}
+{%- endset %}
 {%- set tile_description %}
-  {% call tile() -%}
-    {% call tile_content(data.properties) -%}
-    {%- endcall %}
-  {%- endcall %}
-{% endset %}
+{%- call tile() -%}
+{% call tile_content(data.properties) -%}
+{%- endcall %}
+{%- endcall %}
+{%- endset %}
+
 {%- set tile_media_id %}
-  {% call tile() -%}
-    {% call tile_media() -%}
-      {{icon}}
-    {%- endcall %}
-    {% call tile_content({ title: data.properties.title }) -%}
-    {%- endcall %}
-  {%- endcall %}
+{% call tile() -%}
+{% call tile_media() -%}
+  {{icon}}
+{%- endcall %}
+{%- call tile_content({ title: data.properties.title }) -%}
+{%- endcall %}
+{%- endcall %}
 {% endset %}
+
 {%- set tile_media_id_accent %}
-  {% call tile() -%}
-    {% call tile_media() -%}
-      {{icon_accent}}
-    {%- endcall %}
-    {% call tile_content(data.properties) -%}
-    {%- endcall %}
+{%- call tile() -%}
+  {%- call tile_media() -%}
+    {{icon_accent}}
   {%- endcall %}
+  {%- call tile_content(data.properties) -%}
+  {%- endcall %}
+{%- endcall %}
 {% endset %}
+
+
 {%- set tile_media_image %}
-  {% call tile() -%}
-    {% call tile_media() -%}
-      {{image_default}}
-    {%- endcall %}
+{%- call tile() -%}
+  {% call tile_media() -%}
+    {{image_default}}
+  {%- endcall %}
+  {%- call tile_content({ title: data.properties.title }) -%}
+  {%- endcall %}
+{%- endcall %}
+{% endset %}
+
+{%- set tile_media_image_round %}
+{%- call tile() -%}
+  {% call tile_media() -%}
+    {{image_round}}
+  {%- endcall %}
+  {%- call tile_content(data.properties) -%}
+  {%- endcall %}
+{%- endcall %}
+{% endset %}
+
+
+{%- set tile_actions %}
+  {%- call tile() -%}
     {% call tile_content({ title: data.properties.title }) -%}
     {%- endcall %}
-  {%- endcall %}
-{% endset %}
-{%- set tile_media_image_round %}
-  {% call tile() -%}
-    {% call tile_media() -%}
-      {{image_round}}
-    {%- endcall %}
-    {% call tile_content(data.properties) -%}
+    {%- call tile_actions() -%}
+    {{  button(
+        {
+            icon: 'vertical-grip'
+        },
+        modifier={ block: ['secondary'] },
+        aria={ label: 'More' })
+    }}
     {%- endcall %}
   {%- endcall %}
 {% endset %}
 
 
-    <!-- output the component example and the code snippet -->
-    {% set example %}
+<h2>default</h2>
+{% set example %}
 {{tile_default}}
 {{tile_description}}
+{% endset %}
+{{ format(example) }}
+
+<br><br>
+
+<h2>
+  with <code>.fd-media</code> container
+</h2>
+{% set example %}
 {{tile_media_id}}
 {{tile_media_id_accent}}
 {{tile_media_image}}
 {{tile_media_image_round}}
+{% endset %}
+{{ format(example) }}
+
+<br><br>
+<h2>
+  with <code>.fd-actions</code> container
+</h2>
+
+    {% set example %}
+{{tile_actions}}
     {% endset %}
     {{ format(example) }}
+
+
+<br><br>
+    <h2>button</h2>
+    <p>Add <code>role=button</code>
+    </p>
+    {% set example %}
+    {{tile_button}}
+    {% endset %}
+    {{ format(example) }}
+
+    <br><br>
+    <h2>disabled</h2>
+    <p>Add <code>aria-disabled=true</code></p>
+    {% set example %}
+{%- call tile(aria={disabled: true}) -%}
+  {%- call tile_content({ title: data.properties.title }) -%}
+  {%- endcall %}
+{%- endcall %}
+
+{% call tile(aria={disabled: true}) -%}
+  {%- call tile_media() -%}
+    {{icon}}
+  {%- endcall %}
+  {%- call tile_content({ title: data.properties.title }) -%}
+  {%- endcall %}
+{%- endcall %}
+{% endset %}
+    {{ format(example) }}
+
+    <br><br>
+
+
+
 
 
 {% endblock %}
