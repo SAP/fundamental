@@ -44,9 +44,22 @@ global_nav:
             modifier={ control: "no-border" }
         ) | indent(12) }} #}
 
+        {# properties={ label: 'Application Name' },
+        modifier={ block: ['secondary', 'l'] },
+        aria={ label: 'BUTTON_LABEL', haspopup: true , controls: _id2},
+        classes='global-nav__btn' #}
+        {{properties.launchpad_button.aria}}
+        {{  button(
+                properties.launchpad_button.properties,
+                properties.launchpad_button.aria
+
+            )
+        }}
+{# <button class=" fd-button--secondary fd-button--l">Button</button> #}
         {{ mega_menu(
-            properties.launchpad
-            
+            properties.launchpad_menu,
+            aria={ hidden:true }
+
             )
         }}
 	</div>

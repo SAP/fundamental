@@ -7,7 +7,7 @@ mega_menu:
     aria={}
 -->
 {% macro mega_menu(properties={}, modifier={}, state={}, aria={}) -%}
-<nav class="fd-mega-menu{{ modifier.block | modifier('mega-menu') }}{{ state | state }}"{{ aria | aria }}>
+<nav class="fd-mega-menu{{ modifier.block | modifier('mega-menu') }}{{ state | state }}"{{ aria | aria }} id="{{ properties.id }}">
     <div class="fd-mega-menu__header">
         <a href="#" class="fd-mega-menu__header-link sap-icon--home">SAP Hybris Home</a>
     </div>

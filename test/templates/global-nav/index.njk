@@ -23,12 +23,20 @@
 
     <!-- output the component example and the code snippet -->
     {% set example %}
+    {%- set _id = utils.id() %}
 
     {{  global_nav(
         properties = {
             "title": "Global Nav Label",
             "description": "Global Nav Description",
-            "launchpad": {
+            "launchpad_button": {
+                "properties": { label: 'Application Name'},
+                "modifier": { block: ['secondary', 'l'] },
+                "aria": { label: 'BUTTON_LABEL', haspopup: true , controls: _id2},
+                "classes": 'global-nav__btn'
+            },
+            "launchpad_menu": {
+                "id": _id,
                 "label": "Application Name",
                 "classes": "fd-global-nav__launchpad",
                 "items": [
