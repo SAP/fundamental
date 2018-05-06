@@ -4,7 +4,7 @@
 @mixin fd-icon($key, $size: "default", $position: "before") {
   @include fd-icon-base($position);
   @include fd-icon-glyph($key, $position);
-  @include fd-icon-size($size,$position);
+  @include fd-icon-size($size, $position);
   &::#{$position} {
     @content;
   }
@@ -50,8 +50,10 @@
 //icon glyph mixin
 @mixin fd-icon-glyph($glyph, $position: "before") {
   @if map-has-key($fd-icons, $glyph) {
+    //@debug $glyph;
     &::#{$position} {
       content: map-get($fd-icons, $glyph);
+      @content;
     }
   } @else {
       @warn "Unknown `#{$glyph}` in $fd-icons map";

@@ -109,18 +109,45 @@
 {%- for i in range(0, 5) -%}
 {{  tag({label: "Bibendum"}) }}
 {% endfor %}
-{{  button({label: 'Clear All'},modifier={block: ['secondary','xs']}) }}
+{{  button({label: 'Clear All'},modifier={block: ['secondary','s']}) }}
 {% endset %}
 
+{% set panel_filters_items = [
+    {
+        "label": "Color",
+        "items": [
+            { "label": "Option 1" },
+            { "label": "Option 2" },
+            { "label": "Option 3" }
+        ]
+    },
+    {
+        "label": "Size",
+        "items": [
+            { "label": "Option 1" },
+            { "label": "Option 2" },
+            { "label": "Option 3" }
+        ]
+    }
+
+] %}
 
 {% set panel_filters_content %}
 {% call layout.panel() -%}
     {% call layout.panel_header({ title: "Items (1180)" }) -%}
         {% call layout.panel_actions() -%}
 
-        {{ dropdown(data.toolbar.properties.sort) }}
+        {{ dropdown(
+          {            "label": "Newest",
+                      "icon": "sort",
+                      "items": [
+                          { "label": "Option 1" },
+                          { "label": "Option 2" },
+                          { "label": "Option 3" }
+                      ]},modifier={block: ['s']}
+          ) }}
 
-        {{  button({label: 'Filter',icon: 'add-filter'},modifier={block: ['toolbar','s']}) }}
+        {{  button({label: 'Filter',icon: 'add-filter' },modifier={block: ['toolbar','s']}) }}
 
         {{  button_group(
           properties={
@@ -136,8 +163,8 @@
         {%- endcall %}
     {%- endcall %}
     {% call layout.panel_filters(aria={ hidden: false }) -%}
-{% for item in data.toolbar.properties.filters.items %}
-{{ dropdown(item) }}
+{% for item in panel_filters_items %}
+{{ dropdown(item, modifier={block: "s"}) }}
 {% endfor %}
 
     {%- endcall %}
@@ -196,8 +223,7 @@ Vivamus sagittis <span class="fd-badge fd-badge--success">Active</span>
 {% call layout.panel() -%}
     {% call layout.panel_header({  title: badgetitle }) -%}
         {% call layout.panel_actions() -%}
-        <button class="fd-button fd-button--text fd-button--small">
-            <span class="fd-icon fd-icon--add" role="presentation"></span>
+        <button class="fd-button fd-button--s sap-icon--add">
             Add New Item
         </button>
         {%- endcall %}
