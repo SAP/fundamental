@@ -73,8 +73,7 @@ mega_menu:
 {%- endmacro %}
 
 {%- macro mega_menu(properties={}, modifier={}, state={}, aria={}, classes="") -%}
-<nav class="fd-mega-menu{{ modifier.block | modifier('mega-menu') }}">
-
+<nav class="fd-mega-menu{{ modifier.block | modifier('mega-menu') }}{{ state | state }}"{{ aria | aria }} id="{{ properties.id }}">
     {%- if properties.header  %}
     <div class="fd-mega-menu__header">
         <a href="#" class="fd-mega-menu__header-link sap-icon--home">{{ properties.header }}</a>
@@ -86,7 +85,7 @@ mega_menu:
     {%- else -%}
         {{ navlist(properties.items) }}
     {%- endif -%}
-    
+
 </nav>
 {%- endmacro -%}
 
