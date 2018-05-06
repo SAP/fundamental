@@ -39,29 +39,19 @@ global_nav:
     </div>
 
 	<div class="fd-global-nav__group fd-global-nav__launchpad">
-		{# {{ dropdown(
-            properties.launchpad,
-            modifier={ control: "no-border" }
-        ) | indent(12) }} #}
 
-        {# properties={ label: 'Application Name' },
-        modifier={ block: ['secondary', 'l'] },
-        aria={ label: 'BUTTON_LABEL', haspopup: true , controls: _id2},
-        classes='global-nav__btn' #}
-        {{properties.launchpad_button.aria}}
         {{  button(
-                properties.launchpad_button.properties,
-                properties.launchpad_button.aria
+            { label: 'Application Name' },
+            modifier={ block: ['secondary', 'l'] },
+            aria={ label: 'BUTTON_LABEL', haspopup: true , controls: 'test' }
+        )}}
 
-            )
-        }}
-{# <button class=" fd-button--secondary fd-button--l">Button</button> #}
         {{ mega_menu(
             properties.launchpad_menu,
-            aria={ hidden:true }
+            aria={ hidden:true },
+            classes="fd-global-nav__launchpad"
+        )}}
 
-            )
-        }}
 	</div>
 
     <div class="fd-global-nav__group fd-global-nav__group--right">
