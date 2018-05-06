@@ -8,11 +8,6 @@
 {% set css_deps = ['fonts','icons','components/button','components/dropdown'] %}
 
 {% block content %}
-<style>
-  .fd-dropdown:first-of-type {
-    margin-left: 200px;
-  }
-</style>
 
     <h1>contextual-menu</h1>
 
@@ -23,7 +18,7 @@
     {% set example %}
 {%- set _id = utils.id() %}
 <div class="fd-dropdown">
-    {{ button({ icon: "vertical-grip" }, modifier={ block: ["secondary"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
+    {{ button({ icon: "more" }, modifier={ block: ["icon","text"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
     {{  menu(properties={
             id: _id,
             items: [
@@ -40,13 +35,14 @@
 
 {% set _id = utils.id() %}
 <div class="fd-dropdown">
-{{ button({ icon: "vertical-grip" }, state={ disabled: true }, modifier={ block: ["secondary"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
+{{ button({ icon: "more" }, state={ disabled: true }, modifier={ block: ["icon","text"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
 </div>
 
 {% set _id = utils.id() %}
 <div class="fd-dropdown">
 {{  button(
-        { label: 'More' },
+        { label: 'More', icon: 'more' },
+        modifier={ block: ['text','action-bar'] },
         aria={ controls: _id, haspopup: true, expanded: false, label: "More" }
     ) | indent(4)
 }}

@@ -2,19 +2,10 @@
 {% from "./component.njk" import card %}
 {% from "../button/component.njk" import button %}
 {% from "./../format.njk" import format %}
-{% set css_deps = ['fonts','helpers','icons','components/button','components/alert','components/link'] %}
+{% set css_deps = ['fonts','helpers','icons','components/button'] %}
 
 
 {% block content %}
-
-
-
-<div class="fd-alert fd-alert--error" role="alert">
-  Deprecated <code>.fd-card</code>. See <a href="/tile" class="fd-link"><code>.fd-tile</code> <span class="sap-icon--arrow-right sap-icon--s"></span></a> and <a href="/product-tile" class="fd-link"><code>.fd-product-tile</code> <span class="sap-icon--arrow-right sap-icon--s"></span></a>.
-</div>
-
-<br><br>
-
 
 <h1>Card</h1>
 {% set example %}
@@ -79,8 +70,8 @@
                 'description': 'Tenetur quam placeat ipsum dolor sit amet obcaecati molestias voluptatibus dolorum ut',
                 'status': '<span class="fd-has-color-status-1">Voluptate quis adipisci sit</span>',
                 'actions': button(
-                        { icon: 'vertical-grip' },
-                        modifier={ block: 'secondary' },
+                        { icon: 'more' },
+                        modifier={ block: ['icon','text','small'] },
                         aria={ label: 'BUTTON_LABEL' }
                     )
             },
@@ -197,7 +188,7 @@
                 body: body,
                 actions: button(
                         { label: 'Generate Access Token' },
-                        modifier={ },
+                        modifier={ block: ['link','small'] },
                         aria={  }
                     )
             })
