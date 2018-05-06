@@ -87,7 +87,11 @@ $block: #{$fd-namespace}-global-nav;
         margin: 0 auto;
 
         button{
-            height: $fd-global-nav-height - 2;
+            min-height: $fd-global-nav-height - 2;
+            background-image: url(#{$fd-forms-select-background-image});
+            background-repeat: no-repeat;
+            background-position: calc(100% - #{$fd-forms-select-width--background-image}) center;
+            padding-right: 30px;
 
             &:hover{
                 border-color: transparent;
