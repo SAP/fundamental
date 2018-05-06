@@ -74,7 +74,9 @@ nav.fd-side-nav
 {%- macro navgroup(properties={}) -%}
     {%- for navgroup in properties -%}
     <div class="fd-side-nav__group">
+      {%- if navgroup.title %}
         <h1 class="fd-side-nav__title">{{ navgroup.title }}</h1>
+      {%- endif %}
         {{ navlist(navgroup.items) }}
     </div>
     {%- endfor -%}
