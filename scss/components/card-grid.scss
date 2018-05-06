@@ -1,18 +1,14 @@
 @import "./../settings";
 @import "./../mixins";
 @import "./../functions";
-
-/*! DEPRECATED for .fd-card-grid
-  ------------------------------------
-*/
 /*!
-.fd-card-group+(--2col | --4col)
+.fd-card-grid+(--2col | --4col | --5col | --6col)
 */
-$block: #{$fd-namespace}-card-group;
+$block: #{$fd-namespace}-card-grid;
 .#{$block} {
   //VARS
-  $fd-card-group-border-color: fd-color("background") !default;
-  $fd-card-group-items-per-group: 3 !default;
+  $fd-card-grid-border-color: fd-color("background") !default;
+  $fd-card-grid-items-per-row: 3 !default;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -25,8 +21,8 @@ $block: #{$fd-namespace}-card-group;
       bottom: 0;
       right: 0;
       left: 0;
-      border-right: solid 1px $fd-card-group-border-color;
-      border-bottom: solid 1px $fd-card-group-border-color;
+      border-right: solid 1px $fd-card-grid-border-color;
+      border-bottom: solid 1px $fd-card-grid-border-color;
       position: absolute;
     }
   }
@@ -36,7 +32,7 @@ $block: #{$fd-namespace}-card-group;
     flex-direction: row;
     flex-wrap: wrap;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(calc(100% / #{$fd-card-group-items-per-group}), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(calc(100% / #{$fd-card-grid-items-per-row}), 1fr));
     grid-auto-rows: minmax(0, auto);
     grid-gap: 0;
 
@@ -47,7 +43,4 @@ $block: #{$fd-namespace}-card-group;
       }
     }
   }
-
-
-
 }

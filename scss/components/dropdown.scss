@@ -1,5 +1,6 @@
 @import "./../settings";
 @import "./../mixins";
+@import "./../icons/mixins";
 @import "./../functions";
 @import "./mixins";
 
@@ -10,6 +11,16 @@
 */
 $block: #{$fd-namespace}-dropdown;
 .#{$block} {
+  //SETTINGS
+  //SIZES
+  $fd-dropdown-sizes: (
+      "default",
+      "compact",
+      "xs",
+      "s",
+      "l"
+  ) !default;
+
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-dropdown-menu-color: solid 1px $fd-forms-color !default;
     $fd-dropdown-menu-border: solid 1px $fd-forms-border-color !default;
@@ -33,87 +44,53 @@ $block: #{$fd-namespace}-dropdown;
     display: inline-block;
 
     &__control {
-        @include fd-button-reset;
-        @include fd-form-select;
-        position: relative;
-        line-height: $fd-forms-height--input-text;
-        &[aria-expanded="true"],
-        &.is-expanded {
-            border-color: $fd-forms-border-color--focus;
-            z-index: $fd-dropdown-menu-z-index + 1;
-            box-shadow: $fd-dropdown-menu-shadow;
+      position: relative;
+      margin-left: 0;
+      @include fd-icon-base("after");
+      @include fd-icon-glyph("navigation-down-arrow","after"){
+        transition: transform $fd-dropdown-menu-item-transition-params;
+      };
+      &[aria-expanded="true"],
+      &.is-expanded {
+        &::after {
+          transform: scaleY(-1);
         }
-        &--no-border {
-            border-color: transparent;
-            &[aria-disabled="true"],
-            &.is-disabled,
-            &:disabled {
-                border-color: transparent;
-            }
+      }
+      &.is-disabled,
+      &[disabled],
+      &[aria-disabled="true"] {
+        &::after {
+          transform: none;
         }
+      }
     }
-    &__icon {
-        margin-right: fd-space(3);
-        vertical-align: middle;
-        transform: translateY(-2px);
+    &__menu {
+      padding-top: fd-space(base);
+      padding-bottom: fd-space(base);
+      margin-left: 0;
+      padding-left: 0;
+      min-width: 100%;
+      border: $fd-menu-border-color;
+      position: absolute;
+      white-space: nowrap;
+      z-index: $fd-menu-z-index;
+      border-radius: $fd-border-radius;
+      background-color: $fd-menu-background-color;
+      box-shadow: $fd-menu-box-shadow;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity $fd-menu-transition-params;
+      margin-top: 1px;
+      &[aria-hidden="true"],
+      &.is-hidden {
+          opacity: 0;
+          visibility: hidden;
+      }
     }
-    &__menu,
-    &__options {
-        margin-left: 0;
-        padding-left: 0;
-        list-style: none;
-        min-width: 100%;
-        border: $fd-dropdown-menu-border;
-        background: $fd-dropdown-menu-background-color;
-        position: absolute;
-        white-space: nowrap;
-        z-index: $fd-dropdown-menu-z-index;
-        transform: translateY(-1px);
-        box-shadow: $fd-dropdown-menu-shadow;
-        opacity: 1;
-        visibility: visible;
-        transition: opacity $fd-dropdown-menu-item-transition-params;
-        &[aria-hidden="true"],
-        &.is-hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-    }
-    &__group {
-        margin-left: 0;
-        padding-left: 0;
-        list-style: none;
-    }
-    &__item,
-    &__option {
-        @include fd-reset;
-        @include fd-type("-1", body);
-        display: block;
-        padding-left: 0;
-        list-style: none;
-        padding: $fd-dropdown-menu-item-padding;
-        &:hover {
-            color: $fd-dropdown-menu-item-color--hover;
-            background-color: $fd-dropdown-menu-item-background-color--hover;
-            text-decoration: none;
-        }
-        &.is-disabled:hover,
-        &[disabled]:hover,
-        &[aria-disabled="true"]:hover{
-            background: none;
-            color: $fd-dropdown-menu-item-color--disabled;
-            cursor: not-allowed;
-        }
+    @include fd-menu();
 
-    }
-    &__separator {
-        @include fd-reset;
-        @include fd-type("-3", body, reg, none);
-        display: block;
-        color: fd-color(text, 2);
-        padding: $fd-dropdown-menu-item-padding;
-        padding-top: fd-space(4);
-        border-top: solid 1px fd-color(neutral, 3);
-    }
+
+
+
 
 }

@@ -67,17 +67,24 @@ $block: #{$fd-namespace}-button;
       transition: all $fd-button-transition-params;
       &::before {
         margin-right: fd-space(2);
-        //line-height: inherit !important;
+        vertical-align: middle;
+      }
+      &::after {
+        margin-left: fd-space(2);
         vertical-align: middle;
       }
       &[aria-disabled="true"],
       &.is-disabled,
       &:disabled {
         opacity: 0.4;
+        cursor: not-allowed;
       }
       &:empty {
         &::before {
           margin-right: 0;
+        }
+        &::after {
+          margin-left: 0;
         }
       }
     }
@@ -238,6 +245,7 @@ $block: #{$fd-namespace}-button;
     &.is-disabled,
     &:disabled {
       background-color: $fd-button-background-color--secondary;
+      border-color: $fd-button-border-color--toolbar;
     }
   }
   &--grouped {
@@ -262,11 +270,13 @@ $block: #{$fd-namespace}-button;
         height: nth($list,1);
         max-height: nth($list, 1);
         line-height: nth($list, 1);
-        @include fd-icon-size(nth($list, 3));
+        @include fd-icon-size(nth($list, 3), "before");
+        @include fd-icon-size(nth($list, 3), "after");
         @if $key == "xs" {
           padding-left: $fd-button-padding-x / 1.25;
           padding-right: $fd-button-padding-x / 1.25;
-          &::before {
+          &::before,
+          &::after {
             vertical-align: baseline;
           }
         }
@@ -277,6 +287,9 @@ $block: #{$fd-namespace}-button;
         @if $key == "xs" or $key == "s" or $key == "compact"  {
           &::before {
             margin-right: fd-space(2) / 1.333;
+          }
+          &::after {
+            margin-left: fd-space(2) / 1.333;
           }
         }
       }

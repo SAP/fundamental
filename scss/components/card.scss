@@ -12,31 +12,34 @@
 $block: #{$fd-namespace}-card;
 .#{$block} {
     @include fd-reset;
-
-    //dimensions
-    $fd-card-media-width: 75px !default;
-    //colors
-    $fd-card-color-border: fd-color(neutral, 3) !default;
-    $fd-card-link-color: fd-color(action, 1) !default;
-    $fd-card-color-border-disabled: lighten(fd-color(neutral, 2), 5%) !default;
     $fd-card-color-disabled: fd-color(text, 3) !default;
+    $fd-card-color-link: fd-color("action", 1) !default;
+    $fd-card-border-color: transparent !default;
+    $fd-card-border-color-disabled: lighten(fd-color("neutral", 2), 5%) !default;
+    $fd-card-border-width: 0 !default;
+
+    $fd-card-media-width: 75px !default;
+
     $fd-card-background-color: fd-color("background",2) !default;
     $fd-card-background-color-disabled: fd-color(neutral, 1) !default;
     $fd-card-background-color-hover: $fd-card-background-color !default;
-    $fd-card-shadow-hover: 0 0 5px 0 rgba(138, 143, 161, 0.4) !default;
+    $fd-card-shadow-hover: 0 0 5px 0 rgba($fd-card-color-link, 0.4) !default;
     $fd-card-padding: fd-space(reg, true) !default;
     $fd-card-color-link: $fd-link-color !default;
+    $fd-card-border-radius: $fd-border-radius !default;
     $fd-card-margin-bottom: $fd-margin-bottom !default;
     //anim
     $fd-card-transition-params: $fd-animation--speed ease-in !default;
-    $fd-card-time-hover: $fd-animation--speed!default;
+    $fd-card-time-hover: $fd-animation--speed !default;
 
     display: flex;
-    margin-bottom: $fd-card-margin-bottom;
+    //margin-bottom: $fd-card-margin-bottom;
     border-style: solid;
-    border-width: 1px;
-    border-color: $fd-card-color-border;
+    border-width: $fd-card-border-width;
+    border-color: $fd-card-border-color;
     background-color: $fd-card-background-color;
+    border-radius: $fd-card-border-radius;
+    position: relative;
     &:last-child {
         margin-bottom: 0;
     }
@@ -84,6 +87,8 @@ $block: #{$fd-namespace}-card;
             box-shadow: $fd-card-shadow-hover;
             text-decoration: none;
             color: inherit;
+            position: relative;
+            z-index: 1;
         }
     }
 
@@ -91,7 +96,7 @@ $block: #{$fd-namespace}-card;
     &[aria-disabled="true"],
     &.is-disabled {
         background-color: $fd-card-background-color-disabled !important;
-        border-color: $fd-card-color-border-disabled !important;
+        border-color: $fd-card-border-color-disabled !important;
         box-shadow: none !important;
         cursor: default;
         * {
@@ -148,9 +153,9 @@ $block: #{$fd-namespace}-card;
         padding: $fd-card-padding $fd-card-padding/2;
 
         &>a {
-            color: $fd-card-link-color;
+            color: $fd-card-color-link;
             &:hover{
-                color: $fd-card-link-color;
+                color: $fd-card-color-link;
             }
         }
     }
