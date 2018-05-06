@@ -13,21 +13,58 @@
     <!-- output the component example and the code snippet -->
     {% set example %}
     {{  mega_menu(
-            properties={
-                header:"SAP Hybris Home",
-                "items": [
-                { "label": "Link Item"},
-                { "label": "Link Item" },
+        properties = {
+          "title": "Group Title",
+          "navgroups": [
+            {
+              "title": "Group Name",
+              "items": [
+                { "label": "item link" },
                 {
                     "label": "item link",
-                    "selected": true
+                    "haschild": true,
+                    "items": [
+                        { "label": "Link" },
+                        { "label": "Link" },
+                        { "label": "Link" }
+                    ]
                  },
-                { "label": "Link Item" },
-                { "label": "Link Item" },
-                { "label": "Link Item" },
-                { "label": "Link Item" }
-                ]
+                {
+                    "label": "item link",
+                    "haschild": true,
+                    "items": [
+                        { "label": "Link" },
+                        { "label": "Link" },
+                        { "label": "Link" }
+                    ]
+                 },
+                {
+                    "label": "item link",
+                    "haschild": true,
+                    "items": [
+                        { "label": "Link" },
+                        { "label": "Link" },
+                        { "label": "Link" }
+                    ]
+                 },
+                { "label": "item link" }
+              ]
             },
+            {
+                "title": "Group Name",
+                "items": [
+                  { "label": "item link" },
+                  {
+                      "label": "item link",
+                      "haschild": true
+                   },
+                  { "label": "item link" },
+                  { "label": "item link" },
+                  { "label": "item link" }
+              ]
+            }
+          ]
+        },
             modifier={
                 block: []
             },
