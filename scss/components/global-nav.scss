@@ -81,10 +81,10 @@ $block: #{$fd-namespace}-global-nav;
     }
 
     &__launchpad{
-        text-align: center;
         padding-top: 0;
         max-width: 400px;
         margin: 0 auto;
+        position: relative;
 
         button{
             min-height: $fd-global-nav-height - 2;
@@ -92,6 +92,7 @@ $block: #{$fd-namespace}-global-nav;
             background-repeat: no-repeat;
             background-position: calc(100% - #{$fd-forms-select-width--background-image}) center;
             padding-right: 30px;
+            color: $fd-global-nav-color;
 
             &:hover{
                 border-color: transparent;
@@ -102,6 +103,12 @@ $block: #{$fd-namespace}-global-nav;
                 border-color: transparent;
                 background-color: $fd-side-nav-launchpad-background-color;
             }
+        }
+
+        .fd-mega-menu{
+            position: absolute;
+            top: $fd-global-nav-height;
+            left: 0;    
         }
 
     }
