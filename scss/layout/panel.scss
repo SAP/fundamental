@@ -11,23 +11,15 @@
 
 $block: #{$fd-namespace}-panel;
 .#{$block} {
-    $fd-panel-padding: fd-space("reg") fd-space("reg") !default;
+    @include fd-clearfix;
     $fd-panel-border: none !default;
     $fd-panel-background-color: fd-color("background",2) !default;
     $fd-panel-box-shadow: 0 5px 20px 0 rgba(fd-color("text"), 0.08) !default;
     $fd-panel-border-radius: $fd-border-radius !default;
-
     $fd-panel-header-border-color: fd-color("neutral",2) !default;
+    $fd-panel-header-border: solid 1px $fd-panel-header-border-color !default;
+    $fd-panel-padding: fd-space("reg") fd-space("reg") !default;
     $fd-panel-title-color: fd-color("text") !default;
-    $fd-panel-filters-padding: fd-space(3) fd-space("reg") !default;
-    $fd-panel-filters-border-color: $fd-panel-header-border-color !default;
-    $fd-panel-footer-padding: fd-space(4) fd-space("reg") !default;
-    $fd-panel-footer-border-color: $fd-panel-header-border-color !default;
-
-    //anim
-    $fd-panel-fiters-transition-params: 0.15s ease-in !default;
-
-    @include fd-clearfix;
     background-color: $fd-panel-background-color;
     box-shadow: $fd-panel-box-shadow;
     border-radius: $fd-border-radius;
@@ -37,7 +29,7 @@ $block: #{$fd-namespace}-panel;
         display: flex;
         align-items: center;
         //margin-bottom: fd-space(4);
-        border-bottom: solid 1px $fd-panel-header-border-color;
+        border-bottom: $fd-panel-header-border;
         padding: $fd-panel-padding;
     }
     &__title {
@@ -48,18 +40,6 @@ $block: #{$fd-namespace}-panel;
     }
     &__actions {
         margin-left: auto;
-    }
-    &__filters {
-        padding: $fd-panel-filters-padding;
-        border-bottom: solid 1px $fd-panel-filters-border-color;
-        transition: all $fd-panel-fiters-transition-params;
-        &.is-hidden,
-        &[aria-hidden="true"] {
-          padding-top: 0;
-          padding-bottom: 0;
-          max-height: 0;
-          overflow: hidden;
-        }
     }
     &__body {
         padding: $fd-panel-padding;
@@ -72,7 +52,6 @@ $block: #{$fd-namespace}-panel;
     &__footer {
         display: flex;
         justify-content: center;
-        padding: $fd-panel-footer-padding;
-        border-top: solid 1px $fd-panel-footer-border-color;
+        padding-bottom: fd-space("reg");
     }
 }

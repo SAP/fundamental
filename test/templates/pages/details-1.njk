@@ -10,7 +10,7 @@
 {% from "../table/component.njk" import table %}
 {% from "../image/component.njk" import image %}
 {% from "../badge/component.njk" import badge %}
-{% from "../card-grid/component.njk" import card_grid %}
+{% from "../card-group/component.njk" import card_group %}
 {% from "../form/component.njk" import form_item %}
 
 {# SET CONTENT #}
@@ -94,7 +94,7 @@
 {% call layout.section() -%}
     {% call layout.section_header({  title: "Section Title" }) -%}
     {%- endcall %}
-    {{  card_grid(
+    {{  card_group(
             properties={
                 items: [
                 col_card, col_card, col_card, col_card, col_card, col_card
