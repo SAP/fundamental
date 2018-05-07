@@ -3,6 +3,7 @@
 {% from "../dropdown/component.njk" import dropdown %}
 {% from "../form/component.njk" import form_control %}
 {% from "../mega-menu/component.njk" import mega_menu %}
+{% from "../identifier/component.njk" import identifier %}
 {% import "./../utils.njk" as utils %}
 
 <!--
@@ -41,7 +42,7 @@ global_nav:
 	<div class="fd-global-nav__group fd-global-nav__launchpad">
 
         {{  button(
-            { label: 'Application Name' },
+            { label: 'Suite Name' },
             modifier={ block: ['secondary', 'l'] },
             aria={ label: 'BUTTON_LABEL', haspopup: true , controls: 'launchpad' }
         )}}
@@ -82,14 +83,6 @@ global_nav:
 
             </div>
 
-
-            {{  button(
-                    { icon: 'notification-2' },
-                    modifier={ block: ['secondary', 'm'] },
-                    aria={ label: 'BUTTON_LABEL' },
-                    classes='global-nav__btn'
-                )
-            }}
             {{  button(
                     { icon: 'action-settings' },
                     modifier={ block: ['secondary', 'm'] },
@@ -97,14 +90,17 @@ global_nav:
                     classes='global-nav__btn'
                 )
             }}
-            {{  button(
-                    { icon: 'customer' },
-                    modifier={ block: ['secondary', 'm'] },
-                    aria={ label: 'BUTTON_LABEL' },
-                    classes='global-nav__btn'
-                )
-            }}
-        </div>
+            {{  identifier(
+                properties={
+                  initials: "WW"
+                },
+                modifier={
+                    block: ['s']
+                },
+                aria=data.aria,
+                classes=['has-margin-right-xs']
+            )
+            }}        </div>
     </div>
 </nav>
 

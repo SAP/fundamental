@@ -7,7 +7,7 @@
 {% from "./component.njk" import global_nav %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'components/mega-menu', 'helpers'] %}
+{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'components/mega-menu', 'components/identifier', 'helpers'] %}
 
 {% block content %}
 
@@ -31,14 +31,14 @@
             "description": "Global Nav Description",
             "side_menu": true,
             "launchpad_button": {
-                "properties": { label: 'Application Name'},
+                "properties": { label: 'Suite Name'},
                 "modifier": { block: ['secondary', 'l'] },
                 "aria": { label: 'BUTTON_LABEL', haspopup: true , controls: _id2},
                 "classes": 'global-nav__btn'
             },
             "launchpad_menu": {
                 "id": 'launchpad',
-                "label": "Application Name",
+                "label": "Suite Name",
                 "classes": "fd-global-nav__launchpad",
                 "header": "SAP Hybris Home",
                 "navgroups": [
@@ -90,46 +90,6 @@
 
         }
     ) }}
-
-    {# {{  global_nav(
-        properties = {
-            "title": "Global Nav Label",
-            "description": "Global Nav Description",
-            "side_menu": true,
-            "launchpad": {
-                "label": "Application Name",
-                "classes": "fd-global-nav__launchpad",
-                "items": [
-                    { "label": "Link Name" },
-                    { "label": "Link Name" },
-                    { "label": "Link Name" },
-                    { "label": "Link Name" },
-                    { "label": "Link Name" }
-                ]
-            },
-            "context_menu": {
-                "label": "Context Switcher",
-                "classes": "fd-global-nav__launchpad",
-                "items": [
-                    { "label": "Link Name" },
-                    { "label": "Link Name" },
-                    { "label": "Link Name" },
-                    { "label": "Link Name" },
-                    { "label": "Link Name" }
-                ]
-            }
-        }
-    ) }} #}
-
-    {# {{  global_nav(
-            properties= data.properties,
-            modifier={
-                block: data.properties
-            },
-            state=data.state,
-            aria=data.aria
-        )
-    }} #}
 
     {% endset %}
     {{ format(example) }}
