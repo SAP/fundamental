@@ -63,6 +63,7 @@ $block: #{$fd-namespace}-input-group;
         justify-content: center;
         display: flex;
         flex-direction: column;
+        border-radius: $fd-border-radius;
 
         //ELEMENT MODIFIERS ************
         //each mod MUST extend the element base
@@ -74,6 +75,14 @@ $block: #{$fd-namespace}-input-group;
         }
         &--button {
             padding: 0;
+        }
+        &--before {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        &--after {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
         }
         @at-root {
             [readonly] + & {
@@ -90,6 +99,18 @@ $block: #{$fd-namespace}-input-group;
         }
 
     }
+    &--before {
+        #{$fd-elements-inputs--text} {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+    &--after {
+        #{$fd-elements-inputs--text} {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
     &__button {
         @include fd-button-reset;
         flex: 1;
@@ -98,6 +119,8 @@ $block: #{$fd-namespace}-input-group;
         min-width: fd-space(12);
         &--step-up, &--step-down  {
             font-size: 10px;
+            border-radius: 0;
+            
             &::after {
                 content: "";
                 position: relative;
