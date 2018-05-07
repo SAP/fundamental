@@ -49,9 +49,7 @@ mega_menu:
     <a class="fd-mega-menu__link{{ modifier.link | modifier('nav__link') }}{{ state | state }}"{{ aria | aria }} href="{{ properties.href or '#' }}">
         {{ properties.label }}
     </a>
-
     {%- endif -%}
-
 </li>
 {%- endmacro %}
 
@@ -64,102 +62,25 @@ mega_menu:
 {%- endmacro %}
 
 {%- macro navgroup(properties={}) -%}
-    {%- for navgroup in properties -%}
-    <div class="fd-mega-menu__group">
-        <h1 class="fd-mega-menu__title">{{ navgroup.title }}</h1>
-        {{ navlist(navgroup.items) }}
-    </div>
-    {%- endfor -%}
+{%- for navgroup in properties -%}
+<div class="fd-mega-menu__group">
+    <h1 class="fd-mega-menu__title">{{ navgroup.title }}</h1>
+    {{ navlist(navgroup.items) }}
+</div>
+{%- endfor -%}
 {%- endmacro %}
 
 {%- macro mega_menu(properties={}, modifier={}, state={}, aria={}, classes="") -%}
 <nav class="fd-mega-menu{{ modifier.block | modifier('mega-menu') }}{{ state | state }}"{{ aria | aria }} id="{{ properties.id }}">
-    {%- if properties.header  %}
-    <div class="fd-mega-menu__header">
-        <a href="#" class="fd-mega-menu__header-link sap-icon--home">{{ properties.header }}</a>
-    </div>
-    {%- endif -%}
-
-    {%- if properties.navgroups  %}
-        {{ navgroup(properties.navgroups) }}
-    {%- else -%}
-        {{ navlist(properties.items) }}
-    {%- endif -%}
-
+{%- if properties.header  %}
+<div class="fd-mega-menu__header">
+    <a href="#" class="fd-mega-menu__header-link sap-icon--home">{{ properties.header }}</a>
+</div>
+{%- endif -%}
+{%- if properties.navgroups  %}
+    {{ navgroup(properties.navgroups) }}
+{%- else -%}
+    {{ navlist(properties.items) }}
+{%- endif -%}
 </nav>
 {%- endmacro -%}
-
-{# {% macro mega_menu(properties={}, modifier={}, state={}, aria={}) -%}
-<nav class="fd-mega-menu{{ modifier.block | modifier('mega-menu') }}{{ state | state }}"{{ aria | aria }} id="{{ properties.id }}">
-    <div class="fd-mega-menu__header">
-        <a href="#" class="fd-mega-menu__header-link sap-icon--home">SAP Hybris Home</a>
-    </div>
-    <div class="fd-mega-menu__group">
-        <h1 class="fd-mega-menu__title">Group Name</h1>
-        <ul class="fd-mega-menu__list">
-            <li class="fd-mega-menu__item">
-                <a class="fd-mega-menu__link is-expanded has-child" aria-expanded="true" href="#" aria-controls="123" aria-haspopup="true">
-                    item link
-                </a>
-                <ul class="fd-mega-menu__sublist" id="123" aria-hidden="true">
-                    <li class="fd-mega-menu__subitem">
-                        <a class="fd-mega-menu__sublink" href="#">
-                            Link
-                        </a>
-                    </li>
-                    <li class="fd-mega-menu__subitem">
-                        <a class="fd-mega-menu__sublink" href="#">
-                            Link
-                        </a>
-                    </li>
-                    <li class="fd-mega-menu__subitem">
-                        <a class="fd-mega-menu__sublink" href="#">
-                            Link
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="fd-mega-menu__item">
-                <a class="fd-mega-menu__link" href="#">
-                    Link text
-                </a>
-            </li>
-            <li class="fd-mega-menu__item">
-                <a class="fd-mega-menu__link" href="#">
-                    Link text
-                </a>
-            </li>
-            <li class="fd-mega-menu__item">
-                <a class="fd-mega-menu__link" href="#">
-                    Link text
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="fd-mega-menu__group">
-        <h1 class="fd-mega-menu__title">Group Name</h1>
-        <ul class="fd-mega-menu__list">
-            <li class="fd-mega-menu__item">
-                <a class="fd-mega-menu__link" href="#">
-                    Link text
-                </a>
-            </li>
-            <li class="fd-mega-menu__item">
-                <a class="fd-mega-menu__link" href="#">
-                    Link text
-                </a>
-            </li>
-            <li class="fd-mega-menu__item">
-                <a class="fd-mega-menu__link" href="#">
-                    Link text
-                </a>
-            </li>
-            <li class="fd-mega-menu__item">
-                <a class="fd-mega-menu__link" href="#">
-                    Link text
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
-{%- endmacro %} #}
