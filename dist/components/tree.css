@@ -1,8 +1,9 @@
 /*!
-* Fundamental-UI v1.0.0-beta-3
+* Fundamental-UI v1.0.0-beta-4
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
+@charset "UTF-8";
 /*!
 .fd-tree+(--header)
     .fd-tree__group+(--sublevel-1...-6, ([aria-hidden] | .is-hidden))
@@ -19,7 +20,7 @@
   position: relative;
   width: 100%;
   max-width: 100%;
-  border-bottom: solid 1px #dededf;
+  border-bottom: solid 0 transparent;
   margin-bottom: 12px;
   margin-left: 0
 }
@@ -32,8 +33,9 @@
 }
 .fd-tree--header {
   border-bottom: 0;
-  border-top: solid 1px #dededf;
-  margin-bottom: 0
+  border-top: solid 0 transparent;
+  margin-bottom: 0;
+  background-color: #eeeeef
 }
 .fd-tree__group {
   -webkit-transition: opacity 125ms linear;
@@ -50,7 +52,7 @@
   overflow: hidden
 }
 .fd-tree__item {
-  border-top: solid 1px #dededf;
+  border-top: solid 0 transparent;
   margin-bottom: 0;
   list-style: none
 }
@@ -67,7 +69,7 @@
   transition: background-color 125ms ease-in
 }
 .fd-tree__row:hover {
-  background-color: #f8f8f8
+  background-color: #f9f9f9
 }
 .fd-tree__row--header {
   font-size: .85714rem;
@@ -78,11 +80,11 @@
   text-transform: uppercase
 }
 .fd-tree__row--header:hover {
-  background-color: transparent
+  background-color: initial
 }
 .fd-tree__row.is-selected,
 .fd-tree__row[aria-selected=true] {
-  background-color: #ebebec
+  background-color: #0a6ed1
 }
 .fd-tree__col {
   -webkit-box-flex: 1;
@@ -95,7 +97,7 @@
   -webkit-box-flex: 1;
   -ms-flex: auto;
   flex: auto;
-  width: 25%
+  width: 20%
 }
 .fd-tree__group--sublevel-1 .fd-tree__col--control {
   padding-left: 60px
@@ -127,7 +129,7 @@
   text-align: right
 }
 .fd-tree__control {
-  margin: 0;
+  display: inline-block;
   padding: 0;
   font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -145,26 +147,45 @@
   vertical-align: middle;
   white-space: nowrap;
   background-color: transparent;
+  border-radius: 4px;
   position: absolute;
   top: calc(50% - 18px/2);
   margin-left: -30px;
   width: 18px;
-  height: 18px;
   margin-right: 12px;
-  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI5Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMwMDhGRDIiIGQ9Ik0xMS45MzUgMS40NzVMNi4xODggNy45MjdhLjI2NC4yNjQgMCAwIDEtLjM3OCAwTC4wNjUgMS40NzVhLjIzNi4yMzYgMCAwIDEgLjAyNi0uMzQzTDEuMzgxLjA1OGEuMjUzLjI1MyAwIDAgMSAuMTYzLS4wNTlMMS41NjMgMGEuMjUyLjI1MiAwIDAgMSAuMTcxLjA4NWw0LjI2NSA0Ljg4IDQuMjY3LTQuODhhLjI1Mi4yNTIgMCAwIDEgLjM1Mi0uMDI3bDEuMjkxIDEuMDc0Yy4wNS4wNDIuMDgxLjEwMi4wODYuMTY2YS4yMzYuMjM2IDAgMCAxLS4wNi4xNzd6Ii8+PC9zdmc+) no-repeat 50%;
-  background-size: contain;
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
   vertical-align: middle;
   -webkit-transition: -webkit-transform 125ms linear;
   transition: -webkit-transform 125ms linear;
   transition: transform 125ms linear;
-  transition: transform 125ms linear,-webkit-transform 125ms linear
+  transition: transform 125ms linear,-webkit-transform 125ms linear;
+  color: #0a6ed1
+}
+.fd-tree__control::before {
+  font-family: SAP-icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none
+}
+.fd-tree__control::before {
+  content: ""
+}
+.fd-tree__control::before {
+  font-size: 14px;
+  line-height: 1.42857
 }
 .fd-tree__control.is-pressed,
 .fd-tree__control[aria-pressed=true] {
-  -webkit-transform: rotate(0);
-  transform: rotate(0)
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg)
 }
 .fd-tree a {
   color: #0a6ed1

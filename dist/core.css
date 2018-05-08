@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.0.0-beta-3
+* Fundamental-UI v1.0.0-beta-4
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -98,20 +98,27 @@ img {
   vertical-align: middle
 }
 a {
-  color: #0a6ed1;
-  text-decoration: none
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: all 125ms ease-in;
+  transition: all 125ms ease-in;
+  color: #0a6ed1
 }
 a:hover {
-  color: #0961b9
+  color: #085caf
 }
+a.is-pressed,
+a.is-selected,
 a:active,
-a:focus {
-  color: #0961b9;
+a:focus,
+a[aria-pressed=true],
+a[aria-selected=true] {
+  color: #0854a0;
   outline: 0
 }
 a.is-disabled,
 a[aria-disabled=true] {
-  color: #515559;
+  color: rgba(10,110,209,.4);
   cursor: not-allowed
 }
 code,
@@ -190,7 +197,8 @@ input[readonly][type=checkbox],
 input[readonly][type=radio] {
   color: #32363a;
   border-color: #ebebec;
-  border-width: 0 0 1px
+  border-width: 0 0 1px;
+  border-radius: 0
 }
 input[type=checkbox]::after,
 input[type=radio]::after {
@@ -203,10 +211,6 @@ input[type=radio]::-webkit-input-placeholder {
 }
 input[type=checkbox]:-ms-input-placeholder,
 input[type=radio]:-ms-input-placeholder {
-  color: #66696c
-}
-input[type=checkbox]::-ms-input-placeholder,
-input[type=radio]::-ms-input-placeholder {
   color: #66696c
 }
 input[type=checkbox]::placeholder,
@@ -360,7 +364,8 @@ textarea.is-readonly,
 textarea[readonly] {
   color: #32363a;
   border-color: #ebebec;
-  border-width: 0 0 1px
+  border-width: 0 0 1px;
+  border-radius: 0
 }
 textarea {
   height: 72px;
@@ -427,7 +432,8 @@ select.is-readonly,
 select[readonly] {
   color: #32363a;
   border-color: #ebebec;
-  border-width: 0 0 1px
+  border-width: 0 0 1px;
+  border-radius: 0
 }
 select:focus,
 select:hover {
@@ -449,11 +455,12 @@ select[multiple] {
 }
 input[type=checkbox],
 input[type=radio] {
-  height: 28px;
-  width: 28px;
+  height: 16px;
+  width: 16px;
   margin: 0;
   vertical-align: middle;
-  position: relative
+  position: relative;
+  cursor: pointer
 }
 input[type=checkbox]:checked,
 input[type=radio]:checked {
@@ -469,23 +476,23 @@ input[type=radio][disabled] {
   border-color: #ebebec;
   background-color: #fafafa
 }
-input[type=checkbox]:checked::after {
+input[type=checkbox]::before {
   content: "";
-  width: 16px;
-  height: 6px;
+  width: 10px;
+  height: 5px;
   border-color: #f3f4f5;
   border-style: solid;
-  border-width: 0 0 1px 1px;
+  border-width: 0 0 2px 2px;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   position: absolute;
   z-index: 2;
-  top: calc(50% - 5px);
-  left: calc(50% - 16px/2)
+  top: calc(50% - 4px);
+  left: calc(50% - 10px/2)
 }
-input[type=checkbox]:checked.is-disabled::after,
-input[type=checkbox]:checked[aria-disabled=true]::after,
-input[type=checkbox]:checked[disabled]::after {
+input[type=checkbox].is-disabled::before,
+input[type=checkbox][aria-disabled=true]::before,
+input[type=checkbox][disabled]::before {
   border-color: #515559
 }
 input[type=radio] {
@@ -494,13 +501,11 @@ input[type=radio] {
 input[type=radio]::after {
   content: "";
   border-radius: 50%;
-  width: fd-space(4);
-  height: fd-space(4);
+  width: 8px;
+  height: 8px;
   position: absolute;
-  bottom: 0;
-  right: 0;
-  top: calc(50% - (fd-space(4)/ 2));
-  left: calc(50% - (fd-space(4)/ 2));
+  top: calc(50% - (8px/2));
+  left: calc(50% - (8px/2));
   -webkit-transition: background-color 125ms ease-in;
   transition: background-color 125ms ease-in;
   background-color: transparent

@@ -1,8 +1,9 @@
 /*!
-* Fundamental-UI v1.0.0-beta-3
+* Fundamental-UI v1.0.0-beta-4
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
+@charset "UTF-8";
 /*!
 .fd-pagination
 */
@@ -11,100 +12,70 @@
   line-height: 1.42857;
   color: #32363a;
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-size: .92857rem;
-  line-height: 1.23077;
+  font-size: 1rem;
+  line-height: 1.42857;
   font-weight: 400
 }
-.fd-pagination__list {
+.fd-pagination__total {
+  color: #515559;
+  margin-right: 8px
+}
+.fd-pagination__nav {
+  display: inline-block;
   padding-left: 0;
   margin-left: 0;
   list-style: none;
-  margin-bottom: 0;
-  display: inline-block
+  margin-bottom: 0
 }
 .fd-pagination__link {
   color: #0a6ed1;
   background-color: transparent;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 4px;
+  padding-right: 4px;
   position: relative
 }
-.fd-pagination__link::after {
-  content: "";
-  border-bottom: solid 2px transparent;
-  width: calc(100% - 8px*2);
-  height: 2px;
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  margin-left: 8px
-}
-.fd-pagination__link:focus,
-.fd-pagination__link:hover {
-  color: #0961b9;
-  text-decoration: none
-}
-.fd-pagination__link:focus::after,
-.fd-pagination__link:hover::after {
-  border-bottom-color: #0961b9
-}
 .fd-pagination__link.is-selected,
 .fd-pagination__link:active,
 .fd-pagination__link[aria-selected=true] {
-  background-color: transparent;
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none
-}
-.fd-pagination__link.is-selected::after,
-.fd-pagination__link:active::after,
-.fd-pagination__link[aria-selected=true]::after {
-  border-bottom-color: transparent
-}
-.fd-pagination__link.is-disabled,
-.fd-pagination__link[aria-disabled=true] {
   color: #515559;
   text-decoration: none;
-  cursor: default
+  cursor: default;
+  font-weight: 700
 }
-.fd-pagination__link.is-disabled::after,
-.fd-pagination__link[aria-disabled=true]::after {
-  border-bottom-color: transparent
+.fd-pagination__link--next,
+.fd-pagination__link--previous {
+  padding-left: 8px;
+  padding-right: 8px
 }
-.fd-pagination__link.is-selected,
-.fd-pagination__link:active,
-.fd-pagination__link[aria-selected=true] {
-  color: #32363a;
-  text-decoration: none;
-  cursor: default
-}
-.fd-pagination__link--more {
-  font-size: .78571rem;
-  line-height: 1.45455;
+.fd-pagination__link--next::before,
+.fd-pagination__link--previous::before {
+  font-family: SAP-icons;
+  font-style: normal;
   font-weight: 400;
-  font-family: sans-serif;
-  color: #32363a;
-  vertical-align: sub;
-  padding-left: 12px;
-  padding-right: 12px
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none
 }
-.fd-pagination__link--more:focus,
-.fd-pagination__link--more:hover {
-  background-color: transparent;
-  color: #32363a;
-  cursor: default
+.fd-pagination__link--next::before,
+.fd-pagination__link--previous::before {
+  content: ""
 }
-.fd-pagination__link--more:focus:after,
-.fd-pagination__link--more:hover:after {
-  border-bottom-color: transparent
+.fd-pagination__link--next::before,
+.fd-pagination__link--previous::before {
+  font-size: .85714rem;
+  line-height: 1
 }
-.fd-pagination__item {
-  display: inline-block
-}
-.fd-pagination__item--previous {
+.fd-pagination__link--next {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1)
 }
-.fd-pagination__total {
-  color: #515559
+.fd-pagination__link--more::before {
+  content: "...";
+  color: #0a6ed1;
+  font-weight: 700
 }
