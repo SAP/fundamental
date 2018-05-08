@@ -42,6 +42,18 @@ The following color options are avialable for fast recognition of the status:
 
 <br>
 
+## Filled Badge
+`fd-badge--filled` modifier can be used to render a filled version of the badge.
+{% capture badge %}
+<span class="fd-badge fd-badge--filled"> Default </span>
+<span class="fd-badge fd-badge--success fd-badge--filled"> Default </span>
+<span class="fd-badge fd-badge--warning fd-badge--filled"> Default </span>
+<span class="fd-badge fd-badge--error fd-badge--filled"> Default </span>
+{% endcapture %}
+{% include display-component.html component=badge %}
+
+<br>
+
 ## Label
 
 {% capture badge %}
