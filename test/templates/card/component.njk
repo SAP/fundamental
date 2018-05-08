@@ -1,12 +1,12 @@
 {#
     see ./data.json for object structure
 #}
-{% macro card(properties={}, modifier={}, state={}, aria={},classes='') %}
-<div class="fd-card{{ modifier.block | modifier('card') }}{{ ' is-disabled' if state.disabled }}{{ classes | classes }}"{{ ' aria-disabled="'+ state.disabled +'"' if state.disabled }}{{ aria | aria }}>
+{% macro card(properties={}, modifier={}, state={}, aria={}) %}
+<div class="fd-card{{ modifier.block | modifier('card') }}{{ ' is-disabled' if state.disabled }}"{{ ' aria-disabled="'+ state.disabled +'"' if state.disabled }}{{ ' role="' + aria.role +'"' if aria.role }}>
     {%- if properties.media %}{{ card_media(modifier=modifier.media, properties=properties.media) | trim }}
     {%- endif %}
     <div class="fd-card__content">
-      {%- if properties.body or properties.body === "" -%}
+        {%- if properties.body -%}
              {{ properties.body }}
          {%- else %}
          <h2 class="fd-card__header">
@@ -20,7 +20,7 @@
              {{ properties.status }}
          </p>
          {%- endif -%}
-      {%- endif %}
+     {%- endif %}
     </div>
     {%- if properties.actions %}
     <div class="fd-card__actions">

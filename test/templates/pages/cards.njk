@@ -8,7 +8,7 @@
 
 {% from "../label/component.njk" import label %}
 {% from "../card/component.njk" import card %}
-{% from "../card-grid/component.njk" import card_grid %}
+{% from "../card-group/component.njk" import card_group %}
 {% set active_label  %}<span class="fd-has-color-status-1">Active</span>{% endset %}
 
 {% set mediaCardItem = card({
@@ -40,7 +40,7 @@
         </button>
         {%- endcall %}
     {%- endcall %}
-    {{  card_grid(
+    {{  card_group(
           properties={
               items: [
               mediaCardItem, mediaCardItem, mediaCardItem, mediaCardItem, mediaCardItem, mediaCardItem, mediaCardItem, mediaCardItem, mediaCardItem

@@ -5,56 +5,71 @@
 {% from "./component.njk" import card_group %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['fonts','icons','helpers','components/card', 'components/link','components/alert','components/button','components/badge'] %}
+{% set css_deps = ['fonts','components/card','components/button'] %}
 
 {% block content %}
-
-
-<div class="fd-alert fd-alert--error" role="alert">
-  Deprecated <code>.fd-card-group</code> to <code>.fd-tile-grid</code> to better match the layout and tile component. <a href="/tile-grid" class="fd-link">See <code>.fd-tile-grid</code> <span class="sap-icon--arrow-right sap-icon--s"></span></a>
-</div>
-
-<br><br>
-
+{% set mediaCardItem = card(
+        {
+            'title': 'Asperiores doloribus id dolore',
+            'description': 'Consectetur adipisicing elit',
+            'media': {
+                'alt': 'YaaS product thumbnail',
+                'image': 'https://techne.yaas.io/images/product-thumbnail-wide.png'
+            }
+        },
+        modifier={ media: "fill" },
+        aria={ role: 'button' })
+ %}
 
 
 {% set cardItem = card(
-            { title: 'Lorem ipsum dolor quam placeat numquam repellendus', description: 'Tenetur quam placeat obcaecati molestias voluptatibus dolorum ut molestias voluptatibus dolorum ut.', status: '<span class="fd-badge fd-badge--success">Adipisci</span>' },
+            { title: 'Lorem ipsum dolor quam placeat numquam repellendus', description: 'Tenetur quam placeat obcaecati molestias voluptatibus dolorum ut molestias voluptatibus dolorum ut.', status: '<span class="fd-has-color-status-1">Voluptate quis adipisci sit</span>' },
             modifier={ block: [] },
             aria={ role: 'button' }
     )
 %}
-{% set cardItemEmpty = card({ body: "" }) %}
-{% set cardItemMin = card(
-            { title: 'Lorem ipsum dolor', description: 'Tenetur quam placeat' },
+{% set cardItem2 = card(
+            { title: 'Lorem ipsum dolor quam placeat numquam repellendus', description: 'Tenetur quam  dolorum ut.', status: '' },
             modifier={ block: [] },
             aria={ role: 'button' }
     )
 %}
-
 {% set btn = button(
         {
             label: 'View'
-        }
+        },
+        modifier={ block: "small" }
     )
  %}
 {% set actionCardItem = card(
-            { title: 'Lorem ipsum dolor quam placeat numquam repellendus', description: 'Tenetur quam  dolorum ut.', status: '<span class="fd-has-color-status-2">Voluptate quis sit</span>',
+            { title: 'Lorem ipsum dolor quam placeat numquam repellendus', description: 'Tenetur quam  dolorum ut.', status: 'VOLUPTATE QUIS ADIPISCI SIT',
             actions: btn },
             modifier={ block: [] },
             aria={  }
     )
 %}
-
+{% set productCardItem =
+    card(
+            {
+                'title': 'Asperiores doloribus id dolore',
+                'description': 'Consectetur adipisicing elit',
+                'status': '<span class="fd-has-color-status-1">Cumque itaque</span>',
+                'media': {
+                    'alt': 'YaaS product thumbnail',
+                    'image': 'https://techne.yaas.io/images/product-thumbnail-wide.png'
+                }
+            },
+            modifier={ block: ['vertical'] },
+            aria={ role: 'button' })
+     %}
     <h1>card-group</h1>
 
-<h2>3-col grid (default)</h2>
     <!-- output the component example and the code snippet -->
     {% set example %}
     {{  card_group(
             properties={
                 items: [
-                cardItem, cardItem, cardItem, cardItem, cardItem, cardItem
+                cardItem2, mediaCardItem, actionCardItem, cardItem, cardItem2
                 ]
             },
             modifier={
@@ -69,13 +84,13 @@
 
 <br><br>
 
-<h1>2 col grid</h1>
+<h1>2 cols</h1>
 
 {% set example %}
 {{  card_group(
         properties={
             items: [
-            actionCardItem, actionCardItem, actionCardItem, actionCardItem
+            actionCardItem, cardItem, mediaCardItem, cardItem2, cardItem
             ]
         },
         modifier={
@@ -91,12 +106,13 @@
 
 <br><br>
 
-<h1>4 col grid</h1>
+<h1>4 cols</h1>
+
 {% set example %}
 {{  card_group(
         properties={
             items: [
-            cardItemMin, cardItemMin, cardItemMin, cardItemMin, cardItemMin, cardItemMin, cardItemMin, cardItemMin
+            productCardItem, productCardItem, productCardItem, productCardItem, productCardItem
             ]
         },
         modifier={
@@ -109,77 +125,7 @@
 {% endset %}
 {{ format(example) }}
 
-<br><br>
-
-<h1>5 col grid</h1>
-{% set example %}
-{{  card_group(
-        properties={
-            items: [
-            cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty,
-            cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty
-            ]
-        },
-        modifier={
-            block: ["5col"]
-        },
-        state={},
-        aria={}
-    )
-}}
-{% endset %}
-{{ format(example) }}
 
 
-<br><br>
-
-<h1>6 col grid</h1>
-{% set span %}
-<div style="grid-row: span 2;">
-  {{cardItemEmpty}}
-</div>
-{% endset %}
-{% set example %}
-{{  card_group(
-        properties={
-            items: [
-cardItemEmpty,cardItemEmpty,
-            cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty,
-            cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty
-            ]
-        },
-        modifier={
-            block: ["6col"]
-        },
-        state={},
-        aria={}
-    )
-}}
-{% endset %}
-{{ format(example) }}
-
-<br><br>
-
-<h1>6 col grid w/ span helpers</h1>
-<p>Shows use of helper classes <code>.fd-has-grid-row-span-2</code> and <code>.fd-has-grid-column-span-2</code>.
-</p>
-{% set example %}
-{{  card_group(
-        properties={
-            items: [
-            card({ body: "" },classes=['has-grid-row-span-2','has-background-color-accent-7']),
-            cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty,
-            cardItemEmpty, cardItemEmpty, cardItemEmpty, cardItemEmpty, card({ body: "" },classes=['has-grid-column-span-2','has-background-color-accent-7'])
-            ]
-        },
-        modifier={
-            block: ["6col"]
-        },
-        state={},
-        aria={}
-    )
-}}
-{% endset %}
-{{ format(example) }}
 
 {% endblock %}
