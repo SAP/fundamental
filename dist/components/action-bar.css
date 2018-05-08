@@ -1,11 +1,10 @@
 /*!
-* Fundamental-UI v1.0.0-beta-3
+* Fundamental-UI v1.0.0-beta-4
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 /*!
 .fd-action-bar
-	.fd-action-bar__navigation
 	.fd-action-bar__title
 	.fd-action-bar__actions+(.is-disabled | aria-hidden)?
         .fd-action-bar__action-item
@@ -15,34 +14,38 @@
   line-height: 1.42857;
   color: #32363a;
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  height: 76px;
-  background-color: #fff;
-  border-style: solid;
-  border-width: 0;
-  border-color: #dededf;
+  background-color: transparent;
+  min-height: 64px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding-right: 0;
+  padding-left: 0
 }
-.fd-action-bar__title {
+.fd-action-bar__header {
   font-size: 14px;
   line-height: 1.42857;
   color: #32363a;
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1.71429rem;
   line-height: 1.33333;
-  font-family: '72Condensed',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 500;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  margin-bottom: 0
+  margin-bottom: 0;
+  padding-top: 16px;
+  padding-bottom: 16px
 }
-.fd-action-bar__title:first-child {
-  padding-left: 24px
+.fd-action-bar__title {
+  font-size: 1.71429rem;
+  line-height: 1.33333;
+  font-weight: 400;
+  margin-bottom: 0
 }
 .fd-action-bar__actions {
   font-size: 14px;
@@ -52,6 +55,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-transition: opacity .25s ease-in;
   transition: opacity .25s ease-in;
   visibility: visible
@@ -60,4 +66,10 @@
 .fd-action-bar__actions[aria-hidden=true] {
   opacity: 0;
   visibility: hidden
+}
+.fd-action-bar__actions > * {
+  margin-left: 8px
+}
+.fd-action-bar__actions > :first-child {
+  margin-left: 0
 }

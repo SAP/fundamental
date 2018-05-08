@@ -8,80 +8,131 @@
 */
 $block: #{$fd-namespace}-toggle;
 .#{$block} {
-    //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-toggle-height: fd-space(10) !default;
-    $fd-toggle-height--small: fd-space(8) !default;
-    $fd-toggle-height--large: fd-space(13) !default;
+    // Hard coded values, TODO: look into cleaning up with more local spacing variables ~Eric
+    $fd-toggle-barheight--xsmall: 14px !default;
+    $fd-toggle-barheight--small: 16px !default;
+    $fd-toggle-barheight: 20px !default;
+    $fd-toggle-barheight--large: 22px !default;
+
+    $fd-toggle-barwidth--xsmall: 34px !default;
+    $fd-toggle-barwidth--small: 40px !default;
+    $fd-toggle-barwidth: 48px !default;
+    $fd-toggle-barwidth--large: 50px !default;
+
+    $fd-toggle-height--xsmall: 20px !default;
+    $fd-toggle-height--small: 24px !default;
+    $fd-toggle-height: 28px !default;
+    $fd-toggle-height--large: 32px !default;
+
+    $fd-toggle-width--xsmall: $fd-toggle-barwidth--xsmall + $fd-toggle-height--xsmall !default;
+    $fd-toggle-width--small: $fd-toggle-barwidth--small + $fd-toggle-height--small !default;
+    $fd-toggle-width: $fd-toggle-barwidth + $fd-toggle-height !default;
+    $fd-toggle-width--large: $fd-toggle-barwidth--large + $fd-toggle-height--large !default;
+
     $fd-toggle-background-color: $fd-forms-border-color !default;
     $fd-toggle-background-color--checked: $fd-forms-background-color--check !default;
-    $fd-toggle-switch-background-color: fd-color(background, 1) !default;
+    $fd-toggle-switch-background-color: fd-color(neutral, 1) !default;
     $fd-toggle-switch-background-color--disabled: fd-color(neutral, 2) !default;
     $fd-toggle-transition-params: $fd-animation--speed ease-in !default;
+    $fd-toggle-switch-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
 
     @include fd-reset;
     position: relative;
     display: inline-block;
     height: $fd-toggle-height;
-    width: $fd-toggle-height * 2 - 4px;
+    width: $fd-toggle-width;
+    padding: 0 ($fd-toggle-height / 2);
+
     &__switch {
-        height: $fd-toggle-height - 8px;
-        width: $fd-toggle-height - 8px;
+        height: $fd-toggle-height;
+        width: $fd-toggle-height;
         border-radius: 50%;
         position: absolute;
-        top: 4px;
+        top: -5px;
         left: 4px;
-        background-color: white;
+        background-color: $fd-toggle-switch-background-color;
+        border: 1px solid rgba(fd-color(text, 3), .7);
         transition: left $fd-toggle-transition-params;
         pointer-events: none;
+        box-shadow: $fd-toggle-switch-box-shadow;
     }
+
     input {
         background-color: $fd-toggle-background-color;
         border-radius: $fd-toggle-height/2;
         width: 100%;
-        height: 100%;
+        height: $fd-toggle-barheight;
         border-color: transparent;
         vertical-align: middle;
+
+        &:before {
+            display: none;
+        }
         &:checked {
+            background: $fd-forms-background-color--check-secondary;
+            border-color: transparent;
+
             &::after {
                 display: none;
             }
             & + .#{$block}__switch {
                 left: calc(50% + 2px);
+                background: $fd-forms-border-color--check;
+                border-color: $fd-forms-border-color--check;
             }
+        }
+        &:hover {
+            border-color: transparent;
+        }
+        &:active, &:focus {
+            border-color: transparent;
         }
         &[disabled],
         &.is-disabled,
         &[aria-disabled="true"] {
-            border-color: $fd-forms-border-color;
+            border-color: transparent;
+
             & + .#{$block}__switch {
                 background-color: $fd-toggle-switch-background-color--disabled;
             }
         }
     }
-    &--small {
-        height: $fd-toggle-height--small;
-        width: $fd-toggle-height--small * 2 - 4px;
+    &--xsmall {
+        height: $fd-toggle-height--xsmall;
+        width: $fd-toggle-width--xsmall;
         input {
-            border-radius: $fd-toggle-height--small/2;
+            border-radius: $fd-toggle-height--xsmall/2;
+            height: $fd-toggle-barheight--xsmall;
         }
         .#{$block}__switch {
-            height: $fd-toggle-height--small - 8px;
-            width: $fd-toggle-height--small - 8px;
+            height: $fd-toggle-height--xsmall;
+            width: $fd-toggle-height--xsmall;
+            top: 0;
+        }
+    }
+    &--small {
+        height: $fd-toggle-height--small;
+        width: $fd-toggle-width--small;
+        input {
+            border-radius: $fd-toggle-height--small/2;
+            height: $fd-toggle-barheight--small;
+        }
+        .#{$block}__switch {
+            height: $fd-toggle-height--small;
+            width: $fd-toggle-height--small;
+            top: -2px;
         }
     }
     &--large {
         height: $fd-toggle-height--large;
-        width: $fd-toggle-height--large * 2 - 4px;
+        width: $fd-toggle-width--large;
         input {
             border-radius: $fd-toggle-height--large/2;
+            height: $fd-toggle-barheight--large;
         }
         .#{$block}__switch {
-            height: $fd-toggle-height--large - 8px;
-            width: $fd-toggle-height--large - 8px;
+            height: $fd-toggle-height--large;
+            width: $fd-toggle-height--large;
         }
     }
-
-
-
-
 }
