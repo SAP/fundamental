@@ -9,22 +9,22 @@
 $block: #{$fd-namespace}-toggle;
 .#{$block} {
     // Hard coded values, TODO: look into cleaning up with more local spacing variables ~Eric
-    $fd-toggle-barheight--xsmall: 14px !default; 
+    $fd-toggle-barheight--xsmall: 14px !default;
     $fd-toggle-barheight--small: 16px !default;
-    $fd-toggle-barheight: 20px !default; 
-    $fd-toggle-barheight--large: 22px !default; 
+    $fd-toggle-barheight: 20px !default;
+    $fd-toggle-barheight--large: 22px !default;
 
-    $fd-toggle-barwidth--xsmall: 34px !default; 
+    $fd-toggle-barwidth--xsmall: 34px !default;
     $fd-toggle-barwidth--small: 40px !default;
-    $fd-toggle-barwidth: 48px !default; 
-    $fd-toggle-barwidth--large: 50px !default; 
+    $fd-toggle-barwidth: 48px !default;
+    $fd-toggle-barwidth--large: 50px !default;
 
     $fd-toggle-height--xsmall: 20px !default;
     $fd-toggle-height--small: 24px !default;
     $fd-toggle-height: 28px !default;
     $fd-toggle-height--large: 32px !default;
 
-    $fd-toggle-width--xsmall: $fd-toggle-barwidth--xsmall + $fd-toggle-height--xsmall !default; 
+    $fd-toggle-width--xsmall: $fd-toggle-barwidth--xsmall + $fd-toggle-height--xsmall !default;
     $fd-toggle-width--small: $fd-toggle-barwidth--small + $fd-toggle-height--small !default;
     $fd-toggle-width: $fd-toggle-barwidth + $fd-toggle-height !default;
     $fd-toggle-width--large: $fd-toggle-barwidth--large + $fd-toggle-height--large !default;
@@ -34,6 +34,7 @@ $block: #{$fd-namespace}-toggle;
     $fd-toggle-switch-background-color: fd-color(neutral, 1) !default;
     $fd-toggle-switch-background-color--disabled: fd-color(neutral, 2) !default;
     $fd-toggle-transition-params: $fd-animation--speed ease-in !default;
+    $fd-toggle-switch-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
 
     @include fd-reset;
     position: relative;
@@ -47,12 +48,13 @@ $block: #{$fd-namespace}-toggle;
         width: $fd-toggle-height;
         border-radius: 50%;
         position: absolute;
-        top: -4px;
+        top: -5px;
         left: 4px;
-        background-color: white;
-        border: 1px solid $fd-toggle-background-color;
+        background-color: $fd-toggle-switch-background-color;
+        border: 1px solid rgba(fd-color(text, 3), .7);
         transition: left $fd-toggle-transition-params;
         pointer-events: none;
+        box-shadow: $fd-toggle-switch-box-shadow;
     }
 
     input {
@@ -76,9 +78,13 @@ $block: #{$fd-namespace}-toggle;
             & + .#{$block}__switch {
                 left: calc(50% + 2px);
                 background: $fd-forms-border-color--check;
+                border-color: $fd-forms-border-color--check;
             }
         }
         &:hover {
+            border-color: transparent;
+        }
+        &:active, &:focus {
             border-color: transparent;
         }
         &[disabled],
