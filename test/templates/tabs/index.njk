@@ -3,14 +3,11 @@
 {% from "./component.njk" import tabs %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['components/nav'] %}
+{% set css_deps = ['fonts','components/nav'] %}
 
 {% block content %}
 
     <h1>tabs</h1>
-    <p>NOTE: The <code>.fd-tabs__item</code> container is optional. You can use <code>nav</code> and <code>a</code> elements to the same effect.</p>
-
-
 {% set example %}
 {{  tabs(
         properties=data.properties,
@@ -23,6 +20,10 @@
 }}
 {% endset %}
 {{ format(example) }}
+
+<br><br><hr>
+<br>
+  <p>NOTE: The <code>.fd-tabs__item</code> container is optional. You can use <code>nav</code> and <code>a</code> elements to the same effect.</p>
 
 {% set example %}
 <nav class="fd-tabs" role="tablist">

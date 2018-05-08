@@ -6,7 +6,7 @@
 {% import "./../utils.njk" as utils %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['icons'] %}
+{% set css_deps = ['fonts','icons','components/contextual-menu','components/dropdown','components/button'] %}
 
 {% block content %}
 <style media="screen">
@@ -15,47 +15,41 @@
     }
 </style>
 
-    <h1>action-bar</h1>
+<h1>action-bar</h1>
 
-{%- set backbtn %}{{
-    button(
-            { icon: 'backarrow' },
-            modifier={ block: ['text','icon','large'] },
-            aria={ label: 'Back' }
-        )
-}}{%- endset %}
-{%- set actionbtn %}{{
-    button(
-            { label: 'Cancel', icon: 'close' },
-            modifier={ block: ['text','action-bar'] }
-        )
-}}{%- endset %}
 {%- set primarybtn %}{{
     button(
-            { label: 'Save', icon: 'checked' },
-            modifier={ block: ['action-bar'] }
+            { label: 'Save' },
+            modifier={block: [ 'main', 'l'] }
         )
 }}{%- endset %}
+
+{%- set secbtn %}{{
+  button(
+          { label: 'Cancel' },
+          modifier={ block: ['secondary', 'l'] }
+      )
+}}{%- endset %}
 {%- set contextmenu %}
-{% set _id = utils.id() %}
+{%- set _id = utils.id() %}
 <div class="fd-dropdown">
     {{  button(
-        { label: 'More', icon: 'more' },
-        modifier={ block: ['text','action-bar'] },
+        { icon: 'vertical-grip' },
+        modifier={ block: ['secondary', 'l'] },
         aria={ controls: _id, haspopup: true, expanded: false, label: "More" }
     ) | indent(4)
 }}
-    {{  menu(properties={
-        id: _id,
-        items: [
-            { "label": "Edit" },
-            { "label": "Delete" },
-            { "label": "Assign" },
-            { "label": "Expire" },
-            { "label": "Archive" }
-        ]
-    },
-    classes="contextual-menu") | indent(4)
+  {{  menu(properties={
+    id: _id,
+    items: [
+        { "label": "Edit" },
+        { "label": "Delete" },
+        { "label": "Assign" },
+        { "label": "Expire" },
+        { "label": "Archive" }
+    ]
+},
+classes="contextual-menu") | indent(4)
 }}
 </div>
 {%- endset %}
@@ -63,37 +57,13 @@
 
     <!-- output the component example and the code snippet -->
     {% set example %}
-    {{  action_bar(
-            properties={
-                title: data.properties.title
-            },
-            modifier={
-                block: []
-            },
-            state={},
-            aria={}
-        )
-    }}
-
-    {{  action_bar(
-            properties={
-                navigation: backbtn,
-                title: data.properties.title
-            },
-            modifier={
-                block: []
-            },
-            state={},
-            aria={}
-        )
-    }}
 
     {{  action_bar(
             properties={
                 title: data.properties.title,
                 actions: {
                     properties: {
-                        items: [actionbtn,actionbtn,actionbtn,primarybtn]
+                        items: [secbtn,primarybtn]
                     }
                 }
             },
@@ -122,7 +92,6 @@
         )
     }}
 
-
     {% endset %}
     {{ format(example) }}
 <br><br>
@@ -141,7 +110,7 @@
                 title: data.properties.title,
                 actions: {
                     properties: {
-                        items: [actionbtn,primarybtn]
+                        items: [secbtn,primarybtn]
                     },
                     aria: {
                         hidden: true
@@ -178,19 +147,6 @@
         button.addEventListener('click',function() {
             doDirty();
         })
-
-        var els = document.querySelectorAll("[aria-controls]");
-        for (var i = 0; i < els.length; i++) {
-            var el = els[i];
-            el.addEventListener('click', function() {
-                var isExpanded = this.getAttribute("aria-expanded") === "true";
-                this.setAttribute("aria-expanded", !isExpanded);
-                var targetId = this.getAttribute("aria-controls");
-                var target = document.getElementById(targetId);
-                var targetIsHidden = target.getAttribute("aria-hidden") == "true";
-                target.setAttribute("aria-hidden", isExpanded);
-            })
-        }
     </script>
 
 {% endblock %}

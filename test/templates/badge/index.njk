@@ -4,7 +4,7 @@
 {% from "./component.njk" import badge %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = [] %}
+{% set css_deps = ['fonts'] %}
 
 {% block content %}
 
@@ -24,7 +24,9 @@
 }}
     {% endset %}
     {{ format(example) }}
+<br><br>
 
+    <h2>pill</h2>
 
     {% set example %}
 {{  badge(
@@ -43,5 +45,28 @@
 }}
     {% endset %}
     {{ format(example) }}
+
+<br><br>
+    <h2>filled</h2>
+
+    {% set example %}
+{{  badge(
+        {label: "Default"},
+        modifier={ block: ["filled"] }
+    )
+}}
+{{  badge({label: "Default"},
+        modifier={block: ["success", "filled"]})
+}}
+{{  badge({label: "Default"},
+        modifier={block: ["warning", "filled"]})
+}}
+{{  badge({label: "Default"},
+        modifier={block: ["error", "filled"]})
+}}
+    {% endset %}
+    {{ format(example) }}
+
+
 
 {% endblock %}

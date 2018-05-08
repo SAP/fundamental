@@ -16,11 +16,11 @@
 .fd-panel__actions
         {%- endcall %}
     {%- endcall %}
-
-<h1>.fd-panel</h1>
-<p>Very much like a <code>.fd-section</code> but intended to be used inside of a column.</p>
-<p>A <code>.fd-panel</code> should only be used when a title, actions and/or footer are needed with the content, otherwise the content can be placed directly inside the <code>.fd-col</code></p>
-
+    {% call layout.panel_body() -%}
+      <h1>.fd-panel</h1>
+      <p>Very much like a <code>.fd-section</code> but intended to be used inside of a column.</p>
+      <p>A <code>.fd-panel</code> should only be used when a title, actions and/or footer are needed with the content, otherwise the content can be placed directly inside the <code>.fd-col</code></p>
+    {%- endcall %}
     {% call layout.panel_footer() -%}
 .fd-panel__footer
     {%- endcall %}
@@ -77,9 +77,11 @@ Vivamus sagittis <span class="fd-badge fd-badge--success">Active</span>
         </button>
         {%- endcall %}
     {%- endcall %}
-{{ card }}
-{{ card }}
-{{ card }}
+    {% call layout.panel_body() -%}
+      {{ card }}
+      {{ card }}
+      {{ card }}
+    {%- endcall %}
     {% call layout.panel_footer() -%}
 <a href="#" class="fd-button fd-button--link">See All</a>
     {%- endcall %}
@@ -120,8 +122,9 @@ Vivamus sagittis <span class="fd-badge fd-badge--success">Active</span>
 //buttons (optional)
         {%- endcall %}
     {%- endcall %}
-
-//panel content
+    {% call layout.panel_body() -%}
+//panel body
+    {%- endcall %}
     {% call layout.panel_footer() -%}
 //link or info (optional)
     {%- endcall %}

@@ -1,0 +1,106 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "./component.njk" import button_group %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['components/button','icons'] %}
+
+{% block content %}
+<style media="screen">
+  .fd-button-group {
+    margin-bottom: 10px;
+  }
+</style>
+    <h1>button-group</h1>
+<p>NOTE: The button groups require the buttons to have the modifier class <code>.fd-button--grouped</code>
+
+</p>
+
+    {% for size in ["xs","s","compact","default","l"] %}
+      {%- set modifier = { block: ["grouped", size] } %}
+      {%- if size == "default" %}
+        {%- set modifier = { block: ["grouped"] } %}
+      {%- endif %}
+<h2> {{size}}</h2>
+
+{% set example %}
+{{  button_group(
+properties={
+  label: data.properties.label,
+  buttons: [
+    {
+      "properties": {
+          "icon": "survey"
+      },
+      "modifier": modifier
+    },
+    {
+      "properties": {
+          "icon": "pie-chart"
+      },
+      "modifier": modifier,
+      "aria": {
+          "pressed": true
+      }
+    },
+    {
+      "properties": {
+          "icon": "pool"
+      },
+      "modifier": modifier
+    }
+]
+
+},
+modifier={
+
+},
+state={},
+aria={}
+)
+}}
+
+{{  button_group(
+      properties={
+          label: data.properties.label,
+          buttons: [
+            {
+              properties: {
+                  label: "Left"
+              },
+              modifier: modifier,
+              aria: {
+                  pressed: true
+              }
+            },
+            {
+              properties: {
+                  label: "Middle"
+              },
+              modifier: modifier
+            },
+            {
+              properties: {
+                  label: "Right"
+              },
+              modifier: modifier
+            }
+          ]
+        },
+        modifier={},
+        state=data.state,
+        aria=data.aria
+    )
+}}
+
+
+    {% endset %}
+    {{ format(example) }}
+
+
+    {% endfor %}
+
+
+
+{% endblock %}

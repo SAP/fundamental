@@ -1,16 +1,3 @@
-@function color($key: reg) {
-    @if map-has-key($colors, $key) {
-        @return map-get($colors, $key);
-    } @else {
-        @warn "Unknown `#{$key}` in $colors map";
-        @return black;
-    }
-}
-@function ns($str: "") {
-	$ns: #{$fd-namespace}-;
-    @return $ns + $str;
-}
-
 //if
 @function fd-if($bool, $poss) {
     @if $bool {
@@ -49,7 +36,7 @@
     @return $_size;
 }
 
-
+// get color from main map
 @function fd-color($type: text, $shade: 1) {
     $_map: $fd-colors;
     //check type

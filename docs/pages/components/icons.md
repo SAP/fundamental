@@ -13,9 +13,11 @@ Icons are used throughout the UI to save space, allow for visual clarity and foc
 
 ## Icon usage
 {% highlight html %}
-<span class="fd-icon fd-icon--{icon-name}"></span>
-<span class="fd-icon fd-icon--{icon-name} fd-icon--medium"></span>
-<span class="fd-icon fd-icon--{icon-name} fd-icon--large"></span>
+<span class="sap-icon--{icon-name} sap-icon--s"></span>
+<span class="sap-icon--{icon-name}"></span>
+<span class="sap-icon--{icon-name} sap-icon--m"></span>
+<span class="sap-icon--{icon-name} sap-icon--l"></span>
+<span class="sap-icon--{icon-name} sap-icon--xl"></span>
 {% endhighlight %}
 
 <br />
@@ -23,9 +25,11 @@ Icons are used throughout the UI to save space, allow for visual clarity and foc
 ## Available Icons
 {% for icon in site.data.icons %}
 <div class="demo-icon-wrapper">
-  <span class="fd-icon fd-icon--{{ icon.name }}"></span>
-  <span class="fd-icon fd-icon--{{ icon.name }} fd-icon--medium"></span>
-  <span class="fd-icon fd-icon--{{ icon.name }} fd-icon--large"></span>
-  <h4>.fd-icon--{{ icon.name }}</h4>
+  <span class="sap-icon--{{ icon.name }} sap-icon--s"></span>
+  <span class="sap-icon--{{ icon.name }}"></span>
+  <span class="sap-icon--{{ icon.name }} sap-icon--m"></span>
+  <span class="sap-icon--{{ icon.name }} sap-icon--l"></span>
+  <span class="sap-icon--{{ icon.name }} sap-icon--xl"></span>
+  <h4>.sap-icon--{{ icon.name }}</h4>
 </div>
 {% endfor %}

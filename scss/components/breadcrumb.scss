@@ -1,0 +1,47 @@
+@import "./../settings";
+@import "./../layout/mixins";
+@import "./../mixins";
+@import "./../functions";
+
+/*!
+.fd-breadcrumb
+    .fd-breadcrumb__item
+    .fd-breadcrump__link
+*/
+$block: #{$fd-namespace}-breadcrumb;
+.#{$block} {
+
+    //LOCAL VARS *******************************************
+    $fd-breadcrumb-background-color: fd-color(background, 2)!default;
+    $fd-breadcrumb-border-bottom-color: fd-color(neutral, 3)!default;
+    $fd-breadcrumb-padding: fd-space(3) fd-space(4)!default;
+    $fd-breadcrumb-link-margin: fd-space(4);
+
+    //BLOCK BASE *******************************************
+    @include fd-reset;
+    @include fd-type('-1');
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: -#{fd-space(3)};
+    list-style: none;
+    //background-color: $fd-breadcrumb-background-color;
+    padding: $fd-breadcrumb-padding 0 0;
+    //border-bottom: 1px solid $fd-breadcrumb-border-bottom-color;
+
+    //ELEMENTS *******************************************
+    &__item {
+        &:after{
+            content: "/";
+            margin-right: $fd-breadcrumb-link-margin;
+        }
+        &:last-child:after{
+            content: none;
+        }
+    }
+
+    &__link {
+        margin-right: $fd-breadcrumb-link-margin;
+    }
+
+}

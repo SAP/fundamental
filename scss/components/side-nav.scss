@@ -1,0 +1,139 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+
+/*!
+.fd-side-nav
+    .fd-side-nav__group
+        .fd-side-nav__title
+        .fd-side-nav__list
+            .fd-side-nav__item
+                .fd-side-nav__link (.has-child, .is-active, .is-expanded)
+                .fd-side-nav__sublist
+                    .fd-side-nav__subitem
+                    .fd-side-nav__sublink (.is-active)
+*/
+
+$block: #{$fd-namespace}-side-nav;
+
+.#{$block} {
+
+    //LOCAL VARS
+    $fd-side-nav-text-size: fd-type(1);
+    $fd-side-nav-background-color: fd-color("background", 2);
+    $fd-side-nav-selected-background-color: rgba(fd-color("action", 1), .07);
+    $fd-side-nav-hover-background-color: fd-color("neutral", 1);
+    $fd-side-nav-link-color: fd-color("text", 2);
+    $fd-side-nav-max-width: 250px;
+    $fd-side-nav-link-padding: fd-space(2.5) fd-space(5);
+    $fd-side-nav-title-padding: fd-space(2) fd-space(5);
+    $fd-side-nav-icon-right-padding: fd-space(2.5);
+    $fd-side-nav-link-disabled-color: fd-color("text", 3);
+    $fd-side-nav-title-background-color: fd-color("neutral", 1);
+
+
+    //BLOCK BASE *******************************************
+
+    background-color: $fd-side-nav-background-color;
+    min-width: $fd-side-nav-max-width;
+    margin: 0;
+    padding: 0;
+
+    //ELEMENTS *******************************************
+    &__group {
+        list-style: none;
+        margin-bottom: 0;
+    }
+
+    &__title {
+        display: block;
+        margin-bottom: 0;
+        padding: $fd-side-nav-title-padding;
+        @include fd-type("-3", "body", "reg", uppercase);
+        color: $fd-side-nav-link-disabled-color;
+        background:$fd-side-nav-title-background-color;
+
+    }
+
+    &__list,
+    &__sublist {
+        @include fd-reset;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style:  none;
+        flex-direction: column;
+    }
+
+    &__sublist{
+        &[aria-hidden="true"] {
+            display: none;
+        }
+    }
+
+    &__link,
+    &__sublink {
+        padding: $fd-side-nav-link-padding;
+        color: $fd-side-nav-link-color;
+        display: block;
+        @include fd-type("0", "body", "reg");
+
+        //STATES *******************************************
+        &:hover{
+            background-color: $fd-side-nav-hover-background-color;
+        }
+        &.is-selected,
+        &.is-expanded,
+        &[aria-selected="true"],
+        &[aria-expanded="true"]{
+            color: $fd-side-nav-link-color;
+            background-color: $fd-side-nav-selected-background-color;
+            font-weight: bold;
+        }
+
+
+
+        &.is-disabled,
+        &[aria-disabled="true"] {
+            color: $fd-side-nav-link-disabled-color;
+        }
+
+    }
+
+    &__link {
+
+        //STATES *******************************************
+        &.has-child{
+            background-image: url(#{$fd-forms-select-background-image});
+            background-repeat: no-repeat;
+            background-position: calc(100% - #{$fd-forms-select-width--background-image}) center;
+        }
+
+        &.is-expanded,
+        &[aria-expanded="true"]
+        {
+            background-image: url(#{$fd-forms-select-background-image--expanded});
+        }
+    }
+
+    &__sublink{
+        font-weight: normal;
+        padding-left: fd-space(5) * 2;
+        &[aria-hidden="true"]{
+            display: none;
+        }
+    }
+
+    &__icon{
+        padding-right: $fd-side-nav-icon-right-padding;
+    }
+
+    &--icons{
+        min-width: auto;
+        .#{$block}__icon{
+            padding-right:0;
+        }
+    }
+
+}

@@ -1,36 +1,34 @@
-@import "../core/settings";
-@import "../core/functions";
-@import "../core/mixins";
-@import "mixins";
-
-$block: ns(col);
-
+@import "./../settings";
+@import "./../functions";
+@import "./../mixins";
+@import "./mixins";
 /*!
     .fd-col+(--1...12, --shift-1...11)
 */
+$block: #{$fd-namespace}-col;
 .#{$block} {
-    flex: 1;
-    @include fd-screen(s) {
-        @for $i from 1 through 12 {
-            &--#{$i} {
-                @include fd-flow($i, 12);
-            }
-        }
-        @for $i from 1 through 11 {
-            &--shift-#{$i} {
-                @include fd-flow-shift($i);
-            }
-        }
+  flex: 1;
+  @include fd-screen(s) {
+    @for $i from 1 through 12 {
+      &--#{$i} {
+        @include fd-flow($i, 12);
+      }
     }
-    @at-root {
-        [class^="#{$block}"] {
-            margin-bottom: $fd-margin-bottom;
-            &:last-child {
-                margin-bottom: 0;
-            }
-            @include fd-screen(s) {
-                margin-bottom: 0;
-            }
-        }
+    @for $i from 1 through 11 {
+      &--shift-#{$i} {
+        @include fd-flow-shift($i);
+      }
     }
+  }
+  @at-root {
+    [class^="#{$block}"] {
+      margin-bottom: $fd-margin-bottom;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include fd-screen(s) {
+        margin-bottom: 0;
+      }
+    }
+  }
 }

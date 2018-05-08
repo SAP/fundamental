@@ -1,8 +1,8 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
+@import "./../settings";
+@import "./../mixins";
+@import "./../icons/mixins";
+@import "./../functions";
 @import "./mixins";
-
 /*!
 .fd-tree+(--header)
     .fd-tree__group+(--sublevel-1...-6, ([aria-hidden] | .is-hidden))
@@ -11,14 +11,18 @@
             .fd-tree__col+(--control, --actions)
                 .fd-tree__control+([aria-pressed] | .is-pressed)
 */
-$block: ns(tree);
-
+$block: #{$fd-namespace}-tree;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-tree-border-color: fd-color(neutral, 3) !default;
+    $fd-tree-border-color: transparent !default;
+    $fd-tree-border-width: 0 !default;
     $fd-tree-link-color: fd-color(action, 1) !default;
     $fd-tree-cell-spacing: $fd-width--gutter !default;
     $fd-tree-cell-padding: fd-space(3) !default;
+
+    $fd-tree-header-background-color: fd-color("neutral", 2) !default;
+    $fd-tree-row-background-color--hover: lighten($fd-tree-header-background-color,4) !default;
+
     $fd-tree-control-width: 18px !default;
     $fd-tree-control-margin-right: fd-space(2) !default;
     $fd-tree-transition-params: $fd-animation--speed ease-in !default;
@@ -28,7 +32,7 @@ $block: ns(tree);
     position: relative;
     width: 100%;
     max-width: 100%;
-    border-bottom: solid 1px $fd-tree-border-color;
+    border-bottom: solid $fd-tree-border-width $fd-tree-border-color;
     margin-bottom: $fd-margin-bottom;
     margin-left: 0;
     &:last-child {
@@ -36,8 +40,9 @@ $block: ns(tree);
     }
     &--header {
         border-bottom: 0;
-        border-top: solid 1px $fd-tree-border-color;
+        border-top: solid $fd-tree-border-width $fd-tree-border-color;
         margin-bottom: 0;
+        background-color: $fd-tree-header-background-color;
     }
     &__group {
         //see addt'l group classes under __col--first below
@@ -54,7 +59,7 @@ $block: ns(tree);
         }
     }
     &__item {
-        border-top: solid 1px $fd-tree-border-color;
+        border-top: solid $fd-tree-border-width $fd-tree-border-color;
         margin-bottom: 0;
         list-style: none;
     }
@@ -65,19 +70,20 @@ $block: ns(tree);
         position: relative;
         transition: background-color $fd-tree-transition-params;
         &:hover {
-            background-color: lighten(fd-color(neutral, 3), 10);
+            background-color: $fd-tree-row-background-color--hover;
         }
         &--header {
-            @include fd-type(-1);
-            @include fd-weight(bold);
-            color: fd-color(text, 2);
+            @include fd-type("-2");
+            color: fd-color("text", 3);
+            background-color: fd-color("background",1);
+            text-transform: uppercase;
             &:hover {
-                background-color: transparent;
+                background-color: initial;
             }
         }
         &.is-selected,
         &[aria-selected="true"] {
-            background-color: lighten(fd-color(neutral, 3), 5);
+            background-color: lighten(fd-color("action", 1), 0);
         }
     }
     $_row_padding: $fd-tree-control-width + $fd-tree-control-margin-right + 4;
@@ -88,7 +94,7 @@ $block: ns(tree);
         padding-left: $_row_padding;
         &--control {
             flex: auto;
-            width: 25%;
+            width: 20%;
             //sets 8 sublevels of indentation based on __group level
             @at-root {
                 @each $i in 1,2,3,4,5,6,7,8 {
@@ -96,7 +102,6 @@ $block: ns(tree);
                         padding-left: $_row_padding * ($i + 1);
                     }
                 }
-
             }
         }
         &--actions {
@@ -112,16 +117,16 @@ $block: ns(tree);
         top: calc(50% - #{$fd-tree-control-width}/2);
         margin-left: -#{$_row_padding};
         width: $fd-tree-control-width;
-        height: $fd-tree-control-width;
+        //height: $fd-tree-control-width;
         margin-right: fd-space(3);
-        background: url($fd-forms-select-background-image--active) no-repeat 50%;
-        background-size: contain;
-        transform: rotate(-90deg);
+        transform: rotate(180deg);
         vertical-align: middle;
         transition: transform $fd-animation--speed linear;
+        @include fd-icon("nav-back");
+        color: $fd-link-color;
         &[aria-pressed="true"],
         &.is-pressed {
-            transform: rotate(0);
+            transform: rotate(270deg);
         }
     }
     a {

@@ -35,13 +35,14 @@ env.addFilter('sass_to_css', function(sassFile="app.scss") {
 });
 // convert an array to classes
 // returns [ fd-element--mod ]
-env.addFilter('modifier', function(array=[],element="") {
+env.addFilter('modifier', function(array=[],element="",namespace="") {
+    var _ns = namespace || GLOBALS.namespace;
     //is string
     if (typeof array === "string") {
-        return ` ${GLOBALS.namespace}-${element}--${array}`;
+        return ` ${_ns}-${element}--${array}`;
     }
     var mods = array.map((mod) => {
-         return ` ${GLOBALS.namespace}-${element}--${mod}`;
+         return ` ${_ns}-${element}--${mod}`;
     })
     //console.log(mods.join());
     return mods.join('') ;
@@ -120,6 +121,12 @@ app.use('/static', express.static(path.join(__dirname, 'resources')));
 router.get('/(*/)?FundamentalIcons:key', (req, res) => {
     res.sendFile(path.join(__dirname, '..', `scss/icons/FundamentalIcons${req.params.key}`));
 });
+router.get('/(*/)?SAP-icons:key', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', `scss/icons/SAP-icons${req.params.key}`));
+});
+router.get('/(*/)?72/72-:key', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', `scss/fonts/72/72-${req.params.key}`));
+});
 
 router.all('/', function (req, res, next) {
   //console.log('request initiated!');
@@ -150,6 +157,9 @@ function getStarterData() {
         "tree": require(`./templates/tree/data.json`),
         "table": require(`./templates/table/data.json`),
         "tabs": require(`./templates/tabs/data.json`),
+        "pagination": require(`./templates/pagination/data.json`),
+        "side_nav": require(`./templates/side-nav/data.json`),
+        "breadcrumb": require(`./templates/breadcrumb/data.json`),
         "image": require(`./templates/image/data.json`)
     }
     return data;
@@ -159,6 +169,11 @@ router.get('/pages/:key', (req, res) => {
     var key = req.params.key;
     console.log(`requested http://localhost:3030/pages/${key}`);
     res.render(`pages/${key}`, Object.assign(GLOBALS, { id: key, data: getStarterData(), app: config }));
+});
+router.get('/pages/app/:key', (req, res) => {
+    var key = req.params.key;
+    console.log(`requested http://localhost:3030/pages/${key}`);
+    res.render(`pages/app/${key}`, Object.assign(GLOBALS, { id: key, data: getStarterData(), app: config }));
 });
 
 

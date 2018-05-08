@@ -1,22 +1,21 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-@import "mixins";
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+@import "./mixins";
 
 /*!
 .fd-dropdown+()
     .fd-dropdown__control+([disabled])
     .fd-dropdown__menu+()
 */
-$block: ns(dropdown);
-
+$block: #{$fd-namespace}-dropdown;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-dropdown-menu-color: solid 1px $fd-forms-color !default;
     $fd-dropdown-menu-border: solid 1px $fd-forms-border-color !default;
     $fd-dropdown-menu-z-index: 2 !default;
     $fd-dropdown-menu-background-color: fd-color(background) !default;
-    $fd-dropdown-menu-shadow: 0 0 4px 1px rgba(fd-color(neutral, 4), 0.2) !default;
+    $fd-dropdown-menu-shadow: 0 0 4px 1px rgba(fd-color(neutral, 2), 1) !default;
     //items
     $fd-dropdown-menu-item-color: $fd-dropdown-menu-color !default;
     $fd-dropdown-menu-item-color--hover: fd-color(text-inverse) !default;
@@ -88,7 +87,7 @@ $block: ns(dropdown);
     &__item,
     &__option {
         @include fd-reset;
-        @include fd-type(-1,body);
+        @include fd-type("-1", body);
         display: block;
         padding-left: 0;
         list-style: none;
@@ -109,7 +108,7 @@ $block: ns(dropdown);
     }
     &__separator {
         @include fd-reset;
-        @include fd-type(-3, body, reg, none);
+        @include fd-type("-3", body, reg, none);
         display: block;
         color: fd-color(text, 2);
         padding: $fd-dropdown-menu-item-padding;

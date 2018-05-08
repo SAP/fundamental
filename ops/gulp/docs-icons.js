@@ -8,7 +8,7 @@ const paths = {
 }
 
 const task = (cb) => {
-    return gulp.src([`${paths.src}/*.woff`, `${paths.src}/*.woff2`])
+    return gulp.src([`${paths.src}/*.woff`])
 		.pipe(gulp.dest(paths.dest));
 }
 

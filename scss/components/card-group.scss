@@ -1,12 +1,10 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
 /*!
 .fd-card-group+(--2col | --4col)
 */
-$block: ns(card-group);
-
+$block: #{$fd-namespace}-card-group;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-card-group-items-per-group: 3 !default;
@@ -21,6 +19,11 @@ $block: ns(card-group);
     flex-direction: column;
     &:last-child {
         margin-bottom: -$fd-margin-bottom;
+    }
+    .fd-card {
+      &:last-child {
+          margin-bottom: $fd-margin-bottom;
+      }
     }
     @include fd-screen(s) {
         flex-direction: row;

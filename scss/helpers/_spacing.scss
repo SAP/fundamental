@@ -1,32 +1,33 @@
-@import "../core/settings";
-//set namespace using function to avoid hardcoding it
-$ns: ns();
-.#{$ns}has-margin-none {
+@import "./../settings";
+.#{$fd-namespace}-has-margin-none {
     margin: 0;
 }
-.#{$ns}has-padding-none {
+.#{$fd-namespace}-has-padding-none {
     padding: 0;
 }
 @each $item in top, right, bottom, left {
-    .#{$ns}has-margin-#{$item}-none {
+    .#{$fd-namespace}-has-margin-#{$item}-none {
         margin-#{$item}: 0 !important;
     }
-    .#{$ns}has-padding-#{$item}-none {
+    .#{$fd-namespace}-has-padding-#{$item}-none {
         padding-#{$item}: 0 !important;
     }
 }
 @each $key, $value in $fd-spacing {
-    .#{$ns}has-margin-#{$key} {
+    .#{$fd-namespace}-has-height-#{$key} {
+        height: #{$value};
+    }
+    .#{$fd-namespace}-has-margin-#{$key} {
         margin: #{$value};
     }
-    .#{$ns}has-padding-#{$key} {
+    .#{$fd-namespace}-has-padding-#{$key} {
         padding: #{$value};
     }
     @each $item in top, right, bottom, left {
-        .#{$ns}has-margin-#{$item}-#{$key} {
+        .#{$fd-namespace}-has-margin-#{$item}-#{$key} {
             margin-#{$item}: #{$value};
         }
-        .#{$ns}has-padding-#{$item}-#{$key} {
+        .#{$fd-namespace}-has-padding-#{$item}-#{$key} {
             padding-#{$item}: #{$value};
         }
     }
