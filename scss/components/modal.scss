@@ -52,10 +52,15 @@ $block: #{$fd-namespace}-modal;
   &__body{
     padding: $fd-modal-padding-y $fd-modal-padding-x;
     max-height: calc(100vh - #{$fd-modal-header-height} - #{$fd-modal-footer-height});
-    overflow: scroll;
+    overflow-y: auto;
+    
+    > p {
+      padding: 0;
+    }
   }
   &__footer {
     padding: $fd-modal-padding-y $fd-modal-padding-x;
     text-align: right;
+    border-top: 1px solid $fd-modal-border-color;
   }
 }

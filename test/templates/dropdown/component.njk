@@ -9,9 +9,11 @@ dropdown:
 -->
 {%- macro dropdown(properties={}, modifier={}, state={}, aria={}) %}
 {%- set _id = utils.id() %}
-{%- set btn_size_class = " fd-button--"+modifier.block if modifier.block and modifier.block !== "default" else "" %}
 <div class="fd-dropdown{{ modifier.block | modifier('dropdown') }}">
-    <button class="fd-dropdown__control{{ modifier.control | modifier('dropdown__control') }} fd-button--toolbar{{ btn_size_class }}{{ " sap-icon--"+properties.icon if properties.icon }}" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}>
+    <button class="fd-dropdown__control{{ modifier.control | modifier('dropdown__control') }}" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}>
+        {%- if properties.icon %}
+        {{ icon(glyph=properties.icon, classes="dropdown__icon") }}
+        {%- endif %}
         {{ properties.label }}
     </button>
     {{ menu({ items: properties.items, id: _id }, modifier.menu) | indent(4) }}
@@ -22,33 +24,25 @@ dropdown:
 <li><a href="#" class="fd-dropdown__item">{{ properties.label }}</a></li>
 {%- endmacro %}
 
-{%- macro menu(properties={}, modifier=[], classes=[], aria={ hidden: true }) -%}
-<nav class="fd-dropdown__menu{{ modifier | modifier('dropdown__menu') }}{{ classes | classes }}"{{ aria | aria }} id="{{ properties.id }}">
-  {%- for item in properties.items %}
+{%- macro menu(properties={}, modifier=[], classes=[]) -%}
+<ul class="fd-dropdown__menu{{ modifier | modifier('dropdown__menu') }}{{ classes | classes }}" aria-hidden="true" id="{{ properties.id }}">
+    {%- for item in properties.items %}
     {%- if item.items %}
-      {%- if not loop.first %}
-  </ul>
-      {%- endif %}
-  {{ optgroup(item)| indent(2) }}
+    {{ optgroup(item) }}
     {%- else %}
-      {%- if loop.first %}
-  <ul class="fd-dropdown__list">
-      {%- endif %}
     {{ option(item) }}
     {%- endif %}
-  {%- endfor %}
-</nav>
+    {%- endfor %}
+</ul>
 {%- endmacro %}
 
 {% macro optgroup(properties={}) -%}
-<div class="fd-dropdown__group">
-  <h1 class="fd-dropdown__title">{{ properties.label }}</h1>
-  <ul class="fd-dropdown__list">
-  {%- for item in properties.items %}
+<ul class="fd-dropdown__group">
+    <span class="fd-dropdown__separator" role="separator">{{ properties.label }}</span>
+    {%- for item in properties.items %}
     {{ option(item) }}
-  {%- endfor %}
-  </ul>
-</div>
+    {%- endfor %}
+</ul>
 {%- endmacro %}
 
 {% macro dropdown_alt(properties={}, modifier={}, state={}, aria={}) -%}

@@ -39,12 +39,12 @@
 {% for group, values in colors %}
   <h2>{{ group }}</h2>
   {% for item in values %}
-    <div style="height: 30px;" class="fd-has-background-color-{{ group }}-{{ loop.index }}">
+    <div style=" padding:10px; border: 1px solid #ccc" class="fd-has-background-color-{{ group }}-{{ loop.index }}">
+        <p>{{ loop.index }}
     </div>
-    <p>{{ loop.index }}
-      {# — {{item}} #}
-    </p>
+    <br>
   {% endfor %}
+  <br>
 {% endfor %}
 {#
 <h2>Mixins</h2>
@@ -68,9 +68,10 @@
 
     <h1>Spacing</h1>
 {% for key, value in spaces %}
-    <h2>{{ key }}</h2>
+    <h2 style="margin-bottom:0;">{{ key }}</h2>
     <div class="fd-has-height-{{ key }}" style="background-color: pink;">
     </div>
+    <br>
     {# <p>{{ value }}px</p> #}
 {% endfor %}
 {#
@@ -99,13 +100,11 @@
 
 <div class="fd-container">
 
-    <h1>Type</h1>
-
-    <h2>Sizes</h2>
+    <h1>Type Sizes</h1>
 
     {% for i in ["-3","-2","-1","0","1","2","3","4","5"] | reverse %}
     {% set type = specs[i] %}
-        <p><strong>{{i}}</strong>
+        <h2 style="margin-bottom:0;">{{i}}</h2>
            {# — {{ "72Condensed" if type[2] == "header" else "72" }} {{ type[3] | capitalize }}{{ "bold" if type[2] == "medium" }} {{ type[0] }}px | Line-height {{ type[1] }}px #}
          </p>
         <p class="fd-has-type{{ '-minus' if i < 0 }}-{{ i | abs if i != 0 else 'base' }}">
@@ -116,6 +115,7 @@
         {# </s> #}
           {% endif %}
         </p>
+        <br><br>
 
     {% endfor %}
 
@@ -212,23 +212,14 @@
 </div>
 
 <div class="fd-container">
-
-
-      <h1>Fonts</h1>
-
-          {% for i in ['header', 'body', 'code'] %}
-
-              <span>
-                   <code>.fd-has-font-family-{{ i }}</code>
-              </span>
-              <p class="fd-has-type-3 fd-has-font-family-{{ i }}">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
-
-          {% endfor %}
-
-
-
-
+  <h1>Fonts</h1>
+  {% for i in ['header', 'body', 'code'] %}
+      <span>
+           <code>.fd-has-font-family-{{ i }}</code>
+      </span>
+      <p class="fd-has-type-3 fd-has-font-family-{{ i }}">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+      <br>
+  {% endfor %}
 </div>
-
 
 {% endblock %}
