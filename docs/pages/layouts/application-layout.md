@@ -104,10 +104,8 @@ Then put inside other components like [modals](/components/modal.html).
     <div class="fd-modal">
         <div class="fd-modal__content">
             <div class="fd-modal__header">
-                <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="close">
-                    <span class="fd-icon fd-icon--close" role="presentation"></span>
-                </button>
-                <h4 class="fd-modal__title">Modal</h4>
+                <h1 class="fd-modal__title">Modal</h1>
+                <button class="fd-modal__close" aria-label="close"></button>
             </div>
             <div class="fd-modal__body">
                 <p>Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
