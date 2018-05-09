@@ -14,119 +14,89 @@
 
 <h1>Input Group — Text addon</h1>
 {% set example %}
-
-    {{ input_group(
-        properties={
-            after: "km/h",
-            input: {
-                properties: {
-                    placeholder: "Field placeholder text"
-                }
+{{ input_group(
+    properties={
+        after: "km/h",
+        input: {
+            properties: {
+                placeholder: "Field placeholder text"
             }
-        },
-        modifier={
-            block: ["inline", "after"],
-            after: "after"
-        })
-    }}
-    {{ input_group(
-        properties={
-            after: "km/h",
-            input: {
-                properties: {
-                    value: "19387309"
-                }
+        }
+    },
+    modifier={
+        block: "inline"
+    })
+}}
+{{ input_group(
+    properties={
+        after: "km/h",
+        input: {
+            properties: {
+                value: "19387309"
             }
-        },
-        modifier={
-            block: "after",
-            after: "after"
-        })
-    }}
-    {{ input_group(
-        properties={
-            after: "€",
-            input: {
-                properties: {
-                    value: "19387309"
-                }
+        }
+    })
+}}
+{{ input_group(
+    properties={
+        after: "€",
+        input: {
+            properties: {
+                value: "19387309"
             }
-        },
-        modifier={
-            block: "after",
-            after: "after"
-        })
-    }}
-    {{ input_group(
-        properties={
-            after: "$",
-            input: {
-                properties: {
-                    value: "19387309"
-                }
+        }
+    })
+}}
+{{ input_group(
+    properties={
+        after: "$",
+        input: {
+            properties: {
+                value: "19387309"
             }
-        },
-        modifier={
-            block: "after",
-            after: "after"
-        })
-    }}
-    {{ input_group(
-        properties={
-            before: "km/h",
-            input: {
-                properties: {
-                    value: "19387309"
-                }
+        }
+    })
+}}
+{{ input_group(
+    properties={
+        before: "km/h",
+        input: {
+            properties: {
+                value: "19387309"
             }
-        },
-        modifier={
-            block: "before",
-            before: "before"
-        })
-    }}
-    {{ input_group(
-        properties={
-            before: "€",
-            input: {
-                properties: {
-                    value: "19387309"
-                }
+        }
+    })
+}}
+{{ input_group(
+    properties={
+        before: "€",
+        input: {
+            properties: {
+                value: "19387309"
             }
-        },
-        modifier={
-            block: "before",
-            before: "before"
-        })
-    }}
-    {{ input_group(
-        properties={
-            before: "$",
-            input: {
-                properties: {
-                    value: "19387309"
-                }
+        }
+    })
+}}
+{{ input_group(
+    properties={
+        before: "$",
+        input: {
+            properties: {
+                value: "19387309"
             }
-        },
-        modifier={
-            block: "before",
-            before: "before"
-        })
-    }}
-    {{ input_group(
-        properties={
-            after: "50",
-            input: {
-                properties: {
-                    value: "19387309"
-                }
+        }
+    })
+}}
+{{ input_group(
+    properties={
+        after: "50",
+        input: {
+            properties: {
+                value: "19387309"
             }
-        },
-        modifier={
-            block: "after",
-            after: "after"
-        })
-    }}
+        }
+    })
+}}
 
 {% endset %}
 {{ format(example) }}
@@ -144,8 +114,7 @@
         }
     },
     modifier={
-        block: ["inline", "after"],
-        after: "after"
+        block: "inline"
     })
 }}
 {{ input_group(
@@ -158,8 +127,7 @@
         }
     },
     modifier={
-        block: ["inline", "after"],
-        after: "after"
+        block: "inline"
     })
 }}
 {% endset %}
@@ -169,23 +137,16 @@
 <h1>Input Group — Special addon</h1>
 
 {% set example %}
-
 {{ input_group(
     type="number",
     properties={
-        after: "",
         input: {
             properties: {
                 value: "1000000", id: "spinner-1"
             }
         }
-    },
-    modifier={
-        block: "after",
-        after: "after"
     })
 }}
-
 {{ input_group(
     type="search",
     properties={
@@ -196,9 +157,7 @@
         }
     })
 }}
-
 {% endset %}
-
 {{ format(example) }}
 
 
@@ -215,11 +174,7 @@
                 value: "1000000"
             }
         },
-        before: icon("globe")
-    },
-    modifier={
-        block: "before",
-        before: "before"
+        before: icon("localization")
     })
 }}
 {{ input_group(
@@ -229,11 +184,7 @@
                 value: "1000000"
             }
         },
-        after: icon("hide")
-    },
-    modifier={
-        block: "after",
-        after: "after"
+        after: icon("visibilityoff")
     })
 }}
 {% endset %}
@@ -249,10 +200,10 @@
 {%- set iconbtn %}{{  button(
         {
             label: '',
-            icon: 'navigation-down-arrow'
+            icon: 'chevron'
         },
         modifier={
-            block: ['icon','secondary']
+            block: ['icon','text']
         })
 }}{%- endset %}
 {%- set btn %}{{  button(
@@ -260,7 +211,7 @@
             label: 'Button'
         },
         modifier={
-            block: ['secondary']
+            block: []
         })
 }}{%- endset %}
 
@@ -268,8 +219,7 @@
 
 {{ input_group(
     modifier={
-        block: "after",
-        after: ['after', 'button']
+        after: "button"
     },
     properties={
         input: {
@@ -282,7 +232,6 @@
 }}
 {{ input_group(
     modifier={
-        block: "after",
         after: "button"
     },
     properties={
@@ -291,7 +240,7 @@
                 readonly: true
             },
             properties: {
-                value: "2000000"
+                value: "1000000"
             }
         },
         after: iconbtn
@@ -299,13 +248,12 @@
 }}
 {{ input_group(
     modifier={
-        after: ['after', 'button'],
-        block: "after"
+        after: "button"
     },
     properties={
         input: {
             properties: {
-                value: "3000000"
+                value: "1000000"
             }
         },
         after: btn
@@ -313,16 +261,15 @@
 }}
 {{ input_group(
     modifier={
-        after: ['after', 'button'],
-        block: "after"
+        after: "button"
     },
     properties={
         input: {
             properties: {
-                value: "4000000"
+                value: "1000000"
             }
         },
-        after: button({ icon: 'navigation-down-arrow' }, modifier={ block: ['icon', 'secondary'] })
+        after: button({ icon: 'chevron' }, modifier={ block: 'icon' })
     })
 }}
 {% endset %}

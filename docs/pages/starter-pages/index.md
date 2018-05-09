@@ -77,15 +77,4 @@ Starter pages can be used as quick starting points to see how a set of component
              </p>
         </div>
     </a>
-    <a class="fd-card" role="button" href="overlay-starter-page.html" target="_blank">
-        <div class="fd-card__content">
-             <h2 class="fd-card__header">
-                 Application Overlay
-             </h2>
-             <br/>
-             <p class="fd-card__description">
-                 This is an example of an Overlay being used over a simple page.
-             </p>
-        </div>
-    </a>
 </div>

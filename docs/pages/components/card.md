@@ -26,10 +26,10 @@ Used to display static information only. The user should not interact with this 
 <div class="fd-card">
     <div class="fd-card__content">
          <h2 class="fd-card__header">
-             Primary Value
+             Primary info
          </h2>
          <p class="fd-card__description">
-             Secondary Value aute irure dolor in reprehenderit in voluptate
+             Secondary info aute irure dolor in reprehenderit in voluptate
          </p>
          <p class="fd-card__status">
              Status
@@ -109,13 +109,14 @@ The card can also contain actions that can be performed on the object. This acti
     </div>
     <div class="fd-card__actions">
         <div class="fd-dropdown">
-            <button class=" fd-button--secondary fd-button--l sap-icon--vertical-grip" aria-controls="MXLTN784" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
-            <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="MXLTN784">
-                <li><a href="#" class="fd-dropdown__item">Edit</a></li>
-                <li><a href="#" class="fd-dropdown__item">Delete</a></li>
-                <li><a href="#" class="fd-dropdown__item">Assign</a></li>
-                <li><a href="#" class="fd-dropdown__item">Expire</a></li>
-                <li><a href="#" class="fd-dropdown__item">Archive</a></li>
+            <button class="fd-button fd-button--icon fd-button--text" aria-controls="dKKJX636" aria-haspopup="true" aria-label="More">
+                <span class="fd-icon fd-icon--more fd-icon--medium" role="presentation"></span>
+            </button>
+            <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="dKKJX636">
+                <li><a class="fd-dropdown__item">Pellentesque metus</a></li>
+                <li><a class="fd-dropdown__item">Duis malesuada odio volutpat</a></li>
+                <li><a class="fd-dropdown__item">Suspendisse</a></li>
+                <li><a class="fd-dropdown__item">Donec mattis arcu et velit</a></li>
             </ul>
         </div>
     </div>
