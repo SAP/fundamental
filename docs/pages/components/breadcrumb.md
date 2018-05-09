@@ -12,9 +12,6 @@ The breadcrumb allows users to see the current page and navigation path to that 
 
 <hr>
 
-## Default Alert
-Use to let people know there is something happening, but you can dismiss and act upon it later if needed, e.g. a service subscribed to needs updating. It’s recommended to use the dark blue treatment for Alerts. Alerts should display until they are dismissed by clicking or tapping X.
-
 {% capture default %}
 <ul class="fd-breadcrumb">
     <li class="fd-breadcrumb__item">
