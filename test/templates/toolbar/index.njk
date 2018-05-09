@@ -8,7 +8,7 @@
 {% from "./component.njk" import toolbar %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['fonts','icons', 'components/button','components/dropdown','components/input-group', 'components/pagination','helpers'] %}
+{% set css_deps = ['components/alert', 'components/link','fonts','icons', 'components/button','components/dropdown','components/input-group', 'components/pagination','helpers'] %}
 
 {% block content %}
 
@@ -18,7 +18,12 @@
     }
 </style>
 
+<div class="fd-alert fd-alert--warning" role="alert">
+  The <code>.fd-toolbar</code> component has been deprecated in favor of using the <code>.fd-panel</code> header, filters, and footer containers.
+  <a href="pages/panel" class="fd-link">See the  <code>.fd-panel</code> example page. <span class="sap-icon--arrow-right sap-icon--s"></span></a>
+</div>
 
+<br>
 
     <h1>toolbar</h1>
 

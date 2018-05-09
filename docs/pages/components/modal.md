@@ -19,10 +19,12 @@ Used when you need to inform the user but the [Alert Component](alert.html) does
 {% capture default-modal %}
 <div class="modal-demo-bg">
 <div class="fd-modal">
-    <div class="fd-modal__content" role="document">
+    <div class="fd-modal__content">
         <div class="fd-modal__header">
-            <h1 class="fd-modal__title">Product Added</h1>
-            <button class="fd-modal__close" aria-label="close"></button>
+            <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="close">
+                <span class="fd-icon fd-icon--close" role="presentation"></span>
+            </button>
+            <h4 class="fd-modal__title">Product Added</h4>
         </div>
         <div class="fd-modal__body">
             <b>Thew new product have been added to your catalog.</b><br/>
@@ -48,19 +50,19 @@ Used to confirm with the user before continuing with destructive or complex acti
 {% capture default-confirmation %}
 <div class="modal-demo-bg">
 <div class="fd-modal">
-    <div class="fd-modal__content" role="document">
+    <div class="fd-modal__content">
         <div class="fd-modal__header">
-            <h1 class="fd-modal__title">Delete</h1>
-            <button class="fd-modal__close" aria-label="close"></button>
+            <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="close">
+                <span class="fd-icon fd-icon--close" role="presentation"></span>
+            </button>
+            <h4 class="fd-modal__title">Delete</h4>
         </div>
         <div class="fd-modal__body">
             Do you want to delete item <b>X</b>?
         </div>
-        <footer class="fd-modal__footer">
-            <div class="fd-modal__actions">
-                <button class="fd-button--secondary">No</button>
-                <button class="fd-button--">Yes</button>
-            </div>
+        <footer class="fd-modal__footer-items">
+            <button class="fd-modal__button-primary">Yes</button>
+            <button class="fd-modal__button-secondary">No</button>
         </footer>
     </div>
 </div>
@@ -78,24 +80,24 @@ Used to collect simple information from the user. Please use with care and don't
 {% capture default-form %}
 <div class="modal-demo-bg">
 <div class="fd-modal">
-    <div class="fd-modal__content" role="document">
+    <div class="fd-modal__content">
         <div class="fd-modal__header">
-            <h1 class="fd-modal__title">Invite user</h1>
-            <button class="fd-modal__close" aria-label="close"></button>
+            <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="close">
+                <span class="fd-icon fd-icon--close" role="presentation"></span>
+            </button>
+            <h4 class="fd-modal__title">Invite user</h4>
         </div>
         <div class="fd-modal__body">
-            <div class="fd-form__group">
-                <div class="fd-form__item">
-                    <label class="fd-form__label is-required" for="input-2">Email*</label>
-                    <input class="fd-form__control" type="text" id="input-2">
-                </div>
+        <div class="fd-form__group">
+            <div class="fd-form__item">
+                <label class="fd-form__label is-required" for="input-2">Email*</label>
+                <input class="fd-form__control" type="text" id="input-2">
             </div>
         </div>
-        <footer class="fd-modal__footer">
-            <div class="fd-modal__actions">
-                <button class="fd-button--secondary">Cancel</button>
-                <button class="fd-button--">Invite</button>
-            </div>
+        </div>
+        <footer class="fd-modal__footer-items">
+            <button class="fd-modal__button-primary">Invite</button>
+            <button class="fd-modal__button-secondary">Cancel</button>
         </footer>
     </div>
 </div>

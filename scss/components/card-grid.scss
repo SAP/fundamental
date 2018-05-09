@@ -1,0 +1,46 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+/*!
+.fd-card-grid+(--2col | --4col | --5col | --6col)
+*/
+$block: #{$fd-namespace}-card-grid;
+.#{$block} {
+  //VARS
+  $fd-card-grid-border-color: fd-color("background") !default;
+  $fd-card-grid-items-per-row: 3 !default;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  & > * {
+    margin-bottom: 0;
+    border-radius: 0 !important;
+    &::after {
+      content: "";
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      border-right: solid 1px $fd-card-grid-border-color;
+      border-bottom: solid 1px $fd-card-grid-border-color;
+      position: absolute;
+    }
+  }
+  @include fd-screen(s) {
+    /* flex fallback */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(100% / #{$fd-card-grid-items-per-row}), 1fr));
+    grid-auto-rows: minmax(0, auto);
+    grid-gap: 0;
+
+    //BLOCK MODIFIERS ************
+    @each $n in 2, 3, 4, 5, 6 {
+      &--#{$n}col {
+        grid-template-columns: repeat(auto-fill, minmax(calc(100% / #{$n}), 1fr));
+      }
+    }
+  }
+}

@@ -10,66 +10,65 @@
 {% block content %}
 
 <h1>Inline Help</h1>
-
 <div style="text-align:center;">
 
-    <!-- output the component example and the code snippet -->
-    {% set example %}
-    {%- set _id = utils.id() %}
+<!-- output the component example and the code snippet -->
+{% set example %}
+{%- set _id = utils.id() %}
 
-    Bottom Right (Default)
-    {{  inline_help(
-            properties={
-                content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
-            },
-            modifier={
-                content: ["bottom-right"]
-            }
-        )
-    }}
+Bottom Right (Default)
+{{  inline_help(
+        properties={
+            content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
+        },
+        modifier={
+            content: ["bottom-right"]
+        }
+    )
+}}
 
-    <br><br>
+<br><br>
 
-    Bottom Left
-    {{  inline_help(
-            properties={
-                content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
-            },
-            modifier={
-                content: ["bottom-left"]
-            }
-        )
-    }}
+Bottom Left
+{{  inline_help(
+        properties={
+            content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
+        },
+        modifier={
+            content: ["bottom-left"]
+        }
+    )
+}}
 
-    <br><br>
+<br><br>
 
-    Right
-    {{  inline_help(
-            properties={
-                content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
-            },
-            modifier={
-                content: ["right"]
-            }
-        )
-    }}
+Right
+{{  inline_help(
+        properties={
+            content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
+        },
+        modifier={
+            content: ["right"]
+        }
+    )
+}}
 
-    <br><br>
+<br><br>
 
-    Left
-    {{  inline_help(
-            properties={
-                content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
-            },
-            modifier={
-                content: ["left"]
-            }
-        )
-    }}
+Left
+{{  inline_help(
+        properties={
+            content: "Lorem ipsum dolor sit amet, consectetur adipiscing."
+        },
+        modifier={
+            content: ["left"]
+        }
+    )
+}}
 
-    {% endset %}
-    {{- format(example) -}}
+{% endset %}
+{{- format(example) -}}
 
-    {% endblock %}
+{% endblock %}
 
 </div>

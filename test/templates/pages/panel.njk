@@ -4,6 +4,11 @@
 
 {% from "../tree/component.njk" import tree %}
 {% from "../table/component.njk" import table %}
+{% from "../tag/component.njk" import tag %}
+{% from "../button/component.njk" import button %}
+{% from "../button-group/component.njk" import button_group %}
+{% from "../pagination/component.njk" import pagination %}
+{% from "../dropdown/component.njk" import dropdown, menu %}
 
 {% set hide_app_sidebar = false %}
 {% set hide_page_header = true %}
@@ -17,9 +22,9 @@
         {%- endcall %}
     {%- endcall %}
     {% call layout.panel_body() -%}
-      <h1>.fd-panel</h1>
-      <p>Very much like a <code>.fd-section</code> but intended to be used inside of a column.</p>
-      <p>A <code>.fd-panel</code> should only be used when a title, actions and/or footer are needed with the content, otherwise the content can be placed directly inside the <code>.fd-col</code></p>
+      <p>.fd-panel__body</p>
+      <p>Very much like a <code>.fd-section</code> but intended to contain content.</p>
+      <p>Use <code>.fd-col</code>s when multiple panels are needed in a column structure.</p>
     {%- endcall %}
     {% call layout.panel_footer() -%}
 .fd-panel__footer
@@ -28,8 +33,42 @@
 {% endset %}
 
 
+{% set panel_filters %}
+{% call layout.panel() -%}
+    {% call layout.panel_header({ title: ".fd-panel__title" }) -%}
+        {% call layout.panel_actions() -%}
+.fd-panel__actions
+        {%- endcall %}
+    {%- endcall %}
+    {% call layout.panel_filters(aria={ hidden: false }) -%}
+.fd-panel__filters
+    {%- endcall %}
+    {% call layout.panel_body() -%}
+      .fd-panel__body
+    {%- endcall %}
+    {% call layout.panel_footer() -%}
+.fd-panel__footer
+    {%- endcall %}
+{%- endcall %}
+{% endset %}
 
-<div class="fd-has-background-color-neutral-2">
+{# //////////////////////// #}
+
+{% call layout.section() -%}
+{% call layout.section_header({ title: "<code>.fd-panel</code>"}) -%}
+{%- endcall %}
+{% call layout.container() -%}
+
+{{panel}}
+
+{%- endcall %}
+{%- endcall %}
+
+
+{# //////////////////////// #}
+
+
+
 {% call layout.section() -%}
 {% call layout.container() -%}
     {% call layout.col(6) -%}
@@ -45,7 +84,118 @@
 
 {%- endcall %}
 {%- endcall %}
-</div>
+
+
+
+{# //////////////////////// #}
+
+{% call layout.section() -%}
+{% call layout.section_header({ title: "<code>.fd-panel</code> with filters"}) -%}
+{%- endcall %}
+{% call layout.container() -%}
+
+{{panel_filters}}
+
+{%- endcall %}
+{%- endcall %}
+
+
+
+{# //////////////////////// #}
+
+{%- set tags %}
+{%- for i in range(0, 5) -%}
+{{  tag({label: "Bibendum"}) }}
+{% endfor %}
+{{  button({label: 'Clear All'},modifier={block: ['secondary','s']}) }}
+{% endset %}
+
+{% set panel_filters_items = [
+    {
+        "label": "Color",
+        "items": [
+            { "label": "Option 1" },
+            { "label": "Option 2" },
+            { "label": "Option 3" }
+        ]
+    },
+    {
+        "label": "Size",
+        "items": [
+            { "label": "Option 1" },
+            { "label": "Option 2" },
+            { "label": "Option 3" }
+        ]
+    }
+
+] %}
+
+{% set panel_filters_content %}
+{% call layout.panel() -%}
+    {% call layout.panel_header({ title: "Items (1180)" }) -%}
+        {% call layout.panel_actions() -%}
+
+        {{ dropdown(
+          {            "label": "Newest",
+                      "icon": "sort",
+                      "items": [
+                          { "label": "Option 1" },
+                          { "label": "Option 2" },
+                          { "label": "Option 3" }
+                      ]},modifier={block: ['s']}
+          ) }}
+
+        {{  button({label: 'Filter',icon: 'add-filter' },modifier={block: ['toolbar','s']}) }}
+
+        {{  button_group(
+          properties={
+            label: "Show as",
+            buttons: [
+              { "properties": { "icon": "grid" }, "modifier": { block: ["grouped","s" ] }, "aria": { "pressed": true } },
+              { "properties": { "icon": "list" }, "modifier": { block: ["grouped","s" ] } }
+            ]
+          })
+        }}
+
+
+        {%- endcall %}
+    {%- endcall %}
+    {% call layout.panel_filters(aria={ hidden: false }) -%}
+{% for item in panel_filters_items %}
+{{ dropdown(item, modifier={block: "s"}) }}
+{% endfor %}
+
+    {%- endcall %}
+    {% call layout.panel_filters(aria={ hidden: false }) -%}
+{{tags}}
+    {%- endcall %}
+    {% call layout.panel_body() -%}
+      .fd-panel__body
+    {%- endcall %}
+    {% call layout.panel_footer() -%}
+    {{  pagination(data.pagination.properties) }}
+
+    {%- endcall %}
+{%- endcall %}
+{% endset %}
+
+
+
+
+{% call layout.section() -%}
+{% call layout.section_header({ title: "Example <code>.fd-panel</code> with content"}) -%}
+{%- endcall %}
+{% call layout.container() -%}
+
+{{panel_filters_content}}
+
+{%- endcall %}
+{%- endcall %}
+
+{# //////////////////////// #}
+
+
+
 
 {% set badgetitle %}
 Vivamus sagittis <span class="fd-badge fd-badge--success">Active</span>
@@ -71,8 +221,7 @@ Vivamus sagittis <span class="fd-badge fd-badge--success">Active</span>
 {% call layout.panel() -%}
     {% call layout.panel_header({  title: badgetitle }) -%}
         {% call layout.panel_actions() -%}
-        <button class="fd-button fd-button--text fd-button--small">
-            <span class="fd-icon fd-icon--add" role="presentation"></span>
+        <button class="fd-button fd-button--s sap-icon--add">
             Add New Item
         </button>
         {%- endcall %}
@@ -121,6 +270,9 @@ Vivamus sagittis <span class="fd-badge fd-badge--success">Active</span>
         {% call layout.panel_actions() -%}
 //buttons (optional)
         {%- endcall %}
+    {%- endcall %}
+    {% call layout.panel_filters() -%}
+//panel filters (optional)
     {%- endcall %}
     {% call layout.panel_body() -%}
 //panel body

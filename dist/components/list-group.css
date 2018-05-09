@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.0.0-beta-4
+* Fundamental-UI v1.0.0-beta-3
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -17,7 +17,9 @@
 }
 .fd-list-group__item {
   list-style: none;
-  padding: 10px 16px;
+  border: 1px solid #fbfbfb;
+  border-top: none;
+  padding: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,6 +27,9 @@
   background-color: none;
   -webkit-transition: background-color 125ms ease-in;
   transition: background-color 125ms ease-in
+}
+.fd-list-group__item:first-child {
+  border-top: 1px solid #fbfbfb
 }
 .fd-list-group__item:hover {
   background-color: #f8f8f8
@@ -37,8 +42,8 @@
   position: relative;
   display: inline-block;
   max-height: 40px;
-  padding-top: 0;
-  top: -10px;
-  margin-bottom: -20px;
+  padding-top: 4px;
+  top: -16px;
+  margin-bottom: -32px;
   right: -16px
 }
