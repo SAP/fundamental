@@ -155,7 +155,7 @@ If you have a need to apply a color to any of your scss/css class, you can use t
 }
 {% endhighlight %}
 
-You can refer to the [colors page](colors.html){:target="_blank"} for the complete list of the available color options.
+You can refer to the [colors page](/fundamentals/colors.html){:target="_blank"} for the complete list of the available color options.
 
 ### Spacing Function
 {:.docs-header-h3}
@@ -187,7 +187,7 @@ The following spacing options are available -
 ### Type Mixin
 {:.docs-header-h3}
 
-You can utilize the type mixin to render size, line height, face, weight and transformation - <br> `fd-type(size, font, weight, transform)`
+You can utilize the type mixin to render size, line height, face, weight and transformation - <br> `fd-type("size", font, weight, transform)`
 
 {% highlight css %}
 .foo {

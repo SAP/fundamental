@@ -2,7 +2,7 @@
 {% from "./component.njk" import card %}
 {% from "../button/component.njk" import button %}
 {% from "./../format.njk" import format %}
-{% set css_deps = ['helpers','icons','components/button'] %}
+{% set css_deps = ['fonts','helpers','icons','components/button'] %}
 
 
 {% block content %}
@@ -70,8 +70,8 @@
                 'description': 'Tenetur quam placeat ipsum dolor sit amet obcaecati molestias voluptatibus dolorum ut',
                 'status': '<span class="fd-has-color-status-1">Voluptate quis adipisci sit</span>',
                 'actions': button(
-                        { icon: 'more' },
-                        modifier={ block: ['icon','text','small'] },
+                        { icon: 'vertical-grip' },
+                        modifier={ block: ['l','secondary'] },
                         aria={ label: 'BUTTON_LABEL' }
                     )
             },

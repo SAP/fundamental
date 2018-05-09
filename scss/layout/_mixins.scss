@@ -1,4 +1,4 @@
-@import "../core/mixins";
+@import "./../mixins";
 
 @mixin navlist($direction: horizontal) {
     list-style: none;
@@ -76,7 +76,6 @@ $flow_width_of_gutter: $fd-width--gutter;
 //Apply to "columned" containers
 @mixin fd-flow($span: 12, $cols: 12) {
   float: left;
-
   //set margin for gutter
   margin-right: $flow_width_of_gutter;
   &:last-child {
@@ -85,9 +84,10 @@ $flow_width_of_gutter: $fd-width--gutter;
   //calc width without gutters
   $num_of_gutters: $cols - 1;
   $gutter_width_total: $num_of_gutters * $flow_width_of_gutter;
-
+  
   //calc spanned gutter width
   $gutter_width_spanned: $flow_width_of_gutter * ($span - 1);
+
 
   //the math
   //#1 subtract total gutter width from container width (e.g., 12 cols have 11 gutters * 20px)

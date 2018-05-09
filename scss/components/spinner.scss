@@ -1,7 +1,6 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
 /*!
 .fd-spinner+(.is-hidden|[aria-hidden=true])
 
@@ -9,8 +8,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 * Copyright 2015 Daniel Cardoso <@DanielCardoso>
 * Licensed under MIT
 */
-$block: ns(spinner);
-
+$block: #{$fd-namespace}-spinner;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-spinner-background-color: fd-color(action, 1) !default;
@@ -69,6 +67,7 @@ $block: ns(spinner);
         width: $fd-spinner-width--bar;
         height: 100%;
         background-color: $fd-spinner-background-color;
+        border-radius: $fd-border-radius;
     }
     div {
         &::before,
@@ -78,6 +77,7 @@ $block: ns(spinner);
             width: $fd-spinner-width--bar;
             height: 100%;
             background-color: $fd-spinner-background-color;
+            border-radius: $fd-border-radius;
         }
         &::before {
             left: $fd-spinner-width--bar + $fd-spinner-width--gutter;

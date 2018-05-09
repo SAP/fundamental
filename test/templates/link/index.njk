@@ -1,0 +1,50 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "./component.njk" import link %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = [] %}
+
+{% block content %}
+
+    <h1>link</h1>
+
+    <!-- output the component example and the code snippet -->
+    {% set example %}
+{{  link(
+        properties=data.properties,
+        modifier={},
+        state={},
+        aria={}
+    )
+}}
+<br>
+{{  link(
+        properties=data.properties,
+        modifier={
+
+        },
+        state=data.state,
+        aria={
+          selected: true
+        }
+    )
+}}
+<br>
+{{  link(
+        properties=data.properties,
+        modifier={
+
+        },
+        state=data.state,
+        aria={
+          disabled: true
+        }
+    )
+}}
+    {% endset %}
+    {{ format(example) }}
+
+
+{% endblock %}

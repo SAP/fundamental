@@ -6,28 +6,31 @@ modal:
     properties={},
 -->
 {% macro modal(properties={}) %}
-
-<div class="fd-modal">
-  <div class="fd-modal__content">
-      <div class="fd-modal__header">
-          <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="close">
-            <span class="fd-icon fd-icon--close" role="presentation"></span>
-          </button>
-          <h4 class="fd-modal__title">{{properties.header}}</h4>
-      </div>
+<div class="fd-modal" role="dialog">
+  <div class="fd-modal__content" role="document">
+      <header class="fd-modal__header">
+          <h1 class="fd-modal__title">{{properties.header}}</h1>
+          <button class="fd-modal__close" aria-label="close"></button>
+      </header>
       <div class="fd-modal__body">
-            {{properties.body}}
+            <p>{{properties.body}}</p>
       </div>
-      <footer class="fd-modal__footer-items">
-        {%- for item in properties.footerActions %}
-          {%- if item.type === "primary" %}
-            <button class="fd-modal__button-primary">{{item.label}}</button>
-          {%- else %}
-            <button class="fd-modal__button-secondary">{{item.label}}</button>
-          {%- endif %}
-        {%- endfor %}
-      </footer>
+      <footer class="fd-modal__footer">
+        <div class="fd-modal__actions">
+          {%- for item in properties.actions %}
+          {{  button(
+                  {
+                      label: item.label
+                  },
+                  modifier={
+                      block: [item.type]
+                  })
+          }}
+          {%- endfor %}
+        </div>
+        </footer>
   </div>
+
 </div>
 
 {%- endmacro %}

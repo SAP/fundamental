@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.0.0-beta-3
+* Fundamental-UI v1.0.0-beta-4
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -10,51 +10,61 @@
 .fd-tabs__panel+([aria-expanded]|.is-expanded)
 */
 .fd-tabs {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #21262c;
-  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #32363a;
+  font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding-left: 0;
-  margin-bottom: 40px;
+  margin-bottom: 12px;
   list-style: none;
-  border-bottom: solid 1px #ccdaeb
+  border-bottom: solid 1px #dededf
 }
 .fd-tabs__link {
   display: block;
-  padding: 12px 20px;
-  font-size: 1.125rem;
-  line-height: 1.33334;
-  font-family: sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #009cdf;
-  border-bottom: solid 2px transparent;
+  position: relative;
+  padding: 16px 16px;
+  font-size: 1rem;
+  line-height: 1.42857;
+  font-weight: 400;
+  cursor: pointer;
+  color: #32363a
+}
+.fd-tabs__link:link {
+  color: #32363a
+}
+.fd-tabs__link::after {
   -webkit-transition: all 125ms ease-in;
   transition: all 125ms ease-in;
-  cursor: pointer
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  height: 3px;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 4px 4px 0 0
 }
 .fd-tabs__link:hover {
-  border-bottom: solid 2px #009cdf;
-  color: #008ac6
+  color: #085caf
 }
 .fd-tabs__link.is-selected,
 .fd-tabs__link[aria-selected=true] {
-  color: #21262c;
-  border-bottom: solid 2px #009cdf
+  color: #0a6ed1
+}
+.fd-tabs__link.is-selected::after,
+.fd-tabs__link[aria-selected=true]::after {
+  background-color: #0a6ed1
 }
 .fd-tabs__link.is-disabled,
 .fd-tabs__link[aria-disabled=true] {
-  color: #7f90a4;
+  color: rgba(10,110,209,.4);
   cursor: not-allowed
-}
-.fd-tabs__link.is-disabled:hover,
-.fd-tabs__link[aria-disabled=true]:hover {
-  border-bottom-color: transparent
 }
 .fd-tabs__panel[aria-expanded=false] {
   display: none

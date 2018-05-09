@@ -1,47 +1,49 @@
-@import "../core/functions";
-
-
 //colors
 $fd-colors: (
-    primary: (
-        1: midnightblue,
-        2: #1a1a1a,
-    ),
-    text: (
-        1: #ded9d3,
-        2: #7f6f5c,
-        3: #fff,
-    ),
-    text-inverse: (
-        1: #000000,
-        2: #090706,
-        3: #110e0c,
-    ),
-    action: (
-        1: #1ba6e9,
-        2: #e45916,
-        3: #e86b30,
-       	4: #008ac4
-    ),
-    neutral: (
-        1: #060403,
-        2: #cdcdcd,
-        3: #332515,
-        4: #8a8fa1,
-        5: #c2d1ea,
-        6: #a8bfe3
-    ),
-    background: (
-        1: black
-    ),
-    status: (
-        1: #61bf33,
-        2: #dff2d6,
-        3: #e96b1a,
-        4: #fbe3d4,
-        5: #df1919,
-        6: #f9d1d1
-    )
+  "primary": (
+    1: #273143, //*
+    2: darkblue,
+  ),
+  "action": (
+    1: #0a6ed1,
+    2: deepskyblue
+  ),
+  "text": (
+    1: #ffffff,
+    2: #f5f5f5,
+    3: #ebebeb,
+  ),
+  "text-inverse": (
+    1: #32363b,
+    2: #515559,
+    3: #66696c,
+  ),
+  "background": (
+    1: #1c2433, //*
+    2: #273143,
+    3: darkviolet,
+  ),
+  "neutral": (
+    1: black,
+    2: slategray,
+    3: dimgray,
+    4: tomato,
+  ),
+  "status": (
+    1: #359c46,
+    2: #f59518,
+    3: #ee0000,
+  )
 );
 
-$fd-ui-sidebar-background-color: lighten(black, 10);
+//BRING IN DEFAULT SETTINGS so you have access to the full system when defining overrides
+@import "./../functions";
+@import "./../settings";
+
+//NO !default flags
+$fd-card-background-color: fd-color("background",2);
+$fd-list-group-border-color: none;
+$fd-button-background-color: fd-color("action",1);
+$fd-link-color: fd-color("action",2);
+$fd-button-color: fd-color("text");
+$fd-list-group-background-color--hover: fd-color("neutral",1);

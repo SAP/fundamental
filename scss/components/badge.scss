@@ -1,33 +1,52 @@
-@import "../core/settings";
-@import "../core/mixins";
-@import "../core/functions";
-
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
 /*!
-.fd-badge+(( --success | --warning | --error ), --pill)
+.fd-badge+(( --success | --warning | --error ), (--pill | --filled))
 */
-$block: ns(badge);
-
+$block: #{$fd-namespace}-badge;
 .#{$block} {
-    @include fd-reset;
-    @include fd-type(-3);
-    line-height: fd-space(reg);
-    border-radius: 5px;
-    border-width: 1px;
-    border-style: solid;
-    padding: fd-space(1) fd-space(2);
-    vertical-align: middle;
-    display: inline-block;
-    padding: fd-space(1)-1px fd-space(2);
-    &--pill {
-        border-radius: 12.5px;
+  $fd-badge-background-color: fd-color("neutral", 1) !default;
+  $fd-badge-background-color--success: rgba($fd-color--success, 0.07) !default;
+  $fd-badge-background-color--warning: rgba($fd-color--warning, 0.07) !default;
+  $fd-badge-background-color--error: rgba($fd-color--error, 0.07) !default;
+
+  @include fd-reset;
+  @include fd-type("-2");
+  @include fd-weight("bold");
+  color: fd-color("text", 3);
+  text-transform: uppercase;
+  line-height: fd-space(6);
+  vertical-align: middle;
+  display: inline-block;
+  padding-left: fd-space(2);
+  padding-right: fd-space(2);
+  border-radius: $fd-border-radius;
+  border-width: 1px;
+  border-style: solid;
+  &--pill {
+    border-radius: fd-space(6)/2;
+  }
+  &--filled {
+    background-color: $fd-badge-background-color;
+    border: none;
+    &.#{$block}--success {
+      background-color: $fd-badge-background-color--success;
     }
-    &--success {
-        color: $fd-color--success;
+    &.#{$block}--warning {
+      background-color: $fd-badge-background-color--warning;
     }
-    &--warning {
-        color: $fd-color--warning;
+    &.#{$block}--error {
+      background-color: $fd-badge-background-color--error;
     }
-    &--error {
-        color: $fd-color--error;
-    }
+  }
+  &--success {
+    color: $fd-color--success;
+  }
+  &--warning {
+    color: $fd-color--warning;
+  }
+  &--error {
+    color: $fd-color--error;
+  }
 }

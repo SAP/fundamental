@@ -1,328 +1,81 @@
 /*!
-* Fundamental-UI v1.0.0-beta-3
+* Fundamental-UI v1.0.0-beta-4
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
-/*!
-.fd-button+( (--small | --large), --icon, --text, --link, --action-bar)+( (.is-disabled | [aria-disabled=true]) | (.is-selected | [aria-selected=true] | (.is-pressed | [aria-pressed=true]))
-*/
-.fd-button {
-  margin: 0;
-  padding: 0;
-  font-smoothing: antialiased;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: 0;
-  border: 0;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  background-color: transparent;
-  font-size: 1.125rem;
-  line-height: 1.33334;
-  font-family: sans-serif;
-  font-weight: 500;
-  display: inline-block;
-  background-color: #009cdf;
-  -webkit-transition: background-color 125ms ease-in;
-  transition: background-color 125ms ease-in;
-  color: #f6f8f9;
-  max-height: 52px;
-  height: 52px;
-  line-height: 52px;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-  text-transform: uppercase;
-  border-radius: 0
-}
-.fd-button--small {
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: 400;
-  font-weight: 600;
-  max-height: 40px;
-  height: 40px;
-  line-height: 40px;
-  padding-left: 16px;
-  padding-right: 16px
-}
-.fd-button--action-bar,
-.fd-button--large {
-  font-size: 1.25rem;
-  line-height: 1.4;
-  font-weight: 600;
-  max-height: 76px;
-  height: 76px;
-  line-height: 76px;
-  padding-left: 28px;
-  padding-right: 28px
-}
-.fd-button:hover {
-  background-color: #008ac6;
-  color: #f6f8f9;
-  text-decoration: none
-}
-.fd-button:focus {
-  color: #f6f8f9;
-  -webkit-box-shadow: 0 0 4px 1px #8a8fa1;
-  box-shadow: 0 0 4px 1px #8a8fa1;
-  outline: solid 2px #2dc0ff
-}
-.fd-button.is-active,
-.fd-button.is-pressed,
-.fd-button.is-selected,
-.fd-button:active,
-.fd-button[aria-pressed=true],
-.fd-button[aria-selected=true] {
-  background-color: #0078ac;
-  color: #f6f8f9
-}
-.fd-button.is-disabled,
-.fd-button:disabled,
-.fd-button[aria-disabled=true] {
-  outline: solid 1px #d7d7d7;
-  color: #7f90a4;
-  background-color: #f9fbfc;
-  cursor: not-allowed
-}
-.fd-button--link,
-.fd-button--text {
-  color: #009cdf;
-  background-color: transparent
-}
-.fd-button--link:focus,
-.fd-button--link:hover,
-.fd-button--text:focus,
-.fd-button--text:hover {
-  background-color: transparent;
-  color: #008ac6
-}
-.fd-button--link.is-disabled,
-.fd-button--link.is-pressed,
-.fd-button--link.is-selected,
-.fd-button--link:active,
-.fd-button--link:disabled,
-.fd-button--link[aria-disabled=true],
-.fd-button--link[aria-pressed=true],
-.fd-button--link[aria-selected=true],
-.fd-button--text.is-disabled,
-.fd-button--text.is-pressed,
-.fd-button--text.is-selected,
-.fd-button--text:active,
-.fd-button--text:disabled,
-.fd-button--text[aria-disabled=true],
-.fd-button--text[aria-pressed=true],
-.fd-button--text[aria-selected=true] {
-  background-color: transparent;
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none
-}
-.fd-button--link.is-pressed,
-.fd-button--link.is-selected,
-.fd-button--link:active,
-.fd-button--link[aria-pressed=true],
-.fd-button--link[aria-selected=true],
-.fd-button--text.is-pressed,
-.fd-button--text.is-selected,
-.fd-button--text:active,
-.fd-button--text[aria-pressed=true],
-.fd-button--text[aria-selected=true] {
-  color: #0078ac
-}
-.fd-button--link.is-disabled,
-.fd-button--link:disabled,
-.fd-button--link[aria-disabled=true],
-.fd-button--text.is-disabled,
-.fd-button--text:disabled,
-.fd-button--text[aria-disabled=true] {
-  color: #7f90a4
-}
-.fd-button--link {
-  height: 28px;
-  line-height: 28px;
-  padding-left: 16px;
-  padding-right: 16px;
-  position: relative
-}
-.fd-button--link.fd-button--small {
-  height: 24px;
-  line-height: 24px
-}
-.fd-button--link::after {
-  content: "";
-  border-bottom: solid 2px transparent;
-  width: calc(100% - 16px*2);
-  height: 2px;
-  position: absolute;
-  bottom: 1px;
-  left: 0;
-  margin-left: 16px;
-  -webkit-transition: border-bottom-color 125ms ease-in;
-  transition: border-bottom-color 125ms ease-in
-}
-.fd-button--link:focus {
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none
-}
-.fd-button--link.is-pressed::after,
-.fd-button--link.is-selected::after,
-.fd-button--link:active::after,
-.fd-button--link:focus::after,
-.fd-button--link:hover::after,
-.fd-button--link[aria-pressed=true]::after,
-.fd-button--link[aria-selected=true]::after {
-  border-bottom-color: #009cdf
-}
-.fd-button--link.is-disabled::after,
-.fd-button--link:disabled::after,
-.fd-button--link[aria-disabled=true]::after {
-  display: none
-}
-.fd-button > * {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 12px;
-  margin-top: 13px
-}
-.fd-button--icon > * {
-  margin-left: auto;
-  margin-right: auto
-}
-.fd-button--small > * {
-  margin-top: 11px
-}
-.fd-button--action-bar > *,
-.fd-button--large > * {
-  margin-top: 22px
-}
-.fd-button--action-bar {
-  font-size: .75rem;
-  line-height: 1.33334;
-  font-weight: 700;
-  text-transform: uppercase;
-  min-width: 135px;
-  line-height: 32px;
-  vertical-align: middle
-}
-.fd-button--action-bar > * {
-  display: block!important;
-  margin-top: 12px;
-  margin-left: auto;
-  margin-right: auto
-}
+@charset "UTF-8";
 /*!
 .fd-pagination
 */
 .fd-pagination {
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #32363a;
+  font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
-  line-height: 1.5;
-  color: #21262c;
-  font-family: sans-serif;
-  font-size: .875rem;
-  line-height: 1.42858;
+  line-height: 1.42857;
   font-weight: 400
 }
-.fd-pagination__list {
+.fd-pagination__total {
+  color: #515559;
+  margin-right: 8px
+}
+.fd-pagination__nav {
+  display: inline-block;
   padding-left: 0;
   margin-left: 0;
   list-style: none;
-  margin-bottom: 0;
-  display: inline-block
+  margin-bottom: 0
 }
 .fd-pagination__link {
-  color: #009cdf;
+  color: #0a6ed1;
   background-color: transparent;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 4px;
+  padding-right: 4px;
   position: relative
 }
-.fd-pagination__link::after {
-  content: "";
-  border-bottom: solid 2px transparent;
-  width: calc(100% - 8px*2);
-  height: 2px;
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  margin-left: 8px
-}
-.fd-pagination__link:focus,
-.fd-pagination__link:hover {
-  color: #008ac6;
-  text-decoration: none
-}
-.fd-pagination__link:focus::after,
-.fd-pagination__link:hover::after {
-  border-bottom-color: #008ac6
-}
 .fd-pagination__link.is-selected,
 .fd-pagination__link:active,
 .fd-pagination__link[aria-selected=true] {
-  background-color: transparent;
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none
-}
-.fd-pagination__link.is-selected::after,
-.fd-pagination__link:active::after,
-.fd-pagination__link[aria-selected=true]::after {
-  border-bottom-color: transparent
-}
-.fd-pagination__link.is-disabled,
-.fd-pagination__link[aria-disabled=true] {
-  color: #7f90a4;
+  color: #515559;
   text-decoration: none;
-  cursor: default
+  cursor: default;
+  font-weight: 700
 }
-.fd-pagination__link.is-disabled::after,
-.fd-pagination__link[aria-disabled=true]::after {
-  border-bottom-color: transparent
+.fd-pagination__link--next,
+.fd-pagination__link--previous {
+  padding-left: 8px;
+  padding-right: 8px
 }
-.fd-pagination__link.is-selected,
-.fd-pagination__link:active,
-.fd-pagination__link[aria-selected=true] {
-  color: #21262c;
-  text-decoration: none;
-  cursor: default
+.fd-pagination__link--next::before,
+.fd-pagination__link--previous::before {
+  font-family: SAP-icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none
 }
-.fd-pagination__link--more {
-  font-size: .75rem;
-  line-height: 1.33334;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-family: sans-serif;
-  color: #21262c;
-  vertical-align: sub;
-  padding-left: 12px;
-  padding-right: 12px
+.fd-pagination__link--next::before,
+.fd-pagination__link--previous::before {
+  content: ""
 }
-.fd-pagination__link--more:focus,
-.fd-pagination__link--more:hover {
-  background-color: transparent;
-  color: #21262c;
-  cursor: default
+.fd-pagination__link--next::before,
+.fd-pagination__link--previous::before {
+  font-size: .85714rem;
+  line-height: 1
 }
-.fd-pagination__link--more:focus:after,
-.fd-pagination__link--more:hover:after {
-  border-bottom-color: transparent
+.fd-pagination__link--next {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1)
 }
-.fd-pagination__item {
-  display: inline-block
-}
-.fd-pagination__item--previous {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg)
-}
-.fd-pagination__total {
-  color: #7f90a4
+.fd-pagination__link--more::before {
+  content: "...";
+  color: #0a6ed1;
+  font-weight: 700
 }

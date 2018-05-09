@@ -1,0 +1,165 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+
+
+/*!
+.fd-global-nav+(--no-border)
+    .fd-global-nav__content+()
+    .fd-global-nav__title+()
+*/
+$block: #{$fd-namespace}-global-nav;
+
+.#{$block} {
+
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-global-nav-color: fd-color(text, 2);
+    $fd-global-nav-background-color: fd-color(background, 2) !default;
+    $fd-global-nav-border-color: fd-color(neutral, 2);
+    $fd-global-nav-height: fd-space(12.5);
+    $fd-global-nav-btn-color: fd-color(action, 1);
+    $fd-global-nav-search-box-background-color: fd-color(background, 2);
+    $fd-global-nav-search-box-width: fd-space(44);
+    $fd-side-nav-launchpad-background-color: rgba(fd-color("action", 1), .07);
+    $fd-side-nav-launchpad-hover-background-color: fd-color(neutral, 1);
+
+    //BLOCK BASE *******************************************
+    @include fd-reset;
+    border-bottom: solid 1px $fd-global-nav-border-color;
+    background: $fd-global-nav-background-color;
+    height: $fd-global-nav-height;
+    display: flex;
+    color: $fd-global-nav-color;
+    position: relative;
+
+    //ELEMENTS *******************************************
+    &__group {
+        min-height: $fd-global-nav-height;
+
+        &--left {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        &--right{
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+
+    &__side-menu,
+    &__logo,
+    &__product-name {
+        display: inline-block;
+        height: $fd-global-nav-height;
+        vertical-align: middle;
+    }
+
+    &__side-menu {
+        button {
+            height: $fd-global-nav-height;
+            min-height: $fd-global-nav-height;
+            padding: 0 fd-space(5);
+        }
+    }
+
+    &__logo {
+        padding-left: fd-space(4);
+        font-weight: bold;
+        background-image: url(#{$fd-hybris-logo});
+        background-repeat: no-repeat;
+        background-position: left 17px;
+        width: fd-space(22.5);
+        margin-left: fd-space(5);
+    }
+
+    &__product-name {
+        padding: fd-space(5) 0 0 fd-space(5);
+        @include fd-type("-1", "body", "semi");
+    }
+
+    &__launchpad{
+        padding-top: 0;
+        max-width: 400px;
+        margin: 0 auto;
+        position: relative;
+
+        button{
+            min-height: $fd-global-nav-height - 2;
+            background-image: url(#{$fd-forms-select-background-image});
+            background-repeat: no-repeat;
+            background-position: calc(100% - #{$fd-forms-select-width--background-image}) center;
+            padding-right: 30px;
+            color: $fd-global-nav-color;
+
+            &:hover{
+                border-color: transparent;
+                background-color:  $fd-side-nav-launchpad-hover-background-color
+            }
+            &:focus,
+            &[aria-expanded="true"]{
+                border-color: transparent;
+                background-color: $fd-side-nav-launchpad-background-color;
+            }
+        }
+
+        .fd-mega-menu{
+            position: absolute;
+            top: $fd-global-nav-height;
+            left: 0;
+        }
+
+    }
+
+    &__context-menu {
+        border-left: 1px solid $fd-global-nav-border-color;
+        border-right: 1px solid $fd-global-nav-border-color;
+        display: inline-block;
+
+        button{
+            height: $fd-global-nav-height - 2;
+        }
+    }
+
+    &__actions {
+        display: inline-block;
+
+        button {
+            height: $fd-global-nav-height - 2;
+            min-height: $fd-global-nav-height - 2;
+            padding: 0 10px;
+        }
+    }
+
+    &__search{
+        position: relative;
+        display: inline-block;
+
+        input{
+            position: absolute;
+            left: -$fd-global-nav-search-box-width;
+            top: 5px;
+            background:$fd-global-nav-search-box-background-color;
+            border-radius: 0;
+            border:none;
+            min-width:$fd-global-nav-search-box-width;
+            border-bottom: 1px solid $fd-global-nav-border-color;
+            height: $fd-global-nav-height - 11;
+            box-shadow: 0 5px #fff,  0px -5px #fff;
+            &[aria-hidden="true"] {
+                display: none;
+            }
+        }
+    }
+
+    //STATES *******************************************
+    &.is-disabled,
+    &[disabled] {
+        opacity: 0.5;
+    }
+    &[aria-selected="true"] {
+    }
+
+}

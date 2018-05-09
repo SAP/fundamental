@@ -4,10 +4,74 @@
 {% from "./component.njk" import image %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = [] %}
+{% set css_deps = ['fonts','icons'] %}
 
 {% block content %}
-{% set sizes = ["xs","s","m","l","xl","xxl"] %}
+
+
+<h1>specs</h1>
+<p>Three sizes, default matches the base font size (14px)</p>
+<table>
+  <tr>
+    <td>
+      {{  image(
+        properties=data.properties,
+        modifier={ block: ["s"] }
+          )
+      }}
+    </td>
+    <td>
+      <span>small (s) - 24px
+    </td>
+    <td>
+<code>.fd-image--s</code>
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+      {{  image(
+        properties=data.properties,
+        modifier={ block: ["m"] }
+          )
+      }}
+    </td>
+    <td>
+
+  medium (m) - 36px
+    </td>
+    <td>
+<code>.fd-image--m</code>
+
+    </td>
+
+  </tr>
+  <tr>
+    <td style="padding-right: 20px;">
+      {{  image(
+              properties=data.properties,
+              modifier={ block: ["l"] }
+          )
+      }}
+    </td>
+    <td>
+
+  large (l) - 48px
+    </td>
+    <td>
+<code>.fd-image--l</code>
+
+    </td>
+
+  </tr>
+
+</table>
+
+<br><hr><br>
+
+
+
+{% set sizes = ["s","m","l"] %}
     <h1>image</h1>
 
     <h2>default</h2>
@@ -26,7 +90,7 @@
     {{ format(example) }}
 <br><br>
 
-    <h2>rounded</h2>
+    {# <h2>rounded</h2>
     {%- set example %}
 {% for size in sizes %}
 {{  image(
@@ -41,7 +105,7 @@
     {%- endset %}
     {{ format(example) }}
 
-<br><br>
+<br><br> #}
     <h2>circle</h2>
     {%- set example %}
 {% for size in sizes %}
@@ -56,115 +120,6 @@
 {% endfor %}
     {%- endset %}
     {{ format(example) }}
-
-<br><br>
-<h1>placeholder images</h1>
-
-    <h2>profile</h2>
-    {%- set example %}
-{% for size in sizes %}
-{{  image(
-        properties={},
-        modifier={
-            block: [size, "profile"]
-        },
-        aria={
-            label: "John Smith"
-        }
-    )
-}}
-{% endfor %}
-    {%- endset %}
-    {{ format(example) }}
-
-<br>
-{%- set example %}
-{% for size in sizes %}
-{{  image(
-    properties={},
-    modifier={
-        block: [size, "rounded", "profile"]
-    },
-    aria={
-        label: "John Smith"
-    }
-)
-}}
-{% endfor %}
-{%- endset %}
-{{ format(example) }}
-
-<br>
-
-{%- set example %}
-{% for size in sizes %}
-{{  image(
-    properties={},
-    modifier={
-        block: [size, "circle", "profile"]
-    },
-    aria={
-        label: "John Smith"
-    }
-)
-}}
-{% endfor %}
-{%- endset %}
-{{ format(example) }}
-
-    <br><br>
-    <h2>product</h2>
-
-    {%- set example %}
-{% for size in sizes %}
-{{  image(
-        properties={},
-        modifier={
-            block: [size, "product"]
-        },
-        aria={
-            label: "Product name"
-        }
-    )
-}}
-{% endfor %}
-    {%- endset %}
-    {{ format(example) }}
-
-<br>
-{%- set example %}
-{% for size in sizes %}
-{{  image(
-    properties={},
-    modifier={
-        block: [size, "rounded", "product"]
-    },
-    aria={
-        label: "Product name"
-    }
-)
-}}
-{% endfor %}
-{%- endset %}
-{{ format(example) }}
-
-<br>
-
-{%- set example %}
-{% for size in sizes %}
-{{  image(
-    properties={},
-    modifier={
-        block: [size, "circle", "product"]
-    },
-    aria={
-        label: "Product name"
-    }
-)
-}}
-{% endfor %}
-{%- endset %}
-{{ format(example) }}
 
 
 

@@ -4,12 +4,12 @@
 {% from "./component.njk" import nav %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = [] %}
+{% set css_deps = ['fonts'] %}
 
 {% block content %}
 
     <h1>nav</h1>
-    <p>NOTE: The <code>.fd-form__item</code> container is optional. You can use <code>nav</code> and <code>a</code> elements to the same effect.</p>
+
 
     <h2>horizontal</h2>
 
@@ -24,6 +24,8 @@
 
 <br><br>
 
+    <p>NOTE: The <code>.fd-form__item</code> container is optional. You can use <code>nav</code> and <code>a</code> elements to the same effect.</p>
+    
 {% set example %}
 <nav class="fd-nav" role="navigation">
     <a class="fd-nav__link" href="#">Link</a>
