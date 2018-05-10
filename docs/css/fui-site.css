@@ -2874,7 +2874,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-weight: 400;
   height: 36px;
   max-height: 36px;
-  line-height: 36px;
+  line-height: 1;
   transition: all 0.125s ease-in; }
   .fd-button::before, [class*="fd-button--"]::before {
     font-size: 1.42857rem;
@@ -2983,7 +2983,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-weight: 400;
   height: 32px;
   max-height: 32px;
-  line-height: 32px; }
+  line-height: 1; }
   .fd-button--compact::before {
     font-size: 1.14286rem;
     line-height: 1; }
@@ -2996,14 +2996,12 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-weight: 400;
   height: 24px;
   max-height: 24px;
-  line-height: 24px;
+  line-height: 1;
   padding-left: 8px;
   padding-right: 8px; }
   .fd-button--xs::before {
     font-size: 0.85714rem;
     line-height: 1; }
-  .fd-button--xs::before {
-    vertical-align: baseline; }
   .fd-button--xs::before {
     margin-right: 6.0015px; }
 
@@ -3013,7 +3011,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-weight: 400;
   height: 28px;
   max-height: 28px;
-  line-height: 28px; }
+  line-height: 1; }
   .fd-button--s::before {
     font-size: 1.14286rem;
     line-height: 1; }
@@ -3026,7 +3024,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-weight: 400;
   height: 40px;
   max-height: 40px;
-  line-height: 40px;
+  line-height: 1;
   padding-left: 12px;
   padding-right: 12px; }
   .fd-button--l::before {
@@ -4270,13 +4268,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   display: inline-block;
   height: 28px;
   width: 76px;
-  padding: 0 14px; }
+  padding: 4px 14px 0 14px; }
   .fd-toggle__switch {
     height: 28px;
     width: 28px;
     border-radius: 50%;
     position: absolute;
-    top: -5px;
+    top: 0;
     left: 4px;
     background-color: #fafafa;
     border: 1px solid rgba(102, 105, 108, 0.7);
@@ -4311,27 +4309,28 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         background-color: #eeeeef; }
   .fd-toggle--xsmall {
     height: 20px;
-    width: 54px; }
+    width: 54px;
+    padding-top: 0; }
     .fd-toggle--xsmall input {
       border-radius: 10px;
       height: 14px; }
     .fd-toggle--xsmall .fd-toggle__switch {
       height: 20px;
-      width: 20px;
-      top: 0; }
+      width: 20px; }
   .fd-toggle--small {
     height: 24px;
-    width: 64px; }
+    width: 64px;
+    padding-top: 2px; }
     .fd-toggle--small input {
       border-radius: 12px;
       height: 16px; }
     .fd-toggle--small .fd-toggle__switch {
       height: 24px;
-      width: 24px;
-      top: -2px; }
+      width: 24px; }
   .fd-toggle--large {
     height: 32px;
-    width: 82px; }
+    width: 82px;
+    padding-top: 6px; }
     .fd-toggle--large input {
       border-radius: 16px;
       height: 22px; }
