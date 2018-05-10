@@ -10,13 +10,40 @@
     padding-bottom: 8px;
     border-color: #ccc;
 
-    span{
-        display: block;
-        border: 1px solid fd-color(neutral, 3);
-        background: fd-color(neutral, 1);
-    }
+    // span{
+    //     display: block;
+    //     border: 1px solid fd-color(neutral, 3);
+    //     background: fd-color(neutral, 1);
+    // }
+
     p{
         @extend .fd-has-padding-xs;
+    }
+
+    .fd-identifier--s{
+        display: inline-block;
+        background: transperant ;
+    }
+
+    .fd-mega-menu__header-link,
+    .fd-mega-menu__link,
+    .fd-mega-menu__sublink,
+    .fd-dropdown__item{
+        color: inherit;
+        &:hover{
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .fd-dropdown__item{
+        &:hover{
+            color: #fff;
+        }
+    }
+    .fd-mega-menu__list,
+    .fd-mega-menu__sublist{
+        margin-left: 0;
     }
 
     &__app{
