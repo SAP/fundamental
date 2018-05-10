@@ -1,7 +1,11 @@
 $( document ).ready(function() {
-    
+
     //AnchorJS
     anchors.add('.post-content>h2');
+
+    $('a[href="#"]').click(function(e) {
+        e.preventDefault();
+    });
 
 });
 
