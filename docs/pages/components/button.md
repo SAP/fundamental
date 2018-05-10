@@ -14,8 +14,8 @@ The Buttons are components that let the user perform an actions. For example: sa
 ## Button Types
 - **Primary Button**: The default button style with the base class `fd-button`. There can be more than one primary button on a single page or view such as "Approve" or "Reject".
 - **Main Button**: `--main` modifier is required to render the Main button. There should only be on main button on the page or view. This is the primary Call to Action for example "Save".
-- **Secondary Button**: `--secondary` is required to render the Secondary button. There can be more tha one secondary button on the page. Common use cases include "Cancle".
-- **Toolbar Button**: `--toolbar` is required to render the Main button. This button is used inside the toolbar component.
+- **Secondary Button**: `--secondary` is required to render the Secondary button. There can be more tha one secondary button on the page. Common use cases include "Cancel".
+- **Toolbar Button**: `--toolbar` is required to render the Toolbar button. This button is used inside the toolbar component.
 - **Semantic Buttons**: Semantic modifiers `--positive` for approve and `--negative` for reject can be applied to the button.
 {% capture button %}
 <button class="fd-button">Primary Button</button>
@@ -31,7 +31,7 @@ The Buttons are components that let the user perform an actions. For example: sa
 <br/>
 
 ## Button Sizes
-There are five different sizes can be rendered with modifiers: `--xs`, `--s`, `--compact`, defaut and `--l`.
+There are five different sizes can be rendered with modifiers: `--xs`, `--s`, `--compact`, default and `--l`.
 {% capture button %}
 <button class=" fd-button fd-button--xs">Button</button>
 <button class=" fd-button fd-button--s">Button</button>

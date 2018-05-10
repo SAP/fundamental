@@ -1,5 +1,5 @@
 ---
-title: List
+title: List Group
 keywords: list group, lists group, list, lists, groups
 sidebar: left-navigation-sidebar
 toc: false
@@ -45,33 +45,25 @@ The List items can also contain quick actions, like: remove, edit, copy, etc.
     <li class="fd-list-group__item">
         List item 1
         <span class="fd-list-group__action">
-            <button class="fd-button fd-button--icon fd-button--text fd-button--small" aria-label="Delete">
-                <span class="fd-icon fd-icon--close" role="presentation"></span>
-            </button>
+            <button class=" fd-button--secondary sap-icon--edit" aria-label="Edit"></button>
         </span>
     </li>
     <li class="fd-list-group__item">
         List item 2
         <span class="fd-list-group__action">
-            <button class="fd-button fd-button--icon fd-button--text fd-button--small">
-                <span class="fd-icon fd-icon--edit" role="presentation"></span>
-            </button>
+            <button class=" fd-button--secondary sap-icon--edit" aria-label="Edit"></button>
         </span>
     </li>
     <li class="fd-list-group__item">
         List item 3 - Lorem ipsum dolor sit amet, consectetur sed do
         <span class="fd-list-group__action">
-            <button class="fd-button fd-button--icon fd-button--text fd-button--small">
-                <span class="fd-icon fd-icon--clone" role="presentation"></span>
-            </button>
+            <button class=" fd-button--secondary sap-icon--edit" aria-label="Edit"></button>
         </span>
     </li>
     <li class="fd-list-group__item">
         List item 4 - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
         <span class="fd-list-group__action">
-            <button class="fd-button fd-button--icon fd-button--text fd-button--small">
-                <span class="fd-icon fd-icon--options" role="presentation"></span>
-            </button>
+            <button class=" fd-button--secondary sap-icon--edit" aria-label="Edit"></button>
         </span>
     </li>
 </ul>
@@ -90,40 +82,28 @@ Checkboxes can be used on the left, that enables the user to select multiple ite
 <ul class="fd-list-group">
     <li class="fd-list-group__item">
         <div class="fd-form__item fd-form__item--check">
-            <label class="fd-form__label" for="checkbox-1">
-                <input class="fd-form__control" type="checkbox" id="checkbox-1">
+            <label class="fd-form__label" for="121Sd939">
+                <input type="checkbox" class="fd-form__control" id="121Sd939">
                 List item 1
             </label>
         </div>
     </li>
     <li class="fd-list-group__item">
         <div class="fd-form__item fd-form__item--check">
-            <label class="fd-form__label" for="checkbox-2">
-                <input type="checkbox" class="fd-form__control" id="checkbox-2">
-                List item 2
+            <label class="fd-form__label" for="CndSd399">
+                <input type="checkbox" class="fd-form__control" id="CndSd399">
+                List item 2 sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </label>
         </div>
     </li>
     <li class="fd-list-group__item">
         <div class="fd-form__item fd-form__item--check">
-            <label class="fd-form__label" for="checkbox-3">
-                <input type="checkbox" class="fd-form__control" id="checkbox-3">
-                List item 3 - Lorem ipsum dolor sit amet, consectetur sed do
-            </label>
-        </div>
-    </li>
-    <li class="fd-list-group__item">
-        <div class="fd-form__item fd-form__item--check">
-            <label class="fd-form__label" for="checkbox-4">
-                <input type="checkbox" class="fd-form__control" id="checkbox-4">
-                List item 4 - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            <label class="fd-form__label" for="S8jyH416">
+                <input type="checkbox" class="fd-form__control" id="S8jyH416">
+                List item 3
             </label>
         </div>
     </li>
 </ul>
 {% endcapture %}
-
 {% include display-component.html component=list-group-actions-form %}
-
-
-<br>
