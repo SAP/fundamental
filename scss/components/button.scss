@@ -62,12 +62,11 @@ $block: #{$fd-namespace}-button;
       @include fd-type(nth($defaults, 2));
       height: nth($defaults, 1);
       max-height: nth($defaults, 1);
-      line-height: nth($defaults, 1);
+      line-height: 1;
       @include fd-icon-size(nth($defaults, 3));
       transition: all $fd-button-transition-params;
       &::before {
         margin-right: fd-space(2);
-        //line-height: inherit !important;
         vertical-align: middle;
       }
       &[aria-disabled="true"],
@@ -261,14 +260,11 @@ $block: #{$fd-namespace}-button;
         @include fd-type(nth($list, 2));
         height: nth($list,1);
         max-height: nth($list, 1);
-        line-height: nth($list, 1);
+        line-height: 1;
         @include fd-icon-size(nth($list, 3));
         @if $key == "xs" {
           padding-left: $fd-button-padding-x / 1.25;
           padding-right: $fd-button-padding-x / 1.25;
-          &::before {
-            vertical-align: baseline;
-          }
         }
         @if $key == "l" {
           padding-left: $fd-button-padding-x * 1.2;

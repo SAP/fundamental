@@ -29,6 +29,11 @@ $block: #{$fd-namespace}-toggle;
     $fd-toggle-width: $fd-toggle-barwidth + $fd-toggle-height !default;
     $fd-toggle-width--large: $fd-toggle-barwidth--large + $fd-toggle-height--large !default;
 
+    $fd-toggle-toppadding--xsmall: 0;
+    $fd-toggle-toppadding--small: 2px;
+    $fd-toggle-toppadding: ($fd-toggle-height - $fd-toggle-barheight) / 2;
+    $fd-toggle-toppadding--large: ($fd-toggle-height--large - $fd-toggle-barheight) / 2;
+
     $fd-toggle-background-color: $fd-forms-border-color !default;
     $fd-toggle-background-color--checked: $fd-forms-background-color--check !default;
     $fd-toggle-switch-background-color: fd-color(neutral, 1) !default;
@@ -41,14 +46,14 @@ $block: #{$fd-namespace}-toggle;
     display: inline-block;
     height: $fd-toggle-height;
     width: $fd-toggle-width;
-    padding: 0 ($fd-toggle-height / 2);
+    padding: $fd-toggle-toppadding ($fd-toggle-height / 2) 0 ($fd-toggle-height / 2);
 
     &__switch {
         height: $fd-toggle-height;
         width: $fd-toggle-height;
         border-radius: 50%;
         position: absolute;
-        top: -5px;
+        top: 0;
         left: 4px;
         background-color: $fd-toggle-switch-background-color;
         border: 1px solid rgba(fd-color(text, 3), .7);
@@ -100,6 +105,8 @@ $block: #{$fd-namespace}-toggle;
     &--xsmall {
         height: $fd-toggle-height--xsmall;
         width: $fd-toggle-width--xsmall;
+        padding-top: $fd-toggle-toppadding--xsmall;
+
         input {
             border-radius: $fd-toggle-height--xsmall/2;
             height: $fd-toggle-barheight--xsmall;
@@ -107,12 +114,13 @@ $block: #{$fd-namespace}-toggle;
         .#{$block}__switch {
             height: $fd-toggle-height--xsmall;
             width: $fd-toggle-height--xsmall;
-            top: 0;
         }
     }
     &--small {
         height: $fd-toggle-height--small;
         width: $fd-toggle-width--small;
+        padding-top: $fd-toggle-toppadding--small;
+
         input {
             border-radius: $fd-toggle-height--small/2;
             height: $fd-toggle-barheight--small;
@@ -120,12 +128,13 @@ $block: #{$fd-namespace}-toggle;
         .#{$block}__switch {
             height: $fd-toggle-height--small;
             width: $fd-toggle-height--small;
-            top: -2px;
         }
     }
     &--large {
         height: $fd-toggle-height--large;
         width: $fd-toggle-width--large;
+        padding-top: $fd-toggle-toppadding--large;
+
         input {
             border-radius: $fd-toggle-height--large/2;
             height: $fd-toggle-barheight--large;
