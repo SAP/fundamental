@@ -8,7 +8,7 @@ folder: components
 summary:
 ---
 
-Inline help component can be used to display a quick help or informative message in a popover. I can be placed inline with components such as headers, body text, labels, etc.
+Inline help component can be used to display a quick help or informative message in a popover. It can be placed inline with components such as headers, body text, labels, etc.
 
 <hr>
 
