@@ -4,7 +4,7 @@
 @mixin fd-icon($key, $size: "default", $position: "before") {
   @include fd-icon-base($position);
   @include fd-icon-glyph($key, $position);
-  @include fd-icon-size($size,$position);
+  @include fd-icon-size($size, $position);
   &::#{$position} {
     @content;
   }
