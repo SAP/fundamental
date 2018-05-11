@@ -16,7 +16,6 @@ Starter pages can be used as quick starting points to see how a set of component
              <h2 class="fd-tile__header">
                  Cards
              </h2>
-             <br/>
              <p class="fd-tile__description">
                  This starter page have an <strong>ActionBar</strong>, <strong>ToolBar</strong> and <strong>Cards group</strong>.
              </p>
@@ -27,7 +26,6 @@ Starter pages can be used as quick starting points to see how a set of component
              <h2 class="fd-tile__header">
                  Table
              </h2>
-             <br/>
              <p class="fd-tile__description">
                  This starter page has an <strong>ActionBar</strong>, <strong>ToolBar</strong> and <strong>Table</strong>.
              </p>
@@ -38,7 +36,6 @@ Starter pages can be used as quick starting points to see how a set of component
              <h2 class="fd-tile__header">
                  Tree
              </h2>
-             <br/>
              <p class="fd-tile__description">
                  This starter page has a <strong>Panel</strong>, <strong>AddButton</strong> and <strong>Tree</strong>.
              </p>
@@ -49,7 +46,6 @@ Starter pages can be used as quick starting points to see how a set of component
              <h2 class="fd-tile__header">
                  Detail 1
              </h2>
-             <br/>
              <p class="fd-tile__description">
                  This starter page is an example of typical detail page.
              </p>
@@ -60,7 +56,6 @@ Starter pages can be used as quick starting points to see how a set of component
              <h2 class="fd-tile__header">
                  Detail 2
              </h2>
-             <br/>
              <p class="fd-tile__description">
                  This is a typical detail 2 starter page.
              </p>
@@ -71,7 +66,6 @@ Starter pages can be used as quick starting points to see how a set of component
              <h2 class="fd-tile__header">
                  Empty Page
              </h2>
-             <br/>
              <p class="fd-tile__description">
                  This starter page shows and example of an empty page.
              </p>
@@ -82,7 +76,6 @@ Starter pages can be used as quick starting points to see how a set of component
              <h2 class="fd-tile__header">
                  Application Overlay
              </h2>
-             <br/>
              <p class="fd-tile__description">
                  This is an example of an Overlay being used over a simple page.
              </p>

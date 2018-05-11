@@ -18,7 +18,6 @@ problems in a meaningful way and creates simple intuitive experience.
              <h2 class="fd-tile__header">
                  Getting Started - Designers
              </h2>
-             <br/>
             <p class="fd-tile__description">
                 Create a harmonious experience for users with Fundamental UI design language.
             </p>
@@ -29,7 +28,6 @@ problems in a meaningful way and creates simple intuitive experience.
              <h2 class="fd-tile__header">
                  Getting Started - Developers
              </h2>
-             <br/>
              <p class="fd-tile__description">
                  Fundamental UI is a coherent Design System accompanied by a collection of HTML/CSS Components.
              </p>
@@ -40,7 +38,6 @@ problems in a meaningful way and creates simple intuitive experience.
              <h2 class="fd-tile__header">
                  Colors
              </h2>
-             <br/>
              <p class="fd-tile__description">
                  Colors bring designs to life. It is used in a meaningful way to express emotions and tone, and promotes a distinct and consistent look and feel throughout all application.
              </p>
@@ -51,7 +48,6 @@ problems in a meaningful way and creates simple intuitive experience.
              <h2 class="fd-tile__header">
                  Grid
              </h2>
-             <br/>
              <p class="fd-tile__description">
                  Fundamental UI uses responsive grid system that achieves flexible 12-column flow layout. It is used to create flexible layouts for various screen sizes and device types.
              </p>
@@ -62,7 +58,6 @@ problems in a meaningful way and creates simple intuitive experience.
              <h2 class="fd-tile__header">
                  Spacing
              </h2>
-             <br/>
              <p class="fd-tile__description">
                  Spacing helps content to breathe as well as create hierarchy and depth.
              </p>
@@ -73,7 +68,6 @@ problems in a meaningful way and creates simple intuitive experience.
              <h2 class="fd-tile__header">
                  Type
              </h2>
-             <br/>
              <p class="fd-tile__description">
                  Fundamental UI uses a set of sans-serif system fonts.
              </p>

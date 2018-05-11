@@ -21,7 +21,6 @@ Layouts in Fundamental UI are for structuring the main parts of your application
              <h2 class="fd-tile__header">
                  Application Layouts
              </h2>
-            <br/>
              <p class="fd-tile__description">
                  Main application structure, including Header, Sidebar, Content, Footer.
              </p>
@@ -32,7 +31,6 @@ Layouts in Fundamental UI are for structuring the main parts of your application
              <h2 class="fd-tile__header">
                  Content Layouts
              </h2>
-            <br/>
              <p class="fd-tile__description">
                  Elements to structure the content your application.
              </p>
@@ -43,7 +41,6 @@ Layouts in Fundamental UI are for structuring the main parts of your application
              <h2 class="fd-tile__header">
                  Grid
              </h2>
-            <br/>
              <p class="fd-tile__description">
                  Elements to construct complex layouts.
              </p>
