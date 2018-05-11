@@ -1,64 +1,77 @@
 @import "./../settings";
 @import "./../mixins";
 @import "./../functions";
-
+@import "./../icons/mixins";
 /*!
-.fd-product-tile+()
-  .fd-product-tile__media+()
-  .fd-product-tile__title+()
+.fd-image+((--circle), (--s|--m|--l))
 */
-$block: #{$fd-namespace}-product-tile;
-
+$block: #{$fd-namespace}-identifier;
 .#{$block} {
-  $fd-product-tile-width: 25% !default;
-  $fd-product-tile-color: fd-color("text",3) !default;
-  $fd-product-tile-background-color: fd-color("background",2) !default;
-  $fd-product-tile-title-color: fd-color("text",1) !default;
-  $fd-product-tile-media-height: 210px !default;
-  $fd-product-tile-content-padding: fd-space(4) fd-space("reg") !default;
-  $fd-product-tile-content-padding-x: fd-space("reg") !default;
-  $fd-product-tile-content-padding-y: fd-space(4) !default;
-  $fd-product-tile-box-shadow: 0 0 5px 0 rgba($fd-product-tile-color, 0.4) !default;
-  //anim
-  $fd-product-tile-transition-params: $fd-animation--speed ease-in !default;
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-identifier-sizes: (
+        s: 24px,
+        m: 36px,
+        l: 48px
+    ) !default;
+    $fd-identifier-border-radius: $fd-border-radius !default;
+    $fd-identifier-background: fd-color("text", 3) !default;
 
-  @include fd-reset;
-  //max-width: $fd-product-tile-width;
-  color: $fd-product-tile-color;
-  background-color: $fd-product-tile-background-color;
-
-  //MODIFICATIONS
-  &--button,
-  &[role="button"] {
-    cursor: pointer;
-    transition: box-shadow $fd-product-tile-transition-params;
-    &:hover {
-      box-shadow: $fd-product-tile-box-shadow;
-      position: relative;
-      z-index: 1;
+    //BLOCK BASE *******************************************
+    @at-root {
+      [class*="#{$block}"] {
+        @include fd-reset;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+        border-radius: $fd-identifier-border-radius;
+        background-color: $fd-identifier-background;
+        color: fd-color("text-inverse", 1);
+      }
     }
-  }
-  //STATES
-  &[aria-disabled="true"],
-  &.is-disabled {
-    opacity: 0.4;
-  }
-
-  &__media {
-    width: 100%;
-    min-height: $fd-product-tile-media-height;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-  }
-  &__content {
-    //flex: 1;
-    padding: $fd-product-tile-content-padding-x $fd-product-tile-content-padding-x;
-  }
-  &__title {
-    @include fd-type("1");
-    color: $fd-product-tile-title-color;
-    margin-bottom: 0;
-  }
+    //BLOCK MODIFIERS ************
+    //sizes
+    @each $size, $value in $fd-identifier-sizes {
+      &--#{$size} {
+        width: $value;
+        height: $value;
+        max-width: $value;
+        max-height: $value;
+        min-width: $value;
+        min-height: $value;
+        @if $size == s {
+          @include fd-type("-3");
+          @include fd-weight("bold");
+          font-stretch: condensed;
+          @include fd-icon-size("s") {
+            line-height: $value;
+          }
+        }
+        @if $size == m {
+          @include fd-type("0");
+          @include fd-icon-size("l") {
+            line-height: $value;
+          }
+        }
+        @if $size == l {
+          @include fd-type("2");
+          @include fd-icon-size("xl") {
+            line-height: $value;
+          }
+        }
+        line-height: $value;
+      }
+    }
+    //borders
+    &--circle {
+      border-radius: 50%;
+    }
+    //background
+    &--transparent {
+      background-color: transparent;
+      color: $fd-color;
+    }
 
 }
