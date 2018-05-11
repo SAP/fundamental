@@ -54,17 +54,18 @@ $block: #{$fd-namespace}-button;
   @at-root {
     .#{$block}, [class*="#{$block}--"] {
       @include fd-button-reset;
+      @include fd-type(nth($defaults, 2));
+      @include fd-icon-size(nth($defaults, 3));
       background-color: $fd-button-background-color;
       color: $fd-button-color;
       border: solid 1px $fd-button-border-color;
       padding-left: $fd-button-padding-x;
       padding-right: $fd-button-padding-x;
-      @include fd-type(nth($defaults, 2));
       height: nth($defaults, 1);
       max-height: nth($defaults, 1);
-      line-height: nth($defaults, 1);
-      @include fd-icon-size(nth($defaults, 3));
       transition: all $fd-button-transition-params;
+      line-height: 1;
+
       &::before {
         margin-right: fd-space(2);
         vertical-align: middle;
@@ -267,11 +268,11 @@ $block: #{$fd-namespace}-button;
     @if $key != "default" {
       &--#{$key} {
         @include fd-type(nth($list, 2));
-        height: nth($list,1);
-        max-height: nth($list, 1);
-        line-height: nth($list, 1);
         @include fd-icon-size(nth($list, 3), "before");
         @include fd-icon-size(nth($list, 3), "after");
+        height: nth($list,1);
+        max-height: nth($list, 1);
+        line-height: 1;
         @if $key == "xs" {
           padding-left: $fd-button-padding-x / 1.25;
           padding-right: $fd-button-padding-x / 1.25;
