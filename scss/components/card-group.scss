@@ -1,58 +1,53 @@
 @import "./../settings";
 @import "./../mixins";
 @import "./../functions";
+
+/*! DEPRECATED for .fd-tile-grid
+  ------------------------------------
+*/
 /*!
 .fd-card-group+(--2col | --4col)
 */
 $block: #{$fd-namespace}-card-group;
 .#{$block} {
-    //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-card-group-items-per-group: 3 !default;
-    $fd-card-group-width--gutter: fd-space(reg) !default;
-
-    @include fd-reset;
-    @include fd-clearfix;
-    $gutter_: $fd-card-group-width--gutter;
-    $i_: $fd-card-group-items-per-group;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    &:last-child {
-        margin-bottom: -$fd-margin-bottom;
+  //VARS
+  $fd-card-group-border-color: fd-color("background") !default;
+  $fd-card-group-items-per-group: 3 !default;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  & > * {
+    margin-bottom: 0;
+    border-radius: 0 !important;
+    &::after {
+      content: "";
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      border-right: solid 1px $fd-card-group-border-color;
+      border-bottom: solid 1px $fd-card-group-border-color;
+      position: absolute;
     }
-    .fd-card {
-      &:last-child {
-          margin-bottom: $fd-margin-bottom;
+  }
+  @include fd-screen(s) {
+    /* flex fallback */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(100% / #{$fd-card-group-items-per-group}), 1fr));
+    grid-auto-rows: minmax(0, auto);
+    grid-gap: 0;
+
+    //BLOCK MODIFIERS ************
+    @each $n in 2, 3, 4, 5, 6 {
+      &--#{$n}col {
+        grid-template-columns: repeat(auto-fill, minmax(calc(100% / #{$n}), 1fr));
       }
     }
-    @include fd-screen(s) {
-        flex-direction: row;
-        & > * {
-            flex: 1;
-            margin-right: $gutter_;
-            min-width: calc((100% - #{$gutter_}*#{$i_ - 1}) / #{$i_});
-            max-width: calc((100% - #{$gutter_}*#{$i_ - 1}) / #{$i_});
-            &:nth-child(#{$i_}n) {
-                margin-right: 0;
-            }
-        }
-        //BLOCK MODIFIERS ************
-        @each $n in 2, 4 {
-            &--#{$n}col {
-                & > * {
-                    $j_: $n;
-                    min-width: calc((100% - #{$gutter_}*#{$j_ - 1}) / #{$j_});
-                    max-width: calc((100% - #{$gutter_}*#{$j_ - 1}) / #{$j_});
-                    //reset the defaults
-                    &:nth-child(#{$i_}n+#{$i_}) {
-                        margin-right: $gutter_;
-                    }
-                    &:nth-child(#{$j_}n+#{$j_}) {
-                        margin-right: 0;
-                    }
-                }
-            }
-        }
-    }
+  }
+
+
 
 }
