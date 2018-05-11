@@ -2874,18 +2874,18 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   white-space: nowrap;
   background-color: transparent;
   border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.42857;
+  font-weight: 400;
   background-color: transparent;
   color: #0a6ed1;
   border: solid 1px #0a6ed1;
   padding-left: 10px;
   padding-right: 10px;
-  font-size: 1rem;
-  line-height: 1.42857;
-  font-weight: 400;
   height: 36px;
   max-height: 36px;
-  line-height: 36px;
-  transition: all 0.125s ease-in; }
+  transition: all 0.125s ease-in;
+  line-height: 1; }
   .fd-button::before, [class*="fd-button--"]::before {
     font-size: 1.42857rem;
     line-height: 1; }
@@ -3000,7 +3000,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-weight: 400;
   height: 32px;
   max-height: 32px;
-  line-height: 32px; }
+  line-height: 1; }
   .fd-button--compact::before {
     font-size: 1.14286rem;
     line-height: 1; }
@@ -3018,7 +3018,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-weight: 400;
   height: 24px;
   max-height: 24px;
-  line-height: 24px;
+  line-height: 1;
   padding-left: 8px;
   padding-right: 8px; }
   .fd-button--xs::before {
@@ -3040,7 +3040,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-weight: 400;
   height: 28px;
   max-height: 28px;
-  line-height: 28px; }
+  line-height: 1; }
   .fd-button--s::before {
     font-size: 1.14286rem;
     line-height: 1; }
@@ -3058,7 +3058,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-weight: 400;
   height: 40px;
   max-height: 40px;
-  line-height: 40px;
+  line-height: 1;
   padding-left: 12px;
   padding-right: 12px; }
   .fd-button--l::before {
@@ -5493,7 +5493,7 @@ hr {
     color: #b200a9 !important;
     font-weight: normal;
     font-size: 20px;
-    margin-bottom: 0; }
+    margin-bottom: 10px; }
   .docs-tiles .fd-tile__description {
     color: #424e5a; }
   .docs-tiles a:hover {
@@ -5660,7 +5660,9 @@ hr {
     background-color: #424e5a;
     color: #fff !important;
     display: inline-block;
-    margin: 36px 0 32px 0; }
+    margin: 36px 0 32px 0;
+    line-height: 0;
+    padding: 20px; }
     .docs-home_hero-btn:hover {
       background-color: #2fd0c8;
       text-decoration: none; }
@@ -5724,7 +5726,7 @@ hr {
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #ffffff; }
+    color: #ffffff !important; }
     .docs-home_ui-guidelines-link:hover {
       color: #ffffff; }
 
@@ -6029,7 +6031,8 @@ hr {
     padding-left: 0; }
     .docs-component ul a:hover {
       text-decoration: none; }
-  .docs-component .fd-button, .docs-component [class*="fd-button--"] {
+  .docs-component .fd-button,
+  .docs-component [class*="fd-button--"] {
     margin-right: 10px; }
   .docs-component .fd-breadcrumb__link {
     color: #0a6ed1; }
