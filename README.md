@@ -6,7 +6,7 @@ Learn more about this project at - http://sap.github.io/fundamental/
 
 # Current version
 ````
-v1.0.0-beta-4
+v1.0.0-beta-5
 ````
 
 # The Project Structure
@@ -42,7 +42,7 @@ We rely on several core technologies.
 You can quickly include the latest minified file available via CDN link below
 
 ```
-https://unpkg.com/fundamental-ui@1.0.0-beta-4/dist/fundamental-ui.min.css
+https://unpkg.com/fundamental-ui@1.0.0-beta-5/dist/fundamental-ui.min.css
 ```
 
 ### NPM

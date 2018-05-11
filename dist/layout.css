@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.0.0-beta-4
+* Fundamental-UI v1.0.0-beta-5
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -496,8 +496,8 @@
   padding: 20px 20px
 }
 .fd-panel__title {
-  font-size: 1.14286rem;
-  line-height: 1.25;
+  font-size: 1.71429rem;
+  line-height: 1.33333;
   font-weight: 400;
   -webkit-box-flex: 1;
   -ms-flex: 1;
@@ -507,6 +507,19 @@
 }
 .fd-panel__actions {
   margin-left: auto
+}
+.fd-panel__filters {
+  padding: 12px 20px;
+  border-bottom: solid 1px #eeeeef;
+  -webkit-transition: all .15s ease-in;
+  transition: all .15s ease-in
+}
+.fd-panel__filters.is-hidden,
+.fd-panel__filters[aria-hidden=true] {
+  padding-top: 0;
+  padding-bottom: 0;
+  max-height: 0;
+  overflow: hidden
 }
 .fd-panel__body {
   padding: 20px 20px
@@ -523,7 +536,8 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-bottom: 20px
+  padding: 16px 20px;
+  border-top: solid 1px #eeeeef
 }
 /*!
 .fd-overlay
