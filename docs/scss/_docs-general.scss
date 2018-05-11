@@ -25,20 +25,29 @@ hr{
     max-width: 1600px;
 }
 
-.docs-cards{
-    $docs-cards-color: docs-color(action, 3);
-    .fd-card[role="button"]{
+.docs-tiles{
+    $docs-tiles-color: docs-color(action, 3);
+    margin: 0 -20px;
+    .fd-tile[role="button"]{
+        border: 1px solid docs-color(neturals, 1);
+        margin:20px;
+        text-decoration: none;
         &:hover{
-            border-color: $docs-cards-color;
+            border-color: $docs-tiles-color;
         }
         &:active, :focus{
-            border-color: $docs-cards-color;
+            border-color: $docs-tiles-color;
+            text-decoration: none;
         }
     }
-    .fd-card__header{
-        color: $docs-cards-color !important;
+
+    .fd-tile__header{
+        color: $docs-tiles-color !important;
+        font-weight: normal;
+        font-size: 20px;
+        margin-bottom: 0;
     }
-    .fd-card__description{
+    .fd-tile__description{
         color: docs-color(text, 1);
     }
     a:hover{
