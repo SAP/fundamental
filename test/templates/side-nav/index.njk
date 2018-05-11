@@ -36,170 +36,196 @@
                 }
             )
         }}
+    {% endset %}
+    {{ format(example) }}
 
-        {{ side_nav(
-            properties = {
-              "title": "Group Title",
-              "navgroups": [
+    <br><br><br>
+
+    <h1>With group headings</h1>
+    {% set example %}
+    {{ side_nav(
+        properties = {
+          "title": "Group Title",
+          "navgroups": [
+            {
+              "title": "Group Name",
+              "items": [
+                { "label": "icon link"},
                 {
-                  "title": "Group Name",
-                  "items": [
-                    { "label": "icon link"},
-                    {
-                        "label": "item link",
-                        "haschild": true
-                     },
-                    { "label": "icon link"},
-                    { "label": "item link" },
-                    { "label": "item link" }
-                  ]
-                },
-                {
-                    "title": "Group Name",
-                    "items": [
-                      { "label": "item link" },
-                      {
-                          "label": "item link",
-                          "haschild": true
-                       },
-                      { "label": "item link" },
-                      { "label": "item link" },
-                      { "label": "item link" }
-                  ]
-                }
+                    "label": "item link",
+                    "haschild": true
+                 },
+                { "label": "icon link"},
+                { "label": "item link" },
+                { "label": "item link" }
+              ]
+            },
+            {
+                "title": "Group Name",
+                "items": [
+                  { "label": "item link" },
+                  {
+                      "label": "item link",
+                      "haschild": true
+                   },
+                  { "label": "item link" },
+                  { "label": "item link" },
+                  { "label": "item link" }
               ]
             }
-        )}}
+          ]
+        }
+    )}}
+    {% endset %}
+    {{ format(example) }}
 
-        {{ side_nav(
-            properties = {
-              "title": "Group Title",
-              "navgroups": [
-                {
-                  "title": "Group Name",
-                  "items": [
-                    { "label": "item link" },
-                    {
-                        "label": "item link",
-                        "haschild": true,
-                        "items": [
-                            { "label": "Link" },
-                            { "label": "Link" },
-                            { "label": "Link" }
-                        ]
-                     },
-                    {
-                        "label": "item link",
-                        "haschild": true,
-                        "items": [
-                            { "label": "Link" },
-                            { "label": "Link" },
-                            { "label": "Link" }
-                        ]
-                     },
-                    {
-                        "label": "item link",
-                        "haschild": true,
-                        "items": [
-                            { "label": "Link" },
-                            { "label": "Link" },
-                            { "label": "Link" }
-                        ]
-                     },
-                    { "label": "item link" }
-                  ]
-                },
-                {
-                    "title": "Group Name",
-                    "items": [
-                      { "label": "item link" },
-                      {
-                          "label": "item link",
-                          "haschild": true
-                       },
-                      { "label": "item link" },
-                      { "label": "item link" },
-                      { "label": "item link" }
-                  ]
-                }
-              ]
-            }
-        )}}
+    <br><br><br>
 
-        {{ side_nav(
-            properties = {
-              "title": "Group Title",
-              "navgroups": [
+    <h1>Sublink</h1>
+    {% set example %}
+    {{ side_nav(
+        properties = {
+          "title": "Group Title",
+          "navgroups": [
+            {
+              "title": "Group Name",
+              "items": [
+                { "label": "item link" },
                 {
-                  "title": "Group test",
-                  "items": [
-                    { "label": "item link" },
-                    {
-                        "label": "item link",
-                        "haschild": true,
-                        "expanded": true,
-                        "items": [
-                            { "label": "Link" },
-                            { "label": "Link" },
-                            { "label": "Link" }
-                        ]
-                     },
-                    { "label": "item link" },
-                    { "label": "item link" },
-                    { "label": "item link" }
-                  ]
-                },
-                {
-                    "title": "Group Name",
+                    "label": "item link",
+                    "haschild": true,
                     "items": [
-                      { "label": "item link" },
-                      {
-                          "label": "item link",
-                          "haschild": true
-                       },
-                      { "label": "item link" },
-                      { "label": "item link" },
-                      { "label": "item link" }
-                  ]
-                }
-              ]
-            }
-        )}}
-
-        {{ side_nav(
-                properties = {
-                    "items": [
-                    { "label": "Link icon", "icon": "home"},
-                    { "label": "Link icon", "icon": "home"},
-                    { "label": "Link icon", "icon": "home"},
-                    { "label": "Link icon", "icon": "home"},
-                    { "label": "Link icon", "icon": "home"},
-                    { "label": "Link icon", "icon": "home"}
+                        { "label": "Link" },
+                        { "label": "Link" },
+                        { "label": "Link" }
                     ]
-                }
-            )
-        }}
-
-        {{ side_nav(
-                properties = {
+                 },
+                {
+                    "label": "item link",
+                    "haschild": true,
                     "items": [
-                    { "icon": "home"},
-                    { "icon": "home"},
-                    { "icon": "home"},
-                    { "icon": "home"},
-                    { "icon": "home"},
-                    { "icon": "home"}
+                        { "label": "Link" },
+                        { "label": "Link" },
+                        { "label": "Link" }
                     ]
-                },
-                modifier={
-                    block: ["icons"]
-                }
-            )
-        }}
+                 },
+                {
+                    "label": "item link",
+                    "haschild": true,
+                    "items": [
+                        { "label": "Link" },
+                        { "label": "Link" },
+                        { "label": "Link" }
+                    ]
+                 },
+                { "label": "item link" }
+              ]
+            },
+            {
+                "title": "Group Name",
+                "items": [
+                  { "label": "item link" },
+                  {
+                      "label": "item link",
+                      "haschild": true
+                   },
+                  { "label": "item link" },
+                  { "label": "item link" },
+                  { "label": "item link" }
+              ]
+            }
+          ]
+        }
+    )}}
+    {% endset %}
+    {{ format(example) }}
 
+    <br><br><br>
 
-        {# {{ side_nav(properties=data.properties) }} #}
+    <h1>Selected with sub links</h1>
+    {% set example %}
+    {{ side_nav(
+        properties = {
+          "title": "Group Title",
+          "navgroups": [
+            {
+              "title": "Group test",
+              "items": [
+                { "label": "item link" },
+                {
+                    "label": "item link",
+                    "haschild": true,
+                    "expanded": true,
+                    "items": [
+                        { "label": "Link" },
+                        { "label": "Link" },
+                        { "label": "Link" }
+                    ]
+                 },
+                { "label": "item link" },
+                { "label": "item link" },
+                { "label": "item link" }
+              ]
+            },
+            {
+                "title": "Group Name",
+                "items": [
+                  { "label": "item link" },
+                  {
+                      "label": "item link",
+                      "haschild": true
+                   },
+                  { "label": "item link" },
+                  { "label": "item link" },
+                  { "label": "item link" }
+              ]
+            }
+          ]
+        }
+    )}}
+    {% endset %}
+    {{ format(example) }}
 
+    <br><br><br>
+
+    <h1>Text with Icons</h1>
+    {% set example %}
+    {{ side_nav(
+            properties = {
+                "items": [
+                { "label": "Link icon", "icon": "home"},
+                { "label": "Link icon", "icon": "home"},
+                { "label": "Link icon", "icon": "home"},
+                { "label": "Link icon", "icon": "home"},
+                { "label": "Link icon", "icon": "home"},
+                { "label": "Link icon", "icon": "home"}
+                ]
+            }
+        )
+    }}
+    {% endset %}
+    {{ format(example) }}
+
+    <br><br><br>
+
+    <h1>Icons only</h1>
+    {% set example %}
+    {{ side_nav(
+            properties = {
+                "items": [
+                { "icon": "home"},
+                { "icon": "home"},
+                { "icon": "home"},
+                { "icon": "home"},
+                { "icon": "home"},
+                { "icon": "home"}
+                ]
+            },
+            modifier={
+                block: ["icons"]
+            }
+        )
+    }}
     {% endset %}
     {{ format(example) }}
 
