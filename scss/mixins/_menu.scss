@@ -1,0 +1,34 @@
+@import "../settings";
+
+@mixin fd-menu() {
+  &__group,
+  &__list {
+    //background-color: $fd-menu-background-color;
+    list-style: none;
+    margin-bottom: 0;
+  }
+  &__title {
+    display: block;
+    margin-bottom: 0;
+    padding: $fd-menu-title-padding $fd-menu-item-padding-x;
+    @include fd-type("-3", "body", "reg", uppercase);
+    color: $fd-menu-title-color;
+    background: $fd-menu-title-background-color;
+  }
+  &__item {
+    display: block;
+    padding: $fd-menu-item-padding-y $fd-menu-item-padding-x;
+    color: $fd-menu-item-color;
+    &:hover{
+      color: $fd-menu-item-color;
+      background-color: $fd-menu-item-background-color--hover;
+    }
+    &.is-selected,
+    &[aria-selected="true"] {
+        color: $fd-menu-item-color;
+        background-color: $fd-menu-item-background-color--selected;
+    }
+  }
+  @content;
+}
+ 
