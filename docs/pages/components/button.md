@@ -94,6 +94,6 @@ The buttons can also be set to a state:
 <button class="fd-button--toolbar is-disabled" aria-disabled="true">Disabled State</button>
 <button class="fd-button--positive is-disabled" aria-disabled="true">Disabled State</button>
 <button class=" fd-button--negative is-disabled" aria-disabled="true">Disabled State</button>
-
 {% endcapture %}
+
 {% include display-component.html component=button-standard-state %}
