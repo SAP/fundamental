@@ -11,83 +11,74 @@ Group a series of buttons together on a single line with the button group
 
 <hr>
 
-## XS
+## Extra Small Size (XS)
 {% capture button-group-xsmall %}
 <div class="fd-button-group" role="group" aria-label="Group label">
-  <button class=" fd-button--grouped fd-button--xs sap-icon--survey"></button>
-  <button class=" fd-button--grouped fd-button--xs sap-icon--pie-chart" aria-pressed="true"></button>
-  <button class=" fd-button--grouped fd-button--xs sap-icon--pool"></button>
+  <button class="fd-button--grouped fd-button--xs sap-icon--survey"></button>
+  <button class="fd-button--grouped fd-button--xs sap-icon--pie-chart" aria-pressed="true"></button>
+  <button class="fd-button--grouped fd-button--xs sap-icon--pool"></button>
 </div>
 
 <div class="fd-button-group" role="group" aria-label="Group label">
-  <button class=" fd-button--grouped fd-button--xs" aria-pressed="true">Left</button>
-  <button class=" fd-button--grouped fd-button--xs">Middle</button>
-  <button class=" fd-button--grouped fd-button--xs">Right</button>
+  <button class="fd-button--grouped fd-button--xs" aria-pressed="true">Left</button>
+  <button class="fd-button--grouped fd-button--xs">Middle</button>
+  <button class="fd-button--grouped fd-button--xs">Right</button>
 </div>
 {% endcapture %}
 {% include display-component.html component=button-group-xsmall %}
 
-## S
+<br>
+
+## Small Size (S)
 {% capture button-group-small %}
 <div class="fd-button-group" role="group" aria-label="Group label">
-  <button class=" fd-button--grouped fd-button--s sap-icon--survey"></button>
-  <button class=" fd-button--grouped fd-button--s sap-icon--pie-chart" aria-pressed="true"></button>
-  <button class=" fd-button--grouped fd-button--s sap-icon--pool"></button>
+  <button class="fd-button--grouped fd-button--s sap-icon--survey"></button>
+  <button class="fd-button--grouped fd-button--s sap-icon--pie-chart" aria-pressed="true"></button>
+  <button class="fd-button--grouped fd-button--s sap-icon--pool"></button>
 </div>
 
 <div class="fd-button-group" role="group" aria-label="Group label">
-  <button class=" fd-button--grouped fd-button--s" aria-pressed="true">Left</button>
-  <button class=" fd-button--grouped fd-button--s">Middle</button>
-  <button class=" fd-button--grouped fd-button--s">Right</button>
+  <button class="fd-button--grouped fd-button--s" aria-pressed="true">Left</button>
+  <button class="fd-button--grouped fd-button--s">Middle</button>
+  <button class="fd-button--grouped fd-button--s">Right</button>
 </div>
 {% endcapture %}
 {% include display-component.html component=button-group-small %}
 
-## Compact
+<br>
+
+## Compact Size
+Compact size renders bigger icons with minimal padding inside the button.
 {% capture button-group-compact %}
 <div class="fd-button-group" role="group" aria-label="Group label">
-  <button class=" fd-button--grouped fd-button--compact sap-icon--survey"></button>
-  <button class=" fd-button--grouped fd-button--compact sap-icon--pie-chart" aria-pressed="true"></button>
-  <button class=" fd-button--grouped fd-button--compact sap-icon--pool"></button>
+  <button class="fd-button--grouped fd-button--compact sap-icon--survey"></button>
+  <button class="fd-button--grouped fd-button--compact sap-icon--pie-chart" aria-pressed="true"></button>
+  <button class="fd-button--grouped fd-button--compact sap-icon--pool"></button>
 </div>
 
 <div class="fd-button-group" role="group" aria-label="Group label">
-  <button class=" fd-button--grouped fd-button--compact" aria-pressed="true">Left</button>
-  <button class=" fd-button--grouped fd-button--compact">Middle</button>
-  <button class=" fd-button--grouped fd-button--compact">Right</button>
+  <button class="fd-button--grouped fd-button--compact" aria-pressed="true">Left</button>
+  <button class="fd-button--grouped fd-button--compact">Middle</button>
+  <button class="fd-button--grouped fd-button--compact">Right</button>
 </div>
 {% endcapture %}
 {% include display-component.html component=button-group-compact %}
 
-## Default
+<br>
+
+## Default Size (Large)
+The large size is rendered by default with no additional modifier classes.
 {% capture button-group-default %}
 <div class="fd-button-group" role="group" aria-label="Group label">
-  <button class=" fd-button--grouped sap-icon--survey"></button>
-  <button class=" fd-button--grouped sap-icon--pie-chart" aria-pressed="true"></button>
-  <button class=" fd-button--grouped sap-icon--pool"></button>
+  <button class="fd-button--grouped sap-icon--survey"></button>
+  <button class="fd-button--grouped sap-icon--pie-chart" aria-pressed="true"></button>
+  <button class="fd-button--grouped sap-icon--pool"></button>
 </div>
 
 <div class="fd-button-group" role="group" aria-label="Group label">
-  <button class=" fd-button--grouped" aria-pressed="true">Left</button>
-  <button class=" fd-button--grouped">Middle</button>
-  <button class=" fd-button--grouped">Right</button>
+  <button class="fd-button--grouped" aria-pressed="true">Left</button>
+  <button class="fd-button--grouped">Middle</button>
+  <button class="fd-button--grouped">Right</button>
 </div>
 {% endcapture %}
 {% include display-component.html component=button-group-default %}
-
-## Large
-{% capture button-group-large %}
-<div class="fd-button-group" role="group" aria-label="Group label">
-  <button class=" fd-button--grouped fd-button--l sap-icon--survey"></button>
-  <button class=" fd-button--grouped fd-button--l sap-icon--pie-chart" aria-pressed="true"></button>
-  <button class=" fd-button--grouped fd-button--l sap-icon--pool"></button>
-</div>
-
-<div class="fd-button-group" role="group" aria-label="Group label">
-  <button class=" fd-button--grouped fd-button--l" aria-pressed="true">Left</button>
-  <button class=" fd-button--grouped fd-button--l">Middle</button>
-  <button class=" fd-button--grouped fd-button--l">Right</button>
-</div>
-{% endcapture %}
-{% include display-component.html component=button-group-large %}
-
