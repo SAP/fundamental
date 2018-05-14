@@ -27,122 +27,119 @@ Use this layout when your application needs a sidebar to navigate inside the app
 
 {% capture app-layout %}
 <nav class="fd-global-nav">
-    <div class="fd-global-nav__group fd-global-nav__group--left">
-        <div class="fd-global-nav__side-menu">
-            <button class=" fd-button--secondary fd-button--l sap-icon--menu2 fd-global-nav__btn"
-                aria-label="BUTTON_LABEL"></button>
-        </div>
-        <div class="fd-global-nav__logo fd-has-margin-left-none"></div><div class="fd-global-nav__product-name">
-            Product Name
-        </div>
-    </div>
-	<div class="fd-global-nav__group fd-global-nav__launchpad">
-        <button class=" fd-button--secondary fd-button--l" aria-label="BUTTON_LABEL" aria-haspopup="true"
-        aria-controls="launchpad">Suite Name</button>
-        <nav class="fd-mega-menu" aria-hidden="true" id="launchpad">
-            <div class="fd-mega-menu__header">
-                <a href="#" class="fd-mega-menu__header-link sap-icon--home">SAP Hybris Home</a>
-            </div>
-            <div class="fd-mega-menu__group">
-                <h1 class="fd-mega-menu__title">Group Name</h1>
-                <ul class="fd-mega-menu__list">
-                    <li class="fd-mega-menu__item">
-                        <a class="fd-mega-menu__link" href="#">
-                            item link
+   <div class="fd-global-nav__group fd-global-nav__group--left">
+      <div class="fd-global-nav__side-menu">
+         <button class=" fd-button--secondary fd-button--l sap-icon--menu2 fd-global-nav__btn" aria-label="BUTTON_LABEL"></button>
+      </div>
+      <div class="fd-global-nav__logo fd-has-margin-left-none"></div>
+      <div class="fd-global-nav__product-name">
+         Product Name
+      </div>
+   </div>
+   <div class="fd-global-nav__group fd-global-nav__launchpad">
+      <button class=" fd-button--secondary fd-button--l" aria-label="BUTTON_LABEL" aria-haspopup="true" aria-controls="launchpad">Suite Name</button>
+      <nav class="fd-mega-menu" aria-hidden="true" id="launchpad">
+         <div class="fd-mega-menu__header">
+            <a href="#" class="fd-mega-menu__header-link sap-icon--home">SAP Hybris Home</a>
+         </div>
+         <div class="fd-mega-menu__group">
+            <h1 class="fd-mega-menu__title">Group Name</h1>
+            <ul class="fd-mega-menu__list">
+               <li class="fd-mega-menu__item"><a class="fd-mega-menu__link" href="#">
+                  item link
+                  </a>
+               </li>
+               <li class="fd-mega-menu__item">
+                  <a class="fd-mega-menu__link has-child" href="#" aria-controls="OribD921" aria-haspopup="true">
+                  item link
+                  </a>
+                  <ul class="fd-mega-menu__sublist" id="OribD921" aria-hidden="true">
+                     <li class="fd-mega-menu__subitem">
+                        <a class="fd-mega-menu__sublink" href="#">
+                        Link
                         </a>
-                    </li>
-
-                    <li class="fd-mega-menu__item">
-                        <a class="fd-mega-menu__link has-child" href="#" aria-controls="zEjHZ588" aria-haspopup="true">
-                            item link
+                     </li>
+                     <li class="fd-mega-menu__subitem">
+                        <a class="fd-mega-menu__sublink" href="#">
+                        Link
                         </a>
-                        <ul class="fd-mega-menu__sublist" id="zEjHZ588" aria-hidden="true">
-                            <li class="fd-mega-menu__subitem">
-                                <a class="fd-mega-menu__sublink" href="#">
-                                    Link
-                                </a>
-                            </li>
-                            <li class="fd-mega-menu__subitem">
-                                <a class="fd-mega-menu__sublink" href="#">
-                                    Link
-                                </a>
-                            </li>
-                            <li class="fd-mega-menu__subitem">
-                                <a class="fd-mega-menu__sublink" href="#">
-                                    Link
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="fd-mega-menu__item"><a class="fd-mega-menu__link" href="#">
-                            item link
+                     </li>
+                     <li class="fd-mega-menu__subitem">
+                        <a class="fd-mega-menu__sublink" href="#">
+                        Link
                         </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="fd-mega-menu__group">
-                <h1 class="fd-mega-menu__title">Group Name</h1>
-                <ul class="fd-mega-menu__list">
-                    <li class="fd-mega-menu__item">
-                        <a class="fd-mega-menu__link" href="#">
-                            item link
-                        </a>
-                    </li>
-                    <li class="fd-mega-menu__item">
-                        <a class="fd-mega-menu__link has-child" href="#"
-                        aria-controls="NC0xp739" aria-haspopup="true">
-                            item link
-                        </a>
-                        <ul class="fd-mega-menu__sublist" id="NC0xp739" aria-hidden="true">
-                            <li class="fd-mega-menu__subitem">
-                                <a class="fd-mega-menu__sublink" href="#">
-                                    Link
-                                </a>
-                            </li>
-                            <li class="fd-mega-menu__subitem">
-                                <a class="fd-mega-menu__sublink" href="#">
-                                    Link
-                                </a>
-                            </li>
-                            <li class="fd-mega-menu__subitem">
-                                <a class="fd-mega-menu__sublink" href="#">
-                                    Link
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="fd-mega-menu__item">
-                        <a class="fd-mega-menu__link" href="#">
-                            item link
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-	</div>
-    <div class="fd-global-nav__group fd-global-nav__group--right"><div class="fd-global-nav__context-menu">
-        <div class="fd-dropdown">
-            <button class="fd-dropdown__control fd-dropdown__control--no-border" aria-controls="0aNIu838" aria-expanded="false" aria-haspopup="true">
-                Context Switcher
-            </button>
-            <ul class="fd-dropdown__menu" aria-hidden="true" id="0aNIu838">
-                <li><a href="#" class="fd-dropdown__item">Link Name</a></li>
-                <li><a href="#" class="fd-dropdown__item">Link Name</a></li>
-                <li><a href="#" class="fd-dropdown__item">Link Name</a></li>
-                <li><a href="#" class="fd-dropdown__item">Link Name</a></li>
-                <li><a href="#" class="fd-dropdown__item">Link Name</a></li>
+                     </li>
+                  </ul>
+               </li>
+               <li class="fd-mega-menu__item"><a class="fd-mega-menu__link" href="#">
+                  item link
+                  </a>
+               </li>
             </ul>
-        </div>
-    </div>
-        <div class="fd-global-nav__actions">
-            <div class="fd-global-nav__search">
-                <button class=" fd-button--secondary fd-button--m sap-icon--search fd-global-nav__btn" aria-label="BUTTON_LABEL" aria-controls="grH4K890" aria-haspopup="true" aria-expanded="false"></button>
-                <input type="text" class="fd-form__control" id="grH4K890" aria-hidden="true" placeholder="Search... ">
-            </div>
-            <button class=" fd-button--secondary fd-button--m sap-icon--action-settings fd-global-nav__btn" aria-label="BUTTON_LABEL"></button>
-            <span class=" fd-identifier--s fd-has-margin-right-xs">WW</span>
-        </div>
-    </div>
+         </div>
+         <div class="fd-mega-menu__group">
+            <h1 class="fd-mega-menu__title">Group Name</h1>
+            <ul class="fd-mega-menu__list">
+               <li class="fd-mega-menu__item"><a class="fd-mega-menu__link" href="#">
+                  item link
+                  </a>
+               </li>
+               <li class="fd-mega-menu__item">
+                  <a class="fd-mega-menu__link has-child" href="#" aria-controls="EAahz812" aria-haspopup="true">
+                  item link
+                  </a>
+                  <ul class="fd-mega-menu__sublist" id="EAahz812" aria-hidden="true">
+                     <li class="fd-mega-menu__subitem">
+                        <a class="fd-mega-menu__sublink" href="#">
+                        Link
+                        </a>
+                     </li>
+                     <li class="fd-mega-menu__subitem">
+                        <a class="fd-mega-menu__sublink" href="#">
+                        Link
+                        </a>
+                     </li>
+                     <li class="fd-mega-menu__subitem">
+                        <a class="fd-mega-menu__sublink" href="#">
+                        Link
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+               <li class="fd-mega-menu__item"><a class="fd-mega-menu__link" href="#">
+                  item link
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+   </div>
+   <div class="fd-global-nav__group fd-global-nav__group--right">
+      <div class="fd-global-nav__context-menu">
+         <div class="fd-dropdown">
+            <button class="fd-dropdown__control fd-button--toolbar" aria-controls="ue8pW363" aria-expanded="false" aria-haspopup="true">
+            Context Switcher
+            </button>
+            <nav class="fd-dropdown__menu" aria-hidden="true" id="ue8pW363">
+               <ul class="fd-dropdown__list">
+                 <li><a href="#" class="fd-dropdown__item">Link Name</a></li>
+                 <li><a href="#" class="fd-dropdown__item">Link Name</a></li>
+                 <li><a href="#" class="fd-dropdown__item">Link Name</a></li>
+                 <li><a href="#" class="fd-dropdown__item">Link Name</a></li>
+                 <li><a href="#" class="fd-dropdown__item">Link Name</a></li>
+               </ul>
+            </nav>
+         </div>
+      </div>
+      <div class="fd-global-nav__actions">
+         <div class="fd-global-nav__search">
+            <button class=" fd-button--secondary fd-button--m sap-icon--search fd-global-nav__btn" aria-label="BUTTON_LABEL" aria-controls="CEBAq170" aria-haspopup="true" aria-expanded="false"></button>
+            <input type="text" class="fd-form__control" id="CEBAq170" aria-hidden="true" placeholder="Search... ">
+         </div>
+         <button class=" fd-button--secondary fd-button--m sap-icon--action-settings fd-global-nav__btn" aria-label="BUTTON_LABEL"></button>
+         <span class=" fd-identifier--m fd-identifier--circle fd-has-margin-right-xs">WW</span>
+      </div>
+   </div>
 </nav>
 {% endcapture %}
-{% include display-example.html component=app-layout class="app" %}
+{% include display-example.html component=app-layout class="global-nav" %}
