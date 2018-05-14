@@ -1,6 +1,6 @@
 ---
 title: Card
-keywords: card
+keywords: 
 sidebar: left-navigation-sidebar
 toc: false
 permalink: components/card.html
