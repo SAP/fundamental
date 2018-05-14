@@ -8,7 +8,7 @@ folder: components
 summary:
 ---
 
-Anchor link styles
+A link is used as a navigation element or as a show/hide element.
 
 <hr>
 
