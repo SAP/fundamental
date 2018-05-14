@@ -1,10 +1,11 @@
 ---
 title: Card Group
-keywords: card group
+keywords:
 sidebar: left-navigation-sidebar
 toc: false
 permalink: components/card-group.html
 folder: components
+exclude: true
 ---
 
 The Card Group is used to display a collection of Cards representing objects of the same type. For instance: A set of products, projects, organizations, etc. It should be used to display collections of objects where the user can find and identify the items visually, by glancing at the Card Groups. The Cards layouts doesn't allow too much comparison of the data inside the cards; but different state (active/inactive, etc) are easily identifiable.

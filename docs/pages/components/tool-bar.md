@@ -1,6 +1,6 @@
 ---
 title: Toolbar
-keywords: toolbar
+keywords: 
 sidebar: left-navigation-sidebar
 toc: false
 permalink: components/toolbar.html
