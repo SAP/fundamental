@@ -7,20 +7,20 @@ permalink: components/input-group.html
 folder: components
 ---
 
-The Input groups component are form inputs with add-ons that allows the user to better understand the information been entered.
+The input group includes form inputs with add-ons that allow the user to better understand the information being entered.
 
 <hr/>
 
 ## Text add-on
 
-The Input with text add-on component is used mainly to specify the type of the data being entered, like: currency, unit of measure, etc. There informational add-on can be placed at the left or right of the input element.
+The Input with text add-on component is typically used to specify the type of the data being entered, such as currency or unit of measure. This add-on can be placed at the left or right of the input element.
 
 {% capture text-addon %}
 <div class="fd-form__group">
     <div class="fd-form__item">
         <label class="fd-form__label" for="">Left Aligned Text Add-on</label>
-        <div class="fd-input-group">
-            <span class="fd-input-group__addon">$</span>
+        <div class="fd-input-group fd-input-group--before">
+            <span class="fd-input-group__addon fd-input-group__addon--before">$</span>
             <input class="" type="text" id="" name="" value="1234568910 ">
         </div>
     </div>
@@ -29,9 +29,9 @@ The Input with text add-on component is used mainly to specify the type of the d
 <div class="fd-form__group">
     <div class="fd-form__item">
         <label class="fd-form__label" for="">Right Aligned Text Addon</label>
-        <div class="fd-input-group">
+        <div class="fd-input-group fd-input-group--after">
             <input class="" type="text" id="" name="" value="1234568910 ">
-            <span class="fd-input-group__addon">€</span>
+            <span class="fd-input-group__addon fd-input-group__addon--after">€</span>
         </div>
     </div>
 </div>
@@ -39,9 +39,9 @@ The Input with text add-on component is used mainly to specify the type of the d
 <div class="fd-form__group">
     <div class="fd-form__item">
         <label class="fd-form__label" for="">Right Aligned Text Addon</label>
-        <div class="fd-input-group">
+        <div class="fd-input-group fd-input-group--after">
             <input class="" type="text" id="" name="" value="" placeholder="Field placeholder text">
-            <span class="fd-input-group__addon">km/h</span>
+            <span class="fd-input-group__addon fd-input-group__addon--after">km/h</span>
         </div>
     </div>
 </div>
@@ -49,9 +49,9 @@ The Input with text add-on component is used mainly to specify the type of the d
 <div class="fd-form__group">
     <div class="fd-form__item">
         <label class="fd-form__label" for="">Character Counter Example</label>
-        <div class="fd-input-group">
+        <div class="fd-input-group fd-input-group--after">
             <input class="" type="text" id="" name="" value="This is a test">
-            <span class="fd-input-group__addon">50</span>
+            <span class="fd-input-group__addon fd-input-group__addon--after">50</span>
         </div>
     </div>
 </div>
@@ -63,15 +63,15 @@ The Input with text add-on component is used mainly to specify the type of the d
 
 ## Number input
 
-When the user needs to enter an integer value you can use the spinner, to aid the user to increase or decrease the value.
+For an integer value input, a spinner can be added allowing the user to increase or decrease the value.
 
 {% capture input-spinner %}
 <div class="fd-form__group">
     <div class="fd-form__item">
         <label class="fd-form__label" for="">Quantity Spinner</label>
-        <div class="fd-input-group">
+        <div class="fd-input-group fd-input-group--after">
             <input class="" type="number" id="spinner-1" name="" value="100" />
-            <span class="fd-input-group__addon fd-input-group__addon--button">
+            <span class="fd-input-group__addon fd-input-group__addon--button fd-input-group__addon--after">
                 <button class="fd-input-group__button fd-input-group__button--step-up" aria-label="Step up" onclick="document.getElementById('spinner-1').stepUp();"></button>
                 <button class="fd-input-group__button fd-input-group__button--step-down" aria-label="Step down" onclick="document.getElementById('spinner-1').stepDown();"></button>
             </span>
@@ -86,7 +86,7 @@ When the user needs to enter an integer value you can use the spinner, to aid th
 
 ## Input with icons
 
-The Input with add-on component also support actions icons to the right of the element.
+The Input with add-on supports icons.
 
 {% capture input-action %}
 <div class="fd-form__group">
@@ -104,9 +104,9 @@ The Input with add-on component also support actions icons to the right of the e
 <div class="fd-form__group">
     <div class="fd-form__item">
         <label class="fd-form__label" for="">Input with icon on the left</label>
-        <div class="fd-input-group">
-            <span class="fd-input-group__addon">
-                <span class="fd-icon fd-icon--localization" role="presentation"></span>
+        <div class="fd-input-group fd-input-group--before">
+            <span class="fd-input-group__addon fd-input-group__addon--before">
+                <span class="sap-icon--globe" role="presentation"></span>
             </span>
             <input class="" type="text" id="" name="" value="1000000">
         </div>
@@ -116,10 +116,10 @@ The Input with add-on component also support actions icons to the right of the e
 <div class="fd-form__group">
     <div class="fd-form__item">
         <label class="fd-form__label" for="">Input with icon on the right</label>
-        <div class="fd-input-group">
+        <div class="fd-input-group fd-input-group--after">
             <input class="" type="text" id="" name="" value="1000000">
-            <span class="fd-input-group__addon">
-                <span class="fd-icon fd-icon--visibilityoff" role="presentation"></span>
+            <span class="fd-input-group__addon fd-input-group__addon--after">
+                <span class="sap-icon--hide" role="presentation"></span>
             </span>
         </div>
     </div>
@@ -132,16 +132,16 @@ The Input with add-on component also support actions icons to the right of the e
 
 ## Input with actions
 
-The input add-on also support actions. The actions can show a label and also a icon.
+The Input with add-on supports actions. Actions can be shown with a text label or icon.
 
 {% capture button-addon %}
 <div class="fd-form__group">
     <div class="fd-form__item">
         <label class="fd-form__label" for="">Input with action</label>
-        <div class="fd-input-group">
+        <div class="fd-input-group fd-input-group--after">
             <input class="" type="text" id="" name="" value="1000000">
-            <span class="fd-input-group__addon fd-input-group__addon--button">
-                <button class="fd-button">
+            <span class="fd-input-group__addon fd-input-group__addon--button fd-input-group__addon--after">
+                <button class="fd-button--secondary">
                     Button
                 </button>
             </span>
@@ -152,12 +152,10 @@ The input add-on also support actions. The actions can show a label and also a i
 <div class="fd-form__group">
     <div class="fd-form__item">
         <label class="fd-form__label" for="">Input with icon action</label>
-        <div class="fd-input-group">
+        <div class="fd-input-group fd-input-group--after">
             <input class="" type="text" id="" name="" value="1000000">
-            <span class="fd-input-group__addon fd-input-group__addon--button">
-                <button class="fd-button fd-button--icon">
-                    <span class="fd-icon fd-icon--chevron fd-icon--medium" role="presentation"></span>
-                </button>
+            <span class="fd-input-group__addon fd-input-group__addon--button fd-input-group__addon--after">
+                <button class="fd-button--icon fd-button--secondary sap-icon--navigation-down-arrow"></button>
             </span>
         </div>
     </div>
@@ -166,10 +164,10 @@ The input add-on also support actions. The actions can show a label and also a i
 <div class="fd-form__group">
     <div class="fd-form__item">
         <label class="fd-form__label" for="">Input with text action</label>
-        <div class="fd-input-group">
+        <div class="fd-input-group fd-input-group--after">
             <input class="" type="text" id="" name="" value="1000000">
-            <span class="fd-input-group__addon fd-input-group__addon--button">
-                <button class="fd-button fd-button--text">
+            <span class="fd-input-group__addon fd-input-group__addon--button fd-input-group__addon--after">
+                <button class="fd-button--secondary">
                     Button
                 </button>
             </span>
@@ -180,12 +178,10 @@ The input add-on also support actions. The actions can show a label and also a i
 <div class="fd-form__group">
     <div class="fd-form__item">
         <label class="fd-form__label" for="">Input with icon text action</label>
-        <div class="fd-input-group">
+        <div class="fd-input-group fd-input-group--after">
             <input class="" type="text" id="" name="" value="1000000">
-            <span class="fd-input-group__addon fd-input-group__addon--button">
-                <button class="fd-button fd-button--icon fd-button--text">
-                    <span class="fd-icon fd-icon--chevron fd-icon--medium" role="presentation"></span>
-                </button>
+            <span class="fd-input-group__addon fd-input-group__addon--button fd-input-group__addon--after">
+                <button class="fd-button--icon fd-button--secondary sap-icon--navigation-down-arrow"></button>
             </span>
         </div>
     </div>

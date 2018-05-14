@@ -59,7 +59,7 @@ global_nav:
 
         {%- if properties.context_menu -%}
         <div class="fd-global-nav__context-menu">
-            {{ dropdown(properties.context_menu, modifier={ control: "no-border" }) | indent(12) }}
+            {{ dropdown(properties.context_menu) | indent(12) }}
         </div>
         {%- endif -%}
 
@@ -95,7 +95,7 @@ global_nav:
                   initials: "WW"
                 },
                 modifier={
-                    block: ['s']
+                    block: ['m','circle']
                 },
                 aria=data.aria,
                 classes=['has-margin-right-xs']

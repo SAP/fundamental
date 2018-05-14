@@ -5,18 +5,52 @@
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     padding-bottom: 8px;
-    border-color: #ccc;
+    border:1px solid #ccc;
 
-    .fd-card__content{
+    .fd-tile__content{
+        padding: 20px;
+
         overflow: visible;
     }
 
     pre{
         background-color: #fff;
     }
-    
-    .fd-button, [class*="fd-button--"]{
-        margin-right: 10px;
+
+    ul{
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+
+        a:hover{
+            text-decoration: none;
+        }
+    }
+
+    // This is breaking a few things, re-visit/test removing
+    // .fd-button,
+    // [class*="fd-button--"]{
+    //     margin-right: 10px;
+    // }
+
+    .fd-breadcrumb__link{
+        color: #0a6ed1;
+        &:hover{
+            color: #0a6ed1;
+            text-decoration: none;
+        }
+    }
+
+    .fd-side-nav{
+        max-width: 250px;
+    }
+
+    .fd-side-nav__link{
+        color: inherit;
+    }
+
+    .fd-side-nav--icons{
+        max-width: 65px;
     }
 
 }

@@ -11,7 +11,7 @@
 $block: #{$fd-namespace}-button;
 .#{$block} {
   //SETTINGS
-  //SIZES — size: height "text size" "icon size"
+  //SIZES — size: height "text size" "icon size"
   $fd-button-sizes: (
       "default": $fd-forms-height "0" "l", //36px
       "compact": fd-space(8) "0" "m", //32px
@@ -54,29 +54,38 @@ $block: #{$fd-namespace}-button;
   @at-root {
     .#{$block}, [class*="#{$block}--"] {
       @include fd-button-reset;
+      @include fd-type(nth($defaults, 2));
+      @include fd-icon-size(nth($defaults, 3));
       background-color: $fd-button-background-color;
       color: $fd-button-color;
       border: solid 1px $fd-button-border-color;
       padding-left: $fd-button-padding-x;
       padding-right: $fd-button-padding-x;
-      @include fd-type(nth($defaults, 2));
       height: nth($defaults, 1);
       max-height: nth($defaults, 1);
-      line-height: 1;
-      @include fd-icon-size(nth($defaults, 3));
       transition: all $fd-button-transition-params;
+      line-height: 1;
+
       &::before {
         margin-right: fd-space(2);
+        vertical-align: middle;
+      }
+      &::after {
+        margin-left: fd-space(2);
         vertical-align: middle;
       }
       &[aria-disabled="true"],
       &.is-disabled,
       &:disabled {
         opacity: 0.4;
+        cursor: not-allowed;
       }
       &:empty {
         &::before {
           margin-right: 0;
+        }
+        &::after {
+          margin-left: 0;
         }
       }
     }
@@ -237,6 +246,7 @@ $block: #{$fd-namespace}-button;
     &.is-disabled,
     &:disabled {
       background-color: $fd-button-background-color--secondary;
+      border-color: $fd-button-border-color--toolbar;
     }
   }
   &--grouped {
@@ -258,13 +268,18 @@ $block: #{$fd-namespace}-button;
     @if $key != "default" {
       &--#{$key} {
         @include fd-type(nth($list, 2));
+        @include fd-icon-size(nth($list, 3), "before");
+        @include fd-icon-size(nth($list, 3), "after");
         height: nth($list,1);
         max-height: nth($list, 1);
         line-height: 1;
-        @include fd-icon-size(nth($list, 3));
         @if $key == "xs" {
           padding-left: $fd-button-padding-x / 1.25;
           padding-right: $fd-button-padding-x / 1.25;
+          &::before,
+          &::after {
+            vertical-align: baseline;
+          }
         }
         @if $key == "l" {
           padding-left: $fd-button-padding-x * 1.2;
@@ -273,6 +288,9 @@ $block: #{$fd-namespace}-button;
         @if $key == "xs" or $key == "s" or $key == "compact"  {
           &::before {
             margin-right: fd-space(2) / 1.333;
+          }
+          &::after {
+            margin-left: fd-space(2) / 1.333;
           }
         }
       }

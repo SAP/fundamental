@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.0.0-beta-4
+* Fundamental-UI v1.0.0-beta-5
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -51,17 +51,27 @@
   margin-right: 8px;
   vertical-align: middle
 }
+.fd-button::after,
+[class*=fd-button--]::after {
+  margin-left: 8px;
+  vertical-align: middle
+}
 .fd-button.is-disabled,
 .fd-button:disabled,
 .fd-button[aria-disabled=true],
 [class*=fd-button--].is-disabled,
 [class*=fd-button--]:disabled,
 [class*=fd-button--][aria-disabled=true] {
-  opacity: .4
+  opacity: .4;
+  cursor: not-allowed
 }
 .fd-button:empty::before,
 [class*=fd-button--]:empty::before {
   margin-right: 0
+}
+.fd-button:empty::after,
+[class*=fd-button--]:empty::after {
+  margin-left: 0
 }
 .fd-button:hover {
   background-color: transparent;
@@ -223,7 +233,8 @@
 .fd-button--toolbar.is-disabled,
 .fd-button--toolbar:disabled,
 .fd-button--toolbar[aria-disabled=true] {
-  background-color: transparent
+  background-color: transparent;
+  border-color: #9da2a6
 }
 .fd-button--grouped.is-active,
 .fd-button--grouped.is-pressed,
@@ -247,8 +258,15 @@
   font-size: 1.14286rem;
   line-height: 1
 }
+.fd-button--compact::after {
+  font-size: 1.14286rem;
+  line-height: 1
+}
 .fd-button--compact::before {
   margin-right: 6.0015px
+}
+.fd-button--compact::after {
+  margin-left: 6.0015px
 }
 .fd-button--xs {
   font-size: .85714rem;
@@ -264,11 +282,19 @@
   font-size: .85714rem;
   line-height: 1
 }
+.fd-button--xs::after {
+  font-size: .85714rem;
+  line-height: 1
+}
+.fd-button--xs::after,
 .fd-button--xs::before {
   vertical-align: baseline
 }
 .fd-button--xs::before {
   margin-right: 6.0015px
+}
+.fd-button--xs::after {
+  margin-left: 6.0015px
 }
 .fd-button--s {
   font-size: 1rem;
@@ -282,8 +308,15 @@
   font-size: 1.14286rem;
   line-height: 1
 }
+.fd-button--s::after {
+  font-size: 1.14286rem;
+  line-height: 1
+}
 .fd-button--s::before {
   margin-right: 6.0015px
+}
+.fd-button--s::after {
+  margin-left: 6.0015px
 }
 .fd-button--l {
   font-size: 1rem;
@@ -296,6 +329,10 @@
   padding-right: 12px
 }
 .fd-button--l::before {
+  font-size: 1.42857rem;
+  line-height: 1
+}
+.fd-button--l::after {
   font-size: 1.42857rem;
   line-height: 1
 }
