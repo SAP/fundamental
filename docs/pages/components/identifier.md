@@ -7,12 +7,18 @@ permalink: components/identifier.html
 folder: components
 ---
 
-A visual presentation option around using an icon. Three sizes, default matches the base font size (14px). small (s) - 24px, medium (m) - 36px and large (l) - 48px.
+A visual presentation option around using an icon or user initials .
+
+Three sizes,
+- Default matches the base font size (14px)
+- Small (`--s`) - 24px
+- Medium (`--m`) - 36px
+- Large (`--l`) - 48px
 
 <hr>
 
 ## Icon
-Include role="presentation" when the identifier is only used for illustrative purposes. For example, if the icon sits right next to a label then use the role.
+Include `role="presentation"` when the identifier is only used for illustrative purposes. For example, if the icon sits right next to a label then use the role.
 {% capture identifier-icon %}
 <span class=" fd-identifier--s sap-icon--washing-machine" role="presentation"></span>
 <span class=" fd-identifier--m sap-icon--washing-machine" role="presentation"></span>
@@ -32,11 +38,12 @@ Include aria-label when there is no text equivalent of the identifier. It is not
 <br>
 
 ## Circle
+A circle style can be rendered using the `--circle` modifier
 {% capture identifier-circle %}
 <span class=" fd-identifier--s fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--m fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--l fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
-<br>
+<br><br>
 <span class=" fd-identifier--s fd-identifier--circle" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--m fd-identifier--circle" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--l fd-identifier--circle" aria-label="Wendy Wallace">WW</span>
@@ -45,11 +52,12 @@ Include aria-label when there is no text equivalent of the identifier. It is not
 <br>
 
 ## Transparent
+A transparent style can be rendered using the `--transparent` modifier
 {% capture identifier-transparent %}
 <span class=" fd-identifier--s fd-identifier--circle fd-identifier--transparent sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--m fd-identifier--circle fd-identifier--transparent sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--l fd-identifier--circle fd-identifier--transparent sap-icon--money-bills" role="presentation"></span>
-<br>
+<br><br>
 <span class=" fd-identifier--s fd-identifier--circle fd-identifier--transparent" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--m fd-identifier--circle fd-identifier--transparent" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--l fd-identifier--circle fd-identifier--transparent" aria-label="Wendy Wallace">WW</span>
@@ -58,7 +66,7 @@ Include aria-label when there is no text equivalent of the identifier. It is not
 <br>
 
 ## Accent Colors
-Use helpers classes tp change the background colors, e.g., .fd-has-background-color-accent-10
+Use helpers classes tp change the background colors, e.g., `.fd-has-background-color-accent-10`
 {% capture identifier-accent-colors %}
 <span class=" fd-identifier--m sap-icon--money-bills fd-has-background-color-accent-1" role="presentation"></span>
 <span class=" fd-identifier--m sap-icon--money-bills fd-has-background-color-accent-2" role="presentation"></span>
