@@ -17,29 +17,16 @@ When the first page is active, the previous link should be disabled.
 
 {% capture pagination %}
 <div class="fd-pagination">
-    <span class="fd-pagination__total">30 items</span>
-    <ul class="fd-pagination__list">
-        <li class="fd-pagination__item fd-pagination__item--previous">
-            <a class="fd-button fd-button--text fd-button--icon fd-button--small"
-            aria-label="Previous" aria-disabled="true">
-                <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
-            </a>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link" aria-selected="true">1</a>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link">2</a>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link">3</a>
-        </li>
-        <li class="fd-pagination__item">
-            <a class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Next">
-                <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
-            </a>
-        </li>
-    </ul>
+  <span class="fd-pagination__total">30 items</span>
+  <nav class="fd-pagination__nav">
+    <a href="#" class="fd-pagination__link fd-pagination__link--previous" aria-label="Previous"
+    aria-disabled="true"></a>
+    <a href="#" class="fd-pagination__link" aria-selected="true">1</a>
+    <a href="#" class="fd-pagination__link">2</a>
+    <a href="#" class="fd-pagination__link">3</a>
+    <a href="#" class="fd-pagination__link fd-pagination__link--next" aria-label="Next"
+    aria-disabled="false"></a>
+  </nav>
 </div>
 {% endcapture %}
 
@@ -52,30 +39,16 @@ Example with second page active.
 
 {% capture pagination-second %}
 <div class="fd-pagination">
-    <span class="fd-pagination__total">30 items</span>
-    <ul class="fd-pagination__list">
-        <li class="fd-pagination__item fd-pagination__item--previous">
-            <a class="fd-button fd-button--text fd-button--icon fd-button--small"
-            aria-label="Previous">
-                <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
-            </a>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link">1</a>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link" aria-selected="true">2</a>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link">3</a>
-        </li>
-        <li class="fd-pagination__item">
-            <a class="fd-button fd-button--text fd-button--icon fd-button--small"
-            aria-label="Next">
-                <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
-            </a>
-        </li>
-    </ul>
+  <span class="fd-pagination__total">30 items</span>
+  <nav class="fd-pagination__nav">
+    <a href="#" class="fd-pagination__link fd-pagination__link--previous" aria-label="Previous"
+    aria-disabled="false"></a>
+    <a href="#" class="fd-pagination__link">1</a>
+    <a href="#" class="fd-pagination__link" aria-selected="true">2</a>
+    <a href="#" class="fd-pagination__link">3</a>
+    <a href="#" class="fd-pagination__link fd-pagination__link--next" aria-label="Next"
+    aria-disabled="false"></a>
+  </nav>
 </div>
 {% endcapture %}
 
@@ -87,36 +60,18 @@ Example with second page active.
 
 {% capture pagination-more %}
 <div class="fd-pagination">
-    <span class="fd-pagination__total">500 items</span>
-    <ul class="fd-pagination__list">
-        <li class="fd-pagination__item fd-pagination__item--previous">
-            <a class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous">
-                <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
-            </a>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link">1</a>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link" aria-selected="true">2</a>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link">3</a>
-        </li>
-        <li class="fd-pagination__item">
-            <span class="fd-pagination__link fd-pagination__link--more" role="presentation">
-                &#8226;&#8226;&#8226;
-            </span>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link">50</a>
-        </li>
-        <li class="fd-pagination__item">
-            <a class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Next">
-                <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
-            </a>
-        </li>
-    </ul>
+  <span class="fd-pagination__total">500 items</span>
+  <nav class="fd-pagination__nav">
+    <a href="#" class="fd-pagination__link fd-pagination__link--previous" aria-label="Previous"
+    aria-disabled="false"></a>
+    <a href="#" class="fd-pagination__link">1</a>
+    <a href="#" class="fd-pagination__link" aria-selected="true">2</a>
+    <a href="#" class="fd-pagination__link">3</a>
+    <span class="fd-pagination__link fd-pagination__link--more" role="presentation"></span>
+    <a href="#" class="fd-pagination__link">50</a>
+    <a href="#" class="fd-pagination__link fd-pagination__link--next" aria-label="Next"
+    aria-disabled="false"></a>
+  </nav>
 </div>
 {% endcapture %}
 
@@ -128,44 +83,20 @@ Example with second page active.
 
 {% capture pagination-more-between %}
 <div class="fd-pagination">
-    <span class="fd-pagination__total">500 items</span>
-    <ul class="fd-pagination__list">
-        <li class="fd-pagination__item fd-pagination__item--previous">
-            <a class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous">
-                <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
-            </a>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link">1</a>
-        </li>
-        <li class="fd-pagination__item">
-            <span class="fd-pagination__link fd-pagination__link--more" role="presentation">
-                &#8226;&#8226;&#8226;
-            </span>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link">21</a>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link" aria-selected="true">22</a>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link">23</a>
-        </li>
-        <li class="fd-pagination__item">
-            <span class="fd-pagination__link fd-pagination__link--more" role="presentation">
-                &#8226;&#8226;&#8226;
-            </span>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link">50</a>
-        </li>
-        <li class="fd-pagination__item">
-            <a class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Next">
-                <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
-            </a>
-        </li>
-    </ul>
+  <span class="fd-pagination__total">500 items</span>
+  <nav class="fd-pagination__nav">
+    <a href="#" class="fd-pagination__link fd-pagination__link--previous" aria-label="Previous"
+    aria-disabled="false"></a>
+    <a href="#" class="fd-pagination__link">1</a>
+    <span class="fd-pagination__link fd-pagination__link--more" role="presentation"></span>
+    <a href="#" class="fd-pagination__link">21</a>
+    <a href="#" class="fd-pagination__link" aria-selected="true">22</a>
+    <a href="#" class="fd-pagination__link">23</a>
+    <span class="fd-pagination__link fd-pagination__link--more" role="presentation"></span>
+    <a href="#" class="fd-pagination__link">50</a>
+    <a href="#" class="fd-pagination__link fd-pagination__link--next" aria-label="Next"
+    aria-disabled="false"></a>
+  </nav>
 </div>
 {% endcapture %}
 
@@ -178,33 +109,17 @@ On the last page, the next link should be disabled.
 
 {% capture pagination-last %}
 <div class="fd-pagination">
-    <span class="fd-pagination__total">500 items</span>
-    <ul class="fd-pagination__list">
-        <li class="fd-pagination__item fd-pagination__item--previous">
-            <a class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous">
-                <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
-            </a>
-        </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link">1</a>
-        </li>
-        <li class="fd-pagination__item">
-            <span class="fd-pagination__link fd-pagination__link--more" role="presentation">
-                &#8226;&#8226;&#8226;
-            </span>
-        </li>
-            <li class="fd-pagination__item">
-                <a href="#" class="fd-pagination__link">49</a>
-            </li>
-        <li class="fd-pagination__item">
-            <a href="#" class="fd-pagination__link" aria-selected="true">50</a>
-        </li>
-        <li class="fd-pagination__item">
-            <a class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Next" aria-disabled="true">
-                <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
-            </a>
-        </li>
-    </ul>
+  <span class="fd-pagination__total">500 items</span>
+  <nav class="fd-pagination__nav">
+    <a href="#" class="fd-pagination__link fd-pagination__link--previous" aria-label="Previous"
+    aria-disabled="false"></a>
+    <a href="#" class="fd-pagination__link">1</a>
+    <span class="fd-pagination__link fd-pagination__link--more" role="presentation"></span>
+    <a href="#" class="fd-pagination__link">49</a>
+    <a href="#" class="fd-pagination__link" aria-selected="true">50</a>
+    <a href="#" class="fd-pagination__link fd-pagination__link--next" aria-label="Next"
+    aria-disabled="true"></a>
+  </nav>
 </div>
 {% endcapture %}
 
