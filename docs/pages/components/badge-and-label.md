@@ -7,14 +7,14 @@ permalink: components/badge-and-label.html
 folder: components
 ---
 
-The Status indicators are used to show the status of an object or a process. They can be displayed as **Labels**, **Badges** or **Pills** depending on the context.
+Badges and labels are used to indicate status. Colors, generally in combination with text, are used to easily highlight the state of an object.
 
-The following color options are avialable for fast recognition of the status:
+The following colors should be used:
 
-* **Black**: the default color, used when the status doesn't have active/inactive or error states.
-* **Green**: signal positive status: active, published, approved, etc.
-* **Orange**: used for status like: in process, waiting, reviewing, etc.
-* **Red**: signal the user that the object or process needs attention: in error, rejected, expired, etc.
+* **Black**: default or inactive status
+* **Green**: positive status, used for active, published, approved
+* **Orange**: a warning status or to indicate that an action can be taken
+* **Red**: error status
 
 <hr />
 
