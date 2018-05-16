@@ -28,26 +28,22 @@ Header columns should be present to allow the user to know and understand the da
     </thead>
     <tbody>
         <tr>
-            <td><img src="http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png"
-            class="fd-has-border-radius-50percent"
-            width="32" height="32"></td>
-            <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
+            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label" style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);"></span></td>
+            <td><a href="#" class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>Last Name</td>
             <td>01/26/17</td>
         </tr>
         <tr>
-            <td><img src="http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png"
-            class="fd-has-border-radius-50percent" width="32" height="32"></td>
-            <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
+            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label" style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);"></span></td>
+            <td><a href="#" class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>Last Name</td>
             <td>01/26/17</td>
         </tr>
         <tr>
-            <td><img src="http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png"
-            class="fd-has-border-radius-50percent" width="32" height="32"></td>
-            <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
+            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label" style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);"></span></td>
+            <td><a href="#" class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>Last Name</td>
             <td>01/26/17</td>
@@ -68,7 +64,7 @@ When needed to make bulk changes on multiple object at once, the checkbox input 
 <table class="fd-table">
     <thead>
         <tr>
-            <th></th>
+            <th><input type="checkbox"></th>
             <th>Column Header</th>
             <th>Column Header</th>
             <th>Column Header</th>
@@ -105,9 +101,9 @@ When needed to make bulk changes on multiple object at once, the checkbox input 
 
 <br />
 
-## Table with Actions
+## Table with Contextual Menu
 
-When needed the table row can have Actions to be performed on the object represented. The Actions are done as Small Text buttons with only an icon.
+When there is more than four actions to display we recommend the use of the contextual menu and display all the actions.
 
 {% capture table-actions %}
 <table class="fd-table">
@@ -125,18 +121,13 @@ When needed the table row can have Actions to be performed on the object represe
             <td>First Name</td>
             <td>01/26/17</td>
             <td>
-                <button class="fd-button fd-button--text fd-button--icon fd-button--small">
-                    <span class="fd-icon fd-icon--edit fd-icon--small" role="presentation"></span>
-                </button>
-                <button class="fd-button fd-button--text fd-button--icon fd-button--small">
-                    <span class="fd-icon fd-icon--sync fd-icon--small" role="presentation"></span>
-                </button>
-                <button class="fd-button fd-button--text fd-button--icon fd-button--small">
-                    <span class="fd-icon fd-icon--clone fd-icon--small" role="presentation"></span>
-                </button>
-                <button class="fd-button fd-button--text fd-button--icon fd-button--small">
-                    <span class="fd-icon fd-icon--remove fd-icon--small" role="presentation"></span>
-                </button>
+                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179" aria-haspopup="true"></button>
+                <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179">
+                    <li><a href="#" class="fd-dropdown__item">Edit</a></li>
+                    <li><a href="#" class="fd-dropdown__item">Lock</a></li>
+                    <li><a href="#" class="fd-dropdown__item">Duplicate</a></li>
+                    <li><a href="#" class="fd-dropdown__item">Delete</a></li>
+                </ul>
             </td>
         </tr>
         <tr>
@@ -144,18 +135,13 @@ When needed the table row can have Actions to be performed on the object represe
             <td>First Name</td>
             <td>01/26/17</td>
             <td>
-                <button class="fd-button fd-button--text fd-button--icon fd-button--small">
-                    <span class="fd-icon fd-icon--edit fd-icon--small" role="presentation"></span>
-                </button>
-                <button class="fd-button fd-button--text fd-button--icon fd-button--small">
-                    <span class="fd-icon fd-icon--sync fd-icon--small" role="presentation"></span>
-                </button>
-                <button class="fd-button fd-button--text fd-button--icon fd-button--small">
-                    <span class="fd-icon fd-icon--clone fd-icon--small" role="presentation"></span>
-                </button>
-                <button class="fd-button fd-button--text fd-button--icon fd-button--small">
-                    <span class="fd-icon fd-icon--remove fd-icon--small" role="presentation"></span>
-                </button>
+                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179-2" aria-haspopup="true"></button>
+                <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179-2">
+                    <li><a href="#" class="fd-dropdown__item">Edit</a></li>
+                    <li><a href="#" class="fd-dropdown__item">Lock</a></li>
+                    <li><a href="#" class="fd-dropdown__item">Duplicate</a></li>
+                    <li><a href="#" class="fd-dropdown__item">Delete</a></li>
+                </ul>
             </td>
         </tr>
         <tr>
@@ -163,18 +149,13 @@ When needed the table row can have Actions to be performed on the object represe
             <td>First Name</td>
             <td>01/26/17</td>
             <td>
-                <button class="fd-button fd-button--text fd-button--icon fd-button--small">
-                    <span class="fd-icon fd-icon--edit fd-icon--small" role="presentation"></span>
-                </button>
-                <button class="fd-button fd-button--text fd-button--icon fd-button--small">
-                    <span class="fd-icon fd-icon--sync fd-icon--small" role="presentation"></span>
-                </button>
-                <button class="fd-button fd-button--text fd-button--icon fd-button--small">
-                    <span class="fd-icon fd-icon--clone fd-icon--small" role="presentation"></span>
-                </button>
-                <button class="fd-button fd-button--text fd-button--icon fd-button--small">
-                    <span class="fd-icon fd-icon--remove fd-icon--small" role="presentation"></span>
-                </button>
+                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179-3" aria-haspopup="true"></button>
+                <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179-3">
+                    <li><a href="#" class="fd-dropdown__item">Edit</a></li>
+                    <li><a href="#" class="fd-dropdown__item">Lock</a></li>
+                    <li><a href="#" class="fd-dropdown__item">Duplicate</a></li>
+                    <li><a href="#" class="fd-dropdown__item">Delete</a></li>
+                </ul>
             </td>
         </tr>
     </tbody>
@@ -182,83 +163,3 @@ When needed the table row can have Actions to be performed on the object represe
 {% endcapture %}
 
 {% include display-component.html component=table-actions %}
-
-<br />
-
-## Table with Contextual Menu
-
-When there is more than four actions to display we recommend the use of the contextual menu and display all the actions.
-
-{% capture table-menu %}
-<table class="fd-table">
-    <thead>
-        <tr>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
-            <td>First Name</td>
-            <td>01/26/17</td>
-            <td>
-                <div class="fd-dropdown">
-                    <button class="fd-button fd-button--icon fd-button--text fd-button--small" aria-controls="nH3Yk786" aria-haspopup="true" aria-label="More">
-                        <span class="fd-icon fd-icon--more fd-icon--small" role="presentation"></span>
-                    </button>
-                    <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="nH3Yk786">
-                        <li><a class="fd-dropdown__item">Edit</a></li>
-                        <li><a class="fd-dropdown__item">Sync</a></li>
-                        <li><a class="fd-dropdown__item">Clone</a></li>
-                        <li><a class="fd-dropdown__item">Archive</a></li>
-                        <li><a class="fd-dropdown__item">Remove</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
-            <td>First Name</td>
-            <td>01/26/17</td>
-            <td>
-                <div class="fd-dropdown">
-                    <button class="fd-button fd-button--icon fd-button--text fd-button--small" aria-controls="nH3Yk787" aria-haspopup="true" aria-label="More">
-                        <span class="fd-icon fd-icon--more fd-icon--small" role="presentation"></span>
-                    </button>
-                    <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="nH3Yk787">
-                        <li><a class="fd-dropdown__item">Edit</a></li>
-                        <li><a class="fd-dropdown__item">Sync</a></li>
-                        <li><a class="fd-dropdown__item">Clone</a></li>
-                        <li><a class="fd-dropdown__item">Archive</a></li>
-                        <li><a class="fd-dropdown__item">Remove</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
-            <td>First Name</td>
-            <td>01/26/17</td>
-            <td>
-                <div class="fd-dropdown">
-                    <button class="fd-button fd-button--icon fd-button--text fd-button--small" aria-controls="nH3Yk788" aria-haspopup="true" aria-label="More">
-                        <span class="fd-icon fd-icon--more fd-icon--small" role="presentation"></span>
-                    </button>
-                    <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="nH3Yk788">
-                        <li><a class="fd-dropdown__item">Edit</a></li>
-                        <li><a class="fd-dropdown__item">Sync</a></li>
-                        <li><a class="fd-dropdown__item">Clone</a></li>
-                        <li><a class="fd-dropdown__item">Archive</a></li>
-                        <li><a class="fd-dropdown__item">Remove</a></li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-    </tbody>
-</table>
-{% endcapture %}
-
-{% include display-component.html component=table-menu %}
