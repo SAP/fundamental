@@ -8,12 +8,12 @@ folder: components
 summary:
 ---
 
-Alerts are used to display short messages that need the user attention.
+Alerts provide messages within the application that are color-coded to emphasize the level of urgency.
 
 <hr>
 
 ## Default Alert
-Use to let people know there is something happening, but you can dismiss and act upon it later if needed, e.g. a service subscribed to needs updating. It’s recommended to use the dark blue treatment for Alerts. Alerts should display until they are dismissed by clicking or tapping X.
+The alert provides information that is useful and relevant, but not critical. It can also provide feedback that an action has been executed. The user will need to dismiss the message.
 
 {% capture default-alert %}
 <div class="fd-alert fd-alert--dismissible" role="alert" id="j2ALl423">
@@ -25,7 +25,7 @@ Use to let people know there is something happening, but you can dismiss and act
 {% include display-component.html component=default-alert %}
 
 ## Warning
-Use to let people know about some information or action that happened, but no action is needed on their part, e.g. the service will be deprecated at a future date. It’s recommended to use the dark blue treatment for Notifications. Notifications should display for 3 seconds, and disappear on their own or by clicking or tapping X.
+The alert warns of potential issues, but the user can still continue. The user will need to dismiss the message.
 
 Add the modifier class `fd-alert--warning` for Notification alert.
 
@@ -39,7 +39,7 @@ Add the modifier class `fd-alert--warning` for Notification alert.
 {% include display-component.html component=warning-alert %}
 
 ## Error
-Use to let people know there is an issue that needs attention immediately, e.g. an authorization is expired and no work can proceed until it’s resolved. It’s recommended to use the red treatment for Errors. Errors should display until they are dismissed by clicking or tapping X.
+This alert is triggered after the user entered data incorrectly or a system error has occurred. It should interrupt the user. A final action such as Submit cannot be carried out until the user has rectified the error. The user will need to dismiss the message.
 
 Add the modifier class `fd-alert--error` for Error alert.
 
