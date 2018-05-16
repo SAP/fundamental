@@ -6,15 +6,14 @@ toc: false
 permalink: components/action-bar.html
 folder: components
 ---
-The Action Bar is located at the top of the page and is used for three main functions:
-1. Display the title of the current page
-2. Display the main Actions for the page
+The Action Bar is located at the top of the page and is used for the following:
+- Page title
+- Main Actions for the page
 
 <hr>
 
 ## Title
-
-The page title is displayed very prominently in the Action Bar. This is helpful for the user to know what page or part of the application is currently in use. The page title should be descriptive like "Your profile" or "Product #2342 - Red T-Shirt Type D"
+The page title is displayed prominently in the Action Bar. This is helpful for the user to know exactly where they are.
 
 {% capture default-action-bar %}
 <div class="fd-action-bar">
@@ -30,8 +29,7 @@ The page title is displayed very prominently in the Action Bar. This is helpful 
 <br/>
 
 ## Main Actions
-
-Main actions that are performed on the object represented on the page can be displayed on the Action Bar. we recommend not putting more than four actions on the action bar.
+Display main actions within the Action bar. This allows for users to find important page actions in a consistent area no matter what page they are on within the application.
 
 {% capture default-action-bar-multi %}
 <div class="fd-action-bar">
@@ -51,9 +49,9 @@ Main actions that are performed on the object represented on the page can be dis
 
 <br/>
 
-## Actions with Contextual menu
+## Several Main Actions in a Contextual Menu
 
-When you need to display more than four actions it is recommended to use the **Contextual Menu** to display all actions.
+When there are several main actions for a page, consider displaying them under a contextual menu. This allows the user to look in the same position they are used to but avoids cluttering the action bar with more than 3-4 actions. This also works well for a responsive/adaptive application.
 
 {% capture default-action-bar-menu %}
 <div class="fd-action-bar">
