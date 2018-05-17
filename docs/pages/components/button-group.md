@@ -82,3 +82,10 @@ The large size is rendered by default with no additional modifier classes.
 </div>
 {% endcapture %}
 {% include display-component.html component=button-group-default %}
+
+<style media="screen">
+.fd-button-group,
+[class*="fd-button-group--"]{
+	margin-right: 10px;
+}
+</style>
