@@ -21,12 +21,18 @@ The elements used to construct a page are:
 
 {% capture page-layout %}
 <article class="fd-page">
-    <header class="fd-page__header">
+    <header class="fd-page__header fd-has-background-color-background-2">
         fd-page_header
     </header>
-    <div class="fd-page__content">
+    <div class="fd-page__content fd-has-background-color-neutral-2">
         fd-page_content
     </div>
 </article>
 {% endcapture %}
 {% include display-example.html component=page-layout  class="page"%}
+
+<style media="screen">
+    .fd-page__content{
+        height: 300px;
+    }
+</style>

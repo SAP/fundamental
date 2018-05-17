@@ -57,68 +57,74 @@ The section containing the form have a contextual menu as main actions container
         </h1>
         <div class="fd-section__actions">
             <div class="fd-dropdown">
-                <button class="fd-button fd-button--text fd-button--action-bar"
-                aria-controls="3ewpS611" aria-haspopup="true" aria-expanded="false" aria-label="More">
-                    <span class="fd-icon fd-icon--more fd-icon--medium" role="presentation"></span>
-                </button>
-                <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="3ewpS611">
-                    <li><a href="#" class="fd-dropdown__item">Action 1</a></li>
-                    <li><a href="#" class="fd-dropdown__item">Action 2</a></li>
-                    <li><a href="#" class="fd-dropdown__item">Action 3</a></li>
-                </ul>
+                <button class=" fd-button--secondary sap-icon--vertical-grip" aria-controls="pQqQR213"
+                aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+                <nav class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="pQqQR213">
+                  <ul class="fd-dropdown__list">
+                    <li><a href="#" class="fd-dropdown__item">Pellentesque metus</a></li>
+                    <li><a href="#" class="fd-dropdown__item">Duis malesuada odio volutpat</a></li>
+                    <li><a href="#" class="fd-dropdown__item">Suspendisse</a></li>
+                    <li><a href="#" class="fd-dropdown__item">Donec mattis arcu et velit</a></li>
+                  </ul>
+                </nav>
             </div>
         </div>
     </header>
     <div class="fd-container">
-        <div class="fd-col--2"><span class="fd-image fd-image--xxl fd-image--circle fd-image--profile"
-        aria-label="Image label"></span></div>
-        <div class="fd-col--10">
+        <div class="fd-col--1">
+            <span class=" fd-identifier--l fd-identifier--circle" aria-label="Wendy Wallace">WW</span>
+        </div>
+        <div class="fd-col--11">
             <div class="fd-col--6">
-                <div class="fd-form__item">
-                    <label class="fd-form__label" for="VDQ4Z626">
-                        Label
-                    </label>
-                    <input type="text" class="fd-form__control" id="VDQ4Z626"
-                    readonly="" value="Non-editable value">
-                </div>
-                <div class="fd-form__item">
-                    <label class="fd-form__label" for="uaB3S746">
-                        Label
-                        <span class="fd-form__help">
-                            <span class="fd-inline-help">
-                                <span class="fd-inline-help__content">
-                                    Lorem ipsim dolor sit amet
+                <div class="fd-form__set">
+                    <div class="fd-form__item">
+                        <label class="fd-form__label" for="input-44">
+                            Input with inline help
+                            <span class="fd-inline-help fd-has-float-right">
+                                <span class="fd-inline-help__content fd-inline-help__content--bottom-right">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing.
                                 </span>
                             </span>
-                        </span>
-                    </label>
-                    <input type="text" class="fd-form__control" id="uaB3S746"
-                    placeholder="Field placholder value">
-                    <span class="fd-form__message">
-                        Start with a letter, use only alphanumeric characters 3-16 characters
-                    </span>
+                        </label>
+                        <input class="fd-form__control" type="text" id="input-45" value="Read only data" readonly>
+                    </div>
+                    <div class="fd-form__item">
+                        <label class="fd-form__label" for="input-44">
+                            Input with inline help
+                            <span class="fd-inline-help fd-has-float-right">
+                                <span class="fd-inline-help__content fd-inline-help__content--bottom-right">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing.
+                                </span>
+                            </span>
+                        </label>
+                        <input class="fd-form__control" type="text" id="input-45" value="Read only data">
+                    </div>
                 </div>
             </div>
             <div class="fd-col--6">
-                <div class="fd-form__item">
-                    <label class="fd-form__label" for="RTiFm834">
-                        Creation Date
-                    </label>
-                    <input type="text" class="fd-form__control" id="RTiFm834" readonly="" value="12/04/15">
-                </div>
-                <div class="fd-form__item">
-                    <label class="fd-form__label" for="xptZT462">
-                        Version
-                        <span class="fd-form__help">
-                            <span class="fd-inline-help">
-                                <span class="fd-inline-help__content">
-                                    Lorem ipsim dolor sit amet
+                <div class="fd-form__set">
+                    <div class="fd-form__item">
+                        <label class="fd-form__label" for="input-44">
+                            Input with inline help
+                            <span class="fd-inline-help fd-has-float-right">
+                                <span class="fd-inline-help__content fd-inline-help__content--bottom-right">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing.
                                 </span>
                             </span>
-                        </span>
-                    </label>
-                    <input type="text" class="fd-form__control" id="xptZT462"
-                    placeholder="Field placholder value">
+                        </label>
+                        <input class="fd-form__control" type="text" id="input-45" value="Read only data" readonly>
+                    </div>
+                    <div class="fd-form__item">
+                        <label class="fd-form__label" for="input-44">
+                            Input with inline help
+                            <span class="fd-inline-help fd-has-float-right">
+                                <span class="fd-inline-help__content fd-inline-help__content--bottom-right">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing.
+                                </span>
+                            </span>
+                        </label>
+                        <input class="fd-form__control" type="text" id="input-45" value="Read only data">
+                    </div>
                 </div>
             </div>
         </div>
@@ -133,10 +139,7 @@ The section containing the form have a contextual menu as main actions container
             Table
         </h1>
         <div class="fd-section__actions">
-            <button class="fd-button fd-button--text fd-button--small">
-                <span class="fd-icon fd-icon--add" role="presentation"></span>
-                Add
-            </button>
+            <button class="fd-button sap-icon--add">Add New</button>
         </div>
     </header>
     <table class="fd-table">
@@ -167,7 +170,7 @@ The section containing the form have a contextual menu as main actions container
         </tbody>
     </table>
     <footer class="fd-section__footer">
-        <a href="#" class="fd-button fd-button--link">See All</a>
+        <button class="fd-button--secondary">Secondary Button</button>
     </footer>
 </section>
 {% endcapture %}
