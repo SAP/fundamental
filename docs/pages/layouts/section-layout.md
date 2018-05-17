@@ -1,15 +1,15 @@
 ---
-title: Content Layouts
-keywords: content layouts
+title: Section Layout
+keywords: section layout
 toc: false
 sidebar: left-navigation-sidebar
-permalink: /layouts/content-layouts.html
+permalink: /layouts/section-layouts.html
 folder: layouts
 summary:
 ---
 Content Layouts consists of three main component:
 * `.fd-page`: is the main element that contains all elements present in the page.
-* `.fd-section`: used to encapsulate aeas of content. In can contain actions that can be performed for the object the section is representing.
+* `.fd-section`: used to encapsulate areas of content. In can contain actions that can be performed for the object the section is representing.
 * `.fd-panel`: used for encapsulating information objects and can contain actions.
 
 ## Page Layout Structure
@@ -18,7 +18,6 @@ Content Layouts consists of three main component:
 The elements used to construct a page are:
 * `.fd-page`: is the page level layout it consists of a header, intro and content.
   * `.fd-page__header`: the page level heading
-  * `.fd-page__intro`: can hold page intro or help text
   * `.fd-page__content`: holds the page page content
 
 <br/>
@@ -28,9 +27,6 @@ The elements used to construct a page are:
     <header class="fd-page__header">
         fd-page_header
     </header>
-    <div class="fd-page__intro">
-        <p><em>fd-page_intro</em></p>
-    </div>
     <div class="fd-page__content">
         fd-page_content
     </div>

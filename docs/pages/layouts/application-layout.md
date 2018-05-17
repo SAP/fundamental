@@ -80,7 +80,7 @@ Use this layout when your application is very simple and doesn't need a sidebar 
 ## Application Overlay
 {: .docs-header-h2}
 
-You can use the `.fd-overlay` to block out the UI when a is open and the user needs to take an action in order to move forward. 
+You can use the `.fd-overlay` to block out the UI when a is open and the user needs to take an action in order to move forward.
 
 Then put inside other components like [modals](/components/modal.html).
 
