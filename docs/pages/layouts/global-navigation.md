@@ -137,7 +137,7 @@ Use this layout when your application needs a sidebar to navigate inside the app
             <input type="text" class="fd-form__control" id="CEBAq170" aria-hidden="true" placeholder="Search... ">
          </div>
          <button class=" fd-button--secondary fd-button--m sap-icon--action-settings fd-global-nav__btn" aria-label="BUTTON_LABEL"></button>
-         <span class=" fd-identifier--m fd-identifier--circle fd-has-margin-right-xs">WW</span>
+         <span class=" fd-identifier--s fd-identifier--circle fd-has-margin-right-xs">WW</span>
       </div>
    </div>
 </nav>
