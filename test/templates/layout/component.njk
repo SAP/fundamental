@@ -77,6 +77,11 @@ panel:
         {{ properties.title }}
     </h1>
     {%- endif %}
+    {%- if properties.description %}
+    <p class="fd-panel__description">
+        {{ properties.description }}
+    </p>
+    {%- endif %}
     {{- caller() | indent -}}
 </div>
 {%- endmacro %}

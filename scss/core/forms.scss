@@ -59,7 +59,7 @@ input[type="checkbox"] {
         content: "";
         width: 10px;
         height: 5px;
-        border-color: $fd-forms-background-color;
+        border-color: transparent;
         border-style: solid;
         border-width: 0 0 2px 2px;
         transform: rotate(-45deg);
@@ -67,6 +67,11 @@ input[type="checkbox"] {
         z-index: 2;
         top: calc(50% - 4px);
         left: calc(50% - 10px/2);
+    }
+    &:checked {
+        &::before {
+            border-color: $fd-forms-background-color;
+        }
     }
     &[disabled],
     &[aria-disabled="true"],

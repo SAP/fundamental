@@ -17,11 +17,13 @@ $block: #{$fd-namespace}-global-nav;
     $fd-global-nav-background-color: fd-color(background, 2) !default;
     $fd-global-nav-border-color: fd-color(neutral, 2);
     $fd-global-nav-height: fd-space(12.5);
+    $fd-global-nav-logo-height: fd-space(7) !default
     $fd-global-nav-btn-color: fd-color(action, 1);
     $fd-global-nav-search-box-background-color: fd-color(background, 2);
     $fd-global-nav-search-box-width: fd-space(44);
     $fd-side-nav-launchpad-background-color: rgba(fd-color("action", 1), .07);
     $fd-side-nav-launchpad-hover-background-color: fd-color(neutral, 1);
+
 
     //BLOCK BASE *******************************************
     @include fd-reset;
@@ -70,13 +72,15 @@ $block: #{$fd-namespace}-global-nav;
         font-weight: bold;
         background-image: url(#{$fd-hybris-logo});
         background-repeat: no-repeat;
-        background-position: left 17px;
-        width: fd-space(22.5);
-        margin-left: fd-space(5);
+        //background-position: left 17px;
+        width: fd-space(15);
+        margin-left: fd-space(5                    );
+        height: $fd-global-nav-logo-height;
+        background-size: contain;
     }
 
     &__product-name {
-        padding: fd-space(5) 0 0 fd-space(5);
+        padding: fd-space(5) 0 0 fd-space(2);
         @include fd-type("-1", "body", "semi");
     }
 

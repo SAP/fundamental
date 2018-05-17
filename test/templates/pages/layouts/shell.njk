@@ -14,7 +14,7 @@
     properties = {
         "title": "Global Nav Label",
         "description": "Global Nav Description",
-        "side_menu": true,
+        "side_menu": hide_app_sidebar != true,
         "launchpad_button": {
             "properties": { label: 'Suite Name'},
             "modifier": { block: ['secondary', 'l'] },
@@ -102,9 +102,11 @@
               modifier={ block: ['l'] }
           )] %} #}
   {%- endif %}
+  {%- set page_description = page_intro or "" %}
 {{  action_bar(
         properties={
             title: page_title,
+            description: page_description,
             actions: {
                 properties: {
                     items: btns
