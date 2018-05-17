@@ -10,15 +10,14 @@ summary:
 The global navigation component offers a similar navigation approach between Hybris applications. It allows for branding, application groupings, access to a left navigation, switch between applications, contexts and access tooling such as search or a users' profile.
 Elements and positioning in the global navigation are optional but included are:
 
-* Suite name - identifies the suite or common grouping of the applications
-* Logo - allows for common branding. SAP Hybris applications display the SAP logo.
-* Left navigation menu icon - allows for the left navigation to be expanded or collapsed
-* Application switcher - allows for the identification of the application. Users can switch between applications within the suite/grouping of applications.
-* Context switcher - allows for switching context of application such as an organization or subscription.
-* Search icon - on click, a search field is displayed.
-* User icon - on click, user options are displayed such as Sign Off and Preferences.
+* **Suite name**: identifies the suite or common grouping of the applications
+* **Logo**: allows for common branding. SAP Hybris applications display the SAP logo.
+* **Left navigation menu icon**: allows for the left navigation to be expanded or collapsed
+* **Application switcher**: allows for the identification of the application. Users can switch between applications within the suite/grouping of applications.
+* **Context switcher**: allows for switching context of application such as an organization or subscription.
+* **Search icon**: on click, a search field is displayed.
+* **User icon**: on click, user options are displayed such as Sign Off and Preferences.
 Additional tooling icons - if the application requires additional tooling, it can be accessed via an icon in the same area of the global header as the search and user icons.
-
 
 ## Application with Sidebar
 {: .docs-header-h2}
