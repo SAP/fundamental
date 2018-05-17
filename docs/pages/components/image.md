@@ -8,7 +8,7 @@ folder: components
 summary:
 ---
 
-When using images you can use our helpers classes to adjust the size and the shape.
+When using images, use the following helpers classes to adjust the size and the shape.
 
 <hr>
 

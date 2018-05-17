@@ -24,6 +24,7 @@
 
         a:hover{
             text-decoration: none;
+            color: inherit;
         }
     }
 
@@ -66,4 +67,14 @@
             margin-right: 0;
         }
     }
+
+    a[aria-disabled="true"]:hover,
+    a[aria-disabled="true"]:visited,
+    a[aria-disabled="true"]:active,
+    a[aria-disabled="true"]:focus,
+    a.is-disabled {
+    color: rgba(10, 110, 209, 0.4);
+    cursor: not-allowed;
+    text-decoration: none;
+}
 }

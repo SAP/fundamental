@@ -6040,7 +6040,8 @@ hr {
     margin-left: 0;
     padding-left: 0; }
     .docs-component ul a:hover {
-      text-decoration: none; }
+      text-decoration: none;
+      color: inherit; }
   .docs-component .fd-breadcrumb__link {
     color: #0a6ed1; }
     .docs-component .fd-breadcrumb__link:hover {
@@ -6062,6 +6063,14 @@ hr {
     margin-right: 20px; }
   .docs-component .fd-tile-grid .fd-product-tile {
     margin-right: 0; }
+  .docs-component a[aria-disabled="true"]:hover,
+  .docs-component a[aria-disabled="true"]:visited,
+  .docs-component a[aria-disabled="true"]:active,
+  .docs-component a[aria-disabled="true"]:focus,
+  .docs-component a.is-disabled {
+    color: rgba(10, 110, 209, 0.4);
+    cursor: not-allowed;
+    text-decoration: none; }
 
 .docs-example {
   margin-bottom: -28px;
