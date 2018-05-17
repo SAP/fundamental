@@ -8,7 +8,7 @@ folder: components
 summary:
 ---
 
-The Modal component is a high level component, used as a temporary container to be displayed on response of an user action. Can be used to collect simple information from the user: a small form; or give some contextual information that doesn't need the use user to navigate to a new page.
+The modal is used as a container to be displayed in response to a action. It is commonly used to collect simple information with a short form, to get confirmation or display contextual information that does not require a page.
 
 <hr />
 
@@ -59,7 +59,7 @@ Used to confirm with the user before continuing with destructive or complex acti
         <footer class="fd-modal__footer">
             <div class="fd-modal__actions">
                 <button class="fd-button--secondary">No</button>
-                <button class="fd-button--">Yes</button>
+                <button class="fd-button--main">Yes</button>
             </div>
         </footer>
     </div>
@@ -94,7 +94,7 @@ Used to collect simple information from the user. Please use with care and don't
         <footer class="fd-modal__footer">
             <div class="fd-modal__actions">
                 <button class="fd-button--secondary">Cancel</button>
-                <button class="fd-button--">Invite</button>
+                <button class="fd-button--main">Invite</button>
             </div>
         </footer>
     </div>

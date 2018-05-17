@@ -46,4 +46,14 @@ Layouts in Fundamental UI are for structuring the main parts of your application
              </p>
         </div>
     </a>
+    <a class="fd-tile" role="button" href="panel.html">
+        <div class="fd-tile__content">
+             <h2 class="fd-tile__header">
+                 Panel
+             </h2>
+             <p class="fd-tile__description">
+                 Elements to organize components.
+             </p>
+        </div>
+    </a>
 </div>

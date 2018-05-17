@@ -7,16 +7,18 @@ permalink: components/button.html
 folder: components
 ---
 
-The Buttons are components that let the user perform an actions. For example: saving a form, submitting data to the server, adding elements to a list, etc.
+The Buttons allow users to perform actions. The priority of buttons within a page should be considered. For instance, only use the main button once within a page or modal.
+Color is also important. For instance, the most important button has a blue background where as a red button should only be used if the action it performs is potentially destructive.
 
 <hr>
 
 ## Button Types
-- **Primary Button**: The default button style with the base class `fd-button`. There can be more than one primary button on a single page or view such as "Approve" or "Reject".
-- **Main Button**: `--main` modifier is required to render the Main button. There should only be on main button on the page or view. This is the primary Call to Action for example "Save".
-- **Secondary Button**: `--secondary` is required to render the Secondary button. There can be more tha one secondary button on the page. Common use cases include "Cancel".
+- **Main Button**: `--main` modifier is required to render the Main button. There should only be one main button on the page or modal. This is the main call to action.
+- **Primary Button**: The default button style with the base class `fd-button`. There can be more than one primary button on a single page or view such as “Approve” or “Reject”.
+- **Secondary Button**: `--secondary` is required to render the Secondary button. There can be more than one secondary button on the page. A common use case is “Cancel”.
 - **Toolbar Button**: `--toolbar` is required to render the Toolbar button. This button is used inside the toolbar component.
 - **Semantic Buttons**: Semantic modifiers `--positive` for approve and `--negative` for reject can be applied to the button.
+
 {% capture button %}
 <button class="fd-button">Primary Button</button>
 <button class="fd-button--main">Main Button</button>
@@ -97,3 +99,10 @@ The buttons can also be set to a state:
 {% endcapture %}
 
 {% include display-component.html component=button-standard-state %}
+
+<style media="screen">
+.fd-button,
+[class*="fd-button--"]{
+	margin-right: 10px;
+}
+</style>
