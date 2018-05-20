@@ -17,9 +17,9 @@ The grid layout consists of two main elements: **containers** and **columns**.
 {: .docs-header-h2}
 
 * `fd-container`: This is the wrapper for the gird columns. Some modifiers are provided to give you better control over your layout. The default width for this container is 1290px.
-	* `fd-col--[num]`: Column container with support from 1 to 12.
 	* `fd-container--fluid`: Modifier for fluid layouts that will exdent the width to 100% of it's parent container.
 	* `fd-container--centered`: Center aligned
+	* `fd-col--[num]`: Column container with support from 1 to 12.
 
 ### Default Container
 {: .docs-header-h3}

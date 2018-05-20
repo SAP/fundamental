@@ -9,9 +9,6 @@ summary:
 ---
 
 Layouts in Fundamental UI are for structuring the main parts of your application. Organized in three main categories
-* **Application Layouts**: can be used to construct the main skeleton of your application.
-* **Content Layout**: used to position and arrange the content inside the main element of your application.
-* **Grid Layout**: permit you to make complex layouts inside the content of your application.
 
 <br>
 
@@ -26,13 +23,23 @@ Layouts in Fundamental UI are for structuring the main parts of your application
              </p>
         </div>
     </a>
-    <a class="fd-tile" role="button" href="content-layouts.html">
+    <a class="fd-tile" role="button" href="page-layout.html">
         <div class="fd-tile__content">
              <h2 class="fd-tile__header">
-                 Content Layouts
+                 Page Layouts
              </h2>
              <p class="fd-tile__description">
-                 Elements to structure the content your application.
+                 Elements to structure the content your application page.
+             </p>
+        </div>
+    </a>
+    <a class="fd-tile" role="button" href="section-layout.html">
+        <div class="fd-tile__content">
+             <h2 class="fd-tile__header">
+                 Secton Layout
+             </h2>
+             <p class="fd-tile__description">
+                 Wrapper element for dividing a page into different sections 
              </p>
         </div>
     </a>
