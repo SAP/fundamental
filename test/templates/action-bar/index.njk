@@ -78,6 +78,24 @@ classes="contextual-menu") | indent(4)
     {{  action_bar(
             properties={
                 title: data.properties.title,
+                description: data.properties.description,
+                actions: {
+                    properties: {
+                        items: [secbtn,primarybtn]
+                    }
+                }
+            },
+            modifier={
+                block: []
+            },
+            state={},
+            aria={}
+        )
+    }}
+
+    {{  action_bar(
+            properties={
+                title: data.properties.title,
                 actions: {
                     properties: {
                         items: [contextmenu]

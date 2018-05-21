@@ -53,12 +53,19 @@ env.addFilter('classes', function(array=[]) {
     if (!array) {
         return;
     }
+    let _ns = `${GLOBALS.namespace}-`;
     //is string
     if (typeof array === "string") {
-        return ` ${GLOBALS.namespace}-${array}`;
+      if (array.startsWith("sap-icon") || array.startsWith("fd-")) {
+        _ns = "";
+      }
+        return ` ${_ns}${array}`;
     }
     var classes = array.map((cls, index) => {
-         return ` ${GLOBALS.namespace}-${cls}`;
+      if (cls.startsWith("sap-icon") || cls.startsWith("fd-")) {
+        _ns = "";
+      }
+         return ` ${_ns}${cls}`;
     })
     //console.log(mods.join());
     return classes.join('') ;

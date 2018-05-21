@@ -11,6 +11,9 @@ action_bar:
       <h1 class="fd-action-bar__title">
           {{ properties.title }}
       </h1>
+      {%- if properties.description %}
+      <p class="fd-action-bar__description">{{ properties.description }}</p>
+      {%- endif %}
     </div>
     {%- if properties.actions %}
     {%- set actions = properties.actions %}
