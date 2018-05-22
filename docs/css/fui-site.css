@@ -2240,7 +2240,7 @@ input[type="checkbox"]::before {
   content: "";
   width: 10px;
   height: 5px;
-  border-color: #f3f4f5;
+  border-color: transparent;
   border-style: solid;
   border-width: 0 0 2px 2px;
   transform: rotate(-45deg);
@@ -2248,6 +2248,9 @@ input[type="checkbox"]::before {
   z-index: 2;
   top: calc(50% - 4px);
   left: calc(50% - 10px/2); }
+
+input[type="checkbox"]:checked::before {
+  border-color: #ffffff; }
 
 input[type="checkbox"][disabled]::before, input[type="checkbox"][aria-disabled="true"]::before, input[type="checkbox"].is-disabled::before {
   border-color: #515559; }
@@ -2265,7 +2268,7 @@ input[type="radio"] {
     transition: background-color 0.125s ease-in;
     background-color: transparent; }
   input[type="radio"]:checked {
-    background-color: #f3f4f5; }
+    background-color: #ffffff; }
     input[type="radio"]:checked::after {
       background-color: #0a6ed1; }
     input[type="radio"]:checked[disabled]::after, input[type="radio"]:checked[aria-disabled="true"]::after, input[type="radio"]:checked.is-disabled::after {
@@ -2656,7 +2659,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     display: flex;
     align-items: center;
     border-bottom: solid 1px #eeeeef;
-    padding: 20px 20px;
+    padding: 16px 20px;
     font-size: 0.85714rem;
     line-height: 1.33333;
     font-weight: 400;
@@ -2669,7 +2672,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     margin-bottom: 0;
     color: #32363a; }
   .fd-panel__actions {
-    margin-left: auto; }
+    margin-left: auto;
+    margin-top: -4px;
+    margin-bottom: -4px; }
   .fd-panel__filters {
     padding: 12px 20px;
     border-bottom: solid 1px #eeeeef;
@@ -2680,7 +2685,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       max-height: 0;
       overflow: hidden; }
   .fd-panel__body {
-    padding: 20px 20px; }
+    padding: 16px 20px; }
     .fd-panel__body--full-bleed, .fd-panel__body--bleed {
       padding: 0; }
   .fd-panel__footer {
@@ -2688,6 +2693,38 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     justify-content: center;
     padding: 16px 20px;
     border-top: solid 1px #eeeeef; }
+
+/*!
+.fd-tile-grid+(--2col | --4col | --5col | --6col)
+*/
+.fd-panel-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative; }
+  @media (min-width: 800px) {
+    .fd-panel-grid {
+      /* flex fallback */
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 24px; }
+      .fd-panel-grid--2col {
+        grid-template-columns: repeat(2, 1fr); }
+      .fd-panel-grid--3col {
+        grid-template-columns: repeat(3, 1fr); }
+      .fd-panel-grid--4col {
+        grid-template-columns: repeat(4, 1fr); }
+      .fd-panel-grid--5col {
+        grid-template-columns: repeat(5, 1fr); }
+      .fd-panel-grid--6col {
+        grid-template-columns: repeat(6, 1fr); }
+      .fd-panel-grid--nogap, .fd-panel-grid--nogutter {
+        grid-gap: 1px; }
+        .fd-panel-grid--nogap > *, .fd-panel-grid--nogutter > * {
+          box-shadow: none; } }
 
 /*!
 .fd-overlay
@@ -2801,6 +2838,12 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     line-height: 1.33333;
     font-weight: 400;
     margin-bottom: 4px; }
+  .fd-action-bar__description {
+    font-size: 1rem;
+    line-height: 1.42857;
+    font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-weight: 400;
+    text-transform: none; }
   .fd-action-bar__actions {
     font-size: 14px;
     line-height: 1.42857;
@@ -2886,6 +2929,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   padding-right: 10px;
   height: 36px;
   max-height: 36px;
+  min-width: 36px;
   transition: all 0.125s ease-in;
   line-height: 1; }
   .fd-button::before, [class*="fd-button--"]::before {
@@ -3002,6 +3046,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-weight: 400;
   height: 32px;
   max-height: 32px;
+  min-width: 32px;
   line-height: 1; }
   .fd-button--compact::before {
     font-size: 1.14286rem;
@@ -3020,6 +3065,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-weight: 400;
   height: 24px;
   max-height: 24px;
+  min-width: 24px;
   line-height: 1;
   padding-left: 8px;
   padding-right: 8px; }
@@ -3042,6 +3088,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-weight: 400;
   height: 28px;
   max-height: 28px;
+  min-width: 28px;
   line-height: 1; }
   .fd-button--s::before {
     font-size: 1.14286rem;
@@ -3060,6 +3107,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-weight: 400;
   height: 40px;
   max-height: 40px;
+  min-width: 40px;
   line-height: 1;
   padding-left: 12px;
   padding-right: 12px; }
@@ -3175,6 +3223,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       transform: scaleY(-1); }
     .fd-dropdown__control.is-disabled::after, .fd-dropdown__control[disabled]::after, .fd-dropdown__control[aria-disabled="true"]::after {
       transform: none; }
+    .fd-dropdown__control--no-border {
+      border: none; }
   .fd-dropdown__menu {
     padding-top: 4px;
     padding-bottom: 4px;
@@ -4308,15 +4358,16 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     .fd-global-nav__group--right {
       position: absolute;
       right: 0;
-      top: 0; }
+      top: 0;
+      display: flex;
+      align-items: center; }
   .fd-global-nav__side-menu, .fd-global-nav__logo, .fd-global-nav__product-name {
     display: inline-block;
     height: 50px;
     vertical-align: middle; }
-  .fd-global-nav__side-menu button {
-    height: 50px;
-    min-height: 50px;
-    padding: 0 20px; }
+  .fd-global-nav__side-menu {
+    display: inline-flex;
+    align-items: center; }
   .fd-global-nav__logo {
     padding-left: 16px;
     font-weight: bold;
@@ -4355,28 +4406,26 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
       top: 50px;
       left: 0; }
   .fd-global-nav__context-menu {
-    display: inline-block; }
+    border-left: 1px solid #eeeeef;
+    border-right: 1px solid #eeeeef;
+    margin-right: 8px; }
     .fd-global-nav__context-menu button {
-      height: 48px; }
+      min-height: 48px;
+      color: #515559; }
   .fd-global-nav__actions {
     display: inline-block; }
-    .fd-global-nav__actions button {
-      height: 48px;
-      min-height: 48px;
-      padding: 0 10px; }
   .fd-global-nav__search {
     position: relative;
     display: inline-block; }
     .fd-global-nav__search input {
       position: absolute;
       left: -176px;
-      top: 5px;
+      top: 0px;
       background: #ffffff;
       border-radius: 0;
       border: none;
       min-width: 176px;
       border-bottom: 1px solid #eeeeef;
-      height: 39px;
       box-shadow: 0 5px #fff,  0px -5px #fff; }
       .fd-global-nav__search input[aria-hidden="true"] {
         display: none; }
@@ -4756,20 +4805,14 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-tile-grid {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column; }
+  flex-direction: column;
+  position: relative; }
   .fd-tile-grid > * {
     margin-bottom: 0;
     border-radius: 0 !important;
-    position: relative; }
-    .fd-tile-grid > *::after {
-      content: "";
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      border-right: solid 1px #f3f4f5;
-      border-bottom: solid 1px #f3f4f5;
-      position: absolute; }
+    position: relative;
+    border: solid 1px #f3f4f5;
+    border-width: 0 1px 1px 0; }
   @media (min-width: 800px) {
     .fd-tile-grid {
       /* flex fallback */
@@ -4777,19 +4820,18 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
       flex-direction: row;
       flex-wrap: wrap;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3), 1fr));
-      grid-auto-rows: minmax(0, auto);
+      grid-template-columns: repeat(3, 1fr);
       grid-gap: 0; }
       .fd-tile-grid--2col {
-        grid-template-columns: repeat(auto-fill, minmax(calc(100% / 2), 1fr)); }
+        grid-template-columns: repeat(2, 1fr); }
       .fd-tile-grid--3col {
-        grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3), 1fr)); }
+        grid-template-columns: repeat(3, 1fr); }
       .fd-tile-grid--4col {
-        grid-template-columns: repeat(auto-fill, minmax(calc(100% / 4), 1fr)); }
+        grid-template-columns: repeat(4, 1fr); }
       .fd-tile-grid--5col {
-        grid-template-columns: repeat(auto-fill, minmax(calc(100% / 5), 1fr)); }
+        grid-template-columns: repeat(5, 1fr); }
       .fd-tile-grid--6col {
-        grid-template-columns: repeat(auto-fill, minmax(calc(100% / 6), 1fr)); } }
+        grid-template-columns: repeat(6, 1fr); } }
 
 /*!
 .fd-tag+(--no-border)
@@ -4837,6 +4879,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     color: #0a6ed1;
     margin-left: 4px; }
 
+/*
+see layouts/panel-grid
+*/
+/*
+see layouts/panel
+*/
 .fd-has-text-transform-none {
   text-transform: none !important; }
 
@@ -5464,6 +5512,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 
 .fd-has-grid-column-span-6 {
   grid-column: span 6; }
+
+.fd-has-grid-gap-0,
+.fd-has-grid-gap-none {
+  grid-gap: 0 !important; }
+
+.fd-has-grid-gap-1 {
+  grid-gap: 1px !important; }
 
 .has-accent-color {
   color: #2fd0c8; }
