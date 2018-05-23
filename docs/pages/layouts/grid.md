@@ -1,14 +1,14 @@
 ---
-title: Grid Layouts
-keywords: grid layouts
+title: Grid
+keywords: grid
 toc: false
 sidebar: left-navigation-sidebar
-permalink: /layouts/grid-layouts.html
+permalink: /layouts/grid.html
 folder: layouts
 summary:
 ---
 
-The grid layout consists of two main elements: **containers** and **columns**.
+Grid is used to organize content within a `panel`. The grid layout consists of two main elements: **containers** and **columns**.
 
 * **Containers**: are used to contain the columns.
 * **Columns**: are the elements that contain the actual content.

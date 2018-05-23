@@ -33,7 +33,6 @@ Application layout is the shell that holds your app. It consists of a global hea
 Use this layout when your application needs a sidebar to navigate inside the application.
 
 {% capture app-layout %}
-
 <div class="fd-ui fd-ui--fundamental">
     <div class="fd-ui__header">
         fd-ui_header
@@ -52,7 +51,6 @@ Use this layout when your application needs a sidebar to navigate inside the app
         fd-ui_footer
     </div>
 </div>
-
 {% endcapture %}
 {% include display-example.html component=app-layout class="app" %}
 
@@ -76,47 +74,6 @@ Use this layout when your application is very simple and doesn't need a sidebar 
     </div>
     <div class="fd-ui__footer">
         fd-ui_footer
-    </div>
-</div>
-{% endcapture %}
-{% include display-example.html component=app-layout-no-sidebar class="app" %}
-
-<br>
-
-## Application Overlay
-{: .docs-header-h2}
-
-You can use the `.fd-overlay` to block out the UI when a is open and the user needs to take an action in order to move forward.
-
-Then put inside other components like [modals](/components/modal.html).
-
-{% capture app-layout-no-sidebar %}
-<div class="fd-ui fd-ui--fundamental">
-    <div class="fd-ui__header">
-        fd-ui_header
-    </div>
-    <div class="fd-ui__app">
-        <div class="fd-app">
-            <main class="fd-app__main">
-                fd-app_main
-            </main>
-        </div>
-    </div>
-    <div class="fd-ui__footer">
-        fd-ui_footer
-    </div>
-</div>
-<div class="fd-overlay">
-    <div class="fd-modal">
-        <div class="fd-modal__content">
-            <div class="fd-modal__header">
-                <h1 class="fd-modal__title">Modal</h1>
-                <button class="fd-modal__close" aria-label="close"></button>
-            </div>
-            <div class="fd-modal__body">
-                <p>Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra augue. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-            </div>
-        </div>
     </div>
 </div>
 {% endcapture %}
