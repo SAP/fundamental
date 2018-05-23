@@ -169,6 +169,26 @@ The `.fd-panel-grid--4col` modifier will render a 4 column grid.
             <p>.fd-panel</p>
         </div>
     </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
 </div>
 {% endcapture %}
 {% include display-component.html component=default %}
@@ -178,7 +198,37 @@ The `.fd-panel-grid--4col` modifier will render a 4 column grid.
 ## Panel Grid with 5 columns
 The `.fd-panel-grid--5col` modifier will render a 5 column grid.
 {% capture default %}
-<div class="fd-panel-grid fd-panel-grid--4col">
+<div class="fd-panel-grid fd-panel-grid--5col">
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
     <div class="fd-panel">
         <div class="fd-panel__body">
             <p>.fd-panel</p>
@@ -208,7 +258,47 @@ The `.fd-panel-grid--5col` modifier will render a 5 column grid.
 ## Panel Grid with 6 columns
 The `.fd-panel-grid--6col` modifier will render a 6 column grid.
 {% capture default %}
-<div class="fd-panel-grid fd-panel-grid--4col">
+<div class="fd-panel-grid fd-panel-grid--6col">
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
     <div class="fd-panel">
         <div class="fd-panel__body">
             <p>.fd-panel</p>
