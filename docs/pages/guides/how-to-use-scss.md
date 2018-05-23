@@ -107,7 +107,7 @@ scss/
 - `core.scss`: The main purpose of core is elements and forms. It's like the reset and foundation.
 - `helpers.scss`: Includes various helper functions.
 - `icons.scss`: Fundamental UI's custom icon library.
-- '/theme/fundamental.scss': Includes fonts.
+- `/theme/fundamental.scss`: Includes fonts.
 - `layout.scss`: App level layout components such as top Overview of Core features bar, side nav, containers, panels, etc.
 
 You can choose to selectively import parts of the library that best fits the need of your project. Please note that components, icons, layout and helpers have a dependency on `settings.scss`. Therefore, `settings.scss` should always be included in case if you are not importing `all.scss`. For fonts, make sure you are importing `theme/fundamental.scss`
