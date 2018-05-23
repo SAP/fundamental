@@ -20,15 +20,15 @@ These are dumb containers only concerned with placement with no effect on their 
 
 * `.fd-ui`: The outermost full-screen root wrapper
     * `.fd-ui__header`: Global header
-    > <small>`.fd-ui__header--fixed`: Modifier to make the header persistent (sticky)</small>
+        * `.fd-ui__header--fixed`: Modifier to make the header persistent (sticky)
     * `.fd-ui__app`: The wrapper for the app content
         * `.fd-app`: The root application content container
             * `.fd-app__sidebar`: Optional sidebar navigation container
             * `.fd-app__main`: Main app content
     * `.fd_ui__footer`: Optional global footer
-    > <small>`.fd-ui__footer--fixed`: Modifier to make the footer persistent (sticky)</small>
+        * `.fd-ui__footer--fixed`: Modifier to make the footer persistent (sticky)
     * `.fd-ui__overlay`: Appended container for overlaying content
-    > <small>`.fd-overlay`: Common standalone component used to dim background</small>
+        * `.fd-overlay`: Common standalone component used to dim background
 
 ## Application with only Top Bar
 {: .docs-header-h2}
@@ -36,7 +36,7 @@ This is the master layout which provides the foundation for all page templates. 
 
 Both the header and footer can be fixed by applying the `.fd-ui--fixed` modifier to the `.fd-ui` container, or each can be fixed individual by apply `.fd-ui__header--fixed` or `.fd-ui__footer--fixed`.
 
-The `app` containers here provide additional structure to application content. 
+The `app` containers here provide additional structure to application content.
 
 {% capture app-layout-no-sidebar %}
 <div class="fd-ui fd-ui--fundamental">
