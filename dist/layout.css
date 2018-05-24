@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.0.0-beta-5
+* Fundamental-UI v1.0.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -493,11 +493,15 @@
   -ms-flex-align: center;
   align-items: center;
   border-bottom: solid 1px #eeeeef;
-  padding: 20px 20px
+  padding: 16px 20px;
+  font-size: .85714rem;
+  line-height: 1.33333;
+  font-weight: 400;
+  color: #6f7275
 }
 .fd-panel__title {
-  font-size: 1.71429rem;
-  line-height: 1.33333;
+  font-size: 1.14286rem;
+  line-height: 1.25;
   font-weight: 400;
   -webkit-box-flex: 1;
   -ms-flex: 1;
@@ -506,7 +510,9 @@
   color: #32363a
 }
 .fd-panel__actions {
-  margin-left: auto
+  margin-left: auto;
+  margin-top: -4px;
+  margin-bottom: -4px
 }
 .fd-panel__filters {
   padding: 12px 20px;
@@ -522,12 +528,11 @@
   overflow: hidden
 }
 .fd-panel__body {
-  padding: 20px 20px
+  padding: 16px 20px
 }
 .fd-panel__body--bleed,
 .fd-panel__body--full-bleed {
-  padding-left: 0;
-  padding-right: 0
+  padding: 0
 }
 .fd-panel__footer {
   display: -webkit-box;
@@ -538,6 +543,61 @@
   justify-content: center;
   padding: 16px 20px;
   border-top: solid 1px #eeeeef
+}
+/*!
+.fd-tile-grid+(--2col | --4col | --5col | --6col)
+*/
+.fd-panel-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative
+}
+@media (min-width:800px) {
+  .fd-panel-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 24px
+  }
+  .fd-panel-grid--2col {
+    grid-template-columns: repeat(2,1fr)
+  }
+  .fd-panel-grid--3col {
+    grid-template-columns: repeat(3,1fr)
+  }
+  .fd-panel-grid--4col {
+    grid-template-columns: repeat(4,1fr)
+  }
+  .fd-panel-grid--5col {
+    grid-template-columns: repeat(5,1fr)
+  }
+  .fd-panel-grid--6col {
+    grid-template-columns: repeat(6,1fr)
+  }
+  .fd-panel-grid--nogap,
+  .fd-panel-grid--nogutter {
+    grid-gap: 1px
+  }
+  .fd-panel-grid--nogap > *,
+  .fd-panel-grid--nogutter > * {
+    -webkit-box-shadow: none;
+    box-shadow: none
+  }
 }
 /*!
 .fd-overlay
