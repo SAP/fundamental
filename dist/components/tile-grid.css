@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.0.0-beta-5
+* Fundamental-UI v1.0.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -15,22 +15,15 @@
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column
+  flex-direction: column;
+  position: relative
 }
 .fd-tile-grid > * {
   margin-bottom: 0;
   border-radius: 0!important;
-  position: relative
-}
-.fd-tile-grid > ::after {
-  content: "";
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-right: solid 1px #f3f4f5;
-  border-bottom: solid 1px #f3f4f5;
-  position: absolute
+  position: relative;
+  border: solid 1px #f3f4f5;
+  border-width: 0 1px 1px 0
 }
 @media (min-width:800px) {
   .fd-tile-grid {
@@ -44,23 +37,22 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(calc(100% / 3),1fr));
-    grid-auto-rows: minmax(0,auto);
+    grid-template-columns: repeat(3,1fr);
     grid-gap: 0
   }
   .fd-tile-grid--2col {
-    grid-template-columns: repeat(auto-fill,minmax(calc(100% / 2),1fr))
+    grid-template-columns: repeat(2,1fr)
   }
   .fd-tile-grid--3col {
-    grid-template-columns: repeat(auto-fill,minmax(calc(100% / 3),1fr))
+    grid-template-columns: repeat(3,1fr)
   }
   .fd-tile-grid--4col {
-    grid-template-columns: repeat(auto-fill,minmax(calc(100% / 4),1fr))
+    grid-template-columns: repeat(4,1fr)
   }
   .fd-tile-grid--5col {
-    grid-template-columns: repeat(auto-fill,minmax(calc(100% / 5),1fr))
+    grid-template-columns: repeat(5,1fr)
   }
   .fd-tile-grid--6col {
-    grid-template-columns: repeat(auto-fill,minmax(calc(100% / 6),1fr))
+    grid-template-columns: repeat(6,1fr)
   }
 }
