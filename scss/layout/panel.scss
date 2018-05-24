@@ -11,7 +11,7 @@
 
 $block: #{$fd-namespace}-panel;
 .#{$block} {
-    $fd-panel-padding: fd-space("reg") fd-space("reg") !default;
+    $fd-panel-padding: fd-space("s") fd-space("reg") !default;
     $fd-panel-border: none !default;
     $fd-panel-background-color: fd-color("background",2) !default;
     $fd-panel-box-shadow: 0 5px 20px 0 rgba(fd-color("text"), 0.08) !default;
@@ -39,15 +39,19 @@ $block: #{$fd-namespace}-panel;
         //margin-bottom: fd-space(4);
         border-bottom: solid 1px $fd-panel-header-border-color;
         padding: $fd-panel-padding;
+        @include fd-type("-2");
+        color: fd-color("text", 3);
     }
     &__title {
-        @include fd-type("3");
+        @include fd-type("1");
         flex: 1;
         margin-bottom: 0;
         color: $fd-panel-title-color;
     }
     &__actions {
         margin-left: auto;
+        margin-top: -#{fd-space(base)};
+        margin-bottom: -#{fd-space(base)};
     }
     &__filters {
         padding: $fd-panel-filters-padding;
@@ -65,8 +69,7 @@ $block: #{$fd-namespace}-panel;
         padding: $fd-panel-padding;
         &--full-bleed,
         &--bleed {
-          padding-left: 0;
-          padding-right: 0;
+          padding: 0;
         }
     }
     &__footer {

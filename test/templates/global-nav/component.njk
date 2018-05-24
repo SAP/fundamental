@@ -44,7 +44,7 @@ global_nav:
         {{  button(
             { label: 'Suite Name' },
             modifier={ block: ['secondary', 'l'] },
-            aria={ label: 'BUTTON_LABEL', haspopup: true , controls: 'launchpad' }
+            aria={ haspopup: true , controls: 'launchpad' }
         )}}
 
         {{ mega_menu(
@@ -59,7 +59,7 @@ global_nav:
 
         {%- if properties.context_menu -%}
         <div class="fd-global-nav__context-menu">
-            {{ dropdown(properties.context_menu) | indent(12) }}
+            {{ dropdown(properties.context_menu, modifier={ button: "secondary", control: "no-border"}) | indent(12) }}
         </div>
         {%- endif -%}
 
@@ -90,17 +90,26 @@ global_nav:
                     classes='global-nav__btn'
                 )
             }}
-            {{  identifier(
+            {%- set wwid = identifier(
                 properties={
                   initials: "WW"
                 },
                 modifier={
                     block: ['s','circle']
                 },
-                aria=data.aria,
-                classes=['has-margin-right-xs']
-            )
-            }}        </div>
+                aria=data.aria) %}
+
+                {{  button(
+                        { label: wwid },
+                        modifier={ block: ['secondary', 'm'] },
+                        aria={ label: 'BUTTON_LABEL' },
+                        classes='global-nav__btn'
+                    )
+                }}
+
+
+
+            </div>
     </div>
 </nav>
 

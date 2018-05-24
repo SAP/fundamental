@@ -63,6 +63,7 @@ $block: #{$fd-namespace}-button;
       padding-right: $fd-button-padding-x;
       height: nth($defaults, 1);
       max-height: nth($defaults, 1);
+      min-width: nth($defaults, 1);
       transition: all $fd-button-transition-params;
       line-height: 1;
 
@@ -272,6 +273,7 @@ $block: #{$fd-namespace}-button;
         @include fd-icon-size(nth($list, 3), "after");
         height: nth($list,1);
         max-height: nth($list, 1);
+        min-width: nth($list, 1);
         line-height: 1;
         @if $key == "xs" {
           padding-left: $fd-button-padding-x / 1.25;
