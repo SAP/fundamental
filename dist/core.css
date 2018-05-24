@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.0.0-beta-5
+* Fundamental-UI v1.0.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -483,7 +483,7 @@ input[type=checkbox]::before {
   content: "";
   width: 10px;
   height: 5px;
-  border-color: #f3f4f5;
+  border-color: transparent;
   border-style: solid;
   border-width: 0 0 2px 2px;
   -webkit-transform: rotate(-45deg);
@@ -492,6 +492,9 @@ input[type=checkbox]::before {
   z-index: 2;
   top: calc(50% - 4px);
   left: calc(50% - 10px/2)
+}
+input[type=checkbox]:checked::before {
+  border-color: #fff
 }
 input[type=checkbox].is-disabled::before,
 input[type=checkbox][aria-disabled=true]::before,
@@ -514,7 +517,7 @@ input[type=radio]::after {
   background-color: transparent
 }
 input[type=radio]:checked {
-  background-color: #f3f4f5
+  background-color: #fff
 }
 input[type=radio]:checked::after {
   background-color: #0a6ed1
