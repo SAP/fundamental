@@ -7,7 +7,10 @@
 {% set css_deps = [] %}
 
 {% block content %}
+<style>
+main {background-color: white;}
 
+</style>
     <h1>calendar</h1>
 
     <!-- output the component example and the code snippet -->
@@ -26,10 +29,20 @@
             properties={
               "month": 0,
               "year": 2018,
-              "daysOffset": 6,
               "today": 3,
-              "block": [4,29],
-              "selected": 30
+              "dates": {
+                "daysOffset": 6,
+                "block": [4,20],
+                "selected": 30,
+                "selectedRange": [16,25],
+                "disablePast": true
+              },
+              "months": {
+                "selected": 2
+              },
+              "years": {
+                "selected": 6
+              }
             },
             modifier={
                 block: data.modifier.block

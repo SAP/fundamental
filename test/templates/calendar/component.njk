@@ -79,7 +79,7 @@ calendar:
 {% macro calendar_dates(id, properties={}, modifier={}, state={}, aria={}) -%}
   {%- set month = data.months[properties.month] %}
   {%- set monthTotalDays = month.days %}
-  {%- set daysOffset = properties.daysOffset %}
+  {%- set daysOffset = properties.dates.daysOffset %}
   {%- set totalCells = 7 * 5 %}
   {%- if monthTotalDays + daysOffset > totalCells %}
     {%- set totalCells = 7 * 6 %}
@@ -87,7 +87,7 @@ calendar:
   {%- set _predate = 31 %}
   {%- set _enddate = 0 %}
 <div class="fd-calendar__dates" id="{{id}}">
-  <table class="fd-calendar__table">
+  <table class="fd-calendar__table"{{ { role: 'grid'} | aria }}>
     {{ calendar_header_group() }}
     <tbody class="fd-calendar__group">
       <tr class="fd-calendar__row">
@@ -98,8 +98,10 @@ calendar:
       {%-endif %}
   {%- set date = loop.index - daysOffset %}
   {%- set _is_other_month = date < 1 or date > monthTotalDays %}
+  {%- set _is_disabled = properties.dates.disablePast and date < properties.today and not _is_other_month %}
   {%- if _is_other_month %}
     {%- if date < 1 %}
+      {%- set _is_disabled = properties.dates.disablePast %}
       {%- set date = _predate + date %}
     {%- else %}
       {%- set _enddate = _enddate + 1 %}
@@ -107,13 +109,15 @@ calendar:
     {%- endif %}
   {%- endif %}
   {%- set _is_today = date === properties.today and _is_other_month == false %}
-  {%- set _is_blocked = (date > properties.block[0] and date < properties.block[1]) and not _is_other_month %}
-  {%- set _is_selected = date === properties.selected and not _is_other_month %}
-  {%- if properties.selectedRange and not _is_other_month %}
-    {%- set _is_selected = date === properties.selectedRange[0] or date === properties.selectedRange[1] %}
-    {%- set _is_selected_range = date > properties.selectedRange[0] and date < properties.selectedRange[1] %}
+  {%- set _is_blocked = (date > properties.dates.block[0] and date < properties.dates.block[1]) and not _is_other_month %}
+  {%- set _is_selected = date === properties.dates.selected and not _is_other_month %}
+  {%- if properties.dates.selectedRange and not _is_other_month %}
+    {%- set _is_selected = date === properties.dates.selectedRange[0] or date === properties.dates.selectedRange[1] %}
+    {%- set _is_selected_range = date > properties.dates.selectedRange[0] and date < properties.dates.selectedRange[1] %}
+    {%- set _is_selected_range_first = date == properties.dates.selectedRange[0] %}
+    {%- set _is_selected_range_last = date == properties.dates.selectedRange[1] %}
   {%- endif %}
-        {{ calendar_item(date,modifier={ 'item': ['other-month' if _is_other_month else '', 'current' if _is_today else '' ] },state={ blocked: _is_blocked, selected: _is_selected, 'selected-range': _is_selected_range }) }}
+        {{ calendar_item(date,modifier={ 'item': ['other-month' if _is_other_month else '', 'current' if _is_today else '' ] },state={ blocked: _is_blocked, selected: _is_selected, 'selected-range': _is_selected_range, 'selected-range-first': _is_selected_range_first, 'selected-range-last': _is_selected_range_last, disabled: _is_disabled }) }}
       {%- endfor %}
       </tr>
     </tbody>
@@ -127,6 +131,7 @@ calendar:
     <ul class="fd-calendar__list">
     {%- for month in data.months %}
 {%- set _is_current = properties.month === loop.index0 %}
+{%- set _is_selected = properties.months.selected === loop.index0 %}
     {{ calendar_item(month.name | truncate(3, true, "."),modifier={ 'item': ['current' if _is_current else '' ] },state={ blocked: _is_blocked, selected: _is_selected }, el="li") }}
     {%- endfor %}
   </ul>
@@ -138,6 +143,7 @@ calendar:
       {%- for i in range(0,12) %}
       {%- set year = properties.year + loop.index0 %}
       {%- set _is_current = properties.year === year %}
+{%- set _is_selected = properties.years.selected === loop.index0 %}
           {{ calendar_item(properties.year + loop.index0,modifier={ 'item': ['current' if _is_current else '' ] },state={ blocked: _is_blocked, selected: _is_selected }, el="li") }}
       {%- endfor %}
     </ul>
@@ -162,6 +168,6 @@ calendar:
 {%- endmacro %}
 
 {% macro calendar_item(text, properties={}, modifier={}, state={}, aria={}, el="td") -%}
-      <{{el}} class="fd-calendar__item{{ modifier.item | modifier('calendar__item')}}{{ state | state}}">
+      <{{el}} class="fd-calendar__item{{ modifier.item | modifier('calendar__item')}}{{ state | state}}"{{ { role: 'gridcell' } | aria if el == 'td'  }}>
       <span class="fd-calendar__text">{{ text }}</span></{{el}}>
 {%- endmacro %}
