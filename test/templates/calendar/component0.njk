@@ -1,0 +1,120 @@
+<!--
+calendar:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{% set data = {
+    "days": [
+      "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"
+    ],
+    "months": [
+      {
+        "name": "January",
+        "days": 31
+      },
+      {
+        "name": "February",
+        "days": 28
+      },
+      {
+        "name": "March",
+        "days": 31
+      },
+      {
+        "name": "April",
+        "days": 30
+      },
+      {
+        "name": "May",
+        "days": 31
+      },
+      {
+        "name": "June",
+        "days": 30
+      },
+      {
+        "name": "January",
+        "days": 31
+      },
+      {
+        "name": "February",
+        "days": 28
+      },
+      {
+        "name": "March",
+        "days": 31
+      },
+      {
+        "name": "April",
+        "days": 30
+      },
+      {
+        "name": "May",
+        "days": 31
+      },
+      {
+        "name": "June",
+        "days": 30
+      }
+    ]
+  }
+%}
+{% macro calendar(properties={}, modifier={}, state={}, aria={}) -%}
+{%- set month = data.months[properties.month] %}
+{%- set daysOffset = properties.daysOffset %}
+{%- set monthTotalDays = month.days %}
+{%- set extraDays = totalCells - monthTotalDays %}
+{%- set totalCells = 7 * 5 %}
+{%- if monthTotalDays + properties.daysOffset > totalCells %}
+  {%- set totalCells = totalCells + 7 %}
+{% endif %}
+{%- set _enddate = 0 %}
+<div class="fd-calendar{{ modifier.block | modifier('calendar') }}{{ state | state }}"{{ aria | aria }}>
+  <table class="fd-calendar__grid{{ modifier.content | modifier('calendar__content') }}">
+    <thead class="fd-calendar__header">
+      <tr class="fd-calendar__row">
+      {%- for day in data.days %}
+         <th class="fd-calendar__column-header fd-calendar__day-of-week">{{day| truncate(1, true, "")}}</th>
+      {%- endfor %}
+      </tr>
+    </thead>
+    <tbody class="fd-calendar__body">
+  {%- set extradays = value %}
+      {%- set weeks = range(0, totalCells) %}
+      {%- for dates in weeks | batch(7) %}
+      <tr class="fd-calendar__row">
+        {%- if loop.first %}
+          {%- for _predate in range(0, properties.daysOffset) %}
+            <td class="fd-calendar__item fd-calendar__day fd-calendar__day--other-month">{{ 31 - properties.daysOffset + loop.index }}</td>
+          {%- endfor %}
+          {%- for date in range(0, 7 - properties.daysOffset) %}
+            {%- set _is_today = date === properties.today %}
+          {{_is_today}}
+            {{ calendar_item(date, properties, state={ today: _is_today }) }}
+             {# <td class="fd-calendar__item fd-calendar__day{{ 'today'
+              | state if date == properties.today }}">{{ date+1 }}</td> #}
+          {%- endfor %}
+        {%- else %}
+          {%- set start = loop.index0 * 7 - properties.daysOffset %}
+          {%- set end = start + 7  %}
+          {%- for date in range(start, end) %}
+          {%- if date > monthTotalDays - 1 %}
+            <td class="fd-calendar__item fd-calendar__day fd-calendar__day--other-month">{{ _enddate + 1 }}
+              {%- set _enddate = _enddate+1 -%}
+            </td>
+          {%- else %}
+            <td class="fd-calendar__item fd-calendar__day">{{ date+1 }}</td>
+          {%- endif %}
+          {%- endfor %}
+        {% endif %}
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+</div>
+{%- endmacro %}
+{% macro calendar_item(date, properties={}, modifier={}, state={}, aria={}) -%}
+  <td class="fd-calendar__item fd-calendar__day{{ state | state}}">{{ date+1 }}</td>
+{%- endmacro %}

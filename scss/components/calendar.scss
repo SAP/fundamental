@@ -1,0 +1,134 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+@import "./mixins";
+
+/*!
+.fd-calendar+(--no-border)
+    .fd-calendar__content+()
+    .fd-calendar__title+()
+*/
+$block: #{$fd-namespace}-calendar;
+
+//VARS
+//making these more readily available
+$fd-calendar-table-item-width: fd-space(9) !default;
+$fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
+
+%fd-calendar-item {
+  height: $fd-calendar-table-item-width;
+  min-width: $fd-calendar-table-item-width;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  border-radius: $fd-border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
+%fd-calendar-day-other-month {
+
+}
+%fd-calendar-item-current {
+  background-color: $fd-link-color--active;
+  color: fd-color("text-inverse");
+}
+%fd-calendar-day-blocked {
+
+}
+%fd-calendar-day-selected {
+  background-color: red;
+}
+
+
+.#{$block} {
+
+  //BLOCK BASE *******************************************
+  //set all BLOCK reset and baseline styles
+  @include fd-reset;
+  width: $fd-calendar-table-width;
+
+  //ELEMENTS *******************************************
+  &__dates {
+
+
+  }
+  &__months {
+      display: grid;
+
+  }
+  &__years {
+      display: grid;
+
+  }
+
+  //TABLE styles
+  &__table {
+    display: table;
+    border-collapse: collapse;
+    .#{$block}__item {
+      display: table-cell;
+    }
+  }
+  &__group {
+    display: table-row-group;
+  }
+  &__row {
+    display: table-row;
+  }
+  &__column-header {
+    @extend %fd-calendar-item;
+    display: table-cell;
+    &:hover {
+      cursor: default;
+    }
+  }
+
+
+  &__list {
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+  }
+
+
+
+
+  &__item {
+    @extend %fd-calendar-item;
+
+  }
+  &__day-of-week {
+    @include fd-type("-3");
+  }
+  &__item {
+    &--other-month {
+      background-color: pink;
+    }
+    &--current {
+      @extend %fd-calendar-item-current;
+    }
+    &.is-disabled {
+      background-color: gray;
+    }
+    &.is-blocked {
+      background-color: lightgray;
+      text-decoration: line-through;
+    }
+    &.is-selected {
+      @extend %fd-calendar-day-selected;
+    }
+    &.is-selected-range {
+      background-color: yellow;
+    }
+  }
+
+
+
+
+}
