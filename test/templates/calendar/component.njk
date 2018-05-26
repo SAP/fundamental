@@ -68,13 +68,23 @@ calendar:
   {%- set _grid_id = utils.id() %}
   {%- set _months_id = utils.id() %}
   {%- set _years_id = utils.id() %}
-<div class="fd-calendar">
-  {{ calendar_dates(_grid_id, properties) | indent(2) }}
-  {{ calendar_months(_months_id, properties) }}
-  {{ calendar_years(_years_id, properties) }}
+<div class="fd-calendar">{{properties.header.show}}
+  {%- if not properties.header.hide %}
+      {{ calendar_header({ months: _months_id, years: _years_id }, properties) }}
+  {%- endif %}
+  <div class="fd-calendar__content">
+    {%- if properties.dates %}
+    {{ calendar_dates(_grid_id, properties, aria={ hidden: properties.dates.show === false } ) | indent(2) }}
+    {%- endif %}
+    {%- if properties.months %}
+      {{ calendar_months(_months_id, properties, aria={ hidden: not properties.months.show === true } ) }}
+    {%- endif %}
+    {%- if properties.years %}
+      {{ calendar_years(_years_id, properties, aria={ hidden: not  properties.years.show === true  } ) }}
+    {%- endif %}
+  </div>
 </div>
 {%- endmacro %}
-
 
 {% macro calendar_dates(id, properties={}, modifier={}, state={}, aria={}) -%}
   {%- set month = data.months[properties.month] %}
@@ -86,7 +96,7 @@ calendar:
   {%- endif %}
   {%- set _predate = 31 %}
   {%- set _enddate = 0 %}
-<div class="fd-calendar__dates" id="{{id}}">
+<div class="fd-calendar__dates" id="{{id}}"{{ aria | aria }}>
   <table class="fd-calendar__table"{{ { role: 'grid'} | aria }}>
     {{ calendar_header_group() }}
     <tbody class="fd-calendar__group">
@@ -127,7 +137,7 @@ calendar:
 
 {% macro calendar_months(id, properties={}, modifier={}, state={}, aria={}) -%}
   {%- set month = data.months[properties.month] %}
-  <div class="fd-calendar__months{{ state | state}}"{{ aria | aria }} id="{{id}}">
+  <div class="fd-calendar__months{{ state | state}}" id="{{id}}"{{ aria | aria }}>
     <ul class="fd-calendar__list">
     {%- for month in data.months %}
 {%- set _is_current = properties.month === loop.index0 %}
@@ -150,10 +160,47 @@ calendar:
   </div>
 {%- endmacro %}
 
-{% macro calendar_header(properties={}, modifier={}, state={}, aria={}) -%}
+{% macro calendar_header(ids={},properties={}, modifier={}, state={}, aria={}) -%}
+  {%- set month = data.months[properties.month] %}
+  {%- set year = properties.year %}
   <header class="fd-calendar__header{{ state | state}}"{{ aria | aria }}>
+    <div class="fd-calendar__navigation">
+      <div class="fd-calendar__action">
+        {{  button(
+          {
+            icon: 'slim-arrow-left' },
+                modifier={ block: ['toolbar','xs'] },
+                aria={ label: 'Previous' })
+        }}
+      </div>
+      <div class="fd-calendar__action">
+        {{  button(
+            { label: month.name },
+            modifier={ block: ['secondary','s'] },
+            aria={ selected: properties.months.show === true,  controls: ids.months }
 
-
+          )
+        }}
+      </div>
+      <div class="fd-calendar__action">
+        {{  button(
+          {
+            label: year },
+            modifier={ block: ['secondary','s']
+          },
+          aria={ selected: properties.years.show === true, controls: ids.years }
+          )
+        }}
+      </div>
+      <div class="fd-calendar__action">
+        {{ button(
+          {
+            icon: 'slim-arrow-right' },
+                modifier={ block: ['toolbar','xs'] },
+                aria={ label: 'Next' })
+        }}
+      </div>
+    </div>
   </header>
 {%- endmacro %}
 

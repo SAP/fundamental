@@ -75,6 +75,11 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
 %fd-calendar-item-selected-range-last {
   border-radius: 0 $fd-border-radius $fd-border-radius 0;
 }
+%fd-calendar-content-hidden {
+  &[aria-hidden="true"], &.is-hidden {
+    display: none;
+  }
+}
 
 
 .#{$block} {
@@ -86,16 +91,31 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
 
   //ELEMENTS *******************************************
   &__dates {
-
-
+    @extend %fd-calendar-content-hidden;
   }
   &__months {
-      display: grid;
-
+    display: grid;
+    @extend %fd-calendar-content-hidden;
   }
   &__years {
-      display: grid;
+    display: grid;
+    @extend %fd-calendar-content-hidden;
+  }
 
+  &__header {
+    box-shadow: inset 0 -1px 0 0 fd-color("neutral",2);
+    height: fd-space(13);
+    display: flex;
+    align-items: center;
+  }
+  &__content {
+    padding: fd-space(xs) 0;
+  }
+  &__navigation {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
   }
 
   //TABLE styles
@@ -117,21 +137,14 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
     display: table-cell;
     &:hover {
       cursor: default;
+      background-color: transparent;
     }
   }
-
-
   &__list {
-
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
   }
-
-
-
-
   &__item {
     @extend %fd-calendar-item;
 

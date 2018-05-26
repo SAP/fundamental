@@ -4,7 +4,7 @@
 {% from "./component.njk" import calendar %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = [] %}
+{% set css_deps = ['icons','components/button'] %}
 
 {% block content %}
 <style>
@@ -25,124 +25,62 @@ main {background-color: white;}
         )
     }}
 
-    {{  calendar(
-            properties={
-              "month": 0,
-              "year": 2018,
-              "today": 3,
-              "dates": {
-                "daysOffset": 6,
-                "block": [4,20],
-                "selected": 30,
-                "selectedRange": [16,25],
-                "disablePast": true
-              },
-              "months": {
-                "selected": 2
-              },
-              "years": {
-                "selected": 6
-              }
-            },
-            modifier={
-                block: data.modifier.block
-            },
-            state=data.state,
-            aria=data.aria
-        )
-    }}
+        {% endset %}
+        {{ format(example) }}
 
 
-    {% endset %}
-    {{ format(example) }}
+        <br><br>
+
+  <h2>dates</h2>
+  {% set example %}
+  {{  calendar({
+    "month": 8,
+    "year": 2018,
+    "today": 6,
+    "dates": {
+      "daysOffset": 3,
+      "block": [25,29],
+      "selected": 15,
+      "disablePast": true
+    }
+    })
+  }}
+  {% endset %}
+  {{ format(example) }}
 
 
+<br><br>
 
+<h2>months</h2>
+{% set example %}
+{{  calendar({
+    "month": 0,
+    "year": 2018,
+    "today": 3,
+    "months": {
+      "selected": 2,
+      "show": true
+    }
+  })
+}}
+{% endset %}
+{{ format(example) }}
 
-
-
-    <hr>
-    <br>
-    <div class="fd-calendar">
-      <div class="fd-calendar__table">
-        <div class="fd-calendar__header">
-          <div class="fd-calendar__row">
-             <div class="fd-calendar__column-header fd-calendar__day-of-week">S</div>
-             <div class="fd-calendar__column-header fd-calendar__day-of-week">M</div>
-             <div class="fd-calendar__column-header fd-calendar__day-of-week">T</div>
-             <div class="fd-calendar__column-header fd-calendar__day-of-week">W</div>
-             <div class="fd-calendar__column-header fd-calendar__day-of-week">T</div>
-             <div class="fd-calendar__column-header fd-calendar__day-of-week">F</div>
-             <div class="fd-calendar__column-header fd-calendar__day-of-week">S</div>
-          </div>
-        </div>
-        <div class="fd-calendar__body">
-          <div class="fd-calendar__row">
-            <div class="fd-calendar__item">
-              <button class="fd-calendar__day fd-calendar__day--other-month">30</button>
-            </div>
-            <div class="fd-calendar__item">
-              <button class="fd-calendar__day fd-calendar__day--other-month">31</button>
-            </div>
-            <div class="fd-calendar__item">
-                 <button class="fd-calendar__day">1</button>
-            </div>
-            <div class="fd-calendar__item">
-                 <button class="fd-calendar__day">2</button>
-            </div>
-            <div class="fd-calendar__item">
-                 <button class="fd-calendar__day">3</button>
-            </div>
-            <div class="fd-calendar__item">
-                 <button class="fd-calendar__day">4</button>
-            </div>
-            <div class="fd-calendar__item">
-                 <button class="fd-calendar__day">5</button>
-            </div>
-          </div>
-          <div class="fd-calendar__row">
-                <div class="fd-calendar__item fd-calendar__day">6</div>
-                <div class="fd-calendar__item fd-calendar__day">7</div>
-                <div class="fd-calendar__item fd-calendar__day">8</div>
-                <div class="fd-calendar__item fd-calendar__day">9</div>
-                <div class="fd-calendar__item fd-calendar__day">10</div>
-                <div class="fd-calendar__item fd-calendar__day">11</div>
-                <div class="fd-calendar__item fd-calendar__day">12</div>
-          </div>
-          <div class="fd-calendar__row">
-                <div class="fd-calendar__item fd-calendar__day">13</div>
-                <div class="fd-calendar__item fd-calendar__day">14</div>
-                <div class="fd-calendar__item fd-calendar__day">15</div>
-                <div class="fd-calendar__item fd-calendar__day">16</div>
-                <div class="fd-calendar__item fd-calendar__day">17</div>
-                <div class="fd-calendar__item fd-calendar__day">18</div>
-                <div class="fd-calendar__item fd-calendar__day">19</div>
-
-          </div>
-          <div class="fd-calendar__row">
-                <div class="fd-calendar__item fd-calendar__day">20</div>
-                <div class="fd-calendar__item fd-calendar__day">21</div>
-                <div class="fd-calendar__item fd-calendar__day">22</div>
-                <div class="fd-calendar__item fd-calendar__day">23</div>
-                <div class="fd-calendar__item fd-calendar__day">24</div>
-                <div class="fd-calendar__item fd-calendar__day">25</div>
-                <div class="fd-calendar__item fd-calendar__day">26</div>
-
-          </div>
-          <div class="fd-calendar__row">
-                <div class="fd-calendar__item fd-calendar__day">27</div>
-                <div class="fd-calendar__item fd-calendar__day">28</div>
-                <div class="fd-calendar__item fd-calendar__day fd-calendar__day--other-month">1</div>
-                <div class="fd-calendar__item fd-calendar__day fd-calendar__day--other-month">2</div>
-                <div class="fd-calendar__item fd-calendar__day fd-calendar__day--other-month">3</div>
-                <div class="fd-calendar__item fd-calendar__day fd-calendar__day--other-month">4</div>
-                <div class="fd-calendar__item fd-calendar__day fd-calendar__day--other-month">5</div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
+<br><br>
+<h2>years</h2>
+{% set example %}
+{{  calendar({
+    "month": 0,
+    "year": 2018,
+    "today": 3,
+    "years": {
+      "selected": 3,
+      "show": true
+    }
+  })
+}}
+{% endset %}
+{{ format(example) }}
 
 
 {% endblock %}
