@@ -170,14 +170,14 @@ calendar:
           {
             icon: 'slim-arrow-left' },
                 modifier={ block: ['toolbar','xs'] },
-                aria={ label: 'Previous' })
+                aria={ label: 'Previous', disabled: properties.dates.disablePast })
         }}
       </div>
       <div class="fd-calendar__action">
         {{  button(
             { label: month.name },
             modifier={ block: ['secondary','s'] },
-            aria={ selected: properties.months.show === true,  controls: ids.months }
+            aria={ selected: properties.months.show === true, expanded: properties.months.show === true,  controls: ids.months }
 
           )
         }}
@@ -188,7 +188,7 @@ calendar:
             label: year },
             modifier={ block: ['secondary','s']
           },
-          aria={ selected: properties.years.show === true, controls: ids.years }
+          aria={ selected: properties.years.show === true, expanded: properties.years.show === true, controls: ids.years }
           )
         }}
       </div>
