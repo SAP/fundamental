@@ -4,9 +4,18 @@
 @import "./mixins";
 
 /*!
-.fd-calendar+(--no-border)
-    .fd-calendar__content+()
-    .fd-calendar__title+()
+.fd-calendar+()
+    .fd-calendar__header
+      .fd-calendar__navigation
+        .fd-calendar__action
+    .fd-calendar__content
+      .fd-calendar__dates(+[aria-hidden])
+      .fd-calendar__months(+[aria-hidden])
+      .fd-calendar__years(+[aria-hidden])
+        .fd-calendar__table
+        .fd-calendar__list
+          .fd-calendar__item(+[--other-month,--current,--disabled,--blocked],[is-selected,is-selected-range, is-selected-range-first,is-selected-range-last])
+            .fd-calendar__text
 */
 $block: #{$fd-namespace}-calendar;
 
