@@ -1,0 +1,73 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../icons/mixins";
+@import "./../functions";
+@import "./mixins";
+
+/*!
+.fd-popover+()
+    .fd-popover__control+([disabled])
+    .fd-popover__menu+()
+*/
+$block: #{$fd-namespace}-popover;
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-popover-menu-color: solid 1px $fd-forms-color !default;
+    $fd-popover-menu-border: solid 1px $fd-forms-border-color !default;
+    $fd-popover-menu-z-index: 2 !default;
+    $fd-popover-menu-background-color: fd-color(background) !default;
+    $fd-popover-menu-shadow: 0 0 4px 1px rgba(fd-color(neutral, 2), 1) !default;
+    //items
+    $fd-popover-menu-item-color: $fd-popover-menu-color !default;
+    $fd-popover-menu-item-color--hover: fd-color(text-inverse) !default;
+    $fd-popover-menu-item-background-color: $fd-popover-menu-background-color !default;
+    $fd-popover-menu-item-background-color--hover: darken(fd-color(action), 5%) !default;
+    $fd-popover-menu-item-padding: fd-space(3) fd-space(4) !default;
+    $fd-popover-menu-item-color--disabled: fd-color(text, 2);
+    //anim
+    $fd-popover-menu-item-transition-params: $fd-animation--speed ease-in !default;
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    @include fd-reset;
+    position: relative;
+    display: inline-block;
+
+    &__control {
+      position: relative;
+      margin-left: 0;
+      cursor: pointer;
+    }
+    &__menu {
+      padding-top: fd-space(base);
+      padding-bottom: fd-space(base);
+      margin-left: 0;
+      padding-left: 0;
+      min-width: 100%;
+      border: $fd-menu-border-color;
+      position: absolute;
+      white-space: nowrap;
+      z-index: $fd-menu-z-index;
+      border-radius: $fd-border-radius;
+      background-color: $fd-menu-background-color;
+      box-shadow: $fd-menu-box-shadow;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity $fd-menu-transition-params;
+      margin-top: 15px;
+      
+      &[aria-hidden="true"],
+      &.is-hidden {
+          opacity: 0;
+          visibility: hidden;
+      }
+      &:after {
+        @include triangle(16px, #ffffff, up);
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 8px;
+      }
+    }
+    @include fd-menu();
+}
