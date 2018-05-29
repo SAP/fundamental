@@ -8,8 +8,7 @@ folder: components
 summary:
 ---
 
-A tag is useful to show applied filters, selected values or any other small values to
-indicate the user of a state of a component or application.
+Tags are used to represent contextualizing information. They can be useful to show applied filters, selected values for form field or object metadata.
 
 <hr>
 
