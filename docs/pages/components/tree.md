@@ -7,7 +7,8 @@ permalink: components/tree.html
 folder: components
 ---
 
-The Tree component is used to display hierarchical data in tabular way. Permitting the user to dig deeper into the data in an simple way. Along with displaying the hierarchy information it can also contain other data in the same node as well.
+A tree is used to display data in a visual hierarchy.
+Items that contain additional items are called nodes, while items that do not contain any other items are called leaves. If available, a single topmost node is called a root node. Apart from the hierarchical structure of its nodes and leaves, a tree is similar to a list.
 
 <hr/>
 
@@ -37,7 +38,8 @@ The Tree component is used to display hierarchical data in tabular way. Permitti
     <li class="fd-tree__item" role="treeitem" id="inYUX852" aria-expanded="false">
         <div class="fd-tree__row">
             <div class="fd-tree__col fd-tree__col--control">
-                <button class="fd-tree__control" aria-label="Expand" aria-controls="inYUX852" aria-pressed="false"></button>
+                <button class="fd-tree__control" aria-label="Expand" aria-controls="inYUX852"
+                aria-pressed="false"></button>
                 First Level
             </div>
             <div class="fd-tree__col">
@@ -50,10 +52,10 @@ The Tree component is used to display hierarchical data in tabular way. Permitti
                 <span class="fd-label">
                     Inactive
                 </span>
-
             </div>
             <div class="fd-tree__col fd-tree__col--actions">
-                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179" aria-haspopup="true"></button>
+                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More"
+                aria-expanded="false" aria-controls="WQIDD179" aria-haspopup="true"></button>
                 <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179">
                     <li><a href="#" class="fd-dropdown__item">Edit</a></li>
                     <li><a href="#" class="fd-dropdown__item">Lock</a></li>
@@ -61,13 +63,13 @@ The Tree component is used to display hierarchical data in tabular way. Permitti
                     <li><a href="#" class="fd-dropdown__item">Delete</a></li>
                 </ul>
             </div>
-
         </div>
         <ul class="fd-tree__group fd-tree__group--sublevel-1 is-hidden" role="group" aria-hidden="true">
             <li class="fd-tree__item" role="treeitem" id="Bxd8s850" aria-expanded="false">
                 <div class="fd-tree__row">
                     <div class="fd-tree__col fd-tree__col--control">
-                        <button class="fd-tree__control" aria-label="Expand" aria-controls="Bxd8s850" aria-pressed="false"></button>
+                        <button class="fd-tree__control" aria-label="Expand" aria-controls="Bxd8s850"
+                        aria-pressed="false"></button>
                         Second Level
                     </div>
                     <div class="fd-tree__col">
@@ -80,25 +82,24 @@ The Tree component is used to display hierarchical data in tabular way. Permitti
                         <span class="fd-label">
                             Inactive
                         </span>
-
                     </div>
                     <div class="fd-tree__col fd-tree__col--actions">
-                        <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179-1" aria-haspopup="true"></button>
+                        <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More"
+                        aria-expanded="false" aria-controls="WQIDD179-1" aria-haspopup="true"></button>
                         <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179-1">
                             <li><a href="#" class="fd-dropdown__item">Edit</a></li>
                             <li><a href="#" class="fd-dropdown__item">Lock</a></li>
                             <li><a href="#" class="fd-dropdown__item">Duplicate</a></li>
                             <li><a href="#" class="fd-dropdown__item">Delete</a></li>
                         </ul>
-
-
                     </div>
                 </div>
                 <ul class="fd-tree__group fd-tree__group--sublevel-2 is-hidden" role="group" aria-hidden="true">
                     <li class="fd-tree__item" role="treeitem" id="qz9hB117" aria-expanded="false">
                         <div class="fd-tree__row">
                             <div class="fd-tree__col fd-tree__col--control">
-                                <button class="fd-tree__control" aria-label="Expand" aria-controls="qz9hB117" aria-pressed="false"></button>
+                                <button class="fd-tree__control" aria-label="Expand" aria-controls="qz9hB117"
+                                aria-pressed="false"></button>
                                 Third Level
                             </div>
                             <div class="fd-tree__col">
@@ -111,21 +112,23 @@ The Tree component is used to display hierarchical data in tabular way. Permitti
                                 <span class="fd-label">
                                     Inactive
                                 </span>
-
                             </div>
                             <div class="fd-tree__col fd-tree__col--actions">
-                                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179-2" aria-haspopup="true"></button>
-                                <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179-2">
+                                <button class="fd-button--secondary sap-icon--vertical-grip"
+                                aria-label="More"
+                                aria-expanded="false" aria-controls="WQIDD179-2"
+                                aria-haspopup="true"></button>
+                                <ul class="fd-dropdown__menu fd-contextual-menu"
+                                aria-hidden="true" id="WQIDD179-2">
                                     <li><a href="#" class="fd-dropdown__item">Edit</a></li>
                                     <li><a href="#" class="fd-dropdown__item">Lock</a></li>
                                     <li><a href="#" class="fd-dropdown__item">Duplicate</a></li>
                                     <li><a href="#" class="fd-dropdown__item">Delete</a></li>
                                 </ul>
-
-
                             </div>
                         </div>
-                        <ul class="fd-tree__group fd-tree__group--sublevel-3 is-hidden" role="group" aria-hidden="true">
+                        <ul class="fd-tree__group fd-tree__group--sublevel-3 is-hidden"
+                        role="group" aria-hidden="true">
                             <li class="fd-tree__item" role="treeitem">
                                 <div class="fd-tree__row">
                                     <div class="fd-tree__col fd-tree__col--control">
@@ -144,25 +147,24 @@ The Tree component is used to display hierarchical data in tabular way. Permitti
 
                                     </div>
                                     <div class="fd-tree__col fd-tree__col--actions">
-                                        <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179-3" aria-haspopup="true"></button>
-                                        <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179-3">
+                                        <button class="fd-button--secondary sap-icon--vertical-grip"
+                                        aria-label="More"
+                                        aria-expanded="false" aria-controls="WQIDD179-3"
+                                        aria-haspopup="true"></button>
+                                        <ul class="fd-dropdown__menu fd-contextual-menu"
+                                        aria-hidden="true" id="WQIDD179-3">
                                             <li><a href="#" class="fd-dropdown__item">Edit</a></li>
                                             <li><a href="#" class="fd-dropdown__item">Lock</a></li>
                                             <li><a href="#" class="fd-dropdown__item">Duplicate</a></li>
                                             <li><a href="#" class="fd-dropdown__item">Delete</a></li>
                                         </ul>
-
-
                                     </div>
                                 </div>
                             </li>
-
                         </ul>
                     </li>
-
                 </ul>
             </li>
-
             <li class="fd-tree__item" role="treeitem">
                 <div class="fd-tree__row">
                     <div class="fd-tree__col fd-tree__col--control">
@@ -178,28 +180,26 @@ The Tree component is used to display hierarchical data in tabular way. Permitti
                         <span class="fd-label">
                             Default
                         </span>
-
                     </div>
                     <div class="fd-tree__col fd-tree__col--actions">
-                        <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179-4" aria-haspopup="true"></button>
+                        <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More"
+                        aria-expanded="false" aria-controls="WQIDD179-4" aria-haspopup="true"></button>
                         <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179-4">
                             <li><a href="#" class="fd-dropdown__item">Edit</a></li>
                             <li><a href="#" class="fd-dropdown__item">Lock</a></li>
                             <li><a href="#" class="fd-dropdown__item">Duplicate</a></li>
                             <li><a href="#" class="fd-dropdown__item">Delete</a></li>
                         </ul>
-
-
                     </div>
                 </div>
             </li>
-
         </ul>
     </li>
     <li class="fd-tree__item" role="treeitem" id="lkEDI899" aria-expanded="false">
         <div class="fd-tree__row">
             <div class="fd-tree__col fd-tree__col--control">
-                <button class="fd-tree__control" aria-label="Expand" aria-controls="lkEDI899" aria-pressed="false"></button>
+                <button class="fd-tree__control" aria-label="Expand" aria-controls="lkEDI899"
+                aria-pressed="false"></button>
                 First Level
             </div>
             <div class="fd-tree__col">
@@ -212,10 +212,10 @@ The Tree component is used to display hierarchical data in tabular way. Permitti
                 <span class="fd-label">
                     Default
                 </span>
-
             </div>
             <div class="fd-tree__col fd-tree__col--actions">
-                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179-5" aria-haspopup="true"></button>
+                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More"
+                aria-expanded="false" aria-controls="WQIDD179-5" aria-haspopup="true"></button>
                 <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179-5">
                     <li><a href="#" class="fd-dropdown__item">Edit</a></li>
                     <li><a href="#" class="fd-dropdown__item">Lock</a></li>
@@ -240,10 +240,10 @@ The Tree component is used to display hierarchical data in tabular way. Permitti
                         <span class="fd-label">
                             Inactive
                         </span>
-
                     </div>
                     <div class="fd-tree__col fd-tree__col--actions">
-                        <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179-6" aria-haspopup="true"></button>
+                        <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More"
+                        aria-expanded="false" aria-controls="WQIDD179-6" aria-haspopup="true"></button>
                         <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179-6">
                             <li><a href="#" class="fd-dropdown__item">Edit</a></li>
                             <li><a href="#" class="fd-dropdown__item">Lock</a></li>
@@ -253,7 +253,6 @@ The Tree component is used to display hierarchical data in tabular way. Permitti
                     </div>
                 </div>
             </li>
-
         </ul>
     </li>
     <li class="fd-tree__item" role="treeitem">
@@ -271,10 +270,10 @@ The Tree component is used to display hierarchical data in tabular way. Permitti
                 <span class="fd-label">
                     Inactive
                 </span>
-
             </div>
             <div class="fd-tree__col fd-tree__col--actions">
-                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179-8" aria-haspopup="true"></button>
+                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More"
+                aria-expanded="false" aria-controls="WQIDD179-8" aria-haspopup="true"></button>
                 <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179-8">
                     <li><a href="#" class="fd-dropdown__item">Edit</a></li>
                     <li><a href="#" class="fd-dropdown__item">Lock</a></li>
