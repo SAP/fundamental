@@ -8,7 +8,11 @@ folder: components
 summary:
 ---
 
-NOTE: The .fd-tabs__item container is optional. You can use nav and a elements to the same effect.
+Tabs are based on a folder metaphor and used to separate content into different sections. Tabs should be ordered to create a visual hierarchy based on priority.
+
+<hr>
+
+## Tabs with `list` element
 
 {% capture default-tab %}
 <ul class="fd-tabs" role="tablist">
@@ -38,11 +42,11 @@ NOTE: The .fd-tabs__item container is optional. You can use nav and a elements t
     Tincidunt nunc
 </div>
 {% endcapture %}
-
-<br />
-
 {% include display-component.html component=default-tab %}
 
+<br/>
+
+## Tabs with `nav` element
 {% capture modified-tab %}
 <nav class="fd-tabs" role="tablist">
     <a class="fd-tabs__link" aria-controls="kf8369" href="#kf8369" role="tab">Link</a>
@@ -63,5 +67,4 @@ NOTE: The .fd-tabs__item container is optional. You can use nav and a elements t
     Tincidunt nunc
 </div>
 {% endcapture %}
-
 {% include display-component.html component=modified-tab %}
