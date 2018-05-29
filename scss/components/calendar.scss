@@ -1,0 +1,211 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+@import "./mixins";
+
+/*!
+.fd-calendar+()
+    .fd-calendar__header
+      .fd-calendar__navigation
+        .fd-calendar__action
+    .fd-calendar__content
+      .fd-calendar__dates(+[aria-hidden])
+      .fd-calendar__months(+[aria-hidden])
+      .fd-calendar__years(+[aria-hidden])
+        .fd-calendar__table
+        .fd-calendar__list
+          .fd-calendar__item(+[--other-month,--current,--disabled,--blocked],[is-selected,is-selected-range, is-selected-range-first,is-selected-range-last])
+            .fd-calendar__text
+*/
+$block: #{$fd-namespace}-calendar;
+
+//VARS
+//making these more readily available
+$fd-calendar-item-color: $fd-link-color--active !default;
+$fd-calendar-item-color--other-month: lighten(fd-color("text"), 50%) !default;
+$fd-calendar-item-color--disabled: lighten(fd-color("text"), 70%) !default;
+$fd-calendar-item-color--selected: fd-color("text-inverse") !default;
+$fd-calendar-item-color--current: $fd-calendar-item-color !default;
+$fd-calendar-item-background-color: fd-color("background",2) !default;
+$fd-calendar-item-background-color--hover: fd-color("neutral",1) !default;
+$fd-calendar-item-background-color--selected: $fd-link-color--active !default;
+$fd-calendar-item-background-color--selected-range: rgba($fd-link-color--active,0.07) !default;
+
+$fd-calendar-item-border-color--current: lighten($fd-link-color--active,40%) !default;
+
+$fd-calendar-table-item-width: fd-space(9) !default;
+$fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
+
+%fd-calendar-item {
+  @include fd-type("-1", "body");
+  color: $fd-calendar-item-color;
+  background-color: $fd-calendar-item-background-color;
+  height: $fd-calendar-table-item-width;
+  min-width: $fd-calendar-table-item-width;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  border-radius: $fd-border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    cursor: pointer;
+    background-color: $fd-calendar-item-background-color--hover;
+  }
+}
+%fd-calendar-item-other-month {
+  color: $fd-calendar-item-color--other-month;
+}
+%fd-calendar-item-disabled {
+  color: $fd-calendar-item-color--disabled;
+  &:hover {
+    cursor: not-allowed;
+    background-color: $fd-calendar-item-background-color;
+  }
+}
+%fd-calendar-item-current {
+  position: relative;
+  color: $fd-calendar-item-color--current;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: solid 2px $fd-calendar-item-border-color--current;
+    border-radius: $fd-border-radius;
+  }
+}
+%fd-calendar-item-blocked {
+  text-decoration: line-through;
+  &:hover {
+    cursor: not-allowed;
+    background-color: $fd-calendar-item-background-color;
+  }
+}
+%fd-calendar-item-selected {
+  background-color: $fd-calendar-item-background-color--selected;
+  //$fd-link-color--active;
+  color: $fd-calendar-item-color--selected;
+}
+%fd-calendar-item-selected-range {
+  background-color: $fd-calendar-item-background-color--selected-range;
+  border-radius: 0;
+}
+%fd-calendar-item-selected-range-first {
+  border-radius: $fd-border-radius 0 0 $fd-border-radius;
+}
+%fd-calendar-item-selected-range-last {
+  border-radius: 0 $fd-border-radius $fd-border-radius 0;
+}
+%fd-calendar-content-hidden {
+  &[aria-hidden="true"], &.is-hidden {
+    display: none;
+  }
+}
+
+
+.#{$block} {
+
+  //BLOCK BASE *******************************************
+  //set all BLOCK reset and baseline styles
+  @include fd-reset;
+  width: $fd-calendar-table-width;
+
+  //ELEMENTS *******************************************
+  &__dates {
+    @extend %fd-calendar-content-hidden;
+  }
+  &__months {
+    display: grid;
+    @extend %fd-calendar-content-hidden;
+  }
+  &__years {
+    display: grid;
+    @extend %fd-calendar-content-hidden;
+  }
+  &__header {
+    box-shadow: inset 0 -1px 0 0 fd-color("neutral",2);
+    height: fd-space(13);
+    display: flex;
+    align-items: center;
+  }
+  &__content {
+    padding: fd-space(xs) 0;
+  }
+  &__navigation {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  //TABLE styles
+  &__table {
+    display: table;
+    border-collapse: collapse;
+    .#{$block}__item {
+      display: table-cell;
+    }
+  }
+  &__group {
+    display: table-row-group;
+  }
+  &__row {
+    display: table-row;
+  }
+  &__column-header {
+    @extend %fd-calendar-item;
+    display: table-cell;
+    &:hover {
+      cursor: default;
+      background-color: transparent;
+    }
+  }
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &__item {
+    @extend %fd-calendar-item;
+
+  }
+  &__day-of-week {
+    @include fd-type("-3","body");
+    color: fd-color("text",3);
+  }
+  &__item {
+    &--other-month {
+      @extend %fd-calendar-item-other-month;
+    }
+    &--current {
+      @extend %fd-calendar-item-current;
+    }
+    &--disabled,
+    &.is-disabled,
+    &[aria-disabled="true"] {
+      @extend %fd-calendar-item-disabled;
+    }
+    &--blocked,
+    &.is-blocked {
+      @extend %fd-calendar-item-blocked;
+    }
+    &.is-selected {
+      @extend %fd-calendar-item-selected;
+    }
+    &.is-selected-range {
+      @extend %fd-calendar-item-selected-range;
+      &-first {
+        @extend %fd-calendar-item-selected-range-first;
+      }
+      &-last {
+        @extend %fd-calendar-item-selected-range-last;
+      }
+    }
+  }
+
+
+}

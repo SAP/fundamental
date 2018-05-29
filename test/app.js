@@ -39,9 +39,11 @@ env.addFilter('modifier', function(array=[],element="",namespace="") {
     var _ns = namespace || GLOBALS.namespace;
     //is string
     if (typeof array === "string") {
+        if(array === "") { return; }
         return ` ${_ns}-${element}--${array}`;
     }
     var mods = array.map((mod) => {
+      if(mod === "") { return; }
          return ` ${_ns}-${element}--${mod}`;
     })
     //console.log(mods.join());

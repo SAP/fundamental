@@ -1,0 +1,147 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+
+/*!
+.fd-date-picker+(--no-border)
+    .fd-date-picker__content+()
+    .fd-date-picker__title+()
+*/
+$block: #{$fd-namespace}-date-picker;
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-date-picker-border-color: fd-color(primary, 1) !default;
+    $fd-date-picker-content-border-color: fd-color(neutral, 4) !default;
+    $fd-date-picker-border-color--selected: fd-color(primary) !default;
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    @include fd-reset;
+
+
+    %day-mark {
+        position: relative;
+        &:after {
+            display: block;
+            content: '';
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: calc(50% - 15px);
+            top: calc(50% - 15px);
+            border-radius: 4px;
+            border-style: solid;
+            border-width: 1px;
+
+        }
+    }
+
+    .datepicker {
+        position: relative;
+      //  width: 296px;
+        border: solid 1px color(mediumgray);
+        border-radius: 4px;
+        padding: space(s) 0;
+
+        table {
+            width: auto;
+        }
+        th, td {
+          //  @include weight;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            height: 40px;
+            vertical-align: middle;
+        }
+        tbody {
+
+        }
+
+        //targeted tweaks
+        thead {
+            &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                border-bottom: solid 1px color(midnightblack);
+                width: 100%;
+                height: 1px;
+                left: 0;
+                top: 76px;
+            }
+            tr:nth-child(1) {
+                //prev, next and month row
+                th {
+
+                }
+                th {
+                  //  @include type(m);
+                    color: color(plum);
+                  //  @include weight(reg);
+                    vertical-align: top;
+                }
+                th.next, th.prev {
+                    cursor: pointer;
+                    text-align: left;
+                    &:after {
+                        display: inline-block;
+                        content: '';
+                        width: 10px;
+                        height: 10px;
+                        border-color: color(aqua);
+                        border-style: solid;
+                        border-width: 0 1px 1px 0;
+                        margin-left: 8px;
+                        transform: rotate(-45deg);
+                        position: relative;
+                    }
+                }
+                th.prev {
+                    transform: scaleX(-1);
+                }
+            }
+        }
+
+        //DAY OF WEEK
+        .dow {
+            padding-bottom: space(s);
+            height: 24px;
+          //  @include type(s);
+        }
+
+        //DAYS
+        .day {
+            width: 43px;
+            height: 43px;
+            cursor: pointer;
+            // @include type(s);
+            // @include weight(reg);
+        }
+
+        %range {
+            @extend %day-mark;
+            color: color(aqua);
+        }
+        .range, .range-start, .range-end {
+            @extend %range;
+        }
+        .active {
+            color: color(aqua);
+            @extend %day-mark;
+        }
+        .selected {
+            //not sure what this one does
+            color: color(mediumgray);
+            @extend %day-mark;
+        }
+        .old, .new {
+            color: color(mediumgray);
+        }
+
+    }
+
+
+
+}
