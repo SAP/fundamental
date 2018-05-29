@@ -8,12 +8,12 @@ folder: components
 summary:
 ---
 
-Use pagination components in conjunction with Tables (recommended) or Cards (if needed) to allow for more efficient performance and quick access to specific records in the overall data set.
+Pagination is commonly used for tables and tiles. It allows users to see how many pages of content exist, to navigate and highlights which page they are currently viewing.
 
 <hr>
 
 ## First Page
-When the first page is active, the previous link should be disabled.
+When the first page is active, the Back arrow should be disabled.
 
 {% capture pagination %}
 <div class="fd-pagination">
@@ -35,7 +35,6 @@ When the first page is active, the previous link should be disabled.
 <br>
 
 ## Second Page
-Example with second page active.
 
 {% capture pagination-second %}
 <div class="fd-pagination">
@@ -105,7 +104,7 @@ Example with second page active.
 <br>
 
 ## Last Page
-On the last page, the next link should be disabled.
+On the last page, the Next arrow should be disabled.
 
 {% capture pagination-last %}
 <div class="fd-pagination">
