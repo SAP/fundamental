@@ -1,6 +1,6 @@
 ---
 title: Toggle
-keywords: toggle`
+keywords: toggle
 sidebar: left-navigation-sidebar
 toc: false
 permalink: components/toggle.html
@@ -9,15 +9,13 @@ folder: components
 
 The toggle component is used to activate or deactivate an element. Uses a visual metaphor that is know to the user with visible differences between on and off state.
 
-It is also recommended to use it always with a label to let know the user what is the element/setting that is been activated/deactivated.
-
-Toggles can be also used as a standalone element in a screen, to set properties like "visible", "active", "published", etc.
+It is recommended to always display the toggle with a label above it as well as the label of the selected state. For example, the label above would be Active, the toggle state would be "on" and the selected state label displayed to the right of the toggle would be "Yes".
 
 <hr/>
 
 ## Toggle Sizes
 
-The toggle can be set to 3 sizes: **small**, **normal** and **large**. When used with forms is recommended to use the **small** size, to keep consistency with the other form components.
+The toggle can be set to 3 sizes: `--small`, normal and `--large`. When used with forms, it is recommended to use the small size so that form components will be consistent.
 
 
 {% capture default %}
@@ -58,7 +56,7 @@ The toggle can be set to 3 sizes: **small**, **normal** and **large**. When used
 
 ## Disabled state
 
-The toggle can be set to the disable state and still indicate if the element is active or inactive. For that just add the `disabled` parameter to the input element.
+The toggle can be set to the disable state and still indicate the state of the toggle. To do this, add the `disabled` parameter to the input element.
 
 {% capture toggle-disabled %}
 <div class="fd-form__item fd-form__item--check">
