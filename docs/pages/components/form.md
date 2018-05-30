@@ -7,12 +7,11 @@ permalink: components/form.html
 folder: components
 ---
 
-Form Elements include the layout of a field itself, checkboxes, radio buttons and states of a field. Use these components along with inline help and error state.
-
+Form elements include field layout, checkboxes, radio buttons and states of a field. Use these components along with inline help and error state.
 <hr/>
 
 ## Inputs
-Inputs are the used to collect data from the user. When a field is required the **label** is displayed in bold and noted by asterisk *
+Inputs are used to collect data from the user. When a field is required, the label is displayed in bold and noted by an asterisk (*).
 
 {% capture inputs %}
 <div class="fd-form__set">
@@ -50,11 +49,10 @@ Inputs are the used to collect data from the user. When a field is required the 
 
 ## Inputs help elements
 
-To make it easier for the user to understand what kind of information is should be entered; two types of help elements can be used.
+Help elements give the user information about the input. Two types of help elements can be used.
 
-The inline help element: displayed as an icon that when the user hover the cursor over it, shows the help indications. This help elements is used then the help indications are an aid to the user but not contain information they have to know right away.
-
-The help indications can be aso always visible when the user needs to be inform about it at all times, to avoid mistakes. This help element is then displayed bellow the input.
+- The inline help element is displayed as a ? Icon. On hover or click, help content is displayed.
+- Help content can also be visible at all times to avoid mistakes. This type of help generally contains validation rules about the data allowed in the input field. An example is "Maximum 20 characters". This is displayed below the input field.
 
 {% capture inputs-help %}
 <div class="fd-form__set">
@@ -86,16 +84,16 @@ The help indications can be aso always visible when the user needs to be inform 
 
 <br/>
 
-## Inputs state
-Input can reflect if the data entered is valid or not, for that, the state can be set:
-* **Normal**: No validation  state is displayed.
-* **Valid**: Used mostly when the data have a specific format, like an email address for example.
-* **Invalid**: The data entered is not valid and the input have to be corrected.
-* **Warning**: Less severe than invalid. Used to signal the user the date entered is formatted correctly but there are still some minor issues.
-* **Disabled**: Used to prevent the user to enter any data. Usually this state is set depending on other data entered.
-* **Read Only**: Used to display static information in the context of a Form.
+## Input States
+The state of the input field can reflect validity of the data entered, whether the input data is editable or disabled.
+* **Normal**: The field is editable but no validation has occurred
+* **Valid**: The data format entered has been validated and it's correct, such as an email address.
+* **Invalid**: The data entered is not valid and must be corrected.
+* **Warning**: The data entered is formatted correctly but there are other issues are problematic but will not stop the user from moving forward.
+* **Disabled**: This indicates the field is not editable. A common use case is that this field is dependent on a previous entry or selection within the form.
+* **Read Only**: Used to display static information in the context of a form.
 
-Along with **Invalid** and **Warning**, messages can be displayed to help the user to correct the errors.
+Along with Invalid and Warning, error messages should be displayed below the field so the user can correct the error and move forward.
 
 {% capture inputs %}
 <div class="fd-form__item">
@@ -162,7 +160,7 @@ Along with **Invalid** and **Warning**, messages can be displayed to help the us
 <br>
 
 ## Select
-The *Simple Select* form component is used to let the user select on of various options. It also can be set to a **Disabled** state.
+The Select component is similar to a dropdown but is more commonly used within a form. It can also be set to a disabled state.
 
 {% capture select %}
 <div class="fd-form__set">
@@ -193,7 +191,7 @@ The *Simple Select* form component is used to let the user select on of various 
 <br/>
 
 ## Radio buttons
-Are used to let the user select only one of various options. All options are visible at all time. This component can also be **disabled** and displayed in a row.
+Radio buttons allow the user to see all options and select one. Generally, this is used when there are between 2-3 options. This component can also be disabled and displayed in a row.
 
 {% capture radio-buttons%}
 <fieldset class="fd-form__set">
@@ -258,7 +256,7 @@ Are used to let the user select only one of various options. All options are vis
 <br>
 
 ## Checkbox
-Checkboxes let the user select multiple options, while all the options been displayed. This component can be set **disabled** and also displayed in a row.
+WIth checkboxes, all options are visible and the user can make one or more selections. This component can be set disabled and also displayed in a row.
 
 {% capture checkbox %}
 <fieldset class="fd-form__set">
