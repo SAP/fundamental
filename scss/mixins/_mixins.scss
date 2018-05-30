@@ -127,10 +127,9 @@
 	}
 }
 //$size: -3,-2,-1,0,1,2,3,4,5
-//$font: body, header, code
 //$weight: reg, med, semi
 //$transform: none, uppercase, lowercase
-@mixin fd-type($size: "0", $font: default, $weight: default, $transform: default) {
+@mixin fd-type($size: "0", $weight: default, $transform: default) {
     //get type map — set default to 0
     $list: map-get($fd-type, "0");
     @if map-has-key($fd-type, $size) {
@@ -140,21 +139,6 @@
     }
     font-size: nth($list, 1);
     line-height: nth($list, 2);
-    //HANDLE TYPE FACE
-    @if $font != default {
-        //explicitly
-        @if map-has-key($fd-fonts, $font) {
-            font-family: map-get($fd-fonts, $font);
-        } @else {
-            @warn "Unknown `#{$fd-font}` in $fonts map";
-        }
-    } @else {
-        //implicity
-        $_font: nth($list, 3);
-        @if $_font != body {
-            font-family: map-get($fd-fonts, $_font);
-        }
-    }
     //HANDLE WEIGHT
     @if $weight != default {
         @include fd-weight($weight);
