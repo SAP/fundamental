@@ -85,6 +85,10 @@ $block: #{$fd-namespace}-form;
         color: $fd-form-label-color;
         &.is-required {
             @include fd-weight(bold);
+
+            &:after {
+                content: "*";
+            }
         }
     }
     &__control {
