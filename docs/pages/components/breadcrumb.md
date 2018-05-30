@@ -21,7 +21,7 @@ The breadcrumb allows users to see the current page and navigation path to that 
         <a class="fd-breadcrumb__link" href="#">Link Text</a>
     </li>
     <li class="fd-breadcrumb__item">
-        Link Text
+        <a class="fd-breadcrumb__link" href="#">Link Text</a>
     </li>
 </ul>
 {% endcapture %}
