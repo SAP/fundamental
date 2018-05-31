@@ -1,0 +1,66 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../icons/mixins";
+@import "./../functions";
+@import "./mixins";
+
+/*!
+.fd-menu+()
+    .fd-menu__menu+()
+*/
+$block: #{$fd-namespace}-menu;
+
+.#{$block} {
+  //SETTINGS
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-menu-menu-color: solid 1px $fd-forms-color !default;
+    $fd-menu-menu-border: solid 1px $fd-forms-border-color !default;
+    $fd-menu-menu-z-index: 2 !default;
+    $fd-menu-menu-background-color: fd-color(background) !default;
+    $fd-menu-menu-shadow: 0 0 4px 1px rgba(fd-color(neutral, 2), 1) !default;
+    //items
+    $fd-menu-menu-item-color: $fd-menu-menu-color !default;
+    $fd-menu-menu-item-color--hover: fd-color(text-inverse) !default;
+    $fd-menu-menu-item-background-color: $fd-menu-menu-background-color !default;
+    $fd-menu-menu-item-background-color--hover: darken(fd-color(action), 5%) !default;
+    $fd-menu-menu-item-padding: fd-space(3) fd-space(4) !default;
+    $fd-menu-menu-item-color--disabled: fd-color(text, 2);
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    @include fd-reset;
+    position: relative;
+    display: inline-block;
+    min-width: 100%;
+    white-space: nowrap;
+    background-color: $fd-menu-background-color;
+
+    &__group,
+    &__list {
+      //background-color: $fd-menu-background-color;
+      list-style: none;
+      margin-bottom: 0;
+    }
+    &__title {
+      display: block;
+      margin-bottom: 0;
+      padding: $fd-menu-title-padding $fd-menu-item-padding-x;
+      @include fd-type("-3", "body", "reg", uppercase);
+      color: $fd-menu-title-color;
+      background: $fd-menu-title-background-color;
+    }
+    &__item {
+      display: block;
+      padding: $fd-menu-item-padding-y $fd-menu-item-padding-x;
+      color: $fd-menu-item-color;
+      &:hover{
+        color: $fd-menu-item-color;
+        background-color: $fd-menu-item-background-color--hover;
+      }
+      &.is-selected,
+      &[aria-selected="true"] {
+          color: $fd-menu-item-color;
+          background-color: $fd-menu-item-background-color--selected;
+      }
+    }
+}

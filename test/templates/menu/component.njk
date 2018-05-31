@@ -1,0 +1,41 @@
+{% import "./../utils.njk" as utils %}
+<!--
+menu:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+
+{%- macro menu(properties={}, modifier=[], classes=[], aria=[]) -%}
+    <nav class="fd-menu{{ modifier | modifier('menu') }}{{ classes | classes }}"{{ aria | aria }} id="{{ properties.id }}">
+        {%- for item in properties.items %}
+            {%- if item.items %}
+                {%- if not loop.first %}
+                    </ul>
+                {%- endif %}
+                    {{ optgroup(item)| indent(2) }}
+                {%- else %}
+                {%- if loop.first %}
+                    <ul class="fd-menu__list">
+                {%- endif %}
+                    {{ option(item) }}
+            {%- endif %}
+        {%- endfor %}
+    </nav>
+{%- endmacro %}
+
+{%- macro option(properties={}) -%}
+    <li><a href="#" class="fd-menu__item">{{ properties.label }}</a></li>
+{%- endmacro %}
+
+{% macro optgroup(properties={}) -%}
+    <div class="fd-menu__group">
+        <h1 class="fd-menu__title">{{ properties.label }}</h1>
+        <ul class="fd-menu__list">
+            {%- for item in properties.items %}
+                {{ option(item) }}
+            {%- endfor %}
+        </ul>
+    </div>
+{%- endmacro %}
