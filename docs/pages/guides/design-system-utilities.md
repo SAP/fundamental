@@ -20,8 +20,7 @@ Use the text utilities to set the text style and the justification.
 <p class="fd-has-text-align-right">This text is right aligned</p>
 <p class="fd-has-text-transform-none">text with no transformation</p>
 {% endcapture %}
-{% include display-example.html component=text-util %}
-
+{% include display-component.html component=text-util %}
 ## Floats
 {: .docs-header-h2}
 
@@ -31,7 +30,7 @@ The float helper classes are used to control the element floats in the HTML elem
 <p class="fd-has-float-left">This text is floating on left</p>
 <p class="fd-has-float-right">This text is floating on right</p>
 {% endcapture %}
-{% include display-example.html component=float-util %}
+{% include display-component.html component=float-util %}
 
 ## Type Sizes
 {: .docs-header-h2}
@@ -48,7 +47,7 @@ Use these CSS classes to control the text size. Used mainly for content text, al
 <p class="fd-has-type-4">This is text type size 4</p>
 <p class="fd-has-type-5">This is text type size 5</p>
 {% endcapture %}
-{% include display-example.html component=type-util %}
+{% include display-component.html component=type-util %}
 
 ## Type Face
 {: .docs-header-h2}
@@ -60,7 +59,7 @@ Use these CSS classes to control the text size. Used mainly for content text, al
 <p class="fd-has-font-family-header">This is header text</p>
 <p class="fd-has-font-family-code">This is code text</p>
 {% endcapture %}
-{% include display-example.html component=type-face %}
+{% include display-component.html component=type-face %}
 
 ## Type Weights
 {: .docs-header-h2}
@@ -73,7 +72,7 @@ used with `fd-has-font-family-header` for illustrate weight variants
 <p class="fd-has-font-family-header fd-has-font-weight-semi">This is font with weight semi-bold</p>
 <p class="fd-has-font-family-header fd-has-font-weight-bold">This is font with weight bold</p>
 {% endcapture %}
-{% include display-example.html component=type-weight %}
+{% include display-component.html component=type-weight %}
 
 ## Colors
 {: .docs-header-h2}
@@ -145,7 +144,7 @@ Some examples of color helper classes.
 <p class="fd-has-background-color-status-3 fd-has-color-text-inverse">.fd-has-background-color-status-3</p>
 
 {% endcapture %}
-{% include display-example.html component=color %}
+{% include display-component.html component=color %}
 
 ## Margin and Padding
 {: .docs-header-h2}
@@ -209,7 +208,7 @@ Similar to adding margin or padding on all sides of an element, you can use the 
 <span class="fd-has-margin-base fd-has-padding-m fd-has-padding-bottom-none">.fd-has-padding-bottom-none</span>
 <span class="fd-has-margin-base fd-has-padding-m fd-has-padding-left-none">.fd-has-padding-left-none</span>
 {% endcapture %}
-{% include display-example.html component=margin %}
+{% include display-component.html component=margin %}
 
 
 ## Other Utilities
@@ -222,7 +221,7 @@ Similar to adding margin or padding on all sides of an element, you can use the 
 <span class="fd-has-clearfix">This element clear all</span>
 {% endcapture %}
 
-{% include display-example.html component=clear %}
+{% include display-component.html component=clear %}
 
 ### Display Flex
 {: .docs-header-h3}
@@ -231,7 +230,7 @@ Similar to adding margin or padding on all sides of an element, you can use the 
 <span class="fd-has-display-flex">This element is display flex</span>
 {% endcapture %}
 
-{% include display-example.html component=flex %}
+{% include display-component.html component=flex %}
 
 ### Display Block
 {: .docs-header-h3}
@@ -240,7 +239,7 @@ Similar to adding margin or padding on all sides of an element, you can use the 
 <span class="fd-has-display-block">This element is display block</span>
 {% endcapture %}
 
-{% include display-example.html component=block %}
+{% include display-component.html component=block %}
 
 ### Align items center
 {: .docs-header-h3}
@@ -249,7 +248,7 @@ Similar to adding margin or padding on all sides of an element, you can use the 
 <span class="fd-has-align-items-center">This element is align items center</span>
 {% endcapture %}
 
-{% include display-example.html component=block %}
+{% include display-component.html component=block %}
 
 ### Flex grow
 {: .docs-header-h3}
@@ -258,4 +257,4 @@ Similar to adding margin or padding on all sides of an element, you can use the 
 <span class="fd-has-flex-grow-1">This element is flex grow</span>
 {% endcapture %}
 
-{% include display-example.html component=block %}
+{% include display-component.html component=block %}

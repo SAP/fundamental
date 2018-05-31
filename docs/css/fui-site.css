@@ -3351,6 +3351,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     color: #6f7275; }
     .fd-form__label.is-required, .fd-form__legend.is-required {
       font-weight: 700; }
+      .fd-form__label.is-required:after, .fd-form__legend.is-required:after {
+        content: "*"; }
   .fd-form__control {
     min-width: 16px; }
   .fd-form__legend {
@@ -4885,6 +4887,132 @@ see layouts/panel-grid
 /*
 see layouts/panel
 */
+/*!
+.fd-calendar+()
+    .fd-calendar__header
+      .fd-calendar__navigation
+        .fd-calendar__action
+    .fd-calendar__content
+      .fd-calendar__dates(+[aria-hidden])
+      .fd-calendar__months(+[aria-hidden])
+      .fd-calendar__years(+[aria-hidden])
+        .fd-calendar__table
+        .fd-calendar__list
+          .fd-calendar__item(+[--other-month,--current,--disabled,--blocked],[is-selected,is-selected-range, is-selected-range-first,is-selected-range-last])
+            .fd-calendar__text
+*/
+.fd-calendar__column-header, .fd-calendar__item {
+  font-size: 0.92857rem;
+  line-height: 1.23077;
+  font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-weight: 400;
+  color: #0854a0;
+  background-color: #ffffff;
+  height: 36px;
+  min-width: 36px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .fd-calendar__column-header:hover, .fd-calendar__item:hover {
+    cursor: pointer;
+    background-color: #fafafa; }
+
+.fd-calendar__item--other-month {
+  color: #b0b6bb; }
+
+.fd-calendar__item--disabled, .fd-calendar__item.is-disabled, .fd-calendar__item[aria-disabled="true"] {
+  color: #e7e9ea; }
+  .fd-calendar__item--disabled:hover, .fd-calendar__item.is-disabled:hover, .fd-calendar__item[aria-disabled="true"]:hover {
+    cursor: not-allowed;
+    background-color: #ffffff; }
+
+.fd-calendar__item--current {
+  position: relative;
+  color: #0854a0; }
+  .fd-calendar__item--current::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: solid 2px #7bbaf9;
+    border-radius: 4px; }
+
+.fd-calendar__item--blocked, .fd-calendar__item.is-blocked {
+  text-decoration: line-through; }
+  .fd-calendar__item--blocked:hover, .fd-calendar__item.is-blocked:hover {
+    cursor: not-allowed;
+    background-color: #ffffff; }
+
+.fd-calendar__item.is-selected {
+  background-color: #0854a0;
+  color: #ffffff; }
+
+.fd-calendar__item.is-selected-range {
+  background-color: rgba(8, 84, 160, 0.07);
+  border-radius: 0; }
+
+.fd-calendar__item.is-selected-range-first {
+  border-radius: 4px 0 0 4px; }
+
+.fd-calendar__item.is-selected-range-last {
+  border-radius: 0 4px 4px 0; }
+
+[aria-hidden="true"].fd-calendar__dates, [aria-hidden="true"].fd-calendar__months, [aria-hidden="true"].fd-calendar__years, .is-hidden.fd-calendar__dates, .is-hidden.fd-calendar__months, .is-hidden.fd-calendar__years {
+  display: none; }
+
+.fd-calendar {
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #32363a;
+  font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  width: 252px; }
+  .fd-calendar__months {
+    display: grid; }
+  .fd-calendar__years {
+    display: grid; }
+  .fd-calendar__header {
+    box-shadow: inset 0 -1px 0 0 #eeeeef;
+    height: 52px;
+    display: flex;
+    align-items: center; }
+  .fd-calendar__content {
+    padding: 12px 0; }
+  .fd-calendar__navigation {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center; }
+  .fd-calendar__table {
+    display: table;
+    border-collapse: collapse; }
+    .fd-calendar__table .fd-calendar__item {
+      display: table-cell; }
+  .fd-calendar__group {
+    display: table-row-group; }
+  .fd-calendar__row {
+    display: table-row; }
+  .fd-calendar__column-header {
+    display: table-cell; }
+    .fd-calendar__column-header:hover {
+      cursor: default;
+      background-color: transparent; }
+  .fd-calendar__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); }
+  .fd-calendar__day-of-week {
+    font-size: 0.78571rem;
+    line-height: 1.45455;
+    font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-weight: 400;
+    color: #6f7275; }
+
 .fd-has-text-transform-none {
   text-transform: none !important; }
 
@@ -5274,7 +5402,7 @@ see layouts/panel
 .fd-has-margin-xs {
   margin: 12px; }
 
-.fd-has-padding-xs, .docs-example p {
+.fd-has-padding-xs, .docs-component p {
   padding: 12px; }
 
 .fd-has-margin-top-xs {
@@ -5886,7 +6014,7 @@ hr {
     background-color: #0a6ed1;
     color: #ffffff; }
   .docs-colors_example--4 {
-    background-color: black;
+    background-color: #f3f4f5;
     color: #ffffff; }
 
 .docs-breakpoints-table {
@@ -6090,6 +6218,145 @@ hr {
     .docs-component ul a:hover {
       text-decoration: none;
       color: inherit; }
+  .docs-component .fd-identifier--s {
+    display: inline-block;
+    background: transperant; }
+  .docs-component .fd-mega-menu__header-link,
+  .docs-component .fd-mega-menu__link,
+  .docs-component .fd-mega-menu__sublink,
+  .docs-component .fd-dropdown__item,
+  .docs-component .fd-breadcrumb__link,
+  .docs-component .fd-side-nav__link {
+    color: inherit; }
+    .docs-component .fd-mega-menu__header-link:hover,
+    .docs-component .fd-mega-menu__link:hover,
+    .docs-component .fd-mega-menu__sublink:hover,
+    .docs-component .fd-dropdown__item:hover,
+    .docs-component .fd-breadcrumb__link:hover,
+    .docs-component .fd-side-nav__link:hover {
+      text-decoration: none;
+      color: inherit; }
+  .docs-component .fd-mega-menu__list,
+  .docs-component .fd-mega-menu__sublist {
+    margin-left: 0; }
+  .docs-component__app {
+    height: 500px;
+    color: #fff;
+    position: relative; }
+    .docs-component__app .fd-ui__app,
+    .docs-component__app .fd-ui,
+    .docs-component__app .fd-app {
+      width: 100%;
+      min-height: 410px;
+      position: relative;
+      margin-top: 0; }
+    .docs-component__app .fd-ui__header,
+    .docs-component__app .fd-app__sidebar,
+    .docs-component__app .fd-ui__footer,
+    .docs-component__app .fd-app__main {
+      padding: 10px;
+      text-align: center;
+      color: #000; }
+    .docs-component__app .fd-ui__header, .docs-component__app .fd-ui__footer {
+      background-color: #dededf; }
+    .docs-component__app .fd-app__sidebar {
+      width: 250px;
+      background-color: #ffffff;
+      padding-top: 100px; }
+    .docs-component__app .fd-app__main {
+      background-color: #fafafa;
+      padding-top: 50px; }
+    .docs-component__app .fd-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0; }
+  .docs-component__app-example {
+    color: #fff;
+    position: relative; }
+    .docs-component__app-example .fd-ui__app, .docs-component__app-example .fd-ui, .docs-component__app-example .fd-app {
+      width: 100%;
+      min-height: 410px;
+      position: relative;
+      margin-top: 0; }
+    .docs-component__app-example .fd-app__sidebar {
+      width: 250px;
+      padding-top: 50px; }
+    .docs-component__app-example .fd-app__main {
+      background-color: #fafafa;
+      padding-top: 50px; }
+    .docs-component__app-example .fd-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0; }
+    .docs-component__app-example .fd-side-nav__list,
+    .docs-component__app-example .fd-side-nav__sublist,
+    .docs-component__app-example .fd-breadcrumb {
+      margin-left: 0; }
+    .docs-component__app-example .fd-action-bar__description {
+      padding: 0; }
+  .docs-component__page .fd-page,
+  .docs-component__page .fd-page__header,
+  .docs-component__page .fd-page__intro,
+  .docs-component__page .fd-page__content {
+    padding: 10px; }
+  .docs-component__section .fd-section,
+  .docs-component__section .fd-section__header,
+  .docs-component__section .fd-section__title,
+  .docs-component__section .fd-section__actions,
+  .docs-component__section .fd-section__footer,
+  .docs-component__section .fd-container {
+    padding: 10px; }
+  .docs-component__section .fd-section {
+    background-color: #ebebeb; }
+  .docs-component__section .fd-section__header {
+    background-color: #f3f4f5; }
+  .docs-component__section .fd-section__title {
+    background-color: #f5f5f5; }
+  .docs-component__section .fd-section__actions {
+    background-color: #ebebeb;
+    padding: 14px 10px; }
+  .docs-component__section .fd-section__footer {
+    background-color: #f3f4f5; }
+  .docs-component__section .fd-container {
+    background-color: #f3f4f5; }
+  .docs-component__panel .fd-panel,
+  .docs-component__panel .fd-panel__header,
+  .docs-component__panel .fd-panel__title,
+  .docs-component__panel .fd-panel__actions,
+  .docs-component__panel .fd-panel__footer,
+  .docs-component__panel .fd-container {
+    padding: 10px; }
+  .docs-component__panel .fd-panel {
+    background-color: #ebebeb; }
+  .docs-component__panel .fd-panel__header {
+    background-color: #f3f4f5; }
+  .docs-component__panel .fd-panel__title {
+    background-color: #f5f5f5; }
+  .docs-component__panel .fd-panel__actions {
+    background-color: #ebebeb;
+    padding: 14px 10px; }
+  .docs-component__panel .fd-panel__footer {
+    background-color: #f3f4f5; }
+  .docs-component__panel .fd-container {
+    background-color: #f3f4f5; }
+  .docs-component__container .fd-container {
+    background-color: #ebebeb;
+    padding: 20px;
+    max-width: 800px; }
+  .docs-component__container .fd-container--fluid {
+    max-width: 100%; }
+  .docs-component__container [class^="fd-col"] {
+    background-color: #f3f4f5;
+    height: 70px;
+    border: 1px solid #dededf;
+    text-align: center;
+    padding: 10px 5px; }
+  .docs-component__global-nav .fd-dropdown__list {
+    margin-left: 0; }
   .docs-component .fd-breadcrumb__link {
     color: #0a6ed1; }
     .docs-component .fd-breadcrumb__link:hover {
@@ -6119,153 +6386,6 @@ hr {
     color: rgba(10, 110, 209, 0.4);
     cursor: not-allowed;
     text-decoration: none; }
-
-.docs-example {
-  margin-bottom: -28px;
-  border-radius: 4px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  padding-bottom: 8px;
-  border: 1px solid #ccc; }
-  .docs-example .fd-tile__content {
-    padding: 20px; }
-  .docs-example .fd-identifier--s {
-    display: inline-block;
-    background: transperant; }
-  .docs-example .fd-mega-menu__header-link,
-  .docs-example .fd-mega-menu__link,
-  .docs-example .fd-mega-menu__sublink,
-  .docs-example .fd-dropdown__item,
-  .docs-example .fd-breadcrumb__link,
-  .docs-example .fd-side-nav__link {
-    color: inherit; }
-    .docs-example .fd-mega-menu__header-link:hover,
-    .docs-example .fd-mega-menu__link:hover,
-    .docs-example .fd-mega-menu__sublink:hover,
-    .docs-example .fd-dropdown__item:hover,
-    .docs-example .fd-breadcrumb__link:hover,
-    .docs-example .fd-side-nav__link:hover {
-      text-decoration: none;
-      color: inherit; }
-  .docs-example .fd-mega-menu__list,
-  .docs-example .fd-mega-menu__sublist {
-    margin-left: 0; }
-  .docs-example__app {
-    height: 500px;
-    color: #fff;
-    position: relative; }
-    .docs-example__app .fd-ui__app, .docs-example__app .fd-ui, .docs-example__app .fd-app {
-      width: 100%;
-      min-height: 410px;
-      position: relative;
-      margin-top: 0; }
-    .docs-example__app .fd-ui__header,
-    .docs-example__app .fd-app__sidebar,
-    .docs-example__app .fd-ui__footer,
-    .docs-example__app .fd-app__main {
-      padding: 10px;
-      text-align: center;
-      color: #000; }
-    .docs-example__app .fd-ui__header, .docs-example__app .fd-ui__footer {
-      background-color: #dededf; }
-    .docs-example__app .fd-app__sidebar {
-      width: 250px;
-      background-color: #ffffff;
-      padding-top: 100px; }
-    .docs-example__app .fd-app__main {
-      background-color: #fafafa;
-      padding-top: 50px; }
-    .docs-example__app .fd-overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0; }
-  .docs-example__app-example {
-    color: #fff;
-    position: relative; }
-    .docs-example__app-example .fd-ui__app, .docs-example__app-example .fd-ui, .docs-example__app-example .fd-app {
-      width: 100%;
-      min-height: 410px;
-      position: relative;
-      margin-top: 0; }
-    .docs-example__app-example .fd-app__sidebar {
-      width: 250px;
-      padding-top: 50px; }
-    .docs-example__app-example .fd-app__main {
-      background-color: #fafafa;
-      padding-top: 50px; }
-    .docs-example__app-example .fd-overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0; }
-    .docs-example__app-example .fd-side-nav__list,
-    .docs-example__app-example .fd-side-nav__sublist,
-    .docs-example__app-example .fd-breadcrumb {
-      margin-left: 0; }
-    .docs-example__app-example .fd-action-bar__description {
-      padding: 0; }
-  .docs-example__page .fd-page,
-  .docs-example__page .fd-page__header,
-  .docs-example__page .fd-page__intro,
-  .docs-example__page .fd-page__content {
-    padding: 20px; }
-  .docs-example__section .fd-section,
-  .docs-example__section .fd-section__header,
-  .docs-example__section .fd-section__title,
-  .docs-example__section .fd-section__actions,
-  .docs-example__section .fd-section__footer,
-  .docs-example__section .fd-container {
-    padding: 10px; }
-  .docs-example__section .fd-section {
-    background-color: #ebebeb; }
-  .docs-example__section .fd-section__header {
-    background-color: #f3f4f5; }
-  .docs-example__section .fd-section__title {
-    background-color: #f5f5f5; }
-  .docs-example__section .fd-section__actions {
-    background-color: #ebebeb;
-    padding: 14px 10px; }
-  .docs-example__section .fd-section__footer {
-    background-color: #f3f4f5; }
-  .docs-example__section .fd-container {
-    background-color: #f3f4f5; }
-  .docs-example__panel .fd-panel,
-  .docs-example__panel .fd-panel__header,
-  .docs-example__panel .fd-panel__title,
-  .docs-example__panel .fd-panel__actions,
-  .docs-example__panel .fd-panel__footer,
-  .docs-example__panel .fd-container {
-    padding: 10px; }
-  .docs-example__panel .fd-panel {
-    background-color: #ebebeb; }
-  .docs-example__panel .fd-panel__header {
-    background-color: #f3f4f5; }
-  .docs-example__panel .fd-panel__title {
-    background-color: #f5f5f5; }
-  .docs-example__panel .fd-panel__actions {
-    background-color: #ebebeb;
-    padding: 14px 10px; }
-  .docs-example__panel .fd-panel__footer {
-    background-color: #f3f4f5; }
-  .docs-example__panel .fd-container {
-    background-color: #f3f4f5; }
-  .docs-example__container .fd-container {
-    background-color: #ebebeb;
-    padding: 20px;
-    max-width: 800px; }
-  .docs-example__container .fd-container--fluid {
-    max-width: 100%; }
-  .docs-example__container [class^="fd-col"] {
-    background-color: #f3f4f5;
-    height: 70px;
-    border: 1px solid #dededf;
-    text-align: center;
-    padding: 10px 5px; }
-  .docs-example__global-nav .fd-dropdown__list {
-    margin-left: 0; }
 
 .docs-footer {
   border-top: 1px solid #cfdbe7;
