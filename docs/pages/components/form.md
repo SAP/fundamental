@@ -256,7 +256,7 @@ Radio buttons allow the user to see all options and select one. Generally, this 
 <br>
 
 ## Checkbox
-WIth checkboxes, all options are visible and the user can make one or more selections. This component can be set disabled and also displayed in a row.
+With checkboxes, all options are visible and the user can make one or more selections. This component can be set disabled and also displayed in a row.
 
 {% capture checkbox %}
 <fieldset class="fd-form__set">
