@@ -8,7 +8,7 @@ folder: components
 summary:
 ---
 
-Mega menu is used in conjunction with the global navigation and supports two levels of link nesting.
+Mega menu is used in conjunction with Context Switcher within the Global Navigation (link to Global Nav page) and supports two levels within a hierarchy.
 
 <hr>
 
