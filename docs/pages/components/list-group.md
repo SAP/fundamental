@@ -7,13 +7,13 @@ permalink: components/list-group.html
 folder: components
 ---
 
-The List Component can be used to display a list of items with simple information such as - scopes, names, etc.
+Lists and tables are similar as both usually contain a vertical list of data, but lists generally contain basic data and tables tend to hold more complex data. If the list is a complex hierarchy, it is best to use a tree.
 
 <hr>
 
 ## Simple List
 
-You can use a link to allow the user to access more information about list item.
+A link can be used to allow the user to access more details about the item.
 
 {% capture list-group-default %}
 <ul class="fd-list-group">
@@ -38,7 +38,7 @@ You can use a link to allow the user to access more information about list item.
 
 ## Lists with Action
 
-The List items can also contain quick actions, like: remove, edit, copy, etc.
+The List item can contain quick actions.
 
 {% capture list-group-action %}
 <ul class="fd-list-group">
@@ -74,9 +74,9 @@ The List items can also contain quick actions, like: remove, edit, copy, etc.
 <br>
 
 
-## List with Check boxes
+## List with Checkboxes
 
-Checkboxes can be used on the left, that enables the user to select multiple items for bulk actions.
+Checkboxes can be include on the left of each line for such purposes as bulk actions.
 
 {% capture list-group-actions-form %}
 <ul class="fd-list-group">
