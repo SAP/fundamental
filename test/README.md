@@ -52,7 +52,7 @@ If you have never setup the project, you need to do a few things first.
 - Install node from https://nodejs.org/en/
 - Install the [Github desktop application](https://desktop.github.com)
 - Choose "Clone a repository" and input URL `https://github.com/SAP/fundamental.git`
-- Change "Current Branch" to `v2.0`
+- Change "Current Branch" to `develop`
 - From the macOS menu bar, select "Repository > Open in Terminal"
 - Type `npm install`
 

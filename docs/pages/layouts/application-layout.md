@@ -55,8 +55,7 @@ The `app` containers here provide additional structure to application content.
     </div>
 </div>
 {% endcapture %}
-{% include display-example.html component=app-layout-no-sidebar class="app" %}
-
+{% include display-component.html component=app-layout-no-sidebar class="app" %}
 
 ## Application with Sidebar
 {: .docs-header-h2}
@@ -83,8 +82,7 @@ The sidebar is an optional `app` layout container and should be used with applic
     </div>
 </div>
 {% endcapture %}
-{% include display-example.html component=app-layout class="app" %}
-
+{% include display-component.html component=app-layout class="app" %}
 
 ## Application with UI overlay
 {: .docs-header-h2}
@@ -114,4 +112,4 @@ The container visibility can be toggled with the `aria-hidden` attribute.
     </div>
 </div>
 {% endcapture %}
-{% include display-example.html component=app-layout-no-sidebar class="app" %}
+{% include display-component.html component=app-layout-no-sidebar class="app" %}

@@ -8,7 +8,7 @@ folder: components
 summary:
 ---
 
-Loading indicators are used to signal the user that data on the page is still loading, or a process is been performed on the server.
+A loading spinner informs the user of an ongoing operation. Only one busy indicator should be shown at a time. The aria-hidden attribute is used to hide and show the element.
 
 Loading indicators are not visible all the time, only when needed. To show and hide the loading indicator the `aria-hidden` attribute is used to hide/show the element.
 
@@ -16,7 +16,7 @@ Loading indicators are not visible all the time, only when needed. To show and h
 
 ## Loader element
 
-The element used to display the loading indicator animation.
+The loading element is used to display the loading indicator animation.
 
 {% capture default %}
 <div class="fd-spinner" aria-hidden="false" aria-label="Loading">
@@ -29,9 +29,9 @@ The element used to display the loading indicator animation.
 <br>
 
 ## Usage with other elements
-The loading indicators is most often used within another component to indicate the loading state. Any container (even `ui-, app-, and page-level`) can be "activated" by setting `aria-busy="true"`.
+The loading indicator is most often used within another component to indicate the loading state. A container (even `ui-`, `app-`, and page-level) can be “activated” by setting `aria-busy="true"`.
 
-The spinner should be included inside the container. Its visibility can be toggled in relation to the `aria-busy` attribute. They should always be opposites, i.e, if currently loading, `section[aria-busy="true"], .fd-spinner[aria-hidden="false"]`, once the content is loaded, toggle to false and true respectively.
+The spinner should be included inside the container. Visibility can be toggled in relation to the aria-busy attribute. They should always be opposites, i.e, if currently loading, `section[aria-busy="true"]`, `.fd-spinner[aria-hidden="false"]`, once the content is loaded, toggle to false and true respectively.
 
 {% capture aria %}
 <div class="fd-panel" aria-busy="true">

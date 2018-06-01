@@ -31,7 +31,7 @@ Default container has a max-width of `1290px`.
  fd-container
 </div>
 {% endcapture %}
-{% include display-example.html component=container class="container" %}
+{% include display-component.html component=container class="container" %}
 
 ### Fluid Container
 {: .docs-header-h3}
@@ -43,7 +43,7 @@ Default container has a max-width of `1290px`.
  fd-container--fluid
 </div>
 {% endcapture %}
-{% include display-example.html component=container-fluid class="container" %}
+{% include display-component.html component=container-fluid class="container" %}
 
 ### Centered Container
 {: .docs-header-h3}
@@ -55,7 +55,7 @@ Default container has a max-width of `1290px`.
  fd-container--centered
 </div>
 {% endcapture %}
-{% include display-example.html component=container-centered class="container" %}
+{% include display-component.html component=container-centered class="container" %}
 
 ### Flex Container
 {: .docs-header-h3}
@@ -67,7 +67,7 @@ Default container has a max-width of `1290px`.
  fd-container--flex
 </div>
 {% endcapture %}
-{% include display-example.html component=container-flex class="container" %}
+{% include display-component.html component=container-flex class="container" %}
 
 ## Equal width Columns
 {: .docs-header-h2}
@@ -75,7 +75,7 @@ Default container has a max-width of `1290px`.
 ### 12 columns
 {: .docs-header-h3}
 
-This example use `.fd-col--1` to illustrate the how the grid works with the spacing.
+This component use `.fd-col--1` to illustrate the how the grid works with the spacing.
 
 {% capture container-flex %}
 <div class="fd-container fd-container--fluid">
@@ -93,7 +93,7 @@ This example use `.fd-col--1` to illustrate the how the grid works with the spac
     <div class="fd-col--1">col</div>
 </div>
 {% endcapture %}
-{% include display-example.html component=container-flex class="container" %}
+{% include display-component.html component=container-flex class="container" %}
 
 ### Three columns
 {: .docs-header-h3}
@@ -107,7 +107,7 @@ Using `.fd-col--4` you can build a three column layout.
     <div class="fd-col--4">col</div>
 </div>
 {% endcapture %}
-{% include display-example.html component=container-flex class="container" %}
+{% include display-component.html component=container-flex class="container" %}
 
 ### Two columns
 {: .docs-header-h3}
@@ -120,7 +120,7 @@ Probably the most used layout. With `.fd-col--6` you can achieve the two columns
     <div class="fd-col--6">col</div>
 </div>
 {% endcapture %}
-{% include display-example.html component=container-flex class="container" %}
+{% include display-component.html component=container-flex class="container" %}
 
 ## Unequal width columns
 {: .docs-header-h2}
@@ -136,7 +136,7 @@ You can use arbitrary column sizes depending on the information you need to disp
     <div class="fd-col--9">col</div>
 </div>
 {% endcapture %}
-{% include display-example.html component=container-flex class="container" %}
+{% include display-component.html component=container-flex class="container" %}
 
 The grid can be used with any column size.
 
@@ -152,21 +152,21 @@ Example of a three column layout.
     <div class="fd-col--3">col</div>
 </div>
 {% endcapture %}
-{% include display-example.html component=container-flex class="container" %}
+{% include display-component.html component=container-flex class="container" %}
 
 You can also shift columns to get a balanced visual design on your page.
 
 ### One column, shifted by three columns
 {: .docs-header-h3}
 
-In the following example we have only one columns that is shifted by 3 columns.
+In the following component we have only one columns that is shifted by 3 columns.
 
 {% capture container-flex %}
 <div class="fd-container fd-container--centered">
     <div class="fd-col--9 fd-col--shift-3">col</div>
 </div>
 {% endcapture %}
-{% include display-example.html component=container-flex class="container" %}
+{% include display-component.html component=container-flex class="container" %}
 
 ## Flex width Columns
 {: .docs-header-h2}
@@ -186,7 +186,7 @@ Inside flex containers, use .fd-col to evenly fill the left over space. The colu
     <div class="fd-col">flex col</div>
 </div>
 {% endcapture %}
-{% include display-example.html component=container-flex class="container" %}
+{% include display-component.html component=container-flex class="container" %}
 
 ### Three columns using flexbox
 {: .docs-header-h3}
@@ -200,4 +200,4 @@ Inside flex containers, use .fd-col to distribute space with no margin.
     <div class="fd-col">flex col</div>
 </div>
 {% endcapture %}
-{% include display-example.html component=container-flex class="container" %}
+{% include display-component.html component=container-flex class="container" %}
