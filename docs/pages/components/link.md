@@ -8,7 +8,7 @@ folder: components
 summary:
 ---
 
-A link is used as a navigation element or as a show/hide element.
+Used when extra emphasis is needed especially when a link needs to standout from the surrounding text.
 
 <hr>
 
@@ -17,14 +17,6 @@ A link is used as a navigation element or as a show/hide element.
 * Disabled state can be rendered using class `is-disabled` and/or `aria-disabled="true"` attribute
 
 {% capture default %}
-<a href="#" class="fd-link">lorem ipsum</a>
-
-<br>
-
-<a href="#" class="fd-link" aria-selected="true">lorem ipsum</a>
-
-<br>
-
-<a href="#" class="fd-link" aria-disabled="true">lorem ipsum</a>
+Lorem ipsum <a href="#" class="fd-link">dolor sit amet consectetur</a> adipiscing elit.
 {% endcapture %}
 {% include display-component.html component=default %}

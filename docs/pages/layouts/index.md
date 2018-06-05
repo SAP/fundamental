@@ -13,10 +13,10 @@ Layouts in Fundamental UI are for structuring the main parts of your application
 <br>
 
 <div class="fd-tile-grid fd-tile-grid--2col docs-tiles">
-    <a class="fd-tile" role="button" href="application-layouts.html">
+    <a class="fd-tile" role="button" href="application-layout.html">
         <div class="fd-tile__content">
              <h2 class="fd-tile__header">
-                 Application Layouts
+                 Application Layout
              </h2>
              <p class="fd-tile__description">
                  Main application structure, including Header, Sidebar, Content, Footer.
@@ -26,24 +26,24 @@ Layouts in Fundamental UI are for structuring the main parts of your application
     <a class="fd-tile" role="button" href="page-layout.html">
         <div class="fd-tile__content">
              <h2 class="fd-tile__header">
-                 Page Layouts
+                 Page Layout
              </h2>
              <p class="fd-tile__description">
                  Elements to structure the content your application page.
              </p>
         </div>
     </a>
-    <a class="fd-tile" role="button" href="section-layout.html">
+    <a class="fd-tile" role="button" href="section.html">
         <div class="fd-tile__content">
              <h2 class="fd-tile__header">
-                 Secton Layout
+                 Section
              </h2>
              <p class="fd-tile__description">
-                 Wrapper element for dividing a page into different sections 
+                 Wrapper element for dividing a page into different sections
              </p>
         </div>
     </a>
-    <a class="fd-tile" role="button" href="grid-layouts.html">
+    <a class="fd-tile" role="button" href="grid.html">
         <div class="fd-tile__content">
              <h2 class="fd-tile__header">
                  Grid
@@ -60,6 +60,16 @@ Layouts in Fundamental UI are for structuring the main parts of your application
              </h2>
              <p class="fd-tile__description">
                  Elements to organize components.
+             </p>
+        </div>
+    </a>
+    <a class="fd-tile" role="button" href="global-navigation.html">
+        <div class="fd-tile__content">
+             <h2 class="fd-tile__header">
+                 Global Nav
+             </h2>
+             <p class="fd-tile__description">
+                 Global Navigation to switch between different Apps
              </p>
         </div>
     </a>

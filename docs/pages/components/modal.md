@@ -8,7 +8,7 @@ folder: components
 summary:
 ---
 
-The modal is a container generally displayed in response to an action. It is used for short forms, confirmation messages or to display contextual information that does not require a page.
+The modal is a container generally displayed in response to an action. It is used for short forms, confirmation messages or to display contextual information that does not require a page. The modal should always be used in conjunction with the [Application Layout Containers](/layouts/application-layout.html). See an example [App layout page with Modal](/demo-pages/overlay-app-demo.html)
 
 <hr/>
 
