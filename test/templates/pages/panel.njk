@@ -1,7 +1,7 @@
 {% extends "./layouts/page.njk" %}
 {% from "./../format.njk" import format, code %}
 {% import "../layout/component.njk" as layout %}
-
+{% import "./../utils.njk" as utils %}
 {% from "../tree/component.njk" import tree %}
 {% from "../table/component.njk" import table %}
 {% from "../tag/component.njk" import tag %}
@@ -14,7 +14,7 @@
 {% set hide_page_header = true %}
 {% block page_content %}
 
-
+{%- set _id = utils.id() %}
 
 {% set panel %}
 {% call layout.panel() -%}
@@ -133,6 +133,7 @@
 ] %}
 
 {% set panel_filters_content %}
+
 {% call layout.panel() -%}
     {% call layout.panel_header({ title: "Items (1180)" }) -%}
         {% call layout.panel_actions() -%}
@@ -147,7 +148,7 @@
                       ]},modifier={block: ['s']}
           ) }}
 
-        {{  button({label: 'Filter',icon: 'add-filter' },modifier={block: ['toolbar','s']}) }}
+        {{  button({label: 'Filter',icon: 'filter' }, modifier={block: ['toolbar','s']}, aria={ controls: _id, haspopup: true, expanded: false, label: "Filter" }) }}
 
         {{  button_group(
           properties={
@@ -162,7 +163,7 @@
 
         {%- endcall %}
     {%- endcall %}
-    {% call layout.panel_filters(aria={ hidden: false }) -%}
+    {% call layout.panel_filters(properties={id: _id}, aria={ hidden: true }) -%}
 {% for item in panel_filters_items %}
 {{ dropdown(item, modifier={block: "s"}) }}
 {% endfor %}
