@@ -133,7 +133,7 @@
 
 {#
     <h2>Mixins</h2>
-    <h3><code>@mixin fd-type($size, $font, $weight, $transform)</code></h3>
+    <h3><code>@mixin fd-type($size, $weight, $transform)</code></h3>
     <p>Each type size has default family, weight and transform rules built in. Passing the size alone will return all default rules.</p>
     <p>Example:<br>
     <pre>
@@ -148,7 +148,7 @@
     <p>Example:<br>
     <pre>
     .small-header {
-        @include fd-type("-3",header,reg,none);
+        @include fd-type("-3",reg,none);
     }
     </pre>
     <table>
@@ -160,10 +160,6 @@
         <tr>
             <td>$size</td>
             <td>-3,-2,-1,0 (default),1,2,3,4,5</td>
-        </tr>
-        <tr>
-            <td>$font</td>
-            <td>body (default), header, code</td>
         </tr>
         <tr>
             <td>$weight</td>

@@ -8,7 +8,7 @@ folder: components
 summary:
 ---
 
-The breadcrumb allows users to see the current page and navigation path to that page. Users can navigate to previous levels int he path by clicking on those levels. By clicking on the current page, a dropdown allows users to access other pages at that same level.
+The breadcrumb allows users to see the current page and navigation path to that page. Users can navigate to previous levels in the path. When clicking on the current page, a dropdown allows users to access other pages at that same level.
 
 <hr>
 
@@ -21,7 +21,7 @@ The breadcrumb allows users to see the current page and navigation path to that 
         <a class="fd-breadcrumb__link" href="#">Link Text</a>
     </li>
     <li class="fd-breadcrumb__item">
-        Link Text
+        <a class="fd-breadcrumb__link" href="#">Link Text</a>
     </li>
 </ul>
 {% endcapture %}

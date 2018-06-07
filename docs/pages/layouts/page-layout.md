@@ -36,7 +36,7 @@ The `.fd-page__content` container should have one or more `.fd-section` containe
     </div>
 </article>
 {% endcapture %}
-{% include display-example.html component=page-layout  class="page"%}
+{% include display-component.html component=page-layout  class="page"%}
 
 <style media="screen">
     .fd-page__content{

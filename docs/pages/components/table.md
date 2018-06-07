@@ -7,13 +7,12 @@ permalink: components/table.html
 folder: components
 ---
 
-The Table component is a common component used to display data that can be compared. Usually a set of item of the same type which data is divided on columns to facilitate the comparison between items.
+A table is a set tabular data. Line items can support data, images and actions.
 
 <hr />
 
 ## Default Table
-
-Header columns should be present to allow the user to know and understand the data represented. When more details are needed, one of the columns data can be make a link to a details page, or a modal component with more data about the object.
+The header columns allows the user to easily understand the data represented.
 
 {% capture table-icon %}
 <table class="fd-table">
@@ -28,21 +27,27 @@ Header columns should be present to allow the user to know and understand the da
     </thead>
     <tbody>
         <tr>
-            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label" style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);"></span></td>
+            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
+            style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
+            </span></td>
             <td><a href="#" class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>Last Name</td>
             <td>01/26/17</td>
         </tr>
         <tr>
-            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label" style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);"></span></td>
+            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
+            style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
+            </span></td>
             <td><a href="#" class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>Last Name</td>
             <td>01/26/17</td>
         </tr>
         <tr>
-            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label" style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);"></span></td>
+            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
+            style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
+            </span></td>
             <td><a href="#" class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>Last Name</td>
@@ -51,14 +56,13 @@ Header columns should be present to allow the user to know and understand the da
     </tbody>
 </table>
 {% endcapture %}
-
 {% include display-component.html component=table-icon %}
 
 <br />
 
 ## Table with checkbox
-
-When needed to make bulk changes on multiple object at once, the checkbox input can be used at the beginning of the row. It is recommended to add the parameter `area-selected="true` to the row that is selected.
+The checkbox input can be used at the beginning of each row to allow for bulk actions.
+It is recommended to add the parameter `area-selected="true` to the row that is selected.
 
 {% capture table-checkbox %}
 <table class="fd-table">
@@ -96,14 +100,13 @@ When needed to make bulk changes on multiple object at once, the checkbox input 
     </tbody>
 </table>
 {% endcapture %}
-
 {% include display-component.html component=table-checkbox %}
 
 <br />
 
 ## Table with Contextual Menu
-
-When there is more than four actions to display we recommend the use of the contextual menu and display all the actions.
+When more than three actions exist per row and/or space doesn't allow for actions,
+a contextual menu can be substituted in order to display all actions in one menu.
 
 {% capture table-actions %}
 <table class="fd-table">
@@ -121,7 +124,8 @@ When there is more than four actions to display we recommend the use of the cont
             <td>First Name</td>
             <td>01/26/17</td>
             <td>
-                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179" aria-haspopup="true"></button>
+                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More"
+                aria-expanded="false" aria-controls="WQIDD179" aria-haspopup="true"></button>
                 <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179">
                     <li><a href="#" class="fd-dropdown__item">Edit</a></li>
                     <li><a href="#" class="fd-dropdown__item">Lock</a></li>
@@ -135,7 +139,8 @@ When there is more than four actions to display we recommend the use of the cont
             <td>First Name</td>
             <td>01/26/17</td>
             <td>
-                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179-2" aria-haspopup="true"></button>
+                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More"
+                aria-expanded="false" aria-controls="WQIDD179-2" aria-haspopup="true"></button>
                 <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179-2">
                     <li><a href="#" class="fd-dropdown__item">Edit</a></li>
                     <li><a href="#" class="fd-dropdown__item">Lock</a></li>
@@ -149,7 +154,8 @@ When there is more than four actions to display we recommend the use of the cont
             <td>First Name</td>
             <td>01/26/17</td>
             <td>
-                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179-3" aria-haspopup="true"></button>
+                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More"
+                aria-expanded="false" aria-controls="WQIDD179-3" aria-haspopup="true"></button>
                 <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179-3">
                     <li><a href="#" class="fd-dropdown__item">Edit</a></li>
                     <li><a href="#" class="fd-dropdown__item">Lock</a></li>
@@ -161,5 +167,4 @@ When there is more than four actions to display we recommend the use of the cont
     </tbody>
 </table>
 {% endcapture %}
-
 {% include display-component.html component=table-actions %}

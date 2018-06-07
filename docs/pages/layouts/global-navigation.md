@@ -145,4 +145,4 @@ Elements and positioning in the global navigation are optional but included are:
   </div>
 </nav>
 {% endcapture %}
-{% include display-example.html component=app-layout class="global-nav" %}
+{% include display-component.html component=app-layout class="global-nav" %}

@@ -187,14 +187,13 @@ The following spacing options are available -
 ### Type Mixin
 {:.docs-header-h3}
 
-You can utilize the type mixin to render size, line height, face, weight and transformation - <br> `fd-type("size", font, weight, transform)`
+You can utilize the type mixin to render size, line height, weight and transformation - <br> `fd-type("size", weight, transform)`
 
 {% highlight css %}
 .foo {
-    @include fd-type(3, header, med, uppercase); /* renders the css below */
+    @include fd-type(3, med, uppercase); /* renders the css below */
     /* font-size: 1.125rem; */
     /* line-height: 1.33334; */
-    /* font-family: sans-serif; */
     /* font-weight: 500; */
     /* text-transform: uppercase; */
 }
@@ -204,6 +203,5 @@ You can utilize the type mixin to render size, line height, face, weight and tra
 | Option      | Value                                          |
 | ----------- |----------------------------------------------- |
 | `size`      | `-3`, `-2`, `-1`, `0`, `1`, `2`, `3`, `4`, `5` |
-| `font`      | `body`, `header`, `code`                       |
 | `weight`    | `reg`, `med`, `semi`                           |
 | `transform` | `none`, `uppercase`, `lowercase`               |

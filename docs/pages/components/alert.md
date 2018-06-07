@@ -1,6 +1,6 @@
 ---
-title: Alerts
-keywords: alert, alerts
+title: Alert
+keywords: alert
 sidebar: left-navigation-sidebar
 toc: false
 permalink: components/alert.html
@@ -27,7 +27,7 @@ The alert provides information that is useful and relevant, but not critical. It
 ## Warning
 The alert warns of potential issues, but the user can still continue. The user will need to dismiss the message.
 
-Add the modifier class `fd-alert--warning` for Notification alert.
+Add the modifier class `fd-alert--warning` for Warning alert.
 
 {% capture warning-alert %}
 <div class="fd-alert fd-alert--warning fd-alert--dismissible" role="alert" id="j2ALl423">

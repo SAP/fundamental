@@ -7,7 +7,7 @@ permalink: components/dropdown.html
 folder: components
 ---
 
-The dropdown component let the user select one of different options. It is more flexible than the normal Select.
+The dropdown component allows users to make one selection from a list. It is more flexible than the normal Select. Generally, it should be used when there are between 3 to 10 or more options.
 
 <hr />
 

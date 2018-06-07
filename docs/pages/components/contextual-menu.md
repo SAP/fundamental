@@ -8,7 +8,7 @@ folder: components
 summary:
 ---
 
-A More Options icon or the word, More, is used to indicate when there are more options than there is room to display them. On click or tap, the user to access a contextual menu.
+A More icon or the word, "More", is used to indicate there are more options than room to display them. On click or tap, a contextual menu opens.
 
 <hr>
 

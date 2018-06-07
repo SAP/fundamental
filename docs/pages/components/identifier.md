@@ -7,9 +7,9 @@ permalink: components/identifier.html
 folder: components
 ---
 
-A visual presentation option around using an icon or user initials .
+Identifier is a way to visually present something using an icon or user initials.
 
-Three sizes,
+There are four sizes:
 - Default matches the base font size (14px)
 - Small (`--s`) - 24px
 - Medium (`--m`) - 36px
@@ -18,7 +18,8 @@ Three sizes,
 <hr>
 
 ## Icon
-Include `role="presentation"` when the identifier is only used for illustrative purposes. For example, if the icon sits right next to a label then use the role.
+Include `role="presentation"` when the identifier is used for only illustrative purposes. For example, if the icon sits right next to a label, use role.
+
 {% capture identifier-icon %}
 <span class=" fd-identifier--s sap-icon--washing-machine" role="presentation"></span>
 <span class=" fd-identifier--m sap-icon--washing-machine" role="presentation"></span>
@@ -28,7 +29,8 @@ Include `role="presentation"` when the identifier is only used for illustrative 
 <br>
 
 ## Initials
-Include aria-label when there is no text equivalent of the identifier. It is not necessary if the identfier is illustrative only.
+Include aria-label when there is no text equivalent for the identifier. This is not necessary if the identifier is used for illustrative purposes only. See Icon above.
+
 {% capture identifier-initials %}
 <span class=" fd-identifier--s" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--m" aria-label="Wendy Wallace">WW</span>
@@ -38,7 +40,8 @@ Include aria-label when there is no text equivalent of the identifier. It is not
 <br>
 
 ## Circle
-A circle style can be rendered using the `--circle` modifier
+A circle style can be rendered using the `--circle` modifier.
+
 {% capture identifier-circle %}
 <span class=" fd-identifier--s fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--m fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
@@ -52,7 +55,9 @@ A circle style can be rendered using the `--circle` modifier
 <br>
 
 ## Transparent
-A transparent style can be rendered using the `--transparent` modifier
+
+A transparent style can be rendered using the `--transparent` modifier.
+
 {% capture identifier-transparent %}
 <span class=" fd-identifier--s fd-identifier--circle fd-identifier--transparent sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--m fd-identifier--circle fd-identifier--transparent sap-icon--money-bills" role="presentation"></span>
@@ -66,7 +71,8 @@ A transparent style can be rendered using the `--transparent` modifier
 <br>
 
 ## Accent Colors
-Use helpers classes tp change the background colors, e.g., `.fd-has-background-color-accent-10`
+Use helpers classes to change the background colors, for example, `.fd-has-background-color-accent-9`.
+
 {% capture identifier-accent-colors %}
 <span class=" fd-identifier--m sap-icon--money-bills fd-has-background-color-accent-1" role="presentation"></span>
 <span class=" fd-identifier--m sap-icon--money-bills fd-has-background-color-accent-2" role="presentation"></span>

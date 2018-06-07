@@ -8,13 +8,12 @@ folder: components
 summary:
 ---
 
-The modal is used as a container to be displayed in response to a action. It is commonly used to collect simple information with a short form, to get confirmation or display contextual information that does not require a page.
+The modal is a container generally displayed in response to an action. It is used for short forms, confirmation messages or to display contextual information that does not require a page. The modal should always be used in conjunction with the [Application Layout Containers](/layouts/application-layout.html). See an example [App layout page with Modal](/demo-pages/overlay-app-demo.html)
 
-<hr />
+<hr/>
 
 ## Informational Modal
-
-Used when you need to inform the user but the [Alert Component](alert.html) doesn't fit all the information. Also when the user have to acknowledge the information, actively, by clicking a button or closing the Modal.
+This is used to present information to the user but the Alert Component doesn’t fit all the information.
 
 {% capture default-modal %}
 <div class="modal-demo-bg">
@@ -42,8 +41,7 @@ Used when you need to inform the user but the [Alert Component](alert.html) does
 <br/>
 
 ## Confirmation Modal
-
-Used to confirm with the user before continuing with destructive or complex actions. In this case the modal have two buttons at the bottom. With the "positive" path always been the primary button.
+This is used to confirm with the user before continuing with a destructive or complex action. In this case, the modal has action buttons at the bottom.
 
 {% capture default-confirmation %}
 <div class="modal-demo-bg">
@@ -72,8 +70,7 @@ Used to confirm with the user before continuing with destructive or complex acti
 <br />
 
 ## Form Modal
-
-Used to collect simple information from the user. Please use with care and don't include more than five inputs on a modal to avoid scrolling inside the modal.
+This is used for short forms in order to collect information from the user.
 
 {% capture default-form %}
 <div class="modal-demo-bg">
