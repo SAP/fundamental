@@ -87,7 +87,7 @@ panel:
 {%- endmacro %}
 
 {%- macro panel_filters(properties={}, modifier=[], aria={}, classes=[]) %}
-<div class="fd-panel__filters{{ classes | classes }}{{ modifier | modifier("panel__filters") }}"{{ aria | aria }}>
+<div class="fd-panel__filters{{ classes | classes }}{{ modifier | modifier("panel__filters") }}"{{ aria | aria }}  id="{{ properties.id }}">
     {{- caller() | indent -}}
 </div>
 {%- endmacro %}
