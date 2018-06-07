@@ -1,9 +1,9 @@
 ---
-title: Icons
-keywords: icon, icons
+title: Icon
+keywords: icon
 sidebar: left-navigation-sidebar
 toc: false
-permalink: components/icons.html
+permalink: components/icon.html
 folder: components
 summary:
 ---

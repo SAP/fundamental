@@ -1,6 +1,6 @@
 ---
-title: Alerts
-keywords: alert, alerts
+title: Alert
+keywords: alert
 sidebar: left-navigation-sidebar
 toc: false
 permalink: components/alert.html

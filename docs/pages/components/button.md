@@ -1,5 +1,5 @@
 ---
-title: Buttons
+title: Button
 keywords: button, buttons
 sidebar: left-navigation-sidebar
 toc: false
