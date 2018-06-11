@@ -18,7 +18,7 @@
 
 {% set panel %}
 {% call layout.panel() -%}
-    {% call layout.panel_header({ title: ".fd-panel__title" }) -%}
+    {% call layout.panel_header({ title: ".fd-panel__title", description: ".fd-panel__description" }) -%}
         {% call layout.panel_actions() -%}
 .fd-panel__actions
         {%- endcall %}
@@ -37,7 +37,7 @@
 
 {% set panel_filters %}
 {% call layout.panel() -%}
-    {% call layout.panel_header({ title: ".fd-panel__title" }) -%}
+    {% call layout.panel_header({ title: ".fd-panel__title", description: ".fd-panel__description" }) -%}
         {% call layout.panel_actions() -%}
 .fd-panel__actions
         {%- endcall %}
@@ -135,7 +135,7 @@
 {% set panel_filters_content %}
 
 {% call layout.panel() -%}
-    {% call layout.panel_header({ title: "Items (1180)" }) -%}
+    {% call layout.panel_header({ title: "Items (1180)", description: "Lorem ipsum dolor sit amet" }) -%}
         {% call layout.panel_actions() -%}
 
         {{ dropdown(
@@ -222,7 +222,7 @@ Vivamus sagittis <span class="fd-badge fd-badge--success">Active</span>
 
 {% set panel_2 %}
 {% call layout.panel() -%}
-    {% call layout.panel_header({  title: badgetitle }) -%}
+    {% call layout.panel_header({  title: badgetitle, description: "Lorem ipsum dolor sit amet" }) -%}
         {% call layout.panel_actions() -%}
         <button class="fd-button fd-button--s sap-icon--add">
             Add New Item

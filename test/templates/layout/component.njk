@@ -72,16 +72,19 @@ panel:
 
 {%- macro panel_header(properties={}, modifier=[], aria={}, classes=[]) %}
 <div class="fd-panel__header{{ classes | classes }}{{ modifier | modifier("panel__header") }}">
-    {%- if properties.title %}
-    <h1 class="fd-panel__title">
-        {{ properties.title }}
-    </h1>
-    {%- endif %}
-    {%- if properties.description %}
-    <p class="fd-panel__description">
-        {{ properties.description }}
-    </p>
-    {%- endif %}
+    <div class="fd-panel_head">
+        {%- if properties.title %}
+        <h1 class="fd-panel__title">
+            {{ properties.title }}
+        </h1>
+        {%- endif %}
+        {%- if properties.description %}
+        <p class="fd-panel__description">
+            {{ properties.description }}
+        </p>
+        {%- endif %}
+    </div>
+
     {{- caller() | indent -}}
 </div>
 {%- endmacro %}
