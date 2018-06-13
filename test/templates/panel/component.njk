@@ -14,22 +14,24 @@ panel:
 {%- macro panel_header(properties={}, modifier=[], aria={}, classes=[]) %}
 <div class="fd-panel__header{{ classes | classes }}{{ modifier | modifier("panel__header") }}">
     {%- if properties.title %}
-    <h1 class="fd-panel__title">
-        {{ properties.title }}
-    </h1>
-    {%- endif %}
-    {%- if properties.description %}
-    <p class="fd-panel__description">
-        {{ properties.description }}
-    </p>
-    {%- endif %}
+    <div class="fd-panel__head">
+        <h1 class="fd-panel__title">
+            {{ properties.title }}
+        </h1>
+        {%- endif %}
+        {%- if properties.description %}
+        <p class="fd-panel__description">
+            {{ properties.description }}
+        </p>
+        {%- endif %}
+    </div>
     {{- caller() | indent -}}
 </div>
 {%- endmacro %}
 
 {%- macro panel_filters(properties={}, modifier=[], aria={}, classes=[]) %}
 <div class="fd-panel__filters{{ classes | classes }}{{ modifier | modifier("panel__filters") }}"{{ aria | aria }} id="{{ properties.id }}">
-    {{- caller() | indent -}} 
+    {{- caller() | indent -}}
 </div>
 {%- endmacro %}
 

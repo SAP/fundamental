@@ -8,11 +8,13 @@
 
 {% set panel_example %}
 {% call panel() -%}
-    {% call panel_header({ title: ".fd-panel__title" }) -%}
-        {% call panel_actions() -%}
+    {% call panel_header({ title: ".fd-panel__title", description: ".fd-panel__description" }) -%}
+    {% call panel_actions() -%}
 .fd-panel__actions
-        {%- endcall %}
     {%- endcall %}
+
+    {%- endcall %}
+
     {%- call panel_filters() %}
 .fd-panel__filters
     {%- endcall %}
