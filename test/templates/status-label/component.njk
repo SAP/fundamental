@@ -1,0 +1,12 @@
+<!--
+status_label:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{% macro status_label(properties={}, modifier={}, state={}, aria={}) -%}
+<span class="fd-status-label{{ modifier.block | modifier('status-label') }}">
+    {{ properties.label }}
+</span>
+{%- endmacro %}
