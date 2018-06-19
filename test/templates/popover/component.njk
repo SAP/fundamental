@@ -10,12 +10,17 @@ popover:
     aria={}
 -->
 
-{%- macro popover(properties={}, modifier={}, state={}, aria={}) %}
-    {%- set _id = utils.id() %}
+{%- set _id = utils.id() %}
+
+{%- macro popover(properties={}, modifier={}, state={}, aria={ hidden: true }) %}
     {%- set btn_size_class = " fd-button--"+modifier.block if modifier.block and modifier.block !== "default" else "" %}
     <div class="fd-popover{{ modifier.block | modifier('popover') }}">
         <span class="fd-popover__control{{ modifier.control | modifier('popover__control') }}  fd-image--m fd-image--circle" aria-label="Image label" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }} style="background-image: url('https://placeimg.com/400/400/nature');"></span>
 
-        <div class="fd-popover__body">{{properties.body}}</div>
+        {{ popover_body({ body: properties.body, id: _id }) }}
     </div>
+{%- endmacro %}
+
+{%- macro popover_body(properties={}, modifier={}, state={}, aria={ hidden: true }) %}
+    <div class="fd-popover__body"{{ aria | aria }} id="{{ properties.id }}">{{properties.body}}</div>
 {%- endmacro %}
