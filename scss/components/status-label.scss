@@ -3,26 +3,67 @@
 @import "./../functions";
 
 /*!
-.fd-status-label+(--no-border)
-    .fd-status-label__content+()
-    .fd-status-label__title+()
+.fd-status-label+(--available, --away, --busy, --offline, --success, --warning, --error)
 */
+
 $block: #{$fd-namespace}-status-label;
 
 .#{$block} {
+
     //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-status-lable-icon-size: fd-space(4);
+    @mixin fd-status-icon{
+        height: $fd-status-lable-icon-size;
+        width: $fd-status-lable-icon-size;
+        background-repeat: no-repeat;
+        display: inline-block;
+        content: "";
+        line-height: 1;
+        text-align: center;
+        margin-right: fd-space(1);
+        vertical-align: -8%;
+    }
 
     //BLOCK BASE *******************************************
-    //set all BLOCK reset and baseline styles
     @include fd-reset;
     color: fd-color("text", 2);
-    background-image: url($fd-status-indicator-avialable);
-    background-repeat: no-repeat;
+
+    &::before{
+        margin-right: fd-space(1);
+        vertical-align: -8%;
+    }
 
     //BLOCK MODIFIERS ************
+    &--available:before{
+        @include fd-status-icon;
+        background-image: url($fd-status-indicator-available);
+    }
 
-    //ELEMENTS *******************************************
+    &--away:before{
+        @include fd-status-icon;
+        background-image: url($fd-status-indicator-away);
+    }
 
-    //STATES *******************************************
+    &--busy:before{
+        @include fd-status-icon;
+        background-image: url($fd-status-indicator-busy);
+    }
+
+    &--offline:before{
+        @include fd-status-icon;
+        background-image: url($fd-status-indicator-offline);
+    }
+
+    &--success {
+        color: $fd-color--success;
+    }
+
+    &--warning {
+        color: $fd-color--warning;
+    }
+
+    &--error {
+        color: $fd-color--error;
+    }
 
 }
