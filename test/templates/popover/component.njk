@@ -1,4 +1,3 @@
-{% import "./../utils.njk" as utils %}
 {% from "./../icon/component.njk" import icon %}
 {% from "./../image/component.njk" import image %}
 
@@ -10,15 +9,16 @@ popover:
     aria={}
 -->
 
-{%- set _id = utils.id() %}
-
 {%- macro popover(properties={}, modifier={}, state={}, aria={ hidden: true }) %}
-    {%- set btn_size_class = " fd-button--"+modifier.block if modifier.block and modifier.block !== "default" else "" %}
     <div class="fd-popover{{ modifier.block | modifier('popover') }}">
-        <span class="fd-popover__control{{ modifier.control | modifier('popover__control') }}  fd-image--m fd-image--circle" aria-label="Image label" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }} style="background-image: url('https://placeimg.com/400/400/nature');"></span>
+        {{ popover_control({ control: properties.control }) }}
 
-        {{ popover_body({ body: properties.body, id: _id }) }}
+        {{ popover_body({ body: properties.body, id: properties.id }) }}
     </div>
+{%- endmacro %}
+
+{%- macro popover_control(properties={}, modifier={}, state={}) %}
+    <div class="fd-popover__control"{{ aria | aria }}>{{properties.control}}</div>
 {%- endmacro %}
 
 {%- macro popover_body(properties={}, modifier={}, state={}, aria={ hidden: true }) %}

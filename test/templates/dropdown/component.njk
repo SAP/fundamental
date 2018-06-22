@@ -1,6 +1,6 @@
 {% import "./../utils.njk" as utils %}
 {% from "./../icon/component.njk" import icon %}
-{% from "./../popover/component.njk" import popover_body %}
+{% from "./../popover/component.njk" import popover %}
 
 <!--
 dropdown:
@@ -10,13 +10,21 @@ dropdown:
     aria={}
 -->
 {%- macro dropdown(properties={}, modifier={}, state={}, aria={}) %}
-{%- set _id = utils.id() %}
-    {%- set btn_size_class = " fd-button--"+modifier.block if modifier.block and modifier.block !== "default" else "" %}
+    {%- set _id = utils.id() %}
+
     <div class="fd-dropdown{{ modifier.block | modifier('dropdown') }}">
-        <button class="fd-dropdown__control{{ modifier.control | modifier('dropdown__control') }} fd-button--{{modifier.button if modifier.button else 'toolbar'}}{{ btn_size_class }}{{ " sap-icon--"+properties.icon if properties.icon }}" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}>
-            {{ properties.label }}
-        </button>
-        {{ popover_body({ body: properties.body, id: _id }) }}
+        {%- macro dropdown_control(properties={}, modifier={}, state={}, aria={}) -%}
+            {%- set btn_size_class = " fd-button--"+modifier.block if modifier.block and modifier.block !== "default" else "" %}
+            <button class="fd-dropdown__control{{ modifier.control | modifier('dropdown__control') }} fd-button--{{modifier.button if modifier.button else 'toolbar'}}{{ btn_size_class }}{{ " sap-icon--"+properties.icon if properties.icon }}" aria-controls="{{ properties.id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}>
+                {{ properties.label }}
+            </button>
+        {%- endmacro %}
+
+        {{  popover(properties={
+                id: _id,
+                control: dropdown_control(properties={label: properties.label, id: _id, icon: properties.icon}, modifier={ block: modifier.block }, state={ disabled: aria.disabled }),
+                body: properties.body
+            })
+        }}
     </div>
 {%- endmacro %}
-
