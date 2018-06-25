@@ -50,10 +50,28 @@ $block: #{$fd-namespace}-action-bar;
     &__title {
         @include fd-type("3");
         margin-bottom: fd-space(base);
+
+        @include fd-screen(xs) {
+            white-space: nowrap;
+            width: 185px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        @include fd-screen(s) {
+            width: auto;
+            overflow: auto;
+        }
+
     }
 
     &__description{
         @include fd-type("0", reg, none);
+        @include fd-screen(xs) {
+            display: none;
+        }
+        @include fd-screen(s) {
+            display: block;
+        }
     }
 
     &__actions {
