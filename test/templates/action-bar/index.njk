@@ -19,17 +19,18 @@
 
 {%- set primarybtn %}{{
     button(
-            { label: 'Save' },
+            { label: 'Button' },
             modifier={block: [ 'main', 'l'] }
         )
 }}{%- endset %}
 
 {%- set secbtn %}{{
   button(
-          { label: 'Cancel' },
-          modifier={ block: ['secondary', 'l'] }
+          { label: 'Button' },
+          modifier={ block: ['primary', 'l'] }
       )
 }}{%- endset %}
+
 {%- set contextmenu %}
 {%- set _id = utils.id() %}
 <div class="fd-dropdown">
@@ -66,6 +67,24 @@ classes="contextual-menu") | indent(4)
                         items: [secbtn,primarybtn]
                     }
                 }
+            },
+            modifier={
+                block: []
+            },
+            state={},
+            aria={}
+        )
+    }}
+
+    {{  action_bar(
+            properties={
+                title: data.properties.title,
+                actions: {
+                    properties: {
+                        items: [secbtn,primarybtn]
+                    }
+                },
+                back_button: true
             },
             modifier={
                 block: []
