@@ -1,0 +1,40 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "./component.njk" import menu %}
+
+{% set css_deps = ['fonts'] %}
+
+{% block content %}
+
+  <h1>menu</h1>
+
+  {% set example %}
+    {{ menu(properties=data.properties) }}
+  {% endset %}
+
+  {{ format(example) }}
+
+
+  <h1>menu w/ groups</h1>
+
+  {% set example %}
+    {{ menu(properties={
+      items: [
+          { "label": "Option 1" },
+          { "label": "Option 2" },
+          { "label": "Option 3" },
+          {  "label": "Group Header",
+            "items": [
+                { "label": "Option 4" },
+                { "label": "Option 5" },
+                { "label": "Option 6" }
+            ]
+          }
+        ]
+      }) 
+    }}
+  {% endset %}
+
+  {{ format(example) }}
+
+{% endblock %}

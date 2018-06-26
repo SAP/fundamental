@@ -1945,24 +1945,30 @@
   content: ""; }
 
 :root {
-  --color-action-1: #0a6ed1;
-  --color-text-1: #32363a;
-  --color-text-2: #515559;
-  --color-text-3: #6f7275;
-  --color-text-inverse-1: #ffffff;
-  --color-text-inverse-2: #f5f5f5;
-  --color-text-inverse-3: #ebebeb;
-  --color-background-1: #f3f4f5;
-  --color-background-2: #ffffff;
-  --color-neutral-1: #fafafa;
-  --color-neutral-2: #eeeeef;
-  --color-neutral-3: #dededf;
-  --color-status-1: #359c46;
-  --color-status-2: #f59518;
-  --color-status-3: #ee0000;
-  --color-accent-1: #359c46;
-  --color-accent-2: #f59518;
-  --color-accent-3: #ee0000; }
+  --color-action-1: map-get($fd-colors-action, 1);
+  --color-text-1: map-get($fd-colors-text, 1);
+  --color-text-2: map-get($fd-colors-text, 2);
+  --color-text-3: map-get($fd-colors-text, 3);
+  --color-text-inverse-1: map-get($fd-colors-text-inverse, 1);
+  --color-text-inverse-2: map-get($fd-colors-text-inverse, 2);
+  --color-text-inverse-3: map-get($fd-colors-text-inverse, 3);
+  --color-background-1: map-get($fd-colors-background, 1);
+  --color-background-2: map-get($fd-colors-background, 2);
+  --color-neutral-1: map-get($fd-colors-neutral, 1);
+  --color-neutral-2: map-get($fd-colors-neutral, 2);
+  --color-neutral-3: map-get($fd-colors-neutral, 3);
+  --color-status-1: map-get($fd-colors-status, 1);
+  --color-status-2: map-get($fd-colors-status, 2);
+  --color-status-3: map-get($fd-colors-status, 3);
+  --color-accent-1: map-get($fd-colors-status, 1);
+  --color-accent-2: map-get($fd-colors-status, 2);
+  --color-accent-3: map-get($fd-colors-status, 3);
+  --color-accent-4: map-get($fd-colors-status, 4);
+  --color-accent-5: map-get($fd-colors-status, 5);
+  --color-accent-6: map-get($fd-colors-status, 6);
+  --color-accent-7: map-get($fd-colors-status, 7);
+  --color-accent-8: map-get($fd-colors-status, 8);
+  --color-accent-9: map-get($fd-colors-status, 9); }
 
 /*!
 * @section Root Element
@@ -2071,7 +2077,7 @@ input[type=radio], input[type=checkbox] {
   background-color: transparent;
   transition: border-color 0.125s;
   transition: border-color 0.125s ease-in, background-color 0.125s ease-in, background-image 0.125s ease-in; }
-  input[type=radio]:focus, input[type=checkbox]:focus, input[type=radio]:hover, input[type=checkbox]:hover {
+  input:focus[type=radio], input:focus[type=checkbox], input:hover[type=radio], input:hover[type=checkbox] {
     border-color: #0a6ed1; }
   input.is-invalid[type=radio], input.is-invalid[type=checkbox] {
     border-color: #ee0000; }
@@ -2079,7 +2085,7 @@ input[type=radio], input[type=checkbox] {
     border-color: #359c46; }
   input.is-warning[type=radio], input.is-warning[type=checkbox] {
     border-color: #f59518; }
-  input[type=radio]:disabled, input[type=checkbox]:disabled, input[aria-disabled="true"][type=radio], input[aria-disabled="true"][type=checkbox], input.is-disabled[type=radio], input.is-disabled[type=checkbox] {
+  input:disabled[type=radio], input:disabled[type=checkbox], input[aria-disabled="true"][type=radio], input[aria-disabled="true"][type=checkbox], input.is-disabled[type=radio], input.is-disabled[type=checkbox] {
     cursor: not-allowed;
     color: #6f7275;
     border-color: #ebebec;
@@ -2943,7 +2949,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     margin-left: 0; }
 
 .fd-button:hover {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
   border-color: #085caf; }
 
 .fd-button:active, .fd-button.is-active, .fd-button[aria-selected="true"], .fd-button.is-selected, .fd-button[aria-pressed="true"], .fd-button.is-pressed {
@@ -3005,7 +3011,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   border: solid 1px transparent; }
   .fd-button--secondary:hover {
     background-color: #fafafa;
-    border-color: transparent; }
+    border-color: rgba(0, 0, 0, 0); }
   .fd-button--secondary:active, .fd-button--secondary.is-active, .fd-button--secondary[aria-selected="true"], .fd-button--secondary.is-selected, .fd-button--secondary[aria-pressed="true"], .fd-button--secondary.is-pressed {
     color: #0a6ed1;
     background-color: #eeeeef;
@@ -3646,24 +3652,29 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-table thead tr:hover, .docs-table thead tr:hover {
       background-color: inherit; }
     .fd-table thead td, .docs-table thead td,
-    .fd-table thead th, .docs-table thead th {
+    .fd-table thead th,
+    .docs-table thead th {
       border: none;
       font-weight: 400; }
   .fd-table td, .docs-table td,
-  .fd-table th, .docs-table th {
+  .fd-table th,
+  .docs-table th {
     text-align: left;
     padding: 12px 12px;
     border-style: solid;
     border-width: 0;
     border-color: transparent; }
     .fd-table td:first-child, .docs-table td:first-child,
-    .fd-table th:first-child, .docs-table th:first-child {
+    .fd-table th:first-child,
+    .docs-table th:first-child {
       padding-left: 24px; }
     .fd-table td:last-child, .docs-table td:last-child,
-    .fd-table th:last-child, .docs-table th:last-child {
+    .fd-table th:last-child,
+    .docs-table th:last-child {
       padding-right: 24px; }
     .fd-table td .fd-dropdown__menu, .docs-table td .fd-dropdown__menu,
-    .fd-table th .fd-dropdown__menu, .docs-table th .fd-dropdown__menu {
+    .fd-table th .fd-dropdown__menu,
+    .docs-table th .fd-dropdown__menu {
       min-width: auto;
       text-align: left; }
   .fd-table a, .docs-table a {
@@ -4229,10 +4240,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   margin: 0 auto; }
   .fd-spinner.is-hidden, .fd-spinner[aria-hidden="true"] {
     display: none; }
-  .is-busy, [aria-busy="true"] {
+  .is-busy,
+  [aria-busy="true"] {
     position: relative;
     min-height: 40px; }
-    .is-busy::before, [aria-busy="true"]::before {
+    .is-busy::before,
+    [aria-busy="true"]::before {
       position: absolute;
       background-color: rgba(243, 244, 245, 0.95);
       top: 0;
@@ -4241,7 +4254,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
       left: 0;
       z-index: 1;
       content: ""; }
-    .is-busy .fd-spinner, [aria-busy="true"] .fd-spinner {
+    .is-busy .fd-spinner,
+    [aria-busy="true"] .fd-spinner {
       position: absolute;
       z-index: 2;
       left: calc(50% - 29px/2);

@@ -1,0 +1,64 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../icons/mixins";
+@import "./../functions";
+@import "./mixins";
+
+
+$block: #{$fd-namespace}-menu;
+
+.#{$block} {
+  //SETTINGS
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-menu-color: $fd-forms-color !default;
+    $fd-menu-background-color: fd-color(background) !default;
+
+    //items
+    $fd-menu-item-color: $fd-menu-color !default;
+    $fd-menu-item-color--hover: fd-color(text-inverse) !default;
+    $fd-menu-item-background-color: $fd-menu-background-color !default;
+    $fd-menu-item-background-color--hover: darken(fd-color(action), 5%) !default;
+    $fd-menu-item-background-color--selected: darken(fd-color(action), 10%) !default;
+    $fd-menu-item-padding: fd-space(3) fd-space(4) !default;
+    $fd-menu-item-color--disabled: fd-color(text, 2);
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    @include fd-reset;
+    position: relative;
+    display: inline-block;
+    min-width: 100%;
+    white-space: nowrap;
+    background-color: $fd-menu-background-color;
+    padding-top: fd-space(base);
+    padding-bottom: fd-space(base);
+
+    &__group,
+    &__list {
+      list-style: none;
+      margin-bottom: 0;
+    }
+    &__title {
+      display: block;
+      margin-bottom: 0;
+      padding: $fd-menu-title-padding $fd-menu-item-padding-x;
+      @include fd-type("-3", "reg", uppercase);
+      color: $fd-menu-title-color;
+      background: $fd-menu-title-background-color;
+    }
+    &__item {
+      display: block;
+      padding: $fd-menu-item-padding-y $fd-menu-item-padding-x;
+      color: $fd-menu-item-color;
+      background-color: $fd-menu-item-background-color;
+
+      &:hover{
+        color: $fd-menu-item-color--hover;
+        background-color: $fd-menu-item-background-color--hover;
+      }
+      &.is-selected,
+      &[aria-selected="true"] {
+          background-color: $fd-menu-item-background-color--selected;
+      }
+    }
+}
