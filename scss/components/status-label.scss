@@ -42,7 +42,6 @@ $block: #{$fd-namespace}-status-label;
     position: relative;
     @include fd-reset;
     color: fd-color("text", 2);
-    padding-left: fd-space(5);
 
     &::before{
         margin-right: fd-space(1);
@@ -50,60 +49,71 @@ $block: #{$fd-namespace}-status-label;
     }
 
     //BLOCK MODIFIERS ************
-    &--available:before{
-        @include fd-status-icon;
-        width: 7px;
-        height: 7px;
-        top: 5px;
-        left: 4px;
-        background-image: url($fd-status-indicator-available);
+    &--available,
+    &--away,
+    &--busy,
+    &--offline {
+        padding-left: fd-space(5);
     }
 
-    &--away:before{
-        @include fd-status-icon;
-        width: 6px;
-        height: 6px;
-        top: 5px;
-        left: 6px;
-        background-image: url($fd-status-indicator-away);
+    &--available {
+        &:before{
+            @include fd-status-icon;
+            width: 7px;
+            height: 7px;
+            top: 5px;
+            left: 4px;
+            background-image: url($fd-status-indicator-available);
+        }
+        &:after{
+            @include fd-status-icon-bg;
+            background-color: $fd-color--success;
+        }
     }
 
-    &--busy:before{
-        @include fd-status-icon;
-        width: 4px;
-        height: 4px;
-        top: 7px;
-        left: 6px;
-        background-image: url($fd-status-indicator-busy);
+    &--away {
+        &:before{
+            @include fd-status-icon;
+            width: 6px;
+            height: 6px;
+            top: 5px;
+            left: 6px;
+            background-image: url($fd-status-indicator-away);
+        }
+        &:after{
+            @include fd-status-icon-bg;
+            background-color: $fd-color--warning;
+        }
     }
 
-    &--offline:before{
-        @include fd-status-icon;
-        width: 8px;
-        height: 8px;
-        top: 5px;
-        left: 4px;
-        background-image: url($fd-status-indicator-offline);
+    &--busy {
+        &:before{
+            @include fd-status-icon;
+            width: 4px;
+            height: 4px;
+            top: 7px;
+            left: 6px;
+            background-image: url($fd-status-indicator-busy);
+        }
+        &:after{
+            @include fd-status-icon-bg;
+            background-color: $fd-color--error;
+        }
     }
-
-    &--available:after{
-        @include fd-status-icon-bg;
-        background-color: $fd-color--success;
-    }
-
-    &--away:after{
-        @include fd-status-icon-bg;
-        background-color: $fd-color--warning;
-    }
-
-    &--busy:after{
-        @include fd-status-icon-bg;
-        background-color: $fd-color--error;
-    }
-
-    &--offline:after{
-        @include fd-status-icon-bg;
-        background-color: fd-color("text", 2);
+    
+    &--offline {
+        &:before{
+            @include fd-status-icon;
+            width: 8px;
+            height: 8px;
+            top: 5px;
+            left: 4px;
+            background-image: url($fd-status-indicator-offline);
+        }
+        &:after{
+            @include fd-status-icon-bg;
+            background-color: fd-color("text", 2);
+        }
     }
 
     &--success {
