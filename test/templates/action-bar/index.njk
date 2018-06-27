@@ -59,7 +59,7 @@
 {% set example %}
 {{  action_bar(
         properties={
-            title: "Page Title that takes up a lot of space",
+            title: "Action Bar with description and back button",
             description: data.properties.description,
             actions: {
                 properties: {
@@ -78,7 +78,7 @@
 
 {{  action_bar(
         properties={
-            title: "Page Title that takes up a lot of space",
+            title: "Action Bar with no description",
             actions: {
                 properties: {
                     items: [secbtn,primarybtn]
@@ -94,21 +94,12 @@
     )
 }}
 
-{% endset %}
-{{ format(example) }}
-
-<br><br>
-
-<h1>action-bar on small screens (hides back button and description)</h1>
-
-{% set example %}
-<div style="width:320px">
 {{  action_bar(
         properties={
-            title: "Page Title that takes up a lot of space",
+            title: "Action Bar with no back button",
             actions: {
                 properties: {
-                    items: [contextmenu]
+                    items: [secbtn,primarybtn]
                 }
             }
         },
