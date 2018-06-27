@@ -68,8 +68,6 @@ $block: #{$fd-namespace}-action-bar;
     }
 
     &__back {
-        position: relative;
-        margin-right: fd-space(5);
         display: block;
         @include fd-hide-on-mobile;
         &::after {
@@ -83,6 +81,20 @@ $block: #{$fd-namespace}-action-bar;
         }
         button {
             margin-top: - fd-space(2);
+        }
+    }
+
+    &__back {
+        position: relative;
+        margin-right: fd-space(5);
+        &::after {
+                content: '';
+                width: 0;
+                height: 100%;
+                position: absolute;
+                top: - fd-space(1);
+                right: - fd-space(1);
+                border-right: 1px solid $fd-action-bar-backbtn-seperator-color;
         }
     }
 

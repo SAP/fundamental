@@ -30,7 +30,6 @@
       )
 }}{%- endset %}
 
-
 {%- set contextmenu %}
 {%- set _id = utils.id() %}
 <div class="fd-popover">
@@ -59,7 +58,7 @@
 {% set example %}
 {{  action_bar(
         properties={
-            title: "Page Title that takes up a lot of space",
+            title: "Action Bar with description and back button",
             description: data.properties.description,
             actions: {
                 properties: {
@@ -78,13 +77,30 @@
 
 {{  action_bar(
         properties={
-            title: "Page Title that takes up a lot of space",
+            title: "Action Bar with no description",
             actions: {
                 properties: {
                     items: [secbtn,primarybtn]
                 }
             },
             back_button: true
+        },
+        modifier={
+            block: []
+        },
+        state={},
+        aria={}
+    )
+}}
+
+{{  action_bar(
+        properties={
+            title: "Action Bar with no back button",
+            actions: {
+                properties: {
+                    items: [secbtn,primarybtn]
+                }
+            }
         },
         modifier={
             block: []
@@ -105,7 +121,7 @@
 <div style="width:320px">
 {{  action_bar(
         properties={
-            title: "Page Title that takes up a lot of space",
+            title: "Action Bar page title that takes up a lot of space",
             actions: {
                 properties: {
                     items: [contextmenu]
