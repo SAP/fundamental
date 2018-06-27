@@ -9,69 +9,93 @@
 */
 $block: #{$fd-namespace}-action-bar;
 .#{$block} {
+
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-action-bar-background-color: transparent !default;
+    $fd-action-bard-description-color: fd-color('text', 3);
     $fd-action-bar-height: fd-space(16) !default;
     $fd-action-bar-transition-params: 0.25s ease-in !default;
     $fd-action-bar-backbtn-seperator-color: fd-color('neutral', 3);
+
+    //LOCAL mixins
+    @mixin fd-action-bar-responsive-props {
+        white-space: nowrap;
+        width: calc(100%-10px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    @mixin fd-action-bar-responsive {
+        @include fd-screen(xs){
+            @include fd-action-bar-responsive-props;
+        }
+
+        @include fd-screen(s) {
+            @include fd-action-bar-responsive-props;
+        }
+
+        @include fd-screen(m) {
+            @include fd-action-bar-responsive-props;
+        }
+    }
+
+    @mixin fd-hide-on-mobile {
+        @include fd-screen(xs) {
+            display: none !important;
+        }
+        @include fd-screen(s) {
+            display: inline-block !important;
+        }
+    }
 
     //BLOCK BASE *******************************************
     @include fd-reset;
     background-color: $fd-action-bar-background-color;
     min-height: $fd-action-bar-height;
-    display: flex;
-    align-items: center;
     padding-right: 0;
     padding-left: 0;
+    display: flex;
+    align-items: baseline;
 
     &__header {
         @include fd-reset;
         @include fd-type("0");
-        flex: 1;
+        @include fd-action-bar-responsive;
         margin-bottom: 0;
         padding-top: fd-space("s");
         padding-bottom: fd-space("s");
+        flex-grow: 1;
     }
 
     &__back {
         position: relative;
         margin-right: fd-space(5);
+        display: block;
+        @include fd-hide-on-mobile;
         &::after {
                 content: '';
                 width: 0;
                 height: 100%;
                 position: absolute;
-                top: 0;
+                top: - fd-space(1);
                 right: - fd-space(1);
                 border-right: 1px solid $fd-action-bar-backbtn-seperator-color;
+        }
+        button {
+            margin-top: - fd-space(2);
         }
     }
 
     &__title {
         @include fd-type("3");
+        @include fd-action-bar-responsive;
         margin-bottom: fd-space(base);
-
-        @include fd-screen(xs) {
-            white-space: nowrap;
-            width: 185px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        @include fd-screen(s) {
-            width: auto;
-            overflow: auto;
-        }
-
     }
 
     &__description{
+        color: $fd-action-bard-description-color;
         @include fd-type("0", reg, none);
-        @include fd-screen(xs) {
-            display: none;
-        }
-        @include fd-screen(s) {
-            display: block;
-        }
+        @include fd-hide-on-mobile;
     }
 
     &__actions {
