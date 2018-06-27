@@ -54,7 +54,7 @@
 
 <!-- output the component example and the code snippet -->
 
-<h1>action-bar with and without description</h1>
+<h1>action-bar</h1>
 
 {% set example %}
 {{  action_bar(
@@ -113,10 +113,32 @@
 </div>
 
 {% endset %}
-
-
 {{ format(example) }}
 <br><br>
+
+<h2>Action bar on mobile screen  (320px)</h2>
+{% set example %}
+<div style="width:319px">
+{{  action_bar(
+        properties={
+            title: "Action Bar with description and back button",
+            actions: {
+                properties: {
+                    items: [contextmenu]
+                }
+            },
+            back_button: true
+        },
+        modifier={
+            block: []
+        },
+        state={},
+        aria={}
+    )
+}}
+</div>
+{% endset %}
+{{ format(example) }}
 
 <h2>Actions Hidden</h2>
 <div id="toggles">

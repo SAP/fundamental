@@ -18,24 +18,13 @@ $block: #{$fd-namespace}-action-bar;
     $fd-action-bar-backbtn-seperator-color: fd-color('neutral', 3);
 
     //LOCAL mixins
-    @mixin fd-action-bar-responsive-props {
-        white-space: nowrap;
-        width: calc(100%-10px);
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
     @mixin fd-action-bar-responsive {
         @include fd-screen(xs){
-            @include fd-action-bar-responsive-props;
-        }
+            white-space: nowrap;
+            width: calc(100%-10px);
+            overflow: hidden;
+            text-overflow: ellipsis;
 
-        @include fd-screen(s) {
-            @include fd-action-bar-responsive-props;
-        }
-
-        @include fd-screen(m) {
-            @include fd-action-bar-responsive-props;
         }
     }
 
@@ -43,9 +32,12 @@ $block: #{$fd-namespace}-action-bar;
         @include fd-screen(xs) {
             display: none !important;
         }
+
         @include fd-screen(s) {
             display: inline-block !important;
         }
+
+
     }
 
     //BLOCK BASE *******************************************
