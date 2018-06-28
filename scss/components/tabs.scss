@@ -35,9 +35,9 @@ $block: #{$fd-namespace}-tabs;
     padding: $fd-tabs-link-padding-y $fd-tabs-link-padding-x;
     @include fd-type("0");
     cursor: pointer;
-    color: $fd-color;
+    color: $fd-link-color;
     &:link {
-      color: $fd-color;
+      color: $fd-link-color;
     }
     &::after {
       transition: all $fd-tabs-link-transition-params;
@@ -56,7 +56,7 @@ $block: #{$fd-namespace}-tabs;
     }
     &.is-selected,
     &[aria-selected="true"] {
-      color: $fd-link-color;
+      color: $fd-color;
       &::after {
         background-color: $fd-tabs-link-border-color;
       }
