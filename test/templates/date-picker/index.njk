@@ -1,25 +1,24 @@
 {% extends "layout.njk" %}
 {% import "./../utils.njk" as utils %}
 {% from "./../format.njk" import format %}
-{% from "./../calendar/component.njk" import calendar %}
 {% from "./../date-picker/component.njk" import date_picker %}
 
-{% set css_deps = ['fonts','components/button','icons','components/calendar', 'components/popover'] %}
+{% set css_deps = ['fonts','components/button','icons','components/input-group','components/calendar', 'components/popover', 'components/date-picker'] %}
 
 {% block content %}
   <h2>datepicker</h2>
 
   {% set example %}
     {{  date_picker(properties={
-        body: calendar({
-          "month": 0,
-          "year": 2018,
-          "today": 3,
-          "years": {
-            "selected": 3,
-            "show": true
+          month: 8,
+          year: 2018,
+          today: 6,
+          dates: {
+            daysOffset: 3,
+            block: [25,29],
+            selected: 15,
+            disablePast: true
           }
-        })
       })
     }}
   {% endset %}
