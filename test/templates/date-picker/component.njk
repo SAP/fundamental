@@ -13,31 +13,31 @@ date_picker:
 {%- set _id = utils.id() %}
 
 {%- macro date_picker_control(properties={}, modifier={}, state={}, aria={ hidden: true }) -%}
-    <div class="fd-input-group fd-input-group--after">
-        <input type="text" value="" placeholder="Pick a date">
-        <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
-            <button class="fd-popover__control fd-button--icon fd-button--secondary sap-icon--calendar" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}></button>
-        </span>
-    </div>
+<div class="fd-input-group fd-input-group--after">
+    <input type="text" value="" placeholder="Pick a date">
+    <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
+        <button class="fd-popover__control fd-button--icon fd-button--secondary sap-icon--calendar" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}></button>
+    </span>
+</div>
 {%- endmacro %}
 
 {%- macro date_picker(properties={}, modifier={}, state={}, aria={ hidden: true }) -%}
-    <div class="fd-date-picker">
-        {{  popover(properties={
-                id: _id,
-                control: date_picker_control(properties={id: _id}),
-                body: calendar({
-                    "month": properties.month,
-                    "year": properties.year,
-                    "today": properties.today,
-                    "dates": {
-                        "daysOffset": properties.dates.daysOffset,
-                        "block": properties.dates.block,
-                        "selected": properties.dates.selected,
-                        "disablePast": properties.dates.disablePast
-                    }
-                })
+<div class="fd-date-picker">
+    {{  popover(properties={
+            id: _id,
+            control: date_picker_control(properties={id: _id}),
+            body: calendar({
+                "month": properties.month,
+                "year": properties.year,
+                "today": properties.today,
+                "dates": {
+                    "daysOffset": properties.dates.daysOffset,
+                    "block": properties.dates.block,
+                    "selected": properties.dates.selected,
+                    "disablePast": properties.dates.disablePast
+                }
             })
-        }}
-    </div>
+        })
+    }}
+</div>
 {%- endmacro %}
