@@ -10,16 +10,15 @@
 $block: #{$fd-namespace}-input-group;
 .#{$block} {
     //LOCAL VARS (set all vars used in component, always include !default)
+    $fd-input-group-button-background-color: fd-color('neutral', 1);
 
     //BLOCK BASE *******************************************
-    //set all BLOCK reset and baseline styles
     @include fd-reset;
     display: flex;
     vertical-align: bottom;
     max-height: $fd-forms-height--input-text;
 
     //ELEMENTS *******************************************
-    //set all ELEMENT baseline styles
     & [type="number"] {
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
@@ -54,7 +53,6 @@ $block: #{$fd-namespace}-input-group;
         }
     }
     &__addon {
-        // @include fd-type("1", bold, normal);
         color: fd-color(text, 3);
         padding: 0 fd-space(3);
         border-style: solid;
@@ -67,7 +65,6 @@ $block: #{$fd-namespace}-input-group;
         border-radius: $fd-border-radius;
 
         //ELEMENT MODIFIERS ************
-        //each mod MUST extend the element base
         &:first-child {
             border-right-width: 0;
         }
@@ -98,7 +95,6 @@ $block: #{$fd-namespace}-input-group;
                 width: 0;
             }
         }
-
     }
     &--before {
         #{$fd-elements-inputs--text} {
@@ -118,29 +114,30 @@ $block: #{$fd-namespace}-input-group;
         width: 100%;
         display: block;
         min-width: fd-space(12);
-        &--step-up, &--step-down  {
-            font-size: 10px;
-            border-radius: 0;
-
-            &::after {
-                content: "";
-                position: relative;
+        background: $fd-input-group-button-background-color;
+        &--step-up,
+        &--step-down  {
+            @include fd-type("0");
+            color: $fd-link-color;
+            position: relative;
+            &::before{
+                position: absolute;
+                transform: translateX(-50%);
+                top: -2px;
             }
         }
         &--step-up {
             border-bottom: solid 1px $fd-forms-border-color;
-            &::after {
-                @include triangle(13px 8px, black, up);
-                top: -10px;
-            }
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
         &--step-down  {
-            &::after {
-                @include triangle(13px 8px, black, down);
-                top: 10px;
-            }
+            border-top: solid 1px $fd-forms-border-color;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
         }
         &--clear {
+            background-color: transparent;
             background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNiIgaGVpZ2h0PSIyNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMDA5Q0RGIiBkPSJNMTMgMEM1LjgyIDAgMCA1LjgyIDAgMTNzNS44MiAxMyAxMyAxMyAxMy01LjgyIDEzLTEzUzIwLjE4IDAgMTMgMHptNS4xOTUgMTcuMzk2YS41NjQuNTY0IDAgMSAxLS43OTkuNzk5TDEzIDEzLjc5OWwtNC4zOTYgNC4zOTZhLjU2NC41NjQgMCAxIDEtLjc5OS0uNzk5TDEyLjIwMSAxMyA3LjgwNSA4LjYwNGEuNTY0LjU2NCAwIDEgMSAuNzk5LS43OTlMMTMgMTIuMjAxbDQuMzk2LTQuMzk2YS41NjQuNTY0IDAgMSAxIC43OTkuNzk5TDEzLjc5OSAxM2w0LjM5NiA0LjM5NnoiLz48L3N2Zz4=');
             background-repeat: no-repeat;
             background-position: center;
@@ -149,6 +146,4 @@ $block: #{$fd-namespace}-input-group;
             left: -(fd-space(11));
         }
     }
-
-
 }
