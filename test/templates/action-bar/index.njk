@@ -3,7 +3,7 @@
 {% from "../button/component.njk" import button %}
 {% from "./component.njk" import action_bar %}
 {% from "../menu/component.njk" import menu %}
-{% from "./../popover/component.njk" import popover_body %}
+{% from "./../popover/component.njk" import popover %}
 {% import "./../utils.njk" as utils %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
@@ -32,11 +32,15 @@
 
 
 {%- set contextmenu %}
-{%- set _id = utils.id() %}
-<div class="fd-popover">
-    {{ button({ icon: "vertical-grip" }, modifier={ block: ["secondary"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
-    {{  popover_body(properties={
+    {%- set _id = utils.id() %}
+
+    {%- macro contextmenu_control(properties={}) -%}
+        {{ button({ icon: "vertical-grip" }, modifier={ block: ["secondary"] }, aria={ controls: properties.id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
+    {%- endmacro %}
+
+    {{  popover(properties={
             id: _id,
+            control: contextmenu_control(properties={ id: _id }),
             body: menu(properties={
             items: [
                 { "label": "Option 1" },
@@ -49,7 +53,6 @@
         classes="contextual-menu"
         ) | indent(4)
     }}
-</div>
 {%- endset %}
 
 <!-- output the component example and the code snippet -->
