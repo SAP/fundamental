@@ -26,6 +26,7 @@ $fd-calendar-item-color--other-month: lighten(fd-color("text"), 50%) !default;
 $fd-calendar-item-color--disabled: lighten(fd-color("text"), 70%) !default;
 $fd-calendar-item-color--selected: fd-color("text-inverse") !default;
 $fd-calendar-item-color--current: $fd-calendar-item-color !default;
+$fd-calendar-item-color--blocked: fd-color("text",1) !default;
 $fd-calendar-item-background-color: fd-color("background",2) !default;
 $fd-calendar-item-background-color--hover: fd-color("neutral",1) !default;
 $fd-calendar-item-background-color--selected: $fd-link-color--active !default;
@@ -80,6 +81,7 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
 }
 %fd-calendar-item-blocked {
   text-decoration: line-through;
+  color: $fd-calendar-item-color--blocked;
   &:hover {
     cursor: not-allowed;
     background-color: $fd-calendar-item-background-color;
