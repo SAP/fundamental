@@ -11,7 +11,7 @@ $block: #{$fd-namespace}-popover;
     $fd-popover-z-index: 2 !default;
     $fd-popover-background-color: fd-color(background, 2) !default;
     $fd-popover-box-shadow: 0 0 2px 0 rgba(fd-color(neutral, 2), 1), 0 2px 14px 0 rgba(fd-color(neutral, 2), 1);
-    $fd-popover-transition-params: $fd-animation--speed ease-in !default;
+    $fd-popover-transition-params: $fd-animation--speed !default;
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
@@ -37,7 +37,7 @@ $block: #{$fd-namespace}-popover;
       visibility: visible;
       transition: opacity $fd-popover-transition-params;
       overflow: hidden;
-      
+
       &[aria-hidden="true"],
       &.is-hidden {
           opacity: 0;
