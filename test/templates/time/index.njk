@@ -1,0 +1,19 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{% from "./component.njk" import time %}
+
+{% set css_deps = ['fonts','icons', 'components/button'] %}
+
+{% block content %}
+
+  <h1>time</h1>
+
+  {% set example %}
+    <div style="max-width: 210px;">
+      {{ time(properties=data.properties) }}
+    </div>
+  {% endset %}
+
+  {{ format(example) }}
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% import "./../utils.njk" as utils %}
+{% from "../popover/component.njk" import popover %}
+{% from "./../time/component.njk" import time %}
+
+<!--
+time_picker:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+
+{%- set _id = utils.id() %}
+
+{%- macro time_picker_control(properties={}, modifier={}, state={}, aria={ hidden: true }) -%}
+<div class="fd-input-group fd-input-group--after">
+    <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
+        <button class="fd-popover__control fd-button--icon fd-button--secondary sap-icon--fob-watch" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}></button>
+    </span>
+</div>
+{%- endmacro %}
+
+{%- macro time_picker(properties={}, modifier={}, state={}, aria={ hidden: true }) -%}
+<div class="fd-time-picker">
+    {{  popover(properties={
+            id: _id,
+            control: time_picker_control(properties={id: _id}),
+            body: time({
+                id: _id
+            })
+        })
+    }}
+</div>
+{%- endmacro %}

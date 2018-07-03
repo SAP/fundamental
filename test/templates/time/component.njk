@@ -1,0 +1,74 @@
+{% import "./../utils.njk" as utils %}
+{% from "../button/component.njk" import button %}
+
+<!--
+menu:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+
+{%- set _id = utils.id() %}
+
+{%- macro time(properties={}, modifier=[], classes=[], aria=[]) -%}
+    <div class="fd-time{{ modifier | modifier('menu') }}{{ classes | classes }}"{{ aria | aria }} id="{{ _id }}">
+        <div class="fd-time__item">
+            <div class="fd-time__button">
+                {{  button({
+                        icon: 'navigation-up-arrow' },
+                        modifier={ block: ['secondary','xs'] },
+                        aria={ label: 'Increase Hours' })
+                }}
+            </div>
+            <div class="fd-time__input">
+                <input class="fd-form__control" type="text" placeholder="6" />
+            </div>
+            <div class="fd-time__button">
+                {{  button({
+                        icon: 'navigation-down-arrow' },
+                        modifier={ block: ['secondary','xs'] },
+                        aria={ label: 'Decrease Hours' })
+                }}
+            </div>
+        </div>
+        <div class="fd-time__item">
+            <div class="fd-time__button">
+                {{  button({
+                        icon: 'navigation-up-arrow' },
+                        modifier={ block: ['secondary','xs'] },
+                        aria={ label: 'Increase Minutes' })
+                }}
+            </div>
+            <div class="fd-time__input">
+                <input class="fd-form__control" type="text" placeholder="45" />
+            </div>
+            <div class="fd-time__button">
+                {{  button({
+                        icon: 'navigation-down-arrow' },
+                        modifier={ block: ['secondary','xs'] },
+                        aria={ label: 'Decrease Minutes' })
+                }}
+            </div>
+        </div>
+        <div class="fd-time__item">
+            <div class="fd-time__button">
+                {{  button({
+                        icon: 'navigation-up-arrow' },
+                        modifier={ block: ['secondary','xs'] },
+                        aria={ label: 'Increase Clock' })
+                }}
+            </div>
+            <div class="fd-time__input">
+                <input class="fd-form__control" type="text" placeholder="PM" />
+            </div>
+            <div class="fd-time__button">
+                {{  button({
+                        icon: 'navigation-down-arrow' },
+                        modifier={ block: ['secondary','xs'] },
+                        aria={ label: 'Decrease Clock' })
+                }}
+            </div>
+        </div>
+    </div>
+{%- endmacro %}
