@@ -174,8 +174,8 @@ $block: #{$fd-namespace}-button;
     border: solid 1px $fd-button-border-color--main;
     font-weight: bold !important;
     &:hover {
-      background-color: darken($fd-button-background-color--main, 7);
-      border-color: darken($fd-button-border-color--main, 7);
+      background-color: adjust-color($fd-button-background-color--main, $lightness: -7%);
+      border-color: adjust-color($fd-button-background-color--main, $lightness: -7%);
       box-shadow: none;
     }
     &:active,
@@ -184,7 +184,9 @@ $block: #{$fd-namespace}-button;
     &.is-selected,
     &[aria-pressed="true"],
     &.is-pressed {
-      background-color: darken($fd-button-background-color--main, 10);
+      background-color: adjust-color($fd-button-background-color--main, $lightness: -10%);
+      border-color: adjust-color($fd-button-background-color--main, $lightness: -10%);
+
     }
     &[aria-disabled="true"],
     &.is-disabled,
@@ -196,18 +198,32 @@ $block: #{$fd-namespace}-button;
     &.#{$block}--positive {
       background-color: $fd-color--success;
       border-color: $fd-color--success;
+
+      &:hover {
+        background-color: adjust-color($fd-color--success, $lightness: -7%);
+        border-color: adjust-color($fd-color--success, $lightness: -7%);
+      }
+
       &:active,
       &.is-active,
       &[aria-selected="true"],
       &.is-selected,
       &[aria-pressed="true"],
       &.is-pressed {
+        background-color: adjust-color($fd-color--success, $lightness: -10%);
+        border-color: adjust-color($fd-color--success, $lightness: -10%);
         color: $fd-button-color--main;
       }
     }
     &.#{$block}--negative {
       background-color: $fd-color--error;
       border-color: $fd-color--error;
+
+      &:hover {
+        background-color: adjust-color($fd-color--error, $lightness: -7%);
+        border-color: adjust-color($fd-color--error, $lightness: -7%);
+      }
+
       &:active,
       &.is-active,
       &[aria-selected="true"],
@@ -215,6 +231,9 @@ $block: #{$fd-namespace}-button;
       &[aria-pressed="true"],
       &.is-pressed {
         color: $fd-button-color--main;
+        background-color: adjust-color($fd-color--error, $lightness: -10%);
+        border-color: adjust-color($fd-color--error, $lightness: -10%);
+
       }
     }
   }
