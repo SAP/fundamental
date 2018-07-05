@@ -28,6 +28,7 @@ $block: #{$fd-namespace}-button;
   //main
   $fd-button-color--main: fd-color("text-inverse", 1) !default;
   $fd-button-background-color--main: fd-color("action", 1) !default;
+  $fd-button-background-color--main-pressed: adjust-color($fd-button-background-color--main, $lightness: -10%);
   $fd-button-border-color--main: fd-color("action", 1) !default;
 
   //secondary
@@ -39,6 +40,7 @@ $block: #{$fd-namespace}-button;
   $fd-button-color--toolbar: fd-color("text", 2) !default;
   $fd-button-background-color--toolbar: fd-color("neutral", 1) !default;
   $fd-button-selected-background-color--toolbar: fd-color("neutral", 2) !default;
+  $fd-button-pressed-background-color--toolbar: fd-color("action", 1) !default;
   $fd-button-hover-background-color--toolbar: fd-color("text-inverse", 2) !default;
   $fd-button-border-color--toolbar: fd-color("neutral", 3) !default;
   $fd-button-shadow--toolbar: 0 1px 0 0 rgba(lighten(fd-color("text", 2),50), 1) !default;
@@ -174,8 +176,8 @@ $block: #{$fd-namespace}-button;
     border: solid 1px $fd-button-border-color--main;
     font-weight: bold !important;
     &:hover {
-      background-color: darken($fd-button-background-color--main, 7);
-      border-color: darken($fd-button-border-color--main, 7);
+      background-color: adjust-color($fd-button-background-color--main, $lightness: -7%);
+      border-color: adjust-color($fd-button-background-color--main, $lightness: -7%);
       box-shadow: none;
     }
     &:active,
@@ -184,7 +186,9 @@ $block: #{$fd-namespace}-button;
     &.is-selected,
     &[aria-pressed="true"],
     &.is-pressed {
-      background-color: darken($fd-button-background-color--main, 10);
+      background-color: $fd-button-background-color--main-pressed;
+      border-color: adjust-color($fd-button-background-color--main, $lightness: -10%);
+
     }
     &[aria-disabled="true"],
     &.is-disabled,
@@ -196,18 +200,32 @@ $block: #{$fd-namespace}-button;
     &.#{$block}--positive {
       background-color: $fd-color--success;
       border-color: $fd-color--success;
+
+      &:hover {
+        background-color: adjust-color($fd-color--success, $lightness: -7%);
+        border-color: adjust-color($fd-color--success, $lightness: -7%);
+      }
+
       &:active,
       &.is-active,
       &[aria-selected="true"],
       &.is-selected,
       &[aria-pressed="true"],
       &.is-pressed {
+        background-color: adjust-color($fd-color--success, $lightness: -10%);
+        border-color: adjust-color($fd-color--success, $lightness: -10%);
         color: $fd-button-color--main;
       }
     }
     &.#{$block}--negative {
       background-color: $fd-color--error;
       border-color: $fd-color--error;
+
+      &:hover {
+        background-color: adjust-color($fd-color--error, $lightness: -7%);
+        border-color: adjust-color($fd-color--error, $lightness: -7%);
+      }
+
       &:active,
       &.is-active,
       &[aria-selected="true"],
@@ -215,6 +233,9 @@ $block: #{$fd-namespace}-button;
       &[aria-pressed="true"],
       &.is-pressed {
         color: $fd-button-color--main;
+        background-color: adjust-color($fd-color--error, $lightness: -10%);
+        border-color: adjust-color($fd-color--error, $lightness: -10%);
+
       }
     }
   }
@@ -258,12 +279,17 @@ $block: #{$fd-namespace}-button;
     &:active,
     &.is-active,
     &[aria-selected="true"],
-    &.is-selected,
-    &[aria-pressed="true"],
-    &.is-pressed {
+    &.is-selected{
       color: $fd-button-color--toolbar;
       border-color: transparent;
       background: $fd-button-selected-background-color--toolbar;
+    }
+
+    &[aria-pressed="true"],
+    &.is-pressed {
+      color: $fd-button-color--main;
+      border-color: transparent;
+      background: $fd-button-background-color--main-pressed;
     }
     &[aria-disabled="true"],
     &.is-disabled,
@@ -280,7 +306,7 @@ $block: #{$fd-namespace}-button;
     &[aria-pressed="true"],
     &.is-pressed {
       color: $fd-button-color--main;
-      background-color: $fd-button-background-color--main;
+      background-color: $fd-button-background-color--main-pressed;
       //border-color: $fd-button-background-color--main;
       border-color: $fd-button-border-color--toolbar;
     }
