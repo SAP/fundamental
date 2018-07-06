@@ -11,9 +11,9 @@ time_picker:
 -->
 
 {%- set _id = utils.id() %}
-
-{%- macro time_picker_control(properties={}, modifier={}, state={}, aria={ hidden: true }) -%}
+{%- macro time_picker_control(properties={}, modifier={}, state={}, aria={ hidden: true }) %}
 <div class="fd-input-group fd-input-group--after">
+  <input type="text" class="" id="" placeholder="hh:mm am/pm">
     <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
         <button class="fd-popover__control fd-button--icon fd-button--secondary sap-icon--fob-watch" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}></button>
     </span>
