@@ -23,21 +23,6 @@
   <h2>with values</h2>
   {% set example %}
 {{ time(properties=data.properties) }}
-{{ time(properties={
-  "value": "34",
-  "placeholder": "mm",
-  "label": "minutes"
-}) }}
-{{ time(properties={
-  "value": "58",
-  "placeholder": "00",
-  "label": "seconds"
-}) }}
-{{ time(properties={
-  "value": "pm",
-  "placeholder": "am",
-  "label": "period"
-}) }}
   {% endset %}
 
   {{ format(example) }}
@@ -45,22 +30,24 @@
 
   <h2>with placeholder</h2>
   {% set example %}
-  {{ time(properties={
+{{ time(properties={ items: [
+  {
     "placeholder": "hh",
     "label": "hours"
-  }) }}
-  {{ time(properties={
+  },
+  {
     "placeholder": "mm",
     "label": "minutes"
-  }) }}
-  {{ time(properties={
+  },
+  {
     "placeholder": "ss",
     "label": "seconds"
-  }) }}
-  {{ time(properties={
+  },
+  {
     "placeholder": "am",
     "label": "period"
-  }) }}
+  }]
+}) }}
   {% endset %}
 
   {{ format(example) }}
@@ -73,17 +60,20 @@
 
 
   {% set example %}
-  {{ time(properties={
-    "value": "00",
-    "placeholder": "hh",
-    "label": "hours",
-    "firstValue": true
-  }) }}
-  {{ time(properties={
-    "value": "59",
-    "placeholder": "mm",
-    "label": "minutes",
-    "lastValue": true
+  {{ time(properties={ items: [
+    {
+      "value": "00",
+      "placeholder": "hh",
+      "label": "hours",
+      "firstValue": true
+    },
+    {
+      "value": "59",
+      "placeholder": "mm",
+      "label": "minutes",
+      "lastValue": true
+    }
+]
   }) }}
   {% endset %}
 

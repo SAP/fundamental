@@ -10,21 +10,23 @@ time_picker:
     aria={}
 -->
 {%- set _time_items %}
-{{ time(properties={
-  "placeholder": "hh",
-  "label": "hours"
-}) }}
-{{ time(properties={
-  "placeholder": "mm",
-  "label": "minutes"
-}) }}
-{{ time(properties={
-  "placeholder": "ss",
-  "label": "seconds"
-}) }}
-{{ time(properties={
-  "placeholder": "am",
-  "label": "period"
+{{ time(properties={ items: [
+  {
+    "placeholder": "hh",
+    "label": "hours"
+  },
+  {
+    "placeholder": "mm",
+    "label": "minutes"
+  },
+  {
+    "placeholder": "ss",
+    "label": "seconds"
+  },
+  {
+    "placeholder": "am",
+    "label": "period"
+  }]
 }) }}
 {%- endset %}
 {%- macro time_picker_control(properties={}, modifier={}, state={}, aria={ hidden: true }) %}
