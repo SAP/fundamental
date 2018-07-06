@@ -1,5 +1,7 @@
-{% macro format(content="") %}
+{% macro format(content="",bgcolor="transparent") %}
+<div style="background-color:{{bgcolor}}">
 {{ content }}
+</div>
 <br><br>
 <textarea readonly class="test-textarea">{{ content | e | trim }}</textarea>
 {% endmacro %}

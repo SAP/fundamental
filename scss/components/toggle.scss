@@ -8,140 +8,116 @@
 */
 $block: #{$fd-namespace}-toggle;
 .#{$block} {
-    // Hard coded values, TODO: look into cleaning up with more local spacing variables ~Eric
-    $fd-toggle-barheight--xsmall: 14px !default;
-    $fd-toggle-barheight--small: 16px !default;
-    $fd-toggle-barheight: 20px !default;
-    $fd-toggle-barheight--large: 22px !default;
+  // Hard coded values, TODO: look into cleaning up with more local spacing variables ~Eric
 
-    $fd-toggle-barwidth--xsmall: 34px !default;
-    $fd-toggle-barwidth--small: 40px !default;
-    $fd-toggle-barwidth: 48px !default;
-    $fd-toggle-barwidth--large: 50px !default;
+  //SETTINGS
+  //SIZES — size: height "text size" "icon size"
+  $fd-toggle-sizes: (
+      "default": fd-space(12) fd-space(7), //48px 28px
+      "xs": fd-space(9) fd-space(5), //36px 20px
+      "s": fd-space(10) fd-space(6), //40px 24px
+      "l": fd-space(14) fd-space(8), //56px 32px
+  ) !default;
+  $_defaults: map-get($fd-toggle-sizes, "default");
+  $fd-toggle-width: nth($_defaults, 1);
+  $fd-toggle-height: nth($_defaults, 2);
+  $fd-toggle-background-color: $fd-forms-border-color !default;
+  $fd-toggle-transition-params: $fd-animation--speed ease-in !default;
+  $fd-toggle-switch-width: nth($_defaults, 2);
+  $fd-toggle-switch-background-color: fd-color(neutral, 1) !default;
+  $fd-toggle-switch-background-color--disabled: fd-color(neutral, 2) !default;
+  $fd-toggle-switch-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
 
-    $fd-toggle-height--xsmall: 20px !default;
-    $fd-toggle-height--small: 24px !default;
-    $fd-toggle-height: 28px !default;
-    $fd-toggle-height--large: 32px !default;
-
-    $fd-toggle-width--xsmall: $fd-toggle-barwidth--xsmall + $fd-toggle-height--xsmall !default;
-    $fd-toggle-width--small: $fd-toggle-barwidth--small + $fd-toggle-height--small !default;
-    $fd-toggle-width: $fd-toggle-barwidth + $fd-toggle-height !default;
-    $fd-toggle-width--large: $fd-toggle-barwidth--large + $fd-toggle-height--large !default;
-
-    $fd-toggle-toppadding--xsmall: 0;
-    $fd-toggle-toppadding--small: 2px;
-    $fd-toggle-toppadding: ($fd-toggle-height - $fd-toggle-barheight) / 2;
-    $fd-toggle-toppadding--large: ($fd-toggle-height--large - $fd-toggle-barheight) / 2;
-
-    $fd-toggle-background-color: $fd-forms-border-color !default;
-    $fd-toggle-background-color--checked: $fd-forms-background-color--check !default;
-    $fd-toggle-switch-background-color: fd-color(neutral, 1) !default;
-    $fd-toggle-switch-background-color--disabled: fd-color(neutral, 2) !default;
-    $fd-toggle-transition-params: $fd-animation--speed ease-in !default;
-    $fd-toggle-switch-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
-
-    @include fd-reset;
-    position: relative;
-    display: inline-block;
-    height: $fd-toggle-height;
-    width: $fd-toggle-width;
-    padding: $fd-toggle-toppadding ($fd-toggle-height / 2) 0 ($fd-toggle-height / 2);
-
-    &__switch {
-        height: $fd-toggle-height;
-        width: $fd-toggle-height;
-        border-radius: 50%;
-        position: absolute;
-        top: 0;
-        left: 4px;
-        background-color: $fd-toggle-switch-background-color;
-        border: 1px solid rgba(fd-color(text, 3), .7);
-        transition: left $fd-toggle-transition-params;
-        pointer-events: none;
-        box-shadow: $fd-toggle-switch-box-shadow;
+  @include fd-reset;
+  position: relative;
+  display: inline-block;
+  height: $fd-toggle-height;
+  width: $fd-toggle-width;
+  vertical-align: middle;
+  &__switch {
+    height: $fd-toggle-switch-width;
+    width: $fd-toggle-switch-width;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 100%;
+    background-color: $fd-toggle-switch-background-color;
+    border: 1px solid rgba(fd-color(text, 3), .7);
+    transition: left $fd-toggle-transition-params;
+    pointer-events: none;
+    box-shadow: $fd-toggle-switch-box-shadow;
+  }
+  input {
+    position: absolute;
+    width: 100%;
+    height: 71%;
+    top: calc((100% - 71%) /2);
+    z-index: 1;
+    border-color: transparent !important;
+    border-radius: $fd-toggle-height/2;
+    background-color: $fd-toggle-background-color;
+    &::before,
+    &::after {
+      display: none;
+    }
+    &:checked {
+      background-color: $fd-link-color;
+      opacity: 0.6;
+      & + .#{$block}__switch {
+        left: calc(100% - #{$fd-toggle-switch-width});
+        background: $fd-link-color--pressed;
+        border-color: $fd-link-color--pressed;
+      }
     }
 
-    input {
-        background-color: $fd-toggle-background-color;
-        border-radius: $fd-toggle-height/2;
-        width: 100%;
-        height: $fd-toggle-barheight;
+    &:hover {
+      border-color: transparent;
+    }
+    &:active,
+    &:focus {
+      border-color: transparent;
+    }
+    &[disabled],
+    &.is-disabled,
+    &[aria-disabled="true"] {
+      opacity: 0.4;
+      border-color: transparent;
+      & + .#{$block}__switch {
         border-color: transparent;
-        vertical-align: middle;
+        background-color: $fd-toggle-switch-background-color--disabled;
+      }
+    }
 
-        &:before {
-            display: none;
+  }
+
+
+  //SIZES
+  @each $key, $list in $fd-toggle-sizes {
+    @if $key != "default" {
+      &--#{$key} {
+        height: nth($list, 2);
+        width: nth($list, 1);
+        .#{$block}__switch {
+          height: nth($list, 2);
+          width: nth($list, 2);
         }
-        &:checked {
-            background: $fd-forms-background-color--check-secondary;
-            border-color: transparent;
-
-            &::after {
-                display: none;
-            }
+        input {
+          border-radius: nth($list, 2)/2;
+          &:checked {
             & + .#{$block}__switch {
-                left: calc(50% + 2px);
-                background: $fd-forms-border-color--check;
-                border-color: $fd-forms-border-color--check;
+              left: calc(100% - #{nth($list, 2)});
             }
+          }
         }
-        &:hover {
-            border-color: transparent;
-        }
-        &:active, &:focus {
-            border-color: transparent;
-        }
-        &[disabled],
-        &.is-disabled,
-        &[aria-disabled="true"] {
-            border-color: transparent;
-
-            & + .#{$block}__switch {
-                background-color: $fd-toggle-switch-background-color--disabled;
-            }
-        }
+      }
     }
-    &--xsmall {
-        height: $fd-toggle-height--xsmall;
-        width: $fd-toggle-width--xsmall;
-        padding-top: $fd-toggle-toppadding--xsmall;
+  }
 
-        input {
-            border-radius: $fd-toggle-height--xsmall/2;
-            height: $fd-toggle-barheight--xsmall;
-        }
-        .#{$block}__switch {
-            height: $fd-toggle-height--xsmall;
-            width: $fd-toggle-height--xsmall;
-        }
-    }
-    &--small {
-        height: $fd-toggle-height--small;
-        width: $fd-toggle-width--small;
-        padding-top: $fd-toggle-toppadding--small;
 
-        input {
-            border-radius: $fd-toggle-height--small/2;
-            height: $fd-toggle-barheight--small;
-        }
-        .#{$block}__switch {
-            height: $fd-toggle-height--small;
-            width: $fd-toggle-height--small;
-        }
-    }
-    &--large {
-        height: $fd-toggle-height--large;
-        width: $fd-toggle-width--large;
-        padding-top: $fd-toggle-toppadding--large;
 
-        input {
-            border-radius: $fd-toggle-height--large/2;
-            height: $fd-toggle-barheight--large;
-        }
-        .#{$block}__switch {
-            height: $fd-toggle-height--large;
-            width: $fd-toggle-height--large;
-        }
-    }
+
+
+
 }

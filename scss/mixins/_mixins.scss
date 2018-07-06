@@ -29,10 +29,11 @@
     background-color: $fd-forms-background-color;
     transition: border-color $fd-animation--speed;
     //states
-    &:focus,
     &:hover {
-        border-color: $fd-forms-border-color--focus;
-        //background-color: $fd-forms-background-color;
+        border-color: fd-color-darker($fd-forms-color--active);
+    }
+    &:focus {
+      border-color: fd-color-darkest($fd-forms-color--active);
     }
     &.is-invalid {
         border-color: $fd-color--error;

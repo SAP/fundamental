@@ -21,29 +21,12 @@ $block: #{$fd-namespace}-button;
   ) !default;
 
   //default
-  $fd-button-color: fd-color("action", 1) !default;
-  $fd-button-background-color: transparent !default;
-  $fd-button-border-color: fd-color("action", 1) !default;
-
-  //main
-  $fd-button-color--main: fd-color("text-inverse", 1) !default;
-  $fd-button-background-color--main: fd-color("action", 1) !default;
-  $fd-button-background-color--main-pressed: adjust-color($fd-button-background-color--main, $lightness: -10%);
-  $fd-button-border-color--main: fd-color("action", 1) !default;
-
-  //secondary
-  $fd-button-color--secondary: fd-color("action", 1) !default;
-  $fd-button-background-color--secondary: transparent !default;
-  $fd-button-border-color--secondary: transparent !default;
-
-  //toolbar
-  $fd-button-color--toolbar: fd-color("text", 2) !default;
-  $fd-button-background-color--toolbar: fd-color("neutral", 1) !default;
-  $fd-button-selected-background-color--toolbar: fd-color("neutral", 2) !default;
-  $fd-button-pressed-background-color--toolbar: fd-color("action", 1) !default;
-  $fd-button-hover-background-color--toolbar: fd-color("text-inverse", 2) !default;
-  $fd-button-border-color--toolbar: fd-color("neutral", 3) !default;
-  $fd-button-shadow--toolbar: 0 1px 0 0 rgba(lighten(fd-color("text", 2),50), 1) !default;
+  $fd-button-color: $fd-link-color !default;
+  $fd-button-color--inverse: fd-color("text-inverse", 1) !default;
+  $fd-button-color--hover: $fd-link-color--hover !default;
+  $fd-button-color--pressed: $fd-link-color--pressed !default;
+  $fd-button-color--active: $fd-link-color--active !default;
+  $fd-button-background-color: fd-color("background", 2) !default;
 
   //anim
   $fd-button-transition-params: $fd-animation--speed ease-in !default;
@@ -61,7 +44,7 @@ $block: #{$fd-namespace}-button;
       @include fd-icon-size(nth($defaults, 3));
       background-color: $fd-button-background-color;
       color: $fd-button-color;
-      border: solid 1px $fd-button-border-color;
+      border: solid 1px $fd-button-color;
       padding-left: $fd-button-padding-x;
       padding-right: $fd-button-padding-x;
       height: nth($defaults, 1);
@@ -69,21 +52,6 @@ $block: #{$fd-namespace}-button;
       min-width: nth($defaults, 1);
       transition: all $fd-button-transition-params;
       line-height: 1;
-
-      &:hover{
-        box-shadow: 0px 0px 0px 1px $fd-button-border-color;
-      }
-      &:active,
-      &.is-active,
-      &[aria-selected="true"],
-      &.is-selected,
-      &[aria-pressed="true"],
-      &.is-pressed {
-        border-color: $fd-button-border-color;
-        background-color: $fd-button-border-color;
-        color: $fd-button-color--main;
-      }
-
       &::before {
         margin-right: fd-space(2);
         vertical-align: middle;
@@ -106,29 +74,29 @@ $block: #{$fd-namespace}-button;
           margin-left: 0;
         }
       }
+      //DEFAULT
+      &:hover {
+        border-color: $fd-button-color--hover;
+        color: $fd-button-color--hover;
+        box-shadow: 0px 0px 0px 1px $fd-button-color;
+      }
+      &:active,
+      &.is-active,
+      &[aria-selected="true"],
+      &.is-selected,
+      &[aria-pressed="true"],
+      &.is-pressed {
+        background-color: $fd-button-color--active;
+        border-color: $fd-button-color--active;
+        color: fd-color("text-inverse",1);
+      }
+      &[aria-disabled="true"],
+      &.is-disabled,
+      &:disabled {
+        background-color: $fd-button-background-color;
+        color: $fd-button-color;
+      }
     }
-  }
-
-  //DEFAULT
-  &:hover {
-    background-color: darken($fd-button-background-color, 7);
-    border-color: darken($fd-button-border-color, 7);
-  }
-  &:active,
-  &.is-active,
-  &[aria-selected="true"],
-  &.is-selected,
-  &[aria-pressed="true"],
-  &.is-pressed {
-    border-color: $fd-button-border-color;
-    background-color: $fd-button-border-color;
-    color: $fd-button-color--main;
-  }
-  &[aria-disabled="true"],
-  &.is-disabled,
-  &:disabled {
-    background-color: $fd-button-background-color;
-    color: $fd-button-color;
   }
 
   //TYPES
@@ -136,7 +104,8 @@ $block: #{$fd-namespace}-button;
     color: $fd-color--success;
     border-color: $fd-color--success;
     &:hover {
-      border-color: $fd-color--success;
+      border-color: fd-color-darker($fd-color--success);
+      color: fd-color-darker($fd-color--success);
       box-shadow: 0px 0px 0px 1px $fd-color--success;
     }
     &:active,
@@ -145,16 +114,23 @@ $block: #{$fd-namespace}-button;
     &.is-selected,
     &[aria-pressed="true"],
     &.is-pressed {
-      border-color: $fd-color--success;
-      background-color: $fd-color--success;
-      color: $fd-button-color--main;
+      background-color: fd-color-darkest($fd-color--success);
+      border-color: fd-color-darkest($fd-color--success);
+      color: $fd-button-color--inverse;
+    }
+    &[aria-disabled="true"],
+    &.is-disabled,
+    &:disabled {
+      background-color: $fd-button-background-color;
+      color: $fd-color--success;
     }
   }
   &--negative {
     color: $fd-color--error;
     border-color: $fd-color--error;
     &:hover {
-      border-color: $fd-color--error;
+      border-color: fd-color-darker($fd-color--error);
+      color: fd-color-darker($fd-color--error);
       box-shadow: 0px 0px 0px 1px $fd-color--error;
     }
     &:active,
@@ -163,21 +139,27 @@ $block: #{$fd-namespace}-button;
     &.is-selected,
     &[aria-pressed="true"],
     &.is-pressed {
-        border-color: $fd-color--error;
-        background-color: $fd-color--error;
-        color: $fd-button-color--main;
+      background-color: fd-color-darkest($fd-color--error);
+      border-color: fd-color-darkest($fd-color--error);
+      color: fd-color("text-inverse",1);
+    }
+    &[aria-disabled="true"],
+    &.is-disabled,
+    &:disabled {
+      background-color: $fd-button-background-color;
+      color: $fd-color--error;
     }
   }
 
   &--main,
-  &--action-bar { //adding --action-bar modifier. --main modifier shoudl be depricated in future releases. see issue #
-    color: $fd-button-color--main;
-    background-color: $fd-button-background-color--main;
-    border: solid 1px $fd-button-border-color--main;
-    font-weight: bold !important;
+  &--action-bar {
+    color: $fd-button-color--inverse;
+    background-color: $fd-button-color;
+    border-color: $fd-button-color;
     &:hover {
-      background-color: adjust-color($fd-button-background-color--main, $lightness: -7%);
-      border-color: adjust-color($fd-button-background-color--main, $lightness: -7%);
+      background-color: $fd-button-color--hover;
+      border-color: $fd-button-color--hover;
+      color: $fd-button-color--inverse;
       box-shadow: none;
     }
     &:active,
@@ -186,67 +168,74 @@ $block: #{$fd-namespace}-button;
     &.is-selected,
     &[aria-pressed="true"],
     &.is-pressed {
-      background-color: $fd-button-background-color--main-pressed;
-      border-color: adjust-color($fd-button-background-color--main, $lightness: -10%);
-
+      background-color: $fd-button-color--active;
+      border-color: $fd-button-color--active;
     }
     &[aria-disabled="true"],
     &.is-disabled,
     &:disabled {
-      background-color: $fd-button-background-color--main;
-      color: $fd-button-color--main;
-      opacity: 0.4;
+      background-color: $fd-button-color;
+      color: $fd-button-color--inverse;
     }
     &.#{$block}--positive {
       background-color: $fd-color--success;
       border-color: $fd-color--success;
-
       &:hover {
-        background-color: adjust-color($fd-color--success, $lightness: -7%);
-        border-color: adjust-color($fd-color--success, $lightness: -7%);
+        background-color: fd-color-darker($fd-color--success);
+        border-color: fd-color-darker($fd-color--success);
+        color: $fd-button-color--inverse;
       }
-
       &:active,
       &.is-active,
       &[aria-selected="true"],
       &.is-selected,
       &[aria-pressed="true"],
       &.is-pressed {
-        background-color: adjust-color($fd-color--success, $lightness: -10%);
-        border-color: adjust-color($fd-color--success, $lightness: -10%);
-        color: $fd-button-color--main;
+        color: $fd-button-color--inverse;
+        background-color: fd-color-darkest($fd-color--success);
+        border-color: fd-color-darkest($fd-color--success);
+      }
+      &[aria-disabled="true"],
+      &.is-disabled,
+      &:disabled {
+        background-color: $fd-color--success;
+        color: $fd-button-color--inverse;
       }
     }
     &.#{$block}--negative {
       background-color: $fd-color--error;
       border-color: $fd-color--error;
-
       &:hover {
-        background-color: adjust-color($fd-color--error, $lightness: -7%);
-        border-color: adjust-color($fd-color--error, $lightness: -7%);
+        background-color: fd-color-darker($fd-color--error);
+        border-color: fd-color-darker($fd-color--error);
+        color: $fd-button-color--inverse;
       }
-
       &:active,
       &.is-active,
       &[aria-selected="true"],
       &.is-selected,
       &[aria-pressed="true"],
       &.is-pressed {
-        color: $fd-button-color--main;
-        background-color: adjust-color($fd-color--error, $lightness: -10%);
-        border-color: adjust-color($fd-color--error, $lightness: -10%);
-
+        color: $fd-button-color--inverse;
+        background-color: fd-color-darkest($fd-color--error);
+        border-color: fd-color-darkest($fd-color--error);
+      }
+      &[aria-disabled="true"],
+      &.is-disabled,
+      &:disabled {
+        background-color: $fd-color--error;
+        color: $fd-button-color--inverse;
       }
     }
   }
 
   &--secondary {
-    color: $fd-button-color--secondary;
-    background-color: $fd-button-background-color--secondary;
-    border: solid 1px $fd-button-border-color--secondary;
+    color: $fd-button-color;
+    border-color: transparent;
+    //background-color: $fd-button-background-color;
     &:hover {
-      background-color: fd-color("neutral",1);
-      border-color: darken($fd-button-border-color--secondary, 7);
+      background-color: fd-color("neutral", 1);
+      border-color: transparent;
       box-shadow: none;
     }
     &:active,
@@ -255,60 +244,50 @@ $block: #{$fd-namespace}-button;
     &.is-selected,
     &[aria-pressed="true"],
     &.is-pressed {
-      color: $fd-button-color--secondary;
+      color: $fd-button-color;
       background-color: fd-color("neutral",2);
       border-color: transparent;
     }
     &[aria-disabled="true"],
     &.is-disabled,
     &:disabled {
-      background-color: $fd-button-background-color--secondary;
+      background-color: $fd-button-background-color;
     }
   }
+
   &--toolbar,
   &--grouped {
-    color: $fd-button-color--toolbar;
-    background-color: $fd-button-background-color--toolbar;
-    border: solid 1px $fd-button-border-color--toolbar;
-    box-shadow: $fd-button-shadow--toolbar;
+    color: fd-color("text", 2);
+    background-color: fd-color("neutral", 1);
+    border-color: fd-color("neutral", 3);
+    box-shadow: 0 1px 0 0 rgba(lighten(fd-color("text", 2),50), 1);
     &:hover {
-      background-color: $fd-button-hover-background-color--toolbar;
-      border-color: darken($fd-button-border-color--toolbar, 7);
+      color: fd-color("text", 2);
+      background-color: fd-color-darker(fd-color("neutral", 1));
+      border-color: fd-color-darker(fd-color("neutral", 1));
       box-shadow: none;
     }
     &:active,
-    &.is-active,
-    &[aria-selected="true"],
-    &.is-selected{
-      color: $fd-button-color--toolbar;
-      border-color: transparent;
-      background: $fd-button-selected-background-color--toolbar;
+    &.is-active {
+      //color: fd-color("text", 2);
+      background-color: fd-color-darkest(fd-color("neutral", 1));
+      border-color: fd-color-darkest(fd-color("neutral", 1));
+      box-shadow: none;
     }
-
-    &[aria-pressed="true"],
-    &.is-pressed {
-      color: $fd-button-color--main;
-      border-color: transparent;
-      background: $fd-button-background-color--main-pressed;
-    }
-    &[aria-disabled="true"],
-    &.is-disabled,
-    &:disabled {
-      background-color: $fd-button-background-color--secondary;
-      border-color: $fd-button-border-color--toolbar;
-    }
-  }
-  &--grouped {
-    &:active,
-    &.is-active,
     &[aria-selected="true"],
     &.is-selected,
     &[aria-pressed="true"],
     &.is-pressed {
-      color: $fd-button-color--main;
-      background-color: $fd-button-background-color--main-pressed;
-      //border-color: $fd-button-background-color--main;
-      border-color: $fd-button-border-color--toolbar;
+      border-color: transparent;
+      color: $fd-button-color--inverse;
+      background-color: fd-color-darkest($fd-button-color);
+    }
+    &[aria-disabled="true"],
+    &.is-disabled,
+    &:disabled {
+      color: fd-color("text", 2);
+      background-color: fd-color("neutral", 1);
+      border-color: fd-color("neutral", 3);
     }
   }
 
@@ -346,5 +325,4 @@ $block: #{$fd-namespace}-button;
       }
     }
   }
-
 }

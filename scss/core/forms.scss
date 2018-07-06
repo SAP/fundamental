@@ -44,8 +44,8 @@ select {
     position: relative;
     cursor: pointer;
     &:checked {
-        border-color: $fd-forms-border-color--check;
-        background-color: $fd-forms-border-color--check;
+        border-color: fd-color-darkest($fd-forms-color--active);
+        background-color: fd-color-darkest($fd-forms-color--active);
     }
     &[disabled],
     &[aria-disabled="true"],
@@ -98,7 +98,7 @@ input[type="radio"] {
     &:checked {
         background-color: $fd-forms-background-color;
         &::after {
-            background-color: $fd-forms-background-color--check;
+            background-color: fd-color-darkest($fd-forms-color--active);
         }
         &[disabled],
         &[aria-disabled="true"],
