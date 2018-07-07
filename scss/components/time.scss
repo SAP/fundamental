@@ -4,18 +4,22 @@
 
 $block: #{$fd-namespace}-time;
 .#{$block} {
-    display: flex;
-    justify-content: space-between;
-
     &__item {
-        text-align: center;
-        padding: 0 5px;
-        max-width: 75px;
+      display: inline-block;
+      max-width: fd-space(10);
+      text-align: center;
+      margin-right: fd-space(1);
+      &:last-child {
+        margin-right: 0;
+      }  
     }
+
     &__input {
-        margin: 5px 0;
-        input{
-            text-align: center;
+        margin: fd-space(2) 0;
+        input {
+          padding-left: fd-space(2);
+          padding-right: fd-space(2);
+          text-align: center;
         }
     }
 }
