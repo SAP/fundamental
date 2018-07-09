@@ -2077,9 +2077,9 @@ input[type=radio], input[type=checkbox] {
   background-color: #ffffff;
   transition: border-color 0.125s;
   transition: border-color 0.125s ease-in, background-color 0.125s ease-in, background-image 0.125s ease-in; }
-  input[type=radio]:hover, input[type=checkbox]:hover {
+  input:hover[type=radio], input:hover[type=checkbox] {
     border-color: #085caf; }
-  input[type=radio]:focus, input[type=checkbox]:focus {
+  input:focus[type=radio], input:focus[type=checkbox] {
     border-color: #0854a0; }
   input.is-invalid[type=radio], input.is-invalid[type=checkbox] {
     border-color: #ee0000; }
@@ -2087,7 +2087,7 @@ input[type=radio], input[type=checkbox] {
     border-color: #359c46; }
   input.is-warning[type=radio], input.is-warning[type=checkbox] {
     border-color: #f59518; }
-  input[type=radio]:disabled, input[type=checkbox]:disabled, input[aria-disabled="true"][type=radio], input[aria-disabled="true"][type=checkbox], input.is-disabled[type=radio], input.is-disabled[type=checkbox] {
+  input:disabled[type=radio], input:disabled[type=checkbox], input[aria-disabled="true"][type=radio], input[aria-disabled="true"][type=checkbox], input.is-disabled[type=radio], input.is-disabled[type=checkbox] {
     cursor: not-allowed;
     color: #6f7275;
     border-color: #ebebec;
@@ -3744,24 +3744,29 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-table thead tr:hover, .docs-table thead tr:hover {
       background-color: inherit; }
     .fd-table thead td, .docs-table thead td,
-    .fd-table thead th, .docs-table thead th {
+    .fd-table thead th,
+    .docs-table thead th {
       border: none;
       font-weight: 400; }
   .fd-table td, .docs-table td,
-  .fd-table th, .docs-table th {
+  .fd-table th,
+  .docs-table th {
     text-align: left;
     padding: 12px 12px;
     border-style: solid;
     border-width: 0;
     border-color: transparent; }
     .fd-table td:first-child, .docs-table td:first-child,
-    .fd-table th:first-child, .docs-table th:first-child {
+    .fd-table th:first-child,
+    .docs-table th:first-child {
       padding-left: 24px; }
     .fd-table td:last-child, .docs-table td:last-child,
-    .fd-table th:last-child, .docs-table th:last-child {
+    .fd-table th:last-child,
+    .docs-table th:last-child {
       padding-right: 24px; }
     .fd-table td .fd-dropdown__menu, .docs-table td .fd-dropdown__menu,
-    .fd-table th .fd-dropdown__menu, .docs-table th .fd-dropdown__menu {
+    .fd-table th .fd-dropdown__menu,
+    .docs-table th .fd-dropdown__menu {
       min-width: auto;
       text-align: left; }
   .fd-table a, .docs-table a {
@@ -3867,7 +3872,6 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     white-space: nowrap;
     background-color: transparent;
     border-radius: 4px;
-    color: #32363a;
     width: 36px;
     height: 36px; }
     .fd-modal__close::before {
@@ -4331,10 +4335,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   margin: 0 auto; }
   .fd-spinner.is-hidden, .fd-spinner[aria-hidden="true"] {
     display: none; }
-  .is-busy, [aria-busy="true"] {
+  .is-busy,
+  [aria-busy="true"] {
     position: relative;
     min-height: 40px; }
-    .is-busy::before, [aria-busy="true"]::before {
+    .is-busy::before,
+    [aria-busy="true"]::before {
       position: absolute;
       background-color: rgba(243, 244, 245, 0.95);
       top: 0;
@@ -4343,7 +4349,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
       left: 0;
       z-index: 1;
       content: ""; }
-    .is-busy .fd-spinner, [aria-busy="true"] .fd-spinner {
+    .is-busy .fd-spinner,
+    [aria-busy="true"] .fd-spinner {
       position: absolute;
       z-index: 2;
       left: calc(50% - 29px/2);
@@ -5050,7 +5057,7 @@ see layouts/panel
 
 .fd-calendar__item--disabled, .fd-calendar__item.is-disabled, .fd-calendar__item[aria-disabled="true"] {
   color: #e7e9ea; }
-  .fd-calendar__item--disabled:hover, .fd-calendar__item.is-disabled:hover, .fd-calendar__item[aria-disabled="true"]:hover {
+  .fd-calendar__item--disabled:hover, .fd-calendar__item.is-disabled:hover, .fd-calendar__item:hover[aria-disabled="true"] {
     cursor: not-allowed;
     background-color: #ffffff; }
 
@@ -5088,7 +5095,7 @@ see layouts/panel
 .fd-calendar__item.is-selected-range-last {
   border-radius: 0 4px 4px 0; }
 
-[aria-hidden="true"].fd-calendar__dates, [aria-hidden="true"].fd-calendar__months, [aria-hidden="true"].fd-calendar__years, .is-hidden.fd-calendar__dates, .is-hidden.fd-calendar__months, .is-hidden.fd-calendar__years {
+.fd-calendar__dates[aria-hidden="true"], .fd-calendar__months[aria-hidden="true"], .fd-calendar__years[aria-hidden="true"], .is-hidden.fd-calendar__dates, .is-hidden.fd-calendar__months, .is-hidden.fd-calendar__years {
   display: none; }
 
 .fd-calendar {
@@ -6563,9 +6570,9 @@ hr {
     .docs-component__app .fd-overlay {
       position: absolute;
       width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0; }
+      height: 100%; }
+    .docs-component__app .fd-overlay--alert .fd-alert {
+      margin-top: -410px; }
   .docs-component__app-example {
     color: #fff;
     position: relative; }

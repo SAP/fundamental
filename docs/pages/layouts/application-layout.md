@@ -87,10 +87,16 @@ The sidebar is an optional `app` layout container and should be used with applic
 ## Application with UI overlay
 {: .docs-header-h2}
 The overlay container is meant to accommodate any content that needs to be positioned on top of the UI. The is often included at the bottom of the DOM to overcome positioning and overflow styles of content container.
+There are two options for Application overlay.
 
+- `.fd-overlay--modal`: Dims background and position the modal in the center of the viewport.
+- `.fd-overlay--alert`: Does not dim the background and positions the alert component near the top of the viewport.
 Commonly the `fd-overlay` class will be added to the overlay to dim the background and center the content, as with a modal. However, the container is generic enough to accommodate any full-UI takeover.
 
 The container visibility can be toggled with the `aria-hidden` attribute.
+
+### Application Overlay Modal example
+{: .docs-header-h3}
 
 {% capture app-layout-no-sidebar %}
 <div class="fd-ui fd-ui--fundamental">
@@ -107,9 +113,59 @@ The container visibility can be toggled with the `aria-hidden` attribute.
     <div class="fd-ui__footer">
         fd-ui_footer
     </div>
-    <div class="fd-ui__overlay fd-overlay" aria-hidden="false">
-        fd-ui_overlay fd-overlay
+    <div class="fd-ui__overlay fd-overlay fd-overlay--modal" aria-hidden="false">
+        <div class="fd-modal" role="dialog">
+          <div class="fd-modal__content" role="document">
+              <header class="fd-modal__header">
+                  <h1 class="fd-modal__title">fd-modal__header</h1>
+                  <button class=" fd-button--secondary fd-modal__close"></button>
+              </header>
+              <div class="fd-modal__body">
+                  fd-modal__body
+              </div>
+              <footer class="fd-modal__footer">
+                <div class="fd-modal__actions">
+                  <button class=" fd-button--secondary">fd-modal__action</button>
+                  <button class=" fd-button--primary">fd-modal__action</button>
+                </div>
+                </footer>
+          </div>
+        </div>
     </div>
 </div>
+
+
+
+{% endcapture %}
+{% include display-component.html component=app-layout-no-sidebar class="app" %}
+
+### Application Overlay Alert example
+{: .docs-header-h3}
+
+{% capture app-layout-no-sidebar %}
+<div class="fd-ui fd-ui--fundamental">
+    <div class="fd-ui__header">
+        fd-ui_header
+    </div>
+    <div class="fd-ui__app">
+        <div class="fd-app">
+            <main class="fd-app__main">
+                fd-app_main
+            </main>
+        </div>
+    </div>
+    <div class="fd-ui__footer">
+        fd-ui_footer
+    </div>
+    <div class="fd-ui__overlay fd-overlay fd-overlay--alert" aria-hidden="false">
+        <div class="fd-alert fd-alert--warning fd-alert--dismissible" role="alert" id="4Nolz351">
+          <button class="fd-alert__close" aria-controls="4Nolz351" aria-label="Close"></button>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        </div>
+    </div>
+</div>
+
+
+
 {% endcapture %}
 {% include display-component.html component=app-layout-no-sidebar class="app" %}
