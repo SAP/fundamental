@@ -14,7 +14,7 @@ summary:
 <div class="fd-tile-grid fd-tile-grid--2col docs-tiles">
     <a class="fd-tile" role="button" href="full-width-app-demo.html" target="_blank">
         <div class="fd-tile__content">
-             <h2 class="fd-tile__header"> 
+             <h2 class="fd-tile__header">
                  Full Width App Layout
              </h2>
         </div>
@@ -26,10 +26,17 @@ summary:
              </h2>
          </div>
     </a>
-    <a class="fd-tile" role="button" href="overlay-app-demo.html" target="_blank">
+    <a class="fd-tile" role="button" href="alert-overlay-demo-page.html" target="_blank">
         <div class="fd-tile__content">
              <h2 class="fd-tile__header">
-                 Application Overlay (modal)
+                 Application Alert Overlay
+             </h2>
+         </div>
+    </a>
+    <a class="fd-tile" role="button" href="modal-overlay-demo-page.html" target="_blank">
+        <div class="fd-tile__content">
+             <h2 class="fd-tile__header">
+                 Application Modal Overlay
              </h2>
          </div>
     </a>
