@@ -8,66 +8,57 @@ folder: components
 summary:
 ---
 
-A More icon or the word, "More", is used to indicate there are more options than room to display them. On click or tap, a contextual menu opens.
+The contextual menu component is an opinionated composition of the "popover" and "menu" components with the use of a styled button. A More icon or the word, "More", is used to indicate there are more options than room to display them. On click or tap, a contextual menu opens. Composed by the "popover" and "menu" components.
+
+This component is completely composed from other components CSS and doesn't have any of its own.
 
 <hr>
 
 ## With Icon
-{% capture default-alert %}
-<div class="fd-dropdown">
-    <button class=" fd-button--secondary sap-icon--vertical-grip" aria-controls="pQqQR213"
-    aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
-    <nav class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="pQqQR213">
-      <ul class="fd-dropdown__list">
-        <li><a href="#" class="fd-dropdown__item">Pellentesque metus</a></li>
-        <li><a href="#" class="fd-dropdown__item">Duis malesuada odio volutpat</a></li>
-        <li><a href="#" class="fd-dropdown__item">Suspendisse</a></li>
-        <li><a href="#" class="fd-dropdown__item">Donec mattis arcu et velit</a></li>
-      </ul>
-    </nav>
+{% capture default-contextualmenu %}
+<div class="fd-popover">
+    <div class="fd-popover__control">
+        <button class="fd-button--secondary sap-icon--vertical-grip" aria-controls="pQqQR213" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+    </div>
+    <div class="fd-popover__body" aria-hidden="true" id="pQqQR213">
+        <nav class="fd-menu">
+            <ul class="fd-menu__list">
+                <li><a href="#" class="fd-menu__item">Option 1</a></li>
+                <li><a href="#" class="fd-menu__item">Option 2</a></li>
+                <li><a href="#" class="fd-menu__item">Option 3</a></li>
+            </ul>
+        </nav>
+    </div>
 </div>
-
 {% endcapture %}
-{% include display-component.html component=default-alert %}
+{% include display-component.html component=default-contextualmenu %}
 
 <br>
 
 ## With Text Button and Group Header
 
-{% capture default-alert %}
-<div class="fd-dropdown">
-    <button class="fd-button" aria-controls="8jxLG206" aria-haspopup="true"
-    aria-expanded="false" aria-label="More">More</button>
-    <nav class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="8jxLG206">
-      <ul class="fd-dropdown__list">
-        <li><a href="#" class="fd-dropdown__item">Option 1</a></li>
-        <li><a href="#" class="fd-dropdown__item">Option 2</a></li>
-        <li><a href="#" class="fd-dropdown__item">Option 3</a></li>
-      </ul>
-      <div class="fd-dropdown__group">
-        <h1 class="fd-dropdown__title">Group Header</h1>
-        <ul class="fd-dropdown__list">
-          <li><a href="#" class="fd-dropdown__item">Option 4</a></li>
-          <li><a href="#" class="fd-dropdown__item">Option 5</a></li>
-          <li><a href="#" class="fd-dropdown__item">Option 6</a></li>
-        </ul>
-      </div>
-    </nav>
+{% capture default-contextualmenuwheader %}
+<div class="fd-popover">
+    <div class="fd-popover__control">
+        <button class="fd-button" aria-controls="jhqD0558" aria-haspopup="true" aria-expanded="false" aria-label="More">More</button>
+    </div>
+    <div class="fd-popover__body" aria-hidden="true" id="jhqD0558">
+        <nav class="fd-menu">
+            <ul class="fd-menu__list">
+                <li><a href="#" class="fd-menu__item">Option 1</a></li>
+                <li><a href="#" class="fd-menu__item">Option 2</a></li>
+                <li><a href="#" class="fd-menu__item">Option 3</a></li>
+            </ul>
+            <div class="fd-menu__group">
+                <h1 class="fd-menu__title">Group Header</h1>
+                <ul class="fd-menu__list">
+                    <li><a href="#" class="fd-menu__item">Option 4</a></li>
+                    <li><a href="#" class="fd-menu__item">Option 5</a></li>
+                    <li><a href="#" class="fd-menu__item">Option 6</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 </div>
 {% endcapture %}
-{% include display-component.html component=default-alert %}
-
-<br>
-
-## Disabled State
-
-{% capture default-alert %}
-<div class="fd-dropdown">
-    <button class=" fd-button--icon fd-button--secondary sap-icon--vertical-grip is-disabled" aria-controls="BiT4b445" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
-</div>
-
-<div class="fd-dropdown">
-    <button class=" fd-button--icon fd-button--primary is-disabled" aria-controls="BiT4b445" aria-haspopup="true" aria-expanded="false" aria-label="More">More</button>
-</div>
-{% endcapture %}
-{% include display-component.html component=default-alert %}
+{% include display-component.html component=default-contextualmenuwheader %}
