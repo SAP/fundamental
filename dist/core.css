@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.0.0
+* Fundamental-UI v1.1.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -19,9 +19,15 @@
   --color-status-1: #359c46;
   --color-status-2: #f59518;
   --color-status-3: #ee0000;
-  --color-accent-1: #359c46;
-  --color-accent-2: #f59518;
-  --color-accent-3: #ee0000
+  --color-accent-1: #5899da;
+  --color-accent-2: #ed4a7b;
+  --color-accent-3: #945ecf;
+  --color-accent-4: #13a4b4;
+  --color-accent-5: #7ca10c;
+  --color-accent-6: #bf399e;
+  --color-accent-7: #ee6868;
+  --color-accent-8: #686ddf;
+  --color-accent-9: #6c8893
 }
 /*!
 * @section Root Element
@@ -145,8 +151,6 @@ input[type=radio] {
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
-  font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 400;
   appearance: none;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
@@ -159,17 +163,19 @@ input[type=radio] {
   border-color: #dededf;
   border-radius: 4px;
   color: #32363a;
-  background-color: transparent;
+  background-color: #fff;
   -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
   -webkit-transition: border-color 125ms ease-in,background-color 125ms ease-in,background-image 125ms ease-in;
   transition: border-color 125ms ease-in,background-color 125ms ease-in,background-image 125ms ease-in
 }
-input[type=checkbox]:focus,
 input[type=checkbox]:hover,
-input[type=radio]:focus,
 input[type=radio]:hover {
-  border-color: #0a6ed1
+  border-color: #085caf
+}
+input[type=checkbox]:focus,
+input[type=radio]:focus {
+  border-color: #0854a0
 }
 input.is-invalid[type=checkbox],
 input.is-invalid[type=radio] {
@@ -240,8 +246,6 @@ textarea {
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
-  font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 400;
   appearance: none;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
@@ -254,33 +258,35 @@ textarea {
   border-color: #dededf;
   border-radius: 4px;
   color: #32363a;
-  background-color: transparent;
+  background-color: #fff;
   -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
   height: 36px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
   width: 100%
 }
-input[type=date]:focus,
 input[type=date]:hover,
-input[type=email]:focus,
 input[type=email]:hover,
-input[type=number]:focus,
 input[type=number]:hover,
-input[type=password]:focus,
 input[type=password]:hover,
-input[type=search]:focus,
 input[type=search]:hover,
-input[type=tel]:focus,
 input[type=tel]:hover,
-input[type=text]:focus,
 input[type=text]:hover,
-input[type=url]:focus,
 input[type=url]:hover,
-textarea:focus,
 textarea:hover {
-  border-color: #0a6ed1
+  border-color: #085caf
+}
+input[type=date]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
+input[type=url]:focus,
+textarea:focus {
+  border-color: #0854a0
 }
 input[type=date].is-invalid,
 input[type=email].is-invalid,
@@ -372,7 +378,7 @@ textarea[readonly] {
 }
 textarea {
   height: 72px;
-  padding-top: 16px
+  padding-top: 12px
 }
 select {
   font-size: 14px;
@@ -381,8 +387,6 @@ select {
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
-  font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 400;
   appearance: none;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
@@ -395,24 +399,26 @@ select {
   border-color: #dededf;
   border-radius: 4px;
   color: #32363a;
-  background-color: transparent;
+  background-color: #fff;
   -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
   height: 36px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
   -webkit-appearance: none;
   appearance: none;
   -moz-appearance: none;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI5Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMyMTI2MkMiIGQ9Ik0xMS45MzUgMS40NzVMNi4xODggNy45MjdhLjI2NC4yNjQgMCAwIDEtLjM3OCAwTC4wNjUgMS40NzVhLjIzNi4yMzYgMCAwIDEgLjAyNi0uMzQzTDEuMzgxLjA1OGEuMjUzLjI1MyAwIDAgMSAuMTYzLS4wNTlMMS41NjMgMGEuMjUyLjI1MiAwIDAgMSAuMTcxLjA4NWw0LjI2NSA0Ljg4IDQuMjY3LTQuODhhLjI1Mi4yNTIgMCAwIDEgLjM1Mi0uMDI3bDEuMjkxIDEuMDc0Yy4wNS4wNDIuMDgxLjEwMi4wODYuMTY2YS4yMzYuMjM2IDAgMCAxLS4wNi4xNzd6Ii8+PC9zdmc+);
   background-repeat: no-repeat;
   background-position: calc(100% - 12px) center;
-  padding-right: 44px;
+  padding-right: 36px;
   width: 100%
 }
-select:focus,
 select:hover {
-  border-color: #0a6ed1
+  border-color: #085caf
+}
+select:focus {
+  border-color: #0854a0
 }
 select.is-invalid {
   border-color: #e00
@@ -454,7 +460,7 @@ select[disabled] {
 select[multiple] {
   height: 108px;
   background-image: none;
-  padding-top: 16px
+  padding-top: 12px
 }
 input[type=checkbox],
 input[type=radio] {
@@ -467,8 +473,8 @@ input[type=radio] {
 }
 input[type=checkbox]:checked,
 input[type=radio]:checked {
-  border-color: #0a6ed1;
-  background-color: #0a6ed1
+  border-color: #0854a0;
+  background-color: #0854a0
 }
 input[type=checkbox].is-disabled,
 input[type=checkbox][aria-disabled=true],
@@ -520,7 +526,7 @@ input[type=radio]:checked {
   background-color: #fff
 }
 input[type=radio]:checked::after {
-  background-color: #0a6ed1
+  background-color: #0854a0
 }
 input[type=radio]:checked.is-disabled::after,
 input[type=radio]:checked[aria-disabled=true]::after,

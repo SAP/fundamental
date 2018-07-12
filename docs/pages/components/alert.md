@@ -8,7 +8,7 @@ folder: components
 summary:
 ---
 
-Alerts provide messages within the application that are color-coded to emphasize the level of urgency.
+Alerts provide messages within the application that are color-coded to emphasize the level of urgency. For Alert placement guidelines within the application, see [Application Layout page](http://localhost:4000/layouts/application-layout.html#application-with-ui-overlay) and [Application Alerts overlay Demo Page](http://localhost:4000/demo-pages/alert-overlay-demo-page.html)
 
 <hr>
 

@@ -1,0 +1,20 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+
+/*!
+.fd-time-picker+(--no-border)
+    .fd-time-picker__content+()
+    .fd-time-picker__title+()
+*/
+$block: #{$fd-namespace}-time-picker;
+
+.#{$block} {
+    .#{$fd-namespace}-popover {
+        &__body {
+            padding: fd-space(s);
+            min-width: 0;
+            top: fd-space(9)
+        }
+    }
+}

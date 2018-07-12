@@ -111,7 +111,7 @@ $fd-colors-text-inverse: map-get($fd-colors, "text-inverse") !default;
 $fd-colors-background: map-get($fd-colors, "background") !default;
 $fd-colors-neutral: map-get($fd-colors, "neutral") !default;
 $fd-colors-status: map-get($fd-colors, "status") !default;
-$fd-colors-accent: map-get($fd-colors, "status") !default;
+$fd-colors-accent: map-get($fd-colors, "accent") !default;
 
 //features
 $fd-space-modify: normal !default; //normal, compact
@@ -157,6 +157,7 @@ $fd-animation--speed: 0.125s !default;
 $fd-link-color: map-get($fd-colors-action, 1) !default;
 $fd-link-color--hover: darken($fd-link-color, 7) !default;
 $fd-link-color--active: darken($fd-link-color, 10) !default;
+$fd-link-color--pressed: darken($fd-link-color, 10) !default;
 $fd-link-color--visited: adjust-hue($fd-link-color, 45deg) !default;
 $fd-link-color--disabled: rgba($fd-link-color, 0.4) !default;
 
@@ -165,17 +166,23 @@ $fd-link-color--disabled: rgba($fd-link-color, 0.4) !default;
 $fd-forms-height: $fd-spacing--base * 9 !default;
 $fd-forms-height--input-text: $fd-forms-height !default;
 $fd-forms-height--input-check: $fd-spacing--base * 4 !default;
-$fd-forms-padding: $fd-spacing--base * 4 !default;
+$fd-forms-padding: $fd-spacing--base * 3 !default;
 //colors
 $fd-forms-color: $fd-color !default;
 $fd-forms-color--placeholder: map-get($fd-colors-text, 3) !default;
 $fd-forms-color--focus: $fd-forms-color !default;
 $fd-forms-color--disabled: map-get($fd-colors-text, 3) !default;
+$fd-forms-color--active: map-get($fd-colors-action, 1) !default;
 $fd-forms-background-color: map-get($fd-colors-background, 2) !default;
+$fd-forms-background-color--disabled: map-get($fd-colors-neutral, 1) !default;
+
+
+
 $fd-forms-background-color--check: map-get($fd-colors-action, 1) !default;
 $fd-forms-background-color--check-disabled: map-get($fd-colors-text, 2) !default;
-$fd-forms-background-color--check-secondary: map-get($fd-colors-action, 2) !default;
-$fd-forms-background-color--disabled: map-get($fd-colors-neutral, 1) !default;
+//
+// $fd-forms-background-color--check-secondary: map-get($fd-colors-action, 2) !default;
+
 $fd-forms-border-color: map-get($fd-colors-neutral, 3) !default;
 $fd-forms-border-color--check: map-get($fd-colors-action, 1) !default;
 $fd-forms-border-color--focus: map-get($fd-colors-action, 1) !default;

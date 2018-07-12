@@ -40,7 +40,7 @@
         </div>
         {% endif %}
         {%- if show_ui_overlay %}
-        <div class="fd-ui__overlay fd-overlay" aria-hidden="{{ false if show_ui_overlay else true }}">
+        <div class="fd-ui__overlay fd-overlay {{ overlay_modifier }}" aria-hidden="{{ false if show_ui_overlay else true }}">
             {% block ui_overlay -%}
             {%- endblock %}
         </div>

@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.0.0
+* Fundamental-UI v1.1.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -509,6 +509,9 @@
   margin-bottom: 0;
   color: #32363a
 }
+.fd-panel__description {
+  margin-top: 4px
+}
 .fd-panel__actions {
   margin-left: auto;
   margin-top: -4px;
@@ -607,18 +610,27 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  top: 0;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  background: rgba(74,80,92,.3);
   z-index: 1000
 }
 .fd-overlay[aria-hidden=true] {
   display: none
+}
+.fd-overlay--modal {
+  background: rgba(74,80,92,.3);
+  height: 100vh;
+  width: 100vw
+}
+.fd-overlay--alert {
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  margin-top: 28px
 }

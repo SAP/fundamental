@@ -12,15 +12,21 @@ The Action Bar is located at the top of the page and is used for the following:
 
 <hr>
 
-## Title
-The page title is displayed prominently in the Action Bar. This is helpful for the user to know exactly where they are.
-
+## Action bar with back button, description and action buttons.
 {% capture default-action-bar %}
 <div class="fd-action-bar">
+    <div class="fd-action-bar__back">
+        <button class=" fd-button--secondary fd-button--compact sap-icon--nav-back"></button>
+    </div>
     <div class="fd-action-bar__header">
-      <h1 class="fd-action-bar__title">
-          Page Title
-      </h1>
+        <h1 class="fd-action-bar__title">
+        Page Title
+        </h1>
+        <p class="fd-action-bar__description">Action bar Description </p>
+    </div>
+    <div class="fd-action-bar__actions">
+        <button class=" fd-button--primary fd-button--l">Button</button>
+        <button class=" fd-button--main fd-button--l">Button</button>
     </div>
 </div>
 {% endcapture %}
@@ -28,19 +34,19 @@ The page title is displayed prominently in the Action Bar. This is helpful for t
 
 <br/>
 
-## Main Actions
-Display main actions within the Action bar. This allows for users to find important page actions in a consistent area no matter what page they are on within the application.
+## Action bar with no Back button
 
 {% capture default-action-bar-multi %}
 <div class="fd-action-bar">
     <div class="fd-action-bar__header">
-      <h1 class="fd-action-bar__title">
-          Page Title
-      </h1>
+        <h1 class="fd-action-bar__title">
+            Page Title
+        </h1>
+        <p class="fd-action-bar__description">Action bar Description </p>
     </div>
     <div class="fd-action-bar__actions">
-        <button class=" fd-button--secondary fd-button--l">Cancel</button>
-        <button class=" fd-button--main fd-button--l">Save</button>
+        <button class=" fd-button--primary fd-button--l">Button</button>
+        <button class=" fd-button--main fd-button--l">Button</button>
     </div>
 </div>
 {% endcapture %}
@@ -61,19 +67,64 @@ When there are several main actions for a page, consider displaying them under a
       </h1>
     </div>
     <div class="fd-action-bar__actions">
-        <div class="fd-dropdown">
-            <button class=" fd-button--secondary fd-button--l sap-icon--vertical-grip"
-                aria-controls="3cDQg427" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
-            <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="3cDQg427">
-                <li><a href="#" class="fd-dropdown__item">Edit</a></li>
-                <li><a href="#" class="fd-dropdown__item">Delete</a></li>
-                <li><a href="#" class="fd-dropdown__item">Assign</a></li>
-                <li><a href="#" class="fd-dropdown__item">Expire</a></li>
-                <li><a href="#" class="fd-dropdown__item">Archive</a></li>
-            </ul>
+            <div class="fd-popover">
+                <div class="fd-popover__control">
+                    <button class=" fd-button--secondary sap-icon--vertical-grip"
+                    aria-controls="wgxzK859" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+                </div>
+                <div class="fd-popover__body" aria-hidden="true" id="wgxzK859">
+                    <nav class="fd-menu" id="">
+                        <ul class="fd-menu__list">
+                            <li><a href="#" class="fd-menu__item">Edit</a></li>
+                            <li><a href="#" class="fd-menu__item">Delete</a></li>
+                            <li><a href="#" class="fd-menu__item">Assign</a></li>
+                            <li><a href="#" class="fd-menu__item">Expire</a></li>
+                            <li><a href="#" class="fd-menu__item">Archive</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+</div>
+{% endcapture %}
+
+{% include display-component.html component=default-action-bar-menu %}
+
+<br/>
+
+## Action bar mobile view
+
+{% capture default-action-bar-multi %}
+<div style="width:319px">
+    <div class="fd-action-bar">
+        <div class="fd-action-bar__back">
+            <button class=" fd-button--secondary fd-button--compact sap-icon--nav-back"></button>
+        </div>
+        <div class="fd-action-bar__header">
+            <h1 class="fd-action-bar__title">
+                Action Bar with description and back button
+            </h1>
+        </div>
+        <div class="fd-action-bar__actions">
+            <div class="fd-popover">
+                <div class="fd-popover__control">
+                    <button class=" fd-button--secondary sap-icon--vertical-grip"
+                    aria-controls="wgxzK85" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+                </div>
+                <div class="fd-popover__body" aria-hidden="true" id="wgxzK85">
+                    <nav class="fd-menu" id="">
+                        <ul class="fd-menu__list">
+                            <li><a href="#" class="fd-menu__item">Option 1</a></li>
+                            <li><a href="#" class="fd-menu__item">Option 2</a></li>
+                            <li><a href="#" class="fd-menu__item">Option 3</a></li>
+                            <li><a href="#" class="fd-menu__item">Option 4</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 {% endcapture %}
 
-{% include display-component.html component=default-action-bar-menu %}
+{% include display-component.html component=default-action-bar-multi %}

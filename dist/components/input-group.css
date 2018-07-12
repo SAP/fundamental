@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.0.0
+* Fundamental-UI v1.1.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -144,38 +144,36 @@
   flex: 1;
   width: 100%;
   display: block;
-  min-width: 48px
+  min-width: 48px;
+  background: #fafafa
 }
 .fd-input-group__button--step-down,
 .fd-input-group__button--step-up {
-  font-size: 10px;
-  border-radius: 0
-}
-.fd-input-group__button--step-down::after,
-.fd-input-group__button--step-up::after {
-  content: "";
+  font-size: 1rem;
+  line-height: 1.42857;
+  font-weight: 400;
+  color: #0a6ed1;
   position: relative
 }
+.fd-input-group__button--step-down::before,
+.fd-input-group__button--step-up::before {
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: -2px
+}
 .fd-input-group__button--step-up {
-  border-bottom: solid 1px #dededf
+  border-bottom: solid 1px #dededf;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0
 }
-.fd-input-group__button--step-up::after {
-  height: 0;
-  width: 0;
-  border-bottom: 8px solid #000;
-  border-left: 6.5px solid transparent;
-  border-right: 6.5px solid transparent;
-  top: -10px
-}
-.fd-input-group__button--step-down::after {
-  height: 0;
-  width: 0;
-  border-left: 6.5px solid transparent;
-  border-right: 6.5px solid transparent;
-  border-top: 8px solid #000;
-  top: 10px
+.fd-input-group__button--step-down {
+  border-top: solid 1px #dededf;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0
 }
 .fd-input-group__button--clear {
+  background-color: transparent;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNiIgaGVpZ2h0PSIyNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMDA5Q0RGIiBkPSJNMTMgMEM1LjgyIDAgMCA1LjgyIDAgMTNzNS44MiAxMyAxMyAxMyAxMy01LjgyIDEzLTEzUzIwLjE4IDAgMTMgMHptNS4xOTUgMTcuMzk2YS41NjQuNTY0IDAgMSAxLS43OTkuNzk5TDEzIDEzLjc5OWwtNC4zOTYgNC4zOTZhLjU2NC41NjQgMCAxIDEtLjc5OS0uNzk5TDEyLjIwMSAxMyA3LjgwNSA4LjYwNGEuNTY0LjU2NCAwIDEgMSAuNzk5LS43OTlMMTMgMTIuMjAxbDQuMzk2LTQuMzk2YS41NjQuNTY0IDAgMSAxIC43OTkuNzk5TDEzLjc5OSAxM2w0LjM5NiA0LjM5NnoiLz48L3N2Zz4=);
   background-repeat: no-repeat;
   background-position: center;

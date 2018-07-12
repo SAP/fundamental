@@ -2,117 +2,146 @@
 {% from "./../format.njk" import format %}
 {% from "../button/component.njk" import button %}
 {% from "./component.njk" import action_bar %}
-{% from "../dropdown/component.njk" import menu %}
+{% from "../menu/component.njk" import menu %}
+{% from "./../popover/component.njk" import popover %}
 {% import "./../utils.njk" as utils %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['fonts','icons','components/contextual-menu','components/dropdown','components/button'] %}
+{% set css_deps = ['fonts','icons','components/button', 'components/menu', 'components/popover'] %}
 
 {% block content %}
 <style media="screen">
     .fd-action-bar {
-        margin-bottom: 20px;
+        margin: 0 20px;
     }
 </style>
 
-<h1>action-bar</h1>
-
 {%- set primarybtn %}{{
     button(
-            { label: 'Save' },
+            { label: 'Button' },
             modifier={block: [ 'main', 'l'] }
         )
 }}{%- endset %}
 
 {%- set secbtn %}{{
   button(
-          { label: 'Cancel' },
-          modifier={ block: ['secondary', 'l'] }
+          { label: 'Button' },
+          modifier={ block: ['primary', 'l'] }
       )
 }}{%- endset %}
+
+
 {%- set contextmenu %}
-{%- set _id = utils.id() %}
-<div class="fd-dropdown">
-    {{  button(
-        { icon: 'vertical-grip' },
-        modifier={ block: ['secondary', 'l'] },
-        aria={ controls: _id, haspopup: true, expanded: false, label: "More" }
-    ) | indent(4)
-}}
-  {{  menu(properties={
-    id: _id,
-    items: [
-        { "label": "Edit" },
-        { "label": "Delete" },
-        { "label": "Assign" },
-        { "label": "Expire" },
-        { "label": "Archive" }
-    ]
-},
-classes="contextual-menu") | indent(4)
-}}
-</div>
+    {%- set _id = utils.id() %}
+
+    {%- macro contextmenu_control(properties={}) -%}
+        {{ button({ icon: "vertical-grip" }, modifier={ block: ["secondary"] }, aria={ controls: properties.id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
+    {%- endmacro %}
+
+    {{  popover(properties={
+            id: _id,
+            control: contextmenu_control(properties={ id: _id }),
+            body: menu(properties={
+            items: [
+                { "label": "Option 1" },
+                { "label": "Option 2" },
+                { "label": "Option 3" },
+                { "label": "Option 4" }
+              ]
+            })
+        },
+        classes="contextual-menu"
+        ) | indent(4)
+    }}
 {%- endset %}
 
+<!-- output the component example and the code snippet -->
 
-    <!-- output the component example and the code snippet -->
-    {% set example %}
+<h1>action-bar</h1>
 
-    {{  action_bar(
-            properties={
-                title: data.properties.title,
-                actions: {
-                    properties: {
-                        items: [secbtn,primarybtn]
-                    }
+{% set example %}
+{{  action_bar(
+        properties={
+            title: "Action Bar with description and back button",
+            description: data.properties.description,
+            actions: {
+                properties: {
+                    items: [secbtn,primarybtn]
                 }
             },
-            modifier={
-                block: []
-            },
-            state={},
-            aria={}
-        )
-    }}
+            back_button: true
+        },
+        modifier={
+            block: []
+        },
+        state={},
+        aria={}
+    )
+}}
 
-    {{  action_bar(
-            properties={
-                title: data.properties.title,
-                description: data.properties.description,
-                actions: {
-                    properties: {
-                        items: [secbtn,primarybtn]
-                    }
+{{  action_bar(
+        properties={
+            title: "Action Bar with no description",
+            actions: {
+                properties: {
+                    items: [secbtn,primarybtn]
                 }
             },
-            modifier={
-                block: []
-            },
-            state={},
-            aria={}
-        )
-    }}
+            back_button: true
+        },
+        modifier={
+            block: []
+        },
+        state={},
+        aria={}
+    )
+}}
 
-    {{  action_bar(
-            properties={
-                title: data.properties.title,
-                actions: {
-                    properties: {
-                        items: [contextmenu]
-                    }
+{{  action_bar(
+        properties={
+            title: "Action Bar with no back button",
+            actions: {
+                properties: {
+                    items: [secbtn,primarybtn]
                 }
-            },
-            modifier={
-                block: []
-            },
-            state={},
-            aria={}
-        )
-    }}
+            }
+        },
+        modifier={
+            block: []
+        },
+        state={},
+        aria={}
+    )
+}}
+</div>
 
-    {% endset %}
-    {{ format(example) }}
+{% endset %}
+{{ format(example) }}
 <br><br>
+
+<h2>Action bar on mobile screen  (320px)</h2>
+{% set example %}
+<div style="width:319px">
+{{  action_bar(
+        properties={
+            title: "Action Bar with description and back button",
+            actions: {
+                properties: {
+                    items: [contextmenu]
+                }
+            },
+            back_button: true
+        },
+        modifier={
+            block: []
+        },
+        state={},
+        aria={}
+    )
+}}
+</div>
+{% endset %}
+{{ format(example) }}
 
 <h2>Actions Hidden</h2>
 <div id="toggles">

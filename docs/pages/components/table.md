@@ -124,14 +124,21 @@ a contextual menu can be substituted in order to display all actions in one menu
             <td>First Name</td>
             <td>01/26/17</td>
             <td>
-                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More"
-                aria-expanded="false" aria-controls="WQIDD179" aria-haspopup="true"></button>
-                <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179">
-                    <li><a href="#" class="fd-dropdown__item">Edit</a></li>
-                    <li><a href="#" class="fd-dropdown__item">Lock</a></li>
-                    <li><a href="#" class="fd-dropdown__item">Duplicate</a></li>
-                    <li><a href="#" class="fd-dropdown__item">Delete</a></li>
-                </ul>
+                <div class="fd-popover">
+                    <div class="fd-popover__control">
+                        <button class="fd-button--secondary sap-icon--vertical-grip" aria-controls="pQqQR213" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+                    </div>
+                    <div class="fd-popover__body" aria-hidden="true" id="pQqQR213">
+                        <nav class="fd-menu">
+                            <ul class="fd-menu__list">
+                                <li><a href="#" class="fd-menu__item">Edit</a></li>
+                                <li><a href="#" class="fd-menu__item">Lock</a></li>
+                                <li><a href="#" class="fd-menu__item">Duplicate</a></li>
+                                <li><a href="#" class="fd-menu__item">Delete</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </td>
         </tr>
         <tr>
@@ -139,14 +146,21 @@ a contextual menu can be substituted in order to display all actions in one menu
             <td>First Name</td>
             <td>01/26/17</td>
             <td>
-                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More"
-                aria-expanded="false" aria-controls="WQIDD179-2" aria-haspopup="true"></button>
-                <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179-2">
-                    <li><a href="#" class="fd-dropdown__item">Edit</a></li>
-                    <li><a href="#" class="fd-dropdown__item">Lock</a></li>
-                    <li><a href="#" class="fd-dropdown__item">Duplicate</a></li>
-                    <li><a href="#" class="fd-dropdown__item">Delete</a></li>
-                </ul>
+                <div class="fd-popover">
+                    <div class="fd-popover__control">
+                        <button class="fd-button--secondary sap-icon--vertical-grip" aria-controls="lkjlkj23" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+                    </div>
+                    <div class="fd-popover__body" aria-hidden="true" id="lkjlkj23">
+                        <nav class="fd-menu">
+                            <ul class="fd-menu__list">
+                                <li><a href="#" class="fd-menu__item">Edit</a></li>
+                                <li><a href="#" class="fd-menu__item">Lock</a></li>
+                                <li><a href="#" class="fd-menu__item">Duplicate</a></li>
+                                <li><a href="#" class="fd-menu__item">Delete</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </td>
         </tr>
         <tr>
@@ -154,14 +168,21 @@ a contextual menu can be substituted in order to display all actions in one menu
             <td>First Name</td>
             <td>01/26/17</td>
             <td>
-                <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More"
-                aria-expanded="false" aria-controls="WQIDD179-3" aria-haspopup="true"></button>
-                <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="WQIDD179-3">
-                    <li><a href="#" class="fd-dropdown__item">Edit</a></li>
-                    <li><a href="#" class="fd-dropdown__item">Lock</a></li>
-                    <li><a href="#" class="fd-dropdown__item">Duplicate</a></li>
-                    <li><a href="#" class="fd-dropdown__item">Delete</a></li>
-                </ul>
+                <div class="fd-popover">
+                    <div class="fd-popover__control">
+                        <button class="fd-button--secondary sap-icon--vertical-grip" aria-controls="uu4324" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+                    </div>
+                    <div class="fd-popover__body" aria-hidden="true" id="uu4324">
+                        <nav class="fd-menu">
+                            <ul class="fd-menu__list">
+                                <li><a href="#" class="fd-menu__item">Edit</a></li>
+                                <li><a href="#" class="fd-menu__item">Lock</a></li>
+                                <li><a href="#" class="fd-menu__item">Duplicate</a></li>
+                                <li><a href="#" class="fd-menu__item">Delete</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </td>
         </tr>
     </tbody>

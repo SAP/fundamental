@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.0.0
+* Fundamental-UI v1.1.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -30,7 +30,7 @@
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
-  background-color: transparent;
+  background-color: #fff;
   color: #0a6ed1;
   border: solid 1px #0a6ed1;
   padding-left: 10px;
@@ -74,24 +74,36 @@
 [class*=fd-button--]:empty::after {
   margin-left: 0
 }
-.fd-button:hover {
-  background-color: transparent;
-  border-color: #085caf
+.fd-button:hover,
+[class*=fd-button--]:hover {
+  border-color: #085caf;
+  color: #085caf;
+  -webkit-box-shadow: 0 0 0 1px #0a6ed1;
+  box-shadow: 0 0 0 1px #0a6ed1
 }
 .fd-button.is-active,
 .fd-button.is-pressed,
 .fd-button.is-selected,
 .fd-button:active,
 .fd-button[aria-pressed=true],
-.fd-button[aria-selected=true] {
+.fd-button[aria-selected=true],
+[class*=fd-button--].is-active,
+[class*=fd-button--].is-pressed,
+[class*=fd-button--].is-selected,
+[class*=fd-button--]:active,
+[class*=fd-button--][aria-pressed=true],
+[class*=fd-button--][aria-selected=true] {
+  background-color: #0854a0;
   border-color: #0854a0;
-  background-color: #0a6ed1;
   color: #fff
 }
 .fd-button.is-disabled,
 .fd-button:disabled,
-.fd-button[aria-disabled=true] {
-  background-color: transparent;
+.fd-button[aria-disabled=true],
+[class*=fd-button--].is-disabled,
+[class*=fd-button--]:disabled,
+[class*=fd-button--][aria-disabled=true] {
+  background-color: #fff;
   color: #0a6ed1
 }
 .fd-button--positive {
@@ -99,7 +111,10 @@
   border-color: #359c46
 }
 .fd-button--positive:hover {
-  border-color: #359c46
+  border-color: #2c813a;
+  color: #2c813a;
+  -webkit-box-shadow: 0 0 0 1px #359c46;
+  box-shadow: 0 0 0 1px #359c46
 }
 .fd-button--positive.is-active,
 .fd-button--positive.is-pressed,
@@ -107,16 +122,25 @@
 .fd-button--positive:active,
 .fd-button--positive[aria-pressed=true],
 .fd-button--positive[aria-selected=true] {
-  color: #359c46;
-  border-color: #359c46;
-  background-color: transparent
+  background-color: #287635;
+  border-color: #287635;
+  color: #fff
+}
+.fd-button--positive.is-disabled,
+.fd-button--positive:disabled,
+.fd-button--positive[aria-disabled=true] {
+  background-color: #fff;
+  color: #359c46
 }
 .fd-button--negative {
   color: #e00;
   border-color: #e00
 }
 .fd-button--negative:hover {
-  border-color: #e00
+  border-color: #ca0000;
+  color: #ca0000;
+  -webkit-box-shadow: 0 0 0 1px #e00;
+  box-shadow: 0 0 0 1px #e00
 }
 .fd-button--negative.is-active,
 .fd-button--negative.is-pressed,
@@ -124,66 +148,136 @@
 .fd-button--negative:active,
 .fd-button--negative[aria-pressed=true],
 .fd-button--negative[aria-selected=true] {
-  color: #e00;
-  border-color: #e00;
-  background-color: transparent
+  background-color: #b00;
+  border-color: #b00;
+  color: #fff
 }
+.fd-button--negative.is-disabled,
+.fd-button--negative:disabled,
+.fd-button--negative[aria-disabled=true] {
+  background-color: #fff;
+  color: #e00
+}
+.fd-button--action-bar,
 .fd-button--main {
   color: #fff;
   background-color: #0a6ed1;
-  border: solid 1px #0a6ed1
+  border-color: #0a6ed1
 }
+.fd-button--action-bar:hover,
 .fd-button--main:hover {
   background-color: #085caf;
-  border-color: #085caf
+  border-color: #085caf;
+  color: #fff;
+  -webkit-box-shadow: none;
+  box-shadow: none
 }
+.fd-button--action-bar.is-active,
+.fd-button--action-bar.is-pressed,
+.fd-button--action-bar.is-selected,
+.fd-button--action-bar:active,
+.fd-button--action-bar[aria-pressed=true],
+.fd-button--action-bar[aria-selected=true],
 .fd-button--main.is-active,
 .fd-button--main.is-pressed,
 .fd-button--main.is-selected,
 .fd-button--main:active,
 .fd-button--main[aria-pressed=true],
 .fd-button--main[aria-selected=true] {
-  background-color: #0854a0
+  background-color: #0854a0;
+  border-color: #0854a0
 }
+.fd-button--action-bar.is-disabled,
+.fd-button--action-bar:disabled,
+.fd-button--action-bar[aria-disabled=true],
 .fd-button--main.is-disabled,
 .fd-button--main:disabled,
 .fd-button--main[aria-disabled=true] {
   background-color: #0a6ed1;
-  color: #fff;
-  opacity: .4
+  color: #fff
 }
+.fd-button--action-bar.fd-button--positive,
 .fd-button--main.fd-button--positive {
   background-color: #359c46;
   border-color: #359c46
 }
+.fd-button--action-bar.fd-button--positive:hover,
+.fd-button--main.fd-button--positive:hover {
+  background-color: #2c813a;
+  border-color: #2c813a;
+  color: #fff
+}
+.fd-button--action-bar.fd-button--positive.is-active,
+.fd-button--action-bar.fd-button--positive.is-pressed,
+.fd-button--action-bar.fd-button--positive.is-selected,
+.fd-button--action-bar.fd-button--positive:active,
+.fd-button--action-bar.fd-button--positive[aria-pressed=true],
+.fd-button--action-bar.fd-button--positive[aria-selected=true],
 .fd-button--main.fd-button--positive.is-active,
 .fd-button--main.fd-button--positive.is-pressed,
 .fd-button--main.fd-button--positive.is-selected,
 .fd-button--main.fd-button--positive:active,
 .fd-button--main.fd-button--positive[aria-pressed=true],
 .fd-button--main.fd-button--positive[aria-selected=true] {
+  color: #fff;
+  background-color: #287635;
+  border-color: #287635
+}
+.fd-button--action-bar.fd-button--positive.is-disabled,
+.fd-button--action-bar.fd-button--positive:disabled,
+.fd-button--action-bar.fd-button--positive[aria-disabled=true],
+.fd-button--main.fd-button--positive.is-disabled,
+.fd-button--main.fd-button--positive:disabled,
+.fd-button--main.fd-button--positive[aria-disabled=true] {
+  background-color: #359c46;
   color: #fff
 }
+.fd-button--action-bar.fd-button--negative,
 .fd-button--main.fd-button--negative {
   background-color: #e00;
   border-color: #e00
 }
+.fd-button--action-bar.fd-button--negative:hover,
+.fd-button--main.fd-button--negative:hover {
+  background-color: #ca0000;
+  border-color: #ca0000;
+  color: #fff
+}
+.fd-button--action-bar.fd-button--negative.is-active,
+.fd-button--action-bar.fd-button--negative.is-pressed,
+.fd-button--action-bar.fd-button--negative.is-selected,
+.fd-button--action-bar.fd-button--negative:active,
+.fd-button--action-bar.fd-button--negative[aria-pressed=true],
+.fd-button--action-bar.fd-button--negative[aria-selected=true],
 .fd-button--main.fd-button--negative.is-active,
 .fd-button--main.fd-button--negative.is-pressed,
 .fd-button--main.fd-button--negative.is-selected,
 .fd-button--main.fd-button--negative:active,
 .fd-button--main.fd-button--negative[aria-pressed=true],
 .fd-button--main.fd-button--negative[aria-selected=true] {
+  color: #fff;
+  background-color: #b00;
+  border-color: #b00
+}
+.fd-button--action-bar.fd-button--negative.is-disabled,
+.fd-button--action-bar.fd-button--negative:disabled,
+.fd-button--action-bar.fd-button--negative[aria-disabled=true],
+.fd-button--main.fd-button--negative.is-disabled,
+.fd-button--main.fd-button--negative:disabled,
+.fd-button--main.fd-button--negative[aria-disabled=true] {
+  background-color: #e00;
   color: #fff
 }
 .fd-button--secondary {
   color: #0a6ed1;
-  background-color: transparent;
-  border: solid 1px transparent
+  border-color: transparent;
+  background-color: transparent
 }
 .fd-button--secondary:hover {
   background-color: #fafafa;
-  border-color: transparent
+  border-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none
 }
 .fd-button--secondary.is-active,
 .fd-button--secondary.is-pressed,
@@ -198,35 +292,44 @@
 .fd-button--secondary.is-disabled,
 .fd-button--secondary:disabled,
 .fd-button--secondary[aria-disabled=true] {
-  background-color: transparent
+  background-color: #fff
 }
 .fd-button--grouped,
 .fd-button--toolbar {
   color: #515559;
   background-color: #fafafa;
-  border: solid 1px #9da2a6;
+  border-color: #dededf;
   -webkit-box-shadow: 0 1px 0 0 #d3d5d7;
   box-shadow: 0 1px 0 0 #d3d5d7
 }
 .fd-button--grouped:hover,
 .fd-button--toolbar:hover {
+  color: #515559;
   background-color: #e8e8e8;
-  border-color: #8a9095
+  border-color: #e8e8e8;
+  -webkit-box-shadow: none;
+  box-shadow: none
 }
 .fd-button--grouped.is-active,
+.fd-button--grouped:active,
+.fd-button--toolbar.is-active,
+.fd-button--toolbar:active {
+  background-color: #e1e1e1;
+  border-color: #e1e1e1;
+  -webkit-box-shadow: none;
+  box-shadow: none
+}
 .fd-button--grouped.is-pressed,
 .fd-button--grouped.is-selected,
-.fd-button--grouped:active,
 .fd-button--grouped[aria-pressed=true],
 .fd-button--grouped[aria-selected=true],
-.fd-button--toolbar.is-active,
 .fd-button--toolbar.is-pressed,
 .fd-button--toolbar.is-selected,
-.fd-button--toolbar:active,
 .fd-button--toolbar[aria-pressed=true],
 .fd-button--toolbar[aria-selected=true] {
-  background-color: #e1e1e1;
-  border-color: transparent
+  border-color: transparent;
+  color: #fff;
+  background-color: #0854a0
 }
 .fd-button--grouped.is-disabled,
 .fd-button--grouped:disabled,
@@ -234,18 +337,9 @@
 .fd-button--toolbar.is-disabled,
 .fd-button--toolbar:disabled,
 .fd-button--toolbar[aria-disabled=true] {
-  background-color: transparent;
-  border-color: #9da2a6
-}
-.fd-button--grouped.is-active,
-.fd-button--grouped.is-pressed,
-.fd-button--grouped.is-selected,
-.fd-button--grouped:active,
-.fd-button--grouped[aria-pressed=true],
-.fd-button--grouped[aria-selected=true] {
-  color: #fff;
-  background-color: #0a6ed1;
-  border-color: #9da2a6
+  color: #515559;
+  background-color: #fafafa;
+  border-color: #dededf
 }
 .fd-button--compact {
   font-size: 1rem;

@@ -1,37 +1,40 @@
 {% extends "layout.njk" %}
 {% from "./../format.njk" import format %}
 {% from "../button/component.njk" import button %}
-{% from "../dropdown/component.njk" import menu %}
+{% from "../menu/component.njk" import menu %}
+{% from "./../popover/component.njk" import popover_body %}
 {% import "./../utils.njk" as utils %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['fonts','icons','components/button','components/dropdown'] %}
+{% set css_deps = ['fonts','icons','components/button','components/menu', 'components/popover'] %}
 
 {% block content %}
 <style>
-  .fd-dropdown:first-of-type {
-    margin-left: 200px;
+  .fd-popover {
+    margin-left: 50px;
   }
 </style>
 
     <h1>contextual-menu</h1>
 
-<p>This is not a standalone component. It use a "more" icon button and the dropdown menu.</p>
+<p>This is not a standalone component. It use a "more" icon button and the popover component with a child of menu.</p>
 
 
     <!-- output the component example and the code snippet -->
     {% set example %}
 {%- set _id = utils.id() %}
-<div class="fd-dropdown">
+<div class="fd-popover">
     {{ button({ icon: "vertical-grip" }, modifier={ block: ["secondary"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
-    {{  menu(properties={
+    {{  popover_body(properties={
             id: _id,
+            body: menu(properties={
             items: [
-                { "label": "Pellentesque metus" },
-                { "label": "Duis malesuada odio volutpat" },
-                { "label": "Suspendisse" },
-                { "label": "Donec mattis arcu et velit" }
-            ]
+                { "label": "Option 1" },
+                { "label": "Option 2" },
+                { "label": "Option 3" },
+                { "label": "Option 4" }
+              ]
+            })
         },
         classes="contextual-menu"
         ) | indent(4)
@@ -39,20 +42,27 @@
 </div>
 
 {% set _id = utils.id() %}
-<div class="fd-dropdown">
+<div class="fd-popover">
 {{ button({ icon: "vertical-grip" }, state={ disabled: true }, modifier={ block: ["secondary"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
 </div>
 
 {% set _id = utils.id() %}
-<div class="fd-dropdown">
+<div class="fd-popover">
 {{  button(
         { label: 'More' },
         aria={ controls: _id, haspopup: true, expanded: false, label: "More" }
     ) | indent(4)
 }}
-{{  menu(properties={
+{{  popover_body(properties={
         id: _id,
-        items: data.properties.items
+        body: menu(properties={
+            items: [
+                { "label": "Option 1" },
+                { "label": "Option 2" },
+                { "label": "Option 3" },
+                { "label": "Option 4" }
+              ]
+            })
     },
     classes="contextual-menu") | indent(4)
 }}

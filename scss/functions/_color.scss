@@ -1,0 +1,30 @@
+
+// get color from main map
+@function fd-color($type: text, $shade: 1) {
+    $_map: $fd-colors;
+    //check type
+    @if map-has-key($_map, $type) {
+        $_group: map-get($_map, $type);
+        //check shade
+        @if map-has-key($_group, $shade) {
+            $_color: map-get($_group, $shade);
+            @return $_color;
+        } @else {
+            @warn "Invalid $shade of `#{$shade}` in the map $type of `#{$type}`. Valid $shade values are #{map-keys($_group)}. Returning `black`.";
+            @return black;
+        }
+    } @else {
+        @warn "Invalid map $type of `#{$type}`. Valid $type values are #{map-keys($_map)}. Returning `black`.";
+        @return black;
+    }
+}
+
+// darken for hover states
+@function fd-color-darker($color) {
+    @return darken($color, 7);
+}
+
+// darken for pressed states
+@function fd-color-darkest($color) {
+    @return darken($color, 10);
+}

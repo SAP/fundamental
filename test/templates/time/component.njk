@@ -1,0 +1,48 @@
+{% import "./../utils.njk" as utils %}
+{% from "../button/component.njk" import button %}
+
+<!--
+menu:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+
+
+{%- macro time(properties={}, state={}, modifier=[], classes=[], aria=[]) -%}
+<div class="fd-time{{ modifier | modifier('time') }}{{ classes | classes }}"{{ aria | aria }}>
+  {%- for item in properties.items %}
+    {{ time_item(item) }}
+  {%- endfor %}
+</div>
+{%- endmacro %}
+
+{%- macro time_item(properties={}, state={}, modifier=[], classes=[], aria=[]) -%}
+{%- set _id = utils.id() %}
+  <div class="fd-time__item">
+      <div class="fd-time__control">
+          {{  button({
+                  icon: 'navigation-up-arrow' },
+                  modifier={ block: ['secondary','xs'] },
+                  aria={ label: 'Increase ' + properties.label, controls: _id },
+                  state={
+                    disabled: properties.lastValue
+                  })
+          }}
+      </div>
+      <div class="fd-time__input">
+          <input class="fd-form__control" type="text" placeholder="{{properties.placeholder}}" value="{{properties.value}}" id="{{ _id }}" aria-label="{{properties.label | capitalize }}"/>
+      </div>
+      <div class="fd-time__control">
+          {{  button({
+                  icon: 'navigation-down-arrow' },
+                  modifier={ block: ['secondary','xs'] },
+                  aria={ label: 'Decrease ' + properties.label, controls: _id },
+                  state={
+                    disabled: properties.firstValue
+                  })
+          }}
+      </div>
+  </div>
+{%- endmacro %}

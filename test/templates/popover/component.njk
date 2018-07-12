@@ -1,0 +1,26 @@
+{% from "./../icon/component.njk" import icon %}
+{% from "./../image/component.njk" import image %}
+
+<!--
+popover:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+
+{%- macro popover(properties={}, modifier={}, state={}, aria={ hidden: true }) %}
+    <div class="fd-popover{{ modifier.block | modifier('popover') }}">
+        {{ popover_control({ control: properties.control }) }}
+
+        {{ popover_body(properties={ body: properties.body, id: properties.id }, modifier={ block: modifier.block }) }}
+    </div>
+{%- endmacro %}
+
+{%- macro popover_control(properties={}, modifier={}, state={}) %}
+    <div class="fd-popover__control"{{ aria | aria }}>{{properties.control}}</div>
+{%- endmacro %}
+
+{%- macro popover_body(properties={}, modifier={}, state={}, aria={ hidden: true }) %}
+    <div class="fd-popover__body"{{ modifier.block | modifier('popover__body') }} {{ aria | aria }} id="{{ properties.id }}">{{properties.body}}</div>
+{%- endmacro %}
