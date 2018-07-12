@@ -40,7 +40,7 @@ The Action Bar is located at the top of the page and is used for the following:
 <div class="fd-action-bar">
     <div class="fd-action-bar__header">
         <h1 class="fd-action-bar__title">
-        Page Title
+            Page Title
         </h1>
         <p class="fd-action-bar__description">Action bar Description </p>
     </div>
@@ -67,18 +67,24 @@ When there are several main actions for a page, consider displaying them under a
       </h1>
     </div>
     <div class="fd-action-bar__actions">
-        <div class="fd-dropdown">
-            <button class=" fd-button--secondary fd-button--l sap-icon--vertical-grip"
-                aria-controls="3cDQg427" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
-            <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="3cDQg427">
-                <li><a href="#" class="fd-dropdown__item">Edit</a></li>
-                <li><a href="#" class="fd-dropdown__item">Delete</a></li>
-                <li><a href="#" class="fd-dropdown__item">Assign</a></li>
-                <li><a href="#" class="fd-dropdown__item">Expire</a></li>
-                <li><a href="#" class="fd-dropdown__item">Archive</a></li>
-            </ul>
+            <div class="fd-popover">
+                <div class="fd-popover__control">
+                    <button class=" fd-button--secondary sap-icon--vertical-grip"
+                    aria-controls="wgxzK859" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+                </div>
+                <div class="fd-popover__body" aria-hidden="true" id="wgxzK859">
+                    <nav class="fd-menu" id="">
+                        <ul class="fd-menu__list">
+                            <li><a href="#" class="fd-menu__item">Edit</a></li>
+                            <li><a href="#" class="fd-menu__item">Delete</a></li>
+                            <li><a href="#" class="fd-menu__item">Assign</a></li>
+                            <li><a href="#" class="fd-menu__item">Expire</a></li>
+                            <li><a href="#" class="fd-menu__item">Archive</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
-    </div>
 </div>
 {% endcapture %}
 

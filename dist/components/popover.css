@@ -1,0 +1,39 @@
+/*!
+* Fundamental-UI v1.0.0
+* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
+*/
+.fd-popover {
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #32363a;
+  font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  position: relative;
+  display: inline-block
+}
+.fd-popover__control {
+  position: relative;
+  margin-left: 0;
+  cursor: pointer
+}
+.fd-popover__body {
+  min-width: 100%;
+  border: solid 1px #dededf;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 2;
+  border-radius: 4px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 2px 0 #eeeeef,0 2px 14px 0 #eeeeef;
+  box-shadow: 0 0 2px 0 #eeeeef,0 2px 14px 0 #eeeeef;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 125ms;
+  transition: opacity 125ms;
+  overflow: hidden
+}
+.fd-popover__body.is-hidden,
+.fd-popover__body[aria-hidden=true] {
+  opacity: 0;
+  visibility: hidden
+}
