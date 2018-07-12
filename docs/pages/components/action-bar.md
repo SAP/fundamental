@@ -109,9 +109,9 @@ When there are several main actions for a page, consider displaying them under a
             <div class="fd-popover">
                 <div class="fd-popover__control">
                     <button class=" fd-button--secondary sap-icon--vertical-grip"
-                    aria-controls="wgxzK859" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+                    aria-controls="wgxzK85" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
                 </div>
-                <div class="fd-popover__body" aria-hidden="true" id="wgxzK859">
+                <div class="fd-popover__body" aria-hidden="true" id="wgxzK85">
                     <nav class="fd-menu" id="">
                         <ul class="fd-menu__list">
                             <li><a href="#" class="fd-menu__item">Option 1</a></li>

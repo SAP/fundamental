@@ -17,20 +17,11 @@ As a general rule, it is suggested that one popover be revealed on the page at a
 ## Popover Structure
 The basic wrapping structure of a popover.
 
-{% capture default-popover %}
-<div class="fd-popover">
-    <div class="fd-popover__control">
-        <span aria-haspopup="true" aria-controls="YOURID" aria-expanded="false">
-            <!-- Pass in control here -->
-        </span>
-    </div>
-    <div class="fd-popover__body" aria-hidden="true" id="YOURID">
-        <!-- Pass in body here -->
-    </div>
-</div>
-{% endcapture %}
+* `fd-popover` - wrapper for the whole container
+* `fd-popover__control` - control element to toggle the display of the popover
+* `fd-popover__body` - wrapper that contains the popover content
 
-{% include display-component.html component=default-popover %}
+<br> 
 
 ## Popover Example
 This is a composed example of a popover being used to trigger a menu out of an avatar image.
