@@ -14,7 +14,6 @@ $block: #{$fd-namespace}-app;
   $fd-app-sidebar-background-color: $fd-background-color--sidebar !default;
   $fd-app-sidebar-border-bottom: solid 1px fd-color("neutral",3) !default;
   width: 100%;
-  min-height: 100vh;
   @include fd-screen(s) {
     display: flex;
   }
@@ -34,10 +33,10 @@ $block: #{$fd-namespace}-app;
         margin-right: 0;
       }
     }
-    overflow: scroll;
+    overflow: auto;
   }
   &__main {
     flex: 1;
-    overflow: scroll;
+    overflow: auto;
   }
 }
