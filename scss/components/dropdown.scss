@@ -41,18 +41,22 @@ $block: #{$fd-namespace}-dropdown;
     //set all BLOCK reset and baseline styles
     @include fd-reset;
     position: relative;
-    display: inline-block;
+    display: block;
 
     //*****
     // WHEN DEPCRECATING THE REST OF THIS FILE MAKE SURE TO KEEP THE CSS FOR THE CONTROL. IT IS USED WHEN COMPOSING TOGETHER POPOVER/MENU FOR A DROPDOWN COMPONENT.
     //*****
+    $fd-button-right-padding: fd-space(8) !default;
+
     &__control {
-      position: relative;
-      margin-left: 0;
       @include fd-icon-base("after");
       @include fd-icon-glyph("navigation-down-arrow","after"){
         transition: transform $fd-dropdown-menu-item-transition-params;
       };
+      position: relative;
+      margin-left: 0;
+      width: 100%;
+      text-align: left;
       &[aria-expanded="true"],
       &.is-expanded {
         &::after {
@@ -68,6 +72,41 @@ $block: #{$fd-namespace}-dropdown;
       }
       &--no-border {
         border: none;
+      }
+      // Default
+      &.fd-button--toolbar{
+        padding-right: $fd-button-right-padding;
+
+        &::after {
+          top: 50%;
+          position: absolute;
+          right: 10px;
+          margin-top: -7px;
+        }
+      }
+      &.fd-button--xs {
+        padding-right: $fd-button-right-padding - 2;
+        &::after {
+          margin-top: -6px;
+        }
+      }
+      &.fd-button--s {
+        padding-right: $fd-button-right-padding + 2;
+        &::after {
+          margin-top: -8px;
+        }
+      }
+      &.fd-button--compact {
+        &::after {
+          margin-top: -8px;
+        }
+      }
+      &.fd-button--l {
+        padding-right: $fd-button-right-padding + 8;
+
+        &::after {
+          margin-top: -10px;
+        }
       }
     }
     &__menu {
@@ -94,9 +133,4 @@ $block: #{$fd-namespace}-dropdown;
       }
     }
     @include fd-menu();
-
-
-
-
-
 }
