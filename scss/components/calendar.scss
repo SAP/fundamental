@@ -108,14 +108,14 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
   }
 }
 
-
 .#{$block} {
-
   //BLOCK BASE *******************************************
   //set all BLOCK reset and baseline styles
   @include fd-reset;
   width: $fd-calendar-table-width;
+}
 
+.#{$block} .#{$block} {
   //ELEMENTS *******************************************
   &__dates {
     @extend %fd-calendar-content-hidden;
@@ -161,9 +161,10 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
   &__column-header {
     @extend %fd-calendar-item;
     display: table-cell;
+    vertical-align: middle;
     &:hover {
       cursor: default;
-      background-color: transparent;
+      background-color: $fd-calendar-item-background-color;
     }
   }
   &__list {
