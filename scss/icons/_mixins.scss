@@ -47,6 +47,26 @@
   }
 }
 
+@mixin fd-icons-sizes($sizes, $size: "default", $position: "before") {
+  &::#{$position} {
+    @if $size != "default" {
+      //explicitly
+      @if map-has-key($sizes, $size) {
+        font-size: map-get($sizes, $size);
+      } @else {
+        @warn "Unknown `#{$sizes}` in provided $sizes map";
+      }
+      line-height: 1;
+    } @else {
+      //implicity
+      font-size: map-get($sizes, "default");
+      line-height: $fd-line-height;
+    }
+    @content;
+  }
+}
+
+
 //icon glyph mixin
 @mixin fd-icon-glyph($glyph, $position: "before") {
   @if map-has-key($fd-icons, $glyph) {
@@ -57,5 +77,23 @@
     }
   } @else {
       @warn "Unknown `#{$glyph}` in $fd-icons map";
+  }
+}
+
+@mixin fd-icons-glyph($fd-icon-set, $position: "before") {
+
+  @each $key, $value in $fd-icon-set {
+    &--#{$key} {
+      //@include fd-icon-glyph($key, $position);
+      @if map-has-key($fd-icon-set, $key) {
+        //@debug $glyph;
+        &::#{$position} {
+          content: map-get($fd-icon-set, $key);
+          @content;
+        }
+      } @else {
+        @warn "Unknown `#{$key}` in $fd-icon-set map";
+      }
+    }
   }
 }
