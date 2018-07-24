@@ -93,7 +93,7 @@ A foreground color class applies the color property to the element for example `
 {: .docs-table}
 | Class structure                 | {group}-{shade} options |
 | ------------------------------- | ----------------------- |
-| Foreground Class: <br> `.fd-has-color-{group}-{shade}` <br><br> Background Class:<br>`.fd-has-background-color-{group}-{shade}` | `primary` - `1`, `2` <br> `action` - `1`, `2` <br> `text` - `1`, `2`, `3` <br> `text-inverse` - `1`, `2`, `3` <br> `background` - `1`, `2`, `3` <br> `neutral` - `1`, `2`, `3`, `4`  <br> `status` - `1`, `2`, `3` |
+| Foreground Class: <br> `.fd-has-color-{group}-{shade}` <br><br> Background Class:<br>`.fd-has-background-color-{group}-{shade}` | `primary` - `1`, `2` <br> `action` - `1`, `2` <br> `text` - `1`, `2`, `3`, `4` <br> `background` - `1`, `2`, `3` <br> `neutral` - `1`, `2`, `3`, `4`  <br> `status` - `1`, `2`, `3` |
 
 Please check the [colors page](colors.html){:target="_blank"} to see full color pallet.
 
@@ -118,13 +118,6 @@ Some examples of color helper classes.
 
 <hr>
 
-<h3>Text Inverse Color Group</h3>
-<p class="fd-has-background-color-text fd-has-color-text-inverse">.fd-has-color-text-inverse</p>
-<p class="fd-has-background-color-text fd-has-color-text-inverse-2">.fd-has-color-text-inverse-2</p>
-<p class="fd-has-background-color-text fd-has-color-text-inverse-3">.fd-has-color-text-inverse-3</p>
-
-<hr>
-
 <h3>Background Color Group</h3>
 <p class="fd-has-background-color-background fd-has-color-text">.fd-has-color-background (white)</p>
 <p class="fd-has-background-color-background-2 fd-has-color-text">.fd-has-color-background-2</p>
@@ -139,9 +132,9 @@ Some examples of color helper classes.
 
 <h3>Status Color Group</h3>
 
-<p class="fd-has-background-color-status fd-has-color-text-inverse">.fd-has-background-color-status-1</p>
-<p class="fd-has-background-color-status-2 fd-has-color-text-inverse">.fd-has-background-color-status-2</p>
-<p class="fd-has-background-color-status-3 fd-has-color-text-inverse">.fd-has-background-color-status-3</p>
+<p class="fd-has-background-color-status fd-has-color-text-4">.fd-has-background-color-status-1</p>
+<p class="fd-has-background-color-status-2 fd-has-color-text-4">.fd-has-background-color-status-2</p>
+<p class="fd-has-background-color-status-3 fd-has-color-text-4">.fd-has-background-color-status-3</p>
 
 {% endcapture %}
 {% include display-component.html component=color %}
