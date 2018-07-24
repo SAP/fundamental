@@ -1,0 +1,19 @@
+---
+title: Themes
+keywords: themes
+sidebar: left-navigation-sidebar
+toc: false
+permalink: themes/index.html
+folder: themes
+layout: full-width-page
+---
+
+<div class="docs-component-grid">
+    {% for theme in site.data.theme.items %}
+        <a href="{{theme.meta}}/index.html" class="docs-component-grid--item">
+            <img src="{{site.baseurl}}/images/theme/{{theme.meta}}.png" alt="{{theme.title}}" width="60%" class="docs-component-grid--img__button docs-theme-grid--img__{{theme.meta}}">
+            <br>
+            <h3 class="docs-component-grid--label">{{theme.title}}</h3>
+        </a>
+    {% endfor %}
+</div>
