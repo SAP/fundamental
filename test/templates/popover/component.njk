@@ -22,5 +22,7 @@ popover:
 {%- endmacro %}
 
 {%- macro popover_body(properties={}, modifier={}, state={}, aria={ hidden: true }) %}
-    <div class="fd-popover__body"{{ modifier.block | modifier('popover__body') }} {{ aria | aria }} id="{{ properties.id }}">{{properties.body}}</div>
+    <div class="fd-popover__body"{{ modifier.block | modifier('popover__body') }} {{ aria | aria }} id="{{ properties.id }}">
+      {{properties.body}}
+    </div>
 {%- endmacro %}

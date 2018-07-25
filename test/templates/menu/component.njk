@@ -8,21 +8,24 @@ menu:
 -->
 
 {%- macro menu(properties={}, modifier=[], classes=[], aria=[]) -%}
-    <nav class="fd-menu{{ modifier | modifier('menu') }}{{ classes | classes }}"{{ aria | aria }} id="{{ properties.id }}">
-        {%- for item in properties.items %}
-            {%- if item.items %}
-                {%- if not loop.first %}
-                    </ul>
-                {%- endif %}
-                    {{ optgroup(item)| indent(2) }}
-                {%- else %}
-                {%- if loop.first %}
-                    <ul class="fd-menu__list">
-                {%- endif %}
-                    {{ option(item) }}
-            {%- endif %}
-        {%- endfor %}
-    </nav>
+<nav class="fd-menu{{ modifier | modifier('menu') }}{{ classes | classes }}"{{ aria | aria }}{% if properties.id %} id="{{ properties.id }}"{% endif %}>
+{%- for item in properties.items %}
+  {%- if item.items %}
+    {%- if not loop.first %}
+    </ul>
+      {%- endif %}
+      {{ optgroup(item)| indent(2) }}
+    {%- else %}
+      {%- if loop.first %}
+    <ul class="fd-menu__list">
+      {%- endif %}
+      {{ option(item) }}
+      {%- if loop.last %}
+    </ul>
+      {%- endif %}
+    {%- endif %}
+{%- endfor %}
+</nav>
 {%- endmacro %}
 
 {%- macro option(properties={}) -%}
@@ -31,11 +34,11 @@ menu:
 
 {% macro optgroup(properties={}) -%}
     <div class="fd-menu__group">
-        <h1 class="fd-menu__title">{{ properties.label }}</h1>
-        <ul class="fd-menu__list">
-            {%- for item in properties.items %}
-                {{ option(item) }}
-            {%- endfor %}
-        </ul>
+      <h1 class="fd-menu__title">{{ properties.label }}</h1>
+      <ul class="fd-menu__list">
+          {%- for item in properties.items %}
+            {{ option(item) }}
+          {%- endfor %}
+      </ul>
     </div>
 {%- endmacro %}

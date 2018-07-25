@@ -8,7 +8,8 @@
 {% from "../button/component.njk" import button %}
 {% from "../button-group/component.njk" import button_group %}
 {% from "../pagination/component.njk" import pagination %}
-{% from "../dropdown/component.njk" import dropdown, menu %}
+{% from "../dropdown/component.njk" import dropdown %}
+{% from "../menu/component.njk" import menu %}
 
 {% set hide_app_sidebar = false %}
 {% set hide_page_header = true %}
@@ -138,15 +139,21 @@
     {% call layout.panel_header({ title: "Items (1180)", description: "Lorem ipsum dolor sit amet" }) -%}
         {% call layout.panel_actions() -%}
 
-        {{ dropdown(
-          {            "label": "Newest",
-                      "icon": "sort",
-                      "items": [
-                          { "label": "Option 1" },
-                          { "label": "Option 2" },
-                          { "label": "Option 3" }
-                      ]},modifier={block: ['s']}
-          ) }}
+          {{ dropdown(
+              properties={
+                  label: "Newest",
+                  icon: "sort",
+                  body: menu(properties={
+                          items: [
+                              { "label": "Option 1" },
+                              { "label": "Option 2" },
+                              { "label": "Option 3" },
+                              { "label": "Option 4" }
+                          ]
+                        })
+               },
+               modifier={ block: 's' })
+          }}
 
         {{  button({label: 'Filter',icon: 'filter' }, modifier={block: ['toolbar','s']}, aria={ controls: _id, haspopup: true, expanded: false, label: "Filter" }) }}
 

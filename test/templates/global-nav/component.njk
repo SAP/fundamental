@@ -1,5 +1,6 @@
 {% from "../button/component.njk" import button %}
 {% from "../icon/component.njk" import icon %}
+{% from "../menu/component.njk" import menu %}
 {% from "../dropdown/component.njk" import dropdown %}
 {% from "../form/component.njk" import form_control %}
 {% from "../mega-menu/component.njk" import mega_menu %}
@@ -13,6 +14,25 @@ global_nav:
     state={},
     aria={}
 -->
+
+
+{%- set contextmenu %}
+    {%- set _id = utils.id() %}
+
+    {{ dropdown(properties={
+      label: "Context Switcher",
+      body: menu(properties={
+        items: [
+            { "label": "Link 1" },
+            { "label": "Link 2" },
+            { "label": "Link 3" },
+            { "label": "Link 4" }
+          ]
+        })
+      })
+    }}
+
+{%- endset %}
 
 {% macro global_nav(properties={}, modifier={}, state={}, aria={}) -%}
 {%- set _id = utils.id() %}
@@ -59,7 +79,7 @@ global_nav:
 
         {%- if properties.context_menu -%}
         <div class="fd-global-nav__context-menu">
-            {{ dropdown(properties.context_menu, modifier={ button: "secondary", control: "no-border"}) | indent(12) }}
+            {{contextmenu}}
         </div>
         {%- endif -%}
 
