@@ -15,6 +15,12 @@ The input group includes form inputs with add-ons that allow the user to better 
 
 The Input with text add-on component is typically used to specify the type of the data being entered, such as currency or unit of measure. This add-on can be placed at the left or right of the input element.
 
+<style type="text/css">
+.fd-form__group {
+    margin-bottom: 20px;
+}
+</style>
+
 {% capture text-addon %}
 <div class="fd-form__group">
     <div class="fd-form__item">
