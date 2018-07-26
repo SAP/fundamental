@@ -10,6 +10,7 @@
 {% if libs.b4 %}<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">{% endif %}
 {% if libs.md %}<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">{% endif %}
 {% if libs.tn %}<link rel="stylesheet" href="/static/techne-1.5.7.css">{% endif %}
+{# <link rel="stylesheet" href="https://unpkg.com/fundamental-ui@1.1.0/dist/fundamental-ui.min.css"> #}
     <style media="screen">
         {% set core_sass = 'core.scss' %}
         {{ core_sass | sass_to_css }}
@@ -39,7 +40,15 @@
             <label class="test-label"><input type="checkbox" name="lib" value="md" {{'checked' if libs.md }}>
 angular_material/1.1.4</label>
             <label class="test-label"><input type="checkbox" name="lib" value="tn" {{'checked' if libs.tn }}> techne/1.5.7</label>
-            <button type="submit" class="fd-button fd-button--small">Submit</button>
+            <button type="submit" class="fd-button--small">Submit</button>
+
+            <label class="fd-form__label fd-has-class-inline" for="uVKVF356" style="display:inline;">
+                 <span class="fd-toggle fd-toggle--xs fd-form__control">
+                     <input type="checkbox" name="" value="" id="uVKVF356">
+                     <span class="fd-toggle__switch" role="presentation"></span>
+                 </span>
+                 Toggle Bg
+             </label>
         </fieldset>
 
         </form>
