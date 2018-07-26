@@ -1,0 +1,69 @@
+@import "settings";
+@import "../../../icons/settings";
+@import "../../../icons/mixins";
+
+$fd-scss-icons-path: "" !default;
+
+@if variable-exists(fd-icons-path) {
+  $fd-scss-icons-path: $fd-icons-path;
+}
+
+@font-face {
+  font-family: "Ariba-icons";
+  src: url("#{$fd-scss-icons-path}Ariba_icon_library-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$block: ariba-icon;
+
+/* data attributes for inserting icons
+  <span data-sap-icon="\e001"> My Account</span>
+*/
+// [data-#{$block}]::before {
+//   @extend %fd-icon-base;
+//   content: attr(data-#{$block});
+// }
+
+/* class per icon */
+[class*="#{$block}"] {
+  &::before {
+    font-family: "Ariba-icons";
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    display: inline-block;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    speak: none;
+  }
+}
+
+.#{$block} {
+  &--s, &-sm,
+  &--small {
+    @include fd-icons-sizes($fd-icons-sizes, "s");
+  }
+  &--m,
+  &--medium {
+    @include fd-icons-sizes($fd-icons-sizes, "m");
+  }
+  &--l,
+  &--large {
+    @include fd-icons-sizes($fd-icons-sizes, "l");
+  }
+  &--xl,
+  &--xlarge {
+    @include fd-icons-sizes($fd-icons-sizes, "xl");
+  }
+
+  @include fd-icons-glyph($fd-ariba-icons);
+  //@each $key, $value in $fd-ariba-icons {
+  //    &--#{$key} {
+  //      @include fd-icon-glyph($key);
+  //    }
+  //}
+}
