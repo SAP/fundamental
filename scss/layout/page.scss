@@ -7,12 +7,14 @@ $block: #{$fd-namespace}-page;
   $fd-page-background-color: $fd-background-color !default;
   $fd-page-header-padding-x: $fd-padding--ui !default;
   $fd-page-header-padding-y: 0 !default;
+  --fd-page-header-padding-x: var(--fd-padding-ui);
 
   $fd-page-header-height: auto !default;
   $fd-page-header-border-color: fd-color("neutral", 3) !default;
   $fd-page-header-border-width: 0 !default;
   $fd-page-intro-background-color: fd-color("background", 2) !default;
   $fd-page-intro-padding: fd-space(4) !default;
+
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -25,14 +27,7 @@ $block: #{$fd-namespace}-page;
     background-color: $fd-page-background-color;
     min-height: $fd-page-header-height;
     padding: $fd-page-header-padding-y $fd-page-header-padding-x;
-  }
-  &__intro {
-    @include fd-type("-1");
-    padding: $fd-page-intro-padding $fd-padding--ui;
-    background-color: $fd-page-intro-background-color;
-    text-align: center;
-    border-bottom: solid 1px fd-color("neutral", 3);
-    margin-bottom: -1px;
+    padding: $fd-page-header-padding-y var(--fd-page-header-padding-x);
   }
   &__content {
     flex-grow: 1;

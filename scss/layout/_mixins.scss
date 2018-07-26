@@ -78,16 +78,18 @@ $flow_width_of_gutter: $fd-width--gutter;
   float: left;
   //set margin for gutter
   margin-right: $flow_width_of_gutter;
+  margin-right: var(--fd-width-gutter);
+
+
   &:last-child {
     margin-right: 0;
   }
   //calc width without gutters
   $num_of_gutters: $cols - 1;
   $gutter_width_total: $num_of_gutters * $flow_width_of_gutter;
-  
+
   //calc spanned gutter width
   $gutter_width_spanned: $flow_width_of_gutter * ($span - 1);
-
 
   //the math
   //#1 subtract total gutter width from container width (e.g., 12 cols have 11 gutters * 20px)
@@ -101,6 +103,14 @@ $flow_width_of_gutter: $fd-width--gutter;
           / #{$cols}
       ) * #{$span}
     ) + #{$gutter_width_spanned}
+  );
+  width: calc(
+    (
+      (
+        (100% - (#{$num_of_gutters} * var(--fd-width-gutter)))
+          / #{$cols}
+      ) * #{$span}
+    ) + (var(--fd-width-gutter) * (#{$span} - 1))
   );
 }
 
@@ -121,5 +131,13 @@ $flow_width_of_gutter: $fd-width--gutter;
           / #{$cols}
       ) * #{$span}
     ) + #{$gutter_width_spanned}
+  );
+  margin-left: calc(
+    (
+      (
+        (100% - (#{$num_of_gutters} * var(--fd-width-gutter)))
+          / #{$cols}
+      ) * #{$span}
+    ) + (var(--fd-width-gutter) * (#{$span}))
   );
 }
