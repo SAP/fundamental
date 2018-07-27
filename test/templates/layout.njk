@@ -10,7 +10,7 @@
 {% if libs.b4 %}<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">{% endif %}
 {% if libs.md %}<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">{% endif %}
 {% if libs.tn %}<link rel="stylesheet" href="/static/techne-1.5.7.css">{% endif %}
-{# <link rel="stylesheet" href="https://unpkg.com/fundamental-ui@1.1.0/dist/fundamental-ui.min.css"> #}
+<link rel="stylesheet" href="/static/fundamental-ui.min.css">
     <style media="screen">
         {% set core_sass = 'core.scss' %}
         {{ core_sass | sass_to_css }}
@@ -26,7 +26,7 @@
             {% set dep_sass = sass + '.scss' %}
             {{ dep_sass | sass_to_css }}
         {% endfor %}
-        body { padding: 20px; }
+        body { padding: 20px; transition: background-color .25s}
         .test-label { margin-right: 20px; }
         textarea.test-textarea { font-family: monospace; height: 200px; width: 100%; padding: 10px; font-size: 0.9rem; border: solid 1px rgba(0,0,0,0.1); }
     </style>
@@ -34,7 +34,9 @@
 <body>
     <header style="border-bottom: solid 6px lightgray; padding-bottom: 10px; margin-bottom: 10px;">
         <form action="#" method="get">
+
         <fieldset style="font-family: monospace;font-size: 14px;">
+            <label class="test-label fd-has-float-right"><input type="checkbox"  value="" id="toggleBg"> Toggle BG</label>
             <label class="test-label"><input type="checkbox" name="lib" value="b3" {{'checked' if libs.b3 }}> bootstrap/3.3.7</label>
             <label class="test-label"><input type="checkbox" name="lib" value="b4" {{'checked' if libs.b4 }}> bootstrap/4.0.0-beta</label>
             <label class="test-label"><input type="checkbox" name="lib" value="md" {{'checked' if libs.md }}>
@@ -42,13 +44,6 @@ angular_material/1.1.4</label>
             <label class="test-label"><input type="checkbox" name="lib" value="tn" {{'checked' if libs.tn }}> techne/1.5.7</label>
             <button type="submit" class="fd-button--small">Submit</button>
 
-            <label class="fd-form__label fd-has-class-inline" for="uVKVF356" style="display:inline;">
-                 <span class="fd-toggle fd-toggle--xs fd-form__control">
-                     <input type="checkbox" name="" value="" id="uVKVF356">
-                     <span class="fd-toggle__switch" role="presentation"></span>
-                 </span>
-                 Toggle Bg
-             </label>
         </fieldset>
 
         </form>
@@ -79,7 +74,25 @@ angular_material/1.1.4</label>
     </main>
 
     <script type="text/javascript" src="/static/controls.js"></script>
-
+    <script type="text/javascript">
+        (function(){
+            var toggle = document.getElementById("toggleBg"),
+                toggleState = localStorage.getItem('toggleState');
+            if(toggleState ==  "true") {
+                toggle.checked = true;
+                document.body.style.backgroundColor = "white";
+            }
+            toggle.addEventListener( 'change', function() {
+                if(this.checked) {
+                    document.body.style.backgroundColor = "white";
+                    localStorage.setItem("toggleState", true);
+                } else {
+                    document.body.style.backgroundColor = "#f3f4f5";
+                    localStorage.setItem("toggleState", false);
+                }
+            });
+        })();
+    </script>
 
 </body>
 </html>
