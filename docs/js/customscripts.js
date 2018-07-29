@@ -128,4 +128,16 @@ $( document ).ready(function() {
             })
         }
     }
+
+    // bg color toggle for component display
+    var toggle = document.getElementsByClassName("toggle-bg");
+    for (var i = 0; i < toggle.length; i++) {
+        toggle[i].addEventListener("change", function () {
+            if(this.checked) {
+                this.closest('div').style.backgroundColor = "white";
+            } else {
+                this.closest('div').style.backgroundColor = "#f3f4f5";
+            }
+        });
+    }
 })();
