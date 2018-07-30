@@ -6549,9 +6549,12 @@ hr {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   padding-bottom: 8px;
-  border: 1px solid #ccc; }
+  border: 1px solid #ccc;
+  position: relative;
+  background-color: #f3f4f5;
+  transition: background-color .25s; }
   .docs-component .fd-tile__content {
-    padding: 20px;
+    padding: 60px 20px;
     overflow: visible; }
   .docs-component pre {
     background-color: #fff; }
@@ -6616,6 +6619,8 @@ hr {
       height: 100%; }
     .docs-component__app .fd-overlay--alert .fd-alert {
       margin-top: -410px; }
+    .docs-component__app .docs-component__bg-toggle {
+      display: none; }
   .docs-component__app-example {
     color: #fff;
     position: relative; }
@@ -6647,6 +6652,10 @@ hr {
   .docs-component__page .fd-page__intro,
   .docs-component__page .fd-page__content {
     padding: 10px; }
+  .docs-component__page .fd-tile__content {
+    padding: 20px 20px; }
+  .docs-component__page .docs-component__bg-toggle {
+    display: none; }
   .docs-component__section .fd-section,
   .docs-component__section .fd-section__header,
   .docs-component__section .fd-section__title,
@@ -6701,6 +6710,10 @@ hr {
     padding: 10px 5px; }
   .docs-component__global-nav .fd-dropdown__list {
     margin-left: 0; }
+  .docs-component__bg-toggle {
+    position: absolute;
+    right: 10px;
+    top: 10px; }
   .docs-component .fd-breadcrumb__link {
     color: #0a6ed1; }
     .docs-component .fd-breadcrumb__link:hover {

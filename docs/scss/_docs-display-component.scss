@@ -9,9 +9,12 @@
     border-bottom-right-radius: 0;
     padding-bottom: 8px;
     border:1px solid #ccc;
+    position: relative;
+    background-color: #f3f4f5;
+    transition: background-color .25s;
 
     .fd-tile__content {
-        padding: 20px;
+        padding: 60px 20px;
         overflow: visible;
     }
 
@@ -107,6 +110,10 @@
                 margin-top: -410px;
             }
         }
+
+        .docs-component__bg-toggle{
+            display: none;
+        }
     }
 
     &__app-example {
@@ -163,6 +170,12 @@
             padding: 10px;
         }
 
+        .fd-tile__content{
+            padding: 20px 20px;
+        }
+        .docs-component__bg-toggle{
+            display: none;
+        }
     }
 
     &__section {
@@ -261,6 +274,12 @@
         .fd-dropdown__list {
             margin-left: 0;
         }
+    }
+
+    &__bg-toggle{
+        position: absolute;
+        right: 10px;
+        top: 10px;
     }
 
     .fd-breadcrumb__link {
