@@ -11,11 +11,13 @@ dropdown:
 -->
 {%- macro dropdown(properties={}, modifier={}, state={}, aria={}) %}
     {%- set _id = utils.id() %}
-
     <div class="fd-dropdown{{ modifier.block | modifier('dropdown') }}">
         {%- macro dropdown_control(properties={}, modifier={}, state={}, aria={}) -%}
+        {{properties.t}}
+
             {%- set btn_size_class = " fd-button--"+modifier.block if modifier.block and modifier.block !== "default" else "" %}
-            <button class="fd-dropdown__control{{ modifier.control | modifier('dropdown__control') }} fd-button--{{modifier.button if modifier.button else 'toolbar'}}{{ btn_size_class }}{{ " sap-icon--"+properties.icon if properties.icon }}" aria-controls="{{ properties.id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}>
+
+            <button class="fd-dropdown__control{{ modifier.control | modifier('dropdown__control') }} fd-button{{properties.test}} {{ btn_size_class }}{{ " sap-icon--"+properties.icon if properties.icon }}" aria-controls="{{ properties.id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}>
                 {{ properties.label }}
             </button>
         {%- endmacro %}

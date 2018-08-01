@@ -57,6 +57,13 @@ $block: #{$fd-namespace}-dropdown;
       margin-left: 0;
       width: 100%;
       text-align: left;
+      &::after {
+        top: 50%;
+        position: absolute;
+        right: 10px;
+        margin-top: -7px;
+      }
+
       &[aria-expanded="true"],
       &.is-expanded {
         &::after {
@@ -77,12 +84,6 @@ $block: #{$fd-namespace}-dropdown;
       &.fd-button--toolbar{
         padding-right: $fd-button-right-padding;
 
-        &::after {
-          top: 50%;
-          position: absolute;
-          right: 10px;
-          margin-top: -7px;
-        }
       }
       &.fd-button--xs {
         padding-right: $fd-button-right-padding - 2;
