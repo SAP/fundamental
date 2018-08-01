@@ -1,0 +1,107 @@
+@import "./../../settings";
+
+
+$fd-colors: map-merge($fd-colors, (
+        "action": (
+                1: #0a6ed1,
+                2: #9AB7E1
+        ),
+        "text": (
+                1: #32363a,
+                2: #515559,
+                3: #6f7275,
+                4: #ffffff,
+                5: #939598
+        ),
+        "text-inverse": (
+                1: #ffffff,
+                2: #f5f5f5, //consider removing
+                3: #ebebeb, //consider removing
+        ),
+        "background": (
+                1: #f3f4f5,
+                2: #ffffff
+        ),
+        "neutral": (
+                1: #fafafa,
+                2: #eeeeef,
+                3: #dededf,
+                4: #F7F7F8,
+                5: #F3F4F5
+        ),
+        "status": (
+                1: #359c46,
+                2: #f59518,
+                3: #CC0000,
+                4: #118843,
+                5: #E6730C,
+                7: #7C89AC,
+                8: #5F6E97,
+        ),
+        "accent": (
+                1: #5899da,
+                2: #ed4a7b,
+                3: #945ecf,
+                4: #13a4b4,
+                5: #7ca10c,
+                6: #bf399e,
+                7: #ee6868,
+                8: #686ddf,
+                9: #6c8893,
+                10:#ACD4ED,
+        )
+));
+
+$fd-colors-primary: map-get($fd-colors, "primary");
+$fd-colors-action: map-get($fd-colors, "action");
+$fd-colors-text: map-get($fd-colors, "text");
+$fd-colors-background: map-get($fd-colors, "background");
+$fd-colors-neutral: map-get($fd-colors, "neutral");
+$fd-colors-status: map-get($fd-colors, "status");
+$fd-colors-accent: map-get($fd-colors, "accent");
+
+//baseline
+$fd-color: map-get($fd-colors-text, 1);
+$fd-background-color: map-get($fd-colors-background, 1);
+$fd-background-color--header: map-get($fd-colors-background, 2);
+$fd-background-color--sidebar: map-get($fd-colors-background, 2);
+$fd-background-color--footer: map-get($fd-colors-background, 2);
+
+//states
+$fd-color--error: map-get($fd-colors-status, 3);
+$fd-color--warning: map-get($fd-colors-status, 2);
+$fd-color--success: map-get($fd-colors-status, 1);
+
+
+//LINKS
+$fd-link-color: map-get($fd-colors-action, 1);
+
+//colors
+$fd-forms-color: $fd-color;
+$fd-forms-color--placeholder: map-get($fd-colors-text, 3);
+$fd-forms-color--focus: $fd-forms-color;
+$fd-forms-color--disabled: map-get($fd-colors-text, 3);
+$fd-forms-color--active: map-get($fd-colors-action, 1);
+$fd-forms-background-color: map-get($fd-colors-background, 2);
+$fd-forms-background-color--disabled: map-get($fd-colors-neutral, 1);
+
+$fd-forms-background-color--check: map-get($fd-colors-action, 1);
+$fd-forms-background-color--check-disabled: map-get($fd-colors-text, 2);
+//
+// $fd-forms-background-color--check-secondary: map-get($fd-colors-action, 2);
+
+$fd-forms-border-color: map-get($fd-colors-neutral, 3);
+$fd-forms-border-color--check: map-get($fd-colors-action, 1);
+$fd-forms-border-color--focus: map-get($fd-colors-action, 1);
+$fd-forms-border-color--disabled: lighten(map-get($fd-colors-neutral, 3), 5%);
+
+$fd-menu-background-color: map-get($fd-colors-background, 2);
+$fd-menu-box-shadow: 0 0 4px 1px rgba(map-get($fd-colors-neutral, 2), 1);
+$fd-menu-title-color: map-get($fd-colors-text, 3);
+$fd-menu-title-background-color: map-get($fd-colors-neutral, 1);
+$fd-menu-item-color: map-get($fd-colors-text, 2);
+$fd-menu-item-background-color--selected: rgba(map-get($fd-colors-action, 1), .07);
+$fd-menu-item-background-color--hover: map-get($fd-colors-neutral, 2);
+$fd-menu-item-color--hover: map-get($fd-colors-text, 2);
+$fd-menu-link-color: $fd-link-color;
+$fd-menu-link-color--disabled: map-get($fd-colors-text, 3);
