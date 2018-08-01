@@ -64,8 +64,8 @@ $block: #{$fd-namespace}-toggle;
       display: none;
     }
     &:checked {
-      background-color: $fd-link-color;
-      opacity: 0.6;
+      background-color: adjust-color($fd-link-color, $alpha: 0.6);
+      // opacity: 0.6;
       & + .#{$block}__switch {
         left: calc(100% - #{$fd-toggle-switch-width});
         background: $fd-link-color--pressed;
