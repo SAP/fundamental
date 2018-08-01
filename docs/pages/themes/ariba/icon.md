@@ -4,11 +4,11 @@ keywords: icon, ariba
 sidebar: left-navigation-sidebar
 toc: false
 permalink: themes/ariba/icon.html
-folder: components
+folder: ariba
 summary:
 ---
 
-<link rel="stylesheet" type="text/css" href="/css/fundamental-ui-ariba-icons.css">
+<link rel="stylesheet" type="text/css" href="/css/theme/ariba/fundamental-ui-ariba-icons.css">
   
 Icons are used throughout the UI to save space, allow for visual clarity and focus, and for fun. Icons can be used adaptively if desired, but at this point they are used more as visual elements within other components.
 
