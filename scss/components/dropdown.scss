@@ -59,12 +59,12 @@ $block: #{$fd-namespace}-dropdown;
       text-align: left;
       &::after {
         color: $fd-link-color;
-        height: $fd-forms-height - 2;
         width: $fd-forms-height - 2;
         padding-top: fd-space(2.5);
         border-left: 1px solid $fd-forms-border-color;
         background: $fd-menu-title-background-color;
         top: 0;
+        bottom:0;
         position: absolute;
         right: 0;
         border-top-right-radius: $fd-border-radius;
@@ -81,27 +81,24 @@ $block: #{$fd-namespace}-dropdown;
       &.fd-button--xs {
         // padding-right: $fd-button-right-padding - 2;
         &::after {
-          height: $fd-forms-height - 14;
           padding-top: fd-space(1.5);
         }
       }
       &.fd-button--s {
         // padding-right: $fd-button-right-padding + 2;
         &::after {
-            height: $fd-forms-height - 11;
             padding-top: fd-space(1.5);
         }
       }
       &.fd-button--compact {
         &::after {
-            height: $fd-forms-height - 6;
             padding-top: fd-space(2);
         }
       }
       &.fd-button--l {
         // padding-right: $fd-button-right-padding + 8;
         &::after {
-            height: $fd-forms-height + 2;
+            // height: $fd-forms-height + 2;
             width: $fd-forms-height + 2;
             padding-top: fd-space(2.5);
 
