@@ -58,57 +58,65 @@ $block: #{$fd-namespace}-dropdown;
       width: 100%;
       text-align: left;
       &::after {
-        top: 50%;
+        color: $fd-link-color;
+        height: $fd-forms-height - 2;
+        width: $fd-forms-height - 2;
+        padding-top: fd-space(2.5);
+        border-left: 1px solid $fd-forms-border-color;
+        background: $fd-menu-title-background-color;
+        top: 0;
         position: absolute;
-        right: 10px;
-        margin-top: -7px;
-      }
-
-      &[aria-expanded="true"],
-      &.is-expanded {
-        &::after {
-          transform: scaleY(-1);
-        }
-      }
-      &.is-disabled,
-      &[disabled],
-      &[aria-disabled="true"] {
-        &::after {
-          transform: none;
-        }
+        right: 0;
+        border-top-right-radius: $fd-border-radius;
+        border-bottom-right-radius: $fd-border-radius;
       }
       &--no-border {
         border: none;
       }
       // Default
-      &.fd-button--toolbar{
-        padding-right: $fd-button-right-padding;
-
-      }
+      // &.fd-button--toolbar{
+      //   padding-right: $fd-button-right-padding;
+      //
+      // }
       &.fd-button--xs {
-        padding-right: $fd-button-right-padding - 2;
+        // padding-right: $fd-button-right-padding - 2;
         &::after {
-          margin-top: -6px;
+          height: $fd-forms-height - 14;
+          padding-top: fd-space(1.5);
         }
       }
       &.fd-button--s {
-        padding-right: $fd-button-right-padding + 2;
+        // padding-right: $fd-button-right-padding + 2;
         &::after {
-          margin-top: -8px;
+            height: $fd-forms-height - 11;
+            padding-top: fd-space(1.5);
         }
       }
       &.fd-button--compact {
         &::after {
-          margin-top: -8px;
+            height: $fd-forms-height - 6;
+            padding-top: fd-space(2);
         }
       }
       &.fd-button--l {
-        padding-right: $fd-button-right-padding + 8;
-
+        // padding-right: $fd-button-right-padding + 8;
         &::after {
-          margin-top: -10px;
+            height: $fd-forms-height + 2;
+            width: $fd-forms-height + 2;
+            padding-top: fd-space(2.5);
+
         }
       }
+    }
+    &__control.fd-button {
+        color: $fd-forms-color;
+        border-color: $fd-forms-border-color;
+        &:hover, &:active {
+            color: $fd-forms-color;
+            background-color:  $fd-forms-background-color;
+            border-color: $fd-forms-border-color;
+            box-shadow: none;
+        }
     }
     &__menu {
       padding-top: fd-space(base);
