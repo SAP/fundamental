@@ -65,7 +65,6 @@ $block: #{$fd-namespace}-toggle;
     }
     &:checked {
       background-color: adjust-color($fd-link-color, $alpha: 0.6);
-      // opacity: 0.6;
       & + .#{$block}__switch {
         left: calc(100% - #{$fd-toggle-switch-width});
         background: $fd-link-color--pressed;
@@ -83,8 +82,9 @@ $block: #{$fd-namespace}-toggle;
     &[disabled],
     &.is-disabled,
     &[aria-disabled="true"] {
-      opacity: 0.4;
-      border-color: transparent;
+        background-color: adjust-color($fd-toggle-background-color, $lightness: 0.8);
+      // opacity: 0.4;
+      // border-color: transparent;
       & + .#{$block}__switch {
         border-color: transparent;
         background-color: $fd-toggle-switch-background-color--disabled;
