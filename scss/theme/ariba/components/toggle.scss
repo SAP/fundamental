@@ -1,0 +1,99 @@
+@import "./../settings";
+@import "./../../../mixins";
+@import "./../../../functions";
+
+$block: #{$fd-namespace}-toggle;
+.#{$block} {
+  // Hard coded values, TODO: look into cleaning up with more local spacing variables ~Eric
+
+  //SETTINGS
+  //SIZES — size: height "text size" "icon size"
+  $fd-toggle-sizes: (
+      "default": fd-space(12) fd-space(6.4) 5.11719px, //48px 28px
+      "xxs": fd-space(6.5) fd-space(4) 3px, //36px 20px
+      "xs": fd-space(8.5) fd-space(3.55) 4.57031px, //36px 20px
+      "s": fd-space(10) fd-space(4.95) 4.78125px, //40px 24px
+      "l": fd-space(13.5) fd-space(8) 5.11719px, //56px 32px
+  ) !default;
+
+  $_defaults: map-get($fd-toggle-sizes, "default");
+  $fd-toggle-width: nth($_defaults, 1);
+  $fd-toggle-height: nth($_defaults, 2);
+  $fd-toggle-background-color: fd-color(neutral, 3) !default;
+  $fd-toggle-transition-params: $fd-animation--speed ease-in !default;
+  $fd-toggle-switch-width: nth($_defaults, 2);
+  $fd-toggle-switch-border-color: fd-color(neutral, 3) !default;
+  $fd-toggle-switch-background-color: fd-color(neutral, 1) !default;
+  $fd-toggle-switch-background-color--disabled: fd-color(neutral, 2) !default;
+  $fd-toggle-switch-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+
+  height: $fd-toggle-height;
+
+  &__switch {
+
+    box-shadow: none;
+  }
+  input {
+
+    top: nth($_defaults, 3);//calc((100% - 71%) /1);
+    width: 100%;
+    height: 71%;
+    &:checked {
+      background-color: map-get($fd-colors-accent, 10);
+      //opacity: 0.6;
+      & + .#{$block}__switch {
+        //left: calc(100% - #{$fd-toggle-switch-width});
+        background: map-get($fd-colors-action, 1);;
+        border-color: map-get($fd-colors-action, 1);
+      }
+    }
+
+  }
+
+
+  //SIZES
+  @each $key, $list in $fd-toggle-sizes {
+    @if $key != "default" {
+      &--#{$key} {
+        height: nth($list, 2) - 2 ;
+        width: nth($list, 1);
+        @if $key == "xxs" {
+          .#{$block}__switch {
+            height: nth($list, 2);
+            width: nth($list, 2);
+          }
+        }
+        input {
+          top: nth($list, 3);
+
+          @if $key == "xxs" {
+            border-radius: nth($list, 2)/2;
+            &:checked {
+              & + .#{$block}__switch {
+                left: calc(100% - #{nth($list, 2)});
+              }
+            }
+          }
+          //@if $key == "l" {
+          //  &:checked{
+          //    &:after {
+          //      content: "On";
+          //      display: block;
+          //      padding: 3px 0px 0px 4px;
+          //      color: map-get($fd-colors-action, 1);
+          //      font-size: 10px;
+          //    }
+          //  }
+          //  &:after {
+          //    content: "Off";
+          //    display: block;
+          //    padding: 3px 0px 0px 33px;
+          //    color: gray;
+          //    font-size: 10px;
+          //  }
+          //}
+        }
+      }
+    }
+  }
+}
