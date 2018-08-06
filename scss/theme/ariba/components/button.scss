@@ -77,6 +77,13 @@ $block: #{$fd-namespace}-button;
         margin-right: 0px;
       }
     }
+
+    [dir='rtl'] .#{$block}, [dir='rtl'] [class*="#{$block}--"] {
+      &::before {
+        margin-left: fd-space(2);
+        margin-right: 0px;
+      }
+    }
   }
 
   &--negative {
