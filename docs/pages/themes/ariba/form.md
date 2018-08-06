@@ -7,7 +7,7 @@ permalink: themes/ariba/form.html
 folder: ariba
 ---
 
-<link rel="stylesheet" type="text/css" href="/css/theme/ariba/fundamental-ui-ariba-icons.css">
+<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/theme/ariba/fundamental-ui-ariba-icons.css">
 
 
 orm elements include field layout, checkboxes, radio buttons and states of a field. Use these components along with inline help and error state.
