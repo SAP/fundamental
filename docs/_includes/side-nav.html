@@ -35,8 +35,11 @@
                     {% endif %}
                     {% for subfolders in folderitem.subfolders %}
                     {% if subfolders.output contains "web" %}
+                    {% assign subfolder-name = folderitem.title | downcase %}
+                    {% if page.url contains subfolder-name  %}
+
                     <li class="subfolders">
-                        <a href="#">{{ subfolders.title }}</a>
+                        <a class="side-nav__links-link-link" href="{{site.baseurl}}{{subfolders.url}}">{{ subfolders.title }}</a>
                         <ul>
                             {% for subfolderitem in subfolders.subfolderitems %}
                             {% if subfolderitem.output contains "web" %}
@@ -57,6 +60,7 @@
                             {% endfor %}
                         </ul>
                     </li>
+                    {% endif %}
                     {% endif %}
                     {% endfor %}
                     {% endif %}

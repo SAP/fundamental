@@ -1,0 +1,100 @@
+@import "./../settings";
+@import "./../../../mixins";
+@import "./../../../functions";
+@import "./../../../components/mixins";
+/*!
+.fd-input-group+(--inline)
+    .fd-input-group__addon+()
+        .fd-input-group__button
+*/
+$block: #{$fd-namespace}-input-group;
+.#{$block} {
+    &.--l {
+        font-size: $fd-font-size + 2;
+    }
+    &__addon {
+        border: 0px;
+        padding: 0px;
+        background-color: transparent;
+        margin: 0px 0px 0px -40px;
+        color: map-get($fd-colors-text, 5);
+        text-align: center;
+        text-align: -webkit-center;
+
+        &--button {
+            border: 1px solid map-get($fd-colors-accent, 10);
+            margin: 0px 0px 0px -50px;
+        }
+        &--before {
+            margin: 0px -40px 0px 0px;
+            padding-left: 5px;
+            z-index: 1;
+            min-width: 40px;
+            text-align: center;
+        }
+        &--after {
+            min-width: 40px;
+        }
+    }
+    &--before {
+        #{$fd-elements-inputs--text} {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            padding-left: 45px;
+        }
+    }
+    &--after {
+        #{$fd-elements-inputs--text} {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-right: 45px;
+        }
+    }
+    &--before {
+        &.--after{
+            #{$fd-elements-inputs--text} {
+                padding-left: 45px;
+                padding-right: 45px;
+            }
+        }
+    }
+
+}
+
+
+[dir='rtl']{
+    .#{$block} {
+        &__addon {
+            margin: 0px -40px 0px 0px;
+            &--before {
+                margin: 0px 0px 0px -40px;
+                padding-left: 1px;
+                padding-right: 8px;
+                //min-width: 40px;
+            }
+            &--after {
+                //min-width: 40px;
+            }
+        }
+        &--before {
+            .fd-form__control {
+                padding-right: 45px;
+                padding-left: 12px;
+            }
+        }
+        &--after {
+            .fd-form__control {
+                padding-left: 45px;
+                padding-right: 12px;
+            }
+        }
+        &--before {
+            &.--after{
+                .fd-form__control {
+                    padding-left: 45px;
+                    padding-right: 45px;
+                }
+            }
+        }
+    }
+}
