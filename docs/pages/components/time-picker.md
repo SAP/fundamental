@@ -20,7 +20,7 @@ A basic example of a time picker.
     <div class="fd-popover">
         <div class="fd-popover__control">
             <div class="fd-input-group fd-input-group--after">
-                <input type="text" id="" placeholder="hh:mm am/pm">
+                <input type="time" id="" placeholder="hh:mm am/pm">
                 <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
                     <button class="fd-popover__control fd-button--icon fd-button--secondary sap-icon--fob-watch"
                     aria-controls="Cy29K184" aria-expanded="false" aria-haspopup="true"
