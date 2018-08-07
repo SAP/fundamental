@@ -140,4 +140,18 @@ $( document ).ready(function() {
             }
         });
     }
+
+    // Container RTL toggle for component display
+    var toggle = document.getElementsByClassName("toggle-rtl");
+    for (var i = 0; i < toggle.length; i++) {
+        toggle[i].addEventListener("change", function () {
+            var panelId = this.getAttribute("aria-controls");
+            console.log(">> panelId: "+ panelId);
+            if(this.checked) {
+                document.getElementById(panelId).dir = "rtl";
+            } else {
+                document.getElementById(panelId).dir = "ltr";
+            }
+        });
+    }
 })();
