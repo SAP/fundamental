@@ -6942,6 +6942,14 @@ hr {
   .rtl .fd-button::before, .rtl [class*="fd-button--"]::before {
     margin-left: 8px;
     margin-right: 0px; }
+  [dir='rtl'] .fd-button::before,
+  [dir='rtl'] [class*="fd-button--"]::before {
+    margin-left: 8px;
+    margin-right: 0px; }
+  [dir='rtl'] .fd-button.--icon-only::before,
+  [dir='rtl'] [class*="fd-button--"].--icon-only::before,
+  [dir='rtl'] .fd-button--round::before {
+    margin-left: 0px; }
   .ariba .fd-button--negative {
     border-color: #CC0000; }
     .ariba .fd-button--negative:active, .ariba .fd-button--negative.is-active, .ariba .fd-button--negative[aria-selected="true"], .ariba .fd-button--negative.is-selected, .ariba .fd-button--negative[aria-pressed="true"], .ariba .fd-button--negative.is-pressed {
@@ -7072,6 +7080,9 @@ hr {
     padding-right: 14px; }
   .ariba .fd-form__set .fd-form__message {
     margin-top: 0; }
+  [dir='rtl'] .fd-form__control {
+    margin-left: 8px;
+    margin-right: 0; }
   .ariba .fd-form__item.--warning {
     color: #f59518; }
     .ariba .fd-form__item.--warning .fd-form__control {
@@ -7145,6 +7156,8 @@ hr {
         .ariba .fd-toggle input:checked + .fd-toggle__switch {
           background: #0a6ed1;
           border-color: #0a6ed1; }
+    [dir='rtl'] input:checked + .fd-toggle__switch {
+      right: calc(100% - 25.6px); }
     .ariba .fd-toggle--xxs {
       height: 14px;
       width: 26px; }
@@ -7171,6 +7184,17 @@ hr {
       width: 54px; }
       .ariba .fd-toggle--l input {
         top: 5.11719px; }
+  .ariba [dir='rtl'] .fd-toggle__switch {
+    right: 0;
+    transition: right 0.125s ease-in; }
+  .ariba [dir='rtl'] .fd-toggle--xxs input:checked + .fd-toggle__switch {
+    right: calc(100% - 16px); }
+  .ariba [dir='rtl'] .fd-toggle--xs input:checked + .fd-toggle__switch {
+    right: calc(100% - 14.2px); }
+  .ariba [dir='rtl'] .fd-toggle--s input:checked + .fd-toggle__switch {
+    right: calc(100% - 19.8px); }
+  .ariba [dir='rtl'] .fd-toggle--l input:checked + .fd-toggle__switch {
+    right: calc(100% - 32px); }
   .ariba .fd-spinner-2 {
     position: relative;
     -webkit-box-sizing: border-box;

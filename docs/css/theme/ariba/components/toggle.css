@@ -17,6 +17,8 @@
       .fd-toggle input:checked + .fd-toggle__switch {
         background: #0a6ed1;
         border-color: #0a6ed1; }
+  [dir='rtl'] input:checked + .fd-toggle__switch {
+    right: calc(100% - 25.6px); }
   .fd-toggle--xxs {
     height: 14px;
     width: 26px; }
@@ -43,15 +45,19 @@
     width: 54px; }
     .fd-toggle--l input {
       top: 5.11719px; }
-      .fd-toggle--l input:checked:after {
-        content: "On";
-        display: block;
-        padding: 3px 0px 0px 4px;
-        color: #0a6ed1;
-        font-size: 10px; }
-      .fd-toggle--l input:after {
-        content: "Off";
-        display: block;
-        padding: 3px 0px 0px 33px;
-        color: gray;
-        font-size: 10px; }
+[dir='rtl'] .fd-toggle__switch {
+  right: 0;
+  -webkit-transition: right 0.125s ease-in;
+  transition: right 0.125s ease-in; }
+
+[dir='rtl'] .fd-toggle--xxs input:checked + .fd-toggle__switch {
+  right: calc(100% - 16px); }
+
+[dir='rtl'] .fd-toggle--xs input:checked + .fd-toggle__switch {
+  right: calc(100% - 14.2px); }
+
+[dir='rtl'] .fd-toggle--s input:checked + .fd-toggle__switch {
+  right: calc(100% - 19.8px); }
+
+[dir='rtl'] .fd-toggle--l input:checked + .fd-toggle__switch {
+  right: calc(100% - 32px); }
