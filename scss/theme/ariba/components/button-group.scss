@@ -1,0 +1,188 @@
+@import "./../settings";
+@import "./../../../mixins";
+@import "./../../../functions";
+
+/*!
+.fd-button-group+()
+    .fd-button
+*/
+$block: #{$fd-namespace}-button-group;
+
+.#{$block} {
+
+  //SIZES — size: height "text size" "icon size"
+  $fd-button-sizes: (
+          "default": $fd-forms-height "0" "l", //36px
+          "compact": fd-space(8) "0" "m", //32px
+          "xs": fd-space(6) "-2" "s", //24px
+          "s": fd-space(7) "0" "m", //28px
+          "l": fd-space(10) "1" "l", //40px
+          "xl": fd-space(11) "1" "xl", //44px
+  ) !default;
+
+  $defaults: map-get($fd-button-sizes, "default");
+  $fd-button-color: $fd-link-color !default;
+  $fd-button-color--inverse: fd-color("text-inverse", 1) !default;
+  $fd-button-color--hover: $fd-link-color--hover !default;
+  //spacing
+  $fd-button-padding-x: fd-space(3)/1.2 !default;
+
+  display: inline-flex;
+
+  &.--split{
+    [class*="#{$fd-namespace}-button--"] {
+      padding-left: $fd-button-padding-x * 1.6;
+      padding-right: $fd-button-padding-x * 1.6;
+      color: $fd-button-color--inverse;
+      background-color: $fd-button-color;
+      border-color: $fd-button-color;
+      font-weight: 700;
+      font-size: inherit;
+      &:hover {
+        background-color: $fd-button-color--hover;
+        border-color: $fd-button-color--hover;
+        color: $fd-button-color--inverse;
+        box-shadow: none;
+      }
+      &.--more {
+        border-left: 1px solid #fff;
+        padding-left: $fd-button-padding-x * 1.2;
+        padding-right: $fd-button-padding-x * 1.2;
+
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        //font-size: $fd-button-padding-x * 1.4;
+
+        &::before {
+          font-size: inherit;
+          font-family: "Ariba-icons";
+          font-style: normal;
+          font-weight: 700;
+          text-align: center;
+          display: inline-block;
+          text-decoration: inherit;
+          text-transform: none;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          speak: none;
+          content: "\eB16";
+          margin-top: -5px;
+        }
+      }
+    }
+    .fd-popover__body {
+      min-width: inherit;
+      margin-top: nth($defaults, 1) - 1;
+      margin-left: -1px;
+      font-size: inherit;
+      .fd-menu {
+        font-size: inherit;
+      }
+    }
+
+    @each $key, $list in $fd-button-sizes {
+      @if $key != "default" {
+
+        &.--#{$key} {
+          @include fd-type(nth($list, 2), 700);
+
+          .fd-popover__body {
+            margin-top: nth($list, 1) - 1;
+           }
+
+          & [class*="#{$fd-namespace}-button--"]{
+
+            height: nth($list, 1);
+            max-height: nth($list, 1);
+            //min-width: nth($list, 1);
+            @if $key == "xs" {
+              padding-left: $fd-button-padding-x * 0.8;
+              padding-right: $fd-button-padding-x * 0.8;
+            }
+            @if $key == "s" {
+              padding-left: $fd-button-padding-x * 0.8;
+              padding-right: $fd-button-padding-x * 0.8;
+            }
+            @if $key == "compact" {
+              padding-left: $fd-button-padding-x * 1.2;
+              padding-right: $fd-button-padding-x * 1.2;
+            }
+            @if $key == "l" {
+              padding-left: $fd-button-padding-x * 2;
+              padding-right: $fd-button-padding-x * 2;
+            }
+            @if $key == "xl" {
+              padding-left: $fd-button-padding-x * 2.4;
+              padding-right: $fd-button-padding-x * 2.4;
+            }
+          }
+
+          [class*="#{$fd-namespace}-button--"].--more{
+
+            height: nth($list, 1);
+            max-height: nth($list, 1);
+            //min-width: nth($list, 1);
+            @if $key == "xs" {
+              padding-left: $fd-button-padding-x * 0.7;
+              padding-right: $fd-button-padding-x * 0.7;
+            }
+            @if $key == "s" {
+              padding-left: $fd-button-padding-x * 0.8;
+              padding-right: $fd-button-padding-x * 0.8;
+            }
+            @if $key == "compact" {
+              padding-left: $fd-button-padding-x * 1.1;
+              padding-right: $fd-button-padding-x * 1.1;
+            }
+            @if $key == "l" {
+              padding-left: $fd-button-padding-x * 1.3;
+              padding-right: $fd-button-padding-x * 1.3;
+            }
+            @if $key == "xl" {
+              padding-left: $fd-button-padding-x * 1.5;
+              padding-right: $fd-button-padding-x * 1.5;
+            }
+          }
+
+        }
+      }
+    }
+
+  }
+
+}
+
+
+[dir='rtl'] .#{$block}.--split{
+  [class*="#{$fd-namespace}-button--"]{
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+    &::before {
+      margin-left: 0px;
+      //margin-right: 0px;
+    }
+
+    &.--more {
+      border-left: 0px solid #fff;
+      border-right: 1px solid #fff;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+  }
+  .fd-popover__body {
+    margin-right: -1px;
+    margin-left: 0px;
+    border-top-left-radius: 3px;
+
+    .fd-menu__list {
+      padding: 0px;
+
+    }
+  }
+}

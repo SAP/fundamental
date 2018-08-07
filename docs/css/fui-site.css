@@ -3366,19 +3366,27 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       transform: none; }
     .fd-dropdown__control--no-border {
       border: none; }
-    .fd-dropdown__control::after {
-      top: 50%;
-      position: absolute;
-      right: 10px;
-      margin-top: -7px; }
-    .fd-dropdown__control.fd-button--xs::after {
-      margin-top: -6px; }
-    .fd-dropdown__control.fd-button--s::after {
-      margin-top: -8px; }
+    .fd-dropdown__control.fd-button--toolbar {
+      padding-right: 32px; }
+      .fd-dropdown__control.fd-button--toolbar::after {
+        top: 50%;
+        position: absolute;
+        right: 10px;
+        margin-top: -7px; }
+    .fd-dropdown__control.fd-button--xs {
+      padding-right: 30px; }
+      .fd-dropdown__control.fd-button--xs::after {
+        margin-top: -6px; }
+    .fd-dropdown__control.fd-button--s {
+      padding-right: 34px; }
+      .fd-dropdown__control.fd-button--s::after {
+        margin-top: -8px; }
     .fd-dropdown__control.fd-button--compact::after {
-      margin-top: -5px; }
-    .fd-dropdown__control.fd-button--l::after {
-      margin-top: -10px; }
+      margin-top: -8px; }
+    .fd-dropdown__control.fd-button--l {
+      padding-right: 40px; }
+      .fd-dropdown__control.fd-button--l::after {
+        margin-top: -10px; }
   .fd-dropdown__menu {
     padding-top: 4px;
     padding-bottom: 4px;
@@ -3821,11 +3829,11 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-table td:first-child, .docs-table td:first-child,
     .fd-table th:first-child,
     .docs-table th:first-child {
-      padding-left: 24px; }
+      padding-left: 32px; }
     .fd-table td:last-child, .docs-table td:last-child,
     .fd-table th:last-child,
     .docs-table th:last-child {
-      padding-right: 24px; }
+      padding-right: 32px; }
     .fd-table td .fd-dropdown__menu, .docs-table td .fd-dropdown__menu,
     .fd-table th .fd-dropdown__menu,
     .docs-table th .fd-dropdown__menu {
@@ -6864,7 +6872,11 @@ hr {
  */
   /*
  * Animation
- */ }
+ */
+  /*!
+.fd-button-group+()
+    .fd-button
+*/ }
   .ariba input[type=text], .ariba input[type=password], .ariba input[type=email], .ariba input[type=url], .ariba input[type=search], .ariba input[type=tel], .ariba input[type=number], .ariba input[type=date] {
     direction: inherit;
     line-height: 1.14286rem;
@@ -6940,6 +6952,9 @@ hr {
   .ariba .fd-button--main, .ariba .fd-button--action-bar {
     font-weight: 700; }
   .rtl .fd-button::before, .rtl [class*="fd-button--"]::before {
+    margin-left: 8px;
+    margin-right: 0px; }
+  [dir='rtl'] .fd-button::before, [dir='rtl'] [class*="fd-button--"]::before {
     margin-left: 8px;
     margin-right: 0px; }
   .ariba .fd-button--negative {
@@ -7276,3 +7291,141 @@ hr {
     -moz-transform: rotate(360deg);
     -o-transform: rotate(360deg);
     transform: rotate(360deg); } }
+  .ariba .fd-button-group {
+    display: inline-flex; }
+    .ariba .fd-button-group.--split [class*="fd-button--"] {
+      padding-left: 16px;
+      padding-right: 16px;
+      color: #ffffff;
+      background-color: #0a6ed1;
+      border-color: #0a6ed1;
+      font-weight: 700;
+      font-size: inherit; }
+      .ariba .fd-button-group.--split [class*="fd-button--"]:hover {
+        background-color: #085caf;
+        border-color: #085caf;
+        color: #ffffff;
+        box-shadow: none; }
+      .ariba .fd-button-group.--split [class*="fd-button--"].--more {
+        border-left: 1px solid #fff;
+        padding-left: 12px;
+        padding-right: 12px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px; }
+        .ariba .fd-button-group.--split [class*="fd-button--"].--more::before {
+          font-size: inherit;
+          font-family: "Ariba-icons";
+          font-style: normal;
+          font-weight: 700;
+          text-align: center;
+          display: inline-block;
+          text-decoration: inherit;
+          text-transform: none;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          speak: none;
+          content: "\eB16";
+          margin-top: -5px; }
+    .ariba .fd-button-group.--split .fd-popover__body {
+      min-width: inherit;
+      margin-top: 35px;
+      margin-left: -1px;
+      font-size: inherit; }
+      .ariba .fd-button-group.--split .fd-popover__body .fd-menu {
+        font-size: inherit; }
+    .ariba .fd-button-group.--split.--compact {
+      font-size: 1rem;
+      line-height: 1.42857; }
+      .ariba .fd-button-group.--split.--compact .fd-popover__body {
+        margin-top: 31px; }
+      .ariba .fd-button-group.--split.--compact [class*="fd-button--"] {
+        height: 32px;
+        max-height: 32px;
+        padding-left: 12px;
+        padding-right: 12px; }
+      .ariba .fd-button-group.--split.--compact [class*="fd-button--"].--more {
+        height: 32px;
+        max-height: 32px;
+        padding-left: 11px;
+        padding-right: 11px; }
+    .ariba .fd-button-group.--split.--xs {
+      font-size: 0.85714rem;
+      line-height: 1.33333; }
+      .ariba .fd-button-group.--split.--xs .fd-popover__body {
+        margin-top: 23px; }
+      .ariba .fd-button-group.--split.--xs [class*="fd-button--"] {
+        height: 24px;
+        max-height: 24px;
+        padding-left: 8px;
+        padding-right: 8px; }
+      .ariba .fd-button-group.--split.--xs [class*="fd-button--"].--more {
+        height: 24px;
+        max-height: 24px;
+        padding-left: 7px;
+        padding-right: 7px; }
+    .ariba .fd-button-group.--split.--s {
+      font-size: 1rem;
+      line-height: 1.42857; }
+      .ariba .fd-button-group.--split.--s .fd-popover__body {
+        margin-top: 27px; }
+      .ariba .fd-button-group.--split.--s [class*="fd-button--"] {
+        height: 28px;
+        max-height: 28px;
+        padding-left: 8px;
+        padding-right: 8px; }
+      .ariba .fd-button-group.--split.--s [class*="fd-button--"].--more {
+        height: 28px;
+        max-height: 28px;
+        padding-left: 8px;
+        padding-right: 8px; }
+    .ariba .fd-button-group.--split.--l {
+      font-size: 1.14286rem;
+      line-height: 1.25; }
+      .ariba .fd-button-group.--split.--l .fd-popover__body {
+        margin-top: 39px; }
+      .ariba .fd-button-group.--split.--l [class*="fd-button--"] {
+        height: 40px;
+        max-height: 40px;
+        padding-left: 20px;
+        padding-right: 20px; }
+      .ariba .fd-button-group.--split.--l [class*="fd-button--"].--more {
+        height: 40px;
+        max-height: 40px;
+        padding-left: 13px;
+        padding-right: 13px; }
+    .ariba .fd-button-group.--split.--xl {
+      font-size: 1.14286rem;
+      line-height: 1.25; }
+      .ariba .fd-button-group.--split.--xl .fd-popover__body {
+        margin-top: 43px; }
+      .ariba .fd-button-group.--split.--xl [class*="fd-button--"] {
+        height: 44px;
+        max-height: 44px;
+        padding-left: 24px;
+        padding-right: 24px; }
+      .ariba .fd-button-group.--split.--xl [class*="fd-button--"].--more {
+        height: 44px;
+        max-height: 44px;
+        padding-left: 15px;
+        padding-right: 15px; }
+  .ariba [dir='rtl'] .fd-button-group.--split [class*="fd-button--"] {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px; }
+    .ariba [dir='rtl'] .fd-button-group.--split [class*="fd-button--"]::before {
+      margin-left: 0px; }
+    .ariba [dir='rtl'] .fd-button-group.--split [class*="fd-button--"].--more {
+      border-left: 0px solid #fff;
+      border-right: 1px solid #fff;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px; }
+  .ariba [dir='rtl'] .fd-button-group.--split .fd-popover__body {
+    margin-right: -1px;
+    margin-left: 0px;
+    border-top-left-radius: 3px; }
+    .ariba [dir='rtl'] .fd-button-group.--split .fd-popover__body .fd-menu__list {
+      padding: 0px; }

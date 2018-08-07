@@ -7,8 +7,7 @@ permalink: themes/ariba/button.html
 folder: ariba
 ---
      
-<link rel="stylesheet" type="text/css" href="/css/theme/ariba/fundamental-ui-ariba-icons.css">
-<link rel="stylesheet" type="text/css" href="/css/theme/ariba/fundamental-ui-ariba.css">
+<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/theme/ariba/fundamental-ui-ariba-icons.css">
 
 The Buttons allow users to perform actions. The priority of buttons within a page should be considered. For instance, only use the main button once within a page or modal.
 Color is also important. For instance, the most important button has a blue background where as a red button should only be used if the action it performs is potentially destructive.
@@ -21,7 +20,6 @@ Color is also important. For instance, the most important button has a blue back
 - **Secondary Button**: `--secondary` is required to render the Secondary button. There can be more than one secondary button on the page. A common use case is “Cancel”.
 - **Toolbar Button**: `--toolbar` is required to render the Toolbar button. This button is used inside the toolbar component.
 - **Semantic Buttons**: Semantic modifiers `--positive` for approve and `--negative` for reject can be applied to the button.
-- **Round Buttons**: `--round` modifier is required to render the round button. This is kind of Toolbar button but can be used for all kind of variations.
 
 {% capture button %}
 <button class="fd-button--action-bar">Action Bar Button</button>
@@ -30,7 +28,34 @@ Color is also important. For instance, the most important button has a blue back
 <button class="fd-button--toolbar">Toolbar Button</button>
 <button class="fd-button--positive">Accept</button>
 <button class="fd-button--negative">Reject</button>
+
+{% endcapture %}
+{% include display-component.html component=button %}
+
+<br/>
+
+## Specific Case Button Types
+
+- **Round Buttons**: `--round`  modifier is required to render the round button. This is speical kind of Toolbar button.
+- **Split Buttons**: `--split`  modifier is required to render the `1 + N` button. This is kind of Toolbar button but can be used for similar related operations.
+
+{% capture button %}
 <button class="fd-button--action-bar fd-button--round ariba-icon--add-template"></button>
+
+<div class="fd-button-group --split" role="group" aria-label="Group label">
+  <button class="fd-button--grouped">Button</button>
+  <button class="fd-button--grouped --more" aria-controls="gp09D964" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+  <div class="fd-popover__body" aria-hidden="true" id="gp09D964">
+      <nav class="fd-menu">
+          <ul class="fd-menu__list">
+            <li><a href="#" class="fd-menu__item">Option 1</a></li>
+            <li><a href="#" class="fd-menu__item">Option 2</a></li>
+            <li><a href="#" class="fd-menu__item">Option 3</a></li>
+            <li><a href="#" class="fd-menu__item">Option 4</a></li>
+          </ul>
+      </nav>
+   </div>
+</div>
 
 {% endcapture %}
 {% include display-component.html component=button %}
@@ -46,6 +71,106 @@ There are five different sizes can be rendered with modifiers: `--xs`, `--s`, `-
 <button class=" fd-button">Button</button>
 <button class=" fd-button fd-button--l">Button</button>
 <button class=" fd-button fd-button--xl">Button</button>
+
+<br>
+
+{% endcapture %}
+{% include display-component.html component=button %}
+
+## Split Button Sizes
+There are five different sizes can be rendered with modifiers: `--xs`, `--s`, `--compact`, default, `--l` and `--xl`.
+{% capture button %}
+
+<div class="fd-button-group --split --xs" role="group" aria-label="Group label">
+  <button class="fd-button--grouped">Small</button>
+  <button class="fd-button--grouped --more" aria-controls="gp09D96411" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+  <div class="fd-popover__body" aria-hidden="true" id="gp09D96411">
+      <nav class="fd-menu">
+          <ul class="fd-menu__list">
+            <li><a href="#" class="fd-menu__item">Option 1</a></li>
+            <li><a href="#" class="fd-menu__item">Option 2</a></li>
+            <li><a href="#" class="fd-menu__item">Option 3</a></li>
+            <li><a href="#" class="fd-menu__item">Option 4</a></li>
+          </ul>
+      </nav>
+   </div>
+</div>
+
+<div class="fd-button-group --split --s" role="group" aria-label="Group label">
+  <button class="fd-button--grouped">X-Small</button>
+  <button class="fd-button--grouped --more" aria-controls="gp09D96422" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+  <div class="fd-popover__body" aria-hidden="true" id="gp09D96422">
+      <nav class="fd-menu">
+          <ul class="fd-menu__list">
+            <li><a href="#" class="fd-menu__item">Option 1</a></li>
+            <li><a href="#" class="fd-menu__item">Option 2</a></li>
+            <li><a href="#" class="fd-menu__item">Option 3</a></li>
+            <li><a href="#" class="fd-menu__item">Option 4</a></li>
+          </ul>
+      </nav>
+   </div>
+</div>
+
+<div class="fd-button-group --split --compact" role="group" aria-label="Group label">
+  <button class="fd-button--grouped">Compact</button>
+  <button class="fd-button--grouped --more" aria-controls="gp09D96433" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+  <div class="fd-popover__body" aria-hidden="true" id="gp09D96433">
+      <nav class="fd-menu">
+          <ul class="fd-menu__list">
+            <li><a href="#" class="fd-menu__item">Option 1</a></li>
+            <li><a href="#" class="fd-menu__item">Option 2</a></li>
+            <li><a href="#" class="fd-menu__item">Option 3</a></li>
+            <li><a href="#" class="fd-menu__item">Option 4</a></li>
+          </ul>
+      </nav>
+   </div>
+</div>
+<br>
+<br>
+<div class="fd-button-group --split" role="group" aria-label="Group label">
+  <button class="fd-button--grouped">Regular</button>
+  <button class="fd-button--grouped --more" aria-controls="gp09D96444" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+  <div class="fd-popover__body" aria-hidden="true" id="gp09D96444">
+      <nav class="fd-menu">
+          <ul class="fd-menu__list">
+            <li><a href="#" class="fd-menu__item">Option 1</a></li>
+            <li><a href="#" class="fd-menu__item">Option 2</a></li>
+            <li><a href="#" class="fd-menu__item">Option 3</a></li>
+            <li><a href="#" class="fd-menu__item">Option 4</a></li>
+          </ul>
+      </nav>
+   </div>
+</div>
+
+<div class="fd-button-group --split --l" role="group" aria-label="Group label">
+  <button class="fd-button--grouped">Large</button>
+  <button class="fd-button--grouped --more" aria-controls="gp09D96455" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+  <div class="fd-popover__body" aria-hidden="true" id="gp09D96455">
+      <nav class="fd-menu">
+          <ul class="fd-menu__list">
+            <li><a href="#" class="fd-menu__item">Option 1</a></li>
+            <li><a href="#" class="fd-menu__item">Option 2</a></li>
+            <li><a href="#" class="fd-menu__item">Option 3</a></li>
+            <li><a href="#" class="fd-menu__item">Option 4</a></li>
+          </ul>
+      </nav>
+   </div>
+</div>
+
+<div class="fd-button-group --split --xl" role="group" aria-label="Group label">
+  <button class="fd-button--grouped">X-Large</button>
+  <button class="fd-button--grouped --more" aria-controls="gp09D96466" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+  <div class="fd-popover__body" aria-hidden="true" id="gp09D96466">
+      <nav class="fd-menu">
+          <ul class="fd-menu__list">
+            <li><a href="#" class="fd-menu__item">Option 1</a></li>
+            <li><a href="#" class="fd-menu__item">Option 2</a></li>
+            <li><a href="#" class="fd-menu__item">Option 3</a></li>
+            <li><a href="#" class="fd-menu__item">Option 4</a></li>
+          </ul>
+      </nav>
+   </div>
+</div>
 <br>
 {% endcapture %}
 {% include display-component.html component=button %}
@@ -94,7 +219,7 @@ Full list of all the avialable icons can be found on the <a href="icons.html">ic
 Button can have an icon with text or just and icon. You can use the `sap-icon--{icon-name}` class to attach an icon to the button.
 Full list of all the avialable icons can be found on the <a href="icons.html">icons page</a>.
 {% capture button %}
-<div class='rtl' style='direction:rtl'>
+<div dir='rtl'>
     <button class="fd-button fd-button--xs sap-icon--cart">Add to Cart</button>
     <button class="fd-button--main fd-button--xs sap-icon--cart">Add to Cart</button>
     <button class="fd-button--secondary fd-button--xs sap-icon--cart">Add to Cart</button>
@@ -103,6 +228,102 @@ Full list of all the avialable icons can be found on the <a href="icons.html">ic
     <button class="fd-button--main fd-button--xs fd-button--negative sap-icon--decline">Reject</button>
 </div>
 
+{% endcapture %}
+{% include display-component.html component=button %}
+
+
+## RTL Split Button
+There are five different sizes can be rendered with modifiers: `--xs`, `--s`, `--compact`, default, `--l` and `--xl`.
+{% capture button %}
+<div dir='rtl'>
+    <div class="fd-button-group --split --xs" role="group" aria-label="Group label">
+      <button class="fd-button--grouped">Small</button>
+      <button class="fd-button--grouped --more" aria-controls="gp09D964111" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+      <div class="fd-popover__body" aria-hidden="true" id="gp09D964111">
+          <nav class="fd-menu">
+              <ul class="fd-menu__list">
+                <li><a href="#" class="fd-menu__item">Option 1</a></li>
+                <li><a href="#" class="fd-menu__item">Option 2</a></li>
+                <li><a href="#" class="fd-menu__item">Option 3</a></li>
+                <li><a href="#" class="fd-menu__item">Option 4</a></li>
+              </ul>
+          </nav>
+       </div>
+    </div>
+    <div class="fd-button-group --split --s" role="group" aria-label="Group label">
+      <button class="fd-button--grouped">X-Small</button>
+      <button class="fd-button--grouped --more" aria-controls="gp09D964221" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+      <div class="fd-popover__body" aria-hidden="true" id="gp09D964221">
+          <nav class="fd-menu">
+              <ul class="fd-menu__list">
+                <li><a href="#" class="fd-menu__item">Option 1</a></li>
+                <li><a href="#" class="fd-menu__item">Option 2</a></li>
+                <li><a href="#" class="fd-menu__item">Option 3</a></li>
+                <li><a href="#" class="fd-menu__item">Option 4</a></li>
+              </ul>
+          </nav>
+       </div>
+    </div>
+    <div class="fd-button-group --split --compact" role="group" aria-label="Group label">
+      <button class="fd-button--grouped">Compact</button>
+      <button class="fd-button--grouped --more" aria-controls="gp09D964331" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+      <div class="fd-popover__body" aria-hidden="true" id="gp09D964331">
+          <nav class="fd-menu">
+              <ul class="fd-menu__list">
+                <li><a href="#" class="fd-menu__item">Option 1</a></li>
+                <li><a href="#" class="fd-menu__item">Option 2</a></li>
+                <li><a href="#" class="fd-menu__item">Option 3</a></li>
+                <li><a href="#" class="fd-menu__item">Option 4</a></li>
+              </ul>
+          </nav>
+       </div>
+    </div>
+    <br>
+    <br>
+    <div class="fd-button-group --split" role="group" aria-label="Group label">
+      <button class="fd-button--grouped">Regular</button>
+      <button class="fd-button--grouped --more" aria-controls="gp09D964441" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+      <div class="fd-popover__body" aria-hidden="true" id="gp09D964441">
+          <nav class="fd-menu">
+              <ul class="fd-menu__list">
+                <li><a href="#" class="fd-menu__item">Option 1</a></li>
+                <li><a href="#" class="fd-menu__item">Option 2</a></li>
+                <li><a href="#" class="fd-menu__item">Option 3</a></li>
+                <li><a href="#" class="fd-menu__item">Option 4</a></li>
+              </ul>
+          </nav>
+       </div>
+    </div>
+    <div class="fd-button-group --split --l" role="group" aria-label="Group label">
+      <button class="fd-button--grouped">Large</button>
+      <button class="fd-button--grouped --more" aria-controls="gp09D964551" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+      <div class="fd-popover__body" aria-hidden="true" id="gp09D964551">
+          <nav class="fd-menu">
+              <ul class="fd-menu__list">
+                <li><a href="#" class="fd-menu__item">Option 1</a></li>
+                <li><a href="#" class="fd-menu__item">Option 2</a></li>
+                <li><a href="#" class="fd-menu__item">Option 3</a></li>
+                <li><a href="#" class="fd-menu__item">Option 4</a></li>
+              </ul>
+          </nav>
+       </div>
+    </div>
+    <div class="fd-button-group --split --xl" role="group" aria-label="Group label">
+      <button class="fd-button--grouped">X-Large</button>
+      <button class="fd-button--grouped --more" aria-controls="gp09D964661" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+      <div class="fd-popover__body" aria-hidden="true" id="gp09D964661">
+          <nav class="fd-menu">
+              <ul class="fd-menu__list">
+                <li><a href="#" class="fd-menu__item">Option 1</a></li>
+                <li><a href="#" class="fd-menu__item">Option 2</a></li>
+                <li><a href="#" class="fd-menu__item">Option 3</a></li>
+                <li><a href="#" class="fd-menu__item">Option 4</a></li>
+              </ul>
+          </nav>
+       </div>
+    </div>
+</div>
+<br>
 {% endcapture %}
 {% include display-component.html component=button %}
 
