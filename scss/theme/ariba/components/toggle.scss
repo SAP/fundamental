@@ -3,7 +3,6 @@
 @import "./../../../functions";
 
 $block: #{$fd-namespace}-toggle;
-.#{$block} {
   // Hard coded values, TODO: look into cleaning up with more local spacing variables ~Eric
 
   //SETTINGS
@@ -27,6 +26,7 @@ $block: #{$fd-namespace}-toggle;
   $fd-toggle-switch-background-color--disabled: fd-color(neutral, 2) !default;
   $fd-toggle-switch-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
 
+.#{$block} {
   height: $fd-toggle-height;
 
   &__switch {
@@ -48,6 +48,15 @@ $block: #{$fd-namespace}-toggle;
       }
     }
 
+  }
+  @at-root [dir='rtl']{
+    input {
+      &:checked {
+        & + .#{$block}__switch {
+          right: calc(100% - #{$fd-toggle-switch-width});
+        }
+      }
+    }
   }
 
 
@@ -92,6 +101,30 @@ $block: #{$fd-namespace}-toggle;
           //    font-size: 10px;
           //  }
           //}
+        }
+      }
+    }
+  }
+}
+
+[dir='rtl'] {
+  .#{$block}{
+
+    &__switch {
+      right: 0;
+      transition: right $fd-toggle-transition-params;
+    }
+
+    @each $key, $list in $fd-toggle-sizes {
+      @if $key != "default" {
+        &--#{$key} {
+          input {
+            &:checked {
+              & + .#{$block}__switch {
+                right: calc(100% - #{nth($list, 2)});
+              }
+            }
+          }
         }
       }
     }

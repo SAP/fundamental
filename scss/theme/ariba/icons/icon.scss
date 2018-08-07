@@ -42,6 +42,14 @@ $block: ariba-icon;
   }
 }
 
+[dir='rtl']{
+  [class*="#{$block}"] {
+    &::before {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+  }
+}
 .#{$block} {
   &--s, &-sm,
   &--small {
