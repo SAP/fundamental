@@ -146,7 +146,8 @@
 <p>Replace the normal checkbox with the <code>.fd-toggle</code> component. Apply the <code>.fd-form__control</code> class to the <code>.fd-toggle</code> component instead of to the <code>input</code> element. Everything else works the same.</p>
 
 {% set example %}
-{{ form_item("toggle", modifier={ control: "s" }) }}
+{{ form_item("toggle", modifier={ control: "s" }, state={disabled: true}) }}
+{{ form_item("toggle", modifier={ control: "s" }, state={disabled: true, checked: true}) }}
 {{ form_item("toggle") }}
 {{ form_item("toggle", modifier={ control: "l" }) }}
 {% endset %}
