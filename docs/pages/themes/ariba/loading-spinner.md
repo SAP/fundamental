@@ -7,7 +7,7 @@ permalink: themes/ariba/loading-spinner.html
 folder: ariba
 summary:
 ---
-<link rel="stylesheet" type="text/css" href="/css/theme/ariba/fundamental-ui-ariba-icons.css">
+<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/theme/ariba/fundamental-ui-ariba-icons.css">
 
 <style>
 .demo {

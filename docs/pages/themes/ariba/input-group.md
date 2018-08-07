@@ -6,7 +6,7 @@ toc: false
 permalink: themes/ariba/input-group.html
 folder: ariba
 ---
-<link rel="stylesheet" type="text/css" href="/css/theme/ariba/fundamental-ui-ariba-icons.css">
+<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/css/theme/ariba/fundamental-ui-ariba-icons.css">
 
 
 The input group includes form inputs with add-ons that allow the user to better understand the information being entered.
