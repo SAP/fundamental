@@ -30,10 +30,12 @@
     transition: border-color $fd-animation--speed;
     //states
     &:hover {
-        border-color: fd-color-darker($fd-forms-color--active);
+        border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
+
     }
     &:focus {
-      border-color: fd-color-darkest($fd-forms-color--active);
+      border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
+      box-shadow: 0 0 0 1px adjust-color($fd-forms-color--active, $lightness: 30%);
     }
     &.is-invalid {
         border-color: $fd-color--error;
