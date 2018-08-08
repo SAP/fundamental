@@ -98,11 +98,17 @@ $block: #{$fd-namespace}-dropdown;
     &__control.fd-button {
         color: $fd-forms-color;
         border-color: $fd-forms-border-color;
-        &:hover, &:active {
+        &:hover{
             color: $fd-forms-color;
             background-color:  $fd-forms-background-color;
-            border-color: $fd-forms-border-color;
+            border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
             box-shadow: none;
+        }
+        &:active, &[aria-expanded="true"] {
+            color: $fd-forms-color;
+            background-color:  $fd-forms-background-color;
+            border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
+            box-shadow: 0 0 0 1px adjust-color($fd-forms-color--active, $lightness: 30%);
         }
     }
     &__control.fd-button--toolbar{
