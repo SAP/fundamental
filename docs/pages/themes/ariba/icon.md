@@ -27,13 +27,24 @@ Icons are used throughout the UI to save space, allow for visual clarity and foc
 <br />
 
 ## Available Icons
-{% for icon in site.data.themes.ariba.icons %}
-<div class="demo-icon-wrapper">
-  <!-- <span class="sap-icon--{{ icon.name }} ariba-icon--s"></span>
-  <span class="ariba-icon--{{ icon.name }}"></span>
-  <span class="ariba-icon--{{ icon.name }} ariba-icon--m"></span>
-  <span class="ariba-icon--{{ icon.name }} ariba-icon--l"></span> -->
-  <span class="ariba-icon--{{ icon.name }} ariba-icon--xl"></span>
-  <h5>.ariba-icon--{{ icon.name }}</h5>
+<div>
+    <label class="fd-form__label " for="ImBw45511">
+        <span class="fd-toggle fd-toggle--xxs fd-form__control">
+            <input type="checkbox" name="" value="" id="ImBw45511" class="toggle-rtl" aria-controls="rtl-contianer">
+            <span class="fd-toggle__switch" role="presentation"></span>
+        </span>
+        Simulate RTL
+    </label>    
+    <div id="rtl-contianer">
+        {% for icon in site.data.themes.ariba.icons %}
+        <div class="demo-icon-wrapper">
+          <!-- <span class="sap-icon--{{ icon.name }} ariba-icon--s"></span>
+          <span class="ariba-icon--{{ icon.name }}"></span>
+          <span class="ariba-icon--{{ icon.name }} ariba-icon--m"></span>
+          <span class="ariba-icon--{{ icon.name }} ariba-icon--l"></span> -->
+          <span class="ariba-icon--{{ icon.name }} ariba-icon--xl"></span>
+          <h5>.ariba-icon--{{ icon.name }}</h5>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-{% endfor %}

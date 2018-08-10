@@ -16,8 +16,19 @@ It is recommended to always display the toggle with a label above it as well as 
 
 ## Toggle Sizes
 
-The toggle can be set to 3 sizes: `--xs`, `--s`, normal and `--l`. When used with forms, it is recommended to use the small size so that form components will be consistent.
+The toggle can be set to 3 sizes: `--xxs`, `--xs`, `--s`, normal and `--l`. When used with forms, it is recommended to use the small size so that form components will be consistent.
 
+
+<div>
+    <label class="fd-form__label " for="ImBw45511">
+        <span class="fd-toggle fd-toggle--xxs fd-form__control">
+            <input type="checkbox" name="" value="" id="ImBw45511" class="toggle-rtl" aria-controls="rtl-contianer-b-toggle">
+            <span class="fd-toggle__switch" role="presentation"></span>
+        </span>
+        Simulate RTL
+    </label>  
+</div>
+<div id='rtl-contianer-b-toggle'>
 
 {% capture default %}
 
@@ -56,14 +67,14 @@ The toggle can be set to 3 sizes: `--xs`, `--s`, normal and `--l`. When used wit
             <input type="checkbox" name="" value="" id="Yj07w607">
             <span class="fd-toggle__switch" role="presentation"></span>
         </span>
-        Large toggle
+        Regular toggle
     </label>
 </div>
 
 <div class="fd-form__item fd-form__item--check">
-    <label class="fd-form__label" for="Yj07w607">
+    <label class="fd-form__label" for="Yj07w6071">
         <span class="fd-toggle fd-toggle--l fd-form__control">
-            <input type="checkbox" name="" value="" id="Yj07w607">
+            <input type="checkbox" name="" value="" id="Yj07w6071">
             <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Large toggle
@@ -72,7 +83,7 @@ The toggle can be set to 3 sizes: `--xs`, `--s`, normal and `--l`. When used wit
 {% endcapture %}
 
 {% include display-component.html component=default %}
-
+</div>
 <br/>
 
 ## Disabled state
