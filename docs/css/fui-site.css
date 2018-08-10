@@ -1965,7 +1965,20 @@
   --color-accent-6: #bf399e;
   --color-accent-7: #ee6868;
   --color-accent-8: #686ddf;
-  --color-accent-9: #6c8893; }
+  --color-accent-9: #6c8893;
+  --fd-padding-ui: 8px;
+  --fd-width-gutter: 8px; }
+  @media (min-width: 800px) {
+    :root {
+      --fd-padding-ui: 12px; } }
+  @media (min-width: 1024px) {
+    :root {
+      --fd-padding-ui: 16px;
+      --fd-width-gutter: 12px; } }
+  @media (min-width: 1440px) {
+    :root {
+      --fd-padding-ui: 32px;
+      --fd-width-gutter: 32px; } }
 
 /*!
 * @section Root Element
@@ -2104,7 +2117,7 @@ fieldset {
   padding: 0;
   margin: 0; }
 
-input[type=text], input[type=password], input[type=email], input[type=url], input[type=search], input[type=tel], input[type=number], input[type=date],
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=search], input[type=tel], input[type=number], input[type=date], input[type=time],
 textarea {
   font-size: 14px;
   line-height: 1.42857;
@@ -2129,22 +2142,22 @@ textarea {
   padding-left: 12px;
   padding-right: 12px;
   width: 100%; }
-  input[type=text]:hover, input[type=password]:hover, input[type=email]:hover, input[type=url]:hover, input[type=search]:hover, input[type=tel]:hover, input[type=number]:hover, input[type=date]:hover,
+  input[type=text]:hover, input[type=password]:hover, input[type=email]:hover, input[type=url]:hover, input[type=search]:hover, input[type=tel]:hover, input[type=number]:hover, input[type=date]:hover, input[type=time]:hover,
   textarea:hover {
     border-color: #085caf; }
-  input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=number]:focus, input[type=date]:focus,
+  input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=number]:focus, input[type=date]:focus, input[type=time]:focus,
   textarea:focus {
     border-color: #0854a0; }
-  input[type=text].is-invalid, input[type=password].is-invalid, input[type=email].is-invalid, input[type=url].is-invalid, input[type=search].is-invalid, input[type=tel].is-invalid, input[type=number].is-invalid, input[type=date].is-invalid,
+  input[type=text].is-invalid, input[type=password].is-invalid, input[type=email].is-invalid, input[type=url].is-invalid, input[type=search].is-invalid, input[type=tel].is-invalid, input[type=number].is-invalid, input[type=date].is-invalid, input[type=time].is-invalid,
   textarea.is-invalid {
     border-color: #ee0000; }
-  input[type=text].is-valid, input[type=password].is-valid, input[type=email].is-valid, input[type=url].is-valid, input[type=search].is-valid, input[type=tel].is-valid, input[type=number].is-valid, input[type=date].is-valid,
+  input[type=text].is-valid, input[type=password].is-valid, input[type=email].is-valid, input[type=url].is-valid, input[type=search].is-valid, input[type=tel].is-valid, input[type=number].is-valid, input[type=date].is-valid, input[type=time].is-valid,
   textarea.is-valid {
     border-color: #118843; }
-  input[type=text].is-warning, input[type=password].is-warning, input[type=email].is-warning, input[type=url].is-warning, input[type=search].is-warning, input[type=tel].is-warning, input[type=number].is-warning, input[type=date].is-warning,
+  input[type=text].is-warning, input[type=password].is-warning, input[type=email].is-warning, input[type=url].is-warning, input[type=search].is-warning, input[type=tel].is-warning, input[type=number].is-warning, input[type=date].is-warning, input[type=time].is-warning,
   textarea.is-warning {
     border-color: #F59518; }
-  input[type=text]:disabled, input[type=text][aria-disabled="true"], input[type=text].is-disabled, input[type=password]:disabled, input[type=password][aria-disabled="true"], input[type=password].is-disabled, input[type=email]:disabled, input[type=email][aria-disabled="true"], input[type=email].is-disabled, input[type=url]:disabled, input[type=url][aria-disabled="true"], input[type=url].is-disabled, input[type=search]:disabled, input[type=search][aria-disabled="true"], input[type=search].is-disabled, input[type=tel]:disabled, input[type=tel][aria-disabled="true"], input[type=tel].is-disabled, input[type=number]:disabled, input[type=number][aria-disabled="true"], input[type=number].is-disabled, input[type=date]:disabled, input[type=date][aria-disabled="true"], input[type=date].is-disabled,
+  input[type=text]:disabled, input[type=text][aria-disabled="true"], input[type=text].is-disabled, input[type=password]:disabled, input[type=password][aria-disabled="true"], input[type=password].is-disabled, input[type=email]:disabled, input[type=email][aria-disabled="true"], input[type=email].is-disabled, input[type=url]:disabled, input[type=url][aria-disabled="true"], input[type=url].is-disabled, input[type=search]:disabled, input[type=search][aria-disabled="true"], input[type=search].is-disabled, input[type=tel]:disabled, input[type=tel][aria-disabled="true"], input[type=tel].is-disabled, input[type=number]:disabled, input[type=number][aria-disabled="true"], input[type=number].is-disabled, input[type=date]:disabled, input[type=date][aria-disabled="true"], input[type=date].is-disabled, input[type=time]:disabled, input[type=time][aria-disabled="true"], input[type=time].is-disabled,
   textarea:disabled,
   textarea[aria-disabled="true"],
   textarea.is-disabled {
@@ -2152,7 +2165,7 @@ textarea {
     color: #6f7275;
     border-color: #ebebec;
     background-color: #fafafa; }
-  input[type=text][readonly], input[type=text].is-readonly, input[type=password][readonly], input[type=password].is-readonly, input[type=email][readonly], input[type=email].is-readonly, input[type=url][readonly], input[type=url].is-readonly, input[type=search][readonly], input[type=search].is-readonly, input[type=tel][readonly], input[type=tel].is-readonly, input[type=number][readonly], input[type=number].is-readonly, input[type=date][readonly], input[type=date].is-readonly,
+  input[type=text][readonly], input[type=text].is-readonly, input[type=password][readonly], input[type=password].is-readonly, input[type=email][readonly], input[type=email].is-readonly, input[type=url][readonly], input[type=url].is-readonly, input[type=search][readonly], input[type=search].is-readonly, input[type=tel][readonly], input[type=tel].is-readonly, input[type=number][readonly], input[type=number].is-readonly, input[type=date][readonly], input[type=date].is-readonly, input[type=time][readonly], input[type=time].is-readonly,
   textarea[readonly],
   textarea.is-readonly {
     color: #32363a;
@@ -2285,7 +2298,9 @@ input[type="radio"] {
     .fd-section__footer
 */
 .fd-section {
-  padding: 16px 40px 20px;
+  --fd-section-padding-x: var(--fd-padding-ui);
+  padding: 16px 32px 20px;
+  padding: 16px var(--fd-section-padding-x) 20px;
   border-bottom: none; }
   .fd-section::after {
     content: "";
@@ -2297,8 +2312,10 @@ input[type="radio"] {
     padding-right: 0;
     padding-left: 0; }
     .fd-section--full-bleed .fd-section__header, .fd-section--full-bleed .fd-section__footer, .fd-section--bleed .fd-section__header, .fd-section--bleed .fd-section__footer {
-      margin-left: 40px;
-      margin-right: 40px; }
+      margin-left: 32px;
+      margin-left: var(--fd-section-padding-x);
+      margin-right: 32px;
+      margin-right: var(--fd-section-padding-x); }
   .fd-section__header {
     min-height: 40px;
     display: flex;
@@ -2386,98 +2403,133 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   @media (min-width: 800px) {
     .fd-col--1 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 1 ) + 0px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 1 ) + 0px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 1 ) + (var(--fd-width-gutter) * (1 - 1))); }
       .fd-col--1:last-child {
         margin-right: 0; }
     .fd-col--2 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 2 ) + 24px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 2 ) + 32px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 2 ) + (var(--fd-width-gutter) * (2 - 1))); }
       .fd-col--2:last-child {
         margin-right: 0; }
     .fd-col--3 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 3 ) + 48px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 3 ) + 64px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 3 ) + (var(--fd-width-gutter) * (3 - 1))); }
       .fd-col--3:last-child {
         margin-right: 0; }
     .fd-col--4 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 4 ) + 72px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 4 ) + 96px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 4 ) + (var(--fd-width-gutter) * (4 - 1))); }
       .fd-col--4:last-child {
         margin-right: 0; }
     .fd-col--5 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 5 ) + 96px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 5 ) + 128px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 5 ) + (var(--fd-width-gutter) * (5 - 1))); }
       .fd-col--5:last-child {
         margin-right: 0; }
     .fd-col--6 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 6 ) + 120px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 6 ) + 160px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 6 ) + (var(--fd-width-gutter) * (6 - 1))); }
       .fd-col--6:last-child {
         margin-right: 0; }
     .fd-col--7 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 7 ) + 144px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 7 ) + 192px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 7 ) + (var(--fd-width-gutter) * (7 - 1))); }
       .fd-col--7:last-child {
         margin-right: 0; }
     .fd-col--8 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 8 ) + 168px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 8 ) + 224px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 8 ) + (var(--fd-width-gutter) * (8 - 1))); }
       .fd-col--8:last-child {
         margin-right: 0; }
     .fd-col--9 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 9 ) + 192px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 9 ) + 256px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 9 ) + (var(--fd-width-gutter) * (9 - 1))); }
       .fd-col--9:last-child {
         margin-right: 0; }
     .fd-col--10 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 10 ) + 216px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 10 ) + 288px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 10 ) + (var(--fd-width-gutter) * (10 - 1))); }
       .fd-col--10:last-child {
         margin-right: 0; }
     .fd-col--11 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 11 ) + 240px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 11 ) + 320px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 11 ) + (var(--fd-width-gutter) * (11 - 1))); }
       .fd-col--11:last-child {
         margin-right: 0; }
     .fd-col--12 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 12 ) + 264px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 12 ) + 352px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 12 ) + (var(--fd-width-gutter) * (12 - 1))); }
       .fd-col--12:last-child {
         margin-right: 0; }
     .fd-col--shift-1 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 1 ) + 24px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 1 ) + 32px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 1 ) + (var(--fd-width-gutter) * (1))); }
     .fd-col--shift-2 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 2 ) + 48px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 2 ) + 64px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 2 ) + (var(--fd-width-gutter) * (2))); }
     .fd-col--shift-3 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 3 ) + 72px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 3 ) + 96px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 3 ) + (var(--fd-width-gutter) * (3))); }
     .fd-col--shift-4 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 4 ) + 96px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 4 ) + 128px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 4 ) + (var(--fd-width-gutter) * (4))); }
     .fd-col--shift-5 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 5 ) + 120px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 5 ) + 160px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 5 ) + (var(--fd-width-gutter) * (5))); }
     .fd-col--shift-6 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 6 ) + 144px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 6 ) + 192px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 6 ) + (var(--fd-width-gutter) * (6))); }
     .fd-col--shift-7 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 7 ) + 168px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 7 ) + 224px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 7 ) + (var(--fd-width-gutter) * (7))); }
     .fd-col--shift-8 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 8 ) + 192px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 8 ) + 256px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 8 ) + (var(--fd-width-gutter) * (8))); }
     .fd-col--shift-9 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 9 ) + 216px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 9 ) + 288px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 9 ) + (var(--fd-width-gutter) * (9))); }
     .fd-col--shift-10 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 10 ) + 240px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 10 ) + 320px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 10 ) + (var(--fd-width-gutter) * (10))); }
     .fd-col--shift-11 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 11 ) + 264px); } }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 11 ) + 352px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 11 ) + (var(--fd-width-gutter) * (11))); } }
   [class^="fd-col"] {
     margin-bottom: 12px; }
     [class^="fd-col"]:last-child {
@@ -2576,6 +2628,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     overflow: auto; }
 
 .fd-page {
+  --fd-page-header-padding-x: var(--fd-padding-ui);
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -2587,16 +2640,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     border-color: #dededf;
     background-color: #f3f4f5;
     min-height: auto;
-    padding: 0 40px; }
-  .fd-page__intro {
-    font-size: 0.92857rem;
-    line-height: 1.23077;
-    font-weight: 400;
-    padding: 16px 40px;
-    background-color: #ffffff;
-    text-align: center;
-    border-bottom: solid 1px #dededf;
-    margin-bottom: -1px; }
+    padding: 0 32px;
+    padding: 0 var(--fd-page-header-padding-x); }
   .fd-page__content {
     flex-grow: 1;
     margin-bottom: 32px; }
@@ -2609,7 +2654,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-section__footer
 */
 .fd-section {
-  padding: 16px 40px 20px;
+  --fd-section-padding-x: var(--fd-padding-ui);
+  padding: 16px 32px 20px;
+  padding: 16px var(--fd-section-padding-x) 20px;
   border-bottom: none; }
   .fd-section::after {
     content: "";
@@ -2621,8 +2668,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     padding-right: 0;
     padding-left: 0; }
     .fd-section--full-bleed .fd-section__header, .fd-section--full-bleed .fd-section__footer, .fd-section--bleed .fd-section__header, .fd-section--bleed .fd-section__footer {
-      margin-left: 40px;
-      margin-right: 40px; }
+      margin-left: 32px;
+      margin-left: var(--fd-section-padding-x);
+      margin-right: 32px;
+      margin-right: var(--fd-section-padding-x); }
   .fd-section__header {
     min-height: 40px;
     display: flex;
@@ -2715,7 +2764,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       flex-wrap: wrap;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-gap: 24px; }
+      grid-gap: 32px; }
       .fd-panel-grid--2col {
         grid-template-columns: repeat(2, 1fr); }
       .fd-panel-grid--3col {
@@ -3290,7 +3339,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
-  display: inline-block; }
+  display: block; }
   .fd-dropdown__control {
     position: relative;
     margin-left: 0;
@@ -3317,19 +3366,27 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       transform: none; }
     .fd-dropdown__control--no-border {
       border: none; }
-    .fd-dropdown__control::after {
-      top: 50%;
-      position: absolute;
-      right: 10px;
-      margin-top: -7px; }
-    .fd-dropdown__control.fd-button--xs::after {
-      margin-top: -6px; }
-    .fd-dropdown__control.fd-button--s::after {
-      margin-top: -8px; }
+    .fd-dropdown__control.fd-button--toolbar {
+      padding-right: 32px; }
+      .fd-dropdown__control.fd-button--toolbar::after {
+        top: 50%;
+        position: absolute;
+        right: 10px;
+        margin-top: -7px; }
+    .fd-dropdown__control.fd-button--xs {
+      padding-right: 30px; }
+      .fd-dropdown__control.fd-button--xs::after {
+        margin-top: -6px; }
+    .fd-dropdown__control.fd-button--s {
+      padding-right: 34px; }
+      .fd-dropdown__control.fd-button--s::after {
+        margin-top: -8px; }
     .fd-dropdown__control.fd-button--compact::after {
-      margin-top: -5px; }
-    .fd-dropdown__control.fd-button--l::after {
-      margin-top: -10px; }
+      margin-top: -8px; }
+    .fd-dropdown__control.fd-button--l {
+      padding-right: 40px; }
+      .fd-dropdown__control.fd-button--l::after {
+        margin-top: -10px; }
   .fd-dropdown__menu {
     padding-top: 4px;
     padding-bottom: 4px;
@@ -3397,7 +3454,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     margin-bottom: 0;
     margin-right: 0; }
   .fd-form__group .fd-form__item {
-    margin-right: 24px; }
+    margin-right: 32px; }
     .fd-form__group .fd-form__item:last-child {
       margin-bottom: 0;
       margin-right: 0; }
@@ -3585,10 +3642,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     [type="search"] + .fd-input-group__addon {
       border: 0;
       width: 0; }
-  .fd-input-group--before input[type=text], .fd-input-group--before input[type=password], .fd-input-group--before input[type=email], .fd-input-group--before input[type=url], .fd-input-group--before input[type=search], .fd-input-group--before input[type=tel], .fd-input-group--before input[type=number], .fd-input-group--before input[type=date] {
+  .fd-input-group--before input[type=text], .fd-input-group--before input[type=password], .fd-input-group--before input[type=email], .fd-input-group--before input[type=url], .fd-input-group--before input[type=search], .fd-input-group--before input[type=tel], .fd-input-group--before input[type=number], .fd-input-group--before input[type=date], .fd-input-group--before input[type=time] {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; }
-  .fd-input-group--after input[type=text], .fd-input-group--after input[type=password], .fd-input-group--after input[type=email], .fd-input-group--after input[type=url], .fd-input-group--after input[type=search], .fd-input-group--after input[type=tel], .fd-input-group--after input[type=number], .fd-input-group--after input[type=date] {
+  .fd-input-group--after input[type=text], .fd-input-group--after input[type=password], .fd-input-group--after input[type=email], .fd-input-group--after input[type=url], .fd-input-group--after input[type=search], .fd-input-group--after input[type=tel], .fd-input-group--after input[type=number], .fd-input-group--after input[type=date], .fd-input-group--after input[type=time] {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0; }
   .fd-input-group__button {
@@ -3765,18 +3822,18 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-table th,
   .docs-table th {
     text-align: left;
-    padding: 12px 12px;
+    padding: 12px 16px;
     border-style: solid;
     border-width: 0;
     border-color: transparent; }
     .fd-table td:first-child, .docs-table td:first-child,
     .fd-table th:first-child,
     .docs-table th:first-child {
-      padding-left: 24px; }
+      padding-left: 32px; }
     .fd-table td:last-child, .docs-table td:last-child,
     .fd-table th:last-child,
     .docs-table th:last-child {
-      padding-right: 24px; }
+      padding-right: 32px; }
     .fd-table td .fd-dropdown__menu, .docs-table td .fd-dropdown__menu,
     .fd-table th .fd-dropdown__menu,
     .docs-table th .fd-dropdown__menu {
@@ -3861,7 +3918,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-modal__header {
     position: relative;
     border-bottom: 1px solid #eeeeef;
-    padding: 16px 24px; }
+    padding: 16px 32px; }
   .fd-modal__title {
     font-size: 1.14286rem;
     line-height: 1.25;
@@ -3905,13 +3962,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       font-size: 1.42857rem;
       line-height: 1; }
   .fd-modal__body {
-    padding: 16px 24px;
+    padding: 16px 32px;
     max-height: calc(100vh - 60px - 68px);
     overflow-y: auto; }
     .fd-modal__body > p {
       padding: 0; }
   .fd-modal__footer {
-    padding: 16px 24px;
+    padding: 16px 32px;
     text-align: right;
     border-top: 1px solid #eeeeef; }
 
@@ -3959,7 +4016,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     margin-bottom: 0;
     list-style: none; }
   .fd-tree__row {
-    padding: 0 24px;
+    padding: 0 32px;
     display: flex;
     align-items: center;
     position: relative;
