@@ -78,12 +78,22 @@ $block: #{$fd-namespace}-button;
       }
     }
 
-    [dir='rtl'] .#{$block}, [dir='rtl'] [class*="#{$block}--"] {
+    [dir='rtl'] .#{$block},
+    [dir='rtl'] [class*="#{$block}--"] {
       &::before {
         margin-left: fd-space(2);
         margin-right: 0px;
       }
     }
+
+    [dir='rtl'] .#{$block}.--icon-only ,
+    [dir='rtl'] [class*="#{$block}--"].--icon-only,
+    [dir='rtl'] .#{$block}--round{
+      &::before {
+        margin-left: 0px;
+      }
+    }
+
   }
 
   &--negative {

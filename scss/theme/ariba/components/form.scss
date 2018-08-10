@@ -49,7 +49,7 @@ $block: #{$fd-namespace}-form;
     &__item {
     //    @include fd-last-child;
     //    margin-bottom: $fd-form-item-margin-bottom;
-    //    &--check {
+        &--check {
     //        @include fd-clearfix;
     //        position: relative;
     //        display: block;
@@ -62,7 +62,16 @@ $block: #{$fd-namespace}-form;
     //            line-height: $fd-forms-height--input-check;
     //            cursor: pointer;
     //        }
-            &.--error {
+            @at-root {
+                [dir='rtl'] .#{$block}__control {
+                    //float: left;
+                    //vertical-align: middle;
+                    margin-left: fd-space(2);
+                    margin-right: 0;
+                }
+            }
+        }
+        &.--error {
 
                 //color: map-get($fd-colors-status, 6);
                 & .#{$block}__control {
