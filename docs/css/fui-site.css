@@ -1965,7 +1965,20 @@
   --color-accent-6: #bf399e;
   --color-accent-7: #ee6868;
   --color-accent-8: #686ddf;
-  --color-accent-9: #6c8893; }
+  --color-accent-9: #6c8893;
+  --fd-padding-ui: 8px;
+  --fd-width-gutter: 8px; }
+  @media (min-width: 800px) {
+    :root {
+      --fd-padding-ui: 12px; } }
+  @media (min-width: 1024px) {
+    :root {
+      --fd-padding-ui: 16px;
+      --fd-width-gutter: 12px; } }
+  @media (min-width: 1440px) {
+    :root {
+      --fd-padding-ui: 32px;
+      --fd-width-gutter: 32px; } }
 
 /*!
 * @section Root Element
@@ -2285,7 +2298,9 @@ input[type="radio"] {
     .fd-section__footer
 */
 .fd-section {
-  padding: 16px 40px 20px;
+  --fd-section-padding-x: var(--fd-padding-ui);
+  padding: 16px 32px 20px;
+  padding: 16px var(--fd-section-padding-x) 20px;
   border-bottom: none; }
   .fd-section::after {
     content: "";
@@ -2297,8 +2312,10 @@ input[type="radio"] {
     padding-right: 0;
     padding-left: 0; }
     .fd-section--full-bleed .fd-section__header, .fd-section--full-bleed .fd-section__footer, .fd-section--bleed .fd-section__header, .fd-section--bleed .fd-section__footer {
-      margin-left: 40px;
-      margin-right: 40px; }
+      margin-left: 32px;
+      margin-left: var(--fd-section-padding-x);
+      margin-right: 32px;
+      margin-right: var(--fd-section-padding-x); }
   .fd-section__header {
     min-height: 40px;
     display: flex;
@@ -2386,98 +2403,133 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   @media (min-width: 800px) {
     .fd-col--1 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 1 ) + 0px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 1 ) + 0px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 1 ) + (var(--fd-width-gutter) * (1 - 1))); }
       .fd-col--1:last-child {
         margin-right: 0; }
     .fd-col--2 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 2 ) + 24px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 2 ) + 32px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 2 ) + (var(--fd-width-gutter) * (2 - 1))); }
       .fd-col--2:last-child {
         margin-right: 0; }
     .fd-col--3 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 3 ) + 48px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 3 ) + 64px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 3 ) + (var(--fd-width-gutter) * (3 - 1))); }
       .fd-col--3:last-child {
         margin-right: 0; }
     .fd-col--4 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 4 ) + 72px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 4 ) + 96px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 4 ) + (var(--fd-width-gutter) * (4 - 1))); }
       .fd-col--4:last-child {
         margin-right: 0; }
     .fd-col--5 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 5 ) + 96px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 5 ) + 128px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 5 ) + (var(--fd-width-gutter) * (5 - 1))); }
       .fd-col--5:last-child {
         margin-right: 0; }
     .fd-col--6 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 6 ) + 120px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 6 ) + 160px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 6 ) + (var(--fd-width-gutter) * (6 - 1))); }
       .fd-col--6:last-child {
         margin-right: 0; }
     .fd-col--7 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 7 ) + 144px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 7 ) + 192px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 7 ) + (var(--fd-width-gutter) * (7 - 1))); }
       .fd-col--7:last-child {
         margin-right: 0; }
     .fd-col--8 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 8 ) + 168px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 8 ) + 224px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 8 ) + (var(--fd-width-gutter) * (8 - 1))); }
       .fd-col--8:last-child {
         margin-right: 0; }
     .fd-col--9 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 9 ) + 192px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 9 ) + 256px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 9 ) + (var(--fd-width-gutter) * (9 - 1))); }
       .fd-col--9:last-child {
         margin-right: 0; }
     .fd-col--10 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 10 ) + 216px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 10 ) + 288px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 10 ) + (var(--fd-width-gutter) * (10 - 1))); }
       .fd-col--10:last-child {
         margin-right: 0; }
     .fd-col--11 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 11 ) + 240px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 11 ) + 320px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 11 ) + (var(--fd-width-gutter) * (11 - 1))); }
       .fd-col--11:last-child {
         margin-right: 0; }
     .fd-col--12 {
       float: left;
-      margin-right: 24px;
-      width: calc( ( ( (100% - 264px) / 12 ) * 12 ) + 264px); }
+      margin-right: 32px;
+      margin-right: var(--fd-width-gutter);
+      width: calc( ( ( (100% - 352px) / 12 ) * 12 ) + 352px);
+      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 12 ) + (var(--fd-width-gutter) * (12 - 1))); }
       .fd-col--12:last-child {
         margin-right: 0; }
     .fd-col--shift-1 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 1 ) + 24px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 1 ) + 32px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 1 ) + (var(--fd-width-gutter) * (1))); }
     .fd-col--shift-2 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 2 ) + 48px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 2 ) + 64px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 2 ) + (var(--fd-width-gutter) * (2))); }
     .fd-col--shift-3 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 3 ) + 72px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 3 ) + 96px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 3 ) + (var(--fd-width-gutter) * (3))); }
     .fd-col--shift-4 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 4 ) + 96px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 4 ) + 128px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 4 ) + (var(--fd-width-gutter) * (4))); }
     .fd-col--shift-5 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 5 ) + 120px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 5 ) + 160px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 5 ) + (var(--fd-width-gutter) * (5))); }
     .fd-col--shift-6 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 6 ) + 144px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 6 ) + 192px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 6 ) + (var(--fd-width-gutter) * (6))); }
     .fd-col--shift-7 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 7 ) + 168px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 7 ) + 224px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 7 ) + (var(--fd-width-gutter) * (7))); }
     .fd-col--shift-8 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 8 ) + 192px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 8 ) + 256px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 8 ) + (var(--fd-width-gutter) * (8))); }
     .fd-col--shift-9 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 9 ) + 216px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 9 ) + 288px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 9 ) + (var(--fd-width-gutter) * (9))); }
     .fd-col--shift-10 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 10 ) + 240px); }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 10 ) + 320px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 10 ) + (var(--fd-width-gutter) * (10))); }
     .fd-col--shift-11 {
-      margin-left: calc( ( ( (100% - 264px) / 12 ) * 11 ) + 264px); } }
+      margin-left: calc( ( ( (100% - 352px) / 12 ) * 11 ) + 352px);
+      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 11 ) + (var(--fd-width-gutter) * (11))); } }
   [class^="fd-col"] {
     margin-bottom: 12px; }
     [class^="fd-col"]:last-child {
@@ -2576,6 +2628,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     overflow: auto; }
 
 .fd-page {
+  --fd-page-header-padding-x: var(--fd-padding-ui);
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -2587,16 +2640,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     border-color: #dededf;
     background-color: #f3f4f5;
     min-height: auto;
-    padding: 0 40px; }
-  .fd-page__intro {
-    font-size: 0.92857rem;
-    line-height: 1.23077;
-    font-weight: 400;
-    padding: 16px 40px;
-    background-color: #ffffff;
-    text-align: center;
-    border-bottom: solid 1px #dededf;
-    margin-bottom: -1px; }
+    padding: 0 32px;
+    padding: 0 var(--fd-page-header-padding-x); }
   .fd-page__content {
     flex-grow: 1;
     margin-bottom: 32px; }
@@ -2609,7 +2654,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-section__footer
 */
 .fd-section {
-  padding: 16px 40px 20px;
+  --fd-section-padding-x: var(--fd-padding-ui);
+  padding: 16px 32px 20px;
+  padding: 16px var(--fd-section-padding-x) 20px;
   border-bottom: none; }
   .fd-section::after {
     content: "";
@@ -2621,8 +2668,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     padding-right: 0;
     padding-left: 0; }
     .fd-section--full-bleed .fd-section__header, .fd-section--full-bleed .fd-section__footer, .fd-section--bleed .fd-section__header, .fd-section--bleed .fd-section__footer {
-      margin-left: 40px;
-      margin-right: 40px; }
+      margin-left: 32px;
+      margin-left: var(--fd-section-padding-x);
+      margin-right: 32px;
+      margin-right: var(--fd-section-padding-x); }
   .fd-section__header {
     min-height: 40px;
     display: flex;
@@ -2715,7 +2764,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       flex-wrap: wrap;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-gap: 24px; }
+      grid-gap: 32px; }
       .fd-panel-grid--2col {
         grid-template-columns: repeat(2, 1fr); }
       .fd-panel-grid--3col {
@@ -3290,7 +3339,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
-  display: inline-block; }
+  display: block; }
   .fd-dropdown__control {
     position: relative;
     margin-left: 0;
@@ -3317,19 +3366,27 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       transform: none; }
     .fd-dropdown__control--no-border {
       border: none; }
-    .fd-dropdown__control::after {
-      top: 50%;
-      position: absolute;
-      right: 10px;
-      margin-top: -7px; }
-    .fd-dropdown__control.fd-button--xs::after {
-      margin-top: -6px; }
-    .fd-dropdown__control.fd-button--s::after {
-      margin-top: -8px; }
+    .fd-dropdown__control.fd-button--toolbar {
+      padding-right: 32px; }
+      .fd-dropdown__control.fd-button--toolbar::after {
+        top: 50%;
+        position: absolute;
+        right: 10px;
+        margin-top: -7px; }
+    .fd-dropdown__control.fd-button--xs {
+      padding-right: 30px; }
+      .fd-dropdown__control.fd-button--xs::after {
+        margin-top: -6px; }
+    .fd-dropdown__control.fd-button--s {
+      padding-right: 34px; }
+      .fd-dropdown__control.fd-button--s::after {
+        margin-top: -8px; }
     .fd-dropdown__control.fd-button--compact::after {
-      margin-top: -5px; }
-    .fd-dropdown__control.fd-button--l::after {
-      margin-top: -10px; }
+      margin-top: -8px; }
+    .fd-dropdown__control.fd-button--l {
+      padding-right: 40px; }
+      .fd-dropdown__control.fd-button--l::after {
+        margin-top: -10px; }
   .fd-dropdown__menu {
     padding-top: 4px;
     padding-bottom: 4px;
@@ -3397,7 +3454,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     margin-bottom: 0;
     margin-right: 0; }
   .fd-form__group .fd-form__item {
-    margin-right: 24px; }
+    margin-right: 32px; }
     .fd-form__group .fd-form__item:last-child {
       margin-bottom: 0;
       margin-right: 0; }
@@ -3458,6 +3515,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       font-weight: 700; }
       .fd-form__label.is-required:after, .fd-form__legend.is-required:after {
         content: "*"; }
+    .fd-form__label.is-disabled, .fd-form__legend.is-disabled {
+      opacity: .4; }
   .fd-form__control {
     min-width: 16px; }
   .fd-form__legend {
@@ -3765,18 +3824,18 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-table th,
   .docs-table th {
     text-align: left;
-    padding: 12px 12px;
+    padding: 12px 16px;
     border-style: solid;
     border-width: 0;
     border-color: transparent; }
     .fd-table td:first-child, .docs-table td:first-child,
     .fd-table th:first-child,
     .docs-table th:first-child {
-      padding-left: 24px; }
+      padding-left: 32px; }
     .fd-table td:last-child, .docs-table td:last-child,
     .fd-table th:last-child,
     .docs-table th:last-child {
-      padding-right: 24px; }
+      padding-right: 32px; }
     .fd-table td .fd-dropdown__menu, .docs-table td .fd-dropdown__menu,
     .fd-table th .fd-dropdown__menu,
     .docs-table th .fd-dropdown__menu {
@@ -3861,7 +3920,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-modal__header {
     position: relative;
     border-bottom: 1px solid #eeeeef;
-    padding: 16px 24px; }
+    padding: 16px 32px; }
   .fd-modal__title {
     font-size: 1.14286rem;
     line-height: 1.25;
@@ -3905,13 +3964,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       font-size: 1.42857rem;
       line-height: 1; }
   .fd-modal__body {
-    padding: 16px 24px;
+    padding: 16px 32px;
     max-height: calc(100vh - 60px - 68px);
     overflow-y: auto; }
     .fd-modal__body > p {
       padding: 0; }
   .fd-modal__footer {
-    padding: 16px 24px;
+    padding: 16px 32px;
     text-align: right;
     border-top: 1px solid #eeeeef; }
 
@@ -3959,7 +4018,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     margin-bottom: 0;
     list-style: none; }
   .fd-tree__row {
-    padding: 0 24px;
+    padding: 0 32px;
     display: flex;
     align-items: center;
     position: relative;
@@ -4281,28 +4340,36 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-toggle input::before, .fd-toggle input::after {
       display: none; }
     .fd-toggle input:checked {
-      background-color: #0a6ed1;
-      opacity: 0.6; }
+      background-color: #0a6ed1; }
       .fd-toggle input:checked + .fd-toggle__switch {
         left: calc(100% - 28px);
         background: #0854a0;
         border-color: #0854a0; }
+      .fd-toggle input:checked[disabled], .fd-toggle input:checked.is-disabled, .fd-toggle input:checked[aria-disabled="true"] {
+        background-color: #ddedfd; }
+        .fd-toggle input:checked[disabled] + .fd-toggle__switch, .fd-toggle input:checked.is-disabled + .fd-toggle__switch, .fd-toggle input:checked[aria-disabled="true"] + .fd-toggle__switch {
+          border-color: transparent;
+          background-color: #acd4fb; }
     .fd-toggle input:hover {
       border-color: transparent; }
     .fd-toggle input:active, .fd-toggle input:focus {
       border-color: transparent; }
     .fd-toggle input[disabled], .fd-toggle input.is-disabled, .fd-toggle input[aria-disabled="true"] {
-      opacity: 0.4;
-      border-color: transparent; }
+      opacity: 1;
+      background-color: #f0f0f1; }
       .fd-toggle input[disabled] + .fd-toggle__switch, .fd-toggle input.is-disabled + .fd-toggle__switch, .fd-toggle input[aria-disabled="true"] + .fd-toggle__switch {
-        border-color: transparent;
-        background-color: #eeeeef; }
+        opacity: 1;
+        border-color: #f0f0f1;
+        box-shadow: none;
+        background-color: white; }
   .fd-toggle--xs {
     height: 20px;
     width: 36px; }
     .fd-toggle--xs .fd-toggle__switch {
       height: 20px;
       width: 20px; }
+    .fd-toggle--xs .fd-toggle__label {
+      padding-left: 46px; }
     .fd-toggle--xs input {
       border-radius: 10px; }
       .fd-toggle--xs input:checked + .fd-toggle__switch {
@@ -4313,6 +4380,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-toggle--s .fd-toggle__switch {
       height: 24px;
       width: 24px; }
+    .fd-toggle--s .fd-toggle__label {
+      padding-left: 50px; }
     .fd-toggle--s input {
       border-radius: 12px; }
       .fd-toggle--s input:checked + .fd-toggle__switch {
@@ -4323,6 +4392,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-toggle--l .fd-toggle__switch {
       height: 32px;
       width: 32px; }
+    .fd-toggle--l .fd-toggle__label {
+      padding-left: 66px; }
     .fd-toggle--l input {
       border-radius: 16px; }
       .fd-toggle--l input:checked + .fd-toggle__switch {
