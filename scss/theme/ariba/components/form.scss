@@ -1,5 +1,6 @@
 @import "./../settings";
 @import "./../../../mixins";
+@import "./../../../icons/mixins";
 @import "./../../../functions";
 /*!
 .fd-form
@@ -14,7 +15,7 @@
 */
 
 $block: #{$fd-namespace}-form;
-.#{$block} {
+
     //LOCAL VARS (set all vars used in component, always include !default)
     $fd-form-label-font-size: "-1" !default;
     $fd-form-label-font-size--check: "0" !default;
@@ -24,6 +25,7 @@ $block: #{$fd-namespace}-form;
     $fd-form-item-gutter: $fd-width--gutter !default;
     $fd-form-item-margin-bottom: fd-space(5) !default;
 
+.#{$block} {
     //@include fd-reset;
     //&__group {
     //    @include fd-clearfix;
@@ -47,31 +49,8 @@ $block: #{$fd-namespace}-form;
         }
     }
     &__item {
-    //    @include fd-last-child;
-    //    margin-bottom: $fd-form-item-margin-bottom;
-        &--check {
-    //        @include fd-clearfix;
-    //        position: relative;
-    //        display: block;
-    //        .#{$block}__label {
-    //            @include fd-type(#{$fd-form-label-font-size--check});
-    //            margin-bottom: 0;
-    //            vertical-align: middle;
-    //            display: flex;
-    //            align-items: center;
-    //            line-height: $fd-forms-height--input-check;
-    //            cursor: pointer;
-    //        }
-            @at-root {
-                [dir='rtl'] .#{$block}__control {
-                    //float: left;
-                    //vertical-align: middle;
-                    margin-left: fd-space(2);
-                    margin-right: 0;
-                }
-            }
-        }
-        &.--error {
+
+        &.--error, &.is-invalid {
 
                 //color: map-get($fd-colors-status, 6);
                 & .#{$block}__control {
@@ -119,9 +98,18 @@ $block: #{$fd-namespace}-form;
     //        }
     //    }
     //}
-    //&__control {
-    //    min-width: $fd-forms-height--input-check;
-    //}
+    &__control {
+        min-width: $fd-forms-height--input-check;
+        &.is-invalid {
+            border-color: map-get($fd-colors-status, 3);
+            padding-right: 30px;
+
+        }
+        &.is-warning {
+            border-color: map-get($fd-colors-status, 2);
+            padding-right: 30px;
+        }
+    }
     //&__legend {
     //    margin-bottom: fd-space(5);
     //}
@@ -149,49 +137,91 @@ $block: #{$fd-namespace}-form;
     //            margin-bottom: fd-space(2);
     //        }
     //    }
-    //    &::before {
-    //        width: 18px;
-    //        height: 18px;
-    //        font-style: normal;
-    //        position: absolute;
-    //        left: 0;
-    //        color: fd-color(text-inverse);
-    //        border-radius: 50%;
-    //        background-color: fd-color(text, 3);
-    //        text-align: center;
-    //        line-height: 18px;
-    //    }
-    //    &--warning, &--error, &--help {
-    //        padding-left: fd-space(6);
-    //        &::before {
-    //            left: 0;
-    //            top: 7px;
-    //        }
-    //    }
-    //    &--help {
-    //        color: fd-color(text);
-    //        &::before {
-    //            content: "?";
-    //        }
-    //    }
-    //    &--warning {
-    //        color: $fd-color--warning;
-    //        &::before {
-    //            content: "!";
-    //            background-color: transparent;
-    //            border-radius: 0;
-    //            @include triangle(20px 18px, $fd-color--warning, up);
-    //            text-indent: -0.15em;
-    //            line-height: 22px;
-    //        }
-    //    }
-    //    &--error {
-    //        color: $fd-color--error;
-    //        &::before {
-    //            content: "!";
-    //            background-color: $fd-color--error;
-    //            color: fd-color(text-inverse);
-    //        }
-    //    }
+        @include fd-icon-base("before");
+        &::before {
+            background-color: transparent !important;
+            font-family: "Ariba-icons";
+            width: 18px;
+            height: 18px;
+            color: inherit;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 18px;
+            font-size: 20px;
+            border: 0px;
+            margin-top: -36px;
+            float: right;
+            position: relative;
+            margin-right: 6px;
+        }
+        &--warning, &--error, &--help {
+            padding-left: 0px;
+            &::before {
+                left: 0;
+                top: 7px;
+            }
+        }
+        &--help {
+            color: fd-color(text);
+            &::before {
+                content: "?";
+            }
+        }
+        &--warning {
+            color: $fd-color--warning;
+            &::before {
+                content: "\eA9d";
+            }
+        }
+        &--error {
+            color: $fd-color--error;
+            &::before {
+                content: "\eA9c";
+            }
+        }
+    }
+}
+
+[dir='rtl'] .#{$block} {
+
+    &__group {
+        .#{$block}__item {
+            margin-left: $fd-form-item-gutter;
+            margin-right: 0px;
+        }
+    }
+    &__item {
+        &--check {
+            .#{$block}__control {
+                margin-left: fd-space(2);
+                margin-right: 0px;
+                &[type='checkbox'],
+                &[type='radio'] {
+                    float: right;
+                }
+            }
+        }
+        &--inline {
+            float: right;
+        }
+    }
+
+    &__control {
+        &.is-invalid {
+            padding-right: fd-space(3);
+            padding-left: fd-space(7) + 2;
+
+        }
+        &.is-warning {
+            padding-right: fd-space(3);
+            padding-left: fd-space(7) + 2;
+        }
+    }
+
+    &__message {
+        &::before {
+            float: left;
+            margin-left: 6px;
+        }
     }
 }
