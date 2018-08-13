@@ -21,6 +21,16 @@ Color is also important. For instance, the most important button has a blue back
 - **Toolbar Button**: `--toolbar` is required to render the Toolbar button. This button is used inside the toolbar component.
 - **Semantic Buttons**: Semantic modifiers `--positive` for approve and `--negative` for reject can be applied to the button.
 
+<div>
+    <label class="fd-form__label " for="ImBw455111">
+        <span class="fd-toggle fd-toggle--xxs fd-form__control">
+            <input type="checkbox" name="" value="" id="ImBw455111" class="toggle-rtl" aria-controls="rtl-contianer-b-type">
+            <span class="fd-toggle__switch" role="presentation"></span>
+        </span>
+        Simulate RTL
+    </label>  
+</div>
+<div id='rtl-contianer-b-type'>
 {% capture button %}
 <button class="fd-button--action-bar">Action Bar Button</button>
 <button class="fd-button">Primary Button</button>
@@ -31,14 +41,23 @@ Color is also important. For instance, the most important button has a blue back
 
 {% endcapture %}
 {% include display-component.html component=button %}
-
+</div>
 <br/>
 
 ## Specific Case Button Types
 
 - **Round Buttons**: `--round`  modifier is required to render the round button. This is speical kind of Toolbar button.
 - **Split Buttons**: `--split`  modifier is required to render the `1 + N` button. This is kind of Toolbar button but can be used for similar related operations.
-
+<div>
+    <label class="fd-form__label " for="ImBw455111">
+        <span class="fd-toggle fd-toggle--xxs fd-form__control">
+            <input type="checkbox" name="" value="" id="ImBw455111" class="toggle-rtl" aria-controls="rtl-contianer-b-type-spe">
+            <span class="fd-toggle__switch" role="presentation"></span>
+        </span>
+        Simulate RTL
+    </label>  
+</div>
+<div id='rtl-contianer-b-type-spe'>
 {% capture button %}
 <button class="fd-button--action-bar fd-button--round ariba-icon--add-template"></button>
 
@@ -59,11 +78,21 @@ Color is also important. For instance, the most important button has a blue back
 
 {% endcapture %}
 {% include display-component.html component=button %}
-
+</div>
 <br/>
 
 ## Button Sizes
 There are five different sizes can be rendered with modifiers: `--xs`, `--s`, `--compact`, default, `--l` and `--xl`.
+<div>
+    <label class="fd-form__label " for="ImBw455111">
+        <span class="fd-toggle fd-toggle--xxs fd-form__control">
+            <input type="checkbox" name="" value="" id="ImBw455111" class="toggle-rtl" aria-controls="rtl-contianer-b-size-1">
+            <span class="fd-toggle__switch" role="presentation"></span>
+        </span>
+        Simulate RTL
+    </label>  
+</div>
+<div id='rtl-contianer-b-size-1'>
 {% capture button %}
 <button class=" fd-button fd-button--xs">Button</button>
 <button class=" fd-button fd-button--s">Button</button>
@@ -76,6 +105,8 @@ There are five different sizes can be rendered with modifiers: `--xs`, `--s`, `-
 
 {% endcapture %}
 {% include display-component.html component=button %}
+</div>
+<br>
 
 ## Split Button Sizes
 There are five different sizes can be rendered with modifiers: `--xs`, `--s`, `--compact`, default, `--l` and `--xl`.

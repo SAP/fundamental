@@ -1,5 +1,5 @@
 ---
-title: Forms
+title: Ariba Forms
 keywords: form, forms, checkboxes, input, inputs, input help elemnts, input sates, select, radio buttons, ariba
 sidebar: left-navigation-sidebar
 toc: false
@@ -16,6 +16,16 @@ orm elements include field layout, checkboxes, radio buttons and states of a fie
 ## Inputs
 Inputs are used to collect data from the user. When a field is required, the label is displayed in bold and noted by an asterisk (*).
 
+<div>
+    <label class="fd-form__label " for="ImBw455111">
+        <span class="fd-toggle fd-toggle--xxs fd-form__control">
+            <input type="checkbox" name="" value="" id="ImBw455111" class="toggle-rtl" aria-controls="rtl-contianer-ip">
+            <span class="fd-toggle__switch" role="presentation"></span>
+        </span>
+        Simulate RTL
+    </label>  
+</div>
+<div id='rtl-contianer-ip'>
 {% capture inputs %}
 <div class="fd-form__set">
     <div class="fd-form__item">
@@ -42,7 +52,7 @@ Inputs are used to collect data from the user. When a field is required, the lab
 {% endcapture %}
 
 {% include display-component.html component=inputs %}
-
+</div>
 <br/>
 
 
@@ -80,9 +90,19 @@ The state of the input field can reflect validity of the data entered, whether t
 * **Invalid**: The data entered is not valid and must be corrected.
 * **Warning**: The data entered is formatted correctly but there are other issues are problematic but will not stop the user from moving forward.
 * **Disabled**: This indicates the field is not editable. A common use case is that this field is dependent on a previous entry or selection within the form.
-* **Read Only**: Used to display static information in the context of a form.
 
 Along with Invalid and Warning, error messages should be displayed below the field so the user can correct the error and move forward.
+
+<div>
+    <label class="fd-form__label " for="ImBw45512">
+        <span class="fd-toggle fd-toggle--xxs fd-form__control">
+            <input type="checkbox" name="" value="" id="ImBw45512" class="toggle-rtl" aria-controls="rtl-contianer-ip-state">
+            <span class="fd-toggle__switch" role="presentation"></span>
+        </span>
+        Simulate RTL
+    </label>  
+</div>
+<div id='rtl-contianer-ip-state'>
 
 {% capture inputs %}
 <div class="fd-form__item">
@@ -103,23 +123,50 @@ Along with Invalid and Warning, error messages should be displayed below the fie
 </div>
 
 <div class="fd-form__item">
+    <label class="fd-form__label" for="UI7xy545">
+        Invalid Input
+    </label>
+    <input type="text" class="fd-form__control is-invalid" id="UI7xy545" placeholder="Field placeholder text">
+    <span class="fd-form__message fd-form__message--error">
+        Pellentesque metus lacus commodo eget justo ut rutrum varius nunc
+    </span>
+</div>
+
+<div class="fd-form__item">
+    <label class="fd-form__label" for="pvsz1273">
+        Warning Input
+    </label>
+    <input type="text" class="fd-form__control is-warning" id="pvsz1273" placeholder="Field placeholder text">
+    <span class="fd-form__message fd-form__message--warning">
+        Pellentesque metus lacus commodo eget justo ut rutrum varius nunc
+    </span>
+</div>
+
+<div class="fd-form__item">
     <label class="fd-form__label" for="input-6">Disabled Input</label>
     <input class="fd-form__control" type="text" id="input-6" value="Non editable data" disabled>
 </div>
 
-<div class="fd-form__item">
-    <label class="fd-form__label" for="input-7">Read Only Input</label>
-    <input class="fd-form__control" type="text" id="input-7" value="Read only data" readonly>
-</div>
 {% endcapture %}
 
 {% include display-component.html component=inputs %}
-
+</div>
 <br>
 
 
 ## Radio buttons
 Radio buttons allow the user to see all options and select one. Generally, this is used when there are between 2-3 options. This component can also be disabled and displayed in a row.
+
+<div>
+    <label class="fd-form__label " for="ImBw455111">
+        <span class="fd-toggle fd-toggle--xxs fd-form__control">
+            <input type="checkbox" name="" value="" id="ImBw455111" class="toggle-rtl" aria-controls="rtl-contianer-radio">
+            <span class="fd-toggle__switch" role="presentation"></span>
+        </span>
+        Simulate RTL
+    </label>  
+</div>
+<div id='rtl-contianer-radio'>
 
 {% capture radio-buttons%}
 <fieldset class="fd-form__set">
@@ -180,12 +227,21 @@ Radio buttons allow the user to see all options and select one. Generally, this 
 {% endcapture %}
 
 {% include display-component.html component=radio-buttons %}
-
+</div>
 <br>
 
 ## Radio buttons
 Have 3 sizes; `{--s}`, regular, `{--l}`
-
+<div>
+    <label class="fd-form__label " for="ImBw455111">
+        <span class="fd-toggle fd-toggle--xxs fd-form__control">
+            <input type="checkbox" name="" value="" id="ImBw455111" class="toggle-rtl" aria-controls="rtl-contianer-radio-size">
+            <span class="fd-toggle__switch" role="presentation"></span>
+        </span>
+        Simulate RTL
+    </label>  
+</div>
+<div id='rtl-contianer-radio-size'>
 {% capture radio-buttons%}
 
 <fieldset class="fd-form__set">
@@ -214,12 +270,21 @@ Have 3 sizes; `{--s}`, regular, `{--l}`
 {% endcapture %}
 
 {% include display-component.html component=radio-buttons %}
-
+</div>
 <br>
 
 ## Checkbox
 With checkboxes, all options are visible and the user can make one or more selections. This component can be set disabled and also displayed in a row.
-
+<div>
+    <label class="fd-form__label " for="ImBw455111">
+        <span class="fd-toggle fd-toggle--xxs fd-form__control">
+            <input type="checkbox" name="" value="" id="ImBw455111" class="toggle-rtl" aria-controls="rtl-contianer-checkbox">
+            <span class="fd-toggle__switch" role="presentation"></span>
+        </span>
+        Simulate RTL
+    </label>  
+</div>
+<div id='rtl-contianer-checkbox'>
 {% capture checkbox %}
 <fieldset class="fd-form__set">
     <legend class="fd-form__legend">Checkboxes</legend>
@@ -279,12 +344,21 @@ With checkboxes, all options are visible and the user can make one or more selec
 {% endcapture %}
 
 {% include display-component.html component=checkbox %}
-
+</div>
 <br>
 
 ## Checkbox Size
 Have 3 sizes; `{--s}`, regular, `{--l}`
-
+<div>
+    <label class="fd-form__label " for="ImBw455111">
+        <span class="fd-toggle fd-toggle--xxs fd-form__control">
+            <input type="checkbox" name="" value="" id="ImBw455111" class="toggle-rtl" aria-controls="rtl-contianer-cb-size">
+            <span class="fd-toggle__switch" role="presentation"></span>
+        </span>
+        Simulate RTL
+    </label>  
+</div>
+<div id='rtl-contianer-cb-size'>
 {% capture checkbox %}
 
 
@@ -314,5 +388,5 @@ Have 3 sizes; `{--s}`, regular, `{--l}`
 {% endcapture %}
 
 {% include display-component.html component=checkbox %}
-
+</div>
 <br>

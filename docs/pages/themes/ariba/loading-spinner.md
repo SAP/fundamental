@@ -1,5 +1,5 @@
 ---
-title: Loading Spinner
+title: Ariba Loading Spinner
 keywords: loading, spinner, ariba
 sidebar: left-navigation-sidebar
 toc: false

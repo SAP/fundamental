@@ -1,5 +1,5 @@
 ---
-title: Toggle
+title: Ariba Toggle
 keywords: toggle, ariba
 sidebar: left-navigation-sidebar
 toc: false
