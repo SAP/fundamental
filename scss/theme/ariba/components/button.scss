@@ -16,7 +16,6 @@ $fd-type: map-merge($fd-type , $fd-type-ariba);
 */
 
 $block: #{$fd-namespace}-button;
-.#{$block} {
   //SETTINGS
   //SIZES — size: height "text size" "icon size"
   $fd-button-sizes: (
@@ -45,12 +44,17 @@ $block: #{$fd-namespace}-button;
   //BASE
   //set all reset and baseline block styles
   $defaults: map-get($fd-button-sizes, "default");
+  .#{$block}, [class*="#{$block}--"] {
+    @include fd-type(nth($defaults, 2));
+    border-radius: 3px;
+    padding-left: $fd-button-padding-x * 2.4;
+    padding-right: $fd-button-padding-x * 2.4;
+  }
+
+.#{$block} {
+
   @at-root {
     .#{$block}, [class*="#{$block}--"] {
-      @include fd-type(nth($defaults, 2));
-      border-radius: 3px;
-      padding-left: $fd-button-padding-x * 2.4;
-      padding-right: $fd-button-padding-x * 2.4;
       &[class*="ariba-icon"]::before{
         margin-top: -6px;
       }
@@ -67,33 +71,11 @@ $block: #{$fd-namespace}-button;
         padding-right: $fd-button-padding-x * 1.1;
       }
     }
-    &--main,
-    &--action-bar {
-      font-weight: 700;
-    }
-    .rtl .#{$block}, .rtl [class*="#{$block}--"] {
-      &::before {
-        margin-left: fd-space(2);
-        margin-right: 0px;
-      }
-    }
+  }
 
-    [dir='rtl'] .#{$block},
-    [dir='rtl'] [class*="#{$block}--"] {
-      &::before {
-        margin-left: fd-space(2);
-        margin-right: 0px;
-      }
-    }
-
-    [dir='rtl'] .#{$block}.--icon-only ,
-    [dir='rtl'] [class*="#{$block}--"].--icon-only,
-    [dir='rtl'] .#{$block}--round{
-      &::before {
-        margin-left: 0px;
-      }
-    }
-
+  &--main,
+  &--action-bar {
+    font-weight: 700;
   }
 
   &--negative {
@@ -198,4 +180,23 @@ $block: #{$fd-namespace}-button;
 
     }
   }
+}
+
+[dir='rtl'] {
+
+  .#{$block},
+  [class*="#{$block}--"] {
+    &::before {
+      margin-left: fd-space(2);
+      margin-right: 0px;
+    }
+  }
+  .#{$block}.--icon-only ,
+  [class*="#{$block}--"].--icon-only,
+  .#{$block}--round{
+    &::before {
+      margin-left: 0px;
+    }
+  }
+
 }

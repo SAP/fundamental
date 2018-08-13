@@ -47,16 +47,6 @@ $block: #{$fd-namespace}-toggle;
         border-color: map-get($fd-colors-action, 1);
       }
     }
-
-  }
-  @at-root [dir='rtl']{
-    input {
-      &:checked {
-        & + .#{$block}__switch {
-          right: calc(100% - #{$fd-toggle-switch-width});
-        }
-      }
-    }
   }
 
 
@@ -109,6 +99,14 @@ $block: #{$fd-namespace}-toggle;
 
 [dir='rtl'] {
   .#{$block}{
+
+    input {
+      &:checked {
+        & + .#{$block}__switch {
+          right: calc(100% - #{$fd-toggle-switch-width});
+        }
+      }
+    }
 
     &__switch {
       right: 0;
