@@ -1,0 +1,137 @@
+@import "./../settings";
+@import "./../../../mixins";
+@import "./../../../functions";
+@import "./../../../icons/mixins";
+@import "./../../../components/mixins";
+/*!
+.fd-modal
+    .fd-modal__header
+        .fd-form__title
+    .fd-form__body
+    .fd-form__footer-items
+      .fd-modal__button-primary
+      .fd-modal__button-secondary
+*/
+$block: #{$fd-namespace}-modal;
+  $fd-modal-width: 480px !default;
+  //these are used only to roughly calculate body overflow on compact screens - this can be improved with a flex or grid solution
+  //$fd-modal-header-height: 60px !default;
+  //$fd-modal-footer-height: 68px !default;
+  //
+  //$fd-modal-border-color: fd-color("neutral", 2) !default;
+  //$fd-modal-padding-x: $fd-width--gutter !default;
+  //$fd-modal-padding-y: fd-space(4) !default;
+  //$fd-modal-inner-content-background: fd-color("background", 2) !default;
+  $fd-modal-padding: fd-space(12) !default;
+
+.#{$block} {
+  @include fd-reset;
+  max-width: $fd-modal-width;
+  &__content{
+    padding: $fd-modal-padding 0px fd-space(13) $fd-modal-padding;
+  }
+  &__header {
+    position: relative;
+    border-bottom: 0px;
+    padding: 0px;
+    padding-bottom: fd-space(8);
+  }
+  &__title{
+    @include fd-type("4");
+    margin-bottom: 0;
+    padding-right: $fd-modal-padding;
+  }
+  &__close {
+    width: fd-space(4);
+    height: fd-space(4);
+    padding: 0px;
+    top: fd-space(8) * -1;
+    &::before {
+      font-family: "Ariba-icons";
+      font-size: 17px;
+      content: "\eB14";
+    }
+  }
+  &__body{
+    padding: 0px;
+    padding-right: $fd-modal-padding;
+  }
+  &__footer {
+    border: 0px;
+    padding: fd-space(14) $fd-modal-padding 0px 0px;
+    button:only-child {
+      width: 100%;
+    }
+  }
+
+  &.--success, &.--warning, &.--error {
+    & .#{$block}__content{
+      border-top: 1px solid fd-color("status", 1);
+      border-top-width: 4px;
+    }
+    & .#{$block}__header{
+      @include fd-icon-base("before");
+      &::before {
+        font-family: "Ariba-icons";
+        font-size: fd-space(18);
+        margin-top: -20px;
+        margin-left: 35%;
+      }
+    }
+  }
+
+  &.--success {
+    & .#{$block}__content{
+      border-top-color: fd-color("status", 1);
+    }
+    & .#{$block}__header{
+      &::before {
+        color: fd-color("status", 1);
+        content: "\eA19";
+      }
+    }
+  }
+  &.--warning {
+    & .#{$block}__content{
+      border-top-color: fd-color("status", 2);
+    }
+    & .#{$block}__header{
+      &::before {
+        color: fd-color("status", 2);
+        content: "\eA9d";
+      }
+    }
+  }
+  &.--error {
+    & .#{$block}__content{
+      border-top-color: fd-color("status", 3);
+    }
+    & .#{$block}__header{
+      &::before {
+        color: fd-color("status", 3);
+        content: "\eA9c";
+      }
+    }
+
+  }
+}
+
+[dir='rtl'] .#{$block} {
+
+  &__close {
+    right: 100%;
+    margin-right: 6px;
+  }
+  &__footer {
+    text-align: left;
+  }
+
+  &.--success, &.--warning, &.--error {
+    & .#{$block}__header{
+      &::before {
+        margin-right: 35%;
+        padding-right: $fd-modal-padding;
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@import "./../settings";
+@import "./../../../mixins";
+@import "./../../../icons/mixins";
+@import "./../../../functions";
+@import "./../../../components/mixins";
+
+/*!
+.fd-dropdown+()
+    .fd-dropdown__control+([disabled])
+    .fd-dropdown__menu+()
+*/
+//SETTINGS
+//SIZES
+//$fd-dropdown-sizes: (
+//  "default",
+//  "compact",
+//  "xs",
+//  "s",
+//  "l"
+//) !default;
+
+//LOCAL VARS (set all themeable properties, always include !default)
+//$fd-dropdown-menu-color: solid 1px $fd-forms-color !default;
+//$fd-dropdown-menu-border: solid 1px $fd-forms-border-color !default;
+//$fd-dropdown-menu-z-index: 2 !default;
+//$fd-dropdown-menu-background-color: fd-color(background) !default;
+//$fd-dropdown-menu-shadow: 0 0 4px 1px rgba(fd-color(neutral, 2), 1) !default;
+////items
+//$fd-dropdown-menu-item-color: $fd-dropdown-menu-color !default;
+//$fd-dropdown-menu-item-color--hover: fd-color(text, 4) !default;
+//$fd-dropdown-menu-item-background-color: $fd-dropdown-menu-background-color !default;
+//$fd-dropdown-menu-item-background-color--hover: darken(fd-color(action), 5%) !default;
+//$fd-dropdown-menu-item-padding: fd-space(3) fd-space(4) !default;
+//$fd-dropdown-menu-item-color--disabled: fd-color(text, 2);
+////anim
+//$fd-dropdown-menu-item-transition-params: $fd-animation--speed ease-in !default;
+//*****
+// WHEN DEPCRECATING THE REST OF THIS FILE MAKE SURE TO KEEP THE CSS FOR THE CONTROL. IT IS USED WHEN COMPOSING TOGETHER POPOVER/MENU FOR A DROPDOWN COMPONENT.
+//*****
+$fd-button-right-padding: fd-space(3) !default;
+
+$block: #{$fd-namespace}-dropdown;
+
+.#{$block} {
+
+    &__control {
+      background-color: fd-color("background", 2);
+      border-color: map-get($fd-colors-accent, 10);
+      color: map-get($fd-colors-text, 6);
+      box-shadow: none;
+      padding-left: $fd-button-right-padding + 1;
+
+      &.fd-button--l {
+        height: $fd-forms-height + 8;
+        max-height: $fd-forms-height + 8;
+        font-size: $fd-font-size + 2;
+        line-height: nth(map-get($fd-type, "2"), 1);
+      }
+      &:active, &:focus {
+        border-color: $fd-forms-color--active;
+      }
+    }
+
+  .fd-menu{
+    &__item {
+      color: map-get($fd-colors-text, 1);
+      margin: 0px $fd-button-right-padding;
+      padding: (fd-space(2)+2) fd-space(2);
+      &:hover {
+        background-color: rgba( map-get($fd-colors-accent, 10), 0.3 );//lighten( map-get($fd-colors-accent, 10), 3%);
+      }
+      &.selected {
+        @include fd-icon-base("after");
+        &:after {
+          content: "\e05b";
+          margin-top: -5px;
+          color: $fd-link-color;
+          float: right;
+          padding-top: 5px;
+        }
+      }
+    }
+  }
+  &.--l .fd-menu{
+    font-size: $fd-font-size + 2;
+    &__item {
+      padding: (fd-space(3)+2) fd-space(2);
+    }
+  }
+
+}
+
+[dir='rtl'] .#{$block} {
+
+  &__control {
+    text-align: right;
+    padding-right: $fd-button-right-padding + 1;
+    padding-left: fd-space(5);
+    &:after{
+      position: relative;
+      float: left;
+      top: 7px;
+      margin-left: -5px;
+    }
+  }
+  .fd-menu{
+    &__list {
+      padding: inherit;
+    }
+    &__item {
+      &.selected {
+        &:after {
+          float: left;
+        }
+      }
+    }
+  }
+}

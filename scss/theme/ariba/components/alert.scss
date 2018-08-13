@@ -1,0 +1,155 @@
+@import "./../settings";
+@import "./../../../mixins";
+@import "./../../../functions";
+@import "./../../../components/mixins";
+@import "./../../../icons/mixins";
+/*!
+.fd-alert+(--warning. --error)
+    .fd-alert__close
+*/
+//SETTINGS
+$fd-alert-color: fd-color("text", 1) !default;
+$fd-alert-border-color: fd-color("neutral", 3) !default;
+$fd-alert-border-color--success: fd-color("status", 1) !default;
+$fd-alert-border-color--warning: fd-color("status", 2) !default;
+$fd-alert-border-color--error: fd-color("status", 3) !default;
+
+$fd-alert-background-color: $fd-forms-background-color !default;
+$fd-alert-background-color--warning: hsla(34, 92%, 96%, 1) !default; // HSL: +43 to base Status 2
+$fd-alert-background-color--error: hsla(0, 100%, 96%, 1) !default; // HSL: +49 to base Status 3
+
+//$fd-alert-padding-x: fd-space("xxs") !default;
+//$fd-alert-padding-y: fd-space("xs") !default;
+
+$block: #{$fd-namespace}-alert;
+$font-size: nth(map-get($fd-type, "1"), 1);
+$font-size-icon: nth(map-get($fd-type, "3"), 1);
+$font-size-close: nth(map-get($fd-type, "0"), 1);
+
+.#{$block} {
+
+    // Block
+    //@include fd-reset;
+    color: $fd-alert-color;
+    border: solid 1px $fd-alert-border-color;
+    background-color: $fd-alert-background-color;
+    padding: fd-space(5);
+    border-radius: $fd-border-radius - 1;
+    min-height: fd-space(15);
+    box-shadow: 0 12px 20px 0 rgba(0,0,0,0.1), 0 0 4px 0 rgba(0,0,0,0.15);
+    font-size: $font-size;
+    text-align: justify;
+    position: relative;
+    vertical-align: middle;
+
+    // Elements
+    &__close {
+      @include fd-icon-base("before");
+      //position: absolute;
+      right: fd-space(4);
+      top: fd-space(2);
+      //@include fd-icon("decline", "l");
+      //@include fd-button-reset;
+      color: fd-color("text", 3);
+      width: fd-space(2) + 1;
+      height: fd-space(4) - 1;
+      font-size: $font-size-close ;
+      &::before {
+        font-family: "Ariba-icons";
+        content: "\eB14";
+        font-size: $font-size-close ;
+        width: fd-space(2) + 1;
+        height: fd-space(4) - 1;
+      }
+    }
+
+    .#{$block}--message{
+      display: inline-block;
+    }
+    // Modifiers
+    &--success, &--warning, &--error {
+      border-left-width: fd-space(2) + 2;
+      padding-left: fd-space(6) + 2;
+
+      & .#{$block}--message{
+        padding-left: fd-space(13);
+      }
+
+      @include fd-icon-base("before");
+      &::before{
+        font-family: "Ariba-icons";
+        font-size: $font-size-icon;
+        display: inline-block;
+        min-height: 100%;
+        position: absolute;
+        margin-top: -20px;
+        top: 50%;
+      }
+    }
+    &--success {
+
+      border-left-color: $fd-alert-border-color--success;
+      &::before {
+        content: "\eA19";
+        color: $fd-alert-border-color--success;
+      }
+      //background-color: $fd-alert-background-color--warning;
+    }
+    &--warning {
+      border-left-color: $fd-alert-border-color--warning;
+
+      &::before {
+        content: "\eA9d";
+        color: $fd-alert-border-color--warning;
+      }
+    }
+    &--error {
+      border-left-color: $fd-alert-border-color--error;
+      &::before {
+        content: "\eA9c";
+        color: $fd-alert-border-color--error;
+      }
+    }
+    &--dismissible {
+      //position: relative;
+      padding-right: fd-space(12) + 2;
+    }
+
+
+}
+[dir='rtl'] .#{$block} {
+
+  &__close {
+    float: left;
+    position: unset;
+    margin: -13px 0px 0px -34px;
+  }
+  &--dismissible {
+    //position: relative;
+    padding-left: fd-space(12) + 2;
+    padding-right: fd-space(5);
+  }
+
+  // Modifiers
+  &--success, &--warning, &--error {
+    border-right-width: 6px;
+    border-left-width: 0px;
+    padding-left: 20px;
+    padding-right: 26px;
+
+    & .#{$block}--message{
+      padding-right: 52px;
+      padding-left: 0px;
+    }
+  }
+  &--success {
+    border-right-color: $fd-alert-border-color--success;
+  }
+  &--warning {
+    border-right-color: $fd-alert-border-color--warning;
+  }
+  &--error {
+    border-right-color: $fd-alert-border-color--error;
+  }
+
+}
