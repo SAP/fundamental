@@ -1,0 +1,96 @@
+/*!
+* Fundamental-UI-Theme-Ariba v1.1.0
+* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
+*/
+/*!
+.fd-modal
+    .fd-modal__header
+        .fd-form__title
+    .fd-form__body
+    .fd-form__footer-items
+      .fd-modal__button-primary
+      .fd-modal__button-secondary
+*/
+.fd-modal {
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #32363a;
+  font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  max-width: 480px; }
+  .fd-modal__content {
+    padding: 48px 0px 52px 48px; }
+  .fd-modal__header {
+    position: relative;
+    border-bottom: 0px;
+    padding: 0px;
+    padding-bottom: 32px; }
+  .fd-modal__title {
+    font-size: 2.14286rem;
+    line-height: 1.2;
+    font-weight: 300;
+    margin-bottom: 0;
+    padding-right: 48px; }
+  .fd-modal__close {
+    width: 16px;
+    height: 16px;
+    padding: 0px;
+    top: -32px; }
+    .fd-modal__close::before {
+      font-family: "Ariba-icons";
+      font-size: 17px;
+      content: "\eB14"; }
+  .fd-modal__body {
+    padding: 0px;
+    padding-right: 48px; }
+  .fd-modal__footer {
+    border: 0px;
+    padding: 56px 48px 0px 0px; }
+    .fd-modal__footer button:only-child {
+      width: 100%; }
+  .fd-modal.--success .fd-modal__content, .fd-modal.--warning .fd-modal__content, .fd-modal.--error .fd-modal__content {
+    border-top: 1px solid #359c46;
+    border-top-width: 4px; }
+  .fd-modal.--success .fd-modal__header::before, .fd-modal.--warning .fd-modal__header::before, .fd-modal.--error .fd-modal__header::before {
+    font-family: "SAP-icons";
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    display: inline-block;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    speak: none; }
+  .fd-modal.--success .fd-modal__header::before, .fd-modal.--warning .fd-modal__header::before, .fd-modal.--error .fd-modal__header::before {
+    font-family: "Ariba-icons";
+    font-size: 72px;
+    margin-top: -20px;
+    margin-left: 35%; }
+  .fd-modal.--success .fd-modal__content {
+    border-top-color: #359c46; }
+  .fd-modal.--success .fd-modal__header::before {
+    color: #359c46;
+    content: "\eA19"; }
+  .fd-modal.--warning .fd-modal__content {
+    border-top-color: #f59518; }
+  .fd-modal.--warning .fd-modal__header::before {
+    color: #f59518;
+    content: "\eA9d"; }
+  .fd-modal.--error .fd-modal__content {
+    border-top-color: #CC0000; }
+  .fd-modal.--error .fd-modal__header::before {
+    color: #CC0000;
+    content: "\eA9c"; }
+
+[dir='rtl'] .fd-modal__close {
+  right: 100%;
+  margin-right: 6px; }
+
+[dir='rtl'] .fd-modal__footer {
+  text-align: left; }
+
+[dir='rtl'] .fd-modal.--success .fd-modal__header::before, [dir='rtl'] .fd-modal.--warning .fd-modal__header::before, [dir='rtl'] .fd-modal.--error .fd-modal__header::before {
+  margin-right: 35%;
+  padding-right: 48px; }

@@ -1,0 +1,112 @@
+/*!
+* Fundamental-UI-Theme-Ariba v1.1.0
+* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
+*/
+/*!
+.fd-form
+    .fd-form__set?
+        .fd-form__legend(.is-required)
+        .fd-form__group?
+            .fd-form__item+(--check, --inline)
+                .fd-form__label(.is-required)
+                .fd-form__control
+            .fd-form__message(--help, --error, --warning)
+
+*/
+.fd-form__set .fd-form__message {
+  margin-top: 0; }
+
+.fd-form__item.--warning {
+  color: #f59518; }
+  .fd-form__item.--warning .fd-form__control {
+    border-color: #f59518; }
+
+.fd-form__item.--success {
+  color: #359c46; }
+  .fd-form__item.--success .fd-form__control {
+    border-color: #359c46; }
+
+.fd-form__control {
+  min-width: 16px; }
+  .fd-form__control.is-invalid {
+    border-color: #CC0000;
+    padding-right: 30px; }
+  .fd-form__control.is-warning {
+    border-color: #f59518;
+    padding-right: 30px; }
+
+.fd-form__message {
+  color: inherit;
+  padding: 1px 0;
+  font-size: 12px;
+  height: 12px; }
+  .fd-form__message::before {
+    font-family: "SAP-icons";
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    display: inline-block;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    speak: none; }
+  .fd-form__message::before {
+    background-color: transparent !important;
+    font-family: "Ariba-icons";
+    width: 18px;
+    height: 18px;
+    color: inherit;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    font-size: 20px;
+    border: 0px;
+    margin-top: -36px;
+    float: right;
+    position: relative;
+    margin-right: 6px; }
+  .fd-form__message--warning, .fd-form__message--error, .fd-form__message--help {
+    padding-left: 0PX; }
+    .fd-form__message--warning::before, .fd-form__message--error::before, .fd-form__message--help::before {
+      left: 0;
+      top: 7px; }
+  .fd-form__message--help {
+    color: #32363a; }
+    .fd-form__message--help::before {
+      content: "?"; }
+  .fd-form__message--warning {
+    color: #f59518; }
+    .fd-form__message--warning::before {
+      content: "\eA9d"; }
+  .fd-form__message--error {
+    color: #CC0000; }
+    .fd-form__message--error::before {
+      content: "\eA9c"; }
+
+[dir='rtl'] .fd-form__group .fd-form__item {
+  margin-left: 32px;
+  margin-right: 0px; }
+
+[dir='rtl'] .fd-form__item--check .fd-form__control {
+  margin-left: 8px;
+  margin-right: 0px; }
+  [dir='rtl'] .fd-form__item--check .fd-form__control[type='checkbox'], [dir='rtl'] .fd-form__item--check .fd-form__control[type='radio'] {
+    float: right; }
+
+[dir='rtl'] .fd-form__item--inline {
+  float: right; }
+
+[dir='rtl'] .fd-form__control.is-invalid {
+  padding-right: 12px;
+  padding-left: 30px; }
+
+[dir='rtl'] .fd-form__control.is-warning {
+  padding-right: 12px;
+  padding-left: 30px; }
+
+[dir='rtl'] .fd-form__message::before {
+  float: left;
+  margin-left: 6px; }
