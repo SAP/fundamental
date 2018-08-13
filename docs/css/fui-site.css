@@ -6876,6 +6876,24 @@ hr {
   /*!
 .fd-button-group+()
     .fd-button
+*/
+  /*!
+.fd-dropdown+()
+    .fd-dropdown__control+([disabled])
+    .fd-dropdown__menu+()
+*/
+  /*!
+.fd-alert+(--warning. --error)
+    .fd-alert__close
+*/
+  /*!
+.fd-modal
+    .fd-modal__header
+        .fd-form__title
+    .fd-form__body
+    .fd-form__footer-items
+      .fd-modal__button-primary
+      .fd-modal__button-secondary
 */ }
   .ariba input[type=text], .ariba input[type=password], .ariba input[type=email], .ariba input[type=url], .ariba input[type=search], .ariba input[type=tel], .ariba input[type=number], .ariba input[type=date] {
     direction: inherit;
@@ -6928,35 +6946,29 @@ hr {
     height: 12px;
     top: calc(50% - (12px/2));
     left: calc(50% - (12px/2)); }
-  .fd-button, [class*="fd-button--"] {
+  .ariba .fd-button, .ariba [class*="fd-button--"] {
     font-size: 1rem;
     line-height: 1.42857;
     font-weight: 400;
     border-radius: 3px;
     padding-left: 24px;
     padding-right: 24px; }
-    .fd-button[class*="ariba-icon"]::before, [class*="fd-button--"][class*="ariba-icon"]::before {
-      margin-top: -6px; }
-    .fd-button.fd-button--round, [class*="fd-button--"].fd-button--round {
-      font-size: 1.14286rem;
-      line-height: 1.25;
-      font-weight: 400;
-      border-radius: 50%;
-      padding: 0px !important;
-      height: 48px;
-      max-height: 48px;
-      min-width: 48px; }
-    .fd-button.--icon-only, [class*="fd-button--"].--icon-only {
-      padding-left: 11px;
-      padding-right: 11px; }
+  .fd-button[class*="ariba-icon"]::before, [class*="fd-button--"][class*="ariba-icon"]::before {
+    margin-top: -6px; }
+  .fd-button.fd-button--round, [class*="fd-button--"].fd-button--round {
+    font-size: 1.14286rem;
+    line-height: 1.25;
+    font-weight: 400;
+    border-radius: 50%;
+    padding: 0px !important;
+    height: 48px;
+    max-height: 48px;
+    min-width: 48px; }
+  .fd-button.--icon-only, [class*="fd-button--"].--icon-only {
+    padding-left: 11px;
+    padding-right: 11px; }
   .ariba .fd-button--main, .ariba .fd-button--action-bar {
     font-weight: 700; }
-  .rtl .fd-button::before, .rtl [class*="fd-button--"]::before {
-    margin-left: 8px;
-    margin-right: 0px; }
-  [dir='rtl'] .fd-button::before, [dir='rtl'] [class*="fd-button--"]::before {
-    margin-left: 8px;
-    margin-right: 0px; }
   .ariba .fd-button--negative {
     border-color: #CC0000; }
     .ariba .fd-button--negative:active, .ariba .fd-button--negative.is-active, .ariba .fd-button--negative[aria-selected="true"], .ariba .fd-button--negative.is-selected, .ariba .fd-button--negative[aria-pressed="true"], .ariba .fd-button--negative.is-pressed {
@@ -7085,6 +7097,14 @@ hr {
   .ariba .fd-button--xl.--icon-only {
     padding-left: 14px;
     padding-right: 14px; }
+  .ariba [dir='rtl'] .fd-button::before,
+  .ariba [dir='rtl'] [class*="fd-button--"]::before {
+    margin-left: 8px;
+    margin-right: 0px; }
+  .ariba [dir='rtl'] .fd-button.--icon-only::before,
+  .ariba [dir='rtl'] [class*="fd-button--"].--icon-only::before,
+  .ariba [dir='rtl'] .fd-button--round::before {
+    margin-left: 0px; }
   .ariba .fd-form__set .fd-form__message {
     margin-top: 0; }
   .ariba .fd-form__item.--warning {
@@ -7095,13 +7115,85 @@ hr {
     color: #359c46; }
     .ariba .fd-form__item.--success .fd-form__control {
       border-color: #359c46; }
+  .ariba .fd-form__control {
+    min-width: 16px; }
+    .ariba .fd-form__control.is-invalid {
+      border-color: #CC0000;
+      padding-right: 30px; }
+    .ariba .fd-form__control.is-warning {
+      border-color: #f59518;
+      padding-right: 30px; }
   .ariba .fd-form__message {
     color: inherit;
     padding: 1px 0;
     font-size: 12px;
     height: 12px; }
+    .ariba .fd-form__message::before {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none; }
+    .ariba .fd-form__message::before {
+      background-color: transparent !important;
+      font-family: "Ariba-icons";
+      width: 18px;
+      height: 18px;
+      color: inherit;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 18px;
+      font-size: 20px;
+      border: 0px;
+      margin-top: -36px;
+      float: right;
+      position: relative;
+      margin-right: 6px; }
+    .ariba .fd-form__message--warning, .ariba .fd-form__message--error, .ariba .fd-form__message--help {
+      padding-left: 0PX; }
+      .ariba .fd-form__message--warning::before, .ariba .fd-form__message--error::before, .ariba .fd-form__message--help::before {
+        left: 0;
+        top: 7px; }
+    .ariba .fd-form__message--help {
+      color: #32363a; }
+      .ariba .fd-form__message--help::before {
+        content: "?"; }
+    .ariba .fd-form__message--warning {
+      color: #f59518; }
+      .ariba .fd-form__message--warning::before {
+        content: "\eA9d"; }
+    .ariba .fd-form__message--error {
+      color: #CC0000; }
+      .ariba .fd-form__message--error::before {
+        content: "\eA9c"; }
+  .ariba [dir='rtl'] .fd-form__group .fd-form__item {
+    margin-left: 32px;
+    margin-right: 0px; }
+  .ariba [dir='rtl'] .fd-form__item--check .fd-form__control {
+    margin-left: 8px;
+    margin-right: 0px; }
+    .ariba [dir='rtl'] .fd-form__item--check .fd-form__control[type='checkbox'], .ariba [dir='rtl'] .fd-form__item--check .fd-form__control[type='radio'] {
+      float: right; }
+  .ariba [dir='rtl'] .fd-form__item--inline {
+    float: right; }
+  .ariba [dir='rtl'] .fd-form__control.is-invalid {
+    padding-right: 12px;
+    padding-left: 30px; }
+  .ariba [dir='rtl'] .fd-form__control.is-warning {
+    padding-right: 12px;
+    padding-left: 30px; }
+  .ariba [dir='rtl'] .fd-form__message::before {
+    float: left;
+    margin-left: 6px; }
   .ariba .fd-input-group.--l {
-    font-size: 16px; }
+    font-size: 16px;
+    max-height: 44px; }
   .ariba .fd-input-group__addon {
     border: 0px;
     padding: 0px;
@@ -7186,6 +7278,19 @@ hr {
       width: 54px; }
       .ariba .fd-toggle--l input {
         top: 5.11719px; }
+  .ariba [dir='rtl'] .fd-toggle input:checked + .fd-toggle__switch {
+    right: calc(100% - 25.6px); }
+  .ariba [dir='rtl'] .fd-toggle__switch {
+    right: 0;
+    transition: right 0.125s ease-in; }
+  .ariba [dir='rtl'] .fd-toggle--xxs input:checked + .fd-toggle__switch {
+    right: calc(100% - 16px); }
+  .ariba [dir='rtl'] .fd-toggle--xs input:checked + .fd-toggle__switch {
+    right: calc(100% - 14.2px); }
+  .ariba [dir='rtl'] .fd-toggle--s input:checked + .fd-toggle__switch {
+    right: calc(100% - 19.8px); }
+  .ariba [dir='rtl'] .fd-toggle--l input:checked + .fd-toggle__switch {
+    right: calc(100% - 32px); }
   .ariba .fd-spinner-2 {
     position: relative;
     -webkit-box-sizing: border-box;
@@ -7232,7 +7337,6 @@ hr {
         width: 72px;
         height: 72px;
         border-width: 6px; }
-    .ariba button .fd-spinner-2,
     button .fd-spinner-2 {
       color: inherit; }
     .is-busy .fd-spinner-2,
@@ -7300,7 +7404,9 @@ hr {
       background-color: #0a6ed1;
       border-color: #0a6ed1;
       font-weight: 700;
-      font-size: inherit; }
+      font-size: inherit;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0; }
       .ariba .fd-button-group.--split [class*="fd-button--"]:hover {
         background-color: #085caf;
         border-color: #085caf;
@@ -7429,3 +7535,238 @@ hr {
     border-top-left-radius: 3px; }
     .ariba [dir='rtl'] .fd-button-group.--split .fd-popover__body .fd-menu__list {
       padding: 0px; }
+  .ariba .fd-dropdown__control {
+    background-color: #ffffff;
+    border-color: #ACD4ED;
+    color: #949499;
+    box-shadow: none;
+    padding-left: 13px; }
+    .ariba .fd-dropdown__control.fd-button--l {
+      height: 44px;
+      max-height: 44px;
+      font-size: 16px;
+      line-height: 1.28571rem; }
+    .ariba .fd-dropdown__control:active, .ariba .fd-dropdown__control:focus {
+      border-color: #0a6ed1; }
+  .ariba .fd-dropdown .fd-menu__item {
+    color: #32363a;
+    margin: 0px 12px;
+    padding: 10px 8px; }
+    .ariba .fd-dropdown .fd-menu__item:hover {
+      background-color: rgba(172, 212, 237, 0.3); }
+    .ariba .fd-dropdown .fd-menu__item.selected::after {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none; }
+    .ariba .fd-dropdown .fd-menu__item.selected:after {
+      content: "\e05b";
+      margin-top: -5px;
+      color: #0a6ed1;
+      float: right;
+      padding-top: 5px; }
+  .ariba .fd-dropdown.--l .fd-menu {
+    font-size: 16px; }
+    .ariba .fd-dropdown.--l .fd-menu__item {
+      padding: 14px 8px; }
+  .ariba [dir='rtl'] .fd-dropdown__control {
+    text-align: right;
+    padding-right: 13px;
+    padding-left: 20px; }
+    .ariba [dir='rtl'] .fd-dropdown__control:after {
+      position: relative;
+      float: left;
+      top: 7px;
+      margin-left: -5px; }
+  .ariba [dir='rtl'] .fd-dropdown .fd-menu__list {
+    padding: inherit; }
+  .ariba [dir='rtl'] .fd-dropdown .fd-menu__item.selected:after {
+    float: left; }
+  .ariba .fd-alert {
+    color: #32363a;
+    border: solid 1px #dededf;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 3px;
+    min-height: 60px;
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.1), 0 0 4px 0 rgba(0, 0, 0, 0.15);
+    font-size: 1.14286rem;
+    text-align: justify;
+    position: relative;
+    vertical-align: middle; }
+    .ariba .fd-alert__close {
+      right: 16px;
+      top: 8px;
+      color: #6f7275;
+      width: 9px;
+      height: 15px;
+      font-size: 1rem; }
+      .ariba .fd-alert__close::before {
+        font-family: "SAP-icons";
+        font-style: normal;
+        font-weight: normal;
+        text-align: center;
+        display: inline-block;
+        text-decoration: inherit;
+        text-transform: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        speak: none; }
+      .ariba .fd-alert__close::before {
+        font-family: "Ariba-icons";
+        content: "\eB14";
+        font-size: 1rem;
+        width: 9px;
+        height: 15px; }
+    .ariba .fd-alert .fd-alert--message {
+      display: inline-block; }
+    .ariba .fd-alert--success, .ariba .fd-alert--warning, .ariba .fd-alert--error {
+      border-left-width: 10px;
+      padding-left: 26px; }
+      .ariba .fd-alert--success .fd-alert--message, .ariba .fd-alert--warning .fd-alert--message, .ariba .fd-alert--error .fd-alert--message {
+        padding-left: 52px; }
+      .ariba .fd-alert--success::before, .ariba .fd-alert--warning::before, .ariba .fd-alert--error::before {
+        font-family: "SAP-icons";
+        font-style: normal;
+        font-weight: normal;
+        text-align: center;
+        display: inline-block;
+        text-decoration: inherit;
+        text-transform: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        speak: none; }
+      .ariba .fd-alert--success::before, .ariba .fd-alert--warning::before, .ariba .fd-alert--error::before {
+        font-family: "Ariba-icons";
+        font-size: 1.71429rem;
+        display: inline-block;
+        min-height: 100%;
+        position: absolute;
+        margin-top: -20px;
+        top: 50%; }
+    .ariba .fd-alert--success {
+      border-left-color: #359c46; }
+      .ariba .fd-alert--success::before {
+        content: "\eA19";
+        color: #359c46; }
+    .ariba .fd-alert--warning {
+      border-left-color: #f59518; }
+      .ariba .fd-alert--warning::before {
+        content: "\eA9d";
+        color: #f59518; }
+    .ariba .fd-alert--error {
+      border-left-color: #CC0000; }
+      .ariba .fd-alert--error::before {
+        content: "\eA9c";
+        color: #CC0000; }
+    .ariba .fd-alert--dismissible {
+      padding-right: 50px; }
+  .ariba [dir='rtl'] .fd-alert__close {
+    float: left;
+    position: unset;
+    margin: -13px 0px 0px -34px; }
+  .ariba [dir='rtl'] .fd-alert--dismissible {
+    padding-left: 50px;
+    padding-right: 20px; }
+  .ariba [dir='rtl'] .fd-alert--success, .ariba [dir='rtl'] .fd-alert--warning, .ariba [dir='rtl'] .fd-alert--error {
+    border-right-width: 6px;
+    border-left-width: 0px;
+    padding-left: 20px;
+    padding-right: 26px; }
+    .ariba [dir='rtl'] .fd-alert--success .fd-alert--message, .ariba [dir='rtl'] .fd-alert--warning .fd-alert--message, .ariba [dir='rtl'] .fd-alert--error .fd-alert--message {
+      padding-right: 52px;
+      padding-left: 0px; }
+  .ariba [dir='rtl'] .fd-alert--success {
+    border-right-color: #359c46; }
+  .ariba [dir='rtl'] .fd-alert--warning {
+    border-right-color: #f59518; }
+  .ariba [dir='rtl'] .fd-alert--error {
+    border-right-color: #CC0000; }
+  .ariba .fd-modal {
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #32363a;
+    font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    max-width: 460px; }
+    .ariba .fd-modal__content {
+      padding: 48px 0px 52px 48px; }
+    .ariba .fd-modal__header {
+      position: relative;
+      border-bottom: 0px;
+      padding: 0px;
+      padding-bottom: 32px; }
+    .ariba .fd-modal__title {
+      font-size: 2.14286rem;
+      line-height: 1.2;
+      font-weight: 300;
+      margin-bottom: 0;
+      padding-right: 48px; }
+    .ariba .fd-modal__close {
+      width: 16px;
+      height: 16px;
+      padding: 0px;
+      top: -32px; }
+      .ariba .fd-modal__close::before {
+        font-family: "Ariba-icons";
+        font-size: 17px;
+        content: "\eB14"; }
+    .ariba .fd-modal__body {
+      padding: 0px;
+      padding-right: 48px; }
+    .ariba .fd-modal__footer {
+      border: 0px;
+      padding: 56px 48px 0px 0px; }
+      .ariba .fd-modal__footer button:only-child {
+        width: 100%; }
+    .ariba .fd-modal.--success .fd-modal__content, .ariba .fd-modal.--warning .fd-modal__content, .ariba .fd-modal.--error .fd-modal__content {
+      border-top: 1px solid #359c46;
+      border-top-width: 4px; }
+    .ariba .fd-modal.--success .fd-modal__header::before, .ariba .fd-modal.--warning .fd-modal__header::before, .ariba .fd-modal.--error .fd-modal__header::before {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none; }
+    .ariba .fd-modal.--success .fd-modal__header::before, .ariba .fd-modal.--warning .fd-modal__header::before, .ariba .fd-modal.--error .fd-modal__header::before {
+      font-family: "Ariba-icons";
+      font-size: 72px;
+      margin-top: -20px;
+      margin-left: 35%; }
+    .ariba .fd-modal.--success .fd-modal__content {
+      border-top-color: #359c46; }
+    .ariba .fd-modal.--success .fd-modal__header::before {
+      color: #359c46;
+      content: "\eA19"; }
+    .ariba .fd-modal.--warning .fd-modal__content {
+      border-top-color: #f59518; }
+    .ariba .fd-modal.--warning .fd-modal__header::before {
+      color: #f59518;
+      content: "\eA9d"; }
+    .ariba .fd-modal.--error .fd-modal__content {
+      border-top-color: #CC0000; }
+    .ariba .fd-modal.--error .fd-modal__header::before {
+      color: #CC0000;
+      content: "\eA9c"; }
+  .ariba [dir='rtl'] .fd-modal__close {
+    right: 100%;
+    margin-right: 6px; }
+  .ariba [dir='rtl'] .fd-modal__footer {
+    text-align: left; }
+  .ariba [dir='rtl'] .fd-modal.--success .fd-modal__header::before, .ariba [dir='rtl'] .fd-modal.--warning .fd-modal__header::before, .ariba [dir='rtl'] .fd-modal.--error .fd-modal__header::before {
+    margin-right: 35%;
+    padding-right: 48px; }
