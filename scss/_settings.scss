@@ -153,7 +153,7 @@ $fd-animation--speed: 0.125s !default;
 $fd-link-color: map-get($fd-colors-action, 1) !default;
 $fd-link-color--hover: darken($fd-link-color, 7) !default;
 $fd-link-color--active: darken($fd-link-color, 10) !default;
-$fd-link-color--pressed: darken($fd-link-color, 10) !default;
+$fd-link-color--pressed: adjust-color($fd-link-color, $lightness: -10) !default;
 $fd-link-color--visited: adjust-hue($fd-link-color, 45deg) !default;
 $fd-link-color--disabled: rgba($fd-link-color, 0.4) !default;
 
