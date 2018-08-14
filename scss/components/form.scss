@@ -87,7 +87,7 @@ $block: #{$fd-namespace}-form;
         border: 0;
         color: $fd-form-label-color;
         &.is-required {
-            @include fd-weight(bold);
+            // @include fd-weight(bold);
 
             &:after {
                 content: "*";
@@ -125,11 +125,11 @@ $block: #{$fd-namespace}-form;
             width: 18px;
             height: 18px;
             font-style: normal;
+            font-size: 1.3em;
+            font-family: "SAP-icons";
             position: absolute;
             left: 0;
             color: fd-color(text, 4);
-            border-radius: 50%;
-            background-color: fd-color(text, 3);
             text-align: center;
             line-height: 18px;
         }
@@ -137,32 +137,28 @@ $block: #{$fd-namespace}-form;
             padding-left: fd-space(6);
             &::before {
                 left: 0;
-                top: 7px;
+                top: 6px;
             }
         }
         &--help {
             color: fd-color(text);
             &::before {
-                content: "?";
+                color: fd-color(text);
+                content: "";
             }
         }
         &--warning {
             color: $fd-color--warning;
             &::before {
-                content: "!";
-                background-color: transparent;
-                border-radius: 0;
-                @include triangle(20px 18px, $fd-color--warning, up);
-                text-indent: -0.15em;
-                line-height: 22px;
+                color: $fd-color--warning;
+                content: "";
             }
         }
         &--error {
             color: $fd-color--error;
             &::before {
-                content: "!";
-                background-color: $fd-color--error;
-                color: fd-color(text, 4);
+                content: "";
+                color: $fd-color--error;
             }
         }
     }

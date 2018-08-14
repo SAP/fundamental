@@ -30,19 +30,24 @@
     transition: border-color $fd-animation--speed;
     //states
     &:hover {
-        border-color: fd-color-darker($fd-forms-color--active);
+        border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
+
     }
     &:focus {
-      border-color: fd-color-darkest($fd-forms-color--active);
+      border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
+      box-shadow: 0 0 0 1px adjust-color($fd-forms-color--active, $lightness: 30%);
     }
     &.is-invalid {
         border-color: $fd-color--error;
+        border-width: 2px;
     }
     &.is-valid {
         border-color: $fd-color--success;
+        border-width: 2px;
     }
     &.is-warning {
         border-color: $fd-color--warning;
+        border-width: 2px;
     }
     &:disabled,
     &[aria-disabled="true"],
@@ -75,15 +80,15 @@
     -moz-appearance: none;
     background-image: url(#{$fd-forms-select-background-image});
     background-repeat: no-repeat;
-    background-position: calc(100% - #{$fd-forms-select-width--background-image}) center;
+    background-position: calc(100%) center;
     padding-right: ($fd-forms-padding * 2) + $fd-forms-select-width--background-image;
     &:focus,
     &:hover {
-        background-image: url(#{$fd-forms-select-background-image--active});
+        background-image: url(#{$fd-forms-select-background-image});
     }
     &[aria-expanded="true"],
     &.is-expanded {
-        background-image: url(#{$fd-forms-select-background-image--active-expanded});
+        background-image: url(#{$fd-forms-select-background-image});
     }
     &[disabled],
     &[aria-disabled="true"],
