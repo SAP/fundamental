@@ -8,14 +8,17 @@
     &::after {
         transition: border-color $fd-forms-transition-params;
     }
-    &::placeholder {
-        color: $fd-forms-color--placeholder;
-    }
 }
 fieldset {
     border: 0;
     padding: 0;
     margin: 0;
+}
+
+#{$fd-elements-inputs--text}{
+    &::placeholder {
+        color: $fd-forms-color--placeholder;
+    }
 }
 #{$fd-elements-inputs--text},
 textarea {
@@ -34,6 +37,19 @@ select {
         background-image: none;
         padding-top: $fd-forms-padding;
     }
+    &::after {
+        content: "";
+        width: 10px;
+        height: 5px;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 0 0 2px 2px;
+        transform: rotate(-45deg);
+        position: absolute;
+        z-index: 2;
+        top: calc(50% - 4px);
+        left: calc(50% - 10px/2);
+    }
 }
 #{$fd-elements-inputs--check} {
     @extend %form-field-base;
@@ -43,6 +59,10 @@ select {
     vertical-align: middle;
     position: relative;
     cursor: pointer;
+    border-color: fd-color(neutral, 4);
+    &:hover{
+        border-width: 2px;
+    }
     &:checked {
         border-color: fd-color-darkest($fd-forms-color--active);
         background-color: fd-color-darkest($fd-forms-color--active);
