@@ -57,57 +57,73 @@ $block: #{$fd-namespace}-dropdown;
       margin-left: 0;
       width: 100%;
       text-align: left;
-      &[aria-expanded="true"],
-      &.is-expanded {
-        &::after {
-          transform: scaleY(-1);
-        }
-      }
-      &.is-disabled,
-      &[disabled],
-      &[aria-disabled="true"] {
-        &::after {
-          transform: none;
-        }
+      &::after {
+        color: $fd-link-color;
+        width: $fd-forms-height - 2;
+        padding-top: fd-space(2.5);
+        border-left: 1px solid $fd-forms-border-color;
+        background: $fd-menu-title-background-color;
+        top: 0;
+        bottom:0;
+        position: absolute;
+        right: 0;
+        border-top-right-radius: $fd-border-radius;
+        border-bottom-right-radius: $fd-border-radius;
       }
       &--no-border {
         border: none;
       }
-      // Default
-      &.fd-button--toolbar{
-        padding-right: $fd-button-right-padding;
-
-        &::after {
-          top: 50%;
-          position: absolute;
-          right: 10px;
-          margin-top: -7px;
-        }
-      }
       &.fd-button--xs {
-        padding-right: $fd-button-right-padding - 2;
         &::after {
-          margin-top: -6px;
+          padding-top: fd-space(1.5);
         }
       }
       &.fd-button--s {
-        padding-right: $fd-button-right-padding + 2;
         &::after {
-          margin-top: -8px;
+            padding-top: fd-space(1.5);
         }
       }
       &.fd-button--compact {
         &::after {
-          margin-top: -8px;
+            padding-top: fd-space(2);
         }
       }
       &.fd-button--l {
-        padding-right: $fd-button-right-padding + 8;
-
         &::after {
-          margin-top: -10px;
+            width: $fd-forms-height + 2;
+            padding-top: fd-space(2.5);
         }
       }
+    }
+    &__control.fd-button {
+        color: $fd-forms-color;
+        border-color: $fd-forms-border-color;
+        &:hover{
+            color: $fd-forms-color;
+            background-color:  $fd-forms-background-color;
+            border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
+            box-shadow: none;
+        }
+        &:active, &[aria-expanded="true"] {
+            color: $fd-forms-color;
+            background-color:  $fd-forms-background-color;
+            border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
+            box-shadow: 0 0 0 1px adjust-color($fd-forms-color--active, $lightness: 30%);
+        }
+    }
+    &__control.fd-button--toolbar{
+        &:hover, &:active {
+            color: fd-color("text", 2);
+            background-color: fd-color-darker(fd-color("neutral", 1));
+            border-color: fd-color-darker(fd-color("neutral", 1));
+            box-shadow: none;
+        }
+
+        &::after{
+            color: $fd-forms-color;
+            background-color:  transparent;
+            border-left: none;
+        }
     }
     &__menu {
       padding-top: fd-space(base);
