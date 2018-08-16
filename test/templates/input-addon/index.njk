@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+{% from "./component.njk" import input_addon %}
+{% from "./../format.njk" import format %}
+
+{% set css_deps = ['fonts','helpers'] %}
+
+{% block content %}
+
+    <h1>Input Addon</h1>
+    {% set basic_input_addon %}
+        {{ input_addon(
+            type="text",
+            properties={
+                placeholder: "Placeholder Text"
+            })
+        }}
+    {% endset %}
+
+    {{ format(basic_input_addon) }}
+
+{% endblock %}

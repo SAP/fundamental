@@ -1,0 +1,12 @@
+{#
+    see ./data.json for object structure
+#}
+
+{% macro radio(
+    properties={ value: "", id: "" },
+    state={ checked: false, disabled: false, status: "" },
+    aria={},
+    classes=[])
+-%}
+<input type="radio" {{ ' value="'+properties.value+'"' if properties.value }}>
+{%- endmacro %}

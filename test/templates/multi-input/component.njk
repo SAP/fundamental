@@ -1,0 +1,64 @@
+{% from "./../popover/component.njk" import popover %}
+{% from "./../menu/component.njk" import menu %}
+{% from "./../checkbox/component.njk" import checkbox %}
+{% from "./../input-group/component.njk" import input_group %}
+{% from "../button/component.njk" import button %}
+{% import "./../utils.njk" as utils %}
+
+{#
+    see ./data.json for object structure
+#}
+{%- set _id = utils.id() %}
+
+{% macro multi_input(
+    properties={},
+    state={},
+    aria={},
+    classes=[])
+-%}    
+    <div class="fd-multi-input">
+        <div class="fd-multi-input-field">
+            <div class="fd-popover">
+                <div class="fd-popover__control">
+                    <div class="fd-combobox-control" aria-label="Image label" aria-controls="F4GcX348" aria-expanded="false" aria-haspopup="true">
+                        <div class="fd-input-group fd-input-group--after">
+                            <input type="text" class="fd-input" id="" placeholder="Select Fruit">
+                            <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
+                                <button class=" fd-button--icon fd-button--secondary sap-icon--navigation-down-arrow"></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fd-popover__body" aria-hidden="true" id="F4GcX348">
+                    <nav class="fd-menu">
+                    <ul class="fd-menu__list">
+                        <li>
+                            <label for="a" class="fd-menu__item">
+                                <input type="checkbox" class="fd-checkbox" id="a">
+                                Apple
+                            </label>
+                        </li>
+                        <li>
+                            <label for="b" class="fd-menu__item">
+                                <input type="checkbox" class="fd-checkbox" id="b">
+                                Berry
+                            </label>
+                        </li>
+                        <li>
+                            <label for="c" class="fd-menu__item">
+                                <input type="checkbox" class="fd-checkbox" id="c">
+                                Banana
+                            </label>
+                        </li>
+                    </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="fd-multi-input-tags">
+            <span class="fd-tag" role="button">Apple</span>
+            <span class="fd-tag" role="button">Berry</span>
+            <span class="fd-tag" role="button">Banana</span>
+        </div>
+    </div>
+{%- endmacro %}

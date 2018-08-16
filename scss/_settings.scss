@@ -157,14 +157,32 @@ $fd-link-color--pressed: adjust-color($fd-link-color, $lightness: -10) !default;
 $fd-link-color--visited: adjust-hue($fd-link-color, 45deg) !default;
 $fd-link-color--disabled: rgba($fd-link-color, 0.4) !default;
 
-//FORMS
-//dimensions
+//menus and lists and navs
+$fd-menu-border-color: red !default;
+$fd-menu-background-color: map-get($fd-colors-background, 2) !default;
+$fd-menu-box-shadow: 0 0 4px 1px rgba(map-get($fd-colors-neutral, 2), 1) !default;
+$fd-menu-z-index: 2 !default;
+$fd-menu-border-color: transparent !default;
+$fd-menu-title-color: map-get($fd-colors-text, 3) !default;
+$fd-menu-title-padding: map-get($fd-spacing, "xxs") !default;
+$fd-menu-title-background-color: map-get($fd-colors-neutral, 1) !default;
+$fd-menu-item-color: map-get($fd-colors-text, 2) !default;
+$fd-menu-item-background-color--selected: rgba(map-get($fd-colors-action, 1), .07) !default;
+$fd-menu-item-background-color--hover: map-get($fd-colors-neutral, 2) !default;
+$fd-menu-item-color--hover: map-get($fd-colors-text, 2) !default;
+$fd-menu-item-padding-x: map-get($fd-spacing, "reg") !default;
+$fd-menu-item-padding-y: map-get($fd-spacing, "xs") - 2px !default;
+$fd-menu-link-color: $fd-link-color !default;
+$fd-menu-link-color--disabled: map-get($fd-colors-text, 3) !default;
+
+$fd-menu-transition-params: $fd-animation--speed ease-in !default;
+
+// Form Configuration
 $fd-forms-height: $fd-spacing--base * 9 !default;
 $fd-forms-height--input-text: $fd-forms-height !default;
 $fd-forms-height--input-check: $fd-spacing--base * 4 !default;
 $fd-forms-padding: $fd-spacing--base * 3 !default;
 
-//colors
 $fd-forms-color: $fd-color !default;
 $fd-forms-color--placeholder: adjust-color(map-get($fd-colors-text, 3), $lightness: 14) !default;
 $fd-forms-color--focus: $fd-forms-color !default;
@@ -178,9 +196,8 @@ $fd-forms-border-color: map-get($fd-colors-neutral, 4) !default;
 $fd-forms-border-color--check: map-get($fd-colors-action, 1) !default;
 $fd-forms-border-color--focus: map-get($fd-colors-action, 1) !default;
 $fd-forms-border-color--disabled: lighten(map-get($fd-colors-neutral, 3), 5%) !default;
-$fd-forms-select-width--background-image: 12px !default;
 
-// base64 svgs
+$fd-forms-select-width--background-image: 12px !default;
 $fd-forms-select-background-image: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzYgMzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM2IDM2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0ZBRkJGQzt9LnN0MXtmaWxsOm5vbmU7c3Ryb2tlOiNDRUNFRDA7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fS5zdDJ7ZmlsbDojMEE2RUQxO30uc3Qze2ZvbnQtZmFtaWx5OidTQVAtaWNvbnMnO30uc3Q0e2ZvbnQtc2l6ZToxNnB4O308L3N0eWxlPjxyZWN0IHg9IjAiIGNsYXNzPSJzdDAiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNS45Ii8+PGxpbmUgY2xhc3M9InN0MSIgeDE9IjAuNCIgeTE9IjAuMSIgeDI9IjAuNCIgeTI9IjM1LjkiLz48ZyBpZD0iTXVsdGktSW5wdXQiPjxnIGlkPSJGdW5kYW1lbnRhbF9Nb2R1bGFyX1VJX011dGxpLUlucHV0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzY2LjAwMDAwMCwgLTIwMi4wMDAwMDApIj48ZyBpZD0iU2VsZWN0RmllbGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcwLjAwMDAwMCwgMTAzLjAwMDAwMCkiPjxnIGlkPSJJbnB1dCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIDYyLjAwMDAwMCkiPjx0ZXh0IHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIDEgMzA4LjAwMDIgNjAuOTIxOSkiIGNsYXNzPSJzdDIgc3QzIHN0NCI+7oevPC90ZXh0PjwvZz48L2c+PC9nPjwvZz48L3N2Zz4=" !default;
 $fd-forms-select-background-image--expanded: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTJweCIgaGVpZ2h0PSIxMHB4IiB2aWV3Qm94PSIwIDAgMTIgMTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQ5LjMgKDUxMTY3KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5VbnRpdGxlZDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJkb3dubG9hZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNi4wMDAwMDAsIDUuMDAwMDAwKSByb3RhdGUoLTE4MC4wMDAwMDApIHRyYW5zbGF0ZSgtNi4wMDAwMDAsIC01LjAwMDAwMCkgIiBmaWxsPSIjMjEyNjJDIj4KICAgICAgICAgICAgPHBhdGggZD0iTTExLjkzNSwyLjQ3NSBMNi4xODgsOC45MjcgQzYuMTM4MzEzODQsOC45Nzc5NDY4NyA2LjA3MDE2Mzg4LDkuMDA2Njc2OTEgNS45OTksOS4wMDY2NzY5MSBDNS45Mjc4MzYxMiw5LjAwNjY3NjkxIDUuODU5Njg2MTYsOC45Nzc5NDY4NyA1LjgxLDguOTI3IEwwLjA2NSwyLjQ3NSBDMC4wMjEwMzMzNzczLDIuNDI2OTMzNjMgLTAuMDAxMTEwMzExODMsMi4zNjI4MzE4NyAwLjAwMzgxMzQxNzEyLDIuMjk3ODc2NTMgQzAuMDA4NzM3MTQ2MDcsMi4yMzI5MjExOCAwLjA0MDI5MDM0NzcsMi4xNzI4ODk3NSAwLjA5MSwyLjEzMiBMMS4zODEsMS4wNTggQzEuNDI2NjkwMywxLjAxOTc1MjI1IDEuNDg0NDE0MTUsMC45OTg4NTgzMzkgMS41NDQsMC45OTkgTDEuNTYzLDEgQzEuNjI4OTQzNzMsMS4wMDQ4MDMxNSAxLjY5MDM1ODEyLDEuMDM1MzMwNzggMS43MzQsMS4wODUgTDUuOTk5LDUuOTY1IEwxMC4yNjYsMS4wODUgQzEwLjM1NjM3MjUsMC45ODE1ODQ0MTYgMTAuNTEyOTEyNiwwLjk2OTU3NzA4NSAxMC42MTgsMS4wNTggTDExLjkwOSwyLjEzMiBDMTEuOTU5LDIuMTc0IDExLjk5LDIuMjM0IDExLjk5NSwyLjI5OCBDMTIuMDAwMjA5MSwyLjM2Mjc0Mjc4IDExLjk3ODUwNDksMi40MjY3NzA0NCAxMS45MzUsMi40NzUgWiIgaWQ9IlNoYXBlIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=" !default;
 $fd-forms-select-background-image--active: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI5Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMwMDhGRDIiIGQ9Ik0xMS45MzUgMS40NzVMNi4xODggNy45MjdhLjI2NC4yNjQgMCAwIDEtLjM3OCAwTC4wNjUgMS40NzVhLjIzNi4yMzYgMCAwIDEgLjAyNi0uMzQzTDEuMzgxLjA1OGEuMjUzLjI1MyAwIDAgMSAuMTYzLS4wNTlMMS41NjMgMGEuMjUyLjI1MiAwIDAgMSAuMTcxLjA4NWw0LjI2NSA0Ljg4IDQuMjY3LTQuODhhLjI1Mi4yNTIgMCAwIDEgLjM1Mi0uMDI3bDEuMjkxIDEuMDc0Yy4wNS4wNDIuMDgxLjEwMi4wODYuMTY2YS4yMzYuMjM2IDAgMCAxLS4wNi4xNzd6Ii8+PC9zdmc+" !default;
@@ -213,6 +230,3 @@ $fd-menu-transition-params: $fd-animation--speed ease-in !default;
 
 $fd-elements-inputs--text: "input[type=text]", "input[type=password]", "input[type=email]", "input[type=url]", "input[type=search]", "input[type=tel]", "input[type=number]", "input[type=date]", "input[type=time]", "textarea";
 $fd-elements-inputs--check: "input[type=radio]", "input[type=checkbox]";
-
-//animation
-$fd-forms-transition-params: $fd-animation--speed ease-in !default;

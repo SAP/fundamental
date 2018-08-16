@@ -1,0 +1,42 @@
+{% from "./../popover/component.njk" import popover %}
+{% from "./../menu/component.njk" import menu %}
+{% from "./../checkbox/component.njk" import checkbox %}
+{% from "./../input-group/component.njk" import input_group %}
+{% from "../button/component.njk" import button %}
+{% import "./../utils.njk" as utils %}
+
+{#
+    see ./data.json for object structure
+#}
+{%- set _id = utils.id() %}
+
+{% macro search_input(
+    properties={},
+    state={},
+    aria={},
+    classes=[])
+-%}    
+    <div class="fd-search-input">
+        <div class="fd-popover">
+            <div class="fd-popover__control">
+                <div class="fd-combobox-control" aria-label="Image label" aria-controls="F4GcX348" aria-expanded="false" aria-haspopup="true">
+                    <div class="fd-input-group fd-input-group--after">
+                        <input type="text" class="fd-input" id="" value="Ba" placeholder="Select Fruit">
+                        <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
+                            <button class=" fd-button--icon fd-button--secondary sap-icon--search"></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="fd-popover__body" aria-hidden="true" id="F4GcX348">
+                <nav class="fd-menu">
+                <ul class="fd-menu__list">
+                    <li><a href="#" class="fd-menu__item"><strong>Ba</strong>nana</a></li>
+                    <li><a href="#" class="fd-menu__item"><strong>Ba</strong>rk</a></li>
+                    <li><a href="#" class="fd-menu__item"><strong>Ba</strong>ts</a></li>
+                </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+{%- endmacro %}

@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+{% from "./component.njk" import radio %}
+{% from "./../format.njk" import format %}
+
+{% set css_deps = ['fonts','helpers'] %}
+
+{% block content %}
+
+    <h1>Radio</h1>
+    {% set basic_radio %}
+        {{ radio(
+            type="text",
+            properties={
+                placeholder: "Placeholder Text"
+            })
+        }}
+    {% endset %}
+
+    {{ format(basic_radio) }}
+
+{% endblock %}

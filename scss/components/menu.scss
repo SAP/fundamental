@@ -2,7 +2,6 @@
 @import "./../mixins";
 @import "./../icons/mixins";
 @import "./../functions";
-@import "./mixins";
 
 
 $block: #{$fd-namespace}-menu;
@@ -48,10 +47,15 @@ $block: #{$fd-namespace}-menu;
     }
     &__item {
       display: block;
+      cursor: pointer;
       padding: $fd-menu-item-padding-y $fd-menu-item-padding-x;
       color: $fd-menu-item-color;
       background-color: $fd-menu-item-background-color;
 
+      > .fd-checkbox {
+        margin: 0 10px 0 0;
+      }
+      
       &:hover{
         color: $fd-menu-item-color--hover;
         background-color: $fd-menu-item-background-color--hover;

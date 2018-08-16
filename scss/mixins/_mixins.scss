@@ -1,4 +1,3 @@
-
 //utils
 @mixin fd-reset {
     font-size: $fd-font-size;
@@ -9,93 +8,6 @@
 @mixin fd-reset-spacing {
   padding: 0;
   margin: 0;
-}
-
-//els
-@mixin fd-form-base {
-    @include fd-reset;
-    @include fd-type("0", body);
-    appearance: none;
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
-    font-size: inherit;
-    box-sizing: border-box;
-    outline: none;
-    border-style: solid;
-    border-width: 1px;
-    border-color: $fd-forms-border-color;
-    border-radius: $fd-border-radius;
-    color: $fd-forms-color;
-    background-color: $fd-forms-background-color;
-    transition: border-color $fd-animation--speed;
-    //states
-    &:hover {
-        border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
-
-    }
-    &:focus {
-      border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
-      box-shadow: 0 0 0 1px adjust-color($fd-forms-color--active, $lightness: 30%);
-    }
-    &.is-invalid {
-        border-color: $fd-color--error;
-        border-width: 2px;
-    }
-    &.is-valid {
-        border-color: $fd-color--success;
-        border-width: 2px;
-    }
-    &.is-warning {
-        border-color: $fd-color--warning;
-        border-width: 2px;
-    }
-    &:disabled,
-    &[aria-disabled="true"],
-    &.is-disabled {
-        cursor: not-allowed;
-        color: $fd-forms-color--disabled;
-        border-color: $fd-forms-border-color--disabled;
-        background-color: $fd-forms-background-color--disabled;
-    }
-    &[readonly],
-    &.is-readonly {
-        color: $fd-forms-color;
-        //background-color: $fd-forms-background-color;
-        border-color: $fd-forms-border-color--disabled;
-        border-width: 0 0 1px;
-        border-radius: 0;
-    }
-    @content;
-}
-@mixin fd-form-text {
-    @include fd-form-base;
-    height: $fd-forms-height--input-text;
-    padding-left: $fd-forms-padding;
-    padding-right: $fd-forms-padding;
-    @content;
-}
-@mixin fd-form-select {
-    @include fd-form-text;
-    appearance: none;
-    -moz-appearance: none;
-    background-image: url(#{$fd-forms-select-background-image});
-    background-repeat: no-repeat;
-    background-position: calc(100%) center;
-    padding-right: ($fd-forms-padding * 2) + $fd-forms-select-width--background-image;
-    &:focus,
-    &:hover {
-        background-image: url(#{$fd-forms-select-background-image});
-    }
-    &[aria-expanded="true"],
-    &.is-expanded {
-        background-image: url(#{$fd-forms-select-background-image});
-    }
-    &[disabled],
-    &[aria-disabled="true"],
-    &.is-disabled {
-        background-image: url(#{$fd-forms-select-background-image--disabled});
-    }
-    @content;
 }
 @mixin fd-clearfix {
     &::after {
@@ -249,3 +161,50 @@
     -o-transform: rotate($sDeg);
     transform: rotate($sDeg);
 }
+
+@mixin fd-button-reset {
+    display: inline-block;
+    //margin: 0;
+    padding: 0;
+    font-smoothing: antialiased;
+    appearance: none;
+    outline: 0;
+    border: 0;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: $fd-border-radius;
+    @content;
+  }
+  
+  @mixin fd-link($color: $fd-link-color) {
+    color: $fd-link-color;
+    border-bottom: solid 1px $fd-link-color;
+    &:hover {
+      color: $fd-link-color--hover;
+      border-bottom-color: $fd-link-color--hover;
+    }
+    &:visited {
+      color: $fd-link-color--visited;
+      border-bottom-color: $fd-link-color--visited;
+    }
+    &:active,
+    &[aria-selected="true"],
+    &.is-selected,
+    &[aria-pressed="true"],
+    &.is-pressed,
+    &:focus {
+        color: $fd-link-color--active;
+        border-bottom-color: $fd-link-color--active;
+    }
+    &[aria-disabled="true"],
+    &.is-disabled {
+        color: $fd-link-color--disabled;
+        border-bottom-color: $fd-link-color--disabled;
+    }
+  }
+  
