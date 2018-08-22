@@ -30,7 +30,7 @@
     {%- for modifier in modifiers %}
       {% if modifier === "default" %}
         {{ dropdown(properties={
-          label: data.properties.label,
+          label: "Select",
           body: menu(properties={
             items: [
                 { "label": "Option 1" },
@@ -43,7 +43,7 @@
         }}
       {% else %}
         {{ dropdown(properties={
-          label: data.properties.label,
+          label: "Select",
           body: menu(properties={
             items: [
                 { "label": "Option 1" },
@@ -68,7 +68,7 @@
     {% if modifier === "default" %}
         {{ dropdown(properties={
           icon: "filter",
-          label: data.properties.label,
+          label: "Select",
           body: menu(properties={
             items: [
                 { "label": "Option 1" },
@@ -82,7 +82,7 @@
       {% else %}
         {{ dropdown(properties={
           icon: "filter",
-          label: data.properties.label,
+          label: "Select",
           body: menu(properties={
             items: [
                 { "label": "Option 1" },
@@ -118,12 +118,12 @@
     {% if modifier === "default" %}
       {{  dropdown(properties={
         icon: "filter",
-        label: data.properties.label }, aria={ disabled: true })
+        label: "Select" }, aria={ disabled: true })
       }}
     {% else %}
       {{  dropdown(properties={
         icon: "filter",
-        label: data.properties.label },modifier={ block: modifier }, aria={ disabled: true }) }}
+        label: "Select" },modifier={ block: modifier }, aria={ disabled: true }) }}
     {% endif %}
   {%- endfor %}
 {% endset %}

@@ -41,7 +41,7 @@ $block: #{$fd-namespace}-dropdown;
     //set all BLOCK reset and baseline styles
     @include fd-reset;
     position: relative;
-    display: block;
+    display: inline-block;
 
     //*****
     // WHEN DEPCRECATING THE REST OF THIS FILE MAKE SURE TO KEEP THE CSS FOR THE CONTROL. IT IS USED WHEN COMPOSING TOGETHER POPOVER/MENU FOR A DROPDOWN COMPONENT.
@@ -57,16 +57,15 @@ $block: #{$fd-namespace}-dropdown;
       margin-left: 0;
       width: 100%;
       text-align: left;
+
       &::after {
         color: $fd-link-color;
         width: $fd-forms-height - 2;
+        height: $fd-forms-height - 2;
+        margin-top: -3px;
         padding-top: fd-space(2.5);
         border-left: 1px solid $fd-forms-border-color;
         background: $fd-menu-title-background-color;
-        top: 0;
-        bottom:0;
-        position: absolute;
-        right: 0;
         border-top-right-radius: $fd-border-radius;
         border-bottom-right-radius: $fd-border-radius;
       }
@@ -75,22 +74,32 @@ $block: #{$fd-namespace}-dropdown;
       }
       &.fd-button--xs {
         &::after {
-          padding-top: fd-space(1.5);
+            height: $fd-forms-height - 14.5;
+            padding-top: fd-space(1.25);
         }
       }
       &.fd-button--s {
+          padding-top: fd-space(1) - 1;
         &::after {
+            margin-top: -3px;
+            height: $fd-forms-height - 10;
             padding-top: fd-space(1.5);
         }
       }
       &.fd-button--compact {
+          padding-top: fd-space(1) - 1;
         &::after {
-            padding-top: fd-space(2);
+            margin-top: -3px;
+            height: $fd-forms-height - 6;
+            padding-top: fd-space(2) - 1;
         }
       }
       &.fd-button--l {
+          padding-top: fd-space(1) - 1;
         &::after {
+            margin-top: -3px;
             width: $fd-forms-height + 2;
+            height: $fd-forms-height + 2;
             padding-top: fd-space(2.5);
         }
       }
@@ -98,6 +107,8 @@ $block: #{$fd-namespace}-dropdown;
     &__control.fd-button {
         color: $fd-forms-color;
         border-color: $fd-forms-border-color;
+        padding-right: 0;
+        padding-top: fd-space(1) - 2;
         &:hover{
             color: $fd-forms-color;
             background-color:  $fd-forms-background-color;
@@ -112,6 +123,7 @@ $block: #{$fd-namespace}-dropdown;
         }
     }
     &__control.fd-button--toolbar{
+
         &:hover, &:active {
             color: fd-color("text", 2);
             background-color: fd-color-darker(fd-color("neutral", 1));
@@ -120,6 +132,8 @@ $block: #{$fd-namespace}-dropdown;
         }
 
         &::after{
+            width: auto;
+            margin-right: fd-space(2.5);
             color: $fd-forms-color;
             background-color:  transparent;
             border-left: none;
