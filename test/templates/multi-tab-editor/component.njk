@@ -1,0 +1,17 @@
+<!--
+multi_tab_editor:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{% macro multi_tab_editor(properties={}, modifier={}, state={}, aria={}) -%}
+<div class="fd-multi-tab-editor{{ modifier.block | modifier('multi-tab-editor') }}{{ state | state }}"{{ aria | aria }}>
+    <div class="fd-multi-tab-editor__content{{ modifier.content | modifier('multi-tab-editor__content') }}">
+        <h1 class="fd-multi-tab-editor__title">{{ properties.title }}</h1>
+        {%- if properties.description %}
+            {{ properties.description }}
+        {%- endif %}
+    </div>
+</div>
+{%- endmacro %}

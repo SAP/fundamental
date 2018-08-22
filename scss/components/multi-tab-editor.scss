@@ -1,0 +1,58 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+
+/*!
+.fd-multi-tab-editor+(--no-border)
+    .fd-multi-tab-editor__content+()
+    .fd-multi-tab-editor__title+()
+*/
+$block: #{$fd-namespace}-multi-tab-editor;
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-multi-tab-editor-border-color: fd-color(primary, 1) !default;
+    $fd-multi-tab-editor-content-border-color: fd-color(neutral, 4) !default;
+    $fd-multi-tab-editor-border-color--selected: fd-color(primary) !default;
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    @include fd-reset;
+    border: solid 20px $fd-multi-tab-editor-border-color;
+
+    //BLOCK MODIFIERS ************
+    //e.g., $fd-multi-tab-editor--no-border
+    &--no-border {
+        border-color: transparent;
+    }
+
+    //ELEMENTS *******************************************
+    //set all ELEMENT baseline styles
+    //e.g., $fd-multi-tab-editor__content
+    &__content {
+        border: solid 10px $fd-multi-tab-editor-content-border-color;
+
+        //ELEMENT MODIFIERS ************
+        //e.g., $fd-multi-tab-editor__content--no-border
+        &--no-border {
+            border-color: transparent;
+        }
+    }
+    &__title {
+
+
+    }
+
+    //STATES *******************************************
+    &.is-disabled,
+    &[disabled] {
+        opacity: 0.5;
+    }
+    &[aria-selected="true"] {
+        border-color: $fd-multi-tab-editor-border-color--selected;
+    }
+
+
+
+
+}
