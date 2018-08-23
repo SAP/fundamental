@@ -1,0 +1,34 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+
+/*!
+.fd-localization-editor+(--no-border)
+    .fd-localization-editor__content+()
+    .fd-localization-editor__title+()
+*/
+$block: #{$fd-namespace}-localization-editor;
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+
+    //BLOCK BASE *******************************************
+    //set all BLOCK reset and baseline styles
+    @include fd-reset;
+
+    //BLOCK MODIFIERS ************
+
+    //ELEMENTS *******************************************
+    &__item {
+        padding: fd-space(2);
+    }
+
+    //STATES *******************************************
+    &.is-disabled,
+    &[disabled] {
+        opacity: 0.5;
+    }
+    &[aria-selected="true"] {
+    }
+
+}
