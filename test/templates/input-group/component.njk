@@ -11,6 +11,12 @@
             state: {},
             aria: {}
         },
+        textarea: {
+            properties: {},
+            state: {},
+            aria: {}
+        },
+
         before: "",
         after: ""
     },
@@ -21,6 +27,8 @@
     })
 %}
 {%- set input = properties.input %}
+{%- set textarea = properties.textarea %}
+
 <div class="fd-input-group{{ modifier.block | modifier('input-group') }}">
     {%- if properties.before %}
         <span class="fd-input-group__addon{{ modifier.before | modifier('input-group__addon') }}">
@@ -28,7 +36,13 @@
         </span>
     {%- endif %}
 
+    {%- if properties.input %}
     {{ forms.text(type,input.properties,state=input.state,aria=input.aria) }}
+    {%- endif %}
+
+    {%- if properties.textarea %}
+    {{ forms.textarea(type,input.properties,state=input.state,aria=input.aria) }}
+    {%- endif %}
 
     {%- if properties.after %}
         <span class="fd-input-group__addon{{ modifier.after | modifier('input-group__addon') }}">
