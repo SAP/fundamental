@@ -3367,7 +3367,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
-  display: block; }
+  display: inline-block; }
   .fd-dropdown__control {
     position: relative;
     margin-left: 0;
@@ -3391,29 +3391,42 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-dropdown__control::after {
       color: #0a6ed1;
       width: 34px;
+      height: 34px;
+      margin-top: -3px;
       padding-top: 10px;
       border-left: 1px solid #ceced0;
       background: #fafafa;
-      top: 0;
-      bottom: 0;
-      position: absolute;
-      right: 0;
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px; }
     .fd-dropdown__control--no-border {
       border: none; }
     .fd-dropdown__control.fd-button--xs::after {
-      padding-top: 6px; }
-    .fd-dropdown__control.fd-button--s::after {
-      padding-top: 6px; }
-    .fd-dropdown__control.fd-button--compact::after {
-      padding-top: 8px; }
-    .fd-dropdown__control.fd-button--l::after {
-      width: 38px;
-      padding-top: 10px; }
+      height: 21.5px;
+      padding-top: 5px; }
+    .fd-dropdown__control.fd-button--s {
+      padding-top: 3px; }
+      .fd-dropdown__control.fd-button--s::after {
+        margin-top: -3px;
+        height: 26px;
+        padding-top: 6px; }
+    .fd-dropdown__control.fd-button--compact {
+      padding-top: 3px; }
+      .fd-dropdown__control.fd-button--compact::after {
+        margin-top: -3px;
+        height: 30px;
+        padding-top: 7px; }
+    .fd-dropdown__control.fd-button--l {
+      padding-top: 3px; }
+      .fd-dropdown__control.fd-button--l::after {
+        margin-top: -3px;
+        width: 38px;
+        height: 38px;
+        padding-top: 10px; }
   .fd-dropdown__control.fd-button {
     color: #32363a;
-    border-color: #ceced0; }
+    border-color: #ceced0;
+    padding-right: 0;
+    padding-top: 2px; }
     .fd-dropdown__control.fd-button:hover {
       color: #32363a;
       background-color: #ffffff;
@@ -3430,6 +3443,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     border-color: #e8e8e8;
     box-shadow: none; }
   .fd-dropdown__control.fd-button--toolbar::after {
+    width: auto;
+    margin-right: 10px;
     color: #32363a;
     background-color: transparent;
     border-left: none; }
@@ -3625,8 +3640,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   display: flex;
-  vertical-align: bottom;
-  max-height: 36px; }
+  vertical-align: bottom; }
   .fd-input-group [type="number"] {
     -moz-appearance: textfield; }
     .fd-input-group [type="number"]::-webkit-outer-spin-button, .fd-input-group [type="number"]::-webkit-inner-spin-button {
@@ -3646,6 +3660,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-input-group [type="search"]::-webkit-search-cancel-button {
       -webkit-appearance: none;
       margin: 0; }
+  .fd-input-group input {
+    z-index: 100; }
   .fd-input-group--inline {
     display: inline-flex; }
   .fd-input-group--no-border input {
@@ -5453,28 +5469,6 @@ see layouts/panel
   top: 36px; }
 
 /*!
-.fd-multi-tab-editor+(--no-border)
-    .fd-multi-tab-editor__content+()
-    .fd-multi-tab-editor__title+()
-*/
-.fd-multi-tab-editor {
-  font-size: 14px;
-  line-height: 1.42857;
-  color: #32363a;
-  font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  border: solid 20px black; }
-  .fd-multi-tab-editor--no-border {
-    border-color: transparent; }
-  .fd-multi-tab-editor__content {
-    border: solid 10px #ceced0; }
-    .fd-multi-tab-editor__content--no-border {
-      border-color: transparent; }
-  .fd-multi-tab-editor.is-disabled, .fd-multi-tab-editor[disabled] {
-    opacity: 0.5; }
-  .fd-multi-tab-editor[aria-selected="true"] {
-    border-color: black; }
-
-/*!
 .fd-localization-editor+(--no-border)
     .fd-localization-editor__content+()
     .fd-localization-editor__title+()
@@ -5483,18 +5477,11 @@ see layouts/panel
   font-size: 14px;
   line-height: 1.42857;
   color: #32363a;
-  font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  border: solid 20px black; }
-  .fd-localization-editor--no-border {
-    border-color: transparent; }
-  .fd-localization-editor__content {
-    border: solid 10px #ceced0; }
-    .fd-localization-editor__content--no-border {
-      border-color: transparent; }
+  font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; }
+  .fd-localization-editor__list li {
+    padding: 8px; }
   .fd-localization-editor.is-disabled, .fd-localization-editor[disabled] {
     opacity: 0.5; }
-  .fd-localization-editor[aria-selected="true"] {
-    border-color: black; }
 
 .fd-has-text-transform-none {
   text-transform: none !important; }

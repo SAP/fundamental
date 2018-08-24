@@ -27,22 +27,28 @@ localization_editor:
 }}
 {% endmacro %}
 
+{% macro localization_editor_main_item(properties={}) %}
+{{ input_group(
+    properties={
+        after: button({ label: 'EN*' }, modifier={ block: ['secondary'] }),
+        input: {
+            properties: {
+                placeholder: "Enter Label"
+            }
+        }
+    },
+    modifier={
+        after: ["after", "button"],
+        block: "after"
+    })
+}}
+{% endmacro %}
+
 {% macro localization_editor(properties={}, modifier={}, state={}, aria={}) -%}
 <div class="fd-localization-editor{{ modifier.block | modifier('localization-editor') }}{{ state | state }}"{{ aria | aria }} >
     <div class="fd-popover">
-        <div class="fd-popover__control">
-            <div class="fd-form__item">
-                <label class="fd-form__label" for="">Label</label>
-                <div class="fd-form__item">
-                    <div class="fd-input-group fd-input-group--after">
-                        <input class="" type="text" id="" name="" value="" placeholder="Enter Label" aria-controls="jhqD0558" aria-expanded="false" aria-haspopup="true">
-                        <span class="fd-input-group__addon fd-input-group__addon--button fd-input-group__addon--after">
-                            <button class="fd-button--secondary" aria-controls="jhqD0558" aria-expanded="false" aria-haspopup="true">EN*</button>
-                        </span>
-                    </div>
-                </div>
-
-            </div>
+        <div class="fd-popover__control" aria-controls="jhqD0558" aria-expanded="false" aria-haspopup="true">
+            {{ localization_editor_main_item(properties={language: "CH"}) }}
         </div>
         <div class="fd-popover__body" aria-hidden="true" id="jhqD0558">
             <nav class="fd-menu">

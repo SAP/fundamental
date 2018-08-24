@@ -12,8 +12,8 @@
 
     <h1>localization-editor</h1>
 
-    <!-- output the component example and the code snippet -->
     {% set example %}
+
     {{  localization_editor(
             properties={
                 type: "input"
@@ -25,6 +25,21 @@
             aria={}
         )
     }}
+
+    <br><br>
+
+    {{  localization_editor(
+            properties={
+                type: "textarea"
+            },
+            modifier={
+                block: []
+            },
+            state={},
+            aria={}
+        )
+    }}
+
     {% endset %}
     {{ format(example) }}
 
