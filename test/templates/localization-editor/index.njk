@@ -1,6 +1,7 @@
 {% extends "layout.njk" %}
 {% from "./../format.njk" import format %}
 {% from "../button/component.njk" import button %}
+{% import "../forms.njk" as forms %}
 {% from "./component.njk" import localization_editor %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
@@ -15,8 +16,7 @@
     {% set example %}
     {{  localization_editor(
             properties={
-                title: "Sed bibendum sapien",
-                description: "Morbi sodales gravida pulvinar. Duis malesuada odio volutpat elementum vulputate massa magna scelerisque ante et accumsan."
+                type: "input"
             },
             modifier={
                 block: []
