@@ -1,6 +1,8 @@
 {% extends "layout.njk" %}
+{% import "./../utils.njk" as utils %}
 {% from "./../format.njk" import format %}
 {% from "./../popover/component.njk" import popover %}
+{% from "./../menu/component.njk" import menu %}
 {% from "../button/component.njk" import button %}
 {% import "../forms.njk" as forms %}
 {% from "./component.njk" import localization_editor %}
@@ -11,13 +13,16 @@
 
 {% block content %}
 
-    <h1>localization-editor</h1>
+    {%- set _id = utils.id() %}
+
+    <h1>localization-editor with input</h1>
 
     {% set example %}
 
     {{  localization_editor(
             properties={
-                type: "input"
+                type: "input",
+                id: _id
             },
             modifier={
                 block: []
@@ -27,11 +32,18 @@
         )
     }}
 
-    <br><br>
+    {% endset %}
+    {{ format(example) }}
 
+    <br><br><br>
+
+    <h1>localization-editor with textarea</h1>
+
+    {% set example %}
     {{  localization_editor(
             properties={
-                type: "textarea"
+                type: "textarea",
+                id: _id
             },
             modifier={
                 block: []

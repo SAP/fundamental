@@ -15,7 +15,6 @@ localization_editor:
 {% macro localization_editor_item(properties={}) %}
 {{ input_group(
     properties={
-
         after: properties.language,
         input: {
             properties: {
@@ -33,11 +32,22 @@ localization_editor:
 {% macro localization_editor_main_item(properties={}) %}
 {{ input_group(
     properties={
-        id: _id,
-        after: button({ label: 'EN*' }, modifier={ block: ['secondary'] }),
+
+        after: button(
+                properties={ label: 'EN*' },
+                modifier={ block: ['secondary', 'compact'] },
+                aria={ controls: _id, expanded: false, haspopup: true }
+                ),
         input: {
             properties: {
-                placeholder: "Enter Label"
+                placeholder: "Enter Label",
+                id: "test"
+
+            },
+            aria: {
+                controls: _id,
+                expanded: false,
+                haspopup: true
             }
         }
     },
