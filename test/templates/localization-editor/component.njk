@@ -29,23 +29,23 @@ localization_editor:
 }}
 {% endmacro %}
 
-{% macro localization_editor_main_item(properties={}) %}
+{% macro localization_editor_main_item(properties={}, aria={}) %}
 {{ input_group(
     properties={
 
         after: button(
                 properties={ label: 'EN*' },
                 modifier={ block: ['secondary', 'compact'] },
-                aria={ controls: _id, expanded: false, haspopup: true }
+                aria={ controls: aria.controls, expanded: false, haspopup: true }
                 ),
         input: {
             properties: {
-                placeholder: "Enter Label",
-                id: "test"
+                placeholder: "Enter Label"
+
 
             },
             aria: {
-                controls: _id,
+                controls: aria.controls,
                 expanded: false,
                 haspopup: true
             }
@@ -58,7 +58,8 @@ localization_editor:
 }}
 {% endmacro %}
 
-{% macro localization_body(properties={id: _id}) %}
+{% macro localization_body(properties={}) %}
+
 <nav class="fd-menu">
     <ul class="fd-menu__list fd-localization-editor__list">
         <li>
@@ -77,21 +78,13 @@ localization_editor:
 </nav>
 {% endmacro %}
 
-
 {% macro localization_editor(properties={}, modifier={}, state={}, aria={}) -%}
-{# <div class="fd-localization-editor{{ modifier.block | modifier('localization-editor') }}{{ state | state }}"{{ aria | aria }} >
-    <div class="fd-popover">
-        <div class="fd-popover__control" aria-controls="jhqD0558" aria-expanded="false" aria-haspopup="true">
-            {{ localization_editor_main_item(properties={language: "CH"}) }}
-        </div>
-        <div class="fd-popover__body" aria-hidden="true" id="jhqD0558">
-        </div>
-    </div>
-</div> #}
+
+{% set id = properties.id %}
 
 {{  popover(properties={
-    id: _id,
-    control: localization_editor_main_item(properties={id: _id, language: "CH"}),
+    id: id,
+    control: localization_editor_main_item(properties={language: "CH"}, aria={controls: id}),
     body: localization_body()
   })
 }}

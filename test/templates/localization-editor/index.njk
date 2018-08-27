@@ -13,12 +13,10 @@
 
 {% block content %}
 
-    {%- set _id = utils.id() %}
-
     <h1>localization-editor with input</h1>
 
     {% set example %}
-
+    {%- set _id = utils.id() %}
     {{  localization_editor(
             properties={
                 type: "input",
@@ -40,9 +38,10 @@
     <h1>localization-editor with textarea</h1>
 
     {% set example %}
+    {%- set _id = utils.id() %}
     {{  localization_editor(
             properties={
-                type: "textarea",
+                type: "input",
                 id: _id
             },
             modifier={
@@ -52,7 +51,6 @@
             aria={}
         )
     }}
-
     {% endset %}
     {{ format(example) }}
 
