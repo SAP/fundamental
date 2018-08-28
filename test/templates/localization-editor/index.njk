@@ -15,23 +15,15 @@
 
     <h1>localization-editor with input</h1>
 
-    {% set example %}
-    {%- set _id = utils.id() %}
-    {{  localization_editor(
-            properties={
-                type: "input",
-                id: _id
-            },
-            modifier={
-                block: []
-            },
-            state={},
-            aria={}
-        )
-    }}
+{% set example %}
+{%- set _id = utils.id() %}
+{{  localization_editor(
+        properties=data.properties
+    )
+}}
 
-    {% endset %}
-    {{ format(example) }}
+{% endset %}
+{{ format(example) }}
 
     <br><br><br>
 

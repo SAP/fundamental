@@ -28,18 +28,15 @@
 %}
 {%- set input = properties.input %}
 {%- set textarea = properties.textarea %}
-
 <div class="fd-input-group{{ modifier.block | modifier('input-group') }}">
     {%- if properties.before %}
         <span class="fd-input-group__addon{{ modifier.before | modifier('input-group__addon') }}">
             {{ properties.before | trim | indent(8, true) }}
         </span>
     {%- endif %}
-
     {%- if properties.input %}
     {{ forms.text(type,input.properties,state=input.state,aria=input.aria) }}
     {%- endif %}
-
     {%- if properties.textarea %}
     {{ forms.textarea(type,input.properties,state=input.state,aria=input.aria) }}
     {%- endif %}

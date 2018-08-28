@@ -11,26 +11,21 @@ localization_editor:
     aria={}
 -->
 
-{% macro localization_editor_main_input_item(properties={}, aria={}) %}
-{{ properties | dump }}
+
+{#
+
+ #}
+{% macro localization_editor_main_input_item(items, aria={}) %}
+
+{% set main_input = items[0].properties %}
 {{ input_group(
     properties={
         after: button(
-                properties={ label: 'EN*' },
+                properties={ label: main_input.label },
                 modifier={ block: ['secondary', 'compact'] },
                 aria={ controls: aria.controls, expanded: false, haspopup: true }
                 ),
         input: {
-            properties: {
-                placeholder: "Enter Label"
-            },
-            aria: {
-                controls: aria.controls,
-                expanded: false,
-                haspopup: true
-            }
-        },
-        textarea: {
             properties: {
                 placeholder: "Enter Label"
             },
@@ -65,31 +60,25 @@ localization_editor:
 }}
 {% endmacro %}
 
-{% macro localization_editor_input_body(properties={}) %}
+{% macro localization_editor_input_body(items) %}
 <nav class="fd-menu">
     <ul class="fd-menu__list fd-localization-editor__list">
+{%- set len = items.length -%}
+{%- for i in range(1, len) -%}
         <li>
-            {{ localization_editor_input_item(properties={language: "CH"}) }}
+            {{ item[i].properties.label }}
+            {{ localization_editor_input_item(properties={language: items[i].properties.label}) }}
         </li>
-        <li>
-            {{ localization_editor_input_item(properties={language: "SP"}) }}
-        </li>
-        <li>
-            {{ localization_editor_input_item(properties={language: "DE"}) }}
-        </li>
-        <li>
-            {{ localization_editor_input_item(properties={language: "PL"}) }}
-        </li>
+{%- endfor -%}
     </ul>
 </nav>
 {% endmacro %}
 
 {% macro localization_editor(properties={}, modifier={}, state={}, aria={}) -%}
-
 {{  popover(properties={
     id: properties.id,
-    control: localization_editor_main_input_item(properties={language: "CH", type:properties.type}, aria={controls: properties.id}),
-    body: localization_editor_input_body()
+    control: localization_editor_main_input_item(properties.items, aria={controls: properties.id}),
+    body: localization_editor_input_body(properties.items)
   })
 }}
 {%- endmacro %}
