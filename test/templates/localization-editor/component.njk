@@ -10,9 +10,45 @@ localization_editor:
     state={},
     aria={}
 -->
-{%- set _id = utils.id() %}
 
-{% macro localization_editor_item(properties={}) %}
+{% macro localization_editor_main_input_item(properties={}, aria={}) %}
+{{ properties | dump }}
+{{ input_group(
+    properties={
+        after: button(
+                properties={ label: 'EN*' },
+                modifier={ block: ['secondary', 'compact'] },
+                aria={ controls: aria.controls, expanded: false, haspopup: true }
+                ),
+        input: {
+            properties: {
+                placeholder: "Enter Label"
+            },
+            aria: {
+                controls: aria.controls,
+                expanded: false,
+                haspopup: true
+            }
+        },
+        textarea: {
+            properties: {
+                placeholder: "Enter Label"
+            },
+            aria: {
+                controls: aria.controls,
+                expanded: false,
+                haspopup: true
+            }
+        }
+    },
+    modifier={
+        after: ["after", "button"],
+        block: "after"
+    })
+}}
+{% endmacro %}
+
+{% macro localization_editor_input_item(properties={}) %}
 {{ input_group(
     properties={
         after: properties.language,
@@ -29,50 +65,20 @@ localization_editor:
 }}
 {% endmacro %}
 
-{% macro localization_editor_main_item(properties={}, aria={}) %}
-{{ input_group(
-    properties={
-
-        after: button(
-                properties={ label: 'EN*' },
-                modifier={ block: ['secondary', 'compact'] },
-                aria={ controls: aria.controls, expanded: false, haspopup: true }
-                ),
-        input: {
-            properties: {
-                placeholder: "Enter Label"
-
-
-            },
-            aria: {
-                controls: aria.controls,
-                expanded: false,
-                haspopup: true
-            }
-        }
-    },
-    modifier={
-        after: ["after", "button"],
-        block: "after"
-    })
-}}
-{% endmacro %}
-
-{% macro localization_body(properties={}) %}
-
+{% macro localization_editor_input_body(properties={}) %}
 <nav class="fd-menu">
     <ul class="fd-menu__list fd-localization-editor__list">
         <li>
-            {{ localization_editor_item(properties={language: "CH"}) }}
+            {{ localization_editor_input_item(properties={language: "CH"}) }}
         </li>
         <li>
-            {{ localization_editor_item(properties={language: "SP"}) }}
+            {{ localization_editor_input_item(properties={language: "SP"}) }}
         </li>
         <li>
-            {{ localization_editor_item(properties={language: "DE"}) }}
+            {{ localization_editor_input_item(properties={language: "DE"}) }}
         </li>
         <li>
-            {{ localization_editor_item(properties={language: "PL"}) }}
+            {{ localization_editor_input_item(properties={language: "PL"}) }}
         </li>
     </ul>
 </nav>
@@ -80,12 +86,10 @@ localization_editor:
 
 {% macro localization_editor(properties={}, modifier={}, state={}, aria={}) -%}
 
-{% set id = properties.id %}
-
 {{  popover(properties={
-    id: id,
-    control: localization_editor_main_item(properties={language: "CH"}, aria={controls: id}),
-    body: localization_body()
+    id: properties.id,
+    control: localization_editor_main_input_item(properties={language: "CH", type:properties.type}, aria={controls: properties.id}),
+    body: localization_editor_input_body()
   })
 }}
 {%- endmacro %}
