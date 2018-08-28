@@ -7,13 +7,11 @@
 {% import "../forms.njk" as forms %}
 {% from "./component.njk" import localization_editor %}
 
-<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['fonts','helpers', 'components/form', 'components/input', 'components/menu', 'components/popover','components/button','components/input-group', 'icons'] %}
-
+{% set css_deps = ['fonts','helpers', 'components/form', 'components/menu', 'components/popover','components/button','components/input-group', 'icons'] %}
 
 {% block content %}
 
-    <h1>localization-editor with input</h1>
+<h1>localization-editor with input</h1>
 
 {% set example %}
 {%- set _id = utils.id() %}
@@ -25,26 +23,71 @@
 {% endset %}
 {{ format(example) }}
 
-    <br><br><br>
+<br><br><br>
 
-    <h1>localization-editor with textarea</h1>
+<h1>localization-editor with textarea</h1>
 
-    {% set example %}
-    {%- set _id = utils.id() %}
-    {{  localization_editor(
-            properties={
-                type: "input",
-                id: _id
-            },
-            modifier={
-                block: []
-            },
-            state={},
-            aria={}
-        )
-    }}
-    {% endset %}
-    {{ format(example) }}
+{% set example %}
+{%- set _id = utils.id() %}
+{{  localization_editor(
+         {
+            "id": _id,
+            "title": "Localization Editor Label",
+            "description": "Localization Editor Description",
+            "type": "textarea",
+            "items": [
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "Enter label",
+                     "label": "EN"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": true
+                  }
+              },
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "",
+                     "label": "ES"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": false
+                  }
+              },
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "",
+                     "label": "CH"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": false
+                  }
+              },
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "",
+                     "label": "PL"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": false
+                  }
+              }
+            ]
+        }
+    )
+}}
 
+{% endset %}
+{{ format(example) }}
+
+<br><br><br>
 
 {% endblock %}

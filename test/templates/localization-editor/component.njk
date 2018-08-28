@@ -3,6 +3,7 @@
 {% from "./../input-group/component.njk" import input_group %}
 {% from "../button/component.njk" import button %}
 {% import "./../utils.njk" as utils %}
+
 <!--
 localization_editor:
     properties={},
@@ -11,19 +12,20 @@ localization_editor:
     aria={}
 -->
 
+{% macro localization_editor_main_input_item(properties, aria={}) %}
 
-{#
-
- #}
-{% macro localization_editor_main_input_item(items, aria={}) %}
-
-{% set main_input = items[0].properties %}
+{% set main_input = properties.items[0].properties %}
+<label class="fd-form__label" for="vTshu851">
+    {{properties.title}}
+</label>
 {{ input_group(
     properties={
+        type: properties.type,
         after: button(
-                properties={ label: main_input.label },
-                modifier={ block: ['secondary', 'compact'] },
-                aria={ controls: aria.controls, expanded: false, haspopup: true }
+                properties={ label: main_input.label + "*" },
+                modifier={ block: ['secondary'] },
+                aria={ controls: aria.controls, expanded: false, haspopup: true },
+                classes=['localization-editor__button']
                 ),
         input: {
             properties: {
@@ -43,9 +45,10 @@ localization_editor:
 }}
 {% endmacro %}
 
-{% macro localization_editor_input_item(properties={}) %}
+{% macro localization_editor_input_item(properties) %}
 {{ input_group(
     properties={
+        type: properties.type,
         after: properties.language,
         input: {
             properties: {
@@ -60,25 +63,26 @@ localization_editor:
 }}
 {% endmacro %}
 
-{% macro localization_editor_input_body(items) %}
+{% macro localization_editor_input_body(properties) %}
 <nav class="fd-menu">
     <ul class="fd-menu__list fd-localization-editor__list">
-{%- set len = items.length -%}
-{%- for i in range(1, len) -%}
+        {%- set len = properties.items.length -%}
+        {%- for i in range(1, len) -%}
         <li>
-            {{ item[i].properties.label }}
-            {{ localization_editor_input_item(properties={language: items[i].properties.label}) }}
+            {{ localization_editor_input_item(properties={language: properties.items[i].properties.label, type: properties.type}) }}
         </li>
-{%- endfor -%}
+        {%- endfor -%}
     </ul>
 </nav>
 {% endmacro %}
 
 {% macro localization_editor(properties={}, modifier={}, state={}, aria={}) -%}
-{{  popover(properties={
-    id: properties.id,
-    control: localization_editor_main_input_item(properties.items, aria={controls: properties.id}),
-    body: localization_editor_input_body(properties.items)
-  })
-}}
+<div class="fd-localization-editor">
+    {{  popover(properties={
+        id: properties.id,
+        control: localization_editor_main_input_item(properties, aria={controls: properties.id}),
+        body: localization_editor_input_body(properties)
+      })
+    }}
+</div>
 {%- endmacro %}

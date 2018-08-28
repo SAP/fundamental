@@ -19,6 +19,9 @@ $block: #{$fd-namespace}-input-group;
     // max-height: $fd-forms-height--input-text;
 
     //ELEMENTS *******************************************
+    #{$fd-elements-inputs--text}{
+        z-index: 1;
+    }
     & [type="number"] {
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
@@ -100,7 +103,7 @@ $block: #{$fd-namespace}-input-group;
         }
     }
     &--before {
-        #{$fd-elements-inputs--text} {
+        #{$fd-elements-inputs--text}{
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
