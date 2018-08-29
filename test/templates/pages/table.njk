@@ -11,6 +11,7 @@
 {% from "../button-group/component.njk" import button_group %}
 {% from "../table/component.njk" import table %}
 {% from "../tag/component.njk" import tag %}
+{% from "../menu/component.njk" import menu %}
 {% from "../pagination/component.njk" import pagination %}
 
 {% set headers = ["", "Column Header", "Column Header", "Column Header", "Column Header"] %}
@@ -35,20 +36,24 @@
 {% endset %}
 {% set panel_filters_items = [
     {
-        "label": "Color",
-        "items": [
-            { "label": "Option 1" },
-            { "label": "Option 2" },
-            { "label": "Option 3" }
-        ]
+      label: "Size",
+      body: menu(properties={
+        items: [
+            { "label": "Small" },
+            { "label": "Medium" },
+            { "label": "Large" }
+          ]
+        })
     },
     {
-        "label": "Size",
-        "items": [
-            { "label": "Option 1" },
-            { "label": "Option 2" },
-            { "label": "Option 3" }
-        ]
+      label: "Color",
+      body: menu(properties={
+        items: [
+            { "label": "Red" },
+            { "label": "Blue" },
+            { "label": "Green" }
+          ]
+        })
     }
 
 ] %}
@@ -57,15 +62,20 @@
     {% call layout.panel_header({ title: "Items (1180)" }) -%}
         {% call layout.panel_actions() -%}
 
-        {{ dropdown(
-          {            "label": "Newest",
-                      "icon": "sort",
-                      "items": [
-                          { "label": "Option 1" },
-                          { "label": "Option 2" },
-                          { "label": "Option 3" }
-                      ]},modifier={block: ['s']}
-          ) }}
+
+
+          {{ dropdown(properties={
+            label: "Newest",
+            icon: "sort",
+            body: menu(properties={
+              items: [
+                  { "label": "Oldest" },
+                  { "label": "Last 90 Days" },
+                  { "label": "This Year" }
+                ]
+              })
+          },modifier={ block: ['s', 'toolbar'], button: btn })
+          }}
 
         {{  button({label: 'Filter',icon: 'add-filter' },modifier={block: ['toolbar','s']}) }}
 
@@ -85,7 +95,7 @@
 
     {% call layout.panel_filters(aria={ hidden: false }) -%}
 {% for item in panel_filters_items %}
-{{ dropdown(item, modifier={block: "s"}) }}
+{{ dropdown(item, modifier={block: [ 's', 'toolbar' ]}) }}
 {% endfor %}
 
     {%- endcall %}
