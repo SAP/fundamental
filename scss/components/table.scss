@@ -24,6 +24,7 @@ $block: #{$fd-namespace}-table;
     $fd-table-cell-spacing: $fd-width--gutter !default;
     $fd-table-cell-padding: fd-space("s") !default;
     $fd-table-transition-params: $fd-animation--speed ease-in !default;
+    $fd-table-sort-icon-size: fd-space(3);
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
@@ -86,4 +87,29 @@ $block: #{$fd-namespace}-table;
         }
     }
 
+    &__sort-column{
+        &:hover{
+            background: fd-color(neutral, 2);
+            cursor: pointer;
+        }
+        &::after{
+            content: "";
+            width: $fd-table-sort-icon-size;
+            height: $fd-table-sort-icon-size;
+            display: inline-block;
+            background: url($fd-table-column-sort-icon) no-repeat center center;
+            margin: 0 $fd-table-sort-icon-size;
+            vertical-align: text-top;
+        }
+        &--asc{
+            &::after{
+                background-image: url($fd-table-column-sort-icon--asc)
+            }
+        }
+        &--dsc{
+            &::after{
+                background-image: url($fd-table-column-sort-icon--dsc)
+            }
+        }
+    }
 }

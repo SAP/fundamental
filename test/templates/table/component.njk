@@ -6,11 +6,16 @@ table:
     aria={}
 -->
 {% macro table(properties={}, modifier={}, state={}, aria={}) -%}
-<table class="fd-table{{ modifier.block | modifier('table') }}{{ state | state }}"{{ aria | aria }}>
+
+{{ state.sortable | dump(2)}}
+
+<table class="fd-table{{ modifier.block | modifier('table') }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>
     <thead>
         <tr>
             {%- for header in properties.headers %}
-            <th>{{header}}</th>
+            {%- set btn_modifier_class = " fd-button--"+modifier.block if modifier.block and modifier.block !== "default" else "" %}
+            {% set sort_class = "fd-table__sort-column" if properties.sortable else "" %}
+            <th class="{{sort_class}}">{{header}}</th>
             {%- endfor %}
         </tr>
     </thead>
