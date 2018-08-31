@@ -25,6 +25,7 @@ $block: #{$fd-namespace}-table;
     $fd-table-cell-padding: fd-space("s") !default;
     $fd-table-transition-params: $fd-animation--speed ease-in !default;
     $fd-table-sort-icon-size: fd-space(3);
+    $fd-table-sort-column-background-color: fd-color(neutral, 2);
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
@@ -89,7 +90,7 @@ $block: #{$fd-namespace}-table;
 
     &__sort-column{
         &:hover{
-            background: fd-color(neutral, 2);
+            background: $fd-table-sort-column-background-color;
             cursor: pointer;
         }
         &::after{
@@ -102,11 +103,13 @@ $block: #{$fd-namespace}-table;
             vertical-align: text-top;
         }
         &--asc{
+            background: $fd-table-sort-column-background-color;
             &::after{
                 background-image: url($fd-table-column-sort-icon--asc)
             }
         }
         &--dsc{
+            background: $fd-table-sort-column-background-color;
             &::after{
                 background-image: url($fd-table-column-sort-icon--dsc)
             }
