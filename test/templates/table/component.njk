@@ -7,15 +7,30 @@ table:
 -->
 {% macro table(properties={}, modifier={}, state={}, aria={}) -%}
 
-{{ state.sortable | dump(2)}}
+{# {{ state.sortable | dump(2)}} #}
 
 <table class="fd-table{{ modifier.block | modifier('table') }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>
     <thead>
         <tr>
             {%- for header in properties.headers %}
+            {{header.aria | dump(2) }}
+            {%- if properties.contextual_headers -%}
+            <th class="{{sort_class}} {{sort_order_class}} fd-popover__control" {{ header.aria | aria }}>{{header.label}}</th>
+            <div class="fd-popover__body" aria-hidden="true" id="jhqD0558">
+                <nav class="fd-menu" id="">
+                    <ul class="fd-menu__list">
+                        <li><a href="#" class="fd-menu__item">Option 1</a></li>
+                        <li><a href="#" class="fd-menu__item">Option 2</a></li>
+                        <li><a href="#" class="fd-menu__item">Option 3</a></li>
+                        <li><a href="#" class="fd-menu__item">Option 4</a></li>
+                    </ul>
+                </nav>
+            </div>
+            {%- else -%}
             {% set sort_class = "fd-table__sort-column" if header.sortable else "" %}
             {% set sort_order_class = "fd-table__sort-column--"+header.sort_order if header.sort_order and header.sortable  else "" %}
             <th class="{{sort_class}} {{sort_order_class}}">{{header.label}}</th>
+            {%- endif -%}
             {%- endfor %}
         </tr>
     </thead>
