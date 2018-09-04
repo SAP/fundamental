@@ -16,9 +16,12 @@ $block: #{$fd-namespace}-input-group;
     @include fd-reset;
     display: flex;
     vertical-align: bottom;
-    max-height: $fd-forms-height--input-text;
+    // max-height: $fd-forms-height--input-text;
 
     //ELEMENTS *******************************************
+    #{$fd-elements-inputs--text}{
+        z-index: 1;
+    }
     & [type="number"] {
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
@@ -43,6 +46,9 @@ $block: #{$fd-namespace}-input-group;
             margin: 0;
         }
         -moz-appearance: textfield;
+    }
+    input{
+        // z-index: 100;
     }
     &--inline {
         display: inline-flex;
@@ -97,7 +103,7 @@ $block: #{$fd-namespace}-input-group;
         }
     }
     &--before {
-        #{$fd-elements-inputs--text} {
+        #{$fd-elements-inputs--text}{
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }

@@ -1,0 +1,88 @@
+{% from "./../popover/component.njk" import popover %}
+{% from "./../menu/component.njk" import menu %}
+{% from "./../input-group/component.njk" import input_group %}
+{% from "../button/component.njk" import button %}
+{% import "./../utils.njk" as utils %}
+
+<!--
+localization_editor:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+
+{% macro localization_editor_main_input_item(properties, aria={}) %}
+
+{% set main_input = properties.items[0].properties %}
+<label class="fd-form__label" for="vTshu851">
+    {{properties.title}}
+</label>
+{{ input_group(
+    properties={
+        type: properties.type,
+        after: button(
+                properties={ label: main_input.label + "*" },
+                modifier={ block: ['secondary'] },
+                aria={ controls: aria.controls, expanded: false, haspopup: true },
+                classes=['localization-editor__button']
+                ),
+        input: {
+            properties: {
+                placeholder: "Enter Label"
+            },
+            aria: {
+                controls: aria.controls,
+                expanded: false,
+                haspopup: true
+            }
+        }
+    },
+    modifier={
+        after: ["after", "button"],
+        block: "after"
+    })
+}}
+{% endmacro %}
+
+{% macro localization_editor_input_item(properties) %}
+{{ input_group(
+    properties={
+        type: properties.type,
+        after: properties.language,
+        input: {
+            properties: {
+                placeholder: "Enter Label"
+            }
+        }
+    },
+    modifier={
+        block: ["after"],
+        after: "after"
+    })
+}}
+{% endmacro %}
+
+{% macro localization_editor_input_body(properties) %}
+<nav class="fd-menu">
+    <ul class="fd-menu__list fd-localization-editor__list">
+        {%- set len = properties.items.length -%}
+        {%- for i in range(1, len) -%}
+        <li>
+            {{ localization_editor_input_item(properties={language: properties.items[i].properties.label, type: properties.type}) }}
+        </li>
+        {%- endfor -%}
+    </ul>
+</nav>
+{% endmacro %}
+
+{% macro localization_editor(properties={}, modifier={}, state={}, aria={}) -%}
+<div class="fd-localization-editor">
+    {{  popover(properties={
+        id: properties.id,
+        control: localization_editor_main_input_item(properties, aria={controls: properties.id}),
+        body: localization_editor_input_body(properties)
+      })
+    }}
+</div>
+{%- endmacro %}
