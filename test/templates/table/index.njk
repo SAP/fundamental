@@ -1,20 +1,21 @@
 {% extends "layout.njk" %}
 {% from "./../format.njk" import format %}
 {% from "../button/component.njk" import button %}
+{% from "../popover/component.njk" import popover %}
 {% from "./component.njk" import table %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['fonts','helpers','components/image'] %}
+{% set css_deps = ['fonts','helpers','components/image', 'components/popover', 'components/menu'] %}
 
 {% block content %}
 
 <h1>table</h1>
 {% set headers = [
-        { label: "Test Header" },
-        { label: "Test Header" },
-        { label: "Test Header" },
-        { label: "Test Header" },
-        { label: "Test Header" }
+        { label: "Header Column" },
+        { label: "Header Column" },
+        { label: "Header Column" },
+        { label: "Header Column" },
+        { label: "Header Column" }
     ]
 %}
 
@@ -30,21 +31,76 @@
         rows: [row, row, row],
         headers: [
             {
-                label: "Test Header"
+                label: "Header Column"
             },
             {
-                label: "Test Header"
+                label: "Header Column"
             },
             {
-                label: "Test Header"
+                label: "Header Column"
             },
             {
-                label: "Test Header"
+                label: "Header Column"
             },
             {
-                label: "Test Header"
+                label: "Header Column"
             }
         ]
+    })
+}}
+{% endset %}
+{{ format(example) }}
+
+<br><br><br>
+
+<h3>Column with Contextual Menu</h3>
+
+<div class="fd-popover">
+    <div class="fd-popover__control">
+        <span class="fd-popover__control fd-image--m fd-image--circle" aria-label="Image label" aria-controls="jhqD0558" aria-expanded="false" aria-haspopup="true" style="background-image: url('https://placeimg.com/400/400/nature');"></span>
+    </div>
+    <div class="fd-popover__body" aria-hidden="true" id="jhqD0558">
+        <nav class="fd-menu" id="">
+            <ul class="fd-menu__list">
+                <li><a href="#" class="fd-menu__item">Option 1</a></li>
+                <li><a href="#" class="fd-menu__item">Option 2</a></li>
+                <li><a href="#" class="fd-menu__item">Option 3</a></li>
+                <li><a href="#" class="fd-menu__item">Option 4</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+{% set example %}
+{{  table({
+        rows: [row, row, row],
+        headers: [
+            {
+                label: "Header Column",
+                sortable: true,
+                aria: [{
+                    controls: "test",
+                    haspopup: true,
+                    exapnded: false
+                }]
+            },
+            {
+                label: "Header Column",
+                sortable: true
+            },
+            {
+                label: "Header Column",
+                sortable: true
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            }
+        ],
+        contextual_headers: true
+
     })
 }}
 {% endset %}
@@ -59,22 +115,22 @@
         rows: [row, row, row],
         headers: [
             {
-                label: "Test Header",
+                label: "Header Column",
                 sortable: true
             },
             {
-                label: "Test Header",
+                label: "Header Column",
                 sortable: true
             },
             {
-                label: "Test Header",
+                label: "Header Column",
                 sortable: true
             },
             {
-                label: "Test Header"
+                label: "Header Column"
             },
             {
-                label: "Test Header"
+                label: "Header Column"
             }
         ],
         sortable: true
@@ -93,23 +149,23 @@
         rows: [row, row, row],
         headers: [
             {
-                label: "Test Header",
+                label: "Header Column",
                 sortable: true,
                 sort_order:"asc"
             },
             {
-                label: "Test Header",
+                label: "Header Column",
                 sortable: true
             },
             {
-                label: "Test Header",
+                label: "Header Column",
                 sortable: true
             },
             {
-                label: "Test Header"
+                label: "Header Column"
             },
             {
-                label: "Test Header"
+                label: "Header Column"
             }
         ],
         sortable: true
@@ -128,23 +184,23 @@
         rows: [row, row, row],
         headers: [
             {
-                label: "Test Header",
+                label: "Header Column",
                 sortable: true
             },
             {
-                label: "Test Header",
+                label: "Header Column",
                 sortable: true,
                 sort_order:"dsc"
             },
             {
-                label: "Test Header",
+                label: "Header Column",
                 sortable: true
             },
             {
-                label: "Test Header"
+                label: "Header Column"
             },
             {
-                label: "Test Header"
+                label: "Header Column"
             }
         ],
         sortable: true
