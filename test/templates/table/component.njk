@@ -1,3 +1,8 @@
+{% from "./../popover/component.njk" import popover %}
+{% from "./../menu/component.njk" import menu %}
+{% from "./../input-group/component.njk" import input_group %}
+{% import "./../utils.njk" as utils %}
+
 <!--
 table:
     properties={},
@@ -5,27 +10,48 @@ table:
     state={},
     aria={}
 -->
-{% macro table(properties={}, modifier={}, state={}, aria={}) -%}
 
-{# {{ state.sortable | dump(2)}} #}
+{% macro table_contextual_header_control(properties, aria) %}
+{# {{ properties.aria.controls | dump(2) }} #}
+<span class="" {{ properties.aria | aria }}>{{properties.label}}</span>
+{% endmacro %}
+
+{% macro table_contextual_header_body(properties, aria) %}
+{# {{ properties.menu | dump(2) }} #}
+{{ menu(properties={
+  items: properties.menu
+  })
+}}
+{# <nav class="fd-menu">
+    <ul class="fd-menu__list fd-localization-editor__list">
+        {%- set len = properties.items.length -%}
+        {%- for i in range(1, len) -%}
+        <li>
+            {{ properties.label }}
+        </li>
+        {%- endfor -%}
+    </ul>
+</nav> #}
+{% endmacro %}
+
+{% macro table_contextual_header(properties={}, modifier={}, state={}, aria={}) -%}
+{{  popover(properties={
+    id: properties.id,
+    control: table_contextual_header_control(properties, aria={controls: properties.id}),
+    body: table_contextual_header_body(properties)
+  })
+}}
+{%- endmacro %}
+
+
+{% macro table(properties={}, modifier={}, state={}, aria={}) -%}
 
 <table class="fd-table{{ modifier.block | modifier('table') }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>
     <thead>
         <tr>
             {%- for header in properties.headers %}
-            {{header.aria | dump(2) }}
             {%- if properties.contextual_headers -%}
-            <th class="{{sort_class}} {{sort_order_class}} fd-popover__control" {{ header.aria | aria }}>{{header.label}}</th>
-            <div class="fd-popover__body" aria-hidden="true" id="jhqD0558">
-                <nav class="fd-menu" id="">
-                    <ul class="fd-menu__list">
-                        <li><a href="#" class="fd-menu__item">Option 1</a></li>
-                        <li><a href="#" class="fd-menu__item">Option 2</a></li>
-                        <li><a href="#" class="fd-menu__item">Option 3</a></li>
-                        <li><a href="#" class="fd-menu__item">Option 4</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <th>{{ table_contextual_header(header) }}</th>
             {%- else -%}
             {% set sort_class = "fd-table__sort-column" if header.sortable else "" %}
             {% set sort_order_class = "fd-table__sort-column--"+header.sort_order if header.sort_order and header.sortable  else "" %}
