@@ -21,6 +21,7 @@ $block: #{$fd-namespace}-menu;
     $fd-menu-item-background-color--selected: darken(fd-color(action), 10%) !default;
     $fd-menu-item-padding: fd-space(3) fd-space(4) !default;
     $fd-menu-item-color--disabled: fd-color(text, 2);
+    $fd-menu-item-seperator-color: fd-color(neutral, 2);
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
@@ -62,7 +63,7 @@ $block: #{$fd-namespace}-menu;
     }
     hr {
         border: none;
-        border-top: 1px solid fd-color(neutral, 2);
+        border-top: 1px solid $fd-menu-item-seperator-color;
         margin: 0;
       }
 }
