@@ -12,26 +12,14 @@ table:
 -->
 
 {% macro table_contextual_header_control(properties, aria) %}
-{# {{ properties.aria.controls | dump(2) }} #}
-<span class="" {{ properties.aria | aria }}>{{properties.label}}</span>
+<span class="fd-popover__control">{{properties.label}}</span>
 {% endmacro %}
 
 {% macro table_contextual_header_body(properties, aria) %}
-{# {{ properties.menu | dump(2) }} #}
 {{ menu(properties={
   items: properties.menu
   })
 }}
-{# <nav class="fd-menu">
-    <ul class="fd-menu__list fd-localization-editor__list">
-        {%- set len = properties.items.length -%}
-        {%- for i in range(1, len) -%}
-        <li>
-            {{ properties.label }}
-        </li>
-        {%- endfor -%}
-    </ul>
-</nav> #}
 {% endmacro %}
 
 {% macro table_contextual_header(properties={}, modifier={}, state={}, aria={}) -%}
@@ -51,7 +39,7 @@ table:
         <tr>
             {%- for header in properties.headers %}
             {%- if properties.contextual_headers -%}
-            <th>{{ table_contextual_header(header) }}</th>
+            <th class="fd-table__context-menu" {{header.aria | aria}}>{{ table_contextual_header(header) }}</th>
             {%- else -%}
             {% set sort_class = "fd-table__sort-column" if header.sortable else "" %}
             {% set sort_order_class = "fd-table__sort-column--"+header.sort_order if header.sort_order and header.sortable  else "" %}

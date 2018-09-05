@@ -66,9 +66,11 @@ $block: #{$fd-namespace}-table;
     th {
         text-align: left;
         padding: $fd-table-cell-padding $fd-table-cell-spacing/2;
+
         &:first-child {
             padding-left: $fd-table-cell-spacing;
         }
+
         &:last-child {
             padding-right: $fd-table-cell-spacing;
         }
@@ -80,20 +82,23 @@ $block: #{$fd-namespace}-table;
             min-width: auto;
             text-align: left;
         }
-    }
-    a {
-        color: $fd-table-link-color;
-        &:hover{
+
+        > a {
             color: $fd-table-link-color;
+            &:hover{
+                color: $fd-table-link-color;
+            }
         }
+
     }
 
-    &__sort-column{
-        &:hover{
+    &__sort-column {
+        &:hover {
             background: $fd-table-sort-column-background-color;
             cursor: pointer;
         }
-        &::after{
+
+        &::after {
             content: "";
             width: $fd-table-sort-icon-size;
             height: $fd-table-sort-icon-size;
@@ -102,17 +107,42 @@ $block: #{$fd-namespace}-table;
             margin: 0 $fd-table-sort-icon-size;
             vertical-align: text-top;
         }
-        &--asc{
+
+        &--asc {
             background: $fd-table-sort-column-background-color;
-            &::after{
+
+            &::after
+            {
                 background-image: url($fd-table-column-sort-icon--asc)
             }
         }
-        &--dsc{
+        &--dsc {
             background: $fd-table-sort-column-background-color;
-            &::after{
+
+            &::after {
                 background-image: url($fd-table-column-sort-icon--dsc)
             }
+        }
+    }
+
+    th.fd-table__context-menu {
+        padding: 0;
+
+        &:hover {
+            background: $fd-table-sort-column-background-color;
+            cursor: pointer;
+        }
+
+        .fd-popover__control{
+            padding: $fd-table-cell-padding $fd-table-cell-spacing/2;
+        }
+
+        .fd-popover__body{
+            width: 100%;
+        }
+
+        .fd-menu{
+            display: block;
         }
     }
 }
