@@ -125,6 +125,22 @@ $block: #{$fd-namespace}-table;
         }
     }
 
+    &__context-menu-label{
+        display: block;
+        padding: $fd-table-cell-padding $fd-table-cell-spacing/2;
+
+        &::after {
+            content: "";
+            width: $fd-table-sort-icon-size;
+            height: $fd-table-sort-icon-size;
+            display: inline-block;
+            background: url($fd-table-context-menu-icon) no-repeat center center;
+            margin: 0 $fd-table-sort-icon-size;
+            vertical-align: text-top;
+        }
+
+    }
+
     th.fd-table__context-menu {
         padding: 0;
 
@@ -133,9 +149,6 @@ $block: #{$fd-namespace}-table;
             cursor: pointer;
         }
 
-        .fd-popover__control{
-            padding: $fd-table-cell-padding $fd-table-cell-spacing/2;
-        }
 
         .fd-popover__body{
             width: 100%;

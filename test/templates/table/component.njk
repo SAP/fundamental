@@ -12,7 +12,7 @@ table:
 -->
 
 {% macro table_contextual_header_control(properties, aria) %}
-<span class="fd-popover__control">{{properties.label}}</span>
+<span class="fd-table__context-menu-label">{{properties.label}}</span>
 {% endmacro %}
 
 {% macro table_contextual_header_body(properties, aria) %}
@@ -38,7 +38,7 @@ table:
     <thead>
         <tr>
             {%- for header in properties.headers %}
-            {%- if properties.contextual_headers -%}
+            {%- if header.context_menu -%}
             <th class="fd-table__context-menu" {{header.aria | aria}}>{{ table_contextual_header(header) }}</th>
             {%- else -%}
             {% set sort_class = "fd-table__sort-column" if header.sortable else "" %}

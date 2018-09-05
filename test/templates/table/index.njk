@@ -55,34 +55,19 @@
 
 <h3>Column with Contextual Menu</h3>
 
-<div class="fd-popover">
-    <div class="fd-popover__control">
-        <span class="fd-popover__control fd-image--m fd-image--circle" aria-label="Image label" aria-controls="jhqD0558" aria-expanded="false" aria-haspopup="true" style="background-image: url('https://placeimg.com/400/400/nature');"></span>
-    </div>
-    <div class="fd-popover__body" aria-hidden="true" id="jhqD0558">
-        <nav class="fd-menu" id="">
-            <ul class="fd-menu__list">
-                <li><a href="#" class="fd-menu__item">Option 1</a></li>
-                <li><a href="#" class="fd-menu__item">Option 2</a></li>
-                <li><a href="#" class="fd-menu__item">Option 3</a></li>
-                <li><a href="#" class="fd-menu__item">Option 4</a></li>
-            </ul>
-        </nav>
-    </div>
-</div>
-
 {% set example %}
 {{  table({
         rows: [row, row, row],
         headers: [
             {
                 label: "Header Column",
-                sortable: true,
                 id: "test",
+                context_menu: true,
                 menu: [
-                    { "label": "Ascending" },
-                    { "label": "Decensing" },
-                    { "label": "Fix Column" }
+                    { label: "Ascending" },
+                    { label: "Decensing" },
+                    { label: "Seperator", seperator: true },
+                    { label: "Fix Column" }
                 ],
                 aria: {
                     controls: "test",
@@ -91,12 +76,13 @@
             },
             {
                 label: "Header Column",
-                sortable: true,
                 id: "test2",
+                context_menu: true,
                 menu: [
-                    { "label": "Ascending" },
-                    { "label": "Decensing" },
-                    { "label": "Fix Column" }
+                    { label: "Ascending" },
+                    { label: "Decensing" },
+                    { label: "Seperator", seperator: true },
+                    { label: "Fix Column" }
                 ],
                 aria: {
                     controls: "test2",
@@ -105,12 +91,13 @@
             },
             {
                 label: "Header Column",
-                sortable: true,
                 id: "test3",
+                context_menu: true,
                 menu: [
-                    { "label": "Ascending" },
-                    { "label": "Decensing" },
-                    { "label": "Fix Column" }
+                    { label: "Ascending" },
+                    { label: "Decensing" },
+                    { label: "Seperator", seperator: true },
+                    { label: "Fix Column" }
                 ],
                 aria: {
                     controls: "test3",
