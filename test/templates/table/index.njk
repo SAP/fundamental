@@ -9,6 +9,113 @@
 
 {% block content %}
 
+<style media="screen">
+.wrapper {
+    overflow-x: scroll;
+}
+
+.scroll {
+    min-width: 50px;
+}
+
+.fixed {
+    position: absolute;
+    background: #aaa;
+    width: 50px;
+}
+</style>
+<div class="content" style="width: 400px; position: relative;">
+  <div class="wrapper" style="margin-left: 0px">
+      <table>
+        <thead>
+          <tr>
+            <th class="fixed" style="left: 0px">aaa</th>
+            <th class="scroll">b</th>
+            <th class="scroll">c</th>
+            <th class="scroll">d</th>
+            <th class="scroll">e</th>
+            <th class="scroll">f</th>
+            <th class="scroll">a</th>
+            <th class="scroll">b</th>
+            <th class="scroll">c</th>
+            <th class="scroll">d</th>
+            <th class="scroll">e</th>
+            <th class="scroll">f</th>
+            <th class="scroll">a</th>
+            <th class="scroll">b</th>
+            <th class="scroll">c</th>
+            <th class="scroll">d</th>
+            <th class="scroll">e</th>
+            <th class="scroll">f</th>
+            <th class="scroll">a</th>
+            <th class="scroll">b</th>
+            <th class="scroll">c</th>
+            <th class="scroll">d</th>
+            <th class="scroll">e</th>
+            <th class="scroll">f</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="fixed" style="left: 0px">aaa</td>
+            <td class="scroll">b</td>
+            <td class="scroll">c</td>
+            <td class="scroll">d</td>
+            <td class="scroll">e</td>
+            <td class="scroll">f</td>
+            <td class="scroll">a</td>
+            <td class="scroll">b</td>
+            <td class="scroll">c</td>
+            <td class="scroll">d</td>
+            <td class="scroll">e</td>
+            <td class="scroll">f</td>
+            <td class="scroll">a</td>
+            <td class="scroll">b</td>
+            <td class="scroll">c</td>
+            <td class="scroll">d</td>
+            <td class="scroll">e</td>
+            <td class="scroll">f</td>
+            <td class="scroll">a</td>
+            <td class="scroll">b</td>
+            <td class="scroll">c</td>
+            <td class="scroll">d</td>
+            <td class="scroll">e</td>
+            <td class="scroll">f</td>
+          </tr>
+          <tr>
+            <td class="fixed" style="left: 0">bbb</td>
+            <td>b</td>
+            <td>c</td>
+            <td>d</td>
+            <td>e</td>
+            <td>f</td>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>d</td>
+            <td>e</td>
+            <td>f</td>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>d</td>
+            <td>e</td>
+            <td>f</td>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>d</td>
+            <td>e</td>
+            <td>f</td>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+
+</div>
+
+
 <h1>table</h1>
 {% set headers = [
         { label: "Header Column" },
@@ -16,6 +123,20 @@
         { label: "Header Column" },
         { label: "Header Column" },
         { label: "Header Column" }
+    ]
+%}
+
+{% set class_row = [
+        { label: "Lorem", class: "fd-table__fixed-col", width: "200px", fixed_col: true},
+        { label: "Lorem ipsum dolor sit amet ipsum",  offset: "200px" },
+        { label: "Lorem ipsum dolor sit amet ipsum" },
+        { label: "Lorem ipsum dolor sit amet ipsum" },
+        { label: "Lorem ipsum dolor sit amet ipsum" },
+        { label: "Lorem ipsum dolor sit amet ipsum" },
+        { label: "Lorem ipsum dolor sit amet ipsum" },
+        { label: "Lorem ipsum dolor sit amet ipsum" },
+        { label: "Lorem ipsum dolor sit amet ipsum" },
+        { label: "Lorem ipsum dolor sit amet ipsum" }
     ]
 %}
 
@@ -53,6 +174,96 @@
 
 <br><br><br>
 
+<h3>Fixed Column with Contextual Menu</h3>
+<style media="screen">
+    .fixed-col-table-example { margin-left: 200px; overflow-y: scroll;}
+    .fixed-col-table-example td { width: 300px; }
+</style>
+{% set example %}
+{{  table({
+        rows: [class_row, class_row, class_row],
+        headers: [
+            {
+                label: "Header Column",
+                id: "col1.2",
+                context_menu: true,
+                fixed_col: true,
+                width: "200px",
+                menu: [
+                    { label: "Ascending" },
+                    { label: "Decensing" },
+                    { label: "Seperator", seperator: true },
+                    { label: "Fix Column" }
+                ],
+                aria: {
+                    controls: "col1.2",
+                    haspopup: true
+                },
+                classes: ["table__fixed-col"]
+            },
+            {
+                label: "Header Column",
+                id: "col2.2",
+                context_menu: true,
+                offset: "200px",
+                menu: [
+                    { label: "Ascending" },
+                    { label: "Decensing" },
+                    { label: "Seperator", seperator: true },
+                    { label: "Fix Column" }
+                ],
+                aria: {
+                    controls: "col2.2",
+                    haspopup: true
+                }
+            },
+            {
+                label: "Header Column",
+                id: "col3.2",
+                context_menu: true,
+                menu: [
+                    { label: "Ascending" },
+                    { label: "Decensing" },
+                    { label: "Seperator", seperator: true },
+                    { label: "Fix Column" }
+                ],
+                aria: {
+                    controls: "col3.2",
+                    haspopup: true
+                }
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            }
+        ],
+        contextual_headers: true,
+        fixed_col_table: true
+
+    })
+}}
+{% endset %}
+{{ format(example) }}
+
+<br><br><br>
+
 <h3>Column with Contextual Menu</h3>
 
 {% set example %}
@@ -61,7 +272,7 @@
         headers: [
             {
                 label: "Header Column",
-                id: "test",
+                id: "col1",
                 context_menu: true,
                 menu: [
                     { label: "Ascending" },
@@ -70,13 +281,13 @@
                     { label: "Fix Column" }
                 ],
                 aria: {
-                    controls: "test",
+                    controls: "col1",
                     haspopup: true
                 }
             },
             {
                 label: "Header Column",
-                id: "test2",
+                id: "col2",
                 context_menu: true,
                 menu: [
                     { label: "Ascending" },
@@ -85,13 +296,13 @@
                     { label: "Fix Column" }
                 ],
                 aria: {
-                    controls: "test2",
+                    controls: "col2",
                     haspopup: true
                 }
             },
             {
                 label: "Header Column",
-                id: "test3",
+                id: "col3",
                 context_menu: true,
                 menu: [
                     { label: "Ascending" },
@@ -100,7 +311,7 @@
                     { label: "Fix Column" }
                 ],
                 aria: {
-                    controls: "test3",
+                    controls: "col3",
                     haspopup: true
                 }
             },

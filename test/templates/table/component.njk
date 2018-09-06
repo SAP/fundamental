@@ -33,13 +33,17 @@ table:
 
 
 {% macro table(properties={}, modifier={}, state={}, aria={}) -%}
-
+{%- if properties.fixed_col_table %}
+<div class="fd-table--fixed">
+{% endif %}
 <table class="fd-table{{ modifier.block | modifier('table') }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>
     <thead>
         <tr>
             {%- for header in properties.headers %}
             {%- if header.context_menu -%}
-            <th class="fd-table__context-menu" {{header.aria | aria}}>{{ table_contextual_header(header) }}</th>
+            <th class="fd-table__context-menu {{header.classes | classes}}" style="left:{{0 if header.fixed_col else header.offset}}; width:{{header.width}}" {{header.aria | aria}} >
+                {{ table_contextual_header(header) }}
+            </th>
             {%- else -%}
             {% set sort_class = "fd-table__sort-column" if header.sortable else "" %}
             {% set sort_order_class = "fd-table__sort-column--"+header.sort_order if header.sort_order and header.sortable  else "" %}
@@ -52,10 +56,19 @@ table:
         {%- for row in properties.rows %}
         <tr{% if properties.selectedRow === loop.index %} aria-selected="true"{% endif %}>
             {%- for item in row %}
-            <td>{{item}}</td>
+            {%- if item.label %}
+            <td class="{{item.class}}" style="left:{{0 if item.fixed_col else item.offset }}; width:{{item.width}}">{{ item.label }}</td>
+            {%- else %}
+            <td>{{ item }}</td>
+            {%- endif %}
             {%- endfor %}
         </tr>
         {%- endfor %}
     </tbody>
 </table>
+{%- if properties.fixed_col_table %}
+</div>
+{% endif %}
+
+
 {%- endmacro %}
