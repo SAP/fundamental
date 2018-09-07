@@ -34,6 +34,7 @@ table:
 
 {% macro table(properties={}, modifier={}, state={}, aria={}) -%}
 {%- if properties.fixed_col_table %}
+<div class="fd-table--fixed-wrapper">
 <div class="fd-table--fixed">
 {% endif %}
 <table class="fd-table{{ modifier.block | modifier('table') }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>
@@ -67,6 +68,7 @@ table:
     </tbody>
 </table>
 {%- if properties.fixed_col_table %}
+</div>
 </div>
 {% endif %}
 

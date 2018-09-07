@@ -25,8 +25,9 @@ $block: #{$fd-namespace}-table;
     $fd-table-cell-padding: fd-space("s") !default;
     $fd-table-transition-params: $fd-animation--speed ease-in !default;
     $fd-table-sort-icon-size: fd-space(3);
-    $fd-table-sort-column-background-color: fd-color(neutral, 2);
-    $fd-table-sort-column-hover-color: #f2f2f3; //hsl +1 of Neutral 2.;
+    $fd-table-sort-column-header-background-color: fd-color(neutral, 2);
+    $fd-table-sort-column-header-hover-color: #f2f2f3; //hsl +1 of Neutral 2.;
+    $fd-table-fixed-column-cell-color: fd-color("background", 2);
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
@@ -34,7 +35,6 @@ $block: #{$fd-namespace}-table;
     @include fd-last-child;
     width: 100%;
     max-width: 100%;
-    position: relative;
     border-collapse: collapse;
     margin-bottom: $fd-margin-bottom;
     border-top: solid $fd-table-border-width $fd-table-border-color;
@@ -102,7 +102,7 @@ $block: #{$fd-namespace}-table;
     &__sort-column {
 
         &:hover {
-            background: $fd-table-sort-column-hover-color;
+            background: $fd-table-sort-column-header-hover-color;
             cursor: pointer;
         }
 
@@ -117,7 +117,7 @@ $block: #{$fd-namespace}-table;
         }
 
         &--asc {
-            background: $fd-table-sort-column-background-color;
+            background: $fd-table-sort-column-header-background-color;
 
             &::after
             {
@@ -126,7 +126,7 @@ $block: #{$fd-namespace}-table;
         }
 
         &--dsc {
-            background: $fd-table-sort-column-background-color;
+            background: $fd-table-sort-column-header-background-color;
 
             &::after {
                 background-image: url($fd-table-column-sort-icon--dsc)
@@ -154,7 +154,7 @@ $block: #{$fd-namespace}-table;
         padding: 0;
 
         &:hover {
-            background: $fd-table-sort-column-hover-color;
+            background: $fd-table-sort-column-header-hover-color;
             cursor: pointer;
         }
 
@@ -162,10 +162,29 @@ $block: #{$fd-namespace}-table;
 
     &__fixed-col {
         position: absolute;
-        background-color: yellow;
+        // background-color: yellow;
+        z-index: 1;
     }
 
+    th.fd-table__fixed-col {
+        background: $fd-table-sort-column-header-background-color;
+        z-index: 2;
+        box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.08);
+    }
+    td.fd-table__fixed-col {
+        background: $fd-table-fixed-column-cell-color;
+        box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.08);
+    }
+
+    &--fixed-wrapper {
+        position: relative;
+    }
     &--fixed {
-        overflow-y: scroll;
+        overflow-x: scroll;
+        padding-left:200px;
+
+        td{
+            min-width: 200px;
+        }
     }
 }
