@@ -17,8 +17,11 @@ table:
 
 {% macro table_contextual_header_body(properties, aria) %}
 {{ menu(properties={
-  items: properties.menu
-  })
+            items: properties.menu,
+            addon_before: properties.addon_before
+        },
+        modifier=["addon-before"]
+        )
 }}
 {% endmacro %}
 

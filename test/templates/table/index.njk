@@ -5,7 +5,7 @@
 {% import "./../utils.njk" as utils %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['fonts','helpers','components/image', 'components/popover', 'components/menu'] %}
+{% set css_deps = ['fonts', 'icons', 'helpers','components/image', 'components/popover', 'components/menu'] %}
 
 {% block content %}
 
@@ -281,13 +281,14 @@
                 label: "Header Column",
                 id: "col1.2",
                 context_menu: true,
+                addon_before: true,
                 fixed_col: true,
                 width: "200px",
                 menu: [
                     { label: "Ascending" },
                     { label: "Decensing" },
                     { label: "Seperator", seperator: true },
-                    { label: "Fix Column" }
+                    { label: "Fix Column", icon: "accept" }
                 ],
                 aria: {
                     controls: "col1.2",

@@ -1,4 +1,5 @@
 {% import "./../utils.njk" as utils %}
+{% from "../icon/component.njk" import icon %}
 <!--
 menu:
     properties={},
@@ -8,6 +9,7 @@ menu:
 -->
 
 {%- macro menu(properties={}, modifier=[], classes=[], aria=[]) -%}
+{{modifier.addon | dump(2)}}
 <nav class="fd-menu{{ modifier | modifier('menu') }}{{ classes | classes }}"{{ aria | aria }}{% if properties.id %} id="{{ properties.id }}"{% endif %}>
 {%- for item in properties.items %}
   {%- if item.items %}
@@ -19,7 +21,7 @@ menu:
       {%- if loop.first %}
     <ul class="fd-menu__list">
       {%- endif %}
-      {{ option(item) }}
+      {{ option(item, properties) }}
       {%- if loop.last %}
     </ul>
       {%- endif %}
@@ -28,11 +30,20 @@ menu:
 </nav>
 {%- endmacro %}
 
-{%- macro option(properties={}) -%}
-    {%- if properties.seperator %}
+{%- macro option(item={}, properties={}) -%}
+    {%- if item.seperator -%}
     <hr>
-    {%- else  %}
-    <li><a href="#" class="fd-menu__item">{{ properties.label }}</a></li>
+    {%- else  -%}
+    <li>
+        {%- if properties.addon_before -%}
+        <div class="fd-menu__addon-before">
+            {%- if item.icon -%}
+            <span class="sap-icon--{{item.icon}}"></span>
+            {%- endif -%}
+        </div>
+        {%- endif -%}
+        <a href="#" class="fd-menu__item">{{ item.label }}</a>
+    </li>
     {%- endif -%}
 {%- endmacro %}
 
