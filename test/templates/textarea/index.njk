@@ -1,21 +1,20 @@
 {% extends "layout.njk" %}
-{% from "./component.njk" import checkbox %}
+{% from "./component.njk" import textarea %}
 {% from "./../format.njk" import format %}
 
 {% set css_deps = ['fonts','helpers'] %}
 
 {% block content %}
 
-    <h1>Checkbox</h1>
-    {% set basic_checkbox %}
-        {{ checkbox(
-            type="checkbox",
+    <h1>Textarea</h1>
+    {% set basic_textarea %}
+        {{ textarea(
             properties={
                 placeholder: "Placeholder Text"
             })
         }}
     {% endset %}
 
-    {{ format(basic_checkbox) }}
+    {{ format(basic_textarea) }}
 
 {% endblock %}

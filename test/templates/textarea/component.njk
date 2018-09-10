@@ -1,0 +1,11 @@
+{#
+    see ./data.json for object structure
+#}
+{% macro textarea(
+    properties={ value: "", name: "", placeholder: "", id: "" },
+    state={ disabled: false, readonly: false, status: "" },
+    aria={},
+    classes=[])
+-%}
+<textarea {{ ' placeholder="'+properties.placeholder+'"' if properties.placeholder }}>{{properties.value}}</textarea>
+{%- endmacro %}
