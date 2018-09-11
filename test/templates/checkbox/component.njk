@@ -1,0 +1,14 @@
+{#
+    see ./data.json for object structure
+#}
+
+{% macro checkbox(
+    properties={ value: "", id: "" },
+    state={ checked: false, disabled: false, status: "" },
+    aria={},
+    classes=[])
+-%}
+
+<input type="checkbox" {{ ' value="'+properties.value+'"' if properties.value }}>
+
+{%- endmacro %}

@@ -2,7 +2,6 @@
 @import "./../mixins";
 @import "./../icons/mixins";
 @import "./../functions";
-@import "./mixins";
 
 
 $block: #{$fd-namespace}-menu;
@@ -27,7 +26,7 @@ $block: #{$fd-namespace}-menu;
     //set all BLOCK reset and baseline styles
     @include fd-reset;
     position: relative;
-    display: inline-block;
+    display: block;
     white-space: nowrap;
     background-color: $fd-menu-background-color;
     padding-top: fd-space(base);
@@ -48,9 +47,14 @@ $block: #{$fd-namespace}-menu;
     }
     &__item {
       display: block;
+      cursor: pointer;
       padding: $fd-menu-item-padding-y $fd-menu-item-padding-x;
       color: $fd-menu-item-color;
       background-color: $fd-menu-item-background-color;
+
+      > .fd-checkbox {
+        margin: 0 10px 0 0;
+      }
 
       &:hover{
         color: $fd-menu-item-color--hover;
@@ -75,4 +79,11 @@ $block: #{$fd-namespace}-menu;
         border-top: 1px solid $fd-menu-item-seperator-color;
         margin: 0;
       }
+    &__link {
+      color: $fd-link-color;
+
+      &:hover {
+        color: $fd-link-color--hover;
+      }
+    }
 }

@@ -1,0 +1,12 @@
+{#
+    see ./data.json for object structure
+#}
+{% macro input(
+    type="text",
+    properties={ value: "", name: "", placeholder: "", id: "" },
+    state={ disabled: false, readonly: false, status: "" },
+    aria={},
+    classes=[])
+-%}
+    <input type="{{ type }}"{{ ' placeholder="'+properties.placeholder+'"' if properties.placeholder }}{{ ' value="'+properties.value+'"' if properties.value }}>
+{%- endmacro %}

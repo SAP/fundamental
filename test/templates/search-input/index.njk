@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+{% from "./component.njk" import search_input %}
+{% from "./../format.njk" import format %}
+
+{% set css_deps = ['fonts','helpers', 'components/input', 'components/menu', 'components/popover','components/button','components/input-group', 'icons', 'components/tag'] %}
+
+{% block content %}
+
+    <h1>Search</h1>
+    {% set basic_search %}
+        {{ search_input(
+            properties={
+                value: "Ba",
+                placeholder: "Placeholder Text"
+            })
+        }}
+    {% endset %}
+
+    {{ format(basic_search) }}
+
+{% endblock %}

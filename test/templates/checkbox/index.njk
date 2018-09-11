@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+{% from "./component.njk" import checkbox %}
+{% from "./../format.njk" import format %}
+
+{% set css_deps = ['fonts','helpers'] %}
+
+{% block content %}
+
+    <h1>Checkbox</h1>
+    {% set basic_checkbox %}
+        {{ checkbox(
+            type="checkbox",
+            properties={
+                placeholder: "Placeholder Text"
+            })
+        }}
+    {% endset %}
+
+    {{ format(basic_checkbox) }}
+
+{% endblock %}

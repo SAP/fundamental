@@ -1,7 +1,8 @@
 @import "./../settings";
-@import "./../mixins";
 @import "./../functions";
+@import "./../mixins/forms";
 
+// Form Base
 %form-field-base {
     @include fd-form-base;
     transition: border-color $fd-forms-transition-params, background-color $fd-forms-transition-params, background-image $fd-forms-transition-params;
@@ -9,123 +10,23 @@
         transition: border-color $fd-forms-transition-params;
     }
 }
+
+// Global CSS (Remove/Move?)
 fieldset {
     border: 0;
     padding: 0;
     margin: 0;
 }
 
-#{$fd-elements-inputs--text}{
-    &::placeholder {
-        color: $fd-forms-color--placeholder;
-    }
-}
-#{$fd-elements-inputs--text},
-textarea {
-    @include fd-form-text;
-    width: 100%;
-}
-textarea {
-    height: $fd-forms-height--input-text * 2;
-    padding-top: $fd-forms-padding;
-}
-select {
-    @include fd-form-select;
-    width: 100%;
-    &[multiple] {
-        height: $fd-forms-height--input-text * 3;
-        background-image: none;
-        padding-top: $fd-forms-padding;
-    }
-    &::after {
-        content: "";
-        width: 10px;
-        height: 5px;
-        border-color: transparent;
-        border-style: solid;
-        border-width: 0 0 2px 2px;
-        transform: rotate(-45deg);
-        position: absolute;
-        z-index: 2;
-        top: calc(50% - 4px);
-        left: calc(50% - 10px/2);
-    }
-}
-#{$fd-elements-inputs--check} {
-    @extend %form-field-base;
-    height: $fd-forms-height--input-check;
-    width: $fd-forms-height--input-check;
-    margin: 0;
-    vertical-align: middle;
-    position: relative;
-    cursor: pointer;
-    border-color: fd-color(neutral, 4);
-    &:hover{
-        border-width: 2px;
-    }
-    &:checked {
-        border-color: fd-color-darkest($fd-forms-color--active);
-        background-color: fd-color-darkest($fd-forms-color--active);
-    }
-    &[disabled],
-    &[aria-disabled="true"],
-    &.is-disabled {
-        border-color: $fd-forms-border-color--disabled;
-        background-color: $fd-forms-background-color--disabled;
-    }
-}
-input[type="checkbox"] {
-    &::before {
-        content: "";
-        width: 10px;
-        height: 5px;
-        border-color: transparent;
-        border-style: solid;
-        border-width: 0 0 2px 2px;
-        transform: rotate(-45deg);
-        position: absolute;
-        z-index: 2;
-        top: calc(50% - 4px);
-        left: calc(50% - 10px/2);
-    }
-    &:checked {
-        &::before {
-            border-color: $fd-forms-background-color;
-        }
-    }
-    &[disabled],
-    &[aria-disabled="true"],
-    &.is-disabled {
-        &::before {
-            border-color: $fd-forms-background-color--check-disabled;
-        }
-    }
-}
-input[type="radio"] {
-    border-radius: 50%;
-    &::after {
-        $check-size_: fd-space(2);
-        content: "";
-        border-radius: 50%;
-        width: $check-size_;
-        height: $check-size_;
-        position: absolute;
-        top: calc(50% - (#{$check-size_}/2));
-        left: calc(50% - (#{$check-size_}/2));
-        transition: background-color $fd-forms-transition-params;
-        background-color: transparent;
-    }
-    &:checked {
-        background-color: $fd-forms-background-color;
-        &::after {
-            background-color: fd-color-darkest($fd-forms-color--active);
-        }
-        &[disabled],
-        &[aria-disabled="true"],
-        &.is-disabled {
-            &::after {
-                background-color: $fd-forms-background-color--check-disabled;
-            }
-        }
-    }
-}
+// Default Components
+@import "./../components/input";
+@import "./../components/textarea";
+@import "./../components/checkbox";
+@import "./../components/radio";
+@import "./../components/select";
+
+// Special Compoments
+@import "./../components/input-addon";
+@import "./../components/combobox-input";
+@import "./../components/search-input";
+@import "./../components/multi-input";

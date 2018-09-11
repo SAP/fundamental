@@ -1,0 +1,61 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+
+/*!
+radio
+*/
+
+// Repeated CSS (Checkbox/Radio)
+#{$fd-elements-inputs--check} {
+    @extend %form-field-base;
+    height: $fd-forms-height--input-check;
+    width: $fd-forms-height--input-check;
+    margin: 0;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+    border-color: fd-color(neutral, 4);
+    &:hover{
+        border-width: 2px;
+    }
+    &:checked {
+        border-color: fd-color-darkest($fd-forms-color--active);
+        background-color: fd-color-darkest($fd-forms-color--active);
+    }
+    &[disabled],
+    &[aria-disabled="true"],
+    &.is-disabled {
+        border-color: $fd-forms-border-color--disabled;
+        background-color: $fd-forms-background-color--disabled;
+    }
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+    &::after {
+        $check-size_: fd-space(2);
+        content: "";
+        border-radius: 50%;
+        width: $check-size_;
+        height: $check-size_;
+        position: absolute;
+        top: calc(50% - (#{$check-size_}/2));
+        left: calc(50% - (#{$check-size_}/2));
+        transition: background-color $fd-forms-transition-params;
+        background-color: transparent;
+    }
+    &:checked {
+        background-color: $fd-forms-background-color;
+        &::after {
+            background-color: fd-color-darkest($fd-forms-color--active);
+        }
+        &[disabled],
+        &[aria-disabled="true"],
+        &.is-disabled {
+            &::after {
+                background-color: $fd-forms-background-color--check-disabled;
+            }
+        }
+    }
+}
