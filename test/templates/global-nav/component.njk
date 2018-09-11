@@ -2,6 +2,7 @@
 {% from "../icon/component.njk" import icon %}
 {% from "../menu/component.njk" import menu %}
 {% from "../dropdown/component.njk" import dropdown %}
+{% from "../popover/component.njk" import popover %}
 {% from "../form/component.njk" import form_control %}
 {% from "../mega-menu/component.njk" import mega_menu %}
 {% from "../identifier/component.njk" import identifier %}
@@ -19,7 +20,7 @@ global_nav:
 {%- set contextmenu %}
     {%- set _id = utils.id() %}
 
-    {{ dropdown(properties={
+    {# {{ dropdown(properties={
       label: "Context Switcher",
       body: menu(properties={
         items: [
@@ -30,8 +31,25 @@ global_nav:
           ]
         })
       })
-    }}
+    }} #}
 
+    {%- macro sample_control(properties={}) -%}
+    <button class="fd-button--secondary fd-button-l fd-popover__control{{ modifier.control | modifier('popover__control') }}  fd-image--m fd-image--circle" aria-label="Image label" aria-controls="{{ properties.id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }} >Context Switcher</button>
+    {%- endmacro %}
+
+    {{  popover(properties={
+        id: _id,
+        control: sample_control(properties={id: _id}),
+        body: menu(properties={
+          items: [
+              { "label": "Link 1" },
+              { "label": "Link 2" },
+              { "label": "Link 3" },
+              { "label": "Link 4" }
+            ]
+          })
+      })
+    }}
 {%- endset %}
 
 {% macro global_nav(properties={}, modifier={}, state={}, aria={}) -%}
