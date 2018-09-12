@@ -12,23 +12,26 @@
   <style media="screen">
       .fd-dropdown {
           margin-right: 10px;
+          margin-bottom: 10px;
       }
   </style>
 
-  {% set sizes = ["default", "xs", "s", "compact", "l"] %}
+  {% set modifiers = ["default", "xs", "s", "compact", "l", "toolbar"] %}
 
   <h1>dropdown</h1>
   <p><strong>onclick</strong>: change aria-expanded boolean on the control and change aria-hidden boolean on the menu </p>
   <p>Shows default, <code>xs</code>,
   <code>s</code>,
-  <code>compact</code>, and
-  <code>l</code> sizes. Include modifier on block and button.</p>
+  <code>compact</code>,
+  <code>l</code>,
+  and <code>toolgar</code> modifiers. Include modifier on block and button.</p>
 
   {% set example %}
-    {%- for size in sizes %}
-      {% if size === "default" %}
+  
+    {%- for modifier in modifiers %}
+      {% if modifier === "default" %}
         {{ dropdown(properties={
-          label: data.properties.label,
+          label: "Select",
           body: menu(properties={
             items: [
                 { "label": "Option 1" },
@@ -41,7 +44,7 @@
         }}
       {% else %}
         {{ dropdown(properties={
-          label: data.properties.label,
+          label: "Select",
           body: menu(properties={
             items: [
                 { "label": "Option 1" },
@@ -50,7 +53,7 @@
                 { "label": "Option 4" }
               ]
             })
-          },modifier={ block: size })
+        },modifier={ block: modifier, button: btn })
         }}
       {% endif %}
     {%- endfor %}
@@ -62,11 +65,11 @@
 <h2>icon</h2>
 
 {% set example %}
-  {%- for size in sizes %}
-    {% if size === "default" %}
+  {%- for modifier in modifiers %}
+    {% if modifier === "default" %}
         {{ dropdown(properties={
           icon: "filter",
-          label: data.properties.label,
+          label: "Select",
           body: menu(properties={
             items: [
                 { "label": "Option 1" },
@@ -80,7 +83,7 @@
       {% else %}
         {{ dropdown(properties={
           icon: "filter",
-          label: data.properties.label,
+          label: "Select",
           body: menu(properties={
             items: [
                 { "label": "Option 1" },
@@ -89,7 +92,7 @@
                 { "label": "Option 4" }
               ]
             })
-          },modifier={ block: size })
+        },modifier={ block: modifier })
         }}
       {% endif %}
   {%- endfor %}
@@ -101,27 +104,27 @@
 
 <h2>disabled</h2>
 
-{%- for size in sizes %}
-  {% if size === "default" %}
+{%- for modifier in modifiers %}
+  {% if modifier === "default" %}
     {{  dropdown(properties=data.properties, aria={ disabled: true }) }}
   {% else %}
-   {{  dropdown(properties=data.properties,modifier={ block: size }, aria={ disabled: true }) }}
+   {{  dropdown(properties=data.properties,modifier={ block: modifier }, aria={ disabled: true }) }}
   {% endif %}
 {%- endfor %}
 
 <br>
 
 {% set example %}
-  {%- for size in sizes %}
-    {% if size === "default" %}
+  {%- for modifier in modifiers %}
+    {% if modifier === "default" %}
       {{  dropdown(properties={
         icon: "filter",
-        label: data.properties.label }, aria={ disabled: true })
+        label: "Select" }, aria={ disabled: true })
       }}
     {% else %}
       {{  dropdown(properties={
         icon: "filter",
-        label: data.properties.label },modifier={ block: size }, aria={ disabled: true }) }}
+        label: "Select" },modifier={ block: modifier }, aria={ disabled: true }) }}
     {% endif %}
   {%- endfor %}
 {% endset %}

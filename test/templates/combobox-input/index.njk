@@ -1,0 +1,20 @@
+{% extends "layout.njk" %}
+{% from "./component.njk" import combobox_input %}
+{% from "./../format.njk" import format %}
+
+{% set css_deps = ['fonts','helpers', 'components/input', 'components/menu', 'components/popover','components/button','components/input-group', 'icons'] %}
+
+{% block content %}
+
+    <h1>Combobox</h1>
+    {% set basic_combobox_input %}
+        {{ combobox_input(
+            properties={
+                placeholder: "Placeholder Text"
+            })
+        }}
+    {% endset %}
+
+    {{ format(basic_combobox_input) }}
+
+{% endblock %}

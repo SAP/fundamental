@@ -30,7 +30,7 @@ var banner = `/*!
 //compile top-level files
 var sassTask = (cb) => {
     let prefix = config.tasks.css.prefix;
-    let files = environment.production ?  `${paths.src}/*.${config.tasks.css.extensions}` : `!${paths.src}/all.scss`;
+    let files = environment.production ? `${paths.src}/*.${config.tasks.css.extensions}` : `!${paths.src}/all.scss`;
 
     var isAllCss = function (file) {
       return file.path.includes('all') ;
@@ -50,6 +50,30 @@ var sassTask = (cb) => {
         .pipe(gulp.dest(paths.dest))
 }
 gulp.task('pkg-sass', sassTask);
+
+//compile top-level (dark) files
+var darkSassTask = (cb) => {
+    let prefix = config.tasks.css.prefix;
+    let files = environment.production ?  `${paths.src}/*.${config.tasks.css.extensions}` : `!${paths.src}/all-dark.scss`;
+
+    var isAllCss = function (file) {
+      return file.path.includes('all-dark') ;
+    }
+    return gulp.src(files)
+        .pipe(gulpif(environment.development, sourcemaps.init()))
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer(config.tasks.css.autoprefixer))
+        .pipe(gulpif(environment.production, cleanCSS(config.tasks.css.cleanCSS)))
+        // .pipe(rename({
+        //     prefix: `${prefix}-`
+        // }))
+        .pipe(gulpif(isAllCss, rename({
+            basename: prefix
+        })))
+        .pipe(gulpif(environment.development, sourcemaps.write()))
+        .pipe(gulp.dest(paths.dest))
+}
+gulp.task('pkg-dark-sass', darkSassTask);
 
 //compile individual component files
 var componentsTask = (cb) => {
@@ -117,10 +141,9 @@ gulp.task('pkg-css-banner', bannerTask);
 //main css task
 module.exports = cssTask = (cb) => {
     if (environment.production) {
-        gulpSequence('pkg-sass', 'pkg-css-components', 'pkg-css-minify', 'pkg-css-banner', cb)
+        gulpSequence('pkg-sass', 'pkg-dark-sass', 'pkg-css-components', 'pkg-css-minify', 'pkg-css-banner', cb)
     } else {
-        gulpSequence('pkg-sass', cb)
+        gulpSequence('pkg-sass', 'pkg-dark-sass', cb)
     }
-
 }
 gulp.task('pkg-css', cssTask);

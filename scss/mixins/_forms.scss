@@ -1,0 +1,72 @@
+// Form Mixins
+@mixin fd-form-base {
+    @include fd-reset;
+    @include fd-type("0", body);
+    appearance: none;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    font-size: inherit;
+    box-sizing: border-box;
+    outline: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $fd-forms-border-color;
+    border-radius: $fd-border-radius;
+    color: $fd-forms-color;
+    background-color: $fd-forms-background-color;
+    transition: border-color $fd-animation--speed;
+    //states
+    &:hover {
+        border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
+    }
+    &:focus {
+      border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
+      box-shadow: 0 0 0 1px adjust-color($fd-forms-color--active, $lightness: 30%);
+    }
+    &.is-invalid {
+        border-color: $fd-color--error;
+        border-width: 2px;
+    }
+    &.is-valid {
+        border-color: $fd-color--success;
+        border-width: 2px;
+    }
+    &.is-warning {
+        border-color: $fd-color--warning;
+        border-width: 2px;
+    }
+    &:disabled,
+    &[aria-disabled="true"],
+    &.is-disabled {
+        cursor: not-allowed;
+        color: $fd-forms-color--disabled;
+        border-color: $fd-forms-border-color--disabled;
+        background-color: $fd-forms-background-color--disabled;
+    }
+    &[readonly],
+    &.is-readonly {
+        color: $fd-forms-color;
+        //background-color: $fd-forms-background-color;
+        border-color: $fd-forms-border-color--disabled;
+        border-width: 0 0 1px;
+        border-radius: 0;
+    }
+    @content;
+}
+
+@mixin fd-form-text {
+    @include fd-form-base;
+    height: $fd-forms-height--input-text;
+    padding-left: $fd-forms-padding;
+    padding-right: $fd-forms-padding;
+    @content;
+}
+
+// Form Base
+%form-field-base {
+    @include fd-form-base;
+    transition: border-color $fd-forms-transition-params, background-color $fd-forms-transition-params, background-image $fd-forms-transition-params;
+    &::after {
+        transition: border-color $fd-forms-transition-params;
+    }
+}

@@ -1,0 +1,93 @@
+{% extends "layout.njk" %}
+{% import "./../utils.njk" as utils %}
+{% from "./../format.njk" import format %}
+{% from "./../popover/component.njk" import popover %}
+{% from "./../menu/component.njk" import menu %}
+{% from "../button/component.njk" import button %}
+{% import "../forms.njk" as forms %}
+{% from "./component.njk" import localization_editor %}
+
+{% set css_deps = ['fonts','helpers', 'components/form', 'components/menu', 'components/popover','components/button','components/input-group', 'icons'] %}
+
+{% block content %}
+
+<h1>localization-editor with input</h1>
+
+{% set example %}
+{%- set _id = utils.id() %}
+{{  localization_editor(
+        properties=data.properties
+    )
+}}
+
+{% endset %}
+{{ format(example) }}
+
+<br><br><br>
+
+<h1>localization-editor with textarea</h1>
+
+{% set example %}
+{%- set _id = utils.id() %}
+{{  localization_editor(
+         {
+            "id": _id,
+            "title": "Localization Editor Label",
+            "description": "Localization Editor Description",
+            "type": "textarea",
+            "items": [
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "Enter label",
+                     "label": "EN"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": true
+                  }
+              },
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "",
+                     "label": "ES"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": false
+                  }
+              },
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "",
+                     "label": "CH"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": false
+                  }
+              },
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "",
+                     "label": "PL"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": false
+                  }
+              }
+            ]
+        }
+    )
+}}
+
+{% endset %}
+{{ format(example) }}
+
+<br><br><br>
+
+{% endblock %}

@@ -2,7 +2,6 @@
 @import "./../mixins";
 @import "./../icons/mixins";
 @import "./../functions";
-@import "./mixins";
 
 $block: #{$fd-namespace}-popover;
 .#{$block} {
@@ -15,9 +14,8 @@ $block: #{$fd-namespace}-popover;
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
-    @include fd-reset;
+    // @include fd-reset;
     position: relative;
-    display: inline-block;
 
     &__control {
       position: relative;
@@ -25,7 +23,6 @@ $block: #{$fd-namespace}-popover;
       cursor: pointer;
     }
     &__body {
-      min-width: 100%;
       border: $fd-popover-border;
       position: absolute;
       white-space: nowrap;
@@ -37,6 +34,7 @@ $block: #{$fd-namespace}-popover;
       visibility: visible;
       transition: opacity $fd-popover-transition-params;
       overflow: hidden;
+      width: 100%;
 
       &[aria-hidden="true"],
       &.is-hidden {

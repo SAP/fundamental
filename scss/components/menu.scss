@@ -2,7 +2,6 @@
 @import "./../mixins";
 @import "./../icons/mixins";
 @import "./../functions";
-@import "./mixins";
 
 
 $block: #{$fd-namespace}-menu;
@@ -21,13 +20,13 @@ $block: #{$fd-namespace}-menu;
     $fd-menu-item-background-color--selected: darken(fd-color(action), 10%) !default;
     $fd-menu-item-padding: fd-space(3) fd-space(4) !default;
     $fd-menu-item-color--disabled: fd-color(text, 2);
+    $fd-menu-item-seperator-color: fd-color(neutral, 2);
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
     @include fd-reset;
     position: relative;
-    display: inline-block;
-    min-width: 100%;
+    display: block;
     white-space: nowrap;
     background-color: $fd-menu-background-color;
     padding-top: fd-space(base);
@@ -48,9 +47,14 @@ $block: #{$fd-namespace}-menu;
     }
     &__item {
       display: block;
+      cursor: pointer;
       padding: $fd-menu-item-padding-y $fd-menu-item-padding-x;
       color: $fd-menu-item-color;
       background-color: $fd-menu-item-background-color;
+
+      > .fd-checkbox {
+        margin: 0 10px 0 0;
+      }
 
       &:hover{
         color: $fd-menu-item-color--hover;
@@ -59,6 +63,27 @@ $block: #{$fd-namespace}-menu;
       &.is-selected,
       &[aria-selected="true"] {
           background-color: $fd-menu-item-background-color--selected;
+      }
+    }
+    &--addon-before{
+        .fd-menu__item{
+            padding-left: fd-space(8);
+        }
+    }
+    &__addon-before{
+        float: left;
+        padding: fd-space(2.5);
+    }
+    hr {
+        border: none;
+        border-top: 1px solid $fd-menu-item-seperator-color;
+        margin: 0;
+      }
+    &__link {
+      color: $fd-link-color;
+
+      &:hover {
+        color: $fd-link-color--hover;
       }
     }
 }

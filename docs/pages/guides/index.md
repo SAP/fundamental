@@ -18,7 +18,7 @@ summary:
              </h2>
         </div>
     </a>
-    <a class="fd-tile" role="button" href="design-system-utilities.html.html">
+    <a class="fd-tile" role="button" href="design-system-utilities.html">
         <div class="fd-tile__content">
              <h2 class="fd-tile__header">
                  Design System Utilities

@@ -6,11 +6,18 @@
 {% macro input_group(
     type="text",
     properties={
+        type: "",
         input: {
             properties: {},
             state: {},
             aria: {}
         },
+        textarea: {
+            properties: {},
+            state: {},
+            aria: {}
+        },
+
         before: "",
         after: ""
     },
@@ -27,8 +34,11 @@
             {{ properties.before | trim | indent(8, true) }}
         </span>
     {%- endif %}
-
+    {%- if properties.type == "textarea" %}
+    {{ forms.textarea(type,input.properties,state=input.state,aria=input.aria) }}
+    {%- else %}
     {{ forms.text(type,input.properties,state=input.state,aria=input.aria) }}
+    {%- endif %}
 
     {%- if properties.after %}
         <span class="fd-input-group__addon{{ modifier.after | modifier('input-group__addon') }}">

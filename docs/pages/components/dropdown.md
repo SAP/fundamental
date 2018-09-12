@@ -17,6 +17,14 @@ The dropdown component is an opinionated composition of the "popover" and "menu"
 
 The dropdown is designed to look like the rest of input components. The options can be divided in groups, which are visually separated and can have a small Group header text.
 
+<style type="text/css">
+.fd-popover {
+    margin: 0 0 20px 0;
+}
+.fd-popover:last-child {
+    margin-bottom: 0;
+}
+</style>
 {% capture default-dropdown %}
 <div class="fd-popover">
     <div class="fd-popover__control">

@@ -25,7 +25,7 @@
             {% set dep_sass = sass + '.scss' %}
             {{ dep_sass | sass_to_css }}
         {% endfor %}
-        body { padding: 20px; }
+        body { padding: 20px; transition: background-color .25s}
         .test-label { margin-right: 20px; }
         textarea.test-textarea { font-family: monospace; height: 200px; width: 100%; padding: 10px; font-size: 0.9rem; border: solid 1px rgba(0,0,0,0.1); }
     </style>
@@ -33,13 +33,16 @@
 <body>
     <header style="border-bottom: solid 6px lightgray; padding-bottom: 10px; margin-bottom: 10px;">
         <form action="#" method="get">
+
         <fieldset style="font-family: monospace;font-size: 14px;">
+            <label class="test-label fd-has-float-right"><input type="checkbox"  value="" id="toggleBg"> Toggle BG</label>
             <label class="test-label"><input type="checkbox" name="lib" value="b3" {{'checked' if libs.b3 }}> bootstrap/3.3.7</label>
             <label class="test-label"><input type="checkbox" name="lib" value="b4" {{'checked' if libs.b4 }}> bootstrap/4.0.0-beta</label>
             <label class="test-label"><input type="checkbox" name="lib" value="md" {{'checked' if libs.md }}>
 angular_material/1.1.4</label>
             <label class="test-label"><input type="checkbox" name="lib" value="tn" {{'checked' if libs.tn }}> techne/1.5.7</label>
-            <button type="submit" class="fd-button fd-button--small">Submit</button>
+            <button type="submit" class="fd-button--small">Submit</button>
+
         </fieldset>
 
         </form>
@@ -70,7 +73,25 @@ angular_material/1.1.4</label>
     </main>
 
     <script type="text/javascript" src="/static/controls.js"></script>
-
+    <script type="text/javascript">
+        (function(){
+            var toggle = document.getElementById("toggleBg"),
+                toggleState = localStorage.getItem('toggleState');
+            if(toggleState ==  "true") {
+                toggle.checked = true;
+                document.body.style.backgroundColor = "white";
+            }
+            toggle.addEventListener( 'change', function() {
+                if(this.checked) {
+                    document.body.style.backgroundColor = "white";
+                    localStorage.setItem("toggleState", true);
+                } else {
+                    document.body.style.backgroundColor = "#f3f4f5";
+                    localStorage.setItem("toggleState", false);
+                }
+            });
+        })();
+    </script>
 
 </body>
 </html>

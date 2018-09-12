@@ -57,7 +57,7 @@ form-item:
 {%- set _id = utils.id() %}
 <div class="fd-form__item{{ modifier.item | modifier('form__item') }}{{ ' fd-form__item--check' if type == "checkbox" or type == "radio" or type == "toggle" }}">
     {%- if type == "checkbox" or type == "radio" or type == "toggle" %}
-    <label class="fd-form__label{{ ' is-required' if state.required }}" for="{{_id}}">
+    <label class="fd-form__label{{ ' is-required' if state.required }}{{ ' is-disabled' if state.disabled }}" for="{{_id}}">
         {{ form_control(type,_id,properties,state=state,aria=aria,modifier=modifier.control) }}
         {{ properties.label }}
         {%- if properties.help %}
@@ -94,7 +94,7 @@ form-message:
     },
     modifier="help")
 -%}
-<span class="fd-form__message{{ modifier | modifier('form__message') }}">
+<span class="fd-form__message{{ modifier | modifier('form__message') }} ">
     {{properties.message}}
 </span>
 {%- endmacro %}

@@ -1,12 +1,13 @@
 @import "./../settings";
 @import "./../mixins";
 @import "./../functions";
-@import "./mixins";
+
 /*!
 .fd-input-group+(--inline)
     .fd-input-group__addon+()
         .fd-input-group__button
 */
+
 $block: #{$fd-namespace}-input-group;
 .#{$block} {
     //LOCAL VARS (set all vars used in component, always include !default)
@@ -19,6 +20,9 @@ $block: #{$fd-namespace}-input-group;
     max-height: $fd-forms-height--input-text;
 
     //ELEMENTS *******************************************
+    #{$fd-elements-inputs--text}{
+        z-index: 1;
+    }
     & [type="number"] {
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
@@ -43,6 +47,9 @@ $block: #{$fd-namespace}-input-group;
             margin: 0;
         }
         -moz-appearance: textfield;
+    }
+    input{
+        // z-index: 100;
     }
     &--inline {
         display: inline-flex;
@@ -97,7 +104,7 @@ $block: #{$fd-namespace}-input-group;
         }
     }
     &--before {
-        #{$fd-elements-inputs--text} {
+        #{$fd-elements-inputs--text}{
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
