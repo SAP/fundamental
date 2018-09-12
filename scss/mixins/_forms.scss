@@ -61,3 +61,12 @@
     padding-right: $fd-forms-padding;
     @content;
 }
+
+// Form Base
+%form-field-base {
+    @include fd-form-base;
+    transition: border-color $fd-forms-transition-params, background-color $fd-forms-transition-params, background-image $fd-forms-transition-params;
+    &::after {
+        transition: border-color $fd-forms-transition-params;
+    }
+}
