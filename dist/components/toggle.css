@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.1.0
+* Fundamental-UI v1.2.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -51,13 +51,23 @@
   display: none
 }
 .fd-toggle input:checked {
-  background-color: #0a6ed1;
-  opacity: .6
+  background-color: #0a6ed1
 }
 .fd-toggle input:checked + .fd-toggle__switch {
   left: calc(100% - 28px);
   background: #0854a0;
   border-color: #0854a0
+}
+.fd-toggle input:checked.is-disabled,
+.fd-toggle input:checked[aria-disabled=true],
+.fd-toggle input:checked[disabled] {
+  background-color: rgba(10,110,209,.08)
+}
+.fd-toggle input:checked.is-disabled + .fd-toggle__switch,
+.fd-toggle input:checked[aria-disabled=true] + .fd-toggle__switch,
+.fd-toggle input:checked[disabled] + .fd-toggle__switch {
+  border-color: transparent;
+  background-color: #d8ebfd
 }
 .fd-toggle input:hover {
   border-color: transparent
@@ -69,14 +79,17 @@
 .fd-toggle input.is-disabled,
 .fd-toggle input[aria-disabled=true],
 .fd-toggle input[disabled] {
-  opacity: .4;
-  border-color: transparent
+  opacity: 1;
+  background-color: #ededee
 }
 .fd-toggle input.is-disabled + .fd-toggle__switch,
 .fd-toggle input[aria-disabled=true] + .fd-toggle__switch,
 .fd-toggle input[disabled] + .fd-toggle__switch {
-  border-color: transparent;
-  background-color: #eeeeef
+  opacity: 1;
+  border-color: #ededee;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: #fff
 }
 .fd-toggle--xs {
   height: 20px;
@@ -85,6 +98,9 @@
 .fd-toggle--xs .fd-toggle__switch {
   height: 20px;
   width: 20px
+}
+.fd-toggle--xs .fd-toggle__label {
+  padding-left: 46px
 }
 .fd-toggle--xs input {
   border-radius: 10px
@@ -100,6 +116,9 @@
   height: 24px;
   width: 24px
 }
+.fd-toggle--s .fd-toggle__label {
+  padding-left: 50px
+}
 .fd-toggle--s input {
   border-radius: 12px
 }
@@ -113,6 +132,9 @@
 .fd-toggle--l .fd-toggle__switch {
   height: 32px;
   width: 32px
+}
+.fd-toggle--l .fd-toggle__label {
+  padding-left: 66px
 }
 .fd-toggle--l input {
   border-radius: 16px

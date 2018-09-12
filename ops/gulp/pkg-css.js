@@ -115,7 +115,6 @@ gulp.task('pkg-sass', sassTask);
 
 //create minify versions
 var minifyTask = (cb) => {
-    console.log("HELLO?");
     return gulp.src([`${paths.dest}/**/*.css`])
         .pipe(cleanCSS({
             level: {

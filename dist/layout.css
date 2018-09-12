@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.1.0
+* Fundamental-UI v1.2.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -12,7 +12,9 @@
     .fd-section__footer
 */
 .fd-section {
-  padding: 16px 40px 20px;
+  --fd-section-padding-x: var(--fd-padding-ui);
+  padding: 16px 32px 20px;
+  padding: 16px var(--fd-section-padding-x) 20px;
   border-bottom: none
 }
 .fd-section::after {
@@ -33,8 +35,10 @@
 .fd-section--bleed .fd-section__header,
 .fd-section--full-bleed .fd-section__footer,
 .fd-section--full-bleed .fd-section__header {
-  margin-left: 40px;
-  margin-right: 40px
+  margin-left: 32px;
+  margin-left: var(--fd-section-padding-x);
+  margin-right: 32px;
+  margin-right: var(--fd-section-padding-x)
 }
 .fd-section__header {
   min-height: 40px;
@@ -102,132 +106,167 @@
 @media (min-width:800px) {
   .fd-col--1 {
     float: left;
-    margin-right: 24px;
-    width: calc((((100% - 264px)/ 12) * 1) + 0px)
+    margin-right: 32px;
+    margin-right: var(--fd-width-gutter);
+    width: calc((((100% - 352px)/ 12) * 1) + 0px);
+    width: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 1) + (var(--fd-width-gutter) * (1 - 1)))
   }
   .fd-col--1:last-child {
     margin-right: 0
   }
   .fd-col--2 {
     float: left;
-    margin-right: 24px;
-    width: calc((((100% - 264px)/ 12) * 2) + 24px)
+    margin-right: 32px;
+    margin-right: var(--fd-width-gutter);
+    width: calc((((100% - 352px)/ 12) * 2) + 32px);
+    width: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 2) + (var(--fd-width-gutter) * (2 - 1)))
   }
   .fd-col--2:last-child {
     margin-right: 0
   }
   .fd-col--3 {
     float: left;
-    margin-right: 24px;
-    width: calc((((100% - 264px)/ 12) * 3) + 48px)
+    margin-right: 32px;
+    margin-right: var(--fd-width-gutter);
+    width: calc((((100% - 352px)/ 12) * 3) + 64px);
+    width: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 3) + (var(--fd-width-gutter) * (3 - 1)))
   }
   .fd-col--3:last-child {
     margin-right: 0
   }
   .fd-col--4 {
     float: left;
-    margin-right: 24px;
-    width: calc((((100% - 264px)/ 12) * 4) + 72px)
+    margin-right: 32px;
+    margin-right: var(--fd-width-gutter);
+    width: calc((((100% - 352px)/ 12) * 4) + 96px);
+    width: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 4) + (var(--fd-width-gutter) * (4 - 1)))
   }
   .fd-col--4:last-child {
     margin-right: 0
   }
   .fd-col--5 {
     float: left;
-    margin-right: 24px;
-    width: calc((((100% - 264px)/ 12) * 5) + 96px)
+    margin-right: 32px;
+    margin-right: var(--fd-width-gutter);
+    width: calc((((100% - 352px)/ 12) * 5) + 128px);
+    width: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 5) + (var(--fd-width-gutter) * (5 - 1)))
   }
   .fd-col--5:last-child {
     margin-right: 0
   }
   .fd-col--6 {
     float: left;
-    margin-right: 24px;
-    width: calc((((100% - 264px)/ 12) * 6) + 120px)
+    margin-right: 32px;
+    margin-right: var(--fd-width-gutter);
+    width: calc((((100% - 352px)/ 12) * 6) + 160px);
+    width: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 6) + (var(--fd-width-gutter) * (6 - 1)))
   }
   .fd-col--6:last-child {
     margin-right: 0
   }
   .fd-col--7 {
     float: left;
-    margin-right: 24px;
-    width: calc((((100% - 264px)/ 12) * 7) + 144px)
+    margin-right: 32px;
+    margin-right: var(--fd-width-gutter);
+    width: calc((((100% - 352px)/ 12) * 7) + 192px);
+    width: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 7) + (var(--fd-width-gutter) * (7 - 1)))
   }
   .fd-col--7:last-child {
     margin-right: 0
   }
   .fd-col--8 {
     float: left;
-    margin-right: 24px;
-    width: calc((((100% - 264px)/ 12) * 8) + 168px)
+    margin-right: 32px;
+    margin-right: var(--fd-width-gutter);
+    width: calc((((100% - 352px)/ 12) * 8) + 224px);
+    width: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 8) + (var(--fd-width-gutter) * (8 - 1)))
   }
   .fd-col--8:last-child {
     margin-right: 0
   }
   .fd-col--9 {
     float: left;
-    margin-right: 24px;
-    width: calc((((100% - 264px)/ 12) * 9) + 192px)
+    margin-right: 32px;
+    margin-right: var(--fd-width-gutter);
+    width: calc((((100% - 352px)/ 12) * 9) + 256px);
+    width: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 9) + (var(--fd-width-gutter) * (9 - 1)))
   }
   .fd-col--9:last-child {
     margin-right: 0
   }
   .fd-col--10 {
     float: left;
-    margin-right: 24px;
-    width: calc((((100% - 264px)/ 12) * 10) + 216px)
+    margin-right: 32px;
+    margin-right: var(--fd-width-gutter);
+    width: calc((((100% - 352px)/ 12) * 10) + 288px);
+    width: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 10) + (var(--fd-width-gutter) * (10 - 1)))
   }
   .fd-col--10:last-child {
     margin-right: 0
   }
   .fd-col--11 {
     float: left;
-    margin-right: 24px;
-    width: calc((((100% - 264px)/ 12) * 11) + 240px)
+    margin-right: 32px;
+    margin-right: var(--fd-width-gutter);
+    width: calc((((100% - 352px)/ 12) * 11) + 320px);
+    width: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 11) + (var(--fd-width-gutter) * (11 - 1)))
   }
   .fd-col--11:last-child {
     margin-right: 0
   }
   .fd-col--12 {
     float: left;
-    margin-right: 24px;
-    width: calc((((100% - 264px)/ 12) * 12) + 264px)
+    margin-right: 32px;
+    margin-right: var(--fd-width-gutter);
+    width: calc((((100% - 352px)/ 12) * 12) + 352px);
+    width: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 12) + (var(--fd-width-gutter) * (12 - 1)))
   }
   .fd-col--12:last-child {
     margin-right: 0
   }
   .fd-col--shift-1 {
-    margin-left: calc((((100% - 264px)/ 12) * 1) + 24px)
+    margin-left: calc((((100% - 352px)/ 12) * 1) + 32px);
+    margin-left: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 1) + (var(--fd-width-gutter) * (1)))
   }
   .fd-col--shift-2 {
-    margin-left: calc((((100% - 264px)/ 12) * 2) + 48px)
+    margin-left: calc((((100% - 352px)/ 12) * 2) + 64px);
+    margin-left: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 2) + (var(--fd-width-gutter) * (2)))
   }
   .fd-col--shift-3 {
-    margin-left: calc((((100% - 264px)/ 12) * 3) + 72px)
+    margin-left: calc((((100% - 352px)/ 12) * 3) + 96px);
+    margin-left: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 3) + (var(--fd-width-gutter) * (3)))
   }
   .fd-col--shift-4 {
-    margin-left: calc((((100% - 264px)/ 12) * 4) + 96px)
+    margin-left: calc((((100% - 352px)/ 12) * 4) + 128px);
+    margin-left: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 4) + (var(--fd-width-gutter) * (4)))
   }
   .fd-col--shift-5 {
-    margin-left: calc((((100% - 264px)/ 12) * 5) + 120px)
+    margin-left: calc((((100% - 352px)/ 12) * 5) + 160px);
+    margin-left: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 5) + (var(--fd-width-gutter) * (5)))
   }
   .fd-col--shift-6 {
-    margin-left: calc((((100% - 264px)/ 12) * 6) + 144px)
+    margin-left: calc((((100% - 352px)/ 12) * 6) + 192px);
+    margin-left: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 6) + (var(--fd-width-gutter) * (6)))
   }
   .fd-col--shift-7 {
-    margin-left: calc((((100% - 264px)/ 12) * 7) + 168px)
+    margin-left: calc((((100% - 352px)/ 12) * 7) + 224px);
+    margin-left: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 7) + (var(--fd-width-gutter) * (7)))
   }
   .fd-col--shift-8 {
-    margin-left: calc((((100% - 264px)/ 12) * 8) + 192px)
+    margin-left: calc((((100% - 352px)/ 12) * 8) + 256px);
+    margin-left: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 8) + (var(--fd-width-gutter) * (8)))
   }
   .fd-col--shift-9 {
-    margin-left: calc((((100% - 264px)/ 12) * 9) + 216px)
+    margin-left: calc((((100% - 352px)/ 12) * 9) + 288px);
+    margin-left: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 9) + (var(--fd-width-gutter) * (9)))
   }
   .fd-col--shift-10 {
-    margin-left: calc((((100% - 264px)/ 12) * 10) + 240px)
+    margin-left: calc((((100% - 352px)/ 12) * 10) + 320px);
+    margin-left: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 10) + (var(--fd-width-gutter) * (10)))
   }
   .fd-col--shift-11 {
-    margin-left: calc((((100% - 264px)/ 12) * 11) + 264px)
+    margin-left: calc((((100% - 352px)/ 12) * 11) + 352px);
+    margin-left: calc((((100% - (11 * var(--fd-width-gutter)))/ 12) * 11) + (var(--fd-width-gutter) * (11)))
   }
 }
 [class^=fd-col] {
@@ -252,7 +291,7 @@
   position: absolute;
   min-height: 100vh;
   width: 100vw;
-  max-width: 100vw;
+  max-width: 100%;
   background: 0 0;
   background-size: cover;
   background-attachment: fixed
@@ -329,7 +368,7 @@
 */
 .fd-app {
   width: 100%;
-  min-height: 100vh
+  min-height: calc(100vh - 50px)
 }
 @media (min-width:800px) {
   .fd-app {
@@ -343,7 +382,7 @@
   width: 100vw;
   max-height: 40px;
   border-right: solid 1px #dededf;
-  overflow: scroll
+  overflow: auto
 }
 @media (min-width:800px) {
   .fd-app__sidebar {
@@ -364,9 +403,10 @@
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  overflow: scroll
+  overflow: auto
 }
 .fd-page {
+  --fd-page-header-padding-x: var(--fd-padding-ui);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -384,17 +424,8 @@
   border-color: #dededf;
   background-color: #f3f4f5;
   min-height: auto;
-  padding: 0 40px
-}
-.fd-page__intro {
-  font-size: .92857rem;
-  line-height: 1.23077;
-  font-weight: 400;
-  padding: 16px 40px;
-  background-color: #fff;
-  text-align: center;
-  border-bottom: solid 1px #dededf;
-  margin-bottom: -1px
+  padding: 0 32px;
+  padding: 0 var(--fd-page-header-padding-x)
 }
 .fd-page__content {
   -webkit-box-flex: 1;
@@ -410,7 +441,9 @@
     .fd-section__footer
 */
 .fd-section {
-  padding: 16px 40px 20px;
+  --fd-section-padding-x: var(--fd-padding-ui);
+  padding: 16px 32px 20px;
+  padding: 16px var(--fd-section-padding-x) 20px;
   border-bottom: none
 }
 .fd-section::after {
@@ -431,8 +464,10 @@
 .fd-section--bleed .fd-section__header,
 .fd-section--full-bleed .fd-section__footer,
 .fd-section--full-bleed .fd-section__header {
-  margin-left: 40px;
-  margin-right: 40px
+  margin-left: 32px;
+  margin-left: var(--fd-section-padding-x);
+  margin-right: 32px;
+  margin-right: var(--fd-section-padding-x)
 }
 .fd-section__header {
   min-height: 40px;
@@ -575,7 +610,7 @@
     flex-wrap: wrap;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 24px
+    grid-gap: 32px
   }
   .fd-panel-grid--2col {
     grid-template-columns: repeat(2,1fr)
