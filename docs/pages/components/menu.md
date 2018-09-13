@@ -50,3 +50,52 @@ You can optionally add hierarchy to menus by grouping sub-menus and adding heade
 {% endcapture %}
 
 {% include display-component.html component=default-menuwgroup %}
+
+## Menu w/ Separator
+
+{% capture default-menuwgroup %}
+<nav class="fd-menu">
+    <ul class="fd-menu__list">
+      <li><a href="#" class="fd-menu__item">Option 1</a>
+    </li>
+      <hr>
+      <li><a href="#" class="fd-menu__item">Option 2</a>
+    </li>
+      <hr>
+      <li><a href="#" class="fd-menu__item">Option 3</a>
+    </li>
+      <hr>
+      <li><a href="#" class="fd-menu__item">Option 4</a>
+    </li>
+    </ul>
+</nav>
+{% endcapture %}
+
+{% include display-component.html component=default-menuwgroup %}
+
+## Menu w/ addon before
+
+{% capture default-menuwgroup %}
+<nav class="fd-menu fd-menu--addon-before">
+    <ul class="fd-menu__list">
+        <li>
+            <div class="fd-menu__addon-before"></div>
+            <a href="#" class="fd-menu__item">Option 1</a>
+        </li>
+        <li>
+            <div class="fd-menu__addon-before"><span class="sap-icon--accept"></span></div>
+            <a href="#" class="fd-menu__item">Option 2</a>
+        </li>
+        <li>
+            <div class="fd-menu__addon-before"></div>
+            <a href="#" class="fd-menu__item">Option 3</a>
+        </li>
+        <li>
+            <div class="fd-menu__addon-before"></div>
+            <a href="#" class="fd-menu__item">Option 4</a>
+        </li>
+    </ul>
+</nav>
+{% endcapture %}
+
+{% include display-component.html component=default-menuwgroup %}
