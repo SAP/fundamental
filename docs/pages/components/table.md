@@ -189,3 +189,320 @@ a contextual menu can be substituted in order to display all actions in one menu
 </table>
 {% endcapture %}
 {% include display-component.html component=table-actions %}
+
+<br />
+
+## Table with Sortable Column Headers
+{% capture table-sort %}
+<table class="fd-table">
+   <thead>
+      <tr>
+         <th class="fd-table__sort-column">Header Column</th>
+         <th class="fd-table__sort-column">Header Column</th>
+         <th class="fd-table__sort-column">Header Column</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>Lorem ipsum dolor sit amet ipsum</td>
+         <td>Lorem ipsum dolor sit amet ipsum</td>
+         <td>Lorem ipsum dolor sit amet ipsum</td>
+      </tr>
+      <tr>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+      </tr>
+      <tr>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+      </tr>
+   </tbody>
+</table>
+{% endcapture %}
+{% include display-component.html component=table-sort %}
+
+<br>
+
+## Table with Sortable Column Headers - Ascending
+{% capture table-sort %}
+<table class="fd-table">
+   <thead>
+      <tr>
+         <th class="fd-table__sort-column fd-table__sort-column--asc">Header Column</th>
+         <th class="fd-table__sort-column">Header Column</th>
+         <th class="fd-table__sort-column">Header Column</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>Lorem ipsum dolor sit amet ipsum</td>
+         <td>Lorem ipsum dolor sit amet ipsum</td>
+         <td>Lorem ipsum dolor sit amet ipsum</td>
+      </tr>
+      <tr>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+      </tr>
+      <tr>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+      </tr>
+   </tbody>
+</table>
+{% endcapture %}
+{% include display-component.html component=table-sort %}
+
+<br>
+
+## Table with Sortable Column Headers - Descinding
+{% capture table-sort %}
+<table class="fd-table">
+   <thead>
+      <tr>
+         <th class="fd-table__sort-column fd-table__sort-column--dsc">Header Column</th>
+         <th class="fd-table__sort-column ">Header Column</th>
+         <th class="fd-table__sort-column ">Header Column</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>Lorem ipsum dolor sit amet ipsum</td>
+         <td>Lorem ipsum dolor sit amet ipsum</td>
+         <td>Lorem ipsum dolor sit amet ipsum</td>
+      </tr>
+      <tr>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+      </tr>
+      <tr>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+      </tr>
+   </tbody>
+</table>
+{% endcapture %}
+{% include display-component.html component=table-sort %}
+
+<br>
+
+## Table with Column Headers with context menu
+{% capture table-sort %}
+<table class="fd-table">
+   <thead>
+      <tr>
+         <th class="fd-table__context-menu " style="left:; width:"  aria-controls="col1" aria-haspopup="true" >
+            <div class="fd-popover">
+               <div class="fd-popover__control">
+                  <span class="fd-table__context-menu-label">Header Column</span>
+               </div>
+               <div class="fd-popover__body"  aria-hidden="true" id="col1">
+                  <nav class="fd-menu fd-menu--addon-before">
+                     <ul class="fd-menu__list">
+                        <li><a href="#" class="fd-menu__item">Ascending</a>
+                        </li>
+                        <li><a href="#" class="fd-menu__item">Decensing</a>
+                        </li>
+                        <hr>
+                        <li><a href="#" class="fd-menu__item">Fix Column</a>
+                        </li>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+         </th>
+         <th class="fd-table__context-menu " style="left:; width:"  aria-controls="col2" aria-haspopup="true" >
+            <div class="fd-popover">
+               <div class="fd-popover__control">
+                  <span class="fd-table__context-menu-label">Header Column</span>
+               </div>
+               <div class="fd-popover__body"  aria-hidden="true" id="col2">
+                  <nav class="fd-menu fd-menu--addon-before">
+                     <ul class="fd-menu__list">
+                        <li><a href="#" class="fd-menu__item">Ascending</a>
+                        </li>
+                        <li><a href="#" class="fd-menu__item">Decensing</a>
+                        </li>
+                        <hr>
+                        <li><a href="#" class="fd-menu__item">Fix Column</a>
+                        </li>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+         </th>
+         <th class="fd-table__context-menu " style="left:; width:"  aria-controls="col3" aria-haspopup="true" >
+            <div class="fd-popover">
+               <div class="fd-popover__control">
+                  <span class="fd-table__context-menu-label">Header Column</span>
+               </div>
+               <div class="fd-popover__body"  aria-hidden="true" id="col3">
+                  <nav class="fd-menu fd-menu--addon-before">
+                     <ul class="fd-menu__list">
+                        <li><a href="#" class="fd-menu__item">Ascending</a>
+                        </li>
+                        <li><a href="#" class="fd-menu__item">Decensing</a>
+                        </li>
+                        <hr>
+                        <li><a href="#" class="fd-menu__item">Fix Column</a>
+                        </li>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+         </th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>Lorem ipsum dolor sit amet ipsum</td>
+         <td>Lorem ipsum dolor sit amet ipsum</td>
+         <td>Lorem ipsum dolor sit amet ipsum</td>
+      </tr>
+      <tr>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+      </tr>
+      <tr>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+          <td>Lorem ipsum dolor sit amet ipsum</td>
+      </tr>
+   </tbody>
+</table>
+{% endcapture %}
+{% include display-component.html component=table-sort %}
+
+<br>
+
+## Table with Fix Column Header and context menu
+{% capture table-sort %}
+<div class="fd-table--fixed-wrapper" style="width:800px;">
+   <div class="fd-table--fixed">
+      <table class="fd-table">
+         <thead>
+            <tr>
+               <th class="fd-table__context-menu  fd-table__fixed-col" style="left:0; width:200px"  aria-controls="col1.2" aria-haspopup="true" >
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body"  aria-hidden="true" id="col1.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li>
+                                 <div class="fd-menu__addon-before"></div>
+                                 <a href="#" class="fd-menu__item">Ascending</a>
+                              </li>
+                              <li>
+                                 <div class="fd-menu__addon-before"></div>
+                                 <a href="#" class="fd-menu__item">Decensing</a>
+                              </li>
+                              <hr>
+                              <li>
+                                 <div class="fd-menu__addon-before"><span class="sap-icon--accept"></span></div>
+                                 <a href="#" class="fd-menu__item">Fix Column</a>
+                              </li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class="fd-table__context-menu " style="left:200px; width:"  aria-controls="col2.2" aria-haspopup="true" >
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body"  aria-hidden="true" id="col2.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a>
+                              </li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a>
+                              </li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a>
+                              </li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class="fd-table__context-menu " style="left:; width:"  aria-controls="col3.2" aria-haspopup="true" >
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body"  aria-hidden="true" id="col3.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a>
+                              </li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a>
+                              </li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a>
+                              </li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class=" ">Header Column</th>
+               <th class=" ">Header Column</th>
+               <th class=" ">Header Column</th>
+               <th class=" ">Header Column</th>
+               <th class=" ">Header Column</th>
+               <th class=" ">Header Column</th>
+               <th class=" ">Header Column</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:200px; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+            </tr>
+            <tr>
+               <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:200px; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+            </tr>
+            <tr>
+               <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:200px; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>
+{% endcapture %}
+{% include display-component.html component=table-sort %}
