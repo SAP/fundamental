@@ -12,6 +12,11 @@ The contextual menu component is an opinionated composition of the "popover" and
 
 This component is completely composed from other components CSS and doesn't have any of its own.
 
+Implementation Guidelines:
+- Only one menu should be open at a give time
+- Opening one menu should close all other menus
+- Clicking away from the menu should also close the menu
+
 <hr>
 
 ## With Icon
