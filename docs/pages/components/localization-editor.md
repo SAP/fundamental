@@ -74,10 +74,10 @@ summary:
          Localization Editor Label
          </label>
          <div class="fd-input-group fd-input-group--after">
-            <textarea class="" id="" aria-controls="NJvVh542" aria-expanded="false" 
+            <textarea class="" id="" aria-controls="NJvVh542" aria-expanded="false"
             aria-haspopup="true"></textarea>
-            <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
-            <button class=" fd-button--secondary fd-localization-editor__button"
+            <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--textarea fd-input-group__addon--button">
+            <button class="fd-button--secondary fd-localization-editor__button"
             aria-controls="NJvVh542" aria-expanded="false" aria-haspopup="true">EN*</button>
             </span>
          </div>
@@ -88,7 +88,7 @@ summary:
                <li>
                   <div class="fd-input-group fd-input-group--after">
                      <textarea class="" id=""></textarea>
-                     <span class="fd-input-group__addon fd-input-group__addon--after">
+                     <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--textarea">
                      ES
                      </span>
                   </div>
@@ -96,7 +96,7 @@ summary:
                <li>
                   <div class="fd-input-group fd-input-group--after">
                      <textarea class="" id=""></textarea>
-                     <span class="fd-input-group__addon fd-input-group__addon--after">
+                     <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--textarea">
                      CH
                      </span>
                   </div>
@@ -104,7 +104,7 @@ summary:
                <li>
                   <div class="fd-input-group fd-input-group--after">
                      <textarea class="" id=""></textarea>
-                     <span class="fd-input-group__addon fd-input-group__addon--after">
+                     <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--textarea">
                      PL
                      </span>
                   </div>
