@@ -9,6 +9,20 @@ Learn more about this project at - http://sap.github.io/fundamental/
 v1.2.0
 ````
 
+# Project Requirements
+This project has the following prerequisits and works best with the noted versions.
+
+* Git (for downloading this repo)
+* [Node LTS](https://nodejs.org/) 8.12.0
+* [Gulp](https://gulpjs.com/) 6.4.1
+* SCSS (for CSS)
+* Nunjucks (for testing)
+* Ruby (for documentation site)
+* Python 2 (for Jekyll - documentation site)
+* Bundle (for documentation site)
+* Jekyll (for documentation site)
+* XCode (for some Mac OS user)
+
 # The Project Structure
 
 * dist - distribution folder that contains combined and individual CSS files for all component
@@ -17,23 +31,6 @@ v1.2.0
 * ops - various configurations and gulp tasks for processing scss, building icons, generating documentation site
 * scss - SCSS source files for all the components
 * test - Testing framework for the components
-
-
-# Project Requirements
-
-This project packages the library for `npm` and generates the documentation as a static website.
-
-We rely on several core technologies.
-
-* Git (for downloading this repo)
-* [Node](https://nodejs.org/) (minimum v6.4)
-* [Gulp](https://gulpjs.com/) (for various ops tasks)
-* SCSS (for CSS)
-* Nunjucks (for testing)
-* Ruby (for documentation site)
-* Bundle (for documentation site)
-* Jekyll (for documentation site)
-
 
 # Download and Installation - Library only
 
