@@ -2,7 +2,14 @@
 @import "./../functions";
 @import "./../mixins/forms";
 
-
+// Form Base
+%form-field-base {
+    @include fd-form-base;
+    transition: border-color $fd-forms-transition-params, background-color $fd-forms-transition-params, background-image $fd-forms-transition-params;
+    &::after {
+        transition: border-color $fd-forms-transition-params;
+    }
+}
 
 // Global CSS (Remove/Move?)
 fieldset {
@@ -11,15 +18,34 @@ fieldset {
     margin: 0;
 }
 
-// Default Components
+// Form Elements
 @import "./../components/input";
 @import "./../components/textarea";
-@import "./../components/checkbox";
-@import "./../components/radio";
 @import "./../components/select";
 
-// Special Compoments
-@import "./../components/input-addon";
-@import "./../components/combobox-input";
-@import "./../components/search-input";
-@import "./../components/multi-input";
+#{$fd-elements-inputs--check} {
+    @extend %form-field-base;
+    height: $fd-forms-height--input-check;
+    width: $fd-forms-height--input-check;
+    margin: 0;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+    border-color: fd-color(neutral, 4);
+    &:hover{
+        border-width: 2px;
+    }
+    &:checked {
+        border-color: fd-color-darkest($fd-forms-color--active);
+        background-color: fd-color-darkest($fd-forms-color--active);
+    }
+    &[disabled],
+    &[aria-disabled="true"],
+    &.is-disabled {
+        border-color: $fd-forms-border-color--disabled;
+        background-color: $fd-forms-background-color--disabled;
+    }
+}
+
+@import "./../components/checkbox";
+@import "./../components/radio";

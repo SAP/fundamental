@@ -5,32 +5,6 @@
 /*!
 checkbox
 */
-
-// Repeated CSS (Checkbox/Radio)
-#{$fd-elements-inputs--check}{
-    @extend %form-field-base;
-    height: $fd-forms-height--input-check;
-    width: $fd-forms-height--input-check;
-    margin: 0;
-    vertical-align: middle;
-    position: relative;
-    cursor: pointer;
-    border-color: fd-color(neutral, 4);
-    &:hover{
-        border-width: 2px;
-    }
-    &:checked {
-        border-color: fd-color-darkest($fd-forms-color--active);
-        background-color: fd-color-darkest($fd-forms-color--active);
-    }
-    &[disabled],
-    &[aria-disabled="true"],
-    &.is-disabled {
-        border-color: $fd-forms-border-color--disabled;
-        background-color: $fd-forms-background-color--disabled;
-    }
-}
-
 input[type="checkbox"] {
     &::before {
         content: "";
