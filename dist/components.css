@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.2.0
+* Fundamental-UI v1.2.1
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -1102,8 +1102,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  vertical-align: bottom;
-  max-height: 36px
+  vertical-align: bottom
 }
 .fd-input-group input[type=date],
 .fd-input-group input[type=email],
@@ -1167,7 +1166,8 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  border-radius: 4px
+  border-radius: 4px;
+  height: 36px
 }
 .fd-input-group__addon:first-child {
   border-right-width: 0
@@ -1185,6 +1185,9 @@
 .fd-input-group__addon--after {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0
+}
+.fd-input-group__addon--textarea {
+  height: auto
 }
 [readonly] + .fd-input-group__addon {
   border-top-color: transparent;
@@ -1986,21 +1989,21 @@
   top: -8px;
   right: 14px
 }
-.fd-inline-help__content--left {
+.fd-inline-help__content--right {
   top: -12px;
   left: 30px
 }
-.fd-inline-help__content--left::before {
+.fd-inline-help__content--right::before {
   top: 16px;
   left: -10px;
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg)
 }
-.fd-inline-help__content--right {
+.fd-inline-help__content--left {
   top: -12px;
   right: 30px
 }
-.fd-inline-help__content--right::before {
+.fd-inline-help__content--left::before {
   top: 16px;
   right: -10px;
   -webkit-transform: rotate(90deg);
@@ -2960,6 +2963,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-menu__addon-before {
   float: left;
+  clear: left;
   padding: 10px
 }
 .fd-menu hr {
@@ -3615,4 +3619,19 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-localization-editor.is-disabled,
 .fd-localization-editor[disabled] {
   opacity: .5
+}
+/*!
+input-addon
+*/
+/*!
+.fd-combobox
+*/
+/*!
+.fd-search-input
+*/
+/*!
+.fd-multi-input
+*/
+.fd-multi-input-field {
+  margin: 0 0 10px 0
 }

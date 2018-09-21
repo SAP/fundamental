@@ -197,3 +197,19 @@ The Input with add-on supports actions. Actions can be shown with a text label o
 {% include display-component.html component=button-addon %}
 
 <br>
+
+
+## Textarea with input group
+
+{% capture button-addon %}
+<div class="fd-input-group fd-input-group--after">
+    <textarea class="" id=""></textarea>
+    <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--textarea">
+        km/h
+    </span>
+</div>
+{% endcapture %}
+
+{% include display-component.html component=button-addon %}
+
+<br>
