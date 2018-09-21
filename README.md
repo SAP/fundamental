@@ -6,7 +6,7 @@ Learn more about this project at - http://sap.github.io/fundamental/
 
 # Current version
 ````
-v1.2.0
+v1.2.1
 ````
 
 # Project Requirements
@@ -39,7 +39,7 @@ This project has the following prerequisits and works best with the noted versio
 You can quickly include the latest minified file available via CDN link below
 
 ```
-https://unpkg.com/fundamental-ui@1.2.0/dist/fundamental-ui.min.css
+https://unpkg.com/fundamental-ui@1.2.1/dist/fundamental-ui.min.css
 ```
 
 ### NPM

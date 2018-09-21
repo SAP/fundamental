@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.2.0
+* Fundamental-UI v1.2.1
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -16,8 +16,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  vertical-align: bottom;
-  max-height: 36px
+  vertical-align: bottom
 }
 .fd-input-group input[type=date],
 .fd-input-group input[type=email],
@@ -81,7 +80,8 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  border-radius: 4px
+  border-radius: 4px;
+  height: 36px
 }
 .fd-input-group__addon:first-child {
   border-right-width: 0
@@ -99,6 +99,9 @@
 .fd-input-group__addon--after {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0
+}
+.fd-input-group__addon--textarea {
+  height: auto
 }
 [readonly] + .fd-input-group__addon {
   border-top-color: transparent;
