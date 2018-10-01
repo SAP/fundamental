@@ -1,0 +1,16 @@
+{% extends "layout.njk" %}
+{% from "./component.njk" import product_switcher %}
+{% from "./../format.njk" import format %}
+
+{% set css_deps = ['fonts','helpers', 'components/popover', 'components/button', 'icons'] %}
+
+{% block content %}
+
+    <h1>Product Switcher</h1>
+    {% set basic_product_switcher %}
+        {{ product_switcher()}}
+    {% endset %}
+
+    {{ format(basic_product_switcher) }}
+
+{% endblock %}

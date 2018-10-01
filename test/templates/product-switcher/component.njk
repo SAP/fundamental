@@ -1,0 +1,73 @@
+{% from "./../popover/component.njk" import popover %}
+{% import "./../utils.njk" as utils %}
+
+{%- set _id = utils.id() %}
+
+{% macro product_switcher(
+    properties={},
+    state={},
+    aria={},
+    classes=[])
+-%}
+    <div class="fd-product-switcher">
+        <div class="fd-popover">
+            <div class="fd-popover__control">
+                <button class="fd-button--secondary fd-button--m sap-icon--grid fd-global-nav__btn" aria-label="Launch Product Switcher" aria-controls="kj34lkj" aria-expanded="false" aria-haspopup="true"></button>
+            </div>
+            <div class="fd-popover__body fd-product-switcher__body" aria-hidden="true" id="kj34lkj">
+                <nav>
+                    <ul>
+                        <li>
+                            <span class="fd-product-switcher__product-icon"><img src="/static/products/01.png" /></span>
+                            <span class="fd-product-switcher__product-title">Fiori Home</span>
+                        </li>
+                        <li>
+                            <span class="fd-product-switcher__product-icon"><img src="/static/products/02.png" /></span>
+                            <span class="fd-product-switcher__product-title">S/4 HANA Cloud</span>
+                        </li>
+                        <li>
+                            <span class="fd-product-switcher__product-icon"><img src="/static/products/03.png" /></span>
+                            <span class="fd-product-switcher__product-title">Analytics Cloud</span>
+                        </li>
+                        <li>
+                            <span class="fd-product-switcher__product-icon"><img src="/static/products/04.png" /></span>
+                            <span class="fd-product-switcher__product-title">Ariba</span>
+                        </li>
+                        <li>
+                            <span class="fd-product-switcher__product-icon"><img src="/static/products/05.png" /></span>
+                            <span class="fd-product-switcher__product-title">SuccessFactors</span>
+                        </li>
+                        <li>
+                            <span class="fd-product-switcher__product-icon"><img src="/static/products/06.png" /></span>
+                            <span class="fd-product-switcher__product-title">Hybris</span>
+                        </li>
+                        <li>
+                            <span class="fd-product-switcher__product-icon"><img src="/static/products/07.png" /></span>
+                            <span class="fd-product-switcher__product-title">Gigya</span>
+                        </li>
+                        <li>
+                            <span class="fd-product-switcher__product-icon"><img src="/static/products/08.png" /></span>
+                            <span class="fd-product-switcher__product-title">Callidus Cloud</span>
+                        </li>
+                        <li>
+                            <span class="fd-product-switcher__product-icon"><img src="/static/products/09.png" /></span>
+                            <span class="fd-product-switcher__product-title">Fieldglass</span>
+                        </li>
+                        <li>
+                            <span class="fd-product-switcher__product-icon"><img src="/static/products/10.png" /></span>
+                            <span class="fd-product-switcher__product-title">Concur</span>
+                        </li>
+                        <li>
+                            <span class="fd-product-switcher__product-icon"><img src="/static/products/11.png" /></span>
+                            <span class="fd-product-switcher__product-title">Cloud for Customer</span>
+                        </li>
+                        <li>
+                            <span class="fd-product-switcher__product-icon"><img src="/static/products/12.png" /></span>
+                            <span class="fd-product-switcher__product-title">Cloud Portal</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+{%- endmacro %}

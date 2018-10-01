@@ -1,4 +1,5 @@
 {% import "./../utils.njk" as utils %}
+{% from "./../product-switcher/component.njk" import product_switcher %}
 
 <!--
 global_nav:
@@ -20,6 +21,7 @@ global_nav:
     </div>
     <div class="fd-global-nav__group fd-global-nav__group--right">
         <div class="fd-global-nav__actions">
+            {{  product_switcher() }}
             <button class="fd-button--secondary fd-button--m sap-icon--action-settings fd-global-nav__btn" aria-label="BUTTON_LABEL"></button>
             <button class=" fd-button--secondary fd-button--m fd-global-nav__btn" aria-label="BUTTON_LABEL"><span class=" fd-identifier--s fd-identifier--circle">WW</span></button>
         </div>

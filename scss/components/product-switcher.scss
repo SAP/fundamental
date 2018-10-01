@@ -1,0 +1,54 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+
+/*!
+.fd-search-input
+*/
+$block: #{$fd-namespace}-product-switcher;
+
+.#{$block} {
+  position: relative;
+  display: inline-block;
+
+  .fd-popover__body {
+    width: auto; // remove me after bug fix
+  }
+
+  &__body {
+    padding: 20px 10px 0 10px;
+    right: 0;
+
+    > nav {
+      > ul {
+          list-style: none;
+          overflow: hidden;
+          width: 450px;
+
+          > li {
+              float: left;
+              width: 150px;
+              text-align: center;
+              padding: 0 5px;
+              margin: 0 0 30px 0;
+          }
+      }
+    }
+  }
+
+  &__product {
+    &-icon {
+      display: block;
+      height: 40px;
+
+      > img {
+          display: block;
+          max-width: 140px;
+          margin: 0 auto 10px auto;
+      }
+    }
+    &-title {
+      display: block;
+    }
+  }
+}
