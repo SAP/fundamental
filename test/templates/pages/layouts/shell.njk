@@ -1,125 +1,13 @@
 {% extends "./page.njk" %}
 {% from "./../../side-nav/component.njk" import side_nav %}
-{% from "./../../action-bar/component.njk" import action_bar %}
-{% from "./../../button/component.njk" import button %}
-{% from "./../../breadcrumb/component.njk" import breadcrumb %}
 {% from "./../../global-nav/component.njk" import global_nav %}
 
 {% set hide_ui_footer = true %}
 
-
 {% block ui_header %}
 
-{{  global_nav(
-    properties = {
-        "title": "Global Nav Label",
-        "description": "Global Nav Description",
-        "side_menu": hide_app_sidebar != true,
-        "launchpad_button": {
-            "properties": { label: 'Suite Name'},
-            "modifier": { block: ['secondary', 'l'] },
-            "aria": { label: 'BUTTON_LABEL', haspopup: true , controls: _id2},
-            "classes": 'global-nav__btn'
-        },
-        "launchpad_menu": {
-            "id": 'launchpad',
-            "label": "Suite Name",
-            "classes": "fd-global-nav__launchpad",
-            "header": "SAP Hybris Home",
-            "navgroups": [
-              {
-                "title": "Group Name",
-                "items": [
-                  { "label": "item link" },
-                  {
-                      "label": "item link",
-                      "haschild": true,
-                      "items": [
-                          { "label": "Link" },
-                          { "label": "Link" },
-                          { "label": "Link" }
-                      ]
-                   },
-                   { "label": "item link" }
-                ]
-              },
-              {
-                "title": "Group Name",
-                "items": [
-                  { "label": "item link" },
-                  {
-                      "label": "item link",
-                      "haschild": true,
-                      "items": [
-                          { "label": "Link" },
-                          { "label": "Link" },
-                          { "label": "Link" }
-                      ]
-                   },
-                   { "label": "item link" }
-                ]
-              }
-            ]
-        },
-        "context_menu": {
-            "label": "Context Switcher",
-            "classes": "fd-global-nav__launchpad",
-            "items": [
-                { "label": "Link Name" },
-                { "label": "Link Name" },
-                { "label": "Link Name" },
-                { "label": "Link Name" },
-                { "label": "Link Name" }
-            ]
-        }
+{{  global_nav() }}
 
-    }
-) }}
-
-
-{% endblock %}
-
-
-{% block page_header %}
-{%- if show_breadcrumb %}
-{{  breadcrumb(
-        properties=data.breadcrumb.properties
-    )
-}}
-{%- endif %}
-{%- set btns = [] %}
-  {%- if is_editable_page %}
-{%- set btns = [button(
-          { label: 'Cancel' },
-          modifier={ block: ['secondary', 'l'] }
-      ),    button(
-              { label: 'Save' },
-              modifier={block: [ 'main', 'l'] }
-          )] %}
-    {# {%- else  %}
-    {%- set btns = [button(
-              { label: 'Add', icon: 'add' },
-              modifier={ block: ['l'] }
-          )] %} #}
-  {%- endif %}
-  {%- set page_description = page_intro or "" %}
-{{  action_bar(
-        properties={
-            title: page_title,
-            description: page_description,
-            actions: {
-                properties: {
-                    items: btns
-                }
-            }
-        },
-        modifier={
-            block: []
-        },
-        state={},
-        aria={}
-    )
-}}
 {% endblock %}
 
 {% block app_sidebar %}
