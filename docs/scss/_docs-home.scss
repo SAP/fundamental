@@ -4,26 +4,41 @@
     $docs-home-dark-color: docs-color(text, 1);
 
     &_hero{
-        text-align: center;
         background-image: url('../images/home-hero-bg.png');
         background-size: cover;
-        background-position: center;
-        color: $docs-home-white-color;
-        padding: 160px;
+        background-position: -190px -350px;
+        background-repeat: no-repeat;
+        background-color: #242424;
+        color: #d4d4d4;
         font-family: 'Lato', sans-serif;
+        padding-top: 100px;
 
         &-heading{
-            font-size: 50px;
-            font-weight: bold;
-            line-height: 0.76;
+            font-size: 70px;
+            font-weight: 100;
+            line-height: 1.1;
             text-shadow: 1px 3px 6px rgba(0, 0, 0, 0.09);
         }
 
+        &-bold{
+            font-weight: bold;
+        }
+
+        &-img{
+            float: right;
+        }
+
+        &-content{
+            padding: 100px;
+        }
+
         &-description{
-            font-size: 15px;
+            font-size: 20px;
             font-weight: 900;
             line-height: 1.2;
+            margin-top: 20px;
             margin-bottom: 0;
+            max-width: 520px;
         }
 
         &-btn{
@@ -49,9 +64,10 @@
         &-version{
             display: inline-block;
             text-transform: none;
-            padding: 0 15px;
             border-radius: 20px;
             font-weight: normal;
+            color: docs-color(action, 4);
+            font-size: 15px;
         }
     }
 
