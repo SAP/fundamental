@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.2.1
+* Fundamental-UI v1.2.2
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -9,6 +9,7 @@
 .fd-button,
 [class*=fd-button--] {
   display: inline-block;
+  margin: 0;
   padding: 0;
   font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -96,6 +97,13 @@
   background-color: #0854a0;
   border-color: #0854a0;
   color: #fff
+}
+.fd-button.is-focus,
+.fd-button:focus,
+[class*=fd-button--].is-focus,
+[class*=fd-button--]:focus {
+  -webkit-box-shadow: 0 0 0 1px #7bbaf9;
+  box-shadow: 0 0 0 1px #7bbaf9
 }
 .fd-button.is-disabled,
 .fd-button:disabled,

@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.2.1
+* Fundamental-UI v1.2.2
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -40,6 +40,7 @@
   right: 4px;
   top: 8px;
   display: inline-block;
+  margin: 0;
   padding: 0;
   font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -80,6 +81,11 @@
 .fd-modal__close::before {
   font-size: 1.42857rem;
   line-height: 1
+}
+.fd-modal__close.is-focus,
+.fd-modal__close:focus {
+  -webkit-box-shadow: 0 0 0 1px #7bbaf9;
+  box-shadow: 0 0 0 1px #7bbaf9
 }
 .fd-modal__body {
   padding: 16px 32px;

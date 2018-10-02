@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.2.1
+* Fundamental-UI v1.2.2
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -24,6 +24,7 @@
   right: 4px;
   top: 0;
   display: inline-block;
+  margin: 0;
   padding: 0;
   font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -65,6 +66,11 @@
 .fd-alert__close::before {
   font-size: 1.42857rem;
   line-height: 1
+}
+.fd-alert__close.is-focus,
+.fd-alert__close:focus {
+  -webkit-box-shadow: 0 0 0 1px #7bbaf9;
+  box-shadow: 0 0 0 1px #7bbaf9
 }
 .fd-alert--warning {
   border-color: #f59518;
@@ -272,6 +278,7 @@
 .fd-button,
 [class*=fd-button--] {
   display: inline-block;
+  margin: 0;
   padding: 0;
   font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -359,6 +366,13 @@
   background-color: #0854a0;
   border-color: #0854a0;
   color: #fff
+}
+.fd-button.is-focus,
+.fd-button:focus,
+[class*=fd-button--].is-focus,
+[class*=fd-button--]:focus {
+  -webkit-box-shadow: 0 0 0 1px #7bbaf9;
+  box-shadow: 0 0 0 1px #7bbaf9
 }
 .fd-button.is-disabled,
 .fd-button:disabled,
@@ -1167,7 +1181,8 @@
   -ms-flex-direction: column;
   flex-direction: column;
   border-radius: 4px;
-  height: 36px
+  height: 36px;
+  z-index: 2
 }
 .fd-input-group__addon:first-child {
   border-right-width: 0
@@ -1226,6 +1241,7 @@
 }
 .fd-input-group__button {
   display: inline-block;
+  margin: 0;
   padding: 0;
   font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -1643,6 +1659,7 @@
   right: 4px;
   top: 8px;
   display: inline-block;
+  margin: 0;
   padding: 0;
   font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -1683,6 +1700,11 @@
 .fd-modal__close::before {
   font-size: 1.42857rem;
   line-height: 1
+}
+.fd-modal__close.is-focus,
+.fd-modal__close:focus {
+  -webkit-box-shadow: 0 0 0 1px #7bbaf9;
+  box-shadow: 0 0 0 1px #7bbaf9
 }
 .fd-modal__body {
   padding: 16px 32px;
@@ -1827,6 +1849,7 @@
 }
 .fd-tree__control {
   display: inline-block;
+  margin: 0;
   padding: 0;
   font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -1878,6 +1901,11 @@
 .fd-tree__control::before {
   font-size: 14px;
   line-height: 1.42857
+}
+.fd-tree__control.is-focus,
+.fd-tree__control:focus {
+  -webkit-box-shadow: 0 0 0 1px #7bbaf9;
+  box-shadow: 0 0 0 1px #7bbaf9
 }
 .fd-tree__control.is-pressed,
 .fd-tree__control[aria-pressed=true] {
@@ -3549,8 +3577,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   visibility: visible;
   -webkit-transition: opacity 125ms;
   transition: opacity 125ms;
-  overflow: hidden;
-  width: 100%
+  overflow: hidden
+}
+.fd-popover__body--left {
+  left: 0
+}
+.fd-popover__body--right {
+  right: 0
 }
 .fd-popover__body.is-hidden,
 .fd-popover__body[aria-hidden=true] {
@@ -3626,12 +3659,30 @@ input-addon
 /*!
 .fd-combobox
 */
+.fd-combobox-input .fd-popover__body {
+  width: 100%
+}
+.fd-combobox-input .fd-menu {
+  display: block
+}
 /*!
 .fd-search-input
 */
+.fd-search-input .fd-popover__body {
+  width: 100%
+}
+.fd-search-input .fd-menu {
+  display: block
+}
 /*!
 .fd-multi-input
 */
+.fd-multi-input .fd-popover__body {
+  width: 100%
+}
+.fd-multi-input .fd-menu {
+  display: block
+}
 .fd-multi-input-field {
   margin: 0 0 10px 0
 }
