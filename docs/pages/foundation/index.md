@@ -3,7 +3,7 @@ title: Foundation
 keywords: guide, guides
 toc: false
 sidebar: left-navigation-sidebar
-permalink: /fundamentals/index.html
+permalink: foundation/index.html
 folder: guides
 summary:
 ---
