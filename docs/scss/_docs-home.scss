@@ -4,26 +4,40 @@
     $docs-home-dark-color: docs-color(text, 1);
 
     &_hero{
-        text-align: center;
         background-image: url('../images/home-hero-bg.png');
         background-size: cover;
-        background-position: center;
-        color: $docs-home-white-color;
-        padding: 160px;
-        font-family: 'Lato', sans-serif;
+        background-position: -190px -350px;
+        background-repeat: no-repeat;
+        background-color: #242424;
+        color: #d4d4d4;
+        //font-family: 'Lato', sans-serif;
+        padding-top: 100px;
 
         &-heading{
-            font-size: 50px;
-            font-weight: bold;
-            line-height: 0.76;
+            font-size: 70px;
+            font-weight: 100;
+            line-height: 1.1;
             text-shadow: 1px 3px 6px rgba(0, 0, 0, 0.09);
         }
 
+        &-bold{
+            font-weight: bold;
+        }
+
+        &-img{
+            float: right;
+        }
+
+        &-content{
+            padding: 100px;
+        }
+
         &-description{
-            font-size: 15px;
-            font-weight: 900;
+            font-size: 20px;
             line-height: 1.2;
+            margin-top: 20px;
             margin-bottom: 0;
+            max-width: 520px;
         }
 
         &-btn{
@@ -37,8 +51,6 @@
             line-height: 0;
             padding: 20px;
             border:none;
-            width: 200px;
-
 
             &:hover{
                 background-color: $accent-color;
@@ -49,10 +61,115 @@
         &-version{
             display: inline-block;
             text-transform: none;
-            padding: 0 15px;
             border-radius: 20px;
             font-weight: normal;
+            color: docs-color(action, 4);
+            font-size: 15px;
         }
+    }
+
+    &_panel{
+        padding:100px;
+        background: #181818;
+
+        &--alt{
+            background: #242424;
+        }
+
+        &-title{
+            color:#DFDFDF;
+            font-size: 60px;
+            border-bottom: 1px solid #979797;
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+            a {
+                color:#DFDFDF;
+            }
+            a:hover {
+              color: #5FA8EF;
+                text-decoration: none;
+            }
+        }
+
+        &-heading{
+            color:#C7C7C7;
+            font-size: 30px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            font-weight: 100;
+
+        }
+
+        &-description{
+            color:#8F8F8F;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        &-action{
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        &-img{
+            float: right;
+        }
+
+        &-search-box{
+            margin-bottom: 40px;
+
+            .search-box__input{
+                border-radius: 40px !important;
+                font-size: 22px;
+                padding: 30px;
+                padding-left: 60px !important;
+                border-color: #9B9B9B !important;
+                background-color: transparent !important;
+                color: #fff !important;
+            }
+            .search-box__icon{
+                font-size: 30px;
+                color: #9B9B9B;
+                padding-left: 10px;
+            }
+            .search-box__results{
+                border: none;
+                top: 65px;
+                //background: #242424;
+                padding: 0;
+                margin-left: 50px;
+                //margin-right: 50px;
+                width: calc(100% - 100px);
+            }
+            .search-box__results-links a{
+                //color: #ccc;
+                font-size: 20px;
+            }
+            .search-box__results-links a:hover{
+                //color: #fff;
+                color: docs-color(action, 4);
+                background: transparent;
+                text-decoration: none;
+            }
+        }
+
+        &-resources-link{
+            display: block;
+            color: #c7c7c7;
+            font-size: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 30px;
+
+            span{
+                position: absolute;
+                left: 0px;
+                top:0;
+            }
+        }
+
     }
 
     &_getting-started{
