@@ -6,29 +6,21 @@
 </head>
 
 <body>
-<div class="docs-wrapper">
-
 
     {% include topnav.html %}
 
     <!-- Page Content -->
     <div class="docs-container">
-        <!-- Sidebar Column -->
-        <div class="side-nav" id="tg-sb-sidebar">
-            {% include side-nav.html %}
-        </div>
 
         <div class="main-content" id="tg-sb-content">
             <!-- Content Column -->
             {{content}}
 
-
+            <!-- footer -->
+            {% include footer.html %}
         </div>
-
     </div>
-
-    {% include footer.html %}
-    </div>
-{% if site.google_analytics %} {% include google_analytics.html %} {% endif %}
 </body>
+{% if site.google_analytics %} {% include google_analytics.html %} {% endif %}
+
 </html>

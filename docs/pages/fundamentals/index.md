@@ -1,5 +1,5 @@
 ---
-title: Fundamentals
+title: Foundation
 keywords: guide, guides
 toc: false
 sidebar: left-navigation-sidebar
