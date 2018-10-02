@@ -16,7 +16,7 @@ $block: #{$fd-namespace}-alert;
 
     $fd-alert-background-color: fd-color("neutral", 1) !default;
     $fd-alert-background-color--warning: hsla(34, 92%, 96%, 1) !default; // HSL: +43 to base Status 2
-    $fd-alert-background-color--error: hsla(0, 100%, 96%, 1) !default; // HSL: +49 to base Status 3  
+    $fd-alert-background-color--error: hsla(0, 100%, 96%, 1) !default; // HSL: +49 to base Status 3
 
     $fd-alert-padding-x: fd-space("xxs") !default;
     $fd-alert-padding-y: fd-space("xs") !default;
@@ -39,6 +39,7 @@ $block: #{$fd-namespace}-alert;
       color: fd-color("text", 1);
       width: fd-space(9);
       height: fd-space(9);
+      @include fd-focus;
     }
 
     // Modifiers
