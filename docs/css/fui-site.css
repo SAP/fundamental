@@ -5549,8 +5549,11 @@ see layouts/panel
     opacity: 1;
     visibility: visible;
     transition: opacity 0.125s;
-    overflow: hidden;
-    width: 100%; }
+    overflow: hidden; }
+    .fd-popover__body--left {
+      left: 0; }
+    .fd-popover__body--right {
+      right: 0; }
     .fd-popover__body[aria-hidden="true"], .fd-popover__body.is-hidden {
       opacity: 0;
       visibility: hidden; }
@@ -5616,12 +5619,30 @@ input-addon
 /*!
 .fd-combobox
 */
+.fd-combobox-input .fd-popover__body {
+  width: 100%; }
+
+.fd-combobox-input .fd-menu {
+  display: block; }
+
 /*!
 .fd-search-input
 */
+.fd-search-input .fd-popover__body {
+  width: 100%; }
+
+.fd-search-input .fd-menu {
+  display: block; }
+
 /*!
 .fd-multi-input
 */
+.fd-multi-input .fd-popover__body {
+  width: 100%; }
+
+.fd-multi-input .fd-menu {
+  display: block; }
+
 .fd-multi-input-field {
   margin: 0 0 10px 0; }
 
