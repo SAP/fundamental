@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Lato");
 @font-face {
   font-family: '72Condensed';
   src: url("fonts/72/72-Condensed.woff2") format("woff2"), url("fonts/72/72-Condensed.woff") format("woff"), url("fonts/72/72-Condensed.ttf") format("truetype");
@@ -6259,7 +6258,7 @@ input-addon
   background-color: #5FA8EF; }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: '72', sans-serif;
   background-color: #fff; }
 
 a, a:visited {
@@ -6294,6 +6293,8 @@ hr {
     font-weight: normal;
     font-size: 20px;
     margin-bottom: 10px; }
+    .docs-tiles .fd-tile__header:last-child {
+      margin-bottom: 0; }
   .docs-tiles .fd-tile__description {
     color: #424e5a; }
   .docs-tiles a:hover {
@@ -6307,7 +6308,7 @@ hr {
   margin-left: 0;
   width: 100%;
   display: flex;
-  min-height: 100vh; }
+  min-height: calc(100vh - 87px - 89px); }
 
 .docs-landing-page {
   width: 100%;
@@ -6433,8 +6434,7 @@ hr {
   padding: 40px 40px 80px 60px;
   min-width: 1024px;
   max-width: 1600px;
-  width: 80%;
-  min-height: 1000px; }
+  width: 80%; }
 
 .post-content-full-width {
   padding: 40px 40px 80px 40px;
@@ -6447,7 +6447,6 @@ hr {
   background-repeat: no-repeat;
   background-color: #242424;
   color: #d4d4d4;
-  font-family: 'Lato', sans-serif;
   padding-top: 100px; }
   .docs-home_hero-heading {
     font-size: 70px;
@@ -6502,6 +6501,7 @@ hr {
     .docs-home_panel-title a {
       color: #DFDFDF; }
     .docs-home_panel-title a:hover {
+      color: #5FA8EF;
       text-decoration: none; }
   .docs-home_panel-heading {
     color: #C7C7C7;
@@ -6537,14 +6537,14 @@ hr {
     .docs-home_panel-search-box .search-box__results {
       border: none;
       top: 65px;
-      background: #242424;
-      padding: 0 50px; }
+      padding: 0;
+      margin-left: 50px;
+      width: calc(100% - 100px); }
     .docs-home_panel-search-box .search-box__results-links a {
-      color: #ccc;
       font-size: 20px; }
     .docs-home_panel-search-box .search-box__results-links a:hover {
-      color: #fff;
-      background: black;
+      color: #5FA8EF;
+      background: transparent;
       text-decoration: none; }
   .docs-home_panel-resources-link {
     display: block;
@@ -6632,21 +6632,18 @@ hr {
       width: 80px; }
 
 .docs-header-h1 {
-  font-family: Lato;
   font-size: 36px;
   font-weight: bold;
   line-height: 1.06;
   text-align: left; }
 
 .docs-header-h2 {
-  font-family: Lato;
   font-size: 28px;
-  font-weight: 900;
+  font-weight: 100;
   line-height: 1.14;
   margin-top: 40px; }
 
 .docs-header-h3 {
-  font-family: Lato;
   font-size: 16px;
   font-weight: bold;
   line-height: 1.88;
@@ -6655,18 +6652,11 @@ hr {
   margin-top: 40px; }
 
 .docs-header-h4 {
-  font-family: Roboto;
   font-size: 16px;
   font-weight: bold;
   line-height: 1.88;
   margin-bottom: 10px;
   margin-top: 40px; }
-
-.docs-header--open-sans {
-  font-family: 'Open-Sans', sans-serif; }
-
-.docs-header--roboto {
-  font-family: Roboto; }
 
 .docs-colors_container {
   width: 12%;
@@ -6794,7 +6784,7 @@ hr {
   border: 1px solid #cfdbe7;
   border-left: none;
   border-right: none;
-  margin: 0 -40px -125px -40px; }
+  margin: 0 -40px -100px -40px; }
   .docs-component-grid--item {
     background: #fff;
     padding: 40px 10px;
@@ -7119,9 +7109,13 @@ hr {
   background: #EAEAEA;
   border-top: 1px solid #cfdbe7;
   bottom: 0;
-  padding: 20px;
+  padding: 32px;
   width: 100%;
   font-size: 16px; }
+  .docs-footer .row {
+    margin: 0; }
+  .docs-footer__link {
+    margin-left: 20px; }
 
 .demo-icon-wrapper {
   padding: 10px;

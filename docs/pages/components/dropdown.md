@@ -7,9 +7,9 @@ permalink: components/dropdown.html
 folder: components
 ---
 
-The dropdown component is an opinionated composition of the "popover" and "menu" components with the use of a styled button. It allows users to make one selection from a list. It is more flexible than the normal Select. Generally, it should be used when there are between 3 to 10 or more options.
+The dropdown component is an opinionated composition of the Popover and Menu components with the use of a styled button. It allows users to make one selection from a list. It is more flexible than the normal Select. Generally, it should be used when there are between 3 to 10 or more options.
 
-<b>The original "fd-dropdown" CSS will soon be deprecated in exchange for whats now defined in the "menu" and "popover" components to.</b>
+<b>The original `fd-dropdown` CSS will soon be deprecated in exchange for what’s now defined in the "menu" and "popover" components.</b>
 
 <hr />
 
