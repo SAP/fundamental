@@ -8,7 +8,7 @@ folder: components
 summary:
 ---
 
-The date-picker component is an opinionated composition of the "input-group", "popover" and "calendar" components to accomplish the UI pattern for picking a date. 
+The date-picker component is an opinionated composition of the "input-group", "popover" and "calendar" components to accomplish the UI pattern for picking a date.
 
 This component mostly relies on the CSS of other components and has very little CSS of its own.
 
@@ -25,7 +25,7 @@ This component mostly relies on the CSS of other components and has very little 
 				</span>
 			</div>
 		</div>
-		<div class="fd-popover__body" aria-hidden="true" id="Itcgq828">
+		<div class="fd-popover__body fd-popover__body--right" aria-hidden="true" id="Itcgq828">
 			<div class="fd-calendar">
 				<header class="fd-calendar__header">
 				<div class="fd-calendar__navigation">
