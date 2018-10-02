@@ -2898,6 +2898,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     right: 4px;
     top: 0;
     display: inline-block;
+    margin: 0;
     padding: 0;
     font-smoothing: antialiased;
     appearance: none;
@@ -2931,6 +2932,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-alert__close::before {
       font-size: 1.42857rem;
       line-height: 1; }
+    .fd-alert__close:focus, .fd-alert__close.is-focus {
+      box-shadow: 0 0 0 1px #7bbaf9; }
   .fd-alert--warning {
     border-color: #F59518;
     background-color: #fef6eb; }
@@ -3090,6 +3093,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 */
 .fd-button, [class*="fd-button--"] {
   display: inline-block;
+  margin: 0;
   padding: 0;
   font-smoothing: antialiased;
   appearance: none;
@@ -3140,6 +3144,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     background-color: #0854a0;
     border-color: #0854a0;
     color: #ffffff; }
+  .fd-button:focus, .fd-button.is-focus, [class*="fd-button--"]:focus, [class*="fd-button--"].is-focus {
+    box-shadow: 0 0 0 1px #7bbaf9; }
   .fd-button[aria-disabled="true"], .fd-button.is-disabled, .fd-button:disabled, [class*="fd-button--"][aria-disabled="true"], [class*="fd-button--"].is-disabled, [class*="fd-button--"]:disabled {
     background-color: #ffffff;
     color: #0a6ed1; }
@@ -3726,7 +3732,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     display: flex;
     flex-direction: column;
     border-radius: 4px;
-    height: 36px; }
+    height: 36px;
+    z-index: 2; }
     .fd-input-group__addon:first-child {
       border-right-width: 0; }
     .fd-input-group__addon:last-child {
@@ -3756,6 +3763,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     border-bottom-right-radius: 0; }
   .fd-input-group__button {
     display: inline-block;
+    margin: 0;
     padding: 0;
     font-smoothing: antialiased;
     appearance: none;
@@ -4091,6 +4099,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     right: 4px;
     top: 8px;
     display: inline-block;
+    margin: 0;
     padding: 0;
     font-smoothing: antialiased;
     appearance: none;
@@ -4123,6 +4132,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-modal__close::before {
       font-size: 1.42857rem;
       line-height: 1; }
+    .fd-modal__close:focus, .fd-modal__close.is-focus {
+      box-shadow: 0 0 0 1px #7bbaf9; }
   .fd-modal__body {
     padding: 16px 32px;
     max-height: calc(100vh - 60px - 68px);
@@ -4228,6 +4239,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         text-align: left; }
   .fd-tree__control {
     display: inline-block;
+    margin: 0;
     padding: 0;
     font-smoothing: antialiased;
     appearance: none;
@@ -4267,6 +4279,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-tree__control::before {
       font-size: 14px;
       line-height: 1.42857; }
+    .fd-tree__control:focus, .fd-tree__control.is-focus {
+      box-shadow: 0 0 0 1px #7bbaf9; }
     .fd-tree__control[aria-pressed="true"], .fd-tree__control.is-pressed {
       transform: rotate(270deg); }
   .fd-tree a {
@@ -5549,8 +5563,11 @@ see layouts/panel
     opacity: 1;
     visibility: visible;
     transition: opacity 0.125s;
-    overflow: hidden;
-    width: 100%; }
+    overflow: hidden; }
+    .fd-popover__body--left {
+      left: 0; }
+    .fd-popover__body--right {
+      right: 0; }
     .fd-popover__body[aria-hidden="true"], .fd-popover__body.is-hidden {
       opacity: 0;
       visibility: hidden; }
@@ -5616,12 +5633,30 @@ input-addon
 /*!
 .fd-combobox
 */
+.fd-combobox-input .fd-popover__body {
+  width: 100%; }
+
+.fd-combobox-input .fd-menu {
+  display: block; }
+
 /*!
 .fd-search-input
 */
+.fd-search-input .fd-popover__body {
+  width: 100%; }
+
+.fd-search-input .fd-menu {
+  display: block; }
+
 /*!
 .fd-multi-input
 */
+.fd-multi-input .fd-popover__body {
+  width: 100%; }
+
+.fd-multi-input .fd-menu {
+  display: block; }
+
 .fd-multi-input-field {
   margin: 0 0 10px 0; }
 

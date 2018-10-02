@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.2.1
+* Fundamental-UI v1.2.2
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -3323,6 +3323,7 @@ input[type=radio]:checked[disabled]::after {
   right: 4px;
   top: 0;
   display: inline-block;
+  margin: 0;
   padding: 0;
   font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -3364,6 +3365,11 @@ input[type=radio]:checked[disabled]::after {
 .fd-alert__close::before {
   font-size: 1.42857rem;
   line-height: 1
+}
+.fd-alert__close.is-focus,
+.fd-alert__close:focus {
+  -webkit-box-shadow: 0 0 0 1px #7bbaf9;
+  box-shadow: 0 0 0 1px #7bbaf9
 }
 .fd-alert--warning {
   border-color: #f59518;
@@ -3511,10 +3517,12 @@ input[type=radio]:checked[disabled]::after {
   opacity: 0;
   visibility: hidden
 }
-.fd-action-bar__actions > * {
+.fd-action-bar__actions > *,
+.fd-action-bar__actions > button {
   margin-left: 8px
 }
-.fd-action-bar__actions > :first-child {
+.fd-action-bar__actions > :first-child,
+.fd-action-bar__actions > button:first-child {
   margin-left: 0
 }
 /*!
@@ -3571,6 +3579,7 @@ input[type=radio]:checked[disabled]::after {
 .fd-button,
 [class*=fd-button--] {
   display: inline-block;
+  margin: 0;
   padding: 0;
   font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -3658,6 +3667,13 @@ input[type=radio]:checked[disabled]::after {
   background-color: #0854a0;
   border-color: #0854a0;
   color: #fff
+}
+.fd-button.is-focus,
+.fd-button:focus,
+[class*=fd-button--].is-focus,
+[class*=fd-button--]:focus {
+  -webkit-box-shadow: 0 0 0 1px #7bbaf9;
+  box-shadow: 0 0 0 1px #7bbaf9
 }
 .fd-button.is-disabled,
 .fd-button:disabled,
@@ -4466,7 +4482,8 @@ input[type=radio]:checked[disabled]::after {
   -ms-flex-direction: column;
   flex-direction: column;
   border-radius: 4px;
-  height: 36px
+  height: 36px;
+  z-index: 2
 }
 .fd-input-group__addon:first-child {
   border-right-width: 0
@@ -4525,6 +4542,7 @@ input[type=radio]:checked[disabled]::after {
 }
 .fd-input-group__button {
   display: inline-block;
+  margin: 0;
   padding: 0;
   font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -4942,6 +4960,7 @@ input[type=radio]:checked[disabled]::after {
   right: 4px;
   top: 8px;
   display: inline-block;
+  margin: 0;
   padding: 0;
   font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -4982,6 +5001,11 @@ input[type=radio]:checked[disabled]::after {
 .fd-modal__close::before {
   font-size: 1.42857rem;
   line-height: 1
+}
+.fd-modal__close.is-focus,
+.fd-modal__close:focus {
+  -webkit-box-shadow: 0 0 0 1px #7bbaf9;
+  box-shadow: 0 0 0 1px #7bbaf9
 }
 .fd-modal__body {
   padding: 16px 32px;
@@ -5126,6 +5150,7 @@ input[type=radio]:checked[disabled]::after {
 }
 .fd-tree__control {
   display: inline-block;
+  margin: 0;
   padding: 0;
   font-smoothing: antialiased;
   -webkit-appearance: none;
@@ -5177,6 +5202,11 @@ input[type=radio]:checked[disabled]::after {
 .fd-tree__control::before {
   font-size: 14px;
   line-height: 1.42857
+}
+.fd-tree__control.is-focus,
+.fd-tree__control:focus {
+  -webkit-box-shadow: 0 0 0 1px #7bbaf9;
+  box-shadow: 0 0 0 1px #7bbaf9
 }
 .fd-tree__control.is-pressed,
 .fd-tree__control[aria-pressed=true] {
@@ -6828,7 +6858,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   color: #e00
 }
 .fd-popover {
-  position: relative
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #32363a;
+  font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  position: relative;
+  display: inline-block
 }
 .fd-popover__control {
   position: relative;
@@ -6848,8 +6883,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   visibility: visible;
   -webkit-transition: opacity 125ms;
   transition: opacity 125ms;
-  overflow: hidden;
-  width: 100%
+  overflow: hidden
+}
+.fd-popover__body--left {
+  left: 0
+}
+.fd-popover__body--right {
+  right: 0
 }
 .fd-popover__body.is-hidden,
 .fd-popover__body[aria-hidden=true] {
@@ -6925,12 +6965,39 @@ input-addon
 /*!
 .fd-combobox
 */
+.fd-combobox-input .fd-popover {
+  display: block
+}
+.fd-combobox-input .fd-popover__body {
+  width: 100%
+}
+.fd-combobox-input .fd-menu {
+  display: block
+}
 /*!
 .fd-search-input
 */
+.fd-search-input .fd-popover {
+  display: block
+}
+.fd-search-input .fd-popover__body {
+  width: 100%
+}
+.fd-search-input .fd-menu {
+  display: block
+}
 /*!
 .fd-multi-input
 */
+.fd-multi-input .fd-popover {
+  display: block
+}
+.fd-multi-input .fd-popover__body {
+  width: 100%
+}
+.fd-multi-input .fd-menu {
+  display: block
+}
 .fd-multi-input-field {
   margin: 0 0 10px 0
 }

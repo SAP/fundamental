@@ -3,19 +3,18 @@
 @import "./../icons/mixins";
 @import "./../functions";
 
+//LOCAL VARS (set all themeable properties, always include !default)
+$fd-popover-border: solid 1px $fd-forms-border-color !default;
+$fd-popover-z-index: 2 !default;
+$fd-popover-background-color: fd-color(background, 2) !default;
+$fd-popover-box-shadow: 0 0 2px 0 rgba(fd-color(neutral, 2), 1), 0 2px 14px 0 rgba(fd-color(neutral, 2), 1) !default;
+$fd-popover-transition-params: $fd-animation--speed !default;
+
 $block: #{$fd-namespace}-popover;
 .#{$block} {
-    //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-popover-border: solid 1px $fd-forms-border-color !default;
-    $fd-popover-z-index: 2 !default;
-    $fd-popover-background-color: fd-color(background, 2) !default;
-    $fd-popover-box-shadow: 0 0 2px 0 rgba(fd-color(neutral, 2), 1), 0 2px 14px 0 rgba(fd-color(neutral, 2), 1);
-    $fd-popover-transition-params: $fd-animation--speed !default;
-
-    //BLOCK BASE *******************************************
-    //set all BLOCK reset and baseline styles
-    // @include fd-reset;
+    @include fd-reset;
     position: relative;
+    display: inline-block;
 
     &__control {
       position: relative;
@@ -34,7 +33,14 @@ $block: #{$fd-namespace}-popover;
       visibility: visible;
       transition: opacity $fd-popover-transition-params;
       overflow: hidden;
-      width: 100%;
+
+      &--left {
+        left: 0;
+      }
+
+      &--right {
+        right: 0;
+      }
 
       &[aria-hidden="true"],
       &.is-hidden {

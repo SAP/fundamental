@@ -71,6 +71,7 @@ $block: #{$fd-namespace}-input-group;
         flex-direction: column;
         border-radius: $fd-border-radius;
         height: $fd-forms-height--input-text;
+        z-index: 2; // Brings focus state above input
 
         //ELEMENT MODIFIERS ************
         &:first-child {
@@ -127,6 +128,7 @@ $block: #{$fd-namespace}-input-group;
         display: block;
         min-width: fd-space(12);
         background: $fd-input-group-button-background-color;
+
         &--step-up,
         &--step-down  {
             @include fd-type("0");
