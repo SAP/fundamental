@@ -1,0 +1,52 @@
+{% import "./../utils.njk" as utils %}
+{% from "./../product-switcher/component.njk" import product_switcher %}
+{% from "./../user-menu/component.njk" import user_menu %}
+
+<!--
+shell_header:
+    properties={},
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+
+{% macro shell_header(properties={}, modifier={}, state={}, aria={}) -%}
+{%- set _id = utils.id() %}
+<nav class="fd-shell-header">
+
+    <div class="fd-shell-header__group fd-shell-header__group--left">
+        <div class="fd-shell-header__logo"></div>
+        <div class="fd-shell-header__title">This is a very, very, very, very long Title</div>
+        <!--<div class="fd-shell-header__subtitle">This is a very long Title</div>-->
+    </div>
+
+    <div class="fd-shell-header__group fd-shell-header__group--middle">
+        <span class="fd-shell-header__copilot"><img src="/static/copilot.png" /></span>
+    </div>
+
+    <div class="fd-shell-header__group fd-shell-header__group--right">
+        <div class="fd-shell-header__actions">
+            <div class="fd-shell-header__action">
+                <button class="fd-button--secondary fd-button--m sap-icon--search fd-button--shellheader" aria-label="BUTTON_LABEL"></button>
+            </div>
+
+            <div class="fd-shell-header__action">
+                <button class="fd-button--secondary fd-button--m sap-icon--circle-task fd-button--shellheader" aria-label="BUTTON_LABEL"></button>
+            </div>
+
+            <div class="fd-shell-header__action">
+                <button class="fd-button--secondary fd-button--m sap-icon--bell fd-button--shellheader" aria-label="BUTTON_LABEL"></button>
+            </div>
+
+            <div class="fd-shell-header__action">
+                {{  user_menu() }}
+            </div>
+
+            <div class="fd-shell-header__action">
+                {{  product_switcher() }}
+            </div>
+        </div>
+    </div>
+
+</nav>
+{%- endmacro %}

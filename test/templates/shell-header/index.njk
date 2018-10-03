@@ -1,0 +1,33 @@
+{% extends "layout.njk" %}
+{% import "./../utils.njk" as utils %}
+{% from "./../format.njk" import format %}
+{% from "./component.njk" import shell_header %}
+
+<!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
+{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', components/identifier', 'components/popover', 'components/menu', 'components/product-switcher', helpers'] %}
+
+{% block content %}
+
+<style media="screen">
+    .fd-shell-header{
+        margin: 40px 0;
+    }
+</style>
+
+<div style="background-color: #f3f4f5; margin:-20px; padding:20px;">
+
+    <h1>shell-header</h1>
+
+    <!-- output the component example and the code snippet -->
+    {% set example %}
+    {%- set _id = utils.id() %}
+
+    {{  shell_header() }}
+
+    {% endset %}
+    {{ format(example) }}
+
+
+{% endblock %}
+
+</div>

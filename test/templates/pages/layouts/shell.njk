@@ -1,46 +1,44 @@
 {% extends "./page.njk" %}
 {% from "./../../side-nav/component.njk" import side_nav %}
-{% from "./../../global-nav/component.njk" import global_nav %}
+{% from "./../../shell-header/component.njk" import shell_header %}
 
-{% set hide_ui_footer = true %}
+{% set hide_shell_footer = true %}
 
-{% block ui_header %}
-
-{{  global_nav() }}
-
+{% block shell_header %}
+    {{  shell_header() }}
 {% endblock %}
 
 {% block app_sidebar %}
-{{ side_nav(properties = {
-  navgroups: [{
-    items: [
-    { label: "Home", icon: "home"},
-    { label: "Category", icon: "video", expanded: true,
-    items: [
-        { label: "Link" },
-        { label: "Link", selected: true },
-        { label: "Link" },
-        { label: "Link" }
-    ] },
-    { label: "Page", icon: "pending" },
-    { label: "Category", icon: "retail-store",
-    items: [
-        { label: "Link" },
-        { label: "Link" },
-        { label: "Link" },
-        { label: "Link" }
-    ] },
-    { label: "Page", icon: "leads" },
-    { label: "Page", icon: "history" }
-    ]
-  },
-  {
-    title: "Group",
-    items: [
-    { label: "Page", icon: "user-settings"},
-    { label: "Page", icon: "cloud" }
-    ]
-  }]
+    {{ side_nav(properties = {
+      navgroups: [{
+        items: [
+        { label: "Home", icon: "home"},
+        { label: "Category", icon: "video", expanded: true,
+        items: [
+            { label: "Link" },
+            { label: "Link", selected: true },
+            { label: "Link" },
+            { label: "Link" }
+        ] },
+        { label: "Page", icon: "pending" },
+        { label: "Category", icon: "retail-store",
+        items: [
+            { label: "Link" },
+            { label: "Link" },
+            { label: "Link" },
+            { label: "Link" }
+        ] },
+        { label: "Page", icon: "leads" },
+        { label: "Page", icon: "history" }
+        ]
+      },
+      {
+        title: "Group",
+        items: [
+        { label: "Page", icon: "user-settings"},
+        { label: "Page", icon: "cloud" }
+        ]
+      }]
 
-}) }}
+    }) }}
 {% endblock %}

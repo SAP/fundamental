@@ -1,10 +1,14 @@
 {% extends "layout.njk" %}
 {% import "./../utils.njk" as utils %}
 {% from "./../format.njk" import format %}
+{% from "../button/component.njk" import button %}
+{% from "../menu/component.njk" import menu %}
+{% from "../dropdown/component.njk" import dropdown %}
+{% from "../nav/component.njk" import nav %}
 {% from "./component.njk" import global_nav %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', components/identifier', 'components/popover', 'components/menu', 'components/product-switcher', helpers'] %}
+{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'components/mega-menu', 'components/identifier', 'components/popover', 'components/menu', 'helpers'] %}
 
 {% block content %}
 
@@ -22,7 +26,71 @@
     {% set example %}
     {%- set _id = utils.id() %}
 
-    {{  global_nav() }}
+    {{  global_nav(
+        properties = {
+            "title": "Global Nav Label",
+            "description": "Global Nav Description",
+            "side_menu": true,
+            "launchpad_button": {
+                "properties": { label: 'Suite Name'},
+                "modifier": { block: ['secondary', 'l'] },
+                "aria": { label: 'BUTTON_LABEL', haspopup: true , controls: _id2},
+                "classes": 'global-nav__btn'
+            },
+            "launchpad_menu": {
+                "id": 'launchpad',
+                "label": "Suite Name",
+                "classes": "fd-global-nav__launchpad",
+                "header": "SAP Hybris Home",
+                "navgroups": [
+                  {
+                    "title": "Group Name",
+                    "items": [
+                      { "label": "item link" },
+                      {
+                          "label": "item link",
+                          "haschild": true,
+                          "items": [
+                              { "label": "Link" },
+                              { "label": "Link" },
+                              { "label": "Link" }
+                          ]
+                       },
+                       { "label": "item link" }
+                    ]
+                  },
+                  {
+                    "title": "Group Name",
+                    "items": [
+                      { "label": "item link" },
+                      {
+                          "label": "item link",
+                          "haschild": true,
+                          "items": [
+                              { "label": "Link" },
+                              { "label": "Link" },
+                              { "label": "Link" }
+                          ]
+                       },
+                       { "label": "item link" }
+                    ]
+                  }
+                ]
+            },
+            "context_menu": {
+                "label": "Context Switcher",
+                "classes": "fd-global-nav__launchpad",
+                "items": [
+                    { "label": "Link Name" },
+                    { "label": "Link Name" },
+                    { "label": "Link Name" },
+                    { "label": "Link Name" },
+                    { "label": "Link Name" }
+                ]
+            }
+
+        }
+    ) }}
 
     {% endset %}
     {{ format(example) }}

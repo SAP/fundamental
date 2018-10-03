@@ -1,0 +1,16 @@
+{% extends "layout.njk" %}
+{% from "./component.njk" import user_menu %}
+{% from "./../format.njk" import format %}
+
+{% set css_deps = ['fonts','helpers', 'components/popover', 'components/button', 'components/identifier', 'icons'] %}
+
+{% block content %}
+
+    <h1>User Menu</h1>
+    {% set basic_user_menu %}
+        {{ user_menu()}}
+    {% endset %}
+
+    {{ format(basic_user_menu) }}
+
+{% endblock %}

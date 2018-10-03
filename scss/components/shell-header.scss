@@ -1,0 +1,158 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+/*
+## Notes/TODO
+* Move to fd-breakpoints
+* Update shellheader button
+* Update colors
+* Update theming strategy
+* Update product switcher default button color (with theming strategy)
+* Expanding search functionality
+* Update product icons in product switcher
+* Add the modifier to product-switcher & fix on docs page
+* Add dingus back on popovers
+* Add RTL
+* Add focus state to menu items
+* Add responsive classes to hide items at breakpoints
+* Add notification component / concept to button
+*/
+
+// Switch to fd-breakpoints!
+$tempbreakpoint-large: 1199px;
+$tempbreakpoint-medium: 991px;
+$tempbreakpoint-small: 768px;
+$tempbreakpoint-xsmall: 575px;
+
+// Paddings
+$fd-shell-header-outer-spacing-lr-large: 32px;
+$fd-shell-header-outer-spacing-lr-medium: 16px;
+$fd-shell-header-outer-spacing-lr-small: 8px;
+$fd-shell-header-outer-spacing-tb: 4px;
+
+$fd-shell-header-title-spacing: 16px;
+$fd-shell-header-item-spacing: 12px;
+
+// Heights
+$fd-shell-header-height: 48px !default;
+
+$fd-shell-header-copilot-height: 30px; // 48px in docs?
+$fd-shell-header-copilot-width: 30px; // 48px in docs?
+
+// Colors
+$fd-shell-header-color: fd-color(text, 4) !default; // White
+$fd-shell-header-background-color: $tempcolor-shell;
+
+// Actions
+$fd-shell-header-btn-color: fd-color(action, 1) !default;
+
+// Logo
+$fd-shell-header-logo-height: 28px !default;
+$fd-shell-header-logo: "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MTIuMzggMjA0Ij48ZGVmcz48c3R5bGU+LmNscy0xLC5jbHMtMntmaWxsLXJ1bGU6ZXZlbm9kZH0uY2xzLTF7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCl9LmNscy0ye2ZpbGw6I2ZmZn08L3N0eWxlPjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB4MT0iMjA2LjE5IiB4Mj0iMjA2LjE5IiB5Mj0iMjA0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDBiOGYxIi8+PHN0b3Agb2Zmc2V0PSIuMDIiIHN0b3AtY29sb3I9IiMwMWI2ZjAiLz48c3RvcCBvZmZzZXQ9Ii4zMSIgc3RvcC1jb2xvcj0iIzBkOTBkOSIvPjxzdG9wIG9mZnNldD0iLjU4IiBzdG9wLWNvbG9yPSIjMTc3NWM4Ii8+PHN0b3Agb2Zmc2V0PSIuODIiIHN0b3AtY29sb3I9IiMxYzY1YmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTVmYmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+U0FQX2dyYWRfUl9zY3JuX1plaWNoZW5mbMOkY2hlIDE8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTAgMjA0aDIwOC40MUw0MTIuMzggMEgwdjIwNCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTI0NC43MyAzOC4zNmgtNDAuNnY5Ni41MmwtMzUuNDYtOTYuNTVoLTM1LjE2bC0zMC4yNyA4MC43MkMxMDAgOTguNyA3OSA5MS42NyA2Mi40IDg2LjQgNTEuNDYgODIuODkgMzkuODUgNzcuNzIgNDAgNzJjLjA5LTQuNjggNi4yMy05IDE4LjM4LTguMzggOC4xNy40MyAxNS4zNyAxLjA5IDI5LjcxIDhsMTQuMS0yNC41NUM4OS4wNiA0MC40MiA3MSAzNi4yMSA1Ni4xNyAzNi4xOWgtLjA5Yy0xNy4yOCAwLTMxLjY4IDUuNi00MC42IDE0LjgzQTM0LjIzIDM0LjIzIDAgMCAwIDUuNzcgNzQuN0M1LjU0IDg3LjE1IDEwLjExIDk2IDE5LjcxIDEwM2M4LjEgNS45NCAxOC40NiA5Ljc5IDI3LjYgMTIuNjIgMTEuMjcgMy40OSAyMC40NyA2LjUzIDIwLjM2IDEzQTkuNTcgOS41NyAwIDAgMSA2NSAxMzVjLTIuODEgMi45LTcuMTMgNC0xMy4wOSA0LjEtMTEuNDkuMjQtMjAtMS41Ni0zMy42MS05LjU5TDUuNzcgMTU0LjQyYTkzLjc3IDkzLjc3IDAgMCAwIDQ2IDEyLjIyaDIuMTFjMTQuMjQtLjI1IDI1Ljc0LTQuMzEgMzQuOTItMTEuNzEuNTMtLjQxIDEtLjg0IDEuNDktMS4yOGwtNC4xMiAxMC44NUgxMjNsNi4xOS0xOC44MmE2Ny40NiA2Ny40NiAwIDAgMCAyMS42OCAzLjQzIDY4LjMzIDY4LjMzIDAgMCAwIDIxLjE2LTMuMjVsNiAxOC42NGg2MC4xNHYtMzloMTMuMTFjMzEuNzEgMCA1MC40Ni0xNi4xNSA1MC40Ni00My4yIDAtMzAuMTEtMTguMjItNDMuOTQtNTcuMDEtNDMuOTR6TTE1MC45MSAxMjFhMzYuOTMgMzYuOTMgMCAwIDEtMTMtMi4yOGwxMi44Ny00MC41OWguMjJsMTIuNjUgNDAuNzFhMzguNSAzOC41IDAgMCAxLTEyLjc0IDIuMTZ6bTk2LjItMjMuMzNoLTguOTRWNjQuOTFoOC45NGMxMS45MyAwIDIxLjQ0IDQgMjEuNDQgMTYuMTQgMCAxMi42LTkuNTEgMTYuNTctMjEuNDQgMTYuNTciLz48L3N2Zz4=" !default;
+
+/*!
+.fd-shell-header+()
+    .fd-shell-header__content+()
+    .fd-shell-header__title+()
+*/
+$block: #{$fd-namespace}-shell-header;
+
+.#{$block} {
+    @include fd-reset;
+    background: $fd-shell-header-background-color;
+    height: $fd-shell-header-height;
+    display: flex;
+    align-items: center;
+    color: $fd-shell-header-color;
+    position: relative;
+    padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-large;
+    justify-content: space-between;
+
+    //ELEMENTS *******************************************
+    &__group {
+        &--left,
+        &--middle,
+        &--right{
+            display: inline-block;
+        }
+        &--left,
+        &--right {
+            flex: 1;
+        }
+        &--middle {
+            width: $fd-shell-header-copilot-width;
+        }
+        &--right {
+            text-align: right;
+        }
+    }
+
+    &__logo,
+    &__title,
+    &__subtitle {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__logo {
+        background-image: url(#{$fd-shell-header-logo});
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: fd-space(15);
+        height: $fd-shell-header-logo-height;
+    }
+
+    &__title {
+        @include fd-type("1", "bold");
+        line-height: 1;
+        padding: 0 $fd-shell-header-title-spacing;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px; // TEMP
+    }
+
+    &__subtitle {
+        @include fd-type("-2", "reg");
+        line-height: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px; // TEMP
+    }
+
+    &__copilot {
+        display: inline-block;
+        vertical-align: middle;
+        width: $fd-shell-header-copilot-width;
+        height: $fd-shell-header-copilot-height;
+        > img {
+            display: block;
+            max-width: 100%;
+        }
+    }
+
+    &__actions,
+    &__action {
+        display: inline-block;
+        > * {
+            vertical-align: middle;
+        }
+    }
+    &__action {
+        padding-left: $fd-shell-header-item-spacing;
+    }
+
+    @media all and (max-width: $tempbreakpoint-large) {
+        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-large;
+    }
+    @media all and (max-width: $tempbreakpoint-medium) {
+        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-medium;
+    }
+    @media all and (max-width: $tempbreakpoint-small) {
+        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-small;
+    }
+    @media all and (max-width: $tempbreakpoint-xsmall) {
+        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-small;
+    }
+}

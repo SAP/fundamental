@@ -1,0 +1,47 @@
+{% from "./../popover/component.njk" import popover %}
+{% import "./../utils.njk" as utils %}
+
+{%- set _id = utils.id() %}
+
+{% macro user_menu(
+    properties={},
+    state={},
+    aria={},
+    classes=[])
+-%}
+    <div class="fd-user-menu">
+        <div class="fd-popover">
+            <div class="fd-popover__control">
+                <button class="fd-button--secondary fd-button--m fd-button--shellheader" aria-label="Eric Boyer" aria-controls="alksjlkj34" aria-expanded="false" aria-haspopup="true"><span class=" fd-identifier--s fd-identifier--circle">EB</span></button>
+            </div>
+            <div class="fd-popover__body fd-popover__body--right fd-user-menu__body" aria-hidden="true" id="alksjlkj34">
+                <nav class="fd-menu">
+                    <h1 class="fd-menu__title">Eric Boyer</h1>
+                    <ul class="fd-menu__list">
+                        <li>
+                            <a href="#" class="fd-menu__item">App Finder</a>
+                        </li>
+                        <li>
+                            <a href="#" class="fd-menu__item">Settings</a>
+                        </li>
+                        <li>
+                            <a href="#" class="fd-menu__item">App Settings</a>
+                        </li>
+                        <li>
+                            <a href="#" class="fd-menu__item">Help</a>
+                        </li>
+                        <li>
+                            <a href="#" class="fd-menu__item">Give Feedback</a>
+                        </li>
+                        <li>
+                            <a href="#" class="fd-menu__item">About</a>
+                        </li>
+                        <li>
+                            <a href="#" class="fd-menu__item">Sign Out</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+{%- endmacro %}

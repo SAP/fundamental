@@ -1,36 +1,45 @@
 {% extends "./app.njk" %}
-{# ui-level vars #}
-{%- set hide_ui_footer = hide_ui_footer or false %}
-{%- set fix_ui_footer = fix_ui_footer or false %}
-{%- set show_ui_overlay = show_ui_overlay or false %}
-{# app-level vars #}
+
+{# ui.njk level vars #}
+{%- set hide_shell_footer = hide_shell_footer or false %}
+{%- set fix_shell_footer = fix_shell_footer or false %}
+{%- set show_shell_overlay = show_shell_overlay or false %}
+
+{# app.njk level vars #}
 {%- set hide_app_sidebar = hide_app_sidebar or false %}
-{# page-level vars #}
+
+{# page.njk level vars #}
 {%- set hide_page_header = hide_page_header or false %}
 {%- set hide_page_footer = hide_page_footer or false %}
 
-{# app-level blocks #}
+{# app.njk blocks #}
 {% block app_sidebar %}
 {% endblock %}
+
 {% block app_main -%}
-<article class="fd-page">
-    {% if hide_page_header !== true %}
-    <header class="fd-page__header">
-        {% block page_header -%}
-        {%- endblock %}
-    </header>
-    {% endif %}
-    <div class="fd-page__content">
-    {% block page_content -%}
-    {%- endblock %}
-    </div>
-</article>
+    <article class="fd-page">
+
+        {% if hide_page_header !== true %}
+            <header class="fd-page__header">
+                {% block page_header -%}
+                {%- endblock %}
+            </header>
+        {% endif %}
+
+        <div class="fd-page__content">
+            {% block page_content -%}
+            {%- endblock %}
+        </div>
+
+    </article>
 {%- endblock %}
 
-{# ui-level blocks #}
-{% block ui_header -%}
+{# ui.njk blocks #}
+{% block shell_header -%}
 {%- endblock %}
-{% block ui_footer -%}
+
+{% block shell_footer -%}
 {%- endblock %}
-{% block ui_overlay -%}
+
+{% block shell_overlay -%}
 {%- endblock %}

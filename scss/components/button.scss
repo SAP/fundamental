@@ -310,6 +310,40 @@ $block: #{$fd-namespace}-button;
     --fd-button-color: var(--fd-color-status-2);
     --fd-button-border-color: var(--fd-color-status-2);
     @include fd-focus(--fd-color-status-2);
+
+  &--shellheader {
+    color: $tempcolor-shell-icons;
+    border-color: transparent;
+    background-color: transparent;
+    &:hover {
+      color: $tempcolor-shell-icons;
+      background-color: $tempcolor-shell-icons-bg-hover;
+      border-color: transparent;
+      box-shadow: none;
+    }
+    &:active,
+    &.is-active,
+    &[aria-selected="true"],
+    &.is-selected,
+    &[aria-pressed="true"],
+    &.is-pressed {
+      color: $tempcolor-shell-icons;
+      background-color: $tempcolor-shell-icons-bg-active;
+      border-color: transparent;
+    }
+    &[aria-disabled="true"],
+    &.is-disabled,
+    &:disabled {
+      opacity: .25; // TEMP/PLACEHOLDER
+    }
+  }
+
+  &--toolbar,
+  &--grouped {
+    color: fd-color("text", 2);
+    background-color: fd-color("neutral", 1);
+    border-color: fd-color("neutral", 3);
+    box-shadow: 0 1px 0 0 rgba(lighten(fd-color("text", 2),50), 1);
     @include fd-hover {
       --fd-button-background-color: var(--fd-color-status-2);
       @include fd-disabled {
@@ -343,10 +377,6 @@ $block: #{$fd-namespace}-button;
 .#{$block}-group .#{$block} {
   @extend .#{$block}--standard;
 }
-
-
-
-
 
 
 //DEPRECATED
@@ -504,5 +534,5 @@ $block: #{$fd-namespace}-button;
         }
       }
     }
-
+  }
 }
