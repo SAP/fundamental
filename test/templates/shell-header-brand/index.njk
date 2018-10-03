@@ -1,0 +1,16 @@
+{% extends "layout.njk" %}
+{% from "./component.njk" import shell_header_brand %}
+{% from "./../format.njk" import format %}
+
+{% set css_deps = ['fonts','helpers', 'icons'] %}
+
+{% block content %}
+
+    <h1>Shell Header Brand</h1>
+    {% set basic_shell_header_brand %}
+        {{ shell_header_brand()}}
+    {% endset %}
+
+    {{ format(basic_shell_header_brand) }}
+
+{% endblock %}

@@ -33,12 +33,15 @@ $block: #{$fd-namespace}-popover;
       visibility: visible;
       transition: opacity $fd-popover-transition-params;
       overflow: hidden;
+      left: 0;
 
       &--left {
+        right: auto;
         left: 0;
       }
 
       &--right {
+        left: auto;
         right: 0;
       }
 
@@ -47,5 +50,28 @@ $block: #{$fd-namespace}-popover;
           opacity: 0;
           visibility: hidden;
       }
+    }
+}
+
+// RTL Styles (Considers Body, Shell Header, and Self)
+body[dir=rtl],
+.#{$fd-namespace}-shell-header[dir=rtl],
+.#{$block}[dir=rtl] {
+    .#{$block}{
+        // Reverse the default positioning
+        &__body {
+          left: auto;
+          right: 0;
+
+          // Reverse the modified positioning
+          &--left {
+            right: 0;
+            left: auto;
+          }
+          &--right {
+            right: auto;
+            left: 0;
+          }
+        }
     }
 }

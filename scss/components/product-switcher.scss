@@ -2,6 +2,10 @@
 @import "./../mixins";
 @import "./../functions";
 
+$fd-product-switcher-width: 450px;
+$fd-product-switcher-product-width: 140px;
+$fd-product-switcher-product-height: 40px;
+
 /*!
 .fd-product-switcher
 */
@@ -13,17 +17,18 @@ $block: #{$fd-namespace}-product-switcher;
 
   &__body {
     padding: 20px 10px 0 10px;
-    right: 0;
 
     > nav {
       > ul {
+          margin: 0;
+          padding: 0;
           list-style: none;
           overflow: hidden;
-          width: 450px;
+          width: $fd-product-switcher-width;
 
           > li {
               float: left;
-              width: 150px;
+              width: $fd-product-switcher-product-width + 10;
               text-align: center;
               padding: 0 5px;
               margin: 0 0 30px 0;
@@ -35,11 +40,11 @@ $block: #{$fd-namespace}-product-switcher;
   &__product {
     &-icon {
       display: block;
-      height: 40px;
+      height: $fd-product-switcher-product-height;
 
       > img {
           display: block;
-          max-width: 140px;
+          max-width: $fd-product-switcher-product-width;
           margin: 0 auto 10px auto;
       }
     }

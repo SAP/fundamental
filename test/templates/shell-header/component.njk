@@ -1,4 +1,5 @@
 {% import "./../utils.njk" as utils %}
+{% from "./../shell-header-brand/component.njk" import shell_header_brand %}
 {% from "./../product-switcher/component.njk" import product_switcher %}
 {% from "./../user-menu/component.njk" import user_menu %}
 
@@ -15,7 +16,9 @@ shell_header:
 <nav class="fd-shell-header">
 
     <div class="fd-shell-header__group fd-shell-header__group--left">
-        <div class="fd-shell-header__logo"></div>
+        <div class="fd-shell-header__logo">
+            {{  shell_header_brand() }}
+        </div>
         <div class="fd-shell-header__title">This is a very, very, very, very long Title</div>
         <!--<div class="fd-shell-header__subtitle">This is a very long Title</div>-->
     </div>
