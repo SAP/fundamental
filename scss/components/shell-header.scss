@@ -11,21 +11,19 @@
 * Update product icons in product switcher
 * Add the modifier to product-switcher & fix on docs page
 * Add dingus back on popovers
-* Add RTL
 * Add focus state to menu items
 * Add responsive classes to hide items at breakpoints
 * Add notification component / concept to button
-* Add RTL modifier
 */
 
 // Paddings
-$fd-shell-header-outer-spacing-lr-large: 32px;
-$fd-shell-header-outer-spacing-lr-medium: 16px;
-$fd-shell-header-outer-spacing-lr-small: 8px;
-$fd-shell-header-outer-spacing-tb: 4px;
+$fd-shell-header-outer-spacing-lr-large: 32px !default;
+$fd-shell-header-outer-spacing-lr-medium: 16px !default;
+$fd-shell-header-outer-spacing-lr-small: 8px !default;
+$fd-shell-header-outer-spacing-tb: 4px !default;
 
-$fd-shell-header-title-spacing: 16px;
-$fd-shell-header-item-spacing: 12px;
+$fd-shell-header-title-spacing: 16px !default;
+$fd-shell-header-item-spacing: 12px !default;
 
 // Heights
 $fd-shell-header-height: 48px !default;
@@ -148,7 +146,7 @@ $block: #{$fd-namespace}-shell-header;
 }
 
 // RTL Styles
-body[dir=rtl],
+[dir=rtl],
 .#{$block}[dir=rtl] {
     .#{$block}{
         &__group {

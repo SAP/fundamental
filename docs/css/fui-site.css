@@ -5816,6 +5816,10 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-menu__group, .fd-menu__list {
     list-style: none;
     margin-bottom: 0; }
+  .fd-menu__list {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
   .fd-menu__title {
     display: block;
     margin-bottom: 0;
@@ -6380,15 +6384,19 @@ see layouts/panel
     opacity: 1;
     visibility: visible;
     transition: opacity 0.125s;
-    overflow: hidden; }
+    overflow: hidden;
+    left: 0; }
     .fd-popover__body--left {
+      right: auto;
       left: 0; }
     .fd-popover__body--right {
+      left: auto;
       right: 0; }
     .fd-popover__body[aria-hidden="true"], .fd-popover__body.is-hidden {
       opacity: 0;
       visibility: hidden; }
 
+<<<<<<< HEAD
 /*
   @mixin fd-type mixin
     Looks up values from $fd-type to ensure consistent application of the type hierarchy.
@@ -6396,6 +6404,21 @@ see layouts/panel
     $size: "-1", "0", "1", "2", "3", "4", "5"
     $weight: "light", "normal", "bold"
 */
+=======
+[dir=rtl] .fd-popover__body,
+.fd-popover[dir=rtl] .fd-popover__body {
+  left: auto;
+  right: 0; }
+  [dir=rtl] .fd-popover__body--left,
+  .fd-popover[dir=rtl] .fd-popover__body--left {
+    right: 0;
+    left: auto; }
+  [dir=rtl] .fd-popover__body--right,
+  .fd-popover[dir=rtl] .fd-popover__body--right {
+    right: auto;
+    left: 0; }
+
+>>>>>>> Cont. shell header progress
 /*!
 .fd-date-picker+(--no-border)
     .fd-date-picker__content+()
@@ -6546,9 +6569,10 @@ input-addon
   position: relative;
   display: inline-block; }
   .fd-product-switcher__body {
-    padding: 20px 10px 0 10px;
-    right: 0; }
+    padding: 20px 10px 0 10px; }
     .fd-product-switcher__body > nav > ul {
+      margin: 0;
+      padding: 0;
       list-style: none;
       overflow: hidden;
       width: 450px; }
@@ -6570,7 +6594,6 @@ input-addon
 
 /*
 ## Notes/TODO
-* Move to fd-breakpoints
 * Update shellheader button
 * Update colors
 * Update theming strategy
@@ -6579,15 +6602,9 @@ input-addon
 * Update product icons in product switcher
 * Add the modifier to product-switcher & fix on docs page
 * Add dingus back on popovers
-* Add RTL
 * Add focus state to menu items
 * Add responsive classes to hide items at breakpoints
 * Add notification component / concept to button
-*/
-/*!
-.fd-shell-header+()
-    .fd-shell-header__content+()
-    .fd-shell-header__title+()
 */
 .fd-shell-header {
   font-size: 14px;
@@ -6614,9 +6631,6 @@ input-addon
     display: inline-block;
     vertical-align: middle; }
   .fd-shell-header__logo {
-    background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MTIuMzggMjA0Ij48ZGVmcz48c3R5bGU+LmNscy0xLC5jbHMtMntmaWxsLXJ1bGU6ZXZlbm9kZH0uY2xzLTF7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCl9LmNscy0ye2ZpbGw6I2ZmZn08L3N0eWxlPjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB4MT0iMjA2LjE5IiB4Mj0iMjA2LjE5IiB5Mj0iMjA0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDBiOGYxIi8+PHN0b3Agb2Zmc2V0PSIuMDIiIHN0b3AtY29sb3I9IiMwMWI2ZjAiLz48c3RvcCBvZmZzZXQ9Ii4zMSIgc3RvcC1jb2xvcj0iIzBkOTBkOSIvPjxzdG9wIG9mZnNldD0iLjU4IiBzdG9wLWNvbG9yPSIjMTc3NWM4Ii8+PHN0b3Agb2Zmc2V0PSIuODIiIHN0b3AtY29sb3I9IiMxYzY1YmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTVmYmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+U0FQX2dyYWRfUl9zY3JuX1plaWNoZW5mbMOkY2hlIDE8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTAgMjA0aDIwOC40MUw0MTIuMzggMEgwdjIwNCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTI0NC43MyAzOC4zNmgtNDAuNnY5Ni41MmwtMzUuNDYtOTYuNTVoLTM1LjE2bC0zMC4yNyA4MC43MkMxMDAgOTguNyA3OSA5MS42NyA2Mi40IDg2LjQgNTEuNDYgODIuODkgMzkuODUgNzcuNzIgNDAgNzJjLjA5LTQuNjggNi4yMy05IDE4LjM4LTguMzggOC4xNy40MyAxNS4zNyAxLjA5IDI5LjcxIDhsMTQuMS0yNC41NUM4OS4wNiA0MC40MiA3MSAzNi4yMSA1Ni4xNyAzNi4xOWgtLjA5Yy0xNy4yOCAwLTMxLjY4IDUuNi00MC42IDE0LjgzQTM0LjIzIDM0LjIzIDAgMCAwIDUuNzcgNzQuN0M1LjU0IDg3LjE1IDEwLjExIDk2IDE5LjcxIDEwM2M4LjEgNS45NCAxOC40NiA5Ljc5IDI3LjYgMTIuNjIgMTEuMjcgMy40OSAyMC40NyA2LjUzIDIwLjM2IDEzQTkuNTcgOS41NyAwIDAgMSA2NSAxMzVjLTIuODEgMi45LTcuMTMgNC0xMy4wOSA0LjEtMTEuNDkuMjQtMjAtMS41Ni0zMy42MS05LjU5TDUuNzcgMTU0LjQyYTkzLjc3IDkzLjc3IDAgMCAwIDQ2IDEyLjIyaDIuMTFjMTQuMjQtLjI1IDI1Ljc0LTQuMzEgMzQuOTItMTEuNzEuNTMtLjQxIDEtLjg0IDEuNDktMS4yOGwtNC4xMiAxMC44NUgxMjNsNi4xOS0xOC44MmE2Ny40NiA2Ny40NiAwIDAgMCAyMS42OCAzLjQzIDY4LjMzIDY4LjMzIDAgMCAwIDIxLjE2LTMuMjVsNiAxOC42NGg2MC4xNHYtMzloMTMuMTFjMzEuNzEgMCA1MC40Ni0xNi4xNSA1MC40Ni00My4yIDAtMzAuMTEtMTguMjItNDMuOTQtNTcuMDEtNDMuOTR6TTE1MC45MSAxMjFhMzYuOTMgMzYuOTMgMCAwIDEtMTMtMi4yOGwxMi44Ny00MC41OWguMjJsMTIuNjUgNDAuNzFhMzguNSAzOC41IDAgMCAxLTEyLjc0IDIuMTZ6bTk2LjItMjMuMzNoLTguOTRWNjQuOTFoOC45NGMxMS45MyAwIDIxLjQ0IDQgMjEuNDQgMTYuMTQgMCAxMi42LTkuNTEgMTYuNTctMjEuNDQgMTYuNTciLz48L3N2Zz4=);
-    background-repeat: no-repeat;
-    background-size: contain;
     width: 60px;
     height: 28px; }
   .fd-shell-header__title {
@@ -6651,19 +6665,47 @@ input-addon
     .fd-shell-header__actions > *, .fd-shell-header__action > * {
       vertical-align: middle; }
   .fd-shell-header__action {
+    padding-right: 0;
     padding-left: 12px; }
-  @media all and (max-width: 1199px) {
+  @media all and (max-width: 1580px) {
     .fd-shell-header {
       padding: 4px 32px; } }
-  @media all and (max-width: 991px) {
+  @media all and (max-width: 1440px) {
+    .fd-shell-header {
+      padding: 4px 32px; } }
+  @media all and (max-width: 1024px) {
     .fd-shell-header {
       padding: 4px 16px; } }
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 800px) {
     .fd-shell-header {
       padding: 4px 8px; } }
-  @media all and (max-width: 575px) {
+  @media all and (max-width: 320px) {
     .fd-shell-header {
       padding: 4px 8px; } }
+
+[dir=rtl] .fd-shell-header__group--right,
+.fd-shell-header[dir=rtl] .fd-shell-header__group--right {
+  text-align: left; }
+
+[dir=rtl] .fd-shell-header__action,
+.fd-shell-header[dir=rtl] .fd-shell-header__action {
+  padding-right: 12px;
+  padding-left: 0; }
+
+/*!
+.fd-shell-header-brand+()
+*/
+.fd-shell-header-brand {
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #32363a;
+  font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  display: inline-block;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MTIuMzggMjA0Ij48ZGVmcz48c3R5bGU+LmNscy0xLC5jbHMtMntmaWxsLXJ1bGU6ZXZlbm9kZH0uY2xzLTF7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCl9LmNscy0ye2ZpbGw6I2ZmZn08L3N0eWxlPjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB4MT0iMjA2LjE5IiB4Mj0iMjA2LjE5IiB5Mj0iMjA0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDBiOGYxIi8+PHN0b3Agb2Zmc2V0PSIuMDIiIHN0b3AtY29sb3I9IiMwMWI2ZjAiLz48c3RvcCBvZmZzZXQ9Ii4zMSIgc3RvcC1jb2xvcj0iIzBkOTBkOSIvPjxzdG9wIG9mZnNldD0iLjU4IiBzdG9wLWNvbG9yPSIjMTc3NWM4Ii8+PHN0b3Agb2Zmc2V0PSIuODIiIHN0b3AtY29sb3I9IiMxYzY1YmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTVmYmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+U0FQX2dyYWRfUl9zY3JuX1plaWNoZW5mbMOkY2hlIDE8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTAgMjA0aDIwOC40MUw0MTIuMzggMEgwdjIwNCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTI0NC43MyAzOC4zNmgtNDAuNnY5Ni41MmwtMzUuNDYtOTYuNTVoLTM1LjE2bC0zMC4yNyA4MC43MkMxMDAgOTguNyA3OSA5MS42NyA2Mi40IDg2LjQgNTEuNDYgODIuODkgMzkuODUgNzcuNzIgNDAgNzJjLjA5LTQuNjggNi4yMy05IDE4LjM4LTguMzggOC4xNy40MyAxNS4zNyAxLjA5IDI5LjcxIDhsMTQuMS0yNC41NUM4OS4wNiA0MC40MiA3MSAzNi4yMSA1Ni4xNyAzNi4xOWgtLjA5Yy0xNy4yOCAwLTMxLjY4IDUuNi00MC42IDE0LjgzQTM0LjIzIDM0LjIzIDAgMCAwIDUuNzcgNzQuN0M1LjU0IDg3LjE1IDEwLjExIDk2IDE5LjcxIDEwM2M4LjEgNS45NCAxOC40NiA5Ljc5IDI3LjYgMTIuNjIgMTEuMjcgMy40OSAyMC40NyA2LjUzIDIwLjM2IDEzQTkuNTcgOS41NyAwIDAgMSA2NSAxMzVjLTIuODEgMi45LTcuMTMgNC0xMy4wOSA0LjEtMTEuNDkuMjQtMjAtMS41Ni0zMy42MS05LjU5TDUuNzcgMTU0LjQyYTkzLjc3IDkzLjc3IDAgMCAwIDQ2IDEyLjIyaDIuMTFjMTQuMjQtLjI1IDI1Ljc0LTQuMzEgMzQuOTItMTEuNzEuNTMtLjQxIDEtLjg0IDEuNDktMS4yOGwtNC4xMiAxMC44NUgxMjNsNi4xOS0xOC44MmE2Ny40NiA2Ny40NiAwIDAgMCAyMS42OCAzLjQzIDY4LjMzIDY4LjMzIDAgMCAwIDIxLjE2LTMuMjVsNiAxOC42NGg2MC4xNHYtMzloMTMuMTFjMzEuNzEgMCA1MC40Ni0xNi4xNSA1MC40Ni00My4yIDAtMzAuMTEtMTguMjItNDMuOTQtNTcuMDEtNDMuOTR6TTE1MC45MSAxMjFhMzYuOTMgMzYuOTMgMCAwIDEtMTMtMi4yOGwxMi44Ny00MC41OWguMjJsMTIuNjUgNDAuNzFhMzguNSAzOC41IDAgMCAxLTEyLjc0IDIuMTZ6bTk2LjItMjMuMzNoLTguOTRWNjQuOTFoOC45NGMxMS45MyAwIDIxLjQ0IDQgMjEuNDQgMTYuMTQgMCAxMi42LTkuNTEgMTYuNTctMjEuNDQgMTYuNTciLz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 28px; }
 
 /*!
 .fd-user-menu
