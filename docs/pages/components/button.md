@@ -47,7 +47,7 @@ There are five different sizes can be rendered with modifiers: `--xs`, `--s`, `-
 
 ## Buttons with Icon
 Button can have an icon with text or just and icon. You can use the `sap-icon--{icon-name}` class to attach an icon to the button.
-Full list of all the avialable icons can be found on the <a href="icons.html">icons page</a>.
+Full list of all the available icons can be found on the <a href="icon.html">icons page</a>.
 {% capture button %}
 <button class="fd-button--action-bar sap-icon--cart">Add to Cart</button>
 <button class="fd-button sap-icon--cart">Add to Cart</button>
