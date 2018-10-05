@@ -1,19 +1,24 @@
-$side-nav-bg: docs-color(background, 2);
+$side-nav-bg: #EEEEEE;
 $side-nav-border-color: docs-color(neturals, 3);
 $side-nav-links-color: docs-color(text, 1);
 $side-nav-link-active-border: docs-color(action, 1);
 .side-nav{
     background-color: $side-nav-bg;
-    padding: 20px;
+    padding: 20px 40px;
     float: none;
     vertical-align: top;
-    width: 250px;
-    min-width: 250px;
+    width: 290px;
+    min-width: 290px;
 
     &__headers{
-        font-size: 15px;
+        font-size: 28px;
         font-weight: bold;
         list-style: none;
+
+        &:last-child hr{
+            display: none;
+        }
+
         >ul{
             display: none;
         }
@@ -22,6 +27,7 @@ $side-nav-link-active-border: docs-color(action, 1);
         }
         &-link{
             color: $side-nav-links-color !important;
+            font-family: '72', sans-serif;
             padding: 20px 20px 5px 20px;
             display: block;
             &:hover{
@@ -34,7 +40,6 @@ $side-nav-link-active-border: docs-color(action, 1);
     }
 
     &__links-container{
-        border-top: 2px solid $side-nav-border-color;
         margin: 0 -20px;
     }
     &__links{
@@ -43,25 +48,35 @@ $side-nav-link-active-border: docs-color(action, 1);
         &-link{
             color: $side-nav-links-color !important;
             display: block;
-            padding: 8px 30px;
-            font-size: 15px;
+            padding: 12px 30px;
+            font-weight: lighter;
+            font-size: 18px;
+            font-family: '72', sans-serif;
             &:hover{
                 color: $side-nav-links-color;
                 text-decoration: none;
-                background-color: #e4eaf1;
+                background-color: #fbfbfb;
             }
         }
         &.active{
             a{
-                padding-left: 24px;
-                border-left: 6px solid $side-nav-link-active-border;
-                background-color: #cfdbe7;
+                padding-left: 30px;
+                // border-left: 6px solid $side-nav-link-active-border;
+                // background-color: #cfdbe7;
+                color: red;
+                font-weight: bold;
             }
         }
     }
 
-
     .search-box{
         margin-bottom: 20px;
+    }
+
+    &__seperator{
+        margin: 15px 20px 0 20px;
+        border-bottom: 1px solid #242424;
+        opacity: .3;
+
     }
 }
