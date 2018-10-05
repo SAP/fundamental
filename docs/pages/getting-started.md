@@ -1,11 +1,11 @@
 ---
-title: Developers
+title: Getting Started
 keywords: getting started
 sidebar: left-navigation-sidebar
 toc: false
-permalink: foundation/getting-started-developers.html
-folder: fundamentals
-summary: Fundamental UI is a coherent Design System accompanied by a collection of HTML/CSS Components. Consumable as a library that can be used independently of the Front-End Technology or Framework. It is used to build Modern User Experiences for Products with the SAP look and feel.
+permalink: getting-started.html
+folder:
+summary: SAP Fiori Fundamentals is a light-weight presentation layer that can be used with your UI framework of choice (e.g. Angular, React, Vue, etc.). With Fiori Fundamentals’ library of stylesheets and HTML tags, developers can build consistent Fiori apps in any web-based technology.
 
 ---
 
