@@ -61,7 +61,7 @@ The project has the following prerequisites and works best with the noted versio
 * Python 2 (for Jekyll - documentation site)
 * Bundle (for documentation site)
 * Jekyll (for documentation site)
-* XCode (for some Mac OS user)
+* Xcode (for some macOS users)
 
 # Limitations
 
