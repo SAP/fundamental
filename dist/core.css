@@ -4,27 +4,34 @@
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 :root {
-  --color-action-1: #0a6ed1;
-  --color-text-1: #32363a;
-  --color-text-2: #515559;
-  --color-text-3: #6f7275;
-  --color-background-1: #f3f4f5;
-  --color-background-2: #ffffff;
-  --color-neutral-1: #fafafa;
-  --color-neutral-2: #eeeeef;
-  --color-neutral-3: #dededf;
-  --color-status-1: #118843;
-  --color-status-2: #F59518;
-  --color-status-3: #ee0000;
-  --color-accent-1: #5899da;
-  --color-accent-2: #ed4a7b;
-  --color-accent-3: #945ecf;
-  --color-accent-4: #13a4b4;
-  --color-accent-5: #7ca10c;
-  --color-accent-6: #bf399e;
-  --color-accent-7: #ee6868;
-  --color-accent-8: #686ddf;
-  --color-accent-9: #6c8893;
+  --fd-color-action-1: #0a6ed1;
+  --fd-color-action-2: white;
+  --fd-color-shell-1: #354a5f;
+  --fd-color-shell-2: #d1e8ff;
+  --fd-color-text-1: #32363a;
+  --fd-color-text-2: #51555a;
+  --fd-color-text-3: #6f7275;
+  --fd-color-text-4: white;
+  --fd-color-background-1: #edeef0;
+  --fd-color-background-2: white;
+  --fd-color-neutral-1: #fafafa;
+  --fd-color-neutral-2: #eeeeef;
+  --fd-color-neutral-3: #dedede;
+  --fd-color-neutral-4: #ceced0;
+  --fd-color-status-1: #118843;
+  --fd-color-status-2: #F59518;
+  --fd-color-status-3: #ee0000;
+  --fd-color-status-4: #6D7678;
+  --fd-color-accent-1: #e38b16;
+  --fd-color-accent-2: #ee6868;
+  --fd-color-accent-3: #ed4a7b;
+  --fd-color-accent-4: #c0399f;
+  --fd-color-accent-5: #686cdf;
+  --fd-color-accent-6: #5899da;
+  --fd-color-accent-7: #13a4b4;
+  --fd-color-accent-8: #7ca10c;
+  --fd-color-accent-9: #955ecf;
+  --fd-color-accent-10: #6c8893;
   --fd-padding-ui: 8px;
   --fd-width-gutter: 8px
 }
@@ -71,7 +78,7 @@ html {
 }
 body {
   margin: 0;
-  background-color: #f3f4f5;
+  background-color: #edeef0;
   -webkit-font-smoothing: antialiased;
   color: #32363a
 }
@@ -138,7 +145,7 @@ a:active,
 a:focus,
 a[aria-pressed=true],
 a[aria-selected=true] {
-  color: #0854a0;
+  color: #0854a1;
   outline: 0
 }
 a.is-disabled,
@@ -218,7 +225,7 @@ input[aria-disabled=true][type=checkbox],
 input[aria-disabled=true][type=radio] {
   cursor: not-allowed;
   color: #6f7275;
-  border-color: #ebebec;
+  border-color: #eaebeb;
   background-color: #fafafa
 }
 input.is-readonly[type=checkbox],
@@ -226,7 +233,7 @@ input.is-readonly[type=radio],
 input[readonly][type=checkbox],
 input[readonly][type=radio] {
   color: #32363a;
-  border-color: #ebebec;
+  border-color: #eaebeb;
   border-width: 0 0 1px;
   border-radius: 0
 }
@@ -376,7 +383,7 @@ textarea:disabled,
 textarea[aria-disabled=true] {
   cursor: not-allowed;
   color: #6f7275;
-  border-color: #ebebec;
+  border-color: #eaebeb;
   background-color: #fafafa
 }
 input[type=date].is-readonly,
@@ -400,7 +407,7 @@ input[type=url][readonly],
 textarea.is-readonly,
 textarea[readonly] {
   color: #32363a;
-  border-color: #ebebec;
+  border-color: #eaebeb;
   border-width: 0 0 1px;
   border-radius: 0
 }
@@ -414,7 +421,7 @@ input[type=text]::-webkit-input-placeholder,
 input[type=time]::-webkit-input-placeholder,
 input[type=url]::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #939698
+  color: #939699
 }
 input[type=date]:-ms-input-placeholder,
 input[type=email]:-ms-input-placeholder,
@@ -426,7 +433,7 @@ input[type=text]:-ms-input-placeholder,
 input[type=time]:-ms-input-placeholder,
 input[type=url]:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #939698
+  color: #939699
 }
 input[type=date]::placeholder,
 input[type=email]::placeholder,
@@ -438,7 +445,7 @@ input[type=text]::placeholder,
 input[type=time]::placeholder,
 input[type=url]::placeholder,
 textarea::placeholder {
-  color: #939698
+  color: #939699
 }
 /*!
 textarea
@@ -497,13 +504,13 @@ textarea:disabled,
 textarea[aria-disabled=true] {
   cursor: not-allowed;
   color: #6f7275;
-  border-color: #ebebec;
+  border-color: #eaebeb;
   background-color: #fafafa
 }
 textarea.is-readonly,
 textarea[readonly] {
   color: #32363a;
-  border-color: #ebebec;
+  border-color: #eaebeb;
   border-width: 0 0 1px;
   border-radius: 0
 }
@@ -569,13 +576,13 @@ select:disabled,
 select[aria-disabled=true] {
   cursor: not-allowed;
   color: #6f7275;
-  border-color: #ebebec;
+  border-color: #eaebeb;
   background-color: #fafafa
 }
 select.is-readonly,
 select[readonly] {
   color: #32363a;
-  border-color: #ebebec;
+  border-color: #eaebeb;
   border-width: 0 0 1px;
   border-radius: 0
 }
@@ -627,8 +634,8 @@ input[type=radio]:hover {
 }
 input[type=checkbox]:checked,
 input[type=radio]:checked {
-  border-color: #0854a0;
-  background-color: #0854a0
+  border-color: #0854a1;
+  background-color: #0854a1
 }
 input[type=checkbox].is-disabled,
 input[type=checkbox][aria-disabled=true],
@@ -636,7 +643,7 @@ input[type=checkbox][disabled],
 input[type=radio].is-disabled,
 input[type=radio][aria-disabled=true],
 input[type=radio][disabled] {
-  border-color: #ebebec;
+  border-color: #eaebeb;
   background-color: #fafafa
 }
 /*!
@@ -662,7 +669,7 @@ input[type=checkbox]:checked::before {
 input[type=checkbox].is-disabled::before,
 input[type=checkbox][aria-disabled=true]::before,
 input[type=checkbox][disabled]::before {
-  border-color: #515559
+  border-color: #51555a
 }
 /*!
 radio
@@ -686,10 +693,10 @@ input[type=radio]:checked {
   background-color: #fff
 }
 input[type=radio]:checked::after {
-  background-color: #0854a0
+  background-color: #0854a1
 }
 input[type=radio]:checked.is-disabled::after,
 input[type=radio]:checked[aria-disabled=true]::after,
 input[type=radio]:checked[disabled]::after {
-  background-color: #515559
+  background-color: #51555a
 }

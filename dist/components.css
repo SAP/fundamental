@@ -14,7 +14,7 @@
   color: #32363a;
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #32363a;
-  border: solid 1px #dededf;
+  border: solid 1px #dedede;
   background-color: #fafafa;
   padding: 8px 12px;
   border-radius: 4px
@@ -149,7 +149,7 @@
   position: absolute;
   top: -4px;
   right: -4px;
-  border-right: 1px solid #dededf
+  border-right: 1px solid #dedede
 }
 .fd-action-bar__back button {
   margin-top: -8px
@@ -165,7 +165,7 @@
   position: absolute;
   top: -4px;
   right: -4px;
-  border-right: 1px solid #dededf
+  border-right: 1px solid #dedede
 }
 .fd-action-bar__title {
   font-size: 1.71429rem;
@@ -365,8 +365,8 @@
 [class*=fd-button--]:active,
 [class*=fd-button--][aria-pressed=true],
 [class*=fd-button--][aria-selected=true] {
-  background-color: #0854a0;
-  border-color: #0854a0;
+  background-color: #0854a1;
+  border-color: #0854a1;
   color: #fff
 }
 .fd-button.is-focus,
@@ -463,8 +463,8 @@
 .fd-button--main:active,
 .fd-button--main[aria-pressed=true],
 .fd-button--main[aria-selected=true] {
-  background-color: #0854a0;
-  border-color: #0854a0
+  background-color: #0854a1;
+  border-color: #0854a1
 }
 .fd-button--action-bar.is-disabled,
 .fd-button--action-bar:disabled,
@@ -573,19 +573,46 @@
 .fd-button--secondary[aria-disabled=true] {
   background-color: #fff
 }
+.fd-button--shellheader {
+  color: #d1e8ff;
+  border-color: transparent;
+  background-color: transparent
+}
+.fd-button--shellheader:hover {
+  color: #d1e8ff;
+  background-color: #323c4c;
+  border-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none
+}
+.fd-button--shellheader.is-active,
+.fd-button--shellheader.is-pressed,
+.fd-button--shellheader.is-selected,
+.fd-button--shellheader:active,
+.fd-button--shellheader[aria-pressed=true],
+.fd-button--shellheader[aria-selected=true] {
+  color: #d1e8ff;
+  background-color: #2a3341;
+  border-color: transparent
+}
+.fd-button--shellheader.is-disabled,
+.fd-button--shellheader:disabled,
+.fd-button--shellheader[aria-disabled=true] {
+  opacity: .25
+}
 .fd-button--grouped,
 .fd-button--toolbar {
-  color: #515559;
+  color: #51555a;
   background-color: #fafafa;
-  border-color: #dededf;
+  border-color: #dedede;
   -webkit-box-shadow: 0 1px 0 0 #d3d5d7;
   box-shadow: 0 1px 0 0 #d3d5d7
 }
 .fd-button--grouped:hover,
 .fd-button--toolbar:hover {
-  color: #515559;
-  background-color: #e8e8e8;
-  border-color: #e8e8e8;
+  color: #51555a;
+  background-color: #e7e8e9;
+  border-color: #e7e8e9;
   -webkit-box-shadow: none;
   box-shadow: none
 }
@@ -593,8 +620,8 @@
 .fd-button--grouped:active,
 .fd-button--toolbar.is-active,
 .fd-button--toolbar:active {
-  background-color: #e1e1e1;
-  border-color: #e1e1e1;
+  background-color: #dfe0e1;
+  border-color: #dfe0e1;
   -webkit-box-shadow: none;
   box-shadow: none
 }
@@ -608,7 +635,7 @@
 .fd-button--toolbar[aria-selected=true] {
   border-color: transparent;
   color: #fff;
-  background-color: #0854a0
+  background-color: #0854a1
 }
 .fd-button--grouped.is-disabled,
 .fd-button--grouped:disabled,
@@ -616,9 +643,9 @@
 .fd-button--toolbar.is-disabled,
 .fd-button--toolbar:disabled,
 .fd-button--toolbar[aria-disabled=true] {
-  color: #515559;
+  color: #51555a;
   background-color: #fafafa;
-  border-color: #dededf
+  border-color: #dedede
 }
 .fd-button--compact {
   font-size: 1rem;
@@ -852,9 +879,9 @@
 }
 .fd-dropdown__control.fd-button--toolbar:active,
 .fd-dropdown__control.fd-button--toolbar:hover {
-  color: #515559;
-  background-color: #e8e8e8;
-  border-color: #e8e8e8;
+  color: #51555a;
+  background-color: #e7e8e9;
+  border-color: #e7e8e9;
   -webkit-box-shadow: none;
   box-shadow: none
 }
@@ -909,15 +936,15 @@
 .fd-dropdown__item {
   display: block;
   padding: 10px 20px;
-  color: #515559
+  color: #51555a
 }
 .fd-dropdown__item:hover {
-  color: #515559;
+  color: #51555a;
   background-color: #eeeeef
 }
 .fd-dropdown__item.is-selected,
 .fd-dropdown__item[aria-selected=true] {
-  color: #515559;
+  color: #51555a;
   background-color: rgba(10,110,209,.07)
 }
 /*!
@@ -1047,7 +1074,7 @@
   font-size: .92857rem;
   line-height: 1.23077;
   font-weight: 400;
-  color: #515559;
+  color: #51555a;
   padding: 8px 0;
   position: relative
 }
@@ -1346,7 +1373,7 @@
   font-weight: 400
 }
 .fd-pagination__total {
-  color: #515559;
+  color: #51555a;
   margin-right: 8px
 }
 .fd-pagination__nav {
@@ -1366,7 +1393,7 @@
 .fd-pagination__link.is-selected,
 .fd-pagination__link:active,
 .fd-pagination__link[aria-selected=true] {
-  color: #515559;
+  color: #51555a;
   text-decoration: none;
   cursor: default;
   font-weight: 700
@@ -1574,7 +1601,7 @@
   padding-left: 0;
   margin-bottom: 12px;
   list-style: none;
-  border-bottom: solid 1px #dededf
+  border-bottom: solid 1px #dedede
 }
 .fd-tabs__link {
   display: block;
@@ -1786,14 +1813,14 @@
   transition: background-color 125ms ease-in
 }
 .fd-tree__row:hover {
-  background-color: #f9f9f9
+  background-color: #f8f9f9
 }
 .fd-tree__row--header {
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
   color: #6f7275;
-  background-color: #f3f4f5;
+  background-color: #edeef0;
   text-transform: uppercase
 }
 .fd-tree__row--header:hover {
@@ -1944,7 +1971,7 @@
   transition: background-color 125ms ease-in
 }
 .fd-list-group__item:hover {
-  background-color: #f8f8f8
+  background-color: #f7f7f7
 }
 .fd-list-group__action {
   -webkit-box-flex: 1;
@@ -1994,7 +2021,7 @@
   padding: 12px;
   display: block;
   position: absolute;
-  color: #515559;
+  color: #51555a;
   top: 30px;
   right: -12px;
   min-width: 350px;
@@ -2103,7 +2130,7 @@
   padding-left: 0;
   margin-bottom: 12px;
   list-style: none;
-  border-bottom: solid 1px #dededf
+  border-bottom: solid 1px #dedede
 }
 .fd-tabs__link {
   display: block;
@@ -2180,7 +2207,7 @@
   left: 0;
   right: 100%;
   background-color: #fafafa;
-  border: 1px solid #dededf;
+  border: 1px solid #dedede;
   -webkit-transition: left 125ms ease-in;
   transition: left 125ms ease-in;
   pointer-events: none;
@@ -2195,7 +2222,7 @@
   z-index: 1;
   border-color: transparent!important;
   border-radius: 14px;
-  background-color: #dededf
+  background-color: #dedede
 }
 .fd-toggle input::after,
 .fd-toggle input::before {
@@ -2206,8 +2233,8 @@
 }
 .fd-toggle input:checked + .fd-toggle__switch {
   left: calc(100% - 28px);
-  background: #0854a0;
-  border-color: #0854a0
+  background: #0854a1;
+  border-color: #0854a1
 }
 .fd-toggle input:checked.is-disabled,
 .fd-toggle input:checked[aria-disabled=true],
@@ -2328,7 +2355,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .is-busy::before,
 [aria-busy=true]::before {
   position: absolute;
-  background-color: rgba(243,244,245,.95);
+  background-color: rgba(237,238,240,.95);
   top: 0;
   right: 0;
   bottom: 0;
@@ -2471,7 +2498,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: #515559;
+  color: #51555a;
   position: relative
 }
 .fd-global-nav__group {
@@ -2494,10 +2521,19 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   align-items: center
 }
 .fd-global-nav__logo,
-.fd-global-nav__product-name {
+.fd-global-nav__product-name,
+.fd-global-nav__side-menu {
   display: inline-block;
   height: 50px;
   vertical-align: middle
+}
+.fd-global-nav__side-menu {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
 }
 .fd-global-nav__logo {
   padding-left: 16px;
@@ -2515,8 +2551,73 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   line-height: 1.23077;
   font-weight: 600
 }
+.fd-global-nav__launchpad {
+  padding-top: 0;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative
+}
+.fd-global-nav__launchpad button {
+  min-height: 48px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI5Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMyMTI2MkMiIGQ9Ik0xMS45MzUgMS40NzVMNi4xODggNy45MjdhLjI2NC4yNjQgMCAwIDEtLjM3OCAwTC4wNjUgMS40NzVhLjIzNi4yMzYgMCAwIDEgLjAyNi0uMzQzTDEuMzgxLjA1OGEuMjUzLjI1MyAwIDAgMSAuMTYzLS4wNTlMMS41NjMgMGEuMjUyLjI1MiAwIDAgMSAuMTcxLjA4NWw0LjI2NSA0Ljg4IDQuMjY3LTQuODhhLjI1Mi4yNTIgMCAwIDEgLjM1Mi0uMDI3bDEuMjkxIDEuMDc0Yy4wNS4wNDIuMDgxLjEwMi4wODYuMTY2YS4yMzYuMjM2IDAgMCAxLS4wNi4xNzd6Ii8+PC9zdmc+);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 12px) center;
+  padding-right: 30px;
+  color: #51555a
+}
+.fd-global-nav__launchpad button:hover {
+  border-color: transparent;
+  background-color: #fafafa
+}
+.fd-global-nav__launchpad button:focus,
+.fd-global-nav__launchpad button[aria-expanded=true] {
+  border-color: transparent;
+  background-color: rgba(10,110,209,.07)
+}
+.fd-global-nav__launchpad .fd-mega-menu {
+  position: absolute;
+  top: 50px;
+  left: 0
+}
+.fd-global-nav__context-menu {
+  border-left: 1px solid #eeeeef;
+  border-right: 1px solid #eeeeef;
+  margin-right: 8px
+}
+.fd-global-nav__context-menu button {
+  min-height: 48px;
+  color: #51555a;
+  background: 0 0;
+  border-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0
+}
 .fd-global-nav__actions {
   display: inline-block
+}
+.fd-global-nav__search {
+  position: relative;
+  display: inline-block
+}
+.fd-global-nav__search input {
+  position: absolute;
+  left: -176px;
+  top: 0;
+  background: #fff;
+  border-radius: 0;
+  border: none;
+  min-width: 176px;
+  border-bottom: 1px solid #eeeeef;
+  -webkit-box-shadow: 0 5px #fff,0 -5px #fff;
+  box-shadow: 0 5px #fff,0 -5px #fff
+}
+.fd-global-nav__search input[aria-hidden=true] {
+  display: none
+}
+.fd-global-nav.is-disabled,
+.fd-global-nav[disabled] {
+  opacity: .5
 }
 /*!
 .fd-side-nav
@@ -2575,7 +2676,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-side-nav__link,
 .fd-side-nav__sublink {
   padding: 10px 20px;
-  color: #515559;
+  color: #51555a;
   display: block;
   font-size: 1rem;
   line-height: 1.42857;
@@ -2593,7 +2694,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-side-nav__sublink.is-selected,
 .fd-side-nav__sublink[aria-expanded=true],
 .fd-side-nav__sublink[aria-selected=true] {
-  color: #515559;
+  color: #51555a;
   background-color: rgba(10,110,209,.07);
   font-weight: 700
 }
@@ -2640,8 +2741,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   border-bottom-color: #085caf
 }
 .fd-link:visited {
-  color: #3b0ad1;
-  border-bottom-color: #3b0ad1
+  color: #3c0ad1;
+  border-bottom-color: #3c0ad1
 }
 .fd-link.is-pressed,
 .fd-link.is-selected,
@@ -2649,8 +2750,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-link:focus,
 .fd-link[aria-pressed=true],
 .fd-link[aria-selected=true] {
-  color: #0854a0;
-  border-bottom-color: #0854a0
+  color: #0854a1;
+  border-bottom-color: #0854a1
 }
 .fd-link.is-disabled,
 .fd-link[aria-disabled=true] {
@@ -2761,7 +2862,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-mega-menu__header-link {
   padding: 10px 20px;
-  color: #515559
+  color: #51555a
 }
 .fd-mega-menu__header-link:before {
   padding-right: 10px;
@@ -2821,7 +2922,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-mega-menu__link,
 .fd-mega-menu__sublink {
   padding: 10px 20px;
-  color: #515559;
+  color: #51555a;
   display: block;
   font-size: 1rem;
   line-height: 1.42857;
@@ -2839,7 +2940,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-mega-menu__sublink.is-selected,
 .fd-mega-menu__sublink[aria-expanded=true],
 .fd-mega-menu__sublink[aria-selected=true] {
-  color: #515559;
+  color: #51555a;
   background-color: rgba(10,110,209,.07);
   font-weight: 700
 }
@@ -2885,6 +2986,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   list-style: none;
   margin-bottom: 0
 }
+.fd-menu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
 .fd-menu__title {
   display: block;
   margin-bottom: 0;
@@ -2900,14 +3006,14 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: block;
   cursor: pointer;
   padding: 10px 20px;
-  color: #515559;
+  color: #51555a;
   background-color: #fff
 }
 .fd-menu__item > .fd-checkbox {
   margin: 0 10px 0 0
 }
 .fd-menu__item:hover {
-  color: #515559;
+  color: #51555a;
   background-color: #eeeeef
 }
 .fd-menu__item.is-selected,
@@ -3017,7 +3123,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
-  color: #515559;
+  color: #51555a;
   margin-bottom: 0
 }
 .fd-tile__actions {
@@ -3095,7 +3201,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   margin-bottom: 0;
   border-radius: 0!important;
   position: relative;
-  border: solid 1px #f3f4f5;
+  border: solid 1px #edeef0;
   border-width: 0 1px 1px 0
 }
 @media (min-width:800px) {
@@ -3142,7 +3248,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
-  color: #515559;
+  color: #51555a;
   background-color: rgba(10,110,209,.07);
   line-height: 24px;
   vertical-align: middle;
@@ -3198,7 +3304,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   font-size: .92857rem;
   line-height: 1.23077;
   font-weight: 400;
-  color: #0854a0;
+  color: #0854a1;
   background-color: #fff;
   height: 36px;
   min-width: 36px;
@@ -3222,12 +3328,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   background-color: #fafafa
 }
 .fd-calendar .fd-calendar__item--other-month {
-  color: #b0b6bb
+  color: #b0b5bb
 }
 .fd-calendar .fd-calendar__item--disabled,
 .fd-calendar .fd-calendar__item.is-disabled,
 .fd-calendar .fd-calendar__item[aria-disabled=true] {
-  color: #e7e9ea
+  color: #e6e8ea
 }
 .fd-calendar .fd-calendar__item--disabled:hover,
 .fd-calendar .fd-calendar__item.is-disabled:hover,
@@ -3237,7 +3343,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-calendar .fd-calendar__item--current {
   position: relative;
-  color: #0854a0
+  color: #0854a1
 }
 .fd-calendar .fd-calendar__item--current::after {
   content: "";
@@ -3260,11 +3366,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   background-color: #fff
 }
 .fd-calendar .fd-calendar__item.is-selected {
-  background-color: #0854a0;
+  background-color: #0854a1;
   color: #fff
 }
 .fd-calendar .fd-calendar__item.is-selected-range {
-  background-color: rgba(8,84,160,.07);
+  background-color: rgba(8,84,161,.07);
   border-radius: 0
 }
 .fd-calendar .fd-calendar__item.is-selected-range-first {
@@ -3363,7 +3469,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   line-height: 1.42857;
   color: #32363a;
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #515559
+  color: #51555a
 }
 .fd-status-label::before {
   margin-right: 4px;
@@ -3473,7 +3579,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   top: 1px;
   left: 0;
   z-index: 1;
-  background-color: #515559
+  background-color: #51555a
 }
 .fd-status-label--success {
   color: #118843
@@ -3510,18 +3616,36 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   visibility: visible;
   -webkit-transition: opacity 125ms;
   transition: opacity 125ms;
-  overflow: hidden
+  overflow: hidden;
+  left: 0
 }
 .fd-popover__body--left {
+  right: auto;
   left: 0
 }
 .fd-popover__body--right {
+  left: auto;
   right: 0
 }
 .fd-popover__body.is-hidden,
 .fd-popover__body[aria-hidden=true] {
   opacity: 0;
   visibility: hidden
+}
+.fd-popover[dir=rtl] .fd-popover__body,
+[dir=rtl] .fd-popover__body {
+  left: auto;
+  right: 0
+}
+.fd-popover[dir=rtl] .fd-popover__body--left,
+[dir=rtl] .fd-popover__body--left {
+  right: 0;
+  left: auto
+}
+.fd-popover[dir=rtl] .fd-popover__body--right,
+[dir=rtl] .fd-popover__body--right {
+  right: auto;
+  left: 0
 }
 /*!
 .fd-date-picker+(--no-border)
@@ -3629,20 +3753,18 @@ input-addon
   margin: 0 0 10px 0
 }
 /*!
-.fd-search-input
+.fd-product-switcher
 */
 .fd-product-switcher {
   position: relative;
   display: inline-block
 }
-.fd-product-switcher .fd-popover__body {
-  width: auto
-}
 .fd-product-switcher__body {
-  padding: 20px 10px 0 10px;
-  right: 0
+  padding: 20px 10px 0 10px
 }
 .fd-product-switcher__body > nav > ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
   overflow: hidden;
   width: 450px
@@ -3665,4 +3787,153 @@ input-addon
 }
 .fd-product-switcher__product-title {
   display: block
+}
+.fd-shell-header {
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #32363a;
+  font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  background: #354a5f;
+  height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  padding: 4px 32px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+.fd-shell-header__group--left,
+.fd-shell-header__group--middle,
+.fd-shell-header__group--right {
+  display: inline-block
+}
+.fd-shell-header__group--left,
+.fd-shell-header__group--right {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1
+}
+.fd-shell-header__group--middle {
+  width: 30px
+}
+.fd-shell-header__group--right {
+  text-align: right
+}
+.fd-shell-header__logo,
+.fd-shell-header__subtitle,
+.fd-shell-header__title {
+  display: inline-block;
+  vertical-align: middle
+}
+.fd-shell-header__logo {
+  width: 60px;
+  height: 28px
+}
+.fd-shell-header__title {
+  font-size: 1.14286rem;
+  line-height: 1.25;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px
+}
+.fd-shell-header__subtitle {
+  font-size: .85714rem;
+  line-height: 1.33333;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px
+}
+.fd-shell-header__copilot {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px
+}
+.fd-shell-header__copilot > img {
+  display: block;
+  max-width: 100%
+}
+.fd-shell-header__action,
+.fd-shell-header__actions {
+  display: inline-block
+}
+.fd-shell-header__action > *,
+.fd-shell-header__actions > * {
+  vertical-align: middle
+}
+.fd-shell-header__action {
+  padding-right: 0;
+  padding-left: 12px
+}
+@media all and (max-width:1580px) {
+  .fd-shell-header {
+    padding: 4px 32px
+  }
+}
+@media all and (max-width:1440px) {
+  .fd-shell-header {
+    padding: 4px 32px
+  }
+}
+@media all and (max-width:1024px) {
+  .fd-shell-header {
+    padding: 4px 16px
+  }
+}
+@media all and (max-width:800px) {
+  .fd-shell-header {
+    padding: 4px 8px
+  }
+}
+@media all and (max-width:320px) {
+  .fd-shell-header {
+    padding: 4px 8px
+  }
+}
+.fd-shell-header[dir=rtl] .fd-shell-header__group--right,
+[dir=rtl] .fd-shell-header__group--right {
+  text-align: left
+}
+.fd-shell-header[dir=rtl] .fd-shell-header__action,
+[dir=rtl] .fd-shell-header__action {
+  padding-right: 12px;
+  padding-left: 0
+}
+/*!
+.fd-shell-header-brand+()
+*/
+.fd-shell-header-brand {
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #32363a;
+  font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  display: inline-block;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MTIuMzggMjA0Ij48ZGVmcz48c3R5bGU+LmNscy0xLC5jbHMtMntmaWxsLXJ1bGU6ZXZlbm9kZH0uY2xzLTF7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCl9LmNscy0ye2ZpbGw6I2ZmZn08L3N0eWxlPjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB4MT0iMjA2LjE5IiB4Mj0iMjA2LjE5IiB5Mj0iMjA0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDBiOGYxIi8+PHN0b3Agb2Zmc2V0PSIuMDIiIHN0b3AtY29sb3I9IiMwMWI2ZjAiLz48c3RvcCBvZmZzZXQ9Ii4zMSIgc3RvcC1jb2xvcj0iIzBkOTBkOSIvPjxzdG9wIG9mZnNldD0iLjU4IiBzdG9wLWNvbG9yPSIjMTc3NWM4Ii8+PHN0b3Agb2Zmc2V0PSIuODIiIHN0b3AtY29sb3I9IiMxYzY1YmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTVmYmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+U0FQX2dyYWRfUl9zY3JuX1plaWNoZW5mbMOkY2hlIDE8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTAgMjA0aDIwOC40MUw0MTIuMzggMEgwdjIwNCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTI0NC43MyAzOC4zNmgtNDAuNnY5Ni41MmwtMzUuNDYtOTYuNTVoLTM1LjE2bC0zMC4yNyA4MC43MkMxMDAgOTguNyA3OSA5MS42NyA2Mi40IDg2LjQgNTEuNDYgODIuODkgMzkuODUgNzcuNzIgNDAgNzJjLjA5LTQuNjggNi4yMy05IDE4LjM4LTguMzggOC4xNy40MyAxNS4zNyAxLjA5IDI5LjcxIDhsMTQuMS0yNC41NUM4OS4wNiA0MC40MiA3MSAzNi4yMSA1Ni4xNyAzNi4xOWgtLjA5Yy0xNy4yOCAwLTMxLjY4IDUuNi00MC42IDE0LjgzQTM0LjIzIDM0LjIzIDAgMCAwIDUuNzcgNzQuN0M1LjU0IDg3LjE1IDEwLjExIDk2IDE5LjcxIDEwM2M4LjEgNS45NCAxOC40NiA5Ljc5IDI3LjYgMTIuNjIgMTEuMjcgMy40OSAyMC40NyA2LjUzIDIwLjM2IDEzQTkuNTcgOS41NyAwIDAgMSA2NSAxMzVjLTIuODEgMi45LTcuMTMgNC0xMy4wOSA0LjEtMTEuNDkuMjQtMjAtMS41Ni0zMy42MS05LjU5TDUuNzcgMTU0LjQyYTkzLjc3IDkzLjc3IDAgMCAwIDQ2IDEyLjIyaDIuMTFjMTQuMjQtLjI1IDI1Ljc0LTQuMzEgMzQuOTItMTEuNzEuNTMtLjQxIDEtLjg0IDEuNDktMS4yOGwtNC4xMiAxMC44NUgxMjNsNi4xOS0xOC44MmE2Ny40NiA2Ny40NiAwIDAgMCAyMS42OCAzLjQzIDY4LjMzIDY4LjMzIDAgMCAwIDIxLjE2LTMuMjVsNiAxOC42NGg2MC4xNHYtMzloMTMuMTFjMzEuNzEgMCA1MC40Ni0xNi4xNSA1MC40Ni00My4yIDAtMzAuMTEtMTguMjItNDMuOTQtNTcuMDEtNDMuOTR6TTE1MC45MSAxMjFhMzYuOTMgMzYuOTMgMCAwIDEtMTMtMi4yOGwxMi44Ny00MC41OWguMjJsMTIuNjUgNDAuNzFhMzguNSAzOC41IDAgMCAxLTEyLjc0IDIuMTZ6bTk2LjItMjMuMzNoLTguOTRWNjQuOTFoOC45NGMxMS45MyAwIDIxLjQ0IDQgMjEuNDQgMTYuMTQgMCAxMi42LTkuNTEgMTYuNTctMjEuNDQgMTYuNTciLz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 28px
+}
+/*!
+.fd-user-menu
+*/
+.fd-user-menu {
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #32363a;
+  font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  text-align: left
 }

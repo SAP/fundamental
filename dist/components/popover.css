@@ -29,16 +29,34 @@
   visibility: visible;
   -webkit-transition: opacity 125ms;
   transition: opacity 125ms;
-  overflow: hidden
+  overflow: hidden;
+  left: 0
 }
 .fd-popover__body--left {
+  right: auto;
   left: 0
 }
 .fd-popover__body--right {
+  left: auto;
   right: 0
 }
 .fd-popover__body.is-hidden,
 .fd-popover__body[aria-hidden=true] {
   opacity: 0;
   visibility: hidden
+}
+.fd-popover[dir=rtl] .fd-popover__body,
+[dir=rtl] .fd-popover__body {
+  left: auto;
+  right: 0
+}
+.fd-popover[dir=rtl] .fd-popover__body--left,
+[dir=rtl] .fd-popover__body--left {
+  right: 0;
+  left: auto
+}
+.fd-popover[dir=rtl] .fd-popover__body--right,
+[dir=rtl] .fd-popover__body--right {
+  right: auto;
+  left: 0
 }
