@@ -77,7 +77,7 @@ used with `fd-has-font-family-header` for illustrate weight variants
 ## Colors
 {: .docs-header-h2}
 
-All colors on the [color pallet](colors.html). Can be accessed via SCSS function and respective CSS classes.
+All colors on the [color pallete](/foundation/colors.html). Can be accessed via SCSS function and respective CSS classes.
 
 ### Color Function
 {: .docs-header-h3}
@@ -93,49 +93,53 @@ A foreground color class applies the color property to the element for example `
 {: .docs-table}
 | Class structure                 | {group}-{shade} options |
 | ------------------------------- | ----------------------- |
-| Foreground Class: <br> `.fd-has-color-{group}-{shade}` <br><br> Background Class:<br>`.fd-has-background-color-{group}-{shade}` | `primary` - `1`, `2` <br> `action` - `1`, `2` <br> `text` - `1`, `2`, `3`, `4` <br> `background` - `1`, `2`, `3` <br> `neutral` - `1`, `2`, `3`, `4`  <br> `status` - `1`, `2`, `3` |
+| Foreground Class: <br> `.fd-has-color-{group}-{shade}` <br><br> Background Class:<br>`.fd-has-background-color-{group}-{shade}` | `action` - `1`, `2` <br> `shell` - `1`, `2` <br> `text` - `1`, `2`, `3`, `4` <br> `background` - `1`, `2` <br> `neutral` - `1`, `2`, `3`, `4`  <br> `status` - `1`, `2`, `3`, `4` <br> `accent` - `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`|
 
 Please check the [colors page](colors.html){:target="_blank"} to see full color pallet.
 
 Some examples of color helper classes.
 {% capture color %}
-<h3>Primary Color Group</h3>
-<p class="fd-has-color-primary">.fd-has-color-primary</p>
-<p class="fd-has-color-primary-2">.fd-has-color-primary-2</p>
-
-<hr>
 
 <h3>Action Color Group</h3>
-<p class="fd-has-color-action">.fd-has-color-action</p>
-<p class="fd-has-color-action-2">.fd-has-color-action-2</p>
+<p class="fd-has-color-action-1">.fd-has-color-action-1</p>
+<p class="fd-has-color-action-2 fd-has-background-color-action-1">.fd-has-color-action-2</p>
 
-<hr>
+<h3>Shell Color Group</h3>
+<p class="fd-has-background-color-shell-1 fd-has-color-text-4">.fd-has-background-color-shell-1</p>
+<p class="fd-has-background-color-shell-1 fd-has-color-shell-2">.fd-has-color-shell-2</p>
 
 <h3>Text Color Group</h3>
-<p class="fd-has-color-text">.fd-has-color-text</p>
+<p class="fd-has-color-text-1">.fd-has-color-text-1</p>
 <p class="fd-has-color-text-2">.fd-has-color-text-2</p>
 <p class="fd-has-color-text-3">.fd-has-color-text-3</p>
 
-<hr>
-
 <h3>Background Color Group</h3>
-<p class="fd-has-background-color-background fd-has-color-text">.fd-has-color-background (white)</p>
-<p class="fd-has-background-color-background-2 fd-has-color-text">.fd-has-color-background-2</p>
+<p class="fd-has-background-color-background-1 fd-has-color-text-1">.fd-has-color-background-1</p>
+<p class="fd-has-background-color-background-2 fd-has-color-text-1">.fd-has-color-background-2</p>
 
 <h3>Neutral Color Group</h3>
-
-<p class="fd-has-background-color-neutral fd-has-color-text">.fd-has-background-color-netural-1</p>
-<p class="fd-has-background-color-neutral-2 fd-has-color-text">.fd-has-background-color-netural-2</p>
-<p class="fd-has-background-color-neutral-3 fd-has-color-text">.fd-has-background-color-netural-3</p>
+<p class="fd-has-background-color-neutral-1 fd-has-color-text-1">.fd-has-background-color-netural-1</p>
+<p class="fd-has-background-color-neutral-2 fd-has-color-text-1">.fd-has-background-color-netural-2</p>
+<p class="fd-has-background-color-neutral-3 fd-has-color-text-1">.fd-has-background-color-netural-3</p>
 <p class="fd-has-background-color-neutral-4 fd-has-color-text-1">.fd-has-background-color-netural-4</p>
 
-
 <h3>Status Color Group</h3>
-
-<p class="fd-has-background-color-status fd-has-color-text-4">.fd-has-background-color-status-1</p>
+<p class="fd-has-background-color-status-1 fd-has-color-text-4">.fd-has-background-color-status-1</p>
 <p class="fd-has-background-color-status-2 fd-has-color-text-4">.fd-has-background-color-status-2</p>
 <p class="fd-has-background-color-status-3 fd-has-color-text-4">.fd-has-background-color-status-3</p>
+<p class="fd-has-background-color-status-4 fd-has-color-text-4">.fd-has-background-color-status-4</p>
 
+<h3>Accent Color Group</h3>
+<p class="fd-has-background-color-accent-1 fd-has-color-text-4">.fd-has-background-color-accent-1</p>
+<p class="fd-has-background-color-accent-2 fd-has-color-text-4">.fd-has-background-color-accent-2</p>
+<p class="fd-has-background-color-accent-3 fd-has-color-text-4">.fd-has-background-color-accent-3</p>
+<p class="fd-has-background-color-accent-4 fd-has-color-text-4">.fd-has-background-color-accent-4</p>
+<p class="fd-has-background-color-accent-5 fd-has-color-text-4">.fd-has-background-color-accent-5</p>
+<p class="fd-has-background-color-accent-6 fd-has-color-text-4">.fd-has-background-color-accent-6</p>
+<p class="fd-has-background-color-accent-7 fd-has-color-text-4">.fd-has-background-color-accent-7</p>
+<p class="fd-has-background-color-accent-8 fd-has-color-text-4">.fd-has-background-color-accent-8</p>
+<p class="fd-has-background-color-accent-9 fd-has-color-text-4">.fd-has-background-color-accent-9</p>
+<p class="fd-has-background-color-accent-10 fd-has-color-text-4">.fd-has-background-color-accent-10</p>
 {% endcapture %}
 {% include display-component.html component=color %}
 

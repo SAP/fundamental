@@ -24,12 +24,24 @@
 </style>
 
 {% set colors = {
-  "action": [ "#0a6ed1"],
-  "text": [ "#32363a",  "#515559", "#66696c", "#ffffff"],
-  "background": [ "#f3f4f5",  "#ffffff"],
-  "neutral": [ "#fafafa",  "#eeeeef", "#dededf"],
-  "status": [ "#359c46",  "#f59518", "#ee0000"],
-  "accent": [ "#5899da","#ed4a7b","#945ecf","#13a4b4","#7ca10c","#bf399e","#ee6868","#686ddf","#6c8893"]
+  "action": [ "hsl(210, 91%, 43%) / #0A6ED1", "hsl(210, 0%, 100%) / #FFFFFF" ],
+  "shell": [ "hsl(210, 28.4%, 29%) / #354A5F","hsl(210, 100%, 91%) / #D1E8FF"],
+  "text": [ "hsl(210, 7.5%, 21%) / #32363a",  "hsl(210, 5%, 33.5%) / #515559", "hsl(210, 3%, 44.7%) / #66696c", "hsl(210, 0%, 100%) / #ffffff"],
+  "background": [ "hsl(210, 9%, 93.5%) / #EDEFF0",  "hsl(210, 0%, 100%) / #FFFFFF"],
+  "neutral": [ "hsl(210, 3%, 98%) / #fafafa",  "hsl(210, 3%, 93.5%) / #eeeeef", "hsl(210, 1%, 87%) / #dededf"],
+  "status": [ "#359c46",  "#f59518", "#ee0000", "#6D7678"],
+  "accent": [
+    "hsl(34, 82%, 49%)/ #e38b16" ,
+    "hsl(0, 80%, 67%) / #EE6868",
+    "hsl(342, 82%, 61%) / #ED4A7B",
+    "hsl(315, 54%, 49%) / #C0399F",
+    "hsl(238, 65%, 64%) / #686CDF",
+    "hsl(210, 64%, 60%) / #5899DA",
+    "hsl(186, 81%, 39%) / #13A4B4",
+    "hsl(75, 86%, 34%) / #7CA10C",
+    "hsl(269, 54%, 59%) / #955ECF",
+    "hsl(197, 15%, 50%) / #6C8893"
+    ]
 } %}
 
 <div class="fd-container">
@@ -38,12 +50,12 @@
 {% for group, values in colors %}
   <h2>{{ group }}</h2>
   {% for item in values %}
-    <div style=" padding:10px; border: 1px solid #ccc" class="fd-has-background-color-{{ group }}-{{ loop.index }}">
-        <p>{{ loop.index }}
+    <span>{{ loop.index }} - {{ item }}</span>
+<br>    <div style="padding: 20px; border: 1px solid #ccc; background-color: var(--fd-color-{{ group }}-{{ loop.index }})">
     </div>
-    <br>
+<br>
   {% endfor %}
-  <br>
+
 {% endfor %}
 {#
 <h2>Mixins</h2>
