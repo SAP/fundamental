@@ -1,6 +1,7 @@
 {% import "./../utils.njk" as utils %}
 {% from "./../shell-header-brand/component.njk" import shell_header_brand %}
 {% from "./../product-switcher/component.njk" import product_switcher %}
+{% from "./../shell-header-collapse/component.njk" import shell_header_collapse %}
 {% from "./../user-menu/component.njk" import user_menu %}
 
 <!--
@@ -31,24 +32,28 @@ shell_header:
 
     <div class="fd-shell-header__group fd-shell-header__group--right">
         <div class="fd-shell-header__actions">
-            <div class="fd-shell-header__action">
+            <div class="fd-shell-header__action fd-display-xs-none fd-display-s-none fd-display-m-inline-block">
                 <button class="fd-button--secondary fd-button--m sap-icon--search fd-button--shellheader" aria-label="BUTTON_LABEL"></button>
             </div>
 
-            <div class="fd-shell-header__action">
+            <div class="fd-shell-header__action fd-display-xs-none fd-display-s-none fd-display-m-inline-block">
                 <button class="fd-button--secondary fd-button--m sap-icon--circle-task fd-button--shellheader" aria-label="BUTTON_LABEL"></button>
             </div>
 
-            <div class="fd-shell-header__action">
+            <div class="fd-shell-header__action fd-display-xs-none fd-display-s-none fd-display-m-inline-block">
                 <button class="fd-button--secondary fd-button--m sap-icon--bell fd-button--shellheader" aria-label="BUTTON_LABEL"></button>
             </div>
 
             <div class="fd-shell-header__action">
-                {{  user_menu() }}
+                {{ shell_header_collapse() }}
             </div>
 
             <div class="fd-shell-header__action">
-                {{  product_switcher() }}
+                {{ user_menu() }}
+            </div>
+
+            <div class="fd-shell-header__action fd-display-xs-none fd-display-s-none fd-display-m-inline-block">
+                {{ product_switcher() }}
             </div>
         </div>
     </div>

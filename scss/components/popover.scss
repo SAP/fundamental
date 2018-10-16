@@ -54,23 +54,22 @@ $block: #{$fd-namespace}-popover;
 }
 
 // RTL Styles (Considers Body, Shell Header, and Self)
-[dir=rtl],
-.#{$block}[dir=rtl] {
-    .#{$block}{
-        // Reverse the default positioning
-        &__body {
-          left: auto;
-          right: 0;
+@include fd-rtl(#{$block}) {
+  .#{$block}{
+    // Reverse the default positioning
+    &__body {
+      left: auto;
+      right: 0;
 
-          // Reverse the modified positioning
-          &--left {
-            right: 0;
-            left: auto;
-          }
-          &--right {
-            right: auto;
-            left: 0;
-          }
-        }
+      // Reverse the modified positioning
+      &--left {
+        right: 0;
+        left: auto;
+      }
+      &--right {
+        right: auto;
+        left: 0;
+      }
     }
+  }
 }

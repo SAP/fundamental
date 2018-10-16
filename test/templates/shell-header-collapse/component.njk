@@ -1,0 +1,31 @@
+{% from "./../popover/component.njk" import popover %}
+{% import "./../utils.njk" as utils %}
+
+{%- set _id = utils.id() %}
+
+{% macro shell_header_collapse(
+    properties={},
+    state={},
+    aria={},
+    classes=[])
+-%}
+    <div class="fd-shell-header-collapse">
+        <div class="fd-popover">
+            <div class="fd-popover__control">
+                <button class="fd-button--secondary fd-button--m sap-icon--overflow fd-button--shellheader" aria-label="Navigation Menu" aria-controls="llk2j34lkj234" aria-expanded="false" aria-haspopup="true"></button>
+            </div>
+            <div class="fd-popover__body fd-popover__body--right fd-shell-header-collapse__body" aria-hidden="true" id="llk2j34lkj234">
+                <nav class="fd-menu">
+                    <ul class="fd-menu__list">
+                        <li>
+                            <a href="#" class="fd-menu__item">Notifications</a>
+                        </li>
+                        <li>
+                            <a href="#" class="fd-menu__item">Search</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+{%- endmacro %}

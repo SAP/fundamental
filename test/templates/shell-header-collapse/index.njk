@@ -1,0 +1,16 @@
+{% extends "layout.njk" %}
+{% from "./component.njk" import shell_header_collapse %}
+{% from "./../format.njk" import format %}
+
+{% set css_deps = ['fonts','helpers', 'components/popover', 'components/button', 'icons'] %}
+
+{% block content %}
+
+    <h1>Shell Header Collapse</h1>
+    {% set basic_shell_header_collapse %}
+        {{ shell_header_collapse()}}
+    {% endset %}
+
+    {{ format(basic_shell_header_collapse) }}
+
+{% endblock %}

@@ -4,9 +4,6 @@
 /*
 ## Notes/TODO
 * Update shellheader button
-* Update colors
-* Update theming strategy
-* Update product switcher default button color (with theming strategy)
 * Expanding search functionality
 * Update product icons in product switcher
 * Add the modifier to product-switcher & fix on docs page
@@ -125,29 +122,28 @@ $block: #{$fd-namespace}-shell-header;
     &__action {
         padding-right: 0;
         padding-left: $fd-shell-header-item-spacing;
+        // @extend .#{$fd-namespace}-d-m-none; // Utility to hide at specified breakpoint
     }
 
-    // Responsive Styles
-    @media all and (max-width: map-get($fd-breakpoints,xl)) {
-        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-large;
+    @include fd-screen(xs) {
+        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-small;
     }
-    @media all and (max-width: map-get($fd-breakpoints,l)) {
-        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-large;
+    @include fd-screen(s) {
+        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-small;
     }
-    @media all and (max-width: map-get($fd-breakpoints,m)) {
+    @include fd-screen(m) {
         padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-medium;
     }
-    @media all and (max-width: map-get($fd-breakpoints,s)) {
-        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-small;
+    @include fd-screen(l) {
+        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-large;
     }
-    @media all and (max-width: map-get($fd-breakpoints,xs)) {
-        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-small;
+    @include fd-screen(xl) {
+        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-large;
     }
 }
 
-// RTL Styles
-[dir=rtl],
-.#{$block}[dir=rtl] {
+// RTL
+@include fd-rtl(#{$block}){
     .#{$block}{
         &__group {
             &--right {

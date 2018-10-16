@@ -117,41 +117,129 @@
 }
 
 @mixin fd-button-reset {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    font-smoothing: antialiased;
-    appearance: none;
-    outline: 0;
-    border: 0;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-    user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
-    background-color: transparent;
-    border-radius: $fd-border-radius;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-smoothing: antialiased;
+  appearance: none;
+  outline: 0;
+  border: 0;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: $fd-border-radius;
+  @content;
+}
+
+@mixin fd-link($color: $fd-link-color) {
+  color: $fd-link-color;
+  border-bottom: solid 1px $fd-link-color;
+  &:hover {
+    color: $fd-link-color--hover;
+    border-bottom-color: $fd-link-color--hover;
+  }
+  &:visited {
+    color: $fd-link-color--visited;
+    border-bottom-color: $fd-link-color--visited;
+  }
+  &:active,
+  &[aria-selected="true"],
+  &.is-selected,
+  &[aria-pressed="true"],
+  &.is-pressed,
+  &:focus {
+      color: $fd-link-color--active;
+      border-bottom-color: $fd-link-color--active;
+  }
+  &[aria-disabled="true"],
+  &.is-disabled {
+      color: $fd-link-color--disabled;
+      border-bottom-color: $fd-link-color--disabled;
+  }
+}
+
+@mixin fd-rtl($class){
+  [dir=rtl],
+  .#{$class}[dir=rtl] {
     @content;
   }
+}
 
-  @mixin fd-link($color: $fd-color--action) {
-    color: $fd-color--action;
-    border-bottom: solid 1px $fd-color--action;
-    @include fd-hover {
-      color: map-get($fd-colors-action-states, "hover");
-      border-bottom-color: map-get($fd-colors-action-states, "hover");
+@mixin fd-hide-on-xs {
+    @include fd-screen(xs) {
+        display: none !important;
     }
-    &:visited {
-      color: map-get($fd-colors-action-states, "visited");
-      border-bottom-color: map-get($fd-colors-action-states, "visited");
+}
+@mixin fd-hide-on-s {
+    @include fd-screen(s) {
+        display: none !important;
     }
-    @include fd-selected {
-        color: map-get($fd-colors-action-states, "selected");
-        border-bottom-color: map-get($fd-colors-action-states, "selected");
+}
+@mixin fd-hide-on-m {
+    @include fd-screen(m) {
+        display: none !important;
     }
-    @include fd-disabled {
-        color: map-get($fd-colors-action-states, "disabled");
-        border-bottom-color: map-get($fd-colors-action-states, "disabled");
+}
+
+@mixin fd-hide-on-l {
+    @include fd-screen(l) {
+        display: none !important;
     }
+}
+@mixin fd-hide-on-xl {
+    @include fd-screen(xl) {
+        display: none !important;
+    }
+}
+
+@mixin fd-show-on-xs {
+    @include fd-screen(xs) {
+        display: block !important;
+    }
+}
+@mixin fd-show-on-s {
+    @include fd-screen(s) {
+        display: block !important;
+    }
+}
+@mixin fd-show-on-m {
+    @include fd-screen(m) {
+        display: block !important;
+    }
+}
+
+@mixin fd-show-on-l {
+    @include fd-screen(l) {
+        display: block !important;
+    }
+}
+@mixin fd-show-on-xl {
+    @include fd-screen(xl) {
+        display: block !important;
+    }
+}
+
+@mixin fd-link($color: $fd-color--action) {
+  color: $fd-color--action;
+  border-bottom: solid 1px $fd-color--action;
+  @include fd-hover {
+    color: map-get($fd-colors-action-states, "hover");
+    border-bottom-color: map-get($fd-colors-action-states, "hover");
   }
+  &:visited {
+    color: map-get($fd-colors-action-states, "visited");
+    border-bottom-color: map-get($fd-colors-action-states, "visited");
+  }
+  @include fd-selected {
+      color: map-get($fd-colors-action-states, "selected");
+      border-bottom-color: map-get($fd-colors-action-states, "selected");
+  }
+  @include fd-disabled {
+      color: map-get($fd-colors-action-states, "disabled");
+      border-bottom-color: map-get($fd-colors-action-states, "disabled");
+  }
+}
