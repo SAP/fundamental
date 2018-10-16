@@ -197,32 +197,44 @@ Radio buttons allow the user to see all options and select one. Generally, this 
 <fieldset class="fd-form__set">
     <legend class="fd-form__legend">Radio buttons</legend>
     <div class="fd-form__item fd-form__item--check">
-        <input class="fd-form__control" type="radio" id="radio-1" name="radio-name-1" value="" checked>
-        <label class="fd-form__label" for="radio-1">Option One</label>
+        <label class="fd-form__label" for="pDidh761">
+            <input type="radio" class="fd-form__control" id="pDidh761" name="radio" checked="checked">
+            Field label
+        </label>
     </div>
     <div class="fd-form__item fd-form__item--check">
-        <input class="fd-form__control" type="radio" id="radio-2" name="radio-name-1" value="">
-        <label class="fd-form__label" for="radio-2">Option Two</label>
+        <label class="fd-form__label" for="pDidh7612">
+            <input type="radio" class="fd-form__control" id="pDidh7612" name="radio">
+            Field label
+        </label>
     </div>
     <div class="fd-form__item fd-form__item--check">
-        <input class="fd-form__control" type="radio" id="radio-3" name="radio-name-1" value="">
-        <label class="fd-form__label" for="radio-3">Option Three</label>
+        <label class="fd-form__label" for="pDidh7613">
+            <input type="radio" class="fd-form__control" id="pDidh7613" name="radio">
+            Field label
+        </label>
     </div>
 </fieldset>
 
 <fieldset class="fd-form__set">
     <legend class="fd-form__legend">Radio buttons Disabled</legend>
     <div class="fd-form__item fd-form__item--check">
-        <input class="fd-form__control" type="radio" id="radio-10" name="radio-name-4" value="" disabled>
-        <label class="fd-form__label" for="radio-10">Option One</label>
+        <label class="fd-form__label" for="pDidh764">
+            <input type="radio" class="fd-form__control" id="pDidh764" name="radio" disabled>
+            Field label
+        </label>
     </div>
     <div class="fd-form__item fd-form__item--check">
-        <input class="fd-form__control" type="radio" id="radio-11" name="radio-name-4" value="" disabled checked>
-        <label class="fd-form__label" for="radio-11">Option Two</label>
+        <label class="fd-form__label" for="pDidh7615">
+            <input type="radio" class="fd-form__control" id="pDidh7615" name="radio" disabled>
+            Field label
+        </label>
     </div>
     <div class="fd-form__item fd-form__item--check">
-        <input class="fd-form__control" type="radio" id="radio-12" name="radio-name-4" value="" disabled>
-        <label class="fd-form__label" for="radio-12">Option Three</label>
+        <label class="fd-form__label" for="pDidh7616">
+            <input type="radio" class="fd-form__control" id="pDidh7616" name="radio" disabled>
+            Field label
+        </label>
     </div>
 </fieldset>
 
@@ -230,21 +242,21 @@ Radio buttons allow the user to see all options and select one. Generally, this 
     <legend class="fd-form__legend">Inline Radio buttons</legend>
     <div class="fd-form__group">
         <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-            <label class="fd-form__label" for="radio-13">
-                <input class="fd-form__control" type="radio" id="radio-13" name="radio-name-5" value="" checked>
-                Option One
+            <label class="fd-form__label" for="pDidh767">
+                <input type="radio" class="fd-form__control" id="pDidh767" name="radio">
+                Field label
             </label>
         </div>
         <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-            <label class="fd-form__label" for="radio-14">
-                <input class="fd-form__control" type="radio" id="radio-14" name="radio-name-5" value="">
-                Option Two
+            <label class="fd-form__label" for="pDidh7618">
+                <input type="radio" class="fd-form__control" id="pDidh7618" name="radio" >
+                Field label
             </label>
         </div>
         <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-            <label class="fd-form__label" for="radio-15">
-                <input class="fd-form__control" type="radio" id="radio-15" name="radio-name-5" value="">
-                Option Three
+            <label class="fd-form__label" for="pDidh7619">
+                <input type="radio" class="fd-form__control" id="pDidh7619" name="radio">
+                Field label
             </label>
         </div>
     </div>
@@ -262,32 +274,44 @@ With checkboxes, all options are visible and the user can make one or more selec
 <fieldset class="fd-form__set">
     <legend class="fd-form__legend">Checkboxes</legend>
     <div class="fd-form__item fd-form__item--check">
-        <input class="fd-form__control" type="checkbox" id="checkbox-1" name="checkbox-name-1" checked>
-        <label class="fd-form__label" for="checkbox-1">Option One</label>
+        <label class="fd-form__label" for="Ai4ez611">
+            <input type="checkbox" class="fd-form__control" id="Ai4ez611">
+            Field label
+        </label>
     </div>
     <div class="fd-form__item fd-form__item--check">
-        <input class="fd-form__control" type="checkbox" id="checkbox-2" name="checkbox-name-1">
-        <label class="fd-form__label" for="checkbox-2">Option Two</label>
+        <label class="fd-form__label" for="Ai4ez612">
+            <input type="checkbox" class="fd-form__control" id="Ai4ez612">
+            Field label
+        </label>
     </div>
     <div class="fd-form__item fd-form__item--check">
-        <input class="fd-form__control" type="checkbox" id="checkbox-3" name="checkbox-name-1">
-        <label class="fd-form__label" for="checkbox-3">Option Three</label>
+        <label class="fd-form__label" for="Ai4ez613">
+            <input type="checkbox" class="fd-form__control" id="Ai4ez613">
+            Field label
+        </label>
     </div>
 </fieldset>
 
 <fieldset class="fd-form__set">
     <legend class="fd-form__legend">Checkboxes disabled</legend>
     <div class="fd-form__item fd-form__item--check">
-        <input class="fd-form__control" type="checkbox" id="checkbox-4" name="checkbox-name-2" checked disabled>
-        <label class="fd-form__label" for="checkbox-4">Option One</label>
+        <label class="fd-form__label" for="Ai4ez614">
+            <input type="checkbox" class="fd-form__control" id="Ai4ez614" disabled>
+            Field label
+        </label>
     </div>
     <div class="fd-form__item fd-form__item--check">
-        <input class="fd-form__control" type="checkbox" id="checkbox-5" name="checkbox-name-2" disabled>
-        <label class="fd-form__label" for="checkbox-6">Option Two</label>
+        <label class="fd-form__label" for="Ai4ez615">
+            <input type="checkbox" class="fd-form__control" id="Ai4ez615" disabled>
+            Field label
+        </label>
     </div>
     <div class="fd-form__item fd-form__item--check">
-        <input class="fd-form__control" type="checkbox" id="checkbox-6" name="checkbox-name-2" disabled>
-        <label class="fd-form__label" for="checkbox-6">Option Three</label>
+        <label class="fd-form__label" for="Ai4ez616">
+            <input type="checkbox" class="fd-form__control" id="Ai4ez616" disabled>
+            Field label
+        </label>
     </div>
 </fieldset>
 
@@ -295,21 +319,21 @@ With checkboxes, all options are visible and the user can make one or more selec
     <legend class="fd-form__legend">Checkboxes inline</legend>
     <div class="fd-form__group">
         <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-            <label class="fd-form__label" for="checkbox-7">
-                <input class="fd-form__control" type="checkbox" id="checkbox-7" name="checkbox-name-3" checked>
-                Option One
+            <label class="fd-form__label" for="Ai4ez617">
+                <input type="checkbox" class="fd-form__control" id="Ai4ez617">
+                Field label
             </label>
         </div>
         <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-            <label class="fd-form__label" for="checkbox-8">
-                <input class="fd-form__control" type="checkbox" id="checkbox-8" name="checkbox-name-3" >
-                Option Two
+            <label class="fd-form__label" for="Ai4ez618">
+                <input type="checkbox" class="fd-form__control" id="Ai4ez618">
+                Field label
             </label>
         </div>
         <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-            <label class="fd-form__label" for="checkbox-9">
-                <input class="fd-form__control" type="checkbox" id="checkbox-9" name="checkbox-name-4">
-                Option Three
+            <label class="fd-form__label" for="Ai4ez619">
+                <input type="checkbox" class="fd-form__control" id="Ai4ez619">
+                Field label
             </label>
         </div>
     </div>
