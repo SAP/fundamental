@@ -3,12 +3,18 @@
 @import "./../icons/mixins";
 @import "./../functions";
 
-//LOCAL VARS (set all themeable properties, always include !default)
-$fd-popover-border: solid 1px $fd-forms-border-color !default;
-$fd-popover-z-index: 2 !default;
-$fd-popover-background-color: fd-color(background, 2) !default;
-$fd-popover-box-shadow: 0 0 2px 0 rgba(fd-color(neutral, 2), 1), 0 2px 14px 0 rgba(fd-color(neutral, 2), 1) !default;
-$fd-popover-transition-params: $fd-animation--speed !default;
+$fd-popover-top-position:         120% !default;
+$fd-popover-left-position:        0 !default;
+$fd-popover-border:               solid 1px $fd-forms-border-color !default;
+$fd-popover-z-index:              2 !default;
+$fd-popover-background-color:     fd-color(background, 2) !default;
+$fd-popover-box-shadow:           0 0 1px 0 rgba(218 ,222, 230, .50), 0 2px 8px 0 rgba(0, 8, 26, .20) !default;
+
+$fd-popover-arrow-top:            -8px !default;
+$fd-popover-arrow-right:          14px !default;
+
+$fd-popover-transition-params:    $fd-animation--speed !default;
+$fd-popover-transition-distance:  -15px !default;
 
 $block: #{$fd-namespace}-popover;
 .#{$block} {
@@ -31,9 +37,18 @@ $block: #{$fd-namespace}-popover;
       box-shadow: $fd-popover-box-shadow;
       opacity: 1;
       visibility: visible;
-      transition: opacity $fd-popover-transition-params;
-      overflow: hidden;
-      left: 0;
+      transition: all $fd-popover-transition-params;
+      left: $fd-popover-left-position;
+      top: $fd-popover-top-position;
+      transform: translateY(0);
+
+      &::before {
+        @include triangle(13px 8px, white, up);
+        content: "";
+        position: absolute;
+        top: $fd-popover-arrow-top;
+        right: $fd-popover-arrow-right;
+      }
 
       &--left {
         right: auto;
@@ -49,6 +64,7 @@ $block: #{$fd-namespace}-popover;
       &.is-hidden {
           opacity: 0;
           visibility: hidden;
+          transform: translateY($fd-popover-transition-distance);
       }
     }
 }

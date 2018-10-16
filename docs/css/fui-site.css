@@ -3715,12 +3715,12 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   background-color: transparent; }
   .fd-button--shellheader:hover {
     color: #d1e8ff;
-    background-color: #323C4C;
+    background-color: #283848;
     border-color: transparent;
     box-shadow: none; }
   .fd-button--shellheader:active, .fd-button--shellheader.is-active, .fd-button--shellheader[aria-selected="true"], .fd-button--shellheader.is-selected, .fd-button--shellheader[aria-pressed="true"], .fd-button--shellheader.is-pressed {
     color: #d1e8ff;
-    background-color: #2A3341;
+    background-color: #23303e;
     border-color: transparent; }
   .fd-button--shellheader[aria-disabled="true"], .fd-button--shellheader.is-disabled, .fd-button--shellheader:disabled {
     opacity: .25; }
@@ -5810,7 +5810,6 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   position: relative;
   display: block;
   white-space: nowrap;
-  background-color: white;
   padding-top: 4px;
   padding-bottom: 4px; }
   .fd-menu__group, .fd-menu__list {
@@ -6380,12 +6379,23 @@ see layouts/panel
     z-index: 2;
     border-radius: 4px;
     background-color: white;
-    box-shadow: 0 0 2px 0 #eeeeef, 0 2px 14px 0 #eeeeef;
+    box-shadow: 0 0 1px 0 rgba(218, 222, 230, 0.5), 0 2px 8px 0 rgba(0, 8, 26, 0.2);
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.125s;
-    overflow: hidden;
-    left: 0; }
+    transition: all 0.125s;
+    left: 0;
+    top: 120%;
+    transform: translateY(0); }
+    .fd-popover__body::before {
+      height: 0;
+      width: 0;
+      border-bottom: 8px solid white;
+      border-left: 6.5px solid transparent;
+      border-right: 6.5px solid transparent;
+      content: "";
+      position: absolute;
+      top: -8px;
+      right: 14px; }
     .fd-popover__body--left {
       right: auto;
       left: 0; }
@@ -6394,7 +6404,8 @@ see layouts/panel
       right: 0; }
     .fd-popover__body[aria-hidden="true"], .fd-popover__body.is-hidden {
       opacity: 0;
-      visibility: hidden; }
+      visibility: hidden;
+      transform: translateY(-15px); }
 
 <<<<<<< HEAD
 /*
@@ -6595,9 +6606,6 @@ input-addon
 /*
 ## Notes/TODO
 * Update shellheader button
-* Update colors
-* Update theming strategy
-* Update product switcher default button color (with theming strategy)
 * Expanding search functionality
 * Update product icons in product switcher
 * Add the modifier to product-switcher & fix on docs page
@@ -6611,7 +6619,7 @@ input-addon
   line-height: 1.42857;
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  background: #354A5F;
+  background: #354a5f;
   height: 48px;
   display: flex;
   align-items: center;
@@ -6667,21 +6675,21 @@ input-addon
   .fd-shell-header__action {
     padding-right: 0;
     padding-left: 12px; }
-  @media all and (max-width: 1580px) {
+  @media (min-width: 320px) {
     .fd-shell-header {
-      padding: 4px 32px; } }
-  @media all and (max-width: 1440px) {
+      padding: 4px 8px; } }
+  @media (min-width: 800px) {
     .fd-shell-header {
-      padding: 4px 32px; } }
-  @media all and (max-width: 1024px) {
+      padding: 4px 8px; } }
+  @media (min-width: 1024px) {
     .fd-shell-header {
       padding: 4px 16px; } }
-  @media all and (max-width: 800px) {
+  @media (min-width: 1440px) {
     .fd-shell-header {
-      padding: 4px 8px; } }
-  @media all and (max-width: 320px) {
+      padding: 4px 32px; } }
+  @media (min-width: 1580px) {
     .fd-shell-header {
-      padding: 4px 8px; } }
+      padding: 4px 32px; } }
 
 [dir=rtl] .fd-shell-header__group--right,
 .fd-shell-header[dir=rtl] .fd-shell-header__group--right {
@@ -7392,6 +7400,106 @@ input-addon
 
 .fd-has-grid-gap-1 {
   grid-gap: 1px !important; }
+
+@media (min-width: 320px) {
+  .fd-display-xs-none {
+    display: none !important; }
+  .fd-display-xs-inline {
+    display: inline !important; }
+  .fd-display-xs-inline-block {
+    display: inline-block !important; }
+  .fd-display-xs-block {
+    display: block !important; }
+  .fd-display-xs-table {
+    display: table !important; }
+  .fd-display-xs-table-row {
+    display: table-row !important; }
+  .fd-display-xs-table-cell {
+    display: table-cell !important; }
+  .fd-display-xs-flex {
+    display: flex !important; }
+  .fd-display-xs-inline-flex {
+    display: inline-flex !important; } }
+
+@media (min-width: 800px) {
+  .fd-display-s-none {
+    display: none !important; }
+  .fd-display-s-inline {
+    display: inline !important; }
+  .fd-display-s-inline-block {
+    display: inline-block !important; }
+  .fd-display-s-block {
+    display: block !important; }
+  .fd-display-s-table {
+    display: table !important; }
+  .fd-display-s-table-row {
+    display: table-row !important; }
+  .fd-display-s-table-cell {
+    display: table-cell !important; }
+  .fd-display-s-flex {
+    display: flex !important; }
+  .fd-display-s-inline-flex {
+    display: inline-flex !important; } }
+
+@media (min-width: 1024px) {
+  .fd-display-m-none {
+    display: none !important; }
+  .fd-display-m-inline {
+    display: inline !important; }
+  .fd-display-m-inline-block {
+    display: inline-block !important; }
+  .fd-display-m-block {
+    display: block !important; }
+  .fd-display-m-table {
+    display: table !important; }
+  .fd-display-m-table-row {
+    display: table-row !important; }
+  .fd-display-m-table-cell {
+    display: table-cell !important; }
+  .fd-display-m-flex {
+    display: flex !important; }
+  .fd-display-m-inline-flex {
+    display: inline-flex !important; } }
+
+@media (min-width: 1440px) {
+  .fd-display-l-none {
+    display: none !important; }
+  .fd-display-l-inline {
+    display: inline !important; }
+  .fd-display-l-inline-block {
+    display: inline-block !important; }
+  .fd-display-l-block {
+    display: block !important; }
+  .fd-display-l-table {
+    display: table !important; }
+  .fd-display-l-table-row {
+    display: table-row !important; }
+  .fd-display-l-table-cell {
+    display: table-cell !important; }
+  .fd-display-l-flex {
+    display: flex !important; }
+  .fd-display-l-inline-flex {
+    display: inline-flex !important; } }
+
+@media (min-width: 1580px) {
+  .fd-display-xl-none {
+    display: none !important; }
+  .fd-display-xl-inline {
+    display: inline !important; }
+  .fd-display-xl-inline-block {
+    display: inline-block !important; }
+  .fd-display-xl-block {
+    display: block !important; }
+  .fd-display-xl-table {
+    display: table !important; }
+  .fd-display-xl-table-row {
+    display: table-row !important; }
+  .fd-display-xl-table-cell {
+    display: table-cell !important; }
+  .fd-display-xl-flex {
+    display: flex !important; }
+  .fd-display-xl-inline-flex {
+    display: inline-flex !important; } }
 
 .has-accent-color {
   color: #5FA8EF; }
