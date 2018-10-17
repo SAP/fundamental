@@ -7,7 +7,6 @@
 * Expanding search functionality
 * Update product icons in product switcher
 * Add the modifier to product-switcher & fix on docs page
-* Add dingus back on popovers
 * Add focus state to menu items
 * Add responsive classes to hide items at breakpoints
 * Add notification component / concept to button
@@ -25,11 +24,11 @@ $fd-shell-header-item-spacing: 12px !default;
 // Heights
 $fd-shell-header-height: 48px !default;
 
-$fd-shell-header-copilot-height: 30px; // 48px in docs?
-$fd-shell-header-copilot-width: 30px; // 48px in docs?
+$fd-shell-header-copilot-height: 30px !default;
+$fd-shell-header-copilot-width: 30px !default;
 
 $fd-shell-header-logo-height: 28px !default; // Also in shell-header-brand.scss
-$fd-shell-header-logo-width: 60px !default; //fd-space(15)
+$fd-shell-header-logo-width: 60px !default; // fd-space(15)
 
 // Colors
 $fd-shell-header-color: fd-color(text, 4) !default; // White
@@ -122,6 +121,30 @@ $block: #{$fd-namespace}-shell-header;
     &__action {
         padding-right: 0;
         padding-left: $fd-shell-header-item-spacing;
+
+        &--search,
+        &--task,
+        &--bell,
+        &--switcher {
+            // Show only on desktop, hide on s and xs
+            @include fd-screen(xs) {
+                display: none;
+            }
+            @include fd-screen(s) {
+                display: none;
+            }
+        }
+        &--overflow {
+            // Show only on s and xs, hide on desktop
+            display: none;
+
+            @include fd-screen(m) {
+                display: inline-block;
+            }
+        }
+        &--user {
+            // Show me at all times
+        }
     }
 
     @include fd-screen(xs) {

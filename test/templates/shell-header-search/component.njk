@@ -1,0 +1,14 @@
+{% import "./../utils.njk" as utils %}
+
+{%- set _id = utils.id() %}
+
+{% macro shell_header_search(
+    properties={},
+    state={},
+    aria={},
+    classes=[])
+-%}
+    <div class="fd-shell-header-search">
+        <button class="fd-button--secondary fd-button--m sap-icon--search fd-button--shellheader" aria-label="BUTTON_LABEL"></button>
+    </div>
+{%- endmacro %}

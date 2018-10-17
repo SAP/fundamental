@@ -2,6 +2,7 @@
 {% from "./../shell-header-brand/component.njk" import shell_header_brand %}
 {% from "./../product-switcher/component.njk" import product_switcher %}
 {% from "./../shell-header-collapse/component.njk" import shell_header_collapse %}
+{% from "./../shell-header-search/component.njk" import shell_header_search %}
 {% from "./../user-menu/component.njk" import user_menu %}
 
 <!--
@@ -32,27 +33,26 @@ shell_header:
 
     <div class="fd-shell-header__group fd-shell-header__group--right">
         <div class="fd-shell-header__actions">
-            <div class="fd-shell-header__action fd-display-xs-none fd-display-s-none fd-display-m-inline-block">
-                <button class="fd-button--secondary fd-button--m sap-icon--search fd-button--shellheader" aria-label="BUTTON_LABEL"></button>
+            <div class="fd-shell-header__action fd-shell-header__action--search">
+                {{ shell_header_search()}}
             </div>
-
-            <div class="fd-shell-header__action fd-display-xs-none fd-display-s-none fd-display-m-inline-block">
+            <div class="fd-shell-header__action fd-shell-header__action--task">
                 <button class="fd-button--secondary fd-button--m sap-icon--circle-task fd-button--shellheader" aria-label="BUTTON_LABEL"></button>
             </div>
 
-            <div class="fd-shell-header__action fd-display-xs-none fd-display-s-none fd-display-m-inline-block">
+            <div class="fd-shell-header__action fd-shell-header__action--bell">
                 <button class="fd-button--secondary fd-button--m sap-icon--bell fd-button--shellheader" aria-label="BUTTON_LABEL"></button>
             </div>
 
-            <div class="fd-shell-header__action">
+            <div class="fd-shell-header__action fd-shell-header__action--overflow">
                 {{ shell_header_collapse() }}
             </div>
 
-            <div class="fd-shell-header__action">
+            <div class="fd-shell-header__action fd-shell-header__action--user">
                 {{ user_menu() }}
             </div>
 
-            <div class="fd-shell-header__action fd-display-xs-none fd-display-s-none fd-display-m-inline-block">
+            <div class="fd-shell-header__action fd-shell-header__action--switcher">
                 {{ product_switcher() }}
             </div>
         </div>
