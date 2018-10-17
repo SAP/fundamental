@@ -14,13 +14,13 @@ $block: #{$fd-namespace}-menu;
 
     //items
     $fd-menu-item-color: $fd-menu-color !default;
-    $fd-menu-item-color--hover: fd-color(text, 4) !default;
+    $fd-menu-item-color--hover: fd-color("text", 4) !default;
     $fd-menu-item-background-color: $fd-menu-background-color !default;
-    $fd-menu-item-background-color--hover: darken(fd-color(action), 5%) !default;
-    $fd-menu-item-background-color--selected: darken(fd-color(action), 10%) !default;
+    $fd-menu-item-background-color--hover: fd-color-state("hover") !default;
+    $fd-menu-item-background-color--selected: fd-color-state("selected") !default;
     $fd-menu-item-padding: fd-space(3) fd-space(4) !default;
-    $fd-menu-item-color--disabled: fd-color(text, 2);
-    $fd-menu-item-seperator-color: fd-color(neutral, 2);
+    $fd-menu-item-color--disabled: fd-color("text", 2);
+    $fd-menu-item-seperator-color: fd-color("neutral", 2);
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
@@ -56,13 +56,15 @@ $block: #{$fd-namespace}-menu;
         margin: 0 10px 0 0;
       }
 
-      &:hover{
+      @include fd-hover {
         color: $fd-menu-item-color--hover;
         background-color: $fd-menu-item-background-color--hover;
       }
-      &.is-selected,
-      &[aria-selected="true"] {
+      @include fd-selected {
           background-color: $fd-menu-item-background-color--selected;
+          @include fd-hover {
+            background-color: fd-color-state("selected-hover");
+          }
       }
     }
     &--addon-before{
@@ -81,10 +83,9 @@ $block: #{$fd-namespace}-menu;
         margin: 0;
       }
     &__link {
-      color: $fd-link-color;
-
+      color: $fd-color--action;
       &:hover {
-        color: $fd-link-color--hover;
+        color: fd-color-state("hover", "action");
       }
     }
 }

@@ -21,10 +21,10 @@ $block: #{$fd-namespace}-button;
 
   //default
   $fd-button-color: $fd-link-color !default;
-  $fd-button-color--inverse: fd-color(text, 4) !default;
-  $fd-button-color--hover: $fd-link-color--hover !default;
-  $fd-button-color--pressed: $fd-link-color--pressed !default;
-  $fd-button-color--active: $fd-link-color--active !default;
+  $fd-button-color--inverse: fd-color("text", 4) !default;
+  $fd-button-color--hover: fd-color-state("hover", "action") !default;
+  $fd-button-color--pressed: fd-color-state("selected", "action") !default;
+  $fd-button-color--active: fd-color-state("selected", "action") !default;
   $fd-button-background-color: fd-color("background", 2) !default;
 
   //anim
@@ -74,27 +74,18 @@ $block: #{$fd-namespace}-button;
         }
       }
       //DEFAULT
-      &:hover {
+      @include fd-hover {
         border-color: $fd-button-color--hover;
         color: $fd-button-color--hover;
         box-shadow: 0px 0px 0px 1px $fd-button-color;
       }
-      &:active,
-      &.is-active,
-      &[aria-selected="true"],
-      &.is-selected,
-      &[aria-pressed="true"],
-      &.is-pressed {
+      @include fd-selected {
         background-color: $fd-button-color--active;
         border-color: $fd-button-color--active;
         color: fd-color(text, 4);
       }
-
       @include fd-focus;
-
-      &[aria-disabled="true"],
-      &.is-disabled,
-      &:disabled {
+      @include fd-disabled {
         background-color: $fd-button-background-color;
         color: $fd-button-color;
       }
@@ -105,24 +96,17 @@ $block: #{$fd-namespace}-button;
   &--positive {
     color: $fd-color--success;
     border-color: $fd-color--success;
-    &:hover {
+    @include fd-hover {
       border-color: fd-color-darker($fd-color--success);
       color: fd-color-darker($fd-color--success);
       box-shadow: 0px 0px 0px 1px $fd-color--success;
     }
-    &:active,
-    &.is-active,
-    &[aria-selected="true"],
-    &.is-selected,
-    &[aria-pressed="true"],
-    &.is-pressed {
+    @include fd-selected {
       background-color: fd-color-darkest($fd-color--success);
       border-color: fd-color-darkest($fd-color--success);
       color: $fd-button-color--inverse;
     }
-    &[aria-disabled="true"],
-    &.is-disabled,
-    &:disabled {
+    @include fd-disabled {
       background-color: $fd-button-background-color;
       color: $fd-color--success;
     }
@@ -130,24 +114,17 @@ $block: #{$fd-namespace}-button;
   &--negative {
     color: $fd-color--error;
     border-color: $fd-color--error;
-    &:hover {
+    @include fd-hover {
       border-color: fd-color-darker($fd-color--error);
       color: fd-color-darker($fd-color--error);
       box-shadow: 0px 0px 0px 1px $fd-color--error;
     }
-    &:active,
-    &.is-active,
-    &[aria-selected="true"],
-    &.is-selected,
-    &[aria-pressed="true"],
-    &.is-pressed {
+    @include fd-selected {
       background-color: fd-color-darkest($fd-color--error);
       border-color: fd-color-darkest($fd-color--error);
       color: fd-color(text, 4);
     }
-    &[aria-disabled="true"],
-    &.is-disabled,
-    &:disabled {
+    @include fd-disabled {
       background-color: $fd-button-background-color;
       color: $fd-color--error;
     }
@@ -158,48 +135,34 @@ $block: #{$fd-namespace}-button;
     color: $fd-button-color--inverse;
     background-color: $fd-button-color;
     border-color: $fd-button-color;
-    &:hover {
+    @include fd-hover {
       background-color: $fd-button-color--hover;
       border-color: $fd-button-color--hover;
       color: $fd-button-color--inverse;
       box-shadow: none;
     }
-    &:active,
-    &.is-active,
-    &[aria-selected="true"],
-    &.is-selected,
-    &[aria-pressed="true"],
-    &.is-pressed {
+    @include fd-selected {
       background-color: $fd-button-color--active;
       border-color: $fd-button-color--active;
     }
-    &[aria-disabled="true"],
-    &.is-disabled,
-    &:disabled {
+    @include fd-disabled {
       background-color: $fd-button-color;
       color: $fd-button-color--inverse;
     }
     &.#{$block}--positive {
       background-color: $fd-color--success;
       border-color: $fd-color--success;
-      &:hover {
+      @include fd-hover {
         background-color: fd-color-darker($fd-color--success);
         border-color: fd-color-darker($fd-color--success);
         color: $fd-button-color--inverse;
       }
-      &:active,
-      &.is-active,
-      &[aria-selected="true"],
-      &.is-selected,
-      &[aria-pressed="true"],
-      &.is-pressed {
+      @include fd-selected {
         color: $fd-button-color--inverse;
         background-color: fd-color-darkest($fd-color--success);
         border-color: fd-color-darkest($fd-color--success);
       }
-      &[aria-disabled="true"],
-      &.is-disabled,
-      &:disabled {
+      @include fd-disabled {
         background-color: $fd-color--success;
         color: $fd-button-color--inverse;
       }
@@ -207,24 +170,17 @@ $block: #{$fd-namespace}-button;
     &.#{$block}--negative {
       background-color: $fd-color--error;
       border-color: $fd-color--error;
-      &:hover {
+      @include fd-hover {
         background-color: fd-color-darker($fd-color--error);
         border-color: fd-color-darker($fd-color--error);
         color: $fd-button-color--inverse;
       }
-      &:active,
-      &.is-active,
-      &[aria-selected="true"],
-      &.is-selected,
-      &[aria-pressed="true"],
-      &.is-pressed {
+      @include fd-selected {
         color: $fd-button-color--inverse;
         background-color: fd-color-darkest($fd-color--error);
         border-color: fd-color-darkest($fd-color--error);
       }
-      &[aria-disabled="true"],
-      &.is-disabled,
-      &:disabled {
+      @include fd-disabled {
         background-color: $fd-color--error;
         color: $fd-button-color--inverse;
       }
@@ -235,24 +191,17 @@ $block: #{$fd-namespace}-button;
     color: $fd-button-color;
     border-color: transparent;
     background-color: transparent;
-    &:hover {
+    @include fd-hover {
       background-color: fd-color("neutral", 1);
       border-color: transparent;
       box-shadow: none;
     }
-    &:active,
-    &.is-active,
-    &[aria-selected="true"],
-    &.is-selected,
-    &[aria-pressed="true"],
-    &.is-pressed {
+    @include fd-selected {
       color: $fd-button-color;
       background-color: fd-color("neutral",2);
       border-color: transparent;
     }
-    &[aria-disabled="true"],
-    &.is-disabled,
-    &:disabled {
+    @include fd-disabled {
       background-color: $fd-button-background-color;
     }
   }
@@ -263,7 +212,7 @@ $block: #{$fd-namespace}-button;
     background-color: fd-color("neutral", 1);
     border-color: fd-color("neutral", 3);
     box-shadow: 0 1px 0 0 rgba(lighten(fd-color("text", 2),50), 1);
-    &:hover {
+    @include fd-hover {
       color: fd-color("text", 2);
       background-color: fd-color-darker(fd-color("neutral", 1));
       border-color: fd-color-darker(fd-color("neutral", 1));
@@ -284,9 +233,7 @@ $block: #{$fd-namespace}-button;
       color: $fd-button-color--inverse;
       background-color: fd-color-darkest($fd-button-color);
     }
-    &[aria-disabled="true"],
-    &.is-disabled,
-    &:disabled {
+    @include fd-disabled {
       color: fd-color("text", 2);
       background-color: fd-color("neutral", 1);
       border-color: fd-color("neutral", 3);

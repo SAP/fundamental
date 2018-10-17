@@ -5,3 +5,28 @@
     @content;
   }
 }
+
+@mixin fd-selected {
+  &:active,
+  &.is-active,
+  &[aria-selected="true"],
+  &.is-selected,
+  &[aria-pressed="true"],
+  &.is-pressed {
+    @content;
+  }
+}
+
+@mixin fd-disabled {
+  &[aria-disabled="true"],
+  &.is-disabled,
+  &:disabled {
+    @content;
+  }
+}
+
+@mixin fd-hover {
+  &:hover {
+    @content;
+  }
+}
