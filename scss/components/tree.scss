@@ -21,7 +21,7 @@ $block: #{$fd-namespace}-tree;
     $fd-tree-cell-padding: fd-space(3) !default;
 
     $fd-tree-header-background-color: fd-color("neutral", 2) !default;
-    $fd-tree-row-background-color--hover: lighten($fd-tree-header-background-color,4) !default;
+    $fd-tree-row-background-color--hover: fd-color-state("hover") !default;
 
     $fd-tree-control-width: 18px !default;
     $fd-tree-control-margin-right: fd-space(2) !default;
@@ -69,7 +69,7 @@ $block: #{$fd-namespace}-tree;
         align-items: center;
         position: relative;
         transition: background-color $fd-tree-transition-params;
-        &:hover {
+        @include fd-hover {
             background-color: $fd-tree-row-background-color--hover;
         }
         &--header {
@@ -77,13 +77,12 @@ $block: #{$fd-namespace}-tree;
             color: fd-color("text", 3);
             background-color: fd-color("background",1);
             text-transform: uppercase;
-            &:hover {
+            @include fd-hover {
                 background-color: initial;
             }
         }
-        &.is-selected,
-        &[aria-selected="true"] {
-            background-color: lighten(fd-color("action", 1), 0);
+        @include fd-selected {
+            background-color: fd-color-state("selected");
         }
     }
     $_row_padding: $fd-tree-control-width + $fd-tree-control-margin-right + 4;
@@ -137,7 +136,7 @@ $block: #{$fd-namespace}-tree;
     }
     a {
         color: $fd-tree-link-color;
-        &:hover{
+        @include fd-hover{
             color: $fd-tree-link-color;
         }
     }

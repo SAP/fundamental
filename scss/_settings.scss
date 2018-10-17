@@ -87,10 +87,10 @@ $fd-colors: map-merge((
     4: #ceced0
   ),
   "status": (
-    1: #118843, //positive
-    2: #F59518, //alert
+    1: #107F3E, //positive
+    2: #E9730C, //alert
     3: #ee0000, //negative
-    4: #6D7678, //neutral
+    4: #687173, //neutral
   ),
   "accent": (
     1: hsl(34, 82%, 49%), //e38b16
@@ -117,6 +117,55 @@ $fd-colors-neutral: map-get($fd-colors, "neutral") !default;
 $fd-colors-status: map-get($fd-colors, "status") !default;
 $fd-colors-accent: map-get($fd-colors, "accent") !default;
 $fd-colors-shell: map-get($fd-colors, "shell") !default;
+
+//state colors
+$fd-color--action: map-get($fd-colors-action, 1) !default;
+$fd-colors-action-states: () !default;
+$fd-colors-action-states: map-merge((
+  "hover": adjust-color($fd-color--action, $lightness: -7%),
+  "selected": adjust-color($fd-color--action, $lightness: -10%, $saturation: 7%),
+  "disabled": change-color($fd-color--action, $alpha: 0.4),
+  "visited": adjust-hue($fd-color--action, 45deg),
+), $fd-colors-action-states);
+
+//deprecate these by 1.5 ----v
+$fd-link-color: map-get($fd-colors-action, 1) !default;
+$fd-link-color--hover: adjust-color($fd-link-color, $lightness: -7%) !default;
+$fd-link-color--active: darken($fd-link-color, 10) !default;
+$fd-link-color--pressed: adjust-color($fd-link-color, $lightness: -10) !default;
+$fd-link-color--visited: adjust-hue($fd-link-color, 45deg) !default;
+$fd-link-color--disabled: rgba($fd-link-color, 0.4) !default;
+//deprecate these ----^
+
+$fd-color--negative: map-get($fd-colors-status, 3) !default;
+$fd-color--error: $fd-color--negative !default;
+$fd-color--alert: map-get($fd-colors-status, 2) !default;
+$fd-color--warning: $fd-color--alert !default;
+$fd-color--positive: map-get($fd-colors-status, 1) !default;
+$fd-color--success: $fd-color--positive !default;
+$fd-color--neutral: map-get($fd-colors-status, 4) !default;
+
+$fd-colors-background-states: () !default;
+$fd-colors-background-states: map-merge((
+  "hover": map-get($fd-colors-neutral, 1),
+  "selected": change-color($fd-color--action, $alpha: .07),
+  "selected-hover": change-color($fd-color--action, $alpha: .1),
+  "positive": adjust-color($fd-color--positive, $lightness: 66%),
+  "negative": adjust-color($fd-color--negative, $lightness: 49%),
+  "alert": adjust-color($fd-color--alert, $lightness: 49%),
+), $fd-colors-background-states);
+
+
+
+
+$fd-background-color--positive:  !default;
+$fd-background-color--alert:  !default;
+$fd-background-color--negative:  !default;
+
+$fd-background-color--hover:  !default;
+$fd-background-color--selected:  !default;
+$fd-background-color--selected-hover:  !default;
+
 
 //————————^ FIORI FUNDAMENTALS FOUNDATION ————————^
 
@@ -149,24 +198,11 @@ $fd-background-color--footer: map-get($fd-colors-background, 2) !default;
 //positioning
 $fd-margin-bottom: map-get($fd-spacing, "xs") !default;
 
-//states
-$fd-color--error: map-get($fd-colors-status, 3) !default;
-$fd-color--warning: map-get($fd-colors-status, 2) !default;
-$fd-color--success: map-get($fd-colors-status, 1) !default;
-
 //borders
 $fd-border-radius: 4px !default;
 
 //animation speed
 $fd-animation--speed: 0.125s !default;
-
-//LINKS
-$fd-link-color: map-get($fd-colors-action, 1) !default;
-$fd-link-color--hover: darken($fd-link-color, 7) !default;
-$fd-link-color--active: darken($fd-link-color, 10) !default;
-$fd-link-color--pressed: adjust-color($fd-link-color, $lightness: -10) !default;
-$fd-link-color--visited: adjust-hue($fd-link-color, 45deg) !default;
-$fd-link-color--disabled: rgba($fd-link-color, 0.4) !default;
 
 // menus and lists and navs
 $fd-menu-border-color: red !default;
@@ -196,17 +232,20 @@ $fd-forms-padding: $fd-spacing--base * 3 !default;
 
 $fd-forms-color: $fd-color !default;
 $fd-forms-color--placeholder: adjust-color(map-get($fd-colors-text, 3), $lightness: 14) !default;
+
 $fd-forms-color--focus: $fd-forms-color !default;
 $fd-forms-color--disabled: map-get($fd-colors-text, 3) !default;
 $fd-forms-color--active: map-get($fd-colors-action, 1) !default;
 $fd-forms-background-color: map-get($fd-colors-background, 2) !default;
 $fd-forms-background-color--disabled: map-get($fd-colors-neutral, 1) !default;
 $fd-forms-background-color--check: map-get($fd-colors-action, 1) !default;
-$fd-forms-background-color--check-disabled: map-get($fd-colors-text, 2) !default;
+$fd-forms-background-color--check-disabled: map-get($fd-colors-action-states, "disabled");
 $fd-forms-border-color: map-get($fd-colors-neutral, 4) !default;
 $fd-forms-border-color--check: map-get($fd-colors-action, 1) !default;
 $fd-forms-border-color--focus: map-get($fd-colors-action, 1) !default;
-$fd-forms-border-color--disabled: lighten(map-get($fd-colors-neutral, 3), 5%) !default;
+$fd-forms-border-color--disabled: map-get($fd-colors-neutral, 2) !default;
+
+
 
 $fd-elements-inputs--text: "input[type=text]", "input[type=password]", "input[type=email]", "input[type=url]", "input[type=search]", "input[type=tel]", "input[type=number]", "input[type=date]", "input[type=time]", "textarea";
 $fd-elements-inputs--check: "input[type=radio]", "input[type=checkbox]";

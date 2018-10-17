@@ -44,6 +44,22 @@
     ]
 } %}
 
+{% set states = {
+  "action": [
+    ["hover", "hsla(210, 91%, 36%, 1) / #085caf"],
+    ["selected", "hsla(210deg, 98%, 33%, 1) / #0254a7"],
+    ["disabled", "hsla(210deg, 91%, 43%, 0.4) / n/a"]
+  ],
+  "background": [
+    ["hover", "hsla(210deg, 3%, 98%, 1) / #fafafa"],
+    ["selected", "hsla(210deg, 91%, 43%, 0.07) / n/a"],
+    ["selected-hover", "hsla(210deg, 91%, 43%, 0.1) / n/a"],
+    ["positive", "hsla(144.86486deg, 77.62238%, 94.03922%, 1) / #e4fcee"],
+    ["alert", "hsla(0deg, 100%, 95.66667%, 1) / #ffe9e9"],
+    ["negative", "hsla(0deg, 100%, 95.66667%, 1) / #ffe9e9"]
+  ]
+} %}
+
 <div class="fd-container">
 
     <h1>Color</h1>
@@ -51,12 +67,32 @@
   <h2>{{ group }}</h2>
   {% for item in values %}
     <span>{{ loop.index }} - {{ item }}</span>
+
 <br>    <div style="padding: 20px; border: 1px solid #ccc; background-color: var(--fd-color-{{ group }}-{{ loop.index }})">
     </div>
 <br>
   {% endfor %}
 
 {% endfor %}
+
+
+{% for group, values in states %}
+  <h1>State Colors</h1>
+  <h2>{{ group }}</h2>
+  {% for item in values %}
+    <span>{{ item[0] }} — {{ item[1] }}</span>
+    {% set cssvar %}
+    --fd-color-{{ group }}-{{ item[0] }}
+    {% endset %}
+
+    <br> <div style="padding: 20px; border: 1px solid #ccc; background-color: var({{cssvar}})">
+        </div>
+    <br>
+  {% endfor %}
+
+{% endfor %}
+
+
 {#
 <h2>Mixins</h2>
 <h3><code>@mixin fd-color($group, $shade)</code></h3>

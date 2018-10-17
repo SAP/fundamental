@@ -16,28 +16,25 @@
     background-color: $fd-forms-background-color;
     transition: border-color $fd-animation--speed;
     //states
-    &:hover {
-        border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
+    @include fd-hover {
+        border-color: fd-color-state("hover", "action");//adjust-color($fd-forms-color--active, $lightness: 30%);
     }
-    &:focus {
+    @include fd-focus {
       border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
-      box-shadow: 0 0 0 1px adjust-color($fd-forms-color--active, $lightness: 30%);
     }
     &.is-invalid {
-        border-color: $fd-color--error;
+        border-color: $fd-color--negative;
         border-width: 2px;
     }
     &.is-valid {
-        border-color: $fd-color--success;
+        border-color: $fd-color--positive;
         border-width: 2px;
     }
     &.is-warning {
-        border-color: $fd-color--warning;
+        border-color: $fd-color--alert;
         border-width: 2px;
     }
-    &:disabled,
-    &[aria-disabled="true"],
-    &.is-disabled {
+    @include fd-disabled {
         cursor: not-allowed;
         color: $fd-forms-color--disabled;
         border-color: $fd-forms-border-color--disabled;
@@ -46,7 +43,6 @@
     &[readonly],
     &.is-readonly {
         color: $fd-forms-color;
-        //background-color: $fd-forms-background-color;
         border-color: $fd-forms-border-color--disabled;
         border-width: 0 0 1px;
         border-radius: 0;
