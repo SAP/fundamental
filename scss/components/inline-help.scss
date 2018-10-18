@@ -84,11 +84,18 @@ $block: #{$fd-namespace}-inline-help;
                 transform: rotate(90deg);
             }
         }
-        &--bottom-left{
+        &--bottom-right{
             left: -$fd-tooltip-arrow-offset;
             &::before{
                 top: -($fd-tooltip-arrow-offset) ;
-                left: $fd-tooltip-arrow-offset * 1.5;
+                left: $fd-tooltip-arrow-offset * 1.4;
+            }
+        }
+        &--bottom-left{
+            right: -$fd-tooltip-arrow-offset;
+            &::before{
+                top: -($fd-tooltip-arrow-offset) ;
+                right: $fd-tooltip-arrow-offset * 1.4;
             }
         }
     }
