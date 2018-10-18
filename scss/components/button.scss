@@ -21,7 +21,7 @@ $block: #{$fd-namespace}-button;
 
   //default
   $fd-button-color: $fd-link-color !default;
-  $fd-button-color--inverse: fd-color("text", 4) !default;
+  $fd-button-color--inverse: fd-color("text", 5) !default;
   $fd-button-color--hover: fd-color-state("hover", "action") !default;
   $fd-button-color--pressed: fd-color-state("selected", "action") !default;
   $fd-button-color--active: fd-color-state("selected", "action") !default;
@@ -82,7 +82,7 @@ $block: #{$fd-namespace}-button;
       @include fd-selected {
         background-color: $fd-button-color--active;
         border-color: $fd-button-color--active;
-        color: fd-color(text, 4);
+        color: fd-color("text", 5);
       }
       @include fd-focus;
       @include fd-disabled {
@@ -122,7 +122,7 @@ $block: #{$fd-namespace}-button;
     @include fd-selected {
       background-color: fd-color-darkest($fd-color--error);
       border-color: fd-color-darkest($fd-color--error);
-      color: fd-color(text, 4);
+      color: fd-color("text", 5);
     }
     @include fd-disabled {
       background-color: $fd-button-background-color;
