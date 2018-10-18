@@ -19,7 +19,7 @@ $block: #{$fd-namespace}-side-nav;
 .#{$block} {
 
     //LOCAL VARS
-    $fd-side-nav-text-size: fd-type(1);
+    $fd-side-nav-text-size: fd-type("1");
     $fd-side-nav-background-color: fd-color("background", 2);
     $fd-side-nav-selected-background-color: rgba(fd-color("action", 1), .07);
     $fd-side-nav-hover-background-color: fd-color("neutral", 1);
@@ -49,7 +49,8 @@ $block: #{$fd-namespace}-side-nav;
         display: block;
         margin-bottom: 0;
         padding: $fd-side-nav-title-padding;
-        @include fd-type("-3", "reg", uppercase);
+        @include fd-type("-1", "normal");
+        text-transform: uppercase;
         color: $fd-side-nav-link-disabled-color;
         background:$fd-side-nav-title-background-color;
 
