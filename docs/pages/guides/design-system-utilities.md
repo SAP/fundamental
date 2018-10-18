@@ -38,14 +38,16 @@ The float helper classes are used to control the element floats in the HTML elem
 Use these CSS classes to control the text size. Used mainly for content text, all standard components have the right text size by default.
 
 {% capture type-util %}
-<p class="fd-has-type-minus-3">This is text type size -3</p>
-<p class="fd-has-type-minus-2">This is text type size -2</p>
+<p class="fd-has-type">This is the default body type size</p>
+
 <p class="fd-has-type-minus-1">This is text type size -1</p>
-<p class="fd-has-type-base">This is text type size base</p>
+<p class="fd-has-type-0">This is text type size 0 (same as default)</p>
+<p class="fd-has-type-1">This is text type size 1</p>
 <p class="fd-has-type-2">This is text type size 2</p>
 <p class="fd-has-type-3">This is text type size 3</p>
 <p class="fd-has-type-4">This is text type size 4</p>
 <p class="fd-has-type-5">This is text type size 5</p>
+<p class="fd-has-type-6">This is text type size 5</p>
 {% endcapture %}
 {% include display-component.html component=type-util %}
 

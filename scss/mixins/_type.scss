@@ -11,15 +11,13 @@
   font-size: nth($list, 1);
   line-height: nth($list, 2);
   //handle weight
-  @if $weight {
-    @include fd-weight($weight);
-  }
+  @include fd-weight($weight);
 }
-
+//$weight: "light", "normal", "bold"
 @mixin fd-weight($weight: reg) {
     @if $weight == light {
         font-weight: 300;
-    } @else if $weight == reg {
+    } @else if $weight == reg or $weight == normal {
         font-weight: 400;
     } @else if $weight == med {
         font-weight: 500;
