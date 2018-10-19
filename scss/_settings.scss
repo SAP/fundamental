@@ -4,12 +4,23 @@ $fd-namespace: fd !default;
 //————————v FIORI FUNDAMENTALS FOUNDATION ————————v
 
 //breakpoints
+//
+//~ size ~~ target device ~~ viewport size
+//~ s       phone            <600px
+//~ m       tablet           600-1024px
+//~ l       desktop          1025-1439px
+//~ xl      desktop          1440-1919px
+//~ xxl     desktop          >=1920px
+//
+
+// replace xs references
+// find s references for LESS THAN? (max-width)
 $fd-breakpoints: (
-    xs: 320px,
-    s: 800px,
-    m: 1024px,
-    l: 1440px,
-    xl: 1580px,
+    s: 320px,
+    m: 600px,
+    l: 1025px,
+    xl: 1440px,
+    xxl: 1920px,
 ) !default;
 
 //spacing
@@ -182,7 +193,7 @@ $fd-padding--ui: $fd-spacing--base * 8 !default;
 $fd-max-width--ui: 1290px !default;
 
 //global widths
-$fd-width--gutter: map-get($fd-spacing, m) !default;
+$fd-width--gutter: var(--fd-width-gutter) !default;
 
 //type
 $fd-font-family: map-get($fd-fonts, "body") !default;

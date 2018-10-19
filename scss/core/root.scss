@@ -39,17 +39,23 @@
 
 
   //padding and gutter values used in page, section, and container
-  --fd-padding-ui: #{map-get($fd-spacing, xxs)};
-  --fd-width-gutter: #{map-get($fd-spacing, xxs)};
-  @include fd-screen(s) {
-    --fd-padding-ui: #{map-get($fd-spacing, xs)};
-  }
+  --fd-padding-ui: #{map-get($fd-spacing, xxs)}; // 8px ~ Margin (A)
+  --fd-width-gutter: #{map-get($fd-spacing, xxs)}; // 8px ~ Gutter (B)
+
   @include fd-screen(m) {
-    --fd-padding-ui: #{map-get($fd-spacing, s)};
-    --fd-width-gutter: #{map-get($fd-spacing, xs)};
+    --fd-padding-ui: #{map-get($fd-spacing, s)}; // 16px
+    --fd-width-gutter: #{map-get($fd-spacing, s)}; // 16px
   }
   @include fd-screen(l) {
-    --fd-padding-ui: #{$fd-padding--ui};
-    --fd-width-gutter: #{$fd-width--gutter};
+    --fd-padding-ui: #{map-get($fd-spacing, m)}; // 32px
+    --fd-width-gutter: #{map-get($fd-spacing, s)}; // 16px
+  }
+  @include fd-screen(xl) {
+    --fd-padding-ui: #{map-get($fd-spacing, m)}; // 32px
+    --fd-width-gutter: #{map-get($fd-spacing, reg)}; // 20px
+  }
+  @include fd-screen(xxl) {
+    --fd-padding-ui: #{map-get($fd-spacing, xxl)}; // 48px
+    --fd-width-gutter: #{map-get($fd-spacing, reg)}; // 20px
   }
 }
