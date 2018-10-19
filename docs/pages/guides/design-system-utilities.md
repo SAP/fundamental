@@ -152,58 +152,59 @@ Margin and/or padding can be applied on all sides to an element with the followi
 | {size} options | Value |
 | -------------- | ----- |
 | `none`         | 0     |
-| `base`         | 4px   |
-| `xs`           | 8px   |
-| `s`            | 12px  |
-| `reg`          | 20px  |
-| `m`            | 40px  |
-| `l`            | 100px |
-| `xl`           | 148px |
+| `tiny`         | 8px   |
+| `small`           | 16px   |
+| `medium`            | 32px  |
+| `large`          | 48px  |
 
-Similar to adding margin or padding on all sides of an element, you can use the `{side}` option to selectively add to a single side. The helper classes for a specific side is structured as `.fd-has-margin-{side}-{size}` and `.fd-has-padding-{side}-{size}`. For example to add margin to the bottom on an element you could use a helper class `.fd-has-margin-bottom-m`. To remove margin from the left size of an element you can use the class `.fd-has-margin-left-none`. The following table lists all the available options for `{side}` an `{size}` options
+Similar to adding margin or padding on all sides of an element, you can use the `{side}` option to selectively add to a single side. The helper classes for a specific side is structured as `.fd-has-margin-{side}-{size}` and `.fd-has-padding-{side}-{size}`. For example to add margin to the bottom on an element you could use a helper class `.fd-has-margin-bottom-tiny`. To remove margin from the left size of an element you can use the class `.fd-has-margin-left-none`. The following table lists all the available options for `{side}` an `{size}` options
 
 {: .docs-table}
 | Class structure                | {side} options                    | {size} options                            |
 | ------------------------------ | --------------------------------- | ----------------------------------------- |
-| `.fd-has-margin-{side}-{size}` | `top`, `right`, `bottom`, `left` | `none`, `base`, `xs`, `s`, `m`, `l`, `xl` |
-| `.fd-has-padding-{side}-{size}` | `top`, `right`, `bottom`, `left` | `none`, `base`, `xs`, `s`, `m`, `l`, `xl` |
+| `.fd-has-margin-{side}-{size}` | `top`, `right`, `bottom`, `left` | `none`, `tiny`, `small`, `medium`, `large` |
+| `.fd-has-padding-{side}-{size}` | `top`, `right`, `bottom`, `left` | `none`, `tiny`, `small`, `medium`, `large` |
 
+<style>
+.block-margin {
+  outline: solid 1px lightgray;
+  display: flex;
+  font-family: monospace;
+  margin: 16px;
+}
+</style>
 {% capture margin %}
 <h3> Margin helper classes </h3>
-<span class="fd-has-padding-reg fd-has-margin-base"> .fd-has-margin-base //adds margin of 4px </span>
-<span class="fd-has-padding-reg fd-has-margin-xs"> .fd-has-margin-xs //adds margin of 8px</span>
-<span class="fd-has-padding-reg fd-has-margin-s"> .fd-has-margin-s //adds margin of 12px</span>
-<span class="fd-has-padding-reg fd-has-margin-reg"> .fd-has-margin-reg //adds margin of 20px</span>
-<span class="fd-has-padding-reg fd-has-margin-m"> .fd-has-margin-m //adds margin of 40px</span>
-<span class="fd-has-padding-reg fd-has-margin-l"> .fd-has-margin-l //adds margin of 100px</span>
-<span class="fd-has-padding-reg fd-has-margin-xl"> .fd-has-margin-xl //adds margin of 148px;</span>
+<span class="block-margin fd-has-margin-none"> .fd-has-margin-none //margin: 0 </span>
+<span class="block-margin fd-has-margin-tiny"> .fd-has-margin-xs //margin: 8px</span>
+<span class="block-margin fd-has-margin-small"> .fd-has-margin-s //margin: 16px</span>
+<span class="block-margin fd-has-margin-medium"> .fd-has-margin-reg //margin: 32px</span>
+<span class="block-margin fd-has-margin-large"> .fd-has-margin-m //margin: 48px</span>
 
 <hr>
 
 <h3> Removing margin by side using helper classes</h3>
-<span class="fd-has-padding-reg fd-has-margin-m fd-has-margin-top-none">.fd-has-margin-top-none</span>
-<span class="fd-has-padding-reg fd-has-margin-m fd-has-margin-right-none">.fd-has-margin-right-none</span>
-<span class="fd-has-padding-reg fd-has-margin-m fd-has-margin-bottom-none">.fd-has-margin-bottom-none</span>
-<span class="fd-has-padding-reg fd-has-margin-m fd-has-margin-left-none">.fd-has-margin-left-none</span>
+<span class="block-margin fd-has-margin-top-none">.fd-has-margin-top-none</span>
+<span class="block-margin fd-has-margin-right-none">.fd-has-margin-right-none</span>
+<span class="block-margin fd-has-margin-bottom-none">.fd-has-margin-bottom-none</span>
+<span class="block-margin fd-has-margin-left-none">.fd-has-margin-left-none</span>
 
 <hr>
 
 <h3> Padding helper classes</h3>
 <span class="fd-has-margin-base fd-has-padding-none">.fd-has-padding-none</span>
-<span class="fd-has-margin-base fd-has-padding-base">.fd-has-padding-base</span>
-<span class="fd-has-margin-base fd-has-padding-xs">.fd-has-padding-xs</span>
-<span class="fd-has-margin-base fd-has-padding-s">.fd-has-padding-s</span>
-<span class="fd-has-margin-base fd-has-padding-m">.fd-has-padding-m</span>
-<span class="fd-has-margin-base fd-has-padding-l">.fd-has-padding-l</span>
-<span class="fd-has-margin-base fd-has-padding-xl">.fd-has-padding-xl</span>
+<span class="fd-has-margin-base fd-has-padding-tiny">.fd-has-padding-tiny</span>
+<span class="fd-has-margin-base fd-has-padding-small">.fd-has-padding-small</span>
+<span class="fd-has-margin-base fd-has-padding-medium">.fd-has-padding-medium</span>
+<span class="fd-has-margin-base fd-has-padding-large">.fd-has-padding-large</span>
 
 <hr>
 
 <h3> Removing padding by side using helper classes</h3>
-<span class="fd-has-margin-base fd-has-padding-m fd-has-padding-top-none">.fd-has-padding-top-none</span>
-<span class="fd-has-margin-base fd-has-padding-m fd-has-padding-right-none">.fd-has-padding-right-none</span>
-<span class="fd-has-margin-base fd-has-padding-m fd-has-padding-bottom-none">.fd-has-padding-bottom-none</span>
-<span class="fd-has-margin-base fd-has-padding-m fd-has-padding-left-none">.fd-has-padding-left-none</span>
+<span class="fd-has-margin-base fd-has-padding-tiny fd-has-padding-top-none">.fd-has-padding-top-none</span>
+<span class="fd-has-margin-base fd-has-padding-small fd-has-padding-right-none">.fd-has-padding-right-none</span>
+<span class="fd-has-margin-base fd-has-padding-medium fd-has-padding-bottom-none">.fd-has-padding-bottom-none</span>
+<span class="fd-has-margin-base fd-has-padding-large fd-has-padding-left-none">.fd-has-padding-left-none</span>
 {% endcapture %}
 {% include display-component.html component=margin %}
 

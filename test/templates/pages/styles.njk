@@ -111,13 +111,15 @@
 </div>
 
 {% set spaces = {
-  "base": 4,
-  "xs": 8,
-  "s": 12,
-  "reg": 20,
-  "m": 32,
-  "l": 40,
-  "xl": 60
+  "base": [4, ""],
+  "xxs": [8, "tiny"],
+  "xs": [12, ""],
+  "s": [16, "small"],
+  "reg": [24, ""],
+  "m": [32, "medium"],
+  "l": [46, ""],
+  "xl": [40, ""],
+  "xxl": [48, "large"]
 } %}
 
 
@@ -125,8 +127,15 @@
 
     <h1>Spacing</h1>
 {% for key, value in spaces %}
-    <h2 style="margin-bottom:0;">{{ key }}</h2>
-    <div class="fd-has-height-{{ key }}" style="background-color: pink;">
+
+
+      <h2 style="margin-bottom:0;">
+<span class="fd-has-type-1">{{ key }} — {{value[0]}}px</span>
+  {{value[1]}}
+        </h2>
+    {% set color = "accent-3" if value[1] else "neutral-3" %}
+
+    <div class="fd-has-height-{{ key }} fd-has-background-color-{{color}}">
     </div>
     <br>
     {# <p>{{ value }}px</p> #}

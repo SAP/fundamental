@@ -165,8 +165,8 @@ Spacing function can be utilized for padding, margins and other positioning need
 
 {% highlight css %}
 .foo {
-  padding: fd-space(xs); /* renders 8px */
-  margin-bottom: fd-space(reg); /* renders 20px */
+  padding: fd-space(xs); /* renders 12px */
+  margin-bottom: fd-space(reg); /* renders 24px */
 }
 {% endhighlight %}
 
@@ -176,12 +176,14 @@ The following spacing options are available -
 | Option        | Value           | Rendered Value |
 | ------------- | --------------- | -------------- |
 | `base`        | `fd-space()`    |  4px           |
-| `xs`          | `fd-space(xs)`  |  8px           |
-| `s`           | `fd-space(s)`   |  12px          |
-| `reg`         | `fd-space(reg)` |  20px          |
-| `m`           | `fd-space(m)`   |  40px          |
-| `l`           | `fd-space(l)`   |  100px         |
-| `xl`          | `fd-space(xl)`  |  148px         |
+| `xxs`         | `fd-space(xxs)` |  8px           |
+| `xs`          | `fd-space(xs)`  |  12px          |
+| `s`           | `fd-space(s)`   |  16px          |
+| `reg`         | `fd-space(reg)` |  24px          |
+| `m`           | `fd-space(m)`   |  32px          |
+| `l`           | `fd-space(l)`   |  36px         |
+| `xl`          | `fd-space(xl)`  |  40px         |
+| `xl`          | `fd-space(xxl)`  |  48px         |
 
 
 ### Type Mixin
