@@ -208,7 +208,13 @@ $block: #{$fd-namespace}-button;
     --fd-button-border-color: var(--fd-color-neutral-3);
     --fd-button-background-color: var(--fd-color-neutral-1);
     box-shadow: 0 1px 0 0 rgba(lighten(fd-color("text", 2),50), 1);
+    @include fd-hover {
 
+      @include fd-disabled {
+        --fd-button-background-color: var(--fd-color-neutral-1);
+        --fd-button-color: var(--fd-color-text-2);
+      }
+    }
   }
 
 

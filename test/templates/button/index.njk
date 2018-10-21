@@ -3,12 +3,25 @@
 {% from "./component.njk" import button %}
 {% set css_deps = ['fonts','helpers','icons'] %}
 
+{% macro btncode(content="",bgcolor="transparent") %}
+<div style="background-color:{{bgcolor}}">
+{{ content }}
+</div>
+<textarea readonly class="test-textarea">{{ content | e | trim }}</textarea>
+{% endmacro %}
+
+
+
 {% block content %}
 <style media="screen">
   button {
     margin-bottom: 4px !important;
     margin-right: 4px !important;
   }
+  table textarea.test-textarea {
+    height: 100px;
+  }
+
 </style>
 
 {# <del>Main
@@ -53,8 +66,6 @@ Toolbar
 
 
 
-
-
 {% set emphasis = ["action-bar", "", "secondary" ] %}
 {% set types = ["", "toolbar", "positive ", "negative" ] %}
 {% set sizes = ["", "compact" ] %}
@@ -78,38 +89,47 @@ Toolbar
 {{".fd-button" if not type and not size and not e}}
 </code>
 <br>
-          {{ button(
-            { label: 'Button' },
-            modifier={ block: [type,size,e] })
-          }}
-          {{  button(
-            { label: 'Add to Cart',
-              icon: 'cart' },
-              modifier={ block: [type,size,e] })
-          }}
-          {{  button(
-            { icon: 'attachment' },
-              modifier={ block: [type,size,e] },
-              aria={ label: 'Add Attachment' })
-          }}
-          <br>
-          {{  button(
-            { label: 'Focused',
-              icon: 'cart' },
-              modifier={ block: [type,size,e] },
-              state={ focus: true })
-          }}
-          {{ button(
-            { label: 'Selected' },
-            modifier={ block: [type,size,e] },
-            aria={ selected: true })
-          }}
-          {{  button(
-            { label: 'Disabled',
-              icon: 'cart' },
-              modifier={ block: [type,size,e] },
-              state={ disabled: true })
-          }}
+{% set example %}
+{{- button(
+  { label: 'Button' },
+  modifier={ block: [type,size,e] })
+}}
+{{- button(
+  { label: 'Add to Cart',
+    icon: 'cart' },
+    modifier={ block: [type,size,e] })
+}}
+{{-  button(
+  { icon: 'attachment' },
+    modifier={ block: [type,size,e] },
+    aria={ label: 'Add Attachment' })
+}}
+{% endset %}
+{{ btncode(example) }}
+
+
+<br>
+{% set example %}
+{{-  button(
+  { label: 'Focused',
+    icon: 'cart' },
+    modifier={ block: [type,size,e] },
+    state={ focus: true })
+}}
+{{- button(
+  { label: 'Selected' },
+  modifier={ block: [type,size,e] },
+  aria={ selected: true })
+}}
+{{-  button(
+  { label: 'Disabled',
+    icon: 'cart' },
+    modifier={ block: [type,size,e] },
+    state={ disabled: true })
+}}
+{% endset %}
+{{ btncode(example) }}
+
 
 
 
