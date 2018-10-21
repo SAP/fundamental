@@ -202,22 +202,24 @@ $block: #{$fd-namespace}-button;
 
 
   //BUTTON TYPES
-  &--toolbar,
-  &--grouped {
+  &--toolbar {
     --fd-button-color: var(--fd-color-text-2);
     --fd-button-border-color: var(--fd-color-neutral-3);
     --fd-button-background-color: var(--fd-color-neutral-1);
     @include fd-focus(--fd-color-neutral-3);
-    //box-shadow: 0 1px 0 0 rgba(lighten(fd-color("text", 2),50), 1);
+    @include fd-selected {
+      --fd-button-background-color: var(--fd-color-action-selected);
+      --fd-button-color: var(--fd-color-action-2);
+    }
     @include fd-hover {
+      --fd-button-background-color: var(--fd-color-action-hover);
+      --fd-button-color: var(--fd-color-action-2);
       @include fd-disabled {
         --fd-button-background-color: var(--fd-color-neutral-3);
         --fd-button-color: var(--fd-color-text-2);
       }
     }
   }
-
-
   &--positive {
     --fd-button-color: var(--fd-color-status-1);
     --fd-button-border-color: var(--fd-color-status-1);
@@ -252,13 +254,14 @@ $block: #{$fd-namespace}-button;
         --fd-button-color: var(--fd-color-action-2);
     }
   }
-
-
-
-
-
 }
 
+
+//CONTEXTS
+.#{$block}-group [class*="#{$block}--"],
+.#{$block}-group .#{$block} {
+  @extend .#{$block}--toolbar;
+}
 
 
 

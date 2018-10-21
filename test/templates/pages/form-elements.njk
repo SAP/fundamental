@@ -10,6 +10,7 @@
 {% from "./../multi-input/component.njk" import multi_input %}
 {% from "./../search-input/component.njk" import search_input %}
 {% from "./../time-picker/component.njk" import time_picker %}
+{% from "./../button-group/component.njk" import button_group %}
 {% import "./../utils.njk" as utils %}
 {#
 {%- set _id = utils.id() %}
@@ -337,7 +338,36 @@
 
 
 
+<h3>.fd-button-group</h3>
+<div class="fd-form__item">
+  {% for size in ["","compact"] %}
+    {%- set modifier = { block: [size] } %}
+    {%- if size == "default" %}
+      {%- set modifier = { block: [] } %}
+    {%- endif %}
+  {% call button_group() -%}
+    {{-  button(
+      { icon: 'survey' },
+        modifier={ block: [size] },
+        aria={ label: 'Survey' })
+      }}
+    {{-  button(
+        { icon: 'pie-chart' },
+          modifier={ block: [size] },
+          aria={ label: 'Chart', selected: true })
+        }}
+    {{-  button(
+          { icon: 'pool' },
+            modifier={ block: [size] },
+            aria={ label: 'Pool' })
+          }}
+  {%- endcall %}
+  {%- endfor %}
 
+
+
+
+</div>
 {%- endcall %}
 
 
