@@ -1,3 +1,4 @@
+@import "./../functions/type";
 /*
   @mixin fd-type mixin
     Looks up values from $fd-type to ensure consistent application of the type hierarchy.
@@ -7,32 +8,14 @@
 */
 @mixin fd-type($size: "0", $weight: "normal") {
   $list: map-get($fd-type, "0");
-  @if map-has-key($fd-type, $size) {
-    $list: map-get($fd-type, $size);
-  } @else {
-    @warn "Unknown `#{$size}` in $type map";
-  }
-  font-size: nth($list, 1);
-  line-height: nth($list, 2);
-  //handle weight
-  @include fd-weight($weight);
+  font-size: fd-font-size($size);
+  line-height: fd-line-height($size);
+  //set weight
+  font-weight: fd-font-weight($weight);
   margin-bottom: nth($list, 3);
 }
 
 //$weight: "light", "normal", "bold"
-@mixin fd-weight($weight: reg) {
-    @if $weight == light {
-        font-weight: 300;
-    } @else if $weight == reg or $weight == normal {
-        font-weight: 400;
-    } @else if $weight == med {
-        font-weight: 500;
-    } @else if $weight == semi {
-        font-weight: 600;
-    } @else if $weight == bold {
-        font-weight: 700;
-    } @else if $weight == black {
-       font-weight: 900;
-   }
-
+@mixin fd-weight($weight: "normal") {
+  font-weight: fd-font-weight($weight);
 }
