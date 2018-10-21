@@ -13,11 +13,13 @@ localization_editor:
 -->
 
 {% macro localization_editor_main_input_item(properties, aria={}) %}
-
+{%- set _id = utils.id() %}
 {% set main_input = properties.items[0].properties %}
+{%- if properties.title %}
 <label class="fd-form__label" for="vTshu851">
     {{properties.title}}
 </label>
+{%- endif %}
 {{ input_group(
     properties={
         type: properties.type,

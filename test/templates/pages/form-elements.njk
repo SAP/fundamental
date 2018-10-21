@@ -1,10 +1,322 @@
-{% extends "./layouts/master.njk" %}
-{% block content %}
+{% extends "./layouts/module.njk" %}
+{% import "../forms.njk" as forms %}
+{% import "../layout/component.njk" as layout %}
+{% from "./../toggle/component.njk" import toggle %}
+{% from "./../button/component.njk" import button %}
+{% from "./../combobox-input/component.njk" import combobox_input %}
+{% from "./../date-picker/component.njk" import date_picker %}
+{% from "./../input-group/component.njk" import input_group %}
+{% from "./../localization-editor/component.njk" import localization_editor %}
+{% from "./../multi-input/component.njk" import multi_input %}
+{% from "./../search-input/component.njk" import search_input %}
+{% from "./../time-picker/component.njk" import time_picker %}
+{% import "./../utils.njk" as utils %}
+{#
+{%- set _id = utils.id() %}
+#}
+
+{% set hide_sidebar = true %}
+{% block page_content %}
+
+{% call layout.section() -%}
+{% call layout.panel() -%}
+{% call layout.panel_body() -%}
+{% call layout.container() -%}
+
+{% call layout.col(span=6) -%}
+
+
+<div class="fd-form__item fd-has-display-flex">
+    {{ forms.text() }}
+    {{ button({ label: "Dolor"}) }}
+</div>
+
+<div class="fd-form__item fd-has-display-flex">
+    {{ forms.select() }} {{ button({ label: "Dolor"}) }}
+</div>
+
+<div class="fd-form__item">
+        {{ forms.radio() }}
+        {{ forms.radio() }}
+        {{ forms.radio() }}
+{{ button({ label: "Dolor"}) }}
+
+</div>
+
+
+<div class="fd-form__item">
+        {{ forms.checkbox() }}
+          {{ forms.checkbox() }}
+            {{ forms.checkbox() }}
+
+            {{ button({ label: "Dolor"}) }}
+</div>
+
+
+<div class="fd-form__item">
+      {{ toggle() }} {{ button({ label: "Dolor"}) }}
+</div>
+
+
+<div class="fd-form__item">
+    {{ forms.textarea() }} {{ button({ label: "Dolor"}) }}
+</div>
 
 
 
 
 
+{{combobox_input()}}
+
+{{  date_picker(properties={
+      month: 8,
+      year: 2018,
+      today: 6,
+      dates: {
+        daysOffset: 3,
+        block: [25,29],
+        selected: 15,
+        disablePast: true
+      }
+  })
+}}
+
+{{ search_input(
+    properties={
+        value: "Ba",
+        placeholder: "Placeholder Text"
+    })
+}}
+
+
+{{  time_picker()
+}}
+
+
+{{ input_group(
+    properties={
+        after: "$",
+        input: {
+            properties: {
+                value: "19387309"
+            }
+        }
+    },
+    modifier={
+        block: "after",
+        after: "after"
+    })
+}}
+{{ input_group(
+    properties={
+        before: "km/h",
+        input: {
+            properties: {
+                value: "19387309"
+            }
+        }
+    },
+    modifier={
+        block: "before",
+        before: "before"
+    })
+}}
+
+{{ input_group(
+    properties={
+        after: "phone",
+        input: {
+            properties: {
+                placeholder: "Field placeholder text"
+            }
+        }
+    },
+    modifier={
+        block: ["inline", "after"],
+        after: "after"
+    })
+}}
+{{ input_group(
+    properties={
+        after: "fax",
+        input: {
+            properties: {
+                placeholder: "Field placeholder text"
+            }
+        }
+    },
+    modifier={
+        block: ["inline", "after"],
+        after: "after"
+    })
+}}
+
+{{ input_group(
+    type="number",
+    properties={
+        after: "",
+        input: {
+            properties: {
+                value: "1000000", id: utils.id()
+            }
+        }
+    },
+    modifier={
+        block: "after",
+        after: "after"
+    })
+}}
+
+{{ input_group(
+    type="search",
+    properties={
+        input: {
+            properties: {
+                value: "1000008980283748972894732979327592739572394752397594657843657868436029840932840927349236572635876347239875283472893742980", id: utils.id()
+            }
+        }
+    })
+}}
+
+
+{{  localization_editor(
+        properties={
+            "id": utils.id(),
+            "description": "Localization Editor Description",
+            "type": "input",
+            "items": [
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "Enter label",
+                     "label": "EN"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": true
+                  }
+              },
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "",
+                     "label": "ES"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": false
+                  }
+              },
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "",
+                     "label": "CH"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": false
+                  }
+              },
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "",
+                     "label": "PL"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": false
+                  }
+              }
+            ]}
+    )
+}}
+
+{{  localization_editor(
+         {
+            "id": _id,
+            "type": "textarea",
+            "items": [
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "Enter label",
+                     "label": "EN"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": true
+                  }
+              },
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "",
+                     "label": "ES"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": false
+                  }
+              },
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "",
+                     "label": "CH"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": false
+                  }
+              },
+              {
+                  "properties": {
+                    "value": "",
+                    "placeholder": "",
+                     "label": "PL"
+                  },
+                  "state": {
+                    "status": "",
+                    "required": false
+                  }
+              }
+            ]
+        }
+    )
+}}
+
+
+
+{{ multi_input(
+    properties={
+        placeholder: "Placeholder Text"
+    })
+}}
+
+
+
+{%- endcall %}
+
+{% call layout.col(span=6) -%}
+
+
+
+
+{%- endcall %}
+
+
+
+
+
+
+
+
+{%- endcall %}
+{%- endcall %}
+{%- endcall %}
+{%- endcall %}
 
 
 {% endblock %}
