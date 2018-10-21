@@ -1,6 +1,10 @@
-
-//$size: "-1","0","1","2","3","4","5"
-//$weight: "light", "normal", "bold"
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 @mixin fd-type($size: "0", $weight: "normal") {
   $list: map-get($fd-type, "0");
   @if map-has-key($fd-type, $size) {
@@ -12,7 +16,9 @@
   line-height: nth($list, 2);
   //handle weight
   @include fd-weight($weight);
+  margin-bottom: nth($list, 3);
 }
+
 //$weight: "light", "normal", "bold"
 @mixin fd-weight($weight: reg) {
     @if $weight == light {
@@ -28,4 +34,5 @@
     } @else if $weight == black {
        font-weight: 900;
    }
+
 }
