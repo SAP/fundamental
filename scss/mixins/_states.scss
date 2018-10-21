@@ -1,7 +1,8 @@
-@mixin fd-focus {
+@mixin fd-focus($shadow: --fd-color-action-focus) {
   &:focus,
   &.is-focus {
-    box-shadow: 0 0 0 1px adjust-color($fd-forms-color--active, $lightness: 30%);
+  //  box-shadow: 0 0 0 1px adjust-color($fd-forms-color--active, $lightness: 30%);
+    box-shadow: 0 0 0 1px var(#{$shadow});
     @content;
   }
 }

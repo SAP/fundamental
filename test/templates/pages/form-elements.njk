@@ -25,16 +25,23 @@
 
 {% call layout.col(span=6) -%}
 
-
+<h3>input[type=text]</h3>
 <div class="fd-form__item fd-has-display-flex">
     {{ forms.text() }}
     {{ button({ label: "Dolor"}) }}
 </div>
 
+<h3>select</h3>
 <div class="fd-form__item fd-has-display-flex">
     {{ forms.select() }} {{ button({ label: "Dolor"}) }}
 </div>
 
+<h4>select[multiple]</h4>
+<div class="fd-form__item fd-has-display-flex">
+    {{ forms.select(state={ multiple: true }) }} {{ button({ label: "Dolor"}) }}
+</div>
+
+<h3>input[type=radio]</h3>
 <div class="fd-form__item">
         {{ forms.radio() }}
         {{ forms.radio() }}
@@ -42,8 +49,7 @@
 {{ button({ label: "Dolor"}) }}
 
 </div>
-
-
+<h3>input[type=checkbox]</h3>
 <div class="fd-form__item">
         {{ forms.checkbox() }}
           {{ forms.checkbox() }}
@@ -52,12 +58,12 @@
             {{ button({ label: "Dolor"}) }}
 </div>
 
-
+<h3>.fd-toggle input[type=checkbox]</h3>
 <div class="fd-form__item">
       {{ toggle() }} {{ button({ label: "Dolor"}) }}
 </div>
 
-
+<h3>textarea</h3>
 <div class="fd-form__item">
     {{ forms.textarea() }} {{ button({ label: "Dolor"}) }}
 </div>
@@ -66,33 +72,8 @@
 
 
 
-{{combobox_input()}}
-
-{{  date_picker(properties={
-      month: 8,
-      year: 2018,
-      today: 6,
-      dates: {
-        daysOffset: 3,
-        block: [25,29],
-        selected: 15,
-        disablePast: true
-      }
-  })
-}}
-
-{{ search_input(
-    properties={
-        value: "Ba",
-        placeholder: "Placeholder Text"
-    })
-}}
-
-
-{{  time_picker()
-}}
-
-
+<h3>.fd-input-group</h3>
+<div class="fd-form__item">
 {{ input_group(
     properties={
         after: "$",
@@ -107,6 +88,8 @@
         after: "after"
     })
 }}
+</div>
+<div class="fd-form__item">
 {{ input_group(
     properties={
         before: "km/h",
@@ -121,7 +104,8 @@
         before: "before"
     })
 }}
-
+</div>
+<div class="fd-form__item">
 {{ input_group(
     properties={
         after: "phone",
@@ -150,7 +134,8 @@
         after: "after"
     })
 }}
-
+</div>
+<div class="fd-form__item">
 {{ input_group(
     type="number",
     properties={
@@ -166,7 +151,8 @@
         after: "after"
     })
 }}
-
+</div>
+<div class="fd-form__item">
 {{ input_group(
     type="search",
     properties={
@@ -177,7 +163,56 @@
         }
     })
 }}
+</div>
 
+
+
+
+{%- endcall %}
+
+{% call layout.col(span=6) -%}
+
+
+
+<h3>.fd-combobox-input</h3>
+<div class="fd-form__item">
+{{combobox_input()}}
+</div>
+
+
+<h3>.fd-date-picker</h3>
+<div class="fd-form__item">
+{{  date_picker(properties={
+      month: 8,
+      year: 2018,
+      today: 6,
+      dates: {
+        daysOffset: 3,
+        block: [25,29],
+        selected: 15,
+        disablePast: true
+      }
+  })
+}}
+</div>
+<h3>.fd-search-input</h3>
+<div class="fd-form__item">
+{{ search_input(
+    properties={
+        value: "Ba",
+        placeholder: "Placeholder Text"
+    })
+}}
+</div>
+<h3>.fd-time-picker</h3>
+<div class="fd-form__item">
+
+{{  time_picker() }}
+
+
+</div>
+<h3>.fd-localization-editor</h3>
+<div class="fd-form__item">
 
 {{  localization_editor(
         properties={
@@ -232,7 +267,8 @@
             ]}
     )
 }}
-
+</div>
+<div class="fd-form__item">
 {{  localization_editor(
          {
             "id": _id,
@@ -288,18 +324,16 @@
 }}
 
 
+</div>
+<h3>.fd-multi-input</h3>
+<div class="fd-form__item">
 
 {{ multi_input(
     properties={
         placeholder: "Placeholder Text"
     })
 }}
-
-
-
-{%- endcall %}
-
-{% call layout.col(span=6) -%}
+</div>
 
 
 

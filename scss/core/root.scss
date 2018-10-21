@@ -32,6 +32,7 @@
   --fd-color-accent-10: #{map-get($fd-colors-accent, 10)};
   //derived states
   --fd-color-action-hover: #{map-get($fd-colors-action-states, "hover")};
+  --fd-color-action-focus: #{map-get($fd-colors-action-states, "hover")};
   --fd-color-action-selected: #{map-get($fd-colors-action-states, "selected")};
   --fd-color-action-disabled: #{map-get($fd-colors-action-states, "disabled")};
   --fd-color-action-visited: #{map-get($fd-colors-action-states, "visited")};
@@ -42,6 +43,23 @@
   --fd-color-background-positive: #{map-get($fd-colors-background-states, "positive")};
   --fd-color-background-alert: #{map-get($fd-colors-background-states, "alert")};
   --fd-color-background-negative: #{map-get($fd-colors-background-states, "negative")};
+
+
+  //form metrics
+  --fd-forms-height: #{$fd-forms-height};
+  --fd-forms-height-compact: #{$fd-forms-height};
+  @at-root {
+    .fd-for-touch {
+      --fd-forms-height-compact: #{$fd-forms-height};
+    }
+    .fd-for-compact {
+      --fd-forms-height-compact: #{$fd-forms-height--compact};
+    }
+  }
+  @include fd-screen(l) {
+    --fd-forms-height-compact: #{$fd-forms-height--compact};
+  }
+
 
   //padding and gutter values used in page, section, and container
   --fd-padding-ui: #{map-get($fd-spacing, xxs)};
