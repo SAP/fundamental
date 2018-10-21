@@ -24,7 +24,6 @@
 
 // get weights from main map
 @function fd-font-weight($weight: "normal") {
-  @debug $weight;
   $_map: $fd-weights;
   $_weight: map-get($_map, "normal");
   @if $weight == "reg" {
@@ -35,6 +34,5 @@
   } @else {
     @warn "Invalid $weight of `#{$weight}` in the map $fd-weights. Valid $weight values are #{map-keys($_map)}. Returning `#{$_weight}`.";
   }
-  @debug $_weight;
   @return $_weight;
 }
