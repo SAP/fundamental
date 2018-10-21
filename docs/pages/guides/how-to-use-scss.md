@@ -143,7 +143,7 @@ Fundamental UI comes with some very useful built-in functions and mixins to help
 > `@import "~fundamental-ui/scss/core/functions";` <br>
 > `@import "~fundamental-ui/scss/core/mixins";`
 
-### Color Function
+## Color Function
 {:.docs-header-h3}
 
 If you have a need to apply a color to any of your scss/css class, you can use the built-in color function - <br> `fd-color(group, shade)`
@@ -157,7 +157,7 @@ If you have a need to apply a color to any of your scss/css class, you can use t
 
 You can refer to the [colors page](/fundamentals/colors.html){:target="_blank"} for the complete list of the available color options.
 
-### Spacing Function
+## Spacing Function
 {:.docs-header-h3}
 
 Spacing function can be utilized for padding, margins and other positioning needs - <br>
@@ -184,7 +184,7 @@ The following spacing options are available -
 | `xl`          | `fd-space(xl)`  |  148px         |
 
 
-### Type Mixin
+## Type Mixin
 {:.docs-header-h3}
 
 You can utilize the type mixin to render size, line height and weight - <br> `fd-type($size, $weight)`
