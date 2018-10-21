@@ -68,11 +68,11 @@ Use these CSS classes to control the text size. Used mainly for content text, al
 
 used with `fd-has-font-family-header` for illustrate weight variants
 {% capture type-weight %}
-<p class="fd-has-font-family-header fd-has-font-weight-light">This is font with weight light</p>
-<p class="fd-has-font-family-header fd-has-font-weight-reg">This is font with weight regular</p>
-<p class="fd-has-font-family-header fd-has-font-weight-med">This is font with weight medium</p>
-<p class="fd-has-font-family-header fd-has-font-weight-semi">This is font with weight semi-bold</p>
-<p class="fd-has-font-family-header fd-has-font-weight-bold">This is font with weight bold</p>
+<p class="fd-has-font-weight-light">This is font with weight light</p>
+<p class="fd-has-font-weight-reg">This is font with weight regular</p>
+<p class="fd-has-font-weight-med">This is font with weight medium</p>
+<p class="fd-has-font-weight-semi">This is font with weight semi-bold</p>
+<p class="fd-has-font-weight-bold">This is font with weight bold</p>
 {% endcapture %}
 {% include display-component.html component=type-weight %}
 
