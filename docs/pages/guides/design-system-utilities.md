@@ -39,7 +39,6 @@ Use these CSS classes to control the text size. Used mainly for content text, al
 
 {% capture type-util %}
 <p class="fd-has-type">This is the default body type size</p>
-
 <p class="fd-has-type-minus-1">This is text type size -1</p>
 <p class="fd-has-type-0">This is text type size 0 (same as default)</p>
 <p class="fd-has-type-1">This is text type size 1</p>
@@ -66,12 +65,9 @@ Use these CSS classes to control the text size. Used mainly for content text, al
 ## Type Weights
 {: .docs-header-h2}
 
-used with `fd-has-font-family-header` for illustrate weight variants
 {% capture type-weight %}
 <p class="fd-has-font-weight-light">This is font with weight light</p>
-<p class="fd-has-font-weight-reg">This is font with weight regular</p>
-<p class="fd-has-font-weight-med">This is font with weight medium</p>
-<p class="fd-has-font-weight-semi">This is font with weight semi-bold</p>
+<p class="fd-has-font-weight-normal">This is font with weight regular</p>
 <p class="fd-has-font-weight-bold">This is font with weight bold</p>
 {% endcapture %}
 {% include display-component.html component=type-weight %}
@@ -149,7 +145,7 @@ Some examples of color helper classes.
 <p class="fd-has-background-color-accent-15 fd-has-color-text-5">.fd-has-background-color-accent-15</p>
 <p class="fd-has-background-color-accent-16 fd-has-color-text-5">.fd-has-background-color-accent-16</p>
 {% endcapture %}
-{% include display-component.html component=color %}
+{% include display-component.html component=color class="color-examples"%}
 
 ## Margin and Padding
 {: .docs-header-h2}
@@ -174,7 +170,7 @@ Similar to adding margin or padding on all sides of an element, you can use the 
 | `.fd-has-padding-{side}-{size}` | `top`, `right`, `bottom`, `left` | `none`, `tiny`, `small`, `medium`, `large` |
 
 <style>
-.block-margin {
+.{
   outline: solid 1px lightgray;
   display: flex;
   font-family: monospace;
@@ -183,38 +179,38 @@ Similar to adding margin or padding on all sides of an element, you can use the 
 </style>
 {% capture margin %}
 <h3> Margin helper classes </h3>
-<span class="block-margin fd-has-margin-none"> .fd-has-margin-none //margin: 0 </span>
-<span class="block-margin fd-has-margin-tiny"> .fd-has-margin-xs //margin: 8px</span>
-<span class="block-margin fd-has-margin-small"> .fd-has-margin-s //margin: 16px</span>
-<span class="block-margin fd-has-margin-medium"> .fd-has-margin-reg //margin: 32px</span>
-<span class="block-margin fd-has-margin-large"> .fd-has-margin-m //margin: 48px</span>
+<span class="fd-has-margin-none"> .fd-has-margin-none //margin: 0 </span>
+<span class="fd-has-margin-tiny"> .fd-has-margin-tiny //margin: 8px</span>
+<span class="fd-has-margin-small"> .fd-has-margin-small //margin: 16px</span>
+<span class="fd-has-margin-medium"> .fd-has-margin-medium //margin: 32px</span>
+<span class="fd-has-margin-large"> .fd-has-margin-large//margin: 48px</span>
 
 <hr>
 
 <h3> Removing margin by side using helper classes</h3>
-<span class="block-margin fd-has-margin-top-none">.fd-has-margin-top-none</span>
-<span class="block-margin fd-has-margin-right-none">.fd-has-margin-right-none</span>
-<span class="block-margin fd-has-margin-bottom-none">.fd-has-margin-bottom-none</span>
-<span class="block-margin fd-has-margin-left-none">.fd-has-margin-left-none</span>
+<span class="fd-has-margin-medium fd-has-margin-top-none">.fd-has-margin-top-none</span>
+<span class="fd-has-margin-medium fd-has-margin-right-none">.fd-has-margin-right-none</span>
+<span class="fd-has-margin-medium fd-has-margin-bottom-none">.fd-has-margin-bottom-none</span>
+<span class="fd-has-margin-medium fd-has-margin-left-none">.fd-has-margin-left-none</span>
 
 <hr>
 
 <h3> Padding helper classes</h3>
-<span class="fd-has-margin-base fd-has-padding-none">.fd-has-padding-none</span>
-<span class="fd-has-margin-base fd-has-padding-tiny">.fd-has-padding-tiny</span>
-<span class="fd-has-margin-base fd-has-padding-small">.fd-has-padding-small</span>
-<span class="fd-has-margin-base fd-has-padding-medium">.fd-has-padding-medium</span>
-<span class="fd-has-margin-base fd-has-padding-large">.fd-has-padding-large</span>
+<span class="fd-has-padding-none">.fd-has-padding-none</span>
+<span class="fd-has-padding-tiny">.fd-has-padding-tiny</span>
+<span class="fd-has-padding-small">.fd-has-padding-small</span>
+<span class="fd-has-padding-medium">.fd-has-padding-medium</span>
+<span class="fd-has-padding-large">.fd-has-padding-large</span>
 
 <hr>
 
 <h3> Removing padding by side using helper classes</h3>
-<span class="fd-has-margin-base fd-has-padding-tiny fd-has-padding-top-none">.fd-has-padding-top-none</span>
-<span class="fd-has-margin-base fd-has-padding-small fd-has-padding-right-none">.fd-has-padding-right-none</span>
-<span class="fd-has-margin-base fd-has-padding-medium fd-has-padding-bottom-none">.fd-has-padding-bottom-none</span>
-<span class="fd-has-margin-base fd-has-padding-large fd-has-padding-left-none">.fd-has-padding-left-none</span>
+<span class="fd-has-padding-medium fd-has-padding-top-none">.fd-has-padding-top-none</span>
+<span class="fd-has-padding-medium fd-has-padding-right-none">.fd-has-padding-right-none</span>
+<span class="fd-has-padding-medium fd-has-padding-bottom-none">.fd-has-padding-bottom-none</span>
+<span class="fd-has-padding-medium fd-has-padding-left-none">.fd-has-padding-left-none</span>
 {% endcapture %}
-{% include display-component.html component=margin %}
+{% include display-component.html component=margin class="margin-padding-helpers"%}
 
 
 ## Other Utilities

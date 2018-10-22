@@ -1,18 +1,5 @@
 @import "./../settings";
-.#{$fd-namespace}-has-margin-none {
-    margin: 0 !important;
-}
-.#{$fd-namespace}-has-padding-none {
-    padding: 0 !important;
-}
-@each $item in top, right, bottom, left {
-    .#{$fd-namespace}-has-margin-#{$item}-none {
-        margin-#{$item}: 0 !important;
-    }
-    .#{$fd-namespace}-has-padding-#{$item}-none {
-        padding-#{$item}: 0 !important;
-    }
-}
+
 @each $key, $value in $fd-spacing {
     .#{$fd-namespace}-has-height-#{$key} {
         height: #{$value} !important;
@@ -61,7 +48,6 @@
       padding-right: #{$value} !important;
   }
 
-
   @each $item in top, right, bottom, left {
       .#{$fd-namespace}-has-margin-#{$item}-#{$key} {
           margin-#{$item}: #{$value} !important;
@@ -88,6 +74,20 @@
               padding-right: #{$value} !important;
             }
           }
+      }
+  }
+  .#{$fd-namespace}-has-margin-none {
+      margin: 0 !important;
+  }
+  .#{$fd-namespace}-has-padding-none {
+      padding: 0 !important;
+  }
+  @each $item in top, right, bottom, left {
+      .#{$fd-namespace}-has-margin-#{$item}-none {
+          margin-#{$item}: 0 !important;
+      }
+      .#{$fd-namespace}-has-padding-#{$item}-none {
+          padding-#{$item}: 0 !important;
       }
   }
 

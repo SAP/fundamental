@@ -12,29 +12,73 @@ summary: Spacing helps content to breathe as well as create hierarchy and depth.
 <div class="fd-container">
 	<div class="fd-col--8">
 		<h2 class="docs-header-h2" id="spacing-sizes">Base Unit of 4</h2>
-
 		<p>All spacing is divisible by 4, the list below includes the most common  spacing increments we use. </p>
-
-		<h3 class="docs-header-h3">8px | tiny</h3>
-		<div style="height: 8px;" class="docs-spacing-example"></div>
-
-		<h3 class="docs-header-h3">16px | small</h3>
-		<div style="height: 16px;" class="docs-spacing-example"></div>
-
-		<h3 class="docs-header-h3">32px | medium</h3>
-		<div style="height: 32px;" class="docs-spacing-example"></div>
-
-		<h3 class="docs-header-h3">48px | large</h3>
-		<div style="height: 48px;" class="docs-spacing-example"></div>
 	</div>
 </div>
 
+<table class="docs-type__scale">
+  <tr>
+    <td class="fd-has-type-0 docs-type__scale--preview"><div style="height: 8px;" class="docs-spacing-example"></div></td>
+    <td class="fd-has-type-1 docs-type__scale--preview"><div style="height: 16px;" class="docs-spacing-example"></div></td>
+    <td class="fd-has-type-2 docs-type__scale--preview"><div style="height: 32px;" class="docs-spacing-example"></div></td>
+    <td class="fd-has-type-3 docs-type__scale--preview"><div style="height: 48px;" class="docs-spacing-example"></div></td>
+  </tr>
+  <tr>
+    <td class="fd-has-type-1 docs-type__scale--info"><strong>Tiny</strong><br>8px</td>
+    <td class="fd-has-type-1 docs-type__scale--info" ><strong>Small</strong><br>16px</td>
+    <td class="fd-has-type-1 docs-type__scale--info" ><strong>Medium</strong><br>32px</td>
+    <td class="fd-has-type-1 docs-type__scale--info" ><strong>Large</strong><br>48px</td>
+  </tr>
+</table>
 
-<hr>
+<br>
+
+<h2 class="docs-header-h2" id="spacing-usage">Spacing Usage for <code>padding</code> </h2>
+
+<p><a href="/guides/how-to-use-scss.html#spacing-function" target="_blank">SCSS Mixin</a>: <code>@include fd-space([$size)</code> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/guides/design-system-utilities.html#margin-and-padding" target="_blank">Helper class</a>: <code>.fd-has-padding-[size]</code></p>
+{% capture spacing-preview %}
+
+<div class="fd-has-padding-tiny">
+    <code>padding</code> using <code>tiny</code> spacing option
+</div>
+<div class="fd-has-padding-small">
+    <code>padding</code> using <code>small</code> spacing option
+</div>
+<div class="fd-has-padding-medium">
+    <code>padding</code> using <code>medium</code> spacing option
+</div>
+<div class="fd-has-padding-large">
+    <code>padding</code> using <code>large</code> spacing option
+</div>
+{% endcapture %}
+{% include display-component.html component=spacing-preview class="spacing-example" %}
+
+
+<h2 class="docs-header-h2" id="spacing-usage">Spacing Usage for <code>margin</code> </h2>
+
+<p><a href="/guides/how-to-use-scss.html#spacing-function" target="_blank">SCSS Mixin</a>: <code>@include fd-space([$size)</code> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/guides/design-system-utilities.html#margin-and-padding" target="_blank">Helper class</a>: <code>.fd-has-margin-[size]</code></p>
+{% capture spacing-preview %}
+
+<div class="fd-has-margin-tiny">
+    <code>margin</code> using <code>tiny</code> spacing option
+</div>
+<div class="fd-has-margin-small">
+    <code>margin</code> using <code>small</code> spacing option
+</div>
+<div class="fd-has-margin-medium">
+    <code>margin</code> using <code>medium</code> spacing option
+</div>
+<div class="fd-has-margin-large">
+    <code>margin</code> using <code></code> spacing option
+</div>
+{% endcapture %}
+{% include display-component.html component=spacing-preview class="spacing-example" %}
+
+<br>
 
 <div class="fd-container">
 	<div class="fd-col--8">
-		<h2 class="docs-header-h2" id="spacing-function">Understanding Sections & Panels </h2>
+		<h2 class="docs-header-h2" id="spacing-function">Sections & Panels Spacing</h2>
 		<p>For common content areas such as lists, tables, cards, or forms, there is a system of sections & panels that
 		work together to create a consistent visual layout.</p>
 
