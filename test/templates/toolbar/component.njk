@@ -57,7 +57,7 @@ toolbar:
             {%- for item in properties.view.items %}
             {{  button(
                     { icon: item.icon },
-                    modifier={ block: ['text', 'icon'] },
+                    modifier={ block: ['standard'] },
                     aria={ label: item.label, pressed: loop.first }
                 )
             }}
@@ -89,7 +89,7 @@ toolbar:
         <span>Color: <strong>Red</strong></span>
         {{  button(
                 { icon: 'filterremove' },
-                modifier={ block: ['text','small','icon'] },
+                modifier={ block: ['light','compact'] },
                 aria={ label: 'Clear' }
             )
         | indent(16) }}
@@ -98,7 +98,7 @@ toolbar:
         <span>Size: <strong>Small</strong></span>
         {{  button(
                 { icon: 'filterremove' },
-                modifier={ block: ['text','small','icon'] },
+                modifier={ block: ['light','compact'] },
                 aria={ label: 'Clear' }
             )
         | indent(16) }}

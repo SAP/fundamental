@@ -169,14 +169,14 @@ calendar:
         {{  button(
           {
             icon: 'slim-arrow-left' },
-                modifier={ block: ['toolbar','xs'] },
+                modifier={ block: ['standard','light','compact'] },
                 aria={ label: 'Previous', disabled: properties.dates.disablePast })
         }}
       </div>
       <div class="fd-calendar__action">
         {{  button(
             { label: month.name },
-            modifier={ block: ['secondary','s'] },
+            modifier={ block: ['light','compact'] },
             aria={ selected: properties.months.show === true, expanded: properties.months.show === true,  controls: ids.months }
 
           )
@@ -186,7 +186,7 @@ calendar:
         {{  button(
           {
             label: year },
-            modifier={ block: ['secondary','s']
+            modifier={ block: ['light','compact']
           },
           aria={ selected: properties.years.show === true, expanded: properties.years.show === true, controls: ids.years }
           )
@@ -196,7 +196,7 @@ calendar:
         {{ button(
           {
             icon: 'slim-arrow-right' },
-                modifier={ block: ['toolbar','xs'] },
+                modifier={ block: ['standard','light','compact'] },
                 aria={ label: 'Next' })
         }}
       </div>

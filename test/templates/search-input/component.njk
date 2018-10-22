@@ -15,7 +15,7 @@
     size="")
 -%}
 {%- set _id = utils.id() %}
-<div class="fd-search-input">
+<div class="fd-search-input{{ classes|classes}}">
     <div class="fd-popover">
         <div class="fd-popover__control">
             <div class="fd-combobox-control" aria-controls="{{_id}}" aria-expanded="false" aria-haspopup="true">
@@ -33,7 +33,7 @@
                           icon: 'search'
                         },
                         modifier={
-                          block: ['secondary']
+                          block: ['light']
                         },size=size
                       )
                   },size=size)

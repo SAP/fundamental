@@ -3,6 +3,10 @@
 {% import "../layout/component.njk" as layout %}
 {% from "./../toggle/component.njk" import toggle %}
 {% from "./../button/component.njk" import button %}
+{% from "./../button-group/component.njk" import button_group %}
+{% from "./../dropdown/component.njk" import dropdown %}
+{% from "./../menu/component.njk" import menu %}
+{% from "./../tag/component.njk" import tag %}
 {% from "./../combobox-input/component.njk" import combobox_input %}
 {% from "./../date-picker/component.njk" import date_picker %}
 {% from "./../input-group/component.njk" import input_group %}
@@ -18,6 +22,57 @@
 
 {% set hide_sidebar = true %}
 {% block page_content %}
+
+
+
+{% call layout.section() -%}
+{% call layout.panel() -%}
+  {% call layout.panel_header({ title: "Lorem ipsum dolor", description: "Suspendisse volutpat felis lectus nec consequat" }) -%}
+      {% call layout.panel_actions() -%}
+
+        {{ button({label: 'Filter',icon: 'add-filter' },modifier={block: ['standard','compact']}) }}
+        {{ search_input(
+            properties={
+                value: "Ba",
+                placeholder: "Placeholder Text"
+            },
+            size="compact",
+            classes="has-display-inline-block")
+        }}
+
+        {{ dropdown(properties={
+          label: "Newest",
+          icon: "sort",
+          body: menu(properties={
+            items: [
+                { "label": "Oldest" },
+                { "label": "Last 90 Days" },
+                { "label": "This Year" }
+              ]
+            })
+        },modifier={ block: ['standard', 'compact'], button: btn })
+        }}
+        {% call button_group() -%}
+          {{button({ icon: "grid" },size="compact",modifier={block: []},aria={  })}}
+          {{button({ icon: "list" },size="compact",modifier={block: []},aria={ "pressed": true })}}
+        {%- endcall %}
+      {%- endcall %}
+  {%- endcall %}
+  {% call layout.panel_filters(aria={ hidden: false }) -%}
+    {%- for i in range(0, 5) -%}
+      {{  tag({label: "Bibendum"}) }}
+      {% endfor %}
+      {{  button({label: 'Clear All'},modifier={block: ['secondary','s']}) }}
+  {%- endcall %}
+  {% call layout.panel_body() -%}
+
+
+  {%- endcall %}
+{%- endcall %}
+{%- endcall %}
+
+
+
 
 {% call layout.section() -%}
 {% call layout.panel() -%}

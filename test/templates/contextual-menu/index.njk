@@ -24,7 +24,7 @@
     {% set example %}
 {%- set _id = utils.id() %}
 <div class="fd-popover fd-contextual-menu">
-    {{ button({ icon: "vertical-grip" }, modifier={ block: ["secondary"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
+    {{ button({ icon: "vertical-grip" }, modifier={ block: ["light"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
     {{  popover_body(properties={
             id: _id,
             body: menu(properties={
@@ -43,7 +43,7 @@
 
 {% set _id = utils.id() %}
 <div class="fd-popover fd-contextual-menu">
-{{ button({ icon: "vertical-grip" }, state={ disabled: true }, modifier={ block: ["secondary"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
+{{ button({ icon: "vertical-grip" }, state={ disabled: true }, modifier={ block: ["light"] }, aria={ controls: _id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
 </div>
 
 {% set _id = utils.id() %}
