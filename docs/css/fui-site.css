@@ -3093,6 +3093,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       line-height: 1; }
     .fd-alert__close:focus, .fd-alert__close.is-focus {
       box-shadow: 0 0 0 1px #7bbaf9; }
+  .fd-alert[dir="rtl"] .fd-alert__close {
+    left: 4px;
+    right: auto; }
   .fd-alert--warning {
     border-color: #E9730C;
     background-color: #fef7f1; }
@@ -3102,6 +3105,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-alert--dismissible {
     position: relative;
     padding-right: 48px; }
+    .fd-alert--dismissible[dir="rtl"] {
+      padding-right: 12px; }
 
 /*
   @mixin fd-type mixin
