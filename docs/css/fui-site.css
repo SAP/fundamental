@@ -1943,15 +1943,21 @@
 .sap-icon--increase-line-height::before {
   content: ""; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 :root {
   --fd-color-action-1: #0a6ed1;
   --fd-color-action-2: white;
-  --fd-color-shell-1: #354a5f;
-  --fd-color-shell-2: #d1e8ff;
   --fd-color-text-1: #32363a;
   --fd-color-text-2: #51555a;
   --fd-color-text-3: #6a6d70;
   --fd-color-text-4: #74777a;
+  --fd-color-text-5: white;
   --fd-color-background-1: #edeef0;
   --fd-color-background-2: white;
   --fd-color-neutral-1: #fafafa;
@@ -1972,6 +1978,14 @@
   --fd-color-accent-8: #7ca10c;
   --fd-color-accent-9: #955ecf;
   --fd-color-accent-10: #6c8893;
+  --fd-color-accent-11: #2b78c5;
+  --fd-color-accent-12: #6367de;
+  --fd-color-accent-13: #984bd2;
+  --fd-color-accent-14: #c0399f;
+  --fd-color-accent-15: #db1f77;
+  --fd-color-accent-16: #66768a;
+  --fd-color-shell-1: #354a5f;
+  --fd-color-shell-2: #d1e8ff;
   --fd-color-action-hover: #085caf;
   --fd-color-action-selected: #0254a7;
   --fd-color-action-disabled: rgba(10, 110, 209, 0.4);
@@ -2093,6 +2107,8 @@ input[type=radio], input[type=checkbox] {
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
+  font-weight: 400;
+  margin-bottom: 12px;
   appearance: none;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
@@ -2139,6 +2155,13 @@ fieldset {
   padding: 0;
   margin: 0; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 input
 */
@@ -2149,6 +2172,8 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
+  font-weight: 400;
+  margin-bottom: 12px;
   appearance: none;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
@@ -2193,6 +2218,13 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
   input[type=text]::placeholder, input[type=password]::placeholder, input[type=email]::placeholder, input[type=url]::placeholder, input[type=search]::placeholder, input[type=tel]::placeholder, input[type=number]::placeholder, input[type=date]::placeholder, input[type=time]::placeholder, textarea::placeholder {
     color: #8d9194; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 textarea
 */
@@ -2203,6 +2235,8 @@ textarea {
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
+  font-weight: 400;
+  margin-bottom: 12px;
   appearance: none;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
@@ -2247,6 +2281,13 @@ textarea {
     border-width: 0 0 1px;
     border-radius: 0; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 select
 */
@@ -2257,6 +2298,8 @@ select {
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
+  font-weight: 400;
+  margin-bottom: 12px;
   appearance: none;
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
@@ -2344,6 +2387,13 @@ input[type=radio], input[type=checkbox] {
     border-color: #eeeeef;
     background-color: #fafafa; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 checkbox
 */
@@ -2366,6 +2416,13 @@ input[type="checkbox"]:checked::before {
 input[type="checkbox"][aria-disabled="true"]::before, input[type="checkbox"].is-disabled::before, input[type="checkbox"]:disabled::before {
   border-color: rgba(10, 110, 209, 0.4); }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 radio
 */
@@ -2388,6 +2445,13 @@ input[type="radio"] {
     input[type="radio"]:checked[disabled]::after, input[type="radio"]:checked[aria-disabled="true"]::after, input[type="radio"]:checked.is-disabled::after {
       background-color: rgba(10, 110, 209, 0.4); }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-section+(--full-bleed, --no-border)
     .fd-section__header
@@ -2423,6 +2487,7 @@ input[type="radio"] {
     font-size: 1.71429rem;
     line-height: 1.33333;
     font-weight: 400;
+    margin-bottom: 16px;
     color: #51555a;
     flex: 1;
     margin-bottom: 0; }
@@ -2432,6 +2497,13 @@ input[type="radio"] {
     display: flex;
     justify-content: center; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 .fd-container {
   margin-bottom: 12px;
   max-width: 1290px; }
@@ -2449,6 +2521,20 @@ input[type="radio"] {
     margin-left: auto;
     margin-right: auto; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*
 WHY THIS:
 Other semantic grids don't eaily allow for fixed gutter widths
@@ -2636,6 +2722,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       [class^="fd-col"] {
         margin-bottom: 0; } }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-ui+(--fixed)
     .fd-ui__header+(--fixed)
@@ -2694,6 +2787,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-ui__overlay {
     position: absolute; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-app
     .fd-app__sidebar
@@ -2725,6 +2825,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     flex: 1;
     overflow: auto; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 .fd-page {
   --fd-page-header-padding-x: var(--fd-padding-ui);
   display: flex;
@@ -2744,6 +2851,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     flex-grow: 1;
     margin-bottom: 32px; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-section+(--full-bleed, --no-border)
     .fd-section__header
@@ -2779,6 +2893,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     font-size: 1.71429rem;
     line-height: 1.33333;
     font-weight: 400;
+    margin-bottom: 16px;
     color: #51555a;
     flex: 1;
     margin-bottom: 0; }
@@ -2788,6 +2903,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     display: flex;
     justify-content: center; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-panel
     .fd-panel__header
@@ -2813,11 +2935,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     font-size: 0.85714rem;
     line-height: 1.33333;
     font-weight: 400;
+    margin-bottom: 8px;
     color: #6a6d70; }
   .fd-panel__title {
     font-size: 1.14286rem;
     line-height: 1.25;
     font-weight: 400;
+    margin-bottom: 12px;
     flex: 1;
     margin-bottom: 0;
     color: #32363a; }
@@ -2846,6 +2970,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     padding: 16px 24px;
     border-top: solid 1px #eeeeef; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-tile-grid+(--2col | --4col | --5col | --6col)
 */
@@ -2878,6 +3009,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         .fd-panel-grid--nogap > *, .fd-panel-grid--nogutter > * {
           box-shadow: none; } }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-overlay
 */
@@ -2900,6 +3038,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     transform: translate(-50%, 0);
     margin-top: 28px; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-alert+(--warning. --error)
     .fd-alert__close
@@ -2955,6 +3100,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       line-height: 1; }
     .fd-alert__close:focus, .fd-alert__close.is-focus {
       box-shadow: 0 0 0 1px #7bbaf9; }
+  .fd-alert[dir="rtl"] .fd-alert__close {
+    left: 4px;
+    right: auto; }
   .fd-alert--warning {
     border-color: #E9730C;
     background-color: #fef7f1; }
@@ -2964,7 +3112,16 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-alert--dismissible {
     position: relative;
     padding-right: 48px; }
+    .fd-alert--dismissible[dir="rtl"] {
+      padding-right: 12px; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-action-bar
 	.fd-action-bar__title
@@ -2990,6 +3147,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     font-size: 1rem;
     line-height: 1.42857;
     font-weight: 400;
+    margin-bottom: 12px;
     margin-bottom: 0;
     padding-top: 16px;
     padding-bottom: 16px;
@@ -2997,7 +3155,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     @media (min-width: 320px) {
       .fd-action-bar__header {
         white-space: nowrap;
-        width: calc(100%-10px);
+        width: calc(100% - 10px);
         overflow: hidden;
         text-overflow: ellipsis; } }
   .fd-action-bar__back {
@@ -3033,11 +3191,12 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     font-size: 1.71429rem;
     line-height: 1.33333;
     font-weight: 400;
+    margin-bottom: 16px;
     margin-bottom: 4px; }
     @media (min-width: 320px) {
       .fd-action-bar__title {
         white-space: nowrap;
-        width: calc(100%-10px);
+        width: calc(100% - 10px);
         overflow: hidden;
         text-overflow: ellipsis; } }
   .fd-action-bar__description {
@@ -3045,7 +3204,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     font-size: 1rem;
     line-height: 1.42857;
     font-weight: 400;
-    text-transform: none; }
+    margin-bottom: 12px; }
     @media (min-width: 320px) {
       .fd-action-bar__description {
         display: none !important; } }
@@ -3071,6 +3230,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       .fd-action-bar__actions > button:first-child {
         margin-left: 0; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-badge+(( --success | --warning | --error ), (--pill | --filled))
 */
@@ -3079,9 +3245,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   line-height: 1.42857;
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  font-size: 0.78571rem;
-  line-height: 1.45455;
+  font-size: 0.85714rem;
+  line-height: 1.33333;
   font-weight: 400;
+  margin-bottom: 8px;
   font-weight: 700;
   color: #6a6d70;
   text-transform: uppercase;
@@ -3111,6 +3278,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-badge--error {
     color: #ee0000; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-button+( (--small | --large), --icon, --text, --link, --action-bar)+( (.is-disabled | [aria-disabled=true]) | (.is-selected | [aria-selected=true] | (.is-pressed | [aria-pressed=true]))
 */
@@ -3133,6 +3307,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
+  margin-bottom: 12px;
   background-color: white;
   color: #0a6ed1;
   border: solid 1px #0a6ed1;
@@ -3289,6 +3464,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
+  margin-bottom: 12px;
   height: 32px;
   max-height: 32px;
   min-width: 32px;
@@ -3308,6 +3484,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-size: 0.85714rem;
   line-height: 1.33333;
   font-weight: 400;
+  margin-bottom: 8px;
   height: 24px;
   max-height: 24px;
   min-width: 24px;
@@ -3331,6 +3508,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
+  margin-bottom: 12px;
   height: 28px;
   max-height: 28px;
   min-width: 28px;
@@ -3350,6 +3528,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
+  margin-bottom: 12px;
   height: 40px;
   max-height: 40px;
   min-width: 40px;
@@ -3363,6 +3542,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     font-size: 1.42857rem;
     line-height: 1; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*
 WHY THIS:
 Other semantic grids don't eaily allow for fixed gutter widths
@@ -3407,6 +3593,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
           |  box  | |  box  | |  box  | |  box  |
 
 */
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-breadcrumb
     .fd-breadcrumb__item
@@ -3417,9 +3610,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   line-height: 1.42857;
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  font-size: 0.92857rem;
-  line-height: 1.23077;
+  font-size: 0.85714rem;
+  line-height: 1.33333;
   font-weight: 400;
+  margin-bottom: 8px;
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
@@ -3434,6 +3628,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-breadcrumb__link {
     margin-right: 16px; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-dropdown+()
     .fd-dropdown__control+([disabled])
@@ -3484,17 +3685,26 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-dropdown__control.fd-button--s {
       padding-top: 3px; }
       .fd-dropdown__control.fd-button--s::after {
+        font-size: 14px;
+        line-height: 1.42857; }
+      .fd-dropdown__control.fd-button--s::after {
         margin-top: -3px;
         height: 26px;
-        padding-top: 6px; }
+        padding-top: 4.8px; }
     .fd-dropdown__control.fd-button--compact {
       padding-top: 3px; }
       .fd-dropdown__control.fd-button--compact::after {
+        font-size: 14px;
+        line-height: 1.42857; }
+      .fd-dropdown__control.fd-button--compact::after {
         margin-top: -3px;
         height: 30px;
-        padding-top: 7px; }
+        padding-top: 6px; }
     .fd-dropdown__control.fd-button--l {
       padding-top: 3px; }
+      .fd-dropdown__control.fd-button--l::after {
+        font-size: 14px;
+        line-height: 1.42857; }
       .fd-dropdown__control.fd-button--l::after {
         margin-top: -3px;
         width: 38px;
@@ -3555,7 +3765,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     padding: 8px 24px;
     font-size: 0.78571rem;
     line-height: 1.45455;
+
     font-weight: 400;
+    margin-bottom: 8px;
     text-transform: uppercase;
     color: #6a6d70;
     background: #fafafa; }
@@ -3570,6 +3782,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       color: #51555a;
       background-color: rgba(10, 110, 209, 0.07); }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-form
     .fd-form__set?
@@ -3620,6 +3839,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         font-size: 1rem;
         line-height: 1.42857;
         font-weight: 400;
+        margin-bottom: 12px;
         margin-bottom: 0;
         vertical-align: middle;
         display: flex;
@@ -3643,9 +3863,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     line-height: 1.42857;
     color: #32363a;
     font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-    font-size: 0.92857rem;
-    line-height: 1.23077;
+    font-size: 0.85714rem;
+    line-height: 1.33333;
     font-weight: 400;
+    margin-bottom: 8px;
     display: block;
     margin-bottom: 8px;
     border: 0;
@@ -3663,9 +3884,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-form__message {
     clear: both;
     display: block;
-    font-size: 0.92857rem;
-    line-height: 1.23077;
+    font-size: 0.85714rem;
+    line-height: 1.33333;
     font-weight: 400;
+    margin-bottom: 8px;
     color: #51555a;
     padding: 8px 0;
     position: relative; }
@@ -3707,6 +3929,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         content: "";
         color: #ee0000; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-input-group+(--inline)
     .fd-input-group__addon+()
@@ -3809,6 +4038,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       font-size: 1rem;
       line-height: 1.42857;
       font-weight: 400;
+      margin-bottom: 12px;
       color: #0a6ed1;
       position: relative; }
       .fd-input-group__button--step-up::before, .fd-input-group__button--step-down::before {
@@ -3832,6 +4062,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       position: relative;
       left: -44px; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-label+(--success | --warning | --error)
 */
@@ -3843,6 +4080,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-size: 0.85714rem;
   line-height: 1.33333;
   font-weight: 400;
+  margin-bottom: 8px;
   font-weight: 700;
   color: #6a6d70;
   text-transform: uppercase;
@@ -3858,6 +4096,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-label--error {
     color: #ee0000; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-pagination
 */
@@ -3868,7 +4113,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
-  font-weight: 400; }
+  font-weight: 400;
+  margin-bottom: 12px; }
   .fd-pagination__total {
     color: #51555a;
     margin-right: 8px; }
@@ -3916,6 +4162,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       color: #0a6ed1;
       font-weight: 700; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-table
     thead
@@ -3947,6 +4200,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     font-size: 0.85714rem;
     line-height: 1.33333;
     font-weight: 400;
+    margin-bottom: 8px;
     color: #6a6d70;
     background-color: #fafafa;
     text-transform: uppercase; }
@@ -4039,6 +4293,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-table--fixed td {
       min-width: 200px; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-tabs+()
     .fd-tabs__item?
@@ -4063,6 +4324,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     font-size: 1rem;
     line-height: 1.42857;
     font-weight: 400;
+    margin-bottom: 12px;
     cursor: pointer;
     color: #0a6ed1; }
     .fd-tabs__link:link {
@@ -4092,6 +4354,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-tabs__panel.is-expanded, .fd-tabs__panel[aria-expanded="true"] {
     display: block; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-modal
     .fd-modal__header
@@ -4118,6 +4387,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     font-size: 1.14286rem;
     line-height: 1.25;
     font-weight: 400;
+    margin-bottom: 12px;
     margin-bottom: 0; }
   .fd-modal__close {
     position: absolute;
@@ -4170,6 +4440,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     text-align: right;
     border-top: 1px solid #eeeeef; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-tree+(--header)
     .fd-tree__group+(--sublevel-1...-6, ([aria-hidden] | .is-hidden))
@@ -4225,6 +4502,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       font-size: 0.85714rem;
       line-height: 1.33333;
       font-weight: 400;
+      margin-bottom: 8px;
       color: #6a6d70;
       background-color: #edeef0;
       text-transform: uppercase; }
@@ -4313,6 +4591,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-tree a:hover {
       color: #0a6ed1; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-list-group
   .fd-list-group__item
@@ -4344,6 +4629,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     margin-bottom: -20px;
     right: -16px; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-tooltip
     .fd-tooltip__content+(left, right, bottom-left, bottom-right)
@@ -4373,6 +4665,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     font-size: 0.85714rem;
     line-height: 1.33333;
     font-weight: 400;
+    margin-bottom: 8px;
     background: white;
     padding: 12px;
     display: block;
@@ -4427,6 +4720,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     opacity: 1;
     overflow: visible; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-nav+(--vertical)
     .fd-nav__item
@@ -4450,6 +4750,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-nav__link.is-selected, .fd-nav__link[aria-selected="true"] {
       color: #32363a; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-tabs+()
     .fd-tabs__item?
@@ -4474,6 +4781,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     font-size: 1rem;
     line-height: 1.42857;
     font-weight: 400;
+    margin-bottom: 12px;
     cursor: pointer;
     color: #0a6ed1; }
     .fd-tabs__link:link {
@@ -4503,6 +4811,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-tabs__panel.is-expanded, .fd-tabs__panel[aria-expanded="true"] {
     display: block; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-toggle+(--no-border)
     .fd-toggle__content+()
@@ -4603,6 +4918,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       .fd-toggle--l input:checked + .fd-toggle__switch {
         left: calc(100% - 32px); }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-spinner+(.is-hidden|[aria-hidden=true])
 
@@ -4680,6 +5002,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   80% {
     transform: scaleY(1); } }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-image+((--circle), (--s|--m|--l))
 */
@@ -4722,6 +5051,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-image--circle {
   border-radius: 50%; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-global-nav+(--no-border)
     .fd-global-nav__content+()
@@ -4768,9 +5104,10 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     background-size: contain; }
   .fd-global-nav__product-name {
     padding: 20px 0 0 8px;
-    font-size: 0.92857rem;
-    line-height: 1.23077;
-    font-weight: 600; }
+    font-size: 0.85714rem;
+    line-height: 1.33333;
+    font-weight: 400;
+    margin-bottom: 8px; }
   .fd-global-nav__launchpad {
     padding-top: 0;
     max-width: 400px;
@@ -4824,6 +5161,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-global-nav.is-disabled, .fd-global-nav[disabled] {
     opacity: 0.5; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-side-nav
     .fd-side-nav__group
@@ -4847,9 +5191,10 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     display: block;
     margin-bottom: 0;
     padding: 8px 20px;
-    font-size: 0.78571rem;
-    line-height: 1.45455;
+    font-size: 0.85714rem;
+    line-height: 1.33333;
     font-weight: 400;
+    margin-bottom: 8px;
     text-transform: uppercase;
     color: #6a6d70;
     background: #fafafa; }
@@ -4872,7 +5217,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     display: block;
     font-size: 1rem;
     line-height: 1.42857;
-    font-weight: 400; }
+    font-weight: 400;
+    margin-bottom: 12px; }
     .fd-side-nav__link:hover, .fd-side-nav__sublink:hover {
       background-color: #fafafa; }
     .fd-side-nav__link.is-selected, .fd-side-nav__link.is-expanded, .fd-side-nav__link[aria-selected="true"], .fd-side-nav__link[aria-expanded="true"], .fd-side-nav__sublink.is-selected, .fd-side-nav__sublink.is-expanded, .fd-side-nav__sublink[aria-selected="true"], .fd-side-nav__sublink[aria-expanded="true"] {
@@ -4899,6 +5245,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     .fd-side-nav--icons .fd-side-nav__icon {
       padding-right: 0; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-link
 */
@@ -4918,6 +5271,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     color: rgba(10, 110, 209, 0.4);
     border-bottom-color: rgba(10, 110, 209, 0.4); }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-image+((--circle), (--s|--m|--l))
 */
@@ -4943,10 +5303,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   max-height: 24px;
   min-width: 24px;
   min-height: 24px;
-  font-size: 0.78571rem;
-  line-height: 1.45455;
+  font-size: 0.85714rem;
+  line-height: 1.33333;
   font-weight: 400;
-  font-weight: 700;
+  margin-bottom: 8px;
+  font-weight: 400;
   font-stretch: condensed;
   line-height: 24px; }
   .fd-identifier--s::before {
@@ -4964,6 +5325,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
+  margin-bottom: 12px;
   line-height: 36px; }
   .fd-identifier--m::before {
     font-size: 1.42857rem;
@@ -4980,6 +5342,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   font-size: 1.28571rem;
   line-height: 1.33333;
   font-weight: 400;
+  margin-bottom: 12px;
   line-height: 48px; }
   .fd-identifier--l::before {
     font-size: 1.71429rem;
@@ -4993,6 +5356,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   background-color: transparent;
   color: #32363a; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-mega-menu+(--no-border)
     .fd-mega-menu__content+()
@@ -5027,9 +5397,10 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     display: block;
     margin-bottom: 0;
     padding: 8px 20px;
-    font-size: 0.78571rem;
-    line-height: 1.45455;
+    font-size: 0.85714rem;
+    line-height: 1.33333;
     font-weight: 400;
+    margin-bottom: 8px;
     text-transform: uppercase;
     color: #6a6d70;
     background: #fafafa; }
@@ -5062,7 +5433,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     display: block;
     font-size: 1rem;
     line-height: 1.42857;
-    font-weight: 400; }
+    font-weight: 400;
+    margin-bottom: 12px; }
     .fd-mega-menu__link:hover, .fd-mega-menu__sublink:hover {
       background-color: #fafafa; }
     .fd-mega-menu__link.is-selected, .fd-mega-menu__link.is-expanded, .fd-mega-menu__link[aria-selected="true"], .fd-mega-menu__link[aria-expanded="true"], .fd-mega-menu__sublink.is-selected, .fd-mega-menu__sublink.is-expanded, .fd-mega-menu__sublink[aria-selected="true"], .fd-mega-menu__sublink[aria-expanded="true"] {
@@ -5085,6 +5457,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-mega-menu.is-disabled, .fd-mega-menu[disabled] {
     opacity: 0.5; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 .fd-menu {
   font-size: 14px;
   line-height: 1.42857;
@@ -5105,7 +5484,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     padding: 8px 24px;
     font-size: 0.78571rem;
     line-height: 1.45455;
+
     font-weight: 400;
+    margin-bottom: 8px;
     text-transform: uppercase;
     color: #6a6d70;
     background: #fafafa; }
@@ -5139,6 +5520,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     .fd-menu__link:hover {
       color: #085caf; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-button-group+()
     .fd-button
@@ -5161,6 +5549,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
       border-top-left-radius: 0;
       border-bottom-left-radius: 0; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-tile+()
   .fd-tile__media+()
@@ -5197,6 +5592,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     font-size: 1rem;
     line-height: 1.42857;
     font-weight: 400;
+    margin-bottom: 12px;
     color: #51555a;
     margin-bottom: 0; }
   .fd-tile__actions {
@@ -5205,6 +5601,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
       min-width: auto;
       text-align: left; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-product-tile+()
   .fd-product-tile__media+()
@@ -5238,9 +5641,17 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     font-size: 1.14286rem;
     line-height: 1.25;
     font-weight: 400;
+    margin-bottom: 12px;
     color: #32363a;
     margin-bottom: 0; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-tile-grid+(--2col | --4col | --5col | --6col)
 */
@@ -5275,6 +5686,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
       .fd-tile-grid--6col {
         grid-template-columns: repeat(6, 1fr); } }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-tag+(--no-border)
     .fd-tag__content+()
@@ -5288,6 +5706,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   font-size: 0.85714rem;
   line-height: 1.33333;
   font-weight: 400;
+  margin-bottom: 8px;
   color: #51555a;
   background-color: rgba(10, 110, 209, 0.07);
   line-height: 24px;
@@ -5327,6 +5746,13 @@ see layouts/panel-grid
 /*
 see layouts/panel
 */
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-calendar+()
     .fd-calendar__header
@@ -5342,9 +5768,10 @@ see layouts/panel
             .fd-calendar__text
 */
 .fd-calendar .fd-calendar__column-header, .fd-calendar .fd-calendar__item {
-  font-size: 0.92857rem;
-  line-height: 1.23077;
+  font-size: 0.85714rem;
+  line-height: 1.33333;
   font-weight: 400;
+  margin-bottom: 8px;
   color: #0254a7;
   background-color: white;
   height: 36px;
@@ -5460,11 +5887,19 @@ see layouts/panel
   grid-template-columns: repeat(4, 1fr); }
 
 .fd-calendar .fd-calendar__day-of-week {
-  font-size: 0.78571rem;
-  line-height: 1.45455;
+  font-size: 0.85714rem;
+  line-height: 1.33333;
   font-weight: 400;
+  margin-bottom: 8px;
   color: #6a6d70; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-status-label+(--available, --away, --busy, --offline, --success, --warning, --error)
 */
@@ -5579,6 +6014,13 @@ see layouts/panel
   .fd-status-label--error {
     color: #ee0000; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 .fd-popover {
   font-size: 14px;
   line-height: 1.42857;
@@ -5610,6 +6052,13 @@ see layouts/panel
       opacity: 0;
       visibility: hidden; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-date-picker+(--no-border)
     .fd-date-picker__content+()
@@ -5618,6 +6067,13 @@ see layouts/panel
 .fd-date-picker .fd-popover__body {
   padding: 0 12px; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 .fd-time__item {
   display: inline-block;
   max-width: 40px;
@@ -5633,6 +6089,13 @@ see layouts/panel
     padding-right: 8px;
     text-align: center; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-time-picker+(--no-border)
     .fd-time-picker__content+()
@@ -5643,6 +6106,13 @@ see layouts/panel
   min-width: 0;
   top: 36px; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-localization-editor+(--no-border)
     .fd-localization-editor__content+()
@@ -5665,8 +6135,22 @@ see layouts/panel
   .fd-localization-editor.is-disabled, .fd-localization-editor[disabled] {
     opacity: 0.5; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 input-addon
+*/
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
 */
 /*!
 .fd-combobox
@@ -5679,6 +6163,13 @@ input-addon
 .fd-combobox-input .fd-menu {
   display: block; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-search-input
 */
@@ -5690,6 +6181,13 @@ input-addon
 .fd-search-input .fd-menu {
   display: block; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 /*!
 .fd-multi-input
 */
@@ -5737,50 +6235,60 @@ input-addon
 .fd-has-border-radius-50percent {
   border-radius: 50% !important; }
 
-.fd-has-type-minus-3 {
-  font-size: 0.78571rem;
-  line-height: 1.45455;
-  font-weight: 400; }
-
-.fd-has-type-minus-2 {
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
+.fd-has-type-minus-1 {
   font-size: 0.85714rem;
   line-height: 1.33333;
-  font-weight: 400; }
-
-.fd-has-type-minus-1 {
-  font-size: 0.92857rem;
-  line-height: 1.23077;
-  font-weight: 400; }
+  font-weight: 400;
+  margin-bottom: 8px; }
 
 .fd-has-type-0 {
   font-size: 1rem;
   line-height: 1.42857;
-  font-weight: 400; }
+  font-weight: 400;
+  margin-bottom: 12px; }
 
 .fd-has-type-1 {
   font-size: 1.14286rem;
   line-height: 1.25;
-  font-weight: 400; }
+  font-weight: 400;
+  margin-bottom: 12px; }
 
 .fd-has-type-2 {
   font-size: 1.28571rem;
   line-height: 1.33333;
-  font-weight: 400; }
+  font-weight: 400;
+  margin-bottom: 12px; }
 
 .fd-has-type-3 {
-  font-size: 1.71429rem;
-  line-height: 1.33333;
-  font-weight: 400; }
+  font-size: 1.42857rem;
+  line-height: 1.4;
+  font-weight: 400;
+  margin-bottom: 12px; }
 
 .fd-has-type-4 {
-  font-size: 2.14286rem;
-  line-height: 1.2;
-  font-weight: 300; }
+  font-size: 1.71429rem;
+  line-height: 1.33333;
+  font-weight: 400;
+  margin-bottom: 16px; }
 
 .fd-has-type-5 {
+  font-size: 2.57143rem;
+  line-height: 1.11111;
+  font-weight: 400;
+  margin-bottom: 20px; }
+
+.fd-has-type-6 {
   font-size: 3.42857rem;
   line-height: 1.08333;
-  font-weight: 400; }
+  font-weight: 400;
+  margin-bottom: 24px; }
 
 .fd-has-font-family-body {
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; }
@@ -5794,14 +6302,8 @@ input-addon
 .fd-has-font-weight-light {
   font-weight: 300; }
 
-.fd-has-font-weight-reg {
+.fd-has-font-weight-normal {
   font-weight: 400; }
-
-.fd-has-font-weight-med {
-  font-weight: 500; }
-
-.fd-has-font-weight-semi {
-  font-weight: 600; }
 
 .fd-has-font-weight-bold {
   font-weight: 700; }
@@ -5892,6 +6394,24 @@ input-addon
 
 .fd-has-color-accent-10 {
   color: #6c8893 !important; }
+
+.fd-has-color-accent-11 {
+  color: #2b78c5 !important; }
+
+.fd-has-color-accent-12 {
+  color: #6367de !important; }
+
+.fd-has-color-accent-13 {
+  color: #984bd2 !important; }
+
+.fd-has-color-accent-14 {
+  color: #c0399f !important; }
+
+.fd-has-color-accent-15 {
+  color: #db1f77 !important; }
+
+.fd-has-color-accent-16 {
+  color: #66768a !important; }
 
 .fd-has-color-shell,
 .fd-has-color-shell-1 {
@@ -6006,6 +6526,24 @@ input-addon
 
 .fd-has-background-color-accent-10 {
   background-color: #6c8893 !important; }
+
+.fd-has-background-color-accent-11 {
+  background-color: #2b78c5 !important; }
+
+.fd-has-background-color-accent-12 {
+  background-color: #6367de !important; }
+
+.fd-has-background-color-accent-13 {
+  background-color: #984bd2 !important; }
+
+.fd-has-background-color-accent-14 {
+  background-color: #c0399f !important; }
+
+.fd-has-background-color-accent-15 {
+  background-color: #db1f77 !important; }
+
+.fd-has-background-color-accent-16 {
+  background-color: #66768a !important; }
 
 .fd-has-background-color-shell,
 .fd-has-background-color-shell-1 {
@@ -6617,6 +7155,13 @@ input-addon
   [direction="rtl"] .fd-has-padding-after-large, .fd-has-padding-after-large[direction="rtl"] {
     padding-right: 48px !important; }
 
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
 .fd-has-clearfix::after {
   content: "";
   display: table;
@@ -6672,10 +7217,10 @@ input-addon
   grid-gap: 1px !important; }
 
 .has-accent-color {
-  color: black; }
+  color: #5FA8EF; }
 
 .has-accent-background {
-  background-color: black; }
+  background-color: #5FA8EF; }
 
 body {
   font-family: '72', sans-serif;
@@ -6759,6 +7304,7 @@ hr {
     font-size: 1.14286rem;
     line-height: 1.25;
     font-weight: 400;
+    margin-bottom: 12px;
     color: #fff !important;
     padding: 18px 20px 0 0;
     display: inline-block; }
@@ -6905,7 +7451,7 @@ hr {
     padding: 20px;
     border: none; }
     .docs-home_hero-btn:hover {
-      background-color: black;
+      background-color: #5FA8EF;
       text-decoration: none;
       box-shadow: none; }
   .docs-home_hero-version {
@@ -6972,7 +7518,7 @@ hr {
     .docs-home_panel-search-box .search-box__results-links a {
       font-size: 20px; }
     .docs-home_panel-search-box .search-box__results-links a:hover {
-      color: black;
+      color: #5FA8EF;
       background: transparent;
       text-decoration: none; }
   .docs-home_panel-resources-link {
@@ -7162,8 +7708,7 @@ hr {
 
 .docs-type_header {
   font-size: 13px;
-  font-weight: bold;
-  color: #9ba7b3; }
+  font-weight: bold; }
 
 .docs-type_drop-cap {
   float: left;
@@ -7208,6 +7753,17 @@ hr {
     font-size: 11px;
     font-weight: normal;
     line-height: 8px; }
+
+.docs-type__scale--preview {
+  text-align: center;
+  vertical-align: bottom;
+  padding: 0 20px 10px; }
+
+.docs-type__scale--info {
+  text-align: center;
+  vertical-align: bottom;
+  padding: 10px 20px 0;
+  border-top: solid 1px lightgray; }
 
 .docs-component-grid {
   display: grid;

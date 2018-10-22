@@ -50,7 +50,13 @@
     "hsl(186, 81%, 39%) / #13A4B4",
     "hsl(75, 86%, 34%) / #7CA10C",
     "hsl(269, 54%, 59%) / #955ECF",
-    "hsl(197, 15%, 50%) / #6C8893"
+    "hsl(197, 15%, 50%) / #6C8893",
+    "hsl(210, 64.2%, 47.1%) / #2B78C5",
+    "hsl(238, 65.1%, 62.9%) / #6367DE",
+    "hsl(274.2, 60%, 55.9%) / #984BD2",
+    "hsl(314.7, 54.2%, 48.8%) / #C0399F",
+    "hsl(331.9, 75.2%, 49%) / #DB1F77",
+    "hsl(213.3, 15%, 47.1%) / #66768A"
     ]
 } %}
 
@@ -75,7 +81,18 @@
     <h1>Color</h1>
 {% for group, values in colors %}
   <h2>{{ group }}</h2>
+
   {% for item in values %}
+  {% if group == "accent" %}
+    <h3>
+      {% if loop.first%}
+        3:1
+      {% endif %}
+{% if loop.index == 11 %}
+  4.5:1
+{% endif %}
+    </h3>
+  {% endif %}
     <span>{{ loop.index }} - {{ item }}</span>
 
 <br>    <div style="padding: 20px; border: 1px solid #ccc; background-color: var(--fd-color-{{ group }}-{{ loop.index }})">
@@ -150,28 +167,33 @@
 
 
 
-
 {% set specs = {
-    "-3": [ 11, 16, "body", "bold", "none" ],
-    "-2": [ 12, 16, "body", "reg", "none" ],
-    "-1": [ 13, 16, "body", "reg", "none" ],
-    "0": [ 14, 20, "body", "reg", "none" ],
-    "1": [ 16, 20, "body", "reg", "none" ],
-    "2": [ 19, 24, "body", "reg", "none" ],
-    "3": [ 23, 32, "body", "reg", "none" ],
-    "4": [ 30, 36, "body", "reg", "none" ],
-    "5": [ 45, 52, "header", "reg", "none" ]
+    "-1": [ 12, 16 ],
+    "0": [ 14, 20 ],
+    "1": [ 16, 20 ],
+    "2": [ 18, 24 ],
+    "3": [ 20, 28 ],
+    "4": [ 24, 32 ],
+    "5": [ 36, 40 ],
+    "6": [ 48, 52 ]
 } %}
+
 
 
 <div class="fd-container">
 
     <h1>Type Sizes</h1>
 
-    {% for i in ["-3","-2","-1","0","1","2","3","4","5"] | reverse %}
+
+    {% for i in ["-1","0","1","2","3","4","5","6"] | reverse %}
     {% set type = specs[i] %}
         <h2 style="margin-bottom:0;">{{i}}</h2>
-           {# — {{ "72Condensed" if type[2] == "header" else "72" }} {{ type[3] | capitalize }}{{ "bold" if type[2] == "medium" }} {{ type[0] }}px | Line-height {{ type[1] }}px #}
+<p>
+  <code>
+font-size: {{ (type[1]/16) | round(5) }}rem //{{ type[0] }}px, <br>
+line-height:
+  {{ (type[1]/type[0]) | round(5) }} //{{ type[1] }}px
+  </code>
          </p>
         <p class="fd-has-type{{ '-minus' if i < 0 }}-{{ i | abs if i != 0 else 'base' }}">
           {% if i == "5" %}
@@ -181,13 +203,13 @@
         {# </s> #}
           {% endif %}
         </p>
-        <br><br>
+        <br>
 
     {% endfor %}
 
 <p>
-  <strong>body</strong>
-   {# — 72 Reg 14px | Line height 20px #}
+  <strong>body</strong><br>
+  {{specs["0"][0]}}px/{{specs["1"][1]}}
 </p>
         <p>
     Nullam ut tincidunt nunc. Pellentesque metus lacus commodo eget justo ut rutrum varius nunc. Sed non rhoncus risus. Morbi sodales gravida pulvinar. Duis malesuada odio volutpat elementum vulputate massa magna scelerisque ante et accumsan tellus nunc in sem. Donec mattis arcu et velit aliquet non sagittis justo vestibulum. Suspendisse volutpat felis lectus nec consequat ipsum mattis id.
@@ -199,7 +221,7 @@
 
 {#
     <h2>Mixins</h2>
-    <h3><code>@mixin fd-type($size, $weight, $transform)</code></h3>
+    <h3><code>@mixin fd-type($size, $weight)</code></h3>
     <p>Each type size has default family, weight and transform rules built in. Passing the size alone will return all default rules.</p>
     <p>Example:<br>
     <pre>
@@ -214,7 +236,7 @@
     <p>Example:<br>
     <pre>
     .small-header {
-        @include fd-type("-3",reg,none);
+        @include fd-type("-1");
     }
     </pre>
     <table>
@@ -225,15 +247,11 @@
         </tr>
         <tr>
             <td>$size</td>
-            <td>-3,-2,-1,0 (default),1,2,3,4,5</td>
+            <td>-1,0 (default),1,2,3,4,5,6</td>
         </tr>
         <tr>
             <td>$weight</td>
-            <td>reg (default), med, semi</td>
-        </tr>
-        <tr>
-            <td>$transform</td>
-            <td>none (default), uppercase, lowercase</td>
+            <td>normal, med, semi</td>
         </tr>
     </table>
 
@@ -275,6 +293,7 @@
 
 <div class="fd-container">
   <h1>Fonts</h1>
+
   {% for i in ['header', 'body', 'code'] %}
       <span>
            <code>.fd-has-font-family-{{ i }}</code>
@@ -282,6 +301,12 @@
       <p class="fd-has-type-3 fd-has-font-family-{{ i }}">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
       <br>
   {% endfor %}
+
+  <h2 class="fd-has-font-family-body">72</h2>
+  <p class="fd-has-font-family-body">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+  a b c d e f g h i j k l m n o p q r s t u v w x y z
+  1 2 3 4 5 6 7 8 9 0
+  ​‘ ? ’ “ ! ” ( % ) [ # ] { @ } / & \ < - + ÷ × = > ® © $ € £ ¥ ¢ : ; , . *</p>
 </div>
 
 {% endblock %}

@@ -38,14 +38,16 @@ The float helper classes are used to control the element floats in the HTML elem
 Use these CSS classes to control the text size. Used mainly for content text, all standard components have the right text size by default.
 
 {% capture type-util %}
-<p class="fd-has-type-minus-3">This is text type size -3</p>
-<p class="fd-has-type-minus-2">This is text type size -2</p>
+<p class="fd-has-type">This is the default body type size</p>
+
 <p class="fd-has-type-minus-1">This is text type size -1</p>
-<p class="fd-has-type-base">This is text type size base</p>
+<p class="fd-has-type-0">This is text type size 0 (same as default)</p>
+<p class="fd-has-type-1">This is text type size 1</p>
 <p class="fd-has-type-2">This is text type size 2</p>
 <p class="fd-has-type-3">This is text type size 3</p>
 <p class="fd-has-type-4">This is text type size 4</p>
 <p class="fd-has-type-5">This is text type size 5</p>
+<p class="fd-has-type-6">This is text type size 5</p>
 {% endcapture %}
 {% include display-component.html component=type-util %}
 
@@ -66,11 +68,11 @@ Use these CSS classes to control the text size. Used mainly for content text, al
 
 used with `fd-has-font-family-header` for illustrate weight variants
 {% capture type-weight %}
-<p class="fd-has-font-family-header fd-has-font-weight-light">This is font with weight light</p>
-<p class="fd-has-font-family-header fd-has-font-weight-reg">This is font with weight regular</p>
-<p class="fd-has-font-family-header fd-has-font-weight-med">This is font with weight medium</p>
-<p class="fd-has-font-family-header fd-has-font-weight-semi">This is font with weight semi-bold</p>
-<p class="fd-has-font-family-header fd-has-font-weight-bold">This is font with weight bold</p>
+<p class="fd-has-font-weight-light">This is font with weight light</p>
+<p class="fd-has-font-weight-reg">This is font with weight regular</p>
+<p class="fd-has-font-weight-med">This is font with weight medium</p>
+<p class="fd-has-font-weight-semi">This is font with weight semi-bold</p>
+<p class="fd-has-font-weight-bold">This is font with weight bold</p>
 {% endcapture %}
 {% include display-component.html component=type-weight %}
 
@@ -93,7 +95,7 @@ A foreground color class applies the color property to the element for example `
 {: .docs-table}
 | Class structure                 | {group}-{shade} options |
 | ------------------------------- | ----------------------- |
-| Foreground Class: <br> `.fd-has-color-{group}-{shade}` <br><br> Background Class:<br>`.fd-has-background-color-{group}-{shade}` | `action` - `1`, `2` <br> `shell` - `1`, `2` <br> `text` - `1`, `2`, `3`, `4` <br> `background` - `1`, `2` <br> `neutral` - `1`, `2`, `3`, `4`  <br> `status` - `1`, `2`, `3`, `4` <br> `accent` - `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`|
+| Foreground Class: <br> `.fd-has-color-{group}-{shade}` <br><br> Background Class:<br>`.fd-has-background-color-{group}-{shade}` | `action` - `1`, `2` <br> `shell` - `1`, `2` <br> `text` - `1`, `2`, `3`, `4` <br> `background` - `1`, `2` <br> `neutral` - `1`, `2`, `3`, `4`  <br> `status` - `1`, `2`, `3`, `4` <br> `accent` - `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`|
 
 Please check the [colors page](colors.html){:target="_blank"} to see full color pallet.
 
@@ -105,7 +107,7 @@ Some examples of color helper classes.
 <p class="fd-has-color-action-2 fd-has-background-color-action-1">.fd-has-color-action-2</p>
 
 <h3>Shell Color Group</h3>
-<p class="fd-has-background-color-shell-1 fd-has-color-text-4">.fd-has-background-color-shell-1</p>
+<p class="fd-has-background-color-shell-1 fd-has-color-text-5">.fd-has-background-color-shell-1</p>
 <p class="fd-has-background-color-shell-1 fd-has-color-shell-2">.fd-has-color-shell-2</p>
 
 <h3>Text Color Group</h3>
@@ -124,22 +126,28 @@ Some examples of color helper classes.
 <p class="fd-has-background-color-neutral-4 fd-has-color-text-1">.fd-has-background-color-netural-4</p>
 
 <h3>Status Color Group</h3>
-<p class="fd-has-background-color-status-1 fd-has-color-text-4">.fd-has-background-color-status-1</p>
-<p class="fd-has-background-color-status-2 fd-has-color-text-4">.fd-has-background-color-status-2</p>
-<p class="fd-has-background-color-status-3 fd-has-color-text-4">.fd-has-background-color-status-3</p>
-<p class="fd-has-background-color-status-4 fd-has-color-text-4">.fd-has-background-color-status-4</p>
+<p class="fd-has-background-color-status-1 fd-has-color-text-5">.fd-has-background-color-status-1</p>
+<p class="fd-has-background-color-status-2 fd-has-color-text-5">.fd-has-background-color-status-2</p>
+<p class="fd-has-background-color-status-3 fd-has-color-text-5">.fd-has-background-color-status-3</p>
+<p class="fd-has-background-color-status-4 fd-has-color-text-5">.fd-has-background-color-status-4</p>
 
 <h3>Accent Color Group</h3>
-<p class="fd-has-background-color-accent-1 fd-has-color-text-4">.fd-has-background-color-accent-1</p>
-<p class="fd-has-background-color-accent-2 fd-has-color-text-4">.fd-has-background-color-accent-2</p>
-<p class="fd-has-background-color-accent-3 fd-has-color-text-4">.fd-has-background-color-accent-3</p>
-<p class="fd-has-background-color-accent-4 fd-has-color-text-4">.fd-has-background-color-accent-4</p>
-<p class="fd-has-background-color-accent-5 fd-has-color-text-4">.fd-has-background-color-accent-5</p>
-<p class="fd-has-background-color-accent-6 fd-has-color-text-4">.fd-has-background-color-accent-6</p>
-<p class="fd-has-background-color-accent-7 fd-has-color-text-4">.fd-has-background-color-accent-7</p>
-<p class="fd-has-background-color-accent-8 fd-has-color-text-4">.fd-has-background-color-accent-8</p>
-<p class="fd-has-background-color-accent-9 fd-has-color-text-4">.fd-has-background-color-accent-9</p>
-<p class="fd-has-background-color-accent-10 fd-has-color-text-4">.fd-has-background-color-accent-10</p>
+<p class="fd-has-background-color-accent-1 fd-has-color-text-5">.fd-has-background-color-accent-1</p>
+<p class="fd-has-background-color-accent-2 fd-has-color-text-5">.fd-has-background-color-accent-2</p>
+<p class="fd-has-background-color-accent-3 fd-has-color-text-5">.fd-has-background-color-accent-3</p>
+<p class="fd-has-background-color-accent-4 fd-has-color-text-5">.fd-has-background-color-accent-4</p>
+<p class="fd-has-background-color-accent-5 fd-has-color-text-5">.fd-has-background-color-accent-5</p>
+<p class="fd-has-background-color-accent-6 fd-has-color-text-5">.fd-has-background-color-accent-6</p>
+<p class="fd-has-background-color-accent-7 fd-has-color-text-5">.fd-has-background-color-accent-7</p>
+<p class="fd-has-background-color-accent-8 fd-has-color-text-5">.fd-has-background-color-accent-8</p>
+<p class="fd-has-background-color-accent-9 fd-has-color-text-5">.fd-has-background-color-accent-9</p>
+<p class="fd-has-background-color-accent-10 fd-has-color-text-5">.fd-has-background-color-accent-10</p>
+<p class="fd-has-background-color-accent-11 fd-has-color-text-5">.fd-has-background-color-accent-11</p>
+<p class="fd-has-background-color-accent-12 fd-has-color-text-5">.fd-has-background-color-accent-12</p>
+<p class="fd-has-background-color-accent-13 fd-has-color-text-5">.fd-has-background-color-accent-13</p>
+<p class="fd-has-background-color-accent-14 fd-has-color-text-5">.fd-has-background-color-accent-14</p>
+<p class="fd-has-background-color-accent-15 fd-has-color-text-5">.fd-has-background-color-accent-15</p>
+<p class="fd-has-background-color-accent-16 fd-has-color-text-5">.fd-has-background-color-accent-16</p>
 {% endcapture %}
 {% include display-component.html component=color %}
 
