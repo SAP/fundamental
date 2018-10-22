@@ -14,7 +14,6 @@
 <h1>localization-editor with input</h1>
 
 {% set example %}
-{%- set _id = utils.id() %}
 {{  localization_editor(
         properties=data.properties
     )
@@ -22,6 +21,19 @@
 
 {% endset %}
 {{ format(example) }}
+
+<br><br>
+<h3>compact</h3>
+{% set example %}
+{{  localization_editor(
+        properties=data.properties,
+        size="compact"
+    )
+}}
+
+{% endset %}
+{{ format(example) }}
+
 
 <br><br><br>
 
@@ -31,7 +43,6 @@
 {%- set _id = utils.id() %}
 {{  localization_editor(
          {
-            "id": _id,
             "type": "textarea",
             "items": [
               {

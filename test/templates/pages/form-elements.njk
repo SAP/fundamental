@@ -25,6 +25,8 @@
 {% call layout.container() -%}
 
 {% call layout.col(span=6) -%}
+{# ////////////////////////// ------ #}
+
 
 <h3>input[type=text]</h3>
 <div class="fd-form__item fd-has-display-flex">
@@ -32,9 +34,18 @@
     {{ button({ label: "Dolor"}) }}
 </div>
 
+<div class="fd-form__item fd-has-display-flex">
+    {{ forms.text(size="compact") }}
+    {{ button({ label: "Dolor" }, size="compact") }}
+</div>
+
 <h3>select</h3>
 <div class="fd-form__item fd-has-display-flex">
     {{ forms.select() }} {{ button({ label: "Dolor"}) }}
+</div>
+<div class="fd-form__item fd-has-display-flex">
+    {{ forms.select(size="compact") }}
+    {{ button({ label: "Dolor" }, size="compact") }}
 </div>
 
 <h4>select[multiple]</h4>
@@ -48,26 +59,14 @@
         {{ forms.radio() }}
         {{ forms.radio() }}
 {{ button({ label: "Dolor"}) }}
-
 </div>
-<h3>input[type=checkbox]</h3>
 <div class="fd-form__item">
-        {{ forms.checkbox() }}
-          {{ forms.checkbox() }}
-            {{ forms.checkbox() }}
-
-            {{ button({ label: "Dolor"}) }}
+        {{ forms.radio() }}
+        {{ forms.radio() }}
+        {{ forms.radio() }}
+{{ button({ label: "Dolor"},size="compact") }}
 </div>
 
-<h3>.fd-toggle input[type=checkbox]</h3>
-<div class="fd-form__item">
-      {{ toggle() }} {{ button({ label: "Dolor"}) }}
-</div>
-
-<h3>textarea</h3>
-<div class="fd-form__item">
-    {{ forms.textarea() }} {{ button({ label: "Dolor"}) }}
-</div>
 
 
 
@@ -93,6 +92,23 @@
 <div class="fd-form__item">
 {{ input_group(
     properties={
+        after: "$",
+        input: {
+            properties: {
+                value: "19387309"
+            }
+        }
+    },
+    modifier={
+        block: "after",
+        after: "after"
+    },size="compact")
+}}
+</div>
+
+<div class="fd-form__item">
+{{ input_group(
+    properties={
         before: "km/h",
         input: {
             properties: {
@@ -106,6 +122,23 @@
     })
 }}
 </div>
+<div class="fd-form__item">
+{{ input_group(
+    properties={
+        before: "km/h",
+        input: {
+            properties: {
+                value: "19387309"
+            }
+        }
+    },
+    modifier={
+        block: "before",
+        before: "before"
+    },size="compact")
+}}
+</div>
+
 <div class="fd-form__item">
 {{ input_group(
     properties={
@@ -135,7 +168,42 @@
         after: "after"
     })
 }}
+{{ button({ label: "Dolor"}, modifier={ block: ["negative"]}) }}
 </div>
+
+<div class="fd-form__item">
+{{ input_group(
+    properties={
+        after: "phone",
+        input: {
+            properties: {
+                placeholder: "Field placeholder text"
+            }
+        }
+    },
+    modifier={
+        block: ["inline", "after"],
+        after: "after"
+    },size="compact")
+}}
+{{ input_group(
+    properties={
+        after: "fax",
+        input: {
+            properties: {
+                placeholder: "Field placeholder text"
+            }
+        }
+    },
+    modifier={
+        block: ["inline", "after"],
+        after: "after"
+    },size="compact")
+}}
+{{ button({ label: "Dolor"},size="compact") }}
+
+</div>
+
 <div class="fd-form__item">
 {{ input_group(
     type="number",
@@ -155,6 +223,23 @@
 </div>
 <div class="fd-form__item">
 {{ input_group(
+    type="number",
+    properties={
+        after: "",
+        input: {
+            properties: {
+                value: "1000000", id: utils.id()
+            }
+        }
+    },
+    modifier={
+        block: "after",
+        after: "after"
+    },size="compact")
+}}
+</div>
+<div class="fd-form__item">
+{{ input_group(
     type="search",
     properties={
         input: {
@@ -166,18 +251,34 @@
 }}
 </div>
 
+<div class="fd-form__item">
+{{ input_group(
+    type="search",
+    properties={
+        input: {
+            properties: {
+                value: "1000008980283748972894732979327592739572394752397594657843657868436029840932840927349236572635876347239875283472893742980", id: utils.id()
+            }
+        }
+    },size="compact")
+}}
+</div>
 
 
-
+{# ------ ////////////////////////// #}
 {%- endcall %}
-
 {% call layout.col(span=6) -%}
+{# ////////////////////////// ------ #}
 
 
 
 <h3>.fd-combobox-input</h3>
 <div class="fd-form__item">
 {{combobox_input()}}
+</div>
+
+<div class="fd-form__item">
+{{combobox_input(size="compact")}}
 </div>
 
 
@@ -196,6 +297,21 @@
   })
 }}
 </div>
+<div class="fd-form__item">
+{{  date_picker(properties={
+      month: 8,
+      year: 2018,
+      today: 6,
+      dates: {
+        daysOffset: 3,
+        block: [25,29],
+        selected: 15,
+        disablePast: true
+      }
+  },size="compact")
+}}
+</div>
+
 <h3>.fd-search-input</h3>
 <div class="fd-form__item">
 {{ search_input(
@@ -205,124 +321,32 @@
     })
 }}
 </div>
+<div class="fd-form__item">
+{{ search_input(
+    properties={
+        value: "Ba",
+        placeholder: "Placeholder Text"
+    },size="compact")
+}}
+</div>
+
+
 <h3>.fd-time-picker</h3>
 <div class="fd-form__item">
-
 {{  time_picker() }}
-
-
 </div>
+<div class="fd-form__item">
+{{  time_picker(size="compact") }}
+</div>
+
+
+
 <h3>.fd-localization-editor</h3>
 <div class="fd-form__item">
-
-{{  localization_editor(
-        properties={
-            "id": utils.id(),
-            "description": "Localization Editor Description",
-            "type": "input",
-            "items": [
-              {
-                  "properties": {
-                    "value": "",
-                    "placeholder": "Enter label",
-                     "label": "EN"
-                  },
-                  "state": {
-                    "status": "",
-                    "required": true
-                  }
-              },
-              {
-                  "properties": {
-                    "value": "",
-                    "placeholder": "",
-                     "label": "ES"
-                  },
-                  "state": {
-                    "status": "",
-                    "required": false
-                  }
-              },
-              {
-                  "properties": {
-                    "value": "",
-                    "placeholder": "",
-                     "label": "CH"
-                  },
-                  "state": {
-                    "status": "",
-                    "required": false
-                  }
-              },
-              {
-                  "properties": {
-                    "value": "",
-                    "placeholder": "",
-                     "label": "PL"
-                  },
-                  "state": {
-                    "status": "",
-                    "required": false
-                  }
-              }
-            ]}
-    )
-}}
+{{ localization_editor(properties=data.localization_editor.properties, size="compact") }}
 </div>
 <div class="fd-form__item">
-{{  localization_editor(
-         {
-            "id": _id,
-            "type": "textarea",
-            "items": [
-              {
-                  "properties": {
-                    "value": "",
-                    "placeholder": "Enter label",
-                     "label": "EN"
-                  },
-                  "state": {
-                    "status": "",
-                    "required": true
-                  }
-              },
-              {
-                  "properties": {
-                    "value": "",
-                    "placeholder": "",
-                     "label": "ES"
-                  },
-                  "state": {
-                    "status": "",
-                    "required": false
-                  }
-              },
-              {
-                  "properties": {
-                    "value": "",
-                    "placeholder": "",
-                     "label": "CH"
-                  },
-                  "state": {
-                    "status": "",
-                    "required": false
-                  }
-              },
-              {
-                  "properties": {
-                    "value": "",
-                    "placeholder": "",
-                     "label": "PL"
-                  },
-                  "state": {
-                    "status": "",
-                    "required": false
-                  }
-              }
-            ]
-        }
-    )
-}}
+{{ localization_editor(properties={ type: "textarea", items: data.localization_editor.properties.items }) }}
 
 
 </div>
@@ -336,38 +360,19 @@
 }}
 </div>
 
-
-
-<h3>.fd-button-group</h3>
 <div class="fd-form__item">
-  {% for size in ["","compact"] %}
-    {%- set modifier = { block: [size] } %}
-    {%- if size == "default" %}
-      {%- set modifier = { block: [] } %}
-    {%- endif %}
-  {% call button_group() -%}
-    {{-  button(
-      { icon: 'survey' },
-        modifier={ block: [size] },
-        aria={ label: 'Survey' })
-      }}
-    {{-  button(
-        { icon: 'pie-chart' },
-          modifier={ block: [size] },
-          aria={ label: 'Chart', selected: true })
-        }}
-    {{-  button(
-          { icon: 'pool' },
-            modifier={ block: [size] },
-            aria={ label: 'Pool' })
-          }}
-  {%- endcall %}
-  {%- endfor %}
 
-
-
-
+{{ multi_input(
+    properties={
+        placeholder: "Placeholder Text"
+    },size="compact")
+}}
 </div>
+
+
+
+
+{# ------ ////////////////////////// #}
 {%- endcall %}
 
 

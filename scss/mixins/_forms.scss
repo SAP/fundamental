@@ -50,9 +50,12 @@
     @content;
 }
 
-@mixin fd-form-text {
+@mixin fd-form-text() {
     @include fd-form-base;
-    height: $fd-forms-height--input-text;
+    height: var(--fd-forms-height);
+    &.fd-input--compact {
+      height: var(--fd-forms-height-compact);
+    }
     padding-left: $fd-forms-padding;
     padding-right: $fd-forms-padding;
     @content;

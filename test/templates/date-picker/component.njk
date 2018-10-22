@@ -1,6 +1,8 @@
 {% import "./../utils.njk" as utils %}
 {% from "../popover/component.njk" import popover %}
 {% from "./../calendar/component.njk" import calendar %}
+{% from "./../input-group/component.njk" import input_group %}
+{% from "./../button/component.njk" import button %}
 
 <!--
 date_picker:
@@ -10,22 +12,46 @@ date_picker:
     aria={}
 -->
 
-{%- set _id = utils.id() %}
-
-{%- macro date_picker_control(properties={}, modifier={}, state={}, aria={ hidden: true }) -%}
-<div class="fd-input-group fd-input-group--after">
-    <input type="text" value="" placeholder="Pick a date">
-    <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
-        <button class="fd-popover__control fd-button--icon fd-button--secondary sap-icon--calendar" aria-controls="{{ _id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}></button>
-    </span>
-</div>
+{%- macro date_picker_control(properties={}, modifier={}, state={}, aria={ hidden: true },size="") -%}
+{%- set btn = button(
+  { label: '',
+    icon: 'calendar'
+  },
+  modifier={
+    block: ['secondary']
+  },
+  aria={
+    controls: properties.id,
+    expanded: false,
+    haspopup: true
+  },
+  state=state,
+  classes=["popover__control"],
+  size="compact")
+%}
+{{- input_group(
+    type="date",
+    modifier={
+        block: "after",
+        after: ['after', 'button']
+    },
+    properties={
+        input: {
+            properties: {
+                placeholder: "Pick a date"
+            }
+        },
+        after: btn
+    },size=size)
+}}
 {%- endmacro %}
 
-{%- macro date_picker(properties={}, modifier={}, state={}, aria={ hidden: true }) -%}
+{%- macro date_picker(properties={}, modifier={}, state={}, aria={ hidden: true },size="") -%}
+{%- set _id = utils.id() %}
 <div class="fd-date-picker">
     {{  popover(properties={
             id: _id,
-            control: date_picker_control(properties={id: _id}),
+            control: date_picker_control(properties={id: _id},size=size),
             body: calendar({
                 "month": properties.month,
                 "year": properties.year,

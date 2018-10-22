@@ -131,6 +131,135 @@
 {% endset %}
 {{ format(example) }}
 
+<h3>compact</h3>
+{% set example %}
+
+    {{ input_group(
+        properties={
+            after: "km/h",
+            input: {
+                properties: {
+                    placeholder: "Field placeholder text"
+                }
+            }
+        },
+        modifier={
+            block: ["after"],
+            after: "after"
+        },
+        size="compact")
+    }}
+    {{ input_group(
+        properties={
+            after: "km/h",
+            input: {
+                properties: {
+                    value: "19387309"
+                }
+            }
+        },
+        modifier={
+            block: "after",
+            after: "after"
+        },
+        size="compact")
+    }}
+    {{ input_group(
+        properties={
+            after: "€",
+            input: {
+                properties: {
+                    value: "19387309"
+                }
+            }
+        },
+        modifier={
+            block: "after",
+            after: "after"
+        },
+        size="compact")
+    }}
+    {{ input_group(
+        properties={
+            after: "$",
+            input: {
+                properties: {
+                    value: "19387309"
+                }
+            }
+        },
+        modifier={
+            block: "after",
+            after: "after"
+        },
+        size="compact")
+    }}
+    {{ input_group(
+        properties={
+            before: "km/h",
+            input: {
+                properties: {
+                    value: "19387309"
+                }
+            }
+        },
+        modifier={
+            block: "before",
+            before: "before"
+        },
+        size="compact")
+    }}
+    {{ input_group(
+        properties={
+            before: "€",
+            input: {
+                properties: {
+                    value: "19387309"
+                }
+            }
+        },
+        modifier={
+            block: "before",
+            before: "before"
+        },
+        size="compact")
+    }}
+    {{ input_group(
+        properties={
+            before: "$",
+            input: {
+                properties: {
+                    value: "19387309"
+                }
+            }
+        },
+        modifier={
+            block: "before",
+            before: "before"
+        },
+        size="compact")
+    }}
+    {{ input_group(
+        properties={
+            after: "50",
+            input: {
+                properties: {
+                    value: "19387309"
+                }
+            }
+        },
+        modifier={
+            block: "after",
+            after: "after"
+        },
+        size="compact")
+    }}
+
+{% endset %}
+{{ format(example) }}
+
+
+
 <br><br>
 <h2>Input Group — Inline</h2>
 {% set example %}
@@ -323,6 +452,93 @@
 }}
 {% endset %}
 {{ format(example) }}
+
+
+<h3>compact</h3>
+
+
+{% set example %}
+
+{{ input_group(
+    modifier={
+        block: "after",
+        after: ['after', 'button']
+    },
+    properties={
+        input: {
+            properties: {
+                value: "1000000"
+            }
+        },
+        after: button(
+                {
+                    label: '',
+                    icon: 'navigation-down-arrow'
+                },
+                modifier={
+                    block: ['icon','secondary']
+                },size="compact")
+    },
+    size="compact")
+}}
+{{ input_group(
+    modifier={
+        block: "after",
+        after: "button"
+    },
+    properties={
+        input: {
+            state: {
+                readonly: true
+            },
+            properties: {
+                value: "2000000"
+            }
+        },
+        after: button(
+                {
+                    label: '',
+                    icon: 'navigation-down-arrow'
+                },
+                modifier={
+                    block: ['icon','secondary']
+                },size="compact")
+    },
+    size="compact")
+}}
+{{ input_group(
+    modifier={
+        after: ['after', 'button'],
+        block: "after"
+    },
+    properties={
+        input: {
+            properties: {
+                value: "3000000"
+            }
+        },
+        after: btn
+    },
+    size="compact")
+}}
+{{ input_group(
+    modifier={
+        after: ['after', 'button'],
+        block: "after"
+    },
+    properties={
+        input: {
+            properties: {
+                value: "4000000"
+            }
+        },
+        after: button({ icon: 'navigation-down-arrow' }, modifier={ block: ['icon', 'secondary'] },size="compact")
+    },
+    size="compact")
+}}
+{% endset %}
+{{ format(example) }}
+
 
 
 <br><br>

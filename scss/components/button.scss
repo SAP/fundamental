@@ -56,16 +56,33 @@ $block: #{$fd-namespace}-button;
         margin-right: fd-space(2);
         vertical-align: middle;
       }
+      @at-root {
+        [dir="rtl"] &,
+        &[dir="rtl"] {
+          &::before {
+            margin-right: 0;
+            margin-left: fd-space(2);
+          }
+        }
+      }
       &::after {
         margin-left: fd-space(2);
         vertical-align: middle;
       }
+      @at-root {
+        [dir="rtl"] &,
+        &[dir="rtl"] {
+          &::after {
+            margin-left: 0;
+            margin-right: fd-space(2);
+          }
+        }
+      }
       &:empty {
         padding: 0;
-        &::before {
-          margin-right: 0;
-        }
+        &::before,
         &::after {
+          margin-right: 0;
           margin-left: 0;
         }
       }

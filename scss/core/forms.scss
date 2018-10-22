@@ -2,6 +2,12 @@
 @import "./../functions";
 @import "./../mixins/forms";
 
+$fd-form-sizes: (
+  "",
+  "compact"
+) !default;
+
+
 // Form Base
 %form-field-base {
     @include fd-form-base;
@@ -9,6 +15,7 @@
     &::after {
         transition: border-color $fd-forms-transition-params;
     }
+
 }
 
 // Global CSS (Remove/Move?)
@@ -19,7 +26,17 @@ fieldset {
 }
 
 // Form Elements
-@import "./../components/input";
+#{$fd-elements-inputs--text}, .#{$fd-namespace}-input {
+    @include fd-form-text();
+    width: 100%;
+    &::placeholder {
+      color: $fd-forms-color--placeholder;
+    }
+}
+
+
+
+
 @import "./../components/textarea";
 @import "./../components/select";
 

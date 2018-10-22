@@ -70,7 +70,16 @@ $block: #{$fd-namespace}-input-group;
         display: flex;
         flex-direction: column;
         border-radius: $fd-border-radius;
-        height: $fd-forms-height--input-text;
+        //height: $fd-forms-height--input-text;
+
+        height: var(--fd-forms-height);
+        @at-root {
+          .#{$block}--compact & {
+            height: var(--fd-forms-height-compact);
+          }
+        }
+
+
         z-index: 2; // Brings focus state above input
 
         //ELEMENT MODIFIERS ************
@@ -82,6 +91,7 @@ $block: #{$fd-namespace}-input-group;
         }
         &--button {
             padding: 0;
+
         }
         &--before {
             border-top-right-radius: 0;
