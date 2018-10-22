@@ -83,7 +83,23 @@
         }
     )
 }}
+{% endset %}
+{{- format(example) -}}
 
+<br><br>
+<h1>dismissible right to left</h1>
+{% set example %}
+{{  alert(
+        properties={
+            text: 'Vivamus sagittis diam in vehicula lobortis sapien arcu mattis erat vel aliquet sem urna et mattis erat vel aliquet in sem urna et sagittis diam in vehicula',
+            dismissible: true,
+            rtl: true
+        },
+        modifier={
+            block: []
+        }
+    )
+}}
 {% endset %}
 {{- format(example) -}}
 
