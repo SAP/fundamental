@@ -12,8 +12,8 @@ $block: #{$fd-namespace}-button;
 
   //SIZES — size: height "text size" "icon size"
   $fd-button-sizes: (
-    "default": --fd-forms-height "0" "l", //36px
-    "compact": --fd-forms-height-compact "0" "m", //28px
+    "default": --fd-forms-height "0", //36px
+    "compact": --fd-forms-height-compact "0", //28px
   ) !default;
 
   //spacing
@@ -35,7 +35,8 @@ $block: #{$fd-namespace}-button;
       height: var(nth($defaults, 1));
       max-height: var(nth($defaults, 1));
       @include fd-type(nth($defaults, 2));
-      @include fd-icon-size(nth($defaults, 3));
+      @include fd-icon-size("m", "before");
+      @include fd-icon-size("m", "after");
       line-height: 1;
       padding-left: $fd-button-padding-x;
       padding-right: $fd-button-padding-x;
@@ -120,8 +121,6 @@ $block: #{$fd-namespace}-button;
         max-height: var(nth($list, 1));
         min-width: var(nth($list, 1));
         @include fd-type(nth($list, 2));
-        @include fd-icon-size(nth($list, 3), "before");
-        @include fd-icon-size(nth($list, 3), "after");
         line-height: 1;
       }
     }
@@ -329,12 +328,7 @@ $block: #{$fd-namespace}-button;
             padding-right: $fd-button-padding-x-deprecated * 1.2;
           }
           @if $key == "xs" or $key == "s"  {
-            &::before {
-              margin-right: fd-space(2) / 1.333;
-            }
-            &::after {
-              margin-left: fd-space(2) / 1.333;
-            }
+            @include fd-icon-size("default", "after");
           }
         }
       }
