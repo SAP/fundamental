@@ -43,52 +43,6 @@
 		@content;
 	}
 }
-//$size: -3,-2,-1,0,1,2,3,4,5
-//$weight: reg, med, semi
-//$transform: none, uppercase, lowercase
-@mixin fd-type($size: "0", $weight: default, $transform: default) {
-    $list: map-get($fd-type, "0");
-    @if map-has-key($fd-type, $size) {
-        $list: map-get($fd-type, $size);
-    } @else {
-        @warn "Unknown `#{$size}` in $type map";
-    }
-    font-size: nth($list, 1);
-    line-height: nth($list, 2);
-    //HANDLE WEIGHT
-    @if $weight != default {
-        @include fd-weight($weight);
-    } @else {
-        //implicity
-        $_weight: nth($list, 4);
-        @include fd-weight($_weight);
-    }
-    //HANDLE TRANSFORM
-    @if $transform != default {
-        text-transform: $transform;
-    } @else {
-        //implicity
-        $_transform: nth($list, 5);
-        @if $_transform != none {
-            text-transform: $_transform;
-        }
-    }
-}
-@mixin fd-weight($weight: reg) {
-    @if $weight == light {
-        font-weight: 300;
-    } @else if $weight == reg {
-        font-weight: 400;
-    } @else if $weight == med {
-        font-weight: 500;
-    } @else if $weight == semi {
-        font-weight: 600;
-    } @else if $weight == bold {
-        font-weight: 700;
-    } @else if $weight == black {
-       font-weight: 900;
-   }
-}
 //Taken from https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/library/_triangle.scss
 @mixin triangle($size, $color, $direction) {
   $width: nth($size, 1);
