@@ -21,7 +21,7 @@ This is used to present information to the user but the Alert Component doesn’
     <div class="fd-modal__content" role="document">
         <div class="fd-modal__header">
             <h1 class="fd-modal__title">Product Added</h1>
-            <button class="fd-button--secondary fd-modal__close" aria-label="close"></button>
+            <button class="fd-button--light fd-modal__close" aria-label="close"></button>
         </div>
         <div class="fd-modal__body">
             <b>Thew new product have been added to your catalog.</b><br/>
@@ -49,15 +49,15 @@ This is used to confirm with the user before continuing with a destructive or co
     <div class="fd-modal__content" role="document">
         <div class="fd-modal__header">
             <h1 class="fd-modal__title">Delete</h1>
-            <button class="fd-button--secondary     fd-modal__close" aria-label="close"></button>
+            <button class="fd-button--light fd-modal__close" aria-label="close"></button>
         </div>
         <div class="fd-modal__body">
             Do you want to delete item <b>X</b>?
         </div>
         <footer class="fd-modal__footer">
             <div class="fd-modal__actions">
-                <button class="fd-button--secondary">No</button>
-                <button class="fd-button--primary">Yes</button>
+                <button class="fd-button--light">No</button>
+                <button class="fd-button">Yes</button>
             </div>
         </footer>
     </div>
@@ -78,7 +78,7 @@ This is used for short forms in order to collect information from the user.
     <div class="fd-modal__content" role="document">
         <div class="fd-modal__header">
             <h1 class="fd-modal__title">Invite user</h1>
-            <button class="fd-button--secondary fd-modal__close" aria-label="close"></button>
+            <button class="fd-button--light fd-modal__close" aria-label="close"></button>
         </div>
         <div class="fd-modal__body">
             <div class="fd-form__group">
@@ -90,8 +90,8 @@ This is used for short forms in order to collect information from the user.
         </div>
         <footer class="fd-modal__footer">
             <div class="fd-modal__actions">
-                <button class="fd-button--secondary">Cancel</button>
-                <button class="fd-button--primary">Invite</button>
+                <button class="fd-button--light">Cancel</button>
+                <button class="fd-button">Invite</button>
             </div>
         </footer>
     </div>

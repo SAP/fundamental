@@ -18,7 +18,7 @@ This is the look and feel of the Toolbar when all the components are used.
 {% capture toolbar-full %}
 <div class="fd-toolbar">
     <div class="fd-toolbar__group fd-toolbar__group--filter">
-        <button class="fd-button fd-button--text fd-button--icon fd-toolbar__button" aria-label="BUTTON_LABEL">
+        <button class="fd-button fd-button--text fd-toolbar__button" aria-label="BUTTON_LABEL">
             <span class="fd-icon fd-icon--filter fd-icon--medium" role="presentation"></span>
         </button>
         <span role="separator"></span>
@@ -40,7 +40,7 @@ This is the look and feel of the Toolbar when all the components are used.
             <ul class="fd-pagination">
                 <span class="fd-pagination__total">30 items</span>
                 <li class="fd-pagination__item fd-pagination__item--previous">
-                    <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
+                    <button class="fd-button fd-button--text fd-button--small" aria-label="Previous" aria-disabled="true">
                         <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
                     </button>
                 </li>
@@ -54,17 +54,17 @@ This is the look and feel of the Toolbar when all the components are used.
                     <a href="#" class="fd-pagination__link">3</a>
                 </li>
                 <li class="fd-pagination__item">
-                    <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Next">
+                    <button class="fd-button fd-button--text fd-button--small" aria-label="Next">
                         <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
                     </button>
                 </li>
             </ul>
         </div>
         <div class="fd-toolbar__view-as">
-            <button class="fd-button fd-button--text fd-button--icon" aria-label="View as grid" aria-pressed="true">
+            <button class="fd-button fd-button--text" aria-label="View as grid" aria-pressed="true">
                 <span class="fd-icon fd-icon--grid fd-icon--medium" role="presentation"></span>
             </button>
-            <button class="fd-button fd-button--text fd-button--icon" aria-label="View as list" aria-pressed="false">
+            <button class="fd-button fd-button--text" aria-label="View as list" aria-pressed="false">
                 <span class="fd-icon fd-icon--list fd-icon--medium" role="presentation"></span>
             </button>
         </div>
@@ -83,7 +83,7 @@ All the filtering options will be under the filtering icon (<span class="fd-icon
 {% capture toolbar %}
 <div class="fd-toolbar">
     <div class="fd-toolbar__group fd-toolbar__group--filter">
-        <button class="fd-button fd-button--text fd-button--icon fd-toolbar__button" aria-label="BUTTON_LABEL" aria-expanded="false" aria-controls="gfAMe850" aria-haspopup="true">
+        <button class="fd-button fd-button--text fd-toolbar__button" aria-label="BUTTON_LABEL" aria-expanded="false" aria-controls="gfAMe850" aria-haspopup="true">
             <span class="fd-icon fd-icon--filter fd-icon--medium" role="presentation"></span>
         </button>
     </div>
@@ -125,7 +125,7 @@ The selected filters will be displayed on a new row bellow. Every filter will in
 {% capture toolbar-with-filters %}
 <div class="fd-toolbar">
     <div class="fd-toolbar__group fd-toolbar__group--filter">
-        <button class="fd-button fd-button--text fd-button--icon fd-toolbar__button" aria-label="BUTTON_LABEL" aria-expanded="false" aria-controls="gfAMe851" aria-haspopup="true">
+        <button class="fd-button fd-button--text fd-toolbar__button" aria-label="BUTTON_LABEL" aria-expanded="false" aria-controls="gfAMe851" aria-haspopup="true">
             <span class="fd-icon fd-icon--filter fd-icon--medium" role="presentation"></span>
         </button>
     </div>
@@ -159,13 +159,13 @@ The selected filters will be displayed on a new row bellow. Every filter will in
         <ul class="fd-toolbar__applied-filter-list">
             <li class="fd-toolbar__applied-filter-item">
                 <span>Color: <strong>Red</strong></span>
-                <button class="fd-button fd-button--text fd-button--small fd-button--icon" aria-label="Clear">
+                <button class="fd-button fd-button--text fd-button--small" aria-label="Clear">
                     <span class="fd-icon fd-icon--filterremove" role="presentation"></span>
                 </button>
             </li>
             <li class="fd-toolbar__applied-filter-item">
                 <span>Size: <strong>Small</strong></span>
-                <button class="fd-button fd-button--text fd-button--small fd-button--icon" aria-label="Clear">
+                <button class="fd-button fd-button--text fd-button--small" aria-label="Clear">
                     <span class="fd-icon fd-icon--filterremove" role="presentation"></span>
                 </button>
             </li>
@@ -188,7 +188,7 @@ The Toolbar sorting elements modify the order of the items in the collection dep
 {% capture toolbar-sorting %}
 <div class="fd-toolbar">
     <div class="fd-toolbar__group fd-toolbar__group--filter">
-        <button class="fd-button fd-button--text fd-button--icon fd-toolbar__button" aria-label="BUTTON_LABEL" disabled aria-disabled="true">
+        <button class="fd-button fd-button--text fd-toolbar__button" aria-label="BUTTON_LABEL" disabled aria-disabled="true">
             <span class="fd-icon fd-icon--filter fd-icon--medium" role="presentation"></span>
         </button>
         <span role="separator"></span>
@@ -219,7 +219,7 @@ The Toolbar is also used to support [pagination elements](pagination.html). They
 {% capture toolbar-pagination %}
 <div class="fd-toolbar">
     <div class="fd-toolbar__group fd-toolbar__group--filter">
-        <button class="fd-button fd-button--text fd-button--icon fd-toolbar__button" aria-label="BUTTON_LABEL" disabled aria-disabled="true">
+        <button class="fd-button fd-button--text fd-toolbar__button" aria-label="BUTTON_LABEL" disabled aria-disabled="true">
             <span class="fd-icon fd-icon--filter fd-icon--medium" role="presentation"></span>
         </button>
         <span role="separator"></span>
@@ -236,7 +236,7 @@ The Toolbar is also used to support [pagination elements](pagination.html). They
             <ul class="fd-pagination">
                 <span class="fd-pagination__total">30 items</span>
                 <li class="fd-pagination__item fd-pagination__item--previous">
-                    <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
+                    <button class="fd-button fd-button--text fd-button--small" aria-label="Previous" aria-disabled="true">
                         <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
                     </button>
                 </li>
@@ -250,7 +250,7 @@ The Toolbar is also used to support [pagination elements](pagination.html). They
                     <a href="#" class="fd-pagination__link">3</a>
                 </li>
                 <li class="fd-pagination__item">
-                    <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Next">
+                    <button class="fd-button fd-button--text fd-button--small" aria-label="Next">
                         <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
                     </button>
                 </li>
@@ -271,7 +271,7 @@ For some collections the user can choose the type of view the items are represen
 {% capture toolbar-change-view %}
 <div class="fd-toolbar">
     <div class="fd-toolbar__group fd-toolbar__group--filter">
-        <button class="fd-button fd-button--text fd-button--icon fd-toolbar__button" aria-label="BUTTON_LABEL" disabled aria-disabled="true">
+        <button class="fd-button fd-button--text fd-toolbar__button" aria-label="BUTTON_LABEL" disabled aria-disabled="true">
             <span class="fd-icon fd-icon--filter fd-icon--medium" role="presentation"></span>
         </button>
         <span role="separator"></span>
@@ -288,7 +288,7 @@ For some collections the user can choose the type of view the items are represen
             <ul class="fd-pagination">
                 <span class="fd-pagination__total">30 items</span>
                 <li class="fd-pagination__item fd-pagination__item--previous">
-                    <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
+                    <button class="fd-button fd-button--text fd-button--small" aria-label="Previous" aria-disabled="true">
                         <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
                     </button>
                 </li>
@@ -302,17 +302,17 @@ For some collections the user can choose the type of view the items are represen
                     <a href="#" class="fd-pagination__link">3</a>
                 </li>
                 <li class="fd-pagination__item">
-                    <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Next">
+                    <button class="fd-button fd-button--text fd-button--small" aria-label="Next">
                         <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
                     </button>
                 </li>
             </ul>
         </div>
         <div class="fd-toolbar__view-as">
-            <button class="fd-button fd-button--text fd-button--icon" aria-label="View as grid" aria-pressed="true">
+            <button class="fd-button fd-button--text" aria-label="View as grid" aria-pressed="true">
                 <span class="fd-icon fd-icon--grid fd-icon--medium" role="presentation"></span>
             </button>
-            <button class="fd-button fd-button--text fd-button--icon" aria-label="View as list" aria-pressed="false">
+            <button class="fd-button fd-button--text" aria-label="View as list" aria-pressed="false">
                 <span class="fd-icon fd-icon--list fd-icon--medium" role="presentation"></span>
             </button>
         </div>
@@ -335,7 +335,7 @@ At the bottom of a collection is recommended to show a toolbar with the paginati
             <ul class="fd-pagination">
                 <span class="fd-pagination__total">30 items</span>
                 <li class="fd-pagination__item fd-pagination__item--previous">
-                    <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Previous" aria-disabled="true">
+                    <button class="fd-button fd-button--text fd-button--small" aria-label="Previous" aria-disabled="true">
                         <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
                     </button>
                 </li>
@@ -349,7 +349,7 @@ At the bottom of a collection is recommended to show a toolbar with the paginati
                     <a href="#" class="fd-pagination__link">3</a>
                 </li>
                 <li class="fd-pagination__item">
-                    <button class="fd-button fd-button--text fd-button--icon fd-button--small" aria-label="Next">
+                    <button class="fd-button fd-button--text fd-button--small" aria-label="Next">
                         <span class="fd-icon fd-icon--chevron fd-icon--small" role="presentation"></span>
                     </button>
                 </li>

@@ -22,7 +22,7 @@ A basic example of a time picker.
             <div class="fd-input-group fd-input-group--after">
                 <input type="time" id="" placeholder="hh:mm am/pm">
                 <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
-                    <button class="fd-popover__control fd-button--icon fd-button--secondary sap-icon--fob-watch"
+                    <button class="fd-popover__controlfd-button--light sap-icon--fob-watch"
                     aria-controls="Cy29K184" aria-expanded="false" aria-haspopup="true"
                     aria-hidden="true"></button>
                 </span>
@@ -32,7 +32,7 @@ A basic example of a time picker.
             <div class="fd-time">
                 <div class="fd-time__item">
                     <div class="fd-time__control">
-                        <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow"
+                        <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow"
                         aria-label="Increase hours" aria-controls="S8Vs0670"></button>
                     </div>
                     <div class="fd-time__input">
@@ -40,13 +40,13 @@ A basic example of a time picker.
                         id="S8Vs0670" aria-label="Hours" />
                     </div>
                     <div class="fd-time__control">
-                        <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow"
+                        <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow"
                         aria-label="Decrease hours" aria-controls="S8Vs0670"></button>
                     </div>
                 </div>
                 <div class="fd-time__item">
                     <div class="fd-time__control">
-                        <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow"
+                        <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow"
                         aria-label="Increase minutes" aria-controls="k2Vkv811"></button>
                     </div>
                     <div class="fd-time__input">
@@ -54,13 +54,13 @@ A basic example of a time picker.
                         id="k2Vkv811" aria-label="Minutes" />
                     </div>
                     <div class="fd-time__control">
-                        <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow"
+                        <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow"
                         aria-label="Decrease minutes" aria-controls="k2Vkv811"></button>
                     </div>
                 </div>
                 <div class="fd-time__item">
                     <div class="fd-time__control">
-                        <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow"
+                        <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow"
                         aria-label="Increase seconds" aria-controls="WC1cw348"></button>
                     </div>
                     <div class="fd-time__input">
@@ -68,13 +68,13 @@ A basic example of a time picker.
                         aria-label="Seconds" />
                     </div>
                     <div class="fd-time__control">
-                        <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow"
+                        <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow"
                         aria-label="Decrease seconds" aria-controls="WC1cw348"></button>
                     </div>
                 </div>
                 <div class="fd-time__item">
                     <div class="fd-time__control">
-                        <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow"
+                        <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow"
                         aria-label="Increase period" aria-controls="T1V37459"></button>
                     </div>
                     <div class="fd-time__input">
@@ -82,7 +82,7 @@ A basic example of a time picker.
                         aria-label="Period" />
                     </div>
                     <div class="fd-time__control">
-                        <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow"
+                        <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow"
                         aria-label="Decrease period" aria-controls="T1V37459"></button>
                     </div>
                 </div>
