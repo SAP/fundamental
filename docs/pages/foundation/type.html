@@ -5,8 +5,9 @@ sidebar: left-navigation-sidebar
 toc: false
 permalink: foundation/type.html
 folder: fundamentals
-summary:
+summary: SAP 72 font family was designed from the ground up and made it possible to meet SAP Fiori’s typographic requirements, including - Legibility Enhancements, Font Styles, Brand Voice, Character Set and Language Support.
 ---
+<a href="https://experience.sap.com/72/" target="_blank">Learn More about the SAP 72 Font Family</a>
 
 <hr>
 <h4 class="docs-header-h4">SAP 72</h4>
@@ -18,26 +19,157 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z <br>
 ​‘ ? ’ “ ! ” ( % ) [ # ] { @ } / &amp; \ &lt; - + ÷ × = &gt; ® © $ € £ ¥ ¢ : ; , . *
 </p>
 
-<p class="docs-type_header fd-has-margin-top-l">4. SAP 72 Light 30px | Line height 36px | Paragraph break 20px</p>
-<p class="docs-type_SAP--1">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
 
-<p class="docs-type_header fd-has-margin-top-l">3. SAP 72 Regular 24px | Line height 32px | Paragpraph break 16px</p>
-<p class="docs-type_SAP--2">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+<br>
 
-<p class="docs-type_header fd-has-margin-top-l">2. SAP 72 Regular 18px | Line height 24px | Paragraph break 12px</p>
-<p class="docs-type_SAP--3">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+<h2 class="docs-header-h2">Sizes</h2>
+<p>There are eight sizes defined where <code>0</code> is the default size of <code>14px</code> and hierarchy proceeds down to <code>-1</code> and up to <code>6</code>.
+</p>
 
-<p class="docs-type_header fd-has-margin-top-l">1. SAP 72 Regular 16px | Line height 20px | Paragraph break 12px</p>
-<p class="docs-type_SAP--4">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+<table class="docs-type__scale">
+  <tr>
+    <td class="fd-has-type-minus-1 docs-type__scale--preview">a</td>
+    <td class="fd-has-type-0 docs-type__scale--preview">a</td>
+    <td class="fd-has-type-1 docs-type__scale--preview">a</td>
+    <td class="fd-has-type-2 docs-type__scale--preview">a</td>
+    <td class="fd-has-type-3 docs-type__scale--preview">a</td>
+    <td class="fd-has-type-4 docs-type__scale--preview">a</td>
+    <td class="fd-has-type-5 docs-type__scale--preview">a</td>
+    <td class="fd-has-type-6 docs-type__scale--preview">a</td>
+  </tr>
+  <tr>
+    <td class="fd-has-type-1 docs-type__scale--info"><strong>-1</strong><br>12px</td>
+    <td class="fd-has-type-1 docs-type__scale--info" ><strong>0</strong><br>14px</td>
+    <td class="fd-has-type-1 docs-type__scale--info" ><strong>1</strong><br>16px</td>
+    <td class="fd-has-type-1 docs-type__scale--info" ><strong>2</strong><br>18px</td>
+    <td class="fd-has-type-1 docs-type__scale--info" ><strong>3</strong><br>20px</td>
+    <td class="fd-has-type-1 docs-type__scale--info" ><strong>4</strong><br>24px</td>
+    <td class="fd-has-type-1 docs-type__scale--info" ><strong>5</strong><br>36px</td>
+    <td class="fd-has-type-1 docs-type__scale--info"><strong>6</strong><br>48px</td>
 
-<p class="docs-type_header fd-has-margin-top-l">0. SAP 72 Regular 14px | Line height 20px | Paragraph break 12px</p>
-<p class="docs-type_SAP--5">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+    </td>
+  </tr>
+</table>
 
-<p class="docs-type_header fd-has-margin-top-l">- 1. SAP 72 Regular 13px | Line height 16px | Paragraph break 8px</p>
-<p class="docs-type_SAP--6">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+<br>
 
-<p class="docs-type_header fd-has-margin-top-l">- 2. SAP 72 Regular 12px | Line height 16px | Paragraph break 8px</p>
-<p class="docs-type_SAP--7">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+<h4 class="docs-header-h4">-1 — 12px | Line height 16px</h4>
+<p><a href="/guides/how-to-use-scss.html#type-mixin" target="_blank">SCSS Mixin</a>: <code>@include fd-type("-1")</code> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/guides/design-system-utilities.html#type-sizes" target="_blank">Helper class</a>: <code>.fd-has-type-minus-1</code></p>
+{% capture type-preview %}
+<p class="fd-has-type-minus-1">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+{% endcapture %}
+{% include display-component.html component=type-preview %}
 
-<p class="docs-type_header fd-has-margin-top-l">- 3. SAP 72 Regular 11px | Line height 16px | Paragraph break 8px</p>
-<p class="docs-type_SAP--8">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+<br>
+
+<h4 class="docs-header-h4">0 — 14px | Line height 20px</h4>
+<p><a href="/guides/how-to-use-scss.html#type-mixin" target="_blank">SCSS Mixin</a>: <code>@include fd-type()</code> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/guides/design-system-utilities.html#type-sizes" target="_blank">Helper class</a>: <code>.fd-has-type</code></p>
+<blockquote >
+    Note: This is the default size and generally no styles are needed to render this size in most cases.
+</blockquote>
+{% capture type-preview %}
+<p class="fd-has-type">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+{% endcapture %}
+{% include display-component.html component=type-preview %}
+
+<br>
+
+<h4 class="docs-header-h4">1 — 16px | Line height 20px</h4>
+<p><a href="/guides/how-to-use-scss.html#type-mixin" target="_blank">SCSS Mixin</a>: <code>@include fd-type("1")</code> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/guides/design-system-utilities.html#type-sizes" target="_blank">Helper class</a>: <code>.fd-has-type-1</code></p>
+{% capture type-preview %}
+<p class="fd-has-type-1">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+{% endcapture %}
+{% include display-component.html component=type-preview %}
+
+<br>
+
+
+<h4 class="docs-header-h4">2 — 18px | Line height 24px</h4>
+<p><a href="/guides/how-to-use-scss.html#type-mixin" target="_blank">SCSS Mixin</a>: <code>@include fd-type("2")</code> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/guides/design-system-utilities.html#type-sizes" target="_blank">Helper class</a>: <code>.fd-has-type-2</code></p>
+{% capture type-preview %}
+<p class="fd-has-type-2">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+{% endcapture %}
+{% include display-component.html component=type-preview %}
+
+<br>
+
+<h4 class="docs-header-h4">3 — 20px | Line height 28px</h4>
+<p><a href="/guides/how-to-use-scss.html#type-mixin" target="_blank">SCSS Mixin</a>: <code>@include fd-type("3")</code> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/guides/design-system-utilities.html#type-sizes" target="_blank">Helper class</a>: <code>.fd-has-type-3</code></p>
+{% capture type-preview %}
+<p class="fd-has-type-3">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+{% endcapture %}
+{% include display-component.html component=type-preview %}
+
+<br>
+
+<h4 class="docs-header-h4">4 — 24px | Line height 32px</h4>
+<p><a href="/guides/how-to-use-scss.html#type-mixin" target="_blank">SCSS Mixin</a>: <code>@include fd-type("4")</code> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/guides/design-system-utilities.html#type-sizes" target="_blank">Helper class</a>: <code>.fd-has-type-4</code></p>
+{% capture type-preview %}
+<p class="fd-has-type-4">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+{% endcapture %}
+{% include display-component.html component=type-preview %}
+
+<br>
+
+<h4 class="docs-header-h4">5 — 36px | Line height 40px</h4>
+<p><a href="/guides/how-to-use-scss.html#type-mixin" target="_blank">SCSS Mixin</a>: <code>@include fd-type("5")</code> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/guides/design-system-utilities.html#type-sizes" target="_blank">Helper class</a>: <code>.fd-has-type-5</code></p>
+{% capture type-preview %}
+<p class="fd-has-type-5">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+{% endcapture %}
+{% include display-component.html component=type-preview %}
+
+<br>
+
+<h4 class="docs-header-h4">6 — 48px | Line height 52px</h4>
+<p><a href="/guides/how-to-use-scss.html#type-mixin" target="_blank">SCSS Mixin</a>: <code>@include fd-type("6")</code> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/guides/design-system-utilities.html#type-sizes" target="_blank">Helper class</a>: <code>.fd-has-type-6</code></p>
+{% capture type-preview %}
+<p class="fd-has-type-6">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+{% endcapture %}
+{% include display-component.html component=type-preview %}
+
+<br>
+
+<h2 class="docs-header-h2">Weights</h2>
+<p>There are three weights defined <code>light</code>, <code>normal</code>, <code>Bold</code>.
+</p>
+
+<table class="docs-type__scale">
+  <tr>
+    <td class="fd-has-type-6 fd-has-font-weight-light docs-type__scale--preview">a</td>
+    <td class="fd-has-type-6 fd-has-font-weight-normal docs-type__scale--preview">a</td>
+    <td class="fd-has-type-6 fd-has-font-weight-bold docs-type__scale--preview">a</td>
+  </tr>
+  <tr>
+    <td class="fd-has-type-1 docs-type__scale--info">Light</td>
+    <td class="fd-has-type-1 docs-type__scale--info" >Normal</td>
+    <td class="fd-has-type-1 docs-type__scale--info" >Bold</td>
+    </td>
+  </tr>
+</table>
+
+<h4 class="docs-header-h4">Light</h4>
+<p><a href="/guides/how-to-use-scss.html#type-mixin" target="_blank">SCSS Mixin</a>: <code>@include fd-weight("light")</code> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/guides/design-system-utilities.html#type-sizes" target="_blank">Helper class</a>: <code>.fd-has-font-weight-light</code></p>
+{% capture type-preview %}
+<p class="fd-has-type-6 fd-has-font-weight-light">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+{% endcapture %}
+{% include display-component.html component=type-preview %}
+
+<br>
+
+<h4 class="docs-header-h4">Normal</h4>
+<p><a href="/guides/how-to-use-scss.html#type-mixin" target="_blank">SCSS Mixin</a>: <code>@include fd-weight("normal")</code> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/guides/design-system-utilities.html#type-sizes" target="_blank">Helper class</a>: <code>.fd-has-font-weight-normal</code></p>
+{% capture type-preview %}
+<p class="fd-has-type-6 fd-has-font-weight-normal">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+{% endcapture %}
+{% include display-component.html component=type-preview %}
+
+<br>
+
+<h4 class="docs-header-h4">Bold</h4>
+<p><a href="/guides/how-to-use-scss.html#type-mixin" target="_blank">SCSS Mixin</a>: <code>@include fd-weight("bold")</code> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/guides/design-system-utilities.html#type-sizes" target="_blank">Helper class</a>: <code>.fd-has-font-weight-bold</code></p>
+{% capture type-preview %}
+<p class="fd-has-type-6 fd-has-font-weight-bold">Grumpy wizards make toxic brew for the evil Queen and Jack</p>
+{% endcapture %}
+{% include display-component.html component=type-preview %}
+
+<br>

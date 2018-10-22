@@ -38,14 +38,16 @@ The float helper classes are used to control the element floats in the HTML elem
 Use these CSS classes to control the text size. Used mainly for content text, all standard components have the right text size by default.
 
 {% capture type-util %}
-<p class="fd-has-type-minus-3">This is text type size -3</p>
-<p class="fd-has-type-minus-2">This is text type size -2</p>
+<p class="fd-has-type">This is the default body type size</p>
+
 <p class="fd-has-type-minus-1">This is text type size -1</p>
-<p class="fd-has-type-base">This is text type size base</p>
+<p class="fd-has-type-0">This is text type size 0 (same as default)</p>
+<p class="fd-has-type-1">This is text type size 1</p>
 <p class="fd-has-type-2">This is text type size 2</p>
 <p class="fd-has-type-3">This is text type size 3</p>
 <p class="fd-has-type-4">This is text type size 4</p>
 <p class="fd-has-type-5">This is text type size 5</p>
+<p class="fd-has-type-6">This is text type size 5</p>
 {% endcapture %}
 {% include display-component.html component=type-util %}
 
@@ -66,11 +68,11 @@ Use these CSS classes to control the text size. Used mainly for content text, al
 
 used with `fd-has-font-family-header` for illustrate weight variants
 {% capture type-weight %}
-<p class="fd-has-font-family-header fd-has-font-weight-light">This is font with weight light</p>
-<p class="fd-has-font-family-header fd-has-font-weight-reg">This is font with weight regular</p>
-<p class="fd-has-font-family-header fd-has-font-weight-med">This is font with weight medium</p>
-<p class="fd-has-font-family-header fd-has-font-weight-semi">This is font with weight semi-bold</p>
-<p class="fd-has-font-family-header fd-has-font-weight-bold">This is font with weight bold</p>
+<p class="fd-has-font-weight-light">This is font with weight light</p>
+<p class="fd-has-font-weight-reg">This is font with weight regular</p>
+<p class="fd-has-font-weight-med">This is font with weight medium</p>
+<p class="fd-has-font-weight-semi">This is font with weight semi-bold</p>
+<p class="fd-has-font-weight-bold">This is font with weight bold</p>
 {% endcapture %}
 {% include display-component.html component=type-weight %}
 
