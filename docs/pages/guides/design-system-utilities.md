@@ -39,7 +39,6 @@ Use these CSS classes to control the text size. Used mainly for content text, al
 
 {% capture type-util %}
 <p class="fd-has-type">This is the default body type size</p>
-
 <p class="fd-has-type-minus-1">This is text type size -1</p>
 <p class="fd-has-type-0">This is text type size 0 (same as default)</p>
 <p class="fd-has-type-1">This is text type size 1</p>
@@ -66,12 +65,9 @@ Use these CSS classes to control the text size. Used mainly for content text, al
 ## Type Weights
 {: .docs-header-h2}
 
-used with `fd-has-font-family-header` for illustrate weight variants
 {% capture type-weight %}
 <p class="fd-has-font-weight-light">This is font with weight light</p>
-<p class="fd-has-font-weight-reg">This is font with weight regular</p>
-<p class="fd-has-font-weight-med">This is font with weight medium</p>
-<p class="fd-has-font-weight-semi">This is font with weight semi-bold</p>
+<p class="fd-has-font-weight-normal">This is font with weight regular</p>
 <p class="fd-has-font-weight-bold">This is font with weight bold</p>
 {% endcapture %}
 {% include display-component.html component=type-weight %}
@@ -95,7 +91,7 @@ A foreground color class applies the color property to the element for example `
 {: .docs-table}
 | Class structure                 | {group}-{shade} options |
 | ------------------------------- | ----------------------- |
-| Foreground Class: <br> `.fd-has-color-{group}-{shade}` <br><br> Background Class:<br>`.fd-has-background-color-{group}-{shade}` | `action` - `1`, `2` <br> `shell` - `1`, `2` <br> `text` - `1`, `2`, `3`, `4` <br> `background` - `1`, `2` <br> `neutral` - `1`, `2`, `3`, `4`  <br> `status` - `1`, `2`, `3`, `4` <br> `accent` - `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`|
+| Foreground Class: <br> `.fd-has-color-{group}-{shade}` <br><br> Background Class:<br>`.fd-has-background-color-{group}-{shade}` | `action` - `1`, `2` <br> `shell` - `1`, `2` <br> `text` - `1`, `2`, `3`, `4` <br> `background` - `1`, `2` <br> `neutral` - `1`, `2`, `3`, `4`  <br> `status` - `1`, `2`, `3`, `4` <br> `accent` - `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`|
 
 Please check the [colors page](colors.html){:target="_blank"} to see full color pallet.
 
@@ -107,7 +103,7 @@ Some examples of color helper classes.
 <p class="fd-has-color-action-2 fd-has-background-color-action-1">.fd-has-color-action-2</p>
 
 <h3>Shell Color Group</h3>
-<p class="fd-has-background-color-shell-1 fd-has-color-text-4">.fd-has-background-color-shell-1</p>
+<p class="fd-has-background-color-shell-1 fd-has-color-text-5">.fd-has-background-color-shell-1</p>
 <p class="fd-has-background-color-shell-1 fd-has-color-shell-2">.fd-has-color-shell-2</p>
 
 <h3>Text Color Group</h3>
@@ -126,24 +122,30 @@ Some examples of color helper classes.
 <p class="fd-has-background-color-neutral-4 fd-has-color-text-1">.fd-has-background-color-netural-4</p>
 
 <h3>Status Color Group</h3>
-<p class="fd-has-background-color-status-1 fd-has-color-text-4">.fd-has-background-color-status-1</p>
-<p class="fd-has-background-color-status-2 fd-has-color-text-4">.fd-has-background-color-status-2</p>
-<p class="fd-has-background-color-status-3 fd-has-color-text-4">.fd-has-background-color-status-3</p>
-<p class="fd-has-background-color-status-4 fd-has-color-text-4">.fd-has-background-color-status-4</p>
+<p class="fd-has-background-color-status-1 fd-has-color-text-5">.fd-has-background-color-status-1</p>
+<p class="fd-has-background-color-status-2 fd-has-color-text-5">.fd-has-background-color-status-2</p>
+<p class="fd-has-background-color-status-3 fd-has-color-text-5">.fd-has-background-color-status-3</p>
+<p class="fd-has-background-color-status-4 fd-has-color-text-5">.fd-has-background-color-status-4</p>
 
 <h3>Accent Color Group</h3>
-<p class="fd-has-background-color-accent-1 fd-has-color-text-4">.fd-has-background-color-accent-1</p>
-<p class="fd-has-background-color-accent-2 fd-has-color-text-4">.fd-has-background-color-accent-2</p>
-<p class="fd-has-background-color-accent-3 fd-has-color-text-4">.fd-has-background-color-accent-3</p>
-<p class="fd-has-background-color-accent-4 fd-has-color-text-4">.fd-has-background-color-accent-4</p>
-<p class="fd-has-background-color-accent-5 fd-has-color-text-4">.fd-has-background-color-accent-5</p>
-<p class="fd-has-background-color-accent-6 fd-has-color-text-4">.fd-has-background-color-accent-6</p>
-<p class="fd-has-background-color-accent-7 fd-has-color-text-4">.fd-has-background-color-accent-7</p>
-<p class="fd-has-background-color-accent-8 fd-has-color-text-4">.fd-has-background-color-accent-8</p>
-<p class="fd-has-background-color-accent-9 fd-has-color-text-4">.fd-has-background-color-accent-9</p>
-<p class="fd-has-background-color-accent-10 fd-has-color-text-4">.fd-has-background-color-accent-10</p>
+<p class="fd-has-background-color-accent-1 fd-has-color-text-5">.fd-has-background-color-accent-1</p>
+<p class="fd-has-background-color-accent-2 fd-has-color-text-5">.fd-has-background-color-accent-2</p>
+<p class="fd-has-background-color-accent-3 fd-has-color-text-5">.fd-has-background-color-accent-3</p>
+<p class="fd-has-background-color-accent-4 fd-has-color-text-5">.fd-has-background-color-accent-4</p>
+<p class="fd-has-background-color-accent-5 fd-has-color-text-5">.fd-has-background-color-accent-5</p>
+<p class="fd-has-background-color-accent-6 fd-has-color-text-5">.fd-has-background-color-accent-6</p>
+<p class="fd-has-background-color-accent-7 fd-has-color-text-5">.fd-has-background-color-accent-7</p>
+<p class="fd-has-background-color-accent-8 fd-has-color-text-5">.fd-has-background-color-accent-8</p>
+<p class="fd-has-background-color-accent-9 fd-has-color-text-5">.fd-has-background-color-accent-9</p>
+<p class="fd-has-background-color-accent-10 fd-has-color-text-5">.fd-has-background-color-accent-10</p>
+<p class="fd-has-background-color-accent-11 fd-has-color-text-5">.fd-has-background-color-accent-11</p>
+<p class="fd-has-background-color-accent-12 fd-has-color-text-5">.fd-has-background-color-accent-12</p>
+<p class="fd-has-background-color-accent-13 fd-has-color-text-5">.fd-has-background-color-accent-13</p>
+<p class="fd-has-background-color-accent-14 fd-has-color-text-5">.fd-has-background-color-accent-14</p>
+<p class="fd-has-background-color-accent-15 fd-has-color-text-5">.fd-has-background-color-accent-15</p>
+<p class="fd-has-background-color-accent-16 fd-has-color-text-5">.fd-has-background-color-accent-16</p>
 {% endcapture %}
-{% include display-component.html component=color %}
+{% include display-component.html component=color class="color-examples"%}
 
 ## Margin and Padding
 {: .docs-header-h2}
@@ -154,60 +156,61 @@ Margin and/or padding can be applied on all sides to an element with the followi
 | {size} options | Value |
 | -------------- | ----- |
 | `none`         | 0     |
-| `base`         | 4px   |
-| `xs`           | 8px   |
-| `s`            | 12px  |
-| `reg`          | 20px  |
-| `m`            | 40px  |
-| `l`            | 100px |
-| `xl`           | 148px |
+| `tiny`         | 8px   |
+| `small`           | 16px   |
+| `medium`            | 32px  |
+| `large`          | 48px  |
 
-Similar to adding margin or padding on all sides of an element, you can use the `{side}` option to selectively add to a single side. The helper classes for a specific side is structured as `.fd-has-margin-{side}-{size}` and `.fd-has-padding-{side}-{size}`. For example to add margin to the bottom on an element you could use a helper class `.fd-has-margin-bottom-m`. To remove margin from the left size of an element you can use the class `.fd-has-margin-left-none`. The following table lists all the available options for `{side}` an `{size}` options
+Similar to adding margin or padding on all sides of an element, you can use the `{side}` option to selectively add to a single side. The helper classes for a specific side is structured as `.fd-has-margin-{side}-{size}` and `.fd-has-padding-{side}-{size}`. For example to add margin to the bottom on an element you could use a helper class `.fd-has-margin-bottom-tiny`. To remove margin from the left size of an element you can use the class `.fd-has-margin-left-none`. The following table lists all the available options for `{side}` an `{size}` options
 
 {: .docs-table}
 | Class structure                | {side} options                    | {size} options                            |
 | ------------------------------ | --------------------------------- | ----------------------------------------- |
-| `.fd-has-margin-{side}-{size}` | `top`, `right`, `bottom`, `left` | `none`, `base`, `xs`, `s`, `m`, `l`, `xl` |
-| `.fd-has-padding-{side}-{size}` | `top`, `right`, `bottom`, `left` | `none`, `base`, `xs`, `s`, `m`, `l`, `xl` |
+| `.fd-has-margin-{side}-{size}` | `top`, `right`, `bottom`, `left` | `none`, `tiny`, `small`, `medium`, `large` |
+| `.fd-has-padding-{side}-{size}` | `top`, `right`, `bottom`, `left` | `none`, `tiny`, `small`, `medium`, `large` |
 
+<style>
+.{
+  outline: solid 1px lightgray;
+  display: flex;
+  font-family: monospace;
+  margin: 16px;
+}
+</style>
 {% capture margin %}
 <h3> Margin helper classes </h3>
-<span class="fd-has-padding-reg fd-has-margin-base"> .fd-has-margin-base //adds margin of 4px </span>
-<span class="fd-has-padding-reg fd-has-margin-xs"> .fd-has-margin-xs //adds margin of 8px</span>
-<span class="fd-has-padding-reg fd-has-margin-s"> .fd-has-margin-s //adds margin of 12px</span>
-<span class="fd-has-padding-reg fd-has-margin-reg"> .fd-has-margin-reg //adds margin of 20px</span>
-<span class="fd-has-padding-reg fd-has-margin-m"> .fd-has-margin-m //adds margin of 40px</span>
-<span class="fd-has-padding-reg fd-has-margin-l"> .fd-has-margin-l //adds margin of 100px</span>
-<span class="fd-has-padding-reg fd-has-margin-xl"> .fd-has-margin-xl //adds margin of 148px;</span>
+<span class="fd-has-margin-none"> .fd-has-margin-none //margin: 0 </span>
+<span class="fd-has-margin-tiny"> .fd-has-margin-tiny //margin: 8px</span>
+<span class="fd-has-margin-small"> .fd-has-margin-small //margin: 16px</span>
+<span class="fd-has-margin-medium"> .fd-has-margin-medium //margin: 32px</span>
+<span class="fd-has-margin-large"> .fd-has-margin-large//margin: 48px</span>
 
 <hr>
 
 <h3> Removing margin by side using helper classes</h3>
-<span class="fd-has-padding-reg fd-has-margin-m fd-has-margin-top-none">.fd-has-margin-top-none</span>
-<span class="fd-has-padding-reg fd-has-margin-m fd-has-margin-right-none">.fd-has-margin-right-none</span>
-<span class="fd-has-padding-reg fd-has-margin-m fd-has-margin-bottom-none">.fd-has-margin-bottom-none</span>
-<span class="fd-has-padding-reg fd-has-margin-m fd-has-margin-left-none">.fd-has-margin-left-none</span>
+<span class="fd-has-margin-medium fd-has-margin-top-none">.fd-has-margin-top-none</span>
+<span class="fd-has-margin-medium fd-has-margin-right-none">.fd-has-margin-right-none</span>
+<span class="fd-has-margin-medium fd-has-margin-bottom-none">.fd-has-margin-bottom-none</span>
+<span class="fd-has-margin-medium fd-has-margin-left-none">.fd-has-margin-left-none</span>
 
 <hr>
 
 <h3> Padding helper classes</h3>
-<span class="fd-has-margin-base fd-has-padding-none">.fd-has-padding-none</span>
-<span class="fd-has-margin-base fd-has-padding-base">.fd-has-padding-base</span>
-<span class="fd-has-margin-base fd-has-padding-xs">.fd-has-padding-xs</span>
-<span class="fd-has-margin-base fd-has-padding-s">.fd-has-padding-s</span>
-<span class="fd-has-margin-base fd-has-padding-m">.fd-has-padding-m</span>
-<span class="fd-has-margin-base fd-has-padding-l">.fd-has-padding-l</span>
-<span class="fd-has-margin-base fd-has-padding-xl">.fd-has-padding-xl</span>
+<span class="fd-has-padding-none">.fd-has-padding-none</span>
+<span class="fd-has-padding-tiny">.fd-has-padding-tiny</span>
+<span class="fd-has-padding-small">.fd-has-padding-small</span>
+<span class="fd-has-padding-medium">.fd-has-padding-medium</span>
+<span class="fd-has-padding-large">.fd-has-padding-large</span>
 
 <hr>
 
 <h3> Removing padding by side using helper classes</h3>
-<span class="fd-has-margin-base fd-has-padding-m fd-has-padding-top-none">.fd-has-padding-top-none</span>
-<span class="fd-has-margin-base fd-has-padding-m fd-has-padding-right-none">.fd-has-padding-right-none</span>
-<span class="fd-has-margin-base fd-has-padding-m fd-has-padding-bottom-none">.fd-has-padding-bottom-none</span>
-<span class="fd-has-margin-base fd-has-padding-m fd-has-padding-left-none">.fd-has-padding-left-none</span>
+<span class="fd-has-padding-medium fd-has-padding-top-none">.fd-has-padding-top-none</span>
+<span class="fd-has-padding-medium fd-has-padding-right-none">.fd-has-padding-right-none</span>
+<span class="fd-has-padding-medium fd-has-padding-bottom-none">.fd-has-padding-bottom-none</span>
+<span class="fd-has-padding-medium fd-has-padding-left-none">.fd-has-padding-left-none</span>
 {% endcapture %}
-{% include display-component.html component=margin %}
+{% include display-component.html component=margin class="margin-padding-helpers"%}
 
 
 ## Other Utilities

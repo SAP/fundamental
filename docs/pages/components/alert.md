@@ -51,3 +51,15 @@ Add the modifier class `fd-alert--error` for Error alert.
 {% endcapture %}
 
 {% include display-component.html component=error-alert %}
+
+## Right to left support
+If right to left text direction is provided, the dismiss button moves to left side.
+
+{% capture default-alert %}
+<div class="fd-alert fd-alert--dismissible" role="alert" id="j2ALl423" dir="rtl">
+  <button class="fd-alert__close" aria-controls="j2ALl423" aria-label="Close"></button>
+  تم. بسبب أمام وشعار ولم بـ. أحكم والكساد ما فقد. كل وعُرفت الإنزال مدن. انه
+</div>
+{% endcapture %}
+
+{% include display-component.html component=default-alert %}

@@ -160,29 +160,33 @@ You can refer to the [colors page](/fundamentals/colors.html){:target="_blank"} 
 ## Spacing Function
 {:.docs-header-h3}
 
-Spacing function can be utilized for padding, margins and other positioning needs - <br>
-`fd-space(value)`
+```
+fd-space("value")
+```
+The space function can be utilized for heights, padding, margins and other positioning. <br>
+
+
+
+
+
+The design system defines a variety of spacing increments that are commonly used throughout and [all of those are available](https://github.com/SAP/fundamental/blob/develop/scss/_settings.scss#L18) using the mixin by passing the key. However, there are four units that will be used most often when building and extending components. These are accessible with special keys to apply consistent padding and margins.
 
 {% highlight css %}
 .foo {
-  padding: fd-space(xs); /* renders 8px */
-  margin-bottom: fd-space(reg); /* renders 20px */
+  padding: fd-space("tiny"); /* renders 8px */
+  margin-bottom: fd-space("small"); /* renders 24px */
 }
 {% endhighlight %}
 
 The following spacing options are available -
 
 {:.docs-table}
-| Option        | Value           | Rendered Value |
-| ------------- | --------------- | -------------- |
-| `base`        | `fd-space()`    |  4px           |
-| `xs`          | `fd-space(xs)`  |  8px           |
-| `s`           | `fd-space(s)`   |  12px          |
-| `reg`         | `fd-space(reg)` |  20px          |
-| `m`           | `fd-space(m)`   |  40px          |
-| `l`           | `fd-space(l)`   |  100px         |
-| `xl`          | `fd-space(xl)`  |  148px         |
-
+| Value           | Rendered Value |
+|  --------------- | -------------- |
+| `fd-space("tiny")` |  8px           |
+|  `fd-space("small")`  |  16px          |
+| `fd-space("medium")`   |  32px          |
+| `fd-space("large")` |  48px          |
 
 ## Type Mixin
 {:.docs-header-h3}

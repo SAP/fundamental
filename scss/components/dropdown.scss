@@ -88,14 +88,25 @@ $block: #{$fd-namespace}-dropdown;
       }
       &.fd-button--s {
           padding-top: fd-space(1) - 1;
+          @include fd-icon-size("default", "after");
         &::after {
             margin-top: -3px;
             height: $fd-forms-height - 10;
-            padding-top: fd-space(1.5);
+            padding-top: fd-space(1.2);
+        }
+      }
+      &.fd-button--compact {
+          padding-top: fd-space(1) - 1;
+          @include fd-icon-size("default", "after");
+        &::after {
+            margin-top: -3px;
+            height: $fd-forms-height - 6;
+            padding-top: fd-space(2) - 2;
         }
       }
       &.fd-button--l {
           padding-top: fd-space(1) - 1;
+          @include fd-icon-size("default", "after");
         &::after {
             margin-top: -3px;
             width: $fd-forms-height + 2;
