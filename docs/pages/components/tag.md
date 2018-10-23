@@ -7,9 +7,9 @@ permalink: components/tag.html
 folder: components
 summary:
 ---
+<span class="fd-badge fd-badge--error fd-badge--pill">Depricated</span>
 
-Tags are used to represent contextualizing information. They can be useful to show applied filters, selected values for form field or object metadata.
-
+This componnet has been renamed to <a href="token.html">Token</a>
 <hr>
 
 {% capture default-alert %}
