@@ -169,6 +169,7 @@ function getStarterData() {
         "pagination": require(`./templates/pagination/data.json`),
         "side_nav": require(`./templates/side-nav/data.json`),
         "breadcrumb": require(`./templates/breadcrumb/data.json`),
+        "localization_editor": require(`./templates/localization-editor/data.json`),
         "image": require(`./templates/image/data.json`)
     }
     return data;

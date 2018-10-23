@@ -1,5 +1,5 @@
 {% extends "layout.njk" %}
-{% from "./component.njk" import radio %}
+{% import "../forms.njk" as forms %}
 {% from "./../format.njk" import format %}
 
 {% set css_deps = ['fonts','helpers'] %}
@@ -8,7 +8,7 @@
 
     <h1>Radio</h1>
     {% set basic_radio %}
-        {{ radio(
+        {{ forms.radio(
             type="radio",
             properties={
                 placeholder: "Placeholder Text"

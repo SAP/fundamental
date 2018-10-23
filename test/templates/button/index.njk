@@ -3,21 +3,112 @@
 {% from "./component.njk" import button %}
 {% set css_deps = ['fonts','helpers','icons'] %}
 
+{% macro btncode(content="",bgcolor="transparent") %}
+<div style="background-color:{{bgcolor}}">
+{{ content }}
+</div>
+<textarea readonly class="test-textarea">{{ content | e | trim }}</textarea>
+{% endmacro %}
+
+
+
 {% block content %}
 <style media="screen">
   button {
     margin-bottom: 4px !important;
     margin-right: 4px !important;
   }
+  table textarea.test-textarea {
+    height: 100px;
+  }
+
 </style>
 
-{# <del>Main
-<button class="fd-button--main sap-icon--save">Button</button>
-<button class="fd-button--main">Button</button>
-<button class="fd-button--main fd-button--positive sap-icon--accept">Approve</button>
-<button class="fd-button--main fd-button--negative sap-icon--decline">Reject</button>
-</del> (depricated, but still avialable)
-<br><br> #}
+
+{% set emphasis = ["action-bar", "", "secondary" ] %}
+{% set types = ["", "toolbar", "positive ", "negative" ] %}
+{% set sizes = ["", "compact" ] %}
+
+
+
+
+<table border="1" cellpadding="10">
+  <tr>
+    <td></td>
+{% for e in emphasis %}
+    <th>{{e}} {{"<em>default</em>" if not e }}</th>
+{% endfor %}
+  </tr>
+  {% for type in types %}
+  <tr>
+      <th>{{type}} {{"<em>default</em>" if not type }}</th>
+      {% for e in emphasis %}
+        <td>
+{% for size in sizes %}
+
+<code>{{".fd-button--" + e if e}}{{".fd-button--" + type if type}}{{".fd-button--" + size if size}}
+{{".fd-button" if not type and not size and not e}}
+</code>
+<br>
+{% set example %}
+{{- button(
+  { label: 'Button' },
+  modifier={ block: [type,size,e] })
+}}
+{{- button(
+  { label: 'Add to Cart',
+    icon: 'cart' },
+    modifier={ block: [type,size,e] })
+}}
+{{-  button(
+  { icon: 'attachment' },
+    modifier={ block: [type,size,e] },
+    aria={ label: 'Add Attachment' })
+}}
+{% endset %}
+{{ btncode(example) }}
+
+
+<br>
+{% set example %}
+{{-  button(
+  { label: 'Focused',
+    icon: 'cart' },
+    modifier={ block: [type,size,e] },
+    state={ focus: true })
+}}
+{{- button(
+  { label: 'Selected' },
+  modifier={ block: [type,size,e] },
+  aria={ selected: true })
+}}
+{{-  button(
+  { label: 'Disabled',
+    icon: 'cart' },
+    modifier={ block: [type,size,e] },
+    state={ disabled: true })
+}}
+{% endset %}
+{{ btncode(example) }}
+
+
+
+
+  <br>
+  {% endfor %}
+
+        </td>
+      {% endfor %}
+  {% endfor %}
+  </tr>
+</table>
+
+
+<br>
+<hr>
+<br>
+
+
 
 Action Bar
 <button class="fd-button--action-bar sap-icon--save">Button</button>
@@ -46,46 +137,22 @@ Toolbar
 
 
 
-<br>
+<br><br>
 <hr>
 <br>
-
-
 
 <h1>Action Bar Button</h1>
 <p>only one should be on a page</p>
 {% set example %}
 {{  button(
         { label: 'Button' },
-        modifier={ block: ['action-bar','xs'] })
-}}
-{{  button(
-        { label: 'Button' },
-        modifier={ block: ['action-bar','s'] })
-}}
-{{  button(
-        { label: 'Button' },
         modifier={ block: ['action-bar','compact'] })
 }}
 {{  button(
         { label: 'Button' },
         modifier={ block: ['action-bar'] })
 }}
-{{  button(
-        { label: 'Button' },
-        modifier={ block: ['action-bar','l'] })
-}}
 <br>
-{{  button(
-        { label: 'Add to Cart',
-          icon: 'cart' },
-        modifier={ block: ['action-bar','xs'] })
-}}
-{{  button(
-        { label: 'Add to Cart',
-          icon: 'cart' },
-        modifier={ block: ['action-bar','s'] })
-}}
 {{  button(
   { label: 'Add to Cart',
     icon: 'cart' },
@@ -96,23 +163,7 @@ Toolbar
     icon: 'cart' },
         modifier={ block: ['action-bar'] })
 }}
-{{  button(
-  { label: 'Add to Cart',
-    icon: 'cart' },
-        modifier={ block: ['action-bar','l'] })
-}}
 <br>
-{{  button(
-        {
-          icon: 'attachment' },
-        modifier={ block: ['action-bar','xs'] },
-        aria={ label: 'Add Attachment' })
-}}
-{{  button(
-        {  icon: 'attachment' },
-        modifier={ block: ['action-bar','s'] },
-        aria={ label: 'Add Attachment' })
-}}
 {{  button(
   {
     icon: 'attachment' },
@@ -123,12 +174,6 @@ Toolbar
   {
     icon: 'attachment' },
         modifier={ block: ['action-bar'] },
-        aria={ label: 'Add Attachment' })
-}}
-{{  button(
-  {
-    icon: 'attachment' },
-        modifier={ block: ['action-bar','l'] },
         aria={ label: 'Add Attachment' })
 }}
 <br>
@@ -144,7 +189,6 @@ Toolbar
         aria={ selected: true }
     )
 }}
-
 {{  button(
   { label: 'Disabled' },
   modifier={ block: ['action-bar'] },
@@ -167,24 +211,6 @@ Toolbar
             icon: 'accept'
         },
         modifier={
-            block: ['xs','action-bar','positive']
-        })
-}}
-{{  button(
-        {
-            label: 'Approve',
-            icon: 'accept'
-        },
-        modifier={
-            block: ['s','action-bar','positive']
-        })
-}}
-{{  button(
-        {
-            label: 'Approve',
-            icon: 'accept'
-        },
-        modifier={
           block: ['compact','action-bar','positive']
         })
 }}
@@ -195,15 +221,6 @@ Toolbar
         },
         modifier={
 block: ['action-bar','positive']
-        })
-}}
-{{  button(
-        {
-            label: 'Approve',
-            icon: 'accept'
-        },
-        modifier={
-            block: ['l','action-bar','positive']
         })
 }}
 <br>

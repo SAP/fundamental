@@ -36,6 +36,7 @@
 
         <fieldset style="font-family: monospace;font-size: 14px;">
             <label class="test-label fd-has-float-right"><input type="checkbox"  value="" id="toggleBg"> Toggle BG</label>
+            <label class="test-label fd-has-float-right"><input type="checkbox"  value="" id="toggleDir"> Toggle RTL</label>
             <label class="test-label"><input type="checkbox" name="lib" value="b3" {{'checked' if libs.b3 }}> bootstrap/3.3.7</label>
             <label class="test-label"><input type="checkbox" name="lib" value="b4" {{'checked' if libs.b4 }}> bootstrap/4.0.0-beta</label>
             <label class="test-label"><input type="checkbox" name="lib" value="md" {{'checked' if libs.md }}>
@@ -90,6 +91,27 @@ angular_material/1.1.4</label>
                     localStorage.setItem("toggleState", false);
                 }
             });
+
+            var toggleDir = document.getElementById("toggleDir"),
+                toggleDirState = localStorage.getItem('toggleDir');
+            if(toggleDirState ==  "true") {
+                toggle.checked = true;
+                document.body.setAttribute("dir","rtl");
+            }
+            toggleDir.addEventListener( 'change', function() {
+                if(this.checked) {
+                    document.body.setAttribute("dir","rtl");
+                    localStorage.setItem("toggleDirState", true);
+                } else {
+                  document.body.setAttribute("dir","ltr");
+                  localStorage.setItem("toggleDirState", false);
+                }
+            });
+
+
+
+
+
         })();
     </script>
 

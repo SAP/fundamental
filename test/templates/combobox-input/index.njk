@@ -13,6 +13,21 @@
                 placeholder: "Placeholder Text"
             })
         }}
+
+
+    {% endset %}
+
+    {{ format(basic_combobox_input) }}
+
+    {% set basic_combobox_input %}
+        {{ combobox_input(
+            properties={
+                placeholder: "Placeholder Text"
+            },
+            size="compact")
+        }}
+
+
     {% endset %}
 
     {{ format(basic_combobox_input) }}

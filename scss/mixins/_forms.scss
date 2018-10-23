@@ -17,7 +17,7 @@
     transition: border-color $fd-animation--speed;
     //states
     @include fd-hover {
-        border-color: fd-color-state("hover", "action");//adjust-color($fd-forms-color--active, $lightness: 30%);
+        border-color: fd-color-state("hover", "action");
     }
     @include fd-focus {
       border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
@@ -50,9 +50,13 @@
     @content;
 }
 
-@mixin fd-form-text {
+@mixin fd-form-text() {
     @include fd-form-base;
-    height: $fd-forms-height--input-text;
+    height: var(--fd-forms-height);
+    &.fd-input--compact,
+    &.fd-select--compact {
+      height: var(--fd-forms-height-compact);
+    }
     padding-left: $fd-forms-padding;
     padding-right: $fd-forms-padding;
     @content;

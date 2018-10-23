@@ -6,15 +6,31 @@
 
 {% block content %}
 
-    <h1>Multi Input</h1>
+    <h1>multi-input</h1>
     {% set basic_multi_input %}
         {{ multi_input(
             properties={
-                placeholder: "Placeholder Text"
+                placeholder: "Select Fruit"
             })
         }}
     {% endset %}
 
     {{ format(basic_multi_input) }}
+
+
+<br><br>
+
+<h3>compact</h3>
+
+
+{% set basic_multi_input %}
+    {{ multi_input(
+        properties={
+            placeholder: "Select Fruit"
+        },size="compact")
+    }}
+{% endset %}
+
+{{ format(basic_multi_input) }}
 
 {% endblock %}

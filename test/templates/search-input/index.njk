@@ -6,13 +6,26 @@
 
 {% block content %}
 
-    <h1>Search</h1>
+    <h1>search-input</h1>
     {% set basic_search %}
         {{ search_input(
             properties={
                 value: "Ba",
-                placeholder: "Placeholder Text"
+                placeholder: "Search products"
             })
+        }}
+    {% endset %}
+
+    {{ format(basic_search) }}
+
+<br><br>
+      <h3>compact</h3>
+    {% set basic_search %}
+        {{ search_input(
+            properties={
+                value: "Ba",
+                placeholder: "Search products"
+            },size="compact")
         }}
     {% endset %}
 
