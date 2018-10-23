@@ -19,7 +19,7 @@ summary:
                 <div class="fd-input-group fd-input-group--after">
                     <input type="text" class="fd-input" id="" value="Ba" placeholder="Select Fruit">
                     <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
-                        <button class=" fd-button--icon fd-button--secondary sap-icon--search"></button>
+                        <button class=" fd-button--light sap-icon--search"></button>
                     </span>
                 </div>
             </div>

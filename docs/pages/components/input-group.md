@@ -147,7 +147,7 @@ The Input with add-on supports actions. Actions can be shown with a text label o
         <div class="fd-input-group fd-input-group--after">
             <input class="" type="text" id="" name="" value="1000000">
             <span class="fd-input-group__addon fd-input-group__addon--button fd-input-group__addon--after">
-                <button class="fd-button--secondary">
+                <button class="fd-button--light">
                     Button
                 </button>
             </span>
@@ -161,7 +161,7 @@ The Input with add-on supports actions. Actions can be shown with a text label o
         <div class="fd-input-group fd-input-group--after">
             <input class="" type="text" id="" name="" value="1000000">
             <span class="fd-input-group__addon fd-input-group__addon--button fd-input-group__addon--after">
-                <button class="fd-button--icon fd-button--secondary sap-icon--navigation-down-arrow"></button>
+                <button class="fd-button--icon fd-button--light sap-icon--navigation-down-arrow"></button>
             </span>
         </div>
     </div>
@@ -173,7 +173,7 @@ The Input with add-on supports actions. Actions can be shown with a text label o
         <div class="fd-input-group fd-input-group--after">
             <input class="" type="text" id="" name="" value="1000000">
             <span class="fd-input-group__addon fd-input-group__addon--button fd-input-group__addon--after">
-                <button class="fd-button--secondary">
+                <button class="fd-button--light">
                     Button
                 </button>
             </span>
@@ -187,7 +187,7 @@ The Input with add-on supports actions. Actions can be shown with a text label o
         <div class="fd-input-group fd-input-group--after">
             <input class="" type="text" id="" name="" value="1000000">
             <span class="fd-input-group__addon fd-input-group__addon--button fd-input-group__addon--after">
-                <button class="fd-button--icon fd-button--secondary sap-icon--navigation-down-arrow"></button>
+                <button class="fd-button--icon fd-button--light sap-icon--navigation-down-arrow"></button>
             </span>
         </div>
     </div>

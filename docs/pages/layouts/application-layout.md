@@ -118,15 +118,15 @@ The container visibility can be toggled with the `aria-hidden` attribute.
           <div class="fd-modal__content" role="document">
               <header class="fd-modal__header">
                   <h1 class="fd-modal__title">fd-modal__header</h1>
-                  <button class=" fd-button--secondary fd-modal__close"></button>
+                  <button class="fd-button--light fd-modal__close"></button>
               </header>
               <div class="fd-modal__body">
                   fd-modal__body
               </div>
               <footer class="fd-modal__footer">
                 <div class="fd-modal__actions">
-                  <button class=" fd-button--secondary">fd-modal__action</button>
-                  <button class=" fd-button--primary">fd-modal__action</button>
+                  <button class=" fd-button--light">fd-modal__action</button>
+                  <button class=" fd-button">fd-modal__action</button>
                 </div>
                 </footer>
           </div>

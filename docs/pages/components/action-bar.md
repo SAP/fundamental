@@ -16,7 +16,7 @@ The Action Bar is located at the top of the page and is used for the following:
 {% capture default-action-bar %}
 <div class="fd-action-bar">
     <div class="fd-action-bar__back">
-        <button class=" fd-button--secondary fd-button--compact sap-icon--nav-back"></button>
+        <button class="fd-button--light fd-button--compact sap-icon--nav-back"></button>
     </div>
     <div class="fd-action-bar__header">
         <h1 class="fd-action-bar__title">
@@ -69,7 +69,7 @@ When there are several main actions for a page, consider displaying them under a
     <div class="fd-action-bar__actions">
             <div class="fd-popover">
                 <div class="fd-popover__control">
-                    <button class=" fd-button--secondary sap-icon--vertical-grip"
+                    <button class="fd-button--light sap-icon--vertical-grip"
                     aria-controls="wgxzK859" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
                 </div>
                 <div class="fd-popover__body" aria-hidden="true" id="wgxzK859">
@@ -98,7 +98,7 @@ When there are several main actions for a page, consider displaying them under a
 <div style="width:319px">
     <div class="fd-action-bar">
         <div class="fd-action-bar__back">
-            <button class=" fd-button--secondary fd-button--compact sap-icon--nav-back"></button>
+            <button class="fd-button--light fd-button--compact sap-icon--nav-back"></button>
         </div>
         <div class="fd-action-bar__header">
             <h1 class="fd-action-bar__title">
@@ -108,7 +108,7 @@ When there are several main actions for a page, consider displaying them under a
         <div class="fd-action-bar__actions">
             <div class="fd-popover">
                 <div class="fd-popover__control">
-                    <button class=" fd-button--secondary sap-icon--vertical-grip"
+                    <button class="fd-button--light sap-icon--vertical-grip"
                     aria-controls="wgxzK85" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
                 </div>
                 <div class="fd-popover__body" aria-hidden="true" id="wgxzK85">

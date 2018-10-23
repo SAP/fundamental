@@ -19,14 +19,14 @@
 {%- set primarybtn %}{{
     button(
             { label: 'Button' },
-            modifier={block: [ 'main', 'l'] }
+            modifier={block: [ 'emphasized'] }
         )
 }}{%- endset %}
 
 {%- set secbtn %}{{
   button(
           { label: 'Button' },
-          modifier={ block: ['primary', 'l'] }
+          modifier={ block: [] }
       )
 }}{%- endset %}
 
@@ -35,7 +35,7 @@
     {%- set _id = utils.id() %}
 
     {%- macro contextmenu_control(properties={}) -%}
-        {{ button({ icon: "vertical-grip" }, modifier={ block: ["secondary"] }, aria={ controls: properties.id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
+        {{ button({ icon: "vertical-grip" }, modifier={ block: ["light"] }, aria={ controls: properties.id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
     {%- endmacro %}
 
     {{  popover(properties={

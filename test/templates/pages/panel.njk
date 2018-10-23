@@ -152,12 +152,17 @@
                           ]
                         })
                },
-               modifier={ block: 's' })
+               modifier={ block: ['standard','compact'] })
           }}
 
-        {{  button({label: 'Filter',icon: 'filter' }, modifier={block: ['toolbar','s']}, aria={ controls: _id, haspopup: true, expanded: false, label: "Filter" }) }}
+        {{  button({label: 'Filter',icon: 'filter' }, modifier={block: ['standard','compact']}, aria={ controls: _id, haspopup: true, expanded: false, label: "Filter" }) }}
+{% call button_group() -%}
+{{button({ icon: "grid" },size="compact",modifier={block: []},aria={  })}}
+{{button({ icon: "list" },size="compact",modifier={block: []},aria={ "pressed": true })}}
 
-        {{  button_group(
+
+{%- endcall %}
+        {# {{  button_group(
           properties={
             label: "Show as",
             buttons: [
@@ -165,7 +170,7 @@
               { "properties": { "icon": "list" }, "modifier": { block: ["grouped","s" ] } }
             ]
           })
-        }}
+        }} #}
 
 
         {%- endcall %}
@@ -242,7 +247,7 @@ Vivamus sagittis <span class="fd-badge fd-badge--success">Active</span>
       {{ card }}
     {%- endcall %}
     {% call layout.panel_footer() -%}
-<button class="fd-button--secondary">See All</button>
+<button class="fd-button--light">See All</button>
     {%- endcall %}
 {%- endcall %}
 {% endset %}

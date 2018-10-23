@@ -17,25 +17,27 @@
 
 {%- set tile_icon %}
 {% call tile() -%}
-{% call tile_media() -%}
-{{
-  identifier(
-  properties={ icon: "person-placeholder" },
-  modifier={ block: ["m"] },
-  classes=["has-background-color-accent-1"])
-}}
-{%- endcall %}
-{%- call tile_content({ title: "Lorem ipsum" }) -%}
-<p>Second line</p>
-<p>
-{{badge({ label: "Active" }, modifier={block: ["success","filled"]}, classes="sap-icon--accept")}}
-</p>
-{%- endcall %}
-{%- call tile_actions() -%}
-  {{ button({ icon: 'vertical-grip' }, modifier={block: "secondary"}, aria={ label: "More" } )}}
-{%- endcall %}
+  {% call tile_media() -%}
+  {{
+    identifier(
+    properties={ icon: "person-placeholder" },
+    modifier={ block: ["m"] },
+    classes=["has-background-color-accent-1"])
+  }}
+  {%- endcall %}
+  {%- call tile_content({ title: "Lorem ipsum" }) -%}
+  <p>Second line</p>
+  <p>
+  {{badge({ label: "Active" }, modifier={block: ["success","filled"]}, classes="sap-icon--accept")}}
+  </p>
+  {%- endcall %}
+  {%- call tile_actions() -%}
+    {{ button({ icon: 'vertical-grip' }, modifier={ block: ["light"]}, aria={ label: "More" } )}}
+  {%- endcall %}
 {%- endcall %}
 {% endset %}
+
+
 {% set tiles_grid_content %}
 {{  tile_grid(
         properties={
@@ -56,21 +58,19 @@
 }}
 {% endset %}
 
+
+
 {% set panel_tiles_content %}
 {% call layout.panel() -%}
     {% call layout.panel_header({ title: "Items (18)" }) -%}
     {% call layout.panel_actions() -%}
-  {{ button({ icon: 'search' }, modifier={block: ["s", "toolbar"]}, aria={ label: "Search" } )}}
+  {{ button({ icon: 'search' }, modifier={block: ["standard", "compact"]}, aria={ label: "Search" } )}}
 
-  {{  button_group(
-    properties={
-      label: "Show as",
-      buttons: [
-        { "properties": { "icon": "grid" }, "modifier": { block: ["grouped","s" ] }, "aria": { "pressed": true } },
-        { "properties": { "icon": "list" }, "modifier": { block: ["grouped","s" ] } }
-      ]
-    })
-  }}
+{% call button_group() -%}
+{{button({ icon: "grid" },size="compact",modifier={block: []},aria={  })}}
+{{button({ icon: "list" },size="compact",modifier={block: []},aria={ "pressed": true })}}
+{%- endcall %}
+
     {%- endcall %}
     {%- endcall %}
     {% call layout.panel_body(modifier=["bleed"]) -%}

@@ -12,57 +12,66 @@ Color is also important. For instance, the most important button has a blue back
 
 <hr>
 
-## Button Types
-- **Action Bar Button**: `--action-bar` modifier is required to render the Main button. There should only be one main button on the page or modal. This is the main call to action.
-- **Primary Button**: The default button style with the base class `fd-button`. There can be more than one primary button on a single page or view such as “Approve” or “Reject”.
-- **Secondary Button**: `--secondary` is required to render the Secondary button. There can be more than one secondary button on the page. A common use case is “Cancel”.
-- **Toolbar Button**: `--toolbar` is required to render the Toolbar button. This button is used inside the toolbar component.
-- **Semantic Buttons**: Semantic modifiers `--positive` for approve and `--negative` for reject can be applied to the button.
+## Button Options
+There are three emphasis styles used to indicate the importance of the button on the page.
+- **Emphasized Button**: There should only be one highlighted button on the page. This is the primary call to action.
+- **Regular Button**: The default button style and the most common button. There may be more than one on a page.
+- **Light Button**: This is the lowest priority button and most often used with page content like appearing in a table or list. There may be more than one on the page.
 
 {% capture button %}
-<button class="fd-button--action-bar">Action Bar Button</button>
-<button class="fd-button">Primary Button</button>
-<button class="fd-button--secondary">Secondary Button</button>
-<button class="fd-button--toolbar">Toolbar Button</button>
-<button class="fd-button--positive">Accept</button>
-<button class=" fd-button--negative">Reject</button>
+<button class="fd-button--emphasized">Emphasized Button</button>
+<button class="fd-button">Regular Button</button>
+<button class="fd-button--light">Light Button</button>
+{% endcapture %}
+{% include display-component.html component=button %}
 
+There are five button types that can be combined with the emphasis styles.
+- **Action Button**:
+- **Standard Button**:
+- **Positive Button**:
+- **Medium Button**:
+- **Negative Button**:
+
+
+{% capture button %}
+<button class="fd-button">Action Button</button>
+<button class="fd-button--standard">Standard Button</button>
+<button class="fd-button--positive">Positive Button</button>
+<button class="fd-button--medium">Medium Button</button>
+<button class="fd-button--negative">Negative Button</button>
 {% endcapture %}
 {% include display-component.html component=button %}
 
 <br/>
 
 ## Button Sizes
-There are five different sizes can be rendered with modifiers: `--xs`, `--s`, `--compact`, default and `--l`.
+There are two sizes.
+
+> The compact size is only used on desktop and it is full size when used on a touch device.
+
 {% capture button %}
-<button class=" fd-button fd-button--xs">Button</button>
-<button class=" fd-button fd-button--s">Button</button>
-<button class=" fd-button fd-button--compact">Button</button>
-<button class=" fd-button">Button</button>
-<button class=" fd-button fd-button--l">Button</button>
+<button class="fd-button">Default</button>
+<button class="fd-button--compact">Compact</button>
 {% endcapture %}
 {% include display-component.html component=button %}
 
 <br>
 
 ## Buttons with Icon
-Button can have an icon with text or just and icon. You can use the `sap-icon--{icon-name}` class to attach an icon to the button.
+All buttons styles can be used with an icon. You can use the `sap-icon--{icon-name}` class to attach an icon to the button.
 Full list of all the available icons can be found on the <a href="icon.html">icons page</a>.
 {% capture button %}
-<button class="fd-button--action-bar sap-icon--cart">Add to Cart</button>
+<button class="fd-button--emphasized sap-icon--cart">Add to Cart</button>
 <button class="fd-button sap-icon--cart">Add to Cart</button>
-<button class="fd-button--secondary sap-icon--cart">Add to Cart</button>
-<button class="fd-button--toolbar sap-icon--filter">Filter</button>
-<button class="fd-button--action-bar fd-button--positive sap-icon--accept">Approve</button>
-<button class="fd-button--action-bar fd-button--negative sap-icon--decline">Reject</button>
+<button class="fd-button--light sap-icon--cart">Add to Cart</button>
+<button class="fd-button--emphasized fd-button--positive sap-icon--accept">Approve</button>
+<button class="fd-button--emphasized fd-button--negative sap-icon--decline">Reject</button>
 <br><br>
-<button class="fd-button--action-bar sap-icon--cart"></button>
 <button class="fd-button sap-icon--cart"></button>
-<button class="fd-button--secondary sap-icon--cart"></button>
-<button class="fd-button--toolbar sap-icon--filter"></button>
-<button class="fd-button--action-bar fd-button--positive sap-icon--accept"></button>
-<button class="fd-button--action-bar fd-button--negative sap-icon--decline"></button>
-
+<button class="fd-button--light sap-icon--cart"></button>
+<button class="fd-button--standard sap-icon--filter"></button>
+<button class="fd-button--emphasized fd-button--positive sap-icon--accept"></button>
+<button class="fd-button--emphasized fd-button--negative sap-icon--decline"></button>
 {% endcapture %}
 {% include display-component.html component=button %}
 
@@ -76,108 +85,54 @@ The buttons can also be set to a state:
 * **Disabled**: It cannot be clicked/tapped.  This state can be rendered using `is-disabled` class or `aria-disabled="true"` attribute for accessibility.
 
 {% capture button-standard-state %}
-<button class="fd-button--action-bar">Normal State</button>
-<button class="fd-button--action-bar is-selected" aria-selected="true">Selected State</button>
-<button class="fd-button--action-bar is-disabled" aria-disabled="true">Disabled State</button>
+<button class="fd-button--emphasized">Normal State</button>
+<button class="fd-button--emphasized" aria-selected="true">Selected State</button>
+<button class="fd-button--emphasized" aria-disabled="true">Disabled State</button>
 <br><br>
 <button class="fd-button">Normal State</button>
-<button class="fd-button is-selected" aria-selected="true">Selected State</button>
-<button class="fd-button is-disabled" aria-disabled="true">Disabled State</button>
+<button class="fd-button" aria-selected="true">Selected State</button>
+<button class="fd-button" aria-disabled="true">Disabled State</button>
 <br><br>
-<button class="fd-button--secondary">Normal State</button>
-<button class="fd-button--secondary is-selected" aria-selected="true">Selected State</button>
-<button class="fd-button--secondary is-disabled" aria-disabled="true">Disabled State</button>
+<button class="fd-button--light">Normal State</button>
+<button class="fd-button--light">Selected State</button>
+<button class="fd-button--light">Disabled State</button>
 <br><br>
-<button class="fd-button--toolbar">Normal State</button>
-<button class="fd-button--toolbar is-selected" aria-selected="true">Selected State</button>
-<button class="fd-button--toolbar is-disabled" aria-disabled="true">Disabled State</button>
+<button class="fd-button--standard">Normal State</button>
+<button class="fd-button--standard" aria-selected="true">Selected State</button>
+<button class="fd-button--standard" aria-disabled="true">Disabled State</button>
 <br><br>
 <button class="fd-button--positive">Normal State</button>
-<button class="fd-button--positive is-selected" aria-selected="true">Selected State</button>
-<button class="fd-button--positive is-disabled" aria-disabled="true">Disabled State</button>
+<button class="fd-button--positive" aria-selected="true">Selected State</button>
+<button class="fd-button--positive" aria-disabled="true">Disabled State</button>
 <br><br>
 <button class=" fd-button--negative">Normal State</button>
-<button class=" fd-button--negative is-selected" aria-selected="true">Selected State</button>
-<button class=" fd-button--negative is-disabled" aria-disabled="true">Disabled State</button>
+<button class=" fd-button--negative" aria-selected="true">Selected State</button>
+<button class=" fd-button--negative" aria-disabled="true">Disabled State</button>
 {% endcapture %}
 
 {% include display-component.html component=button-standard-state %}
 
 
 ## Button Group
-Group a series of buttons together on a single line with the button group
+Group a series of buttons together on a single line with the button group.
 
-## Extra Small(XS) Button Group
-{% capture button-group-xsmall %}
-<div class="fd-button-group" role="group" aria-label="Group label">
-  <button class="fd-button--grouped fd-button--xs sap-icon--survey"></button>
-  <button class="fd-button--grouped fd-button--xs sap-icon--pie-chart" aria-pressed="true"></button>
-  <button class="fd-button--grouped fd-button--xs sap-icon--pool"></button>
-</div>
-
-<div class="fd-button-group" role="group" aria-label="Group label">
-  <button class="fd-button--grouped fd-button--xs" aria-pressed="true">Left</button>
-  <button class="fd-button--grouped fd-button--xs">Middle</button>
-  <button class="fd-button--grouped fd-button--xs">Right</button>
-</div>
-{% endcapture %}
-{% include display-component.html component=button-group-xsmall %}
-
-<br>
-
-## Small(S) Button Group
+## Button Group
 {% capture button-group-small %}
 <div class="fd-button-group" role="group" aria-label="Group label">
-  <button class="fd-button--grouped fd-button--s sap-icon--survey"></button>
-  <button class="fd-button--grouped fd-button--s sap-icon--pie-chart" aria-pressed="true"></button>
-  <button class="fd-button--grouped fd-button--s sap-icon--pool"></button>
+  <button class="fd-button sap-icon--survey"></button>
+  <button class="fd-button sap-icon--pie-chart" aria-pressed="true"></button>
+  <button class="fd-button sap-icon--pool"></button>
 </div>
 
 <div class="fd-button-group" role="group" aria-label="Group label">
-  <button class="fd-button--grouped fd-button--s" aria-pressed="true">Left</button>
-  <button class="fd-button--grouped fd-button--s">Middle</button>
-  <button class="fd-button--grouped fd-button--s">Right</button>
+  <button class="fd-button fd-button--compact" aria-pressed="true">Left</button>
+  <button class="fd-button fd-button--compact">Middle</button>
+  <button class="fd-button fd-button--compact">Right</button>
 </div>
 {% endcapture %}
 {% include display-component.html component=button-group-small %}
 
 <br>
-
-## Compact Button Group
-Compact size renders bigger icons with minimal padding inside the button.
-{% capture button-group-compact %}
-<div class="fd-button-group" role="group" aria-label="Group label">
-  <button class="fd-button--grouped fd-button--compact sap-icon--survey"></button>
-  <button class="fd-button--grouped fd-button--compact sap-icon--pie-chart" aria-pressed="true"></button>
-  <button class="fd-button--grouped fd-button--compact sap-icon--pool"></button>
-</div>
-
-<div class="fd-button-group" role="group" aria-label="Group label">
-  <button class="fd-button--grouped fd-button--compact" aria-pressed="true">Left</button>
-  <button class="fd-button--grouped fd-button--compact">Middle</button>
-  <button class="fd-button--grouped fd-button--compact">Right</button>
-</div>
-{% endcapture %}
-{% include display-component.html component=button-group-compact %}
-
-<br>
-
-## Default(Large) Button Group
-The large size is rendered by default with no additional modifier classes.
-{% capture button-group-default %}
-<div class="fd-button-group" role="group" aria-label="Group label">
-  <button class="fd-button--grouped sap-icon--survey"></button>
-  <button class="fd-button--grouped sap-icon--pie-chart" aria-pressed="true"></button>
-  <button class="fd-button--grouped sap-icon--pool"></button>
-</div>
-
-<div class="fd-button-group" role="group" aria-label="Group label">
-  <button class="fd-button--grouped" aria-pressed="true">Left</button>
-  <button class="fd-button--grouped">Middle</button>
-  <button class="fd-button--grouped">Right</button>
-</div>
-{% endcapture %}
-{% include display-component.html component=button-group-default %}
 
 <style media="screen">
 .fd-button,
@@ -186,7 +141,7 @@ The large size is rendered by default with no additional modifier classes.
 	margin-right: 10px;
 }
 
-[class*="fd-button--grouped"]{
+.fd-button-group [class*="fd-button"]{
 	margin-right: 0px;
 }
 

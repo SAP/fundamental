@@ -46,6 +46,27 @@ The dropdown is designed to look like the rest of input components. The options 
       </div>
    </div>
 </div>
+
+
+<div class="fd-dropdown fd-dropdown--compact">
+  <div class="fd-popover">
+    <div class="fd-popover__control">
+      <button class="fd-dropdown__control fd-button    fd-button--compact" aria-controls="dbkLJ896" aria-expanded="false" aria-haspopup="true">
+          Select
+      </button>
+    </div>
+    <div class="fd-popover__body"  aria-hidden="true" id="dbkLJ896">
+      <div class="fd-menu">
+        <ul class="fd-menu__list">
+          <li><a href="#" class="fd-menu__item">Option 1</a></li>
+          <li><a href="#" class="fd-menu__item">Option 2</a></li>
+          <li><a href="#" class="fd-menu__item">Option 3</a></li>
+          <li><a href="#" class="fd-menu__item">Option 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 {% endcapture %}
 
 {% include display-component.html component=default-dropdown %}
@@ -77,123 +98,31 @@ It can also include complementary information like an icon.
       </div>
    </div>
 </div>
+
+<div class="fd-dropdown fd-dropdown--compact">
+   <div class="fd-popover">
+      <div class="fd-popover__control">
+         <button class="fd-dropdown__control fd-button  fd-button--compact sap-icon--filter "
+         aria-controls="sXq41189" aria-expanded="false" aria-haspopup="true">
+         Select
+         </button>
+      </div>
+      <div class="fd-popover__body"  aria-hidden="true" id="sXq41189">
+         <nav class="fd-menu">
+            <ul class="fd-menu__list">
+               <li><a href="#" class="fd-menu__item">Option 1</a></li>
+               <li><a href="#" class="fd-menu__item">Option 2</a></li>
+               <li><a href="#" class="fd-menu__item">Option 3</a></li>
+               <li><a href="#" class="fd-menu__item">Option 4</a></li>
+            </ul>
+         </nav>
+      </div>
+   </div>
+</div>
 {% endcapture %}
 
 {% include display-component.html component=icon-dropdown %}
 
-
-<br>
-
-## Size Options
-`xs`, `s`, `compact`, default and `l`
-{% capture dropdown-sizes %}
-
-<div class="fd-dropdown fd-dropdown--xs">
-   <div class="fd-popover">
-      <div class="fd-popover__control">
-         <button class="fd-dropdown__control fd-button   fd-button--xs" aria-controls="Wro1L121"
-         aria-expanded="false" aria-haspopup="true">
-         Select
-         </button>
-      </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="Wro1L121">
-         <nav class="fd-menu">
-            <ul class="fd-menu__list">
-               <li><a href="#" class="fd-menu__item">Option 1</a></li>
-               <li><a href="#" class="fd-menu__item">Option 2</a></li>
-               <li><a href="#" class="fd-menu__item">Option 3</a></li>
-               <li><a href="#" class="fd-menu__item">Option 4</a></li>
-            </ul>
-         </nav>
-      </div>
-   </div>
-</div>
-<div class="fd-dropdown fd-dropdown--s">
-   <div class="fd-popover">
-      <div class="fd-popover__control">
-         <button class="fd-dropdown__control fd-button   fd-button--s" aria-controls="iL1jS619"
-         aria-expanded="false" aria-haspopup="true">
-         Select
-         </button>
-      </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="iL1jS619">
-         <nav class="fd-menu">
-            <ul class="fd-menu__list">
-               <li><a href="#" class="fd-menu__item">Option 1</a></li>
-               <li><a href="#" class="fd-menu__item">Option 2</a></li>
-               <li><a href="#" class="fd-menu__item">Option 3</a></li>
-               <li><a href="#" class="fd-menu__item">Option 4</a></li>
-            </ul>
-         </nav>
-      </div>
-   </div>
-</div>
-<div class="fd-dropdown fd-dropdown--compact">
-   <div class="fd-popover">
-      <div class="fd-popover__control">
-         <button class="fd-dropdown__control fd-button   fd-button--compact" aria-controls="FSWho575"
-         aria-expanded="false" aria-haspopup="true">
-         Select
-         </button>
-      </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="FSWho575">
-         <nav class="fd-menu">
-            <ul class="fd-menu__list">
-               <li><a href="#" class="fd-menu__item">Option 1</a></li>
-               <li><a href="#" class="fd-menu__item">Option 2</a></li>
-               <li><a href="#" class="fd-menu__item">Option 3</a></li>
-               <li><a href="#" class="fd-menu__item">Option 4</a></li>
-            </ul>
-         </nav>
-      </div>
-   </div>
-</div>
-
-<div class="fd-dropdown">
-   <div class="fd-popover">
-      <div class="fd-popover__control">
-         <button class="fd-dropdown__control fd-button  " aria-controls="h0C6A3251"
-         aria-expanded="false" aria-haspopup="true">
-         Select
-         </button>
-      </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="h0C6A3251">
-         <nav class="fd-menu">
-            <ul class="fd-menu__list">
-               <li><a href="#" class="fd-menu__item">Option 1</a></li>
-               <li><a href="#" class="fd-menu__item">Option 2</a></li>
-               <li><a href="#" class="fd-menu__item">Option 3</a></li>
-               <li><a href="#" class="fd-menu__item">Option 4</a></li>
-            </ul>
-         </nav>
-      </div>
-   </div>
-</div>
-
-<div class="fd-dropdown fd-dropdown--l">
-   <div class="fd-popover">
-      <div class="fd-popover__control">
-         <button class="fd-dropdown__control fd-button   fd-button--l" aria-controls="qvi7l807"
-         aria-expanded="false" aria-haspopup="true">
-         Select
-         </button>
-      </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="qvi7l807">
-         <nav class="fd-menu">
-            <ul class="fd-menu__list">
-               <li><a href="#" class="fd-menu__item">Option 1</a></li>
-               <li><a href="#" class="fd-menu__item">Option 2</a></li>
-               <li><a href="#" class="fd-menu__item">Option 3</a></li>
-               <li><a href="#" class="fd-menu__item">Option 4</a></li>
-            </ul>
-         </nav>
-      </div>
-   </div>
-</div>
-
-{% endcapture %}
-
-{% include display-component.html component=dropdown-sizes %}
 
 <br />
 
@@ -202,10 +131,31 @@ It can also include complementary information like an icon.
 Disabled state can be rendered with a `is-disabled` class and/or `aria-disabled="true"` attribute.
 
 {% capture toolbar-dropdown %}
-<div class="fd-dropdown fd-dropdown--toolbar">
+<div class="fd-dropdown fd-dropdown--standard">
    <div class="fd-popover">
       <div class="fd-popover__control">
-         <button class="fd-dropdown__control fd-button   fd-button--toolbar" aria-controls="Og5y3993"
+         <button class="fd-dropdown__control fd-button   fd-button--standard" aria-controls="Og5y3993"
+         aria-expanded="false" aria-haspopup="true">
+         Select
+         </button>
+      </div>
+      <div class="fd-popover__body"  aria-hidden="true" id="Og5y3993">
+         <nav class="fd-menu">
+            <ul class="fd-menu__list">
+               <li><a href="#" class="fd-menu__item">Option 1</a></li>
+               <li><a href="#" class="fd-menu__item">Option 2</a></li>
+               <li><a href="#" class="fd-menu__item">Option 3</a></li>
+               <li><a href="#" class="fd-menu__item">Option 4</a></li>
+            </ul>
+         </nav>
+      </div>
+   </div>
+</div>
+
+<div class="fd-dropdown fd-dropdown--standard fd-dropdown--compact">
+   <div class="fd-popover">
+      <div class="fd-popover__control">
+         <button class="fd-dropdown__control fd-button   fd-button--standard fd-button--compact" aria-controls="Og5y3993"
          aria-expanded="false" aria-haspopup="true">
          Select
          </button>
