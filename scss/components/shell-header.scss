@@ -52,19 +52,19 @@ $block: #{$fd-namespace}-shell-header;
 
     //ELEMENTS *******************************************
     &__group {
-        &--left,
+        &--start,
         &--middle,
-        &--right{
+        &--end{
             display: inline-block;
         }
-        &--left,
-        &--right {
+        &--start,
+        &--end {
             flex: 1;
         }
         &--middle {
             width: $fd-shell-header-copilot-width;
         }
-        &--right {
+        &--end {
             text-align: right;
         }
     }
@@ -123,9 +123,8 @@ $block: #{$fd-namespace}-shell-header;
         padding-left: $fd-shell-header-item-spacing;
 
         &--search,
-        &--task,
-        &--bell,
-        &--switcher {
+        &--notifications,
+        &--product_switcher {
             // Show only on desktop, hide on s and xs
             @include fd-screen(xs) {
                 display: none;
@@ -134,7 +133,7 @@ $block: #{$fd-namespace}-shell-header;
                 display: none;
             }
         }
-        &--overflow {
+        &--collapse {
             // Show only on s and xs, hide on desktop
             display: none;
 
@@ -142,7 +141,7 @@ $block: #{$fd-namespace}-shell-header;
                 display: inline-block;
             }
         }
-        &--user {
+        &--user_menu {
             // Show me at all times
         }
     }
@@ -168,7 +167,7 @@ $block: #{$fd-namespace}-shell-header;
 @include fd-rtl(#{$block}){
     .#{$block}{
         &__group {
-            &--right {
+            &--end {
                 text-align: left;
             }
         }
