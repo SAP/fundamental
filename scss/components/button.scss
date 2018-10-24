@@ -334,32 +334,23 @@ $block: #{$fd-namespace}-button;
         --fd-button-background-color: var(--fd-color-status-3);
     }
   }
-  /* Refactor this like the above */
   &--shellheader {
-    color: fd-color(shell, 2);
-    border-color: transparent;
-    background-color: transparent;
+    --fd-button-color: var(--fd-color-shell-2);
+    --fd-button-border-color: transparent;
+    --fd-button-background-color: transparent;
 
-    &:hover {
-      color: fd-color(shell, 2);
-      background-color: fd-color-darker(fd-color(shell, 1));
-      border-color: transparent;
-      box-shadow: none;
+    @include fd-hover {
+      --fd-button-color: var(--fd-color-shell-2);
+      --fd-button-border-color: transparent;
+      --fd-button-background-color: var(fd-color-darker(--fd-color-shell-1));
     }
-    &:active,
-    &.is-active,
-    &[aria-selected="true"],
-    &.is-selected,
-    &[aria-pressed="true"],
-    &.is-pressed {
-      color: fd-color(shell, 2);
-      background-color: fd-color-darkest(fd-color(shell, 1));
-      border-color: transparent;
+    @include fd-selected {
+      --fd-button-color: var(--fd-color-shell-2);
+      --fd-button-border-color: transparent;
+      --fd-button-background-color: var(fd-color-darker(--fd-color-shell-1));
     }
-    &[aria-disabled="true"],
-    &.is-disabled,
-    &:disabled {
-      opacity: .25; // TEMP/PLACEHOLDER
+    @include fd-disabled {
+      opacity: .25; // TEMP
     }
   }
 }

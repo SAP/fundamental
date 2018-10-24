@@ -28,13 +28,19 @@
                 "logo": "SAP"
             },
             "title": "Title",
+            "title_items": [
+                { "label": "Product A" },
+                { "label": "Product B" },
+                { "label": "Product C" },
+                { "label": "Product D" }
+            ],
             "subtitle": "Subtitle",
             "copilot": true,
             "actions": [
                 {
                     "name": "search",
                     "state": "closed",
-                    "component": shell_header_search({ "id": utils.id() }, state={ "closed": true })
+                    "component": shell_header_search(properties={ "id": utils.id() }, state={ "closed": true })
                 },
                 {
                     "name": "notifications",
@@ -42,23 +48,103 @@
                 },
                 {
                     "name": "collapse",
-                    "id": utils.id(),
-                    "component": shell_header_collapse()
+                    "component": shell_header_collapse(properties={
+                        items: [
+                            { "label": "Notifications" },
+                            {"label": "Search" }
+                        ]
+                    })
                 },
                 {
                     "name": "user_menu",
-                    "id": utils.id(),
-                    "component": user_menu()
+                    "component": user_menu(properties={
+                        "initials": "EB",
+                        "name": "Eric Boyer",
+                        items: [
+                            { "label": "App Finder" },
+                            { "label": "Settings" },
+                            { "label": "App Settings" },
+                            { "label": "Help" },
+                            { "label": "Give Feedback" },
+                            { "label": "About" },
+                            { "label": "Sign Out" }
+                        ]
+                    })
                 },
                 {
                     "name": "product_switcher",
-                    "id": utils.id(),
-                    "component": product_switcher()
+                    "component": product_switcher(properties={ "items": data.properties.product_switcher_items })
+                }
+            ]
+        } %}
+
+        {% set properties_two = {
+            "brand": {
+                "name": "SAP",
+                "logo": "SAP"
+            },
+            "title": "Title",
+            "subtitle": false,
+            "copilot": true,
+            "actions": [
+                {
+                    "name": "user_menu",
+                    "component": user_menu(properties={
+                        "initials": "EB",
+                        "name": "Eric Boyer",
+                        items: [
+                            { "label": "App Finder" },
+                            { "label": "Settings" },
+                            { "label": "App Settings" },
+                            { "label": "Help" },
+                            { "label": "Give Feedback" },
+                            { "label": "About" },
+                            { "label": "Sign Out" }
+                        ]
+                    })
+                },
+                {
+                    "name": "product_switcher",
+                    "component": product_switcher(properties={ "items": data.properties.product_switcher_items })
+                }
+            ]
+        } %}
+
+        {% set properties_three = {
+            "brand": {
+                "name": "SAP",
+                "logo": "SAP"
+            },
+            "title": "Title",
+            "subtitle": false,
+            "copilot": false,
+            "actions": [
+                {
+                    "name": "user_menu",
+                    "component": user_menu(properties={
+                        "initials": "EB",
+                        "name": "Eric Boyer",
+                        items: [
+                            { "label": "App Finder" },
+                            { "label": "Settings" },
+                            { "label": "App Settings" },
+                            { "label": "Help" },
+                            { "label": "Give Feedback" },
+                            { "label": "About" },
+                            { "label": "Sign Out" }
+                        ]
+                    })
+                },
+                {
+                    "name": "product_switcher",
+                    "component": product_switcher(properties={ "items": data.properties.product_switcher_items })
                 }
             ]
         } %}
 
         {{  shell_header(properties) }}
+        {{  shell_header(properties_two) }}
+        {{  shell_header(properties_three) }}
     {% endset %}
     {{ format(example) }}
 {% endblock %}

@@ -8,26 +8,6 @@
     see ./data.json for object structure
 #}
 
-
-{# {%- macro combobox_control(properties={}) -%}
-    <div class="fd-combobox-control" aria-label="Image label" aria-controls="{{ properties.id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }} >
-        {{ input_group(
-            modifier={
-                after: ['after', 'button'],
-                block: "after"
-            },
-            properties={
-                input: {
-                    properties: {
-                        placeholder: "Select Fruit"
-                    }
-                },
-                after: button({ icon: 'navigation-down-arrow' }, modifier={ block: ['icon', 'secondary'] })
-            })
-        }}
-    </div>
-{%- endmacro %} #}
-
 {% macro combobox_input(
     properties={},
     state={},
@@ -40,27 +20,27 @@
         <div class="fd-popover">
             <div class="fd-popover__control">
                 <div class="fd-combobox-control{{ size | modifier("input-group") }}" aria-label="Image label" aria-controls="{{_id}}" aria-expanded="false" aria-haspopup="true">
-{{- input_group(
-    modifier={
-        block: "after",
-        after: ['after', 'button']
-    },
-    properties={
-        input: {
-            properties: {
-                placeholder: "Select Fruit"
-            }
-        },
-        after: button(
-          {
-              label: '',
-              icon: 'navigation-down-arrow'
-          },
-          modifier={
-              block: ['light']
-          },size=size)
-    },size=size)
-}}
+                    {{- input_group(
+                        modifier={
+                            block: "after",
+                            after: ['after', 'button']
+                        },
+                        properties={
+                            input: {
+                                properties: {
+                                    placeholder: "Select Fruit"
+                                }
+                            },
+                            after: button(
+                              {
+                                  label: '',
+                                  icon: 'navigation-down-arrow'
+                              },
+                              modifier={
+                                  block: ['light']
+                              },size=size)
+                        },size=size)
+                    }}
                 </div>
             </div>
             <div class="fd-popover__body" aria-hidden="true" id="{{_id}}">
