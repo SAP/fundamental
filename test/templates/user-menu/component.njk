@@ -3,8 +3,6 @@
 {% from "./../menu/component.njk" import menu %}
 {% from "./../identifier/component.njk" import identifier %}
 
-{%- set _id = utils.id() %}
-
 <!--
 user_menu:
     properties={
@@ -17,12 +15,25 @@ user_menu:
     state={},
     aria={}
 -->
-
+{% set props = {
+  "initials": "EB",
+  "name": "Eric Boyer",
+  "items": [
+    { "label": "App Finder" },
+    { "label": "Settings" },
+    { "label": "App Settings" },
+    { "label": "Help" },
+    { "label": "Give Feedback" },
+    { "label": "About" },
+    { "label": "Sign Out" }
+  ]
+} %}
 {% macro user_menu(
-    properties={},
+    properties=props,
     state={},
     aria={})
 -%}
+{%- set _id = utils.id() %}
 <div class="fd-user-menu">
     {{  popover(properties={
             id: _id,

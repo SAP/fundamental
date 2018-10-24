@@ -118,6 +118,23 @@ env.addFilter('random_string', function(length=5) {
     }
     return text;
 });
+// pluck
+// returns array from an object
+// obj | pluck("key")
+env.addFilter('pluck', function(obj={},key="") {
+ var result = obj.map(a => a[key]);
+
+   return result;
+});
+// filter_array
+// returns obj
+// obj | pluck("key")
+env.addFilter('filter_array', function(array={},key="",value="") {
+ var result = array.filter(function(obj) {
+   return obj[key] === value;
+ })
+   return result;
+});
 
 
 app.set('views', TEMPLATE_DIRECTORY);
@@ -146,6 +163,22 @@ router.get('/', function (req, res) {
   res.render('index', GLOBALS);
 });
 
+function getStarterData() {
+    var data = {
+        "toolbar": require(`./templates/toolbar/data.json`),
+        "tree": require(`./templates/tree/data.json`),
+        "table": require(`./templates/table/data.json`),
+        "tabs": require(`./templates/tabs/data.json`),
+        "pagination": require(`./templates/pagination/data.json`),
+        "side_nav": require(`./templates/side-nav/data.json`),
+        "breadcrumb": require(`./templates/breadcrumb/data.json`),
+        "localization_editor": require(`./templates/localization-editor/data.json`),
+        "image": require(`./templates/image/data.json`),
+        "product_switcher": require(`./templates/product-switcher/data.json`)
+    }
+    return data;
+}
+
 router.get('/:key', (req, res) => {
     var key = req.params.key;
     var data = {};
@@ -157,23 +190,9 @@ router.get('/:key', (req, res) => {
 
     }
     console.log(`requested http://localhost:3030/${key}`);
-    res.render(`${key}/index`, Object.assign(GLOBALS, { id: key, data: data, libs: getLibs(req.query.lib) }));
+    res.render(`${key}/index`, Object.assign(GLOBALS, { id: key, component: getStarterData(), data: data, libs: getLibs(req.query.lib) }));
 });
 
-function getStarterData() {
-    var data = {
-        "toolbar": require(`./templates/toolbar/data.json`),
-        "tree": require(`./templates/tree/data.json`),
-        "table": require(`./templates/table/data.json`),
-        "tabs": require(`./templates/tabs/data.json`),
-        "pagination": require(`./templates/pagination/data.json`),
-        "side_nav": require(`./templates/side-nav/data.json`),
-        "breadcrumb": require(`./templates/breadcrumb/data.json`),
-        "localization_editor": require(`./templates/localization-editor/data.json`),
-        "image": require(`./templates/image/data.json`)
-    }
-    return data;
-}
 
 router.get('/pages/:key', (req, res) => {
     var key = req.params.key;
