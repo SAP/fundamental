@@ -16,28 +16,28 @@ Inputs are used to collect data from the user. When a field is required, the lab
 {% capture inputs %}
 <div class="fd-form__set">
     <div class="fd-form__item">
-        <label class="fd-form__label" for="input-1">Default Input</label>
+        <label class="fd-form__label" for="input-1">Default Input:</label>
         <input class="fd-form__control" type="text" id="input-1" placeholder="Field placeholder text">
     </div>
 </div>
 
 <div class="fd-form__set">
     <div class="fd-form__item">
-        <label class="fd-form__label is-required" for="input-2">Required Input*</label>
+        <label class="fd-form__label is-required" for="input-2">Required Input:</label>
         <input class="fd-form__control" type="text" id="input-2" placeholder="Field placeholder text">
     </div>
 </div>
 
 <div class="fd-form__set">
     <div class="fd-form__item">
-        <label class="fd-form__label is-required" for="input-3">Password*</label>
+        <label class="fd-form__label is-required" for="input-3">Password:</label>
         <input class="fd-form__control" type="password" id="input-3">
     </div>
 </div>
 
 <div class="fd-form__set">
     <div class="fd-form__item">
-        <label class="fd-form__label" for="textarea-1">Text area</label>
+        <label class="fd-form__label" for="textarea-1">Text area:</label>
         <textarea class="fd-form__control" id="textarea-1">Pellentesque metus lacus commodo eget justo ut rutrum varius nunc.</textarea>
     </div>
 </div>
@@ -58,7 +58,7 @@ Help elements give the user information about the input. Two types of help eleme
 <div class="fd-form__set">
     <div class="fd-form__item">
         <label class="fd-form__label" for="input-44">
-            Input with inline help
+            Input with inline help:
             <span class="fd-inline-help fd-has-float-right">
                 <span class="fd-inline-help__content fd-inline-help__content--bottom-right">
                         Lorem ipsum dolor sit amet, consectetur adipiscing.
@@ -71,7 +71,7 @@ Help elements give the user information about the input. Two types of help eleme
 
 <div class="fd-form__set">
     <div class="fd-form__item">
-        <label class="fd-form__label" for="input-45">Input with Help Message</label>
+        <label class="fd-form__label" for="input-45">Input with Help Message:</label>
         <input class="fd-form__control" type="text" id="input-45">
         <span class="fd-form__message fd-form__message--help">
             Pellentesque metus lacus commodo eget justo ut rutrum varius nunc
@@ -98,7 +98,7 @@ Along with Invalid and Warning, error messages should be displayed below the fie
 {% capture inputs %}
 <div class="fd-form__item">
     <label class="fd-form__label" for="OatmD552">
-        Normal Input
+        Normal Input:
     </label>
     <input type="text" class="fd-form__control" id="OatmD552" placeholder="Field placeholder text">
     <span class="fd-form__message">
@@ -108,14 +108,14 @@ Along with Invalid and Warning, error messages should be displayed below the fie
 
 <div class="fd-form__item">
     <label class="fd-form__label" for="input-2">
-        Valid Input
+        Valid Input:
     </label>
     <input class="fd-form__control is-valid" type="text" id="input-2">
 </div>
 
 <div class="fd-form__item">
     <label class="fd-form__label" for="UI7xy545">
-        Invalid Input
+        Invalid Input:
     </label>
     <input type="text" class="fd-form__control is-invalid" id="UI7xy545" placeholder="Field placeholder text">
     <span class="fd-form__message fd-form__message--error">
@@ -125,7 +125,7 @@ Along with Invalid and Warning, error messages should be displayed below the fie
 
 <div class="fd-form__item">
     <label class="fd-form__label" for="pvsz1273">
-        Warning Input
+        Warning Input:
     </label>
     <input type="text" class="fd-form__control is-warning" id="pvsz1273" placeholder="Field placeholder text">
     <span class="fd-form__message fd-form__message--warning">
@@ -136,7 +136,7 @@ Along with Invalid and Warning, error messages should be displayed below the fie
 
 <div class="fd-form__item">
     <label class="fd-form__label" for="VmsRZ860">
-        Field Label
+        Field Label:
     </label>
     <input type="text" class="fd-form__control" id="VmsRZ860" placeholder="Field placeholder text">
     <span class="fd-form__message fd-form__message--help">
@@ -145,12 +145,12 @@ Along with Invalid and Warning, error messages should be displayed below the fie
 </div>
 
 <div class="fd-form__item">
-    <label class="fd-form__label" for="input-6">Disabled Input</label>
+    <label class="fd-form__label" for="input-6">Disabled Input:</label>
     <input class="fd-form__control" type="text" id="input-6" value="Non editable data" disabled>
 </div>
 
 <div class="fd-form__item">
-    <label class="fd-form__label" for="input-7">Read Only Input</label>
+    <label class="fd-form__label" for="input-7">Read Only Input:</label>
     <input class="fd-form__control" type="text" id="input-7" value="Read only data" readonly>
 </div>
 {% endcapture %}
@@ -165,7 +165,7 @@ The Select component is similar to a dropdown but is more commonly used within a
 {% capture select %}
 <div class="fd-form__set">
     <div class="fd-form__item">
-        <label class="fd-form__label" for="select-1">Default Select</label>
+        <label class="fd-form__label" for="select-1">Default Select:</label>
         <select class="fd-form__control" id="select-1" name="">
             <option value="1">Duis malesuada odio volutpat elementum</option>
             <option value="2">Suspendisse ante ligula</option>
@@ -176,7 +176,7 @@ The Select component is similar to a dropdown but is more commonly used within a
 
 <div class="fd-form__set">
     <div class="fd-form__item">
-        <label class="fd-form__label" for="select-2">Disabled Select</label>
+        <label class="fd-form__label" for="select-2">Disabled Select:</label>
         <select class="fd-form__control" id="select-2" name="" disabled>
             <option value="1">Duis malesuada odio volutpat elementum</option>
             <option value="2">Suspendisse ante ligula</option>
