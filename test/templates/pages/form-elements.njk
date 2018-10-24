@@ -6,7 +6,7 @@
 {% from "./../button-group/component.njk" import button_group %}
 {% from "./../dropdown/component.njk" import dropdown %}
 {% from "./../menu/component.njk" import menu %}
-{% from "./../tag/component.njk" import tag %}
+{% from "./../token/component.njk" import token %}
 {% from "./../combobox-input/component.njk" import combobox_input %}
 {% from "./../date-picker/component.njk" import date_picker %}
 {% from "./../input-group/component.njk" import input_group %}
@@ -60,7 +60,7 @@
   {%- endcall %}
   {% call layout.panel_filters(aria={ hidden: false }) -%}
     {%- for i in range(0, 5) -%}
-      {{  tag({label: "Bibendum"}) }}
+      {{  token({label: "Bibendum"}) }}
       {% endfor %}
       {{  button({label: 'Clear All'},modifier={block: ['secondary','s']}) }}
   {%- endcall %}

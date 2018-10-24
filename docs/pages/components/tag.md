@@ -9,7 +9,7 @@ summary:
 ---
 <span class="fd-badge fd-badge--error fd-badge--pill">Depricated</span>
 
-This componnet has been renamed to <a href="token.html">Token</a>
+This component has been renamed to <a href="token.html">Token</a>
 <hr>
 
 {% capture default-alert %}

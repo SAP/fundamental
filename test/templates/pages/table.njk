@@ -10,7 +10,7 @@
 {% from "../button/component.njk" import button %}
 {% from "../button-group/component.njk" import button_group %}
 {% from "../table/component.njk" import table %}
-{% from "../tag/component.njk" import tag %}
+{% from "../token/component.njk" import token %}
 {% from "../menu/component.njk" import menu %}
 {% from "../pagination/component.njk" import pagination %}
 
@@ -28,9 +28,9 @@
     }}
 {% endset %}
 
-{%- set tags %}
+{%- set tokens %}
 {%- for i in range(0, 5) -%}
-{{  tag({label: "Bibendum"}) }}
+{{  token({label: "Bibendum"}) }}
 {% endfor %}
 {{  button({label: 'Clear All'},modifier={block: ['secondary','s']}) }}
 {% endset %}
@@ -99,7 +99,7 @@
 
     {%- endcall %}
     {% call layout.panel_filters(aria={ hidden: false }) -%}
-{{tags}}
+{{tokens}}
     {%- endcall %}
 
 
