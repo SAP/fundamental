@@ -1,11 +1,72 @@
 {% extends "./page.njk" %}
-{% from "./../../side-nav/component.njk" import side_nav %}
+{% import "./../../utils.njk" as utils %}
+{% from "./../../button/component.njk" import button %}
+{% from "./../../product-switcher/component.njk" import product_switcher %}
+{% from "./../../shell-header-collapse/component.njk" import shell_header_collapse %}
+{% from "./../../shell-header-search/component.njk" import shell_header_search %}
+{% from "./../../user-menu/component.njk" import user_menu %}
 {% from "./../../shell-header/component.njk" import shell_header %}
 
 {% set hide_shell_footer = true %}
 
 {% block shell_header %}
-    {{  shell_header() }}
+    {% set properties = {
+        "brand": {
+            "name": "SAP",
+            "logo": "SAP"
+        },
+        "title": "Title",
+        "title_items": [
+            { "label": "Product A" },
+            { "label": "Product B" },
+            { "label": "Product C" },
+            { "label": "Product D" }
+        ],
+        "subtitle": "Subtitle",
+        "copilot": true,
+        "actions": [
+            {
+                "name": "search",
+                "state": "closed",
+                "component": shell_header_search(properties={ "id": utils.id() }, state={ "closed": true })
+            },
+            {
+                "name": "notifications",
+                "component": button({ icon: 'bell' }, modifier={ block: ['shellheader'] })
+            },
+            {
+                "name": "collapse",
+                "component": shell_header_collapse(properties={
+                    items: [
+                        { "label": "Notifications" },
+                        {"label": "Search" }
+                    ]
+                })
+            },
+            {
+                "name": "user_menu",
+                "component": user_menu(properties={
+                    "initials": "EB",
+                    "name": "Eric Boyer",
+                    items: [
+                        { "label": "App Finder" },
+                        { "label": "Settings" },
+                        { "label": "App Settings" },
+                        { "label": "Help" },
+                        { "label": "Give Feedback" },
+                        { "label": "About" },
+                        { "label": "Sign Out" }
+                    ]
+                })
+            },
+            {
+                "name": "product_switcher",
+                "component": product_switcher(properties={ "items": data.properties.product_switcher_items })
+            }
+        ]
+    } %}
+
+    {{  shell_header(properties) }}
 {% endblock %}
 
 {% block app_sidebar %}
