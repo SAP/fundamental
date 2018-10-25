@@ -143,16 +143,13 @@ $block: #{$fd-namespace}-shell-header;
         &--search,
         &--notifications,
         &--product_switcher {
-            // Show only on desktop, hide on s and xs
-            @include fd-screen(xs) {
-                // display: none;
-            }
+            // Show only on desktop, hide on s
             @include fd-screen(s) {
                 // display: none;
             }
         }
         &--collapse {
-            // Show only on s and xs, hide on desktop
+            // Show only on s, hide on desktop
             // display: none;
 
             @include fd-screen(m) {
@@ -164,9 +161,6 @@ $block: #{$fd-namespace}-shell-header;
         }
     }
 
-    @include fd-screen(xs) {
-        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-small;
-    }
     @include fd-screen(s) {
         padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-small;
     }
@@ -177,6 +171,9 @@ $block: #{$fd-namespace}-shell-header;
         padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-large;
     }
     @include fd-screen(xl) {
+        padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-large;
+    }
+    @include fd-screen(xxl) {
         padding: $fd-shell-header-outer-spacing-tb $fd-shell-header-outer-spacing-lr-large;
     }
 }
