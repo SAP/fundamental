@@ -19,7 +19,8 @@ $block: #{$fd-namespace}-action-bar;
 
     //LOCAL mixins
     @mixin fd-action-bar-responsive {
-        @include fd-screen(xs){
+        // Changed from deprecated fd-screen(xs)
+        @include fd-screen(s){
             white-space: nowrap;
             width: calc(100% - 10px);
             overflow: hidden;
@@ -29,15 +30,14 @@ $block: #{$fd-namespace}-action-bar;
     }
 
     @mixin fd-hide-on-mobile {
-        @include fd-screen(xs) {
+        // Changed from deprecated fd-screen(xs)
+        @include fd-screen(s) {
             display: none !important;
         }
 
-        @include fd-screen(s) {
+        @include fd-screen(m) {
             display: inline-block !important;
         }
-
-
     }
 
     //BLOCK BASE *******************************************

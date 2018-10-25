@@ -66,7 +66,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 
 */
 
-$flow_width_of_gutter: $fd-width--gutter;
+$flow_width_of_gutter: map-get($fd-spacing, xxs); // Should match var(--fd-width-gutter) in root.scss
 
 //Apply to outer container
 @mixin fd-flow-box {
@@ -79,7 +79,6 @@ $flow_width_of_gutter: $fd-width--gutter;
   //set margin for gutter
   margin-right: $flow_width_of_gutter;
   margin-right: var(--fd-width-gutter);
-
 
   &:last-child {
     margin-right: 0;
