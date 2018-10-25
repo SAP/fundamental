@@ -17,7 +17,7 @@ $block: #{$fd-namespace}-global-nav;
     $fd-global-nav-background-color: fd-color(background, 2) !default;
     $fd-global-nav-border-color: fd-color(neutral, 2);
     $fd-global-nav-height: fd-space(12.5);
-    $fd-global-nav-logo-height: fd-space(7) !default
+    $fd-global-nav-logo-height: fd-space(7) !default;
     $fd-global-nav-btn-color: fd-color(action, 1);
     $fd-global-nav-search-box-background-color: fd-color(background, 2);
     $fd-global-nav-search-box-width: fd-space(44);
@@ -64,11 +64,6 @@ $block: #{$fd-namespace}-global-nav;
     &__side-menu {
       display: inline-flex;
       align-items: center;
-        // button {
-        //     height: $fd-global-nav-height;
-        //     min-height: $fd-global-nav-height;
-        //     padding: 0 fd-space(5);
-        // }
     }
 
     &__logo {
@@ -76,7 +71,6 @@ $block: #{$fd-namespace}-global-nav;
         font-weight: bold;
         background-image: url(#{$fd-global-nav-logo});
         background-repeat: no-repeat;
-        //background-position: left 17px;
         width: fd-space(15);
         margin-left: fd-space(5);
         height: $fd-global-nav-logo-height;
@@ -93,7 +87,6 @@ $block: #{$fd-namespace}-global-nav;
         max-width: 400px;
         margin: 0 auto;
         position: relative;
-        //height: $fd-global-nav-height;
         button{
             min-height: $fd-global-nav-height - 2;
             background-image: url(#{$fd-down-arrow-icon});
@@ -138,12 +131,6 @@ $block: #{$fd-namespace}-global-nav;
 
     &__actions {
         display: inline-block;
-
-        button {
-            // height: $fd-global-nav-height - 2;
-            // min-height: $fd-global-nav-height - 2;
-            // padding: 0 10px;
-        }
     }
 
     &__search{
@@ -158,7 +145,6 @@ $block: #{$fd-namespace}-global-nav;
             border:none;
             min-width:$fd-global-nav-search-box-width;
             border-bottom: 1px solid $fd-global-nav-border-color;
-            //height: $fd-global-nav-height - 11;
             box-shadow: 0 5px #fff,  0px -5px #fff;
             &[aria-hidden="true"] {
                 display: none;
@@ -171,7 +157,4 @@ $block: #{$fd-namespace}-global-nav;
     &[disabled] {
         opacity: 0.5;
     }
-    &[aria-selected="true"] {
-    }
-
 }
