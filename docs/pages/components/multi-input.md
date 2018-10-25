@@ -16,10 +16,12 @@ summary:
     <div class="fd-multi-input-field">
         <div class="fd-popover">
             <div class="fd-popover__control">
-                <div class="fd-combobox-control" aria-label="Image label" aria-controls="F4GcX348" aria-expanded="false" aria-haspopup="true">
+                <div class="fd-combobox-control" aria-label="Image label" aria-controls="F4GcX348"
+                aria-expanded="false" aria-haspopup="true">
                     <div class="fd-input-group fd-input-group--after">
                         <input type="text" class="fd-input" id="" placeholder="Select Fruit">
-                        <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
+                        <span class="fd-input-group__addon fd-input-group__addon--after
+                        fd-input-group__addon--button">
                             <button class=" fd-button--light sap-icon--navigation-down-arrow"></button>
                         </span>
                     </div>
@@ -52,9 +54,9 @@ summary:
         </div>
     </div>
     <div class="fd-multi-input-tags">
-        <span class="fd-tag" role="button">Apple</span>
-        <span class="fd-tag" role="button">Berry</span>
-        <span class="fd-tag" role="button">Banana</span>
+        <span class="fd-token" role="button">Apple</span>
+        <span class="fd-token" role="button">Berry</span>
+        <span class="fd-token" role="button">Banana</span>
     </div>
 </div>
 {% endcapture %}

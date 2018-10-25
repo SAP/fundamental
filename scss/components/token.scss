@@ -1,0 +1,39 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../icons/mixins";
+@import "./../functions";
+
+
+/*!
+.fd-token+(--no-border)
+    .fd-token__content+()
+    .fd-token__title+()
+*/
+$block: #{$fd-namespace}-token;
+
+.#{$block} {
+    //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-token-border-color: transparent !default;
+    $fd-token-background-color: fd-color-state("selected") !default;
+
+    @include fd-reset;
+    @include fd-type("-1");
+    color: fd-color("text",2);
+    background-color: $fd-token-background-color;
+    line-height: fd-space(6);
+    vertical-align: middle;
+    display: inline-block;
+    padding-left: fd-space(2);
+    padding-right: fd-space(2);
+    border-radius: $fd-border-radius;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $fd-token-border-color;
+    cursor: pointer;
+
+    @include fd-icon("sys-cancel","s","after") {
+      color: fd-color("action",1);
+      margin-left: fd-space(base);
+    };
+
+}
