@@ -13,6 +13,14 @@ date_picker:
 -->
 
 {%- macro date_picker_control(properties={}, modifier={}, state={}, aria={ hidden: true },size="") -%}
+{% set value = "" %}
+{% set placeholder = "" %}
+{% if properties.month %}
+  {% set value = properties.year+"/"+properties.month+"/"+properties.today %}
+{% else %}
+  {% set placeholder = "Pick a Date" %}
+{% endif %}
+
 {%- set btn = button(
   { label: '',
     icon: 'calendar'
@@ -38,7 +46,8 @@ date_picker:
     properties={
         input: {
             properties: {
-                placeholder: "Pick a date"
+                placeholder: placeholder,
+                value: value
             }
         },
         after: btn
@@ -51,7 +60,7 @@ date_picker:
 <div class="fd-date-picker">
     {{  popover(properties={
             id: _id,
-            control: date_picker_control(properties={id: _id},size=size),
+            control: date_picker_control(properties=properties,size=size,id=_id),
             body: calendar({
                 "month": properties.month,
                 "year": properties.year,
