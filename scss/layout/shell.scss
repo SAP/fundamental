@@ -1,0 +1,128 @@
+@import "./../settings";
+@import "./../functions";
+@import "./../mixins";
+
+/*!
+.fd-shell+(--fixed)
+    .fd-shell__header+(--fixed)
+    .fd-shell__app
+    .fd-shell__footer+(--fixed)
+    .fd-shell__overlay
+*/
+
+//these vars can be set globally to lock all pages
+//also, --fixed modifiers can be used in the HTML to set per template configurations
+$fd-shellui-fixed: false !default;
+$fd-shellui-background: none !default;
+$fd-shellui-header-fixed: false !default;
+$fd-shellui-footer-fixed: false !default;
+
+$fd-shellui-header-height: 48px !default;
+// $fd-shellui-header-background-color: $fd-background-color--header !default;
+$fd-shellui-header-border-bottom: solid 1px fd-color("neutral",3) !default;
+$fd-shellui-footer-height: 40px !default;
+$fd-shellui-footer-background-color: $fd-background-color--footer !default;
+$fd-shellui-footer-border-top: solid 1px fd-color("neutral",3) !default;
+$_shellui-is-fixed: $fd-shellui-fixed or ($fd-shellui-header-fixed and $fd-shellui-footer-fixed);
+
+$block: #{$fd-namespace}-shell;
+.#{$block} {
+    position: absolute;
+    min-height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    background: $fd-shellui-background;
+    background-size: cover;
+    background-attachment: fixed;
+
+    &--fixed {
+        display: flex;
+        flex-direction: column;
+        max-height: 100vh;
+        .#{$block}__header {
+            flex: 0 0 $fd-shellui-header-height;
+            position: static;
+        }
+        & .#{$block}__footer {
+            flex: 0 0 $fd-shellui-footer-height;
+            position: static;
+        }
+        & .#{$block}__app {
+            overflow: scroll;
+            margin-top: 0;
+            flex: 1;
+            min-height: auto;
+        }
+    }
+    @if $_shellui-is-fixed {
+        display: flex;
+        flex-direction: column;
+        max-height: 100vh;
+    }
+    &__header {
+        position: absolute;
+        z-index: 1;
+        // background: $fd-shellui-header-background-color;
+        width: 100%;
+        min-height: $fd-shellui-header-height;
+        height: $fd-shellui-header-height;
+        &--fixed {
+            position: fixed;
+        }
+        @if $_shellui-is-fixed {
+            position: static;
+            flex: 0 0 $fd-shellui-header-height;
+        } @else {
+            @if $fd-shellui-header-fixed {
+                position: fixed;
+            }
+        }
+    }
+    &__footer {
+        background: $fd-shellui-footer-background-color;
+        width: 100%;
+        min-height: $fd-shellui-footer-height;
+        height: $fd-shellui-footer-height;
+        border-top: $fd-shellui-footer-border-top;
+        &--fixed {
+            position: fixed;
+            bottom: 0;
+        }
+        @if $_shellui-is-fixed {
+            position: static;
+            flex: 0 0 $fd-shellui-footer-height;
+        } @else {
+            @if $fd-shellui-footer-fixed {
+                position: fixed;
+                bottom: 0;
+            }
+        }
+    }
+    &__app {
+        margin-top: $fd-shellui-header-height;
+        min-height: calc(100vh - #{$fd-shellui-footer-height} - #{$fd-shellui-header-height});
+        width: 100%;
+        display: flex;
+        position: relative;
+        @if $_shellui-is-fixed {
+            overflow: scroll;
+            flex: 1;
+            margin-top: 0;
+        } @else {
+            @if $fd-shellui-header-fixed {
+                min-height: calc(100vh - #{$fd-shellui-footer-height});
+            }
+            @if $fd-shellui-footer-fixed {
+                padding-bottom: $fd-shellui-footer-height;
+            }
+        }
+    }
+    &__main {
+        @if $_shellui-is-fixed {
+            overflow: scroll;
+        }
+    }
+    &__overlay {
+        position: absolute;
+    }
+}

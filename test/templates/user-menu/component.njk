@@ -1,0 +1,53 @@
+{% import "./../utils.njk" as utils %}
+{% from "./../popover/component.njk" import popover %}
+{% from "./../menu/component.njk" import menu %}
+{% from "./../identifier/component.njk" import identifier %}
+
+<!--
+user_menu:
+    properties={
+        "id": "",
+        "initials": "",
+        "name": "",
+        "items": []
+    },
+    modifier={ block: [] },
+    state={},
+    aria={}
+-->
+{% set props = {
+  "initials": "EB",
+  "name": "Eric Boyer",
+  "items": [
+    { "label": "App Finder" },
+    { "label": "Settings" },
+    { "label": "App Settings" },
+    { "label": "Help" },
+    { "label": "Give Feedback" },
+    { "label": "About" },
+    { "label": "Sign Out" }
+  ]
+} %}
+{% macro user_menu(
+    properties=props,
+    state={},
+    aria={})
+-%}
+{%- set _id = utils.id() %}
+<div class="fd-user-menu">
+    {{  popover(properties={
+            id: _id,
+            control: user_menu_control(properties={"id": _id, "initials": properties.initials}),
+            body: menu(properties={
+                items: properties.items
+            })
+        }, modifier={ block: ['right'] })
+    }}
+</div>
+{%- endmacro %}
+
+{%- macro user_menu_control(properties={}, modifier={}, state={}) -%}
+<div class="fd-user-menu--control" aria-controls="{{properties.id}}" aria-expanded="false" aria-haspopup="true">
+    {{ identifier(properties={ "initials": properties.initials }, modifier={block: ["m", "circle"]}) }}
+</div>
+{%- endmacro -%}

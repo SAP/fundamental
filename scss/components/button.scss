@@ -334,7 +334,25 @@ $block: #{$fd-namespace}-button;
         --fd-button-background-color: var(--fd-color-status-3);
     }
   }
+  &--shellheader {
+    --fd-button-color: var(--fd-color-shell-2);
+    --fd-button-border-color: transparent;
+    --fd-button-background-color: transparent;
 
+    @include fd-hover {
+      --fd-button-color: var(--fd-color-shell-2);
+      --fd-button-border-color: transparent;
+      --fd-button-background-color: var(fd-color-darker(--fd-color-shell-1));
+    }
+    @include fd-selected {
+      --fd-button-color: var(--fd-color-shell-2);
+      --fd-button-border-color: transparent;
+      --fd-button-background-color: var(fd-color-darker(--fd-color-shell-1));
+    }
+    @include fd-disabled {
+      opacity: .25; // TEMP
+    }
+  }
 }
 
 

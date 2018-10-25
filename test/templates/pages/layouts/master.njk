@@ -1,3 +1,9 @@
+{# ui-level vars #}
+{%- set hide_ui_header = hide_ui_header or false %}
+{%- set hide_ui_footer = hide_ui_footer or false %}
+{%- set fix_ui_footer = fix_ui_footer or false %}
+{%- set show_ui_overlay = show_ui_overlay or false %}
+{%- set fix_ui = (fix_ui_footer and fix_ui_header) or (hide_ui_footer and fix_ui_header) %}
 <!doctype html>
 <html lang="en-us">
 <head>
@@ -12,25 +18,34 @@
     </style>
 </head>
 <body>
-
-<div class="fd-ui fd-ui--{{ app.id }}">
-    <div class="fd-ui__header">
-        <code class="fd-has-color-inverse">&nbsp;</code>
-    </div>
-    <div class="fd-ui__app" id="fd-ui-app">
-        {# <div class="fd-ui__sidebar" style="width: 200px;">
-            <code class="fd-has-color-inverse">&nbsp;</code>
+    <div class="fd-shell{{ 'fixed' | modifier('ui') if fix_ui }} fd-shell--{{ app.id }}">
+        {% if hide_ui_header !== true %}
+        <div class="fd-shell__header{{ 'fixed' | modifier('ui__header') if fix_ui_header and fix_ui === false }}">
+        {% block ui_header -%}
+        {%- endblock %}
         </div>
-        <main class="fd-ui__main"> #}
-            {% block content %}
-                  .fd-ui__app
-            {% endblock %}
-        {# </main> #}
+        {%- endif %}
+        {% if hide_ui_header !== true or hide_ui_footer !== true %}
+        <div class="fd-shell__app">
+        {%- endif %}
+            {% block ui_app -%}
+            {%- endblock %}
+        {% if hide_ui_header !== true or hide_ui_footer !== true %}
+        </div>
+        {%- endif %}
+        {% if hide_ui_footer !== true %}
+        <div class="fd-shell__footer{{ 'fixed' | modifier('ui__footer') if fix_ui_footer and fix_ui === false }}">
+            {% block ui_footer -%}
+            {%- endblock %}
+        </div>
+        {% endif %}
+        {%- if show_ui_overlay %}
+        <div class="fd-shell__overlay fd-overlay {{ overlay_modifier }}" aria-hidden="{{ false if show_ui_overlay else true }}">
+            {% block ui_overlay -%}
+            {%- endblock %}
+        </div>
+        {%- endif %}
     </div>
-    <div class="fd-overlay" aria-hidden="true" id="fd-ui-overlay">
-        .fd-overlay
-    </div>
-</div>
-
+    <script type="text/javascript" src="/static/controls.js"></script>
 </body>
 </html>

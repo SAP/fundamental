@@ -1,0 +1,82 @@
+{% extends "layout.njk" %}
+{% import "./../utils.njk" as utils %}
+{% from "./../format.njk" import format %}
+{% from "./../button/component.njk" import button %}
+{% from "./../product-switcher/component.njk" import product_switcher %}
+{% from "./../shell-header-collapse/component.njk" import shell_header_collapse %}
+{% from "./../shell-header-search/component.njk" import shell_header_search %}
+{% from "./../user-menu/component.njk" import user_menu %}
+{% from "./component.njk" import shell_header %}
+
+{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'components/identifier', 'components/popover', 'components/menu', 'components/product-switcher', 'helpers'] %}
+
+{% set search = shell_header_search(properties={ "id": utils.id() }, state={ "closed": true }) %}
+{% set notification = button({ icon: 'bell' }, modifier={ block: ['shellheader'] }) %}
+
+{% set collapse = shell_header_collapse(properties={
+    items: [
+        { "label": "Notifications" },
+        {"label": "Search" }
+    ]
+}) %}
+
+{% set actions = [
+  {
+    "label": "Search",
+    "action": search,
+    "collapse": false
+  },
+  {
+    "label": "Notifications",
+    "action": notification,
+    "collapse": false
+  }
+]
+%}
+
+
+
+{% block content %}
+
+<style media="screen">
+    .fd-shell-header{
+        margin: 40px 0;
+    }
+</style>
+
+
+<div style="background-color: #f3f4f5; margin:-20px; padding:20px;">
+
+    <h1>shell-header</h1>
+
+    {% set example %}
+        {{  shell_header(switcher=true) }}
+        {{  shell_header(switcher=false) }}
+
+        {{  shell_header(product={ title: "Sales Cloud"}) }}
+        {{  shell_header(actions=actions) }}
+        {{  shell_header(
+          brand={
+            logo: "http://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG3.png"},
+          product={ title: "Corporate Portal"})
+        }}
+
+
+{#
+        {{  shell_header(properties={
+          brand: data.properties.brand,
+          product: {
+            title: "Sales Cloud"
+          },
+          actions: {
+
+          }
+        }) }} #}
+
+        {# {{  shell_header(properties_two) }}
+        {{  shell_header(properties_three) }} #}
+    {% endset %}
+    {{ format(example) }}
+{% endblock %}
+
+</div>
