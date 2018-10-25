@@ -29,7 +29,7 @@ $block: #{$fd-namespace}-form;
         @include fd-last-child;
         .#{$block}__item {
             @include fd-last-child;
-            margin-right: $fd-form-item-gutter;
+            // margin-right: $fd-form-item-gutter;
         }
     }
     &__set {
@@ -78,6 +78,7 @@ $block: #{$fd-namespace}-form;
         }
         &--inline {
             float: left;
+            margin-right: fd-space(3);
             .#{$block}__label {
                 width: auto;
             }
@@ -165,6 +166,29 @@ $block: #{$fd-namespace}-form;
             &::before {
                 content: "";
                 color: $fd-color--error;
+            }
+        }
+    }
+}
+
+// RTL
+@include fd-rtl(#{$block}) {
+    .#{$block}{
+        &__item {
+            &--check{
+                .#{$block}__control {
+                    float: right;
+                    margin-left: fd-space(2);
+                    margin-right: 0;
+                }
+            }
+            &--inline {
+                float: right;
+                margin-right: 0;
+                margin-left: fd-space(3);
+                .#{$block}__label {
+                    width: auto;
+                }
             }
         }
     }
