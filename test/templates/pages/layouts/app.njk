@@ -1,24 +1,24 @@
-{% extends "./ui.njk" %}
+{% extends "./master.njk" %}
 
 {# ui.njk level vars #}
-{%- set hide_shell_footer = hide_shell_footer or false %}
-{%- set fix_shell_footer = fix_shell_footer or false %}
-{%- set show_shell_overlay = show_shell_overlay or false %}
+{%- set hide_ui_footer = hide_ui_footer or false %}
+{%- set fix_ui_footer = fix_ui_footer or false %}
+{%- set show_ui_overlay = show_ui_overlay or false %}
 
 {# app.njk level vars #}
 {% set hide_app_sidebar = hide_app_sidebar or false %}
 
 {# ui.njk blocks #}
-{% block shell_header -%}
+{% block ui_header -%}
 {%- endblock %}
 
-{% block shell_footer -%}
+{% block ui_footer -%}
 {%- endblock %}
 
-{% block shell_overlay -%}
+{% block ui_overlay -%}
 {%- endblock %}
 
-{% block shell_app -%}
+{% block ui_app -%}
     <div class="fd-app">
         {% if hide_app_sidebar !== true %}
             <div class="fd-app__sidebar">

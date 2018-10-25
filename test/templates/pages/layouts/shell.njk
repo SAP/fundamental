@@ -1,105 +1,88 @@
 {% extends "./page.njk" %}
-{% import "./../../utils.njk" as utils %}
+{% from "./../../side-nav/component.njk" import side_nav %}
+{% from "./../../action-bar/component.njk" import action_bar %}
 {% from "./../../button/component.njk" import button %}
-{% from "./../../product-switcher/component.njk" import product_switcher %}
-{% from "./../../shell-header-collapse/component.njk" import shell_header_collapse %}
-{% from "./../../shell-header-search/component.njk" import shell_header_search %}
-{% from "./../../user-menu/component.njk" import user_menu %}
+{% from "./../../breadcrumb/component.njk" import breadcrumb %}
 {% from "./../../shell-header/component.njk" import shell_header %}
 
-{% set hide_shell_footer = true %}
+{% set hide_ui_footer = true %}
+{% block ui_header %}
+{{ shell_header() }}
+{% endblock %}
 
-{% block shell_header %}
-    {% set properties = {
-        "brand": {
-            "name": "SAP",
-            "logo": "SAP"
-        },
-        "title": "Title",
-        "title_items": [
-            { "label": "Product A" },
-            { "label": "Product B" },
-            { "label": "Product C" },
-            { "label": "Product D" }
-        ],
-        "subtitle": "Subtitle",
-        "copilot": true,
-        "actions": [
-            {
-                "name": "search",
-                "state": "closed",
-                "component": shell_header_search(properties={ "id": utils.id() }, state={ "closed": true })
-            },
-            {
-                "name": "notifications",
-                "component": button({ icon: 'bell' }, modifier={ block: ['shellheader'] })
-            },
-            {
-                "name": "collapse",
-                "component": shell_header_collapse(properties={
-                    items: [
-                        { "label": "Notifications" },
-                        {"label": "Search" }
-                    ]
-                })
-            },
-            {
-                "name": "user_menu",
-                "component": user_menu(properties={
-                    "initials": "EB",
-                    "name": "Eric Boyer",
-                    items: [
-                        { "label": "App Finder" },
-                        { "label": "Settings" },
-                        { "label": "App Settings" },
-                        { "label": "Help" },
-                        { "label": "Give Feedback" },
-                        { "label": "About" },
-                        { "label": "Sign Out" }
-                    ]
-                })
-            },
-            {
-                "name": "product_switcher",
-                "component": product_switcher(properties={ "items": data.properties.product_switcher_items })
+{% block page_header %}
+{%- if show_breadcrumb %}
+{{  breadcrumb(
+        properties=data.breadcrumb.properties
+    )
+}}
+{%- endif %}
+{%- set btns = [] %}
+  {%- if is_editable_page %}
+{%- set btns = [button(
+          { label: 'Cancel' },
+          modifier={ block: ['secondary', 'l'] }
+      ),    button(
+              { label: 'Save' },
+              modifier={block: [ 'main', 'l'] }
+          )] %}
+    {# {%- else  %}
+    {%- set btns = [button(
+              { label: 'Add', icon: 'add' },
+              modifier={ block: ['l'] }
+          )] %} #}
+  {%- endif %}
+  {%- set page_description = page_intro or "" %}
+{{  action_bar(
+        properties={
+            title: page_title,
+            description: page_description,
+            actions: {
+                properties: {
+                    items: btns
+                }
             }
-        ]
-    } %}
-
-    {{  shell_header(properties) }}
+        },
+        modifier={
+            block: []
+        },
+        state={},
+        aria={}
+    )
+}}
 {% endblock %}
 
 {% block app_sidebar %}
-    {{ side_nav(properties = {
-      navgroups: [{
-        items: [
-        { label: "Home", icon: "home"},
-        { label: "Category", icon: "video", expanded: true,
-        items: [
-            { label: "Link" },
-            { label: "Link", selected: true },
-            { label: "Link" },
-            { label: "Link" }
-        ] },
-        { label: "Page", icon: "pending" },
-        { label: "Category", icon: "retail-store",
-        items: [
-            { label: "Link" },
-            { label: "Link" },
-            { label: "Link" },
-            { label: "Link" }
-        ] },
-        { label: "Page", icon: "leads" },
-        { label: "Page", icon: "history" }
-        ]
-      },
-      {
-        title: "Group",
-        items: [
-        { label: "Page", icon: "user-settings"},
-        { label: "Page", icon: "cloud" }
-        ]
-      }]
+{{ side_nav(properties = {
+  navgroups: [{
+    items: [
+    { label: "Home", icon: "home"},
+    { label: "Category", icon: "video", expanded: true,
+    items: [
+        { label: "Link" },
+        { label: "Link", selected: true },
+        { label: "Link" },
+        { label: "Link" }
+    ] },
+    { label: "Page", icon: "pending" },
+    { label: "Category", icon: "retail-store",
+    items: [
+        { label: "Link" },
+        { label: "Link" },
+        { label: "Link" },
+        { label: "Link" }
+    ] },
+    { label: "Page", icon: "leads" },
+    { label: "Page", icon: "history" }
+    ]
+  },
+  {
+    title: "Group",
+    items: [
+    { label: "Page", icon: "user-settings"},
+    { label: "Page", icon: "cloud" }
+    ]
+  }]
 
-    }) }}
+}) }}
 {% endblock %}

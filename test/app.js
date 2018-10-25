@@ -201,8 +201,13 @@ router.get('/pages/:key', (req, res) => {
 });
 router.get('/pages/app/:key', (req, res) => {
     var key = req.params.key;
-    console.log(`requested http://localhost:3030/pages/${key}`);
+    console.log(`requested http://localhost:3030/pages/app/${key}`);
     res.render(`pages/app/${key}`, Object.assign(GLOBALS, { id: key, data: getStarterData(), app: config }));
+});
+router.get('/pages/floorplans/:key', (req, res) => {
+    var key = req.params.key;
+    console.log(`requested http://localhost:3030/pages/floorplans/${key}`);
+    res.render(`pages/floorplans/${key}`, Object.assign(GLOBALS, { id: key, data: getStarterData(), app: config }));
 });
 
 
