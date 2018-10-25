@@ -15,6 +15,7 @@ $block: #{$fd-namespace}-table;
     $fd-table-link-color: fd-color(action, 1) !default;
     $fd-table-cell-spacing: $fd-width--gutter !default;
     $fd-table-cell-padding: fd-space("xs") !default;
+    $fd-table-background-color: fd-color("background", 2);
 
     $fd-table-header-color: fd-color("text", 3) !default;
     $fd-table-header-background-color: fd-color("neutral", 1) !default;
@@ -39,6 +40,7 @@ $block: #{$fd-namespace}-table;
     border-collapse: collapse;
     margin-bottom: $fd-margin-bottom;
     border-top: solid $fd-table-border-width $fd-table-border-color;
+    background-color: $fd-table-background-color;
 
     tr {
         transition: background-color $fd-table-transition-params;
@@ -51,6 +53,7 @@ $block: #{$fd-namespace}-table;
                 background-color: fd-color-state("selected-hover")
             }
         }
+        @include action-cursor;
     }
 
     thead {
@@ -106,7 +109,7 @@ $block: #{$fd-namespace}-table;
 
         &:hover {
             background: $fd-table-sort-column-header-hover-color;
-            cursor: pointer;
+            @include action-cursor;
         }
 
         &::after {
@@ -158,7 +161,7 @@ $block: #{$fd-namespace}-table;
 
         &:hover {
             background: $fd-table-sort-column-header-hover-color;
-            cursor: pointer;
+            @include action-cursor;
         }
 
     }
