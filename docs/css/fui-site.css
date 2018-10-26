@@ -4061,6 +4061,32 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       color: #51555a;
       background-color: rgba(10, 110, 209, 0.07); }
 
+[dir=rtl] .fd-dropdown__control::after,
+.fd-dropdown[dir=rtl] .fd-dropdown__control::after {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+
+[dir=rtl] .fd-dropdown__control:not(.fd-button--standard)::after,
+.fd-dropdown[dir=rtl] .fd-dropdown__control:not(.fd-button--standard)::after {
+  border-right: 1px solid #8b949c;
+  border-left: none; }
+
+[dir=rtl] .fd-dropdown__control.fd-button,
+.fd-dropdown[dir=rtl] .fd-dropdown__control.fd-button {
+  padding-left: 0;
+  padding-right: 12px; }
+
+[dir=rtl] .fd-dropdown__control.fd-button--standard, [dir=rtl] .fd-button-group .fd-dropdown__control[class*="fd-button--"], .fd-button-group [dir=rtl] .fd-dropdown__control[class*="fd-button--"],
+[dir=rtl] .fd-button-group .fd-dropdown__control.fd-button, .fd-button-group [dir=rtl] .fd-dropdown__control.fd-button,
+.fd-dropdown[dir=rtl] .fd-dropdown__control.fd-button--standard,
+.fd-dropdown[dir=rtl] .fd-button-group .fd-dropdown__control[class*="fd-button--"],
+.fd-button-group .fd-dropdown[dir=rtl] .fd-dropdown__control[class*="fd-button--"],
+.fd-dropdown[dir=rtl] .fd-button-group .fd-dropdown__control.fd-button,
+.fd-button-group .fd-dropdown[dir=rtl] .fd-dropdown__control.fd-button {
+  padding-left: 12px; }
+
 /*
   @mixin fd-type mixin
     Looks up values from $fd-type to ensure consistent application of the type hierarchy.
@@ -5821,6 +5847,25 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
       border-top-left-radius: 0;
       border-bottom-left-radius: 0; }
 
+[dir=rtl] .fd-button-group > *:not(:first-child),
+.fd-button-group[dir=rtl] .fd-button-group > *:not(:first-child) {
+  border-right: none; }
+
+[dir=rtl] .fd-button-group > *:last-child,
+.fd-button-group[dir=rtl] .fd-button-group > *:last-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+
+[dir=rtl] .fd-button-group > *:first-child,
+.fd-button-group[dir=rtl] .fd-button-group > *:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-right: 1px var(--fd-button-border-color) solid; }
+
 /*
   @mixin fd-type mixin
     Looks up values from $fd-type to ensure consistent application of the type hierarchy.
@@ -6341,10 +6386,6 @@ see layouts/panel
     $weight: "light", "normal", "bold"
 */
 .fd-popover {
-  font-size: 14px;
-  line-height: 1.42857;
-  color: #32363a;
-  font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   display: inline-block; }
   .fd-popover__control {
@@ -6390,6 +6431,10 @@ see layouts/panel
 .fd-popover[dir=rtl] .fd-popover__body {
   left: auto;
   right: -3px; }
+  [dir=rtl] .fd-popover__body::before,
+  .fd-popover[dir=rtl] .fd-popover__body::before {
+    left: 14px;
+    right: unset; }
   [dir=rtl] .fd-popover__body--left,
   .fd-popover[dir=rtl] .fd-popover__body--left {
     right: -3px;
@@ -6604,7 +6649,7 @@ input-addon
 * Add notification component / concept to button
 * Logo to CSS Var
 */
-.fd-shell-header {
+.fd-shellbar {
   font-size: 14px;
   line-height: 1.42857;
   color: #32363a;
@@ -6617,30 +6662,29 @@ input-addon
   position: relative;
   padding: 4px 32px;
   justify-content: space-between; }
-  .fd-shell-header__group--start, .fd-shell-header__group--middle, .fd-shell-header__group--end {
+  .fd-shellbar__group--start, .fd-shellbar__group--middle, .fd-shellbar__group--end {
     display: inline-block; }
-  .fd-shell-header__group--start, .fd-shell-header__group--end {
+  .fd-shellbar__group--start, .fd-shellbar__group--end {
     flex: 1; }
-  .fd-shell-header__group--middle {
+  .fd-shellbar__group--middle {
     width: 30px; }
-  .fd-shell-header__group--end {
+  .fd-shellbar__group--end {
     text-align: right; }
-  .fd-shell-header__logo, .fd-shell-header__title, .fd-shell-header__title-menu, .fd-shell-header__subtitle {
+  .fd-shellbar__logo, .fd-shellbar__title, .fd-shellbar__title-menu, .fd-shellbar__subtitle {
     display: inline-block;
     vertical-align: middle; }
-  .fd-shell-header__logo {
-    width: 60px;
+  .fd-shellbar__logo {
     height: 28px; }
-    .fd-shell-header__logo img {
+    .fd-shellbar__logo img {
       max-height: 28px; }
-  .fd-shell-header--brand {
+  .fd-shellbar--brand {
     display: inline-block;
     background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MTIuMzggMjA0Ij48ZGVmcz48c3R5bGU+LmNscy0xLC5jbHMtMntmaWxsLXJ1bGU6ZXZlbm9kZH0uY2xzLTF7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCl9LmNscy0ye2ZpbGw6I2ZmZn08L3N0eWxlPjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB4MT0iMjA2LjE5IiB4Mj0iMjA2LjE5IiB5Mj0iMjA0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDBiOGYxIi8+PHN0b3Agb2Zmc2V0PSIuMDIiIHN0b3AtY29sb3I9IiMwMWI2ZjAiLz48c3RvcCBvZmZzZXQ9Ii4zMSIgc3RvcC1jb2xvcj0iIzBkOTBkOSIvPjxzdG9wIG9mZnNldD0iLjU4IiBzdG9wLWNvbG9yPSIjMTc3NWM4Ii8+PHN0b3Agb2Zmc2V0PSIuODIiIHN0b3AtY29sb3I9IiMxYzY1YmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTVmYmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+U0FQX2dyYWRfUl9zY3JuX1plaWNoZW5mbMOkY2hlIDE8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTAgMjA0aDIwOC40MUw0MTIuMzggMEgwdjIwNCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTI0NC43MyAzOC4zNmgtNDAuNnY5Ni41MmwtMzUuNDYtOTYuNTVoLTM1LjE2bC0zMC4yNyA4MC43MkMxMDAgOTguNyA3OSA5MS42NyA2Mi40IDg2LjQgNTEuNDYgODIuODkgMzkuODUgNzcuNzIgNDAgNzJjLjA5LTQuNjggNi4yMy05IDE4LjM4LTguMzggOC4xNy40MyAxNS4zNyAxLjA5IDI5LjcxIDhsMTQuMS0yNC41NUM4OS4wNiA0MC40MiA3MSAzNi4yMSA1Ni4xNyAzNi4xOWgtLjA5Yy0xNy4yOCAwLTMxLjY4IDUuNi00MC42IDE0LjgzQTM0LjIzIDM0LjIzIDAgMCAwIDUuNzcgNzQuN0M1LjU0IDg3LjE1IDEwLjExIDk2IDE5LjcxIDEwM2M4LjEgNS45NCAxOC40NiA5Ljc5IDI3LjYgMTIuNjIgMTEuMjcgMy40OSAyMC40NyA2LjUzIDIwLjM2IDEzQTkuNTcgOS41NyAwIDAgMSA2NSAxMzVjLTIuODEgMi45LTcuMTMgNC0xMy4wOSA0LjEtMTEuNDkuMjQtMjAtMS41Ni0zMy42MS05LjU5TDUuNzcgMTU0LjQyYTkzLjc3IDkzLjc3IDAgMCAwIDQ2IDEyLjIyaDIuMTFjMTQuMjQtLjI1IDI1Ljc0LTQuMzEgMzQuOTItMTEuNzEuNTMtLjQxIDEtLjg0IDEuNDktMS4yOGwtNC4xMiAxMC44NUgxMjNsNi4xOS0xOC44MmE2Ny40NiA2Ny40NiAwIDAgMCAyMS42OCAzLjQzIDY4LjMzIDY4LjMzIDAgMCAwIDIxLjE2LTMuMjVsNiAxOC42NGg2MC4xNHYtMzloMTMuMTFjMzEuNzEgMCA1MC40Ni0xNi4xNSA1MC40Ni00My4yIDAtMzAuMTEtMTguMjItNDMuOTQtNTcuMDEtNDMuOTR6TTE1MC45MSAxMjFhMzYuOTMgMzYuOTMgMCAwIDEtMTMtMi4yOGwxMi44Ny00MC41OWguMjJsMTIuNjUgNDAuNzFhMzguNSAzOC41IDAgMCAxLTEyLjc0IDIuMTZ6bTk2LjItMjMuMzNoLTguOTRWNjQuOTFoOC45NGMxMS45MyAwIDIxLjQ0IDQgMjEuNDQgMTYuMTQgMCAxMi42LTkuNTEgMTYuNTctMjEuNDQgMTYuNTciLz48L3N2Zz4=);
     background-repeat: no-repeat;
     background-size: contain;
     width: 60px;
     height: 28px; }
-  .fd-shell-header__title {
+  .fd-shellbar__title {
     font-size: 1.14286rem;
     line-height: 1.25;
     font-weight: 400;
@@ -6648,49 +6692,49 @@ input-addon
     line-height: 1;
     padding: 0 16px;
     color: white; }
-  .fd-shell-header__subtitle {
+  .fd-shellbar__subtitle {
     font-size: 0.85714rem;
     line-height: 1.33333;
     font-weight: 400;
     font-weight: 400;
     line-height: 1; }
-  .fd-shell-header__copilot {
+  .fd-shellbar__copilot {
     display: inline-block;
     vertical-align: middle;
     width: 30px;
     height: 30px; }
-    .fd-shell-header__copilot > img {
+    .fd-shellbar__copilot > img {
       display: block;
       max-width: 100%; }
-  .fd-shell-header__actions, .fd-shell-header__action {
+  .fd-shellbar__actions, .fd-shellbar__action {
     display: inline-block; }
-    .fd-shell-header__actions > *, .fd-shell-header__action > * {
+    .fd-shellbar__actions > *, .fd-shellbar__action > * {
       vertical-align: middle; }
-  .fd-shell-header__action {
+  .fd-shellbar__action {
     padding-right: 0;
     padding-left: 12px; }
   @media (min-width: 320px) {
-    .fd-shell-header {
+    .fd-shellbar {
       padding: 4px 8px; } }
   @media (min-width: 600px) {
-    .fd-shell-header {
+    .fd-shellbar {
       padding: 4px 16px; } }
   @media (min-width: 1025px) {
-    .fd-shell-header {
+    .fd-shellbar {
       padding: 4px 32px; } }
   @media (min-width: 1440px) {
-    .fd-shell-header {
+    .fd-shellbar {
       padding: 4px 32px; } }
   @media (min-width: 1920px) {
-    .fd-shell-header {
+    .fd-shellbar {
       padding: 4px 32px; } }
 
-[dir=rtl] .fd-shell-header__group--end,
-.fd-shell-header[dir=rtl] .fd-shell-header__group--end {
+[dir=rtl] .fd-shellbar__group--end,
+.fd-shellbar[dir=rtl] .fd-shellbar__group--end {
   text-align: left; }
 
-[dir=rtl] .fd-shell-header__action,
-.fd-shell-header[dir=rtl] .fd-shell-header__action {
+[dir=rtl] .fd-shellbar__action,
+.fd-shellbar[dir=rtl] .fd-shellbar__action {
   padding-right: 12px;
   padding-left: 0; }
 
