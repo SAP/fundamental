@@ -4,9 +4,8 @@
 {% from "./../button/component.njk" import button %}
 
 <!--
-shell_header_title_menu:
+shell_header_collapse:
     properties={
-        "title": "",
         "items": []
     },
     modifier={ block: [] },
@@ -14,7 +13,7 @@ shell_header_title_menu:
     aria={}
 -->
 
-{% macro shell_header_title_menu(
+{% macro shell_header_collapse(
     properties={},
     state={},
     aria={},
@@ -23,10 +22,10 @@ shell_header_title_menu:
 
 {%- set _id = utils.id() %}
 
-<div class="fd-shell-header__title-menu">
+<div class="fd-shellbar-collapse">
     {{  popover(properties={
             id: _id,
-            control: shell_header_title_menu_control(properties={ "title": properties.title }, aria={ "controls": _id, "haspopup": true, "expanded": false}),
+            control: button({ icon: 'overflow' }, modifier={ block: ['shellheader fd-button--m'] }, aria={ "controls": _id, "haspopup": true, "expanded": false}),
             body: menu(properties={
                 "items": properties.items
             })
@@ -35,8 +34,3 @@ shell_header_title_menu:
 </div>
 
 {%- endmacro %}
-
-
-{%- macro shell_header_title_menu_control(properties={}, modifier={}, state={}, aria={}) -%}
-    <div class="fd-shell-header__title"{{ aria | aria }}>{{ properties.title }}</div>
-{%- endmacro -%}
