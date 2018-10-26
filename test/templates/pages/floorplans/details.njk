@@ -5,6 +5,8 @@
 {% from "./../../table/component.njk" import table %}
 {% from "./../../date-picker/component.njk" import date_picker %}
 {% from "./../../button-group/component.njk" import button_group %}
+{% from "./../../toggle/component.njk" import toggle %}
+{% from "./../../time-picker/component.njk" import time_picker %}
 {% from "./../../form/component.njk" import form_control, form_item, form_set %}
 {% import "../../forms.njk" as forms %}
 
@@ -30,7 +32,7 @@
 {%- call layout.container(modifier=["fluid","flex"],classes="has-align-items-flex-end") -%}
   {%- call layout.col(2) %}
     {% call form_set({ }) %}
-      {{ form_item("select", { label: "View by:", value: "Week ", options: [{
+      {{ form_item("select", { label: "View by", value: "Week ", options: [{
           properties: { label: "Week", value: "1" }
       },{
           properties: { label: "Month", value: "2" }
@@ -39,14 +41,14 @@
   {% endcall %}
   {%- call layout.col(2) %}
     {% call form_set({ }) %}
-      {{ form_item("select", { label: "Inventory type:", options: [{
+      {{ form_item("select", { label: "Inventory type", options: [{
         properties: { label: "Choose" }
     }] }, modifier={ item: "" }) }}
     {% endcall %}
   {% endcall %}
   {%- call layout.col(2) %}
     {% call form_set({ }) %}
-    {{ form_item("select", { label: "Exra data for chart:", options: [{
+    {{ form_item("select", { label: "Extra data for chart", options: [{
       properties: { label: "None" }
   }] }, modifier={ item: "" }) }}
     {% endcall %}
@@ -102,29 +104,89 @@
 
   {% call layout.panel() -%}
       {% call layout.panel_header({ title: "Form" }) -%}
-          {% call layout.panel_actions() -%}
-            {% call button_group() -%}
-              {{button({ icon: "table-chart" },size="compact",modifier={block: []},aria={  })}}
-              {{button({ icon: "bar-chart" },size="compact",modifier={block: []},aria={ "pressed": true })}}
-            {%- endcall %}
-            <span class="fd-has-margin-left-tiny">
-              {{button({ icon: "sort" },size="compact",modifier={block: ["light"]},aria={ })}}
-              {{button({ icon: "group-2" },size="compact",modifier={block: ["light"]},aria={ })}}
-              {{button({ icon: "action-settings" },size="compact",modifier={block: ["light"]},aria={ })}}
-            </span>
-          {%- endcall %}
       {%- endcall %}
-      {% call layout.panel_body(modifier=["bleed"]) -%}
-      {{  table({
-              headers: headers,
-              rows: [checkbox_row, checkbox_row, checkbox_row, checkbox_row_selected, checkbox_row, checkbox_row, checkbox_row, checkbox_row, checkbox_row, checkbox_row, checkbox_row, checkbox_row],
-              selectedRow: 4
-          })
-      }}
+      {% call layout.panel_body() -%}
+
+
+  {%- call layout.container() -%}
+    {%- call layout.col(5) -%}
+      {% call form_set({ }) %}
+        {{ form_item("text", { label: "ID" }) }}
+      {%- endcall %}
+    {%- endcall %}
+    {%- call layout.col(5) -%}
+      {% call form_set({ }) %}
+        {{ form_item("text", { label: "Store name" }) }}
+      {%- endcall %}
+    {%- endcall %}
+    {%- call layout.col(2) -%}
+      {% call form_set(properties={
+              legend: "Activate"
+          }) %}
+          {{  time_picker()
+          }}
+      {%- endcall %}
+    {%- endcall %}
+
+  {%- endcall %}
+  {%- call layout.container() -%}
+    {%- call layout.col(5) -%}
+      {% call form_set({ }) %}
+        {{ form_item("select", { label: "Default language", options: [{
+      properties: { label: "English" }
+  }] }, modifier={ item: "" }) }}
+      {%- endcall %}
+    {%- endcall %}
+    {%- call layout.col(5) -%}
+      {% call form_set({ }) %}
+        {{ form_item("select", { label: "Default currency", options: [{
+        properties: { label: "US - Dollar" }
+    }] }, modifier={ item: "" }) }}
+      {%- endcall %}
+    {%- endcall %}
+  {%- endcall %}
+  {%- call layout.container() -%}
+    {%- call layout.col(5) -%}
+    {% call form_set(properties={
+            legend: "Net"
+        }) %}
+    {{ form_item("radio", { label: "Yes", name: "foo" }, modifier={ item: "inline" }) }}
+    {{ form_item("radio", { label: "No", name: "foo" }, modifier={ item: "inline" }, state={ checked: true}) }}
+    {% endcall %}
+    {%- endcall %}
+    {%- call layout.col(5) -%}
+    {% call form_set(properties={
+            legend: "Label"
+        }) %}
+{{ form_item("toggle", { label: "Inventory type" }) }}
+    {% endcall %}
+    {%- endcall %}
+  {%- endcall %}
+  {%- call layout.container() -%}
+    {%- call layout.col(5) -%}
+    {% call form_set(properties={
+            legend: "Net"
+        }) %}
+    {{ form_item("radio", { label: "Yes", name: "bar" }, modifier={ item: "inline" }, state={ checked: true}) }}
+    {{ form_item("radio", { label: "No", name: "bar" }, modifier={ item: "inline" }) }}
+    {% endcall %}
+    {%- endcall %}
+    {%- call layout.col(5) -%}
+      {% call form_set(properties={
+              legend: "Label"
+          }) %}
+  {{ form_item("toggle", { label: "Inventory type" },state={ checked: true }) }}
+      {% endcall %}
+    {%- endcall %}
+  {%- endcall %}
+
       {%- endcall %}
     {%- endcall %}
   {%- endcall %}
   {# ---------------------- FORM SECTION #}
+
+
+
 
 
   {# TABLE SECTION ---------------------- #}
@@ -143,6 +205,7 @@
           { label: "Version" },
           { label: "TA Type" },
           { label: "Description" },
+          { label: "Region" },
           { label: "Status" },
           { label: "Last Update" },
           { label: "" }
@@ -159,8 +222,8 @@
             }
         },size="compact")
   %}
-  {% set checkbox_row = ['<input type="checkbox">', '<strong>Name of Technical Asset</strong>', '1.3', 'API Packages', 'Lorem ipsum dolor sit amet', '<span class="fd-has-color-status-1">Deployed</span>', '2018/03/21', [btnedit,btndelete].join('') ] %}
-  {% set checkbox_row_selected = ['<input type="checkbox" checked>', '<strong>Name of Technical Asset</strong>', '1.3', 'API Packages', 'Lorem ipsum dolor sit amet', '<span class="fd-has-color-status-3">Failed</span>', picker, btndelete] %}
+  {% set checkbox_row = ['<input type="checkbox">', '<strong>Name of Technical Asset</strong>', '1.3', 'API Packages', 'Lorem ipsum dolor sit amet', 'US Midwest/Chicago', '<span class="fd-has-color-status-1">Deployed</span>', '2018/03/21', [btnedit,btndelete].join('') ] %}
+  {% set checkbox_row_selected = ['<input type="checkbox" checked>', '<strong>Name of Technical Asset</strong>', '1.3', 'API Packages', 'Lorem ipsum dolor sit amet', 'US Midwest/Chicago', '<span class="fd-has-color-status-3">Failed</span>', picker, btndelete] %}
   {% call layout.panel() -%}
       {% call layout.panel_header({ title: "Technical Assets (12)" }) -%}
           {% call layout.panel_actions() -%}
