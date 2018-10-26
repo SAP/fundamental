@@ -4063,6 +4063,32 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       color: #51555a;
       background-color: rgba(10, 110, 209, 0.07); }
 
+[dir=rtl] .fd-dropdown__control::after,
+.fd-dropdown[dir=rtl] .fd-dropdown__control::after {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+
+[dir=rtl] .fd-dropdown__control:not(.fd-button--standard)::after,
+.fd-dropdown[dir=rtl] .fd-dropdown__control:not(.fd-button--standard)::after {
+  border-right: 1px solid #8b949c;
+  border-left: none; }
+
+[dir=rtl] .fd-dropdown__control.fd-button,
+.fd-dropdown[dir=rtl] .fd-dropdown__control.fd-button {
+  padding-left: 0;
+  padding-right: 12px; }
+
+[dir=rtl] .fd-dropdown__control.fd-button--standard, [dir=rtl] .fd-button-group .fd-dropdown__control[class*="fd-button--"], .fd-button-group [dir=rtl] .fd-dropdown__control[class*="fd-button--"],
+[dir=rtl] .fd-button-group .fd-dropdown__control.fd-button, .fd-button-group [dir=rtl] .fd-dropdown__control.fd-button,
+.fd-dropdown[dir=rtl] .fd-dropdown__control.fd-button--standard,
+.fd-dropdown[dir=rtl] .fd-button-group .fd-dropdown__control[class*="fd-button--"],
+.fd-button-group .fd-dropdown[dir=rtl] .fd-dropdown__control[class*="fd-button--"],
+.fd-dropdown[dir=rtl] .fd-button-group .fd-dropdown__control.fd-button,
+.fd-button-group .fd-dropdown[dir=rtl] .fd-dropdown__control.fd-button {
+  padding-left: 12px; }
+
 /*
   @mixin fd-type mixin
     Looks up values from $fd-type to ensure consistent application of the type hierarchy.
@@ -6407,6 +6433,10 @@ see layouts/panel
 .fd-popover[dir=rtl] .fd-popover__body {
   left: auto;
   right: -3px; }
+  [dir=rtl] .fd-popover__body::before,
+  .fd-popover[dir=rtl] .fd-popover__body::before {
+    left: 14px;
+    right: unset; }
   [dir=rtl] .fd-popover__body--left,
   .fd-popover[dir=rtl] .fd-popover__body--left {
     right: -3px;
