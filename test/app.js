@@ -6,6 +6,7 @@ const router = express.Router();
 const sass = require('node-sass');
 
 const TEMPLATE_DIRECTORY = path.join(__dirname, 'templates');
+const MODULES_DIRECTORY = path.join(__dirname, 'modules');
 const PUBLIC_DIRECTORY = path.join(__dirname, 'public');
 const SASS_DIRECTORY = path.join(__dirname, '..', 'scss');
 
@@ -16,7 +17,7 @@ const config = {
     id: "fundamental"
 }
 // looks for html in templates folder, static resources in public
-const env = nunjucks.configure([TEMPLATE_DIRECTORY,PUBLIC_DIRECTORY], {
+var env = nunjucks.configure([TEMPLATE_DIRECTORY,PUBLIC_DIRECTORY,MODULES_DIRECTORY], {
     autoescape: false,
     cache: false,
     express: app,
@@ -129,6 +130,16 @@ env.addFilter('filter_array', (array={}, key="", value="") => {
  const result = array.filter(obj => obj[key] === value);
    return result;
 });
+
+
+// merge_objs
+// returns obj
+// obj1 | merge_objs(obj2)
+env.addFilter('merge_objs', function(obj1={},obj2={}) {
+  var result = {...obj1, ...obj2 };
+  return result;
+});
+
 
 app.set('views', TEMPLATE_DIRECTORY);
 app.set('view engine', 'njk');
