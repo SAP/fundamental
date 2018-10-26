@@ -3,8 +3,8 @@
 {% from "./../format.njk" import format %}
 {% from "./../button/component.njk" import button %}
 {% from "./../product-switcher/component.njk" import product_switcher %}
-{% from "./../shell-header-collapse/component.njk" import shell_header_collapse %}
-{% from "./../shell-header-search/component.njk" import shell_header_search %}
+{% from "./../shellbar-collapse/component.njk" import shell_header_collapse %}
+{% from "./../shellbar-search/component.njk" import shell_header_search %}
 {% from "./../user-menu/component.njk" import user_menu %}
 {% from "./component.njk" import shell_header %}
 
@@ -39,7 +39,7 @@
 {% block content %}
 
 <style media="screen">
-    .fd-shell-header{
+    .fd-shellbar{
         margin: 40px 0;
     }
 </style>
@@ -47,7 +47,7 @@
 
 <div style="background-color: #f3f4f5; margin:-20px; padding:20px;">
 
-    <h1>shell-header</h1>
+    <h1>shellbar</h1>
 
     {% set example %}
         {{  shell_header(switcher=true) }}

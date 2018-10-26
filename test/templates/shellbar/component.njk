@@ -5,9 +5,9 @@
 {% from "./../menu/component.njk" import menu %}
 {% from "./../button/component.njk" import button %}
 {% from "./../product-switcher/component.njk" import product_switcher %}
-{% from "./../shell-header-collapse/component.njk" import shell_header_collapse %}
-{% from "./../shell-header-title-menu/component.njk" import shell_header_title_menu %}
-{% from "./../shell-header-search/component.njk" import shell_header_search %}
+{% from "./../shellbar-collapse/component.njk" import shell_header_collapse %}
+{% from "./../shellbar-title-menu/component.njk" import shell_header_title_menu %}
+{% from "./../shellbar-search/component.njk" import shell_header_search %}
 
 <!--
 shell_header:
@@ -69,33 +69,33 @@ shell_header:
 
 {% macro shell_header(brand=brand,product=product,copilot=true,actions=actions,user=true,switcher=true, properties={}, modifier={}, state={}, aria={}) -%}
 {%- set _id = utils.id() %}
-<div class="fd-shell-header">
-    <div class="fd-shell-header__group fd-shell-header__group--start">
-        <div class="fd-shell-header__logo">
+<div class="fd-shellbar">
+    <div class="fd-shellbar__group fd-shellbar__group--start">
+        <div class="fd-shellbar__logo">
           {% if brand.logo %}
             <img src="{{brand.logo}}" alt="{{brand.name}}">
           {% else %}
-              <div class="fd-shell-header--brand" aria-label="{{brand.name}}"></div>
+              <div class="fd-shellbar--brand" aria-label="{{brand.name}}"></div>
           {% endif %}
         </div>
-        <div class="fd-shell-header__title">
+        <div class="fd-shellbar__title">
         {% if product %}
 {{ product_menu(product) }}
         {% endif %}
         </div>
         {% if product.subtitle %}
-        <div class="fd-shell-header__subtitle">
+        <div class="fd-shellbar__subtitle">
 {{ product.subtitle }}
         </div>
         {% endif %}
     </div>
     {% if copilot === true %}
-    <div class="fd-shell-header__group fd-shell-header__group--middle">
+    <div class="fd-shellbar__group fd-shellbar__group--middle">
       <img src="/static/copilot.png" alt="CoPilot" height="30" width="30" />
     </div>
     {% endif %}
     {% if actions or user or switcher %}
-    <div class="fd-shell-header__group fd-shell-header__group--end">
+    <div class="fd-shellbar__group fd-shellbar__group--end">
       {{ shell_actions(actions=actions, user=user, switcher=switcher) }}
     </div>
     {% endif %}
@@ -104,24 +104,24 @@ shell_header:
 
 {% macro shell_actions(actions=actions, user=true, switcher=true, properties={}, modifier={}, state={}, aria={}) -%}
   {% set collapsed_items = actions | filter_array("collapse",true) %}
-    <div class="fd-shell-header__actions">
+    <div class="fd-shellbar__actions">
       {%- if actions %}
         {%- for item in actions %}
-            <div class="fd-shell-header__action">
+            <div class="fd-shellbar__action">
                 {{item.action}}
             </div>
         {%- endfor %}
-        <div class="fd-shell-header__action">
+        <div class="fd-shellbar__action">
 {{ shell_actions_collapse(actions=collapsed_items) }}
         </div>
         {%- endif %}
         {%- if user %}
-            <div class="fd-shell-header__action">
+            <div class="fd-shellbar__action">
 {{ user_menu() }}
             </div>
         {%- endif %}
         {%- if switcher %}
-            <div class="fd-shell-header__action">
+            <div class="fd-shellbar__action">
 {{ product_switcher() }}
             </div>
         {%- endif %}
@@ -129,7 +129,7 @@ shell_header:
 {%- endmacro %}
 
 {% macro shell_actions_collapse(actions=[], user=true, switcher=true, properties={}, modifier={}, state={}, aria={}) -%}
-  <div class="fd-shell-header-collapse">
+  <div class="fd-shellbar-collapse">
       {{  popover(properties={
               id: _id,
               control: button({ icon: 'overflow' }, modifier={ block: ['shellheader fd-button--m'] }, aria={ "controls": _id, "haspopup": true, "expanded": false}),
