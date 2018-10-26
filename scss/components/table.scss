@@ -168,12 +168,12 @@ $block: #{$fd-namespace}-table;
 
     &__fixed-col {
         position: absolute;
-        z-index: 1;
+        z-index: map-get($fd-z-index-levels, "first");
     }
 
     th.fd-table__fixed-col {
         background: $fd-table-sort-column-header-background-color;
-        z-index: 2;
+        z-index: map-get($fd-z-index-levels, "second");
         box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.08);
     }
     td.fd-table__fixed-col {
