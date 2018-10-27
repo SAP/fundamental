@@ -4,10 +4,16 @@
 {% from "./../../button/component.njk" import button %}
 {% from "./../../breadcrumb/component.njk" import breadcrumb %}
 {% from "./../../shellbar/component.njk" import shell_header %}
-
+{% set product = value %}
 {% set hide_ui_footer = true %}
+{% set custom_product = shellbar_product or false %}
 {% block ui_header %}
-{{ shell_header() }}
+{%- if custom_product %}
+  {{ shell_header(product=custom_product) }}
+{%- else %}
+  {{ shell_header() }}
+{%- endif %}
+
 {% endblock %}
 
 {% block page_header %}

@@ -1,15 +1,13 @@
 {% from "../templates/icon/component.njk" import icon %}
 {% set defaults = {
-    button: {
-      properties:{
-        label: "Button",
-        icon: "pool"
-      }
+    properties:{
+      label: "Button",
+      icon: "pool"
     }
   }
 %}
 {%- macro button(
-    label=defaults.button.properties.label,
+    label=defaults.properties.label,
     icon="",
     size="",
     type="",
@@ -23,8 +21,8 @@
 
 {# AN ICON ONLY BUTTON #}
 {%- macro icon_button(
-    label=defaults.button.properties.label,
-    icon=defaults.button.properties.icon,
+    label=defaults.properties.label,
+    icon=defaults.properties.icon,
     size="",
     type="",
     color="",

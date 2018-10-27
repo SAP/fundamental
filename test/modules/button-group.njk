@@ -1,0 +1,26 @@
+{% from "./button.njk" import icon_button %}
+{% import "./utils.njk" as utils %}
+{% set defaults = {
+    properties: {
+      label: "Sort by"
+    }
+  }
+%}
+{% macro button_group(label="", classes="") -%}
+<div class="fd-button-group{{ classes | classes }}" role="group" aria-label="{{label}}">
+  {{- caller() | indent -}}
+</div>
+{%- endmacro %}
+
+{% macro default_button_group(
+  label=defaults.properties.label,
+  modifiers={},
+  state={},
+  aria={}
+) -%}
+  {% call button_group(label="Sort by") -%}
+  {{ icon_button(size="compact",label="Survey",icon="survey") }}
+  {{ icon_button(size="compact",label="Chart",icon="pie-chart") }}
+  {{ icon_button(size="compact",label="Pool",icon="pool") }}
+  {%- endcall %}
+{%- endmacro %}

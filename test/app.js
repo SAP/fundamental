@@ -177,7 +177,8 @@ function getStarterData() {
         "breadcrumb": require(`./templates/breadcrumb/data.json`),
         "localization_editor": require(`./templates/localization-editor/data.json`),
         "image": require(`./templates/image/data.json`),
-        "product_switcher": require(`./templates/product-switcher/data.json`)
+        "product_switcher": require(`./templates/product-switcher/data.json`),
+        "test": require(`./data/test.json`)
     };
     return data;
 }
