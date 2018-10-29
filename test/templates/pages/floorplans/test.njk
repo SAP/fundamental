@@ -1,4 +1,4 @@
-{% extends "./../layouts/shell.njk" %}
+{% extends "./../layouts/module.njk" %}
 {% import "./../../layout/component.njk" as layout %}
 {% from "./../../table/component.njk" import table %}
 
@@ -6,8 +6,9 @@
 {% import "../../forms.njk" as forms %}
 
 {% from "./../../../modules/table.njk" import default_table, table, table_row, table_header, table_cell %}
-{% from "./../../../modules/button-group.njk" import button_group, default_button_group %}
-{% from "./../../../modules/button.njk" import icon_button, button %}
+{% from "./../../../modules/button-group.njk" import button_group %}
+{% from "./../../../modules/button.njk" import icon_button %}
+{% from "./../../../modules/button.njk" import button as btn %}
 
 {% set shellbar_product = {
   title: "Supplier Portal"
@@ -18,19 +19,9 @@
 {% set is_landing_page = false %}
 {% set is_editable_page = true %}
 {% set show_toolbar = false %}
+{% set hide_page_header = true %}
 {% set hide_app_sidebar = true %}
 
-{% set is_details_page = true %}
-{% block page_header %}
-{# PAGE_HEADER ---------------------- #}
-<div class="fd-has-background-color-background-2">
-{{ super() }}
-
-</div>
-
-
-{# ---------------------- PAGE_HEADER #}
-{% endblock %}
 {% block page_content %}
 {# PAGE_CONTENT ---------------------- #}
 
@@ -42,10 +33,16 @@
       {% call layout.panel_header({ title: "Technical Assets (12)" }) -%}
           {% call layout.panel_actions() -%}
 
+          {{ btn(default=true) }}
+          {{ icon_button(default=true) }}
+       <br>
 
-          {{ default_button_group() }}
+{{ button_group(default=true) }}
 
-
+{% call button_group() -%}
+  {{ icon_button(size="compact",label="Survey",icon="survey") }}
+  {{ icon_button(size="compact",label="Chart",icon="pie-chart",aria={ selected: true }) }}
+{%- endcall %}
 
 
 

@@ -16,7 +16,8 @@
     aria={},
     classes=""
   ) -%}
-<button class="fd-button{{ ' fd-button--'+size if size }}{{ ' fd-button--'+type if type }}{{ ' fd-button--'+color if color }}{{ ' sap-icon--'+icon if icon }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>{%- if label %}{{label}}{%- endif %}</button>
+<button class="fd-button{{ ' fd-button--'+size if size }}{{ ' fd-button--'+type if type }}{{ ' fd-button--'+color if color }}{{ ' sap-icon--'+icon if icon }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>
+  {%- if label %}{{label}}{%- endif %}</button>
 {%- endmacro %}
 
 {# AN ICON ONLY BUTTON #}
