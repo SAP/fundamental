@@ -2635,7 +2635,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 */
 .fd-col {
   flex: 1; }
-  @media (min-width: 320px) {
+  @media (min-width: 600px) {
     .fd-col--1 {
       float: left;
       margin-right: 8px;
@@ -4116,11 +4116,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-form__group:last-child {
     margin-bottom: 0;
     margin-right: 0; }
-  .fd-form__group .fd-form__item {
-    margin-right: var(--fd-width-gutter); }
-    .fd-form__group .fd-form__item:last-child {
-      margin-bottom: 0;
-      margin-right: 0; }
+  .fd-form__group .fd-form__item:last-child {
+    margin-bottom: 0;
+    margin-right: 0; }
   .fd-form__set {
     margin-bottom: 20px; }
     @media (min-width: 320px) {
@@ -4141,15 +4139,20 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         display: table;
         clear: both; }
       .fd-form__item--check .fd-form__label {
+        box-sizing: content-box;
         font-size: 1rem;
         line-height: 1.42857;
         font-weight: 400;
         margin-bottom: 0;
         vertical-align: middle;
-        display: flex;
+        display: inline-block;
         align-items: center;
         line-height: 16px;
         cursor: pointer; }
+        .fd-form__item--check .fd-form__label:focus-within {
+          outline: 1px dotted var(--fd-color-action-focus);
+          padding: 4px;
+          margin: -4px; }
       .fd-form__item--check .fd-form__control {
         float: left;
         vertical-align: middle;
@@ -4158,9 +4161,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         float: none;
         margin-left: 12px; }
     .fd-form__item--inline {
-      float: left; }
+      float: left;
+      margin-right: 12px; }
       .fd-form__item--inline .fd-form__label {
-        margin-top: 4px;
         width: auto; }
   .fd-form__label, .fd-form__legend {
     font-size: 14px;
@@ -4230,6 +4233,21 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       .fd-form__message--error::before {
         content: "";
         color: #ee0000; }
+
+[dir=rtl] .fd-form__item--check .fd-form__control,
+.fd-form[dir=rtl] .fd-form__item--check .fd-form__control {
+  float: right;
+  margin-left: 8px;
+  margin-right: 0; }
+
+[dir=rtl] .fd-form__item--inline,
+.fd-form[dir=rtl] .fd-form__item--inline {
+  float: right;
+  margin-right: 0;
+  margin-left: 12px; }
+  [dir=rtl] .fd-form__item--inline .fd-form__label,
+  .fd-form[dir=rtl] .fd-form__item--inline .fd-form__label {
+    width: auto; }
 
 /*
   @mixin fd-type mixin

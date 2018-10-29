@@ -21,6 +21,7 @@ $block: #{$fd-namespace}-form;
     $fd-form-message-color: fd-color(text, 2) !default;
     $fd-form-item-gutter: var(--fd-width-gutter) !default;
     $fd-form-item-margin-bottom: fd-space(5) !default;
+    $fd-form-item-focus-gutter: fd-space(1) !default;
 
     @include fd-reset;
     &__group {
@@ -28,7 +29,7 @@ $block: #{$fd-namespace}-form;
         @include fd-last-child;
         .#{$block}__item {
             @include fd-last-child;
-            margin-right: $fd-form-item-gutter;
+            // margin-right: $fd-form-item-gutter;
         }
     }
     &__set {
@@ -52,10 +53,17 @@ $block: #{$fd-namespace}-form;
             position: relative;
             display: block;
             .#{$block}__label {
+                box-sizing: content-box;
+                &:focus-within{
+                    outline: 1px dotted var(--fd-color-action-focus);
+                    padding: $fd-form-item-focus-gutter;
+                    margin: - $fd-form-item-focus-gutter;
+
+                }
                 @include fd-type(#{$fd-form-label-font-size--check});
                 margin-bottom: 0;
                 vertical-align: middle;
-                display: flex;
+                display: inline-block;
                 align-items: center;
                 line-height: $fd-forms-height--input-check;
                 @include action-cursor;
@@ -72,8 +80,8 @@ $block: #{$fd-namespace}-form;
         }
         &--inline {
             float: left;
+            margin-right: fd-space(3);
             .#{$block}__label {
-                margin-top: fd-space(1);
                 width: auto;
             }
         }
@@ -160,6 +168,29 @@ $block: #{$fd-namespace}-form;
             &::before {
                 content: "";
                 color: $fd-color--error;
+            }
+        }
+    }
+}
+
+// RTL
+@include fd-rtl(#{$block}) {
+    .#{$block}{
+        &__item {
+            &--check{
+                .#{$block}__control {
+                    float: right;
+                    margin-left: fd-space(2);
+                    margin-right: 0;
+                }
+            }
+            &--inline {
+                float: right;
+                margin-right: 0;
+                margin-left: fd-space(3);
+                .#{$block}__label {
+                    width: auto;
+                }
             }
         }
     }
