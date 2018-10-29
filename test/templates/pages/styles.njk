@@ -107,10 +107,11 @@
   <h1>State Colors</h1>
   <h2>{{ group }}</h2>
   {% for item in values %}
-    <span>{{ item[0] }} — {{ item[1] }}</span>
     {% set cssvar %}
     --fd-color-{{ group }}-{{ item[0] }}
     {% endset %}
+
+    <span>{{ item[0] }} — {{ item[1] }} / var({{cssvar}})</span>
 
     <br> <div style="padding: 20px; border: 1px solid #ccc; background-color: var({{cssvar}})">
         </div>
