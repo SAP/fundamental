@@ -1,6 +1,6 @@
 {% extends "./master.njk" %}
 {% from "../../action-bar/component.njk" import action_bar %}
-{% from "../../button/component.njk" import button %}
+{% from "../../button/component.njk" import button as btn %}
 
 {# ui-level vars #}
 {%- set hide_ui_header = true %}
@@ -31,15 +31,15 @@
         {% set actions_props = {
             properties: {
                 items: [
-button({ label: 'Add New Item', icon: 'add' })
+btn({ label: 'Add New Item', icon: 'add' })
                  ]
             }
         } %}
         {%- endif %}
             {%- if is_editable_page %}
-            {%- set actionbtn = button({ label: 'Cancel', icon: 'close' },modifier={ block: ['text','action-bar'] })
+            {%- set actionbtn = btn({ label: 'Cancel', icon: 'close' },modifier={ block: ['text','action-bar'] })
             %}
-            {%- set primarybtn = button({ label: 'Save', icon: 'checked' },modifier={ block: ['action-bar'] })
+            {%- set primarybtn = btn({ label: 'Save', icon: 'checked' },modifier={ block: ['action-bar'] })
             %}
             {% set actions_props = {
                 properties: {

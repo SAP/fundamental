@@ -7,8 +7,7 @@
 
 {% from "./../../../modules/table.njk" import default_table, table, table_row, table_header, table_cell %}
 {% from "./../../../modules/button-group.njk" import button_group %}
-{% from "./../../../modules/button.njk" import icon_button %}
-{% from "./../../../modules/button.njk" import button as btn %}
+{% from "./../../../modules/button.njk" import icon_button, button %}
 
 {% set shellbar_product = {
   title: "Supplier Portal"
@@ -33,7 +32,7 @@
       {% call layout.panel_header({ title: "Technical Assets (12)" }) -%}
           {% call layout.panel_actions() -%}
 
-          {{ btn(default=true) }}
+          {{ button(default=true) }}
           {{ icon_button(default=true) }}
        <br>
 
