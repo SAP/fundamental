@@ -4,7 +4,7 @@
 {% from "./component.njk" import link %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = [] %}
+{% set css_deps = ['icons'] %}
 
 {% block content %}
 
@@ -40,6 +40,13 @@
         state=data.state,
         aria={
           disabled: true
+        }
+    )
+}}
+<br><br>
+{{  link(
+        properties={
+            text: "Text with an icon <span class='sap-icon--cart'></span>"
         }
     )
 }}
