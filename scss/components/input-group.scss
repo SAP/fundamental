@@ -20,7 +20,7 @@ $block: #{$fd-namespace}-input-group;
 
     //ELEMENTS *******************************************
     #{$fd-elements-inputs--text}{
-        z-index: 1;
+        z-index: map-get($fd-z-index-levels, "first");
     }
     & [type="number"] {
         &::-webkit-outer-spin-button,
@@ -74,7 +74,7 @@ $block: #{$fd-namespace}-input-group;
         }
 
 
-        z-index: 2; // Brings focus state above input
+        z-index: map-get($fd-z-index-levels, "first"); // Brings focus state above input
 
         //ELEMENT MODIFIERS ************
         &:first-child {

@@ -209,6 +209,15 @@ $fd-background-color--footer: map-get($fd-colors-background, 2) !default;
 //positioning
 $fd-margin-bottom: map-get($fd-spacing, "xs") !default;
 
+$fd-z-index-levels: () !default;
+$fd-z-index-levels: map-merge((
+  "base": 0,
+  "first": 1,
+  "second": 2,
+  "top": 1000,
+  "default": auto
+), $fd-z-index-levels);
+
 //borders
 $fd-border-radius: 4px !default;
 
@@ -219,7 +228,7 @@ $fd-animation--speed: 0.125s !default;
 $fd-menu-border-color: red !default;
 $fd-menu-background-color: map-get($fd-colors-background, 2) !default;
 $fd-menu-box-shadow: 0 0 4px 1px rgba(map-get($fd-colors-neutral, 2), 1) !default;
-$fd-menu-z-index: 2 !default;
+$fd-menu-z-index: map-get($fd-z-index-levels, "second") !default;
 $fd-menu-border-color: transparent !default;
 $fd-menu-title-color: map-get($fd-colors-text, 3) !default;
 $fd-menu-title-padding: map-get($fd-spacing, "xxs") !default;
