@@ -7,12 +7,12 @@
 $block: #{$fd-namespace}-badge;
 .#{$block} {
   $fd-badge-background-color: fd-color("neutral", 1) !default;
-  $fd-badge-background-color--success: rgba($fd-color--success, 0.07) !default;
-  $fd-badge-background-color--warning: rgba($fd-color--warning, 0.07) !default;
-  $fd-badge-background-color--error: rgba($fd-color--error, 0.07) !default;
+  $fd-badge-background-color--success: fd-color-state("positive") !default;
+  $fd-badge-background-color--warning: fd-color-state("alert") !default;
+  $fd-badge-background-color--error: fd-color-state("negative") !default;
 
   @include fd-reset;
-  @include fd-type("-3");
+  @include fd-type("-1");
   @include fd-weight("bold");
   color: fd-color("text", 3);
   text-transform: uppercase;

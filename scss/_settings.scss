@@ -1,13 +1,26 @@
 //library namespace
 $fd-namespace: fd !default;
 
+//————————v FIORI FUNDAMENTALS FOUNDATION ————————v
+
 //breakpoints
+//
+//~ size ~~ target device ~~ viewport size
+//~ s       phone            <600px
+//~ m       tablet           600-1024px
+//~ l       desktop          1025-1439px
+//~ xl      desktop          1440-1919px
+//~ xxl     desktop          >=1920px
+//
+
+// replace xs references
+// find s references for LESS THAN? (max-width)
 $fd-breakpoints: (
-    xs: 320px,
-    s: 800px,
-    m: 1024px,
-    l: 1440px,
-    xl: 1580px,
+    s: 320px,
+    m: 600px,
+    l: 1025px,
+    xl: 1440px,
+    xxl: 1920px,
 ) !default;
 
 //spacing
@@ -18,11 +31,21 @@ $fd-spacing: map-merge((
     xxs: $fd-spacing--base * 2,  //8
     xs: $fd-spacing--base * 3,  //12
     s: $fd-spacing--base * 4,   //16
-    reg: $fd-spacing--base * 5, //20
+    reg: $fd-spacing--base * 6, //24** was 20
     m: $fd-spacing--base * 8,  //32
     l: $fd-spacing--base * 9,  //36
     xl: $fd-spacing--base * 10, //40
+    xxl: $fd-spacing--base * 12, //48** new
 ), $fd-spacing);
+
+$fd-spacing-common: () !default;
+$fd-spacing-common: map-merge((
+    "tiny": "xxs", //8px
+    "small": "s", //16px
+    "regular": "reg", //246px
+    "medium": "m", //32px
+    "large": "xxl" //48
+), $fd-spacing-common);
 
 //fonts
 $fd-fonts: () !default;
@@ -34,80 +57,132 @@ $fd-fonts: map-merge((
 
 //type
 //sets HTML el
-$fd-font-size: 14px !default;
-$fd-line-height: 20/14 !default;
 $fd-type--base: 14 !default;
 $fd-type: () !default;
 $fd-type: map-merge((
-  "-3": #{11/$fd-type--base}rem 16/11 "body" reg none,  //11/16
-  "-2": #{12/$fd-type--base}rem 16/12 "body" reg none, //12/16
-  "-1": #{13/$fd-type--base}rem 16/13 "body" reg none,	//13/16
-  "0": #{14/$fd-type--base}rem 20/14 "body" reg none, //14/20
-  "1": #{16/$fd-type--base}rem 20/16 "body" reg none,  //16/20
-  "2": #{18/$fd-type--base}rem 24/18 "body" reg none, //18/24
-  "3": #{24/$fd-type--base}rem 32/24 "body" reg none, //23/32
-  "4": #{30/$fd-type--base}rem 36/30 "body" light none, //30/36
-  "5": #{48/$fd-type--base}rem 52/48 "header" reg none, //48/52
+  //"key": font-size line-height margin-bottom
+  "-1": #{12/$fd-type--base}rem 16/12 8px, //12/16 8 btm
+  "0": #{14/$fd-type--base}rem 20/14 12px, //14/20 12
+  "1": #{16/$fd-type--base}rem 20/16 12px, //16/20 12
+  "2": #{18/$fd-type--base}rem 24/18 12px, //18/24 12
+  "3": #{20/$fd-type--base}rem 28/20 12px, //20/28 12
+  "4": #{24/$fd-type--base}rem 32/24 16px, //23/32 16
+  "5": #{36/$fd-type--base}rem 40/36 20px, //36/40 20
+  "6": #{48/$fd-type--base}rem 52/48 24px, //48/52 24
 ), $fd-type);
+
+$fd-font-size: #{$fd-type--base}px !default;
+$fd-line-height: 20/#{$fd-type--base} !default;
 
 //weights
 $fd-weights: () !default;
 $fd-weights: map-merge((
-    light: 300,
-    reg: 400,
-    med: 500,
-    semi: 600,
-    bold: 700
+    "light": 300,
+    "normal": 400,
+    "bold": 700
 ), $fd-weights);
 
-//colors
+//COLORS — updated Oct.8.18
+
 $fd-colors: () !default;
 $fd-colors: map-merge((
   "action": (
-    1: #0a6ed1,
-    2: #9AB7E1
+    1: hsl(210, 91%, 43%), //branded action #0A6ED1
+    2: hsl(210, 0%, 100%) //inverse action #FFFFFF
   ),
   "text": (
-    1: #32363a,
-    2: #515559,
-    3: #6f7275,
-    4: #ffffff
+    1: hsl(210, 7.5%, 21%), //default text #32363a
+    2: hsl(210, 5%, 33.5%), // #515559
+    3: hsl(210, 2.8%, 42.7%), // #6a6d70,
+    4: hsl(210, 2.6%, 46.8%), //#74777a
+    5: hsl(210, 0%, 100%) //inverse text #ffffff
   ),
   "background": (
-    1: #f3f4f5,
-    2: #ffffff
+    1: hsl(210, 9%, 93.5%), //body background #EDEFF0
+    2: hsl(210, 0%, 100%)  //content background #FFFFFF
   ),
   "neutral": (
-    1: #fafafa,
-    2: #eeeeef,
-    3: #dededf,
-    4: #ceced0
+    1: hsl(210, 3%, 98%), //#fafafa
+    2: hsl(210, 3%, 93.5%), //#eeeeef
+    3: hsl(210, 1%, 87%), //#dededf
+    4: hsl(208.2, 7.9%, 57.8%) //#8b949c
   ),
   "status": (
-    1: #118843,
-    2: #F59518,
-    3: #ee0000,
+    1: #107F3E, //positive
+    2: #E9730C, //alert
+    3: #ee0000, //negative
+    4: #687173, //neutral
   ),
   "accent": (
-    1: #5899da,
-    2: #ed4a7b,
-    3: #945ecf,
-    4: #13a4b4,
-    5: #7ca10c,
-    6: #bf399e,
-    7: #ee6868,
-    8: #686ddf,
-    9: #6c8893,
+    1: hsl(34, 82%, 49%), //e38b16
+    2: hsl(0, 80%, 67%), //EE6868
+    3: hsl(342, 82%, 61%), //ED4A7B
+    4: hsl(315, 54%, 49%), //C0399F
+    5: hsl(238, 65%, 64%), //686CDF
+    6: hsl(210, 64%, 60%), //5899DA
+    7: hsl(186, 81%, 39%), //13A4B4
+    8: hsl(75, 86%, 34%), //7CA10C
+    9: hsl(269, 54%, 59%), //955ECF
+    10: hsl(197, 15%, 50%), //6C8893
+    11: hsl(210, 64.2%, 47.1%), //2B78C5
+    12: hsl(238, 65.1%, 62.9%), //6367DE
+    13: hsl(274.2, 60%, 55.9%), //984BD2
+    14: hsl(314.7, 54.2%, 48.8%), //C0399F
+    15: hsl(331.9, 75.2%, 49%), //DB1F77
+    16: hsl(213.3, 15%, 47.1%) //66768A
+  ),
+  "shell": (
+    1: hsl(210, 28.4%, 29%), //background #354A5F
+    2: hsl(210, 100%, 91%) //icons #D1E8FF
   )
 ), $fd-colors);
-
-$fd-colors-primary: map-get($fd-colors, "primary") !default;
+//set group lists for easier access (used in _root)
 $fd-colors-action: map-get($fd-colors, "action") !default;
 $fd-colors-text: map-get($fd-colors, "text") !default;
 $fd-colors-background: map-get($fd-colors, "background") !default;
 $fd-colors-neutral: map-get($fd-colors, "neutral") !default;
 $fd-colors-status: map-get($fd-colors, "status") !default;
 $fd-colors-accent: map-get($fd-colors, "accent") !default;
+$fd-colors-shell: map-get($fd-colors, "shell") !default;
+
+//state colors
+$fd-color--action: map-get($fd-colors-action, 1) !default;
+$fd-colors-action-states: () !default;
+$fd-colors-action-states: map-merge((
+  "hover": adjust-color($fd-color--action, $lightness: -7%),
+  "selected": adjust-color($fd-color--action, $lightness: -10%, $saturation: 7%),
+  "disabled": change-color($fd-color--action, $alpha: 0.4),
+  "visited": adjust-hue($fd-color--action, 45deg),
+), $fd-colors-action-states);
+
+//deprecate these by 1.5 ----v
+$fd-link-color: map-get($fd-colors-action, 1) !default;
+$fd-link-color--hover: adjust-color($fd-link-color, $lightness: -7%) !default;
+$fd-link-color--active: darken($fd-link-color, 10) !default;
+$fd-link-color--pressed: adjust-color($fd-link-color, $lightness: -10) !default;
+$fd-link-color--visited: adjust-hue($fd-link-color, 45deg) !default;
+$fd-link-color--disabled: rgba($fd-link-color, 0.4) !default;
+//deprecate these ----^
+
+$fd-color--negative: map-get($fd-colors-status, 3) !default;
+$fd-color--error: $fd-color--negative !default;
+$fd-color--alert: map-get($fd-colors-status, 2) !default;
+$fd-color--warning: $fd-color--alert !default;
+$fd-color--positive: map-get($fd-colors-status, 1) !default;
+$fd-color--success: $fd-color--positive !default;
+$fd-color--neutral: map-get($fd-colors-status, 4) !default;
+
+$fd-colors-background-states: () !default;
+$fd-colors-background-states: map-merge((
+  "hover": map-get($fd-colors-neutral, 1),
+  "selected": change-color($fd-color--action, $alpha: .07),
+  "selected-hover": change-color($fd-color--action, $alpha: .1),
+  "positive": adjust-color($fd-color--positive, $lightness: 66%),
+  "negative": adjust-color($fd-color--negative, $lightness: 49%),
+  "alert": adjust-color($fd-color--alert, $lightness: 49%),
+), $fd-colors-background-states);
+
+//————————^ FIORI FUNDAMENTALS FOUNDATION ————————^
 
 //features
 $fd-space-modify: normal !default; //normal, compact
@@ -115,11 +190,7 @@ $fd-space-modify: normal !default; //normal, compact
 //ui
 $fd-padding--ui: $fd-spacing--base * 8 !default;
 
-//$fd-max-width--ui: map-get($fd-breakpoints,xl) !default;
 $fd-max-width--ui: 1290px !default;
-
-//global widths
-$fd-width--gutter: map-get($fd-spacing, m) !default;
 
 //type
 $fd-font-family: map-get($fd-fonts, "body") !default;
@@ -138,10 +209,14 @@ $fd-background-color--footer: map-get($fd-colors-background, 2) !default;
 //positioning
 $fd-margin-bottom: map-get($fd-spacing, "xs") !default;
 
-//states
-$fd-color--error: map-get($fd-colors-status, 3) !default;
-$fd-color--warning: map-get($fd-colors-status, 2) !default;
-$fd-color--success: map-get($fd-colors-status, 1) !default;
+$fd-z-index-levels: () !default;
+$fd-z-index-levels: map-merge((
+  "base": 0,
+  "first": 1,
+  "second": 2,
+  "top": 1000,
+  "default": auto
+), $fd-z-index-levels);
 
 //borders
 $fd-border-radius: 4px !default;
@@ -149,19 +224,11 @@ $fd-border-radius: 4px !default;
 //animation speed
 $fd-animation--speed: 0.125s !default;
 
-//LINKS
-$fd-link-color: map-get($fd-colors-action, 1) !default;
-$fd-link-color--hover: darken($fd-link-color, 7) !default;
-$fd-link-color--active: darken($fd-link-color, 10) !default;
-$fd-link-color--pressed: adjust-color($fd-link-color, $lightness: -10) !default;
-$fd-link-color--visited: adjust-hue($fd-link-color, 45deg) !default;
-$fd-link-color--disabled: rgba($fd-link-color, 0.4) !default;
-
 // menus and lists and navs
 $fd-menu-border-color: red !default;
 $fd-menu-background-color: map-get($fd-colors-background, 2) !default;
 $fd-menu-box-shadow: 0 0 4px 1px rgba(map-get($fd-colors-neutral, 2), 1) !default;
-$fd-menu-z-index: 2 !default;
+$fd-menu-z-index: map-get($fd-z-index-levels, "second") !default;
 $fd-menu-border-color: transparent !default;
 $fd-menu-title-color: map-get($fd-colors-text, 3) !default;
 $fd-menu-title-padding: map-get($fd-spacing, "xxs") !default;
@@ -169,7 +236,6 @@ $fd-menu-title-background-color: map-get($fd-colors-neutral, 1) !default;
 $fd-menu-item-color: map-get($fd-colors-text, 2) !default;
 $fd-menu-item-background-color--selected: rgba(map-get($fd-colors-action, 1), .07) !default;
 $fd-menu-item-background-color--hover: map-get($fd-colors-neutral, 2) !default;
-$fd-menu-item-color--hover: map-get($fd-colors-text, 2) !default;
 $fd-menu-item-padding-x: map-get($fd-spacing, "reg") !default;
 $fd-menu-item-padding-y: map-get($fd-spacing, "xs") - 2px !default;
 $fd-menu-link-color: $fd-link-color !default;
@@ -178,24 +244,28 @@ $fd-menu-link-color--disabled: map-get($fd-colors-text, 3) !default;
 $fd-menu-transition-params: $fd-animation--speed ease-in !default;
 
 // Form Configuration
-$fd-forms-height: $fd-spacing--base * 9 !default;
+$fd-forms-height: $fd-spacing--base * 9 !default; //36px
+$fd-forms-height--compact: $fd-spacing--base * 7 !default; //28px
 $fd-forms-height--input-text: $fd-forms-height !default;
 $fd-forms-height--input-check: $fd-spacing--base * 4 !default;
 $fd-forms-padding: $fd-spacing--base * 3 !default;
 
 $fd-forms-color: $fd-color !default;
 $fd-forms-color--placeholder: adjust-color(map-get($fd-colors-text, 3), $lightness: 14) !default;
+
 $fd-forms-color--focus: $fd-forms-color !default;
 $fd-forms-color--disabled: map-get($fd-colors-text, 3) !default;
 $fd-forms-color--active: map-get($fd-colors-action, 1) !default;
 $fd-forms-background-color: map-get($fd-colors-background, 2) !default;
 $fd-forms-background-color--disabled: map-get($fd-colors-neutral, 1) !default;
 $fd-forms-background-color--check: map-get($fd-colors-action, 1) !default;
-$fd-forms-background-color--check-disabled: map-get($fd-colors-text, 2) !default;
+$fd-forms-background-color--check-disabled: map-get($fd-colors-action-states, "disabled");
 $fd-forms-border-color: map-get($fd-colors-neutral, 4) !default;
 $fd-forms-border-color--check: map-get($fd-colors-action, 1) !default;
 $fd-forms-border-color--focus: map-get($fd-colors-action, 1) !default;
-$fd-forms-border-color--disabled: lighten(map-get($fd-colors-neutral, 3), 5%) !default;
+$fd-forms-border-color--disabled: map-get($fd-colors-neutral, 2) !default;
+
+
 
 $fd-elements-inputs--text: "input[type=text]", "input[type=password]", "input[type=email]", "input[type=url]", "input[type=search]", "input[type=tel]", "input[type=number]", "input[type=date]", "input[type=time]", "textarea";
 $fd-elements-inputs--check: "input[type=radio]", "input[type=checkbox]";
@@ -203,7 +273,7 @@ $fd-elements-inputs--check: "input[type=radio]", "input[type=checkbox]";
 $fd-forms-transition-params: $fd-animation--speed ease-in !default;
 
 $fd-forms-select-width--background-image: 12px !default;
-$fd-down-arrow-icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI5Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMyMTI2MkMiIGQ9Ik0xMS45MzUgMS40NzVMNi4xODggNy45MjdhLjI2NC4yNjQgMCAwIDEtLjM3OCAwTC4wNjUgMS40NzVhLjIzNi4yMzYgMCAwIDEgLjAyNi0uMzQzTDEuMzgxLjA1OGEuMjUzLjI1MyAwIDAgMSAuMTYzLS4wNTlMMS41NjMgMGEuMjUyLjI1MiAwIDAgMSAuMTcxLjA4NWw0LjI2NSA0Ljg4IDQuMjY3LTQuODhhLjI1Mi4yNTIgMCAwIDEgLjM1Mi0uMDI3bDEuMjkxIDEuMDc0Yy4wNS4wNDIuMDgxLjEwMi4wODYuMTY2YS4yMzYuMjM2IDAgMCAxLS4wNi4xNzd6Ii8+PC9zdmc+" !default; 
+$fd-down-arrow-icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI5Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMyMTI2MkMiIGQ9Ik0xMS45MzUgMS40NzVMNi4xODggNy45MjdhLjI2NC4yNjQgMCAwIDEtLjM3OCAwTC4wNjUgMS40NzVhLjIzNi4yMzYgMCAwIDEgLjAyNi0uMzQzTDEuMzgxLjA1OGEuMjUzLjI1MyAwIDAgMSAuMTYzLS4wNTlMMS41NjMgMGEuMjUyLjI1MiAwIDAgMSAuMTcxLjA4NWw0LjI2NSA0Ljg4IDQuMjY3LTQuODhhLjI1Mi4yNTIgMCAwIDEgLjM1Mi0uMDI3bDEuMjkxIDEuMDc0Yy4wNS4wNDIuMDgxLjEwMi4wODYuMTY2YS4yMzYuMjM2IDAgMCAxLS4wNi4xNzd6Ii8+PC9zdmc+" !default;
 $fd-forms-select-background-image: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzYgMzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM2IDM2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0ZBRkJGQzt9LnN0MXtmaWxsOm5vbmU7c3Ryb2tlOiNDRUNFRDA7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fS5zdDJ7ZmlsbDojMEE2RUQxO30uc3Qze2ZvbnQtZmFtaWx5OidTQVAtaWNvbnMnO30uc3Q0e2ZvbnQtc2l6ZToxNnB4O308L3N0eWxlPjxyZWN0IHg9IjAiIGNsYXNzPSJzdDAiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNS45Ii8+PGxpbmUgY2xhc3M9InN0MSIgeDE9IjAuNCIgeTE9IjAuMSIgeDI9IjAuNCIgeTI9IjM1LjkiLz48ZyBpZD0iTXVsdGktSW5wdXQiPjxnIGlkPSJGdW5kYW1lbnRhbF9Nb2R1bGFyX1VJX011dGxpLUlucHV0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzY2LjAwMDAwMCwgLTIwMi4wMDAwMDApIj48ZyBpZD0iU2VsZWN0RmllbGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDcwLjAwMDAwMCwgMTAzLjAwMDAwMCkiPjxnIGlkPSJJbnB1dCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIDYyLjAwMDAwMCkiPjx0ZXh0IHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIDEgMzA4LjAwMDIgNjAuOTIxOSkiIGNsYXNzPSJzdDIgc3QzIHN0NCI+7oevPC90ZXh0PjwvZz48L2c+PC9nPjwvZz48L3N2Zz4=" !default;
 $fd-forms-select-background-image--expanded: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTJweCIgaGVpZ2h0PSIxMHB4IiB2aWV3Qm94PSIwIDAgMTIgMTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQ5LjMgKDUxMTY3KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5VbnRpdGxlZDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJkb3dubG9hZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNi4wMDAwMDAsIDUuMDAwMDAwKSByb3RhdGUoLTE4MC4wMDAwMDApIHRyYW5zbGF0ZSgtNi4wMDAwMDAsIC01LjAwMDAwMCkgIiBmaWxsPSIjMjEyNjJDIj4KICAgICAgICAgICAgPHBhdGggZD0iTTExLjkzNSwyLjQ3NSBMNi4xODgsOC45MjcgQzYuMTM4MzEzODQsOC45Nzc5NDY4NyA2LjA3MDE2Mzg4LDkuMDA2Njc2OTEgNS45OTksOS4wMDY2NzY5MSBDNS45Mjc4MzYxMiw5LjAwNjY3NjkxIDUuODU5Njg2MTYsOC45Nzc5NDY4NyA1LjgxLDguOTI3IEwwLjA2NSwyLjQ3NSBDMC4wMjEwMzMzNzczLDIuNDI2OTMzNjMgLTAuMDAxMTEwMzExODMsMi4zNjI4MzE4NyAwLjAwMzgxMzQxNzEyLDIuMjk3ODc2NTMgQzAuMDA4NzM3MTQ2MDcsMi4yMzI5MjExOCAwLjA0MDI5MDM0NzcsMi4xNzI4ODk3NSAwLjA5MSwyLjEzMiBMMS4zODEsMS4wNTggQzEuNDI2NjkwMywxLjAxOTc1MjI1IDEuNDg0NDE0MTUsMC45OTg4NTgzMzkgMS41NDQsMC45OTkgTDEuNTYzLDEgQzEuNjI4OTQzNzMsMS4wMDQ4MDMxNSAxLjY5MDM1ODEyLDEuMDM1MzMwNzggMS43MzQsMS4wODUgTDUuOTk5LDUuOTY1IEwxMC4yNjYsMS4wODUgQzEwLjM1NjM3MjUsMC45ODE1ODQ0MTYgMTAuNTEyOTEyNiwwLjk2OTU3NzA4NSAxMC42MTgsMS4wNTggTDExLjkwOSwyLjEzMiBDMTEuOTU5LDIuMTc0IDExLjk5LDIuMjM0IDExLjk5NSwyLjI5OCBDMTIuMDAwMjA5MSwyLjM2Mjc0Mjc4IDExLjk3ODUwNDksMi40MjY3NzA0NCAxMS45MzUsMi40NzUgWiIgaWQ9IlNoYXBlIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=" !default;
 $fd-forms-select-background-image--active: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI5Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMwMDhGRDIiIGQ9Ik0xMS45MzUgMS40NzVMNi4xODggNy45MjdhLjI2NC4yNjQgMCAwIDEtLjM3OCAwTC4wNjUgMS40NzVhLjIzNi4yMzYgMCAwIDEgLjAyNi0uMzQzTDEuMzgxLjA1OGEuMjUzLjI1MyAwIDAgMSAuMTYzLS4wNTlMMS41NjMgMGEuMjUyLjI1MiAwIDAgMSAuMTcxLjA4NWw0LjI2NSA0Ljg4IDQuMjY3LTQuODhhLjI1Mi4yNTIgMCAwIDEgLjM1Mi0uMDI3bDEuMjkxIDEuMDc0Yy4wNS4wNDIuMDgxLjEwMi4wODYuMTY2YS4yMzYuMjM2IDAgMCAxLS4wNi4xNzd6Ii8+PC9zdmc+" !default;

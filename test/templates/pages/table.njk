@@ -10,7 +10,7 @@
 {% from "../button/component.njk" import button %}
 {% from "../button-group/component.njk" import button_group %}
 {% from "../table/component.njk" import table %}
-{% from "../tag/component.njk" import tag %}
+{% from "../token/component.njk" import token %}
 {% from "../menu/component.njk" import menu %}
 {% from "../pagination/component.njk" import pagination %}
 
@@ -28,9 +28,9 @@
     }}
 {% endset %}
 
-{%- set tags %}
+{%- set tokens %}
 {%- for i in range(0, 5) -%}
-{{  tag({label: "Bibendum"}) }}
+{{  token({label: "Bibendum"}) }}
 {% endfor %}
 {{  button({label: 'Clear All'},modifier={block: ['secondary','s']}) }}
 {% endset %}
@@ -74,20 +74,19 @@
                   { "label": "This Year" }
                 ]
               })
-          },modifier={ block: ['s', 'toolbar'], button: btn })
+          },modifier={ block: ['standard', 'compact'], button: btn })
           }}
 
-        {{  button({label: 'Filter',icon: 'add-filter' },modifier={block: ['toolbar','s']}) }}
 
-        {{  button_group(
-          properties={
-            label: "Show as",
-            buttons: [
-              { "properties": { "icon": "grid" }, "modifier": { block: ["grouped","s" ] } },
-              { "properties": { "icon": "list" }, "modifier": { block: ["grouped","s" ] }, "aria": { "pressed": true } }
-            ]
-          })
-        }}
+      {{  button({label: 'Filter',icon: 'add-filter' },modifier={block: ['standard','compact']}) }}
+
+{% call button_group() -%}
+
+        {{button({ icon: "grid" },size="compact",modifier={block: []},aria={  })}}
+        {{button({ icon: "list" },size="compact",modifier={block: []},aria={ "pressed": true })}}
+
+
+        {%- endcall %}
 
 
         {%- endcall %}
@@ -95,12 +94,12 @@
 
     {% call layout.panel_filters(aria={ hidden: false }) -%}
 {% for item in panel_filters_items %}
-{{ dropdown(item, modifier={block: [ 's', 'toolbar' ]}) }}
+{{ dropdown(item, modifier={block: [ 'standard', 'compact' ]}) }}
 {% endfor %}
 
     {%- endcall %}
     {% call layout.panel_filters(aria={ hidden: false }) -%}
-{{tags}}
+{{tokens}}
     {%- endcall %}
 
 

@@ -12,7 +12,7 @@ summary: The following step-by-step guide will covers how to install Fundamental
 {:.docs-header-h2}
 1. [Prerequisites and Requirements](#prerequisites-and-requirements)
 1. [Configuring Angular Project to use SCSS](#configuring-angular-project-to-use-scss)
-1. [Installing Fundamental UI via NPM](#installing-fundamental-ui-via-npm)
+1. [Installing Fundamental UI via NPM](#installing-fiori-fundamentals-via-npm)
 1. [Configuring and Importing SCSS source](#configuring-and-importing-scss-source)
 1. [Selective Imports](#selective-imports)
 1. [Core Functions and Mixins](#core-functions-and-mixins)
@@ -49,10 +49,10 @@ The Basic SCSS configuration is now complete.
 ## Installing Fundamental UI via NPM
 {:.docs-header-h2}
 
-Fundamental UI is currently available as an [NPM package](https://www.npmjs.com/package/fundamental-ui){:target="_blank"} and a compiled and minified [CDN file](https://unpkg.com/fundamental-ui@1.0.0-beta-2/dist/fundamental-ui.min.css){:target="_blank"}. The following steps will cover how to install it via NPM.
+Fundamental UI is currently available as an [NPM package](https://www.npmjs.com/package/fiori-fundamentals){:target="_blank"} and a compiled and minified [CDN file](https://unpkg.com/fiori-fundamentals@1.0.0-beta-2/dist/fiori-fundamentals.min.css){:target="_blank"}. The following steps will cover how to install it via NPM.
 
-1. Type `npm install fundamental-ui --save-dev`. This will install the package as a dev dependency.
-2. Verify the installation was successful by typing `npm list fundamental-ui`
+1. Type `npm install fiori-fundamentals --save-dev`. This will install the package as a dev dependency.
+2. Verify the installation was successful by typing `npm list fiori-fundamentals`
 
 Fundamental UI installation is now complete
 
@@ -60,8 +60,8 @@ Fundamental UI installation is now complete
 {:.docs-header-h2}
 
 1. Open `scss/app.scss` file
-2. Add the following line of code to define the icons path: <br><br> `$fd-icons-path: "~fundamental-ui/scss/icons/";`
-3. Add the following line of code to import SCSS source file: <br><br> `@import "~fundamental-ui/scss/all.scss";`
+2. Add the following line of code to define the icons path: <br><br> `$fd-icons-path: "~fiori-fundamentals/scss/icons/";`
+3. Add the following line of code to import SCSS source file: <br><br> `@import "~fiori-fundamentals/scss/all.scss";`
 
 Importing Fundamental UI SCSS is now complete
 
@@ -71,8 +71,8 @@ At this point, the contents of your `scss/app.scss` should look like this:
 
 {% highlight css %}
 
-$fd-icons-path: "~fundamental-ui/scss/icons/";
-@import "~fundamental-ui/scss/all.scss";
+$fd-icons-path: "~fiori-fundamentals/scss/icons/";
+@import "~fiori-fundamentals/scss/all.scss";
 
 {% endhighlight %}
 
@@ -115,10 +115,10 @@ You can choose to selectively import parts of the library that best fits the nee
 For selective import your `app.scss` content should look like this:
 
 {% highlight css %}
-$fd-icons-path: "~fundamental-ui/scss/icons/";
-@import "~fundamental-ui/scss/theme/fundamental";
-@import "~fundamental-ui/scss/core";
-@import "~fundamental-ui/scss/{feature}";
+$fd-icons-path: "~fiori-fundamentals/scss/icons/";
+@import "~fiori-fundamentals/scss/theme/fundamental";
+@import "~fiori-fundamentals/scss/core";
+@import "~fiori-fundamentals/scss/{feature}";
 
 {% endhighlight %}
 
@@ -128,9 +128,9 @@ $fd-icons-path: "~fundamental-ui/scss/icons/";
 If you are writing angular components using Fundamental UI toolkit, you will need to import the following in your component's scss file:
 
 {% highlight css %}
-@import "~fundamental-ui/scss/core/settings";
-@import "~fundamental-ui/scss/core/mixins";
-@import "~fundamental-ui/scss/core/functions";
+@import "~fiori-fundamentals/scss/core/settings";
+@import "~fiori-fundamentals/scss/core/mixins";
+@import "~fiori-fundamentals/scss/core/functions";
 {% endhighlight %}
 
 
@@ -140,10 +140,10 @@ If you are writing angular components using Fundamental UI toolkit, you will nee
 Fundamental UI comes with some very useful built-in functions and mixins to help maintain consistency and quality of your SCSS source files. We recommend that you utilize these functions instead of hard coding colors, spacing, fonts, etc. in your code to keep CSS low specificity. Utilizing functions also helps in retaining the integrity of the theming options and makes it easy to switch between different themes such as a high-contrast theme for accessibility or a brand specific theme.
 
 > **Note:** In order to use the functions and mixins, please ensure that you are importing the functions SCSS files <br>
-> `@import "~fundamental-ui/scss/core/functions";` <br>
-> `@import "~fundamental-ui/scss/core/mixins";`
+> `@import "~fiori-fundamentals/scss/core/functions";` <br>
+> `@import "~fiori-fundamentals/scss/core/mixins";`
 
-### Color Function
+## Color Function
 {:.docs-header-h3}
 
 If you have a need to apply a color to any of your scss/css class, you can use the built-in color function - <br> `fd-color(group, shade)`
@@ -157,51 +157,53 @@ If you have a need to apply a color to any of your scss/css class, you can use t
 
 You can refer to the [colors page](/fundamentals/colors.html){:target="_blank"} for the complete list of the available color options.
 
-### Spacing Function
+## Spacing Function
 {:.docs-header-h3}
 
-Spacing function can be utilized for padding, margins and other positioning needs - <br>
-`fd-space(value)`
+```
+fd-space("value")
+```
+The space function can be utilized for heights, padding, margins and other positioning. <br>
+
+
+
+
+
+The design system defines a variety of spacing increments that are commonly used throughout and [all of those are available](https://github.com/SAP/fundamental/blob/develop/scss/_settings.scss#L18) using the mixin by passing the key. However, there are four units that will be used most often when building and extending components. These are accessible with special keys to apply consistent padding and margins.
 
 {% highlight css %}
 .foo {
-  padding: fd-space(xs); /* renders 8px */
-  margin-bottom: fd-space(reg); /* renders 20px */
+  padding: fd-space("tiny"); /* renders 8px */
+  margin-bottom: fd-space("small"); /* renders 24px */
 }
 {% endhighlight %}
 
 The following spacing options are available -
 
 {:.docs-table}
-| Option        | Value           | Rendered Value |
-| ------------- | --------------- | -------------- |
-| `base`        | `fd-space()`    |  4px           |
-| `xs`          | `fd-space(xs)`  |  8px           |
-| `s`           | `fd-space(s)`   |  12px          |
-| `reg`         | `fd-space(reg)` |  20px          |
-| `m`           | `fd-space(m)`   |  40px          |
-| `l`           | `fd-space(l)`   |  100px         |
-| `xl`          | `fd-space(xl)`  |  148px         |
+| Value           | Rendered Value |
+|  --------------- | -------------- |
+| `fd-space("tiny")` |  8px           |
+|  `fd-space("small")`  |  16px          |
+| `fd-space("medium")`   |  32px          |
+| `fd-space("large")` |  48px          |
 
-
-### Type Mixin
+## Type Mixin
 {:.docs-header-h3}
 
-You can utilize the type mixin to render size, line height, weight and transformation - <br> `fd-type("size", weight, transform)`
+You can utilize the type mixin to render size, line height and weight - <br> `fd-type($size, $weight)`
 
 {% highlight css %}
-.foo {
-    @include fd-type(3, med, uppercase); /* renders the css below */
-    /* font-size: 1.125rem; */
-    /* line-height: 1.33334; */
-    /* font-weight: 500; */
-    /* text-transform: uppercase; */
+.foo__header {
+    @include fd-type("3", "bold"); /* renders the css below */
+    /* font-size: 1.75rem; */
+    /* line-height: 1.4; */
+    /* font-weight: 700; */
 }
 {% endhighlight %}
 
 {:.docs-table}
 | Option      | Value                                          |
 | ----------- |----------------------------------------------- |
-| `size`      | `-3`, `-2`, `-1`, `0`, `1`, `2`, `3`, `4`, `5` |
-| `weight`    | `reg`, `med`, `semi`                           |
-| `transform` | `none`, `uppercase`, `lowercase`               |
+| `size`      | `-1`, `0`, `1`, `2`, `3`, `4`, `5`, `6` |
+| `weight`    | `light`, `normal`, `bold`                           |

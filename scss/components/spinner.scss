@@ -48,12 +48,12 @@ $block: #{$fd-namespace}-spinner;
                 right: 0;
                 bottom: 0;
                 left: 0;
-                z-index: 1;
+                z-index: map-get($fd-z-index-levels, "first");
                 content: "";
             }
             .#{$block} {
                 position: absolute;
-                z-index: 2;
+                z-index: map-get($fd-z-index-levels, "second");
                 left: calc(50% - #{$_width}/2);
                 top: calc(50% - #{$_height}/2);
             }
@@ -67,7 +67,6 @@ $block: #{$fd-namespace}-spinner;
         width: $fd-spinner-width--bar;
         height: 100%;
         background-color: $fd-spinner-background-color;
-        // border-radius: $fd-border-radius;
     }
     div {
         &::before,
@@ -77,7 +76,6 @@ $block: #{$fd-namespace}-spinner;
             width: $fd-spinner-width--bar;
             height: 100%;
             background-color: $fd-spinner-background-color;
-            // border-radius: $fd-border-radius;
         }
         &::before {
             left: $fd-spinner-width--bar + $fd-spinner-width--gutter;

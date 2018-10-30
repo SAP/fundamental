@@ -13,19 +13,21 @@ $block: #{$fd-namespace}-table;
     $fd-table-border-color: transparent !default;
     $fd-table-border-width: 0 !default;
     $fd-table-link-color: fd-color(action, 1) !default;
-    $fd-table-cell-spacing: $fd-width--gutter !default;
+    $fd-table-cell-spacing: var(--fd-width-gutter) !default;
     $fd-table-cell-padding: fd-space("xs") !default;
+    $fd-table-background-color: fd-color("background", 2);
 
     $fd-table-header-color: fd-color("text", 3) !default;
     $fd-table-header-background-color: fd-color("neutral", 1) !default;
-    $fd-table-row-background-color--hover: lighten($fd-table-header-background-color,4) !default;
-    $fd-table-row-background-color--selected: lighten($fd-table-link-color,50) !default;
+    $fd-table-row-background-color--hover:
+    fd-color-state("hover") !default;
+    $fd-table-row-background-color--selected: fd-color-state("selected") !default;
 
-    $fd-table-cell-spacing: $fd-width--gutter !default;
+    $fd-table-cell-spacing: var(--fd-width-gutter) !default;
     $fd-table-cell-padding: fd-space("s") !default;
     $fd-table-transition-params: $fd-animation--speed ease-in !default;
     $fd-table-sort-icon-size: fd-space(3);
-    $fd-table-sort-column-header-background-color: fd-color(neutral, 2);
+    $fd-table-sort-column-header-background-color: fd-color("neutral", 2);
     $fd-table-sort-column-header-hover-color: #f2f2f3; //hsl +1 of Neutral 2.;
     $fd-table-fixed-column-cell-color: fd-color("background", 2);
 
@@ -38,20 +40,24 @@ $block: #{$fd-namespace}-table;
     border-collapse: collapse;
     margin-bottom: $fd-margin-bottom;
     border-top: solid $fd-table-border-width $fd-table-border-color;
+    background-color: $fd-table-background-color;
 
     tr {
         transition: background-color $fd-table-transition-params;
-        &:hover {
+        @include fd-hover {
             background-color: $fd-table-row-background-color--hover;
         }
-        &.is-selected,
-        &[aria-selected="true"] {
+        @include fd-selected {
             background-color: $fd-table-row-background-color--selected;
+            @include fd-hover {
+                background-color: fd-color-state("selected-hover")
+            }
         }
+        @include action-cursor;
     }
 
     thead {
-        @include fd-type("-2");
+        @include fd-type("-1");
         color: $fd-table-header-color;
         background-color: $fd-table-header-background-color;
         text-transform: uppercase;
@@ -72,7 +78,7 @@ $block: #{$fd-namespace}-table;
     td,
     th {
         text-align: left;
-        padding: $fd-table-cell-padding $fd-table-cell-spacing/2;
+        padding: $fd-table-cell-padding calc(#{$fd-table-cell-spacing}/2);
 
         &:first-child {
             padding-left: $fd-table-cell-spacing;
@@ -103,7 +109,7 @@ $block: #{$fd-namespace}-table;
 
         &:hover {
             background: $fd-table-sort-column-header-hover-color;
-            cursor: pointer;
+            @include action-cursor;
         }
 
         &::after {
@@ -136,7 +142,7 @@ $block: #{$fd-namespace}-table;
 
     &__context-menu-label {
         display: block;
-        padding: $fd-table-cell-padding $fd-table-cell-spacing/2;
+        padding: $fd-table-cell-padding calc(#{$fd-table-cell-spacing}/2);
 
         &::after {
             content: "";
@@ -155,19 +161,19 @@ $block: #{$fd-namespace}-table;
 
         &:hover {
             background: $fd-table-sort-column-header-hover-color;
-            cursor: pointer;
+            @include action-cursor;
         }
 
     }
 
     &__fixed-col {
         position: absolute;
-        z-index: 1;
+        z-index: map-get($fd-z-index-levels, "first");
     }
 
     th.fd-table__fixed-col {
         background: $fd-table-sort-column-header-background-color;
-        z-index: 2;
+        z-index: map-get($fd-z-index-levels, "second");
         box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.08);
     }
     td.fd-table__fixed-col {

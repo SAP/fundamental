@@ -3,6 +3,12 @@
 @import "./../icons/mixins";
 @import "./../functions";
 
+///////////////////////////////////////////////////////////////////////////////
+/// .fd-tag has been depricated as it has been renamed to .fd-token
+/// this file and all realted artifacts for fd-tag should be removed
+/// after couple of releases(1.4). .fd-tag will continue to work in the meantime
+///////////////////////////////////////////////////////////////////////////////
+
 /*!
 .fd-tag+(--no-border)
     .fd-tag__content+()
@@ -13,10 +19,10 @@ $block: #{$fd-namespace}-tag;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-tag-border-color: transparent !default;
-    $fd-tag-background-color: rgba(fd-color("action",1),0.07) !default;
+    $fd-tag-background-color: fd-color-state("selected") !default;
 
     @include fd-reset;
-    @include fd-type("-2");
+    @include fd-type("-1");
     color: fd-color("text",2);
     background-color: $fd-tag-background-color;
     line-height: fd-space(6);
@@ -28,7 +34,7 @@ $block: #{$fd-namespace}-tag;
     border-width: 1px;
     border-style: solid;
     border-color: $fd-tag-border-color;
-    cursor: pointer;
+    @include action-cursor;
 
     @include fd-icon("sys-cancel","s","after") {
       color: fd-color("action",1);

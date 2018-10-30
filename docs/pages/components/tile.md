@@ -84,7 +84,7 @@ summary:
       <h2 class="fd-tile__title">Tile Title</h2>
     </div>
     <div class="fd-tile__actions">
-       <button class="fd-button--secondary sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179" aria-haspopup="true"></button>
+       <button class="fd-button--light sap-icon--vertical-grip" aria-label="More" aria-expanded="false" aria-controls="WQIDD179" aria-haspopup="true"></button>
        <nav class="fd-dropdown__menu" aria-hidden="true" id="WQIDD179">
              <ul class="fd-dropdown__list">
                <li><a href="#" class="fd-dropdown__item">Option 1</a></li>

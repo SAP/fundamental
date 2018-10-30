@@ -8,8 +8,6 @@ button_group:
 -->
 {% macro button_group(properties={}, modifier={}, state={}, aria={}) -%}
 <div class="fd-button-group{{ modifier.block | modifier('button-group') }}{{ state | state }}"{{ aria | aria }} role="group" aria-label="{{properties.label}}">
-{%- for item in properties.buttons %}
-  {{ button( item.properties,item.modifier,aria=item.aria) }}
-{%- endfor %}
+  {{- caller() | indent -}}
 </div>
 {%- endmacro %}

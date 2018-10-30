@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.2.2
+* Fiori Fundamentals v1.3.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -18,7 +18,8 @@
   max-width: 100%;
   border-collapse: collapse;
   margin-bottom: 12px;
-  border-top: solid 0 transparent
+  border-top: solid 0 transparent;
+  background-color: #fff
 }
 .fd-table:last-child {
   margin-bottom: 0;
@@ -26,20 +27,33 @@
 }
 .fd-table tr {
   -webkit-transition: background-color 125ms ease-in;
-  transition: background-color 125ms ease-in
+  transition: background-color 125ms ease-in;
+  cursor: pointer
 }
 .fd-table tr:hover {
-  background-color: #fff
+  background-color: #fafafa
 }
+.fd-table tr.is-active,
+.fd-table tr.is-pressed,
 .fd-table tr.is-selected,
+.fd-table tr:active,
+.fd-table tr[aria-pressed=true],
 .fd-table tr[aria-selected=true] {
-  background-color: #ddedfd
+  background-color: rgba(10,110,209,.07)
+}
+.fd-table tr.is-active:hover,
+.fd-table tr.is-pressed:hover,
+.fd-table tr.is-selected:hover,
+.fd-table tr:active:hover,
+.fd-table tr[aria-pressed=true]:hover,
+.fd-table tr[aria-selected=true]:hover {
+  background-color: rgba(10,110,209,.1)
 }
 .fd-table thead {
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
-  color: #6f7275;
+  color: #6a6d70;
   background-color: #fafafa;
   text-transform: uppercase
 }
@@ -54,18 +68,18 @@
 .fd-table td,
 .fd-table th {
   text-align: left;
-  padding: 12px 16px;
+  padding: 12px calc(var(--fd-width-gutter)/2);
   border-style: solid;
   border-width: 0;
   border-color: transparent
 }
 .fd-table td:first-child,
 .fd-table th:first-child {
-  padding-left: 32px
+  padding-left: var(--fd-width-gutter)
 }
 .fd-table td:last-child,
 .fd-table th:last-child {
-  padding-right: 32px
+  padding-right: var(--fd-width-gutter)
 }
 .fd-table td .fd-dropdown__menu,
 .fd-table th .fd-dropdown__menu {
@@ -107,7 +121,7 @@
 }
 .fd-table__context-menu-label {
   display: block;
-  padding: 12px 16px
+  padding: 12px calc(var(--fd-width-gutter)/2)
 }
 .fd-table__context-menu-label::after {
   content: "";

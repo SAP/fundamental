@@ -20,19 +20,17 @@ $block: #{$fd-namespace}-calendar;
 
 //VARS
 //making these more readily available
-$fd-calendar-item-color: $fd-link-color--active !default;
-$fd-calendar-item-color--other-month: lighten(fd-color(text), 50%) !default;
-$fd-calendar-item-color--disabled: lighten(fd-color(text), 70%) !default;
-$fd-calendar-item-color--selected: fd-color(text, 4) !default;
+$fd-calendar-item-color: fd-color-state("selected", "action") !default;
+$fd-calendar-item-color--other-month: fd-color("text") !default;
+$fd-calendar-item-color--disabled: fd-color-state("disabled", "action") !default;
+$fd-calendar-item-color--selected: fd-color("text", 5) !default;
 $fd-calendar-item-color--current: $fd-calendar-item-color !default;
-$fd-calendar-item-color--blocked: fd-color(text,1) !default;
-$fd-calendar-item-background-color: fd-color(background,2) !default;
-$fd-calendar-item-background-color--hover: fd-color(neutral,1) !default;
-$fd-calendar-item-background-color--selected: $fd-link-color--active !default;
-$fd-calendar-item-background-color--selected-range: rgba($fd-link-color--active,0.07) !default;
-
-$fd-calendar-item-border-color--current: lighten($fd-link-color--active,40%) !default;
-
+$fd-calendar-item-color--blocked: fd-color("text", 1) !default;
+$fd-calendar-item-background-color: fd-color("background", 2) !default;
+$fd-calendar-item-background-color--hover: fd-color("neutral", 1) !default;
+$fd-calendar-item-background-color--selected:  fd-color-state("selected", "action") !default;
+$fd-calendar-item-background-color--selected-range:  fd-color-state("selected", "background") !default;
+$fd-calendar-item-border-color--current: $fd-color--action !default;
 $fd-calendar-table-item-width: fd-space(9) !default;
 $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
 
@@ -50,12 +48,13 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
   align-items: center;
   justify-content: center;
   &:hover {
-    cursor: pointer;
+    @include action-cursor;
     background-color: $fd-calendar-item-background-color--hover;
   }
 }
 %fd-calendar-item-other-month {
   color: $fd-calendar-item-color--other-month;
+  opacity: 0.4;
 }
 %fd-calendar-item-disabled {
   color: $fd-calendar-item-color--disabled;
@@ -88,7 +87,6 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
 }
 %fd-calendar-item-selected {
   background-color: $fd-calendar-item-background-color--selected;
-  //$fd-link-color--active;
   color: $fd-calendar-item-color--selected;
 }
 %fd-calendar-item-selected-range {
@@ -176,7 +174,7 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
 
   }
   &__day-of-week {
-    @include fd-type("-3");
+    @include fd-type("-1");
     color: fd-color(text,3);
   }
   &__item {

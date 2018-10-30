@@ -16,18 +16,58 @@
       }
   </style>
 
-  {% set modifiers = ["default", "xs", "s", "compact", "l", "toolbar"] %}
+  {% set modifiers = ["default", "compact"
+  ] %}
+  {% set types = ["", "standard" ] %}
+
 
   <h1>dropdown</h1>
   <p><strong>onclick</strong>: change aria-expanded boolean on the control and change aria-hidden boolean on the menu </p>
-  <p>Shows default, <code>xs</code>,
-  <code>s</code>,
-  <code>compact</code>,
-  <code>l</code>,
-  and <code>toolgar</code> modifiers. Include modifier on block and button.</p>
+  <p>Shows default and <code>compact</code> modifiers. Include modifier button.</p>
+
+{% set bodyitems = menu(properties={
+  items: [
+      { "label": "Option 1" },
+      { "label": "Option 2" },
+      { "label": "Option 3" },
+      { "label": "Option 4" }
+    ]
+  })
+%}
+{% set props = {
+  label: data.properties.label,
+  body: bodyitems
+} %}
 
   {% set example %}
-  
+
+  {{ dropdown(props) }}
+
+  {{ dropdown(props, modifier={ block: ["compact"]} ) }}
+
+{% endset %}
+{{ format(example) }}
+
+<br><br>
+<h3>toolbar</h3>
+{% set example %}
+
+
+{{ dropdown(props, modifier={ block: ["standard"]} ) }}
+{{ dropdown(props, modifier={ block: ["compact", "standard"]} ) }}
+
+{% endset %}
+{{ format(example) }}
+
+
+<br><br>
+
+  {% set example %}
+
+
+
+
+
     {%- for modifier in modifiers %}
       {% if modifier === "default" %}
         {{ dropdown(properties={

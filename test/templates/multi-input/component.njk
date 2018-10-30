@@ -1,6 +1,5 @@
 {% from "./../popover/component.njk" import popover %}
 {% from "./../menu/component.njk" import menu %}
-{% from "./../checkbox/component.njk" import checkbox %}
 {% from "./../input-group/component.njk" import input_group %}
 {% from "../button/component.njk" import button %}
 {% import "./../utils.njk" as utils %}
@@ -14,39 +13,56 @@
     properties={},
     state={},
     aria={},
-    classes=[])
--%}    
+    classes=[]
+    ,size="")
+-%}
+{%- set _id = utils.id() %}
     <div class="fd-multi-input">
         <div class="fd-multi-input-field">
             <div class="fd-popover">
                 <div class="fd-popover__control">
-                    <div class="fd-combobox-control" aria-label="Image label" aria-controls="F4GcX348" aria-expanded="false" aria-haspopup="true">
-                        <div class="fd-input-group fd-input-group--after">
-                            <input type="text" class="fd-input" id="" placeholder="Select Fruit">
-                            <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
-                                <button class=" fd-button--icon fd-button--secondary sap-icon--navigation-down-arrow"></button>
-                            </span>
-                        </div>
+                    <div class="fd-combobox-control" aria-controls="{{_id}}" aria-expanded="false" aria-haspopup="true">
+                      {{- input_group(
+                          modifier={
+                              block: "after",
+                              after: ['after', 'button']
+                          },
+                          properties={
+                              input: {
+                                  properties: {
+                                      placeholder: "Select Fruit"
+                                  }
+                              },
+                              after: button(
+                                {
+                                    label: '',
+                                    icon: 'navigation-down-arrow'
+                                },
+                                modifier={
+                                    block: ['light']
+                                },size=size)
+                          },size=size)
+                      }}
                     </div>
                 </div>
-                <div class="fd-popover__body" aria-hidden="true" id="F4GcX348">
+                <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="{{_id}}">
                     <nav class="fd-menu">
                     <ul class="fd-menu__list">
-                        <li>
-                            <label for="a" class="fd-menu__item">
-                                <input type="checkbox" class="fd-checkbox" id="a">
+                        <li>{%- set _id = utils.id() %}
+                            <label for="{{_id}}" class="fd-menu__item">
+                                <input type="checkbox" class="fd-checkbox" id="{{_id}}">
                                 Apple
                             </label>
                         </li>
-                        <li>
-                            <label for="b" class="fd-menu__item">
-                                <input type="checkbox" class="fd-checkbox" id="b">
+                        <li>{%- set _id = utils.id() %}
+                            <label for="{{_id}}" class="fd-menu__item">
+                                <input type="checkbox" class="fd-checkbox" id="{{_id}}">
                                 Berry
                             </label>
                         </li>
-                        <li>
-                            <label for="c" class="fd-menu__item">
-                                <input type="checkbox" class="fd-checkbox" id="c">
+                        <li>{%- set _id = utils.id() %}
+                            <label for="{{_id}}" class="fd-menu__item">
+                                <input type="checkbox" class="fd-checkbox" id="{{_id}}">
                                 Banana
                             </label>
                         </li>
@@ -55,10 +71,10 @@
                 </div>
             </div>
         </div>
-        <div class="fd-multi-input-tags">
-            <span class="fd-tag" role="button">Apple</span>
-            <span class="fd-tag" role="button">Berry</span>
-            <span class="fd-tag" role="button">Banana</span>
+        <div class="fd-multi-input-tokens">
+            <span class="fd-token" role="button">Apple</span>
+            <span class="fd-token" role="button">Berry</span>
+            <span class="fd-token" role="button">Banana</span>
         </div>
     </div>
 {%- endmacro %}

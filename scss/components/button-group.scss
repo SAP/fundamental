@@ -7,8 +7,10 @@
     .fd-button
 */
 $block: #{$fd-namespace}-button-group;
+$block-alt: #{$fd-namespace}-segmented-button;
 
-.#{$block} {
+.#{$block},
+.#{$block-alt} {
 
   @include fd-reset-spacing;
   display: inline-flex;
@@ -30,9 +32,29 @@ $block: #{$fd-namespace}-button-group;
       border-bottom-left-radius: 0;
     }
   }
-
-
-
-
-
 }
+
+// RTL Styles
+@include fd-rtl(#{$block}) {
+  .#{$block}{
+    & > * {
+      &:not(:first-child) {
+        border-right: none;
+      }
+      &:last-child {
+        border-top-left-radius: $fd-border-radius;
+        border-bottom-left-radius: $fd-border-radius;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      &:first-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: $fd-border-radius;
+        border-bottom-right-radius: $fd-border-radius;
+        border-right: 1px var(--fd-button-border-color) solid;
+      }
+    } 
+  }
+}
+

@@ -5,9 +5,10 @@
 .fd-label+(--success | --warning | --error)
 */
 $block: #{$fd-namespace}-label;
+
 .#{$block} {
   @include fd-reset;
-  @include fd-type("-2");
+  @include fd-type("-1");
   @include fd-weight("bold");
   color: fd-color("text", 3);
   text-transform: uppercase;
@@ -16,12 +17,15 @@ $block: #{$fd-namespace}-label;
   display: inline-block;
   padding-left: fd-space(2);
   padding-right: fd-space(2);
+
   &--success {
     color: $fd-color--success;
   }
+
   &--warning {
     color: $fd-color--warning;
   }
+
   &--error {
     color: $fd-color--error;
   }

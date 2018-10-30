@@ -23,12 +23,12 @@ $block: #{$fd-namespace}-dropdown;
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-dropdown-menu-color: solid 1px $fd-forms-color !default;
     $fd-dropdown-menu-border: solid 1px $fd-forms-border-color !default;
-    $fd-dropdown-menu-z-index: 2 !default;
+    $fd-dropdown-menu-z-index: map-get($fd-z-index-levels, "second") !default;
     $fd-dropdown-menu-background-color: fd-color(background) !default;
     $fd-dropdown-menu-shadow: 0 0 4px 1px rgba(fd-color(neutral, 2), 1) !default;
     //items
     $fd-dropdown-menu-item-color: $fd-dropdown-menu-color !default;
-    $fd-dropdown-menu-item-color--hover: fd-color(text, 4) !default;
+    $fd-dropdown-menu-item-color--hover: fd-color("text", 5) !default;
     $fd-dropdown-menu-item-background-color: $fd-dropdown-menu-background-color !default;
     $fd-dropdown-menu-item-background-color--hover: darken(fd-color(action), 5%) !default;
     $fd-dropdown-menu-item-padding: fd-space(3) fd-space(4) !default;
@@ -71,20 +71,6 @@ $block: #{$fd-namespace}-dropdown;
       &--no-border {
         border: none;
       }
-      &.fd-button--xs {
-        &::after {
-            height: $fd-forms-height - 14.5;
-            padding-top: fd-space(1.25);
-        }
-      }
-      &.fd-button--s {
-          padding-top: fd-space(1) - 1;
-        &::after {
-            margin-top: -3px;
-            height: $fd-forms-height - 10;
-            padding-top: fd-space(1.5);
-        }
-      }
       &.fd-button--compact {
           padding-top: fd-space(1) - 1;
         &::after {
@@ -93,8 +79,34 @@ $block: #{$fd-namespace}-dropdown;
             padding-top: fd-space(2) - 1;
         }
       }
+      // DEPCRECATE these other sizes -------V
+      &.fd-button--xs {
+        &::after {
+            height: $fd-forms-height - 14.5;
+            padding-top: fd-space(1.25);
+        }
+      }
+      &.fd-button--s {
+          padding-top: fd-space(1) - 1;
+          @include fd-icon-size("default", "after");
+        &::after {
+            margin-top: -3px;
+            height: $fd-forms-height - 10;
+            padding-top: fd-space(1.2);
+        }
+      }
+      &.fd-button--compact {
+          padding-top: fd-space(1) - 1;
+          @include fd-icon-size("default", "after");
+        &::after {
+            margin-top: -2px;
+            height: $fd-forms-height - 10;
+            padding-top: fd-space(2) - 5;
+        }
+      }
       &.fd-button--l {
           padding-top: fd-space(1) - 1;
+          @include fd-icon-size("default", "after");
         &::after {
             margin-top: -3px;
             width: $fd-forms-height + 2;
@@ -121,7 +133,7 @@ $block: #{$fd-namespace}-dropdown;
             box-shadow: 0 0 0 1px adjust-color($fd-forms-color--active, $lightness: 30%);
         }
     }
-    &__control.fd-button--toolbar{
+    &__control.fd-button--standard {
 
         &:hover, &:active {
             color: fd-color("text", 2);
@@ -162,4 +174,30 @@ $block: #{$fd-namespace}-dropdown;
       }
     }
     @include fd-menu();
+}
+
+@include fd-rtl(#{$block}) {
+    .#{$block}{
+        &__control {
+            &::after {
+                border-top-left-radius: $fd-border-radius;
+                border-bottom-left-radius: $fd-border-radius;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            &:not(.fd-button--standard) {
+                &::after {
+                    border-right: 1px solid $fd-forms-border-color;
+                    border-left: none;
+                }
+            }
+            &.fd-button {
+                padding-left: 0;
+                padding-right: fd-space("xs");
+            }
+        }
+        &__control.fd-button--standard {
+            padding-left: fd-space("xs");
+        }
+    }
 }

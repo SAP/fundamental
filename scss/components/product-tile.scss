@@ -23,19 +23,18 @@ $block: #{$fd-namespace}-product-tile;
   $fd-product-tile-transition-params: $fd-animation--speed ease-in !default;
 
   @include fd-reset;
-  //max-width: $fd-product-tile-width;
   color: $fd-product-tile-color;
   background-color: $fd-product-tile-background-color;
 
   //MODIFICATIONS
   &--button,
   &[role="button"] {
-    cursor: pointer;
+    @include action-cursor;
     transition: box-shadow $fd-product-tile-transition-params;
     &:hover {
       box-shadow: $fd-product-tile-box-shadow;
       position: relative;
-      z-index: 1;
+      z-index: map-get($fd-z-index-levels, "first");
     }
   }
   //STATES
@@ -52,7 +51,6 @@ $block: #{$fd-namespace}-product-tile;
     background-size: cover;
   }
   &__content {
-    //flex: 1;
     padding: $fd-product-tile-content-padding-x $fd-product-tile-content-padding-x;
   }
   &__title {

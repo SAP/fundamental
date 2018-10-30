@@ -2,35 +2,49 @@
 .docs-colors{
     $colors-example-1-bg: fd-color(background, 1);
     $colors-example-1-text: fd-color(text, 1);
-    $colors-example-2-bg: fd-color(action, 2);
-    $colors-example-2-text: fd-color(text, 4);
-    $colors-example-3-bg: fd-color(action, 1);
-    $colors-example-3-text: fd-color(text, 4);
+    $colors-example-2-bg: fd-color(action, 1);
+    $colors-example-2-text: fd-color(action, 2);
+    $colors-example-3-bg: fd-color(shell, 1);
+    $colors-example-3-text: fd-color(shell, 2);
     $colors-example-4-bg: fd-color(background, 1);
-    $colors-example-4-text: fd-color(text, 4);
+    $colors-example-4-text: fd-color(text, 5);
 
-    &_container{
-        width: 12%;
-        float: left;
-        margin-right: 20px
-    }
-
-    &_plaque{
+    &_plaque {
         list-style: none;
         margin-left: 0;
-        &_color{
-            padding: 5px;
-            justify-content: center;
+
+        &_color {
+            display: inline-block;
+            float: left;
+
+            width: calc(25% - 20px);
+            padding: 10px;
             margin-bottom: 20px;
             min-height: 115px;
+
             display: flex;
             flex-direction: column;
-            align-items: center;
             vertical-align: middle;
+            margin-right: 10px;
+
+            &:nth-child(4n) {
+
+                clear: right;
+
+            }
 
             &-name {
-                font-size: 14px;
-                margin-bottom: 10px;
+                font-size: 2rem;
+                margin-bottom: 5px;
+            }
+
+            &-value {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            &-code {
+                display: block;
             }
         }
     }

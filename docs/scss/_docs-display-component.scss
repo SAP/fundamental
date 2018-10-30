@@ -1,7 +1,7 @@
 
 .docs-component{
 
-    $docs-example-bg-color: fd-color(text, 4);
+    $docs-example-bg-color: fd-color(text, 5);
 
     margin-bottom: -28px;
     border-radius: 4px;
@@ -127,12 +127,6 @@
             margin-top: 0;
         }
 
-        .fd-ui__header,
-        .fd-app__sidebar,
-        .fd-ui__footer,
-        .fd-app__main {
-        }
-
         .fd-app__sidebar {
             width:250px;
             padding-top:50px;
@@ -197,11 +191,11 @@
         }
 
         .fd-section__title {
-            background-color: fd-color(text, 4);
+            background-color: fd-color(text, 5);
         }
 
         .fd-section__actions {
-            background-color: fd-color(text, 4);
+            background-color: fd-color(text, 5);
             padding:14px 10px;
         }
 
@@ -233,11 +227,11 @@
         }
 
         .fd-panel__title {
-            background-color: fd-color(text, 4);
+            background-color: fd-color(text, 5);
         }
 
         .fd-panel__actions {
-            background-color: fd-color(text, 4);
+            background-color: fd-color(text, 5);
             padding:14px 10px;
         }
 
@@ -348,6 +342,38 @@
 
     .fd-toggle input {
         border-radius: 15px;
+    }
+
+    &__spacing-example{
+        .fd-tile__content [class^="fd-has"]{
+            border: 1px solid #ccc;
+            background: #fff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .fd-tile__content [class^="fd-has-margin"]{
+            padding:10px;
+        }
+    }
+
+    &__margin-padding-helpers{
+        .fd-tile__content [class^="fd-has"]{
+            display: block;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .fd-tile__content [class^="fd-has-padding"]{
+            margin:10px;
+        }
+    }
+
+    &__color-examples{
+        .fd-tile__content p {
+            padding: 10px;
+            display: inline-block;
+            width: calc(33%);
+        }
     }
 
 }

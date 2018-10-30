@@ -19,9 +19,10 @@ $block: #{$fd-namespace}-action-bar;
 
     //LOCAL mixins
     @mixin fd-action-bar-responsive {
-        @include fd-screen(xs){
+        // Changed from deprecated fd-screen(xs)
+        @include fd-screen(s){
             white-space: nowrap;
-            width: calc(100%-10px);
+            width: calc(100% - 10px);
             overflow: hidden;
             text-overflow: ellipsis;
 
@@ -29,15 +30,14 @@ $block: #{$fd-namespace}-action-bar;
     }
 
     @mixin fd-hide-on-mobile {
-        @include fd-screen(xs) {
+        // Changed from deprecated fd-screen(xs)
+        @include fd-screen(s) {
             display: none !important;
         }
 
-        @include fd-screen(s) {
+        @include fd-screen(m) {
             display: inline-block !important;
         }
-
-
     }
 
     //BLOCK BASE *******************************************
@@ -91,14 +91,14 @@ $block: #{$fd-namespace}-action-bar;
     }
 
     &__title {
-        @include fd-type("3");
+        @include fd-type("4");
         @include fd-action-bar-responsive;
         margin-bottom: fd-space(base);
     }
 
     &__description{
         color: $fd-action-bard-description-color;
-        @include fd-type("0", reg, none);
+        @include fd-type("0");
         @include fd-hide-on-mobile;
     }
 

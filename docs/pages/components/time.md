@@ -20,7 +20,7 @@ The time component is used for a single time value. Multiple components can be u
 <div class="fd-time">
   <div class="fd-time__item">
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow"
           aria-label="Increase hours" aria-controls="1610C873"></button>
       </div>
       <div class="fd-time__input">
@@ -28,14 +28,14 @@ The time component is used for a single time value. Multiple components can be u
           id="1610C873" aria-label="Hours"/>
       </div>
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow"
           aria-label="Decrease hours" aria-controls="1610C873"></button>
       </div>
   </div>
 
   <div class="fd-time__item">
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow"
           aria-label="Increase minutes" aria-controls="DDlHR199"></button>
       </div>
       <div class="fd-time__input">
@@ -43,13 +43,13 @@ The time component is used for a single time value. Multiple components can be u
           aria-label="Minutes"/>
       </div>
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow"
           aria-label="Decrease minutes" aria-controls="DDlHR199"></button>
       </div>
   </div>
   <div class="fd-time__item">
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow"
           aria-label="Increase seconds" aria-controls="8CAnL947"></button>
       </div>
       <div class="fd-time__input">
@@ -57,13 +57,13 @@ The time component is used for a single time value. Multiple components can be u
           aria-label="Seconds"/>
       </div>
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow"
           aria-label="Decrease seconds" aria-controls="8CAnL947"></button>
       </div>
   </div>
   <div class="fd-time__item">
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow"
           aria-label="Increase period" aria-controls="sEWOL676"></button>
       </div>
       <div class="fd-time__input">
@@ -71,7 +71,7 @@ The time component is used for a single time value. Multiple components can be u
           aria-label="Period"/>
       </div>
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow"
           aria-label="Decrease period" aria-controls="sEWOL676"></button>
       </div>
   </div>
@@ -86,7 +86,7 @@ The time component is used for a single time value. Multiple components can be u
 <div class="fd-time">
   <div class="fd-time__item">
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow"
           aria-label="Increase hours" aria-controls="HgDLk176"></button>
       </div>
       <div class="fd-time__input">
@@ -94,13 +94,13 @@ The time component is used for a single time value. Multiple components can be u
           aria-label="Hours"/>
       </div>
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow"
           aria-label="Decrease hours" aria-controls="HgDLk176"></button>
       </div>
   </div>
   <div class="fd-time__item">
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow"
           aria-label="Increase minutes" aria-controls="CHeFH472"></button>
       </div>
       <div class="fd-time__input">
@@ -108,13 +108,13 @@ The time component is used for a single time value. Multiple components can be u
           aria-label="Minutes"/>
       </div>
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow"
           aria-label="Decrease minutes" aria-controls="CHeFH472"></button>
       </div>
   </div>
   <div class="fd-time__item">
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow"
           aria-label="Increase seconds" aria-controls="qMPpb855"></button>
       </div>
       <div class="fd-time__input">
@@ -122,13 +122,13 @@ The time component is used for a single time value. Multiple components can be u
           aria-label="Seconds"/>
       </div>
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow"
           aria-label="Decrease seconds" aria-controls="qMPpb855"></button>
       </div>
   </div>
   <div class="fd-time__item">
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow"
           aria-label="Increase period" aria-controls="VpUG6928"></button>
       </div>
       <div class="fd-time__input">
@@ -136,7 +136,7 @@ The time component is used for a single time value. Multiple components can be u
           aria-label="Period"/>
       </div>
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow"
           aria-label="Decrease period" aria-controls="VpUG6928"></button>
       </div>
   </div>
@@ -154,7 +154,7 @@ disabled when the first or last values are reached.
 <div class="fd-time">
   <div class="fd-time__item">
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow"
           aria-label="Increase hours" aria-controls="Rjap5115"></button>
       </div>
       <div class="fd-time__input">
@@ -162,13 +162,13 @@ disabled when the first or last values are reached.
           aria-label="Hours"/>
       </div>
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow is-disabled"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow is-disabled"
           aria-label="Decrease hours" aria-controls="Rjap5115"></button>
       </div>
   </div>
   <div class="fd-time__item">
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-up-arrow is-disabled"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-up-arrow is-disabled"
           aria-label="Increase minutes" aria-controls="VnVPz732"></button>
       </div>
       <div class="fd-time__input">
@@ -176,7 +176,7 @@ disabled when the first or last values are reached.
           aria-label="Minutes"/>
       </div>
       <div class="fd-time__control">
-          <button class=" fd-button--secondary fd-button--xs sap-icon--navigation-down-arrow"
+          <button class="fd-button--light fd-button--xs sap-icon--navigation-down-arrow"
           aria-label="Decrease minutes" aria-controls="VnVPz732"></button>
       </div>
   </div>

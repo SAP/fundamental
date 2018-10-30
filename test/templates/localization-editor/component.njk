@@ -12,18 +12,14 @@ localization_editor:
     aria={}
 -->
 
-{% macro localization_editor_main_input_item(properties, aria={}) %}
-
-{% set main_input = properties.items[0].properties %}
-<label class="fd-form__label" for="vTshu851">
-    {{properties.title}}
-</label>
+{% macro localization_editor_main_input_item(properties, aria={},size="") %}
+{%- set main_input = properties.items[0].properties %}
 {{ input_group(
     properties={
         type: properties.type,
         after: button(
                 properties={ label: main_input.label + "*" },
-                modifier={ block: ['secondary'] },
+                modifier={ block: ['light'] },
                 aria={ controls: aria.controls, expanded: false, haspopup: true },
                 classes=['localization-editor__button']
                 ),
@@ -41,7 +37,7 @@ localization_editor:
     modifier={
         after: ["after", "button", "textarea"],
         block: ["after"]
-    })
+    },size=size)
 }}
 {% endmacro %}
 
@@ -76,13 +72,14 @@ localization_editor:
 </nav>
 {% endmacro %}
 
-{% macro localization_editor(properties={}, modifier={}, state={}, aria={}) -%}
+{% macro localization_editor(properties={}, modifier={}, state={}, aria={},size="") -%}
+{%- set _id = utils.id() %}
 <div class="fd-localization-editor">
     {{  popover(properties={
-        id: properties.id,
-        control: localization_editor_main_input_item(properties, aria={controls: properties.id}),
+        id: _id,
+        control: localization_editor_main_input_item(properties, aria={controls: _id},size=size),
         body: localization_editor_input_body(properties)
-      })
+      }, modifier={ block: ['no-arrow'] })
     }}
 </div>
 {%- endmacro %}

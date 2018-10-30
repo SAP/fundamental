@@ -21,25 +21,25 @@ This component mostly relies on the CSS of other components and has very little 
 			<div class="fd-input-group fd-input-group--after">
 				<input type="text" value="" placeholder="Pick a date">
 				<span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
-				<button class="fd-popover__control fd-button--icon fd-button--secondary sap-icon--calendar" aria-controls="Itcgq828" aria-expanded="false" aria-haspopup="true" aria-hidden="true"></button>
+				<button class="fd-popover__control fd-button--light sap-icon--calendar" aria-controls="Itcgq828" aria-expanded="false" aria-haspopup="true" aria-hidden="true"></button>
 				</span>
 			</div>
 		</div>
-		<div class="fd-popover__body fd-popover__body--right" aria-hidden="true" id="Itcgq828">
+		<div class="fd-popover__body fd-popover__body--right fd-popover__body--no-arrow" aria-hidden="true" id="Itcgq828">
 			<div class="fd-calendar">
 				<header class="fd-calendar__header">
 				<div class="fd-calendar__navigation">
 					<div class="fd-calendar__action">
-						<button class=" fd-button--toolbar fd-button--xs sap-icon--slim-arrow-left" aria-label="Previous" aria-disabled="true"></button>
+						<button class=" fd-button--light fd-button--standard  sap-icon--slim-arrow-left" aria-label="Previous" aria-disabled="true"></button>
 					</div>
 					<div class="fd-calendar__action">
-						<button class=" fd-button--secondary fd-button--s" aria-selected="false" aria-expanded="false" aria-controls="mGTGe998">September</button>
+						<button class="fd-button--light fd-button--compact" aria-selected="false" aria-expanded="false" aria-controls="mGTGe998">September</button>
 					</div>
 					<div class="fd-calendar__action">
-						<button class=" fd-button--secondary fd-button--s" aria-selected="false" aria-expanded="false" aria-controls="D8NDL125">2018</button>
+						<button class="fd-button--light fd-button--compact" aria-selected="false" aria-expanded="false" aria-controls="D8NDL125">2018</button>
 					</div>
 					<div class="fd-calendar__action">
-						<button class=" fd-button--toolbar fd-button--xs sap-icon--slim-arrow-right" aria-label="Next"></button>
+						<button class="fd-button--light fd-button--standard  sap-icon--slim-arrow-right" aria-label="Next"></button>
 					</div>
 				</div>
 				</header>

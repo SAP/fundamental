@@ -1,6 +1,8 @@
 {% import "./../utils.njk" as utils %}
 {% from "../popover/component.njk" import popover %}
 {% from "./../time/component.njk" import time %}
+{% from "./../input-group/component.njk" import input_group %}
+{% from "./../button/component.njk" import button %}
 
 <!--
 time_picker:
@@ -29,23 +31,47 @@ time_picker:
   }]
 }) }}
 {%- endset %}
-{%- macro time_picker_control(properties={}, modifier={}, state={}, aria={ hidden: true }) %}
-<div class="fd-input-group fd-input-group--after">
-  <input type="time" id="" placeholder="hh:mm am/pm">
-    <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
-        <button class="fd-popover__control fd-button--icon fd-button--secondary sap-icon--fob-watch" aria-controls="{{ properties.id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }}></button>
-    </span>
-</div>
+{%- macro time_picker_control(properties={}, modifier={}, state={}, aria={ hidden: true },size="") %}
+{%- set btn = button(
+  { label: '',
+    icon: 'fob-watch'
+  },
+  modifier={
+    block: ['light']
+  },
+  aria={
+    controls: properties.id,
+    expanded: false,
+    haspopup: true
+  },
+  state=state,
+  classes=["popover__control"],size="compact")
+%}
+{{- input_group(
+    type="time",
+    modifier={
+        block: "after",
+        after: ['after', 'button']
+    },
+    properties={
+        input: {
+            properties: {
+                placeholder: "hh:mm am/pm"
+            }
+        },
+        after: btn
+    },size=size)
+}}
 {%- endmacro %}
 
-{%- macro time_picker(properties={}, modifier={}, state={}, aria={ hidden: true }) -%}
+{%- macro time_picker(properties={}, modifier={}, state={}, aria={ hidden: true },size="") -%}
 {%- set _id = utils.id() %}
 <div class="fd-time-picker">
     {{  popover(properties={
             id: _id,
-            control: time_picker_control(properties={id: _id}),
+            control: time_picker_control(properties={id: _id},size=size),
             body: _time_items
-        })
+        }, modifier={ block: ['no-arrow'] })
     }}
 </div>
 {%- endmacro %}

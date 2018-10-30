@@ -22,12 +22,12 @@ summary:
             <input type="text" class="" id="" aria-controls="test" aria-expanded="false"
             aria-haspopup="true" placeholder="Enter Label">
             <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button">
-            <button class=" fd-button--secondary fd-localization-editor__button"
+            <button class="fd-button--light fd-localization-editor__button"
             aria-controls="test" aria-expanded="false" aria-haspopup="true">EN*</button>
             </span>
          </div>
       </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="test">
+      <div class="fd-popover__body fd-popover__body--no-arrow"  aria-hidden="true" id="test">
          <nav class="fd-menu">
             <ul class="fd-menu__list fd-localization-editor__list">
                <li>
@@ -77,12 +77,12 @@ summary:
             <textarea class="" id="" aria-controls="NJvVh542" aria-expanded="false"
             aria-haspopup="true"></textarea>
             <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--textarea fd-input-group__addon--button">
-            <button class="fd-button--secondary fd-localization-editor__button"
+            <button class="fd-button--light fd-localization-editor__button"
             aria-controls="NJvVh542" aria-expanded="false" aria-haspopup="true">EN*</button>
             </span>
          </div>
       </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="NJvVh542">
+      <div class="fd-popover__body fd-popover__body--no-arrow"  aria-hidden="true" id="NJvVh542">
          <nav class="fd-menu">
             <ul class="fd-menu__list fd-localization-editor__list">
                <li>

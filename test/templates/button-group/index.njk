@@ -13,86 +13,52 @@
   }
 </style>
     <h1>button-group</h1>
-<p>NOTE: The button groups require the buttons to have the modifier class <code>.fd-button--grouped</code>
 
-</p>
 
-    {% for size in ["xs","s","compact","default","l"] %}
-      {%- set modifier = { block: ["grouped", size] } %}
+    {% for size in ["","compact"] %}
+      {%- set modifier = { block: [size] } %}
       {%- if size == "default" %}
-        {%- set modifier = { block: ["grouped"] } %}
+        {%- set modifier = { block: [] } %}
       {%- endif %}
 <h2> {{size}}</h2>
 
 {% set example %}
-{{  button_group(
-properties={
-  label: data.properties.label,
-  buttons: [
-    {
-      "properties": {
-          "icon": "survey"
-      },
-      "modifier": modifier
-    },
-    {
-      "properties": {
-          "icon": "pie-chart"
-      },
-      "modifier": modifier,
-      "aria": {
-          "pressed": true
-      }
-    },
-    {
-      "properties": {
-          "icon": "pool"
-      },
-      "modifier": modifier
-    }
-]
 
-},
-modifier={
+  {% call button_group() -%}
+    {{-  button(
+      { icon: 'survey' },
+        modifier={ block: [size] },
+        aria={ label: 'Survey' })
+      }}
+    {{-  button(
+        { icon: 'pie-chart' },
+          modifier={ block: [size] },
+          aria={ label: 'Chart', selected: true })
+        }}
+    {{-  button(
+          { icon: 'pool' },
+            modifier={ block: [size] },
+            aria={ label: 'Pool' })
+          }}
+  {%- endcall %}
 
-},
-state={},
-aria={}
-)
-}}
-
-{{  button_group(
-      properties={
-          label: data.properties.label,
-          buttons: [
-            {
-              properties: {
-                  label: "Left"
-              },
-              modifier: modifier,
-              aria: {
-                  pressed: true
-              }
-            },
-            {
-              properties: {
-                  label: "Middle"
-              },
-              modifier: modifier
-            },
-            {
-              properties: {
-                  label: "Right"
-              },
-              modifier: modifier
-            }
-          ]
-        },
-        modifier={},
-        state=data.state,
-        aria=data.aria
-    )
-}}
+  {% call button_group() -%}
+    {{-  button(
+      { label: 'First' },
+        modifier={ block: [size] },
+        aria={ selected: true })
+      }}
+    {{-  button(
+        { label: 'Second' },
+          modifier={ block: [size] },
+          aria={ })
+        }}
+    {{-  button(
+          { label: 'Third' },
+            modifier={ block: [size] },
+            aria={ })
+          }}
+  {%- endcall %}
 
 
     {% endset %}

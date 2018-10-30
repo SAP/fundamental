@@ -17,11 +17,10 @@ $block: #{$fd-namespace}-input-group;
     @include fd-reset;
     display: flex;
     vertical-align: bottom;
-    // max-height: $fd-forms-height--input-text;
 
     //ELEMENTS *******************************************
     #{$fd-elements-inputs--text}{
-        z-index: 1;
+        z-index: map-get($fd-z-index-levels, "first");
     }
     & [type="number"] {
         &::-webkit-outer-spin-button,
@@ -48,9 +47,6 @@ $block: #{$fd-namespace}-input-group;
         }
         -moz-appearance: textfield;
     }
-    input{
-        // z-index: 100;
-    }
     &--inline {
         display: inline-flex;
     }
@@ -70,8 +66,30 @@ $block: #{$fd-namespace}-input-group;
         display: flex;
         flex-direction: column;
         border-radius: $fd-border-radius;
-        height: $fd-forms-height--input-text;
-        z-index: 2; // Brings focus state above input
+        height: var(--fd-forms-height);
+        &--readonly{
+            border: none;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-radius: 0;
+
+            button{
+            }
+        }
+        @at-root {
+          .#{$block}--compact & {
+            height: var(--fd-forms-height-compact);
+            .#{$block}__button {
+                &--step-up:before,
+                &--step-down:before {
+                    top: -4px;
+                }
+            }
+          }
+        }
+
+
+        z-index: map-get($fd-z-index-levels, "first"); // Brings focus state above input
 
         //ELEMENT MODIFIERS ************
         &:first-child {
@@ -81,7 +99,10 @@ $block: #{$fd-namespace}-input-group;
             border-left-width: 0;
         }
         &--button {
-            padding: 0;
+          padding: 0;
+          [class*="fd-button"] {
+            border-radius: 0;
+          }
         }
         &--before {
             border-top-right-radius: 0;

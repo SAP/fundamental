@@ -2,19 +2,35 @@
 {% from "./component.njk" import multi_input %}
 {% from "./../format.njk" import format %}
 
-{% set css_deps = ['fonts','helpers', 'components/input', 'components/menu', 'components/popover','components/button','components/input-group', 'icons', 'components/tag'] %}
+{% set css_deps = ['fonts','helpers', 'components/input', 'components/menu', 'components/popover','components/button','components/input-group', 'icons', 'components/token'] %}
 
 {% block content %}
 
-    <h1>Multi Input</h1>
+    <h1>multi-input</h1>
     {% set basic_multi_input %}
         {{ multi_input(
             properties={
-                placeholder: "Placeholder Text"
+                placeholder: "Select Fruit"
             })
         }}
     {% endset %}
 
     {{ format(basic_multi_input) }}
+
+
+<br><br>
+
+<h3>compact</h3>
+
+
+{% set basic_multi_input %}
+    {{ multi_input(
+        properties={
+            placeholder: "Select Fruit"
+        },size="compact")
+    }}
+{% endset %}
+
+{{ format(basic_multi_input) }}
 
 {% endblock %}
