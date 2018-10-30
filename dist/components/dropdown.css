@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.2.2
+* Fundamental-UI v1.3.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -49,25 +49,13 @@
   height: 34px;
   margin-top: -3px;
   padding-top: 10px;
-  border-left: 1px solid #ceced0;
+  border-left: 1px solid #8b949c;
   background: #fafafa;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px
 }
 .fd-dropdown__control--no-border {
   border: none
-}
-.fd-dropdown__control.fd-button--xs::after {
-  height: 21.5px;
-  padding-top: 5px
-}
-.fd-dropdown__control.fd-button--s {
-  padding-top: 3px
-}
-.fd-dropdown__control.fd-button--s::after {
-  margin-top: -3px;
-  height: 26px;
-  padding-top: 6px
 }
 .fd-dropdown__control.fd-button--compact {
   padding-top: 3px
@@ -77,8 +65,40 @@
   height: 30px;
   padding-top: 7px
 }
+.fd-dropdown__control.fd-button--xs::after {
+  height: 21.5px;
+  padding-top: 5px
+}
+.fd-dropdown__control.fd-button--s {
+  padding-top: 3px
+}
+.fd-dropdown__control.fd-button--s::after {
+  font-size: 14px;
+  line-height: 1.42857
+}
+.fd-dropdown__control.fd-button--s::after {
+  margin-top: -3px;
+  height: 26px;
+  padding-top: 4.8px
+}
+.fd-dropdown__control.fd-button--compact {
+  padding-top: 3px
+}
+.fd-dropdown__control.fd-button--compact::after {
+  font-size: 14px;
+  line-height: 1.42857
+}
+.fd-dropdown__control.fd-button--compact::after {
+  margin-top: -2px;
+  height: 26px;
+  padding-top: 3px
+}
 .fd-dropdown__control.fd-button--l {
   padding-top: 3px
+}
+.fd-dropdown__control.fd-button--l::after {
+  font-size: 14px;
+  line-height: 1.42857
 }
 .fd-dropdown__control.fd-button--l::after {
   margin-top: -3px;
@@ -88,7 +108,7 @@
 }
 .fd-dropdown__control.fd-button {
   color: #32363a;
-  border-color: #ceced0;
+  border-color: #8b949c;
   padding-right: 0;
   padding-top: 2px
 }
@@ -107,15 +127,15 @@
   -webkit-box-shadow: 0 0 0 1px #7bbaf9;
   box-shadow: 0 0 0 1px #7bbaf9
 }
-.fd-dropdown__control.fd-button--toolbar:active,
-.fd-dropdown__control.fd-button--toolbar:hover {
-  color: #515559;
-  background-color: #e8e8e8;
-  border-color: #e8e8e8;
+.fd-dropdown__control.fd-button--standard:active,
+.fd-dropdown__control.fd-button--standard:hover {
+  color: #51555a;
+  background-color: #e7e8e9;
+  border-color: #e7e8e9;
   -webkit-box-shadow: none;
   box-shadow: none
 }
-.fd-dropdown__control.fd-button--toolbar::after {
+.fd-dropdown__control.fd-button--standard::after {
   width: auto;
   margin-right: 10px;
   color: #32363a;
@@ -155,25 +175,46 @@
 .fd-dropdown__title {
   display: block;
   margin-bottom: 0;
-  padding: 8px 20px;
-  font-size: .78571rem;
-  line-height: 1.45455;
+  padding: 8px 24px;
+  font-size: .85714rem;
+  line-height: 1.33333;
   font-weight: 400;
   text-transform: uppercase;
-  color: #6f7275;
+  color: #6a6d70;
   background: #fafafa
 }
 .fd-dropdown__item {
   display: block;
-  padding: 10px 20px;
-  color: #515559
+  padding: 10px 24px;
+  color: #51555a
 }
 .fd-dropdown__item:hover {
-  color: #515559;
+  color: #51555a;
   background-color: #eeeeef
 }
 .fd-dropdown__item.is-selected,
 .fd-dropdown__item[aria-selected=true] {
-  color: #515559;
+  color: #51555a;
   background-color: rgba(10,110,209,.07)
+}
+.fd-dropdown[dir=rtl] .fd-dropdown__control::after,
+[dir=rtl] .fd-dropdown__control::after {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0
+}
+.fd-dropdown[dir=rtl] .fd-dropdown__control:not(.fd-button--standard)::after,
+[dir=rtl] .fd-dropdown__control:not(.fd-button--standard)::after {
+  border-right: 1px solid #8b949c;
+  border-left: none
+}
+.fd-dropdown[dir=rtl] .fd-dropdown__control.fd-button,
+[dir=rtl] .fd-dropdown__control.fd-button {
+  padding-left: 0;
+  padding-right: 12px
+}
+.fd-dropdown[dir=rtl] .fd-dropdown__control.fd-button--standard,
+[dir=rtl] .fd-dropdown__control.fd-button--standard {
+  padding-left: 12px
 }

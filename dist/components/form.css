@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.2.2
+* Fundamental-UI v1.3.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -29,9 +29,6 @@
   margin-bottom: 0;
   margin-right: 0
 }
-.fd-form__group .fd-form__item {
-  margin-right: 32px
-}
 .fd-form__group .fd-form__item:last-child {
   margin-bottom: 0;
   margin-right: 0
@@ -39,7 +36,7 @@
 .fd-form__set {
   margin-bottom: 20px
 }
-@media (min-width:800px) {
+@media (min-width:320px) {
   .fd-form__set .fd-form__item--inline {
     margin-bottom: 0
   }
@@ -64,19 +61,24 @@
   clear: both
 }
 .fd-form__item--check .fd-form__label {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
   margin-bottom: 0;
   vertical-align: middle;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   line-height: 16px;
   cursor: pointer
+}
+.fd-form__item--check .fd-form__label:focus-within {
+  outline: 1px dotted var(--fd-color-action-focus);
+  padding: 4px;
+  margin: -4px
 }
 .fd-form__item--check .fd-form__control {
   float: left;
@@ -88,10 +90,10 @@
   margin-left: 12px
 }
 .fd-form__item--inline {
-  float: left
+  float: left;
+  margin-right: 12px
 }
 .fd-form__item--inline .fd-form__label {
-  margin-top: 4px;
   width: auto
 }
 .fd-form__label,
@@ -100,13 +102,13 @@
   line-height: 1.42857;
   color: #32363a;
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-size: .92857rem;
-  line-height: 1.23077;
+  font-size: 1rem;
+  line-height: 1.42857;
   font-weight: 400;
   display: block;
   margin-bottom: 8px;
   border: 0;
-  color: #6f7275
+  color: #6a6d70
 }
 .fd-form__label.is-required:after,
 .fd-form__legend.is-required:after {
@@ -128,10 +130,10 @@
 .fd-form__message {
   clear: both;
   display: block;
-  font-size: .92857rem;
-  line-height: 1.23077;
+  font-size: .85714rem;
+  line-height: 1.33333;
   font-weight: 400;
-  color: #515559;
+  color: #51555a;
   padding: 8px 0;
   position: relative
 }
@@ -176,10 +178,10 @@
   content: ""
 }
 .fd-form__message--warning {
-  color: #f59518
+  color: #e9730c
 }
 .fd-form__message--warning::before {
-  color: #f59518;
+  color: #e9730c;
   content: ""
 }
 .fd-form__message--error {
@@ -188,4 +190,20 @@
 .fd-form__message--error::before {
   content: "";
   color: #e00
+}
+.fd-form[dir=rtl] .fd-form__item--check .fd-form__control,
+[dir=rtl] .fd-form__item--check .fd-form__control {
+  float: right;
+  margin-left: 8px;
+  margin-right: 0
+}
+.fd-form[dir=rtl] .fd-form__item--inline,
+[dir=rtl] .fd-form__item--inline {
+  float: right;
+  margin-right: 0;
+  margin-left: 12px
+}
+.fd-form[dir=rtl] .fd-form__item--inline .fd-form__label,
+[dir=rtl] .fd-form__item--inline .fd-form__label {
+  width: auto
 }

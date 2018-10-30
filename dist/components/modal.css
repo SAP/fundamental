@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.2.2
+* Fundamental-UI v1.3.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -27,7 +27,7 @@
 .fd-modal__header {
   position: relative;
   border-bottom: 1px solid #eeeeef;
-  padding: 16px 32px
+  padding: 16px var(--fd-width-gutter)
 }
 .fd-modal__title {
   font-size: 1.14286rem;
@@ -84,11 +84,11 @@
 }
 .fd-modal__close.is-focus,
 .fd-modal__close:focus {
-  -webkit-box-shadow: 0 0 0 1px #7bbaf9;
-  box-shadow: 0 0 0 1px #7bbaf9
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+  box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
 .fd-modal__body {
-  padding: 16px 32px;
+  padding: 16px var(--fd-width-gutter);
   max-height: calc(100vh - 60px - 68px);
   overflow-y: auto
 }
@@ -96,7 +96,7 @@
   padding: 0
 }
 .fd-modal__footer {
-  padding: 16px 32px;
+  padding: 16px var(--fd-width-gutter);
   text-align: right;
   border-top: 1px solid #eeeeef
 }

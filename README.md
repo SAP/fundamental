@@ -4,11 +4,11 @@ SAP Fiori Fundamentals is a light-weight presentation layer that can be used wit
 
 #### Learn more at http://sap.github.io/fundamental/
 
-We are also working on [Angular](https://github.com/SAP/fundamental-ngx) and [React](https://github.com/SAP/fundamental-react) implementations. 
+We are also working on [Angular](https://github.com/SAP/fundamental-ngx) and [React](https://github.com/SAP/fundamental-react) implementations.
 
 ## Current version
 ````
-v1.2.2
+v1.3.0
 ````
 
 # Getting started
@@ -18,7 +18,7 @@ The library is modular so you can use as little or as much as you need.
 The fully compiled, minified library is available via CDN for inclusion in your application.
 
 ```
-<link href="//unpkg.com/fundamental-ui@1.2.2/dist/fundamental-ui.min.css" rel="stylesheet">
+<link href="//unpkg.com/fundamental-ui@1.3.0/dist/fundamental-ui.min.css" rel="stylesheet">
 ```
 
 #### NPM
