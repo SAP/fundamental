@@ -22,12 +22,12 @@ summary: SAP Fiori Fundamentals is a light-weight presentation layer that can be
 {:.docs-header-h2}
 
 ````
-npm i fundamental-ui --save
+npm i fiori-fundamentals --save
 ````
 
 ## CDN link
 {:.docs-header-h2}
 
 ```
-https://unpkg.com/fundamental-ui@{{site.library_version}}/dist/fundamental-ui.min.css
+https://unpkg.com/fiori-fundamentals@{{site.library_version}}/dist/fiori-fundamentals.min.css
 ```

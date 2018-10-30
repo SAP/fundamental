@@ -18,7 +18,7 @@ The library is modular so you can use as little or as much as you need.
 The fully compiled, minified library is available via CDN for inclusion in your application.
 
 ```
-<link href="//unpkg.com/fundamental-ui@1.3.0/dist/fundamental-ui.min.css" rel="stylesheet">
+<link href="//unpkg.com/fiori-fundamentals@1.3.0/dist/fiori-fundamentals.min.css" rel="stylesheet">
 ```
 
 #### NPM
@@ -27,7 +27,7 @@ The compiled CSS for the full library and modules, e.g., core, layout, etc., are
 This gives you incredible flexibility to use individual components and enable [advanced customization](https://github.com/SAP/fundamental/wiki/Advanced-Customization) options.
 
 ````
-npm install fundamental-ui --save
+npm install fiori-fundamentals --save
 ````
 
 > NOTE: We only distribute the [fonts, icons and CSS](https://github.com/SAP/fundamental/tree/develop/dist) and [the SASS source](https://github.com/SAP/fundamental/tree/develop/scss), not the full project or HTML for specific components.
@@ -77,9 +77,9 @@ At the time this version was released, there are no known limitations
 If you are importing .scss files in your project, the icons path needs to be configured in your project's .scss file before the Fundamental UI scss import as described below. Please note that the path variable name has to be `$fd-icons-path` in order to override the default value set in `scss/icons/icon.scss`.
 
 ```
-$fd-icons-path : "../node_modules/fundamental-ui/scss/icons/"; // should be declared before the scss import
+$fd-icons-path : "../node_modules/fiori-fundamentals/scss/icons/"; // should be declared before the scss import
 
-@import "../node_modules/fundamental-ui/scss/all.scss";
+@import "../node_modules/fiori-fundamentals/scss/all.scss";
 
 ```
 
