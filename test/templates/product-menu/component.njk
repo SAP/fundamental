@@ -39,5 +39,8 @@ product_menu:
 
 
 {%- macro product_menu_control(properties={}, modifier={}, state={}, aria={}) -%}
-    <div class="fd-product-menu__title"{{ aria | aria }}>{{ properties.title }}</div>
+    <div class="fd-product-menu__title"{{ aria | aria }}>
+      <span class="fd-product-menu__titletext">{{ properties.title }}</span>
+      <span class="fd-product-menu__titlearrow">Open Product Menu</span>
+    </div>
 {%- endmacro -%}

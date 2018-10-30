@@ -8,9 +8,29 @@
 $block: #{$fd-namespace}-product-menu;
 
 .#{$block} {
+  &__titletext,
+  &__titlearrow {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  &__titlearrow {
+    position: relative;
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 10px;
+    height: 5px;
+    transform: translateY(-3px);
 
+    &::before {
+      @include triangle(10px 5px, var(--fd-color-shell-2), down);
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 
-
-
-
+  .fd-popover__body--right {
+    right: -7px;
+  }
 }
