@@ -12,6 +12,7 @@ $fd-popover-box-shadow:           0 0 1px 0 rgba(218 ,222, 230, .50), 0 2px 8px 
 
 $fd-popover-arrow-top:            -8px !default;
 $fd-popover-arrow-right:          14px !default;
+$fd-popover-arrow-x-offset:       fd-space(2.5) !default;
 
 $fd-popover-transition-params:    $fd-animation--speed !default;
 $fd-popover-transition-distance:  -15px !default;
@@ -48,17 +49,34 @@ $block: #{$fd-namespace}-popover;
         content: "";
         position: absolute;
         top: $fd-popover-arrow-top;
-        right: $fd-popover-arrow-right;
+        left: $fd-popover-arrow-x-offset;
       }
 
       &--left {
         right: auto;
         left: -3px;
+
+        &::before {
+          left: $fd-popover-arrow-x-offset;
+        }
+
       }
 
       &--right {
         left: auto;
         right: -3px;
+
+        &::before {
+          left: auto;
+          right: $fd-popover-arrow-x-offset;
+        }
+
+      }
+
+      &--no-arrow{
+          &::before {
+              display: none;
+          }
       }
 
       &[aria-hidden="true"],
