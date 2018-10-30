@@ -27,7 +27,7 @@ summary:
             </span>
          </div>
       </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="test">
+      <div class="fd-popover__body fd-popover__body--no-arrow"  aria-hidden="true" id="test">
          <nav class="fd-menu">
             <ul class="fd-menu__list fd-localization-editor__list">
                <li>
@@ -82,7 +82,7 @@ summary:
             </span>
          </div>
       </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="NJvVh542">
+      <div class="fd-popover__body fd-popover__body--no-arrow"  aria-hidden="true" id="NJvVh542">
          <nav class="fd-menu">
             <ul class="fd-menu__list fd-localization-editor__list">
                <li>

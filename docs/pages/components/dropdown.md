@@ -34,7 +34,7 @@ The dropdown is designed to look like the rest of input components. The options 
          Select
          </button>
       </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="h0C6A325">
+      <div class="fd-popover__body fd-popover__body--no-arrow"  aria-hidden="true" id="h0C6A325">
          <nav class="fd-menu">
             <ul class="fd-menu__list">
                <li><a href="#" class="fd-menu__item">Option 1</a></li>
@@ -55,7 +55,7 @@ The dropdown is designed to look like the rest of input components. The options 
           Select
       </button>
     </div>
-    <div class="fd-popover__body"  aria-hidden="true" id="dbkLJ896">
+    <div class="fd-popover__body fd-popover__body--no-arrow"  aria-hidden="true" id="dbkLJ896">
       <div class="fd-menu">
         <ul class="fd-menu__list">
           <li><a href="#" class="fd-menu__item">Option 1</a></li>
@@ -86,7 +86,7 @@ It can also include complementary information like an icon.
          Select
          </button>
       </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="sXq41189">
+      <div class="fd-popover__body fd-popover__body--no-arrow"  aria-hidden="true" id="sXq41189">
          <nav class="fd-menu">
             <ul class="fd-menu__list">
                <li><a href="#" class="fd-menu__item">Option 1</a></li>
@@ -107,7 +107,7 @@ It can also include complementary information like an icon.
          Select
          </button>
       </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="sXq411891">
+      <div class="fd-popover__body fd-popover__body--no-arrow"  aria-hidden="true" id="sXq411891">
          <nav class="fd-menu">
             <ul class="fd-menu__list">
                <li><a href="#" class="fd-menu__item">Option 1</a></li>
@@ -139,7 +139,7 @@ Disabled state can be rendered with a `is-disabled` class and/or `aria-disabled=
          Select
          </button>
       </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="Og5y3993">
+      <div class="fd-popover__body fd-popover__body--no-arrow"  aria-hidden="true" id="Og5y3993">
          <nav class="fd-menu">
             <ul class="fd-menu__list">
                <li><a href="#" class="fd-menu__item">Option 1</a></li>
@@ -160,7 +160,7 @@ Disabled state can be rendered with a `is-disabled` class and/or `aria-disabled=
          Select
          </button>
       </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="Og5y399">
+      <div class="fd-popover__body fd-popover__body--no-arrow"  aria-hidden="true" id="Og5y399">
          <nav class="fd-menu">
             <ul class="fd-menu__list">
                <li><a href="#" class="fd-menu__item">Option 1</a></li>
@@ -191,7 +191,7 @@ Disabled state can be rendered with a `is-disabled` class and/or `aria-disabled=
          Select
          </button>
       </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="GEAva783">
+      <div class="fd-popover__body fd-popover__body--no-arrow"  aria-hidden="true" id="GEAva783">
       </div>
    </div>
 </div>
