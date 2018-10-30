@@ -4,7 +4,7 @@
     <div class="docs-colors_container">
         <ul class="docs-colors_plaque">
         {% for colors in group.colors %}
-            <li style="background-color: {{ colors.colorhsl }}; color: #{{colors.textcolor}}; border: 1px solid #{{colors.bordercolor}}{% if colors.colorname == 11 %}; clear: left;{% endif %}" class="docs-colors_plaque_color">
+            <li style="background-color: var(--fd-color-{{group.key}}-{{colors.colorname}}); color: #{{colors.textcolor}}; border: 1px solid #{{colors.bordercolor}}{% if colors.colorname == 11 %}; clear: left;{% endif %}" class="docs-colors_plaque_color">
                <span class="docs-colors_plaque_color-name">
                 {{ colors.colorname }}
                </span>

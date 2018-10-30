@@ -6433,13 +6433,34 @@ see layouts/panel
       content: "";
       position: absolute;
       top: -8px;
-      right: 14px; }
+      left: 10px;
+      z-index: 4; }
+    .fd-popover__body::after {
+      height: 0;
+      width: 0;
+      border-bottom: 8px solid black;
+      border-left: 6.5px solid transparent;
+      border-right: 6.5px solid transparent;
+      content: "";
+      position: absolute;
+      top: -9px;
+      left: 10px;
+      z-index: 3; }
     .fd-popover__body--left {
       right: auto;
       left: -3px; }
+      .fd-popover__body--left::before, .fd-popover__body--left::after {
+        left: 10px; }
     .fd-popover__body--right {
       left: auto;
       right: -3px; }
+      .fd-popover__body--right::before, .fd-popover__body--right::after {
+        left: auto;
+        right: 10px; }
+    .fd-popover__body--no-arrow {
+      top: 100%; }
+      .fd-popover__body--no-arrow::before, .fd-popover__body--no-arrow::after {
+        display: none; }
     .fd-popover__body[aria-hidden="true"], .fd-popover__body.is-hidden {
       opacity: 0;
       visibility: hidden;
@@ -6449,8 +6470,9 @@ see layouts/panel
 .fd-popover[dir=rtl] .fd-popover__body {
   left: auto;
   right: -3px; }
-  [dir=rtl] .fd-popover__body::before,
-  .fd-popover[dir=rtl] .fd-popover__body::before {
+  [dir=rtl] .fd-popover__body::before, [dir=rtl] .fd-popover__body::after,
+  .fd-popover[dir=rtl] .fd-popover__body::before,
+  .fd-popover[dir=rtl] .fd-popover__body::after {
     left: 14px;
     right: unset; }
   [dir=rtl] .fd-popover__body--left,
@@ -6484,20 +6506,21 @@ see layouts/panel
     $size: "-1", "0", "1", "2", "3", "4", "5"
     $weight: "light", "normal", "bold"
 */
-.fd-time__item {
-  display: inline-block;
-  max-width: 40px;
-  text-align: center;
-  margin-right: 4px; }
-  .fd-time__item:last-child {
-    margin-right: 0; }
-
-.fd-time__input {
-  margin: 8px 0; }
-  .fd-time__input input {
-    padding-left: 8px;
-    padding-right: 8px;
-    text-align: center; }
+.fd-time {
+  width: 184px; }
+  .fd-time__item {
+    display: inline-block;
+    max-width: 40px;
+    text-align: center;
+    margin-right: 4px; }
+    .fd-time__item:last-child {
+      margin-right: 0; }
+  .fd-time__input {
+    margin: 8px 0; }
+    .fd-time__input input {
+      padding-left: 8px;
+      padding-right: 8px;
+      text-align: center; }
 
 /*
   @mixin fd-type mixin
@@ -6512,9 +6535,7 @@ see layouts/panel
     .fd-time-picker__title+()
 */
 .fd-time-picker .fd-popover__body {
-  padding: 16px;
-  min-width: 0;
-  top: 36px; }
+  padding: 16px; }
 
 /*
   @mixin fd-type mixin
@@ -6626,7 +6647,8 @@ input-addon
   position: relative;
   display: inline-block; }
   .fd-product-switcher__body {
-    padding: 20px 10px 0 10px; }
+    padding: 20px 10px 0 10px;
+    color: #32363a; }
     .fd-product-switcher__body > nav > ul {
       margin: 0;
       padding: 0;
@@ -6641,11 +6663,12 @@ input-addon
         margin: 0 0 30px 0; }
   .fd-product-switcher__product-icon {
     display: block;
-    height: 40px; }
+    height: 40px;
+    margin: 0 0 10px 0; }
     .fd-product-switcher__product-icon > img {
       display: block;
       max-width: 140px;
-      margin: 0 auto 10px auto; }
+      margin: 0 auto; }
   .fd-product-switcher__product-title {
     display: block; }
 
@@ -6709,13 +6732,26 @@ input-addon
     font-weight: 700;
     line-height: 1;
     padding: 0 16px;
-    color: white; }
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0; }
   .fd-shellbar__subtitle {
     font-size: 0.85714rem;
     line-height: 1.33333;
     font-weight: 400;
     font-weight: 400;
     line-height: 1; }
+    @media (min-width: 320px) {
+      .fd-shellbar__subtitle {
+        display: none; } }
+    @media (min-width: 600px) {
+      .fd-shellbar__subtitle {
+        display: none; } }
+    @media (min-width: 1025px) {
+      .fd-shellbar__subtitle {
+        display: inline-block; } }
   .fd-shellbar__copilot {
     display: inline-block;
     vertical-align: middle;
@@ -6731,6 +6767,24 @@ input-addon
   .fd-shellbar__action {
     padding-right: 0;
     padding-left: 12px; }
+    @media (min-width: 320px) {
+      .fd-shellbar__action--hide {
+        display: none; } }
+    @media (min-width: 600px) {
+      .fd-shellbar__action--hide {
+        display: none; } }
+    @media (min-width: 1025px) {
+      .fd-shellbar__action--hide {
+        display: inline-block; } }
+    @media (min-width: 320px) {
+      .fd-shellbar__action--collapse {
+        display: inline-block; } }
+    @media (min-width: 600px) {
+      .fd-shellbar__action--collapse {
+        display: inline-block; } }
+    @media (min-width: 1025px) {
+      .fd-shellbar__action--collapse {
+        display: none; } }
   @media (min-width: 320px) {
     .fd-shellbar {
       padding: 4px 8px; } }
@@ -6783,6 +6837,31 @@ input-addon
 /*!
 .fd-product-menu+()
 */
+.fd-product-menu__titletext, .fd-product-menu__titlearrow {
+  display: inline-block;
+  margin-right: 5px; }
+
+.fd-product-menu__titlearrow {
+  position: relative;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 10px;
+  height: 5px;
+  transform: translateY(-3px); }
+  .fd-product-menu__titlearrow::before {
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--fd-color-shell-2);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.fd-product-menu .fd-popover__body--right {
+  right: -7px; }
+
 /*
   @mixin fd-type mixin
     Looks up values from $fd-type to ensure consistent application of the type hierarchy.
@@ -6793,6 +6872,31 @@ input-addon
 /*!
 .fd-product-menu+()
 */
+.fd-product-menu__titletext, .fd-product-menu__titlearrow {
+  display: inline-block;
+  margin-right: 5px; }
+
+.fd-product-menu__titlearrow {
+  position: relative;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 10px;
+  height: 5px;
+  transform: translateY(-3px); }
+  .fd-product-menu__titlearrow::before {
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--fd-color-shell-2);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.fd-product-menu .fd-popover__body--right {
+  right: -7px; }
+
 /*
   @mixin fd-type mixin
     Looks up values from $fd-type to ensure consistent application of the type hierarchy.
@@ -6803,6 +6907,31 @@ input-addon
 /*!
 .fd-product-menu+()
 */
+.fd-product-menu__titletext, .fd-product-menu__titlearrow {
+  display: inline-block;
+  margin-right: 5px; }
+
+.fd-product-menu__titlearrow {
+  position: relative;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 10px;
+  height: 5px;
+  transform: translateY(-3px); }
+  .fd-product-menu__titlearrow::before {
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--fd-color-shell-2);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.fd-product-menu .fd-popover__body--right {
+  right: -7px; }
+
 .fd-has-text-transform-none {
   text-transform: none !important; }
 
