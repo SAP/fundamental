@@ -103,11 +103,11 @@ It can also include complementary information like an icon.
    <div class="fd-popover">
       <div class="fd-popover__control">
          <button class="fd-dropdown__control fd-button  fd-button--compact sap-icon--filter "
-         aria-controls="sXq41189" aria-expanded="false" aria-haspopup="true">
+         aria-controls="sXq411891" aria-expanded="false" aria-haspopup="true">
          Select
          </button>
       </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="sXq41189">
+      <div class="fd-popover__body"  aria-hidden="true" id="sXq411891">
          <nav class="fd-menu">
             <ul class="fd-menu__list">
                <li><a href="#" class="fd-menu__item">Option 1</a></li>
@@ -155,12 +155,12 @@ Disabled state can be rendered with a `is-disabled` class and/or `aria-disabled=
 <div class="fd-dropdown fd-dropdown--standard fd-dropdown--compact">
    <div class="fd-popover">
       <div class="fd-popover__control">
-         <button class="fd-dropdown__control fd-button   fd-button--standard fd-button--compact" aria-controls="Og5y3993"
+         <button class="fd-dropdown__control fd-button   fd-button--standard fd-button--compact" aria-controls="Og5y399"
          aria-expanded="false" aria-haspopup="true">
          Select
          </button>
       </div>
-      <div class="fd-popover__body"  aria-hidden="true" id="Og5y3993">
+      <div class="fd-popover__body"  aria-hidden="true" id="Og5y399">
          <nav class="fd-menu">
             <ul class="fd-menu__list">
                <li><a href="#" class="fd-menu__item">Option 1</a></li>
