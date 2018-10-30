@@ -22,7 +22,7 @@ const paths = {
 var d = new Date();
 var y = d.getFullYear();
 var banner = `/*!
-* Fundamental-UI v${pkg.version}
+* Fiori Fundamentals v${pkg.version}
 * Copyright (c) ${y} SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */\n`;

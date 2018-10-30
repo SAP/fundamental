@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.2.2
+* Fiori Fundamentals v1.3.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -64,11 +64,11 @@
   border-color: transparent
 }
 .fd-input-group__addon {
-  color: #6f7275;
+  color: #6a6d70;
   padding: 0 12px;
   border-style: solid;
   border-width: 1px;
-  border-color: #ceced0;
+  border-color: #8b949c;
   background-color: #fafafa;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -81,8 +81,21 @@
   -ms-flex-direction: column;
   flex-direction: column;
   border-radius: 4px;
-  height: 36px;
-  z-index: 2
+  height: var(--fd-forms-height);
+  z-index: 1
+}
+.fd-input-group__addon--readonly {
+  border: none;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-radius: 0
+}
+.fd-input-group--compact .fd-input-group__addon {
+  height: var(--fd-forms-height-compact)
+}
+.fd-input-group--compact .fd-input-group__addon .fd-input-group__button--step-down:before,
+.fd-input-group--compact .fd-input-group__addon .fd-input-group__button--step-up:before {
+  top: -4px
 }
 .fd-input-group__addon:first-child {
   border-right-width: 0
@@ -92,6 +105,9 @@
 }
 .fd-input-group__addon--button {
   padding: 0
+}
+.fd-input-group__addon--button [class*=fd-button] {
+  border-radius: 0
 }
 .fd-input-group__addon--before {
   border-top-right-radius: 0;
@@ -184,12 +200,12 @@
   top: -2px
 }
 .fd-input-group__button--step-up {
-  border-bottom: solid 1px #ceced0;
+  border-bottom: solid 1px #8b949c;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0
 }
 .fd-input-group__button--step-down {
-  border-top: solid 1px #ceced0;
+  border-top: solid 1px #8b949c;
   border-top-left-radius: 0;
   border-top-right-radius: 0
 }

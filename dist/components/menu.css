@@ -1,5 +1,5 @@
 /*!
-* Fundamental-UI v1.2.2
+* Fiori Fundamentals v1.3.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -11,7 +11,6 @@
   position: relative;
   display: block;
   white-space: nowrap;
-  background-color: #fff;
   padding-top: 4px;
   padding-bottom: 4px
 }
@@ -20,34 +19,51 @@
   list-style: none;
   margin-bottom: 0
 }
+.fd-menu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
 .fd-menu__title {
   display: block;
   margin-bottom: 0;
-  padding: 8px 20px;
-  font-size: .78571rem;
-  line-height: 1.45455;
+  padding: 8px 24px;
+  font-size: .85714rem;
+  line-height: 1.33333;
   font-weight: 400;
   text-transform: uppercase;
-  color: #6f7275;
+  color: #6a6d70;
   background: #fafafa
 }
 .fd-menu__item {
   display: block;
   cursor: pointer;
-  padding: 10px 20px;
-  color: #515559;
+  padding: 10px 24px;
+  color: #51555a;
   background-color: #fff
 }
 .fd-menu__item > .fd-checkbox {
   margin: 0 10px 0 0
 }
 .fd-menu__item:hover {
-  color: #515559;
+  color: #32363a;
   background-color: #eeeeef
 }
+.fd-menu__item.is-active,
+.fd-menu__item.is-pressed,
 .fd-menu__item.is-selected,
+.fd-menu__item:active,
+.fd-menu__item[aria-pressed=true],
 .fd-menu__item[aria-selected=true] {
   background-color: rgba(10,110,209,.07)
+}
+.fd-menu__item.is-active:hover,
+.fd-menu__item.is-pressed:hover,
+.fd-menu__item.is-selected:hover,
+.fd-menu__item:active:hover,
+.fd-menu__item[aria-pressed=true]:hover,
+.fd-menu__item[aria-selected=true]:hover {
+  background-color: rgba(10,110,209,.1)
 }
 .fd-menu--addon-before .fd-menu__item {
   padding-left: 32px
