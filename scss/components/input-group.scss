@@ -70,6 +70,12 @@ $block: #{$fd-namespace}-input-group;
         @at-root {
           .#{$block}--compact & {
             height: var(--fd-forms-height-compact);
+            .#{$block}__button {
+                &--step-up:before,
+                &--step-down:before {
+                    top: -4px;
+                }
+            }
           }
         }
 
