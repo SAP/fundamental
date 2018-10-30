@@ -2258,7 +2258,7 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
     height: var(--fd-forms-height-compact); }
   input[type=text]::-webkit-input-placeholder, input[type=password]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder, input[type=url]::-webkit-input-placeholder, input[type=search]::-webkit-input-placeholder, input[type=tel]::-webkit-input-placeholder, input[type=number]::-webkit-input-placeholder, input[type=date]::-webkit-input-placeholder, input[type=time]::-webkit-input-placeholder, textarea::-webkit-input-placeholder, .fd-input::-webkit-input-placeholder {
     color: #8d9194; }
-  input[type=text]:-ms-input-placeholder, input[type=password]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder, input[type=url]:-ms-input-placeholder, input[type=search]:-ms-input-placeholder, input[type=tel]:-ms-input-placeholder, input[type=number]:-ms-input-placeholder, input[type=date]:-ms-input-placeholder, input[type=time]:-ms-input-placeholder, textarea:-ms-input-placeholder, .fd-input:-ms-input-placeholder {
+  input[type=text]::-ms-input-placeholder, input[type=password]::-ms-input-placeholder, input[type=email]::-ms-input-placeholder, input[type=url]::-ms-input-placeholder, input[type=search]::-ms-input-placeholder, input[type=tel]::-ms-input-placeholder, input[type=number]::-ms-input-placeholder, input[type=date]::-ms-input-placeholder, input[type=time]::-ms-input-placeholder, textarea::-ms-input-placeholder, .fd-input::-ms-input-placeholder {
     color: #8d9194; }
   input[type=text]::placeholder, input[type=password]::placeholder, input[type=email]::placeholder, input[type=url]::placeholder, input[type=search]::placeholder, input[type=tel]::placeholder, input[type=number]::placeholder, input[type=date]::placeholder, input[type=time]::placeholder, textarea::placeholder, .fd-input::placeholder {
     color: #8d9194; }
@@ -4050,6 +4050,22 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     content: none; }
   .fd-breadcrumb__link {
     margin-right: 16px; }
+
+[dir=rtl] .fd-breadcrumb,
+.fd-breadcrumb[dir=rtl] .fd-breadcrumb {
+  padding: 12px 0 0 16px; }
+  [dir=rtl] .fd-breadcrumb__item::after,
+  .fd-breadcrumb[dir=rtl] .fd-breadcrumb__item::after {
+    content: "/";
+    margin-right: initial;
+    margin-left: 16px; }
+  [dir=rtl] .fd-breadcrumb__item:last-child::after,
+  .fd-breadcrumb[dir=rtl] .fd-breadcrumb__item:last-child::after {
+    content: none; }
+  [dir=rtl] .fd-breadcrumb__link,
+  .fd-breadcrumb[dir=rtl] .fd-breadcrumb__link {
+    margin-right: initial;
+    margin-left: 16px; }
 
 /*
   @mixin fd-type mixin
