@@ -12,7 +12,7 @@ summary: The following step-by-step guide will covers how to install Fundamental
 {:.docs-header-h2}
 1. [Prerequisites and Requirements](#prerequisites-and-requirements)
 1. [Configuring Angular Project to use SCSS](#configuring-angular-project-to-use-scss)
-1. [Installing Fundamental UI via NPM](#installing-fundamental-ui-via-npm)
+1. [Installing Fundamental UI via NPM](#installing-fiori-fundamentals-via-npm)
 1. [Configuring and Importing SCSS source](#configuring-and-importing-scss-source)
 1. [Selective Imports](#selective-imports)
 1. [Core Functions and Mixins](#core-functions-and-mixins)
@@ -49,10 +49,10 @@ The Basic SCSS configuration is now complete.
 ## Installing Fundamental UI via NPM
 {:.docs-header-h2}
 
-Fundamental UI is currently available as an [NPM package](https://www.npmjs.com/package/fundamental-ui){:target="_blank"} and a compiled and minified [CDN file](https://unpkg.com/fundamental-ui@1.0.0-beta-2/dist/fundamental-ui.min.css){:target="_blank"}. The following steps will cover how to install it via NPM.
+Fundamental UI is currently available as an [NPM package](https://www.npmjs.com/package/fiori-fundamentals){:target="_blank"} and a compiled and minified [CDN file](https://unpkg.com/fiori-fundamentals@1.0.0-beta-2/dist/fiori-fundamentals.min.css){:target="_blank"}. The following steps will cover how to install it via NPM.
 
-1. Type `npm install fundamental-ui --save-dev`. This will install the package as a dev dependency.
-2. Verify the installation was successful by typing `npm list fundamental-ui`
+1. Type `npm install fiori-fundamentals --save-dev`. This will install the package as a dev dependency.
+2. Verify the installation was successful by typing `npm list fiori-fundamentals`
 
 Fundamental UI installation is now complete
 
@@ -60,8 +60,8 @@ Fundamental UI installation is now complete
 {:.docs-header-h2}
 
 1. Open `scss/app.scss` file
-2. Add the following line of code to define the icons path: <br><br> `$fd-icons-path: "~fundamental-ui/scss/icons/";`
-3. Add the following line of code to import SCSS source file: <br><br> `@import "~fundamental-ui/scss/all.scss";`
+2. Add the following line of code to define the icons path: <br><br> `$fd-icons-path: "~fiori-fundamentals/scss/icons/";`
+3. Add the following line of code to import SCSS source file: <br><br> `@import "~fiori-fundamentals/scss/all.scss";`
 
 Importing Fundamental UI SCSS is now complete
 
@@ -71,8 +71,8 @@ At this point, the contents of your `scss/app.scss` should look like this:
 
 {% highlight css %}
 
-$fd-icons-path: "~fundamental-ui/scss/icons/";
-@import "~fundamental-ui/scss/all.scss";
+$fd-icons-path: "~fiori-fundamentals/scss/icons/";
+@import "~fiori-fundamentals/scss/all.scss";
 
 {% endhighlight %}
 
@@ -115,10 +115,10 @@ You can choose to selectively import parts of the library that best fits the nee
 For selective import your `app.scss` content should look like this:
 
 {% highlight css %}
-$fd-icons-path: "~fundamental-ui/scss/icons/";
-@import "~fundamental-ui/scss/theme/fundamental";
-@import "~fundamental-ui/scss/core";
-@import "~fundamental-ui/scss/{feature}";
+$fd-icons-path: "~fiori-fundamentals/scss/icons/";
+@import "~fiori-fundamentals/scss/theme/fundamental";
+@import "~fiori-fundamentals/scss/core";
+@import "~fiori-fundamentals/scss/{feature}";
 
 {% endhighlight %}
 
@@ -128,9 +128,9 @@ $fd-icons-path: "~fundamental-ui/scss/icons/";
 If you are writing angular components using Fundamental UI toolkit, you will need to import the following in your component's scss file:
 
 {% highlight css %}
-@import "~fundamental-ui/scss/core/settings";
-@import "~fundamental-ui/scss/core/mixins";
-@import "~fundamental-ui/scss/core/functions";
+@import "~fiori-fundamentals/scss/core/settings";
+@import "~fiori-fundamentals/scss/core/mixins";
+@import "~fiori-fundamentals/scss/core/functions";
 {% endhighlight %}
 
 
@@ -140,8 +140,8 @@ If you are writing angular components using Fundamental UI toolkit, you will nee
 Fundamental UI comes with some very useful built-in functions and mixins to help maintain consistency and quality of your SCSS source files. We recommend that you utilize these functions instead of hard coding colors, spacing, fonts, etc. in your code to keep CSS low specificity. Utilizing functions also helps in retaining the integrity of the theming options and makes it easy to switch between different themes such as a high-contrast theme for accessibility or a brand specific theme.
 
 > **Note:** In order to use the functions and mixins, please ensure that you are importing the functions SCSS files <br>
-> `@import "~fundamental-ui/scss/core/functions";` <br>
-> `@import "~fundamental-ui/scss/core/mixins";`
+> `@import "~fiori-fundamentals/scss/core/functions";` <br>
+> `@import "~fiori-fundamentals/scss/core/mixins";`
 
 ## Color Function
 {:.docs-header-h3}

@@ -27,7 +27,7 @@ summary:
                     </div>
                 </div>
             </div>
-            <div class="fd-popover__body" aria-hidden="true" id="F4GcX348">
+            <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="F4GcX348">
                 <nav class="fd-menu">
                 <ul class="fd-menu__list">
                     <li>

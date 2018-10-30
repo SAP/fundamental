@@ -28,7 +28,7 @@ A basic example of a time picker.
                 </span>
             </div>
         </div>
-        <div class="fd-popover__body" aria-hidden="true" id="Cy29K184">
+        <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="Cy29K184">
             <div class="fd-time">
                 <div class="fd-time__item">
                     <div class="fd-time__control">

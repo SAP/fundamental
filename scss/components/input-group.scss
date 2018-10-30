@@ -67,9 +67,24 @@ $block: #{$fd-namespace}-input-group;
         flex-direction: column;
         border-radius: $fd-border-radius;
         height: var(--fd-forms-height);
+        &--readonly{
+            border: none;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-radius: 0;
+
+            button{
+            }
+        }
         @at-root {
           .#{$block}--compact & {
             height: var(--fd-forms-height-compact);
+            .#{$block}__button {
+                &--step-up:before,
+                &--step-down:before {
+                    top: -4px;
+                }
+            }
           }
         }
 

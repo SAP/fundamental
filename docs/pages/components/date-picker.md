@@ -25,7 +25,7 @@ This component mostly relies on the CSS of other components and has very little 
 				</span>
 			</div>
 		</div>
-		<div class="fd-popover__body fd-popover__body--right" aria-hidden="true" id="Itcgq828">
+		<div class="fd-popover__body fd-popover__body--right fd-popover__body--no-arrow" aria-hidden="true" id="Itcgq828">
 			<div class="fd-calendar">
 				<header class="fd-calendar__header">
 				<div class="fd-calendar__navigation">

@@ -8,7 +8,7 @@ const paths = {
 	dest: './docs/css'
 }
 
-let fundamentalCss = environment.production ? 'fundamental-ui.min.css' : 'fundamental-ui.css';
+let fundamentalCss = environment.production ? 'fiori-fundamentals.min.css' : 'fiori-fundamentals.css';
 
 const task = (cb) => {
     return gulp.src([`${paths.src}/${fundamentalCss}`])

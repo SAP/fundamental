@@ -40,7 +40,7 @@
     {{ forms.text(type,input.properties,size=size,state=input.state,aria=input.aria) }}
     {%- endif %}
     {%- if properties.after %}
-        <span class="fd-input-group__addon{{ modifier.after | modifier('input-group__addon') }}">
+        <span class="fd-input-group__addon{{ modifier.after | modifier('input-group__addon') }} {{ 'fd-input-group__addon--readonly' if properties.input.state.readonly}}">
             {{ properties.after | trim | indent(8, true) }}
         </span>
     {%- endif %}
