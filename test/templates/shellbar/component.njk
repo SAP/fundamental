@@ -79,14 +79,14 @@ shell_header:
           {% endif %}
         </div>
         <div class="fd-shellbar__title">
-        {% if product %}
-{{ product_menu(product) }}
-        {% endif %}
+          {% if product %}
+            {{ product_menu(product) }}
+          {% endif %}
         </div>
         {% if product.subtitle %}
-        <div class="fd-shellbar__subtitle">
-{{ product.subtitle }}
-        </div>
+          <div class="fd-shellbar__subtitle">
+            {{ product.subtitle }}
+          </div>
         {% endif %}
     </div>
     {% if copilot === true %}
@@ -107,21 +107,21 @@ shell_header:
     <div class="fd-shellbar__actions">
       {%- if actions %}
         {%- for item in actions %}
-            <div class="fd-shellbar__action">
+            <div class="fd-shellbar__action fd-shellbar__action--hide">
                 {{item.action}}
             </div>
         {%- endfor %}
-        <div class="fd-shellbar__action">
+        <div class="fd-shellbar__action fd-shellbar__action--collapse">
           {{ shell_actions_collapse(actions=collapsed_items) }}
         </div>
         {%- endif %}
         {%- if user %}
-            <div class="fd-shellbar__action">
-{{ user_menu() }}
+            <div class="fd-shellbar__action fd-shellbar__action--show">
+              {{ user_menu() }}
             </div>
         {%- endif %}
         {%- if switcher %}
-            <div class="fd-shellbar__action">
+            <div class="fd-shellbar__action fd-shellbar__action--hide">
 {{ product_switcher() }}
             </div>
         {%- endif %}

@@ -106,16 +106,26 @@ $block: #{$fd-namespace}-shellbar;
         line-height: 1;
         padding: 0 $fd-shellbar-title-spacing;
         color: fd-color("text", 5);
-        // white-space: nowrap;
-        // overflow: hidden;
-        // text-overflow: ellipsis;
-        // max-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 0;
     }
 
     &__subtitle {
         @include fd-type("-1");
         @include fd-weight("reg");
         line-height: 1;
+        // Show only on desktop, hide on s
+        @include fd-screen(s) {
+            display: none;
+        }
+        @include fd-screen(m) {
+            display: none;
+        }
+        @include fd-screen(l) {
+            display: inline-block;
+        }
     }
 
     &__copilot {
@@ -140,24 +150,29 @@ $block: #{$fd-namespace}-shellbar;
         padding-right: 0;
         padding-left: $fd-shellbar-item-spacing;
 
-        &--search,
-        &--notifications,
-        &--product_switcher {
+        &--hide {
             // Show only on desktop, hide on s
             @include fd-screen(s) {
-                // display: none;
+                display: none;
+            }
+            @include fd-screen(m) {
+                display: none;
+            }
+            @include fd-screen(l) {
+                display: inline-block;
             }
         }
         &--collapse {
             // Show only on s, hide on desktop
-            // display: none;
-
-            @include fd-screen(m) {
-                // display: inline-block;
+            @include fd-screen(s) {
+                display: inline-block;
             }
-        }
-        &--user_menu {
-            // Show me at all times
+            @include fd-screen(m) {
+                display: inline-block;
+            }
+            @include fd-screen(l) {
+                display: none;
+            }
         }
     }
 
