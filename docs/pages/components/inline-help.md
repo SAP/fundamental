@@ -41,6 +41,20 @@ Bottom Left
 
 <br>
 
+## Bottom Center Position
+{% capture inline-help %}
+Bottom Center
+
+<span class="fd-inline-help">
+    <span class="fd-inline-help__content fd-inline-help__content--bottom-center">
+        Lorem ipsum dolor sit amet, consectetur adipiscing.
+    </span>
+</span>
+{% endcapture %}
+{% include display-component.html component=inline-help %}
+
+<br>
+
 ## Right Position
 {% capture inline-help %}
 Right
