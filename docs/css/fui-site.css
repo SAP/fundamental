@@ -6300,13 +6300,15 @@ see layouts/panel
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   color: #51555a; }
   .fd-status-label::before {
-    margin-right: 4px;
-    vertical-align: -8%; }
+    vertical-align: -8%;
+    width: 20px;
+    height: 16px;
+    line-height: 1; }
   .fd-status-label--available, .fd-status-label--away, .fd-status-label--busy, .fd-status-label--offline {
     padding-left: 20px; }
   .fd-status-label--available:before {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     background-repeat: no-repeat;
     content: "";
     line-height: 1;
@@ -6325,11 +6327,10 @@ see layouts/panel
     position: absolute;
     top: 1px;
     left: 0;
-    z-index: 1;
     background-color: #107F3E; }
   .fd-status-label--away:before {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     background-repeat: no-repeat;
     content: "";
     line-height: 1;
@@ -6348,11 +6349,10 @@ see layouts/panel
     position: absolute;
     top: 1px;
     left: 0;
-    z-index: 1;
     background-color: #E9730C; }
   .fd-status-label--busy:before {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     background-repeat: no-repeat;
     content: "";
     line-height: 1;
@@ -6371,11 +6371,10 @@ see layouts/panel
     position: absolute;
     top: 1px;
     left: 0;
-    z-index: 1;
     background-color: #ee0000; }
   .fd-status-label--offline:before {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     background-repeat: no-repeat;
     content: "";
     line-height: 1;
@@ -6394,7 +6393,6 @@ see layouts/panel
     position: absolute;
     top: 1px;
     left: 0;
-    z-index: 1;
     background-color: #51555a; }
   .fd-status-label--success {
     color: #107F3E; }
@@ -6402,6 +6400,37 @@ see layouts/panel
     color: #E9730C; }
   .fd-status-label--error {
     color: #ee0000; }
+
+[dir=rtl] .fd-status-label--available, [dir=rtl] .fd-status-label--away, [dir=rtl] .fd-status-label--busy, [dir=rtl] .fd-status-label--offline,
+.fd-status-label[dir=rtl] .fd-status-label--available,
+.fd-status-label[dir=rtl] .fd-status-label--away,
+.fd-status-label[dir=rtl] .fd-status-label--busy,
+.fd-status-label[dir=rtl] .fd-status-label--offline {
+  padding-left: initial;
+  padding-right: 20px; }
+  [dir=rtl] .fd-status-label--available:before, [dir=rtl] .fd-status-label--away:before, [dir=rtl] .fd-status-label--busy:before, [dir=rtl] .fd-status-label--offline:before,
+  .fd-status-label[dir=rtl] .fd-status-label--available:before,
+  .fd-status-label[dir=rtl] .fd-status-label--away:before,
+  .fd-status-label[dir=rtl] .fd-status-label--busy:before,
+  .fd-status-label[dir=rtl] .fd-status-label--offline:before {
+    left: initial; }
+  [dir=rtl] .fd-status-label--available:after, [dir=rtl] .fd-status-label--away:after, [dir=rtl] .fd-status-label--busy:after, [dir=rtl] .fd-status-label--offline:after,
+  .fd-status-label[dir=rtl] .fd-status-label--available:after,
+  .fd-status-label[dir=rtl] .fd-status-label--away:after,
+  .fd-status-label[dir=rtl] .fd-status-label--busy:after,
+  .fd-status-label[dir=rtl] .fd-status-label--offline:after {
+    left: initial;
+    right: 0; }
+
+[dir=rtl] .fd-status-label--available:before, [dir=rtl] .fd-status-label--away:before, [dir=rtl] .fd-status-label--offline:before,
+.fd-status-label[dir=rtl] .fd-status-label--available:before,
+.fd-status-label[dir=rtl] .fd-status-label--away:before,
+.fd-status-label[dir=rtl] .fd-status-label--offline:before {
+  right: 4px; }
+
+[dir=rtl] .fd-status-label--busy:before,
+.fd-status-label[dir=rtl] .fd-status-label--busy:before {
+  right: 6px; }
 
 /*
   @mixin fd-type mixin
