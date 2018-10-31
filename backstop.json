@@ -1,0 +1,75 @@
+{
+  "id": "backstop_default",
+  "viewports": [
+    {
+      "label": "desktop",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "onBeforeScript": "puppet/onBefore.js",
+  "onReadyScript": "puppet/onReady.js",
+  "scenarios": [
+    {
+      "label": "Button",
+      "url": "http://localhost:3030/button",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [
+        "button.fd-button",
+        "button.fd-button--action-bar",
+        "button.fd-button--secondary",
+        "button.fd-button--toolbar",
+        "button.fd-button--positive",
+        "button.fd-button--negative"
+      ],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold" : 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Alerts",
+      "url": "http://localhost:3030/alert",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 0,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [
+        "div.fd-alert"
+      ],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold" : 0.1,
+      "requireSameDimensions": true
+    }  
+  ],
+  "paths": {
+    "bitmaps_reference": "test/resources/backstop/reference_images",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "test/resources/backstop/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "chromy",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 15,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}
