@@ -7,19 +7,50 @@ permalink: components/input-group.html
 folder: components
 ---
 
-The input group includes form inputs with add-ons that allow the user to better understand the information being entered.
-
-<hr/>
-
-## Text add-on
-
-The Input with text add-on component is typically used to specify the type of the data being entered, such as currency or unit of measure. This add-on can be placed at the left or right of the input element.
-
 <style type="text/css">
 .fd-form__group {
     margin-bottom: 20px;
 }
 </style>
+
+The input group includes form inputs with add-ons that allow the user to better understand the information being entered.
+
+<hr/>
+
+## Sizes
+The Input Group supports `--compact` mode
+
+{% capture text-addon %}
+<div class="fd-form__group">
+    <div class="fd-form__item">
+        <label class="fd-form__label" for="">Default Size </label>
+        <div class="fd-input-group fd-input-group--before">
+            <span class="fd-input-group__addon fd-input-group__addon--before">$</span>
+            <input class="" type="text" id="" name="" value="1234568910 ">
+        </div>
+    </div>
+</div>
+
+<div class="fd-form__group">
+    <div class="fd-form__item">
+        <label class="fd-form__label" for="">Compact Size </label>
+        <div class="fd-input-group fd-input-group--before fd-input-group--compact">
+            <span class="fd-input-group__addon fd-input-group__addon--before">$</span>
+            <input class="fd-input fd-input--compact" type="text" id="" name="" value="1234568910 ">
+        </div>
+    </div>
+</div>
+{% endcapture %}
+
+{% include display-component.html component=text-addon %}
+
+## Text add-on
+
+The Input Group with text add-on component is typically used to specify the type of the data being entered, such as currency or unit of measure. This add-on can be placed at the left or right of the input element.
+
+
+
+
 
 {% capture text-addon %}
 <div class="fd-form__group">

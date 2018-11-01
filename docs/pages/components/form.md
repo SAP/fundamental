@@ -23,6 +23,13 @@ Inputs are used to collect data from the user. When a field is required, the lab
 
 <div class="fd-form__set">
     <div class="fd-form__item">
+        <label class="fd-form__label" for="input-1">Compact Input:</label>
+        <input class="fd-input--compact fd-form__control" type="text" id="input-1" placeholder="Field placeholder text">
+    </div>
+</div>
+
+<div class="fd-form__set">
+    <div class="fd-form__item">
         <label class="fd-form__label is-required" for="input-2">Required Input:</label>
         <input class="fd-form__control" type="text" id="input-2" placeholder="Field placeholder text">
     </div>

@@ -25,12 +25,14 @@ There are three emphasis styles used to indicate the importance of the button on
 {% endcapture %}
 {% include display-component.html component=button %}
 
+## Button Types
+
 There are five button types that can be combined with the emphasis styles.
-- **Action Button**:
-- **Standard Button**:
-- **Positive Button**:
-- **Medium Button**:
-- **Negative Button**:
+- **Action Button**: The default button
+- **Standard Button**: Neutral or informative color
+- **Positive Button**: Used for positive actions such as approved, ok, yes.
+- **Medium Button**: Used for warnings or alert
+- **Negative Button**:Used for negative actions such as decline, cancel, no.
 
 
 {% capture button %}
@@ -42,7 +44,6 @@ There are five button types that can be combined with the emphasis styles.
 {% endcapture %}
 {% include display-component.html component=button %}
 
-<br/>
 
 ## Button Sizes
 There are two sizes.
@@ -55,7 +56,6 @@ There are two sizes.
 {% endcapture %}
 {% include display-component.html component=button %}
 
-<br>
 
 ## Buttons with Icon
 All buttons styles can be used with an icon. You can use the `sap-icon--{icon-name}` class to attach an icon to the button.
@@ -75,7 +75,6 @@ Full list of all the available icons can be found on the <a href="icon.html">ico
 {% endcapture %}
 {% include display-component.html component=button %}
 
-<br>
 
 ## Standard button state
 The buttons can also be set to a state:
@@ -116,7 +115,6 @@ The buttons can also be set to a state:
 ## Button Group
 Group a series of buttons together on a single line with the button group.
 
-## Button Group
 {% capture button-group-small %}
 <div class="fd-button-group" role="group" aria-label="Group label">
   <button class="fd-button sap-icon--survey"></button>
@@ -128,6 +126,37 @@ Group a series of buttons together on a single line with the button group.
   <button class="fd-button fd-button--compact" aria-pressed="true">Left</button>
   <button class="fd-button fd-button--compact">Middle</button>
   <button class="fd-button fd-button--compact">Right</button>
+</div>
+{% endcapture %}
+{% include display-component.html component=button-group-small %}
+
+## Button RTL support
+
+
+{% capture button-group-small %}
+<div dir="rtl">
+<button class="fd-button--emphasized sap-icon--cart">Add to Cart</button>
+<button class="fd-button sap-icon--cart">Add to Cart</button>
+<button class="fd-button--light sap-icon--cart">Add to Cart</button>
+<button class="fd-button--emphasized fd-button--positive sap-icon--accept">Approve</button>
+<button class="fd-button--emphasized fd-button--negative sap-icon--decline">Reject</button>
+<br><br>
+<button class="fd-button sap-icon--cart"></button>
+<button class="fd-button--light sap-icon--cart"></button>
+<button class="fd-button--standard sap-icon--filter"></button>
+<button class="fd-button--emphasized fd-button--positive sap-icon--accept"></button>
+<button class="fd-button--emphasized fd-button--negative sap-icon--decline"></button>
+<div class="fd-button-group" role="group" aria-label="Group label">
+  <button class="fd-button sap-icon--survey"></button>
+  <button class="fd-button sap-icon--pie-chart" aria-pressed="true"></button>
+  <button class="fd-button sap-icon--pool"></button>
+</div>
+
+<div class="fd-button-group" role="group" aria-label="Group label">
+  <button class="fd-button fd-button--compact" aria-pressed="true">Left</button>
+  <button class="fd-button fd-button--compact">Middle</button>
+  <button class="fd-button fd-button--compact">Right</button>
+</div>
 </div>
 {% endcapture %}
 {% include display-component.html component=button-group-small %}
