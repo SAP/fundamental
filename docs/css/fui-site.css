@@ -3437,7 +3437,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     line-height: 1; }
   .fd-button::before, [class*="fd-button--"]::before {
     margin-right: 8px;
-    vertical-align: middle; }
+    vertical-align: text-bottom; }
   [dir="rtl"] .fd-button::before, .fd-button[dir="rtl"]::before, [dir="rtl"] [class*="fd-button--"]::before, [class*="fd-button--"][dir="rtl"]::before {
     margin-right: 0;
     margin-left: 8px; }
@@ -3891,7 +3891,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   padding-left: 0;
   margin-bottom: -12px;
   list-style: none;
-  padding: 12px 16px 0 0; }
+  padding-right: 16px; }
   .fd-breadcrumb__item::after {
     content: "/";
     margin-right: 16px; }
@@ -3902,7 +3902,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 
 [dir=rtl] .fd-breadcrumb,
 .fd-breadcrumb[dir=rtl] .fd-breadcrumb {
-  padding: 12px 0 0 16px; }
+  padding: 0 0 0 16px; }
   [dir=rtl] .fd-breadcrumb__item::after,
   .fd-breadcrumb[dir=rtl] .fd-breadcrumb__item::after {
     content: "/";
@@ -4320,8 +4320,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     display: flex;
     flex-direction: column;
     border-radius: 4px;
-    height: var(--fd-forms-height);
-    z-index: 1; }
+    height: var(--fd-forms-height); }
     .fd-input-group__addon--readonly {
       border: none;
       border-top-color: transparent;
@@ -6125,8 +6124,42 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-token::after {
     color: #0a6ed1;
     margin-left: 4px;
-    vertical-align: middle;
+    vertical-align: bottom;
     line-height: 24px; }
+
+[dir=rtl] .fd-token::after,
+.fd-token[dir=rtl] .fd-token::after {
+  content: none; }
+
+[dir=rtl] .fd-token::before,
+.fd-token[dir=rtl] .fd-token::before {
+  font-family: "SAP-icons";
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none; }
+
+[dir=rtl] .fd-token::before,
+.fd-token[dir=rtl] .fd-token::before {
+  content: ""; }
+
+[dir=rtl] .fd-token::before,
+.fd-token[dir=rtl] .fd-token::before {
+  font-size: 0.85714rem;
+  line-height: 1; }
+
+[dir=rtl] .fd-token::before,
+.fd-token[dir=rtl] .fd-token::before {
+  color: #0a6ed1;
+  margin-left: 4px;
+  vertical-align: bottom;
+  line-height: 24px; }
 
 /*
   @mixin fd-type mixin
@@ -6180,8 +6213,42 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-tag::after {
     color: #0a6ed1;
     margin-left: 4px;
-    vertical-align: middle;
+    vertical-align: bottom;
     line-height: 24px; }
+
+[dir=rtl] .fd-tag::after,
+.fd-tag[dir=rtl] .fd-tag::after {
+  content: none; }
+
+[dir=rtl] .fd-tag::before,
+.fd-tag[dir=rtl] .fd-tag::before {
+  font-family: "SAP-icons";
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none; }
+
+[dir=rtl] .fd-tag::before,
+.fd-tag[dir=rtl] .fd-tag::before {
+  content: ""; }
+
+[dir=rtl] .fd-tag::before,
+.fd-tag[dir=rtl] .fd-tag::before {
+  font-size: 0.85714rem;
+  line-height: 1; }
+
+[dir=rtl] .fd-tag::before,
+.fd-tag[dir=rtl] .fd-tag::before {
+  color: #0a6ed1;
+  margin-left: 4px;
+  vertical-align: bottom;
+  line-height: 24px; }
 
 /*
 see layouts/panel-grid
