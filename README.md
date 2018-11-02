@@ -74,7 +74,7 @@ At the time this version was released, there are no known limitations
 
 ### Configuring icons path when importing SCSS
 
-If you are importing .scss files in your project, the icons path needs to be configured in your project's .scss file before the Fundamental UI scss import as described below. Please note that the path variable name has to be `$fd-icons-path` in order to override the default value set in `scss/icons/icon.scss`.
+If you are importing .scss files in your project, the icons path needs to be configured in your project's .scss file before the Fiori Fundamentals scss import as described below. Please note that the path variable name has to be `$fd-icons-path` in order to override the default value set in `scss/icons/icon.scss`.
 
 ```
 $fd-icons-path : "../node_modules/fiori-fundamentals/scss/icons/"; // should be declared before the scss import
