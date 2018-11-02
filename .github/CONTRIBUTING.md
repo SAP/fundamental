@@ -1,6 +1,6 @@
 # Contributing
 
-FThank you for considering contributing to SAP Fiori Fundamentals. It's people like you that make this such a great tool.
+Thank you for considering contributing to SAP Fiori Fundamentals. It's people like you that make this such a great tool.
 
 ### 1. Where do I go from here?
 
