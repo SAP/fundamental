@@ -8,7 +8,7 @@ folder: guides
 summary:
 ---
 
-<p>Fundamental UI is an unified, flexible design system that solves complex
+<p>Fiori Fundamentals is an unified, flexible design system that solves complex
 problems in a meaningful way and creates simple intuitive experience.
 </p>
 
@@ -19,7 +19,7 @@ problems in a meaningful way and creates simple intuitive experience.
                  Getting Started - Designers
              </h2>
             <p class="fd-tile__description">
-                Create a harmonious experience for users with Fundamental UI design language.
+                Create a harmonious experience for users with Fiori Fundamentals design language.
             </p>
         </div>
     </a>
@@ -29,7 +29,7 @@ problems in a meaningful way and creates simple intuitive experience.
                  Getting Started - Developers
              </h2>
              <p class="fd-tile__description">
-                 Fundamental UI is a coherent Design System accompanied by a collection of HTML/CSS Components.
+                 Fiori Fundamentals is a coherent Design System accompanied by a collection of HTML/CSS Components.
              </p>
         </div>
     </a>
@@ -49,7 +49,7 @@ problems in a meaningful way and creates simple intuitive experience.
                  Grid
              </h2>
              <p class="fd-tile__description">
-                 Fundamental UI uses responsive grid system that achieves flexible 12-column flow layout. It is used to create flexible layouts for various screen sizes and device types.
+                 Fiori Fundamentals uses responsive grid system that achieves flexible 12-column flow layout. It is used to create flexible layouts for various screen sizes and device types.
              </p>
         </div>
     </a>
@@ -69,7 +69,7 @@ problems in a meaningful way and creates simple intuitive experience.
                  Type
              </h2>
              <p class="fd-tile__description">
-                 Fundamental UI uses a set of sans-serif system fonts.
+                 Fiori Fundamentals uses a set of sans-serif system fonts.
              </p>
         </div>
     </a>
