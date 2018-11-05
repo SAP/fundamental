@@ -47,7 +47,7 @@ $block: #{$fd-namespace}-action-bar;
     padding-right: 0;
     padding-left: 0;
     display: flex;
-    align-items: center;
+    align-items: baseline;
 
     &__header {
         @include fd-reset;
@@ -67,12 +67,12 @@ $block: #{$fd-namespace}-action-bar;
                 width: 0;
                 height: 100%;
                 position: absolute;
-                top: 0;
+                top: - fd-space(1);
                 right: - fd-space(1);
                 border-right: 1px solid $fd-action-bar-backbtn-seperator-color;
         }
         button {
-            margin-top: - fd-space(0.5);
+            margin-top: - fd-space(2);
         }
     }
 
@@ -84,7 +84,7 @@ $block: #{$fd-namespace}-action-bar;
                 width: 0;
                 height: 100%;
                 position: absolute;
-                top: 0;
+                top: - fd-space(1);
                 right: - fd-space(1);
                 border-right: 1px solid $fd-action-bar-backbtn-seperator-color;
         }
@@ -119,6 +119,9 @@ $block: #{$fd-namespace}-action-bar;
           &:first-child {
             margin-left: 0;
           }
+        }
+        .fd-popover {
+            top: - fd-space(1);
         }
     }
 }
