@@ -7,7 +7,7 @@
 {% from "./../product-switcher/component.njk" import product_switcher %}
 {% from "./../shellbar-collapse/component.njk" import shell_header_collapse %}
 {% from "./../shellbar-title-menu/component.njk" import shell_header_title_menu %}
-{% from "./../shellbar-search/component.njk" import shell_header_search %}
+{% from "./../search-input/component.njk" import search_input %}
 
 <!--
 shell_header:
@@ -20,20 +20,31 @@ shell_header:
         "title_items": [],
         "subtitle": "",
         "copilot": true,
-        "actions": []
+        "actions": [],
+        "search": {
+          "value": "",
+          "placeholder": "",
+          "collapsed": true,
+          "items": []
+        }
     },
     modifier={ block: [] },
     state={},
     aria={}
 -->
-{% set search = shell_header_search(properties={ "id": utils.id() }, state={ "closed": true }) %}
+
+{% set search = search_input(properties={
+    "id": utils.id(),
+    "value": properties.search.value,
+    "placeholder": properties.search.placeholder,
+    "collapsed": properties.search.collapsed,
+    "items": properties.search.items
+  })
+%}
+
 {% set notification = button({ icon: 'bell' }, modifier={ block: ['shellheader'] }) %}
+
 {% set actions = [
-  {
-    "label": "Search",
-    "action": search,
-    "collapse": false
-  },
   {
     "label": "Notifications",
     "action": notification,
@@ -56,6 +67,7 @@ shell_header:
     name: "SAP",
     logo: null
 } %}
+
 {% set product = {
   title: "SuccessFactors",
   subtitle: "Subtitle",
@@ -96,7 +108,7 @@ shell_header:
     {% endif %}
     {% if actions or user or switcher %}
     <div class="fd-shellbar__group fd-shellbar__group--end">
-      {{ shell_actions(actions=actions, user=user, switcher=switcher) }}
+      {{ shell_actions(actions=actions, user=user, switcher=switcher, properties=properties) }}
     </div>
     {% endif %}
   </div>
@@ -106,6 +118,35 @@ shell_header:
   {% set collapsed_items = actions | filter_array("collapse",true) %}
     <div class="fd-shellbar__actions">
       {%- if actions %}
+        <div class="fd-shellbar__action fd-shellbar__action--hide">
+          {{
+            search_input(properties={
+              "id": utils.id(),
+              "value": "Sear",
+              "placeholder": "Search products",
+              "closed": true,
+              "items": [
+                {
+                  "label": "<strong>Sear</strong>ch Result A",
+                  "action": "#"
+                },
+                {
+                  "label": "<strong>Sear</strong>ch Result B",
+                  "action": "#"
+                },
+                {
+                  "label": "<strong>Sear</strong>ch Result C",
+                  "action": "#"
+                },
+                {
+                  "label": "<strong>Sear</strong>ch Result D",
+                  "action": "#"
+                }
+              ]
+            })
+          }}
+          {{ properties | dump }}
+        </div>
         {%- for item in actions %}
             <div class="fd-shellbar__action fd-shellbar__action--hide">
                 {{item.action}}
@@ -122,7 +163,7 @@ shell_header:
         {%- endif %}
         {%- if switcher %}
             <div class="fd-shellbar__action fd-shellbar__action--hide">
-{{ product_switcher() }}
+              {{ product_switcher() }}
             </div>
         {%- endif %}
     </div>

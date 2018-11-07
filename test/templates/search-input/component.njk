@@ -2,11 +2,41 @@
 {% from "./../menu/component.njk" import menu %}
 {% from "./../input-group/component.njk" import input_group %}
 {% from "../button/component.njk" import button %}
+{% import "../forms.njk" as forms %}
 {% import "./../utils.njk" as utils %}
 
 {#
-    see ./data.json for object structure
+<!--
+search_input:
+  properties={
+    "value": "Sear",
+    "placeholder": "Search products"
+    "closed": false,
+    "items": [
+      {
+        "label": "<strong>Sear</strong>ch Result A",
+        "action": "#"
+      },
+      {
+        "label": "<strong>Sear</strong>ch Result B",
+        "action": "#"
+      },
+      {
+        "label": "<strong>Sear</strong>ch Result C",
+        "action": "#"
+      },
+      {
+        "label": "<strong>Sear</strong>ch Result D",
+        "action": "#"
+      }
+    ]
+  },
+  modifier={ block: [] },
+  state={},
+  aria={}
+-->
 #}
+
 {% macro search_input(
     properties={},
     state={},
@@ -14,41 +44,91 @@
     classes=[],
     size="")
 -%}
+
 {%- set _id = utils.id() %}
+
 <div class="fd-search-input{{ classes|classes}}">
     <div class="fd-popover">
         <div class="fd-popover__control">
-            <div class="fd-combobox-control" aria-controls="{{_id}}" aria-expanded="false" aria-haspopup="true">
-              {{- input_group(
-                  modifier={
-                      block: "after",
-                      after: ['after', 'button']
-                  },
-                  properties={
-                      input: {
-                          properties: properties
-                      },
-                      after: button(
-                        { label: '',
-                          icon: 'search'
-                        },
-                        modifier={
-                          block: ['light']
-                        },size=size
-                      )
-                  },size=size)
-              }}
-            </div>
+          {% if properties.closed %}
+            {{ search_input_closed_control(properties={
+                "id": _id,
+                "value": properties.value,
+                "placeholder": properties.placeholder
+              })
+            }}
+          {% else %}
+            {{ search_input_control(properties={
+                "id": _id,
+                "value": properties.value,
+                "placeholder": properties.placeholder
+              })
+            }}
+          {% endif %}
         </div>
         <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="{{_id}}">
-            <nav class="fd-menu">
-            <ul class="fd-menu__list">
-                <li><a href="#" class="fd-menu__item"><strong>Ba</strong>nana</a></li>
-                <li><a href="#" class="fd-menu__item"><strong>Ba</strong>rk</a></li>
-                <li><a href="#" class="fd-menu__item"><strong>Ba</strong>ts</a></li>
-            </ul>
-            </nav>
+            {{ search_input_body(properties={ "items": properties.items }) }}
         </div>
     </div>
 </div>
 {%- endmacro %}
+
+{%- macro search_input_closed_control(properties={}, modifier={}, state={}) -%}
+  {%- set interactionId = utils.id() %}
+
+  <button class="fd-button--m sap-icon--search fd-button--shellheader" aria-controls="{{ interactionId }}" aria-expanded="false" aria-haspopup="true"></button>
+
+  <div class="fd-search-input__closedcontrol" id="{{interactionId}}" aria-hidden="true">
+    <div class="fd-search-input__controlinput" aria-controls="{{ properties.id }}" aria-expanded="false" aria-haspopup="true">
+      {{ forms.text(
+          type="text",
+          properties={
+            "id": utils.id(),
+            "value": properties.value,
+            "placeholder": properties.placeholder
+          })
+      }}
+    </div>
+  </div>
+{%- endmacro -%}
+
+
+{%- macro search_input_control(properties={}, modifier={}, state={}) -%}
+<div class="fd-search-input__control" aria-controls="{{ properties.id }}" aria-expanded="false" aria-haspopup="true">
+  {{- input_group(
+      modifier={
+          block: "after",
+          after: ['after', 'button']
+      },
+      properties={
+          input: {
+              properties: {
+                "id": utils.id(),
+                "value": properties.value,
+                "placeholder": properties.placeholder
+              }
+          },
+          after: button(
+            { label: '',
+              icon: 'search'
+            },
+            modifier={
+              block: ['light']
+            }, size=size
+          )
+      },size=size)
+  }}
+</div>
+{%- endmacro -%}
+
+{%- macro search_input_body(properties={}, modifier={}, state={}) -%}
+<div class="fd-search-input__body">
+    <nav class="fd-menu">
+        <ul class="fd-menu__list">
+            {% for item in properties.items %}
+              <li><a href="{{ item.action }}" class="fd-menu__item">{{ item.label }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>
+{%- endmacro -%}

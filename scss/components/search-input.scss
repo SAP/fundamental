@@ -8,14 +8,38 @@
 $block: #{$fd-namespace}-search-input;
 
 .#{$block} {
+  &__control {
+    position: relative;
+  }
+  &__closedcontrol {
+      position: absolute;
+      top: 0;
+      right: 44px;
+      transition: all $fd-animation--speed;
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      width: 200px;
+
+      &[aria-hidden="true"],
+      &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(15px);
+        width: 200px;
+      }
+    }
   & .fd-popover {
     display: block;
+    width: 200px;
 
     &__body {
       width: 100%;
+      transform: translateX(-44px);
     }
   }
   & .fd-menu{
     display: block;
+    text-align: left;
   }
 }
