@@ -49,9 +49,29 @@
 {% endset %}
 {{ format(example) }}
 
+<br><br>
+
+<h2><code>--1col</code></h2>
+
+{% set example %}
+{{  panel_grid(
+        properties={
+            items: [
+            panel_item, panel_item, panel_item, panel_item
+            ]
+        },
+        modifier={
+            block: ["1col"]
+        },
+        state={},
+        aria={}
+    )
+}}
+{% endset %}
+{{ format(example) }}
 
 
-        <br><br>
+<br><br>
 
     <h2><code>--2col</code>
       and <code>--nogap</code>

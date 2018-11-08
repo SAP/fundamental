@@ -118,6 +118,35 @@ The `.fd-panel-grid-nogap` modifier will remove margins between the panels.
 {% include display-component.html component=default %}
 
 <br/>
+## Panel Grid with 1 columns
+The `.fd-panel-grid--1col` modifier will render a 1 column grid.
+{% capture default %}
+<div class="fd-panel-grid fd-panel-grid--1col">
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+    <div class="fd-panel">
+        <div class="fd-panel__body">
+            <p>.fd-panel</p>
+        </div>
+    </div>
+</div>
+{% endcapture %}
+{% include display-component.html component=default %}
+
+<br/>
 
 ## Panel Grid with 2 columns
 The `.fd-panel-grid--2col` modifier will render a 2 column grid.
