@@ -13,13 +13,13 @@ const task = () => {
 	//gulp.watch([`./docs/**/*.html`,`./src/**/*.html`]);
 
 	//watch component styles
-	gulp.watch([`./scss/**/*.scss`], ['pkg-css']);
+	gulp.watch([`./scss/**/*.scss`], gulp.series('pkg-css'));
 
 	//update docs styles
-	gulp.watch([`${paths.dest}/fundamntal-ui.css`], ['docs-css']);
+	gulp.watch([`${paths.dest}/fundamntal-ui.css`], gulp.series('docs-css'));
 
 	// update site styles
-	gulp.watch([`./docs/scss/**/*.scss`], ['docs-site']);
+	gulp.watch([`./docs/scss/**/*.scss`], gulp.series('docs-site'));
 
 	//update styleguide styles
 	//gulp.watch([`./docs/styleguide/styles/**/*.scss`], ['docs-styleguide']);

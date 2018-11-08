@@ -9,9 +9,9 @@ const paths = {
 }
 
 const task = (cb) => {
-    let prefix = config.tasks.css.prefix;
-    return gulp.src([`${paths.src}/*`, `!${paths.src}/*.scss`])
+	gulp.src([`${paths.src}/*`, `!${paths.src}/*.scss`])
 		.pipe(gulp.dest(paths.dest));
+	cb();
 }
 
 gulp.task('pkg-icons', task);

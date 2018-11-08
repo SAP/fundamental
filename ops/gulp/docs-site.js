@@ -9,12 +9,12 @@ const paths = {
 }
 
 const task = (cb) => {
-    return gulp.src(paths.src)
+    gulp.src(paths.src)
 	.pipe(sourcemaps.init())
 	.pipe(sass().on('error', sass.logError))
 	.pipe(rename("fui-site.css"))
 	.pipe(gulp.dest(paths.dest));
-
+	cb();
 }
 
 gulp.task('docs-site', task);

@@ -8,8 +8,9 @@ const paths = {
 }
 
 const task = (cb) => {
-    return gulp.src([`${paths.src}/*.woff`])
+    gulp.src([`${paths.src}/*.woff`])
 		.pipe(gulp.dest(paths.dest));
+	cb();
 }
 
 gulp.task('docs-icons', task);

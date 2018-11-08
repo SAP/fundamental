@@ -1,9 +1,13 @@
 const gulp = require('gulp');
-const gulpSequence = require('gulp-sequence');
+const FwdRef = require('undertaker-forward-reference');
 
-const task = (cb) => {
-    gulpSequence('dev-jekyll', ['dev-serve', 'dev-watch'], 'docs-build', 'docs-site', cb);
-}
+gulp.registry(FwdRef());
 
-gulp.task('default', task);
-module.exports = task;
+// const task = (cb) => {
+//     gulp.series('dev-jekyll',  gulp.parallel('dev-serve', 'dev-watch'), 'docs-build', 'docs-site', cb());
+// }
+
+// gulp.task('default', task);
+// module.exports = task;
+
+module.exports = gulp.task('default', gulp.series('dev-jekyll', 'docs-build', 'docs-site', gulp.parallel('dev-serve', 'dev-watch')));

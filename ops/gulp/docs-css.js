@@ -11,9 +11,11 @@ const paths = {
 let fundamentalCss = environment.production ? 'fiori-fundamentals.min.css' : 'fiori-fundamentals.css';
 
 const task = (cb) => {
-    return gulp.src([`${paths.src}/${fundamentalCss}`])
+	console.log('--->', `${paths.src}/${fundamentalCss}`, paths.dest);
+	
+    gulp.src(`${paths.src}/${fundamentalCss}`)
 		.pipe(gulp.dest(paths.dest));
-
+	cb();
 }
 
 gulp.task('docs-css', task);

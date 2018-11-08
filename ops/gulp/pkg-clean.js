@@ -12,7 +12,8 @@ the checked-in version of the package should only be built for releases and not 
 let dest = !environment.production ? config.root.tmp : config.root.dest;
 
 const task = (cb) => {
-    return del([`./${dest}/**/*`]);
+    del([`./${dest}/**/*`]);
+    cb();
 }
 
 gulp.task('pkg-clean', task);

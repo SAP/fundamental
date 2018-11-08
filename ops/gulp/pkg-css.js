@@ -5,9 +5,6 @@ const gulpif = require('gulp-if');
 const sourcemaps = require('gulp-sourcemaps');
 const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
-const debug = require('gulp-debug');
-const gulpSequence = require('gulp-sequence');
-const replace = require('gulp-replace');
 const header = require('gulp-header');
 const config = require('../config');
 const pkg = require('../../package');
@@ -15,8 +12,8 @@ const pkg = require('../../package');
 let environment = require('../lib/environment');
 
 const paths = {
-	src: config.root.css,
-	dest: environment.production ? config.root.dest : config.root.tmp
+    src: config.root.css,
+    dest: environment.production ? config.root.dest : config.root.tmp
 }
 
 var d = new Date();
@@ -30,48 +27,45 @@ var banner = `/*!
 //compile top-level files
 var sassTask = (cb) => {
     let prefix = config.tasks.css.prefix;
-    let files = environment.production ? `${paths.src}/*.${config.tasks.css.extensions}` : `!${paths.src}/all.scss`;
+    let files = environment.production ? `${paths.src}/*.${config.tasks.css.extensions}` : `${paths.src}/all.scss`;
 
     var isAllCss = function (file) {
-      return file.path.includes('all') ;
+        return file.path.includes('all');
     }
-    return gulp.src(files)
+    console.log('test')
+    gulp.src(files)
         .pipe(gulpif(environment.development, sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer(config.tasks.css.autoprefixer))
         .pipe(gulpif(environment.production, cleanCSS(config.tasks.css.cleanCSS)))
-        // .pipe(rename({
-        //     prefix: `${prefix}-`
-        // }))
         .pipe(gulpif(isAllCss, rename({
             basename: prefix
         })))
         .pipe(gulpif(environment.development, sourcemaps.write()))
-        .pipe(gulp.dest(paths.dest))
+        .pipe(gulp.dest(paths.dest));
+    cb();
 }
 gulp.task('pkg-sass', sassTask);
 
 //compile top-level (dark) files
 var darkSassTask = (cb) => {
     let prefix = config.tasks.css.prefix;
-    let files = environment.production ?  `${paths.src}/*.${config.tasks.css.extensions}` : `!${paths.src}/all-dark.scss`;
+    let files = environment.production ? `${paths.src}/*.${config.tasks.css.extensions}` : `${paths.src}/all-dark.scss`;
 
     var isAllCss = function (file) {
-      return file.path.includes('all-dark') ;
+        return file.path.includes('all-dark');
     }
-    return gulp.src(files)
+    gulp.src(files)
         .pipe(gulpif(environment.development, sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer(config.tasks.css.autoprefixer))
         .pipe(gulpif(environment.production, cleanCSS(config.tasks.css.cleanCSS)))
-        // .pipe(rename({
-        //     prefix: `${prefix}-`
-        // }))
         .pipe(gulpif(isAllCss, rename({
             basename: prefix
         })))
         .pipe(gulpif(environment.development, sourcemaps.write()))
         .pipe(gulp.dest(paths.dest))
+    cb();
 }
 gulp.task('pkg-dark-sass', darkSassTask);
 
@@ -88,30 +82,6 @@ var componentsTask = (cb) => {
         .pipe(gulp.dest(`${paths.dest}/components`))
 }
 gulp.task('pkg-css-components', componentsTask);
-
-//compile font sass files
-var fontTask = (cb) => {
-    let prefix = config.tasks.css.prefix;
-    let files = environment.production ?  `${paths.src}/fonts/*.${config.tasks.css.extensions}` : `!${paths.src}/all.scss`;
-
-    var isAllCss = function (file) {
-      return file.path.includes('all') ;
-    }
-    return gulp.src(files)
-        .pipe(gulpif(environment.development, sourcemaps.init()))
-        .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer(config.tasks.css.autoprefixer))
-        .pipe(gulpif(environment.production, cleanCSS(config.tasks.css.cleanCSS)))
-        // .pipe(rename({
-        //     prefix: `${prefix}-`
-        // }))
-        .pipe(gulpif(isAllCss, rename({
-            basename: prefix
-        })))
-        .pipe(gulpif(environment.development, sourcemaps.write()))
-        .pipe(gulp.dest(paths.dest))
-}
-gulp.task('pkg-sass', sassTask);
 
 //create minify versions
 var minifyTask = (cb) => {
@@ -132,18 +102,26 @@ gulp.task('pkg-css-minify', minifyTask);
 
 //add banner
 var bannerTask = (cb) => {
-    return gulp.src([`${paths.dest}/**/*.css`])
+    gulp.src([`${paths.dest}/**/*.css`])
         .pipe(header(banner))
-        .pipe(gulp.dest(paths.dest))
+        .pipe(gulp.dest(paths.dest));
+    cb();
 }
 gulp.task('pkg-css-banner', bannerTask);
 
 //main css task
-module.exports = cssTask = (cb) => {
-    if (environment.production) {
-        gulpSequence('pkg-sass', 'pkg-dark-sass', 'pkg-css-components', 'pkg-css-minify', 'pkg-css-banner', cb)
-    } else {
-        gulpSequence('pkg-sass', 'pkg-dark-sass', cb)
-    }
-}
-gulp.task('pkg-css', cssTask);
+
+
+// const cssTask = (cb) => {
+//     console.log('AAA', environment);
+
+//     if (environment.production) {
+//         gulp.series('pkg-sass', 'pkg-dark-sass', 'pkg-css-components', 'pkg-css-minify', 'pkg-css-banner', cb());
+//     } else {
+//         gulp.series('pkg-sass', 'pkg-dark-sass', cb());
+//     }
+// }
+module.exports = gulp.task('pkg-css', environment.production ?
+    gulp.series('pkg-sass', 'pkg-dark-sass', 'pkg-css-components', 'pkg-css-minify', 'pkg-css-banner') :
+    gulp.series('pkg-sass'));
+// module.exports = cssTask;

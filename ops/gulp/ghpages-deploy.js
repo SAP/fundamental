@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const ghPages = require('gh-pages');
-const gulpSequence = require('gulp-sequence');
 
 const paths = {
     srcPrepare:  ['./docs/_site/**/*','./README.md'],
@@ -11,7 +10,7 @@ const paths = {
 //main task that should be used
 const task = (cb) => {
 
-    gulpSequence('prepareDeploy',['ghDeploy'], cb);
+    gulp.series('prepareDeploy', gulp.parallel('ghDeploy'), cb());
 
 }
 

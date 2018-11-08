@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const child = require('child_process');
 const gutil = require('gulp-util');
 
-gulp.task('dev-jekyll', () => {
+gulp.task('dev-jekyll', (cb) => {
   const jekyll = child.exec('bundle exec jekyll build --watch --incremental', { cwd: 'docs' })
 
   const jekyllLogger = (buffer) => {
@@ -13,4 +13,5 @@ gulp.task('dev-jekyll', () => {
 
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
+  cb();
 });
