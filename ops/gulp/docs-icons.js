@@ -1,7 +1,4 @@
 const gulp = require('gulp');
-
-let environment = require('../lib/environment');
-
 const paths = {
 	src: './dist',
 	dest: './docs/css'

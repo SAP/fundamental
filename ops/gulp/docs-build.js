@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 
-module.exports = gulp.task('docs-build', gulp.series('build:dist', 
+module.exports = gulp.task('docs-build', gulp.series('build:dist',
     gulp.parallel(
         'docs-resources',
         'docs-icons',

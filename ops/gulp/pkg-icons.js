@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const config = require('../config');
-
-let environment = require('../lib/environment');
+const environment = require('../lib/environment');
 
 const paths = {
 	src: `${config.root.css}/icons`,
