@@ -22,7 +22,7 @@ A basic example of a time picker.
             <div class="fd-input-group fd-input-group--after">
                 <input type="time" class="fd-input " id="" placeholder="hh:mm am/pm">
                 <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button ">
-                                  <button class=" fd-button--light fd-button--compact sap-icon--fob-watch fd-popover__control" aria-controls="rthHR811" aria-expanded="false" aria-haspopup="true"></button>
+                                  <button class=" fd-button--light sap-icon--fob-watch fd-popover__control" aria-controls="rthHR811" aria-expanded="false" aria-haspopup="true"></button>
 
                       </span>
             </div>
@@ -35,7 +35,7 @@ A basic example of a time picker.
                 <div class="fd-time__item">
                     <div class="fd-time__control">
 
-                        <button class=" fd-button--standard fd-button--light fd-button--compact sap-icon--navigation-up-arrow" aria-label="Increase hours" aria-controls="BW7dC141"></button>
+                        <button class=" fd-button--standard fd-button--light sap-icon--navigation-up-arrow" aria-label="Increase hours" aria-controls="BW7dC141"></button>
                     </div>
                     <div class="fd-time__input">
                         <input class="fd-form__control" type="text" placeholder="hh" value="" id="BW7dC141" aria-label="Hours">
