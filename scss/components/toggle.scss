@@ -30,6 +30,7 @@ $block: #{$fd-namespace}-toggle;
   $fd-toggle-switch-background-color--disabled: hsla(240, 2%, 93%, 1) !default;
   $fd-toggle-switch-on-background-color--disabled: hsla(209, 90%, 92%, 1) !default;
   $fd-toggle-switch-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+  $fd-toggle-z-index: map-get($fd-z-index-levels, "base") !default;
 
   @include fd-reset;
   position: relative;
@@ -37,6 +38,7 @@ $block: #{$fd-namespace}-toggle;
   height: $fd-toggle-height;
   width: $fd-toggle-width;
   vertical-align: middle;
+  z-index: $fd-toggle-z-index;
 
   &__switch {
     height: $fd-toggle-switch-width;
