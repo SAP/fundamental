@@ -384,191 +384,191 @@ a contextual menu can be substituted in order to display all actions in one menu
 ## Table with Fix Column Header and context menu
 {% capture table-sort %}
 <div class="fd-table--fixed-wrapper" style="width:800px;">
-	<div class="fd-table--fixed">
-		<table class="fd-table">
-			<thead>
-				<tr>
-					<th class="fd-table__context-menu fd-table__fixed-col" style="left:0; width:200px" aria-controls="col1.2" aria-haspopup="true">
-						<div class="fd-popover">
-							<div class="fd-popover__control">
-								<span class="fd-table__context-menu-label">Header Column</span>
-							</div>
-							<div class="fd-popover__body" aria-hidden="true" id="col1.2">
-								<nav class="fd-menu fd-menu--addon-before">
-									<ul class="fd-menu__list">
-										<li>
-											<div class="fd-menu__addon-before"></div>
-											<a href="#" class="fd-menu__item">Ascending</a>
-										</li>
-										<li>
-											<div class="fd-menu__addon-before"></div>
-											<a href="#" class="fd-menu__item">Decensing</a>
-										</li>
-										<hr>
-										<li>
-											<div class="fd-menu__addon-before"><span class="sap-icon--accept"></span></div>
-											<a href="#" class="fd-menu__item">Fix Column</a>
-										</li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</th>
-					<th class="fd-table__context-menu" aria-controls="col2.2" aria-haspopup="true">
-						<div class="fd-popover">
-							<div class="fd-popover__control">
-								<span class="fd-table__context-menu-label">Header Column</span>
-							</div>
-							<div class="fd-popover__body" aria-hidden="true" id="col2.2">
-								<nav class="fd-menu fd-menu--addon-before">
-									<ul class="fd-menu__list">
-										<li><a href="#" class="fd-menu__item">Ascending</a></li>
-										<li><a href="#" class="fd-menu__item">Decensing</a></li>
-										<hr>
-										<li><a href="#" class="fd-menu__item">Fix Column</a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</th>
-					<th class="fd-table__context-menu" aria-controls="col3.2" aria-haspopup="true">
-						<div class="fd-popover">
-							<div class="fd-popover__control">
-								<span class="fd-table__context-menu-label">Header Column</span>
-							</div>
-							<div class="fd-popover__body" aria-hidden="true" id="col3.2">
-								<nav class="fd-menu fd-menu--addon-before">
-									<ul class="fd-menu__list">
-										<li><a href="#" class="fd-menu__item">Ascending</a></li>
-										<li><a href="#" class="fd-menu__item">Decensing</a></li>
-										<hr>
-										<li><a href="#" class="fd-menu__item">Fix Column</a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</th>
-					<th class="fd-table__context-menu" aria-controls="col4.2" aria-haspopup="true">
-						<div class="fd-popover">
-							<div class="fd-popover__control">
-								<span class="fd-table__context-menu-label">Header Column</span>
-							</div>
-							<div class="fd-popover__body" aria-hidden="true" id="col4.2">
-								<nav class="fd-menu fd-menu--addon-before">
-									<ul class="fd-menu__list">
-										<li><a href="#" class="fd-menu__item">Ascending</a></li>
-										<li><a href="#" class="fd-menu__item">Decensing</a></li>
-										<hr>
-										<li><a href="#" class="fd-menu__item">Fix Column</a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</th>
-					<th class="fd-table__context-menu" aria-controls="col5.2" aria-haspopup="true">
-						<div class="fd-popover">
-							<div class="fd-popover__control">
-								<span class="fd-table__context-menu-label">Header Column</span>
-							</div>
-							<div class="fd-popover__body" aria-hidden="true" id="col5.2">
-								<nav class="fd-menu fd-menu--addon-before">
-									<ul class="fd-menu__list">
-										<li><a href="#" class="fd-menu__item">Ascending</a></li>
-										<li><a href="#" class="fd-menu__item">Decensing</a></li>
-										<hr>
-										<li><a href="#" class="fd-menu__item">Fix Column</a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</th>
-					<th class="fd-table__context-menu" aria-controls="col6.2" aria-haspopup="true">
-						<div class="fd-popover">
-							<div class="fd-popover__control">
-								<span class="fd-table__context-menu-label">Header Column</span>
-							</div>
-							<div class="fd-popover__body" aria-hidden="true" id="col6.2">
-								<nav class="fd-menu fd-menu--addon-before">
-									<ul class="fd-menu__list">
-										<li><a href="#" class="fd-menu__item">Ascending</a></li>
-										<li><a href="#" class="fd-menu__item">Decensing</a></li>
-										<hr>
-										<li><a href="#" class="fd-menu__item">Fix Column</a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</th>
-					<th class="fd-table__context-menu" aria-controls="col7.2" aria-haspopup="true">
-						<div class="fd-popover">
-							<div class="fd-popover__control">
-								<span class="fd-table__context-menu-label">Header Column</span>
-							</div>
-							<div class="fd-popover__body" aria-hidden="true" id="col7.2">
-								<nav class="fd-menu fd-menu--addon-before">
-									<ul class="fd-menu__list">
-										<li><a href="#" class="fd-menu__item">Ascending</a></li>
-										<li><a href="#" class="fd-menu__item">Decensing</a></li>
-										<hr>
-										<li><a href="#" class="fd-menu__item">Fix Column</a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</th>
-					<th class="fd-table__context-menu" aria-controls="col8.2" aria-haspopup="true">
-						<div class="fd-popover">
-							<div class="fd-popover__control">
-								<span class="fd-table__context-menu-label">Header Column</span>
-							</div>
-							<div class="fd-popover__body" aria-hidden="true" id="col8.2">
-								<nav class="fd-menu fd-menu--addon-before">
-									<ul class="fd-menu__list">
-										<li><a href="#" class="fd-menu__item">Ascending</a></li>
-										<li><a href="#" class="fd-menu__item">Decensing</a></li>
-										<hr>
-										<li><a href="#" class="fd-menu__item">Fix Column</a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-				</tr>
-				<tr>
-					<td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-				</tr>
-				<tr>
-					<td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-					<td>Lorem ipsum dolor sit amet ipsum</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+   <div class="fd-table--fixed">
+      <table class="fd-table">
+         <thead>
+            <tr>
+               <th class="fd-table__context-menu fd-table__fixed-col" style="left:0; width:200px" aria-controls="col1.2" aria-haspopup="true">
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body" aria-hidden="true" id="col1.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li>
+                                 <div class="fd-menu__addon-before"></div>
+                                 <a href="#" class="fd-menu__item">Ascending</a>
+                              </li>
+                              <li>
+                                 <div class="fd-menu__addon-before"></div>
+                                 <a href="#" class="fd-menu__item">Decensing</a>
+                              </li>
+                              <hr>
+                              <li>
+                                 <div class="fd-menu__addon-before"><span class="sap-icon--accept"></span></div>
+                                 <a href="#" class="fd-menu__item">Fix Column</a>
+                              </li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class="fd-table__context-menu" aria-controls="col2.2" aria-haspopup="true">
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body" aria-hidden="true" id="col2.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class="fd-table__context-menu" aria-controls="col3.2" aria-haspopup="true">
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body" aria-hidden="true" id="col3.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class="fd-table__context-menu" aria-controls="col4.2" aria-haspopup="true">
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body" aria-hidden="true" id="col4.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class="fd-table__context-menu" aria-controls="col5.2" aria-haspopup="true">
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body" aria-hidden="true" id="col5.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class="fd-table__context-menu" aria-controls="col6.2" aria-haspopup="true">
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body" aria-hidden="true" id="col6.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class="fd-table__context-menu" aria-controls="col7.2" aria-haspopup="true">
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body" aria-hidden="true" id="col7.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class="fd-table__context-menu" aria-controls="col8.2" aria-haspopup="true">
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body" aria-hidden="true" id="col8.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+            </tr>
+            <tr>
+               <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+            </tr>
+            <tr>
+               <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
 </div>
 {% endcapture %}
 {% include display-component.html component=table-sort %}
