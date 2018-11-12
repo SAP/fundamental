@@ -183,8 +183,16 @@ $block: #{$fd-namespace}-input-group;
 // RTL Styles
 @include fd-rtl(#{$block}) {
     .#{$block}{
+        &__button {
+            &--step-up,
+            &--step-down  {
+                &::before{
+                    transform: translateX(50%);
+                }
+            }
+        }
 
-        & > * {
+        & > * { 
             &:not(:first-child) {
               border-right: none;
             }
@@ -202,6 +210,18 @@ $block: #{$fd-namespace}-input-group;
                 border-bottom-right-radius: $fd-border-radius;
                 border-right: 1px $fd-forms-border-color solid;
               }            
+        }
+
+        & [type="search"] {
+            padding-right: fd-space(12);
+            padding-left: fd-space(15);
+            background-position: right fd-space(4) center;
+            border-bottom-left-radius: $fd-border-radius;
+            border-top-left-radius: $fd-border-radius;
+
+            + .fd-input-group__addon {
+                border-left: none;
+            }
         }
     }
 }  
