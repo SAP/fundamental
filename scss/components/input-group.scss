@@ -196,20 +196,20 @@ $block: #{$fd-namespace}-input-group;
             &:not(:first-child) {
               border-right: none;
             }
-            &:last-child {
+            &:not(.fd-input-group__addon--readonly):last-child {
                 border-top-left-radius: $fd-border-radius;
                 border-bottom-left-radius: $fd-border-radius;
                 border-top-right-radius: 0;
                 border-bottom-right-radius: 0;
                 border-left: 1px $fd-forms-border-color solid;
-              }
-              &:first-child {
+            }
+            &:first-child {
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
                 border-top-right-radius: $fd-border-radius;
                 border-bottom-right-radius: $fd-border-radius;
                 border-right: 1px $fd-forms-border-color solid;
-              }            
+              }
         }
 
         & [type="search"] {
@@ -222,6 +222,10 @@ $block: #{$fd-namespace}-input-group;
             + .fd-input-group__addon {
                 border-left: none;
             }
+        }
+
+        & input:read-only {
+            border-right: none;
         }
     }
 }  
