@@ -13,6 +13,8 @@ $block: #{$fd-namespace}-tabs;
   $fd-tabs-margin-bottom: $fd-margin-bottom !default;
   $fd-tabs-border-width: 1px !default;
   $fd-tabs-border-color: fd-color("neutral", 3) !default;
+  $fd-tabs-background-color: fd-color("background", 2) !default;
+  $fd-tabs-link-color: fd-color("text", 2) !default;
   $fd-tabs-link-padding-y: fd-space("s") !default;
   $fd-tabs-link-padding-x: fd-space("s") !default;
   $fd-tabs-link-border-width: 3px !default;
@@ -20,21 +22,25 @@ $block: #{$fd-namespace}-tabs;
   $fd-tabs-link-transition-params: $fd-animation--speed ease-in !default;
 
   @include fd-reset;
+  background: $fd-tabs-background-color;
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: $fd-tabs-margin-bottom;
   list-style: none;
   border-bottom: solid $fd-tabs-border-width $fd-tabs-border-color;
+  &__item{
+      padding: 0 $fd-tabs-link-padding-x;
+  }
   &__link {
     display: block;
     position: relative;
-    padding: $fd-tabs-link-padding-y $fd-tabs-link-padding-x;
+    padding: $fd-tabs-link-padding-y 0;
     @include fd-type("0");
     @include action-cursor;
-    color: $fd-link-color;
+    color: $fd-tabs-link-color;
     &:link {
-      color: $fd-link-color;
+      color: $fd-tabs-link-color;
     }
     &::after {
       transition: all $fd-tabs-link-transition-params;
@@ -53,7 +59,7 @@ $block: #{$fd-namespace}-tabs;
     }
     &[aria-selected="true"],
     &.is-selected {
-      color: $fd-color;
+      color: $fd-link-color;
       &::after {
         background-color: $fd-tabs-link-border-color;
       }
