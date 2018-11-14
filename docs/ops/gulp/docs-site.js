@@ -4,7 +4,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const rename = require("gulp-rename");
 
 const paths = {
-	src: '.scss/**/*.scss',
+	src: './scss/**/*.scss',
 	dest: './css/'
 }
 
