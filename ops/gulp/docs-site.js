@@ -4,11 +4,11 @@ const sourcemaps = require('gulp-sourcemaps');
 const rename = require("gulp-rename");
 
 const paths = {
-	src: './docs/scss/**/*.scss',
-	dest: './docs/css/'
+	src: './scss/**/*.scss',
+	dest: './css/'
 }
 
-const task = (cb) => {
+const task = (cb) => {	
     gulp.src(paths.src)
 	.pipe(sourcemaps.init())
 	.pipe(sass().on('error', sass.logError))
