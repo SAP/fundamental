@@ -8,8 +8,9 @@
 [build]
   base    = "docs"
   publish = "docs/_site"
-  command = "echo $PATH && npm link gulp && /opt/build/repo/docs/node_modules/.bin/gulp docs-site && bundle exec jekyll build"
-
+  #command = "echo $PATH && npm link gulp && /opt/build/repo/docs/node_modules/.bin/gulp docs-site && bundle exec jekyll build"
+  command = "gulp -v"
+  
 # Production context: All deploys to the main
 # repository branch will inherit these settings.
 [context.production]
