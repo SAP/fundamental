@@ -23,14 +23,22 @@
 
 <br><br><hr>
 <br>
-  <p>NOTE: The <code>.fd-tabs__item</code> container is optional. You can use <code>nav</code> and <code>a</code> elements to the same effect.</p>
+  <p>NOTE: You can use <code>nav</code>, <code>span</code> and <code>a</code> elements to the same effect.</p>
 
 {% set example %}
 <nav class="fd-tabs" role="tablist">
-    <a class="fd-tabs__link" aria-controls="kf8369" href="#kf8369" role="tab">Link</a>
-    <a class="fd-tabs__link" aria-controls="9uQ282" aria-selected="true" href="#9uQ282" role="tab">Selected</a>
-    <a class="fd-tabs__link" aria-controls="DGl707" href="#DGl707" role="tab">Link</a>
-    <a class="fd-tabs__link" aria-controls="98q398" aria-disabled="true" role="tab">Disabled</a>
+    <span class="fd-tabs__item">
+        <a class="fd-tabs__link" aria-controls="kf8369" href="#kf8369" role="tab">Link</a>
+    </span>
+    <span class="fd-tabs__item">
+        <a class="fd-tabs__link" aria-controls="9uQ282" aria-selected="true" href="#9uQ282" role="tab">Selected</a>
+    </span>
+    <span class="fd-tabs__item">
+        <a class="fd-tabs__link" aria-controls="DGl707" href="#DGl707" role="tab">Link</a>
+    </span>
+    <span class="fd-tabs__item">
+        <a class="fd-tabs__link" aria-controls="98q398" aria-disabled="true" role="tab">Disabled</a>
+    </span>
 </nav>
 <div class="fd-tabs__panel" aria-expanded="false" id="kf8369" role="tabpanel">
     Lorem ipsum
