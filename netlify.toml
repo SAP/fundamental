@@ -8,9 +8,9 @@
 [build]
   base    = "docs/"
   publish = "docs/_site"
-  command = "bundle exec jekyll build"
+  command = "gulp docs-site; bundle exec jekyll build"
 
 # Production context: All deploys to the main
 # repository branch will inherit these settings.
 [context.production]
-  command = "bundle exec jekyll build"
+  command = "gulp docs-site; bundle exec jekyll build"
