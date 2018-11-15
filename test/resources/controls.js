@@ -1,6 +1,4 @@
-
 (function() {
-
     //dropdown
     var els = document.querySelectorAll("[aria-controls]");
     for (var i = 0; i < els.length; i++) {
@@ -14,7 +12,7 @@
                 //remove or hide if we want some animation
                 // target.setAttribute("aria-hidden", true);
                 target.remove();
-                return;``
+                return;
             }
             //dropdown
             var isDropdown = this.getAttribute("aria-haspopup") === "true";
@@ -73,6 +71,4 @@
             }
         })
     }
-
-
 })();

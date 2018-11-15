@@ -2,13 +2,19 @@
 {% from "./component.njk" import user_menu %}
 {% from "./../format.njk" import format %}
 
-{% set css_deps = ['fonts','helpers', 'components/popover', 'components/menu', 'components/identifier', 'icons'] %}
+{% set css_deps = ['fonts','helpers', 'components/popover', 'components/menu', 'components/identifier', 'components/notification-counter', 'icons'] %}
 
 {% block content %}
 <div style="background-color: #f3f4f5; margin:-20px; padding:50px 100px;">
-    <h1>User Menu</h1>
+    <h1>User Menu (w/ notification-counter)</h1>
     {% set basic_user_menu %}
-        {{ user_menu(properties={ "initials": data.properties.initials, "name": data.properties.name, "items": data.properties.items }) }}
+        {{ user_menu(properties={
+            "initials": data.properties.initials,
+            "name": data.properties.name,
+            "items": data.properties.items,
+            "notifications": 5
+          })
+        }}
     {% endset %}
 
     {{ format(basic_user_menu) }}

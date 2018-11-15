@@ -2,6 +2,7 @@
 {% from "./../popover/component.njk" import popover %}
 {% from "./../menu/component.njk" import menu %}
 {% from "./../identifier/component.njk" import identifier %}
+{% from "./../notification-counter/component.njk" import notification_counter %}
 
 <!--
 user_menu:
@@ -9,27 +10,15 @@ user_menu:
         "id": "",
         "initials": "",
         "name": "",
-        "items": []
+        "items": [],
+        "notifications": 0
     },
     modifier={ block: [] },
     state={},
     aria={}
 -->
-{% set props = {
-  "initials": "EB",
-  "name": "Eric Boyer",
-  "items": [
-    { "label": "App Finder" },
-    { "label": "Settings" },
-    { "label": "App Settings" },
-    { "label": "Help" },
-    { "label": "Give Feedback" },
-    { "label": "About" },
-    { "label": "Sign Out" }
-  ]
-} %}
 {% macro user_menu(
-    properties=props,
+    properties={},
     state={},
     aria={})
 -%}
@@ -37,7 +26,7 @@ user_menu:
 <div class="fd-user-menu">
     {{  popover(properties={
             id: _id,
-            control: user_menu_control(properties={"id": _id, "initials": properties.initials}),
+            control: user_menu_control(properties={"id": _id, "initials": properties.initials, "notifications": properties.notifications}),
             body: menu(properties={
                 items: properties.items
             })
@@ -47,7 +36,10 @@ user_menu:
 {%- endmacro %}
 
 {%- macro user_menu_control(properties={}, modifier={}, state={}) -%}
-<div class="fd-user-menu--control" aria-controls="{{properties.id}}" aria-expanded="false" aria-haspopup="true">
-    {{ identifier(properties={ "initials": properties.initials }, modifier={block: ["m", "circle"]}) }}
+<div class="fd-user-menu--control" aria-controls="{{properties.id}}" aria-expanded="false" aria-haspopup="true" role="button">
+    {{ identifier(properties={ "initials": properties.initials }, modifier={block: ["s", "circle"]}) }}
+    {%- if properties.notifications > 0 %}
+        {{ notification_counter(properties={ "count": properties.notifications },modifier={block: ["topright"]}) }}
+    {%- endif %}
 </div>
 {%- endmacro -%}
