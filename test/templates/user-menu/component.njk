@@ -37,7 +37,7 @@ user_menu:
 
 {%- macro user_menu_control(properties={}, modifier={}, state={}) -%}
 <div class="fd-user-menu--control" aria-controls="{{properties.id}}" aria-expanded="false" aria-haspopup="true" role="button">
-    {{ identifier(properties={ "initials": properties.initials }, modifier={block: ["s", "circle"]}) }}
+    {{ identifier(properties={ "initials": properties.initials }, modifier={block: ["xs", "circle"]}) }}
     {%- if properties.notifications > 0 %}
         {{ notification_counter(properties={ "count": properties.notifications },modifier={block: ["topright"]}) }}
     {%- endif %}

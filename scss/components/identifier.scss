@@ -3,15 +3,20 @@
 @import "./../functions";
 @import "./../icons/mixins";
 /*!
-.fd-image+((--circle), (--s|--m|--l))
+.fd-identifier+((--circle), (--xxs|--xs|--s|--m|--l|--xl|--xxl))
 */
 $block: #{$fd-namespace}-identifier;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
+    $fd-const-ratio: 4px;
     $fd-identifier-sizes: (
-        s: 28px,
-        m: 36px,
-        l: 48px
+      xxs: $fd-const-ratio * 5, //20px
+      xs: $fd-const-ratio * 7,  //28px ~ Matches shellbar/user-menu
+      s: $fd-const-ratio * 8,   //32px
+      m: $fd-const-ratio * 12,  //48px
+      l: $fd-const-ratio * 16,  //64px
+      xl: $fd-const-ratio * 22, //88px
+      xxl: $fd-const-ratio * 28 //112px
     ) !default;
     $fd-identifier-border-radius: $fd-border-radius !default;
     $fd-identifier-background: fd-color("text", 3) !default;
@@ -41,11 +46,27 @@ $block: #{$fd-namespace}-identifier;
         max-height: $value;
         min-width: $value;
         min-height: $value;
-        @if $size == s {
+        @if $size == xxs {
           @include fd-type("-1");
           @include fd-weight("normal");
           font-stretch: condensed;
           @include fd-icon-size("s") {
+            line-height: $value;
+          }
+        }
+        @if $size == xs {
+          @include fd-type("-1");
+          @include fd-weight("normal");
+          font-stretch: condensed;
+          @include fd-icon-size("s") {
+            line-height: $value;
+          }
+        }
+        @if $size == s {
+          @include fd-type("-1");
+          @include fd-weight("normal");
+          font-stretch: condensed;
+          @include fd-icon-size("m") {
             line-height: $value;
           }
         }
@@ -56,6 +77,18 @@ $block: #{$fd-namespace}-identifier;
           }
         }
         @if $size == l {
+          @include fd-type("2");
+          @include fd-icon-size("xl") {
+            line-height: $value;
+          }
+        }
+        @if $size == xl {
+          @include fd-type("2");
+          @include fd-icon-size("xl") {
+            line-height: $value;
+          }
+        }
+        @if $size == xxl {
           @include fd-type("2");
           @include fd-icon-size("xl") {
             line-height: $value;
