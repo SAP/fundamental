@@ -4410,6 +4410,46 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       position: relative;
       left: -44px; }
 
+[dir=rtl] .fd-input-group__button--step-up::before, [dir=rtl] .fd-input-group__button--step-down::before,
+.fd-input-group[dir=rtl] .fd-input-group__button--step-up::before,
+.fd-input-group[dir=rtl] .fd-input-group__button--step-down::before {
+  transform: translateX(50%); }
+
+[dir=rtl] .fd-input-group > *:not(:first-child),
+.fd-input-group[dir=rtl] .fd-input-group > *:not(:first-child) {
+  border-right: none; }
+
+[dir=rtl] .fd-input-group > *:not(.fd-input-group__addon--readonly):last-child,
+.fd-input-group[dir=rtl] .fd-input-group > *:not(.fd-input-group__addon--readonly):last-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-left: 1px #89919a solid; }
+
+[dir=rtl] .fd-input-group > *:first-child,
+.fd-input-group[dir=rtl] .fd-input-group > *:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-right: 1px #89919a solid; }
+
+[dir=rtl] .fd-input-group [type="search"],
+.fd-input-group[dir=rtl] .fd-input-group [type="search"] {
+  padding-right: 48px;
+  padding-left: 60px;
+  background-position: right 16px center;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px; }
+  [dir=rtl] .fd-input-group [type="search"] + .fd-input-group__addon,
+  .fd-input-group[dir=rtl] .fd-input-group [type="search"] + .fd-input-group__addon {
+    border-left: none; }
+
+[dir=rtl] .fd-input-group input:read-only,
+.fd-input-group[dir=rtl] .fd-input-group input:read-only {
+  border-right: none; }
+
 /*
   @mixin fd-type mixin
     Looks up values from $fd-type to ensure consistent application of the type hierarchy.
@@ -4658,23 +4698,26 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   line-height: 1.42857;
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  background: white;
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 12px;
   list-style: none;
   border-bottom: solid 1px #d9d9d9; }
+  .fd-tabs__item {
+    padding: 0 16px; }
   .fd-tabs__link {
     display: block;
     position: relative;
-    padding: 16px 16px;
+    padding: 16px 0;
     font-size: 1rem;
     line-height: 1.42857;
     font-weight: 400;
     cursor: pointer;
-    color: #0a6ed1; }
+    color: #51555a; }
     .fd-tabs__link:link {
-      color: #0a6ed1; }
+      color: #51555a; }
     .fd-tabs__link::after {
       transition: all 0.125s ease-in;
       content: "";
@@ -4689,7 +4732,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-tabs__link:hover {
       color: #0254a7; }
     .fd-tabs__link[aria-selected="true"], .fd-tabs__link.is-selected {
-      color: #32363a; }
+      color: #0a6ed1; }
       .fd-tabs__link[aria-selected="true"]::after, .fd-tabs__link.is-selected::after {
         background-color: #0a6ed1; }
     .fd-tabs__link[aria-disabled="true"], .fd-tabs__link.is-disabled, .fd-tabs__link:disabled {
@@ -5143,23 +5186,26 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   line-height: 1.42857;
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  background: white;
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 12px;
   list-style: none;
   border-bottom: solid 1px #d9d9d9; }
+  .fd-tabs__item {
+    padding: 0 16px; }
   .fd-tabs__link {
     display: block;
     position: relative;
-    padding: 16px 16px;
+    padding: 16px 0;
     font-size: 1rem;
     line-height: 1.42857;
     font-weight: 400;
     cursor: pointer;
-    color: #0a6ed1; }
+    color: #51555a; }
     .fd-tabs__link:link {
-      color: #0a6ed1; }
+      color: #51555a; }
     .fd-tabs__link::after {
       transition: all 0.125s ease-in;
       content: "";
@@ -5174,7 +5220,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-tabs__link:hover {
       color: #0254a7; }
     .fd-tabs__link[aria-selected="true"], .fd-tabs__link.is-selected {
-      color: #32363a; }
+      color: #0a6ed1; }
       .fd-tabs__link[aria-selected="true"]::after, .fd-tabs__link.is-selected::after {
         background-color: #0a6ed1; }
     .fd-tabs__link[aria-disabled="true"], .fd-tabs__link.is-disabled, .fd-tabs__link:disabled {
@@ -9098,6 +9144,9 @@ hr {
   .docs-component .fd-mega-menu__list,
   .docs-component .fd-mega-menu__sublist {
     margin-left: 0; }
+  .docs-component .fd-tabs__link:hover,
+  .docs-component .fd-tabs__link:focus {
+    text-decoration: none; }
   .docs-component__app {
     height: 500px;
     color: white;

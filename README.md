@@ -8,7 +8,7 @@ We are also working on [Angular](https://github.com/SAP/fundamental-ngx) and [Re
 
 ## Current version
 ````
-v1.3.1
+v1.3.2
 ````
 
 # Getting started
@@ -18,7 +18,7 @@ The library is modular so you can use as little or as much as you need.
 The fully compiled, minified library is available via CDN for inclusion in your application.
 
 ```
-<link href="//unpkg.com/fiori-fundamentals@1.3.1/dist/fiori-fundamentals.min.css" rel="stylesheet">
+<link href="//unpkg.com/fiori-fundamentals@1.3.2/dist/fiori-fundamentals.min.css" rel="stylesheet">
 ```
 
 #### NPM
