@@ -8,6 +8,7 @@
 {% from "./../shellbar-collapse/component.njk" import shell_header_collapse %}
 {% from "./../shellbar-title-menu/component.njk" import shell_header_title_menu %}
 {% from "./../search-input/component.njk" import search_input %}
+{% from "./../notification-counter/component.njk" import notification_counter %}
 
 <!--
 shell_header:
@@ -42,23 +43,21 @@ shell_header:
   })
 %}
 
-{% set notification = button({ icon: 'bell' }, modifier={ block: ['shellheader'] }) %}
+{% set action_notification = button({ icon: 'bell' }, modifier={ block: ['shellheader'] }, aria={ label: "Notifications" }) %}
+{% set action_pool = button({ icon: 'pool' }, modifier={ block: ['shellheader'] }, aria={ label: "Pool" }) %}
 
 {% set actions = [
   {
     "label": "Notifications",
-    "action": notification,
-    "collapse": false
+    "action": action_notification,
+    "collapse": false,
+    "notifications": 24
   },
   {
     "label": "Pool",
-    "action": button({
-      icon: 'pool' },
-      modifier={ block: ['shellheader'] },
-      aria={
-        label: "Pool"
-      }),
-    "collapse": true
+    "action": action_pool,
+    "collapse": true,
+    "notifications": 8
   }
 ]
 %}
@@ -79,8 +78,50 @@ shell_header:
   ]
 } %}
 
+{% set user_menu_props = {
+  "initials": "EB",
+  "name": "Eric Boyer",
+  "items": [
+    { "label": "App Finder" },
+    { "label": "Settings" },
+    { "label": "App Settings" },
+    { "label": "Help" },
+    { "label": "Give Feedback" },
+    { "label": "About" },
+    { "label": "Sign Out" }
+  ],
+  "notifications": 5
+} %}
+
+{% set search_input_props = {
+  "id": utils.id(),
+  "value": "Sear",
+  "placeholder": "Search products",
+  "closed": true,
+  "items": [
+    {
+      "label": "<strong>Sear</strong>ch Result A",
+      "action": "#"
+    },
+    {
+      "label": "<strong>Sear</strong>ch Result B",
+      "action": "#"
+    },
+    {
+      "label": "<strong>Sear</strong>ch Result C",
+      "action": "#"
+    },
+    {
+      "label": "<strong>Sear</strong>ch Result D",
+      "action": "#"
+    }
+  ]
+} %}
+
 {% macro shell_header(brand=brand,product=product,copilot=true,actions=actions,user=true,switcher=true, properties={}, modifier={}, state={}, aria={}) -%}
+
 {%- set _id = utils.id() %}
+
 <div class="fd-shellbar">
     <div class="fd-shellbar__group fd-shellbar__group--start">
         <div class="fd-shellbar__logo">
@@ -112,6 +153,7 @@ shell_header:
     </div>
     {% endif %}
   </div>
+
 {%- endmacro %}
 
 {% macro shell_actions(actions=actions, user=true, switcher=true, properties={}, modifier={}, state={}, aria={}) -%}
@@ -119,37 +161,15 @@ shell_header:
     <div class="fd-shellbar__actions">
       {%- if actions %}
         <div class="fd-shellbar__action fd-shellbar__action--hide">
-          {{
-            search_input(properties={
-              "id": utils.id(),
-              "value": "Sear",
-              "placeholder": "Search products",
-              "closed": true,
-              "items": [
-                {
-                  "label": "<strong>Sear</strong>ch Result A",
-                  "action": "#"
-                },
-                {
-                  "label": "<strong>Sear</strong>ch Result B",
-                  "action": "#"
-                },
-                {
-                  "label": "<strong>Sear</strong>ch Result C",
-                  "action": "#"
-                },
-                {
-                  "label": "<strong>Sear</strong>ch Result D",
-                  "action": "#"
-                }
-              ]
-            })
-          }}
-          {{ properties | dump }}
+          {{ search_input(properties=search_input_props) }}
         </div>
         {%- for item in actions %}
             <div class="fd-shellbar__action fd-shellbar__action--hide">
                 {{item.action}}
+
+                {%- if item.notifications > 0 %}
+                    {{ notification_counter(properties={ "count": item.notifications },modifier={block: ["topright"]}) }}
+                {%- endif %}
             </div>
         {%- endfor %}
         <div class="fd-shellbar__action fd-shellbar__action--collapse">
@@ -158,7 +178,7 @@ shell_header:
         {%- endif %}
         {%- if user %}
             <div class="fd-shellbar__action fd-shellbar__action--show">
-              {{ user_menu() }}
+              {{ user_menu(properties=user_menu_props) }}
             </div>
         {%- endif %}
         {%- if switcher %}
@@ -170,14 +190,31 @@ shell_header:
 {%- endmacro %}
 
 {% macro shell_actions_collapse(actions=[], user=true, switcher=true, properties={}, modifier={}, state={}, aria={}) -%}
+  {%- set _id = utils.id() %}
+  {%- set totalNotifications = 0 %}
+
+  {%- for item in actions %}
+    {%- set totalNotifications = totalNotifications + item.notifications %}
+  {%- endfor %}
+
   <div class="fd-shellbar-collapse">
       {{  popover(properties={
               id: _id,
-              control: button({ icon: 'overflow' }, modifier={ block: ['shellheader fd-button--m'] }, aria={ "controls": _id, "haspopup": true, "expanded": false}),
+              control: shell_header_collapse_control(properties={"id": _id, "notifications": totalNotifications}),
               body: menu(properties={
                   "items": actions
               })
           }, modifier={ block: ['right'] })
       }}
-</div>
+  </div>
 {%- endmacro %}
+
+{%- macro shell_header_collapse_control(properties={}, modifier={}, state={}) -%}
+  <div class="fd-shellbar-collapse--control" aria-controls="{{properties.id}}" aria-expanded="false" aria-haspopup="true" role="button">
+      {{ button({ icon: 'overflow' }, modifier={ block: ['shellheader fd-button--m'] }, aria={ "controls": _id, "haspopup": true, "expanded": false}) }}
+
+      {%- if properties.notifications > 0 %}
+          {{ notification_counter(properties={ "count": properties.notifications },modifier={block: ["topright"]}) }}
+      {%- endif %}
+  </div>
+{%- endmacro -%}

@@ -3,12 +3,11 @@
 {% from "./../format.njk" import format %}
 {% from "./../button/component.njk" import button %}
 {% from "./../product-switcher/component.njk" import product_switcher %}
-{% from "./../shellbar-collapse/component.njk" import shell_header_collapse %}
 {% from "./../user-menu/component.njk" import user_menu %}
 {% from "./component.njk" import shell_header %}
 {% from "./../search-input/component.njk" import search_input %}
 
-{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'components/identifier', 'components/popover', 'components/menu', 'components/product-switcher', 'components/product-menu', 'components/search-input', 'helpers'] %}
+{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'components/identifier', 'components/popover', 'components/menu', 'components/product-switcher', 'components/product-menu', 'components/search-input', 'components/notification-counter', 'components/user-menu', 'components/shellbar-collapse', 'helpers'] %}
 
 {% set search = search_input(properties={
     "id": utils.id(),
@@ -20,13 +19,6 @@
 %}
 
 {% set notification = button({ icon: 'bell' }, modifier={ block: ['shellheader'] }) %}
-
-{% set collapse = shell_header_collapse(properties={
-    items: [
-        { "label": "Notifications" },
-        { "label": "Search" }
-    ]
-}) %}
 
 {% set actions = [
   {
@@ -47,14 +39,10 @@
 
 
 <div style="background-color: #f3f4f5; margin:-20px; padding:20px;">
-
     <h1>shellbar</h1>
 
     {% set example %}
-
         {{  shell_header(switcher=true, properties=data.properties) }}
-
-        {#
 
         {{  shell_header(switcher=false) }}
 
@@ -67,24 +55,6 @@
             logo: "http://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG3.png"},
             product={ title: "Corporate Portal"})
         }}
-
-        #}
-
-        {#
-          {{  shell_header(properties={
-              brand: data.properties.brand,
-              product: {
-                title: "Sales Cloud"
-              },
-              actions: {}
-            })
-          }}
-        #}
-
-        {#
-          {{  shell_header(properties_two) }}
-          {{  shell_header(properties_three) }}
-        #}
     {% endset %}
     {{ format(example) }}
 {% endblock %}

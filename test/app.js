@@ -130,7 +130,6 @@ env.addFilter('filter_array', (array={}, key="", value="") => {
    return result;
 });
 
-
 app.set('views', TEMPLATE_DIRECTORY);
 app.set('view engine', 'njk');
 
