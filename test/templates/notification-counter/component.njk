@@ -1,0 +1,21 @@
+{% import "./../utils.njk" as utils %}
+
+<!--
+notification_counter:
+    properties={
+        "count": 0
+    },
+    modifier={ block: ["topright", "topleft"] }
+-->
+
+{% macro notification_counter(properties={},modifier={}) -%}
+    {% set limit = 999 %}
+
+    {% if properties.count > limit %}
+        {% set count = limit + "+" %}
+    {% else %}
+        {% set count = properties.count %}
+    {% endif %}
+
+    <span class="fd-notification-counter{{ modifier.block | modifier('notification-counter') }}">{{ count }}</span>
+{%- endmacro %}

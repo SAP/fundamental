@@ -4,4 +4,4 @@ const FwdRef = require('undertaker-forward-reference');
 gulp.registry(FwdRef());
 
 module.exports = gulp.task('default',
-    gulp.series('dev-jekyll', 'docs-build', 'docs-site', gulp.parallel('dev-serve', 'dev-watch')));
+    gulp.series('docs-build', 'docs-site', 'dev-jekyll', gulp.parallel('dev-serve', 'dev-watch')));
