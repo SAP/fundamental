@@ -10,6 +10,20 @@ summary:
 
 Layouts in Fiori Fundamentals are for structuring the main parts of your application. Organized in three main categories
 
+
+
+<a class="fd-tile" role="button" href="shell.html">
+    <div class="fd-tile__content">
+         <h2 class="fd-tile__header">
+             Shell
+         </h2>
+         <p class="fd-tile__description">
+             Elements to structure the content your application page.
+         </p>
+    </div>
+</a>
+
+
 <br>
 
 <div class="fd-tile-grid fd-tile-grid--2col docs-tiles">

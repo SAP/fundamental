@@ -42,20 +42,41 @@
 
     {% set example %}
         {{  shell_header(switcher=true, properties=data.properties) }}
+    {% endset %}
+    {{ format(example) }}
 
+    {% set example %}
         {{  shell_header(switcher=false) }}
+    {% endset %}
+    {{ format(example) }}
+
+
+    {% set example %}
 
         {{  shell_header(product={ title: "Sales Cloud"}) }}
 
-        {{  shell_header(actions=actions) }}
-
-        {{  shell_header(
-          brand={
-            logo: "http://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG3.png"},
-            product={ title: "Corporate Portal"})
-        }}
     {% endset %}
     {{ format(example) }}
+
+    {% set example %}
+
+            {{  shell_header(actions=actions) }}
+
+    {% endset %}
+    {{ format(example) }}
+
+    {% set example %}
+
+                {{  shell_header(
+                  brand={
+                    logo: "http://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG3.png"},
+                    product={ title: "Corporate Portal"})
+                }}
+    {% endset %}
+    {{ format(example) }}
+
+
+
 {% endblock %}
 
 </div>

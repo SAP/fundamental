@@ -13,7 +13,7 @@ const GLOBALS = {
     namespace: 'fd'
 };
 const config = {
-    id: "fundamental"
+    id: "fundamentals"
 }
 // looks for html in templates folder, static resources in public
 const env = nunjucks.configure([TEMPLATE_DIRECTORY,PUBLIC_DIRECTORY], {

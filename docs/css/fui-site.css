@@ -2854,9 +2854,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-shell {
   position: absolute;
   min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   max-width: 100%;
-  background: none;
   background-size: cover;
   background-attachment: fixed; }
   .fd-shell--fixed {
@@ -2878,19 +2878,12 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     position: absolute;
     z-index: 1;
     width: 100%;
-    min-height: 48px;
     height: 48px; }
     .fd-shell__header--fixed {
       position: fixed; }
   .fd-shell__footer {
-    background: white;
     width: 100%;
-    min-height: 40px;
-    height: 40px;
-    border-top: solid 1px #d9d9d9; }
-    .fd-shell__footer--fixed {
-      position: fixed;
-      bottom: 0; }
+    min-height: 40px; }
   .fd-shell__app {
     margin-top: 48px;
     min-height: calc(100vh - 40px - 48px);
@@ -6817,8 +6810,7 @@ input-addon
     position: relative;
     z-index: 2;
     --fd-button-border-color: transparent;
-    --fd-button-background-color: transparent;
-    --fd-button-color: var(--fd-color-status-4); }
+    --fd-button-background-color: transparent; }
     .fd-search-input__control > .fd-button--shellheader[aria-expanded="true"]:focus {
       box-shadow: none; }
 
@@ -7019,6 +7011,12 @@ input-addon
     @media (min-width: 1025px) {
       .fd-shellbar__action--collapse {
         display: none; } }
+  .fd-shellbar .fd-search-input .fd-input {
+    border: 1px solid var(--fd-color-shell-2);
+    background-color: var(--fd-color-shell-1);
+    color: var(--fd-color-shell-2); }
+    .fd-shellbar .fd-search-input .fd-input:focus {
+      box-shadow: none; }
   .fd-shellbar .fd-user-menu--control {
     border-radius: 4px; }
     .fd-shellbar .fd-user-menu--control:hover {
@@ -7112,67 +7110,24 @@ input-addon
     $weight: "light", "normal", "bold"
 */
 /*!
-.fd-product-menu+()
+.fd-notification-counter
 */
-.fd-product-menu__titletext, .fd-product-menu__titlearrow {
+.fd-notification-counter {
+  border-radius: 4px;
+  background: #bd0000;
+  color: white;
+  font-size: 11px;
+  line-height: 1;
   display: inline-block;
-  margin-right: 5px; }
-
-.fd-product-menu__titlearrow {
-  position: relative;
-  text-indent: -9999px;
-  overflow: hidden;
-  width: 10px;
-  height: 5px;
-  transform: translateY(-3px); }
-  .fd-product-menu__titlearrow::before {
-    height: 0;
-    width: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid var(--fd-color-shell-2);
-    content: "";
+  text-align: center;
+  padding: 4px; }
+  .fd-notification-counter--topleft, .fd-notification-counter--topright {
     position: absolute;
-    top: 0;
+    top: 0; }
+  .fd-notification-counter--topright {
+    right: 0; }
+  .fd-notification-counter--topleft {
     left: 0; }
-
-.fd-product-menu .fd-popover__body--right {
-  right: -7px; }
-
-/*
-  @mixin fd-type mixin
-    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
-  @params
-    $size: "-1", "0", "1", "2", "3", "4", "5"
-    $weight: "light", "normal", "bold"
-*/
-/*!
-.fd-product-menu+()
-*/
-.fd-product-menu__titletext, .fd-product-menu__titlearrow {
-  display: inline-block;
-  margin-right: 5px; }
-
-.fd-product-menu__titlearrow {
-  position: relative;
-  text-indent: -9999px;
-  overflow: hidden;
-  width: 10px;
-  height: 5px;
-  transform: translateY(-3px); }
-  .fd-product-menu__titlearrow::before {
-    height: 0;
-    width: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid var(--fd-color-shell-2);
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0; }
-
-.fd-product-menu .fd-popover__body--right {
-  right: -7px; }
 
 .fd-has-text-transform-none {
   text-transform: none !important; }
