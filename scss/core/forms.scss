@@ -123,6 +123,14 @@ input[type="checkbox"],
             border-color: $fd-forms-background-color;
         }
     }
+    &:indeterminate {
+        
+            border: solid $fd-forms-background-color;
+            border-width: 3px;
+            background-color: fd-color-darkest($fd-forms-color--active);
+            box-shadow: 0 0 0 1px fd-color-darkest($fd-forms-color--active);
+        
+    }       
     @include fd-disabled {
         &::before {
             border-color: $fd-forms-background-color--check-disabled;
