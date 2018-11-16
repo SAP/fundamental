@@ -16,7 +16,7 @@
 
 > What browser are you working in?
 
-> What version of the Fundamental UI are you using?
+> What version of the Fiori Fundamentals are you using?
 
 > What offering/product do you work on? Any pressing ship or release dates we should be aware of?
 

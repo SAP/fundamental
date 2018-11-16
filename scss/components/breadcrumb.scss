@@ -8,14 +8,15 @@
     .fd-breadcrumb__item
     .fd-breadcrump__link
 */
+
+$fd-breadcrumb-link-margin: fd-space(4);
+
 $block: #{$fd-namespace}-breadcrumb;
 .#{$block} {
 
     //LOCAL VARS *******************************************
     $fd-breadcrumb-background-color: fd-color(background, 2)!default;
     $fd-breadcrumb-border-bottom-color: fd-color(neutral, 3)!default;
-    $fd-breadcrumb-padding: fd-space(3) fd-space(4)!default;
-    $fd-breadcrumb-link-margin: fd-space(4);
 
     //BLOCK BASE *******************************************
     @include fd-reset;
@@ -25,7 +26,7 @@ $block: #{$fd-namespace}-breadcrumb;
     padding-left: 0;
     margin-bottom: -#{fd-space(3)};
     list-style: none;
-    padding: $fd-breadcrumb-padding 0 0;
+    padding-right: fd-space(4);
 
     //ELEMENTS *******************************************
     &__item {
@@ -42,4 +43,26 @@ $block: #{$fd-namespace}-breadcrumb;
         margin-right: $fd-breadcrumb-link-margin;
     }
 
+}
+
+@include fd-rtl(#{$block}) {
+    .#{$block}{
+        padding: 0 0 0 fd-space(4);
+
+        &__item {
+            &::after{
+                content: "/";
+                margin-right: initial;
+                margin-left: $fd-breadcrumb-link-margin;
+            }
+            &:last-child::after{
+                content: none;
+            }
+        }
+
+        &__link {
+            margin-right: initial;
+            margin-left: $fd-breadcrumb-link-margin;
+        }
+    }
 }

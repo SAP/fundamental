@@ -8,7 +8,7 @@ We are also working on [Angular](https://github.com/SAP/fundamental-ngx) and [Re
 
 ## Current version
 ````
-v1.3.1
+v1.3.2
 ````
 
 # Getting started
@@ -18,7 +18,7 @@ The library is modular so you can use as little or as much as you need.
 The fully compiled, minified library is available via CDN for inclusion in your application.
 
 ```
-<link href="//unpkg.com/fiori-fundamentals@1.3.1/dist/fiori-fundamentals.min.css" rel="stylesheet">
+<link href="//unpkg.com/fiori-fundamentals@1.3.2/dist/fiori-fundamentals.min.css" rel="stylesheet">
 ```
 
 #### NPM
@@ -74,7 +74,7 @@ At the time this version was released, there are no known limitations
 
 ### Configuring icons path when importing SCSS
 
-If you are importing .scss files in your project, the icons path needs to be configured in your project's .scss file before the Fundamental UI scss import as described below. Please note that the path variable name has to be `$fd-icons-path` in order to override the default value set in `scss/icons/icon.scss`.
+If you are importing .scss files in your project, the icons path needs to be configured in your project's .scss file before the Fiori Fundamentals scss import as described below. Please note that the path variable name has to be `$fd-icons-path` in order to override the default value set in `scss/icons/icon.scss`.
 
 ```
 $fd-icons-path : "../node_modules/fiori-fundamentals/scss/icons/"; // should be declared before the scss import

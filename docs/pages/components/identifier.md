@@ -11,7 +11,7 @@ Identifier is a way to visually present something using an icon or user initials
 
 There are four sizes:
 - Default matches the base font size (14px)
-- Small (`--s`) - 24px
+- Small (`--s`) - 28px
 - Medium (`--m`) - 36px
 - Large (`--l`) - 48px
 
