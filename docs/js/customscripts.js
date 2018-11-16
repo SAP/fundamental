@@ -142,6 +142,6 @@ $( document ).ready(function() {
     }
 
     //set the indeterminate state of checkbox
-    var triStateCheckbox =document.getElementById('Ai4ez613');
+    const triStateCheckbox = document.getElementById('Ai4ez613');
     triStateCheckbox.indeterminate=true;
 })();
