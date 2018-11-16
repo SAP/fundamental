@@ -3671,14 +3671,16 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent; }
+  .fd-button--shellheader:focus {
+    box-shadow: none; }
   .fd-button--shellheader:hover {
     --fd-button-color: var(--fd-color-shell-2);
     --fd-button-border-color: transparent;
-    --fd-button-background-color: var(fd-color-darker(--fd-color-shell-1)); }
+    --fd-button-background-color: hsl(217, 21%, 25%); }
   .fd-button--shellheader:active, .fd-button--shellheader.is-active, .fd-button--shellheader[aria-selected="true"], .fd-button--shellheader.is-selected, .fd-button--shellheader[aria-pressed="true"], .fd-button--shellheader.is-pressed {
     --fd-button-color: var(--fd-color-shell-2);
     --fd-button-border-color: transparent;
-    --fd-button-background-color: var(fd-color-darker(--fd-color-shell-1)); }
+    --fd-button-background-color: hsl(217, 21%, 21%); }
   .fd-button--shellheader[aria-disabled="true"], .fd-button--shellheader.is-disabled, .fd-button--shellheader:disabled {
     opacity: .25; }
 
@@ -5715,22 +5717,22 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   color: white; }
 
 .fd-identifier--s {
-  width: 24px;
-  height: 24px;
-  max-width: 24px;
-  max-height: 24px;
-  min-width: 24px;
-  min-height: 24px;
+  width: 28px;
+  height: 28px;
+  max-width: 28px;
+  max-height: 28px;
+  min-width: 28px;
+  min-height: 28px;
   font-size: 0.85714rem;
   line-height: 1.33333;
   font-weight: 400;
   font-weight: 400;
   font-stretch: condensed;
-  line-height: 24px; }
+  line-height: 28px; }
   .fd-identifier--s::before {
     font-size: 0.85714rem;
     line-height: 1;
-    line-height: 24px; }
+    line-height: 28px; }
 
 .fd-identifier--m {
   width: 36px;
@@ -6809,13 +6811,43 @@ input-addon
 /*!
 .fd-search-input
 */
+.fd-search-input__control {
+  position: relative; }
+  .fd-search-input__control > .fd-button--shellheader[aria-expanded="true"] {
+    position: relative;
+    z-index: 2;
+    --fd-button-border-color: transparent;
+    --fd-button-background-color: transparent;
+    --fd-button-color: var(--fd-color-status-4); }
+    .fd-search-input__control > .fd-button--shellheader[aria-expanded="true"]:focus {
+      box-shadow: none; }
+
+.fd-search-input__closedcontrol {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.125s;
+  opacity: 1;
+  visibility: visible;
+  width: 300px;
+  z-index: 1; }
+  .fd-search-input__closedcontrol[aria-hidden="true"], .fd-search-input__closedcontrol.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    width: 300px; }
+
 .fd-search-input .fd-popover {
   display: block; }
   .fd-search-input .fd-popover__body {
     width: 100%; }
 
 .fd-search-input .fd-menu {
-  display: block; }
+  display: block;
+  text-align: left; }
+
+.fd-search-input--closed .fd-popover__body {
+  width: 300px;
+  left: -264px; }
 
 /*
   @mixin fd-type mixin
@@ -6937,11 +6969,7 @@ input-addon
     font-weight: 700;
     line-height: 1;
     padding: 0 16px;
-    color: white;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-width: 0; }
+    color: white; }
   .fd-shellbar__subtitle {
     font-size: 0.85714rem;
     line-height: 1.33333;
@@ -6970,6 +6998,7 @@ input-addon
     .fd-shellbar__actions > *, .fd-shellbar__action > * {
       vertical-align: middle; }
   .fd-shellbar__action {
+    position: relative;
     padding-right: 0;
     padding-left: 12px; }
     @media (min-width: 320px) {
@@ -6990,6 +7019,12 @@ input-addon
     @media (min-width: 1025px) {
       .fd-shellbar__action--collapse {
         display: none; } }
+  .fd-shellbar .fd-user-menu--control {
+    border-radius: 4px; }
+    .fd-shellbar .fd-user-menu--control:hover {
+      background-color: #323d4d; }
+    .fd-shellbar .fd-user-menu--control:active, .fd-shellbar .fd-user-menu--control.is-active, .fd-shellbar .fd-user-menu--control[aria-selected="true"], .fd-shellbar .fd-user-menu--control.is-selected, .fd-shellbar .fd-user-menu--control[aria-pressed="true"], .fd-shellbar .fd-user-menu--control.is-pressed {
+      background-color: #2a3341; }
   @media (min-width: 320px) {
     .fd-shellbar {
       padding: 4px 8px; } }
@@ -7031,6 +7066,8 @@ input-addon
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   text-align: left; }
+  .fd-user-menu--control {
+    padding: 4px; }
 
 /*
   @mixin fd-type mixin
