@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.1
+* Fiori Fundamentals v1.3.2
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -25,7 +25,7 @@
   padding-left: 0;
   margin-bottom: -12px;
   list-style: none;
-  padding: 12px 16px 0 0
+  padding-right: 16px
 }
 .fd-breadcrumb__item::after {
   content: "/";
@@ -36,4 +36,23 @@
 }
 .fd-breadcrumb__link {
   margin-right: 16px
+}
+.fd-breadcrumb[dir=rtl] .fd-breadcrumb,
+[dir=rtl] .fd-breadcrumb {
+  padding: 0 0 0 16px
+}
+.fd-breadcrumb[dir=rtl] .fd-breadcrumb__item::after,
+[dir=rtl] .fd-breadcrumb__item::after {
+  content: "/";
+  margin-right: initial;
+  margin-left: 16px
+}
+.fd-breadcrumb[dir=rtl] .fd-breadcrumb__item:last-child::after,
+[dir=rtl] .fd-breadcrumb__item:last-child::after {
+  content: none
+}
+.fd-breadcrumb[dir=rtl] .fd-breadcrumb__link,
+[dir=rtl] .fd-breadcrumb__link {
+  margin-right: initial;
+  margin-left: 16px
 }
