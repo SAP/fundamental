@@ -1,7 +1,11 @@
-@mixin fd-focus($shadow: --fd-color-action-focus) {
+@import "./../functions/color";
+@mixin fd-focus($shadow-var: --fd-color-action-focus, $shadow-value: fd-color-state("hover","action")) {
   &:focus,
   &.is-focus {
-    box-shadow: 0 0 0 1px var(#{$shadow});
+    @if $fd-support-css-var-fallback {
+      box-shadow: 0 0 0 1px $shadow-value;
+    }
+    box-shadow: 0 0 0 1px var(#{$shadow-var});
     @content;
   }
 }
