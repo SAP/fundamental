@@ -283,19 +283,19 @@ With checkboxes, all options are visible and the user can make one or more selec
     <div class="fd-form__item fd-form__item--check">
         <label class="fd-form__label" for="Ai4ez611">
             <input type="checkbox" class="fd-form__control" id="Ai4ez611">
-            Field label
+            Text Option
         </label>
     </div>
     <div class="fd-form__item fd-form__item--check">
         <label class="fd-form__label" for="Ai4ez612">
-            <input type="checkbox" class="fd-form__control" id="Ai4ez612">
-            Field label
+            <input type="checkbox" class="fd-form__control" id="Ai4ez612" checked>
+            Selected State
         </label>
     </div>
     <div class="fd-form__item fd-form__item--check">
         <label class="fd-form__label" for="Ai4ez613">
-            <input type="checkbox" class="fd-form__control" id="Ai4ez613">
-            Field label
+            <input type="checkbox" class="fd-form__control" id="Ai4ez613" >
+            TriState Text
         </label>
     </div>
 </fieldset>
@@ -343,6 +343,7 @@ With checkboxes, all options are visible and the user can make one or more selec
                 Field label
             </label>
         </div>
+        
     </div>
 </fieldset>{% endcapture %}
 
