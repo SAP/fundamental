@@ -5,6 +5,14 @@
 {% set fix_ui_header = true %}
 {# {% set fix_ui_footer = true %} #}
 
+{% block styles -%}
+<style>
+  .fd-shell__header, .fd-shell__app, .fd-shell__footer {
+    outline: dashed 1px red;
+  }
+</style>
+{%- endblock %}
+
 {% block ui_header -%}
 <span style="color: var(--fd-color-text-1)">.fd-shell__header.fd-shell__header--fixed</span>
 {%- endblock %}

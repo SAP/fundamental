@@ -13,10 +13,12 @@
     <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ id }}</title>
-    <style media="screen">
+    <style>
     {% set core_sass = 'all.scss' %}
     {{ core_sass | sass_to_css }}
     </style>
+    {% block styles -%}
+    {%- endblock %}
 </head>
 <body>
     <div class="fd-shell{{ 'fixed' | modifier('shell') if fix_ui }} fd-shell--{{ app.id }}">

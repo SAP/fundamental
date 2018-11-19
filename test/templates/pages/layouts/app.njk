@@ -4,6 +4,8 @@
 {%- set hide_ui_footer = hide_ui_footer or false %}
 {%- set fix_ui_footer = fix_ui_footer or false %}
 {%- set show_ui_overlay = show_ui_overlay or false %}
+{%- set show_app_nav_horizontal = show_app_nav_horizontal or false %}
+{%- set show_app_nav_vertical = show_app_nav_vertical or false %}
 
 {# app.njk level vars #}
 {% set hide_app_sidebar = hide_app_sidebar or false %}
@@ -20,17 +22,21 @@
 
 {% block ui_app -%}
     <div class="fd-app">
-        {% if hide_app_sidebar !== true %}
-            <div class="fd-app__sidebar">
-                {% block app_sidebar -%}
-                {%- endblock %}
-            </div>
-        {% endif %}
-
-        <main class="fd-app__main">
-            {% block app_main -%}
-            {%- endblock %}
-        </main>
-
+      {% if show_app_nav_horizontal === true %}
+      <div class="fd-app__navigation fd-app__navigation--horizontal">
+          {% block app_navigation -%}
+          {%- endblock %}
+      </div>
+      {% endif %}
+      {% if show_app_nav_vertical === true %}
+      <div class="fd-app__navigation fd-app__navigation--vertical">
+          {% block app_sidebar -%}
+          {%- endblock %}
+      </div>
+      {% endif %}
+      <main class="fd-app__main">
+          {% block app_main -%}
+          {%- endblock %}
+      </main>
     </div>
 {%- endblock %}

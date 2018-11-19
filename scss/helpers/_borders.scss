@@ -1,0 +1,25 @@
+@each $item in top, right, bottom, left {
+  .#{$fd-namespace}-has-border-#{$item}-none {
+    border-#{$item}: none !important;
+  }
+}
+@each $item in begin, after {
+    .#{$fd-namespace}-has-border-#{$item}-none {
+        $_side: left;
+        $_opp: right;
+        @if $item == after {
+          $_side: right;
+          $_opp: left;
+        }
+        border-#{$_side}: none !important;
+        @at-root {
+          [direction="rtl"] &,
+          &[direction="rtl"] {
+            border-#{$_opp}: none !important;
+          }
+        }
+    }
+}
+.#{$fd-namespace}-has-border-none {
+  border: none !important;
+}
