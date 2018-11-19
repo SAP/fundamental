@@ -7,11 +7,6 @@
     }
   }
 %}
-<!--
-counter:
-  count: 0
-  modifier={ }
--->
 {% macro counter(count=defaults.count, modifier=defaults.modifier, state={}, aria=defaults.aria, classes=[]) -%}
     {%- set limit = 999 %}
     {%- if count > limit %}
