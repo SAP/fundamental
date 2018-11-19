@@ -3,8 +3,8 @@
 {% from "./../../panel-grid/component.njk" import panel_grid %}
 {% from "./../../panel/component.njk" import panel, panel_header, panel_actions, panel_filters, panel_body, panel_footer %}
 
-{# {% set page_title = "Page Title" %}
-{% set page_intro = "Optional page intro lorem ipsum dolor" %} #}
+{% set page_title = "Page Title" %}
+{% set page_intro = "Optional page intro lorem ipsum dolor" %}
 
 
 {% set panel_item %}
@@ -20,13 +20,10 @@
 
 
 
-{% block page_header %}
-{% endblock %}
-
 {% block page_content %}
 
   {% call layout.section() -%}
-    {% call layout.container(modifier="centered") -%}
+    {% call layout.container(modifier="fluid") -%}
 
 
     {{  panel_grid(
