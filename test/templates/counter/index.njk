@@ -6,58 +6,36 @@
 
 {% block content %}
 <div>
-    <h1>Notification Counter</h1>
+    <h1>Counter</h1>
 
-    <h2>0 (Nothing shows)</h2>
-    {% set basic_counter %}
-        {{ counter(count=0) }}
-    {% endset %}
-    {{ format(basic_counter) }}
-
-<br>
-
-    <h2>Single Digit</h2>
+    <h2>default</h2>
+    <p>Show nothing when 0, max is 999</p>
+    <br>
     {% set single_counter %}
-        {{ counter(count=5) }}
+{{ counter(count=0, modifier="") }}
+{{ counter(count=5, modifier="") }}
+{{ counter(count=25, modifier="") }}
+{{ counter(count=101, modifier="") }}
+{{ counter(count=4001, modifier="") }}
     {% endset %}
-
     {{ format(single_counter) }}
-
-    <h2>Double Digit</h2>
-    {% set double_counter %}
-        {{ counter(count=25) }}
-    {% endset %}
-
-    {{ format(double_counter) }}
-
-    <h2>Triple Digit</h2>
-    {% set triple_counter %}
-        {{ counter(count=101) }}
-    {% endset %}
-
-    {{ format(triple_counter) }}
-
-    <h2>Maximum digits</h2>
-    <p>If the count provided exceeds 999, it will render "999+". This example was passed the count of 4001.</p>
-    {% set max_counter %}
-        {{ counter(count=4001) }}
-    {% endset %}
-
-    {{ format(max_counter) }}
 </div>
 
 <br><br>
-<h2>addt'l uses</h2>
+<h2>notification</h2>
 
-<h3>Inline</h3>
+
 {% set example %}
-<p>Lorem ipsum {{ counter(count=5) }}</p>
+<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=1,modifier="notification") }}</button>
 
-<span class=" sap-icon--account">{{ counter(count=5,modifier="notification",aria={ label: "Unread count"}) }}</span>
+<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=20,modifier="notification") }}</button>
+
+<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=300,modifier="notification") }}</button>
+
+<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=6000,modifier="notification") }}</button>
 
 <nav class="fd-menu fd-menu--addon-before">
     <ul class="fd-menu__list">
-
       <li><div class="fd-menu__addon-before"><span class="sap-icon--bell"></span>{{ counter(count=5,modifier="notification",aria={ label: "Unread count"}) }}</div><a href="#" class="fd-menu__item">Option 2</a>
     </li>
     </ul>
@@ -65,14 +43,17 @@
 
 {% endset %}
 {{ format(example) }}
-<br>
+<br><br>
 
 
-<h3>Tabs</h3>
+
+<h3>Addt'l examples</h3>
 {% set example %}
+<p>Lorem ipsum {{ counter(count=5, modifier="") }}</p>
+
 <ul class="fd-tabs" role="tablist">
     <li class="fd-tabs__item">
-        <a class="fd-tabs__link" aria-controls="AvcVC566" href="#AvcVC566" role="tab">Link {{ counter(count=25) }}</a>
+        <a class="fd-tabs__link" aria-controls="AvcVC566" href="#AvcVC566" role="tab">Link {{ counter(count=25,  modifier="") }}</a>
     </li>
     <li class="fd-tabs__item">
         <a class="fd-tabs__link" aria-controls="5mxO9110" aria-selected="true" href="#5mxO9110" role="tab">Selected</a>
@@ -87,13 +68,6 @@
 {% endset %}
 {{ format(example) }}
 
-{% set example %}
-<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=1,modifier="notification") }}</button>
-<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=20,modifier="notification") }}</button>
-<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=300,modifier="notification") }}</button>
-<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=6000,modifier="notification") }}</button>
-{% endset %}
-{{ format(example) }}
 
 
 {% endblock %}

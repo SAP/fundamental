@@ -3,7 +3,7 @@
 @import "./../functions";
 @import "./../icons/mixins";
 /*!
-.fd-counter
+.fd-counter+(--notification)
 */
 $block: #{$fd-namespace}-counter;
 .#{$block} {
@@ -25,5 +25,11 @@ $block: #{$fd-namespace}-counter;
     background-color: fd-color("status", 3);
     position: absolute;
     transform: translate(-40%, -50%);
+    @at-root {
+      [dir="rtl"] &,
+      &[dir="rtl"] {
+        transform: translate(40%, -50%);
+      }
+    }
   }
 }
