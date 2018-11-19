@@ -9,9 +9,13 @@ $block: #{$fd-namespace}-notification-counter;
 .#{$block} {
   // VARIABLES
   $fd-notification-counter-radius: $fd-border-radius !default;
-  $fd-notification-counter-background: fd-color("status", 4) !default;
+  $fd-notification-counter-background: fd-color("status", 3) !default;
   $fd-notification-counter-color: fd-color("text", 5) !default;
-  $fd-notification-counter-font-size: 0.785714285714286em !default;
+  $fd-notification-counter-font-size: 11px !default;
+
+  $fd-notification-counter-position-top: 0 !default;
+  $fd-notification-counter-position-right: 0 !default;
+  $fd-notification-counter-position-left: 0 !default;
 
   border-radius: $fd-notification-counter-radius;
   background: $fd-notification-counter-background;
@@ -20,12 +24,17 @@ $block: #{$fd-namespace}-notification-counter;
   line-height: 1;
   display: inline-block;
   text-align: center;
-  padding: fd-space(1);
-  @at-root {
-    [class*="fd-button"] .#{$block} {
-      background-color: fd-color("status", 3);
-      position: absolute;
-      transform: translate(-40%, -50%);
-    }
+  padding: 4px; // Specific for perfect centering with default font
+
+  &--topleft,
+  &--topright {
+    position: absolute;
+    top: $fd-notification-counter-position-top;
+  }
+  &--topright {
+    right: $fd-notification-counter-position-right;
+  }
+  &--topleft {
+    left: $fd-notification-counter-position-left;
   }
 }
