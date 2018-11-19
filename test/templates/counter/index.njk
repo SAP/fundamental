@@ -2,7 +2,7 @@
 {% from "./component.njk" import counter %}
 {% from "./../format.njk" import format %}
 
-{% set css_deps = ['fonts','helpers','icons', 'components/tabs', 'components/button'] %}
+{% set css_deps = ['fonts','helpers','icons', 'components/menu', 'components/tabs', 'components/button'] %}
 
 {% block content %}
 <div>
@@ -52,8 +52,20 @@
 <h3>Inline</h3>
 {% set example %}
 <p>Lorem ipsum {{ counter(count=5) }}</p>
+
+<span class=" sap-icon--account">{{ counter(count=5,modifier="notification",aria={ label: "Unread count"}) }}</span>
+
+<nav class="fd-menu fd-menu--addon-before">
+    <ul class="fd-menu__list">
+
+      <li><div class="fd-menu__addon-before"><span class="sap-icon--bell"></span>{{ counter(count=5,modifier="notification",aria={ label: "Unread count"}) }}</div><a href="#" class="fd-menu__item">Option 2</a>
+    </li>
+    </ul>
+</nav>
+
 {% endset %}
 {{ format(example) }}
+<br>
 
 
 <h3>Tabs</h3>
@@ -76,10 +88,10 @@
 {{ format(example) }}
 
 {% set example %}
-<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=1) }}</button>
-<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=20) }}</button>
-<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=300) }}</button>
-<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=6000) }}</button>
+<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=1,modifier="notification") }}</button>
+<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=20,modifier="notification") }}</button>
+<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=300,modifier="notification") }}</button>
+<button class="fd-button--light sap-icon--bell" aria-label="Notifications">{{ counter(count=6000,modifier="notification") }}</button>
 {% endset %}
 {{ format(example) }}
 

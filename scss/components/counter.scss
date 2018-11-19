@@ -21,11 +21,9 @@ $block: #{$fd-namespace}-counter;
   display: inline-block;
   text-align: center;
   padding: fd-space(1);
-  @at-root {
-    [class*="fd-button"] .#{$block} {
-      background-color: fd-color("status", 3);
-      position: absolute;
-      transform: translate(-40%, -50%);
-    }
+  &--notification {
+    background-color: fd-color("status", 3);
+    position: absolute;
+    transform: translate(-40%, -50%);
   }
 }
