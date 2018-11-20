@@ -18,6 +18,7 @@
 {% set page_intro = "Part Number NGX-FOO-1973" %}
 {% set is_landing_page = false %}
 {% set is_editable_page = true %}
+{% set is_object_page = true %}
 {% set show_toolbar = false %}
 {% set hide_app_sidebar = true %}
 
@@ -158,7 +159,7 @@
     {% call form_set(properties={
             legend: "Label"
         }) %}
-{{ form_item("toggle", { label: "Off" }) }}
+{{ form_item("toggle", { label: "Inventory type" }) }}
     {% endcall %}
     {%- endcall %}
   {%- endcall %}
@@ -175,7 +176,7 @@
       {% call form_set(properties={
               legend: "Label"
           }) %}
-  {{ form_item("toggle", { label: "On" },state={ checked: true }) }}
+  {{ form_item("toggle", { label: "Inventory type" },state={ checked: true }) }}
       {% endcall %}
     {%- endcall %}
   {%- endcall %}
