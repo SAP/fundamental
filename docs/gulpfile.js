@@ -3,6 +3,7 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require("gulp-rename");
 const path = require("path");
+const backstop = require('backstopjs');
 // const test = require('../ops/gulp/test');
 
 const paths = {
@@ -25,6 +26,7 @@ const task = (cb) => {
 const testVisual = (cb) => {
 	// process.chdir('..');
 	// test.testVisual();
+	const promise = backstop('test');
 	cb();
 }
 
