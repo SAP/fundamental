@@ -79,6 +79,7 @@ shell_header:
 {% set user_menu_props = {
   "initials": "EB",
   "name": "Eric Boyer",
+  "thumbnail": "",
   "items": [
     { "label": "App Finder" },
     { "label": "Settings" },
@@ -175,7 +176,7 @@ shell_header:
         {%- endif %}
         {%- if user %}
             <div class="fd-shellbar__action fd-shellbar__action--show">
-              {{ user_menu(properties=user_menu_props) }}
+              {{ user_menu(thumbnail="") }}
             </div>
         {%- endif %}
         {%- if switcher %}

@@ -1,7 +1,7 @@
 {% extends "./layouts/app.njk" %}
 
 {# ui-level settings #}
-{# {% set fix_ui_header = false %} #}
+{% set fix_ui_header = true %}
 
 {% block styles -%}
 <style>
@@ -15,7 +15,7 @@
 {%- endblock %}
 
 {% block ui_header -%}
-.fd-shell__header
+<span style="color: var(--fd-color-text-5)">.fd-shell__header.fd-shell__header--fixed</span>
 {%- endblock %}
 {% set hide_ui_footer = true %}
 {% set fix_ui_footer = false %}

@@ -51,19 +51,14 @@ user_menu:
   {%- set control = user_menu_control(id=_id,initials=initials,
       name=name,
       thumbnail=thumbnail, notifications=notifications) %}
-
-{{ control }}
-{#
-    {{  popover(properties={
-            id: _id,
-            control: user_menu_control(properties={"id": _id, "initials": properties.initials, "notifications": properties.notifications, "thumbnail": properties.thumbnail}),
-            body: menu(properties={
-                items: properties.items
-            })
-        }, modifier={ block: ['right'] })
+      {{  popover(properties={
+      id: _id,
+      control: control,
+      body: menu(properties={
+          items: items
+      })
+  }, modifier={ block: ['right'] })
 }}
-        #}
-
 </div>
 {%- endmacro %}
 
