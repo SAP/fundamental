@@ -1,0 +1,18 @@
+@import "./../settings";
+@import "./../functions";
+@mixin fd-var-color($property, $value, $var:null) {
+  @if $fd-support-css-var-fallback {
+    #{$property}: #{$value};
+  }
+  @if $var {
+    #{$property}: var(#{$var});
+  }
+}
+@mixin fd-var-size($property, $value, $var:null) {
+  @if $fd-support-css-var-fallback {
+    #{$property}: #{$value};
+  }
+  @if $var {
+    #{$property}: var(#{$var});
+  }
+}
