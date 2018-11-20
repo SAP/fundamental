@@ -23,7 +23,7 @@ const task = (cb) => {
 }
 
 const testVisual = (cb) => {
-	process.chdir('..');
+	// process.chdir('..');
 	test.testVisual();
 	cb();
 }
