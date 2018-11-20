@@ -1,0 +1,34 @@
+
+{% assign display = include.display %}
+{% case display %}
+  {% when "mobile" %}
+     {% assign width = "320" %}
+  {% when "tablet" %}
+     {% assign width = "720" %}
+  {% else %}
+    {% if include.width %}
+        {% assign width = include.width %}
+    {% else %}
+        {% assign width = "100%" %}
+    {% endif %}
+{% endcase %}
+
+
+<div class="fd-tile docs-component docs-component__{{include.cssclass}}">
+    {% if include.controls == "true" %}
+    <div class="fd-button-group docs-component--responsive-display__controls" role="group" aria-label="Group label">
+      <button class="fd-button--compact sap-icon--iphone"></button>
+      <button class="fd-button--compact sap-icon--ipad"></button>
+      <button class="fd-button--compact sap-icon--popup-window"></button>
+    </div>
+    {% endif %}
+    <div class="fd-tile__content fd-tile__content--responsive-display">
+        <iframe
+        src="{{include.component}}"
+        width="{{width}}"
+        height="500"
+        frameborder="0"
+        class="docs-components-responsive-frame">
+        </iframe>
+	</div>
+</div>
