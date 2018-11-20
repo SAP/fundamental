@@ -23,8 +23,12 @@ const task = (cb) => {
 }
 
 const testVisual = (cb) => {
+	process.chdir('..');
+	test.testVisual();
 	cb();
 }
+
+require('../ops/gulp/test');
 
 gulp.task('docs-site', task);
 gulp.task('test:visual', testVisual);

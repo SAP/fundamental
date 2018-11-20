@@ -47,6 +47,19 @@ gulp.task('test:reference', [ 'server:start' ], () => {
     });
 });
 
+const testVisual = (cb) => {
+    console.log('here!!');
+    const promise = backstop('test');
+    promise.catch(function (error) {
+        // Tests failed.
+        process.exit(-1);
+    });        
+    promise.then(function() {
+        // All Tests passed
+        process.exit(0);
+    });
+}
+
 // Tests the current visual elements against the reference screenshots.
 gulp.task('test:visual', [ 'server:start' ], () => {
     const promise = backstop('test');
@@ -62,3 +75,7 @@ gulp.task('test:visual', [ 'server:start' ], () => {
 
 // Approves any changes to the screenshots and promotes them to the reference data set.
 gulp.task('test:approve', () => backstop('approve'));
+
+module.exports = {
+    testVisual: testVisual
+};
