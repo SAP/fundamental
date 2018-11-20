@@ -3,7 +3,7 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require("gulp-rename");
 const path = require("path");
-const test = require('../ops/gulp/test');
+// const test = require('../ops/gulp/test');
 
 const paths = {
 	src: './scss/**/*.scss',
