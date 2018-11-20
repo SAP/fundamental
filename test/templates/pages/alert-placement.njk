@@ -1,14 +1,14 @@
 {% extends "./layouts/app.njk" %}
 {% from "./../alert/component.njk" import alert %}
 {# ui-level settings #}
-{% set fix_ui_header = false %}
+{% set fix_ui_header = true %}
+{% set hide_ui_footer = true %}
 {% block ui_header -%}
-ui_header
+<span style="color: var(--fd-color-text-5)">.fd-shell__header.fd-shell__header--fixed</span>
 {%- endblock %}
-{% set hide_ui_footer = false %}
-{% set fix_ui_footer = false %}
+
 {% block ui_footer -%}
-ui_footer
+.fd-shell__footer
 {%- endblock %}
 {% set show_ui_overlay = true %}
 {% set overlay_modifier = "fd-overlay--alert" %}
@@ -29,10 +29,6 @@ ui_footer
 {% endblock %}
 
 {# app-level settings #}
-{% set hide_app_sidebar = false %}
-{% block app_sidebar %}
-app_sidebar
-{% endblock %}
 {% block app_main %}
-app_main
+.fd-shell__app
 {% endblock %}
