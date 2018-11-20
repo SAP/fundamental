@@ -79,8 +79,7 @@ $block: #{$fd-namespace}-button;
           }
         }
       }
-      &:empty,
-      &[class*="#{sap-icon}"] {
+      &:empty {
         padding: 0;
         &::before,
         &::after {
@@ -337,7 +336,14 @@ $block: #{$fd-namespace}-button;
     --fd-button-color: var(--fd-color-shell-2);
     --fd-button-border-color: transparent;
     --fd-button-background-color: transparent;
-
+    &[class*="#{sap-icon}"] {
+      padding: 0;
+      &::before,
+      &::after {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
     &:focus {
       box-shadow: none;
     }
