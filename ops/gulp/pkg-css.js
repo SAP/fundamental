@@ -24,12 +24,12 @@ const banner = `/*!
 */\n`;
 
 //compile top-level files
-const sassTask = (cb) => {
+const sassTask = () => {
     const prefix = config.tasks.css.prefix;
     const files = environment.production ? `${paths.src}/*.${config.tasks.css.extensions}` : `${paths.src}/all.scss`;
 
     const isAllCss = file => file.path.includes('all');
-    gulp.src(files)
+    return gulp.src(files)
         .pipe(gulpif(environment.development, sourcemaps.init()))
         .pipe(sass().on('error', (e) => {
 			signale.error(e);
@@ -42,17 +42,16 @@ const sassTask = (cb) => {
         })))
         .pipe(gulpif(environment.development, sourcemaps.write()))
         .pipe(gulp.dest(paths.dest));
-    cb();
 };
 gulp.task('pkg-sass', sassTask);
 
 //compile top-level (dark) files
-const darkSassTask = (cb) => {
+const darkSassTask = () => {
     const prefix = config.tasks.css.prefix;
     const files = environment.production ? `${paths.src}/*.${config.tasks.css.extensions}` : `${paths.src}/all-dark.scss`;
 
     const isAllCss = file => file.path.includes('all-dark');
-    gulp.src(files)
+    return gulp.src(files)
         .pipe(gulpif(environment.development, sourcemaps.init()))
         .pipe(sass().on('error', (e) => {
 			signale.error(e);
@@ -65,17 +64,16 @@ const darkSassTask = (cb) => {
         })))
         .pipe(gulpif(environment.development, sourcemaps.write()))
         .pipe(gulp.dest(paths.dest));
-    cb();
 };
 gulp.task('pkg-dark-sass', darkSassTask);
 
 //compile individual component files
-const componentsTask = (cb) => {
+const componentsTask = () => {
     const files = [
         `${paths.src}/components/*.${config.tasks.css.extensions}`,
         `!${paths.src}/components/_*.${config.tasks.css.extensions}`
     ];
-    gulp.src(files)
+    return gulp.src(files)
         .pipe(sass().on('error', (e) => {
 			signale.error(e);
 			return sass.logError;
@@ -83,13 +81,12 @@ const componentsTask = (cb) => {
         .pipe(autoprefixer(config.tasks.css.autoprefixer))
         .pipe(gulpif(environment.production, cleanCSS(config.tasks.css.cleanCSS)))
         .pipe(gulp.dest(`${paths.dest}/components`));
-    cb();
 };
 gulp.task('pkg-css-components', componentsTask);
 
 //create minify versions
-const minifyTask = (cb) => {
-    gulp.src([`${paths.dest}/**/*.css`])
+const minifyTask = () => {
+    return gulp.src([`${paths.dest}/**/*.css`])
         .pipe(cleanCSS({
             level: {
                 1: {
@@ -101,16 +98,14 @@ const minifyTask = (cb) => {
             suffix: `.min`
         }))
         .pipe(gulp.dest(paths.dest));
-    cb();
 }
 gulp.task('pkg-css-minify', minifyTask);
 
 //add banner
-const bannerTask = (cb) => {
-    gulp.src([`${paths.dest}/**/*.css`])
+const bannerTask = () => {
+    return gulp.src([`${paths.dest}/**/*.css`])
         .pipe(header(banner))
         .pipe(gulp.dest(paths.dest));
-    cb();
 };
 gulp.task('pkg-css-banner', bannerTask);
 
