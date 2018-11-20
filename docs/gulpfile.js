@@ -26,7 +26,7 @@ const task = (cb) => {
 const testVisual = (cb) => {
 	// process.chdir('..');
 	// test.testVisual();
-	const promise = backstop('test');
+	// const promise = backstop('test');
 	cb();
 }
 
