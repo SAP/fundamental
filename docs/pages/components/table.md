@@ -26,7 +26,7 @@ The header columns allows the user to easily understand the data represented.
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr class="fd-table--highlight">
             <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
             style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
             </span></td>
@@ -35,7 +35,7 @@ The header columns allows the user to easily understand the data represented.
             <td>Last Name</td>
             <td>01/26/17</td>
         </tr>
-        <tr>
+        <tr class="fd-table--highlight">
             <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
             style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
             </span></td>
@@ -44,7 +44,7 @@ The header columns allows the user to easily understand the data represented.
             <td>Last Name</td>
             <td>01/26/17</td>
         </tr>
-        <tr>
+        <tr class="fd-table--highlight">
             <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
             style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
             </span></td>
@@ -76,21 +76,21 @@ It is recommended to add the parameter `area-selected="true` to the row that is 
         </tr>
     </thead>
     <tbody>
-        <tr aria-selected="true">
+        <tr class="fd-table--highlight" aria-selected="true">
             <td><input type="checkbox" checked></td>
             <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>Last Name</td>
             <td>01/26/17</td>
         </tr>
-        <tr>
+        <tr class="fd-table--highlight">
             <td><input type="checkbox"></td>
             <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>Last Name</td>
             <td>01/26/17</td>
         </tr>
-        <tr>
+        <tr class="fd-table--highlight">
             <td><input type="checkbox"></td>
             <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
@@ -119,7 +119,7 @@ a contextual menu can be substituted in order to display all actions in one menu
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr class="fd-table--highlight">
             <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>01/26/17</td>
@@ -141,7 +141,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                 </div>
             </td>
         </tr>
-        <tr>
+        <tr class="fd-table--highlight">
             <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>01/26/17</td>
@@ -163,7 +163,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                 </div>
             </td>
         </tr>
-        <tr>
+        <tr class="fd-table--highlight">
             <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>01/26/17</td>
@@ -203,17 +203,17 @@ a contextual menu can be substituted in order to display all actions in one menu
       </tr>
    </thead>
    <tbody>
-      <tr>
+      <tr class="fd-table--highlight">
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr>
+      <tr class="fd-table--highlight">
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr>
+      <tr class="fd-table--highlight">
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -236,17 +236,17 @@ a contextual menu can be substituted in order to display all actions in one menu
       </tr>
    </thead>
    <tbody>
-      <tr>
+      <tr class="fd-table--highlight">
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr>
+      <tr class="fd-table--highlight">
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr>
+      <tr class="fd-table--highlight">
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -269,17 +269,17 @@ a contextual menu can be substituted in order to display all actions in one menu
       </tr>
    </thead>
    <tbody>
-      <tr>
+      <tr class="fd-table--highlight">
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr>
+      <tr class="fd-table--highlight">
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr>
+      <tr class="fd-table--highlight">
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -359,17 +359,17 @@ a contextual menu can be substituted in order to display all actions in one menu
       </tr>
    </thead>
    <tbody>
-      <tr>
+      <tr class="fd-table--highlight">
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr>
+      <tr class="fd-table--highlight">
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr>
+      <tr class="fd-table--highlight">
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -543,7 +543,7 @@ a contextual menu can be substituted in order to display all actions in one menu
             </tr>
          </thead>
          <tbody>
-            <tr>
+            <tr class="fd-table--highlight">
                <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -553,7 +553,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
             </tr>
-            <tr>
+            <tr class="fd-table--highlight">
                <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -563,7 +563,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
             </tr>
-            <tr>
+            <tr class="fd-table--highlight">
                <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
