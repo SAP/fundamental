@@ -55,16 +55,8 @@ gulp.task('server:start', function (cb) {
 	
 });
 
-const testVisual = () => {
-	const promise = backstop('test');
-	promise.catch(function (error) {
-        // Tests failed.
-        process.exit(-1);
-    });        
-    promise.then(function() {
-        // All Tests passed
-        process.exit(0);
-    });
+const testVisual = (cb) => {
+	cb();
 }
 
 // require('../ops/gulp/test');
