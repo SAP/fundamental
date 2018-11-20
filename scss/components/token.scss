@@ -18,7 +18,7 @@ $block: #{$fd-namespace}-token;
 
     @include fd-reset;
     @include fd-type("-1");
-    color: fd-color("text",2);
+    color: fd-color("text", 2);
     background-color: $fd-token-background-color;
     line-height: fd-space(6);
     vertical-align: middle;
@@ -31,9 +31,26 @@ $block: #{$fd-namespace}-token;
     border-color: $fd-token-border-color;
     cursor: pointer;
 
-    @include fd-icon("sys-cancel","s","after") {
-      color: fd-color("action",1);
-      margin-left: fd-space(base);
+    @include fd-icon("sys-cancel", "s", "after") {
+        color: fd-color("action", 1);
+        margin-left: fd-space(base);
+        vertical-align: bottom;
+        line-height: fd-space(6);
     };
 
+}
+
+@include fd-rtl(#{$block}) {
+    .#{$block} {
+        &::after {
+            content: none;
+        }
+
+        @include fd-icon("sys-cancel", "s", "before") {
+            color: fd-color("action", 1);
+            margin-left: fd-space(base);
+            vertical-align: bottom;
+            line-height: fd-space(6);
+        };
+    }
 }

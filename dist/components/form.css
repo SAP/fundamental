@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.0
+* Fiori Fundamentals v1.3.2
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -68,7 +68,9 @@
   font-weight: 400;
   margin-bottom: 0;
   vertical-align: middle;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -185,11 +187,11 @@
   content: ""
 }
 .fd-form__message--error {
-  color: #e00
+  color: #bd0000
 }
 .fd-form__message--error::before {
   content: "";
-  color: #e00
+  color: #bd0000
 }
 .fd-form[dir=rtl] .fd-form__item--check .fd-form__control,
 [dir=rtl] .fd-form__item--check .fd-form__control {

@@ -23,7 +23,7 @@ Shows an example of a background color applied with a helper class.
 <section class="fd-section">
     .fd-section
 </section>
-<section class="fd-section fd-has-background-color-accent-4">
+<section class="fd-section fd-has-background-color-accent-4 fd-has-color-action-2">
     .fd-section
 </section>
 <section class="fd-section">

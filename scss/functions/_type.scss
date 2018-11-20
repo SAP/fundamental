@@ -1,6 +1,7 @@
 // get font-size from main map
 @function fd-font-size($size: "0") {
   $_map: $fd-type;
+  $_size: "0";
   $list: map-get($_map, "0");
   @if map-has-key($_map, $size) {
     $list: map-get($_map, $size);
@@ -13,6 +14,7 @@
 // get line-height from main map
 @function fd-line-height($size: "0") {
   $_map: $fd-type;
+  $_size: "0";
   $list: map-get($_map, "0");
   @if map-has-key($_map, $size) {
     $list: map-get($_map, $size);

@@ -39,6 +39,22 @@ $block: #{$fd-namespace}-tag;
     @include fd-icon("sys-cancel","s","after") {
       color: fd-color("action",1);
       margin-left: fd-space(base);
+      vertical-align: bottom;
+      line-height: fd-space(6);
     };
 
+}
+
+@include fd-rtl(#{$block}) {
+    .#{$block} {
+        &::after{
+            content:none;
+        }
+        @include fd-icon("sys-cancel","s","before") {
+            color: fd-color("action",1);
+            margin-left: fd-space(base);
+            vertical-align: bottom;
+            line-height: fd-space(6);
+          };
+    }
 }

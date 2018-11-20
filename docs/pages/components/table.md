@@ -264,8 +264,8 @@ a contextual menu can be substituted in order to display all actions in one menu
    <thead>
       <tr>
          <th class="fd-table__sort-column fd-table__sort-column--dsc">Header Column</th>
-         <th class="fd-table__sort-column ">Header Column</th>
-         <th class="fd-table__sort-column ">Header Column</th>
+         <th class="fd-table__sort-column">Header Column</th>
+         <th class="fd-table__sort-column">Header Column</th>
       </tr>
    </thead>
    <tbody>
@@ -296,7 +296,7 @@ a contextual menu can be substituted in order to display all actions in one menu
 <table class="fd-table">
    <thead>
       <tr>
-         <th class="fd-table__context-menu " style="left:; width:"  aria-controls="col1" aria-haspopup="true" >
+         <th class="fd-table__context-menu" aria-controls="col1" aria-haspopup="true" >
             <div class="fd-popover">
                <div class="fd-popover__control">
                   <span class="fd-table__context-menu-label">Header Column</span>
@@ -316,7 +316,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                </div>
             </div>
          </th>
-         <th class="fd-table__context-menu " style="left:; width:"  aria-controls="col2" aria-haspopup="true" >
+         <th class="fd-table__context-menu" aria-controls="col2" aria-haspopup="true" >
             <div class="fd-popover">
                <div class="fd-popover__control">
                   <span class="fd-table__context-menu-label">Header Column</span>
@@ -336,12 +336,12 @@ a contextual menu can be substituted in order to display all actions in one menu
                </div>
             </div>
          </th>
-         <th class="fd-table__context-menu " style="left:; width:"  aria-controls="col3" aria-haspopup="true" >
+         <th class="fd-table__context-menu" aria-controls="col3" aria-haspopup="true" >
             <div class="fd-popover">
                <div class="fd-popover__control">
                   <span class="fd-table__context-menu-label">Header Column</span>
                </div>
-               <div class="fd-popover__body"  aria-hidden="true" id="col3">
+               <div class="fd-popover__body" aria-hidden="true" id="col3">
                   <nav class="fd-menu fd-menu--addon-before">
                      <ul class="fd-menu__list">
                         <li><a href="#" class="fd-menu__item">Ascending</a>
@@ -382,18 +382,25 @@ a contextual menu can be substituted in order to display all actions in one menu
 <br>
 
 ## Table with Fix Column Header and context menu
+
+* A column can be fixed by applying the `fd-table_fixed_col` css class a desired number for column width (`width: 200px` inline style in the example below)
+* The `fd-table--fixed` wrapper need to be offset(`padding-left:200px`) by the same amount as defined for column width.
+* `fd-table--fixed-wrapper` need to have a defined with as well to enable horizontal scrolling.
+
+> 100% width on `fd-table--fixed-wrapper` will not render horizontal scrolling as the wrapper container will stretch to accommodate any overflow column width. 
+
 {% capture table-sort %}
 <div class="fd-table--fixed-wrapper" style="width:800px;">
    <div class="fd-table--fixed">
       <table class="fd-table">
          <thead>
             <tr>
-               <th class="fd-table__context-menu  fd-table__fixed-col" style="left:0; width:200px"  aria-controls="col1.2" aria-haspopup="true" >
+               <th class="fd-table__context-menu fd-table__fixed-col" style="left:0; width:200px" aria-controls="col1.2" aria-haspopup="true">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
                      </div>
-                     <div class="fd-popover__body"  aria-hidden="true" id="col1.2">
+                     <div class="fd-popover__body" aria-hidden="true" id="col1.2">
                         <nav class="fd-menu fd-menu--addon-before">
                            <ul class="fd-menu__list">
                               <li>
@@ -414,91 +421,157 @@ a contextual menu can be substituted in order to display all actions in one menu
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu " style="left:200px; width:"  aria-controls="col2.2" aria-haspopup="true" >
+               <th class="fd-table__context-menu" aria-controls="col2.2" aria-haspopup="true">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
                      </div>
-                     <div class="fd-popover__body"  aria-hidden="true" id="col2.2">
+                     <div class="fd-popover__body" aria-hidden="true" id="col2.2">
                         <nav class="fd-menu fd-menu--addon-before">
                            <ul class="fd-menu__list">
-                              <li><a href="#" class="fd-menu__item">Ascending</a>
-                              </li>
-                              <li><a href="#" class="fd-menu__item">Decensing</a>
-                              </li>
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
                               <hr>
-                              <li><a href="#" class="fd-menu__item">Fix Column</a>
-                              </li>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
                            </ul>
                         </nav>
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu " style="left:; width:"  aria-controls="col3.2" aria-haspopup="true" >
+               <th class="fd-table__context-menu" aria-controls="col3.2" aria-haspopup="true">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
                      </div>
-                     <div class="fd-popover__body"  aria-hidden="true" id="col3.2">
+                     <div class="fd-popover__body" aria-hidden="true" id="col3.2">
                         <nav class="fd-menu fd-menu--addon-before">
                            <ul class="fd-menu__list">
-                              <li><a href="#" class="fd-menu__item">Ascending</a>
-                              </li>
-                              <li><a href="#" class="fd-menu__item">Decensing</a>
-                              </li>
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
                               <hr>
-                              <li><a href="#" class="fd-menu__item">Fix Column</a>
-                              </li>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
                            </ul>
                         </nav>
                      </div>
                   </div>
                </th>
-               <th class=" ">Header Column</th>
-               <th class=" ">Header Column</th>
-               <th class=" ">Header Column</th>
-               <th class=" ">Header Column</th>
-               <th class=" ">Header Column</th>
-               <th class=" ">Header Column</th>
-               <th class=" ">Header Column</th>
+               <th class="fd-table__context-menu" aria-controls="col4.2" aria-haspopup="true">
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body" aria-hidden="true" id="col4.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class="fd-table__context-menu" aria-controls="col5.2" aria-haspopup="true">
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body" aria-hidden="true" id="col5.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class="fd-table__context-menu" aria-controls="col6.2" aria-haspopup="true">
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body" aria-hidden="true" id="col6.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class="fd-table__context-menu" aria-controls="col7.2" aria-haspopup="true">
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body" aria-hidden="true" id="col7.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
+               <th class="fd-table__context-menu" aria-controls="col8.2" aria-haspopup="true">
+                  <div class="fd-popover">
+                     <div class="fd-popover__control">
+                        <span class="fd-table__context-menu-label">Header Column</span>
+                     </div>
+                     <div class="fd-popover__body" aria-hidden="true" id="col8.2">
+                        <nav class="fd-menu fd-menu--addon-before">
+                           <ul class="fd-menu__list">
+                              <li><a href="#" class="fd-menu__item">Ascending</a></li>
+                              <li><a href="#" class="fd-menu__item">Decensing</a></li>
+                              <hr>
+                              <li><a href="#" class="fd-menu__item">Fix Column</a></li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </th>
             </tr>
          </thead>
          <tbody>
             <tr>
                <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:200px; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
             </tr>
             <tr>
                <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:200px; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
             </tr>
             <tr>
                <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:200px; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
-               <td class="" style="left:; width:">Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
+               <td>Lorem ipsum dolor sit amet ipsum</td>
             </tr>
          </tbody>
       </table>

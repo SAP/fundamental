@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.0
+* Fiori Fundamentals v1.3.2
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -52,5 +52,41 @@
 }
 .fd-token::after {
   color: #0a6ed1;
-  margin-left: 4px
+  margin-left: 4px;
+  vertical-align: bottom;
+  line-height: 24px
+}
+.fd-token[dir=rtl] .fd-token::after,
+[dir=rtl] .fd-token::after {
+  content: none
+}
+.fd-token[dir=rtl] .fd-token::before,
+[dir=rtl] .fd-token::before {
+  font-family: SAP-icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none
+}
+.fd-token[dir=rtl] .fd-token::before,
+[dir=rtl] .fd-token::before {
+  content: ""
+}
+.fd-token[dir=rtl] .fd-token::before,
+[dir=rtl] .fd-token::before {
+  font-size: .85714rem;
+  line-height: 1
+}
+.fd-token[dir=rtl] .fd-token::before,
+[dir=rtl] .fd-token::before {
+  color: #0a6ed1;
+  margin-left: 4px;
+  vertical-align: bottom;
+  line-height: 24px
 }

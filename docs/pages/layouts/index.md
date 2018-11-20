@@ -8,7 +8,7 @@ folder: layouts
 summary:
 ---
 
-Layouts in Fundamental UI are for structuring the main parts of your application. Organized in three main categories
+Layouts in Fiori Fundamentals are for structuring the main parts of your application. Organized in three main categories
 
 <br>
 

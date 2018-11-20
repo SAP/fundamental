@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.0
+* Fiori Fundamentals v1.3.2
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -49,10 +49,22 @@
   border-radius: 5px;
   visibility: hidden;
   opacity: 0;
+  border: 1px #89919a solid;
   -webkit-filter: drop-shadow(rgba(0, 0, 0, .1) 0 2px 10px);
   filter: drop-shadow(rgba(0, 0, 0, .1) 0 2px 10px)
 }
 .fd-inline-help__content::before {
+  height: 0;
+  width: 0;
+  border-bottom: 8px solid #89919a;
+  border-left: 6.5px solid transparent;
+  border-right: 6.5px solid transparent;
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 10px
+}
+.fd-inline-help__content::after {
   height: 0;
   width: 0;
   border-bottom: 8px solid #fff;
@@ -60,8 +72,8 @@
   border-right: 6.5px solid transparent;
   content: "";
   position: absolute;
-  top: -8px;
-  right: 14px
+  top: -6px;
+  right: 10px
 }
 .fd-inline-help__content--right {
   top: -12px;
@@ -70,6 +82,12 @@
 .fd-inline-help__content--right::before {
   top: 16px;
   left: -10px;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg)
+}
+.fd-inline-help__content--right::after {
+  top: 16px;
+  left: -9px;
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg)
 }
@@ -83,6 +101,12 @@
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg)
 }
+.fd-inline-help__content--left::after {
+  top: 16px;
+  right: -9px;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
 .fd-inline-help__content--bottom-right {
   left: -8px
 }
@@ -90,12 +114,30 @@
   top: -8px;
   left: 11.2px
 }
+.fd-inline-help__content--bottom-right::after {
+  top: -7px;
+  left: 11px
+}
 .fd-inline-help__content--bottom-left {
   right: -8px
 }
 .fd-inline-help__content--bottom-left::before {
   top: -8px;
-  right: 11.2px
+  right: 10px
+}
+.fd-inline-help__content--bottom-left::after {
+  top: -7px
+}
+.fd-inline-help__content--bottom-center {
+  right: -162px
+}
+.fd-inline-help__content--bottom-center::before {
+  top: -8px;
+  right: 164px
+}
+.fd-inline-help__content--bottom-center::after {
+  top: -7px;
+  right: 164px
 }
 .fd-inline-help:hover .fd-inline-help__content {
   visibility: visible;
