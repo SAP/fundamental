@@ -3,6 +3,7 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require("gulp-rename");
 const path = require("path");
+const test = require('../ops/gulp/test');
 
 const paths = {
 	src: './scss/**/*.scss',
@@ -21,5 +22,11 @@ const task = (cb) => {
 
 }
 
+const testVisual = (cb) => {
+	cb();
+}
+
 gulp.task('docs-site', task);
+gulp.task('test:visual', testVisual);
+
 module.exports = task;
