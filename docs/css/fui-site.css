@@ -2464,6 +2464,12 @@ input[type="checkbox"]:checked::before,
 .fd-checkbox:checked::before {
   border-color: white; }
 
+input[type="checkbox"]:indeterminate,
+.fd-checkbox:indeterminate {
+  border: 3px solid white;
+  background-color: #0854a1;
+  box-shadow: 0 0 0 1px #0854a1; }
+
 input[type="checkbox"][aria-disabled="true"]::before, input[type="checkbox"].is-disabled::before, input[type="checkbox"]:disabled::before,
 .fd-checkbox[aria-disabled="true"]::before,
 .fd-checkbox.is-disabled::before,
@@ -2632,145 +2638,145 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 /*!
     .fd-col+(--1...12, --shift-1...11)
 */
-.fd-col {
-  flex: 1; }
-  @media (min-width: 600px) {
-    .fd-col--1 {
-      float: left;
-      margin-right: 8px;
-      margin-right: var(--fd-width-gutter);
-      width: calc( ( ( (100% - 88px) / 12 ) * 1 ) + 0px);
-      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 1 ) + (var(--fd-width-gutter) * (1 - 1))); }
-      .fd-col--1:last-child {
-        margin-right: 0; }
-    .fd-col--2 {
-      float: left;
-      margin-right: 8px;
-      margin-right: var(--fd-width-gutter);
-      width: calc( ( ( (100% - 88px) / 12 ) * 2 ) + 8px);
-      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 2 ) + (var(--fd-width-gutter) * (2 - 1))); }
-      .fd-col--2:last-child {
-        margin-right: 0; }
-    .fd-col--3 {
-      float: left;
-      margin-right: 8px;
-      margin-right: var(--fd-width-gutter);
-      width: calc( ( ( (100% - 88px) / 12 ) * 3 ) + 16px);
-      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 3 ) + (var(--fd-width-gutter) * (3 - 1))); }
-      .fd-col--3:last-child {
-        margin-right: 0; }
-    .fd-col--4 {
-      float: left;
-      margin-right: 8px;
-      margin-right: var(--fd-width-gutter);
-      width: calc( ( ( (100% - 88px) / 12 ) * 4 ) + 24px);
-      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 4 ) + (var(--fd-width-gutter) * (4 - 1))); }
-      .fd-col--4:last-child {
-        margin-right: 0; }
-    .fd-col--5 {
-      float: left;
-      margin-right: 8px;
-      margin-right: var(--fd-width-gutter);
-      width: calc( ( ( (100% - 88px) / 12 ) * 5 ) + 32px);
-      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 5 ) + (var(--fd-width-gutter) * (5 - 1))); }
-      .fd-col--5:last-child {
-        margin-right: 0; }
-    .fd-col--6 {
-      float: left;
-      margin-right: 8px;
-      margin-right: var(--fd-width-gutter);
-      width: calc( ( ( (100% - 88px) / 12 ) * 6 ) + 40px);
-      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 6 ) + (var(--fd-width-gutter) * (6 - 1))); }
-      .fd-col--6:last-child {
-        margin-right: 0; }
-    .fd-col--7 {
-      float: left;
-      margin-right: 8px;
-      margin-right: var(--fd-width-gutter);
-      width: calc( ( ( (100% - 88px) / 12 ) * 7 ) + 48px);
-      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 7 ) + (var(--fd-width-gutter) * (7 - 1))); }
-      .fd-col--7:last-child {
-        margin-right: 0; }
-    .fd-col--8 {
-      float: left;
-      margin-right: 8px;
-      margin-right: var(--fd-width-gutter);
-      width: calc( ( ( (100% - 88px) / 12 ) * 8 ) + 56px);
-      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 8 ) + (var(--fd-width-gutter) * (8 - 1))); }
-      .fd-col--8:last-child {
-        margin-right: 0; }
-    .fd-col--9 {
-      float: left;
-      margin-right: 8px;
-      margin-right: var(--fd-width-gutter);
-      width: calc( ( ( (100% - 88px) / 12 ) * 9 ) + 64px);
-      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 9 ) + (var(--fd-width-gutter) * (9 - 1))); }
-      .fd-col--9:last-child {
-        margin-right: 0; }
-    .fd-col--10 {
-      float: left;
-      margin-right: 8px;
-      margin-right: var(--fd-width-gutter);
-      width: calc( ( ( (100% - 88px) / 12 ) * 10 ) + 72px);
-      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 10 ) + (var(--fd-width-gutter) * (10 - 1))); }
-      .fd-col--10:last-child {
-        margin-right: 0; }
-    .fd-col--11 {
-      float: left;
-      margin-right: 8px;
-      margin-right: var(--fd-width-gutter);
-      width: calc( ( ( (100% - 88px) / 12 ) * 11 ) + 80px);
-      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 11 ) + (var(--fd-width-gutter) * (11 - 1))); }
-      .fd-col--11:last-child {
-        margin-right: 0; }
-    .fd-col--12 {
-      float: left;
-      margin-right: 8px;
-      margin-right: var(--fd-width-gutter);
-      width: calc( ( ( (100% - 88px) / 12 ) * 12 ) + 88px);
-      width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 12 ) + (var(--fd-width-gutter) * (12 - 1))); }
-      .fd-col--12:last-child {
-        margin-right: 0; }
-    .fd-col--shift-1 {
-      margin-left: calc( ( ( (100% - 88px) / 12 ) * 1 ) + 8px);
-      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 1 ) + (var(--fd-width-gutter) * (1))); }
-    .fd-col--shift-2 {
-      margin-left: calc( ( ( (100% - 88px) / 12 ) * 2 ) + 16px);
-      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 2 ) + (var(--fd-width-gutter) * (2))); }
-    .fd-col--shift-3 {
-      margin-left: calc( ( ( (100% - 88px) / 12 ) * 3 ) + 24px);
-      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 3 ) + (var(--fd-width-gutter) * (3))); }
-    .fd-col--shift-4 {
-      margin-left: calc( ( ( (100% - 88px) / 12 ) * 4 ) + 32px);
-      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 4 ) + (var(--fd-width-gutter) * (4))); }
-    .fd-col--shift-5 {
-      margin-left: calc( ( ( (100% - 88px) / 12 ) * 5 ) + 40px);
-      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 5 ) + (var(--fd-width-gutter) * (5))); }
-    .fd-col--shift-6 {
-      margin-left: calc( ( ( (100% - 88px) / 12 ) * 6 ) + 48px);
-      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 6 ) + (var(--fd-width-gutter) * (6))); }
-    .fd-col--shift-7 {
-      margin-left: calc( ( ( (100% - 88px) / 12 ) * 7 ) + 56px);
-      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 7 ) + (var(--fd-width-gutter) * (7))); }
-    .fd-col--shift-8 {
-      margin-left: calc( ( ( (100% - 88px) / 12 ) * 8 ) + 64px);
-      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 8 ) + (var(--fd-width-gutter) * (8))); }
-    .fd-col--shift-9 {
-      margin-left: calc( ( ( (100% - 88px) / 12 ) * 9 ) + 72px);
-      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 9 ) + (var(--fd-width-gutter) * (9))); }
-    .fd-col--shift-10 {
-      margin-left: calc( ( ( (100% - 88px) / 12 ) * 10 ) + 80px);
-      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 10 ) + (var(--fd-width-gutter) * (10))); }
-    .fd-col--shift-11 {
-      margin-left: calc( ( ( (100% - 88px) / 12 ) * 11 ) + 88px);
-      margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 11 ) + (var(--fd-width-gutter) * (11))); } }
-  [class^="fd-col"] {
-    margin-bottom: 12px; }
-    [class^="fd-col"]:last-child {
-      margin-bottom: 0; }
-    @media (min-width: 320px) {
-      [class^="fd-col"] {
-        margin-bottom: 0; } }
+@media (min-width: 600px) {
+  .fd-col--1 {
+    float: left;
+    margin-right: 8px;
+    margin-right: var(--fd-width-gutter);
+    width: calc( ( ( (100% - 88px) / 12 ) * 1 ) + 0px);
+    width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 1 ) + (var(--fd-width-gutter) * (1 - 1))); }
+    .fd-col--1:last-child {
+      margin-right: 0; }
+  .fd-col--2 {
+    float: left;
+    margin-right: 8px;
+    margin-right: var(--fd-width-gutter);
+    width: calc( ( ( (100% - 88px) / 12 ) * 2 ) + 8px);
+    width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 2 ) + (var(--fd-width-gutter) * (2 - 1))); }
+    .fd-col--2:last-child {
+      margin-right: 0; }
+  .fd-col--3 {
+    float: left;
+    margin-right: 8px;
+    margin-right: var(--fd-width-gutter);
+    width: calc( ( ( (100% - 88px) / 12 ) * 3 ) + 16px);
+    width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 3 ) + (var(--fd-width-gutter) * (3 - 1))); }
+    .fd-col--3:last-child {
+      margin-right: 0; }
+  .fd-col--4 {
+    float: left;
+    margin-right: 8px;
+    margin-right: var(--fd-width-gutter);
+    width: calc( ( ( (100% - 88px) / 12 ) * 4 ) + 24px);
+    width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 4 ) + (var(--fd-width-gutter) * (4 - 1))); }
+    .fd-col--4:last-child {
+      margin-right: 0; }
+  .fd-col--5 {
+    float: left;
+    margin-right: 8px;
+    margin-right: var(--fd-width-gutter);
+    width: calc( ( ( (100% - 88px) / 12 ) * 5 ) + 32px);
+    width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 5 ) + (var(--fd-width-gutter) * (5 - 1))); }
+    .fd-col--5:last-child {
+      margin-right: 0; }
+  .fd-col--6 {
+    float: left;
+    margin-right: 8px;
+    margin-right: var(--fd-width-gutter);
+    width: calc( ( ( (100% - 88px) / 12 ) * 6 ) + 40px);
+    width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 6 ) + (var(--fd-width-gutter) * (6 - 1))); }
+    .fd-col--6:last-child {
+      margin-right: 0; }
+  .fd-col--7 {
+    float: left;
+    margin-right: 8px;
+    margin-right: var(--fd-width-gutter);
+    width: calc( ( ( (100% - 88px) / 12 ) * 7 ) + 48px);
+    width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 7 ) + (var(--fd-width-gutter) * (7 - 1))); }
+    .fd-col--7:last-child {
+      margin-right: 0; }
+  .fd-col--8 {
+    float: left;
+    margin-right: 8px;
+    margin-right: var(--fd-width-gutter);
+    width: calc( ( ( (100% - 88px) / 12 ) * 8 ) + 56px);
+    width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 8 ) + (var(--fd-width-gutter) * (8 - 1))); }
+    .fd-col--8:last-child {
+      margin-right: 0; }
+  .fd-col--9 {
+    float: left;
+    margin-right: 8px;
+    margin-right: var(--fd-width-gutter);
+    width: calc( ( ( (100% - 88px) / 12 ) * 9 ) + 64px);
+    width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 9 ) + (var(--fd-width-gutter) * (9 - 1))); }
+    .fd-col--9:last-child {
+      margin-right: 0; }
+  .fd-col--10 {
+    float: left;
+    margin-right: 8px;
+    margin-right: var(--fd-width-gutter);
+    width: calc( ( ( (100% - 88px) / 12 ) * 10 ) + 72px);
+    width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 10 ) + (var(--fd-width-gutter) * (10 - 1))); }
+    .fd-col--10:last-child {
+      margin-right: 0; }
+  .fd-col--11 {
+    float: left;
+    margin-right: 8px;
+    margin-right: var(--fd-width-gutter);
+    width: calc( ( ( (100% - 88px) / 12 ) * 11 ) + 80px);
+    width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 11 ) + (var(--fd-width-gutter) * (11 - 1))); }
+    .fd-col--11:last-child {
+      margin-right: 0; }
+  .fd-col--12 {
+    float: left;
+    margin-right: 8px;
+    margin-right: var(--fd-width-gutter);
+    width: calc( ( ( (100% - 88px) / 12 ) * 12 ) + 88px);
+    width: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 12 ) + (var(--fd-width-gutter) * (12 - 1))); }
+    .fd-col--12:last-child {
+      margin-right: 0; }
+  .fd-col--shift-1 {
+    margin-left: calc( ( ( (100% - 88px) / 12 ) * 1 ) + 8px);
+    margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 1 ) + (var(--fd-width-gutter) * (1))); }
+  .fd-col--shift-2 {
+    margin-left: calc( ( ( (100% - 88px) / 12 ) * 2 ) + 16px);
+    margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 2 ) + (var(--fd-width-gutter) * (2))); }
+  .fd-col--shift-3 {
+    margin-left: calc( ( ( (100% - 88px) / 12 ) * 3 ) + 24px);
+    margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 3 ) + (var(--fd-width-gutter) * (3))); }
+  .fd-col--shift-4 {
+    margin-left: calc( ( ( (100% - 88px) / 12 ) * 4 ) + 32px);
+    margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 4 ) + (var(--fd-width-gutter) * (4))); }
+  .fd-col--shift-5 {
+    margin-left: calc( ( ( (100% - 88px) / 12 ) * 5 ) + 40px);
+    margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 5 ) + (var(--fd-width-gutter) * (5))); }
+  .fd-col--shift-6 {
+    margin-left: calc( ( ( (100% - 88px) / 12 ) * 6 ) + 48px);
+    margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 6 ) + (var(--fd-width-gutter) * (6))); }
+  .fd-col--shift-7 {
+    margin-left: calc( ( ( (100% - 88px) / 12 ) * 7 ) + 56px);
+    margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 7 ) + (var(--fd-width-gutter) * (7))); }
+  .fd-col--shift-8 {
+    margin-left: calc( ( ( (100% - 88px) / 12 ) * 8 ) + 64px);
+    margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 8 ) + (var(--fd-width-gutter) * (8))); }
+  .fd-col--shift-9 {
+    margin-left: calc( ( ( (100% - 88px) / 12 ) * 9 ) + 72px);
+    margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 9 ) + (var(--fd-width-gutter) * (9))); }
+  .fd-col--shift-10 {
+    margin-left: calc( ( ( (100% - 88px) / 12 ) * 10 ) + 80px);
+    margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 10 ) + (var(--fd-width-gutter) * (10))); }
+  .fd-col--shift-11 {
+    margin-left: calc( ( ( (100% - 88px) / 12 ) * 11 ) + 88px);
+    margin-left: calc( ( ( (100% - (11 * var(--fd-width-gutter))) / 12 ) * 11 ) + (var(--fd-width-gutter) * (11))); } }
+
+[class^="fd-col"] {
+  flex: 1;
+  margin-bottom: 12px; }
+  [class^="fd-col"]:last-child {
+    margin-bottom: 0; }
+  @media (min-width: 320px) {
+    [class^="fd-col"] {
+      margin-bottom: 0; } }
 
 /*
   @mixin fd-type mixin
@@ -2954,7 +2960,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     border-style: solid;
     border-width: 0;
     border-color: #d9d9d9;
-    background-color: #edeef0;
+    background-color: transparent;
     min-height: auto;
     padding: 0 32px;
     padding: 0 var(--fd-page-header-padding-x); }
@@ -3448,9 +3454,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   [dir="rtl"] .fd-button::after, .fd-button[dir="rtl"]::after, [dir="rtl"] [class*="fd-button--"]::after, [class*="fd-button--"][dir="rtl"]::after {
     margin-left: 0;
     margin-right: 8px; }
-  .fd-button:empty, .fd-button[class*="sap-icon"], [class*="fd-button--"]:empty, [class*="fd-button--"][class*="sap-icon"] {
+  .fd-button:empty, [class*="fd-button--"]:empty {
     padding: 0; }
-    .fd-button:empty::before, .fd-button:empty::after, .fd-button[class*="sap-icon"]::before, .fd-button[class*="sap-icon"]::after, [class*="fd-button--"]:empty::before, [class*="fd-button--"]:empty::after, [class*="fd-button--"][class*="sap-icon"]::before, [class*="fd-button--"][class*="sap-icon"]::after {
+    .fd-button:empty::before, .fd-button:empty::after, [class*="fd-button--"]:empty::before, [class*="fd-button--"]:empty::after {
       margin-right: 0;
       margin-left: 0; }
   .fd-button:focus, .fd-button.is-focus, [class*="fd-button--"]:focus, [class*="fd-button--"].is-focus {
@@ -3669,6 +3675,11 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent; }
+  .fd-button--shellheader[class*="sap-icon"] {
+    padding: 0; }
+    .fd-button--shellheader[class*="sap-icon"]::before, .fd-button--shellheader[class*="sap-icon"]::after {
+      margin-right: 0;
+      margin-left: 0; }
   .fd-button--shellheader:focus {
     box-shadow: none; }
   .fd-button--shellheader:hover {
@@ -4139,14 +4150,16 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     margin-bottom: 0;
     margin-right: 0; }
   .fd-form__set {
-    margin-bottom: 20px; }
+    margin-bottom: 16px; }
+    .fd-form__set:last-child {
+      margin-bottom: 0; }
     @media (min-width: 320px) {
       .fd-form__set .fd-form__item--inline {
         margin-bottom: 0; } }
     .fd-form__set .fd-form__message {
       margin-top: 8px; }
   .fd-form__item {
-    margin-bottom: 20px; }
+    margin-bottom: 16px; }
     .fd-form__item:last-child {
       margin-bottom: 0;
       margin-right: 0; }
@@ -4203,7 +4216,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-form__control {
     min-width: 16px; }
   .fd-form__legend {
-    margin-bottom: 20px; }
+    margin-bottom: 8px; }
   .fd-form__help {
     float: right; }
   .fd-form__message {
@@ -5697,7 +5710,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     $weight: "light", "normal", "bold"
 */
 /*!
-.fd-identifier+((--circle), (--xxs|--xs|--s|--m|--l|--xl|--xxl))
+.fd-identifier+((--circle), (--thumbnail), (--xxs|--xs|--s|--m|--l|--xl|--xxl))
 */
 [class*="fd-identifier"] {
   font-size: 14px;
@@ -5834,6 +5847,10 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 
 .fd-identifier--circle {
   border-radius: 50%; }
+
+.fd-identifier--thumbnail {
+  text-indent: -200%;
+  overflow: hidden; }
 
 .fd-identifier--transparent {
   background-color: transparent;
@@ -6330,7 +6347,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     font-size: 0.85714rem;
     line-height: 1; }
   .fd-tag::after {
-    color: #0a6ed1;
+    color: inherit;
     margin-left: 4px;
     vertical-align: bottom;
     line-height: 24px; }
@@ -6736,6 +6753,7 @@ see layouts/panel
       .fd-popover__body--no-arrow::before, .fd-popover__body--no-arrow::after {
         display: none; }
     .fd-popover__body[aria-hidden="true"], .fd-popover__body.is-hidden {
+      z-index: 1;
       opacity: 0;
       visibility: hidden;
       transform: translateY(-15px); }
@@ -7138,7 +7156,7 @@ input-addon
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   text-align: left; }
-  .fd-user-menu--control {
+  .fd-user-menu__control {
     padding: 4px; }
 
 /*
@@ -7200,34 +7218,7 @@ input-addon
     $weight: "light", "normal", "bold"
 */
 /*!
-.fd-notification-counter
-*/
-.fd-notification-counter {
-  border-radius: 4px;
-  background: #bd0000;
-  color: white;
-  font-size: 11px;
-  line-height: 1;
-  display: inline-block;
-  text-align: center;
-  padding: 4px; }
-  .fd-notification-counter--topleft, .fd-notification-counter--topright {
-    position: absolute;
-    top: 0; }
-  .fd-notification-counter--topright {
-    right: 0; }
-  .fd-notification-counter--topleft {
-    left: 0; }
-
-/*
-  @mixin fd-type mixin
-    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
-  @params
-    $size: "-1", "0", "1", "2", "3", "4", "5"
-    $weight: "light", "normal", "bold"
-*/
-/*!
-.fd-counter
+.fd-counter+(--notification)
 */
 .fd-counter {
   border-radius: 4px;
@@ -7242,6 +7233,8 @@ input-addon
     background-color: #bd0000;
     position: absolute;
     transform: translate(-40%, -50%); }
+    [dir="rtl"] .fd-counter--notification, .fd-counter--notification[dir="rtl"] {
+      transform: translate(40%, -50%); }
 
 .fd-has-text-transform-none {
   text-transform: none !important; }
@@ -7269,12 +7262,6 @@ input-addon
 
 .fd-has-float-right {
   float: right !important; }
-
-.fd-has-border-radius-0 {
-  border-radius: 0 !important; }
-
-.fd-has-border-radius-50percent {
-  border-radius: 50% !important; }
 
 /*
   @mixin fd-type mixin
@@ -7578,6 +7565,136 @@ input-addon
 
 .fd-has-background-color-shell-2 {
   background-color: #d1e8ff !important; }
+
+.fd-has-border-radius-0 {
+  border-radius: 0 !important; }
+
+.fd-has-border-radius-50percent {
+  border-radius: 50% !important; }
+
+.fd-has-border-none {
+  border: none !important; }
+
+.fd-has-top-border-none {
+  border: none !important; }
+
+.fd-has-right-border-none {
+  border: none !important; }
+
+.fd-has-bottom-border-none {
+  border: none !important; }
+
+.fd-has-left-border-none {
+  border: none !important; }
+
+.fd-has-border-color-action,
+.fd-has-border-color-action-1 {
+  border-color: #0a6ed1 !important; }
+
+.fd-has-border-color-action-2 {
+  border-color: white !important; }
+
+.fd-has-border-color-text,
+.fd-has-border-color-text-1 {
+  border-color: #32363a !important; }
+
+.fd-has-border-color-text-2 {
+  border-color: #51555a !important; }
+
+.fd-has-border-color-text-3 {
+  border-color: #6a6d70 !important; }
+
+.fd-has-border-color-text-4 {
+  border-color: #74777a !important; }
+
+.fd-has-border-color-text-5 {
+  border-color: white !important; }
+
+.fd-has-border-color-background,
+.fd-has-border-color-background-1 {
+  border-color: #edeef0 !important; }
+
+.fd-has-border-color-background-2 {
+  border-color: white !important; }
+
+.fd-has-border-color-neutral,
+.fd-has-border-color-neutral-1 {
+  border-color: #fafafa !important; }
+
+.fd-has-border-color-neutral-2 {
+  border-color: #eeeeef !important; }
+
+.fd-has-border-color-neutral-3 {
+  border-color: #d9d9d9 !important; }
+
+.fd-has-border-color-neutral-4 {
+  border-color: #89919a !important; }
+
+.fd-has-border-color-status,
+.fd-has-border-color-status-1 {
+  border-color: #107f3e !important; }
+
+.fd-has-border-color-status-2 {
+  border-color: #e9730c !important; }
+
+.fd-has-border-color-status-3 {
+  border-color: #bd0000 !important; }
+
+.fd-has-border-color-status-4 {
+  border-color: #6d7678 !important; }
+
+.fd-has-border-color-accent,
+.fd-has-border-color-accent-1 {
+  border-color: #e38b16 !important; }
+
+.fd-has-border-color-accent-2 {
+  border-color: #dc7474 !important; }
+
+.fd-has-border-color-accent-3 {
+  border-color: #db1f77 !important; }
+
+.fd-has-border-color-accent-4 {
+  border-color: #c0399f !important; }
+
+.fd-has-border-color-accent-5 {
+  border-color: #6367de !important; }
+
+.fd-has-border-color-accent-6 {
+  border-color: #5899da !important; }
+
+.fd-has-border-color-accent-7 {
+  border-color: #13a4b4 !important; }
+
+.fd-has-border-color-accent-8 {
+  border-color: #7ca10c !important; }
+
+.fd-has-border-color-accent-9 {
+  border-color: #955ecf !important; }
+
+.fd-has-border-color-accent-10 {
+  border-color: #6c8893 !important; }
+
+.fd-has-border-color-accent-11 {
+  border-color: #d17f15 !important; }
+
+.fd-has-border-color-accent-12 {
+  border-color: #d04343 !important; }
+
+.fd-has-border-color-accent-13 {
+  border-color: #2b78c5 !important; }
+
+.fd-has-border-color-accent-14 {
+  border-color: #0f828f !important; }
+
+.fd-has-border-color-accent-15 {
+  border-color: #647887 !important; }
+
+.fd-has-border-color-shell,
+.fd-has-border-color-shell-1 {
+  border-color: #354a5f !important; }
+
+.fd-has-border-color-shell-2 {
+  border-color: #d1e8ff !important; }
 
 .fd-has-height-base {
   height: 4px !important; }
@@ -8547,30 +8664,195 @@ input-addon
   .fd-display-xxl-inline-flex {
     display: inline-flex !important; } }
 
-.fd-has-border-top-none {
-  border-top: none !important; }
+.fd-has-border-radius-0 {
+  border-radius: 0 !important; }
 
-.fd-has-border-right-none {
-  border-right: none !important; }
-
-.fd-has-border-bottom-none {
-  border-bottom: none !important; }
-
-.fd-has-border-left-none {
-  border-left: none !important; }
-
-.fd-has-border-begin-none {
-  border-left: none !important; }
-  [direction="rtl"] .fd-has-border-begin-none, .fd-has-border-begin-none[direction="rtl"] {
-    border-right: none !important; }
-
-.fd-has-border-after-none {
-  border-right: none !important; }
-  [direction="rtl"] .fd-has-border-after-none, .fd-has-border-after-none[direction="rtl"] {
-    border-left: none !important; }
+.fd-has-border-radius-50percent {
+  border-radius: 50% !important; }
 
 .fd-has-border-none {
   border: none !important; }
+
+.fd-has-top-border-none {
+  border: none !important; }
+
+.fd-has-right-border-none {
+  border: none !important; }
+
+.fd-has-bottom-border-none {
+  border: none !important; }
+
+.fd-has-left-border-none {
+  border: none !important; }
+
+.fd-has-border-color-action,
+.fd-has-border-color-action-1 {
+  border-color: #0a6ed1 !important; }
+
+.fd-has-border-color-action-2 {
+  border-color: white !important; }
+
+.fd-has-border-color-text,
+.fd-has-border-color-text-1 {
+  border-color: #32363a !important; }
+
+.fd-has-border-color-text-2 {
+  border-color: #51555a !important; }
+
+.fd-has-border-color-text-3 {
+  border-color: #6a6d70 !important; }
+
+.fd-has-border-color-text-4 {
+  border-color: #74777a !important; }
+
+.fd-has-border-color-text-5 {
+  border-color: white !important; }
+
+.fd-has-border-color-background,
+.fd-has-border-color-background-1 {
+  border-color: #edeef0 !important; }
+
+.fd-has-border-color-background-2 {
+  border-color: white !important; }
+
+.fd-has-border-color-neutral,
+.fd-has-border-color-neutral-1 {
+  border-color: #fafafa !important; }
+
+.fd-has-border-color-neutral-2 {
+  border-color: #eeeeef !important; }
+
+.fd-has-border-color-neutral-3 {
+  border-color: #d9d9d9 !important; }
+
+.fd-has-border-color-neutral-4 {
+  border-color: #89919a !important; }
+
+.fd-has-border-color-status,
+.fd-has-border-color-status-1 {
+  border-color: #107f3e !important; }
+
+.fd-has-border-color-status-2 {
+  border-color: #e9730c !important; }
+
+.fd-has-border-color-status-3 {
+  border-color: #bd0000 !important; }
+
+.fd-has-border-color-status-4 {
+  border-color: #6d7678 !important; }
+
+.fd-has-border-color-accent,
+.fd-has-border-color-accent-1 {
+  border-color: #e38b16 !important; }
+
+.fd-has-border-color-accent-2 {
+  border-color: #dc7474 !important; }
+
+.fd-has-border-color-accent-3 {
+  border-color: #db1f77 !important; }
+
+.fd-has-border-color-accent-4 {
+  border-color: #c0399f !important; }
+
+.fd-has-border-color-accent-5 {
+  border-color: #6367de !important; }
+
+.fd-has-border-color-accent-6 {
+  border-color: #5899da !important; }
+
+.fd-has-border-color-accent-7 {
+  border-color: #13a4b4 !important; }
+
+.fd-has-border-color-accent-8 {
+  border-color: #7ca10c !important; }
+
+.fd-has-border-color-accent-9 {
+  border-color: #955ecf !important; }
+
+.fd-has-border-color-accent-10 {
+  border-color: #6c8893 !important; }
+
+.fd-has-border-color-accent-11 {
+  border-color: #d17f15 !important; }
+
+.fd-has-border-color-accent-12 {
+  border-color: #d04343 !important; }
+
+.fd-has-border-color-accent-13 {
+  border-color: #2b78c5 !important; }
+
+.fd-has-border-color-accent-14 {
+  border-color: #0f828f !important; }
+
+.fd-has-border-color-accent-15 {
+  border-color: #647887 !important; }
+
+.fd-has-border-color-shell,
+.fd-has-border-color-shell-1 {
+  border-color: #354a5f !important; }
+
+.fd-has-border-color-shell-2 {
+  border-color: #d1e8ff !important; }
+
+/*
+  @mixin fd-type mixin
+    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+  @params
+    $size: "-1", "0", "1", "2", "3", "4", "5"
+    $weight: "light", "normal", "bold"
+*/
+.fd-has-align-items-flex-end {
+  align-items: flex-end !important; }
+
+.fd-table.fd-has-first-child-text-align-right th:first-child, .fd-has-first-child-text-align-right.docs-table th:first-child,
+.fd-table.fd-has-first-child-text-align-right td:first-child,
+.fd-has-first-child-text-align-right.docs-table td:first-child {
+  text-align: right; }
+
+.fd-table.fd-has-last-child-text-align-right th:last-child, .fd-has-last-child-text-align-right.docs-table th:last-child,
+.fd-table.fd-has-last-child-text-align-right td:last-child,
+.fd-has-last-child-text-align-right.docs-table td:last-child {
+  text-align: right; }
+
+.fd-table.fd-has-nth-child-2-text-align-right th:nth-child(2), .fd-has-nth-child-2-text-align-right.docs-table th:nth-child(2),
+.fd-table.fd-has-nth-child-2-text-align-right td:nth-child(2),
+.fd-has-nth-child-2-text-align-right.docs-table td:nth-child(2) {
+  text-align: right; }
+
+.fd-table.fd-has-nth-child-3-text-align-right th:nth-child(3), .fd-has-nth-child-3-text-align-right.docs-table th:nth-child(3),
+.fd-table.fd-has-nth-child-3-text-align-right td:nth-child(3),
+.fd-has-nth-child-3-text-align-right.docs-table td:nth-child(3) {
+  text-align: right; }
+
+.fd-table.fd-has-nth-child-4-text-align-right th:nth-child(4), .fd-has-nth-child-4-text-align-right.docs-table th:nth-child(4),
+.fd-table.fd-has-nth-child-4-text-align-right td:nth-child(4),
+.fd-has-nth-child-4-text-align-right.docs-table td:nth-child(4) {
+  text-align: right; }
+
+.fd-table.fd-has-nth-child-5-text-align-right th:nth-child(5), .fd-has-nth-child-5-text-align-right.docs-table th:nth-child(5),
+.fd-table.fd-has-nth-child-5-text-align-right td:nth-child(5),
+.fd-has-nth-child-5-text-align-right.docs-table td:nth-child(5) {
+  text-align: right; }
+
+.fd-table.fd-has-nth-child-6-text-align-right th:nth-child(6), .fd-has-nth-child-6-text-align-right.docs-table th:nth-child(6),
+.fd-table.fd-has-nth-child-6-text-align-right td:nth-child(6),
+.fd-has-nth-child-6-text-align-right.docs-table td:nth-child(6) {
+  text-align: right; }
+
+.fd-table.fd-has-nth-child-7-text-align-right th:nth-child(7), .fd-has-nth-child-7-text-align-right.docs-table th:nth-child(7),
+.fd-table.fd-has-nth-child-7-text-align-right td:nth-child(7),
+.fd-has-nth-child-7-text-align-right.docs-table td:nth-child(7) {
+  text-align: right; }
+
+.fd-table.fd-has-nth-child-8-text-align-right th:nth-child(8), .fd-has-nth-child-8-text-align-right.docs-table th:nth-child(8),
+.fd-table.fd-has-nth-child-8-text-align-right td:nth-child(8),
+.fd-has-nth-child-8-text-align-right.docs-table td:nth-child(8) {
+  text-align: right; }
+
+.fd-table.fd-has-nth-child-9-text-align-right th:nth-child(9), .fd-has-nth-child-9-text-align-right.docs-table th:nth-child(9),
+.fd-table.fd-has-nth-child-9-text-align-right td:nth-child(9),
+.fd-has-nth-child-9-text-align-right.docs-table td:nth-child(9) {
+  text-align: right; }
 
 .has-accent-color {
   color: #5FA8EF; }
