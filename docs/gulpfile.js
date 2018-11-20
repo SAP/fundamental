@@ -23,11 +23,16 @@ const task = (cb) => {
 
 }
 
-const testVisual = (cb) => {
-	// process.chdir('..');
-	// test.testVisual();
-	// const promise = backstop('test');
-	cb();
+const testVisual = () => {
+	const promise = backstop('test');
+	promise.catch(function (error) {
+        // Tests failed.
+        process.exit(-1);
+    });        
+    promise.then(function() {
+        // All Tests passed
+        process.exit(0);
+    });
 }
 
 // require('../ops/gulp/test');
