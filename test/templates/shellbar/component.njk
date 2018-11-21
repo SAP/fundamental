@@ -134,7 +134,7 @@ shellbar:
 
 {% macro titlemenu(brand=brand, product=product, modifier={}, state={}, aria={}) -%}
   {%- set _id = utils.id() %}
-  <div class="fd-shellbar__titlemenu{{ modifier.block | modifier('product-menu') }}{{ state | state }}"{{ aria | aria }}>
+  <div class="fd-shellbar__titlemenu{{ state | state }}"{{ aria | aria }}>
     {{  popover(properties={
             id: _id,
             control: titlemenu_control(brand=brand, product=product, aria={ "controls": _id, "haspopup": true, "expanded": false}),
