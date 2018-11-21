@@ -61,12 +61,16 @@ shell_header:
 
 {% set brand = {
     name: "SAP",
-    logo: null
-} %}
+    logo: {
+
+    }
+  }
+%}
 
 {% set product = {
   title: "Corporate Portal",
   subtitle: "Subtitle",
+  brand: brand,
   items: [
       { "label": "Application A" },
       { "label": "Application B" },
@@ -115,17 +119,24 @@ shell_header:
   ]
 } %}
 
-{% macro shell_header(brand=brand,product=product,copilot=true,actions=actions,user=true,switcher=true, properties={}, modifier={}, state={}, aria={}) -%}
+{%- macro shell_logo(logo=brand.logo, name=brand.name) %}
+<div class="fd-shellbar__logo{{ ' fd-shellbar__logo--image-replaced' if not logo.src and not logo.svg  }}" aria-label="{{ name }}">
+  {%- if logo.src %}
+  {%- set comma = joiner() %}
+    <img src="{{ logo.src }}"{% if logo.srcset %} srcset="{% for item in logo.srcset %}{{ comma() -}} {{ item }} {{ loop.index }}x
+    {%- endfor %}"{% endif %} alt="">
+  {%- endif %}
+  {%- if logo.svg %}
+    {{ logo.svg }}
+  {%- endif %}
+</div>
+{% endmacro -%}
+
+{% macro shell_header(brand=brand,product=product,copilot=true,actions=actions,user=true,switcher=true, search=search_input_props, properties={}, modifier={}, state={}, aria={}) -%}
 {%- set _id = utils.id() %}
 <div class="fd-shellbar">
     <div class="fd-shellbar__group fd-shellbar__group--start">
-        <div class="fd-shellbar__logo">
-          {% if brand.logo %}
-            <img src="{{brand.logo}}" alt="{{brand.name}}">
-          {% else %}
-              <div class="fd-shellbar--brand" aria-label="{{brand.name}}"></div>
-          {% endif %}
-        </div>
+      {{ shell_logo(logo=brand.logo, name=brand.name) }}
         <div class="fd-shellbar__title">
           {% if product %}
             {{ product_menu(product) }}
@@ -142,22 +153,23 @@ shell_header:
       <img src="/static/copilot.png" alt="CoPilot" height="30" width="30" />
     </div>
     {% endif %}
-    {% if actions or user or switcher %}
-    <div class="fd-shellbar__group fd-shellbar__group--end">
-      {{ shell_actions(actions=actions, user=user, switcher=switcher, properties=properties) }}
+    {% if actions or user or switcher or search %}
+      <div class="fd-shellbar__group fd-shellbar__group--end">
+      {{ shell_actions(actions=actions, user=user, switcher=switcher, search=search,  properties=properties) }}
     </div>
     {% endif %}
   </div>
-
 {%- endmacro %}
 
-{% macro shell_actions(actions=actions, user=true, switcher=true, properties={}, modifier={}, state={}, aria={}) -%}
+{% macro shell_actions(actions=actions, user=true, switcher=true, search=false, properties={}, modifier={}, state={}, aria={}) -%}
   {% set collapsed_items = actions | filter_array("collapse",true) %}
     <div class="fd-shellbar__actions">
       {%- if actions %}
-        <div class="fd-shellbar__action fd-shellbar__action--hide">
-          {{ search_input(properties=search_input_props) }}
-        </div>
+        {%- if search %}
+          <div class="fd-shellbar__action fd-shellbar__action--hide">
+            {{ search_input(properties=search) }}
+          </div>
+        {% endif %}
         {%- for item in actions %}
             <div class="fd-shellbar__action fd-shellbar__action--hide">
                 {{item.action}}
