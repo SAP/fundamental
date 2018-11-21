@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const config = require('../config');
-
-let environment = require('../lib/environment');
+const environment = require('../lib/environment');
 
 const paths = {
 	src: `${config.root.css}/icons`,
@@ -9,9 +8,9 @@ const paths = {
 }
 
 const task = (cb) => {
-    let prefix = config.tasks.css.prefix;
-    return gulp.src([`${paths.src}/*`, `!${paths.src}/*.scss`])
+	gulp.src([`${paths.src}/*`, `!${paths.src}/*.scss`])
 		.pipe(gulp.dest(paths.dest));
+	cb();
 }
 
 gulp.task('pkg-icons', task);

@@ -187,6 +187,26 @@ Include <code>role="presentation"</code> when the identifier is only used for il
 {{ format(example) }}
 <br><br>
 
+<h3>thumbnail</h3>
+{%- set example %}
+{%- for size in sizes %}
+{{  identifier(
+    properties=data.properties,
+    modifier={
+        block: [size,"thumbnail"]
+    },
+    aria=data.aria
+)
+}}
+{%- endfor %}
+{%- endset %}
+{{ format(example) }}
+<br><br>
+
+
+
+
+
     <h2>circle</h2>
 {%- set example %}
 {% for size in sizes %}

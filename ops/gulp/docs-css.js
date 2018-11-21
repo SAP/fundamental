@@ -1,19 +1,16 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass');
-
-let environment = require('../lib/environment');
-
+const environment = require('../lib/environment');
 const paths = {
 	src: environment.production ? './dist' : './tmp',
 	dest: './docs/css'
 }
 
-let fundamentalCss = environment.production ? 'fiori-fundamentals.min.css' : 'fiori-fundamentals.css';
+const fundamentalCss = environment.production ? 'fiori-fundamentals.min.css' : 'fiori-fundamentals.css';
 
 const task = (cb) => {
-    return gulp.src([`${paths.src}/${fundamentalCss}`])
+    gulp.src(`${paths.src}/${fundamentalCss}`)
 		.pipe(gulp.dest(paths.dest));
-
+	cb();
 }
 
 gulp.task('docs-css', task);

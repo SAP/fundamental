@@ -1,0 +1,23 @@
+@import "./../settings";
+.#{$fd-namespace}-table {
+  &.#{$fd-namespace}-has-first-child-text-align-right {
+    th:first-child,
+    td:first-child {
+      text-align: right;
+    }
+  }
+  &.#{$fd-namespace}-has-last-child-text-align-right {
+    th:last-child,
+    td:last-child {
+      text-align: right;
+    }
+  }
+  @each $i in 2,3,4,5,6,7,8,9 {
+    &.#{$fd-namespace}-has-nth-child-#{$i}-text-align-right {
+      th:nth-child(#{$i}),
+      td:nth-child(#{$i}) {
+        text-align: right;
+      }
+    }
+  }
+}

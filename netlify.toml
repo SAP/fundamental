@@ -8,7 +8,7 @@
 [build]
   base    = "docs/"
   publish = "docs/_site"
-  command = "cp ../package.json . && npm i && gulp docs-site && ls css && bundle exec jekyll build"
+  command = "cp ../package.json . && npm i && cp -r node_modules ../node_modules/ && gulp docs-site && ls css && bundle exec jekyll build && gulp server:start &"
 
 # Production context: All deploys to the main
 # repository branch will inherit these settings.

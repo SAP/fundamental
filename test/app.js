@@ -4,8 +4,10 @@ const path = require('path');
 const app = express();
 const router = express.Router();
 const sass = require('node-sass');
+const signale = require('signale');
 
 const TEMPLATE_DIRECTORY = path.join(__dirname, 'templates');
+const MODULES_DIRECTORY = path.join(__dirname, 'modules');
 const PUBLIC_DIRECTORY = path.join(__dirname, 'public');
 const SASS_DIRECTORY = path.join(__dirname, '..', 'scss');
 
@@ -13,10 +15,10 @@ const GLOBALS = {
     namespace: 'fd'
 };
 const config = {
-    id: "fundamental"
+    id: "fundamentals"
 }
 // looks for html in templates folder, static resources in public
-const env = nunjucks.configure([TEMPLATE_DIRECTORY,PUBLIC_DIRECTORY], {
+var env = nunjucks.configure([TEMPLATE_DIRECTORY,PUBLIC_DIRECTORY,MODULES_DIRECTORY], {
     autoescape: false,
     cache: false,
     express: app,
@@ -30,7 +32,7 @@ env.addFilter('sass_to_css', (sassFile="app.scss") => {
             file: scss_filename
         }).css.toString();
     } catch(err) {
-        console.warn(`sassToCss: ${err.message}`);
+        signale.error(`sassToCss: ${err.message}`);
     }
 });
 // convert an array to classes
@@ -130,6 +132,14 @@ env.addFilter('filter_array', (array={}, key="", value="") => {
    return result;
 });
 
+// merge_objs
+// returns obj
+// obj1 | merge_objs(obj2)
+env.addFilter('merge_objs', function(obj1={},obj2={}) {
+  var result = {...obj1, ...obj2 };
+  return result;
+});
+
 app.set('views', TEMPLATE_DIRECTORY);
 app.set('view engine', 'njk');
 
@@ -166,7 +176,8 @@ function getStarterData() {
         "breadcrumb": require(`./templates/breadcrumb/data.json`),
         "localization_editor": require(`./templates/localization-editor/data.json`),
         "image": require(`./templates/image/data.json`),
-        "product_switcher": require(`./templates/product-switcher/data.json`)
+        "product_switcher": require(`./templates/product-switcher/data.json`),
+        "test": require(`./data/test.json`)
     };
     return data;
 }
@@ -188,30 +199,30 @@ router.get('/:key', (req, res) => {
     } finally {
 
     }
-    console.log(`Requested http://localhost:3030/${key}`);
+    signale.info(`Requested http://localhost:3030/${key}`);
     res.render(`${key}/index`, Object.assign(GLOBALS, { id: key, component: getStarterData(), data, libs: getLibs(req.query.lib) }));
 });
 
 
 router.get('/pages/:key', (req, res) => {
     const key = req.params.key;
-    console.log(`Requested http://localhost:3030/pages/${key}`);
+    signale.info(`Requested http://localhost:3030/pages/${key}`);
     res.render(`pages/${key}`, Object.assign(GLOBALS, { id: key, data: getStarterData(), app: config }));
 });
 router.get('/pages/app/:key', (req, res) => {
     const key = req.params.key;
-    console.log(`Requested http://localhost:3030/pages/app/${key}`);
+    signale.info(`Requested http://localhost:3030/pages/app/${key}`);
     res.render(`pages/app/${key}`, Object.assign(GLOBALS, { id: key, data: getStarterData(), app: config }));
 });
 router.get('/pages/floorplans/:key', (req, res) => {
     const key = req.params.key;
-    console.log(`Requested http://localhost:3030/pages/floorplans/${key}`);
+    signale.info(`Requested http://localhost:3030/pages/floorplans/${key}`);
     res.render(`pages/floorplans/${key}`, Object.assign(GLOBALS, { id: key, data: getStarterData(), app: config }));
 });
 
 
 app.listen(3030);
-console.log('Listening at http://localhost:3030')
+signale.watch('Listening at http://localhost:3030')
 module.exports = app;
 
 function getLibs(libQuery) {

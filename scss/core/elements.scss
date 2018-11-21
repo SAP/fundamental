@@ -81,15 +81,17 @@ a {
     display: inline-block;
     transition: all $fd-animation--speed ease-in;
     color: $fd-color--action;
-    &:focus{
-        outline: 1px dotted var(--fd-color-action-focus);
-    }
     @include fd-hover {
       color: fd-color-state("hover", "action");
     }
     @include fd-selected {
         color: fd-color-state("selected", "action");
         outline: none;
+    }
+    &:focus{
+      outline-style: dotted;
+      outline-width: 1px;
+      @include fd-var-color("outline-color", fd-color-state("hover","action"), --fd-color-action-focus)
     }
     @include fd-disabled {
         color: $fd-link-color--disabled;
