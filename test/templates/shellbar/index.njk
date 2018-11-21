@@ -4,10 +4,10 @@
 {% from "./../button/component.njk" import button %}
 {% from "./../product-switcher/component.njk" import product_switcher %}
 {% from "./../user-menu/component.njk" import user_menu %}
-{% from "./component.njk" import shell_header %}
+{% from "./component.njk" import shellbar %}
 {% from "./../search-input/component.njk" import search_input %}
 
-{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'components/identifier', 'components/popover', 'components/menu', 'components/product-switcher', 'components/product-menu', 'components/search-input', 'components/counter', 'components/user-menu', 'helpers'] %}
+{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'components/identifier', 'components/popover', 'components/menu', 'components/product-switcher', 'components/search-input', 'components/counter', 'components/user-menu', 'helpers'] %}
 
 {% set search = search_input(properties={
     "id": utils.id(),
@@ -40,28 +40,28 @@
     <h1>shellbar</h1>
 
     {% set example %}
-        {{  shell_header(switcher=true, properties=data.properties) }}
+        {{  shellbar(switcher=true, properties=data.properties) }}
     {% endset %}
     {{ format(example) }}
 
     {% set example %}
-        {{  shell_header(switcher=false) }}
+        {{  shellbar(switcher=false) }}
     {% endset %}
     {{ format(example) }}
 
 
     {% set example %}
-        {{  shell_header(product={ title: "Sales Cloud"}) }}
+        {{  shellbar(product={ title: "Sales Cloud"}) }}
     {% endset %}
     {{ format(example) }}
 
     {% set example %}
-        {{  shell_header(product={ title: "Product with a Very Very Very Very Very Very Long Name"}) }}
+        {{  shellbar(product={ title: "Product with a Very Very Very Very Very Very Long Name"}) }}
     {% endset %}
     {{ format(example) }}
 
     {% set example %}
-        {{  shell_header(
+        {{  shellbar(
           brand={
             logo: "http://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG3.png"},
             product={ title: "Corporate Portal"})
@@ -74,7 +74,7 @@
 
     <h2>CSS logo</h2>
     {% set example %}
-      {{ shell_header(
+      {{ shellbar(
         product={ title: "Portal" },
         copilot=false,
         actions=false,
@@ -94,7 +94,7 @@
         }
     } %}
     {% set example %}
-      {{ shell_header(
+      {{ shellbar(
         product={ title: "Portal" },
         copilot=false,
         actions=false,
@@ -115,7 +115,7 @@
         }
     } %}
     {% set example %}
-      {{ shell_header(
+      {{ shellbar(
         product={ title: "Portal" },
         copilot=false,
         actions=false,
@@ -135,7 +135,7 @@
         }
     } %}
     {% set example %}
-      {{ shell_header(
+      {{ shellbar(
         product={ title: "Portal" },
         copilot=false,
         actions=false,

@@ -61,7 +61,9 @@ $block: #{$fd-namespace}-shellbar;
     }
     &__logo,
     &__title,
-    &__title-menu,
+    &__titlemenu,
+    &__titlemenucontrol,
+    &__titlemenutitle,
     &__subtitle {
         display: inline-block;
         vertical-align: middle;
@@ -82,12 +84,17 @@ $block: #{$fd-namespace}-shellbar;
         max-width: $fd-shellbar-logo-width;
       }
     }
-    &__title {
+    &__title,
+    &__titlemenutitle {
         @include fd-type("1");
         @include fd-weight("bold");
-        line-height: 1;
+        line-height: 36px;
         padding: 0 $fd-shellbar-title-spacing;
         color: fd-color("text", 5);
+        height: 36px; // Match button height
+    }
+
+    &__title {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -95,10 +102,47 @@ $block: #{$fd-namespace}-shellbar;
         max-width: 60%;
     }
 
+    &__titlemenu {
+        .fd-popover__body--right {
+            right: -10px;
+        }
+    }
+    &__titlemenutitle {
+        position: relative;
+        // white-space: nowrap;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // min-width: 0;
+        // max-width: 60%;
+
+        &::after {
+          @include triangle(10px 5px, var(--fd-color-shell-2), down);
+          content: "";
+          position: absolute;
+          top: calc(50% - 2.5px);
+          right: 0;
+          // margin-left: 8px;
+          // margin-right: 8px;
+        }
+
+        // Show only on desktop, hide on s
+        @include fd-screen(s) {
+            display: none;
+        }
+        @include fd-screen(m) {
+            display: none;
+        }
+        @include fd-screen(l) {
+            display: inline-block;
+        }
+    }
+
     &__subtitle {
         @include fd-type("-1");
         @include fd-weight("reg");
         line-height: 1;
+        padding: 0 16px;
+
         // Show only on desktop, hide on s
         @include fd-screen(s) {
             display: none;
