@@ -4,11 +4,8 @@
 {% from "./component.njk" import breadcrumb %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-<<<<<<< HEAD:test/templates/breadcrumb/index.njk
 {% set css_deps = [] %}
-=======
-{% set css_deps = ['components/popover','components/menu','components/shellbar'] %}
->>>>>>> handles logos for mobile:test/templates/product-menu/index.njk
+
 
 {% block content %}
 <div style="background: #f3f4f5; margin:-20px; padding:20px;">
@@ -18,14 +15,8 @@
     <!-- output the component example and the code snippet -->
     {% set example %}
 
-<<<<<<< HEAD:test/templates/breadcrumb/index.njk
     {{  breadcrumb(
             properties=data.properties,
-=======
-    {{  product_menu(
-            product=data.properties,
-            brand=data.properties.brand,
->>>>>>> handles logos for mobile:test/templates/product-menu/index.njk
             modifier={
                 block: data.modifier.block
             },
