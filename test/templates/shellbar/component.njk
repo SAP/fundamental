@@ -133,24 +133,10 @@ shellbar:
   </div>
 {% endmacro -%}
 
-{% macro titlemenu(brand=brand, product=product, modifier={}, state={}, aria={}) -%}
-  {%- set _id = utils.id() %}
-  <div class="fd-shellbar__titlemenu{{ state | state }}"{{ aria | aria }}>
-    {{  popover(properties={
-            id: _id,
-            control: titlemenu_control(brand=brand, product=product, aria={ "controls": _id, "haspopup": true, "expanded": false}),
-            body: menu(properties={
-                "items": product.items
-            })
-        }, modifier={ block: ['right'] })
-    }}
-  </div>
-{%- endmacro %}
-
-
-{%- macro titlemenu_control(brand=brand, product=product, aria={}) -%}
-  <div class="fd-shellbar__titlemenucontrol"{{ aria | aria }} role="button">
-    <div class="fd-shellbar__titlemenulogo">
+{% macro shell_header(brand=brand,product=product,copilot=true,actions=actions,user=true,switcher=true, search=search_input_props, properties={}, modifier={}, state={}, aria={}, styles="") -%}
+{%- set _id = utils.id() %}
+<div class="fd-shellbar">
+    <div class="fd-shellbar__group fd-shellbar__group--start">
       {{ shell_logo(logo=brand.logo, name=brand.name) }}
         <div class="fd-shellbar__product">
           {% if product %}

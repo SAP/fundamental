@@ -97,12 +97,20 @@ $block: #{$fd-namespace}-shellbar;
     }
     &__product {
         padding: 0 fd-space(2) 0 $fd-shellbar-title-spacing;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 0;
+        @include fd-screen(s) {
+          max-width: 60%;
+        }
     }
     &__title {
         @include fd-type("1");
         @include fd-weight("bold");
         line-height: 1;
         color: fd-color("text", 5);
+        white-space: nowrap;
+        text-overflow: ellipsis;
         display: none;
         @include fd-screen(m) {
           display: inline-block;
