@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.2
+* Fiori Fundamentals v1.3.3
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -68,11 +68,7 @@
   font-weight: 700;
   line-height: 1;
   padding: 0 16px;
-  color: #fff;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-width: 0
+  color: #fff
 }
 .fd-shellbar__subtitle {
   font-size: .85714rem;
@@ -115,6 +111,7 @@
   vertical-align: middle
 }
 .fd-shellbar__action {
+  position: relative;
   padding-right: 0;
   padding-left: 12px
 }
@@ -147,6 +144,29 @@
   .fd-shellbar__action--collapse {
     display: none
   }
+}
+.fd-shellbar .fd-search-input .fd-input {
+  border: 1px solid var(--fd-color-shell-2);
+  background-color: var(--fd-color-shell-1);
+  color: var(--fd-color-shell-2)
+}
+.fd-shellbar .fd-search-input .fd-input:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none
+}
+.fd-shellbar .fd-user-menu--control {
+  border-radius: 4px
+}
+.fd-shellbar .fd-user-menu--control:hover {
+  background-color: #323d4d
+}
+.fd-shellbar .fd-user-menu--control.is-active,
+.fd-shellbar .fd-user-menu--control.is-pressed,
+.fd-shellbar .fd-user-menu--control.is-selected,
+.fd-shellbar .fd-user-menu--control:active,
+.fd-shellbar .fd-user-menu--control[aria-pressed=true],
+.fd-shellbar .fd-user-menu--control[aria-selected=true] {
+  background-color: #2a3341
 }
 @media (min-width:320px) {
   .fd-shellbar {

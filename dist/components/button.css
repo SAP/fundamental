@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.2
+* Fiori Fundamentals v1.3.3
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -33,18 +33,18 @@
   border-radius: 4px;
   height: var(--fd-forms-height);
   max-height: var(--fd-forms-height);
+  min-width: var(--fd-forms-height);
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
   line-height: 1;
   padding-left: 12px;
   padding-right: 12px;
-  min-width: var(--fd-forms-height);
   border-style: solid;
   border-width: 1px;
+  color: var(--fd-button-color);
   border-color: var(--fd-button-border-color);
   background-color: var(--fd-button-background-color);
-  color: var(--fd-button-color);
   -webkit-transition: all 125ms ease-in;
   transition: all 125ms ease-in
 }
@@ -141,11 +141,12 @@
 .fd-button--compact {
   height: var(--fd-forms-height-compact);
   max-height: var(--fd-forms-height-compact);
-  min-width: var(--fd-forms-height-compact);
-  font-size: 1rem;
-  line-height: 1.42857;
-  font-weight: 400;
-  line-height: 1
+  min-width: var(--fd-forms-height-compact)
+}
+@media (min-width:600px) {
+  .fd-button--compact {
+    min-width: var(--fd-forms-height)
+  }
 }
 .fd-button--emphasized {
   font-weight: 700;
@@ -334,7 +335,8 @@
 .fd-button-group .fd-button--light:active[class*=fd-button--],
 .fd-button-group .fd-button--light[aria-pressed=true][class*=fd-button--],
 .fd-button-group .fd-button--light[aria-selected=true][class*=fd-button--] {
-  --fd-button-background-color: var(--fd-color-status-4)
+  --fd-button-background-color: var(--fd-color-status-4);
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--light.fd-button--negative {
   --fd-button-color: var(--fd-color-status-3)
@@ -353,7 +355,8 @@
 .fd-button--light.fd-button--negative:active,
 .fd-button--light.fd-button--negative[aria-pressed=true],
 .fd-button--light.fd-button--negative[aria-selected=true] {
-  --fd-button-background-color: var(--fd-color-status-3)
+  --fd-button-background-color: var(--fd-color-status-3);
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--light.fd-button--positive {
   --fd-button-color: var(--fd-color-status-1)
@@ -372,7 +375,8 @@
 .fd-button--light.fd-button--positive:active,
 .fd-button--light.fd-button--positive[aria-pressed=true],
 .fd-button--light.fd-button--positive[aria-selected=true] {
-  --fd-button-background-color: var(--fd-color-status-1)
+  --fd-button-background-color: var(--fd-color-status-1);
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--light.fd-button--medium {
   --fd-button-color: var(--fd-color-status-2)
@@ -391,7 +395,8 @@
 .fd-button--light.fd-button--medium:active,
 .fd-button--light.fd-button--medium[aria-pressed=true],
 .fd-button--light.fd-button--medium[aria-selected=true] {
-  --fd-button-background-color: var(--fd-color-status-2)
+  --fd-button-background-color: var(--fd-color-status-2);
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--medium,
 .fd-button--negative,
@@ -465,6 +470,7 @@
 .fd-button--standard:hover,
 .fd-button-group .fd-button:hover,
 .fd-button-group :hover[class*=fd-button--] {
+  --fd-button-color: var(--fd-color-action-2);
   --fd-button-background-color: var(--fd-color-status-4)
 }
 .fd-button--standard:hover.is-disabled,
@@ -578,10 +584,22 @@
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent
 }
+.fd-button--shellheader[class*=sap-icon] {
+  padding: 0
+}
+.fd-button--shellheader[class*=sap-icon]::after,
+.fd-button--shellheader[class*=sap-icon]::before {
+  margin-right: 0;
+  margin-left: 0
+}
+.fd-button--shellheader:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none
+}
 .fd-button--shellheader:hover {
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
-  --fd-button-background-color: var(fd-color-darker(--fd-color-shell-1))
+  --fd-button-background-color: hsl(217, 21%, 25%)
 }
 .fd-button--shellheader.is-active,
 .fd-button--shellheader.is-pressed,
@@ -591,7 +609,7 @@
 .fd-button--shellheader[aria-selected=true] {
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
-  --fd-button-background-color: var(fd-color-darker(--fd-color-shell-1))
+  --fd-button-background-color: hsl(217, 21%, 21%)
 }
 .fd-button--shellheader.is-disabled,
 .fd-button--shellheader:disabled,
