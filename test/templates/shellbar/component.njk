@@ -2,6 +2,7 @@
 {% from "./../user-menu/component.njk" import user_menu %}
 {% from "./../popover/component.njk" import popover %}
 {% from "./../menu/component.njk" import menu %}
+{% from "./../product-menu/component.njk" import product_menu %}
 {% from "./../button/component.njk" import button %}
 {% from "./../product-switcher/component.njk" import product_switcher %}
 {% from "./../search-input/component.njk" import search_input %}
@@ -71,6 +72,7 @@ shellbar:
 {% set product = {
   title: "Corporate Portal",
   subtitle: "Subtitle",
+  brand: brand,
   items: [
       { "label": "Application A" },
       { "label": "Application B" },
@@ -132,45 +134,16 @@ shellbar:
   </div>
 {% endmacro -%}
 
-{% macro titlemenu(brand=brand, product=product, modifier={}, state={}, aria={}) -%}
-  {%- set _id = utils.id() %}
-  <div class="fd-shellbar__titlemenu{{ state | state }}"{{ aria | aria }}>
-    {{  popover(properties={
-            id: _id,
-            control: titlemenu_control(brand=brand, product=product, aria={ "controls": _id, "haspopup": true, "expanded": false}),
-            body: menu(properties={
-                "items": product.items
-            })
-        }, modifier={ block: ['right'] })
-    }}
-  </div>
-{%- endmacro %}
-
-
-{%- macro titlemenu_control(brand=brand, product=product, aria={}) -%}
-  <div class="fd-shellbar__titlemenucontrol"{{ aria | aria }} role="button">
-    <div class="fd-shellbar__titlemenulogo">
-      {{ shell_logo(logo=brand.logo, name=brand.name) }}
-    </div>
-    <div class="fd-shellbar__titlemenutitle">
-      {{ product.title }}
-    </div>
-  </div>
-{%- endmacro -%}
-
-
-{% macro shellbar(brand=brand,product=product,copilot=true,actions=actions,user=true,switcher=true, search=search_input_props, properties={}, modifier={}, state={}, aria={}) -%}
-  {%- set _id = utils.id() %}
-  <div class="fd-shellbar">
+{% macro shellbar(brand=brand,product=product,copilot=true,actions=actions,user=true,switcher=true, search=search_input_props, properties={}, modifier={}, state={}, aria={}, styles="") -%}
+{%- set _id = utils.id() %}
+<div class="fd-shellbar">
     <div class="fd-shellbar__group fd-shellbar__group--start">
-        {% if product.items %}
-          {{ titlemenu(brand,product) }}
-        {% else %}
-          {{ shell_logo(logo=brand.logo, name=brand.name) }}
-          <div class="fd-shellbar__title">
-            {{ product.title }}
-          </div>
-        {% endif %}
+      {{ shell_logo(logo=brand.logo, name=brand.name) }}
+        <div class="fd-shellbar__product">
+          {% if product %}
+            {{ product_menu(product=product,brand=brand) }}
+          {% endif %}
+        </div>
         {% if product.subtitle %}
           <div class="fd-shellbar__subtitle">
             {{ product.subtitle }}

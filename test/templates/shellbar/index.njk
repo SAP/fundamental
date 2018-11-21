@@ -4,10 +4,11 @@
 {% from "./../button/component.njk" import button %}
 {% from "./../product-switcher/component.njk" import product_switcher %}
 {% from "./../user-menu/component.njk" import user_menu %}
+{% from "./../product-menu/component.njk" import product_menu %}
 {% from "./component.njk" import shellbar %}
 {% from "./../search-input/component.njk" import search_input %}
 
-{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'components/identifier', 'components/popover', 'components/menu', 'components/product-switcher', 'components/search-input', 'components/counter', 'components/user-menu', 'helpers'] %}
+{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'components/identifier', 'components/popover', 'components/menu', 'components/product-switcher', 'components/search-input', 'components/counter', 'components/user-menu', 'components/product-menu', 'helpers'] %}
 
 {% set search = search_input(properties={
     "id": utils.id(),
@@ -95,7 +96,7 @@
     } %}
     {% set example %}
       {{ shellbar(
-        product={ title: "Portal" },
+        product={ title: "Aliquam erat nisl, aliquam pretium libero aliquet" },
         copilot=false,
         actions=false,
         user=false,
@@ -147,6 +148,88 @@
     {% endset %}
     {{ format(example) }}
 
-{% endblock %}
+    <br><br><hr><br>
+      <h1>Logo variations</h1>
 
-</div>
+
+    <h2>CSS logo</h2>
+    {% set example %}
+      {{ shellbar(
+        product={ title: "Aliquam erat nisl, aliquam pretium libero aliquet " },
+        copilot=false,
+        actions=false,
+        user=false,
+        switcher=false,
+        search=false
+      )}}
+    {% endset %}
+    {{ format(example) }}
+
+
+
+  <h2>Image logo</h2>
+
+    {% set airlines = {
+        name: "Airlines",
+        logo: {
+            src: "static/logos/airlines-logo.png"
+        }
+    } %}
+    {% set example %}
+      {{ shellbar(
+        product={ title: "Portal" },
+        copilot=false,
+        actions=false,
+        user=false,
+        switcher=false,
+        search=false,
+        brand=airlines
+      )}}
+    {% endset %}
+    {{ format(example) }}
+
+    <h2>Image srcset logo</h2>
+    {% set sap = {
+        name: "SAP",
+        logo: {
+            src: "static/logos/sap-logo.png",
+            srcset: ["static/logos/sap-logo@2x.png","static/logos/sap-logo@3x.png","static/logos/sap-logo@4x.png"]
+        }
+    } %}
+    {% set example %}
+      {{ shellbar(
+        product={ title: "Portal" },
+        copilot=false,
+        actions=false,
+        user=false,
+        switcher=false,
+        search=false,
+        brand=sap
+      )}}
+    {% endset %}
+    {{ format(example) }}
+
+
+    <h2>SVG logo</h2>
+    {% set fiori = {
+        name: "Fiori",
+        logo: {
+            svg: '<svg width="286" height="143" viewBox="0 0 286 143" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="-91.234%" y1="50%" x2="98.574%" y2="50%" id="a"><stop stop-color="#32B79D" stop-opacity=".59" offset="0%"/><stop stop-color="#33EAFF" stop-opacity=".59" offset="35.525%"/><stop stop-color="#7FCAFF" stop-opacity=".59" offset="73.603%"/><stop stop-color="#84A2FF" stop-opacity=".59" offset="100%"/></linearGradient></defs><g transform="translate(-19)" fill="url(#a)" fill-rule="evenodd"><path d="M114.232.963h190.464c0 16.966-13.754 30.72-30.72 30.72H83.512c0-16.966 13.754-30.72 30.72-30.72zM80.44 56.259h116.736c0 16.966-13.754 30.72-30.72 30.72H49.72c0-16.966 13.754-30.72 30.72-30.72zM49.72 111.555h18.432c0 16.966-13.754 30.72-30.72 30.72H19c0-16.966 13.754-30.72 30.72-30.72z"/></g></svg>'
+        }
+    } %}
+    {% set example %}
+      {{ shellbar(
+        product={ title: "Portal" },
+        copilot=false,
+        actions=false,
+        user=false,
+        switcher=false,
+        search=false,
+        brand=fiori
+      )}}
+    {% endset %}
+    {{ format(example) }}
+
+
+
+{% endblock %}

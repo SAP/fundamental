@@ -1,22 +1,21 @@
 {% extends "layout.njk" %}
 {% from "./../format.njk" import format %}
 {% from "../button/component.njk" import button %}
-{% from "./component.njk" import breadcrumb %}
+{% from "./component.njk" import product_menu %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = [] %}
-
+{% set css_deps = ['components/popover','components/menu','components/shellbar'] %}
 
 {% block content %}
-<div style="background: #f3f4f5; margin:-20px; padding:20px;">
 
-    <h1>breadcrumb</h1>
+    <h1>product-menu</h1>
 
     <!-- output the component example and the code snippet -->
     {% set example %}
 
-    {{  breadcrumb(
-            properties=data.properties,
+    {{  product_menu(
+            product=data.properties,
+            brand=data.properties.brand,
             modifier={
                 block: data.modifier.block
             },
@@ -27,6 +26,5 @@
     {% endset %}
     {{ format(example) }}
 
-</div>
 
 {% endblock %}
