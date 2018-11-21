@@ -97,7 +97,7 @@ $block: #{$fd-namespace}-shellbar;
     }
     &__product {
         padding: 0 fd-space(2) 0 $fd-shellbar-title-spacing;
-        overflow: hidden;
+        //overflow: hidden;
         text-overflow: ellipsis;
         min-width: 0;
         @include fd-screen(s) {
@@ -110,6 +110,8 @@ $block: #{$fd-namespace}-shellbar;
         line-height: 1;
         color: fd-color("text", 5);
         white-space: nowrap;
+        overflow: hidden;
+        max-width: 100%;
         text-overflow: ellipsis;
         display: none;
         @include fd-screen(m) {
