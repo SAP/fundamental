@@ -149,7 +149,9 @@ shellbar:
 
 {%- macro titlemenu_control(brand=brand, product=product, aria={}) -%}
   <div class="fd-shellbar__titlemenucontrol"{{ aria | aria }} role="button">
-    {{ shell_logo(logo=brand.logo, name=brand.name) }}
+    <div class="fd-shellbar__titlemenulogo">
+      {{ shell_logo(logo=brand.logo, name=brand.name) }}
+    </div>
     <div class="fd-shellbar__titlemenutitle">
       {{ product.title }}
     </div>

@@ -63,6 +63,7 @@ $block: #{$fd-namespace}-shellbar;
     &__title,
     &__titlemenu,
     &__titlemenucontrol,
+    &__titlemenulogo,
     &__titlemenutitle,
     &__subtitle {
         display: inline-block;
@@ -104,16 +105,12 @@ $block: #{$fd-namespace}-shellbar;
 
     &__titlemenu {
         .fd-popover__body--right {
-            right: -10px;
+            right: -12px;
         }
     }
+    &__titlemenulogo,
     &__titlemenutitle {
         position: relative;
-        // white-space: nowrap;
-        // overflow: hidden;
-        // text-overflow: ellipsis;
-        // min-width: 0;
-        // max-width: 60%;
 
         &::after {
           @include triangle(10px 5px, var(--fd-color-shell-2), down);
@@ -124,7 +121,31 @@ $block: #{$fd-namespace}-shellbar;
           // margin-left: 8px;
           // margin-right: 8px;
         }
+    }
+    &__titlemenulogo {
+        &::after {
+            @include fd-screen(s) {
+                display: block;
+            }
+            @include fd-screen(m) {
+                display: block;
+            }
+            @include fd-screen(l) {
+                display: none;
+            }
+        }
 
+        @include fd-screen(s) {
+            padding: 0 $fd-shellbar-title-spacing 0 0;
+        }
+        @include fd-screen(m) {
+            padding: 0 $fd-shellbar-title-spacing 0 0;
+        }
+        @include fd-screen(l) {
+            padding: 0;
+        }
+    }
+    &__titlemenutitle {
         // Show only on desktop, hide on s
         @include fd-screen(s) {
             display: none;
