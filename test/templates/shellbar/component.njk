@@ -40,7 +40,9 @@ shell_header:
     "items": properties.search.items
   })
 %}
+
 {% set action_notification = button({ label: counter(count=25,modifier="notification"), icon: 'bell' }, modifier={ block: ['shellheader'] }, aria={ label: "Notifications" }) %}
+
 {% set action_pool = button({ icon: 'pool' }, modifier={ block: ['shellheader'] }, aria={ label: "Pool" }) %}
 
 {% set actions = [
@@ -120,28 +122,32 @@ shell_header:
 } %}
 
 {%- macro shell_logo(logo=brand.logo, name=brand.name) %}
-<div class="fd-shellbar__logo{{ ' fd-shellbar__logo--image-replaced' if not logo.src and not logo.svg  }}" aria-label="{{ name }}">
-  {%- if logo.src %}
-  {%- set comma = joiner() %}
-    <img src="{{ logo.src }}"{% if logo.srcset %} srcset="{% for item in logo.srcset %}{{ comma() -}} {{ item }} {{ loop.index }}x
-    {%- endfor %}"{% endif %} alt="">
-  {%- endif %}
-  {%- if logo.svg %}
-    {{ logo.svg }}
-  {%- endif %}
-</div>
+  <div class="fd-shellbar__logo{{ ' fd-shellbar__logo--image-replaced' if not logo.src and not logo.svg  }}" aria-label="{{ name }}">
+    {%- if logo.src %}
+    {%- set comma = joiner() %}
+      <img src="{{ logo.src }}"{% if logo.srcset %} srcset="{% for item in logo.srcset %}{{ comma() -}} {{ item }} {{ loop.index }}x
+      {%- endfor %}"{% endif %} alt="">
+    {%- endif %}
+    {%- if logo.svg %}
+      {{ logo.svg }}
+    {%- endif %}
+  </div>
 {% endmacro -%}
 
 {% macro shell_header(brand=brand,product=product,copilot=true,actions=actions,user=true,switcher=true, search=search_input_props, properties={}, modifier={}, state={}, aria={}) -%}
 {%- set _id = utils.id() %}
 <div class="fd-shellbar">
     <div class="fd-shellbar__group fd-shellbar__group--start">
-      {{ shell_logo(logo=brand.logo, name=brand.name) }}
-        <div class="fd-shellbar__title">
-          {% if product %}
+        {% if product.items %}
+          <div class="fd-shellbar__titlemenu">
             {{ product_menu(product) }}
-          {% endif %}
-        </div>
+          </div>
+        {% else %}
+          {{ shell_logo(logo=brand.logo, name=brand.name) }}
+          <div class="fd-shellbar__title">
+            {{ product.title }}
+          </div>
+        {% endif %}
         {% if product.subtitle %}
           <div class="fd-shellbar__subtitle">
             {{ product.subtitle }}

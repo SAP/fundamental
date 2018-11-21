@@ -19,22 +19,19 @@ product_menu:
     state={},
     aria={}
 -->
+
 {% macro product_menu(properties={}, modifier={}, state={}, aria={}) -%}
-{%- set _id = utils.id() %}
-{%- if properties.items %}
-<div class="fd-product-menu{{ modifier.block | modifier('product-menu') }}{{ state | state }}"{{ aria | aria }}>
-  {{  popover(properties={
-          id: _id,
-          control: product_menu_control(properties={ "title": properties.title }, aria={ "controls": _id, "haspopup": true, "expanded": false}),
-          body: menu(properties={
-              "items": properties.items
-          })
-      }, modifier={ block: ['right'] })
-  }}
-</div>
-{%- else %}
-  {{ properties.title }}
-{%- endif %}
+  {%- set _id = utils.id() %}
+  <div class="fd-product-menu{{ modifier.block | modifier('product-menu') }}{{ state | state }}"{{ aria | aria }}>
+    {{  popover(properties={
+            id: _id,
+            control: product_menu_control(properties={ "title": properties.title }, aria={ "controls": _id, "haspopup": true, "expanded": false}),
+            body: menu(properties={
+                "items": properties.items
+            })
+        }, modifier={ block: ['right'] })
+    }}
+  </div>
 {%- endmacro %}
 
 
