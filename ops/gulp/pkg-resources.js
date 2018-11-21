@@ -3,7 +3,7 @@ const config = require('../config');
 const pkg = require('../../package');
 const paths = {
 	src: `${config.root.resources}`,
-	dest: `${config.root.dest}`
+	dest: `${config.root.dest}/resources`
 }
 
 const task = (cb) => {
