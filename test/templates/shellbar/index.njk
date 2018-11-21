@@ -36,7 +36,6 @@
     }
 </style>
 
-
 <div style="background-color: #f3f4f5; margin:-20px; padding:20px;">
     <h1>shellbar</h1>
 
@@ -52,31 +51,28 @@
 
 
     {% set example %}
-
         {{  shell_header(product={ title: "Sales Cloud"}) }}
-
     {% endset %}
     {{ format(example) }}
 
     {% set example %}
-
-            {{  shell_header(actions=actions) }}
-
+        {{  shell_header(product={ title: "Product with a Very Very Very Very Very Very Long Name"}) }}
     {% endset %}
     {{ format(example) }}
 
     {% set example %}
-
-                {{  shell_header(
-                  brand={
-                    logo: "http://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG3.png"},
-                    product={ title: "Corporate Portal"})
-                }}
+        {{  shell_header(actions=actions) }}
     {% endset %}
     {{ format(example) }}
 
-
-
+    {% set example %}
+        {{  shell_header(
+          brand={
+            logo: "http://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG3.png"},
+            product={ title: "Corporate Portal"})
+        }}
+    {% endset %}
+    {{ format(example) }}
 {% endblock %}
 
 </div>
