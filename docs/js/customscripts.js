@@ -149,7 +149,12 @@ $( document ).ready(function() {
 
 
     // display responsive docs controls
-    const displayControls = document.getElementsByClassName('docs-component--responsive-display__controls');
+    const displayControls = document.getElementById('docs-responsive-controls');
     console.log(displayControls);
+
+    displayControls.addEventListener('click', event => {
+
+        console.log('test');
+    })
 
 })();
