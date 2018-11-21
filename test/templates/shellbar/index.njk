@@ -4,10 +4,11 @@
 {% from "./../button/component.njk" import button %}
 {% from "./../product-switcher/component.njk" import product_switcher %}
 {% from "./../user-menu/component.njk" import user_menu %}
+{% from "./../product-menu/component.njk" import product_menu %}
 {% from "./component.njk" import shellbar %}
 {% from "./../search-input/component.njk" import search_input %}
 
-{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'components/identifier', 'components/popover', 'components/menu', 'components/product-switcher', 'components/search-input', 'components/counter', 'components/user-menu', 'helpers'] %}
+{% set css_deps = ['icons', 'components/button', 'components/dropdown', 'components/nav', 'components/identifier', 'components/popover', 'components/menu', 'components/product-switcher', 'components/search-input', 'components/counter', 'components/user-menu', 'components/product-menu', 'helpers'] %}
 
 {% set search = search_input(properties={
     "id": utils.id(),
@@ -135,7 +136,7 @@
         }
     } %}
     {% set example %}
-      {{ shell_header(
+      {{ shellbar(
         product={ title: "Portal" },
         copilot=false,
         actions=false,
@@ -153,7 +154,7 @@
 
     <h2>CSS logo</h2>
     {% set example %}
-      {{ shell_header(
+      {{ shellbar(
         product={ title: "Aliquam erat nisl, aliquam pretium libero aliquet " },
         copilot=false,
         actions=false,
@@ -175,7 +176,7 @@
         }
     } %}
     {% set example %}
-      {{ shell_header(
+      {{ shellbar(
         product={ title: "Portal" },
         copilot=false,
         actions=false,
@@ -196,7 +197,7 @@
         }
     } %}
     {% set example %}
-      {{ shell_header(
+      {{ shellbar(
         product={ title: "Portal" },
         copilot=false,
         actions=false,
@@ -217,7 +218,7 @@
         }
     } %}
     {% set example %}
-      {{ shell_header(
+      {{ shellbar(
         product={ title: "Portal" },
         copilot=false,
         actions=false,
@@ -232,5 +233,3 @@
 
 
 {% endblock %}
-
-</div>
