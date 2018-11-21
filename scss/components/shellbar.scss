@@ -123,6 +123,9 @@ $block: #{$fd-namespace}-shellbar;
         }
     }
     &__titlemenulogo {
+        height: 36px; // Match button height
+        padding-top: 4px;
+
         &::after {
             @include fd-screen(s) {
                 display: block;
@@ -136,13 +139,13 @@ $block: #{$fd-namespace}-shellbar;
         }
 
         @include fd-screen(s) {
-            padding: 0 $fd-shellbar-title-spacing 0 0;
+            padding-right: $fd-shellbar-title-spacing;
         }
         @include fd-screen(m) {
-            padding: 0 $fd-shellbar-title-spacing 0 0;
+            padding-right: $fd-shellbar-title-spacing;
         }
         @include fd-screen(l) {
-            padding: 0;
+            padding-right: 0;
         }
     }
     &__titlemenutitle {
