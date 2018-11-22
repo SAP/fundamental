@@ -19,7 +19,7 @@
   })
 %}
 
-{% set notification = button({ icon: 'bell' }, modifier={ block: ['shellheader'] }) %}
+{% set notification = button({ icon: 'bell' }, modifier={ block: ['shell'] }) %}
 
 {% set actions = [
   {
@@ -53,11 +53,6 @@
 
     {% set example %}
         {{  shellbar(product={ title: "Sales Cloud"}) }}
-    {% endset %}
-    {{ format(example) }}
-
-    {% set example %}
-        {{  shellbar(product={ title: "Product with a Very Very Very Very Very Very Long Name"}) }}
     {% endset %}
     {{ format(example) }}
 

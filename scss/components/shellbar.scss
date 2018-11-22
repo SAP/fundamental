@@ -160,18 +160,17 @@ $block: #{$fd-namespace}-shellbar;
         padding-right: 0;
         padding-left: $fd-shellbar-item-spacing;
 
-        &--hide {
-            // Show only on desktop, hide on s
-            @include fd-screen(s) {
-                display: none;
-            }
-            @include fd-screen(m) {
-                display: none;
-            }
-            @include fd-screen(l) {
-                display: inline-block;
-            }
+        // Show only on desktop, hide on s
+        @include fd-screen(s) {
+            display: none;
         }
+        @include fd-screen(m) {
+            display: none;
+        }
+        @include fd-screen(l) {
+            display: inline-block;
+        }
+
         &--collapse {
             // Show only on s, hide on desktop
             @include fd-screen(s) {
@@ -182,6 +181,19 @@ $block: #{$fd-namespace}-shellbar;
             }
             @include fd-screen(l) {
                 display: none;
+            }
+        }
+
+        &--show-always {
+            // Show only on desktop, hide on s
+            @include fd-screen(s) {
+                display: inline-block;
+            }
+            @include fd-screen(m) {
+                display: inline-block;
+            }
+            @include fd-screen(l) {
+                display: inline-block;
             }
         }
     }
