@@ -2,31 +2,37 @@
 {% assign display = include.display %}
 {% case display %}
   {% when "mobile" %}
-     {% assign width = "320" %}
+     {% assign width = "414" %}
+     {% assign height = "736" %}
   {% when "tablet" %}
      {% assign width = "720" %}
+     {% assign height = "1024" %}
   {% else %}
     {% if include.width %}
         {% assign width = include.width %}
     {% else %}
         {% assign width = "100%" %}
     {% endif %}
+    {% if include.height %}
+        {% assign height = include.height %}
+    {% else %}
+        {% assign height = "600" %}
+    {% endif %}
 {% endcase %}
-
 
 <div class="fd-tile docs-component docs-component__{{include.cssclass}}">
     {% if include.controls == "true" %}
     <div class="fd-button-group docs-component--responsive-display__controls" role="group" aria-label="Group label" id="docs-responsive-controls">
-      <button class="fd-button--compact sap-icon--iphone"></button>
-      <button class="fd-button--compact sap-icon--ipad"></button>
-      <button class="fd-button--compact sap-icon--popup-window"></button>
+      <button class="fd-button--compact sap-icon--iphone" aria-pressed="false"></button>
+      <button class="fd-button--compact sap-icon--ipad"  aria-pressed="false"></button>
+      <button class="fd-button--compact sap-icon--popup-window"  aria-pressed="false"></button>
     </div>
     {% endif %}
     <div class="fd-tile__content fd-tile__content--responsive-display">
         <iframe
         src="{{include.component}}"
         width="{{width}}"
-        height="500"
+        height="{{height}}"
         frameborder="0"
         class="docs-components-responsive-frame">
         </iframe>

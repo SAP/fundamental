@@ -12,12 +12,12 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 <!--
 display-responsive-component options:
-componnet = link to the component demo page
-width = iframe width, defaults to 100% if not defined
-height = iframe height, defaults to 500px if not defined
-controld = 'true'  or 'false' will toggle display of responsive control buttons
-display = 'mobile' will set the width to 320px and 'tablet' will set the width to 720. default to 100% if not defined
-
+component - link to the component demo page
+width - iframe width, defaults to 100% if not defined
+height - iframe height, defaults to 600px if not defined
+controls - 'true'  or 'false' will toggle display of responsive control buttons
+display - 'mobile' will set the width to 414px and height to 736px
+          'tablet' will set the width to 720 and height to 1024px.
 -->
 
 ## Mobile View
@@ -40,7 +40,7 @@ display = 'mobile' will set the width to 320px and 'tablet' will set the width t
 
 <br><br>
 
-### Full Width View
+### Full Width View with controls
 {: .docs-header-h2}
 {% include display-responsive-component.html
     component="/demo-pages/shell-demo-page.html"
@@ -49,7 +49,7 @@ display = 'mobile' will set the width to 320px and 'tablet' will set the width t
 
 <br><br>
 
-### Custom size
+### Custom size with controls
 {: .docs-header-h2}
 {% include display-responsive-component.html
     component="/demo-pages/shell-demo-page.html"
