@@ -56,8 +56,8 @@ This is used to confirm with the user before continuing with a destructive or co
         </div>
         <footer class="fd-modal__footer">
             <div class="fd-modal__actions">
-                <button class="fd-button--light">No</button>
                 <button class="fd-button">Yes</button>
+                <button class="fd-button--light">No</button>
             </div>
         </footer>
     </div>
@@ -90,8 +90,8 @@ This is used for short forms in order to collect information from the user.
         </div>
         <footer class="fd-modal__footer">
             <div class="fd-modal__actions">
-                <button class="fd-button--light">Cancel</button>
                 <button class="fd-button">Invite</button>
+                <button class="fd-button--light">Cancel</button>
             </div>
         </footer>
     </div>

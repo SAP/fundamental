@@ -26,11 +26,11 @@
 {%- set btns = [] %}
   {%- if is_editable_page %}
 {%- set btns = [button(
-          { label: 'Cancel' },
-          modifier={ block: ['secondary', 'l'] }
+          { label: 'Save' },
+          modifier={ block: ['main', 'l'] }
       ),    button(
-              { label: 'Save' },
-              modifier={block: [ 'main', 'l'] }
+              { label: 'Cancel' },
+              modifier={block: [ 'secondary', 'l'] }
           )] %}
     {# {%- else  %}
     {%- set btns = [button(
