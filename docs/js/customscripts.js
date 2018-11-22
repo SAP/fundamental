@@ -1,20 +1,20 @@
-$( document ).ready(function() {
+$(document).ready(function () {
 
     //AnchorJS
     anchors.add('.post-content>h2');
 
-    $('a[href="#"]').click(function(e) {
+    $('a[href="#"]').click(function (e) {
         e.preventDefault();
     });
 
 });
 
-(function() {
+(function () {
     //dropdown
     var els = document.querySelectorAll("[aria-controls]");
     for (var i = 0; i < els.length; i++) {
         var el = els[i];
-        el.addEventListener('click', function(e) {
+        el.addEventListener('click', function (e) {
             var targetId = this.getAttribute("aria-controls");
             var target = document.getElementById(targetId);
             //alert
@@ -39,6 +39,7 @@ $( document ).ready(function() {
             //tree
             var isTree = target.getAttribute("role") === "tree";
             var isTreeItem = target.getAttribute("role") === "treeitem";
+
             function setPressed(el, bool) {
                 el.setAttribute("aria-pressed", bool);
                 if (bool) {
@@ -47,6 +48,7 @@ $( document ).ready(function() {
                     el.classList.remove('is-pressed');
                 }
             }
+
             function setExpanded(el, bool) {
                 el.setAttribute("aria-expanded", bool);
                 //get group
@@ -60,16 +62,16 @@ $( document ).ready(function() {
             }
             var isPressed;
             //handle the primary trigger
-            if(isTree || isTreeItem) {
+            if (isTree || isTreeItem) {
                 isPressed = this.getAttribute("aria-pressed") === "true";
                 setPressed(this, !isPressed);
             }
             //toggle a single treeitem
-            if(isTreeItem) {
+            if (isTreeItem) {
                 setExpanded(target, !isPressed);
             }
             //toggle all treeitems
-            if(isTree) {
+            if (isTree) {
                 //all triggers
                 var controls = target.querySelectorAll("[aria-controls]");
                 for (var i = 0; i < controls.length; i++) {
@@ -100,7 +102,7 @@ $( document ).ready(function() {
         var tabs = tablist.querySelectorAll("[aria-controls]");
         for (var j = 0; j < tabs.length; j++) {
             var el = tabs[j];
-            el.addEventListener('click', function(e) {
+            el.addEventListener('click', function (e) {
                 e.preventDefault();
                 //check states
                 var isDisabled = this.getAttribute("aria-disabled") === "true";
@@ -133,7 +135,7 @@ $( document ).ready(function() {
     var toggle = document.getElementsByClassName("toggle-bg");
     for (var i = 0; i < toggle.length; i++) {
         toggle[i].addEventListener("change", function () {
-            if(this.checked) {
+            if (this.checked) {
                 this.closest('div').style.backgroundColor = "white";
             } else {
                 this.closest('div').style.backgroundColor = "#f3f4f5";
@@ -143,5 +145,5 @@ $( document ).ready(function() {
 
     //set the indeterminate state of checkbox
     const triStateCheckbox = document.getElementById('Ai4ez613');
-    triStateCheckbox.indeterminate=true;
+    if (triStateCheckbox) triStateCheckbox.indeterminate = true;
 })();

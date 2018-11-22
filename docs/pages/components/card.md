@@ -97,26 +97,33 @@ The card can also contain actions that can be performed on the object. This acti
 {% capture action-card %}
 <div class="fd-card fd-card--button">
     <div class="fd-card__content">
-         <h2 class="fd-card__header">
-             Lorem ipsum dolor quam placeat numquam repellendus
-         </h2>
-         <p class="fd-card__description">
-             Tenetur quam placeat ipsum dolor sit amet obcaecati molestias voluptatibus dolorum ut
-         </p>
-         <p class="fd-card__status">
-             <span class="fd-has-color-status-1">Voluptate quis adipisci sit</span>
-         </p>
+        <h2 class="fd-card__header">
+            Lorem ipsum dolor quam placeat numquam repellendus
+        </h2>
+        <p class="fd-card__description">
+            Tenetur quam placeat ipsum dolor sit amet obcaecati molestias voluptatibus dolorum ut
+        </p>
+        <p class="fd-card__status">
+            <span class="fd-has-color-status-1">Voluptate quis adipisci sit</span>
+        </p>
     </div>
     <div class="fd-card__actions">
-        <div class="fd-dropdown">
-            <button class=" fd-button--secondary fd-button--l sap-icon--vertical-grip" aria-controls="MXLTN784" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
-            <ul class="fd-dropdown__menu fd-contextual-menu" aria-hidden="true" id="MXLTN784">
-                <li><a href="#" class="fd-dropdown__item">Edit</a></li>
-                <li><a href="#" class="fd-dropdown__item">Delete</a></li>
-                <li><a href="#" class="fd-dropdown__item">Assign</a></li>
-                <li><a href="#" class="fd-dropdown__item">Expire</a></li>
-                <li><a href="#" class="fd-dropdown__item">Archive</a></li>
-            </ul>
+        <div class="fd-popover fd-popover--right">
+            <div class="fd-popover__control">
+                <button class="fd-button--light sap-icon--vertical-grip" aria-label="More" aria-expanded="false"
+                    aria-controls="MXLTN784" aria-haspopup="true"></button>
+            </div>
+            <div class="fd-popover__body fd-popover__body--right fd-popover__body--no-arrow" aria-hidden="true" id="MXLTN784">
+                <nav class="fd-menu" id="">
+                    <ul class="fd-menu__list">
+                        <li><a href="#" class="fd-menu__item">Edit</a></li>
+                        <li><a href="#" class="fd-menu__item">Delete</a></li>
+                        <li><a href="#" class="fd-menu__item">Assign</a></li>
+                        <li><a href="#" class="fd-menu__item">Expire</a></li>
+                        <li><a href="#" class="fd-menu__item">Archive</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
 </div>
