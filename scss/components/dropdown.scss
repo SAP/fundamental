@@ -6,7 +6,6 @@
 /*!
 .fd-dropdown+()
     .fd-dropdown__control+([disabled])
-    .fd-dropdown__menu+()
 */
 $block: #{$fd-namespace}-dropdown;
 .#{$block} {
@@ -149,29 +148,6 @@ $block: #{$fd-namespace}-dropdown;
             background-color:  transparent;
             border-left: none;
         }
-    }
-    &__menu {
-      padding-top: fd-space(base);
-      padding-bottom: fd-space(base);
-      margin-left: 0;
-      padding-left: 0;
-      min-width: 100%;
-      border: $fd-menu-border-color;
-      position: absolute;
-      white-space: nowrap;
-      z-index: $fd-menu-z-index;
-      border-radius: $fd-border-radius;
-      background-color: $fd-menu-background-color;
-      box-shadow: $fd-menu-box-shadow;
-      opacity: 1;
-      visibility: visible;
-      transition: opacity $fd-menu-transition-params;
-      margin-top: 1px;
-      &[aria-hidden="true"],
-      &.is-hidden {
-          opacity: 0;
-          visibility: hidden;
-      }
     }
     @include fd-menu();
 }
