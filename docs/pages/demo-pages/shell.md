@@ -7,4 +7,4 @@ toc: false
 permalink: demo-pages/shell-demo-page.html
 ---
 
-{% include display-responsive-components/shell.html title="Shell Demo Page" hide-add-btn="true" %}
+{% include demo-page-components/shell.html title="Shell Demo Page" hide-add-btn="true" %}

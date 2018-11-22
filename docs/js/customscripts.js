@@ -148,13 +148,21 @@ $( document ).ready(function() {
     }
 
 
-    // display responsive docs controls
-    const displayControls = document.getElementById('docs-responsive-controls');
-    console.log(displayControls);
-
-    displayControls.addEventListener('click', event => {
-
-        console.log('test');
-    })
+    // TODO: display responsive docs controls
+    // const displayControls = document.getElementById('docs-responsive-controls');
+    // console.log(displayControls);
+    //
+    // displayControls.addEventListener('click', event => {
+    //     const clickTarget = event.target;
+    //     let ctrlState = clickTarget.getAttribute('aria-pressed');
+    //     ctrlState = ctrlState === "false" ? "true" : "false";
+    //     clearControls();
+    //     clickTarget.setAttribute("aria-pressed", ctrlState);
+    //     console.log(setState);
+    // })
+    //
+    // function clearControls() {
+    //     displayControls.childNodes.setAttribute("aria-piressed", false);
+    // }
 
 })();
