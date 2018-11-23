@@ -19,6 +19,7 @@
   })
 %}
 
+
 {% set notification = button({ icon: 'bell' }, modifier={ block: ['shell'] }) %}
 
 {% set actions = [
@@ -41,7 +42,12 @@
     <h1>shellbar</h1>
 
     {% set example %}
-        {{  shellbar(switcher=true, properties=data.properties) }}
+        {{  shellbar(switcher=true) }}
+    {% endset %}
+    {{ format(example) }}
+
+    {% set example %}
+        {{  shellbar(switcher=true, search={ closed: false }) }}
     {% endset %}
     {{ format(example) }}
 

@@ -3677,26 +3677,26 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-button--negative:active, .fd-button--negative.is-active, .fd-button--negative[aria-selected="true"], .fd-button--negative.is-selected, .fd-button--negative[aria-pressed="true"], .fd-button--negative.is-pressed {
     --fd-button-background-color: var(--fd-color-status-3); }
 
-.fd-button--shellheader {
+.fd-button--shell {
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent; }
-  .fd-button--shellheader[class*="sap-icon"] {
+  .fd-button--shell[class*="sap-icon"] {
     padding: 0; }
-    .fd-button--shellheader[class*="sap-icon"]::before, .fd-button--shellheader[class*="sap-icon"]::after {
+    .fd-button--shell[class*="sap-icon"]::before, .fd-button--shell[class*="sap-icon"]::after {
       margin-right: 0;
       margin-left: 0; }
-  .fd-button--shellheader:focus {
+  .fd-button--shell:focus {
     box-shadow: none; }
-  .fd-button--shellheader:hover {
+  .fd-button--shell:hover {
     --fd-button-color: var(--fd-color-shell-2);
     --fd-button-border-color: transparent;
     --fd-button-background-color: hsl(217, 21%, 25%); }
-  .fd-button--shellheader:active, .fd-button--shellheader.is-active, .fd-button--shellheader[aria-selected="true"], .fd-button--shellheader.is-selected, .fd-button--shellheader[aria-pressed="true"], .fd-button--shellheader.is-pressed {
+  .fd-button--shell:active, .fd-button--shell.is-active, .fd-button--shell[aria-selected="true"], .fd-button--shell.is-selected, .fd-button--shell[aria-pressed="true"], .fd-button--shell.is-pressed {
     --fd-button-color: var(--fd-color-shell-2);
     --fd-button-border-color: transparent;
     --fd-button-background-color: hsl(217, 21%, 21%); }
-  .fd-button--shellheader[aria-disabled="true"], .fd-button--shellheader.is-disabled, .fd-button--shellheader:disabled {
+  .fd-button--shell[aria-disabled="true"], .fd-button--shell.is-disabled, .fd-button--shell:disabled {
     opacity: .25; }
 
 .fd-button--xs {
@@ -6003,7 +6003,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     padding: 10px 24px;
     color: #51555a;
     background-color: white;
-    font-weight: 400; }
+    font-weight: 400;
+    text-align: left; }
     .fd-menu__item > .fd-checkbox {
       margin: 0 10px 0 0; }
     .fd-menu__item:hover {
@@ -6906,12 +6907,12 @@ input-addon
 */
 .fd-search-input__control {
   position: relative; }
-  .fd-search-input__control > .fd-button--shellheader[aria-expanded="true"] {
+  .fd-search-input__control > .fd-button--shell[aria-expanded="true"] {
     position: relative;
     z-index: 2;
     --fd-button-border-color: transparent;
     --fd-button-background-color: transparent; }
-    .fd-search-input__control > .fd-button--shellheader[aria-expanded="true"]:focus {
+    .fd-search-input__control > .fd-button--shell[aria-expanded="true"]:focus {
       box-shadow: none; }
 
 .fd-search-input__closedcontrol {
@@ -7109,13 +7110,13 @@ input-addon
     padding-right: 0;
     padding-left: 12px; }
     @media (min-width: 320px) {
-      .fd-shellbar__action--hide {
+      .fd-shellbar__action {
         display: none; } }
     @media (min-width: 600px) {
-      .fd-shellbar__action--hide {
+      .fd-shellbar__action {
         display: none; } }
     @media (min-width: 1025px) {
-      .fd-shellbar__action--hide {
+      .fd-shellbar__action {
         display: inline-block; } }
     @media (min-width: 320px) {
       .fd-shellbar__action--collapse {
@@ -7126,6 +7127,15 @@ input-addon
     @media (min-width: 1025px) {
       .fd-shellbar__action--collapse {
         display: none; } }
+    @media (min-width: 320px) {
+      .fd-shellbar__action--show-always {
+        display: inline-block; } }
+    @media (min-width: 600px) {
+      .fd-shellbar__action--show-always {
+        display: inline-block; } }
+    @media (min-width: 1025px) {
+      .fd-shellbar__action--show-always {
+        display: inline-block; } }
   .fd-shellbar .fd-search-input .fd-input {
     border: 1px solid var(--fd-color-shell-2);
     background-color: var(--fd-color-shell-1);
