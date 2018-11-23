@@ -4,12 +4,7 @@ const replace = require('gulp-replace')
 const footer = require('gulp-footer')
 const yargs = require('yargs');
 const util = require('../lib/util');
-
-const fs = require('fs');
-
 const componentId = yargs.argv.component;
-const pageId = yargs.argv.page;
-
 const paths = {
 	src: './ops/misc',
     dest: {
@@ -23,10 +18,10 @@ const createTask = (cb) => {
     if (!componentId) {
         return;
     }
-    let componentMethod = util.underscorize(util.camelize(componentId));
-    let componentName = util.namerize(componentId);
+    const componentMethod = util.underscorize(util.camelize(componentId));
+    const componentName = util.namerize(componentId);
 
-    let templatePath = `${paths.dest.test}/templates/${componentId}`;
+    const templatePath = `${paths.dest.test}/templates/${componentId}`;
     //data file
     gulp.src(`${paths.src}/test-data.json`)
         .pipe(rename(`data.json`))
@@ -55,6 +50,8 @@ const createTask = (cb) => {
     gulp.src(`${paths.dest.lib}/components.scss`)
         .pipe(footer(`@import "components/${componentId}";\n`))
         .pipe(gulp.dest(`${paths.dest.lib}`));
+
+    cb();
 }
 
 gulp.task('create', createTask);

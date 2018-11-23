@@ -1,15 +1,13 @@
 const gulp = require('gulp');
-
-let environment = require('../lib/environment');
-
 const paths = {
 	src: './dist',
 	dest: './docs/css'
 }
 
 const task = (cb) => {
-    return gulp.src([`${paths.src}/*.woff`])
+    gulp.src([`${paths.src}/*.woff`])
 		.pipe(gulp.dest(paths.dest));
+	cb();
 }
 
 gulp.task('docs-icons', task);

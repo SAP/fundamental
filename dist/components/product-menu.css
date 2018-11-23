@@ -1,26 +1,43 @@
 /*!
-* Fiori Fundamentals v1.3.2
+* Fiori Fundamentals v1.3.3
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 /*!
 .fd-product-menu+()
 */
-.fd-product-menu__titlearrow,
-.fd-product-menu__titletext {
-  display: inline-block;
-  margin-right: 5px
+.fd-product-menu {
+  padding-right: 8px
 }
-.fd-product-menu__titlearrow {
+.fd-product-menu__control {
+  color: inherit;
   position: relative;
-  text-indent: -9999px;
-  overflow: hidden;
-  width: 10px;
-  height: 5px;
-  -webkit-transform: translateY(-3px);
-  transform: translateY(-3px)
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-smoothing: antialiased;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  border: 0;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  height: var(--fd-forms-height);
+  position: relative;
+  padding-right: 20px;
+  padding-left: 0
 }
-.fd-product-menu__titlearrow::before {
+.fd-product-menu__control::after {
   height: 0;
   width: 0;
   border-left: 5px solid transparent;
@@ -28,9 +45,10 @@
   border-top: 5px solid var(--fd-color-shell-2);
   content: "";
   position: absolute;
-  top: 0;
-  left: 0
+  top: calc(50% - 2.5px);
+  margin-left: 8px;
+  margin-right: 8px
 }
 .fd-product-menu .fd-popover__body--right {
-  right: -7px
+  right: -10px
 }

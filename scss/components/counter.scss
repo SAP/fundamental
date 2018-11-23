@@ -1,0 +1,35 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+@import "./../icons/mixins";
+/*!
+.fd-counter+(--notification)
+*/
+$block: #{$fd-namespace}-counter;
+.#{$block} {
+  // VARIABLES
+  $fd-counter-radius: $fd-border-radius !default;
+  $fd-counter-background: fd-color("status", 4) !default;
+  $fd-counter-color: fd-color("text", 5) !default;
+  $fd-counter-font-size: 0.785714285714286em !default;
+
+  border-radius: $fd-counter-radius;
+  background: $fd-counter-background;
+  color: $fd-counter-color;
+  font-size: $fd-counter-font-size;
+  line-height: 1;
+  display: inline-block;
+  text-align: center;
+  padding: fd-space(1);
+  &--notification {
+    background-color: fd-color("status", 3);
+    position: absolute;
+    transform: translate(-40%, -50%);
+    @at-root {
+      [dir="rtl"] &,
+      &[dir="rtl"] {
+        transform: translate(40%, -50%);
+      }
+    }
+  }
+}

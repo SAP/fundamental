@@ -1,6 +1,7 @@
 {# ui-level vars #}
 {%- set hide_ui_header = hide_ui_header or false %}
 {%- set hide_ui_footer = hide_ui_footer or false %}
+{%- set fix_ui_header = true if fix_ui_header != false %}
 {%- set fix_ui_footer = fix_ui_footer or false %}
 {%- set show_ui_overlay = show_ui_overlay or false %}
 {%- set fix_ui = (fix_ui_footer and fix_ui_header) or (hide_ui_footer and fix_ui_header) %}
@@ -12,15 +13,17 @@
     <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ id }}</title>
-    <style media="screen">
+    <style>
     {% set core_sass = 'all.scss' %}
     {{ core_sass | sass_to_css }}
     </style>
+    {% block styles -%}
+    {%- endblock %}
 </head>
 <body>
-    <div class="fd-shell{{ 'fixed' | modifier('ui') if fix_ui }} fd-shell--{{ app.id }}">
+    <div class="fd-shell{{ 'fixed' | modifier('shell') if fix_ui }} fd-shell--{{ app.id }}">
         {% if hide_ui_header !== true %}
-        <div class="fd-shell__header{{ 'fixed' | modifier('ui__header') if fix_ui_header and fix_ui === false }}">
+        <div class="fd-shell__header{{ 'fixed' | modifier('shell__header') if fix_ui_header and fix_ui === false }}">
         {% block ui_header -%}
         {%- endblock %}
         </div>
@@ -47,5 +50,6 @@
         {%- endif %}
     </div>
     <script type="text/javascript" src="/static/controls.js"></script>
+    <script type="text/javascript" src="/static/contexts.js"></script>
 </body>
 </html>

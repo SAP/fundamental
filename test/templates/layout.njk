@@ -30,19 +30,26 @@
         textarea.test-textarea { font-family: monospace; height: 200px; width: 100%; padding: 10px; font-size: 0.9rem; border: solid 1px rgba(0,0,0,0.1); }
     </style>
 </head>
-<body>
+<body class="">
     <header style="border-bottom: solid 6px lightgray; padding-bottom: 10px; margin-bottom: 10px;">
         <form action="#" method="get">
 
         <fieldset style="font-family: monospace;font-size: 14px;">
-            <label class="test-label fd-has-float-right"><input type="checkbox"  value="" id="toggleBg"> Toggle BG</label>
-            <label class="test-label fd-has-float-right"><input type="checkbox"  value="" id="toggleDir"> Toggle RTL</label>
-            <label class="test-label"><input type="checkbox" name="lib" value="b3" {{'checked' if libs.b3 }}> bootstrap/3.3.7</label>
+            <label class="test-label"><input type="checkbox"  value="" id="toggleBg"> Toggle BG</label>
+            <span class="fd-has-float-right">
+            Contexts:
+
+            <label class="test-label"><input type="checkbox"  value="" id="toggleDir"> RTL</label>
+            <label class="test-label" title="Enables touch metrics"><input type="checkbox"  value="" id="toggleTouch"> Touch</label>
+            <label class="test-label" title="Forces compact metrics"><input  type="checkbox"  value="" id="toggleCompact"> Compact</label>
+
+          </span>
+            {# <label class="test-label"><input type="checkbox" name="lib" value="b3" {{'checked' if libs.b3 }}> bootstrap/3.3.7</label>
             <label class="test-label"><input type="checkbox" name="lib" value="b4" {{'checked' if libs.b4 }}> bootstrap/4.0.0-beta</label>
             <label class="test-label"><input type="checkbox" name="lib" value="md" {{'checked' if libs.md }}>
 angular_material/1.1.4</label>
             <label class="test-label"><input type="checkbox" name="lib" value="tn" {{'checked' if libs.tn }}> techne/1.5.7</label>
-            <button type="submit" class="fd-button--small">Submit</button>
+            <button type="submit" class="fd-button--small">Submit</button> #}
 
         </fieldset>
 
@@ -107,6 +114,39 @@ angular_material/1.1.4</label>
                   localStorage.setItem("toggleDirState", false);
                 }
             });
+
+            var toggleTouch = document.getElementById("toggleTouch"),
+                toggleTouchState = localStorage.getItem('toggleTouch');
+            if(toggleTouchState ==  "true") {
+                toggle.checked = true;
+                document.body.classList.add("fd-for-touch");
+            }
+            toggleTouch.addEventListener( 'change', function() {
+                if(this.checked) {
+                    document.body.classList.add("fd-for-touch");
+                    localStorage.setItem("toggleTouchState", true);
+                } else {
+                  document.body.classList.remove("fd-for-touch");
+                  localStorage.setItem("toggleTouchState", false);
+                }
+            });
+
+            var toggleCompact = document.getElementById("toggleCompact"),
+                toggleCompactState = localStorage.getItem('toggleCompact');
+            if(toggleCompactState ==  "true") {
+                toggle.checked = true;
+                document.body.classList.add("fd-for-compact");
+            }
+            toggleCompact.addEventListener( 'change', function() {
+                if(this.checked) {
+                    document.body.classList.add("fd-for-compact");
+                    localStorage.setItem("toggleCompactState", true);
+                } else {
+                  document.body.classList.remove("fd-for-compact");
+                  localStorage.setItem("toggleCompactState", false);
+                }
+            });
+
 
 
 

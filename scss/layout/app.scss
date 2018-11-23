@@ -3,41 +3,44 @@
 @import "./../mixins";
 /*!
 .fd-app
-    .fd-app__sidebar
-    .fd-app__main
+  .fd-app__navigation+(--horizontal|--vertical)
+  .fd-app__sidebar
+  .fd-app__main
 */
 $block: #{$fd-namespace}-app;
 .#{$block} {
+  $fd-app-navigation-background-color: fd-color("background", 2) !default;
+  $fd-app-navigation-height: fd-space(13) !default;
   $fd-app-sidebar-width: 250px !default;
-  $fd-app-sidebar-height--minimized: 40px !default;
-  $fd-app-sidebar-width--minimized: 80px !default;
-  $fd-app-sidebar-background-color: $fd-background-color--sidebar !default;
-  $fd-app-sidebar-border-bottom: solid 1px fd-color("neutral",3) !default;
+  position: relative;
   width: 100%;
-  min-height: calc(100vh - 50px);
-  @include fd-screen(s) {
+  @include fd-screen(m) {
     display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
   }
-  &__sidebar {
-    background-color: $fd-app-sidebar-background-color;
-    width: 100vw;
-    max-height: $fd-app-sidebar-height--minimized;
-    border-right: $fd-app-sidebar-border-bottom;
-    @include fd-screen(s) {
-      width: $fd-app-sidebar-width;
-      max-height: 100%;
+  &__navigation {
+    background-color: $fd-app-navigation-background-color;
+    height: $fd-app-navigation-height;
+    max-height: $fd-app-navigation-height;
+    display: flex;
+    &--horizontal {
+      flex: 1 100%;
+      padding: 0 $fd-padding--ui;
+      padding: 0 var(--fd-padding-ui);
     }
-    @include fd-screen(l) {
-      width: $fd-app-sidebar-width;
-      &:hover {
-        width: $fd-app-sidebar-width;
-        margin-right: 0;
+    &--vertical {
+      flex: 0;
+      @include fd-screen(m) {
+        max-width: $fd-app-sidebar-width;
+        position: relative;
+        height: 100%;
+        max-height: inherit;
       }
     }
-    overflow: auto;
   }
   &__main {
-    flex: 1;
+    flex: 1 auto;
     overflow: auto;
   }
 }

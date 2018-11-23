@@ -11,9 +11,13 @@ Identifier is a way to visually present something using an icon or user initials
 
 There are four sizes:
 - Default matches the base font size (14px)
-- Small (`--s`) - 28px
-- Medium (`--m`) - 36px
-- Large (`--l`) - 48px
+- Extra Extra Small (`--xxs` - 20px)
+- Extra Small (`--xs` - 28px)
+- Small (`--s`) - 32px
+- Medium (`--m`) - 48px
+- Large (`--l`) - 64px
+- Extra Large (`--xl`) - 88px
+- Extra Extra Large (`--xxl`) - 112px
 
 <hr>
 
@@ -21,9 +25,13 @@ There are four sizes:
 Include `role="presentation"` when the identifier is used for only illustrative purposes. For example, if the icon sits right next to a label, use role.
 
 {% capture identifier-icon %}
+<span class=" fd-identifier--xxs sap-icon--washing-machine" role="presentation"></span>
+<span class=" fd-identifier--xs sap-icon--washing-machine" role="presentation"></span>
 <span class=" fd-identifier--s sap-icon--washing-machine" role="presentation"></span>
 <span class=" fd-identifier--m sap-icon--washing-machine" role="presentation"></span>
 <span class=" fd-identifier--l sap-icon--washing-machine" role="presentation"></span>
+<span class=" fd-identifier--xl sap-icon--washing-machine" role="presentation"></span>
+<span class=" fd-identifier--xxl sap-icon--washing-machine" role="presentation"></span>
 {% endcapture %}
 {% include display-component.html component=identifier-icon %}
 <br>
@@ -32,9 +40,13 @@ Include `role="presentation"` when the identifier is used for only illustrative 
 Include aria-label when there is no text equivalent for the identifier. This is not necessary if the identifier is used for illustrative purposes only. See Icon above.
 
 {% capture identifier-initials %}
+<span class=" fd-identifier--xxs" aria-label="Wendy Wallace">WW</span>
+<span class=" fd-identifier--xs" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--s" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--m" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--l" aria-label="Wendy Wallace">WW</span>
+<span class=" fd-identifier--xl" aria-label="Wendy Wallace">WW</span>
+<span class=" fd-identifier--xxl" aria-label="Wendy Wallace">WW</span>
 {% endcapture %}
 {% include display-component.html component=identifier-initials %}
 <br>
@@ -43,29 +55,66 @@ Include aria-label when there is no text equivalent for the identifier. This is 
 A circle style can be rendered using the `--circle` modifier.
 
 {% capture identifier-circle %}
+<span class=" fd-identifier--xxs fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
+<span class=" fd-identifier--xs fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--s fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--m fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--l fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
-<br><br>
+<span class=" fd-identifier--l fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
+<span class=" fd-identifier--l fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
+
+<span class=" fd-identifier--xxs fd-identifier--circle" aria-label="Wendy Wallace">WW</span>
+<span class=" fd-identifier--xs fd-identifier--circle" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--s fd-identifier--circle" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--m fd-identifier--circle" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--l fd-identifier--circle" aria-label="Wendy Wallace">WW</span>
+<span class=" fd-identifier--xl fd-identifier--circle" aria-label="Wendy Wallace">WW</span>
+<span class=" fd-identifier--xxl fd-identifier--circle" aria-label="Wendy Wallace">WW</span>
 {% endcapture %}
 {% include display-component.html component=identifier-circle %}
 <br>
+
+
+## Background image
+
+A background image can be applied to any style using the `--thumbnail` modifier.
+
+{% capture identifier-thumbnail %}
+<span class=" fd-identifier--xxs fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+<span class=" fd-identifier--xs fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+<span class=" fd-identifier--s fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+<span class=" fd-identifier--m fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+<span class=" fd-identifier--l fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+<span class=" fd-identifier--xl fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+<span class=" fd-identifier--xxl fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+
+
+{% endcapture %}
+{% include display-component.html component=identifier-thumbnail %}
+<br>
+
+
 
 ## Transparent
 
 A transparent style can be rendered using the `--transparent` modifier.
 
 {% capture identifier-transparent %}
+<span class=" fd-identifier--xxs fd-identifier--circle fd-identifier--transparent sap-icon--money-bills" role="presentation"></span>
+<span class=" fd-identifier--xs fd-identifier--circle fd-identifier--transparent sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--s fd-identifier--circle fd-identifier--transparent sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--m fd-identifier--circle fd-identifier--transparent sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--l fd-identifier--circle fd-identifier--transparent sap-icon--money-bills" role="presentation"></span>
-<br><br>
+<span class=" fd-identifier--xl fd-identifier--circle fd-identifier--transparent sap-icon--money-bills" role="presentation"></span>
+<span class=" fd-identifier--xxl fd-identifier--circle fd-identifier--transparent sap-icon--money-bills" role="presentation"></span>
+
+<span class=" fd-identifier--xxs fd-identifier--circle fd-identifier--transparent" aria-label="Wendy Wallace">WW</span>
+<span class=" fd-identifier--xs fd-identifier--circle fd-identifier--transparent" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--s fd-identifier--circle fd-identifier--transparent" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--m fd-identifier--circle fd-identifier--transparent" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--l fd-identifier--circle fd-identifier--transparent" aria-label="Wendy Wallace">WW</span>
+<span class=" fd-identifier--xl fd-identifier--circle fd-identifier--transparent" aria-label="Wendy Wallace">WW</span>
+<span class=" fd-identifier--xxl fd-identifier--circle fd-identifier--transparent" aria-label="Wendy Wallace">WW</span>
 {% endcapture %}
 {% include display-component.html component=identifier-transparent %}
 <br>
