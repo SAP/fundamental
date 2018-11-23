@@ -186,12 +186,12 @@ shellbar:
     <div class="fd-shellbar__actions">
       {%- if actions %}
         {%- if search %}
-          <div class="fd-shellbar__action">
+          <div class="fd-shellbar__action fd-shellbar__action--collapsible">
             {{ search_input(properties=search) }}
           </div>
         {% endif %}
         {%- for item in actions %}
-            <div class="fd-shellbar__action">
+            <div class="fd-shellbar__action fd-shellbar__action--collapsible">
                 {{item.action}}
             </div>
         {%- endfor %}
@@ -233,7 +233,7 @@ shellbar:
             </div>
         {%- endif %}
         {%- if switcher %}
-            <div class="fd-shellbar__action">
+            <div class="fd-shellbar__action fd-shellbar__action--collapsible">
               {{ product_switcher() }}
             </div>
         {%- endif %}

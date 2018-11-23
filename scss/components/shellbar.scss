@@ -184,6 +184,19 @@ $block: #{$fd-namespace}-shellbar;
             }
         }
 
+        &--collapsible {
+            // Show only on desktop, hide on s
+            @include fd-screen(s) {
+                display: none;
+            }
+            @include fd-screen(m) {
+                display: none;
+            }
+            @include fd-screen(l) {
+                display: inline-block;
+            }
+        }
+
         &--show-always {
             // Show only on desktop, hide on s
             @include fd-screen(s) {
