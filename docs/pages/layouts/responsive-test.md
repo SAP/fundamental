@@ -23,7 +23,7 @@ display - 'mobile' will set the width to 414px and height to 736px
 ## Mobile View
 {: .docs-header-h2}
 {% include display-responsive-component.html
-    component="/demo-pages/shell-demo-page.html"
+    component="/demo-pages/shell.html"
     controls="false"
     display="mobile"
     cssclass="responsive-demo" %}
@@ -33,7 +33,7 @@ display - 'mobile' will set the width to 414px and height to 736px
 ## Tablet View
 {: .docs-header-h2}
 {% include display-responsive-component.html
-    component="/demo-pages/shell-demo-page.html"
+    component="/demo-pages/shell.html"
     controls="false"
     display="tablet"
     cssclass="responsive-demo" %}
@@ -43,7 +43,7 @@ display - 'mobile' will set the width to 414px and height to 736px
 ### Full Width View with controls
 {: .docs-header-h2}
 {% include display-responsive-component.html
-    component="/demo-pages/shell-demo-page.html"
+    component="/demo-pages/shell.html"
     controls="true"
     cssclass="responsive-demo" %}
 
@@ -52,7 +52,7 @@ display - 'mobile' will set the width to 414px and height to 736px
 ### Custom size with controls
 {: .docs-header-h2}
 {% include display-responsive-component.html
-    component="/demo-pages/shell-demo-page.html"
+    component="/demo-pages/shell.html"
     controls="true"
     width="500"
     height="400"
