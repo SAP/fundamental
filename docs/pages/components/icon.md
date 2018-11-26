@@ -23,6 +23,13 @@ Icons are used throughout the UI to save space, allow for visual clarity and foc
 
 <br />
 
+## Icon animations
+{% capture icon %}
+<span class="sap-icon--synchronize sap-icon--xl sap-icon--animate-spin"></span>
+<span class="sap-icon--synchronize sap-icon--xl sap-icon--animate-pulse"></span>
+{% endcapture %}
+{% include display-component.html component=icon class="icon" %}
+
 ## Available Icons
 {% for icon in site.data.icons %}
 <div class="demo-icon-wrapper">

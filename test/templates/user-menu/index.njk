@@ -1,22 +1,52 @@
 {% extends "layout.njk" %}
-{% from "./component.njk" import user_menu %}
+{% from "./component.njk" import user_menu, user_menu_control %}
 {% from "./../format.njk" import format %}
 
-{% set css_deps = ['fonts','helpers', 'components/popover', 'components/menu', 'components/identifier', 'components/notification-counter', 'icons'] %}
+{% set css_deps = ['fonts','helpers', 'components/popover', 'components/menu', 'components/image', 'components/identifier', 'components/counter', 'icons'] %}
 
 {% block content %}
+<style media="screen">
+
+</style>
 <div style="background-color: #f3f4f5; margin:-20px; padding:50px 100px;">
-    <h1>User Menu (w/ notification-counter)</h1>
+  <h1><code>user-menu__control</code> types
+    </h1>
+
+  {% set controls %}
+    {{ user_menu_control(thumbnail="") }}
+    {{ user_menu_control() }}
+    {{ user_menu_control(notifications=5) }}
+    {{ user_menu_control(notifications=5000) }}
+
+  {% endset %}
+{{ format(controls) }}
+
+
+  <h1>User Menu (w/ initials)</h1>
+  {% set basic_user_menu %}
+      {{ user_menu(thumbnail="") }}
+  {% endset %}
+{{ format(basic_user_menu) }}
+
+    <h1>User Menu (w/ thumbnail)</h1>
     {% set basic_user_menu %}
-        {{ user_menu(properties={
-            "initials": data.properties.initials,
-            "name": data.properties.name,
-            "items": data.properties.items,
-            "notifications": 5
-          })
+        {{ user_menu(
+          )
         }}
     {% endset %}
+  {{ format(basic_user_menu) }}
 
-    {{ format(basic_user_menu) }}
+
+  <br>
+  <h1>User Menu (w/ counter)</h1>
+  {% set basic_user_menu %}
+      {{ user_menu(
+          notifications=5
+        )
+      }}
+  {% endset %}
+  {{ format(basic_user_menu) }}
+
+
 </div>
 {% endblock %}

@@ -27,6 +27,16 @@
   }
 }
 
+//animate mixin
+@mixin fd-icon-animate($type: "spin") {
+  display: inline-block;
+  @if $type == "spin" {
+    animation: sap-icon-spin 2s infinite linear;
+  } @else if $type == "pulse" {
+    animation: sap-icon-spin 2s infinite steps(8);
+  }
+}
+
 //size mixin
 @mixin fd-icon-size($size: "default", $position: "before") {
   &::#{$position} {

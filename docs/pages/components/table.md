@@ -387,7 +387,7 @@ a contextual menu can be substituted in order to display all actions in one menu
 * The `fd-table--fixed` wrapper need to be offset(`padding-left:200px`) by the same amount as defined for column width.
 * `fd-table--fixed-wrapper` need to have a defined with as well to enable horizontal scrolling.
 
-> 100% width on `fd-table--fixed-wrapper` will not render horizontal scrolling as the wrapper container will stretch to accommodate any overflow column width. 
+> 100% width on `fd-table--fixed-wrapper` will not render horizontal scrolling as the wrapper container will stretch to accommodate any overflow column width.
 
 {% capture table-sort %}
 <div class="fd-table--fixed-wrapper" style="width:800px;">
