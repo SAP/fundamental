@@ -43,10 +43,7 @@ $block: #{$fd-namespace}-tag;
       line-height: fd-space(6);
     };
 
-}
-
-@include fd-rtl(#{$block}) {
-    .#{$block} {
+    @include fd-rtl {
         &::after{
             content:none;
         }
@@ -55,6 +52,6 @@ $block: #{$fd-namespace}-tag;
             margin-left: fd-space(base);
             vertical-align: bottom;
             line-height: fd-space(6);
-          };
+        };
     }
 }
