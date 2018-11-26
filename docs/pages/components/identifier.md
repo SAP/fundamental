@@ -74,6 +74,27 @@ A circle style can be rendered using the `--circle` modifier.
 {% include display-component.html component=identifier-circle %}
 <br>
 
+
+## Background image
+
+A background image can be applied to any style using the `--thumbnail` modifier.
+
+{% capture identifier-thumbnail %}
+<span class=" fd-identifier--xxs fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+<span class=" fd-identifier--xs fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+<span class=" fd-identifier--s fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+<span class=" fd-identifier--m fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+<span class=" fd-identifier--l fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+<span class=" fd-identifier--xl fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+<span class=" fd-identifier--xxl fd-identifier--circle fd-identifier--thumbnail" style="background-image: url('{{site.baseurl}}/images/thumbs/headshot-male.jpg')" role="presentation" aria-label="John Doe"></span>
+
+
+{% endcapture %}
+{% include display-component.html component=identifier-thumbnail %}
+<br>
+
+
+
 ## Transparent
 
 A transparent style can be rendered using the `--transparent` modifier.

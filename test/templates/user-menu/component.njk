@@ -4,6 +4,7 @@
 {% from "./../image/component.njk" import image %}
 {% from "./../identifier/component.njk" import identifier %}
 {% from "./../counter/component.njk" import counter %}
+
 {% set defaults = {
     initials: "WW",
     name: "Wendilee Wallingham",
@@ -21,6 +22,7 @@
     modifier: []
   }
 %}
+
 <!--
 user_menu:
     properties={
@@ -34,6 +36,7 @@ user_menu:
     state={},
     aria={}
 -->
+
 {% macro user_menu(
     properties={},
     id="",
@@ -45,7 +48,9 @@ user_menu:
     state={},
     aria={})
 -%}
+
 {%- set _id = utils.id() %}
+
 <div class="fd-user-menu">
   {%- set _id = utils.id() %}
   {%- set control = user_menu_control(id=_id,initials=initials,

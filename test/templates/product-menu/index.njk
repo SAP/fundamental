@@ -4,7 +4,7 @@
 {% from "./component.njk" import product_menu %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
-{% set css_deps = ['components/popover','components/menu'] %}
+{% set css_deps = ['components/popover','components/menu','components/shellbar'] %}
 
 {% block content %}
 
@@ -14,7 +14,8 @@
     {% set example %}
 
     {{  product_menu(
-            properties=data.properties,
+            product=data.properties,
+            brand=data.properties.brand,
             modifier={
                 block: data.modifier.block
             },

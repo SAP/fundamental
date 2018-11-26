@@ -13,6 +13,23 @@
         border: none !important;
     }
 }
+@each $item in begin, after {
+    .#{$fd-namespace}-has-border-#{$item}-none {
+        $_side: left;
+        $_opp: right;
+        @if $item == after {
+          $_side: right;
+          $_opp: left;
+        }
+        border-#{$_side}: none !important;
+        @at-root {
+          [direction="rtl"] &,
+          &[direction="rtl"] {
+            border-#{$_opp}: none !important;
+          }
+        }
+    }
+}
 @each $type, $shades in $fd-colors {
     @each $shade, $value in $shades {
         @if $shade == 1 {
