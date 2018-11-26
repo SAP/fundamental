@@ -41,7 +41,7 @@ You can clone the entire repo and work in the full project where we manage the [
 
 2. **Install Gulp** - In addition to Node, you must have Gulp installed globally: `npm install -g gulp`
 
-3. **Install Ruby Gems** - These gems are need to be installed for the documentation site: `gem install ruby bundle jekyll`
+3. **Install Ruby Gems** - These gems are needed to be installed for the documentation site: `gem install ruby bundle jekyll`
 
 4. **Install Bundle Dependencies** - Bundle dependencies must be installed the from `docs` directory
 `cd docs` and then `bundle install`
