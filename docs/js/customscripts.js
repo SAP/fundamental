@@ -147,22 +147,38 @@ $( document ).ready(function() {
         triStateCheckbox.indeterminate=true;
     }
 
+    // display responsive component controls
+    const displayControls = document.querySelector('.docs-component--responsive-display__controls');
+    const frame = displayControls.parentElement.querySelector('.docs-component--responsive-display__frame');
+    console.log(frame);
+    displayControls.addEventListener('click', event => {
+        const clickTarget = event.target;
+        let ctrlState = clickTarget.getAttribute('aria-pressed');
+        ctrlState = ctrlState === 'false' ? 'true' : 'false';
+        clearControls();
+        clickTarget.setAttribute('aria-pressed', ctrlState);
+        resizeFrame(clickTarget);
+    })
 
-    // TODO: display responsive docs controls
-    // const displayControls = document.getElementById('docs-responsive-controls');
-    // console.log(displayControls);
-    //
-    // displayControls.addEventListener('click', event => {
-    //     const clickTarget = event.target;
-    //     let ctrlState = clickTarget.getAttribute('aria-pressed');
-    //     ctrlState = ctrlState === "false" ? "true" : "false";
-    //     clearControls();
-    //     clickTarget.setAttribute("aria-pressed", ctrlState);
-    //     console.log(setState);
-    // })
-    //
-    // function clearControls() {
-    //     displayControls.childNodes.setAttribute("aria-piressed", false);
-    // }
+    function clearControls() {
+        Array.from(displayControls.children).forEach( button => {
+            button.setAttribute('aria-pressed', false);
+        });
+    }
+
+    function resizeFrame(target) {
+        const size = target.getAttribute('data-size');
+        switch (size) {
+            case 'mobile':
+                frame.width = '414';
+                frame.height= '736'
+                break;
+            case 'tablet':
+                frame.width = '720';
+                frame.height= '1024'
+                break;
+        }
+    }
+
 
 })();
