@@ -35,7 +35,7 @@ gulp.task('server:start', function (cb) {
 });
 
 const backstopReference = (cb) => {
-    const promise = backstop('reference');
+    const promise = backstop('reference', {config: './test/visual-regression-tests/backstop.json'});
     promise.catch(function (error) {
         // Reference screenshots failed to generate
         cb(error);
