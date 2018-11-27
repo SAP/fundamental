@@ -39,15 +39,20 @@ $block: #{$fd-namespace}-token;
     };
 
     @include fd-rtl {
-        &::after {
-            content: none;
-        }
-
         @include fd-icon("sys-cancel", "s", "before") {
             color: fd-color("action", 1);
             margin-left: fd-space(base);
             vertical-align: bottom;
             line-height: fd-space(6);
         };
+
+        &::before {
+            display: inline;
+            margin-left: 0;
+            margin-right: fd-space(base);
+        }
+        &::after {
+            content: none;
+        }
     }
 }
