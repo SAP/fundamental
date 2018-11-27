@@ -148,25 +148,25 @@ $( document ).ready(function() {
     }
 
     // display responsive component controls
-    const displayControls = document.querySelector('.docs-component--responsive-display__controls');
-    const frame = displayControls.parentElement.querySelector('.docs-component--responsive-display__frame');
-    console.log(frame);
-    displayControls.addEventListener('click', event => {
-        const clickTarget = event.target;
-        let ctrlState = clickTarget.getAttribute('aria-pressed');
-        ctrlState = ctrlState === 'false' ? 'true' : 'false';
-        clearControls();
-        clickTarget.setAttribute('aria-pressed', ctrlState);
-        resizeFrame(clickTarget);
-    })
+    const displayControls = document.querySelectorAll('.docs-component--responsive-display__controls');
+    displayControls.forEach((displayControl) => {
+        const frame = displayControl.parentElement.querySelector('.docs-component--responsive-display__frame');
+        console.log(frame);
+        displayControl.addEventListener('click', event => {
+            const clickTarget = event.target;
+            clearControls(displayControl);
+            resizeFrame(clickTarget, frame);
+            clickTarget.setAttribute('aria-pressed', true);
+        })
+    });
 
-    function clearControls() {
-        Array.from(displayControls.children).forEach( button => {
+    function clearControls(displayControl) {
+        Array.from(displayControl.children).forEach( button => {
             button.setAttribute('aria-pressed', false);
         });
     }
 
-    function resizeFrame(target) {
+    function resizeFrame(target, frame) {
         const size = target.getAttribute('data-size');
         switch (size) {
             case 'mobile':
