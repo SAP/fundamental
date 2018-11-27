@@ -29,6 +29,10 @@ $block: #{$fd-namespace}-alert;
     padding: $fd-alert-padding-x $fd-alert-padding-y;
     border-radius: $fd-border-radius;
 
+    span.sap-icon--s {
+      color: $fd-alert-border-color;
+    }
+
     // Elements
     &__close {
       position: absolute;
@@ -53,10 +57,16 @@ $block: #{$fd-namespace}-alert;
     &--warning {
       border-color: $fd-alert-border-color--warning;
       background-color: $fd-alert-background-color--warning;
+      span.sap-icon--s {
+        color: $fd-alert-border-color--warning;
+      }
     }
     &--error {
       border-color: $fd-alert-border-color--error;
       background-color: $fd-alert-background-color--error;
+      span.sap-icon--s {
+        color: $fd-alert-border-color--error;
+      }
     }
     &--dismissible {
       position: relative;
