@@ -1,24 +1,25 @@
 {% import "./../utils.njk" as utils %}
-{% from "./../product-menu/component.njk" import product_menu %}
 {% from "./../user-menu/component.njk" import user_menu %}
 {% from "./../popover/component.njk" import popover %}
 {% from "./../menu/component.njk" import menu %}
+{% from "./../product-menu/component.njk" import product_menu %}
 {% from "./../button/component.njk" import button %}
 {% from "./../product-switcher/component.njk" import product_switcher %}
-{% from "./../shellbar-title-menu/component.njk" import shell_header_title_menu %}
 {% from "./../search-input/component.njk" import search_input %}
 {% from "./../counter/component.njk" import counter %}
 
 <!--
-shell_header:
+shellbar:
     properties={
         "brand": {
             "name": "",
             "logo": ""
         },
-        "title": "",
-        "title_items": [],
-        "subtitle": "",
+        "product": {
+          "title": "",
+          "items": [],
+          "subtitle": ""
+        },
         "copilot": true,
         "actions": [],
         "search": {
@@ -41,8 +42,10 @@ shell_header:
     "items": properties.search.items
   })
 %}
-{% set action_notification = button({ label: counter(count=25,modifier="notification"), icon: 'bell' }, modifier={ block: ['shellheader'] }, aria={ label: "Notifications" }) %}
-{% set action_pool = button({ icon: 'pool' }, modifier={ block: ['shellheader'] }, aria={ label: "Pool" }) %}
+
+{% set action_notification = button({ label: counter(count=25,modifier="notification"), icon: 'bell' }, modifier={ block: ['shell'] }, aria={ label: "Notifications" }) %}
+
+{% set action_pool = button({ icon: 'pool' }, modifier={ block: ['shell'] }, aria={ label: "Pool" }) %}
 
 {% set actions = [
   {
@@ -60,14 +63,30 @@ shell_header:
 ]
 %}
 
+{% set collapse_unshift_extras = [
+  {
+    "label": "Search"
+  }
+]
+%}
+
+{% set collapse_push_extras = [
+  {
+    "label": "Product Switcher"
+  }
+]
+%}
+
 {% set brand = {
     name: "SAP",
-    logo: null
-} %}
+    logo: {}
+  }
+%}
 
 {% set product = {
   title: "Corporate Portal",
   subtitle: "Subtitle",
+  brand: brand,
   items: [
       { "label": "Application A" },
       { "label": "Application B" },
@@ -116,20 +135,27 @@ shell_header:
   ]
 } %}
 
-{% macro shell_header(brand=brand,product=product,copilot=true,actions=actions,user=true,switcher=true, properties={}, modifier={}, state={}, aria={}) -%}
+{%- macro shell_logo(logo=brand.logo, name=brand.name) %}
+  <div class="fd-shellbar__logo{{ ' fd-shellbar__logo--image-replaced' if not logo.src and not logo.svg  }}" aria-label="{{ name }}">
+    {%- if logo.src %}
+    {%- set comma = joiner() %}
+      <img src="{{ logo.src }}"{% if logo.srcset %} srcset="{% for item in logo.srcset %}{{ comma() -}} {{ item }} {{ loop.index }}x
+      {%- endfor %}"{% endif %} alt="">
+    {%- endif %}
+    {%- if logo.svg %}
+      {{ logo.svg }}
+    {%- endif %}
+  </div>
+{% endmacro -%}
+
+{% macro shellbar(brand=brand,product=product,copilot=true,actions=actions,user=true,switcher=true, search=search_input_props, properties={}, modifier={}, state={}, aria={}, styles="") -%}
 {%- set _id = utils.id() %}
 <div class="fd-shellbar">
     <div class="fd-shellbar__group fd-shellbar__group--start">
-        <div class="fd-shellbar__logo">
-          {% if brand.logo %}
-            <img src="{{brand.logo}}" alt="{{brand.name}}">
-          {% else %}
-              <div class="fd-shellbar--brand" aria-label="{{brand.name}}"></div>
-          {% endif %}
-        </div>
-        <div class="fd-shellbar__title">
+      {{ shell_logo(logo=brand.logo, name=brand.name) }}
+        <div class="fd-shellbar__product">
           {% if product %}
-            {{ product_menu(product) }}
+            {{ product_menu(product=product,brand=brand) }}
           {% endif %}
         </div>
         {% if product.subtitle %}
@@ -143,38 +169,71 @@ shell_header:
       <img src="/static/copilot.png" alt="CoPilot" height="30" width="30" />
     </div>
     {% endif %}
-    {% if actions or user or switcher %}
-    <div class="fd-shellbar__group fd-shellbar__group--end">
-      {{ shell_actions(actions=actions, user=user, switcher=switcher, properties=properties) }}
+    {% if actions or user or switcher or search %}
+      <div class="fd-shellbar__group fd-shellbar__group--end">
+      {{ shell_actions(actions=actions, user=user, switcher=switcher, search=search,  properties=properties) }}
     </div>
     {% endif %}
   </div>
-
 {%- endmacro %}
 
-{% macro shell_actions(actions=actions, user=true, switcher=true, properties={}, modifier={}, state={}, aria={}) -%}
+{% macro shell_actions(actions=actions, user=true, switcher=true, search=false, properties={}, modifier={}, state={}, aria={}) -%}
+
+  {%- set _id = utils.id() %}
+
   {% set collapsed_items = actions | filter_array("collapse",true) %}
+
     <div class="fd-shellbar__actions">
       {%- if actions %}
-        <div class="fd-shellbar__action fd-shellbar__action--hide">
-          {{ search_input(properties=search_input_props) }}
-        </div>
+        {%- if search %}
+          <div class="fd-shellbar__action fd-shellbar__action--collapsible">
+            {{ search_input(properties=search) }}
+          </div>
+        {% endif %}
         {%- for item in actions %}
-            <div class="fd-shellbar__action fd-shellbar__action--hide">
+            <div class="fd-shellbar__action fd-shellbar__action--collapsible">
                 {{item.action}}
             </div>
         {%- endfor %}
         <div class="fd-shellbar__action fd-shellbar__action--collapse">
-          {{ shell_actions_collapse(actions=collapsed_items) }}
+          <!--{{ shell_actions_collapse(actions=collapsed_items) }}-->
+          <div class="fd-shellbar-collapse">
+            <div class="fd-popover fd-popover--right">
+              <div class="fd-popover__control">
+                <div class="fd-shellbar-collapse--control" aria-controls="{{_id}}" aria-expanded="false" aria-haspopup="true" role="button">
+                  <button class=" fd-button--shell sap-icon--overflow" aria-controls="undefined" aria-haspopup="true" aria-expanded="false">
+                  <span class="fd-counter fd-counter--notification" aria-label="Unread count">25</span></button>
+                </div>
+              </div>
+              <div class="fd-popover__body fd-popover__body--right" aria-hidden="true" id="{{_id}}">
+                <nav class="fd-menu">
+                <ul class="fd-menu__list">
+                  <li>
+                    <a role="button" class="fd-menu__item">Search</a>
+                  </li>
+                  <li>
+                    <a role="button" class="fd-menu__item">Notifications</a>
+                  </li>
+                  <li>
+                    <a role="button" class="fd-menu__item">Pool</a>
+                  </li>
+                  <li>
+                    <a role="button" class="fd-menu__item">Product Switcher</a>
+                  </li>
+                </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
         </div>
         {%- endif %}
         {%- if user %}
-            <div class="fd-shellbar__action fd-shellbar__action--show">
+            <div class="fd-shellbar__action fd-shellbar__action--show-always">
               {{ user_menu(thumbnail="") }}
             </div>
         {%- endif %}
         {%- if switcher %}
-            <div class="fd-shellbar__action fd-shellbar__action--hide">
+            <div class="fd-shellbar__action fd-shellbar__action--collapsible">
               {{ product_switcher() }}
             </div>
         {%- endif %}
@@ -183,14 +242,17 @@ shell_header:
 
 {% macro shell_actions_collapse(actions=[], user=true, switcher=true, properties={}, modifier={}, state={}, aria={}) -%}
   {%- set _id = utils.id() %}
+
   {%- set totalNotifications = 0 %}
+
   {%- for item in actions %}
     {%- set totalNotifications = totalNotifications + (item.notifications or 0) %}
   {%- endfor %}
+
   <div class="fd-shellbar-collapse">
       {{  popover(properties={
               id: _id,
-              control: shell_header_collapse_control(properties={"id": _id, "notifications": totalNotifications}),
+              control: shellbar_collapse_control(properties={"id": _id, "notifications": totalNotifications}),
               body: menu(properties={
                   "items": actions
               })
@@ -199,8 +261,8 @@ shell_header:
   </div>
 {%- endmacro %}
 
-{%- macro shell_header_collapse_control(properties={}, modifier={}, state={}) -%}
+{%- macro shellbar_collapse_control(properties={}, modifier={}, state={}) -%}
   <div class="fd-shellbar-collapse--control" aria-controls="{{properties.id}}" aria-expanded="false" aria-haspopup="true" role="button">
-      {{ button({ label: counter(count=properties.notifications,modifier="notification"), icon: 'overflow' }, modifier={ block: ['shellheader fd-button--m'] }, aria={ "controls": _id, "haspopup": true, "expanded": false}) }}
+      {{ button({ label: counter(count=properties.notifications,modifier="notification"), icon: 'overflow' }, modifier={ block: ['shell'] }, aria={ "controls": _id, "haspopup": true, "expanded": false}) }}
   </div>
 {%- endmacro -%}

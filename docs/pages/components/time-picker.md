@@ -8,14 +8,16 @@ folder: components
 summary:
 ---
 
-Timepicker is a componet composed of an input-group, a popover, and the time component to create a time selection interaction.
+Timepicker is a component composed of an input-group, a popover and the time component to create a time selection interaction.
 
 <hr/>
 
 ## Basic Time Picker
+
 A basic example of a time picker.
 
 {% capture default-timepicker %}
+
 <div class="fd-time-picker">
     <div class="fd-popover fd-popover--no-arrow">
         <div class="fd-popover__control">
@@ -90,6 +92,7 @@ A basic example of a time picker.
             </div>
         </div>
     </div>
+
 </div>
 
 <br>
@@ -154,6 +157,7 @@ A basic example of a time picker.
             </div>
         </div>
     </div>
+
 </div>
 {% endcapture %}
 

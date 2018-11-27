@@ -116,20 +116,35 @@ env.addFilter('random_string', () => {
     }
     return text;
 });
+
 // pluck
 // returns array from an object
 // obj | pluck("key")
 env.addFilter('pluck', (obj={}, key="") => {
- const result = obj.map(a => a[key]);
-
-   return result;
+    const result = obj.map(a => a[key]);
+    return result;
 });
+
 // filter_array
 // returns obj
 // obj | pluck("key")
 env.addFilter('filter_array', (array={}, key="", value="") => {
- const result = array.filter(obj => obj[key] === value);
-   return result;
+    const result = array.filter(obj => obj[key] === value);
+    return result;
+});
+
+// unshift_array
+// returns obj
+env.addFilter('unshift_array', (obj={}, array={}) => {
+    const result = array.unshift(obj);
+    return result;
+});
+
+// push_array
+// returns obj
+env.addFilter('push', (obj={}, array={}) => {
+    const result = array.push(obj);
+    return result;
 });
 
 // merge_objs
