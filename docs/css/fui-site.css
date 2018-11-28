@@ -3177,6 +3177,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   background-color: #fafafa;
   padding: 8px 12px;
   border-radius: 4px; }
+  .fd-alert span.sap-icon--s {
+    color: #d9d9d9; }
   .fd-alert__close {
     position: absolute;
     right: 4px;
@@ -3224,9 +3226,23 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-alert--warning {
     border-color: #e9730c;
     background-color: #fef7f0; }
+    .fd-alert--warning span.sap-icon--s {
+      color: #e9730c; }
   .fd-alert--error {
     border-color: #bd0000;
     background-color: #ffb8b8; }
+    .fd-alert--error span.sap-icon--s {
+      color: #bd0000; }
+  .fd-alert--success {
+    border-color: #107f3e;
+    background-color: #e4fcee; }
+    .fd-alert--success span.sap-icon--s {
+      color: #107f3e; }
+  .fd-alert--information {
+    border-color: #0a6ed1;
+    background-color: rgba(10, 110, 209, 0.07); }
+    .fd-alert--information span.sap-icon--s {
+      color: #0a6ed1; }
   .fd-alert--dismissible {
     position: relative;
     padding-right: 48px; }
@@ -4603,8 +4619,6 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       background-color: rgba(10, 110, 209, 0.07); }
       .fd-table tr:active:hover, .docs-table tr:active:hover, .fd-table tr.is-active:hover, .docs-table tr.is-active:hover, .fd-table tr[aria-selected="true"]:hover, .docs-table tr[aria-selected="true"]:hover, .fd-table tr.is-selected:hover, .docs-table tr.is-selected:hover, .fd-table tr[aria-pressed="true"]:hover, .docs-table tr[aria-pressed="true"]:hover, .fd-table tr.is-pressed:hover, .docs-table tr.is-pressed:hover {
         background-color: rgba(10, 110, 209, 0.1); }
-    .fd-table tr.fd-highlight:nth-child(even), .docs-table tr.fd-highlight:nth-child(even) {
-      background-color: #fafafa; }
   .fd-table thead, .docs-table thead {
     font-size: 0.85714rem;
     line-height: 1.33333;
@@ -7127,6 +7141,15 @@ input-addon
     @media (min-width: 1025px) {
       .fd-shellbar__action--collapse {
         display: none; } }
+    @media (min-width: 320px) {
+      .fd-shellbar__action--collapsible {
+        display: none; } }
+    @media (min-width: 600px) {
+      .fd-shellbar__action--collapsible {
+        display: none; } }
+    @media (min-width: 1025px) {
+      .fd-shellbar__action--collapsible {
+        display: inline-block; } }
     @media (min-width: 320px) {
       .fd-shellbar__action--show-always {
         display: inline-block; } }

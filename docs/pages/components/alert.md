@@ -18,11 +18,35 @@ The alert provides information that is useful and relevant, but not critical. It
 {% capture default-alert %}
 <div class="fd-alert fd-alert--dismissible" role="alert" id="j2ALl423">
   <button class="fd-alert__close" aria-controls="j2ALl423" aria-label="Close"></button>
-  Default alert with a <a href="#" class="fd-link">link <span class="sap-icon--arrow-right sap-icon--s"></span></a>
+  <span class="sap-icon--alert sap-icon--s"></span> Default alert <a href="#" class="fd-link">Learn more</a>
 </div>
 {% endcapture %}
 
 {% include display-component.html component=default-alert %}
+
+## Information
+Add the modifier class `fd-alert--information` for Information alert.
+
+{% capture information-alert %}
+<div class="fd-alert fd-alert--information fd-alert--dismissible" role="alert" id="j2ALl4231">
+  <button class="fd-alert__close" aria-controls="j2ALl4231" aria-label="Close"></button>
+  <span class="sap-icon--alert sap-icon--s"></span> Information message <a href="#" class="fd-link">Learn more</a>
+</div>
+{% endcapture %}
+
+{% include display-component.html component=information-alert %}
+
+## Success
+Add the modifier class `fd-alert--success` for Success alert.
+
+{% capture success-alert %}
+<div class="fd-alert fd-alert--success fd-alert--dismissible" role="alert" id="j2ALl4232">
+  <button class="fd-alert__close" aria-controls="j2ALl4232" aria-label="Close"></button>
+  <span class="sap-icon--alert sap-icon--s"></span> Success message <a href="#" class="fd-link">Learn more</a>
+</div>
+{% endcapture %}
+
+{% include display-component.html component=success-alert %}
 
 ## Warning
 The alert warns of potential issues, but the user can still continue. The user will need to dismiss the message.
@@ -32,7 +56,7 @@ Add the modifier class `fd-alert--warning` for Warning alert.
 {% capture warning-alert %}
 <div class="fd-alert fd-alert--warning fd-alert--dismissible" role="alert" id="j2ALl423">
   <button class="fd-alert__close" aria-controls="j2ALl423" aria-label="Close"></button>
-  Warning message with a <a href="#" class="fd-link">link <span class="sap-icon--arrow-right sap-icon--s"></span></a>
+  <span class="sap-icon--alert sap-icon--s"></span> Warning message <a href="#" class="fd-link">Learn more</a>
 </div>
 {% endcapture %}
 
@@ -46,7 +70,7 @@ Add the modifier class `fd-alert--error` for Error alert.
 {% capture error-alert %}
 <div class="fd-alert fd-alert--error fd-alert--dismissible" role="alert" id="j2ALl423">
   <button class="fd-alert__close" aria-controls="j2ALl423" aria-label="Close"></button>
-  Error message with a <a href="#" class="fd-link">link <span class="sap-icon--arrow-right sap-icon--s"></span></a>
+  <span class="sap-icon--alert sap-icon--s"></span> Error message <a href="#" class="fd-link">Learn more</a>
 </div>
 {% endcapture %}
 

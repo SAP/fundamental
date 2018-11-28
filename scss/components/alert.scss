@@ -13,10 +13,14 @@ $block: #{$fd-namespace}-alert;
     $fd-alert-border-color: fd-color("neutral", 3) !default;
     $fd-alert-border-color--warning: fd-color("status", 2) !default;
     $fd-alert-border-color--error: fd-color("status", 3) !default;
+    $fd-alert-border-color--success: fd-color("status", 1) !default;
+    $fd-alert-border-color--information: fd-color("action", 1) !default;
 
     $fd-alert-background-color: fd-color("neutral", 1) !default;
     $fd-alert-background-color--warning: fd-color-state("alert") !default;
     $fd-alert-background-color--error: fd-color-state("negative") !default;
+    $fd-alert-background-color--success: fd-color-state("positive") !default;
+    $fd-alert-background-color--information: fd-color-state("selected") !default;
 
     $fd-alert-padding-x: fd-space("xxs") !default;
     $fd-alert-padding-y: fd-space("xs") !default;
@@ -66,6 +70,20 @@ $block: #{$fd-namespace}-alert;
       background-color: $fd-alert-background-color--error;
       span.sap-icon--s {
         color: $fd-alert-border-color--error;
+      }
+    }
+    &--success {
+      border-color: $fd-alert-border-color--success;
+      background-color: $fd-alert-background-color--success;
+      span.sap-icon--s {
+        color: $fd-alert-border-color--success;
+      }
+    }
+    &--information {
+      border-color: $fd-alert-border-color--information;
+      background-color: $fd-alert-background-color--information;
+      span.sap-icon--s {
+        color: $fd-alert-border-color--information;
       }
     }
     &--dismissible {
