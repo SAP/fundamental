@@ -42,6 +42,10 @@ $block: #{$fd-namespace}-table;
     border-top: solid $fd-table-border-width $fd-table-border-color;
     background-color: $fd-table-background-color;
 
+    // td{
+    // // border-bottom: fd-color("neutral", 2);
+    // }
+    
     tr {
         transition: background-color $fd-table-transition-params;
         @include fd-hover {
@@ -89,7 +93,8 @@ $block: #{$fd-namespace}-table;
         }
         border-style: solid;
         border-width: $fd-table-border-width;
-        border-color: $fd-table-border-color;
+        border-color: red;
+        border-bottom: fd-color("neutral", 2);
 
         .fd-dropdown__menu{
             min-width: auto;
@@ -193,3 +198,11 @@ $block: #{$fd-namespace}-table;
         }
     }
 }
+
+.fd-table--no-borders td {
+    border-bottom: none;
+  }
+
+.fd-table--striped tr:nth-child(even) {
+    background-color: fd-color-state("hover");
+  }

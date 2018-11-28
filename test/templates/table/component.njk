@@ -40,7 +40,7 @@ table:
 <div class="fd-table--fixed-wrapper">
 <div class="fd-table--fixed">
 {% endif %}
-<table class="fd-table{{ modifier.block | modifier('table') }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>
+<table  class =" {% if properties.stripedTable %}  fd-table--striped {% endif %}  {% if properties.noBorders %}  fd-table--no-borders {% endif %} fd-table{{ modifier.block | modifier('table') }}{{ state | state }}{{ classes | classes }}"{{ aria | aria }}>
     <thead>
         <tr>
             {%- for header in properties.headers %}
