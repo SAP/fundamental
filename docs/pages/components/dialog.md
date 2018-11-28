@@ -13,7 +13,7 @@ The dialog is a container generally displayed in response to an action. It is us
 <hr/>
 
 ## Informational Dialog
-This is used to present information to the user but the Alert Component doesn’t fit all the information.
+This is used to present information to the user.
 
 {% capture default-dialog %}
 <div class="modal-demo-bg">
@@ -41,8 +41,8 @@ This is used to present information to the user but the Alert Component doesn’
 
 <br/>
 
-## Error Dialog
-This is used to present error to the user 
+## Small Error Dialog
+This is used to present error message to the user 
 
 {% capture error-dialog %}
 <div class="modal-demo-bg">
@@ -69,8 +69,8 @@ This is used to present error to the user
 {% include display-component.html component=error-dialog %}
 
 <br/>
-## Warning Dialog
-This is used to present error to the user 
+## Small Warning Dialog
+This is used to present warning message to the user 
 
 {% capture warning-dialog %}
 <div class="modal-demo-bg">
@@ -98,8 +98,8 @@ This is used to present error to the user
 
 <br/>
 
-## Success Dialog
-This is used to present error to the user 
+## Small Success Dialog
+This is used to present success message to the user 
 
 {% capture success-dialog %}
 <div class="modal-demo-bg">
@@ -126,4 +126,119 @@ This is used to present error to the user
 {% include display-component.html component=success-dialog %}
 
 <br/>
+
+<br/>
+
+## Medium Error Dialog
+This is used to present error message to the user 
+
+{% capture error-dialog %}
+<div class="modal-demo-bg">
+<div class="fd-dialog--medium" role="dialog">
+  <div class="fd-dialog__content" role="document">
+      <header class="fd-dialog__header-error">
+          <h1 class="fd-dialog__title sap-icon--message-error">Error Message</h1>
+      </header>
+    <div class="fd-dialog__body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentes vitae erat feugiat, cursus lorem a condimentum sem.</p>
+    </div>
+    <footer class="fd-dialog__footer">
+        <div class="fd-dialog__actions">
+         <button class=" fd-button--emphasized">Confirm</button>
+          <button class=" fd-button--secondary">Cancel</button>
+        </div>
+    </footer>
+  </div>
+
+</div>
+</div>
+{% endcapture %}
+
+{% include display-component.html component=error-dialog %}
+
+<br/>
+## Medium Warning Dialog
+This is used to present warning message to the user 
+
+{% capture warning-dialog %}
+<div class="modal-demo-bg">
+<div class="fd-dialog--medium" role="dialog">
+  <div class="fd-dialog__content" role="document">
+      <header class="fd-dialog__header-warning">
+          <h1 class="fd-dialog__title sap-icon--message-warning">Warning Message</h1>
+      </header>
+    <div class="fd-dialog__body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentes vitae erat feugiat, cursus lorem a condimentum sem.</p>
+    </div>
+    <footer class="fd-dialog__footer">
+        <div class="fd-dialog__actions">
+         <button class=" fd-button--emphasized">Confirm</button>
+          <button class=" fd-button--secondary">Cancel</button>
+        </div>
+    </footer>
+  </div>
+
+</div>
+</div>
+{% endcapture %}
+
+{% include display-component.html component=warning-dialog %}
+
+<br/>
+
+## Medium Success Dialog
+This is used to present success message to the user 
+
+{% capture success-dialog %}
+<div class="modal-demo-bg">
+<div class="fd-dialog--medium" role="dialog">
+  <div class="fd-dialog__content" role="document">
+      <header class="fd-dialog__header-success">
+          <h1 class="fd-dialog__title sap-icon--message-success">Success Message</h1>
+      </header>
+    <div class="fd-dialog__body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentes vitae erat feugiat, cursus lorem a condimentum sem.</p>
+    </div>
+    <footer class="fd-dialog__footer">
+        <div class="fd-dialog__actions">
+         <button class=" fd-button--emphasized">Confirm</button>
+          <button class=" fd-button--secondary">Cancel</button>
+        </div>
+    </footer>
+  </div>
+
+</div>
+</div>
+{% endcapture %}
+
+{% include display-component.html component=success-dialog %}
+
+<br/>
+
+## Phone full screen
+This is used to present message on phone
+
+{% capture success-dialog %}
+<div class="modal-demo-bg">
+<div class="fd-dialog--phone" role="dialog">
+  <div class="fd-dialog__content" role="document">
+      <header class="fd-dialog__header">
+          <h1 class="fd-dialog__title">Modal Dialog</h1>
+      </header>
+    <div class="fd-dialog__body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentes vitae erat feugiat, cursus lorem a condimentum sem.</p>
+    </div>
+    <footer class="fd-dialog__footer">
+        <div class="fd-dialog__actions">
+         <button class=" fd-button--emphasized">Confirm</button>
+          <button class=" fd-button--secondary">Cancel</button>
+        </div>
+    </footer>
+  </div>
+
+</div>
+</div>
+{% endcapture %}
+
+{% include display-component.html component=success-dialog %}
 

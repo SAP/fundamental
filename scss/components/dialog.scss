@@ -15,8 +15,9 @@
 
 
 $block: #{$fd-namespace}-dialog;
-  $fd-dialog-width: 288px !default;
-  $fd-dialog-height: 258px !default;
+  $fd-dialog-width--small: 288px !default;
+  $fd-dialog-width--medium: 460px !default;
+  $fd-dialog-width--phone: 320px !default;
   //these are used only to roughly calculate body overflow on compact screens - this can be improved with a flex or grid solution
   $fd-dialog-header-height: 48px !default;
   $fd-dialog-footer-height: 48px !default;
@@ -73,19 +74,28 @@ $block: #{$fd-namespace}-dialog;
         margin-right: fd-space(2);
         vertical-align: bottom;
       }
+      @at-root {
+        [dir="rtl"] &,
+        &[dir="rtl"] {
+          &::before {
+            margin-right: 0;
+            margin-left: fd-space(2);
+          }
+        }
+      }
   }
+
   &__body{
     padding: $fd-dialog-padding-y $fd-dialog-padding-x;
-    height: calc(50vh - #{$fd-dialog-header-height} - #{$fd-dialog-footer-height});//calc(100vh - 40px - 40px);;//$fd-dialog-height;
-    //height : 300px;
-    overflow: scroll;
-
+    max-height: calc(100vh - #{$fd-dialog-header-height} - #{$fd-dialog-footer-height});
+    overflow-y : auto;
     > p {
       padding: 0;
     }
   }
   &__footer {
-    padding: $fd-dialog-padding-y $fd-dialog-padding-x;
+    max-height: $fd-dialog-footer-height;
+    padding:  fd-space(1) $fd-dialog-padding-x; 
     text-align: right;
     border-top: 1px solid $fd-dialog-border-color;
   }
@@ -94,17 +104,17 @@ $block: #{$fd-namespace}-dialog;
 
 .#{$block}--small{
     @extend .#{$block};
-    max-width: 288px;
+    max-width: $fd-dialog-width--small;
 }
 
 .#{$block}--medium{
     @extend .#{$block};
-    max-width: 460px;
+    max-width: $fd-dialog-width--medium;
 }
 
 .#{$block}--phone{
     @extend .#{$block};
-    max-width: 320px;
+    max-width: $fd-dialog-width--phone;
 }
 
 
