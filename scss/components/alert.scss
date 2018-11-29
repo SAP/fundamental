@@ -3,14 +3,14 @@
 @import "./../functions";
 @import "./../icons/mixins";
 /*!
-.fd-alert+(--warning. --error)
+.fd-alert+(--information, --success, --warning, --error)
     .fd-alert__close
 */
 $block: #{$fd-namespace}-alert;
 .#{$block} {
     //SETTINGS
     $fd-alert-color: fd-color("text", 1) !default;
-    $fd-alert-border-color: fd-color("neutral", 3) !default;
+    $fd-alert-border-color: fd-color("neutral", 4) !default;
     $fd-alert-border-color--warning: fd-color("status", 2) !default;
     $fd-alert-border-color--error: fd-color("status", 3) !default;
     $fd-alert-border-color--success: fd-color("status", 1) !default;
@@ -33,8 +33,19 @@ $block: #{$fd-namespace}-alert;
     padding: $fd-alert-padding-x $fd-alert-padding-y;
     border-radius: $fd-border-radius;
 
-    span.sap-icon--s {
+    [class*="sap-icon"] {
+      @include fd-type("1");
       color: $fd-alert-border-color;
+      margin-right: fd-space(1);
+      display: inline-block;
+      position: relative;
+      width: fd-space(4);
+      height: fd-space(4);
+
+      &::before {
+          position:absolute;
+          top: 1px;
+      }
     }
 
     // Elements
@@ -61,28 +72,28 @@ $block: #{$fd-namespace}-alert;
     &--warning {
       border-color: $fd-alert-border-color--warning;
       background-color: $fd-alert-background-color--warning;
-      span.sap-icon--s {
+      [class*="sap-icon"] {
         color: $fd-alert-border-color--warning;
       }
     }
     &--error {
       border-color: $fd-alert-border-color--error;
       background-color: $fd-alert-background-color--error;
-      span.sap-icon--s {
+      [class*="sap-icon"] {
         color: $fd-alert-border-color--error;
       }
     }
     &--success {
       border-color: $fd-alert-border-color--success;
       background-color: $fd-alert-background-color--success;
-      span.sap-icon--s {
+      [class*="sap-icon"] {
         color: $fd-alert-border-color--success;
       }
     }
     &--information {
       border-color: $fd-alert-border-color--information;
       background-color: $fd-alert-background-color--information;
-      span.sap-icon--s {
+      [class*="sap-icon"] {
         color: $fd-alert-border-color--information;
       }
     }
