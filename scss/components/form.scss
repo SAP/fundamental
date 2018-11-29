@@ -75,6 +75,11 @@ $block: #{$fd-namespace}-form;
                 float: left;
                 vertical-align: middle;
                 margin-right: fd-space(2);
+                @include fd-rtl {
+                    float: right;
+                    margin-left: fd-space(2);
+                    margin-right: 0;                    
+                }
             }
             .#{$block}__help {
                 float: none;
@@ -87,6 +92,14 @@ $block: #{$fd-namespace}-form;
             .#{$block}__label {
                 width: auto;
             }
+            @include fd-rtl {
+              float: right;
+              margin-right: 0;
+              margin-left: fd-space(3);
+              .#{$block}__label {
+                  width: auto;
+              }     
+            }       
         }
     }
     &__label,
@@ -114,6 +127,9 @@ $block: #{$fd-namespace}-form;
     }
     &__help {
         float: right;
+        @include fd-rtl {
+            float: left;
+        }
     }
     &__message {
         clear: both;
@@ -171,29 +187,6 @@ $block: #{$fd-namespace}-form;
             &::before {
                 content: "";
                 color: $fd-color--error;
-            }
-        }
-    }
-}
-
-// RTL
-@include fd-rtl(#{$block}) {
-    .#{$block}{
-        &__item {
-            &--check{
-                .#{$block}__control {
-                    float: right;
-                    margin-left: fd-space(2);
-                    margin-right: 0;
-                }
-            }
-            &--inline {
-                float: right;
-                margin-right: 0;
-                margin-left: fd-space(3);
-                .#{$block}__label {
-                    width: auto;
-                }
             }
         }
     }
