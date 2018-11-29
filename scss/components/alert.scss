@@ -3,20 +3,24 @@
 @import "./../functions";
 @import "./../icons/mixins";
 /*!
-.fd-alert+(--warning. --error)
+.fd-alert+(--information, --success, --warning, --error)
     .fd-alert__close
 */
 $block: #{$fd-namespace}-alert;
 .#{$block} {
     //SETTINGS
     $fd-alert-color: fd-color("text", 1) !default;
-    $fd-alert-border-color: fd-color("neutral", 3) !default;
+    $fd-alert-border-color: fd-color("neutral", 4) !default;
     $fd-alert-border-color--warning: fd-color("status", 2) !default;
     $fd-alert-border-color--error: fd-color("status", 3) !default;
+    $fd-alert-border-color--success: fd-color("status", 1) !default;
+    $fd-alert-border-color--information: fd-color("action", 1) !default;
 
     $fd-alert-background-color: fd-color("neutral", 1) !default;
     $fd-alert-background-color--warning: fd-color-state("alert") !default;
     $fd-alert-background-color--error: fd-color-state("negative") !default;
+    $fd-alert-background-color--success: fd-color-state("positive") !default;
+    $fd-alert-background-color--information: fd-color-state("selected") !default;
 
     $fd-alert-padding-x: fd-space("xxs") !default;
     $fd-alert-padding-y: fd-space("xs") !default;
@@ -28,6 +32,21 @@ $block: #{$fd-namespace}-alert;
     background-color: $fd-alert-background-color;
     padding: $fd-alert-padding-x $fd-alert-padding-y;
     border-radius: $fd-border-radius;
+
+    [class*="sap-icon"] {
+      @include fd-type("1");
+      color: $fd-alert-border-color;
+      margin-right: fd-space(1);
+      display: inline-block;
+      position: relative;
+      width: fd-space(4);
+      height: fd-space(4);
+
+      &::before {
+          position:absolute;
+          top: 1px;
+      }
+    }
 
     // Elements
     &__close {
@@ -53,10 +72,30 @@ $block: #{$fd-namespace}-alert;
     &--warning {
       border-color: $fd-alert-border-color--warning;
       background-color: $fd-alert-background-color--warning;
+      [class*="sap-icon"] {
+        color: $fd-alert-border-color--warning;
+      }
     }
     &--error {
       border-color: $fd-alert-border-color--error;
       background-color: $fd-alert-background-color--error;
+      [class*="sap-icon"] {
+        color: $fd-alert-border-color--error;
+      }
+    }
+    &--success {
+      border-color: $fd-alert-border-color--success;
+      background-color: $fd-alert-background-color--success;
+      [class*="sap-icon"] {
+        color: $fd-alert-border-color--success;
+      }
+    }
+    &--information {
+      border-color: $fd-alert-border-color--information;
+      background-color: $fd-alert-background-color--information;
+      [class*="sap-icon"] {
+        color: $fd-alert-border-color--information;
+      }
     }
     &--dismissible {
       position: relative;

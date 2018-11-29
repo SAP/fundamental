@@ -3178,7 +3178,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     $weight: "light", "normal", "bold"
 */
 /*!
-.fd-alert+(--warning. --error)
+.fd-alert+(--information, --success, --warning, --error)
     .fd-alert__close
 */
 .fd-alert {
@@ -3187,10 +3187,23 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   color: #32363a;
-  border: solid 1px #d9d9d9;
+  border: solid 1px #89919a;
   background-color: #fafafa;
   padding: 8px 12px;
   border-radius: 4px; }
+  .fd-alert [class*="sap-icon"] {
+    font-size: 1.14286rem;
+    line-height: 1.25;
+    font-weight: 400;
+    color: #89919a;
+    margin-right: 4px;
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px; }
+    .fd-alert [class*="sap-icon"]::before {
+      position: absolute;
+      top: 1px; }
   .fd-alert__close {
     position: absolute;
     right: 4px;
@@ -3238,9 +3251,23 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-alert--warning {
     border-color: #e9730c;
     background-color: #fef7f0; }
+    .fd-alert--warning [class*="sap-icon"] {
+      color: #e9730c; }
   .fd-alert--error {
     border-color: #bd0000;
     background-color: #ffb8b8; }
+    .fd-alert--error [class*="sap-icon"] {
+      color: #bd0000; }
+  .fd-alert--success {
+    border-color: #107f3e;
+    background-color: #e4fcee; }
+    .fd-alert--success [class*="sap-icon"] {
+      color: #107f3e; }
+  .fd-alert--information {
+    border-color: #0a6ed1;
+    background-color: rgba(10, 110, 209, 0.07); }
+    .fd-alert--information [class*="sap-icon"] {
+      color: #0a6ed1; }
   .fd-alert--dismissible {
     position: relative;
     padding-right: 48px; }
@@ -3691,26 +3718,26 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-button--negative:active, .fd-button--negative.is-active, .fd-button--negative[aria-selected="true"], .fd-button--negative.is-selected, .fd-button--negative[aria-pressed="true"], .fd-button--negative.is-pressed {
     --fd-button-background-color: var(--fd-color-status-3); }
 
-.fd-button--shellheader {
+.fd-button--shell {
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent; }
-  .fd-button--shellheader[class*="sap-icon"] {
+  .fd-button--shell[class*="sap-icon"] {
     padding: 0; }
-    .fd-button--shellheader[class*="sap-icon"]::before, .fd-button--shellheader[class*="sap-icon"]::after {
+    .fd-button--shell[class*="sap-icon"]::before, .fd-button--shell[class*="sap-icon"]::after {
       margin-right: 0;
       margin-left: 0; }
-  .fd-button--shellheader:focus {
+  .fd-button--shell:focus {
     box-shadow: none; }
-  .fd-button--shellheader:hover {
+  .fd-button--shell:hover {
     --fd-button-color: var(--fd-color-shell-2);
     --fd-button-border-color: transparent;
     --fd-button-background-color: hsl(217, 21%, 25%); }
-  .fd-button--shellheader:active, .fd-button--shellheader.is-active, .fd-button--shellheader[aria-selected="true"], .fd-button--shellheader.is-selected, .fd-button--shellheader[aria-pressed="true"], .fd-button--shellheader.is-pressed {
+  .fd-button--shell:active, .fd-button--shell.is-active, .fd-button--shell[aria-selected="true"], .fd-button--shell.is-selected, .fd-button--shell[aria-pressed="true"], .fd-button--shell.is-pressed {
     --fd-button-color: var(--fd-color-shell-2);
     --fd-button-border-color: transparent;
     --fd-button-background-color: hsl(217, 21%, 21%); }
-  .fd-button--shellheader[aria-disabled="true"], .fd-button--shellheader.is-disabled, .fd-button--shellheader:disabled {
+  .fd-button--shell[aria-disabled="true"], .fd-button--shell.is-disabled, .fd-button--shell:disabled {
     opacity: .25; }
 
 .fd-button--xs {
@@ -4617,8 +4644,6 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       background-color: rgba(10, 110, 209, 0.07); }
       .fd-table tr:active:hover, .docs-table tr:active:hover, .fd-table tr.is-active:hover, .docs-table tr.is-active:hover, .fd-table tr[aria-selected="true"]:hover, .docs-table tr[aria-selected="true"]:hover, .fd-table tr.is-selected:hover, .docs-table tr.is-selected:hover, .fd-table tr[aria-pressed="true"]:hover, .docs-table tr[aria-pressed="true"]:hover, .fd-table tr.is-pressed:hover, .docs-table tr.is-pressed:hover {
         background-color: rgba(10, 110, 209, 0.1); }
-    .fd-table tr.fd-highlight:nth-child(even), .docs-table tr.fd-highlight:nth-child(even) {
-      background-color: #fafafa; }
   .fd-table thead, .docs-table thead {
     font-size: 0.85714rem;
     line-height: 1.33333;
@@ -6017,7 +6042,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     padding: 10px 24px;
     color: #51555a;
     background-color: white;
-    font-weight: 400; }
+    font-weight: 400;
+    text-align: left; }
     .fd-menu__item > .fd-checkbox {
       margin: 0 10px 0 0; }
     .fd-menu__item:hover {
@@ -6922,12 +6948,12 @@ input-addon
 */
 .fd-search-input__control {
   position: relative; }
-  .fd-search-input__control > .fd-button--shellheader[aria-expanded="true"] {
+  .fd-search-input__control > .fd-button--shell[aria-expanded="true"] {
     position: relative;
     z-index: 2;
     --fd-button-border-color: transparent;
     --fd-button-background-color: transparent; }
-    .fd-search-input__control > .fd-button--shellheader[aria-expanded="true"]:focus {
+    .fd-search-input__control > .fd-button--shell[aria-expanded="true"]:focus {
       box-shadow: none; }
 
 .fd-search-input__closedcontrol {
@@ -7024,17 +7050,6 @@ input-addon
     $size: "-1", "0", "1", "2", "3", "4", "5"
     $weight: "light", "normal", "bold"
 */
-/*
-## Notes/TODO
-* Update shellheader button
-* Expanding search functionality
-* Update product icons in product switcher
-* Add the modifier to product-switcher & fix on docs page
-* Add focus state to menu items
-* Add responsive classes to hide items at breakpoints
-* Add notification component / concept to button
-* Logo to CSS Var
-*/
 .fd-shellbar {
   font-size: 14px;
   line-height: 1.42857;
@@ -7056,34 +7071,60 @@ input-addon
     width: 30px; }
   .fd-shellbar__group--end {
     text-align: right; }
-  .fd-shellbar__logo, .fd-shellbar__title, .fd-shellbar__title-menu, .fd-shellbar__subtitle {
+  .fd-shellbar__logo, .fd-shellbar__product, .fd-shellbar__subtitle {
     display: inline-block;
     vertical-align: middle; }
   .fd-shellbar__logo {
-    height: 28px; }
-    .fd-shellbar__logo img {
-      max-height: 28px; }
-  .fd-shellbar--brand {
-    display: inline-block;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MTIuMzggMjA0Ij48ZGVmcz48c3R5bGU+LmNscy0xLC5jbHMtMntmaWxsLXJ1bGU6ZXZlbm9kZH0uY2xzLTF7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCl9LmNscy0ye2ZpbGw6I2ZmZn08L3N0eWxlPjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB4MT0iMjA2LjE5IiB4Mj0iMjA2LjE5IiB5Mj0iMjA0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDBiOGYxIi8+PHN0b3Agb2Zmc2V0PSIuMDIiIHN0b3AtY29sb3I9IiMwMWI2ZjAiLz48c3RvcCBvZmZzZXQ9Ii4zMSIgc3RvcC1jb2xvcj0iIzBkOTBkOSIvPjxzdG9wIG9mZnNldD0iLjU4IiBzdG9wLWNvbG9yPSIjMTc3NWM4Ii8+PHN0b3Agb2Zmc2V0PSIuODIiIHN0b3AtY29sb3I9IiMxYzY1YmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTVmYmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+U0FQX2dyYWRfUl9zY3JuX1plaWNoZW5mbMOkY2hlIDE8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTAgMjA0aDIwOC40MUw0MTIuMzggMEgwdjIwNCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTI0NC43MyAzOC4zNmgtNDAuNnY5Ni41MmwtMzUuNDYtOTYuNTVoLTM1LjE2bC0zMC4yNyA4MC43MkMxMDAgOTguNyA3OSA5MS42NyA2Mi40IDg2LjQgNTEuNDYgODIuODkgMzkuODUgNzcuNzIgNDAgNzJjLjA5LTQuNjggNi4yMy05IDE4LjM4LTguMzggOC4xNy40MyAxNS4zNyAxLjA5IDI5LjcxIDhsMTQuMS0yNC41NUM4OS4wNiA0MC40MiA3MSAzNi4yMSA1Ni4xNyAzNi4xOWgtLjA5Yy0xNy4yOCAwLTMxLjY4IDUuNi00MC42IDE0LjgzQTM0LjIzIDM0LjIzIDAgMCAwIDUuNzcgNzQuN0M1LjU0IDg3LjE1IDEwLjExIDk2IDE5LjcxIDEwM2M4LjEgNS45NCAxOC40NiA5Ljc5IDI3LjYgMTIuNjIgMTEuMjcgMy40OSAyMC40NyA2LjUzIDIwLjM2IDEzQTkuNTcgOS41NyAwIDAgMSA2NSAxMzVjLTIuODEgMi45LTcuMTMgNC0xMy4wOSA0LjEtMTEuNDkuMjQtMjAtMS41Ni0zMy42MS05LjU5TDUuNzcgMTU0LjQyYTkzLjc3IDkzLjc3IDAgMCAwIDQ2IDEyLjIyaDIuMTFjMTQuMjQtLjI1IDI1Ljc0LTQuMzEgMzQuOTItMTEuNzEuNTMtLjQxIDEtLjg0IDEuNDktMS4yOGwtNC4xMiAxMC44NUgxMjNsNi4xOS0xOC44MmE2Ny40NiA2Ny40NiAwIDAgMCAyMS42OCAzLjQzIDY4LjMzIDY4LjMzIDAgMCAwIDIxLjE2LTMuMjVsNiAxOC42NGg2MC4xNHYtMzloMTMuMTFjMzEuNzEgMCA1MC40Ni0xNi4xNSA1MC40Ni00My4yIDAtMzAuMTEtMTguMjItNDMuOTQtNTcuMDEtNDMuOTR6TTE1MC45MSAxMjFhMzYuOTMgMzYuOTMgMCAwIDEtMTMtMi4yOGwxMi44Ny00MC41OWguMjJsMTIuNjUgNDAuNzFhMzguNSAzOC41IDAgMCAxLTEyLjc0IDIuMTZ6bTk2LjItMjMuMzNoLTguOTRWNjQuOTFoOC45NGMxMS45MyAwIDIxLjQ0IDQgMjEuNDQgMTYuMTQgMCAxMi42LTkuNTEgMTYuNTctMjEuNDQgMTYuNTciLz48L3N2Zz4=);
+    height: 24px;
+    max-height: 24px;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 60px;
-    height: 28px; }
+    display: none; }
+    @media (min-width: 600px) {
+      .fd-shellbar__logo {
+        display: inline-block; } }
+    .fd-shellbar__logo--control {
+      display: inline-block; }
+      @media (min-width: 600px) {
+        .fd-shellbar__logo--control {
+          display: none !important; } }
+    .fd-shellbar__logo img,
+    .fd-shellbar__logo svg {
+      max-height: 24px;
+      width: auto; }
+    .fd-shellbar__logo--image-replaced {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MTIuMzggMjA0Ij48ZGVmcz48c3R5bGU+LmNscy0xLC5jbHMtMntmaWxsLXJ1bGU6ZXZlbm9kZH0uY2xzLTF7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCl9LmNscy0ye2ZpbGw6I2ZmZn08L3N0eWxlPjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB4MT0iMjA2LjE5IiB4Mj0iMjA2LjE5IiB5Mj0iMjA0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDBiOGYxIi8+PHN0b3Agb2Zmc2V0PSIuMDIiIHN0b3AtY29sb3I9IiMwMWI2ZjAiLz48c3RvcCBvZmZzZXQ9Ii4zMSIgc3RvcC1jb2xvcj0iIzBkOTBkOSIvPjxzdG9wIG9mZnNldD0iLjU4IiBzdG9wLWNvbG9yPSIjMTc3NWM4Ii8+PHN0b3Agb2Zmc2V0PSIuODIiIHN0b3AtY29sb3I9IiMxYzY1YmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTVmYmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+U0FQX2dyYWRfUl9zY3JuX1plaWNoZW5mbMOkY2hlIDE8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTAgMjA0aDIwOC40MUw0MTIuMzggMEgwdjIwNCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTI0NC43MyAzOC4zNmgtNDAuNnY5Ni41MmwtMzUuNDYtOTYuNTVoLTM1LjE2bC0zMC4yNyA4MC43MkMxMDAgOTguNyA3OSA5MS42NyA2Mi40IDg2LjQgNTEuNDYgODIuODkgMzkuODUgNzcuNzIgNDAgNzJjLjA5LTQuNjggNi4yMy05IDE4LjM4LTguMzggOC4xNy40MyAxNS4zNyAxLjA5IDI5LjcxIDhsMTQuMS0yNC41NUM4OS4wNiA0MC40MiA3MSAzNi4yMSA1Ni4xNyAzNi4xOWgtLjA5Yy0xNy4yOCAwLTMxLjY4IDUuNi00MC42IDE0LjgzQTM0LjIzIDM0LjIzIDAgMCAwIDUuNzcgNzQuN0M1LjU0IDg3LjE1IDEwLjExIDk2IDE5LjcxIDEwM2M4LjEgNS45NCAxOC40NiA5Ljc5IDI3LjYgMTIuNjIgMTEuMjcgMy40OSAyMC40NyA2LjUzIDIwLjM2IDEzQTkuNTcgOS41NyAwIDAgMSA2NSAxMzVjLTIuODEgMi45LTcuMTMgNC0xMy4wOSA0LjEtMTEuNDkuMjQtMjAtMS41Ni0zMy42MS05LjU5TDUuNzcgMTU0LjQyYTkzLjc3IDkzLjc3IDAgMCAwIDQ2IDEyLjIyaDIuMTFjMTQuMjQtLjI1IDI1Ljc0LTQuMzEgMzQuOTItMTEuNzEuNTMtLjQxIDEtLjg0IDEuNDktMS4yOGwtNC4xMiAxMC44NUgxMjNsNi4xOS0xOC44MmE2Ny40NiA2Ny40NiAwIDAgMCAyMS42OCAzLjQzIDY4LjMzIDY4LjMzIDAgMCAwIDIxLjE2LTMuMjVsNiAxOC42NGg2MC4xNHYtMzloMTMuMTFjMzEuNzEgMCA1MC40Ni0xNi4xNSA1MC40Ni00My4yIDAtMzAuMTEtMTguMjItNDMuOTQtNTcuMDEtNDMuOTR6TTE1MC45MSAxMjFhMzYuOTMgMzYuOTMgMCAwIDEtMTMtMi4yOGwxMi44Ny00MC41OWguMjJsMTIuNjUgNDAuNzFhMzguNSAzOC41IDAgMCAxLTEyLjc0IDIuMTZ6bTk2LjItMjMuMzNoLTguOTRWNjQuOTFoOC45NGMxMS45MyAwIDIxLjQ0IDQgMjEuNDQgMTYuMTQgMCAxMi42LTkuNTEgMTYuNTctMjEuNDQgMTYuNTciLz48L3N2Zz4=);
+      width: 48px;
+      max-width: 60px; }
+  .fd-shellbar__product {
+    padding: 0 8px 0 16px;
+    text-overflow: ellipsis;
+    min-width: 0; }
+    @media (min-width: 320px) {
+      .fd-shellbar__product {
+        max-width: 60%; } }
   .fd-shellbar__title {
     font-size: 1.14286rem;
     line-height: 1.25;
     font-weight: 400;
     font-weight: 700;
     line-height: 1;
-    padding: 0 16px;
-    color: white; }
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    display: none; }
+    @media (min-width: 600px) {
+      .fd-shellbar__title {
+        display: inline-block; } }
   .fd-shellbar__subtitle {
     font-size: 0.85714rem;
     line-height: 1.33333;
     font-weight: 400;
     font-weight: 400;
-    line-height: 1; }
+    line-height: 1;
+    padding: 0 16px; }
     @media (min-width: 320px) {
       .fd-shellbar__subtitle {
         display: none; } }
@@ -7110,13 +7151,13 @@ input-addon
     padding-right: 0;
     padding-left: 12px; }
     @media (min-width: 320px) {
-      .fd-shellbar__action--hide {
+      .fd-shellbar__action {
         display: none; } }
     @media (min-width: 600px) {
-      .fd-shellbar__action--hide {
+      .fd-shellbar__action {
         display: none; } }
     @media (min-width: 1025px) {
-      .fd-shellbar__action--hide {
+      .fd-shellbar__action {
         display: inline-block; } }
     @media (min-width: 320px) {
       .fd-shellbar__action--collapse {
@@ -7127,6 +7168,24 @@ input-addon
     @media (min-width: 1025px) {
       .fd-shellbar__action--collapse {
         display: none; } }
+    @media (min-width: 320px) {
+      .fd-shellbar__action--collapsible {
+        display: none; } }
+    @media (min-width: 600px) {
+      .fd-shellbar__action--collapsible {
+        display: none; } }
+    @media (min-width: 1025px) {
+      .fd-shellbar__action--collapsible {
+        display: inline-block; } }
+    @media (min-width: 320px) {
+      .fd-shellbar__action--show-always {
+        display: inline-block; } }
+    @media (min-width: 600px) {
+      .fd-shellbar__action--show-always {
+        display: inline-block; } }
+    @media (min-width: 1025px) {
+      .fd-shellbar__action--show-always {
+        display: inline-block; } }
   .fd-shellbar .fd-search-input .fd-input {
     border: 1px solid var(--fd-color-shell-2);
     background-color: var(--fd-color-shell-1);
@@ -7213,13 +7272,10 @@ input-addon
     white-space: nowrap;
     background-color: transparent;
     border-radius: 4px;
-    font-size: 1.14286rem;
-    line-height: 1.25;
-    font-weight: 700;
     height: var(--fd-forms-height);
     position: relative;
     padding-right: 20px;
-    padding-left: 8px; }
+    padding-left: 0; }
     .fd-product-menu__control::after {
       height: 0;
       width: 0;
@@ -7610,6 +7666,16 @@ input-addon
 
 .fd-has-left-border-none {
   border: none !important; }
+
+.fd-has-border-begin-none {
+  border-left: none !important; }
+  [direction="rtl"] .fd-has-border-begin-none, .fd-has-border-begin-none[direction="rtl"] {
+    border-right: none !important; }
+
+.fd-has-border-after-none {
+  border-right: none !important; }
+  [direction="rtl"] .fd-has-border-after-none, .fd-has-border-after-none[direction="rtl"] {
+    border-left: none !important; }
 
 .fd-has-border-color-action,
 .fd-has-border-color-action-1 {
@@ -8708,6 +8774,16 @@ input-addon
 
 .fd-has-left-border-none {
   border: none !important; }
+
+.fd-has-border-begin-none {
+  border-left: none !important; }
+  [direction="rtl"] .fd-has-border-begin-none, .fd-has-border-begin-none[direction="rtl"] {
+    border-right: none !important; }
+
+.fd-has-border-after-none {
+  border-right: none !important; }
+  [direction="rtl"] .fd-has-border-after-none, .fd-has-border-after-none[direction="rtl"] {
+    border-left: none !important; }
 
 .fd-has-border-color-action,
 .fd-has-border-color-action-1 {
