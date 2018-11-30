@@ -25,6 +25,14 @@ There are three emphasis styles used to indicate the importance of the button on
 {% endcapture %}
 {% include display-component.html component=button %}
 
+Buttons can also be rendered using a anchor tag. 
+{% capture button %}
+<a class="fd-button--emphasized" href="#">Emphasized Button</a>
+<a class="fd-button"  href="#">Regular Button</a>
+<a class="fd-button--light" href="#">Light Button</a>
+{% endcapture %}
+{% include display-component.html component=button class="abutton"%}
+
 ## Button Types
 
 There are five button types that can be combined with the emphasis styles.
