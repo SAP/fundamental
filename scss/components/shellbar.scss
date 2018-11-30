@@ -15,7 +15,7 @@ $fd-shellbar-outer-spacing-lr-medium: map-get($fd-spacing, "s") !default;
 $fd-shellbar-outer-spacing-lr-small: map-get($fd-spacing, "xxs") !default;
 $fd-shellbar-outer-spacing-tb: map-get($fd-spacing, "base") !default;
 
-$fd-shellbar-title-spacing: map-get($fd-spacing, "s") !default;
+$fd-shellbar-title-spacing: map-get($fd-spacing, "base") !default;
 $fd-shellbar-item-spacing: map-get($fd-spacing, "xs") !default;
 
 // Heights
@@ -61,7 +61,7 @@ $block: #{$fd-namespace}-shellbar;
             text-align: right;
             @include fd-rtl {
                 text-align: left;
-            }            
+            }
         }
     }
     &__logo,
@@ -100,7 +100,6 @@ $block: #{$fd-namespace}-shellbar;
     }
     &__product {
         padding: 0 fd-space(2) 0 $fd-shellbar-title-spacing;
-        //overflow: hidden;
         text-overflow: ellipsis;
         min-width: 0;
         @include fd-screen(s) {
