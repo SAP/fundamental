@@ -45,10 +45,9 @@ $block: #{$fd-namespace}-shellbar;
 
     //ELEMENTS *******************************************
     &__group {
-        &--start,
-        &--middle,
-        &--end{
-            display: inline-block;
+        &--start {
+            display: flex;
+            align-items: center;
         }
         &--start,
         &--end {
@@ -75,11 +74,10 @@ $block: #{$fd-namespace}-shellbar;
       max-height: $fd-shellbar-logo-height;
       background-repeat: no-repeat;
       background-size: contain;
-
       //the logo inside the menu (show only on small screen)
-      display: none;
       @include fd-screen(m) {
         display: inline-block;
+        margin-right: fd-space("tiny");
       }
       &--control {
         display: inline-block;
@@ -99,10 +97,13 @@ $block: #{$fd-namespace}-shellbar;
       }
     }
     &__product {
-        padding: 0 fd-space(2) 0 $fd-shellbar-title-spacing;
+        padding: 0 fd-space(2) 0 0;
         text-overflow: ellipsis;
         min-width: 0;
         @include fd-screen(s) {
+          max-width: 60%;
+        }
+        @include fd-screen(m) {
           max-width: 60%;
         }
     }
@@ -162,20 +163,20 @@ $block: #{$fd-namespace}-shellbar;
         padding-right: 0;
         padding-left: $fd-shellbar-item-spacing;
 
-        @include fd-rtl {        
+        @include fd-rtl {
           padding-right: $fd-shellbar-item-spacing;
           padding-left: 0;
         }
 
         // Show only on desktop, hide on s
         @include fd-screen(s) {
-            display: none;
+            //display: none;
         }
         @include fd-screen(m) {
-            display: none;
+            //display: none;
         }
         @include fd-screen(l) {
-            display: inline-block;
+            //display: inline-block;
         }
 
         &--collapse {

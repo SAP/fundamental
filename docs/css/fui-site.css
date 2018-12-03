@@ -7014,8 +7014,9 @@ input-addon
   position: relative;
   padding: 4px 32px;
   justify-content: space-between; }
-  .fd-shellbar__group--start, .fd-shellbar__group--middle, .fd-shellbar__group--end {
-    display: inline-block; }
+  .fd-shellbar__group--start {
+    display: flex;
+    align-items: center; }
   .fd-shellbar__group--start, .fd-shellbar__group--end {
     flex: 1; }
   .fd-shellbar__group--middle {
@@ -7031,11 +7032,11 @@ input-addon
     height: 24px;
     max-height: 24px;
     background-repeat: no-repeat;
-    background-size: contain;
-    display: none; }
+    background-size: contain; }
     @media (min-width: 600px) {
       .fd-shellbar__logo {
-        display: inline-block; } }
+        display: inline-block;
+        margin-right: 8px; } }
     .fd-shellbar__logo--control {
       display: inline-block; }
       @media (min-width: 600px) {
@@ -7050,10 +7051,13 @@ input-addon
       width: 48px;
       max-width: 60px; }
   .fd-shellbar__product {
-    padding: 0 8px 0 16px;
+    padding: 0 8px 0 0;
     text-overflow: ellipsis;
     min-width: 0; }
     @media (min-width: 320px) {
+      .fd-shellbar__product {
+        max-width: 60%; } }
+    @media (min-width: 600px) {
       .fd-shellbar__product {
         max-width: 60%; } }
   .fd-shellbar__title {
@@ -7106,15 +7110,6 @@ input-addon
     [dir="rtl"] .fd-shellbar__action, .fd-shellbar__action[dir="rtl"] {
       padding-right: 12px;
       padding-left: 0; }
-    @media (min-width: 320px) {
-      .fd-shellbar__action {
-        display: none; } }
-    @media (min-width: 600px) {
-      .fd-shellbar__action {
-        display: none; } }
-    @media (min-width: 1025px) {
-      .fd-shellbar__action {
-        display: inline-block; } }
     @media (min-width: 320px) {
       .fd-shellbar__action--collapse {
         display: inline-block; } }
@@ -9793,6 +9788,27 @@ hr {
     padding: 10px;
     display: inline-block;
     width: calc(33%); }
+
+.fd-tile__content--responsive-display {
+  padding: 60px 10px 30px 10px !important;
+  text-align: center; }
+
+.docs-component--responsive-display__frame {
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  transition: width .25s, height .25s; }
+
+.docs-component--responsive-display__controls {
+  position: absolute;
+  right: 10px;
+  top: 10px; }
+
+.docs-component--responsive-display__full-screen {
+  padding: 5px 9px;
+  font-size: 1.14286rem;
+  color: #6d7678 !important; }
+  .docs-component--responsive-display__full-screen:hover {
+    color: white !important; }
 
 .docs-footer {
   background: #EAEAEA;
