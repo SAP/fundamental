@@ -41,8 +41,8 @@ $block: #{$fd-namespace}-table;
     margin-bottom: $fd-margin-bottom;
     border-top: solid $fd-table-border-width $fd-table-border-color;
     background-color: $fd-table-background-color;
+    border: 1px solid $fd-table-border-color;
 
-    
     tr {
         transition: background-color $fd-table-transition-params;
         @include fd-hover {
@@ -55,6 +55,7 @@ $block: #{$fd-namespace}-table;
             }
         }
         @include action-cursor;
+
     }
 
     thead {
@@ -75,7 +76,16 @@ $block: #{$fd-namespace}-table;
             @include fd-weight();
         }
     }
-
+    tbody{
+        tr{
+            border: $fd-table-border-width solid $fd-table-border-color;
+            border-left: none;
+            border-right: none;
+            &:nth-child(even) {
+                background-color: fd-color-state("hover");
+            }
+        }
+    }
     td,
     th {
         text-align: left;
@@ -88,10 +98,6 @@ $block: #{$fd-namespace}-table;
         &:last-child {
             padding-right: $fd-table-cell-spacing;
         }
-        border-style: solid;
-        border-width: $fd-table-border-width;
-        border-color: $fd-table-border-color;
-        border-bottom: $fd-table-border-color;
 
         .fd-dropdown__menu{
             min-width: auto;
@@ -104,7 +110,6 @@ $block: #{$fd-namespace}-table;
                 color: $fd-table-link-color;
             }
         }
-
     }
 
     &__sort-column {
@@ -155,7 +160,6 @@ $block: #{$fd-namespace}-table;
             margin: 0 $fd-table-sort-icon-size;
             vertical-align: text-top;
         }
-
     }
 
     th.fd-table__context-menu {
@@ -165,7 +169,6 @@ $block: #{$fd-namespace}-table;
             background: $fd-table-sort-column-header-hover-color;
             @include action-cursor;
         }
-
     }
 
     &__fixed-col {
@@ -194,12 +197,17 @@ $block: #{$fd-namespace}-table;
             min-width: 200px;
         }
     }
+
+    &--no-borders {
+        border: none;
+        & tbody tr {
+            border: none;
+        }
+    }
+
+    &--no-stripes {
+        & tbody tr:nth-child(even) {
+            background-color: transparent;
+        }
+    }
 }
-
-.fd-table--no-borders td {
-    border: none;
-  }
-
-.fd-table--striped tr:nth-child(even) {
-    background-color: fd-color-state("hover");
-  }
