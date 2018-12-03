@@ -41,7 +41,7 @@
 <!-- output the component example and the code snippet -->
 <h3>Default Table</h3>
 {% set example %}
-{{  table({
+{{  table(properties={
         rows: [row, row, row],
         headers: [
             {
@@ -59,9 +59,69 @@
             {
                 label: "Header Column"
             }
-        ],
-        stripedTable: true,
-        noBorders:false
+        ]
+    })
+}}
+{% endset %}
+{{ format(example) }}
+
+<br><br><br>
+
+<h3>Table with `--no-borders`</h3>
+{% set example %}
+{{  table(properties={
+        rows: [row, row, row],
+        headers: [
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            }
+        ]
+    },
+    modifier={
+        block: ['no-borders']
+    })
+}}
+{% endset %}
+{{ format(example) }}
+
+<br><br><br>
+
+<h3>Table with `--no-stripes`</h3>
+{% set example %}
+{{  table(properties={
+        rows: [row, row, row],
+        headers: [
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            }
+        ]
+    },
+    modifier={
+        block: ['no-stripes']
     })
 }}
 {% endset %}
