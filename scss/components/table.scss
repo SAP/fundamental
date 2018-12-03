@@ -10,8 +10,8 @@
 $block: #{$fd-namespace}-table;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-table-border-color: transparent !default;
-    $fd-table-border-width: 0 !default;
+    $fd-table-border-color: fd-color("neutral", 2) !default;
+    $fd-table-border-width: 1px !default;
     $fd-table-link-color: fd-color(action, 1) !default;
     $fd-table-cell-spacing: var(--fd-width-gutter) !default;
     $fd-table-cell-padding: fd-space("xs") !default;
@@ -42,6 +42,7 @@ $block: #{$fd-namespace}-table;
     border-top: solid $fd-table-border-width $fd-table-border-color;
     background-color: $fd-table-background-color;
 
+    
     tr {
         transition: background-color $fd-table-transition-params;
         @include fd-hover {
@@ -90,6 +91,7 @@ $block: #{$fd-namespace}-table;
         border-style: solid;
         border-width: $fd-table-border-width;
         border-color: $fd-table-border-color;
+        border-bottom: $fd-table-border-color;
 
         .fd-dropdown__menu{
             min-width: auto;
@@ -193,3 +195,11 @@ $block: #{$fd-namespace}-table;
         }
     }
 }
+
+.fd-table--no-borders td {
+    border: none;
+  }
+
+.fd-table--striped tr:nth-child(even) {
+    background-color: fd-color-state("hover");
+  }

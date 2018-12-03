@@ -59,7 +59,9 @@
             {
                 label: "Header Column"
             }
-        ]
+        ],
+        stripedTable: true,
+        noBorders:false
     })
 }}
 {% endset %}
@@ -72,7 +74,9 @@
 {% set example %}
 {{  table({
         headers: headers,
-        rows: [image_row, image_row, image_row]
+        rows: [image_row, image_row, image_row],
+        stripedTable: true,
+        noBorders:false
     })
 }}
 {% endset %}
@@ -92,7 +96,9 @@
                 {label: "Column Header"}
                 ],
         rows: [checkbox_row_selected, checkbox_row, checkbox_row],
-        selectedRow: 1
+        selectedRow: 1,
+        stripedTable: true,
+        noBorders:false
     })
 }}
 {% endset %}
@@ -125,8 +131,9 @@
                 label: "Header Column"
             }
         ],
-        sortable: true
-
+        sortable: true,
+        stripedTable: true,
+        noBorders:false
     })
 }}
 {% endset %}
@@ -160,7 +167,9 @@
                 label: "Header Column"
             }
         ],
-        sortable: true
+        sortable: true,
+        stripedTable: true,
+        noBorders:false
 
     })
 }}
@@ -195,7 +204,9 @@
                 label: "Header Column"
             }
         ],
-        sortable: true
+        sortable: true,
+        stripedTable: true,
+        noBorders:false
 
     })
 }}
@@ -262,8 +273,9 @@
                 label: "Header Column"
             }
         ],
-        contextual_headers: true
-
+        contextual_headers: true,
+        stripedTable: true,
+        noBorders:false
     })
 }}
 {% endset %}
@@ -350,7 +362,9 @@
             }
         ],
         contextual_headers: true,
-        fixed_col_table: true
+        fixed_col_table: true,
+        stripedTable: true,
+        noBorders:false
 
     })
 }}

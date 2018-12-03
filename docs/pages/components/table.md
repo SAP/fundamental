@@ -15,7 +15,7 @@ A table is a set tabular data. Line items can support data, images and actions.
 The header columns allows the user to easily understand the data represented.
 
 {% capture table-icon %}
-<table class="fd-table">
+<table class="fd-table fd-table--striped ">
     <thead>
         <tr>
             <th></th>
@@ -65,7 +65,7 @@ The checkbox input can be used at the beginning of each row to allow for bulk ac
 It is recommended to add the parameter `area-selected="true` to the row that is selected.
 
 {% capture table-checkbox %}
-<table class="fd-table">
+<table class="fd-table fd-table--striped">
     <thead>
         <tr>
             <th><input type="checkbox"></th>
@@ -109,7 +109,7 @@ When more than three actions exist per row and/or space doesn't allow for action
 a contextual menu can be substituted in order to display all actions in one menu.
 
 {% capture table-actions %}
-<table class="fd-table">
+<table class="fd-table fd-table--striped" >
     <thead>
         <tr>
             <th>Column Header</th>
@@ -194,7 +194,7 @@ a contextual menu can be substituted in order to display all actions in one menu
 
 ## Table with Sortable Column Headers
 {% capture table-sort %}
-<table class="fd-table">
+<table class="fd-table fd-table--striped">
    <thead>
       <tr>
          <th class="fd-table__sort-column">Header Column</th>
@@ -227,7 +227,7 @@ a contextual menu can be substituted in order to display all actions in one menu
 
 ## Table with Sortable Column Headers - Ascending
 {% capture table-sort %}
-<table class="fd-table">
+<table class="fd-table fd-table--striped">
    <thead>
       <tr>
          <th class="fd-table__sort-column fd-table__sort-column--asc">Header Column</th>
@@ -260,7 +260,7 @@ a contextual menu can be substituted in order to display all actions in one menu
 
 ## Table with Sortable Column Headers - Descinding
 {% capture table-sort %}
-<table class="fd-table">
+<table class="fd-table fd-table--striped">
    <thead>
       <tr>
          <th class="fd-table__sort-column fd-table__sort-column--dsc">Header Column</th>
@@ -293,7 +293,7 @@ a contextual menu can be substituted in order to display all actions in one menu
 
 ## Table with Column Headers with context menu
 {% capture table-sort %}
-<table class="fd-table">
+<table class="fd-table fd-table--striped">
    <thead>
       <tr>
          <th class="fd-table__context-menu" aria-controls="col1" aria-haspopup="true" >
@@ -392,7 +392,7 @@ a contextual menu can be substituted in order to display all actions in one menu
 {% capture table-sort %}
 <div class="fd-table--fixed-wrapper" style="width:800px;">
    <div class="fd-table--fixed">
-      <table class="fd-table">
+      <table class="fd-table fd-table--striped">
          <thead>
             <tr>
                <th class="fd-table__context-menu fd-table__fixed-col" style="left:0; width:200px" aria-controls="col1.2" aria-haspopup="true">
