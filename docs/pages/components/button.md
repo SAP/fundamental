@@ -19,7 +19,7 @@ There are three emphasis styles used to indicate the importance of the button on
 - **Light Button**: This is the lowest priority button and most often used with page content like appearing in a table or list. There may be more than one on the page.
 
 {% capture button %}
-<button class="fd-button--anchor">Emphasized Button</button>
+<button class="fd-button--emphasized">Emphasized Button</button>
 <button class="fd-button">Regular Button</button>
 <button class="fd-button--light">Light Button</button>
 {% endcapture %}
