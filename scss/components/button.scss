@@ -130,6 +130,7 @@ $block: #{$fd-namespace}-button;
       @include fd-var-size("min-width", $fd-forms-height--compact, --fd-forms-height);
     }
   }
+
   //BUTTON emphasis variations
   //.fd-button--emphasized
   &--emphasized {
@@ -332,6 +333,9 @@ $block: #{$fd-namespace}-button;
     @include fd-selected {
       --fd-button-color: var(--fd-color-action-2);
     }
+  }
+  &--anchor {
+    line-height: $fd-forms-height;
   }
   &--standard {
     --fd-button-color: var(--fd-color-status-4);
@@ -610,4 +614,7 @@ $block: #{$fd-namespace}-button;
       }
     }
 
+}
+.fd-anchor{
+  line-height: $fd-forms-height;
 }

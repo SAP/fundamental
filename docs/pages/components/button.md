@@ -19,7 +19,7 @@ There are three emphasis styles used to indicate the importance of the button on
 - **Light Button**: This is the lowest priority button and most often used with page content like appearing in a table or list. There may be more than one on the page.
 
 {% capture button %}
-<button class="fd-button--emphasized">Emphasized Button</button>
+<button class="fd-button--anchor">Emphasized Button</button>
 <button class="fd-button">Regular Button</button>
 <button class="fd-button--light">Light Button</button>
 {% endcapture %}
@@ -33,6 +33,7 @@ There are five button types that can be combined with the emphasis styles.
 - **Positive Button**: Used for positive actions such as approved, ok, yes.
 - **Medium Button**: Used for warnings or alert
 - **Negative Button**:Used for negative actions such as decline, cancel, no.
+- **Link Button**:Used for adding links to the button
 
 
 {% capture button %}
@@ -41,6 +42,7 @@ There are five button types that can be combined with the emphasis styles.
 <button class="fd-button--positive">Positive Button</button>
 <button class="fd-button--medium">Medium Button</button>
 <button class="fd-button--negative">Negative Button</button>
+<a class="fd-button--anchor">Link Button</a>
 {% endcapture %}
 {% include display-component.html component=button %}
 
