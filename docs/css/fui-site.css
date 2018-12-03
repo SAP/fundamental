@@ -7024,8 +7024,9 @@ input-addon
   position: relative;
   padding: 4px 32px;
   justify-content: space-between; }
-  .fd-shellbar__group--start, .fd-shellbar__group--middle, .fd-shellbar__group--end {
-    display: inline-block; }
+  .fd-shellbar__group--start {
+    display: flex;
+    align-items: center; }
   .fd-shellbar__group--start, .fd-shellbar__group--end {
     flex: 1; }
   .fd-shellbar__group--middle {
@@ -7041,11 +7042,11 @@ input-addon
     height: 24px;
     max-height: 24px;
     background-repeat: no-repeat;
-    background-size: contain;
-    display: none; }
+    background-size: contain; }
     @media (min-width: 600px) {
       .fd-shellbar__logo {
-        display: inline-block; } }
+        display: inline-block;
+        margin-right: 8px; } }
     .fd-shellbar__logo--control {
       display: inline-block; }
       @media (min-width: 600px) {
@@ -7060,10 +7061,13 @@ input-addon
       width: 48px;
       max-width: 60px; }
   .fd-shellbar__product {
-    padding: 0 8px 0 4px;
+    padding: 0 8px 0 0;
     text-overflow: ellipsis;
     min-width: 0; }
     @media (min-width: 320px) {
+      .fd-shellbar__product {
+        max-width: 60%; } }
+    @media (min-width: 600px) {
       .fd-shellbar__product {
         max-width: 60%; } }
   .fd-shellbar__title {
@@ -7101,7 +7105,7 @@ input-addon
     display: inline-block;
     vertical-align: middle;
     width: 30px;
-    height: 30px; }
+    «»height: 30px; }
     .fd-shellbar__copilot > img {
       display: block;
       max-width: 100%; }
@@ -7116,15 +7120,6 @@ input-addon
     [dir="rtl"] .fd-shellbar__action, .fd-shellbar__action[dir="rtl"] {
       padding-right: 12px;
       padding-left: 0; }
-    @media (min-width: 320px) {
-      .fd-shellbar__action {
-        display: none; } }
-    @media (min-width: 600px) {
-      .fd-shellbar__action {
-        display: none; } }
-    @media (min-width: 1025px) {
-      .fd-shellbar__action {
-        display: inline-block; } }
     @media (min-width: 320px) {
       .fd-shellbar__action--collapse {
         display: inline-block; } }
@@ -9622,26 +9617,36 @@ hr {
     height: 500px;
     color: white;
     position: relative; }
-    .docs-component__app .fd-ui__app,
-    .docs-component__app .fd-ui,
+    .docs-component__app .fd-shell {
+      width: 100%;
+      max-width: 100%;
+      min-height: 410px;
+      max-height: 410px;
+      position: relative; }
+    .docs-component__app .fd-shell__app {
+      height: calc(100%  - 48px);
+      margin-top: 0; }
+    .docs-component__app .fd-app__navigation {
+      height: calc(100%  - 48px);
+      margin-top: 48px; }
+    .docs-component__app .fd-shell__app,
+    .docs-component__app .fd-shell,
     .docs-component__app .fd-app {
       width: 100%;
+      max-width: 100%;
       min-height: 410px;
-      position: relative;
-      margin-top: 0; }
-    .docs-component__app .fd-ui__header,
-    .docs-component__app .fd-app__sidebar,
-    .docs-component__app .fd-ui__footer,
+      max-height: 410px; }
+    .docs-component__app .fd-shell__header,
+    .docs-component__app .fd-app__navigation,
+    .docs-component__app .fd-shell__footer,
     .docs-component__app .fd-app__main {
       padding: 10px;
       text-align: center;
       color: #000; }
-    .docs-component__app .fd-ui__header, .docs-component__app .fd-ui__footer {
+    .docs-component__app .fd-shell__header, .docs-component__app .fd-shell__footer {
       background-color: #d9d9d9; }
-    .docs-component__app .fd-app__sidebar {
-      width: 250px;
-      background-color: white;
-      padding-top: 100px; }
+    .docs-component__app .fd-app__navigation {
+      background-color: white; }
     .docs-component__app .fd-app__main {
       background-color: #fafafa;
       padding-top: 50px; }
@@ -9656,14 +9661,15 @@ hr {
   .docs-component__app-example {
     color: white;
     position: relative; }
-    .docs-component__app-example .fd-ui__app, .docs-component__app-example .fd-ui, .docs-component__app-example .fd-app {
+    .docs-component__app-example .fd-shell__app, .docs-component__app-example .fd-shell, .docs-component__app-example .fd-app {
       width: 100%;
       min-height: 410px;
       position: relative;
       margin-top: 0; }
-    .docs-component__app-example .fd-app__sidebar {
-      width: 250px;
+    .docs-component__app-example .fd-app__navigation {
       padding-top: 50px; }
+    .docs-component__app-example .fd-app__navigation--vertical {
+      width: 250px; }
     .docs-component__app-example .fd-app__main {
       background-color: #fafafa;
       padding-top: 50px; }
