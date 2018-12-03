@@ -4611,8 +4611,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   max-width: 100%;
   border-collapse: collapse;
   margin-bottom: 12px;
-  border-top: solid 0 transparent;
-  background-color: white; }
+  border-top: solid 1px #eeeeef;
+  background-color: white;
+  border: 1px solid #eeeeef; }
   .fd-table:last-child, .docs-table:last-child {
     margin-bottom: 0;
     margin-right: 0; }
@@ -4639,14 +4640,17 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .docs-table thead th {
       border: none;
       font-weight: 400; }
+  .fd-table tbody tr, .docs-table tbody tr {
+    border: 1px solid #eeeeef;
+    border-left: none;
+    border-right: none; }
+    .fd-table tbody tr:nth-child(even), .docs-table tbody tr:nth-child(even) {
+      background-color: #fafafa; }
   .fd-table td, .docs-table td,
   .fd-table th,
   .docs-table th {
     text-align: left;
-    padding: 12px calc(var(--fd-width-gutter)/2);
-    border-style: solid;
-    border-width: 0;
-    border-color: transparent; }
+    padding: 12px calc(var(--fd-width-gutter)/2); }
     .fd-table td:first-child, .docs-table td:first-child,
     .fd-table th:first-child,
     .docs-table th:first-child {
@@ -4720,6 +4724,12 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     padding-left: 200px; }
     .fd-table--fixed td {
       min-width: 200px; }
+  .fd-table--no-borders {
+    border: none; }
+    .fd-table--no-borders tbody tr {
+      border: none; }
+  .fd-table--no-stripes tbody tr:nth-child(even) {
+    background-color: transparent; }
 
 /*
   @mixin fd-type mixin
