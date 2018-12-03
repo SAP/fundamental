@@ -67,7 +67,7 @@ Help elements give the user information about the input. Two types of help eleme
         <label class="fd-form__label" for="input-44">
             Input with inline help:
             <span class="fd-inline-help fd-has-float-right">
-                <span class="fd-inline-help__content fd-inline-help__content--bottom-right">
+                <span class="fd-inline-help__content fd-inline-help__content--bottom-left">
                         Lorem ipsum dolor sit amet, consectetur adipiscing.
                 </span>
             </span>
