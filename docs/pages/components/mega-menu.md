@@ -5,8 +5,10 @@ sidebar: left-navigation-sidebar
 toc: false
 permalink: components/mega-menu.html
 folder: components
-summary:
+summary: <span class="fd-badge fd-badge--error fd-badge--pill">Deprecated</span>
 ---
+
+> <small>`mega-menu` component has been deprecated. It will continue to work until v1.5 release.</small>
 
 Mega menu is used in conjunction with Context Switcher within the Global Navigation (link to Global Nav page) and supports two levels within a hierarchy.
 
