@@ -12,7 +12,7 @@
 
 {% block content %}
 <style media="screen">
-  button {
+  button, a {
     margin-bottom: 4px !important;
     margin-right: 4px !important;
   }
@@ -24,6 +24,29 @@
 {% set emphasis = ["emphasized", "", "light" ] %}
 {% set types = ["", "standard", "positive ", "medium", "negative" ] %}
 {% set sizes = ["", "compact" ] %}
+
+<button class=" fd-button--emphasized">Button</button>
+<button class=" fd-button--emphasized sap-icon--cart">Add to Cart</button>
+<button class=" fd-button--emphasized sap-icon--attachment" aria-label="Add Attachment"></button>
+<br>
+
+<a class=" fd-button--emphasized">Button</a>
+<a class=" fd-button--emphasized sap-icon--cart">Add to Cart</a>
+<a class=" fd-button--emphasized sap-icon--attachment" aria-label="Add Attachment"></a>
+
+<br><br>
+
+<button class=" fd-button--compact fd-button--emphasized">Button</button>
+<button class=" fd-button--compact fd-button--emphasized sap-icon--cart">Add to Cart</button>
+<button class=" fd-button--compact fd-button--emphasized sap-icon--attachment" aria-label="Add Attachment"></button>
+
+<br>
+
+<a class=" fd-button--compact fd-button--emphasized">Button</a>
+<a class=" fd-button--compact fd-button--emphasized sap-icon--cart">Add to Cart</a>
+<a class=" fd-button--compact fd-button--emphasized sap-icon--attachment" aria-label="Add Attachment"></a>
+
+<br><br><br><br>
 
 <table border="1" cellpadding="10">
   <tr>

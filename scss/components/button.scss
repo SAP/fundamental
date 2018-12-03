@@ -32,7 +32,7 @@ $block: #{$fd-namespace}-button;
       @include fd-type("0");
       @include fd-icon-size("m", "before");
       @include fd-icon-size("m", "after");
-      line-height: $fd-forms-height - 2;
+
       padding-left: $fd-button-padding-x;
       padding-right: $fd-button-padding-x;
 
@@ -112,7 +112,7 @@ $block: #{$fd-namespace}-button;
   //compact sizes (see `core/root` for css vars rules)
   &--compact {
     //set metrics
-    line-height: $fd-forms-height - 10;
+
     @include fd-var-size("height", $fd-forms-height, --fd-forms-height-compact);
     @include fd-var-size("max-height", $fd-forms-height, --fd-forms-height-compact);
     @include fd-var-size("min-width", $fd-forms-height, --fd-forms-height-compact);
@@ -444,6 +444,15 @@ $block: #{$fd-namespace}-button;
     @include fd-disabled {
       opacity: .25; // TEMP
     }
+  }
+}
+
+:not(button).#{$block},
+:not(button)[class*="#{$block}--"] {
+    text-align: center;
+    line-height: $fd-forms-height - 2;
+    &--compact {
+      line-height: $fd-forms-height - 10;
   }
 }
 
