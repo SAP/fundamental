@@ -3,7 +3,7 @@ title: Shell Layout
 keywords: shell application layouts overlay
 toc: false
 sidebar: left-navigation-sidebar
-permalink: /layouts/application-layout.html
+permalink: /layouts/shell-layout.html
 folder: layouts
 summary:
 ---
