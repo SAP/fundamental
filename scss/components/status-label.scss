@@ -55,6 +55,20 @@ $block: #{$fd-namespace}-status-label;
     &--busy,
     &--offline {
         padding-left: fd-space(5);
+
+        @include fd-rtl {    
+            padding-left: initial;
+            padding-right: fd-space(5);
+
+            &:before {
+                left: initial;
+            }
+
+            &:after {
+                left: initial;
+                right: 0;
+            }            
+        }
     }
 
     &--available {
@@ -100,6 +114,12 @@ $block: #{$fd-namespace}-status-label;
             @include fd-status-icon-bg;
             background-color: $fd-color--error;
         }
+
+        @include fd-rtl {    
+            &:before {
+                right: 6px;
+            }        
+        }
     }
 
     &--offline {
@@ -129,40 +149,15 @@ $block: #{$fd-namespace}-status-label;
         color: $fd-color--error;
     }
 
-}
-
-@include fd-rtl(#{$block}) {
-    .#{$block} {
-
-        &--available,
-        &--away,
-        &--busy,
-        &--offline {
-            padding-left: initial;
-            padding-right: fd-space(5);
-
-            &:before {
-                left: initial;
-            }
-
-            &:after {
-                left: initial;
-                right: 0;
-            }
-        }
-
-        &--available,
-        &--away,
-        &--offline {
+    &--available,
+    &--away,
+    &--offline {
+        @include fd-rtl {    
             &:before {
                 right: 4px;
             }
         }
-
-        &--busy {
-            &:before {
-                right: 6px;
-            }
-        }
     }
-};
+}
+
+

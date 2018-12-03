@@ -135,10 +135,12 @@
   @content;
 }
 
-@mixin fd-rtl($class){
-  [dir="rtl"],
-  .#{$class}[dir="rtl"] {
-    @content;
+@mixin fd-rtl {
+  @at-root {
+    [dir="rtl"] &,
+    &[dir="rtl"] {
+        @content;
+    }
   }
 }
 

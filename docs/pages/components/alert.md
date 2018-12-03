@@ -16,13 +16,37 @@ Alerts provide messages within the application that are color-coded to emphasize
 The alert provides information that is useful and relevant, but not critical. It can also provide feedback that an action has been executed. The user will need to dismiss the message.
 
 {% capture default-alert %}
-<div class="fd-alert fd-alert--dismissible" role="alert" id="j2ALl423">
-  <button class="fd-alert__close" aria-controls="j2ALl423" aria-label="Close"></button>
-  Default alert with a <a href="#" class="fd-link">link <span class="sap-icon--arrow-right sap-icon--s"></span></a>
+<div class="fd-alert fd-alert--dismissible" role="alert"  id="lLZs7497" >
+  <button class="fd-alert__close" aria-controls="lLZs7497" aria-label="Close"></button>
+  Netural . <a href="#" class="fd-link">Learn More</a>
 </div>
 {% endcapture %}
 
 {% include display-component.html component=default-alert %}
+
+## Information
+Add the modifier class `fd-alert--information` for Information alert.
+
+{% capture information-alert %}
+<div class="fd-alert fd-alert--information fd-alert--dismissible" role="alert"  id="wONLe978" >
+  <button class="fd-alert__close" aria-controls="wONLe978" aria-label="Close"></button>
+  <span class="sap-icon--message-information"></span> Information Message. <a href="#" class="fd-link">Learn More</a>
+</div>
+{% endcapture %}
+
+{% include display-component.html component=information-alert %}
+
+## Success
+Add the modifier class `fd-alert--success` for Success alert.
+
+{% capture success-alert %}
+<div class="fd-alert fd-alert--success fd-alert--dismissible" role="alert"  id="5Pr9b835" >
+  <button class="fd-alert__close" aria-controls="5Pr9b835" aria-label="Close"></button>
+  <span class="sap-icon--message-success"></span> Message Success. <a href="#" class="fd-link">Learn More</a>
+</div>
+{% endcapture %}
+
+{% include display-component.html component=success-alert %}
 
 ## Warning
 The alert warns of potential issues, but the user can still continue. The user will need to dismiss the message.
@@ -30,9 +54,9 @@ The alert warns of potential issues, but the user can still continue. The user w
 Add the modifier class `fd-alert--warning` for Warning alert.
 
 {% capture warning-alert %}
-<div class="fd-alert fd-alert--warning fd-alert--dismissible" role="alert" id="j2ALl423">
-  <button class="fd-alert__close" aria-controls="j2ALl423" aria-label="Close"></button>
-  Warning message with a <a href="#" class="fd-link">link <span class="sap-icon--arrow-right sap-icon--s"></span></a>
+<div class="fd-alert fd-alert--warning fd-alert--dismissible" role="alert"  id="PhSNC155" >
+  <button class="fd-alert__close" aria-controls="PhSNC155" aria-label="Close"></button>
+  <span class="sap-icon--message-warning"></span> Warning Message. <a href="#" class="fd-link">Learn More</a>
 </div>
 {% endcapture %}
 
@@ -44,9 +68,9 @@ This alert is triggered after the user entered data incorrectly or a system erro
 Add the modifier class `fd-alert--error` for Error alert.
 
 {% capture error-alert %}
-<div class="fd-alert fd-alert--error fd-alert--dismissible" role="alert" id="j2ALl423">
-  <button class="fd-alert__close" aria-controls="j2ALl423" aria-label="Close"></button>
-  Error message with a <a href="#" class="fd-link">link <span class="sap-icon--arrow-right sap-icon--s"></span></a>
+<div class="fd-alert fd-alert--error fd-alert--dismissible" role="alert"  id="aVp3S272" >
+  <button class="fd-alert__close" aria-controls="aVp3S272" aria-label="Close"></button>
+  <span class="sap-icon--message-error"></span> Error Message. <a href="#" class="fd-link">Learn More</a>
 </div>
 {% endcapture %}
 
