@@ -9607,26 +9607,36 @@ hr {
     height: 500px;
     color: white;
     position: relative; }
-    .docs-component__app .fd-ui__app,
-    .docs-component__app .fd-ui,
+    .docs-component__app .fd-shell {
+      width: 100%;
+      max-width: 100%;
+      min-height: 410px;
+      max-height: 410px;
+      position: relative; }
+    .docs-component__app .fd-shell__app {
+      height: calc(100%  - 48px);
+      margin-top: 0; }
+    .docs-component__app .fd-app__navigation {
+      height: calc(100%  - 48px);
+      margin-top: 48px; }
+    .docs-component__app .fd-shell__app,
+    .docs-component__app .fd-shell,
     .docs-component__app .fd-app {
       width: 100%;
+      max-width: 100%;
       min-height: 410px;
-      position: relative;
-      margin-top: 0; }
-    .docs-component__app .fd-ui__header,
-    .docs-component__app .fd-app__sidebar,
-    .docs-component__app .fd-ui__footer,
+      max-height: 410px; }
+    .docs-component__app .fd-shell__header,
+    .docs-component__app .fd-app__navigation,
+    .docs-component__app .fd-shell__footer,
     .docs-component__app .fd-app__main {
       padding: 10px;
       text-align: center;
       color: #000; }
-    .docs-component__app .fd-ui__header, .docs-component__app .fd-ui__footer {
+    .docs-component__app .fd-shell__header, .docs-component__app .fd-shell__footer {
       background-color: #d9d9d9; }
-    .docs-component__app .fd-app__sidebar {
-      width: 250px;
-      background-color: white;
-      padding-top: 100px; }
+    .docs-component__app .fd-app__navigation {
+      background-color: white; }
     .docs-component__app .fd-app__main {
       background-color: #fafafa;
       padding-top: 50px; }
@@ -9641,14 +9651,15 @@ hr {
   .docs-component__app-example {
     color: white;
     position: relative; }
-    .docs-component__app-example .fd-ui__app, .docs-component__app-example .fd-ui, .docs-component__app-example .fd-app {
+    .docs-component__app-example .fd-shell__app, .docs-component__app-example .fd-shell, .docs-component__app-example .fd-app {
       width: 100%;
       min-height: 410px;
       position: relative;
       margin-top: 0; }
-    .docs-component__app-example .fd-app__sidebar {
-      width: 250px;
+    .docs-component__app-example .fd-app__navigation {
       padding-top: 50px; }
+    .docs-component__app-example .fd-app__navigation--vertical {
+      width: 250px; }
     .docs-component__app-example .fd-app__main {
       background-color: #fafafa;
       padding-top: 50px; }
