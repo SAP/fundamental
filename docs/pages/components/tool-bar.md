@@ -7,7 +7,7 @@ permalink: components/toolbar.html
 folder: components
 summary: <span class="fd-badge fd-badge--error fd-badge--pill">Deprecated</span>
 ---
-> <small>`mega-menu` component has been deprecated and no longer supported </small>
+> <small>`toolbar` component has been deprecated and no longer supported </small>
 
 The Toolbar component is used always along a collection of items, like cards or a table. The main use of it is to manipulate the collection. We provide elements and interaction patters for **filtering**, **sorting**, **pagination** and **view changes**.
 
