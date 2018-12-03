@@ -56,6 +56,25 @@ $block: #{$fd-namespace}-dropdown;
       width: 100%;
       text-align: left;
 
+      @include fd-rtl {
+        &::after {
+            border-top-left-radius: $fd-border-radius;
+            border-bottom-left-radius: $fd-border-radius;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        &:not(.fd-button--standard) {
+            &::after {
+                border-right: 1px solid $fd-forms-border-color;
+                border-left: none;
+            }
+        }
+        &.fd-button {
+            padding-left: 0;
+            padding-right: fd-space("xs");
+        }
+      }
+
       &::after {
         color: $fd-link-color;
         width: $fd-forms-height - 2;
@@ -148,32 +167,10 @@ $block: #{$fd-namespace}-dropdown;
             background-color:  transparent;
             border-left: none;
         }
-    }
-    @include fd-menu();
-}
 
-@include fd-rtl(#{$block}) {
-    .#{$block}{
-        &__control {
-            &::after {
-                border-top-left-radius: $fd-border-radius;
-                border-bottom-left-radius: $fd-border-radius;
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-            }
-            &:not(.fd-button--standard) {
-                &::after {
-                    border-right: 1px solid $fd-forms-border-color;
-                    border-left: none;
-                }
-            }
-            &.fd-button {
-                padding-left: 0;
-                padding-right: fd-space("xs");
-            }
-        }
-        &__control.fd-button--standard {
+        @include fd-rtl {
             padding-left: fd-space("xs");
         }
     }
+    @include fd-menu();
 }

@@ -51,4 +51,19 @@ $block: sap-icon;
         @include fd-icon-glyph($key);
       }
   }
+  &--animate-spin {
+    @include fd-icon-animate("spin");
+  }
+  &--animate-pulse {
+    @include fd-icon-animate("pulse");
+  }
+}
+
+@keyframes sap-icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
 }

@@ -42,7 +42,7 @@ select,
     background-image: url(#{$fd-forms-select-background-image});
     background-repeat: no-repeat;
     background-position: calc(100%) center;
-    padding-right: ($fd-forms-padding * 2) + $fd-forms-select-width--background-image;
+    padding-right: ($fd-forms-padding * 3) + $fd-forms-select-width--background-image;
     width: 100%;
     &:focus,
     &:hover {
@@ -77,7 +77,18 @@ select,
     }
 }
 
-#{$fd-elements-inputs--check},
+@-moz-document url-prefix() {
+    #{$fd-elements-inputs--check},
+    .#{$fd-namespace}-checkbox {
+        -moz-appearance: checkbox;
+    }
+    #{$fd-elements-inputs--radio},
+    .#{$fd-namespace}-radio {
+        -moz-appearance: radio;
+    }    
+}
+
+#{$fd-elements-inputs--check}, #{$fd-elements-inputs--radio},
 .#{$fd-namespace}-checkbox,
 .#{$fd-namespace}-radio {
     @extend %form-field-base;

@@ -41,7 +41,7 @@
 <!-- output the component example and the code snippet -->
 <h3>Default Table</h3>
 {% set example %}
-{{  table({
+{{  table(properties={
         rows: [row, row, row],
         headers: [
             {
@@ -59,8 +59,69 @@
             {
                 label: "Header Column"
             }
-        ],
-        highlightRows:true
+        ]
+    })
+}}
+{% endset %}
+{{ format(example) }}
+
+<br><br><br>
+
+<h3>Table with `--no-borders`</h3>
+{% set example %}
+{{  table(properties={
+        rows: [row, row, row],
+        headers: [
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            }
+        ]
+    },
+    modifier={
+        block: ['no-borders']
+    })
+}}
+{% endset %}
+{{ format(example) }}
+
+<br><br><br>
+
+<h3>Table with `--no-stripes`</h3>
+{% set example %}
+{{  table(properties={
+        rows: [row, row, row],
+        headers: [
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            },
+            {
+                label: "Header Column"
+            }
+        ]
+    },
+    modifier={
+        block: ['no-stripes']
     })
 }}
 {% endset %}
@@ -74,7 +135,8 @@
 {{  table({
         headers: headers,
         rows: [image_row, image_row, image_row],
-        highlightRows:true
+        stripedTable: true,
+        noBorders:false
     })
 }}
 {% endset %}
@@ -95,7 +157,8 @@
                 ],
         rows: [checkbox_row_selected, checkbox_row, checkbox_row],
         selectedRow: 1,
-        highlightRows:true
+        stripedTable: true,
+        noBorders:false
     })
 }}
 {% endset %}
@@ -129,8 +192,8 @@
             }
         ],
         sortable: true,
-        highlightRows:true
-
+        stripedTable: true,
+        noBorders:false
     })
 }}
 {% endset %}
@@ -165,7 +228,8 @@
             }
         ],
         sortable: true,
-        highlightRows:true
+        stripedTable: true,
+        noBorders:false
 
     })
 }}
@@ -201,7 +265,8 @@
             }
         ],
         sortable: true,
-        highlightRows:true
+        stripedTable: true,
+        noBorders:false
 
     })
 }}
@@ -269,8 +334,8 @@
             }
         ],
         contextual_headers: true,
-        highlightRows:true
-
+        stripedTable: true,
+        noBorders:false
     })
 }}
 {% endset %}
@@ -358,7 +423,9 @@
         ],
         contextual_headers: true,
         fixed_col_table: true,
-        highlightRows:true
+        stripedTable: true,
+        noBorders:false
+
     })
 }}
 {% endset %}

@@ -28,27 +28,8 @@ $block: #{$fd-namespace}-breadcrumb;
     list-style: none;
     padding-right: fd-space(4);
 
-    //ELEMENTS *******************************************
-    &__item {
-        &::after{
-            content: "/";
-            margin-right: $fd-breadcrumb-link-margin;
-        }
-        &:last-child::after{
-            content: none;
-        }
-    }
-
-    &__link {
-        margin-right: $fd-breadcrumb-link-margin;
-    }
-
-}
-
-@include fd-rtl(#{$block}) {
-    .#{$block}{
+    @include fd-rtl {
         padding: 0 0 0 fd-space(4);
-
         &__item {
             &::after{
                 content: "/";
@@ -59,10 +40,35 @@ $block: #{$fd-namespace}-breadcrumb;
                 content: none;
             }
         }
+    }
 
-        &__link {
+    //ELEMENTS *******************************************
+    &__item {
+        &::after{
+            content: "/";
+            margin-right: $fd-breadcrumb-link-margin;
+        }
+        &:last-child::after{
+            content: none;
+        }
+        @include fd-rtl {
+            &::after{
+                content: "/";
+                margin-right: initial;
+                margin-left: $fd-breadcrumb-link-margin;
+            }
+            &:last-child::after{
+                content: none;
+            }
+        }
+    }
+
+    &__link {
+        margin-right: $fd-breadcrumb-link-margin;
+        @include fd-rtl {
             margin-right: initial;
             margin-left: $fd-breadcrumb-link-margin;
         }
     }
+
 }

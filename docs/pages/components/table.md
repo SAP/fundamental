@@ -7,12 +7,11 @@ permalink: components/table.html
 folder: components
 ---
 
-A table is a set tabular data. Line items can support data, images and actions.
+A table is a set of tabular data. Line items can support data, images and actions.
 
 <hr />
 
 ## Default Table
-The header columns allows the user to easily understand the data represented.
 
 {% capture table-icon %}
 <table class="fd-table">
@@ -26,7 +25,7 @@ The header columns allows the user to easily understand the data represented.
         </tr>
     </thead>
     <tbody>
-        <tr class="fd-highlight">
+        <tr>
             <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
             style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
             </span></td>
@@ -35,7 +34,7 @@ The header columns allows the user to easily understand the data represented.
             <td>Last Name</td>
             <td>01/26/17</td>
         </tr>
-        <tr class="fd-highlight">
+        <tr>
             <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
             style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
             </span></td>
@@ -44,7 +43,107 @@ The header columns allows the user to easily understand the data represented.
             <td>Last Name</td>
             <td>01/26/17</td>
         </tr>
-        <tr class="fd-highlight">
+        <tr>
+            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
+            style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
+            </span></td>
+            <td><a href="#" class="fd-has-font-weight-semi">user.name@email.com</a></td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>01/26/17</td>
+        </tr>
+    </tbody>
+</table>
+{% endcapture %}
+{% include display-component.html component=table-icon %}
+
+<br />
+
+## Table with no borders
+
+`fd-table--no-borders` can be applied to render a table with no borders
+
+{% capture table-icon %}
+<table class="fd-table fd-table--no-borders">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Column Header</th>
+            <th>Column Header</th>
+            <th>Column Header</th>
+            <th>Column Header</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
+            style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
+            </span></td>
+            <td><a href="#" class="fd-has-font-weight-semi">user.name@email.com</a></td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>01/26/17</td>
+        </tr>
+        <tr>
+            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
+            style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
+            </span></td>
+            <td><a href="#" class="fd-has-font-weight-semi">user.name@email.com</a></td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>01/26/17</td>
+        </tr>
+        <tr>
+            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
+            style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
+            </span></td>
+            <td><a href="#" class="fd-has-font-weight-semi">user.name@email.com</a></td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>01/26/17</td>
+        </tr>
+    </tbody>
+</table>
+{% endcapture %}
+{% include display-component.html component=table-icon %}
+
+<br />
+
+## Table with no stripes
+
+`fd-table--no-stripes` can be applied to render a table with no stripes
+
+{% capture table-icon %}
+<table class="fd-table fd-table--no-stripes">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Column Header</th>
+            <th>Column Header</th>
+            <th>Column Header</th>
+            <th>Column Header</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
+            style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
+            </span></td>
+            <td><a href="#" class="fd-has-font-weight-semi">user.name@email.com</a></td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>01/26/17</td>
+        </tr>
+        <tr>
+            <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
+            style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
+            </span></td>
+            <td><a href="#" class="fd-has-font-weight-semi">user.name@email.com</a></td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>01/26/17</td>
+        </tr>
+        <tr>
             <td><span class=" fd-image--s fd-image--circle" aria-label="Image label"
             style="background-image: url(http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png);">
             </span></td>
@@ -76,21 +175,21 @@ It is recommended to add the parameter `area-selected="true` to the row that is 
         </tr>
     </thead>
     <tbody>
-        <tr class="fd-highlight" aria-selected="true">
+        <tr aria-selected="true">
             <td><input type="checkbox" checked></td>
             <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>Last Name</td>
             <td>01/26/17</td>
         </tr>
-        <tr class="fd-highlight">
+        <tr>
             <td><input type="checkbox"></td>
             <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>Last Name</td>
             <td>01/26/17</td>
         </tr>
-        <tr class="fd-highlight">
+        <tr>
             <td><input type="checkbox"></td>
             <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
@@ -109,7 +208,7 @@ When more than three actions exist per row and/or space doesn't allow for action
 a contextual menu can be substituted in order to display all actions in one menu.
 
 {% capture table-actions %}
-<table class="fd-table">
+<table class="fd-table" >
     <thead>
         <tr>
             <th>Column Header</th>
@@ -119,7 +218,7 @@ a contextual menu can be substituted in order to display all actions in one menu
         </tr>
     </thead>
     <tbody>
-        <tr class="fd-highlight">
+        <tr>
             <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>01/26/17</td>
@@ -141,7 +240,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                 </div>
             </td>
         </tr>
-        <tr class="fd-highlight">
+        <tr>
             <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>01/26/17</td>
@@ -163,7 +262,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                 </div>
             </td>
         </tr>
-        <tr class="fd-highlight">
+        <tr>
             <td><a class="fd-has-font-weight-semi">user.name@email.com</a></td>
             <td>First Name</td>
             <td>01/26/17</td>
@@ -203,17 +302,17 @@ a contextual menu can be substituted in order to display all actions in one menu
       </tr>
    </thead>
    <tbody>
-      <tr class="fd-highlight">
+      <tr>
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr class="fd-highlight">
+      <tr>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr class="fd-highlight">
+      <tr>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -236,17 +335,17 @@ a contextual menu can be substituted in order to display all actions in one menu
       </tr>
    </thead>
    <tbody>
-      <tr class="fd-highlight">
+      <tr>
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr class="fd-highlight">
+      <tr>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr class="fd-highlight">
+      <tr>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -269,17 +368,17 @@ a contextual menu can be substituted in order to display all actions in one menu
       </tr>
    </thead>
    <tbody>
-      <tr class="fd-highlight">
+      <tr>
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr class="fd-highlight">
+      <tr>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr class="fd-highlight">
+      <tr>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -359,17 +458,17 @@ a contextual menu can be substituted in order to display all actions in one menu
       </tr>
    </thead>
    <tbody>
-      <tr class="fd-highlight">
+      <tr>
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
          <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr class="fd-highlight">
+      <tr>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
       </tr>
-      <tr class="fd-highlight">
+      <tr>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
           <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -387,7 +486,7 @@ a contextual menu can be substituted in order to display all actions in one menu
 * The `fd-table--fixed` wrapper need to be offset(`padding-left:200px`) by the same amount as defined for column width.
 * `fd-table--fixed-wrapper` need to have a defined with as well to enable horizontal scrolling.
 
-> 100% width on `fd-table--fixed-wrapper` will not render horizontal scrolling as the wrapper container will stretch to accommodate any overflow column width. 
+> 100% width on `fd-table--fixed-wrapper` will not render horizontal scrolling as the wrapper container will stretch to accommodate any overflow column width.
 
 {% capture table-sort %}
 <div class="fd-table--fixed-wrapper" style="width:800px;">
@@ -543,7 +642,7 @@ a contextual menu can be substituted in order to display all actions in one menu
             </tr>
          </thead>
          <tbody>
-            <tr class="fd-highlight">
+            <tr>
                <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -553,7 +652,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
             </tr>
-            <tr class="fd-highlight">
+            <tr>
                <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -563,7 +662,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
             </tr>
-            <tr class="fd-highlight">
+            <tr>
                <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>

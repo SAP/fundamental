@@ -46,6 +46,18 @@ $block: #{$fd-namespace}-popover;
       top: $fd-popover-top-position;
       transform: translateY(0);
 
+      @include fd-rtl {
+        left: auto;
+        right: -3px;  
+
+        &::before {
+          right: $fd-popover-arrow-x-offset;
+        }
+        &::after {
+          right: $fd-popover-arrow-x-offset;
+        }
+      }   
+            
       &::before {
         @include triangle(13px 8px, white, up);
         content: "";
@@ -68,6 +80,17 @@ $block: #{$fd-namespace}-popover;
         right: auto;
         left: -3px;
 
+        @include fd-rtl {
+          right: -3px;
+          left: auto;     
+          
+          &::before,
+          &::after {
+            right: $fd-popover-arrow-right;
+            left: unset;
+          }             
+        }
+
         &::before,
         &::after {
           left: $fd-popover-arrow-x-offset;
@@ -78,6 +101,17 @@ $block: #{$fd-namespace}-popover;
       &--right {
         left: auto;
         right: -3px;
+
+        @include fd-rtl {
+          right: auto;
+          left: -3px;     
+          
+          &::before,
+          &::after {
+            left: $fd-popover-arrow-right;
+            right: unset;
+          }             
+        }
 
         &::before,
         &::after {
@@ -102,33 +136,6 @@ $block: #{$fd-namespace}-popover;
           opacity: 0;
           visibility: hidden;
           transform: translateY($fd-popover-transition-distance);
-      }
+      }   
     }
-}
-
-// RTL Styles (Considers Body, Shell Header, and Self)
-@include fd-rtl(#{$block}) {
-  .#{$block}{
-    // Reverse the default positioning
-    &__body {
-      left: auto;
-      right: -3px;
-
-      &::before,
-      &::after {
-        left: $fd-popover-arrow-right;
-        right: unset;
-      }
-
-      // Reverse the modified positioning
-      &--left {
-        right: -3px;
-        left: auto;
-      }
-      &--right {
-        right: auto;
-        left: -3px;
-      }
-    }
-  }
 }
