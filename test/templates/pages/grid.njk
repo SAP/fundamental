@@ -12,6 +12,40 @@
 {% from "../button/component.njk" import button %}
 {% from "../tree/component.njk" import tree %}
 
+
+
+{% block page_header %}
+
+
+
+{% set breakpoints = {
+  "s": [320,"320-599"],
+  "m": [600,"600-1023"],
+  "l": [1024,"1024-1440"],
+  "xl": [1441,"1441-1920"],
+  "xxl": [1921,">1920"]
+} %}
+<style>
+.fd-shell__header::before {
+  content: "default: <320px";
+  font-size: 2em;
+  background-color: white;
+}
+{% for size,width in breakpoints %}
+
+@media screen and (min-width: {{width[0]}}px) {
+  .fd-shell__header::before {
+    content: "{{size}}: {{width[1]}}px";
+  }
+}
+{% endfor %}
+</style>
+
+
+{% endblock %}
+
+
+
 {# SET CONTENT #}
 
 {% set div %}
@@ -154,6 +188,8 @@
 
 
 
+
+
 {% block page_content %}
 
 
@@ -191,6 +227,3 @@
 
 
 {% endblock %}
-{% block page_header -%}
-.page__header
-{%- endblock %}
