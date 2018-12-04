@@ -208,10 +208,11 @@ $block: #{$fd-namespace}-shellbar;
 
     .#{$fd-namespace}-search-input {
         .fd-input {
-            border: 1px solid var(--fd-color-shell-2);
-            background-color: var(--fd-color-shell-1);
-            color: var(--fd-color-shell-2);
-
+            border-style: solid;
+            border-width: 1px;
+            @include fd-var-color("border-color", fd-color("shell", 2), --fd-color-shell-2);
+            @include fd-var-color("background-color", fd-color("shell", 1), --fd-color-shell-1);
+            @include fd-var-color("color", fd-color("shell",2), --fd-color-shell-2);
             &:focus {
               box-shadow: none;
             }
