@@ -111,10 +111,10 @@ A table is a set of tabular data. Line items can support data, images and action
 
 ## Table with no stripes
 
-`fd-table--no-stripes` can be applied to render a table with no stripes
+`fd-table--striped` can be applied to render a table with zebra stripes
 
 {% capture table-icon %}
-<table class="fd-table fd-table--no-stripes">
+<table class="fd-table fd-table--striped">
     <thead>
         <tr>
             <th></th>
