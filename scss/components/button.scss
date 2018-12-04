@@ -418,6 +418,9 @@ $block: #{$fd-namespace}-button;
     --fd-button-color: var(--fd-color-shell-2);
     --fd-button-border-color: transparent;
     --fd-button-background-color: transparent;
+    @include fd-var-color("color", fd-color("shell", 2));
+    @include fd-var-color("border-color", transparent);
+    @include fd-var-color("background-color", transparent);
     &[class*="#{sap-icon}"] {
       padding: 0;
       &::before,
@@ -434,14 +437,23 @@ $block: #{$fd-namespace}-button;
       --fd-button-color: var(--fd-color-shell-2);
       --fd-button-border-color: transparent;
       --fd-button-background-color: hsl(217, 21%, 25%);
+      @include fd-var-color("color", fd-color("shell", 2));
+      @include fd-var-color("border-color", transparent);
+      @include fd-var-color("background-color", hsl(217, 21%, 25%));
+      @include fd-disabled {
+        --fd-button-color: var(--fd-color-shell-2);
+        --fd-button-background-color: transparent;
+        @include fd-var-color("color", fd-color("shell", 2));
+        @include fd-var-color("background-color", transparent);
+      }
     }
     @include fd-selected {
       --fd-button-color: var(--fd-color-shell-2);
       --fd-button-border-color: transparent;
       --fd-button-background-color: hsl(217, 21%, 21%);
-    }
-    @include fd-disabled {
-      opacity: .25; // TEMP
+      @include fd-var-color("color", fd-color("shell", 2));
+      @include fd-var-color("border-color", transparent);
+      @include fd-var-color("background-color", hsl(217, 21%, 21%));
     }
   }
 }
