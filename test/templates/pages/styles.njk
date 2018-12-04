@@ -3,19 +3,23 @@
 
 
 {% set breakpoints = {
-  "xs": 320,
-  "s": 800,
-  "m": 1024,
-  "l": 1440,
-  "xl": 1580
+  "s": [320,"320-599"],
+  "m": [600,"600-1023"],
+  "l": [1024,"1024-1440"],
+  "xl": [1441,"1441-1920"],
+  "xxl": [1921,">1920"]
 } %}
 <style>
+.fd-ui__header::before {
+  content: "default: <320px";
+  font-size: 2em;
+  background-color: white;
+}
 {% for size,width in breakpoints %}
-@media screen and (min-width: {{width}}px) {
+
+@media screen and (min-width: {{width[0]}}px) {
   .fd-ui__header::before {
-    content: "{{size}}: {{width}}px";
-    font-size: 2em;
-    background-color: white;
+    content: "{{size}}: {{width[1]}}px";
   }
 }
 {% endfor %}
