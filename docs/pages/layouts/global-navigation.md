@@ -7,6 +7,9 @@ permalink: /layouts/global-navigation.html
 folder: layouts
 summary:
 ---
+<span class="fd-badge fd-badge--error fd-badge--pill">Deprecated</span>
+> <small> global navigation has been Deprecated in favor of shell-bar component. It will continue to work untill v1.5 release.</small>
+
 The global navigation component offers a similar navigation approach between Hybris applications. It allows for branding, application groupings, access to a left navigation, switch between applications, contexts and access tooling such as search or a users' profile.
 Elements and positioning in the global navigation are optional but included are:
 

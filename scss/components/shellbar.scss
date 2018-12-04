@@ -45,10 +45,9 @@ $block: #{$fd-namespace}-shellbar;
 
     //ELEMENTS *******************************************
     &__group {
-        &--start,
-        &--middle,
-        &--end{
-            display: inline-block;
+        &--start {
+            display: flex;
+            align-items: center;
         }
         &--start,
         &--end {
@@ -75,11 +74,10 @@ $block: #{$fd-namespace}-shellbar;
       max-height: $fd-shellbar-logo-height;
       background-repeat: no-repeat;
       background-size: contain;
-
       //the logo inside the menu (show only on small screen)
-      display: none;
       @include fd-screen(m) {
         display: inline-block;
+        margin-right: fd-space("tiny");
       }
       &--control {
         display: inline-block;
@@ -99,10 +97,13 @@ $block: #{$fd-namespace}-shellbar;
       }
     }
     &__product {
-        padding: 0 fd-space(2) 0 $fd-shellbar-title-spacing;
+        padding: 0 fd-space(2) 0 0;
         text-overflow: ellipsis;
         min-width: 0;
         @include fd-screen(s) {
+          max-width: 60%;
+        }
+        @include fd-screen(m) {
           max-width: 60%;
         }
     }
@@ -143,7 +144,7 @@ $block: #{$fd-namespace}-shellbar;
         display: inline-block;
         vertical-align: middle;
         width: $fd-shellbar-copilot-width;
-        height: $fd-shellbar-copilot-height;
+        «»height: $fd-shellbar-copilot-height;
         > img {
             display: block;
             max-width: 100%;
@@ -161,23 +162,10 @@ $block: #{$fd-namespace}-shellbar;
         position: relative;
         padding-right: 0;
         padding-left: $fd-shellbar-item-spacing;
-
         @include fd-rtl {
           padding-right: $fd-shellbar-item-spacing;
           padding-left: 0;
         }
-
-        // Show only on desktop, hide on s
-        @include fd-screen(s) {
-            display: none;
-        }
-        @include fd-screen(m) {
-            display: none;
-        }
-        @include fd-screen(l) {
-            display: inline-block;
-        }
-
         &--collapse {
             // Show only on s, hide on desktop
             @include fd-screen(s) {

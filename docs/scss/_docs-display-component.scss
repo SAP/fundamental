@@ -72,33 +72,55 @@
         color: fd-color(text, 5);
         position: relative;
 
-        .fd-ui__app,
-        .fd-ui,
-        .fd-app {
-            width: 100%;
-            min-height: 410px;
-            position: relative;
-            margin-top: 0;
-        }
 
-        .fd-ui__header,
-        .fd-app__sidebar,
-        .fd-ui__footer,
+          .fd-shell
+         {
+              width: 100%;
+              max-width: 100%;
+              min-height: 410px;
+              max-height: 410px;
+              position: relative;
+          }
+
+          .fd-shell__app
+         {
+              height: calc(100%  - 48px);
+              margin-top: 0;
+          }
+          .fd-app__navigation
+           {
+              height: calc(100%  - 48px);
+              margin-top: 48px;
+          }
+
+
+
+        .fd-shell__app,
+          .fd-shell,
+          .fd-app {
+              width: 100%;
+              max-width: 100%;
+              min-height: 410px;
+              max-height: 410px;
+          }
+
+
+
+        .fd-shell__header,
+        .fd-app__navigation,
+        .fd-shell__footer,
         .fd-app__main {
             padding: 10px;
             text-align: center;
             color: #000;
         }
 
-        .fd-ui__header, .fd-ui__footer {
+        .fd-shell__header, .fd-shell__footer {
             background-color: fd-color(neutral, 3);
         }
 
-        .fd-app__sidebar {
-            width:250px;
+        .fd-app__navigation {
             background-color: fd-color(background, 2);
-            padding-top:100px;
-
         }
 
         .fd-app__main {
@@ -127,16 +149,19 @@
         color: fd-color(text, 5);
         position: relative;
 
-        .fd-ui__app, .fd-ui, .fd-app {
+        .fd-shell__app, .fd-shell, .fd-app {
             width: 100%;
             min-height: 410px;
             position: relative;
             margin-top: 0;
         }
+        .fd-app__navigation{
 
-        .fd-app__sidebar {
-            width:250px;
             padding-top:50px;
+        }
+        .fd-app__navigation--vertical {
+            width:250px;
+
         }
 
         .fd-app__main {

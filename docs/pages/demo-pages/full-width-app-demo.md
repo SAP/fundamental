@@ -8,7 +8,7 @@ permalink: demo-pages/full-width-app-demo.html
 ---
 
 {% include demo-page-components/fd-app__header.html hide-hamburder="true" %}
-<div class="fd-ui__app">
+<div class="fd-shell__app">
 	<main class="fd-app__main">
         <article class="fd-page">{% include demo-page-components/fd-page__header.html title="Page Title" hide-add-btn="true" %}</article>
 	</main>

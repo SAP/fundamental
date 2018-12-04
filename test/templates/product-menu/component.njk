@@ -33,13 +33,13 @@ product_menu:
   }}
 </div>
 {%- else %}
-{{ product_menu_logo(logo=brand.logo, name=brand.name) }} <span class="fd-shellbar__title">{{ product.title }}</span>
+<span class="fd-shellbar__title">{{ product.title }}</span>
 {%- endif %}
 {%- endmacro %}
 
 {%- macro product_menu_control(properties={}, brand={}, modifier={}, state={}, aria={}) -%}
   <button class="fd-product-menu__control"{{ aria | aria }}>
-    {{ product_menu_logo(brand) }} <span class="fd-shellbar__title fd-product-menu__title">{{ properties.title }}</span>
+    <span class="fd-shellbar__title fd-product-menu__title">{{ properties.title }}</span>
   </button>
 {%- endmacro -%}
 
