@@ -13,26 +13,6 @@ problems in a meaningful way and creates simple intuitive experience.
 </p>
 
 <div class="fd-tile-grid fd-tile-grid--2col docs-tiles">
-    <a class="fd-tile" role="button" href="getting-started-designers.html">
-        <div class="fd-tile__content">
-             <h2 class="fd-tile__header">
-                 Getting Started - Designers
-             </h2>
-            <p class="fd-tile__description">
-                Create a harmonious experience for users with Fiori Fundamentals design language.
-            </p>
-        </div>
-    </a>
-    <a class="fd-tile" role="button" href="getting-started-developers.html">
-        <div class="fd-tile__content">
-             <h2 class="fd-tile__header">
-                 Getting Started - Developers
-             </h2>
-             <p class="fd-tile__description">
-                 Fiori Fundamentals is a coherent Design System accompanied by a collection of HTML/CSS Components.
-             </p>
-        </div>
-    </a>
     <a class="fd-tile" role="button" href="colors.html">
         <div class="fd-tile__content">
              <h2 class="fd-tile__header">
