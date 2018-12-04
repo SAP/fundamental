@@ -1,61 +1,106 @@
 ---
-title: Badge, Counter, Status & Label
+title: Status Indicators
 keywords: status indicators, status, indicators, badge, label, counter
 sidebar: left-navigation-sidebar
 toc: false
-permalink: components/badge-counter-label-status.html
+permalink: components/status-indicators.html
 folder: components
 ---
 
-Badges and labels are used to indicate status. Colors, generally in combination with text, are used to easily highlight the state of an object.
-
-The following colors should be used:
-
-* **Black**: default or inactive status
-* **Green**: positive status, used for active, published, approved
-* **Orange**: a warning status or to indicate that an action can be taken
-* **Red**: error status
+Status Indicators are used to easily highlight the state of an object. `badge`, `label`, `status-label`
 
 <hr />
 
-## Default Badge
+# Badge
 
+## Badge Style Options
+`badge` Status Indicator has three options: `defautl`, `--pill` and `--filled`
 {% capture badge %}
 <span class="fd-badge">Default</span>
+<span class="fd-badge fd-badge--pill"> Default </span>
+<span class="fd-badge fd-badge--filled">Default</span>
+
+
+{% endcapture %}
+{% include display-component.html component=badge %}
+
+<br>
+
+### Badge Color Options
+In addition the the default grey, there are three additional Semantic color options available: `--success`, `--warning` and `-error`
+{% capture badge %}
 <span class="fd-badge fd-badge--success">Default</span>
 <span class="fd-badge fd-badge--warning">Default</span>
 <span class="fd-badge fd-badge--error">Default</span>
-{% endcapture %}
-{% include display-component.html component=badge %}
-
-<br>
-
-## Pill Badge
-`fd-badge--pill` modifier can be used to render a pill version of the badge.
-{% capture badge %}
-<span class="fd-badge fd-badge--pill"> Default </span>
+<br><br>
 <span class="fd-badge fd-badge--success fd-badge--pill">Default</span>
 <span class="fd-badge fd-badge--warning fd-badge--pill">Default</span>
 <span class="fd-badge fd-badge--error fd-badge--pill">Default</span>
-{% endcapture %}
-{% include display-component.html component=badge %}
-
-<br>
-
-## Filled Badge
-`fd-badge--filled` modifier can be used to render a filled version of the badge.
-{% capture badge %}
-<span class="fd-badge fd-badge--filled">Default</span>
+<br><br>
 <span class="fd-badge fd-badge--success fd-badge--filled">Default</span>
 <span class="fd-badge fd-badge--warning fd-badge--filled">Default</span>
 <span class="fd-badge fd-badge--error fd-badge--filled">Default</span>
+
+{% endcapture %}
+{% include display-component.html component=badge %}
+
+<hr>
+
+# Label
+`label` is similar to the `badge` status Indicator, but it does not have have any borders or background color. Color options of default grey, `--success`, `--warning` and `--error` are available.
+{% capture badge %}
+<span class="fd-label">Default</span>
+<span class="fd-label fd-label--success">Success</span>
+<span class="fd-label fd-label--warning">Warning</span>
+<span class="fd-label fd-label--error">Error</span>
+{% endcapture %}
+{% include display-component.html component=badge %}
+
+<hr>
+
+# Status Indicator Label
+
+## Status Indicator Label with build in status icons
+
+{% capture badge %}
+<span class="fd-status-label fd-status-label--available">Available</span>
+<span class="fd-status-label fd-status-label--away">Away</span>
+<span class="fd-status-label fd-status-label--busy">Busy</span>
+<span class="fd-status-label fd-status-label--offline">Appear Offline</span>
 {% endcapture %}
 {% include display-component.html component=badge %}
 
 <br>
 
+## Status Indicator Label with any icons
+
+{% capture badge %}
+<span class="fd-status-label sap-icon--history">Custom Icon</span>
+<span class="fd-status-label sap-icon--message-success">Success</span>
+<span class="fd-status-label sap-icon--message-warning">Warning</span>
+<span class="fd-status-label sap-icon--message-error">Error</span>
+{% endcapture %}
+{% include display-component.html component=badge %}
+
+<br>
+
+## Status Indicator Label with Semantic colors
+
+{% capture badge %}
+<span class="fd-status-label">Default</span>
+<span class="fd-status-label fd-status-label--success">Success</span>
+<span class="fd-status-label fd-status-label--warning">Warning</span>
+<span class="fd-status-label fd-status-label--error">Error</span>
+{% endcapture %}
+{% include display-component.html component=badge %}
+
+
+<hr>
+
+# Counter
+
 ## Default Counter
-Minium value 1. Maximum display is 999+
+Counter has a minimum value 1. Maximum display is 999+
 {% capture badge %}
 <span class="fd-counter" aria-label="Unread count">5</span>
 <span class="fd-counter" aria-label="Unread count">25</span>
@@ -124,51 +169,6 @@ Minium value 1. Maximum display is 999+
 <br>
 
 
-## Label
-
-{% capture badge %}
-<span class="fd-label">Default</span>
-<span class="fd-label fd-label--success">Success</span>
-<span class="fd-label fd-label--warning">Warning</span>
-<span class="fd-label fd-label--error">Error</span>
-{% endcapture %}
-{% include display-component.html component=badge %}
-
-<br>
-
-## Status Indicator Label with build in status icons
-
-{% capture badge %}
-<span class="fd-status-label fd-status-label--available">Available</span>
-<span class="fd-status-label fd-status-label--away">Away</span>
-<span class="fd-status-label fd-status-label--busy">Busy</span>
-<span class="fd-status-label fd-status-label--offline">Appear Offline</span>
-{% endcapture %}
-{% include display-component.html component=badge %}
-
-<br>
-
-## Status Indicator Label with any icons
-
-{% capture badge %}
-<span class="fd-status-label sap-icon--history">Custom Icon</span>
-<span class="fd-status-label sap-icon--message-success">Success</span>
-<span class="fd-status-label sap-icon--message-warning">Warning</span>
-<span class="fd-status-label sap-icon--message-error">Error</span>
-{% endcapture %}
-{% include display-component.html component=badge %}
-
-<br>
-
-## Status Indicator Label with symentic colors
-
-{% capture badge %}
-<span class="fd-status-label">Default</span>
-<span class="fd-status-label fd-status-label--success">Success</span>
-<span class="fd-status-label fd-status-label--warning">Warning</span>
-<span class="fd-status-label fd-status-label--error">Error</span>
-{% endcapture %}
-{% include display-component.html component=badge %}
 
 
 <style>
