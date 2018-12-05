@@ -36,6 +36,23 @@ Tabs are based on a folder metaphor and used to separate content into different 
             Disabled
         </a>
     </li>
+    <li class="fd-tabs__item">
+        <div class="fd-popover fd-popover--right">
+            <a class="fd-tabs__link fd-popover__control sap-icon--overflow" aria-controls="jhqD"
+            aria-expanded="false" aria-haspopup="true" role="tab"></a>
+            <div class="fd-popover__body fd-popover__body--right fd-popover__body--no-arrow"
+            aria-hidden="true" id="jhqD">
+                <nav class="fd-menu">
+                    <ul class="fd-menu__list">
+                        <li><a href="#" class="fd-menu__item">Option 1</a></li>
+                        <li><a href="#" class="fd-menu__item">Option 2</a></li>
+                        <li><a href="#" class="fd-menu__item">Option 3</a></li>
+                        <li><a href="#" class="fd-menu__item">Option 4</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </li>
 </ul>
 <div class="fd-tabs__panel" aria-expanded="false" id="fuCwV550" role="tabpanel">
     Lorem ipsum
@@ -76,6 +93,23 @@ Tabs are based on a folder metaphor and used to separate content into different 
         <a class="fd-tabs__link" aria-controls="98q398" aria-disabled="true" role="tab">
             Disabled
         </a>
+    </span>
+    <span class="fd-tabs__item">
+        <div class="fd-popover fd-popover--right">
+            <a class="fd-tabs__link fd-popover__control sap-icon--overflow" aria-controls="jhqD2"
+            aria-expanded="false" aria-haspopup="true" role="tab"></a>
+            <div class="fd-popover__body fd-popover__body--right fd-popover__body--no-arrow"
+            aria-hidden="true" id="jhqD2">
+                <nav class="fd-menu">
+                    <ul class="fd-menu__list">
+                        <li><a href="#" class="fd-menu__item">Option 1</a></li>
+                        <li><a href="#" class="fd-menu__item">Option 2</a></li>
+                        <li><a href="#" class="fd-menu__item">Option 3</a></li>
+                        <li><a href="#" class="fd-menu__item">Option 4</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </span>
 </nav>
 <div class="fd-tabs__panel" aria-expanded="false" id="kf8369" role="tabpanel">

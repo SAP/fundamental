@@ -81,9 +81,6 @@ $block: #{$fd-namespace}-table;
             border: $fd-table-border-width solid $fd-table-border-color;
             border-left: none;
             border-right: none;
-            &:nth-child(even) {
-                background-color: fd-color-state("hover");
-            }
         }
     }
     td,
@@ -200,9 +197,9 @@ $block: #{$fd-namespace}-table;
         }
     }
 
-    &--no-stripes {
+    &--striped {
         & tbody tr:nth-child(even) {
-            background-color: transparent;
+            background-color: fd-color-state("hover");
         }
     }
 }

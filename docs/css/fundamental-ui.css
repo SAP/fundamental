@@ -2821,13 +2821,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     $weight: "light", "normal", "bold"
 */
 /*!
-.fd-ui+(--fixed)
-    .fd-ui__header+(--fixed)
-    .fd-ui__app
-    .fd-ui__footer+(--fixed)
-    .fd-ui__overlay
+.fd-shell+(--fixed)
+    .fd-shell__header+(--fixed)
+    .fd-shell__app
+    .fd-shell__footer+(--fixed)
+    .fd-shell__overlay
 */
-.fd-ui {
+.fd-shell {
   position: absolute;
   min-height: 100vh;
   width: 100vw;
@@ -2835,7 +2835,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   background: none;
   background-size: cover;
   background-attachment: fixed; }
-  .fd-ui--fixed {
+  .fd-shell--fixed {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2844,24 +2844,24 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         -ms-flex-direction: column;
             flex-direction: column;
     max-height: 100vh; }
-    .fd-ui--fixed .fd-ui__header {
+    .fd-shell--fixed .fd-shell__header {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 50px;
               flex: 0 0 50px;
       position: static; }
-    .fd-ui--fixed .fd-ui__footer {
+    .fd-shell--fixed .fd-shell__footer {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 40px;
               flex: 0 0 40px;
       position: static; }
-    .fd-ui--fixed .fd-ui__app {
+    .fd-shell--fixed .fd-shell__app {
       overflow: scroll;
       margin-top: 0;
       -webkit-box-flex: 1;
           -ms-flex: 1;
               flex: 1;
       min-height: auto; }
-  .fd-ui__header {
+  .fd-shell__header {
     position: absolute;
     z-index: 1;
     background: white;
@@ -2869,18 +2869,18 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     min-height: 50px;
     height: 50px;
     border-bottom: solid 1px #dedede; }
-    .fd-ui__header--fixed {
+    .fd-shell__header--fixed {
       position: fixed; }
-  .fd-ui__footer {
+  .fd-shell__footer {
     background: white;
     width: 100%;
     min-height: 40px;
     height: 40px;
     border-top: solid 1px #dedede; }
-    .fd-ui__footer--fixed {
+    .fd-shell__footer--fixed {
       position: fixed;
       bottom: 0; }
-  .fd-ui__app {
+  .fd-shell__app {
     margin-top: 50px;
     min-height: calc(100vh - 40px - 50px);
     width: 100%;
@@ -2888,7 +2888,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     display: -ms-flexbox;
     display: flex;
     position: relative; }
-  .fd-ui__overlay {
+  .fd-shell__overlay {
     position: absolute; }
 
 /*
