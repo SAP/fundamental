@@ -7,14 +7,14 @@ permalink: components/status-indicators.html
 folder: components
 ---
 
-Status Indicators are used to easily highlight the state of an object. `badge`, `label`, `status-label`
+Status Indicators are used to easily highlight the state of an object. `badge`, `label`, `status-label` and `counter`
 
 <hr />
 
 # Badge
 
 ## Badge Style Options
-`badge` Status Indicator has three options: `defautl`, `--pill` and `--filled`
+`badge` Status Indicator has three options: `default`, `--pill` and `--filled`
 {% capture badge %}
 <span class="fd-badge">Default</span>
 <span class="fd-badge fd-badge--pill"> Default </span>
