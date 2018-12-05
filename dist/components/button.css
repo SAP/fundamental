@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.3
+* Fiori Fundamentals v1.4.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -601,6 +601,12 @@
   --fd-button-border-color: transparent;
   --fd-button-background-color: hsl(217, 21%, 25%)
 }
+.fd-button--shell:hover.is-disabled,
+.fd-button--shell:hover:disabled,
+.fd-button--shell:hover[aria-disabled=true] {
+  --fd-button-color: var(--fd-color-shell-2);
+  --fd-button-background-color: transparent
+}
 .fd-button--shell.is-active,
 .fd-button--shell.is-pressed,
 .fd-button--shell.is-selected,
@@ -610,11 +616,6 @@
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
   --fd-button-background-color: hsl(217, 21%, 21%)
-}
-.fd-button--shell.is-disabled,
-.fd-button--shell:disabled,
-.fd-button--shell[aria-disabled=true] {
-  opacity: .25
 }
 .fd-button--xs {
   font-size: .85714rem;

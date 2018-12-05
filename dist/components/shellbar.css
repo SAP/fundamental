@@ -1,8 +1,9 @@
 /*!
-* Fiori Fundamentals v1.3.3
+* Fiori Fundamentals v1.4.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
+@charset "UTF-8";
 .fd-shellbar {
   font-size: 14px;
   line-height: 1.42857;
@@ -23,10 +24,13 @@
   -ms-flex-pack: justify;
   justify-content: space-between
 }
-.fd-shellbar__group--end,
-.fd-shellbar__group--middle,
 .fd-shellbar__group--start {
-  display: inline-block
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
 }
 .fd-shellbar__group--end,
 .fd-shellbar__group--start {
@@ -40,6 +44,10 @@
 .fd-shellbar__group--end {
   text-align: right
 }
+.fd-shellbar__group--end[dir=rtl],
+[dir=rtl] .fd-shellbar__group--end {
+  text-align: left
+}
 .fd-shellbar__logo,
 .fd-shellbar__product,
 .fd-shellbar__subtitle {
@@ -50,12 +58,12 @@
   height: 24px;
   max-height: 24px;
   background-repeat: no-repeat;
-  background-size: contain;
-  display: none
+  background-size: contain
 }
 @media (min-width:600px) {
   .fd-shellbar__logo {
-    display: inline-block
+    display: inline-block;
+    margin-right: 8px
   }
 }
 .fd-shellbar__logo--control {
@@ -77,11 +85,16 @@
   max-width: 60px
 }
 .fd-shellbar__product {
-  padding: 0 8px 0 16px;
+  padding: 0 8px 0 0;
   text-overflow: ellipsis;
   min-width: 0
 }
 @media (min-width:320px) {
+  .fd-shellbar__product {
+    max-width: 60%
+  }
+}
+@media (min-width:600px) {
   .fd-shellbar__product {
     max-width: 60%
   }
@@ -122,7 +135,7 @@
     display: none
   }
 }
-@media (min-width:1025px) {
+@media (min-width:1024px) {
   .fd-shellbar__subtitle {
     display: inline-block
   }
@@ -130,8 +143,7 @@
 .fd-shellbar__copilot {
   display: inline-block;
   vertical-align: middle;
-  width: 30px;
-  height: 30px
+  width: 30px
 }
 .fd-shellbar__copilot > img {
   display: block;
@@ -150,20 +162,10 @@
   padding-right: 0;
   padding-left: 12px
 }
-@media (min-width:320px) {
-  .fd-shellbar__action {
-    display: none
-  }
-}
-@media (min-width:600px) {
-  .fd-shellbar__action {
-    display: none
-  }
-}
-@media (min-width:1025px) {
-  .fd-shellbar__action {
-    display: inline-block
-  }
+.fd-shellbar__action[dir=rtl],
+[dir=rtl] .fd-shellbar__action {
+  padding-right: 12px;
+  padding-left: 0
 }
 @media (min-width:320px) {
   .fd-shellbar__action--collapse {
@@ -175,7 +177,7 @@
     display: inline-block
   }
 }
-@media (min-width:1025px) {
+@media (min-width:1024px) {
   .fd-shellbar__action--collapse {
     display: none
   }
@@ -190,7 +192,7 @@
     display: none
   }
 }
-@media (min-width:1025px) {
+@media (min-width:1024px) {
   .fd-shellbar__action--collapsible {
     display: inline-block
   }
@@ -205,13 +207,15 @@
     display: inline-block
   }
 }
-@media (min-width:1025px) {
+@media (min-width:1024px) {
   .fd-shellbar__action--show-always {
     display: inline-block
   }
 }
 .fd-shellbar .fd-search-input .fd-input {
-  border: 1px solid var(--fd-color-shell-2);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--fd-color-shell-2);
   background-color: var(--fd-color-shell-1);
   color: var(--fd-color-shell-2)
 }
@@ -243,27 +247,18 @@
     padding: 4px 16px
   }
 }
-@media (min-width:1025px) {
+@media (min-width:1024px) {
   .fd-shellbar {
     padding: 4px 32px
   }
 }
-@media (min-width:1440px) {
+@media (min-width:1441px) {
   .fd-shellbar {
     padding: 4px 32px
   }
 }
-@media (min-width:1920px) {
+@media (min-width:1921px) {
   .fd-shellbar {
     padding: 4px 32px
   }
-}
-.fd-shellbar[dir=rtl] .fd-shellbar__group--end,
-[dir=rtl] .fd-shellbar__group--end {
-  text-align: left
-}
-.fd-shellbar[dir=rtl] .fd-shellbar__action,
-[dir=rtl] .fd-shellbar__action {
-  padding-right: 12px;
-  padding-left: 0
 }

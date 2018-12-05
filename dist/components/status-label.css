@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.3
+* Fiori Fundamentals v1.4.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -25,6 +25,38 @@
 .fd-status-label--busy,
 .fd-status-label--offline {
   padding-left: 20px
+}
+.fd-status-label--available[dir=rtl],
+.fd-status-label--away[dir=rtl],
+.fd-status-label--busy[dir=rtl],
+.fd-status-label--offline[dir=rtl],
+[dir=rtl] .fd-status-label--available,
+[dir=rtl] .fd-status-label--away,
+[dir=rtl] .fd-status-label--busy,
+[dir=rtl] .fd-status-label--offline {
+  padding-left: initial;
+  padding-right: 20px
+}
+.fd-status-label--available[dir=rtl]:before,
+.fd-status-label--away[dir=rtl]:before,
+.fd-status-label--busy[dir=rtl]:before,
+.fd-status-label--offline[dir=rtl]:before,
+[dir=rtl] .fd-status-label--available:before,
+[dir=rtl] .fd-status-label--away:before,
+[dir=rtl] .fd-status-label--busy:before,
+[dir=rtl] .fd-status-label--offline:before {
+  left: initial
+}
+.fd-status-label--available[dir=rtl]:after,
+.fd-status-label--away[dir=rtl]:after,
+.fd-status-label--busy[dir=rtl]:after,
+.fd-status-label--offline[dir=rtl]:after,
+[dir=rtl] .fd-status-label--available:after,
+[dir=rtl] .fd-status-label--away:after,
+[dir=rtl] .fd-status-label--busy:after,
+[dir=rtl] .fd-status-label--offline:after {
+  left: initial;
+  right: 0
 }
 .fd-status-label--available:before {
   position: absolute;
@@ -98,6 +130,10 @@
   left: 0;
   background-color: #bd0000
 }
+.fd-status-label--busy[dir=rtl]:before,
+[dir=rtl] .fd-status-label--busy:before {
+  right: 6px
+}
 .fd-status-label--offline:before {
   position: absolute;
   z-index: 1;
@@ -131,47 +167,11 @@
 .fd-status-label--error {
   color: #bd0000
 }
-.fd-status-label[dir=rtl] .fd-status-label--available,
-.fd-status-label[dir=rtl] .fd-status-label--away,
-.fd-status-label[dir=rtl] .fd-status-label--busy,
-.fd-status-label[dir=rtl] .fd-status-label--offline,
-[dir=rtl] .fd-status-label--available,
-[dir=rtl] .fd-status-label--away,
-[dir=rtl] .fd-status-label--busy,
-[dir=rtl] .fd-status-label--offline {
-  padding-left: initial;
-  padding-right: 20px
-}
-.fd-status-label[dir=rtl] .fd-status-label--available:before,
-.fd-status-label[dir=rtl] .fd-status-label--away:before,
-.fd-status-label[dir=rtl] .fd-status-label--busy:before,
-.fd-status-label[dir=rtl] .fd-status-label--offline:before,
-[dir=rtl] .fd-status-label--available:before,
-[dir=rtl] .fd-status-label--away:before,
-[dir=rtl] .fd-status-label--busy:before,
-[dir=rtl] .fd-status-label--offline:before {
-  left: initial
-}
-.fd-status-label[dir=rtl] .fd-status-label--available:after,
-.fd-status-label[dir=rtl] .fd-status-label--away:after,
-.fd-status-label[dir=rtl] .fd-status-label--busy:after,
-.fd-status-label[dir=rtl] .fd-status-label--offline:after,
-[dir=rtl] .fd-status-label--available:after,
-[dir=rtl] .fd-status-label--away:after,
-[dir=rtl] .fd-status-label--busy:after,
-[dir=rtl] .fd-status-label--offline:after {
-  left: initial;
-  right: 0
-}
-.fd-status-label[dir=rtl] .fd-status-label--available:before,
-.fd-status-label[dir=rtl] .fd-status-label--away:before,
-.fd-status-label[dir=rtl] .fd-status-label--offline:before,
+.fd-status-label--available[dir=rtl]:before,
+.fd-status-label--away[dir=rtl]:before,
+.fd-status-label--offline[dir=rtl]:before,
 [dir=rtl] .fd-status-label--available:before,
 [dir=rtl] .fd-status-label--away:before,
 [dir=rtl] .fd-status-label--offline:before {
   right: 4px
-}
-.fd-status-label[dir=rtl] .fd-status-label--busy:before,
-[dir=rtl] .fd-status-label--busy:before {
-  right: 6px
 }

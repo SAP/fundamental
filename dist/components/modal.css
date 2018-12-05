@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.3
+* Fiori Fundamentals v1.4.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -14,6 +14,7 @@
       .fd-modal__button-secondary
 */
 .fd-modal {
+  --fd-modal-padding-x: var(--fd-width-gutter);
   font-size: 14px;
   line-height: 1.42857;
   color: #32363a;
@@ -24,10 +25,17 @@
   border-radius: 4px;
   background-color: #fff
 }
+.fd-modal__body,
+.fd-modal__footer,
+.fd-modal__header {
+  padding-left: var(--fd-modal-padding-x);
+  padding-right: var(--fd-modal-padding-x);
+  padding-top: 16px;
+  padding-bottom: 16px
+}
 .fd-modal__header {
   position: relative;
-  border-bottom: 1px solid #eeeeef;
-  padding: 16px var(--fd-width-gutter)
+  border-bottom: 1px solid #eeeeef
 }
 .fd-modal__title {
   font-size: 1.14286rem;
@@ -88,7 +96,6 @@
   box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
 .fd-modal__body {
-  padding: 16px var(--fd-width-gutter);
   max-height: calc(100vh - 60px - 68px);
   overflow-y: auto
 }
@@ -96,7 +103,6 @@
   padding: 0
 }
 .fd-modal__footer {
-  padding: 16px var(--fd-width-gutter);
   text-align: right;
   border-top: 1px solid #eeeeef
 }

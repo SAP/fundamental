@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.3
+* Fiori Fundamentals v1.4.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -30,12 +30,27 @@
   -webkit-transform: translateY(0);
   transform: translateY(0)
 }
+.fd-popover__body[dir=rtl],
+[dir=rtl] .fd-popover__body {
+  left: auto;
+  right: -3px
+}
+.fd-popover__body[dir=rtl]::before,
+[dir=rtl] .fd-popover__body::before {
+  right: 10px
+}
+.fd-popover__body[dir=rtl]::after,
+[dir=rtl] .fd-popover__body::after {
+  right: 10px
+}
 .fd-popover__body::before {
   height: 0;
   width: 0;
-  border-bottom: 8px solid #fff;
-  border-left: 6.5px solid transparent;
-  border-right: 6.5px solid transparent;
+  border-style: solid;
+  border-width: 0 6.5px 8px 6.5px;
+  border-bottom-color: #fff;
+  border-left-color: transparent;
+  border-right-color: transparent;
   content: "";
   position: absolute;
   top: -8px;
@@ -45,9 +60,11 @@
 .fd-popover__body::after {
   height: 0;
   width: 0;
-  border-bottom: 8px solid #89919a;
-  border-left: 6.5px solid transparent;
-  border-right: 6.5px solid transparent;
+  border-style: solid;
+  border-width: 0 6.5px 8px 6.5px;
+  border-bottom-color: #89919a;
+  border-left-color: transparent;
+  border-right-color: transparent;
   content: "";
   position: absolute;
   top: -9px;
@@ -58,6 +75,18 @@
   right: auto;
   left: -3px
 }
+.fd-popover__body--left[dir=rtl],
+[dir=rtl] .fd-popover__body--left {
+  right: -3px;
+  left: auto
+}
+.fd-popover__body--left[dir=rtl]::after,
+.fd-popover__body--left[dir=rtl]::before,
+[dir=rtl] .fd-popover__body--left::after,
+[dir=rtl] .fd-popover__body--left::before {
+  right: 14px;
+  left: unset
+}
 .fd-popover__body--left::after,
 .fd-popover__body--left::before {
   left: 10px
@@ -65,6 +94,18 @@
 .fd-popover__body--right {
   left: auto;
   right: -3px
+}
+.fd-popover__body--right[dir=rtl],
+[dir=rtl] .fd-popover__body--right {
+  right: auto;
+  left: -3px
+}
+.fd-popover__body--right[dir=rtl]::after,
+.fd-popover__body--right[dir=rtl]::before,
+[dir=rtl] .fd-popover__body--right::after,
+[dir=rtl] .fd-popover__body--right::before {
+  left: 14px;
+  right: unset
 }
 .fd-popover__body--right::after,
 .fd-popover__body--right::before {
@@ -85,26 +126,4 @@
   visibility: hidden;
   -webkit-transform: translateY(-15px);
   transform: translateY(-15px)
-}
-.fd-popover[dir=rtl] .fd-popover__body,
-[dir=rtl] .fd-popover__body {
-  left: auto;
-  right: -3px
-}
-.fd-popover[dir=rtl] .fd-popover__body::after,
-.fd-popover[dir=rtl] .fd-popover__body::before,
-[dir=rtl] .fd-popover__body::after,
-[dir=rtl] .fd-popover__body::before {
-  left: 14px;
-  right: unset
-}
-.fd-popover[dir=rtl] .fd-popover__body--left,
-[dir=rtl] .fd-popover__body--left {
-  right: -3px;
-  left: auto
-}
-.fd-popover[dir=rtl] .fd-popover__body--right,
-[dir=rtl] .fd-popover__body--right {
-  right: auto;
-  left: -3px
 }
