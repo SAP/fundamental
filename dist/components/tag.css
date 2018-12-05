@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.3
+* Fiori Fundamentals v1.4.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -56,11 +56,7 @@
   vertical-align: bottom;
   line-height: 24px
 }
-.fd-tag[dir=rtl] .fd-tag::after,
-[dir=rtl] .fd-tag::after {
-  content: none
-}
-.fd-tag[dir=rtl] .fd-tag::before,
+.fd-tag[dir=rtl]::before,
 [dir=rtl] .fd-tag::before {
   font-family: SAP-icons;
   font-style: normal;
@@ -74,19 +70,29 @@
   -moz-osx-font-smoothing: grayscale;
   speak: none
 }
-.fd-tag[dir=rtl] .fd-tag::before,
+.fd-tag[dir=rtl]::before,
 [dir=rtl] .fd-tag::before {
   content: ""
 }
-.fd-tag[dir=rtl] .fd-tag::before,
+.fd-tag[dir=rtl]::before,
 [dir=rtl] .fd-tag::before {
   font-size: .85714rem;
   line-height: 1
 }
-.fd-tag[dir=rtl] .fd-tag::before,
+.fd-tag[dir=rtl]::before,
 [dir=rtl] .fd-tag::before {
   color: #0a6ed1;
   margin-left: 4px;
   vertical-align: bottom;
   line-height: 24px
+}
+.fd-tag[dir=rtl]::before,
+[dir=rtl] .fd-tag::before {
+  display: inline;
+  margin-left: 0;
+  margin-right: 4px
+}
+.fd-tag[dir=rtl]::after,
+[dir=rtl] .fd-tag::after {
+  content: none
 }

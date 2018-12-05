@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.3
+* Fiori Fundamentals v1.4.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -81,7 +81,9 @@
   cursor: pointer
 }
 .fd-form__item--check .fd-form__label:focus-within {
-  outline: 1px dotted var(--fd-color-action-focus);
+  outline-width: 1px;
+  outline-style: dotted;
+  outline-color: var(--fd-color-action-focus);
   padding: 4px;
   margin: -4px
 }
@@ -89,6 +91,12 @@
   float: left;
   vertical-align: middle;
   margin-right: 8px
+}
+.fd-form__item--check .fd-form__control[dir=rtl],
+[dir=rtl] .fd-form__item--check .fd-form__control {
+  float: right;
+  margin-left: 8px;
+  margin-right: 0
 }
 .fd-form__item--check .fd-form__help {
   float: none;
@@ -99,6 +107,16 @@
   margin-right: 12px
 }
 .fd-form__item--inline .fd-form__label {
+  width: auto
+}
+.fd-form__item--inline[dir=rtl],
+[dir=rtl] .fd-form__item--inline {
+  float: right;
+  margin-right: 0;
+  margin-left: 12px
+}
+.fd-form__item--inline[dir=rtl] .fd-form__label,
+[dir=rtl] .fd-form__item--inline .fd-form__label {
   width: auto
 }
 .fd-form__label,
@@ -131,6 +149,10 @@
 }
 .fd-form__help {
   float: right
+}
+.fd-form__help[dir=rtl],
+[dir=rtl] .fd-form__help {
+  float: left
 }
 .fd-form__message {
   clear: both;
@@ -195,20 +217,4 @@
 .fd-form__message--error::before {
   content: "";
   color: #bd0000
-}
-.fd-form[dir=rtl] .fd-form__item--check .fd-form__control,
-[dir=rtl] .fd-form__item--check .fd-form__control {
-  float: right;
-  margin-left: 8px;
-  margin-right: 0
-}
-.fd-form[dir=rtl] .fd-form__item--inline,
-[dir=rtl] .fd-form__item--inline {
-  float: right;
-  margin-right: 0;
-  margin-left: 12px
-}
-.fd-form[dir=rtl] .fd-form__item--inline .fd-form__label,
-[dir=rtl] .fd-form__item--inline .fd-form__label {
-  width: auto
 }

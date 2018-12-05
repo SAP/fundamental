@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.3
+* Fiori Fundamentals v1.4.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -1905,4 +1905,34 @@
 }
 .sap-icon--increase-line-height::before {
   content: ""
+}
+.sap-icon--animate-spin {
+  display: inline-block;
+  -webkit-animation: sap-icon-spin 2s infinite linear;
+  animation: sap-icon-spin 2s infinite linear
+}
+.sap-icon--animate-pulse {
+  display: inline-block;
+  -webkit-animation: sap-icon-spin 2s infinite steps(8);
+  animation: sap-icon-spin 2s infinite steps(8)
+}
+@-webkit-keyframes sap-icon-spin {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg)
+  }
+}
+@keyframes sap-icon-spin {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg)
+  }
 }

@@ -1,11 +1,11 @@
 /*!
-* Fiori Fundamentals v1.3.3
+* Fiori Fundamentals v1.4.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 @charset "UTF-8";
 /*!
-.fd-alert+(--warning. --error)
+.fd-alert+(--information, --success, --warning, --error)
     .fd-alert__close
 */
 .fd-alert {
@@ -14,10 +14,25 @@
   color: #32363a;
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #32363a;
-  border: solid 1px #d9d9d9;
+  border: solid 1px #89919a;
   background-color: #fafafa;
   padding: 8px 12px;
   border-radius: 4px
+}
+.fd-alert [class*=sap-icon] {
+  font-size: 1.14286rem;
+  line-height: 1.25;
+  font-weight: 400;
+  color: #89919a;
+  margin-right: 4px;
+  display: inline-block;
+  position: relative;
+  width: 16px;
+  height: 16px
+}
+.fd-alert [class*=sap-icon]::before {
+  position: absolute;
+  top: 1px
 }
 .fd-alert__close {
   position: absolute;
@@ -80,9 +95,29 @@
   border-color: #e9730c;
   background-color: #fef7f0
 }
+.fd-alert--warning [class*=sap-icon] {
+  color: #e9730c
+}
 .fd-alert--error {
   border-color: #bd0000;
   background-color: #ffb8b8
+}
+.fd-alert--error [class*=sap-icon] {
+  color: #bd0000
+}
+.fd-alert--success {
+  border-color: #107f3e;
+  background-color: #e4fcee
+}
+.fd-alert--success [class*=sap-icon] {
+  color: #107f3e
+}
+.fd-alert--information {
+  border-color: #0a6ed1;
+  background-color: rgba(10,110,209,.07)
+}
+.fd-alert--information [class*=sap-icon] {
+  color: #0a6ed1
 }
 .fd-alert--dismissible {
   position: relative;

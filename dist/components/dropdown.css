@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.3.3
+* Fiori Fundamentals v1.4.0
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -7,7 +7,6 @@
 /*!
 .fd-dropdown+()
     .fd-dropdown__control+([disabled])
-    .fd-dropdown__menu+()
 */
 .fd-dropdown {
   font-size: 14px;
@@ -42,6 +41,23 @@
   transition: -webkit-transform 125ms ease-in;
   transition: transform 125ms ease-in;
   transition: transform 125ms ease-in,-webkit-transform 125ms ease-in
+}
+.fd-dropdown__control[dir=rtl]::after,
+[dir=rtl] .fd-dropdown__control::after {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0
+}
+.fd-dropdown__control[dir=rtl]:not(.fd-button--standard)::after,
+[dir=rtl] .fd-dropdown__control:not(.fd-button--standard)::after {
+  border-right: 1px solid #89919a;
+  border-left: none
+}
+.fd-dropdown__control[dir=rtl].fd-button,
+[dir=rtl] .fd-dropdown__control.fd-button {
+  padding-left: 0;
+  padding-right: 12px
 }
 .fd-dropdown__control::after {
   color: #0a6ed1;
@@ -142,30 +158,9 @@
   background-color: transparent;
   border-left: none
 }
-.fd-dropdown__menu {
-  padding-top: 4px;
-  padding-bottom: 4px;
-  margin-left: 0;
-  padding-left: 0;
-  min-width: 100%;
-  border: red;
-  position: absolute;
-  white-space: nowrap;
-  z-index: 2;
-  border-radius: 4px;
-  background-color: #fff;
-  -webkit-box-shadow: 0 0 4px 1px #eeeeef;
-  box-shadow: 0 0 4px 1px #eeeeef;
-  opacity: 1;
-  visibility: visible;
-  -webkit-transition: opacity 125ms ease-in;
-  transition: opacity 125ms ease-in;
-  margin-top: 1px
-}
-.fd-dropdown__menu.is-hidden,
-.fd-dropdown__menu[aria-hidden=true] {
-  opacity: 0;
-  visibility: hidden
+.fd-dropdown__control.fd-button--standard[dir=rtl],
+[dir=rtl] .fd-dropdown__control.fd-button--standard {
+  padding-left: 12px
 }
 .fd-dropdown__group,
 .fd-dropdown__list {
@@ -196,25 +191,4 @@
 .fd-dropdown__item[aria-selected=true] {
   color: #51555a;
   background-color: rgba(10,110,209,.07)
-}
-.fd-dropdown[dir=rtl] .fd-dropdown__control::after,
-[dir=rtl] .fd-dropdown__control::after {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0
-}
-.fd-dropdown[dir=rtl] .fd-dropdown__control:not(.fd-button--standard)::after,
-[dir=rtl] .fd-dropdown__control:not(.fd-button--standard)::after {
-  border-right: 1px solid #89919a;
-  border-left: none
-}
-.fd-dropdown[dir=rtl] .fd-dropdown__control.fd-button,
-[dir=rtl] .fd-dropdown__control.fd-button {
-  padding-left: 0;
-  padding-right: 12px
-}
-.fd-dropdown[dir=rtl] .fd-dropdown__control.fd-button--standard,
-[dir=rtl] .fd-dropdown__control.fd-button--standard {
-  padding-left: 12px
 }
