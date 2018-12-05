@@ -189,7 +189,6 @@ a[aria-selected=true] {
 a:focus {
   outline-style: dotted;
   outline-width: 1px;
-  outline-color: #085caf;
   outline-color: var(--fd-color-action-focus)
 }
 a.is-disabled,
@@ -254,8 +253,6 @@ input.is-focus[type=checkbox],
 input.is-focus[type=radio],
 input:focus[type=checkbox],
 input:focus[type=radio] {
-  -webkit-box-shadow: 0 0 0 1px #085caf;
-  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   border-color: #7bbaf9
@@ -396,8 +393,6 @@ input[type=url].is-focus,
 input[type=url]:focus,
 textarea.is-focus,
 textarea:focus {
-  -webkit-box-shadow: 0 0 0 1px #085caf;
-  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   border-color: #7bbaf9
@@ -624,8 +619,6 @@ textarea:hover {
 .fd-textarea:focus,
 textarea.is-focus,
 textarea:focus {
-  -webkit-box-shadow: 0 0 0 1px #085caf;
-  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   border-color: #7bbaf9
@@ -715,8 +708,6 @@ select:hover {
 .fd-select:focus,
 select.is-focus,
 select:focus {
-  -webkit-box-shadow: 0 0 0 1px #085caf;
-  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   border-color: #7bbaf9
@@ -1751,8 +1742,6 @@ input[type=radio]:checked[disabled]::after {
 }
 .fd-alert__close.is-focus,
 .fd-alert__close:focus {
-  -webkit-box-shadow: 0 0 0 1px #085caf;
-  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
@@ -2015,11 +2004,8 @@ input[type=radio]:checked[disabled]::after {
   white-space: nowrap;
   background-color: transparent;
   border-radius: 4px;
-  height: 36px;
   height: var(--fd-forms-height);
-  max-height: 36px;
   max-height: var(--fd-forms-height);
-  min-width: 36px;
   min-width: var(--fd-forms-height);
   font-size: 1rem;
   line-height: 1.42857;
@@ -2029,11 +2015,8 @@ input[type=radio]:checked[disabled]::after {
   padding-right: 12px;
   border-style: solid;
   border-width: 1px;
-  color: #0a6ed1;
   color: var(--fd-button-color);
-  border-color: #0a6ed1;
   border-color: var(--fd-button-border-color);
-  background-color: #fff;
   background-color: var(--fd-button-background-color);
   -webkit-transition: all 125ms ease-in;
   transition: all 125ms ease-in
@@ -2087,17 +2070,13 @@ input[type=radio]:checked[disabled]::after {
 .fd-button:focus,
 [class*=fd-button--].is-focus,
 [class*=fd-button--]:focus {
-  -webkit-box-shadow: 0 0 0 1px #085caf;
-  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
 .fd-button:hover,
 [class*=fd-button--]:hover {
   --fd-button-background-color: var(--fd-color-action-hover);
-  --fd-button-color: var(--fd-color-action-2);
-  color: #fff;
-  background-color: #085caf
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button:hover.is-disabled,
 .fd-button:hover:disabled,
@@ -2106,9 +2085,7 @@ input[type=radio]:checked[disabled]::after {
 [class*=fd-button--]:hover:disabled,
 [class*=fd-button--]:hover[aria-disabled=true] {
   --fd-button-background-color: var(--fd-color-background-2);
-  --fd-button-color: var(--fd-color-action-1);
-  color: #0a6ed1;
-  background-color: #fff
+  --fd-button-color: var(--fd-color-action-1)
 }
 .fd-button.is-active,
 .fd-button.is-pressed,
@@ -2123,9 +2100,7 @@ input[type=radio]:checked[disabled]::after {
 [class*=fd-button--][aria-pressed=true],
 [class*=fd-button--][aria-selected=true] {
   --fd-button-background-color: var(--fd-color-action-selected);
-  --fd-button-color: var(--fd-color-action-2);
-  color: #fff;
-  background-color: #0254a7
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button.is-disabled,
 .fd-button:disabled,
@@ -2137,25 +2112,12 @@ input[type=radio]:checked[disabled]::after {
   cursor: not-allowed
 }
 .fd-button--compact {
-  height: 36px;
   height: var(--fd-forms-height-compact);
-  max-height: 36px;
   max-height: var(--fd-forms-height-compact);
-  min-width: 36px;
   min-width: var(--fd-forms-height-compact)
-}
-.fd-for-touch .fd-button--compact {
-  height: 36px;
-  min-width: 36px
-}
-.fd-for-compact .fd-button--compact {
-  height: 28px;
-  min-width: 28px
 }
 @media (min-width:600px) {
   .fd-button--compact {
-    height: 28px;
-    min-width: 28px;
     min-width: var(--fd-forms-height)
   }
 }
@@ -2163,10 +2125,7 @@ input[type=radio]:checked[disabled]::after {
   font-weight: 700;
   --fd-button-color: var(--fd-color-action-2);
   --fd-button-border-color: var(--fd-color-action-1);
-  --fd-button-background-color: var(--fd-color-action-1);
-  color: #fff;
-  border-color: #0a6ed1;
-  background-color: #0a6ed1
+  --fd-button-background-color: var(--fd-color-action-1)
 }
 .fd-button--emphasized:hover {
   --fd-button-background-color: var(--fd-color-action-hover);
@@ -2176,9 +2135,7 @@ input[type=radio]:checked[disabled]::after {
 .fd-button--emphasized:hover:disabled,
 .fd-button--emphasized:hover[aria-disabled=true] {
   --fd-button-background-color: var(--fd-color-action-1);
-  --fd-button-color: var(--fd-color-action-2);
-  color: #fff;
-  background-color: #0a6ed1
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--emphasized.fd-button--medium,
 .fd-button--emphasized.fd-button--negative,
@@ -2186,8 +2143,7 @@ input[type=radio]:checked[disabled]::after {
 .fd-button--emphasized.fd-button--standard,
 .fd-button-group .fd-button--emphasized.fd-button,
 .fd-button-group .fd-button--emphasized[class*=fd-button--] {
-  --fd-button-color: var(--fd-color-action-2);
-  color: #fff
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--emphasized.fd-button--medium:hover.is-disabled,
 .fd-button--emphasized.fd-button--medium:hover:disabled,
@@ -2207,16 +2163,13 @@ input[type=radio]:checked[disabled]::after {
 .fd-button-group .fd-button--emphasized:hover.is-disabled[class*=fd-button--],
 .fd-button-group .fd-button--emphasized:hover:disabled[class*=fd-button--],
 .fd-button-group .fd-button--emphasized:hover[aria-disabled=true][class*=fd-button--] {
-  --fd-button-color: var(--fd-color-action-2);
-  color: #fff
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--emphasized.fd-button--standard,
 .fd-button-group .fd-button--emphasized.fd-button,
 .fd-button-group .fd-button--emphasized[class*=fd-button--] {
   --fd-button-border-color: var(--fd-color-status-4);
-  --fd-button-background-color: var(--fd-color-status-4);
-  border-color: #6d7678;
-  background-color: #6d7678
+  --fd-button-background-color: var(--fd-color-status-4)
 }
 .fd-button--emphasized.fd-button--standard:hover.is-disabled,
 .fd-button--emphasized.fd-button--standard:hover:disabled,
@@ -2227,64 +2180,48 @@ input[type=radio]:checked[disabled]::after {
 .fd-button-group .fd-button--emphasized:hover.is-disabled[class*=fd-button--],
 .fd-button-group .fd-button--emphasized:hover:disabled[class*=fd-button--],
 .fd-button-group .fd-button--emphasized:hover[aria-disabled=true][class*=fd-button--] {
-  --fd-button-background-color: var(--fd-color-status-4);
-  background-color: #6d7678
+  --fd-button-background-color: var(--fd-color-status-4)
 }
 .fd-button--emphasized.fd-button--negative {
   --fd-button-border-color: var(--fd-color-status-3);
-  --fd-button-background-color: var(--fd-color-status-3);
-  border-color: #bd0000;
-  background-color: #bd0000
+  --fd-button-background-color: var(--fd-color-status-3)
 }
 .fd-button--emphasized.fd-button--negative:hover.is-disabled,
 .fd-button--emphasized.fd-button--negative:hover:disabled,
 .fd-button--emphasized.fd-button--negative:hover[aria-disabled=true] {
-  --fd-button-background-color: var(--fd-color-status-3);
-  background-color: #bd0000
+  --fd-button-background-color: var(--fd-color-status-3)
 }
 .fd-button--emphasized.fd-button--medium {
   --fd-button-border-color: var(--fd-color-status-2);
-  --fd-button-background-color: var(--fd-color-status-2);
-  border-color: #e9730c;
-  background-color: #e9730c
+  --fd-button-background-color: var(--fd-color-status-2)
 }
 .fd-button--emphasized.fd-button--medium:hover.is-disabled,
 .fd-button--emphasized.fd-button--medium:hover:disabled,
 .fd-button--emphasized.fd-button--medium:hover[aria-disabled=true] {
-  --fd-button-background-color: var(--fd-color-status-2);
-  background-color: #e9730c
+  --fd-button-background-color: var(--fd-color-status-2)
 }
 .fd-button--emphasized.fd-button--positive {
   --fd-button-border-color: var(--fd-color-status-1);
-  --fd-button-background-color: var(--fd-color-status-1);
-  border-color: #107f3e;
-  background-color: #107f3e
+  --fd-button-background-color: var(--fd-color-status-1)
 }
 .fd-button--emphasized.fd-button--positive:hover.is-disabled,
 .fd-button--emphasized.fd-button--positive:hover:disabled,
 .fd-button--emphasized.fd-button--positive:hover[aria-disabled=true] {
-  --fd-button-background-color: var(--fd-color-status-1);
-  background-color: #107f3e
+  --fd-button-background-color: var(--fd-color-status-1)
 }
 .fd-button--light {
   --fd-button-border-color: transparent;
-  --fd-button-background-color: transparent;
-  border-color: transparent;
-  background-color: transparent
+  --fd-button-background-color: transparent
 }
 .fd-button--light:hover {
   --fd-button-background-color: var(--fd-color-neutral-1);
-  --fd-button-color: var(--fd-color-action-1);
-  color: #0a6ed1;
-  background-color: #fafafa
+  --fd-button-color: var(--fd-color-action-1)
 }
 .fd-button--light:hover.is-disabled,
 .fd-button--light:hover:disabled,
 .fd-button--light:hover[aria-disabled=true] {
   --fd-button-background-color: transparent;
-  --fd-button-color: var(--fd-color-action-1);
-  color: #0a6ed1;
-  background-color: transparent
+  --fd-button-color: var(--fd-color-action-1)
 }
 .fd-button--light.is-active,
 .fd-button--light.is-pressed,
@@ -2293,9 +2230,7 @@ input[type=radio]:checked[disabled]::after {
 .fd-button--light[aria-pressed=true],
 .fd-button--light[aria-selected=true] {
   --fd-button-background-color: var(--fd-color-action-selected);
-  --fd-button-color: var(--fd-color-action-2);
-  color: #fff;
-  background-color: #0254a7
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--light.fd-button--medium,
 .fd-button--light.fd-button--negative,
@@ -2304,9 +2239,7 @@ input[type=radio]:checked[disabled]::after {
 .fd-button-group .fd-button--light.fd-button,
 .fd-button-group .fd-button--light[class*=fd-button--] {
   --fd-button-border-color: transparent;
-  --fd-button-background-color: transparent;
-  border-color: transparent;
-  background-color: transparent
+  --fd-button-background-color: transparent
 }
 .fd-button--light.fd-button--medium:hover,
 .fd-button--light.fd-button--negative:hover,
@@ -2314,8 +2247,7 @@ input[type=radio]:checked[disabled]::after {
 .fd-button--light.fd-button--standard:hover,
 .fd-button-group .fd-button--light.fd-button:hover,
 .fd-button-group .fd-button--light:hover[class*=fd-button--] {
-  --fd-button-background-color: var(--fd-color-neutral-1);
-  background-color: #fafafa
+  --fd-button-background-color: var(--fd-color-neutral-1)
 }
 .fd-button--light.fd-button--medium:hover.is-disabled,
 .fd-button--light.fd-button--medium:hover:disabled,
@@ -2335,8 +2267,7 @@ input[type=radio]:checked[disabled]::after {
 .fd-button-group .fd-button--light:hover.is-disabled[class*=fd-button--],
 .fd-button-group .fd-button--light:hover:disabled[class*=fd-button--],
 .fd-button-group .fd-button--light:hover[aria-disabled=true][class*=fd-button--] {
-  --fd-button-background-color: transparent;
-  background-color: transparent
+  --fd-button-background-color: transparent
 }
 .fd-button--light.fd-button--standard,
 .fd-button-group .fd-button--light.fd-button,
@@ -2346,8 +2277,7 @@ input[type=radio]:checked[disabled]::after {
 .fd-button--light.fd-button--standard:hover,
 .fd-button-group .fd-button--light.fd-button:hover,
 .fd-button-group .fd-button--light:hover[class*=fd-button--] {
-  --fd-button-color: var(--fd-color-status-4);
-  color: #6d7678
+  --fd-button-color: var(--fd-color-status-4)
 }
 .fd-button--light.fd-button--standard:hover.is-disabled,
 .fd-button--light.fd-button--standard:hover:disabled,
@@ -2379,16 +2309,13 @@ input[type=radio]:checked[disabled]::after {
 .fd-button-group .fd-button--light[aria-pressed=true][class*=fd-button--],
 .fd-button-group .fd-button--light[aria-selected=true][class*=fd-button--] {
   --fd-button-background-color: var(--fd-color-status-4);
-  --fd-button-color: var(--fd-color-action-2);
-  color: #fff;
-  background-color: #6d7678
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--light.fd-button--negative {
   --fd-button-color: var(--fd-color-status-3)
 }
 .fd-button--light.fd-button--negative:hover {
-  --fd-button-color: var(--fd-color-status-3);
-  color: #bd0000
+  --fd-button-color: var(--fd-color-status-3)
 }
 .fd-button--light.fd-button--negative:hover.is-disabled,
 .fd-button--light.fd-button--negative:hover:disabled,
@@ -2402,16 +2329,13 @@ input[type=radio]:checked[disabled]::after {
 .fd-button--light.fd-button--negative[aria-pressed=true],
 .fd-button--light.fd-button--negative[aria-selected=true] {
   --fd-button-background-color: var(--fd-color-status-3);
-  --fd-button-color: var(--fd-color-action-2);
-  color: #fff;
-  background-color: #bd0000
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--light.fd-button--positive {
   --fd-button-color: var(--fd-color-status-1)
 }
 .fd-button--light.fd-button--positive:hover {
-  --fd-button-color: var(--fd-color-status-1);
-  color: #107f3e
+  --fd-button-color: var(--fd-color-status-1)
 }
 .fd-button--light.fd-button--positive:hover.is-disabled,
 .fd-button--light.fd-button--positive:hover:disabled,
@@ -2425,16 +2349,13 @@ input[type=radio]:checked[disabled]::after {
 .fd-button--light.fd-button--positive[aria-pressed=true],
 .fd-button--light.fd-button--positive[aria-selected=true] {
   --fd-button-background-color: var(--fd-color-status-1);
-  --fd-button-color: var(--fd-color-action-2);
-  color: #fff;
-  background-color: #107f3e
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--light.fd-button--medium {
   --fd-button-color: var(--fd-color-status-2)
 }
 .fd-button--light.fd-button--medium:hover {
-  --fd-button-color: var(--fd-color-status-2);
-  color: #e9730c
+  --fd-button-color: var(--fd-color-status-2)
 }
 .fd-button--light.fd-button--medium:hover.is-disabled,
 .fd-button--light.fd-button--medium:hover:disabled,
@@ -2448,9 +2369,7 @@ input[type=radio]:checked[disabled]::after {
 .fd-button--light.fd-button--medium[aria-pressed=true],
 .fd-button--light.fd-button--medium[aria-selected=true] {
   --fd-button-background-color: var(--fd-color-status-2);
-  --fd-button-color: var(--fd-color-action-2);
-  color: #fff;
-  background-color: #e9730c
+  --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--medium,
 .fd-button--negative,
@@ -2510,9 +2429,7 @@ input[type=radio]:checked[disabled]::after {
 .fd-button-group .fd-button,
 .fd-button-group [class*=fd-button--] {
   --fd-button-color: var(--fd-color-status-4);
-  --fd-button-border-color: var(--fd-color-status-4);
-  color: #6d7678;
-  border-color: #6d7678
+  --fd-button-border-color: var(--fd-color-status-4)
 }
 .fd-button--standard.is-focus,
 .fd-button--standard:focus,
@@ -2520,8 +2437,6 @@ input[type=radio]:checked[disabled]::after {
 .fd-button-group .is-focus.fd-button,
 .fd-button-group .is-focus[class*=fd-button--],
 .fd-button-group :focus[class*=fd-button--] {
-  -webkit-box-shadow: 0 0 0 1px #6d7678;
-  box-shadow: 0 0 0 1px #6d7678;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-4);
   box-shadow: 0 0 0 1px var(--fd-color-status-4)
 }
@@ -2529,9 +2444,7 @@ input[type=radio]:checked[disabled]::after {
 .fd-button-group .fd-button:hover,
 .fd-button-group :hover[class*=fd-button--] {
   --fd-button-color: var(--fd-color-action-2);
-  --fd-button-background-color: var(--fd-color-status-4);
-  color: #fff;
-  background-color: #6d7678
+  --fd-button-background-color: var(--fd-color-status-4)
 }
 .fd-button--standard:hover.is-disabled,
 .fd-button--standard:hover:disabled,
@@ -2542,8 +2455,7 @@ input[type=radio]:checked[disabled]::after {
 .fd-button-group :hover.is-disabled[class*=fd-button--],
 .fd-button-group :hover:disabled[class*=fd-button--],
 .fd-button-group :hover[aria-disabled=true][class*=fd-button--] {
-  --fd-button-color: var(--fd-color-status-4);
-  color: #6d7678
+  --fd-button-color: var(--fd-color-status-4)
 }
 .fd-button--standard.is-active,
 .fd-button--standard.is-pressed,
@@ -2563,32 +2475,24 @@ input[type=radio]:checked[disabled]::after {
 .fd-button-group :active[class*=fd-button--],
 .fd-button-group [aria-pressed=true][class*=fd-button--],
 .fd-button-group [aria-selected=true][class*=fd-button--] {
-  --fd-button-background-color: var(--fd-color-status-4);
-  background-color: #6d7678;
-  color: #fff
+  --fd-button-background-color: var(--fd-color-status-4)
 }
 .fd-button--positive {
   --fd-button-color: var(--fd-color-status-1);
-  --fd-button-border-color: var(--fd-color-status-1);
-  color: #107f3e;
-  border-color: #107f3e
+  --fd-button-border-color: var(--fd-color-status-1)
 }
 .fd-button--positive.is-focus,
 .fd-button--positive:focus {
-  -webkit-box-shadow: 0 0 0 1px #107f3e;
-  box-shadow: 0 0 0 1px #107f3e;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-1);
   box-shadow: 0 0 0 1px var(--fd-color-status-1)
 }
 .fd-button--positive:hover {
-  --fd-button-background-color: var(--fd-color-status-1);
-  background-color: #107f3e
+  --fd-button-background-color: var(--fd-color-status-1)
 }
 .fd-button--positive:hover.is-disabled,
 .fd-button--positive:hover:disabled,
 .fd-button--positive:hover[aria-disabled=true] {
-  --fd-button-color: var(--fd-color-status-1);
-  color: #107f3e
+  --fd-button-color: var(--fd-color-status-1)
 }
 .fd-button--positive.is-active,
 .fd-button--positive.is-pressed,
@@ -2596,31 +2500,24 @@ input[type=radio]:checked[disabled]::after {
 .fd-button--positive:active,
 .fd-button--positive[aria-pressed=true],
 .fd-button--positive[aria-selected=true] {
-  --fd-button-background-color: var(--fd-color-status-1);
-  background-color: #107f3e
+  --fd-button-background-color: var(--fd-color-status-1)
 }
 .fd-button--medium {
   --fd-button-color: var(--fd-color-status-2);
-  --fd-button-border-color: var(--fd-color-status-2);
-  color: #e9730c;
-  border-color: #e9730c
+  --fd-button-border-color: var(--fd-color-status-2)
 }
 .fd-button--medium.is-focus,
 .fd-button--medium:focus {
-  -webkit-box-shadow: 0 0 0 1px #e9730c;
-  box-shadow: 0 0 0 1px #e9730c;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-2);
   box-shadow: 0 0 0 1px var(--fd-color-status-2)
 }
 .fd-button--medium:hover {
-  --fd-button-background-color: var(--fd-color-status-2);
-  background-color: #e9730c
+  --fd-button-background-color: var(--fd-color-status-2)
 }
 .fd-button--medium:hover.is-disabled,
 .fd-button--medium:hover:disabled,
 .fd-button--medium:hover[aria-disabled=true] {
-  --fd-button-color: var(--fd-color-status-2);
-  color: #e9730c
+  --fd-button-color: var(--fd-color-status-2)
 }
 .fd-button--medium.is-active,
 .fd-button--medium.is-pressed,
@@ -2628,31 +2525,24 @@ input[type=radio]:checked[disabled]::after {
 .fd-button--medium:active,
 .fd-button--medium[aria-pressed=true],
 .fd-button--medium[aria-selected=true] {
-  --fd-button-background-color: var(--fd-color-status-2);
-  background-color: #e9730c
+  --fd-button-background-color: var(--fd-color-status-2)
 }
 .fd-button--negative {
   --fd-button-color: var(--fd-color-status-3);
-  --fd-button-border-color: var(--fd-color-status-3);
-  color: #bd0000;
-  border-color: #bd0000
+  --fd-button-border-color: var(--fd-color-status-3)
 }
 .fd-button--negative.is-focus,
 .fd-button--negative:focus {
-  -webkit-box-shadow: 0 0 0 1px #bd0000;
-  box-shadow: 0 0 0 1px #bd0000;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-3);
   box-shadow: 0 0 0 1px var(--fd-color-status-3)
 }
 .fd-button--negative:hover {
-  --fd-button-background-color: var(--fd-color-status-3);
-  background-color: #bd0000
+  --fd-button-background-color: var(--fd-color-status-3)
 }
 .fd-button--negative:hover.is-disabled,
 .fd-button--negative:hover:disabled,
 .fd-button--negative:hover[aria-disabled=true] {
-  --fd-button-color: var(--fd-color-status-3);
-  color: #bd0000
+  --fd-button-color: var(--fd-color-status-3)
 }
 .fd-button--negative.is-active,
 .fd-button--negative.is-pressed,
@@ -2660,8 +2550,7 @@ input[type=radio]:checked[disabled]::after {
 .fd-button--negative:active,
 .fd-button--negative[aria-pressed=true],
 .fd-button--negative[aria-selected=true] {
-  --fd-button-background-color: var(--fd-color-status-3);
-  background-color: #bd0000
+  --fd-button-background-color: var(--fd-color-status-3)
 }
 .fd-button--shell {
   --fd-button-color: var(--fd-color-shell-2);
@@ -2685,6 +2574,12 @@ input[type=radio]:checked[disabled]::after {
   --fd-button-border-color: transparent;
   --fd-button-background-color: hsl(217, 21%, 25%)
 }
+.fd-button--shell:hover.is-disabled,
+.fd-button--shell:hover:disabled,
+.fd-button--shell:hover[aria-disabled=true] {
+  --fd-button-color: var(--fd-color-shell-2);
+  --fd-button-background-color: transparent
+}
 .fd-button--shell.is-active,
 .fd-button--shell.is-pressed,
 .fd-button--shell.is-selected,
@@ -2694,11 +2589,6 @@ input[type=radio]:checked[disabled]::after {
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
   --fd-button-background-color: hsl(217, 21%, 21%)
-}
-.fd-button--shell.is-disabled,
-.fd-button--shell:disabled,
-.fd-button--shell[aria-disabled=true] {
-  opacity: .25
 }
 .fd-button--xs {
   font-size: .85714rem;
@@ -2894,8 +2784,6 @@ input[type=radio]:checked[disabled]::after {
 }
 .fd-button--toolbar.is-focus,
 .fd-button--toolbar:focus {
-  -webkit-box-shadow: 0 0 0 1px #085caf;
-  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-neutral-3);
   box-shadow: 0 0 0 1px var(--fd-color-neutral-3)
 }
@@ -3283,7 +3171,9 @@ input[type=radio]:checked[disabled]::after {
   cursor: pointer
 }
 .fd-form__item--check .fd-form__label:focus-within {
-  outline: 1px dotted var(--fd-color-action-focus);
+  outline-width: 1px;
+  outline-style: dotted;
+  outline-color: var(--fd-color-action-focus);
   padding: 4px;
   margin: -4px
 }
@@ -4114,8 +4004,6 @@ input[type=radio]:checked[disabled]::after {
 }
 .fd-modal__close.is-focus,
 .fd-modal__close:focus {
-  -webkit-box-shadow: 0 0 0 1px #085caf;
-  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
@@ -4321,8 +4209,6 @@ input[type=radio]:checked[disabled]::after {
 }
 .fd-tree__control.is-focus,
 .fd-tree__control:focus {
-  -webkit-box-shadow: 0 0 0 1px #085caf;
-  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
@@ -4429,9 +4315,11 @@ input[type=radio]:checked[disabled]::after {
 .fd-inline-help__content::before {
   height: 0;
   width: 0;
-  border-bottom: 8px solid #89919a;
-  border-left: 6.5px solid transparent;
-  border-right: 6.5px solid transparent;
+  border-style: solid;
+  border-width: 0 6.5px 8px 6.5px;
+  border-bottom-color: #89919a;
+  border-left-color: transparent;
+  border-right-color: transparent;
   content: "";
   position: absolute;
   top: -8px;
@@ -4440,9 +4328,11 @@ input[type=radio]:checked[disabled]::after {
 .fd-inline-help__content::after {
   height: 0;
   width: 0;
-  border-bottom: 8px solid #fff;
-  border-left: 6.5px solid transparent;
-  border-right: 6.5px solid transparent;
+  border-style: solid;
+  border-width: 0 6.5px 8px 6.5px;
+  border-bottom-color: #fff;
+  border-left-color: transparent;
+  border-right-color: transparent;
   content: "";
   position: absolute;
   top: -6px;
@@ -6376,9 +6266,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-popover__body::before {
   height: 0;
   width: 0;
-  border-bottom: 8px solid #fff;
-  border-left: 6.5px solid transparent;
-  border-right: 6.5px solid transparent;
+  border-style: solid;
+  border-width: 0 6.5px 8px 6.5px;
+  border-bottom-color: #fff;
+  border-left-color: transparent;
+  border-right-color: transparent;
   content: "";
   position: absolute;
   top: -8px;
@@ -6388,9 +6280,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-popover__body::after {
   height: 0;
   width: 0;
-  border-bottom: 8px solid #89919a;
-  border-left: 6.5px solid transparent;
-  border-right: 6.5px solid transparent;
+  border-style: solid;
+  border-width: 0 6.5px 8px 6.5px;
+  border-bottom-color: #89919a;
+  border-left-color: transparent;
+  border-right-color: transparent;
   content: "";
   position: absolute;
   top: -9px;
@@ -6845,7 +6739,9 @@ input-addon
   }
 }
 .fd-shellbar .fd-search-input .fd-input {
-  border: 1px solid var(--fd-color-shell-2);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--fd-color-shell-2);
   background-color: var(--fd-color-shell-1);
   color: var(--fd-color-shell-2)
 }
@@ -6942,9 +6838,11 @@ input-addon
 .fd-product-menu__control::after {
   height: 0;
   width: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid var(--fd-color-shell-2);
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-top-color: var(--fd-color-shell-2);
+  border-left-color: transparent;
+  border-right-color: transparent;
   content: "";
   position: absolute;
   top: calc(50% - 2.5px);
