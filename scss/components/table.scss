@@ -13,8 +13,6 @@ $block: #{$fd-namespace}-table;
     $fd-table-border-color: fd-color("neutral", 2) !default;
     $fd-table-border-width: 1px !default;
     $fd-table-link-color: fd-color(action, 1) !default;
-    $fd-table-cell-spacing: var(--fd-width-gutter) !default;
-    $fd-table-cell-padding: fd-space("xs") !default;
     $fd-table-background-color: fd-color("background", 2);
 
     $fd-table-header-color: fd-color("text", 3) !default;
@@ -23,7 +21,9 @@ $block: #{$fd-namespace}-table;
     fd-color-state("hover") !default;
     $fd-table-row-background-color--selected: fd-color-state("selected") !default;
 
-    $fd-table-cell-spacing: var(--fd-width-gutter) !default;
+    $fd-table-cell-spacing: $fd-width--gutter !default;
+    --fd-table-cell-spacing: var(--fd-width-gutter);
+
     $fd-table-cell-padding: fd-space("s") !default;
     $fd-table-transition-params: $fd-animation--speed ease-in !default;
     $fd-table-sort-icon-size: fd-space(3);
@@ -54,8 +54,7 @@ $block: #{$fd-namespace}-table;
                 background-color: fd-color-state("selected-hover")
             }
         }
-        @include action-cursor;
-
+        cursor: pointer;
     }
 
     thead {
@@ -86,16 +85,23 @@ $block: #{$fd-namespace}-table;
     td,
     th {
         text-align: left;
-        padding: $fd-table-cell-padding calc(#{$fd-table-cell-spacing}/2);
-
+        --fd-table-cell-spacing: calc(var(--fd-width-gutter) / 2);
+        @include fd-var-size("padding-left", $fd-table-cell-spacing/2, --fd-table-cell-spacing);
+        @include fd-var-size("padding-right", $fd-table-cell-spacing/2, --fd-table-cell-spacing);
+        padding-top: $fd-table-cell-padding;
+        padding-bottom: $fd-table-cell-padding;
         &:first-child {
-            padding-left: $fd-table-cell-spacing;
+          @include fd-var-size("padding-left", $fd-width--gutter, --fd-width-gutter);
         }
-
         &:last-child {
-            padding-right: $fd-table-cell-spacing;
+          @include fd-var-size("padding-right", $fd-width--gutter, --fd-width-gutter);
         }
 
+        .fd-dropdown__menu {
+            min-width: auto;
+            text-align: left;
+        }
+      
         > a {
             color: $fd-table-link-color;
             &:hover{
@@ -105,12 +111,10 @@ $block: #{$fd-namespace}-table;
     }
 
     &__sort-column {
-
         &:hover {
             background: $fd-table-sort-column-header-hover-color;
-            @include action-cursor;
+            cursor: pointer;
         }
-
         &::after {
             content: "";
             width: $fd-table-sort-icon-size;
@@ -141,8 +145,6 @@ $block: #{$fd-namespace}-table;
 
     &__context-menu-label {
         display: block;
-        padding: $fd-table-cell-padding calc(#{$fd-table-cell-spacing}/2);
-
         &::after {
             content: "";
             width: $fd-table-sort-icon-size;
@@ -155,11 +157,9 @@ $block: #{$fd-namespace}-table;
     }
 
     th.fd-table__context-menu {
-        padding: 0;
-
         &:hover {
             background: $fd-table-sort-column-header-hover-color;
-            @include action-cursor;
+            cursor: pointer;
         }
     }
 

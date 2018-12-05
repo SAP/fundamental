@@ -17,7 +17,8 @@ $block: #{$fd-namespace}-tree;
     $fd-tree-border-color: transparent !default;
     $fd-tree-border-width: 0 !default;
     $fd-tree-link-color: fd-color(action, 1) !default;
-    $fd-tree-cell-spacing: var(--fd-width-gutter) !default;
+    $fd-tree-cell-spacing: $fd-width--gutter !default;
+    --fd-tree-cell-spacing: var(--fd-width-gutter);
     $fd-tree-cell-padding: fd-space(3) !default;
 
     $fd-tree-header-background-color: fd-color("neutral", 2) !default;
@@ -64,7 +65,11 @@ $block: #{$fd-namespace}-tree;
         list-style: none;
     }
     &__row {
-        padding: 0 $fd-tree-cell-spacing;
+        @include fd-var-size("padding-left", $fd-tree-cell-spacing, --fd-tree-cell-spacing);
+        @include fd-var-size("padding-right", $fd-tree-cell-spacing, --fd-tree-cell-spacing);
+        padding-top: 0;
+        padding-bottom: 0;
+
         display: flex;
         align-items: center;
         position: relative;
