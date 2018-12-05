@@ -24,7 +24,7 @@ $block: #{$fd-namespace}-input-group;
     }
 
     @include fd-rtl {
-        > * { 
+        > * {
             & input:read-only {
               border-right: none;
             }
@@ -44,7 +44,7 @@ $block: #{$fd-namespace}-input-group;
                   border-top-right-radius: $fd-border-radius;
                   border-bottom-right-radius: $fd-border-radius;
                   border-right: 1px $fd-forms-border-color solid;
-                }            
+                }
         }
     }
 
@@ -104,7 +104,7 @@ $block: #{$fd-namespace}-input-group;
         display: flex;
         flex-direction: column;
         border-radius: $fd-border-radius;
-        height: var(--fd-forms-height);
+        @include fd-var-size("height", $fd-forms-height, --fd-forms-height);
         &--readonly{
             border: none;
             border-top-color: transparent;
@@ -116,7 +116,7 @@ $block: #{$fd-namespace}-input-group;
         }
         @at-root {
           .#{$block}--compact & {
-            height: var(--fd-forms-height-compact);
+          @include fd-var-size("height", $fd-forms-height--compact, --fd-forms-height-compact);
             .#{$block}__button {
                 &--step-up:before,
                 &--step-down:before {

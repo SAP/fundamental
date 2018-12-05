@@ -52,10 +52,10 @@
 
 @mixin fd-form-text() {
     @include fd-form-base;
-    height: var(--fd-forms-height);
+    @include fd-var-size("height", $fd-forms-height, --fd-forms-height);
     &.fd-input--compact,
     &.fd-select--compact {
-      height: var(--fd-forms-height-compact);
+      @include fd-var-size("height", $fd-forms-height--compact, --fd-forms-height-compact);
     }
     padding-left: $fd-forms-padding;
     padding-right: $fd-forms-padding;
