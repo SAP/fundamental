@@ -1,11 +1,10 @@
 @import "./../functions/type";
-/*
-  @mixin fd-type mixin
-    Looks up values from $fd-type to ensure consistent application of the type hierarchy.
-  @params
-    $size: "-1", "0", "1", "2", "3", "4", "5"
-    $weight: "light", "normal", "bold"
-*/
+// @mixin fd-type mixin
+//   Looks up values from $fd-type to ensure consistent application of the type hierarchy.
+// @params
+//   $size: "-1", "0", "1", "2", "3", "4", "5"
+//   $weight: "light", "normal", "bold"
+
 @mixin fd-type($size: "0", $weight: "normal") {
   $list: map-get($fd-type, $size);
   font-size: fd-font-size($size);

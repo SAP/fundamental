@@ -26,7 +26,7 @@ const banner = `/*!
 //compile top-level files
 const sassTask = () => {
     const prefix = config.tasks.css.prefix;
-    const files = environment.production ? `${paths.src}/*.${config.tasks.css.extensions}` : `${paths.src}/all.scss`;
+    const files = environment.production ? [`${paths.src}/*.${config.tasks.css.extensions}`,`!${paths.src}/*.less.${config.tasks.css.extensions}`] : `${paths.src}/all.scss`;
 
     const isAllCss = file => file.path.includes('all');
     return gulp.src(files)
@@ -111,5 +111,5 @@ gulp.task('pkg-css-banner', bannerTask);
 
 //main css task
 module.exports = gulp.task('pkg-css', environment.production ?
-    gulp.series('pkg-sass', 'pkg-dark-sass', 'pkg-css-components', 'pkg-css-minify', 'pkg-css-banner') :
+    gulp.series('pkg-sass', 'pkg-less', 'pkg-css-components', 'pkg-css-minify', 'pkg-css-banner') :
     gulp.series('pkg-sass'));
