@@ -15,7 +15,7 @@ It is recommended to always display the toggle with a label above it as well as 
 
 ## Toggle Sizes
 
-The toggle can be set to 4 sizes: `--xs`, --s`, normal and `--l`. When used with forms, it is recommended to use the small size so that form components will be consistent.
+The toggle can be set to 4 sizes: `--xs`, `--s`, normal and `--l`. When used with forms, it is recommended to use the small size so that form components will be consistent.
 
 
 {% capture default %}
@@ -83,7 +83,7 @@ The toggle can be set to the disable state and still indicate the state of the t
 <div class="fd-form__item fd-form__item--check">
     <label class="fd-form__label" for="ImBw4551">
         <span class="fd-toggle fd-toggle--s fd-form__control">
-            <input type="checkbox" name="" value="" id="ImBw4551" disabled>
+            <input type="checkbox" name="" value="" id="ImBw4551" disabled checked>
             <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Small Toggle

@@ -8,8 +8,10 @@ toggle:
 -->
 {% macro toggle(properties={}, modifier={}, state={}, aria={}, classes=[]) -%}
 {%- set _id = properties.id or utils.id() -%}
-<span class="fd-toggle{{ modifier.block | modifier('toggle') }}{{ classes | classes }}"{{ aria | aria }}>
-    <input type="checkbox" name="" value="" id="{{ _id }}"{{ ' disabled' if state.disabled }}{{ ' checked' if state.checked }}>
-    <span class="fd-toggle__switch" role="presentation"></span>
-</span>
+<label>
+    <span class="fd-toggle{{ modifier.block | modifier('toggle') }}{{ classes | classes }}"{{ aria | aria }}>
+        <input type="checkbox" name="" value="" id="{{ _id }}"{{ ' disabled' if state.disabled }}{{ ' checked' if state.checked }}>
+        <span class="fd-toggle__switch" role="presentation"></span>
+    </span>
+</label>
 {%- endmacro %}

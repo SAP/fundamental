@@ -1,3 +1,4 @@
+// 
 @import "./../settings";
 @import "./../mixins";
 @import "./../functions";
@@ -7,133 +8,139 @@
     .fd-toggle__title+()
 */
 $block: #{$fd-namespace}-toggle;
+
 .#{$block} {
-  // Hard coded values, TODO: look into cleaning up with more local spacing variables ~Eric
 
-  //SETTINGS
-  //SIZES — size: height "text size" "icon size"
-  $fd-toggle-sizes: (
-      "default": fd-space(12) fd-space(7), //48px 28px
-      "xs": fd-space(9) fd-space(5), //36px 20px
-      "s": fd-space(10) fd-space(6), //40px 24px
-      "l": fd-space(14) fd-space(8), //56px 32px
-  ) !default;
-  $_defaults: map-get($fd-toggle-sizes, "default");
-  $fd-toggle-width: nth($_defaults, 1);
-  $fd-toggle-height: nth($_defaults, 2);
-  $fd-toggle-background-color: fd-color("neutral", 3) !default;
-  $fd-toggle-on-background-color--disabled: fd-color-state("disabled", "action");//rgba($fd-link-color, .08) !default;
-  $fd-toggle-transition-params: $fd-animation--speed ease-in !default;
-  $fd-toggle-switch-width: nth($_defaults, 2);
-  $fd-toggle-switch-border-color: fd-color("neutral", 3) !default;
-  $fd-toggle-switch-background-color: fd-color("neutral", 1) !default;
-  $fd-toggle-switch-background-color--disabled: hsla(240, 2%, 93%, 1) !default;
-  $fd-toggle-switch-on-background-color--disabled: hsla(209, 90%, 92%, 1) !default;
-  $fd-toggle-switch-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
-  $fd-toggle-z-index: map-get($fd-z-index-levels, "base") !default;
+    $fd-toggle-sizes: ("default": fd-space(12) fd-space(5) 20px -5px -5px, //48px 28px
+        "xs": fd-space(9) fd-space(5) 14px -3px -10px, //36px 20px
+        "s": fd-space(10) fd-space(6) 17px -4px -10px, //40px 24px
+        "l": fd-space(14) fd-space(8) 22px -6px -2px, //56px 32px
+        ) !default;
+    $_defaults: map-get($fd-toggle-sizes, "default");
+    $fd-toggle-width: nth($_defaults, 1);
+    $fd-toggle-height: nth($_defaults, 2);
+    $fd-toggle-background-color: fd-color("neutral", 3) !default;
+    $fd-toggle-on-background-color--disabled: fd-color-state("disabled", "action");//rgba($fd-link-color, .08) !default;
+    $fd-toggle-switch-width: nth($_defaults, 2);
+    $fd-toggle-switch-background-color--disabled: hsla(240, 2%, 93%, 1) !default;
+    $fd-toggle-switch-on-background-color--disabled: hsla(209, 90%, 92%, 1) !default;
+    $fd-toggle-switch-box-shadow: 1px 0px 0px 1px #085caf;
 
-  @include fd-reset;
-  position: relative;
-  display: inline-block;
-  height: $fd-toggle-height;
-  width: $fd-toggle-width;
-  vertical-align: middle;
-  z-index: $fd-toggle-z-index;
+    @include fd-reset;
+    position: relative;
+    display: inline-block;
+    width: $fd-toggle-width;
+    height: $fd-toggle-height;
 
-  &__switch {
-    height: $fd-toggle-switch-width;
-    width: $fd-toggle-switch-width;
-    border-radius: 50%;
-    position: absolute;
-    z-index: map-get($fd-z-index-levels, "second");
-    top: 0;
-    left: 0;
-    right: 100%;
-    background-color: $fd-toggle-switch-background-color;
-    border: 1px solid $fd-toggle-switch-border-color;
-    transition: left $fd-toggle-transition-params;
-    pointer-events: none;
-    box-shadow: $fd-toggle-switch-box-shadow;
-  }
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
 
-  input {
-    position: absolute;
-    width: 100%;
-    height: 71%;
-    top: calc((100% - 71%) /2);
-    z-index: map-get($fd-z-index-levels, "first");
-    border-color: transparent !important;
-    border-radius: $fd-toggle-height/2;
-    background-color: $fd-toggle-background-color;
-    &::before,
-    &::after {
-      display: none;
+        &::before,
+        &::after {
+            display: none;
+        }
+
+        &:hover {
+            border-color: transparent;
+        }
+        &:active,
+        &:focus {
+            border-color: transparent;
+        }
+        &[disabled],
+        &.is-disabled,
+        &[aria-disabled="true"] {
+            opacity: 1;
+            background-color: $fd-toggle-switch-background-color--disabled;
+            & + .#{$block}__switch {
+                opacity: 1;
+                border-color: $fd-toggle-switch-background-color--disabled;
+                box-shadow: none;
+                background-color: $fd-toggle-switch-background-color--disabled;
+                pointer-events: none;
+            }
+        }
+
+        &:checked {
+
+            &[disabled],
+            &.is-disabled,
+            &[aria-disabled="true"] {
+                &+.#{$block}__switch {
+                    border-color: transparent;
+                    background-color: $fd-toggle-on-background-color--disabled;
+                    pointer-events: none;
+                }
+
+                &+.#{$block}__switch:before {
+                    border-color: transparent;
+                    background-color: $fd-toggle-switch-on-background-color--disabled;
+                }
+            }
+        }
     }
-    &:checked {
-      background-color: adjust-color($fd-link-color, $alpha: 0.6);
-      & + .#{$block}__switch {
-        left: calc(100% - #{$fd-toggle-switch-width});
+
+    &__switch {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $fd-toggle-background-color;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        border-radius: 34px;
+    }
+
+    &__switch:before {
+        position: absolute;
+        content: "";
+        height: fd-space(7);
+        width: fd-space(7);
+        left: 0;
+        top: -5px;
+        background-color: fd-color('background', 2);
+        border: 1px solid $fd-toggle-background-color;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+
+    input:checked+&__switch {
+        background-color: adjust-color($fd-link-color, $alpha: 0.6);
+    }
+
+    input:checked+&__switch:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
         background: $fd-link-color--pressed;
         border-color: $fd-link-color--pressed;
-      }
-      &[disabled],
-      &.is-disabled,
-      &[aria-disabled="true"] {
-          background-color: $fd-toggle-on-background-color--disabled;
-        & + .#{$block}__switch {
-          border-color: transparent;
-          background-color: $fd-toggle-switch-on-background-color--disabled;
-        }
-      }
+        pointer-events: none;
+        left: -6px;
     }
 
-    &:hover {
-      border-color: transparent;
-    }
-    &:active,
-    &:focus {
-      border-color: transparent;
-    }
-    &[disabled],
-    &.is-disabled,
-    &[aria-disabled="true"] {
-        opacity: 1;
-        background-color: $fd-toggle-switch-background-color--disabled;
-      & + .#{$block}__switch {
-        opacity: 1;
-        border-color: $fd-toggle-switch-background-color--disabled;
-        box-shadow: none;
-        background-color: fd-color('background', 2);
-      }
-    }
+    //SIZES
+    @each $key,
+    $list in $fd-toggle-sizes {
+        @if $key !="default" {
+            &--#{$key} {
+                height: nth($list, 3);
+                width: nth($list, 1);
 
-  }
+                .#{$block}__switch:before {
+                    height: nth($list, 2);
+                    width: nth($list, 2);
+                    top: nth($list, 4);
+                }
 
-
-  //SIZES
-  @each $key, $list in $fd-toggle-sizes {
-    @if $key != "default" {
-      &--#{$key} {
-        height: nth($list, 2);
-        width: nth($list, 1);
-        .#{$block}__switch {
-          height: nth($list, 2);
-          width: nth($list, 2);
-        }
-        .fd-toggle__label{
-            padding-left:  nth($list, 1) + 10px;
-        }
-        input {
-          border-radius: nth($list, 2)/2;
-          &:checked {
-            & + .#{$block}__switch {
-              left: calc(100% - #{nth($list, 2)});
+                input:checked+.#{$block}__switch:before {
+                    left: nth($list, 5);
+                }
             }
-          }
         }
-      }
     }
-  }
-
-
 }

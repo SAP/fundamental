@@ -3996,10 +3996,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 /*!
 .fd-form
     .fd-form__set?
-        .fd-form__legend(.is-required)
+        .fd-form__legend
         .fd-form__group?
             .fd-form__item+(--check, --inline)
-                .fd-form__label(.is-required)
+                .fd-form__label
                 .fd-form__control
             .fd-form__message(--help, --error, --warning)
 */
@@ -4090,8 +4090,6 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     margin-bottom: 8px;
     border: 0;
     color: #6a6d70; }
-    .fd-form__label.is-required:after, .fd-form__legend.is-required:after {
-      content: "*"; }
     .fd-form__label.is-disabled, .fd-form__legend.is-disabled {
       opacity: .4; }
   .fd-form__control {
@@ -5051,46 +5049,14 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   display: inline-block;
-  height: 28px;
   width: 48px;
-  vertical-align: middle;
-  z-index: 0; }
-  .fd-toggle__switch {
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    right: 100%;
-    background-color: #fafafa;
-    border: 1px solid #d9d9d9;
-    transition: left 0.125s ease-in;
-    pointer-events: none;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15); }
+  height: 20px; }
   .fd-toggle input {
-    position: absolute;
-    width: 100%;
-    height: 71%;
-    top: calc((100% - 71%) /2);
-    z-index: 1;
-    border-color: transparent !important;
-    border-radius: 14px;
-    background-color: #d9d9d9; }
+    opacity: 0;
+    width: 0;
+    height: 0; }
     .fd-toggle input::before, .fd-toggle input::after {
       display: none; }
-    .fd-toggle input:checked {
-      background-color: #0a6ed1; }
-      .fd-toggle input:checked + .fd-toggle__switch {
-        left: calc(100% - 28px);
-        background: #0854a1;
-        border-color: #0854a1; }
-      .fd-toggle input:checked[disabled], .fd-toggle input:checked.is-disabled, .fd-toggle input:checked[aria-disabled="true"] {
-        background-color: rgba(10, 110, 209, 0.4); }
-        .fd-toggle input:checked[disabled] + .fd-toggle__switch, .fd-toggle input:checked.is-disabled + .fd-toggle__switch, .fd-toggle input:checked[aria-disabled="true"] + .fd-toggle__switch {
-          border-color: transparent;
-          background-color: #d8ebfd; }
     .fd-toggle input:hover {
       border-color: transparent; }
     .fd-toggle input:active, .fd-toggle input:focus {
@@ -5102,43 +5068,75 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         opacity: 1;
         border-color: #ededee;
         box-shadow: none;
-        background-color: white; }
+        background-color: #ededee;
+        pointer-events: none; }
+    .fd-toggle input:checked[disabled] + .fd-toggle__switch, .fd-toggle input:checked.is-disabled + .fd-toggle__switch, .fd-toggle input:checked[aria-disabled="true"] + .fd-toggle__switch {
+      border-color: transparent;
+      background-color: rgba(10, 110, 209, 0.4);
+      pointer-events: none; }
+    .fd-toggle input:checked[disabled] + .fd-toggle__switch:before, .fd-toggle input:checked.is-disabled + .fd-toggle__switch:before, .fd-toggle input:checked[aria-disabled="true"] + .fd-toggle__switch:before {
+      border-color: transparent;
+      background-color: #d8ebfd; }
+  .fd-toggle__switch {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d9d9d9;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px; }
+  .fd-toggle__switch:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: 0;
+    top: -5px;
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%; }
+  input:checked + .fd-toggle__switch {
+    background-color: #0a6ed1; }
+  input:checked + .fd-toggle__switch:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    background: #0854a1;
+    border-color: #0854a1;
+    pointer-events: none;
+    left: -6px; }
   .fd-toggle--xs {
-    height: 20px;
+    height: 14px;
     width: 36px; }
-    .fd-toggle--xs .fd-toggle__switch {
+    .fd-toggle--xs .fd-toggle__switch:before {
       height: 20px;
-      width: 20px; }
-    .fd-toggle--xs .fd-toggle__label {
-      padding-left: 46px; }
-    .fd-toggle--xs input {
-      border-radius: 10px; }
-      .fd-toggle--xs input:checked + .fd-toggle__switch {
-        left: calc(100% - 20px); }
+      width: 20px;
+      top: -3px; }
+    .fd-toggle--xs input:checked + .fd-toggle__switch:before {
+      left: -10px; }
   .fd-toggle--s {
-    height: 24px;
+    height: 17px;
     width: 40px; }
-    .fd-toggle--s .fd-toggle__switch {
+    .fd-toggle--s .fd-toggle__switch:before {
       height: 24px;
-      width: 24px; }
-    .fd-toggle--s .fd-toggle__label {
-      padding-left: 50px; }
-    .fd-toggle--s input {
-      border-radius: 12px; }
-      .fd-toggle--s input:checked + .fd-toggle__switch {
-        left: calc(100% - 24px); }
+      width: 24px;
+      top: -4px; }
+    .fd-toggle--s input:checked + .fd-toggle__switch:before {
+      left: -10px; }
   .fd-toggle--l {
-    height: 32px;
+    height: 22px;
     width: 56px; }
-    .fd-toggle--l .fd-toggle__switch {
+    .fd-toggle--l .fd-toggle__switch:before {
       height: 32px;
-      width: 32px; }
-    .fd-toggle--l .fd-toggle__label {
-      padding-left: 66px; }
-    .fd-toggle--l input {
-      border-radius: 16px; }
-      .fd-toggle--l input:checked + .fd-toggle__switch {
-        left: calc(100% - 32px); }
+      width: 32px;
+      top: -6px; }
+    .fd-toggle--l input:checked + .fd-toggle__switch:before {
+      left: -2px; }
 
 /*!
 .fd-spinner+(.is-hidden|[aria-hidden=true])
