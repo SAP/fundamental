@@ -20,9 +20,9 @@ The toggle can be set to 4 sizes: `--xs`, `--s`, normal and `--l`. When used wit
 
 {% capture default %}
 <div class="fd-form__item fd-form__item--check">
-    <label class="fd-form__label" for="ImBw4551">
+    <label class="fd-form__label" for="ImBw4551a">
         <span class="fd-toggle fd-toggle--xs fd-form__control">
-            <input type="checkbox" name="" value="" id="ImBw4551">
+            <input type="checkbox" name="" value="" id="ImBw4551a">
             <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Extra Small Toggle
@@ -30,9 +30,9 @@ The toggle can be set to 4 sizes: `--xs`, `--s`, normal and `--l`. When used wit
 </div>
 
 <div class="fd-form__item fd-form__item--check">
-    <label class="fd-form__label" for="ImBw4551">
+    <label class="fd-form__label" for="ImBw4551b">
         <span class="fd-toggle fd-toggle--s fd-form__control">
-            <input type="checkbox" name="" value="" id="ImBw4551" checked>
+            <input type="checkbox" name="" value="" id="ImBw4551b" checked>
             <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Small Toggle
@@ -40,9 +40,9 @@ The toggle can be set to 4 sizes: `--xs`, `--s`, normal and `--l`. When used wit
 </div>
 
 <div class="fd-form__item fd-form__item--check">
-    <label class="fd-form__label" for="P3D2k380">
+    <label class="fd-form__label" for="P3D2k380h">
         <span class="fd-toggle fd-form__control">
-            <input type="checkbox" name="" value="" id="P3D2k380">
+            <input type="checkbox" name="" value="" id="P3D2k380h">
             <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Default Toggle
@@ -50,9 +50,9 @@ The toggle can be set to 4 sizes: `--xs`, `--s`, normal and `--l`. When used wit
 </div>
 
 <div class="fd-form__item fd-form__item--check">
-    <label class="fd-form__label" for="V2bRj442">
+    <label class="fd-form__label" for="V2bRj442g">
         <span class="fd-toggle fd-toggle--l fd-form__control">
-            <input type="checkbox" name="" value="" id="V2bRj442" checked>
+            <input type="checkbox" name="" value="" id="V2bRj442g" checked>
             <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Large Toggle
@@ -73,7 +73,7 @@ The toggle can be set to the disable state and still indicate the state of the t
 <div class="fd-form__item fd-form__item--check">
     <label class="fd-form__label" for="ImBw4551">
         <span class="fd-toggle fd-toggle--xs fd-form__control">
-            <input type="checkbox" name="" value="" id="ImBw4551" disabled>
+            <input type="checkbox" name="" value="" id="ImBw4551c" disabled>
             <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Extra Small Toggle
@@ -83,7 +83,7 @@ The toggle can be set to the disable state and still indicate the state of the t
 <div class="fd-form__item fd-form__item--check">
     <label class="fd-form__label" for="ImBw4551">
         <span class="fd-toggle fd-toggle--s fd-form__control">
-            <input type="checkbox" name="" value="" id="ImBw4551" disabled checked>
+            <input type="checkbox" name="" value="" id="ImBw4551c" disabled checked>
             <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Small Toggle
@@ -91,9 +91,9 @@ The toggle can be set to the disable state and still indicate the state of the t
 </div>
 
 <div class="fd-form__item fd-form__item--check">
-    <label class="fd-form__label" for="P3D2k380">
+    <label class="fd-form__label" for="P3D2k380d">
         <span class="fd-toggle fd-form__control">
-            <input type="checkbox" name="" value="" id="P3D2k380" disabled>
+            <input type="checkbox" name="" value="" id="P3D2k380d" disabled>
             <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Default Toggle
@@ -101,9 +101,9 @@ The toggle can be set to the disable state and still indicate the state of the t
 </div>
 
 <div class="fd-form__item fd-form__item--check">
-    <label class="fd-form__label" for="V2bRj442">
+    <label class="fd-form__label" for="V2bRj442f">
         <span class="fd-toggle fd-toggle--l fd-form__control">
-            <input type="checkbox" name="" value="" id="V2bRj442" disabled>
+            <input type="checkbox" name="" value="" id="V2bRj442f" disabled>
             <span class="fd-toggle__switch" role="presentation"></span>
         </span>
         Large Toggle
