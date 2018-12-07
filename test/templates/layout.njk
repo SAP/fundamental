@@ -6,20 +6,20 @@
     <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ id }}</title>
-{% if libs.b3 %}<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">{% endif %}
-{% if libs.b4 %}<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">{% endif %}
-{% if libs.md %}<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">{% endif %}
-{% if libs.tn %}<link rel="stylesheet" href="/static/techne-1.5.7.css">{% endif %}
+    {% if libs.b3 %}<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">{% endif %}
+    {% if libs.b4 %}<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">{% endif %}
+    {% if libs.md %}<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">{% endif %}
+    {% if libs.tn %}<link rel="stylesheet" href="/static/techne-1.5.7.css">{% endif %}
     <style>
         {% set core_sass = 'core.scss' %}
         {{ core_sass | sass_to_css }}
 
-{% if id === 'icon' %}
-    {{ 'icons.scss' | sass_to_css }}
-{% else %}
-    {% set component_sass = 'components/' + id + '.scss'  %}
-    {{ component_sass | sass_to_css }}
-{% endif %}
+        {% if id === 'icon' %}
+            {{ 'icons.scss' | sass_to_css }}
+        {% else %}
+            {% set component_sass = 'components/' + id + '.scss'  %}
+            {{ component_sass | sass_to_css }}
+        {% endif %}
 
         {% for sass in css_deps %}
             {% set dep_sass = sass + '.scss' %}
@@ -29,131 +29,36 @@
         .test-label { margin-right: 20px; }
         textarea.test-textarea { font-family: monospace; height: 200px; width: 100%; padding: 10px; font-size: 0.9rem; border: solid 1px rgba(0,0,0,0.1); }
     </style>
+    <style media="screen">
+        .test-datacontainer { padding: 5px;background-color: rgba(0,0,0,0.1); }
+        .test-datacontainer textarea { height: 50px; }
+        .test-datacontainer textarea:focus { height: 80vh; }
+    </style>
 </head>
 <body class="">
     <header style="border-bottom: solid 6px lightgray; padding-bottom: 10px; margin-bottom: 10px;">
         <form action="#" method="get">
-
-        <fieldset style="font-family: monospace;font-size: 14px;">
-            <label class="test-label"><input type="checkbox"  value="" id="toggleBg"> Toggle BG</label>
-            <span class="fd-has-float-right">
-            Contexts:
-
-            <label class="test-label"><input type="checkbox"  value="" id="toggleDir"> RTL</label>
-            <label class="test-label" title="Enables touch metrics"><input type="checkbox"  value="" id="toggleTouch"> Touch</label>
-            <label class="test-label" title="Forces compact metrics"><input  type="checkbox"  value="" id="toggleCompact"> Compact</label>
-
-          </span>
-            {# <label class="test-label"><input type="checkbox" name="lib" value="b3" {{'checked' if libs.b3 }}> bootstrap/3.3.7</label>
-            <label class="test-label"><input type="checkbox" name="lib" value="b4" {{'checked' if libs.b4 }}> bootstrap/4.0.0-beta</label>
-            <label class="test-label"><input type="checkbox" name="lib" value="md" {{'checked' if libs.md }}>
-angular_material/1.1.4</label>
-            <label class="test-label"><input type="checkbox" name="lib" value="tn" {{'checked' if libs.tn }}> techne/1.5.7</label>
-            <button type="submit" class="fd-button--small">Submit</button> #}
-
-        </fieldset>
-
+            <fieldset style="font-family: monospace;font-size: 14px;">
+                <label class="test-label"><input type="checkbox"  value="" id="toggleBg"> Toggle BG</label>
+                <span class="fd-has-float-right">
+                    Contexts:
+                    <label class="test-label"><input type="checkbox"  value="" id="toggleDir"> RTL</label>
+                    <label class="test-label" title="Enables touch metrics"><input type="checkbox"  value="" id="toggleTouch"> Touch</label>
+                    <label class="test-label" title="Forces compact metrics"><input  type="checkbox"  value="" id="toggleCompact"> Compact</label>
+                </span>
+            </fieldset>
         </form>
-
         <div class="test-datacontainer" style="position: fixed;right: 10px;bottom: 0px;text-align:right; width: 500px;max-width: calc(100vw - 15px);z-index:10;">
-                    <h2 style="font-size: 12px;margin-bottom:5px"><code style="word-wrap:break-word;">{{id}}/data.json</code></h2>
-            <textarea class="test-textarea" style="">
-{{ data | dump(2) }}
-            </textarea>
-
+            <h2 style="font-size: 12px;margin-bottom:5px"><code style="word-wrap:break-word;">{{id}}/data.json</code></h2>
+            <textarea class="test-textarea" style="">{{ data | dump(2) }}</textarea>
         </div>
-        <style media="screen">
-        .test-datacontainer { padding: 5px;background-color: rgba(0,0,0,0.1); }
-        .test-datacontainer textarea { height: 50px; }
-            .test-datacontainer textarea:focus { height: 80vh; }
-        </style>
-
-
-
     </header>
     <main>
         <div style="padding: 20px;">
-
             {% block content %}
             {% endblock %}
-
         </div>
     </main>
-
     <script type="text/javascript" src="/static/controls.js"></script>
-    <script type="text/javascript">
-        (function(){
-            var toggle = document.getElementById("toggleBg"),
-                toggleState = localStorage.getItem('toggleState');
-            if(toggleState ==  "true") {
-                toggle.checked = true;
-                document.body.style.backgroundColor = "white";
-            }
-            toggle.addEventListener( 'change', function() {
-                if(this.checked) {
-                    document.body.style.backgroundColor = "white";
-                    localStorage.setItem("toggleState", true);
-                } else {
-                    document.body.style.backgroundColor = "#f3f4f5";
-                    localStorage.setItem("toggleState", false);
-                }
-            });
-
-            var toggleDir = document.getElementById("toggleDir"),
-                toggleDirState = localStorage.getItem('toggleDir');
-            if(toggleDirState ==  "true") {
-                toggle.checked = true;
-                document.body.setAttribute("dir","rtl");
-            }
-            toggleDir.addEventListener( 'change', function() {
-                if(this.checked) {
-                    document.body.setAttribute("dir","rtl");
-                    localStorage.setItem("toggleDirState", true);
-                } else {
-                  document.body.setAttribute("dir","ltr");
-                  localStorage.setItem("toggleDirState", false);
-                }
-            });
-
-            var toggleTouch = document.getElementById("toggleTouch"),
-                toggleTouchState = localStorage.getItem('toggleTouch');
-            if(toggleTouchState ==  "true") {
-                toggle.checked = true;
-                document.body.classList.add("fd-for-touch");
-            }
-            toggleTouch.addEventListener( 'change', function() {
-                if(this.checked) {
-                    document.body.classList.add("fd-for-touch");
-                    localStorage.setItem("toggleTouchState", true);
-                } else {
-                  document.body.classList.remove("fd-for-touch");
-                  localStorage.setItem("toggleTouchState", false);
-                }
-            });
-
-            var toggleCompact = document.getElementById("toggleCompact"),
-                toggleCompactState = localStorage.getItem('toggleCompact');
-            if(toggleCompactState ==  "true") {
-                toggle.checked = true;
-                document.body.classList.add("fd-for-compact");
-            }
-            toggleCompact.addEventListener( 'change', function() {
-                if(this.checked) {
-                    document.body.classList.add("fd-for-compact");
-                    localStorage.setItem("toggleCompactState", true);
-                } else {
-                  document.body.classList.remove("fd-for-compact");
-                  localStorage.setItem("toggleCompactState", false);
-                }
-            });
-
-
-
-
-
-
-        })();
-    </script>
-
 </body>
 </html>
