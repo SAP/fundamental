@@ -7,6 +7,6 @@ toc: false
 permalink: demo-pages/alert-overlay-demo-page.html
 ---
 
-{% include demo-page-components/fd-app__header.html %}
+{% include demo-page-components/shell-header.html %}
 {% include demo-page-components/app-sidebar-content.html %}
 {% include demo-page-components/alert-app-overlay.html %}
