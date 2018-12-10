@@ -61,17 +61,19 @@ Fiori Fundamentals installation is now complete
 
 1. Open `scss/app.scss` file
 2. Add the following line of code to define the icons path: <br><br> `$fd-icons-path: "~fiori-fundamentals/scss/icons/";`
-3. Add the following line of code to import SCSS source file: <br><br> `@import "~fiori-fundamentals/scss/all.scss";`
+3. Add the following line of code to define the fonts path: <br><br> `$fd-fonts-path: "~fiori-fundamentals/scss/fonts/";`
+4. Add the following line of code to import SCSS source file: <br><br> `@import "~fiori-fundamentals/scss/all.scss";`
 
 Importing Fiori Fundamentals SCSS is now complete
 
-> **Note:** In order to render the icons correctly, you need to define the `$fd-icons-path` variable.
+> **Note:** In order to render the icons and fonts correctly, you need to define the `$fd-icons-path` and `$fd-fonts-path` variables.
 
 At this point, the contents of your `scss/app.scss` should look like this:
 
 {% highlight css %}
 
 $fd-icons-path: "~fiori-fundamentals/scss/icons/";
+$fd-fonts-path: "~fiori-fundamentals/scss/fonts/";
 @import "~fiori-fundamentals/scss/all.scss";
 
 {% endhighlight %}
