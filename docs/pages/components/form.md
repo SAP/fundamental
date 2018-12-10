@@ -30,14 +30,14 @@ Inputs are used to collect data from the user. When a field is required, the lab
 
 <div class="fd-form__set">
     <div class="fd-form__item">
-        <label class="fd-form__label is-required" for="input-2">Required Input:</label>
+        <label class="fd-form__label" aria-required="true" for="input-2">Required Input:*</label>
         <input class="fd-form__control" type="text" id="input-2" placeholder="Field placeholder text">
     </div>
 </div>
 
 <div class="fd-form__set">
     <div class="fd-form__item">
-        <label class="fd-form__label is-required" for="input-3">Password:</label>
+        <label class="fd-form__label" aria-required="true" for="input-3">Password:*</label>
         <input class="fd-form__control" type="password" id="input-3">
     </div>
 </div>

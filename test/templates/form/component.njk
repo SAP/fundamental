@@ -19,7 +19,7 @@ form-set:
 -%}
 <fieldset class="fd-form__set">
     {%- if properties.legend %}
-        <legend class="fd-form__legend{{ ' is-required' if state.required === true }}">{{ properties.legend }}</legend>
+        <legend class="fd-form__legend" {{ ' aria-required="'+ state.required +'"' if state.required }}>{{ properties.legend }}</legend>
     {%- endif %}
     <div class="fd-form__group">
         {{ caller() }}
@@ -57,9 +57,13 @@ form-item:
 {%- set _id = utils.id() %}
 <div class="fd-form__item{{ modifier.item | modifier('form__item') }}{{ ' fd-form__item--check' if type == "checkbox" or type == "radio" or type == "toggle" }}">
     {%- if type == "checkbox" or type == "radio" or type == "toggle" %}
-    <label class="fd-form__label{{ ' is-required' if state.required }}{{ ' is-disabled' if state.disabled }}" for="{{_id}}">
+    <label class="fd-form__label{{ ' is-disabled' if state.disabled }}" {{ ' aria-required="'+ state.required +'"'  if state.required }} for="{{_id}}">
         {{ form_control(type,_id,properties,state=state,aria=aria,modifier=modifier.control) }}
+        {%- if state.required %}
+        {{ properties.label+'*' }}
+        {%- else %}
         {{ properties.label }}
+        {%- endif %}
         {%- if properties.help %}
         <span class="fd-form__help">
             {{ inline_help({ content: properties.help }) }}
@@ -67,8 +71,12 @@ form-item:
         {%- endif %}
     </label>
     {%- else %}
-    <label class="fd-form__label{{ ' is-required' if state.required }}" for="{{_id}}">
-        {{properties.label}}:
+    <label class="fd-form__label" {{ ' aria-required="'+ state.required +'"' if state.required }}  for="{{_id}}">
+       {%- if state.required %}
+        {{ properties.label+'*' }}
+        {%- else %}
+        {{ properties.label }}
+        {%- endif %}
         {%- if properties.help %}
         <span class="fd-form__help">
             {{ inline_help({ content: properties.help }) }}
@@ -165,15 +173,15 @@ form-control:
 -%}
 <{{ 'fieldset' if (type !== 'text' and type !== 'select') else 'div' }} class="fd-form__group{{ modifier.block | modifier('form__group') }}">
 {%- if properties.legend %}
-    <legend class="fd-form__legend{{ ' is-required' if state.required === true }}">{{ properties.legend }}</legend>
+    <legend class="fd-form__legend" {{ ' aria-required="'+ state.required +'"' if state.required }}>{{ properties.legend }}</legend>
 {%- endif %}
 {%- for item in properties.items %}
     <div class="fd-form__item{{ modifier.item | modifier('form__item') }}{{ ' fd-form__item--check' if type == "checkbox" or type == "radio" }}">
         {%- if type == "checkbox" or type == "radio" %}
         {{ form_control(type,properties=item.properties,state=item.state,aria=item.aria) | trim }}
-        <label class="fd-form__label{{ ' is-required' if item.state.required === true }}" for="{{ item.properties.id }}">{{item.properties.label}}</label>
+        <label class="fd-form__label" {{ ' aria-required="'+ state.required +'"' if state.required }} for="{{ item.properties.id }}">{{item.properties.label}}</label>
         {%- else %}
-        <label class="fd-form__label{{ ' is-required' if item.state.required === true }}" for="{{ item.properties.id }}">{{item.properties.label}}</label>
+        <label class="fd-form__label" {{ ' aria-required="'+ state.required +'"' if state.required }} for="{{ item.properties.id }}">{{item.properties.label}}</label>
         {{ form_control(type,properties=item.properties,state=item.state,aria=item.aria) | trim }}
         {%- endif %}
         {%- if item.properties.message %}
