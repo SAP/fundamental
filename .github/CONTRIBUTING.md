@@ -39,7 +39,7 @@ everyone is a beginner at first :smile_cat:
 
 ### 5. Run the test framework
 Any markup or CSS changes should begin the test framework. The component test framework loads only `core.scss` and individual component `.scss` files. **The HTML created here will be used on the documentation site.**
-
+- Follow seps 2 - 5 under [Download and Installation](https://github.com/SAP/fundamental#download-and-installation) in the `README`
 - Run `npm test`
 - Go to [localhost:3030](http://localhost:3030)
 
@@ -56,7 +56,7 @@ At this point, you should switch back to your master branch and make sure it's
 up to date with Fiori Fundamentals' master branch:
 
 ```sh
-git remote add upstream git@github.com:sap/fundamental.git
+git remote add upstream https://github.com/SAP/fundamental.git
 git checkout master
 git pull upstream master
 ```
