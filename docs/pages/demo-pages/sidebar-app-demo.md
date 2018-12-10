@@ -7,5 +7,5 @@ toc: false
 permalink: demo-pages/sidebar-app-demo.html
 ---
 
-{% include demo-page-components/fd-app__header.html %}
+{% include demo-page-components/shell-header.html %}
 {% include demo-page-components/app-sidebar-content.html %}
