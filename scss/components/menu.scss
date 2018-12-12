@@ -19,7 +19,7 @@ $block: #{$fd-namespace}-menu;
     $fd-menu-item-background-color--selected: fd-color-state("selected") !default;
     $fd-menu-item-padding: fd-space(3) fd-space(4) !default;
     $fd-menu-item-color--disabled: fd-color("text", 2);
-    $fd-menu-item-seperator-color: fd-color("neutral", 2);
+    $fd-menu-item-separator-color: fd-color("neutral", 2);
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
@@ -30,6 +30,15 @@ $block: #{$fd-namespace}-menu;
     padding-top: fd-space(base);
     padding-bottom: fd-space(base);
 
+    &__separator>li {
+      border: none;
+      border-top: 1px solid $fd-menu-item-separator-color;
+      margin: 0;
+    }
+
+    &__separator>li:first-child {
+      border-top: 0;
+    }
     &__group,
     &__list {
       list-style: none;
@@ -84,7 +93,7 @@ $block: #{$fd-namespace}-menu;
     }
     hr {
         border: none;
-        border-top: 1px solid $fd-menu-item-seperator-color;
+        border-top: 1px solid $fd-menu-item-separator-color;
         margin: 0;
       }
     &__link {
