@@ -37,7 +37,6 @@ class="fd-{{field}} {{ size | modifier("input") }}{{ classes | classes | trim }}
     classes=[])
 -%}
 <textarea {{ _field_attrs(properties, field, size, state, aria, classes) | trim }}{{ ' placeholder="'+properties.placeholder+'"' if properties.placeholder }}>{{properties.value}}</textarea>
-{# <textarea class="{{ classes | classes | trim }}{{ ' is-'+state.status if state.status }}" id="{{properties.id}}" name="{{properties.name}}" {{ ' placeholder="'+properties.placeholder+'"' if properties.placeholder }}{{ ' aria-disabled="'+ aria.disabled +'"' if aria.disabled }}{{ ' disabled' if state.disabled }}{{ ' readonly' if state.readonly }}>{{properties.value}}</textarea> #}
 {%- endmacro %}
 
 {% macro radio(
