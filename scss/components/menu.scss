@@ -30,6 +30,15 @@ $block: #{$fd-namespace}-menu;
     padding-top: fd-space(base);
     padding-bottom: fd-space(base);
 
+    &__seperator>li {
+      border: none;
+      border-top: 1px solid $fd-menu-item-seperator-color;
+      margin: 0;
+    }
+
+    &__seperator>li:first-child {
+      border-top: 0;
+    }
     &__group,
     &__list {
       list-style: none;

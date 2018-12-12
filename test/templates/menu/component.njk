@@ -19,7 +19,7 @@ menu:
       {{ optgroup(item)| indent(2) }}
     {%- else %}
       {%- if loop.first %}
-    <ul class="fd-menu__list">
+    <ul class="fd-menu__list {{ 'fd-menu__seperator' if properties.seperator }}">
       {%- endif %}
       {{ option(item, properties) }}
       {%- if loop.last %}
@@ -31,9 +31,7 @@ menu:
 {%- endmacro %}
 
 {%- macro option(item={}, properties={}) -%}
-    {%- if item.seperator -%}
-    <hr>
-    {%- else  -%}
+
     <li>
         {%- if properties.addon_before -%}
         <div class="fd-menu__addon-before">
@@ -44,7 +42,7 @@ menu:
         {%- endif -%}
         <a role="button" class="fd-menu__item">{{ item.label }}</a>
     </li>
-    {%- endif -%}
+
 {%- endmacro %}
 
 {% macro optgroup(properties={}) -%}
