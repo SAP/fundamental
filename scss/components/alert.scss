@@ -22,30 +22,26 @@ $block: #{$fd-namespace}-alert;
     $fd-alert-background-color--success: fd-color-state("positive") !default;
     $fd-alert-background-color--information: fd-color-state("selected") !default;
 
+    --fd-alert-background-color: var(--fd-color-neutral-1);
+    --fd-alert-border-color: var(--fd-color-neutral-4);
+
     $fd-alert-padding-x: fd-space("xxs") !default;
     $fd-alert-padding-y: fd-space("xs") !default;
 
     // Block
     @include fd-reset;
+    position: relative;
     color: $fd-alert-color;
-    border: solid 1px $fd-alert-border-color;
-    background-color: $fd-alert-background-color;
+    border-style: solid;
+    border-width: 1px;
+    @include fd-var-color("background-color", $fd-alert-background-color, --fd-alert-background-color);
+    @include fd-var-color("border-color", $fd-alert-border-color, --fd-alert-border-color);
     padding: $fd-alert-padding-x $fd-alert-padding-y;
     border-radius: $fd-border-radius;
 
-    [class*="sap-icon"] {
-      @include fd-type("1");
-      color: $fd-alert-border-color;
-      margin-right: fd-space(1);
-      display: inline-block;
-      position: relative;
-      width: fd-space(4);
-      height: fd-space(4);
-
-      &::before {
-          position:absolute;
-          top: 1px;
-      }
+    //DEPRECATE v1.6 (brute force embedded solution to adopt new styles)
+    .sap-icon--message-error, .sap-icon--message-warning, .sap-icon--message-success, .sap-icon--message-information {
+      display: none;
     }
 
     // Elements
@@ -59,49 +55,100 @@ $block: #{$fd-namespace}-alert;
       width: fd-space(9);
       height: fd-space(9);
       @include fd-focus;
-    }
-
-    &[dir="rtl"] {
-      .#{$block}__close {
+      @include fd-rtl {
         left: fd-space(1);
         right: auto;
       }
     }
 
+
     // Modifiers
+    &--dismissible {
+      padding-right: fd-space("large");
+      @include fd-rtl {
+        padding-right: $fd-alert-padding-x;
+        padding-left: fd-space("large");
+      }
+    }
+    &--warning,
+    &--information,
+    &--success,
+    &--error {
+      padding-left: fd-space("large");
+      @include fd-rtl {
+        padding-right: fd-space("large");
+        padding-left: $fd-alert-padding-x;
+        &::before {
+          display: none;
+        }
+      }
+      &.#{$block}--dismissible {
+        padding-right: fd-space("large");
+        @include fd-rtl {
+          padding-left: fd-space("large");
+        }
+      }
+      @include fd-icon-base() {
+        position: absolute;
+        left: fd-space("small");
+        top: fd-space("tiny");
+      }
+      @include fd-rtl {
+        @include fd-icon-base("after") {
+          position: absolute;
+          right: fd-space("small");
+          top: fd-space("tiny");
+        }
+      }
+    }
     &--warning {
-      border-color: $fd-alert-border-color--warning;
-      background-color: $fd-alert-background-color--warning;
-      [class*="sap-icon"] {
-        color: $fd-alert-border-color--warning;
+      --fd-alert-background-color: var(--fd-color-background-alert);
+      --fd-alert-border-color: var(--fd-color-status-2);
+      &::before,
+      &::after {
+        @include fd-var-color("color", $fd-alert-border-color--warning, --fd-alert-border-color);
+      }
+      @include fd-var-color("background-color", $fd-alert-border-color--warning);
+      @include fd-var-color("border-color", $fd-alert-border-color--warning);
+      @include fd-icon("message-warning", "l");
+      @include fd-rtl {
+        @include fd-icon("message-warning", "l", "after");
       }
     }
     &--error {
-      border-color: $fd-alert-border-color--error;
-      background-color: $fd-alert-background-color--error;
-      [class*="sap-icon"] {
-        color: $fd-alert-border-color--error;
+      --fd-alert-background-color: var(--fd-color-background-negative);
+      --fd-alert-border-color: var(--fd-color-status-3);
+      &::before,
+      &::after {
+        @include fd-var-color("color", $fd-alert-border-color--error, --fd-alert-border-color);
+      }
+      @include fd-icon("message-error", "l");
+      @include fd-rtl {
+        @include fd-icon("message-error", "l", "after");
       }
     }
     &--success {
-      border-color: $fd-alert-border-color--success;
-      background-color: $fd-alert-background-color--success;
-      [class*="sap-icon"] {
-        color: $fd-alert-border-color--success;
+      --fd-alert-background-color: var(--fd-color-background-positive);
+      --fd-alert-border-color: var(--fd-color-status-1);
+      &::before,
+      &::after {
+        @include fd-var-color("color", $fd-alert-border-color--success, --fd-alert-border-color);
+      }
+      @include fd-icon("message-success", "l");
+      @include fd-rtl {
+        @include fd-icon("message-success", "l", "after");
       }
     }
     &--information {
-      border-color: $fd-alert-border-color--information;
-      background-color: $fd-alert-background-color--information;
-      [class*="sap-icon"] {
-        color: $fd-alert-border-color--information;
+      --fd-alert-background-color: var(--fd-color-background-selected);
+      --fd-alert-border-color: var(--fd-color-action-1);
+      &::before,
+      &::after {
+        @include fd-var-color("color", $fd-alert-border-color--information, --fd-alert-border-color);
       }
-    }
-    &--dismissible {
-      position: relative;
-      padding-right: fd-space(12);
-      &[dir="rtl"] {
-        padding-right: fd-space(3);
+      @include fd-icon("message-information", "l");
+      @include fd-rtl {
+        @include fd-icon("message-information", "l", "after");
       }
     }
 }
