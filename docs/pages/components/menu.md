@@ -55,16 +55,13 @@ You can optionally add hierarchy to menus by grouping sub-menus and adding heade
 
 {% capture default-menuwgroup %}
 <nav class="fd-menu">
-    <ul class="fd-menu__list">
+    <ul class="fd-menu__list fd-menu__separator">
       <li><a href="#" class="fd-menu__item">Option 1</a>
     </li>
-      <hr>
       <li><a href="#" class="fd-menu__item">Option 2</a>
     </li>
-      <hr>
       <li><a href="#" class="fd-menu__item">Option 3</a>
     </li>
-      <hr>
       <li><a href="#" class="fd-menu__item">Option 4</a>
     </li>
     </ul>
