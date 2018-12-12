@@ -225,7 +225,7 @@ a contextual menu can be substituted in order to display all actions in one menu
             <td>
                 <div class="fd-popover">
                     <div class="fd-popover__control">
-                        <button class="fd-button--light sap-icon--vertical-grip" aria-controls="pQqQR213" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+                        <button class="fd-button--light sap-icon--overflow" aria-controls="pQqQR213" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
                     </div>
                     <div class="fd-popover__body" aria-hidden="true" id="pQqQR213">
                         <nav class="fd-menu">
@@ -247,7 +247,7 @@ a contextual menu can be substituted in order to display all actions in one menu
             <td>
                 <div class="fd-popover">
                     <div class="fd-popover__control">
-                        <button class="fd-button--light sap-icon--vertical-grip" aria-controls="lkjlkj23" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+                        <button class="fd-button--light sap-icon--overflow" aria-controls="lkjlkj23" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
                     </div>
                     <div class="fd-popover__body" aria-hidden="true" id="lkjlkj23">
                         <nav class="fd-menu">
@@ -269,7 +269,7 @@ a contextual menu can be substituted in order to display all actions in one menu
             <td>
                 <div class="fd-popover">
                     <div class="fd-popover__control">
-                        <button class="fd-button--light sap-icon--vertical-grip" aria-controls="uu4324" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+                        <button class="fd-button--light sap-icon--overflow" aria-controls="uu4324" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
                     </div>
                     <div class="fd-popover__body" aria-hidden="true" id="uu4324">
                         <nav class="fd-menu">
