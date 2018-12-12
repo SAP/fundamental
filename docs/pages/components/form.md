@@ -11,7 +11,20 @@ Form elements include field layout, checkboxes, radio buttons and states of a fi
 <hr/>
 
 ## Inputs
-Inputs are used to collect data from the user. When a field is required, the label is displayed in bold and noted by an asterisk (*).
+Inputs are used to collect data from the user and should always be paired with a label. When a field is required, the label should include an asterisk (*).
+
+A text input field allows users to enter and edit text or numeric values in one line. To help users enter a valid value, it provides additional features like “auto-complete”, “suggestions”, and “value help”.
+
+Use the input field if:
+
+- The user needs to enter a short, single-line text or numbers, dates or times.
+- The user needs to select one or more items from a list of items, such a a multi-input.
+- The user needs to find one or more items out of a list of items by searching for more than one attribute, such as a combobox.
+
+Do not use the input field if:
+
+- The user needs to enter long texts. In this case, use the textarea.
+- The user needs to carry out a search. In this case, use the search field.
 
 {% capture inputs %}
 <div class="fd-form__set">
@@ -42,12 +55,6 @@ Inputs are used to collect data from the user. When a field is required, the lab
     </div>
 </div>
 
-<div class="fd-form__set">
-    <div class="fd-form__item">
-        <label class="fd-form__label" for="textarea-1">Text area:</label>
-        <textarea class="fd-form__control" id="textarea-1">Pellentesque metus lacus commodo eget justo ut rutrum varius nunc.</textarea>
-    </div>
-</div>
 {% endcapture %}
 
 {% include display-component.html component=inputs %}
@@ -164,6 +171,27 @@ Along with Invalid and Warning, error messages should be displayed below the fie
 
 {% include display-component.html component=inputs %}
 
+
+<br>
+## Textarea
+Use the text area if you want users to enter multiple lines of unformatted text.
+
+Do not use the text area if
+
+- You only want them to enter a single line of text, use the input control instead.
+- Users need to enter formatted text. Use the rich text editor instead.
+
+{% capture inputs %}
+<div class="fd-form__set">
+    <div class="fd-form__item">
+        <label class="fd-form__label" for="textarea-1">Text area:</label>
+        <textarea class="fd-form__control" id="textarea-1">Pellentesque metus lacus commodo eget justo ut rutrum varius nunc.</textarea>
+    </div>
+</div>
+{% endcapture %}
+
+{% include display-component.html component=inputs %}
+
 <br>
 
 ## Select
@@ -198,7 +226,18 @@ The Select component is similar to a dropdown but is more commonly used within a
 <br/>
 
 ## Radio buttons
-Radio buttons allow the user to see all options and select one. Generally, this is used when there are between 2-3 options. This component can also be disabled and displayed in a row.
+Radio buttons provide users with a set of mutually exclusive options. They allow a user to select only one option from two or more choices. Each option is represented by a radio button. Consequently, radio buttons only work in groups.
+
+Use the radio button if:
+
+- You need to help users choose quickly between at least two clearly different choices.
+
+Do not use the radio button if:
+
+- You need to offer the user the option of multiple selection. In this case, use checkboxes instead because radio buttons are for single-selection contexts only.
+- You need to present more than 8 options. Use a dropdown box or list view.
+In special cases, there are only two mutually exclusive options. Combine them into a single checkbox or toggle switch. For example, use a checkbox for “I agree” (for example, to terms and conditions) instead of two radio buttons for “I agree” and “I don’t agree”.
+- The options are numbers with fixed steps. Use a slider control.
 
 {% capture radio-buttons%}
 <fieldset class="fd-form__set">
@@ -276,6 +315,21 @@ Radio buttons allow the user to see all options and select one. Generally, this 
 
 ## Checkbox
 With checkboxes, all options are visible and the user can make one or more selections. This component can be set disabled and also displayed in a row.
+
+Use the check box if:
+
+- Only one option can be selected or deselected, for example to accept terms of use. Use it only if the meaning is obvious.
+- A group or a list of options can be selected independently of each other.
+- All available options need to be displayed right away without any user interaction.
+- An intermediate selection state (Tri-State) is required when multiple sub-options are grouped under a parent option. The Tri-State will represent that multiple (but not all) sub-options are selected in the list.
+
+Do not use the checkbox control if:
+
+- The user needs to choose multiple options from a large list. Use a multi-combo box instead.
+- The user can choose only one option from a list. Use a radio buttons, a select, or a list instead.
+- The user needs to perform instantaneous actions that do not need reviewing or confirming. Consider using the switch control instead.
+- There is not enough space available on the screen. Use the combo box control instead.
+
 
 {% capture checkbox %}
 <fieldset class="fd-form__set">
