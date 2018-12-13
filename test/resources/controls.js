@@ -136,4 +136,12 @@
             localStorage.setItem("toggleCompactState", false);
         }
     });
+
+    //indeterminate
+    const indeterminates = document.querySelectorAll("[indeterminate=true]");
+    for (let i = 0; i < indeterminates.length; i++) {
+      indeterminates[i].indeterminate = true;
+    }
+
+
 })();
