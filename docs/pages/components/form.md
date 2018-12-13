@@ -188,6 +188,12 @@ Do not use the text area if
         <textarea class="fd-form__control" id="textarea-1">Pellentesque metus lacus commodo eget justo ut rutrum varius nunc.</textarea>
     </div>
 </div>
+<div class="fd-form__set">
+    <div class="fd-form__item">
+        <label class="fd-form__label" for="textarea-2">Compact text area:</label>
+        <textarea class="fd-form__control fd-textarea--compact" id="textarea-2">Pellentesque metus lacus commodo eget justo ut rutrum varius nunc.</textarea>
+    </div>
+</div>
 {% endcapture %}
 
 {% include display-component.html component=inputs %}
@@ -397,7 +403,7 @@ Do not use the checkbox control if:
                 Field label
             </label>
         </div>
-        
+
     </div>
 </fieldset>{% endcapture %}
 
