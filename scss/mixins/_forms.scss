@@ -1,3 +1,5 @@
+//DEPRECATE 1.6
+
 // Form Mixins
 @mixin fd-form-base {
     @include fd-reset;
@@ -52,11 +54,6 @@
 
 @mixin fd-form-text() {
     @include fd-form-base;
-    @include fd-var-size("height", $fd-forms-height, --fd-forms-height);
-    &.fd-input--compact,
-    &.fd-select--compact {
-      @include fd-var-size("height", $fd-forms-height--compact, --fd-forms-height-compact);
-    }
     padding-left: $fd-forms-padding;
     padding-right: $fd-forms-padding;
     @content;
