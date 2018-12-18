@@ -28,7 +28,29 @@ The basic stucture of a menu.
 
 {% include display-component.html component=default-menu %}
 
-## Menu w/ Group
+## Menu list with separated items
+Use a modifier on the list element to add separators between the items.
+
+{% capture default-menuwgroup %}
+<nav class="fd-menu">
+    <ul class="fd-menu__list fd-menu__list--separated">
+      <li><a href="#" class="fd-menu__item">Option 1</a>
+    </li>
+      <li><a href="#" class="fd-menu__item">Option 2</a>
+    </li>
+      <li><a href="#" class="fd-menu__item">Option 3</a>
+    </li>
+      <li><a href="#" class="fd-menu__item">Option 4</a>
+    </li>
+    </ul>
+</nav>
+{% endcapture %}
+
+{% include display-component.html component=default-menuwgroup %}
+
+
+
+## Menu with group headers
 You can optionally add hierarchy to menus by grouping sub-menus and adding headers.
 
 {% capture default-menuwgroup %}
@@ -51,26 +73,9 @@ You can optionally add hierarchy to menus by grouping sub-menus and adding heade
 
 {% include display-component.html component=default-menuwgroup %}
 
-## Menu w/ Separator
 
-{% capture default-menuwgroup %}
-<nav class="fd-menu">
-    <ul class="fd-menu__list fd-menu__separator">
-      <li><a href="#" class="fd-menu__item">Option 1</a>
-    </li>
-      <li><a href="#" class="fd-menu__item">Option 2</a>
-    </li>
-      <li><a href="#" class="fd-menu__item">Option 3</a>
-    </li>
-      <li><a href="#" class="fd-menu__item">Option 4</a>
-    </li>
-    </ul>
-</nav>
-{% endcapture %}
-
-{% include display-component.html component=default-menuwgroup %}
-
-## Menu w/ addon before
+## Menu with an addon container
+This is an additional container that can be used for an icon or checkbox before the meni item text.
 
 {% capture default-menuwgroup %}
 <nav class="fd-menu fd-menu--addon-before">

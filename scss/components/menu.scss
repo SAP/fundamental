@@ -20,6 +20,7 @@ $block: #{$fd-namespace}-menu;
     $fd-menu-item-padding: fd-space(3) fd-space(4) !default;
     $fd-menu-item-color--disabled: fd-color("text", 2);
     $fd-menu-item-separator-color: fd-color("neutral", 2);
+    --fd-menu-item-separator-color: var(--fd-color-neutral-2);
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
@@ -35,20 +36,25 @@ $block: #{$fd-namespace}-menu;
       list-style: none;
       margin-bottom: 0;
     }
+    &__group {
+      padding-left: 0;
+    }
     &__list {
       margin: 0;
       padding: 0;
       list-style: none;
       //modified with separator border
       @at-root {
-        .#{$block}--separated & > * {
+        &--separated {
+          & > *,
+          .#{$block}__list > * {
             border-top-style: solid;
             border-top-width: 1px;
-            border-top-color: $fd-menu-item-separator-color;
-            border-top-color: green;
+            @include fd-var-color("border-top-color", $fd-menu-item-separator-color, --fd-menu-item-separator-color);
             &:first-child {
               border-top-width: 0;
             }
+          }
         }
       }
     }
