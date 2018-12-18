@@ -69,7 +69,7 @@ When there are several main actions for a page, consider displaying them under a
     <div class="fd-action-bar__actions">
             <div class="fd-popover">
                 <div class="fd-popover__control">
-                    <button class="fd-button--light sap-icon--vertical-grip"
+                    <button class="fd-button--light sap-icon--overflow"
                     aria-controls="wgxzK859" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
                 </div>
                 <div class="fd-popover__body" aria-hidden="true" id="wgxzK859">
@@ -108,7 +108,7 @@ When there are several main actions for a page, consider displaying them under a
         <div class="fd-action-bar__actions">
             <div class="fd-popover">
                 <div class="fd-popover__control">
-                    <button class="fd-button--light sap-icon--vertical-grip"
+                    <button class="fd-button--light sap-icon--overflow"
                     aria-controls="wgxzK85" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
                 </div>
                 <div class="fd-popover__body" aria-hidden="true" id="wgxzK85">

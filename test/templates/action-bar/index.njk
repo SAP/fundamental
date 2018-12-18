@@ -35,7 +35,7 @@
     {%- set _id = utils.id() %}
 
     {%- macro contextmenu_control(properties={}) -%}
-        {{ button({ icon: "vertical-grip" }, modifier={ block: ["light"] }, aria={ controls: properties.id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
+        {{ button({ icon: "overflow" }, modifier={ block: ["light"] }, aria={ controls: properties.id, haspopup: true, expanded: false, label: "More" }) | indent(4) }}
     {%- endmacro %}
 
     {{  popover(properties={
