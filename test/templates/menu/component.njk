@@ -19,7 +19,7 @@ menu:
       {{ optgroup(item)| indent(2) }}
     {%- else %}
       {%- if loop.first %}
-    <ul class="fd-menu__list {{ 'fd-menu__separator' if properties.separator }}">
+    <ul class="fd-menu__list">
       {%- endif %}
       {{ option(item, properties) }}
       {%- if loop.last %}

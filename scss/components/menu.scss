@@ -30,15 +30,6 @@ $block: #{$fd-namespace}-menu;
     padding-top: fd-space(base);
     padding-bottom: fd-space(base);
 
-    &__separator>li {
-      border: none;
-      border-top: 1px solid $fd-menu-item-separator-color;
-      margin: 0;
-    }
-
-    &__separator>li:first-child {
-      border-top: 0;
-    }
     &__group,
     &__list {
       list-style: none;
@@ -48,6 +39,18 @@ $block: #{$fd-namespace}-menu;
       margin: 0;
       padding: 0;
       list-style: none;
+      //modified with separator border
+      @at-root {
+        .#{$block}--separated & > * {
+            border-top-style: solid;
+            border-top-width: 1px;
+            border-top-color: $fd-menu-item-separator-color;
+            border-top-color: green;
+            &:first-child {
+              border-top-width: 0;
+            }
+        }
+      }
     }
     &__title {
       display: block;
@@ -69,7 +72,6 @@ $block: #{$fd-namespace}-menu;
       > .fd-checkbox {
         margin: 0 10px 0 0;
       }
-
       @include fd-hover {
         color: $fd-menu-item-color--hover;
         background-color: $fd-menu-item-background-color--hover;
