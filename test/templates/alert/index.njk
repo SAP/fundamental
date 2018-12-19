@@ -16,8 +16,8 @@
 {% set example %}
 {{  alert(
         properties={
-            text: 'Netural . <a href="#" class="fd-link">Learn More</a>',
-            dismissible: true
+            text: '<p>Integer turpis augue, tincidunt dignissim mauris id, rhoncus dapibus purus. Maecenas et enim odio. Nullam massa metus, varius quis vehicula sed, pharetra mollis erat. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu. <a href="#" class="fd-link">Learn More</a></p>',
+            dismissible: false
         },
         modifier={
             block: []
@@ -27,8 +27,8 @@
 <br>
 {{  alert(
         properties={
-            text: '<span class="sap-icon--message-information"></span> Information Message. <a href="#" class="fd-link">Learn More</a>',
-            dismissible: true
+            text: '<p>Integer turpis augue, tincidunt dignissim mauris id, rhoncus dapibus purus. Maecenas et enim odio. Nullam massa metus, varius quis vehicula sed, pharetra mollis erat. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu. <a href="#" class="fd-link">Learn More</a></p>',
+            dismissible: false
         },
         modifier={
             block: ["information"]
@@ -38,8 +38,8 @@
 <br>
 {{  alert(
         properties={
-            text: '<span class="sap-icon--message-success"></span> Message Success. <a href="#" class="fd-link">Learn More</a>',
-            dismissible: true
+            text: '<p>Integer turpis augue, tincidunt dignissim mauris id, rhoncus dapibus purus. Maecenas et enim odio. Nullam massa metus, varius quis vehicula sed, pharetra mollis erat. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu.',
+            dismissible: false
         },
         modifier={
             block: ["success"]
@@ -49,8 +49,8 @@
 <br>
 {{  alert(
         properties={
-            text: '<span class="sap-icon--message-warning"></span> Warning Message. <a href="#" class="fd-link">Learn More</a>',
-            dismissible: true
+            text: '<p>Integer turpis augue, tincidunt dignissim mauris id, rhoncus dapibus purus. Maecenas et enim odio. Nullam massa metus, varius quis vehicula sed, pharetra mollis erat. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu.',
+            dismissible: false
         },
         modifier={
             block: ["warning"]
@@ -60,14 +60,16 @@
 <br>
 {{  alert(
         properties={
-            text: '<span class="sap-icon--message-error"></span> Error Message. <a href="#" class="fd-link">Learn More</a>',
-            dismissible: true
+            text: '<p>Integer turpis augue, tincidunt dignissim mauris id, rhoncus dapibus purus. Maecenas et enim odio. Nullam massa metus, varius quis vehicula sed, pharetra mollis erat. Sed bibendum, sapien at posuere interdum, libero est sollicitudin magna, ac gravida tellus purus eu ipsum. Proin ut quam arcu.',
+            dismissible: false
         },
         modifier={
             block: ["error"]
         }
     )
 }}
+<br>
+
 {% endset %}
 {{- format(example) -}}
 
@@ -138,12 +140,49 @@
 {% set example %}
 {{  alert(
         properties={
-            text: '<span class="sap-icon--alert sap-icon--s"></span> Vivamus sagittis diam in vehicula lobortis sapien arcu mattis erat vel aliquet sem urna et mattis erat vel aliquet in sem urna et sagittis diam in vehicula <a href="#" class="fd-link">Learn More</a>',
+            text: ' حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤلاء الأشخاص الذين لا يدركون بأن السعادة لا بد أن نستشعرها بصورة أكثر عقلانية ومنطقية فيعرضهم هذا لمواجهة الظروف الأليمة، وأكرر بأنه لا يوجد من يرغب في الحب ونيل المنال ويتلذذ بالآلام، الألم هو الألم ولكن نتيجة لظروف ما قد تكمن السعاده فيما نتحمله من كد وأسي.',
             dismissible: true,
             rtl: true
         },
         modifier={
             block: []
+        }
+    )
+}}
+<br>
+{{  alert(
+        properties={
+            text: ' حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤلاء الأشخاص الذين لا يدركون بأن السعادة لا بد أن نستشعرها بصورة أكثر عقلانية ومنطقية فيعرضهم هذا لمواجهة الظروف الأليمة، وأكرر بأنه لا يوجد من يرغب في الحب ونيل المنال ويتلذذ بالآلام، الألم هو الألم ولكن نتيجة لظروف ما قد تكمن السعاده فيما نتحمله من كد وأسي.',
+            dismissible: true,
+            rtl: true
+        },
+        modifier={
+            block: ["warning"]
+        }
+    )
+}}
+<br>
+{{  alert(
+        properties={
+            text: ' حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤلاء الأشخاص الذين لا يدركون بأن السعادة لا بد أن نستشعرها بصورة أكثر عقلانية ومنطقية فيعرضهم هذا لمواجهة الظروف الأليمة، وأكرر بأنه لا يوجد من يرغب في الحب ونيل المنال ويتلذذ بالآلام، الألم هو الألم ولكن نتيجة لظروف ما قد تكمن السعاده فيما نتحمله من كد وأسي.',
+            dismissible: false,
+            rtl: true
+        },
+        modifier={
+            block: ["success"]
+        }
+    )
+}}
+
+<br>
+{{  alert(
+        properties={
+            text: ' حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤلاء الأشخاص الذين لا يدركون بأن السعادة لا بد أن نستشعرها بصورة أكثر عقلانية ومنطقية فيعرضهم هذا لمواجهة الظروف الأليمة، وأكرر بأنه لا يوجد من يرغب في الحب ونيل المنال ويتلذذ بالآلام، الألم هو الألم ولكن نتيجة لظروف ما قد تكمن السعاده فيما نتحمله من كد وأسي.',
+            dismissible: true,
+            rtl: true
+        },
+        modifier={
+            block: ["error"]
         }
     )
 }}
