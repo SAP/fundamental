@@ -144,6 +144,8 @@ $block: #{$fd-namespace}-button;
     @include fd-hover {
       --fd-button-background-color: var(--fd-color-action-hover);
       --fd-button-color: var(--fd-color-action-2);
+      @include fd-var-color("color", fd-color("action", 2));
+      @include fd-var-color("background-color", fd-color-state("hover","action"));
       @include fd-disabled {
         --fd-button-background-color: var(--fd-color-action-1);
         --fd-button-color: var(--fd-color-action-2);
