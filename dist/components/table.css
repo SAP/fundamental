@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.4.0
+* Fiori Fundamentals v1.4.1
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -32,22 +32,17 @@
   transition: background-color 125ms ease-in;
   cursor: pointer
 }
+.fd-table tr .is-hover,
 .fd-table tr:hover {
   background-color: #fafafa
 }
-.fd-table tr.is-active,
-.fd-table tr.is-pressed,
 .fd-table tr.is-selected,
-.fd-table tr:active,
-.fd-table tr[aria-pressed=true],
 .fd-table tr[aria-selected=true] {
   background-color: rgba(10,110,209,.07)
 }
-.fd-table tr.is-active:hover,
-.fd-table tr.is-pressed:hover,
+.fd-table tr.is-selected .is-hover,
 .fd-table tr.is-selected:hover,
-.fd-table tr:active:hover,
-.fd-table tr[aria-pressed=true]:hover,
+.fd-table tr[aria-selected=true] .is-hover,
 .fd-table tr[aria-selected=true]:hover {
   background-color: rgba(10,110,209,.1)
 }
