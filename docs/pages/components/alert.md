@@ -1,5 +1,6 @@
 ---
 title: Alert
+id: alert
 keywords: alert
 sidebar: left-navigation-sidebar
 toc: false
@@ -12,7 +13,7 @@ Alerts provide messages within the application that are color-coded to emphasize
 {: .docs-intro}
 For Alert placement guidelines within the application, see [Application Layout page]({{site.baseurl}}/layouts/application-layout.html#application-with-ui-overlay) and [Application Alerts overlay Demo Page]({{site.baseurl}}/demo-pages/alert-overlay-demo-page.html)
 
-<hr>
+<br>
 
 ## Default Alert
 The alert provides information that is useful and relevant, but not critical. It can also provide feedback that an action has been executed. In most cases, the user should be able to dismiss the message so include the modifier class `fd-alert--dismissible` and include the close button.

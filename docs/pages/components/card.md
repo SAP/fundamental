@@ -1,5 +1,6 @@
 ---
 title: Card
+id: card
 keywords:
 sidebar: left-navigation-sidebar
 toc: false
@@ -7,7 +8,9 @@ permalink: components/card.html
 folder: components
 ---
 
-The Card is a container element, used to display information in a way the user can glance and find easily the information. They have common elements always on the same position and with similar visual style.
+The card is a container element, used to display information in a way the user can glance and find easily the information.
+{: .docs-intro}
+They have common elements always on the same position and with similar visual style.
 
 The cards can be [grouped](card-group.html) to display a set of the object of the same type.
 
@@ -16,7 +19,7 @@ Some common elements are styled by default:
 * **Secondary info**: here you can add more information about the object.
 * **Status**: you can signal the status of the object, for instance: active/inactive
 
-<hr/>
+<br>
 
 ## Default Card
 

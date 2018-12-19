@@ -1,5 +1,6 @@
 ---
 title: Time Picker
+id: time-picker
 keywords: time picker
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,9 +9,11 @@ folder: components
 summary:
 ---
 
-Timepicker is a component composed of an input-group, a popover and the time component to create a time selection interaction.
+Timepicker is a component composed of an `input-group`, a `popover` and the `time` component to create a time selection interaction.
+{: .docs-intro}
 
-<hr/>
+<br>
+
 
 ## Basic Time Picker
 

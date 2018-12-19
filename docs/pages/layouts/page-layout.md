@@ -1,5 +1,6 @@
 ---
-title: Page Layout
+title: Page
+id: page
 keywords: page layout
 toc: false
 sidebar: left-navigation-sidebar
@@ -8,11 +9,14 @@ folder: layouts
 summary:
 ---
 Page layout containers are used to construct the view states of the application. The `page` layer includes the header and content containers.
+{: .docs-intro}
 
 The `.fd-page` container is the workhorse of the application where page content updates occur based on navigation selections.
 
 Like the app-level, these are dumb containers only concerned with placement with no effect on their contents.
-<br><br>
+
+<br>
+
 ## Container hierarchy
 The elements used to construct a page are:
 * `.fd-page`: The page-level wrapper

@@ -29,10 +29,15 @@ hr{
 .docs-tiles{
     $docs-tiles-color: docs-color(action, 3);
     margin: 0 -20px;
+     grid-auto-rows: 1fr;
+
     .fd-tile[role="button"]{
         border: 1px solid docs-color(neturals, 1);
-        margin:20px;
+        margin: 20px;
+        padding-top: 10px;
+        padding-bottom: 20px;
         text-decoration: none;
+
         &:hover{
             border-color: $docs-tiles-color;
         }
@@ -50,6 +55,9 @@ hr{
         &:last-child {
           margin-bottom: 0;
         }
+    }
+    .fd-tile__content{
+        align-self: auto;
     }
     .fd-tile__description{
         color: docs-color(text, 1);

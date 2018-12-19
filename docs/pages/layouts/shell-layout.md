@@ -1,5 +1,6 @@
 ---
-title: Shell Layout
+title: Application Shell
+id: shell
 keywords: shell application layouts overlay
 toc: false
 sidebar: left-navigation-sidebar

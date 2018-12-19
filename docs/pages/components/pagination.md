@@ -1,5 +1,6 @@
 ---
 title: Pagination
+id: pagination
 keywords: pagination
 sidebar: left-navigation-sidebar
 toc: false
@@ -9,8 +10,9 @@ summary:
 ---
 
 Pagination is commonly used for tables and tiles. It allows users to see how many pages of content exist, to navigate and highlights which page they are currently viewing.
+{: .docs-intro}
 
-<hr>
+<br>
 
 ## First Page
 When the first page is active, the Back arrow should be disabled.

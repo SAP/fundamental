@@ -1,5 +1,6 @@
 ---
 title: Status Indicators
+id:
 keywords: status indicators, status, indicators, badge, label, counter
 sidebar: left-navigation-sidebar
 toc: false
@@ -7,11 +8,13 @@ permalink: components/status-indicators.html
 folder: components
 ---
 
-Status Indicators are used to easily highlight the state of an object. `badge`, `label`, `status-label` and `counter`
+Status indicators are used to easily highlight the state of an object. `badge`, `label`, `status-label` and `counter`
+{: .docs-intro}
 
-<hr />
+<br>
 
 # Badge
+{% include status-container.html key="badge" %}
 
 ## Badge Style Options
 `badge` Status Indicator has three options: `default`, `--pill` and `--filled`
@@ -47,7 +50,8 @@ In addition the the default grey, there are three additional Semantic color opti
 <hr>
 
 # Label
-`label` is similar to the `badge` status Indicator, but it does not have have any borders or background color. Color options of default grey, `--success`, `--warning` and `--error` are available.
+{% include status-container.html key="label" %}
+A `label` is similar to the `badge` status Indicator, but it does not have have any borders or background color. Color options of default grey, `--success`, `--warning` and `--error` are available.
 {% capture badge %}
 <span class="fd-label">Default</span>
 <span class="fd-label fd-label--success">Success</span>
@@ -59,7 +63,7 @@ In addition the the default grey, there are three additional Semantic color opti
 <hr>
 
 # Status Indicator Label
-
+{% include status-container.html key="status-label" %}
 ## Status Indicator Label with build in status icons
 
 {% capture badge %}
@@ -98,7 +102,7 @@ In addition the the default grey, there are three additional Semantic color opti
 <hr>
 
 # Counter
-
+{% include status-container.html key="counter" %}
 ## Default Counter
 Counter has a minimum value 1. Maximum display is 999+
 {% capture badge %}

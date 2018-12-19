@@ -1,5 +1,6 @@
 ---
 title: Icon
+id: icon
 keywords: icon
 sidebar: left-navigation-sidebar
 toc: false
@@ -7,9 +8,11 @@ permalink: components/icon.html
 folder: components
 summary:
 ---
-Icons are used throughout the UI to save space, allow for visual clarity and focus, and for fun. Icons can be used adaptively if desired, but at this point they are used more as visual elements within other components.
+Icons are used throughout the UI to save space, allow for visual clarity and focus, and for fun.
+{: .docs-intro}
+Icons can be used adaptively if desired, but at this point they are used more as visual elements within other components.
 
-<hr>
+<br>
 
 ## Icon usage and size options
 {% capture icon %}

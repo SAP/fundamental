@@ -1,5 +1,6 @@
 ---
 title: Inline Help
+id: inline-help
 keywords: inline, help
 sidebar: left-navigation-sidebar
 toc: false
@@ -9,8 +10,9 @@ summary:
 ---
 
 Inline help is used to display help text in a popover, often inline with headers, body text and form labels.
+{: .docs-intro}
 
-<hr>
+<br>
 
 ## Default Position
 The default positioning of inline help component is bottom right.
