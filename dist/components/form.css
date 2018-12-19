@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.4.0
+* Fiori Fundamentals v1.4.1
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -7,10 +7,10 @@
 /*!
 .fd-form
     .fd-form__set?
-        .fd-form__legend(.is-required)
+        .fd-form__legend
         .fd-form__group?
             .fd-form__item+(--check, --inline)
-                .fd-form__label(.is-required)
+                .fd-form__label
                 .fd-form__control
             .fd-form__message(--help, --error, --warning)
 */
@@ -132,10 +132,6 @@
   margin-bottom: 8px;
   border: 0;
   color: #6a6d70
-}
-.fd-form__label.is-required:after,
-.fd-form__legend.is-required:after {
-  content: "*"
 }
 .fd-form__label.is-disabled,
 .fd-form__legend.is-disabled {

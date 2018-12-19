@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.4.0
+* Fiori Fundamentals v1.4.1
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -100,14 +100,22 @@
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
+.fd-button .is-hover,
 .fd-button:hover,
+[class*=fd-button--] .is-hover,
 [class*=fd-button--]:hover {
   --fd-button-background-color: var(--fd-color-action-hover);
   --fd-button-color: var(--fd-color-action-2)
 }
+.fd-button .is-hover.is-disabled,
+.fd-button .is-hover:disabled,
+.fd-button .is-hover[aria-disabled=true],
 .fd-button:hover.is-disabled,
 .fd-button:hover:disabled,
 .fd-button:hover[aria-disabled=true],
+[class*=fd-button--] .is-hover.is-disabled,
+[class*=fd-button--] .is-hover:disabled,
+[class*=fd-button--] .is-hover[aria-disabled=true],
 [class*=fd-button--]:hover.is-disabled,
 [class*=fd-button--]:hover:disabled,
 [class*=fd-button--]:hover[aria-disabled=true] {
@@ -154,10 +162,14 @@
   --fd-button-border-color: var(--fd-color-action-1);
   --fd-button-background-color: var(--fd-color-action-1)
 }
+.fd-button--emphasized .is-hover,
 .fd-button--emphasized:hover {
   --fd-button-background-color: var(--fd-color-action-hover);
   --fd-button-color: var(--fd-color-action-2)
 }
+.fd-button--emphasized .is-hover.is-disabled,
+.fd-button--emphasized .is-hover:disabled,
+.fd-button--emphasized .is-hover[aria-disabled=true],
 .fd-button--emphasized:hover.is-disabled,
 .fd-button--emphasized:hover:disabled,
 .fd-button--emphasized:hover[aria-disabled=true] {
@@ -172,24 +184,42 @@
 .fd-button-group .fd-button--emphasized[class*=fd-button--] {
   --fd-button-color: var(--fd-color-action-2)
 }
+.fd-button--emphasized.fd-button--medium .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--medium .is-hover:disabled,
+.fd-button--emphasized.fd-button--medium .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--medium:hover.is-disabled,
 .fd-button--emphasized.fd-button--medium:hover:disabled,
 .fd-button--emphasized.fd-button--medium:hover[aria-disabled=true],
+.fd-button--emphasized.fd-button--negative .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--negative .is-hover:disabled,
+.fd-button--emphasized.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--negative:hover.is-disabled,
 .fd-button--emphasized.fd-button--negative:hover:disabled,
 .fd-button--emphasized.fd-button--negative:hover[aria-disabled=true],
+.fd-button--emphasized.fd-button--positive .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--positive .is-hover:disabled,
+.fd-button--emphasized.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--positive:hover.is-disabled,
 .fd-button--emphasized.fd-button--positive:hover:disabled,
 .fd-button--emphasized.fd-button--positive:hover[aria-disabled=true],
+.fd-button--emphasized.fd-button--standard .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--standard .is-hover:disabled,
+.fd-button--emphasized.fd-button--standard .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--standard:hover.is-disabled,
 .fd-button--emphasized.fd-button--standard:hover:disabled,
 .fd-button--emphasized.fd-button--standard:hover[aria-disabled=true],
+.fd-button-group .fd-button--emphasized.fd-button .is-hover.is-disabled,
+.fd-button-group .fd-button--emphasized.fd-button .is-hover:disabled,
+.fd-button-group .fd-button--emphasized.fd-button .is-hover[aria-disabled=true],
 .fd-button-group .fd-button--emphasized.fd-button:hover.is-disabled,
 .fd-button-group .fd-button--emphasized.fd-button:hover:disabled,
 .fd-button-group .fd-button--emphasized.fd-button:hover[aria-disabled=true],
 .fd-button-group .fd-button--emphasized:hover.is-disabled[class*=fd-button--],
 .fd-button-group .fd-button--emphasized:hover:disabled[class*=fd-button--],
-.fd-button-group .fd-button--emphasized:hover[aria-disabled=true][class*=fd-button--] {
+.fd-button-group .fd-button--emphasized:hover[aria-disabled=true][class*=fd-button--],
+.fd-button-group .fd-button--emphasized[class*=fd-button--] .is-hover.is-disabled,
+.fd-button-group .fd-button--emphasized[class*=fd-button--] .is-hover:disabled,
+.fd-button-group .fd-button--emphasized[class*=fd-button--] .is-hover[aria-disabled=true] {
   --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--emphasized.fd-button--standard,
@@ -198,21 +228,33 @@
   --fd-button-border-color: var(--fd-color-status-4);
   --fd-button-background-color: var(--fd-color-status-4)
 }
+.fd-button--emphasized.fd-button--standard .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--standard .is-hover:disabled,
+.fd-button--emphasized.fd-button--standard .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--standard:hover.is-disabled,
 .fd-button--emphasized.fd-button--standard:hover:disabled,
 .fd-button--emphasized.fd-button--standard:hover[aria-disabled=true],
+.fd-button-group .fd-button--emphasized.fd-button .is-hover.is-disabled,
+.fd-button-group .fd-button--emphasized.fd-button .is-hover:disabled,
+.fd-button-group .fd-button--emphasized.fd-button .is-hover[aria-disabled=true],
 .fd-button-group .fd-button--emphasized.fd-button:hover.is-disabled,
 .fd-button-group .fd-button--emphasized.fd-button:hover:disabled,
 .fd-button-group .fd-button--emphasized.fd-button:hover[aria-disabled=true],
 .fd-button-group .fd-button--emphasized:hover.is-disabled[class*=fd-button--],
 .fd-button-group .fd-button--emphasized:hover:disabled[class*=fd-button--],
-.fd-button-group .fd-button--emphasized:hover[aria-disabled=true][class*=fd-button--] {
+.fd-button-group .fd-button--emphasized:hover[aria-disabled=true][class*=fd-button--],
+.fd-button-group .fd-button--emphasized[class*=fd-button--] .is-hover.is-disabled,
+.fd-button-group .fd-button--emphasized[class*=fd-button--] .is-hover:disabled,
+.fd-button-group .fd-button--emphasized[class*=fd-button--] .is-hover[aria-disabled=true] {
   --fd-button-background-color: var(--fd-color-status-4)
 }
 .fd-button--emphasized.fd-button--negative {
   --fd-button-border-color: var(--fd-color-status-3);
   --fd-button-background-color: var(--fd-color-status-3)
 }
+.fd-button--emphasized.fd-button--negative .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--negative .is-hover:disabled,
+.fd-button--emphasized.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--negative:hover.is-disabled,
 .fd-button--emphasized.fd-button--negative:hover:disabled,
 .fd-button--emphasized.fd-button--negative:hover[aria-disabled=true] {
@@ -222,6 +264,9 @@
   --fd-button-border-color: var(--fd-color-status-2);
   --fd-button-background-color: var(--fd-color-status-2)
 }
+.fd-button--emphasized.fd-button--medium .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--medium .is-hover:disabled,
+.fd-button--emphasized.fd-button--medium .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--medium:hover.is-disabled,
 .fd-button--emphasized.fd-button--medium:hover:disabled,
 .fd-button--emphasized.fd-button--medium:hover[aria-disabled=true] {
@@ -231,6 +276,9 @@
   --fd-button-border-color: var(--fd-color-status-1);
   --fd-button-background-color: var(--fd-color-status-1)
 }
+.fd-button--emphasized.fd-button--positive .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--positive .is-hover:disabled,
+.fd-button--emphasized.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--positive:hover.is-disabled,
 .fd-button--emphasized.fd-button--positive:hover:disabled,
 .fd-button--emphasized.fd-button--positive:hover[aria-disabled=true] {
@@ -240,10 +288,14 @@
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent
 }
+.fd-button--light .is-hover,
 .fd-button--light:hover {
   --fd-button-background-color: var(--fd-color-neutral-1);
   --fd-button-color: var(--fd-color-action-1)
 }
+.fd-button--light .is-hover.is-disabled,
+.fd-button--light .is-hover:disabled,
+.fd-button--light .is-hover[aria-disabled=true],
 .fd-button--light:hover.is-disabled,
 .fd-button--light:hover:disabled,
 .fd-button--light:hover[aria-disabled=true] {
@@ -268,32 +320,56 @@
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent
 }
+.fd-button--light.fd-button--medium .is-hover,
 .fd-button--light.fd-button--medium:hover,
+.fd-button--light.fd-button--negative .is-hover,
 .fd-button--light.fd-button--negative:hover,
+.fd-button--light.fd-button--positive .is-hover,
 .fd-button--light.fd-button--positive:hover,
+.fd-button--light.fd-button--standard .is-hover,
 .fd-button--light.fd-button--standard:hover,
+.fd-button-group .fd-button--light.fd-button .is-hover,
 .fd-button-group .fd-button--light.fd-button:hover,
-.fd-button-group .fd-button--light:hover[class*=fd-button--] {
+.fd-button-group .fd-button--light:hover[class*=fd-button--],
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover {
   --fd-button-background-color: var(--fd-color-neutral-1)
 }
+.fd-button--light.fd-button--medium .is-hover.is-disabled,
+.fd-button--light.fd-button--medium .is-hover:disabled,
+.fd-button--light.fd-button--medium .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--medium:hover.is-disabled,
 .fd-button--light.fd-button--medium:hover:disabled,
 .fd-button--light.fd-button--medium:hover[aria-disabled=true],
+.fd-button--light.fd-button--negative .is-hover.is-disabled,
+.fd-button--light.fd-button--negative .is-hover:disabled,
+.fd-button--light.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--negative:hover.is-disabled,
 .fd-button--light.fd-button--negative:hover:disabled,
 .fd-button--light.fd-button--negative:hover[aria-disabled=true],
+.fd-button--light.fd-button--positive .is-hover.is-disabled,
+.fd-button--light.fd-button--positive .is-hover:disabled,
+.fd-button--light.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--positive:hover.is-disabled,
 .fd-button--light.fd-button--positive:hover:disabled,
 .fd-button--light.fd-button--positive:hover[aria-disabled=true],
+.fd-button--light.fd-button--standard .is-hover.is-disabled,
+.fd-button--light.fd-button--standard .is-hover:disabled,
+.fd-button--light.fd-button--standard .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--standard:hover.is-disabled,
 .fd-button--light.fd-button--standard:hover:disabled,
 .fd-button--light.fd-button--standard:hover[aria-disabled=true],
+.fd-button-group .fd-button--light.fd-button .is-hover.is-disabled,
+.fd-button-group .fd-button--light.fd-button .is-hover:disabled,
+.fd-button-group .fd-button--light.fd-button .is-hover[aria-disabled=true],
 .fd-button-group .fd-button--light.fd-button:hover.is-disabled,
 .fd-button-group .fd-button--light.fd-button:hover:disabled,
 .fd-button-group .fd-button--light.fd-button:hover[aria-disabled=true],
 .fd-button-group .fd-button--light:hover.is-disabled[class*=fd-button--],
 .fd-button-group .fd-button--light:hover:disabled[class*=fd-button--],
-.fd-button-group .fd-button--light:hover[aria-disabled=true][class*=fd-button--] {
+.fd-button-group .fd-button--light:hover[aria-disabled=true][class*=fd-button--],
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover.is-disabled,
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover:disabled,
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover[aria-disabled=true] {
   --fd-button-background-color: transparent
 }
 .fd-button--light.fd-button--standard,
@@ -301,20 +377,32 @@
 .fd-button-group .fd-button--light[class*=fd-button--] {
   --fd-button-color: var(--fd-color-status-4)
 }
+.fd-button--light.fd-button--standard .is-hover,
 .fd-button--light.fd-button--standard:hover,
+.fd-button-group .fd-button--light.fd-button .is-hover,
 .fd-button-group .fd-button--light.fd-button:hover,
-.fd-button-group .fd-button--light:hover[class*=fd-button--] {
+.fd-button-group .fd-button--light:hover[class*=fd-button--],
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover {
   --fd-button-color: var(--fd-color-status-4)
 }
+.fd-button--light.fd-button--standard .is-hover.is-disabled,
+.fd-button--light.fd-button--standard .is-hover:disabled,
+.fd-button--light.fd-button--standard .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--standard:hover.is-disabled,
 .fd-button--light.fd-button--standard:hover:disabled,
 .fd-button--light.fd-button--standard:hover[aria-disabled=true],
+.fd-button-group .fd-button--light.fd-button .is-hover.is-disabled,
+.fd-button-group .fd-button--light.fd-button .is-hover:disabled,
+.fd-button-group .fd-button--light.fd-button .is-hover[aria-disabled=true],
 .fd-button-group .fd-button--light.fd-button:hover.is-disabled,
 .fd-button-group .fd-button--light.fd-button:hover:disabled,
 .fd-button-group .fd-button--light.fd-button:hover[aria-disabled=true],
 .fd-button-group .fd-button--light:hover.is-disabled[class*=fd-button--],
 .fd-button-group .fd-button--light:hover:disabled[class*=fd-button--],
-.fd-button-group .fd-button--light:hover[aria-disabled=true][class*=fd-button--] {
+.fd-button-group .fd-button--light:hover[aria-disabled=true][class*=fd-button--],
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover.is-disabled,
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover:disabled,
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover[aria-disabled=true] {
   --fd-button-color: var(--fd-color-status-4)
 }
 .fd-button--light.fd-button--standard.is-active,
@@ -341,9 +429,13 @@
 .fd-button--light.fd-button--negative {
   --fd-button-color: var(--fd-color-status-3)
 }
+.fd-button--light.fd-button--negative .is-hover,
 .fd-button--light.fd-button--negative:hover {
   --fd-button-color: var(--fd-color-status-3)
 }
+.fd-button--light.fd-button--negative .is-hover.is-disabled,
+.fd-button--light.fd-button--negative .is-hover:disabled,
+.fd-button--light.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--negative:hover.is-disabled,
 .fd-button--light.fd-button--negative:hover:disabled,
 .fd-button--light.fd-button--negative:hover[aria-disabled=true] {
@@ -361,9 +453,13 @@
 .fd-button--light.fd-button--positive {
   --fd-button-color: var(--fd-color-status-1)
 }
+.fd-button--light.fd-button--positive .is-hover,
 .fd-button--light.fd-button--positive:hover {
   --fd-button-color: var(--fd-color-status-1)
 }
+.fd-button--light.fd-button--positive .is-hover.is-disabled,
+.fd-button--light.fd-button--positive .is-hover:disabled,
+.fd-button--light.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--positive:hover.is-disabled,
 .fd-button--light.fd-button--positive:hover:disabled,
 .fd-button--light.fd-button--positive:hover[aria-disabled=true] {
@@ -381,9 +477,13 @@
 .fd-button--light.fd-button--medium {
   --fd-button-color: var(--fd-color-status-2)
 }
+.fd-button--light.fd-button--medium .is-hover,
 .fd-button--light.fd-button--medium:hover {
   --fd-button-color: var(--fd-color-status-2)
 }
+.fd-button--light.fd-button--medium .is-hover.is-disabled,
+.fd-button--light.fd-button--medium .is-hover:disabled,
+.fd-button--light.fd-button--medium .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--medium:hover.is-disabled,
 .fd-button--light.fd-button--medium:hover:disabled,
 .fd-button--light.fd-button--medium:hover[aria-disabled=true] {
@@ -406,12 +506,18 @@
 .fd-button-group [class*=fd-button--] {
   --fd-button-background-color: var(--fd-color-background-2)
 }
+.fd-button--medium .is-hover,
 .fd-button--medium:hover,
+.fd-button--negative .is-hover,
 .fd-button--negative:hover,
+.fd-button--positive .is-hover,
 .fd-button--positive:hover,
+.fd-button--standard .is-hover,
 .fd-button--standard:hover,
+.fd-button-group .fd-button .is-hover,
 .fd-button-group .fd-button:hover,
-.fd-button-group :hover[class*=fd-button--] {
+.fd-button-group :hover[class*=fd-button--],
+.fd-button-group [class*=fd-button--] .is-hover {
   --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--medium.is-active,
@@ -467,21 +573,33 @@
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-4);
   box-shadow: 0 0 0 1px var(--fd-color-status-4)
 }
+.fd-button--standard .is-hover,
 .fd-button--standard:hover,
+.fd-button-group .fd-button .is-hover,
 .fd-button-group .fd-button:hover,
-.fd-button-group :hover[class*=fd-button--] {
+.fd-button-group :hover[class*=fd-button--],
+.fd-button-group [class*=fd-button--] .is-hover {
   --fd-button-color: var(--fd-color-action-2);
   --fd-button-background-color: var(--fd-color-status-4)
 }
+.fd-button--standard .is-hover.is-disabled,
+.fd-button--standard .is-hover:disabled,
+.fd-button--standard .is-hover[aria-disabled=true],
 .fd-button--standard:hover.is-disabled,
 .fd-button--standard:hover:disabled,
 .fd-button--standard:hover[aria-disabled=true],
+.fd-button-group .fd-button .is-hover.is-disabled,
+.fd-button-group .fd-button .is-hover:disabled,
+.fd-button-group .fd-button .is-hover[aria-disabled=true],
 .fd-button-group .fd-button:hover.is-disabled,
 .fd-button-group .fd-button:hover:disabled,
 .fd-button-group .fd-button:hover[aria-disabled=true],
 .fd-button-group :hover.is-disabled[class*=fd-button--],
 .fd-button-group :hover:disabled[class*=fd-button--],
-.fd-button-group :hover[aria-disabled=true][class*=fd-button--] {
+.fd-button-group :hover[aria-disabled=true][class*=fd-button--],
+.fd-button-group [class*=fd-button--] .is-hover.is-disabled,
+.fd-button-group [class*=fd-button--] .is-hover:disabled,
+.fd-button-group [class*=fd-button--] .is-hover[aria-disabled=true] {
   --fd-button-color: var(--fd-color-status-4)
 }
 .fd-button--standard.is-active,
@@ -513,9 +631,13 @@
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-1);
   box-shadow: 0 0 0 1px var(--fd-color-status-1)
 }
+.fd-button--positive .is-hover,
 .fd-button--positive:hover {
   --fd-button-background-color: var(--fd-color-status-1)
 }
+.fd-button--positive .is-hover.is-disabled,
+.fd-button--positive .is-hover:disabled,
+.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--positive:hover.is-disabled,
 .fd-button--positive:hover:disabled,
 .fd-button--positive:hover[aria-disabled=true] {
@@ -538,9 +660,13 @@
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-2);
   box-shadow: 0 0 0 1px var(--fd-color-status-2)
 }
+.fd-button--medium .is-hover,
 .fd-button--medium:hover {
   --fd-button-background-color: var(--fd-color-status-2)
 }
+.fd-button--medium .is-hover.is-disabled,
+.fd-button--medium .is-hover:disabled,
+.fd-button--medium .is-hover[aria-disabled=true],
 .fd-button--medium:hover.is-disabled,
 .fd-button--medium:hover:disabled,
 .fd-button--medium:hover[aria-disabled=true] {
@@ -563,9 +689,13 @@
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-3);
   box-shadow: 0 0 0 1px var(--fd-color-status-3)
 }
+.fd-button--negative .is-hover,
 .fd-button--negative:hover {
   --fd-button-background-color: var(--fd-color-status-3)
 }
+.fd-button--negative .is-hover.is-disabled,
+.fd-button--negative .is-hover:disabled,
+.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--negative:hover.is-disabled,
 .fd-button--negative:hover:disabled,
 .fd-button--negative:hover[aria-disabled=true] {
@@ -596,11 +726,15 @@
   -webkit-box-shadow: none;
   box-shadow: none
 }
+.fd-button--shell .is-hover,
 .fd-button--shell:hover {
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
   --fd-button-background-color: hsl(217, 21%, 25%)
 }
+.fd-button--shell .is-hover.is-disabled,
+.fd-button--shell .is-hover:disabled,
+.fd-button--shell .is-hover[aria-disabled=true],
 .fd-button--shell:hover.is-disabled,
 .fd-button--shell:hover:disabled,
 .fd-button--shell:hover[aria-disabled=true] {
@@ -690,14 +824,22 @@
   --fd-button-border-color: var(--fd-color-action-1);
   --fd-button-background-color: var(--fd-color-action-1)
 }
+.fd-button--action-bar .is-hover,
 .fd-button--action-bar:hover,
+.fd-button--main .is-hover,
 .fd-button--main:hover {
   --fd-button-background-color: var(--fd-color-action-hover);
   --fd-button-color: var(--fd-color-action-2)
 }
+.fd-button--action-bar .is-hover.is-disabled,
+.fd-button--action-bar .is-hover:disabled,
+.fd-button--action-bar .is-hover[aria-disabled=true],
 .fd-button--action-bar:hover.is-disabled,
 .fd-button--action-bar:hover:disabled,
 .fd-button--action-bar:hover[aria-disabled=true],
+.fd-button--main .is-hover.is-disabled,
+.fd-button--main .is-hover:disabled,
+.fd-button--main .is-hover[aria-disabled=true],
 .fd-button--main:hover.is-disabled,
 .fd-button--main:hover:disabled,
 .fd-button--main:hover[aria-disabled=true] {
@@ -710,9 +852,15 @@
   --fd-button-border-color: var(--fd-color-status-3);
   --fd-button-background-color: var(--fd-color-status-3)
 }
+.fd-button--action-bar.fd-button--negative .is-hover.is-disabled,
+.fd-button--action-bar.fd-button--negative .is-hover:disabled,
+.fd-button--action-bar.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--action-bar.fd-button--negative:hover.is-disabled,
 .fd-button--action-bar.fd-button--negative:hover:disabled,
 .fd-button--action-bar.fd-button--negative:hover[aria-disabled=true],
+.fd-button--main.fd-button--negative .is-hover.is-disabled,
+.fd-button--main.fd-button--negative .is-hover:disabled,
+.fd-button--main.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--main.fd-button--negative:hover.is-disabled,
 .fd-button--main.fd-button--negative:hover:disabled,
 .fd-button--main.fd-button--negative:hover[aria-disabled=true] {
@@ -725,9 +873,15 @@
   --fd-button-border-color: var(--fd-color-status-1);
   --fd-button-background-color: var(--fd-color-status-1)
 }
+.fd-button--action-bar.fd-button--positive .is-hover.is-disabled,
+.fd-button--action-bar.fd-button--positive .is-hover:disabled,
+.fd-button--action-bar.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--action-bar.fd-button--positive:hover.is-disabled,
 .fd-button--action-bar.fd-button--positive:hover:disabled,
 .fd-button--action-bar.fd-button--positive:hover[aria-disabled=true],
+.fd-button--main.fd-button--positive .is-hover.is-disabled,
+.fd-button--main.fd-button--positive .is-hover:disabled,
+.fd-button--main.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--main.fd-button--positive:hover.is-disabled,
 .fd-button--main.fd-button--positive:hover:disabled,
 .fd-button--main.fd-button--positive:hover[aria-disabled=true] {
@@ -737,10 +891,14 @@
 .fd-button--secondary {
   --fd-button-border-color: transparent
 }
+.fd-button--secondary .is-hover,
 .fd-button--secondary:hover {
   --fd-button-background-color: var(--fd-color-neutral-1);
   --fd-button-color: var(--fd-color-action-1)
 }
+.fd-button--secondary .is-hover.is-disabled,
+.fd-button--secondary .is-hover:disabled,
+.fd-button--secondary .is-hover[aria-disabled=true],
 .fd-button--secondary:hover.is-disabled,
 .fd-button--secondary:hover:disabled,
 .fd-button--secondary:hover[aria-disabled=true] {
@@ -761,10 +919,14 @@
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent
 }
+.fd-button--secondary.fd-button--negative .is-hover,
 .fd-button--secondary.fd-button--negative:hover {
   --fd-button-background-color: var(--fd-color-neutral-1);
   --fd-button-color: var(--fd-color-status-3)
 }
+.fd-button--secondary.fd-button--negative .is-hover.is-disabled,
+.fd-button--secondary.fd-button--negative .is-hover:disabled,
+.fd-button--secondary.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--secondary.fd-button--negative:hover.is-disabled,
 .fd-button--secondary.fd-button--negative:hover:disabled,
 .fd-button--secondary.fd-button--negative:hover[aria-disabled=true] {
@@ -785,10 +947,14 @@
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent
 }
+.fd-button--secondary.fd-button--positive .is-hover,
 .fd-button--secondary.fd-button--positive:hover {
   --fd-button-background-color: var(--fd-color-neutral-1);
   --fd-button-color: var(--fd-color-status-1)
 }
+.fd-button--secondary.fd-button--positive .is-hover.is-disabled,
+.fd-button--secondary.fd-button--positive .is-hover:disabled,
+.fd-button--secondary.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--secondary.fd-button--positive:hover.is-disabled,
 .fd-button--secondary.fd-button--positive:hover:disabled,
 .fd-button--secondary.fd-button--positive:hover[aria-disabled=true] {
@@ -823,10 +989,14 @@
   --fd-button-background-color: var(--fd-color-action-selected);
   --fd-button-color: var(--fd-color-action-2)
 }
+.fd-button--toolbar .is-hover,
 .fd-button--toolbar:hover {
   --fd-button-background-color: var(--fd-color-action-hover);
   --fd-button-color: var(--fd-color-action-2)
 }
+.fd-button--toolbar .is-hover.is-disabled,
+.fd-button--toolbar .is-hover:disabled,
+.fd-button--toolbar .is-hover[aria-disabled=true],
 .fd-button--toolbar:hover.is-disabled,
 .fd-button--toolbar:hover:disabled,
 .fd-button--toolbar:hover[aria-disabled=true] {
