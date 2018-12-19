@@ -16,6 +16,10 @@ The Action Bar is located at the top of the page and is used for the following:
 
 
 
+<hr>
+
+
+
 ## Action bar with back button, description and action buttons.
 {% capture default-action-bar %}
 <div class="fd-action-bar">
