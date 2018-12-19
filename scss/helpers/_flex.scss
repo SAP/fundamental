@@ -1,8 +1,11 @@
 @import "./../settings";
 @import "./../mixins";
-// .#{$fd-namespace}-has-clearfix {
-//     @include fd-clearfix;
-// }
-.#{$fd-namespace}-has-align-items-flex-end {
-    align-items: flex-end !important;
+
+@each $type in (flex-start flex-end center baseline stretch) {
+  .#{$fd-namespace}-has-align-items-#{$type} {
+      align-items: #{$type} !important;
+  }
+}
+.#{$fd-namespace}-has-flex-grow-1 {
+    flex-grow: 1 !important;
 }
