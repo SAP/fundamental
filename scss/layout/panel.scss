@@ -11,41 +11,62 @@
 
 $block: #{$fd-namespace}-panel;
 .#{$block} {
-    $fd-panel-padding: fd-space("s") fd-space("reg") !default;
-    $fd-panel-border: none !default;
     $fd-panel-background-color: fd-color("background",2) !default;
-    $fd-panel-box-shadow: 0 5px 20px 0 rgba(fd-color("text"), 0.08) !default;
+    --fd-panel-background-color: var(--fd-color-background-2);
+
+    $fd-panel-padding: fd-space("s") fd-space("reg") !default;
+    $fd-panel-border-width: 0 !default;
+    $fd-panel-border-color: transparent !default;
+    --fd-panel-border-color: #{$fd-panel-border-color};
+
+    $fd-panel-box-shadow-color: rgba(fd-color("text"), 0.08) !default;
+    --fd-panel-box-shadow-color: var(--fd-color-neutral-2);
+
     $fd-panel-border-radius: $fd-border-radius !default;
 
     $fd-panel-header-border-color: fd-color("neutral",2) !default;
+    --fd-panel-header-border-color: var(--fd-color-neutral-2);
+
     $fd-panel-title-color: fd-color("text") !default;
+    --fd-panel-title-color: var(--fd-color-text-1);
+
     $fd-panel-filters-padding: fd-space(3) fd-space("reg") !default;
     $fd-panel-filters-border-color: $fd-panel-header-border-color !default;
+    --fd-panel-filters-border-color: var(--fd-panel-header-border-color);
     $fd-panel-footer-padding: fd-space(4) fd-space("reg") !default;
     $fd-panel-footer-border-color: $fd-panel-header-border-color !default;
+    --fd-panel-footer-border-color: var(--fd-panel-header-border-color);
 
     //anim
     $fd-panel-fiters-transition-params: 0.15s ease-in !default;
 
     @include fd-clearfix;
-    background-color: $fd-panel-background-color;
-    box-shadow: $fd-panel-box-shadow;
+    @include fd-var-color("background-color", $fd-panel-background-color, --fd-panel-background-color);
     border-radius: $fd-border-radius;
-    border: $fd-panel-border;
+    border-style: solid;
+    border-width: $fd-panel-border-width;
+    @include fd-var-color("border-color", $fd-panel-border-color, --fd-panel-border-color);
+
+    @if $fd-support-css-var-fallback {
+      box-shadow: 0 5px 20px 0 $fd-panel-box-shadow-color;
+    }
+    box-shadow: 0 5px 20px 0 var(--fd-panel-box-shadow-color);
     &__header {
         min-height: fd-space(10);
         display: flex;
         align-items: center;
-        border-bottom: solid 1px $fd-panel-header-border-color;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        @include fd-var-color("border-bottom-color", $fd-panel-header-border-color, --fd-panel-header-border-color);
         padding: $fd-panel-padding;
         @include fd-type("-1");
-        color: fd-color("text", 3);
+        @include fd-var-color("color", fd-color("text", 3), --fd-color-text-3);
     }
     &__title {
         @include fd-type("1");
         flex: 1;
         margin-bottom: 0;
-        color: $fd-panel-title-color;
+        @include fd-var-color("color", $fd-panel-title-color, --fd-panel-title-color);
     }
     &__description {
         margin-top: fd-space(base);
@@ -57,7 +78,10 @@ $block: #{$fd-namespace}-panel;
     }
     &__filters {
         padding: $fd-panel-filters-padding;
-        border-bottom: solid 1px $fd-panel-filters-border-color;
+        //border-bottom: solid 1px $fd-panel-filters-border-color;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        @include fd-var-color("border-bottom-color", $fd-panel-filters-border-color, --fd-panel-filters-border-color);
         transition: all $fd-panel-fiters-transition-params;
         &.is-hidden,
         &[aria-hidden="true"] {
@@ -78,6 +102,8 @@ $block: #{$fd-namespace}-panel;
         display: flex;
         justify-content: center;
         padding: $fd-panel-footer-padding;
-        border-top: solid 1px $fd-panel-footer-border-color;
+        border-top-style: solid;
+        border-top-width: 1px;
+        @include fd-var-color("border-top-color", $fd-panel-footer-border-color, --fd-panel-footer-border-color);
     }
 }

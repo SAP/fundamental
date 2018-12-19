@@ -7,15 +7,14 @@
 $block: #{$fd-namespace}-panel-grid;
 .#{$block} {
   //VARS
-  $fd-panel-grid-border-color: fd-color("background") !default;
+
   $fd-panel-grid-items-per-row: 3 !default;
   $fd-panel-grid-box-shadow: 0 5px 20px 0 rgba(fd-color("text"), 0.08) !default;
-  $fd-panel-grid-border-color: fd-color("background") !default;
+
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   position: relative;
-
 
   @include fd-screen(s) {
     /* flex fallback */
@@ -24,7 +23,7 @@ $block: #{$fd-namespace}-panel-grid;
     flex-wrap: wrap;
     display: grid;
     grid-template-columns: repeat(#{$fd-panel-grid-items-per-row}, 1fr);
-    grid-gap: var(--fd-width-gutter);
+    @include fd-var-size("grid-gap", $fd-width--gutter, --fd-width-gutter);
 
     //BLOCK MODIFIERS ************
     @each $n in 1, 2, 3, 4, 5, 6 {
