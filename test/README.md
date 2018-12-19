@@ -28,7 +28,7 @@ The index file should minimally contain the following template:
 {% endblock %}
 ```
 
-Then view component at `localhost:3030/BLOCK_NAME`, e.g., [localhost:3030/card](http://localhost:3030/card).
+Then view component at `localhost:3030/BLOCK_NAME`, e.g., [localhost:3030/tile](http://localhost:3030/tile).
 
 Additionally, create a macro and generate the HTML based on a data object.
 
