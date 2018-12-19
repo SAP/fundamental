@@ -7,7 +7,38 @@
 
 {% block content %}
 
-<h1>defatult menu</h1>
+
+{#
+<h1>** Test with non-UL and LI content **</h1>
+<nav class="fd-menu">
+  <div class="fd-menu__list fd-menu__list--separated">
+    <a href="#" class="fd-menu__item">Option 1</a>
+    <a href="#" class="fd-menu__item">Option 2</a>
+    <a href="#" class="fd-menu__item">Option 3</a>
+    <a href="#" class="fd-menu__item">Option 4</a>
+  </div>
+</nav>
+<br>
+<h1>** Test with nested UL **</h1>
+<nav class="fd-menu">
+  <ul class="fd-menu__list fd-menu__list--separated">
+    <li class="fd-menu__item">Option 1</li>
+    <li class="fd-menu__item">Option 2</li>
+    <li class="fd-menu__item">Option 3</li>
+    <li class="fd-menu__group">
+      <h1 class="fd-menu__title">Group Header</h1>
+      <ul class="fd-menu__list">
+        <li class="fd-menu__item">Option 3</li>
+        <li class="fd-menu__item">Option 3</li>
+        <li class="fd-menu__item">Option 3</li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+#}
+
+
+<h1>default</h1>
 {% set example %}
 {{ menu(properties=data.properties) }}
 {% endset %}
@@ -15,13 +46,12 @@
 
 <br><br><br>
 
-<h1>menu with groups</h1>
+<h2>grouped</h2>
 {% set example %}
 {{ menu(properties={
   items: [
       { "label": "Option 1" },
       { "label": "Option 2"},
-      { "label": "Seperator"},
       { "label": "Option 3" },
       {  "label": "Group Header",
         "items": [
@@ -36,27 +66,54 @@
 {% endset %}
 {{ format(example) }}
 
+
 <br><br><br>
 
-<h1>menu with seperators</h1>
+<h1>menu list with separators</h1>
 {% set example %}
 {{ menu(properties={
   items: [
       { "label": "Option 1" },
-      { "label": "Seperator", "seperator": true },
       { "label": "Option 2"},
-      { "label": "Seperator", "seperator": true },
       { "label": "Option 3" },
-      { "label": "Seperator", "seperator": true },
-      { "label": "Option 4" },
-      { "label": "Seperator", "seperator": true }
-    ]
+      { "label": "Option 4" }
+    ],
+    separator: true
   })
 }}
 {% endset %}
 {{ format(example) }}
 
 <br><br><br>
+
+<h2>separated and grouped</h2>
+{% set example %}
+{{ menu(properties={
+  items: [
+      {
+        "label": "Group Header",
+        "items": [
+            { "label": "Option 1" },
+            { "label": "Option 2" },
+            { "label": "Option 3" }
+        ]
+      },
+      {
+        "label": "Group Header",
+        "items": [
+            { "label": "Option 1" },
+            { "label": "Option 2" },
+            { "label": "Option 3" }
+        ]
+      }
+    ],
+    separator: true
+  })
+}}
+{% endset %}
+{{ format(example) }}
+
+
 
 <h1>menu with icons</h1>
 {% set example %}

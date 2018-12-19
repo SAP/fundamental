@@ -5,7 +5,7 @@ sidebar: left-navigation-sidebar
 toc: false
 permalink: components/mega-menu.html
 folder: components
-summary: <span class="fd-badge fd-badge--error fd-badge--pill">Deprecated</span>
+summary: Deprecated
 ---
 
 > <small>`mega-menu` component has been deprecated. It will continue to work until v1.5 release.</small>

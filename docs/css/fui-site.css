@@ -1992,6 +1992,9 @@
   --fd-color-accent-15: #647887;
   --fd-color-shell-1: #354a5f;
   --fd-color-shell-2: #d1e8ff;
+  --fd-color-positive: #107f3e;
+  --fd-color-negative: #bd0000;
+  --fd-color-alert: #e9730c;
   --fd-color-action-hover: #085caf;
   --fd-color-action-focus: #085caf;
   --fd-color-action-selected: #0254a7;
@@ -2003,6 +2006,9 @@
   --fd-color-background-positive: #e4fcee;
   --fd-color-background-alert: #fef7f0;
   --fd-color-background-negative: #ffb8b8;
+  --fd-forms-color: #32363a;
+  --fd-forms-border-color: #89919a;
+  --fd-forms-background-color: white;
   --fd-forms-height: 36px;
   --fd-forms-height-compact: 36px;
   --fd-padding-ui: 8px;
@@ -2086,7 +2092,8 @@ a {
   display: inline-block;
   transition: all 0.125s ease-in;
   color: #0a6ed1; }
-  a:hover {
+  a:hover,
+  a .is-hover {
     color: #085caf; }
   a:active, a.is-active, a[aria-selected="true"], a.is-selected, a[aria-pressed="true"], a.is-pressed {
     color: #0254a7;
@@ -2130,37 +2137,43 @@ input[type=checkbox], input[type=radio],
   outline: none;
   border-style: solid;
   border-width: 1px;
-  border-color: #89919a;
+  color: var(--fd-forms-color);
+  border-color: var(--fd-forms-border-color);
+  background-color: var(--fd-forms-background-color);
   border-radius: 4px;
-  color: #32363a;
-  background-color: white;
   transition: border-color 0.125s;
   transition: border-color 0.125s ease-in, background-color 0.125s ease-in, background-image 0.125s ease-in; }
   input:hover[type=checkbox], input:hover[type=radio],
   .fd-checkbox:hover,
-  .fd-radio:hover {
-    border-color: #085caf; }
+  .fd-radio:hover,
+  input[type=checkbox] .is-hover,
+  input[type=radio] .is-hover,
+  .fd-checkbox .is-hover,
+  .fd-radio .is-hover {
+    --fd-forms-border-color: var(--fd-color-action-hover); }
   input:focus[type=checkbox], input:focus[type=radio],
   .fd-checkbox:focus,
   .fd-radio:focus, input.is-focus[type=checkbox], input.is-focus[type=radio],
   .is-focus.fd-checkbox,
   .is-focus.fd-radio {
     box-shadow: 0 0 0 1px var(--fd-color-action-focus);
-    border-color: #7bbaf9; }
+    --fd-forms-border-color: var(--fd-color-action-focus); }
   input.is-invalid[type=checkbox], input.is-invalid[type=radio],
   .is-invalid.fd-checkbox,
   .is-invalid.fd-radio {
-    border-color: #bd0000;
+    --fd-forms-border-color: var(--fd-color-negative);
     border-width: 2px; }
   input.is-valid[type=checkbox], input.is-valid[type=radio],
   .is-valid.fd-checkbox,
   .is-valid.fd-radio {
-    border-color: #107f3e;
+    --fd-forms-border-color: var(--fd-color-positive);
     border-width: 2px; }
   input.is-warning[type=checkbox], input.is-warning[type=radio],
   .is-warning.fd-checkbox,
-  .is-warning.fd-radio {
-    border-color: #e9730c;
+  .is-warning.fd-radio, input.is-alert[type=checkbox], input.is-alert[type=radio],
+  .is-alert.fd-checkbox,
+  .is-alert.fd-radio {
+    --fd-forms-border-color: var(--fd-color-alert);
     border-width: 2px; }
   input[aria-disabled="true"][type=checkbox], input[aria-disabled="true"][type=radio],
   .fd-checkbox[aria-disabled="true"],
@@ -2170,16 +2183,16 @@ input[type=checkbox], input[type=radio],
   .fd-checkbox:disabled,
   .fd-radio:disabled {
     cursor: not-allowed;
-    color: #6a6d70;
-    border-color: #eeeeef;
-    background-color: #fafafa; }
+    --fd-forms-color: var(--fd-color-text-3);
+    --fd-forms-border-color: var(--fd-color-neutral-2);
+    --fd-forms-background-color: var(--fd-color-neutral-1); }
   input[readonly][type=checkbox], input[readonly][type=radio],
   .fd-checkbox[readonly],
   .fd-radio[readonly], input.is-readonly[type=checkbox], input.is-readonly[type=radio],
   .is-readonly.fd-checkbox,
   .is-readonly.fd-radio {
-    color: #32363a;
-    border-color: #eeeeef;
+    --fd-forms-color: var(--fd-forms-color);
+    --fd-forms-border-color: var(--fd-color-neutral-2);
     border-width: 0 0 1px;
     border-radius: 0; }
   input[type=checkbox]::after, input[type=radio]::after,
@@ -2192,7 +2205,8 @@ fieldset {
   padding: 0;
   margin: 0; }
 
-input[type=text], input[type=password], input[type=email], input[type=url], input[type=search], input[type=tel], input[type=number], input[type=date], input[type=time], textarea, .fd-input {
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=search], input[type=tel], input[type=number], input[type=date], input[type=time],
+.fd-input {
   font-size: 14px;
   line-height: 1.42857;
   color: #32363a;
@@ -2208,43 +2222,67 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
   outline: none;
   border-style: solid;
   border-width: 1px;
-  border-color: #89919a;
+  color: var(--fd-forms-color);
+  border-color: var(--fd-forms-border-color);
+  background-color: var(--fd-forms-background-color);
   border-radius: 4px;
-  color: #32363a;
-  background-color: white;
   transition: border-color 0.125s;
-  height: var(--fd-forms-height);
   padding-left: 12px;
   padding-right: 12px;
+  height: var(--fd-forms-height);
   width: 100%; }
-  input[type=text]:hover, input[type=password]:hover, input[type=email]:hover, input[type=url]:hover, input[type=search]:hover, input[type=tel]:hover, input[type=number]:hover, input[type=date]:hover, input[type=time]:hover, textarea:hover, .fd-input:hover {
-    border-color: #085caf; }
-  input[type=text]:focus, input[type=text].is-focus, input[type=password]:focus, input[type=password].is-focus, input[type=email]:focus, input[type=email].is-focus, input[type=url]:focus, input[type=url].is-focus, input[type=search]:focus, input[type=search].is-focus, input[type=tel]:focus, input[type=tel].is-focus, input[type=number]:focus, input[type=number].is-focus, input[type=date]:focus, input[type=date].is-focus, input[type=time]:focus, input[type=time].is-focus, textarea:focus, textarea.is-focus, .fd-input:focus, .fd-input.is-focus {
+  input[type=text]:hover,
+  input[type=text] .is-hover, input[type=password]:hover,
+  input[type=password] .is-hover, input[type=email]:hover,
+  input[type=email] .is-hover, input[type=url]:hover,
+  input[type=url] .is-hover, input[type=search]:hover,
+  input[type=search] .is-hover, input[type=tel]:hover,
+  input[type=tel] .is-hover, input[type=number]:hover,
+  input[type=number] .is-hover, input[type=date]:hover,
+  input[type=date] .is-hover, input[type=time]:hover,
+  input[type=time] .is-hover,
+  .fd-input:hover,
+  .fd-input .is-hover {
+    --fd-forms-border-color: var(--fd-color-action-hover); }
+  input[type=text]:focus, input[type=text].is-focus, input[type=password]:focus, input[type=password].is-focus, input[type=email]:focus, input[type=email].is-focus, input[type=url]:focus, input[type=url].is-focus, input[type=search]:focus, input[type=search].is-focus, input[type=tel]:focus, input[type=tel].is-focus, input[type=number]:focus, input[type=number].is-focus, input[type=date]:focus, input[type=date].is-focus, input[type=time]:focus, input[type=time].is-focus,
+  .fd-input:focus,
+  .fd-input.is-focus {
     box-shadow: 0 0 0 1px var(--fd-color-action-focus);
-    border-color: #7bbaf9; }
-  input[type=text].is-invalid, input[type=password].is-invalid, input[type=email].is-invalid, input[type=url].is-invalid, input[type=search].is-invalid, input[type=tel].is-invalid, input[type=number].is-invalid, input[type=date].is-invalid, input[type=time].is-invalid, textarea.is-invalid, .fd-input.is-invalid {
-    border-color: #bd0000;
+    --fd-forms-border-color: var(--fd-color-action-focus); }
+  input[type=text].is-invalid, input[type=password].is-invalid, input[type=email].is-invalid, input[type=url].is-invalid, input[type=search].is-invalid, input[type=tel].is-invalid, input[type=number].is-invalid, input[type=date].is-invalid, input[type=time].is-invalid,
+  .fd-input.is-invalid {
+    --fd-forms-border-color: var(--fd-color-negative);
     border-width: 2px; }
-  input[type=text].is-valid, input[type=password].is-valid, input[type=email].is-valid, input[type=url].is-valid, input[type=search].is-valid, input[type=tel].is-valid, input[type=number].is-valid, input[type=date].is-valid, input[type=time].is-valid, textarea.is-valid, .fd-input.is-valid {
-    border-color: #107f3e;
+  input[type=text].is-valid, input[type=password].is-valid, input[type=email].is-valid, input[type=url].is-valid, input[type=search].is-valid, input[type=tel].is-valid, input[type=number].is-valid, input[type=date].is-valid, input[type=time].is-valid,
+  .fd-input.is-valid {
+    --fd-forms-border-color: var(--fd-color-positive);
     border-width: 2px; }
-  input[type=text].is-warning, input[type=password].is-warning, input[type=email].is-warning, input[type=url].is-warning, input[type=search].is-warning, input[type=tel].is-warning, input[type=number].is-warning, input[type=date].is-warning, input[type=time].is-warning, textarea.is-warning, .fd-input.is-warning {
-    border-color: #e9730c;
+  input[type=text].is-warning, input[type=text].is-alert, input[type=password].is-warning, input[type=password].is-alert, input[type=email].is-warning, input[type=email].is-alert, input[type=url].is-warning, input[type=url].is-alert, input[type=search].is-warning, input[type=search].is-alert, input[type=tel].is-warning, input[type=tel].is-alert, input[type=number].is-warning, input[type=number].is-alert, input[type=date].is-warning, input[type=date].is-alert, input[type=time].is-warning, input[type=time].is-alert,
+  .fd-input.is-warning,
+  .fd-input.is-alert {
+    --fd-forms-border-color: var(--fd-color-alert);
     border-width: 2px; }
-  input[type=text][aria-disabled="true"], input[type=text].is-disabled, input[type=text]:disabled, input[type=password][aria-disabled="true"], input[type=password].is-disabled, input[type=password]:disabled, input[type=email][aria-disabled="true"], input[type=email].is-disabled, input[type=email]:disabled, input[type=url][aria-disabled="true"], input[type=url].is-disabled, input[type=url]:disabled, input[type=search][aria-disabled="true"], input[type=search].is-disabled, input[type=search]:disabled, input[type=tel][aria-disabled="true"], input[type=tel].is-disabled, input[type=tel]:disabled, input[type=number][aria-disabled="true"], input[type=number].is-disabled, input[type=number]:disabled, input[type=date][aria-disabled="true"], input[type=date].is-disabled, input[type=date]:disabled, input[type=time][aria-disabled="true"], input[type=time].is-disabled, input[type=time]:disabled, textarea[aria-disabled="true"], textarea.is-disabled, textarea:disabled, .fd-input[aria-disabled="true"], .fd-input.is-disabled, .fd-input:disabled {
+  input[type=text][aria-disabled="true"], input[type=text].is-disabled, input[type=text]:disabled, input[type=password][aria-disabled="true"], input[type=password].is-disabled, input[type=password]:disabled, input[type=email][aria-disabled="true"], input[type=email].is-disabled, input[type=email]:disabled, input[type=url][aria-disabled="true"], input[type=url].is-disabled, input[type=url]:disabled, input[type=search][aria-disabled="true"], input[type=search].is-disabled, input[type=search]:disabled, input[type=tel][aria-disabled="true"], input[type=tel].is-disabled, input[type=tel]:disabled, input[type=number][aria-disabled="true"], input[type=number].is-disabled, input[type=number]:disabled, input[type=date][aria-disabled="true"], input[type=date].is-disabled, input[type=date]:disabled, input[type=time][aria-disabled="true"], input[type=time].is-disabled, input[type=time]:disabled,
+  .fd-input[aria-disabled="true"],
+  .fd-input.is-disabled,
+  .fd-input:disabled {
     cursor: not-allowed;
-    color: #6a6d70;
-    border-color: #eeeeef;
-    background-color: #fafafa; }
-  input[type=text][readonly], input[type=text].is-readonly, input[type=password][readonly], input[type=password].is-readonly, input[type=email][readonly], input[type=email].is-readonly, input[type=url][readonly], input[type=url].is-readonly, input[type=search][readonly], input[type=search].is-readonly, input[type=tel][readonly], input[type=tel].is-readonly, input[type=number][readonly], input[type=number].is-readonly, input[type=date][readonly], input[type=date].is-readonly, input[type=time][readonly], input[type=time].is-readonly, textarea[readonly], textarea.is-readonly, .fd-input[readonly], .fd-input.is-readonly {
-    color: #32363a;
-    border-color: #eeeeef;
+    --fd-forms-color: var(--fd-color-text-3);
+    --fd-forms-border-color: var(--fd-color-neutral-2);
+    --fd-forms-background-color: var(--fd-color-neutral-1); }
+  input[type=text][readonly], input[type=text].is-readonly, input[type=password][readonly], input[type=password].is-readonly, input[type=email][readonly], input[type=email].is-readonly, input[type=url][readonly], input[type=url].is-readonly, input[type=search][readonly], input[type=search].is-readonly, input[type=tel][readonly], input[type=tel].is-readonly, input[type=number][readonly], input[type=number].is-readonly, input[type=date][readonly], input[type=date].is-readonly, input[type=time][readonly], input[type=time].is-readonly,
+  .fd-input[readonly],
+  .fd-input.is-readonly {
+    --fd-forms-color: var(--fd-forms-color);
+    --fd-forms-border-color: var(--fd-color-neutral-2);
     border-width: 0 0 1px;
     border-radius: 0; }
-  input[type=text].fd-input--compact, input[type=text].fd-select--compact, input[type=password].fd-input--compact, input[type=password].fd-select--compact, input[type=email].fd-input--compact, input[type=email].fd-select--compact, input[type=url].fd-input--compact, input[type=url].fd-select--compact, input[type=search].fd-input--compact, input[type=search].fd-select--compact, input[type=tel].fd-input--compact, input[type=tel].fd-select--compact, input[type=number].fd-input--compact, input[type=number].fd-select--compact, input[type=date].fd-input--compact, input[type=date].fd-select--compact, input[type=time].fd-input--compact, input[type=time].fd-select--compact, textarea.fd-input--compact, textarea.fd-select--compact, .fd-input.fd-input--compact, .fd-input.fd-select--compact {
-    height: var(--fd-forms-height-compact); }
-  input[type=text]::placeholder, input[type=password]::placeholder, input[type=email]::placeholder, input[type=url]::placeholder, input[type=search]::placeholder, input[type=tel]::placeholder, input[type=number]::placeholder, input[type=date]::placeholder, input[type=time]::placeholder, textarea::placeholder, .fd-input::placeholder {
+  input[type=text]::placeholder, input[type=password]::placeholder, input[type=email]::placeholder, input[type=url]::placeholder, input[type=search]::placeholder, input[type=tel]::placeholder, input[type=number]::placeholder, input[type=date]::placeholder, input[type=time]::placeholder,
+  .fd-input::placeholder {
     color: #8d9194; }
+
+input.fd-input--compact {
+  height: var(--fd-forms-height-compact); }
 
 textarea,
 .fd-textarea {
@@ -2263,56 +2301,58 @@ textarea,
   outline: none;
   border-style: solid;
   border-width: 1px;
-  border-color: #89919a;
+  color: var(--fd-forms-color);
+  border-color: var(--fd-forms-border-color);
+  background-color: var(--fd-forms-background-color);
   border-radius: 4px;
-  color: #32363a;
-  background-color: white;
   transition: border-color 0.125s;
-  height: var(--fd-forms-height);
   padding-left: 12px;
   padding-right: 12px;
   width: 100%;
-  height: 72px;
+  height: calc(var(--fd-forms-height) * 2);
   padding-top: 12px; }
   textarea:hover,
-  .fd-textarea:hover {
-    border-color: #085caf; }
+  textarea .is-hover,
+  .fd-textarea:hover,
+  .fd-textarea .is-hover {
+    --fd-forms-border-color: var(--fd-color-action-hover); }
   textarea:focus, textarea.is-focus,
   .fd-textarea:focus,
   .fd-textarea.is-focus {
     box-shadow: 0 0 0 1px var(--fd-color-action-focus);
-    border-color: #7bbaf9; }
+    --fd-forms-border-color: var(--fd-color-action-focus); }
   textarea.is-invalid,
   .fd-textarea.is-invalid {
-    border-color: #bd0000;
+    --fd-forms-border-color: var(--fd-color-negative);
     border-width: 2px; }
   textarea.is-valid,
   .fd-textarea.is-valid {
-    border-color: #107f3e;
+    --fd-forms-border-color: var(--fd-color-positive);
     border-width: 2px; }
-  textarea.is-warning,
-  .fd-textarea.is-warning {
-    border-color: #e9730c;
+  textarea.is-warning, textarea.is-alert,
+  .fd-textarea.is-warning,
+  .fd-textarea.is-alert {
+    --fd-forms-border-color: var(--fd-color-alert);
     border-width: 2px; }
   textarea[aria-disabled="true"], textarea.is-disabled, textarea:disabled,
   .fd-textarea[aria-disabled="true"],
   .fd-textarea.is-disabled,
   .fd-textarea:disabled {
     cursor: not-allowed;
-    color: #6a6d70;
-    border-color: #eeeeef;
-    background-color: #fafafa; }
+    --fd-forms-color: var(--fd-color-text-3);
+    --fd-forms-border-color: var(--fd-color-neutral-2);
+    --fd-forms-background-color: var(--fd-color-neutral-1); }
   textarea[readonly], textarea.is-readonly,
   .fd-textarea[readonly],
   .fd-textarea.is-readonly {
-    color: #32363a;
-    border-color: #eeeeef;
+    --fd-forms-color: var(--fd-forms-color);
+    --fd-forms-border-color: var(--fd-color-neutral-2);
     border-width: 0 0 1px;
     border-radius: 0; }
-  textarea.fd-input--compact, textarea.fd-select--compact,
-  .fd-textarea.fd-input--compact,
-  .fd-textarea.fd-select--compact {
-    height: var(--fd-forms-height-compact); }
+
+.fd-textarea--compact {
+  height: calc(var(--fd-forms-height-compact) * 2);
+  padding-top: 12px; }
 
 select,
 .fd-select {
@@ -2331,12 +2371,11 @@ select,
   outline: none;
   border-style: solid;
   border-width: 1px;
-  border-color: #89919a;
+  color: var(--fd-forms-color);
+  border-color: var(--fd-forms-border-color);
+  background-color: var(--fd-forms-background-color);
   border-radius: 4px;
-  color: #32363a;
-  background-color: white;
   transition: border-color 0.125s;
-  height: var(--fd-forms-height);
   padding-left: 12px;
   padding-right: 12px;
   appearance: none;
@@ -2345,46 +2384,46 @@ select,
   background-repeat: no-repeat;
   background-position: calc(100%) center;
   padding-right: 48px;
-  width: 100%; }
+  width: 100%;
+  height: var(--fd-forms-height); }
   select:hover,
-  .fd-select:hover {
-    border-color: #085caf; }
+  select .is-hover,
+  .fd-select:hover,
+  .fd-select .is-hover {
+    --fd-forms-border-color: var(--fd-color-action-hover); }
   select:focus, select.is-focus,
   .fd-select:focus,
   .fd-select.is-focus {
     box-shadow: 0 0 0 1px var(--fd-color-action-focus);
-    border-color: #7bbaf9; }
+    --fd-forms-border-color: var(--fd-color-action-focus); }
   select.is-invalid,
   .fd-select.is-invalid {
-    border-color: #bd0000;
+    --fd-forms-border-color: var(--fd-color-negative);
     border-width: 2px; }
   select.is-valid,
   .fd-select.is-valid {
-    border-color: #107f3e;
+    --fd-forms-border-color: var(--fd-color-positive);
     border-width: 2px; }
-  select.is-warning,
-  .fd-select.is-warning {
-    border-color: #e9730c;
+  select.is-warning, select.is-alert,
+  .fd-select.is-warning,
+  .fd-select.is-alert {
+    --fd-forms-border-color: var(--fd-color-alert);
     border-width: 2px; }
   select[aria-disabled="true"], select.is-disabled, select:disabled,
   .fd-select[aria-disabled="true"],
   .fd-select.is-disabled,
   .fd-select:disabled {
     cursor: not-allowed;
-    color: #6a6d70;
-    border-color: #eeeeef;
-    background-color: #fafafa; }
+    --fd-forms-color: var(--fd-color-text-3);
+    --fd-forms-border-color: var(--fd-color-neutral-2);
+    --fd-forms-background-color: var(--fd-color-neutral-1); }
   select[readonly], select.is-readonly,
   .fd-select[readonly],
   .fd-select.is-readonly {
-    color: #32363a;
-    border-color: #eeeeef;
+    --fd-forms-color: var(--fd-forms-color);
+    --fd-forms-border-color: var(--fd-color-neutral-2);
     border-width: 0 0 1px;
     border-radius: 0; }
-  select.fd-input--compact, select.fd-select--compact,
-  .fd-select.fd-input--compact,
-  .fd-select.fd-select--compact {
-    height: var(--fd-forms-height-compact); }
   select:focus, select:hover,
   .fd-select:focus,
   .fd-select:hover {
@@ -2393,16 +2432,11 @@ select,
   .fd-select[aria-expanded="true"],
   .fd-select.is-expanded {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzdweCIgaGVpZ2h0PSIzNnB4IiB2aWV3Qm94PSIwIDAgMzcgMzYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+ICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgaWQ9IjEiPiAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUiIGZpbGw9IiNGQUZCRkMiIHg9IjEiIHk9IjAiIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNS45Ij48L3JlY3Q+ICAgICAgICAgICAgPHBhdGggZD0iTTEuNCwwLjEgTDEuNCwzNS45IiBpZD0iUGF0aCIgc3Ryb2tlPSIjQ0VDRUQwIj48L3BhdGg+ICAgICAgICAgICAgPGcgaWQ9Ik11bHRpLUlucHV0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMi4wMDAwMDAsIDE0LjAwMDAwMCkiIGZpbGw9IiMwQTZFRDEiPiAgICAgICAgICAgICAgICA8ZyBpZD0iMiI+ICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTUuOTIyMDczNywyLjg0MjIzNDQzIEw4LjI1NDY5MzYsMTAuODk5MzE5NiBDOC4xODg0MDQ2NCwxMC45NjI5NDA3IDguMDk3NDgyMTMsMTAuOTk4ODE4IDguMDAyNTM4NTksMTAuOTk4ODE4IEM3LjkwNzU5NTA2LDEwLjk5ODgxOCA3LjgxNjY3MjU1LDEwLjk2Mjk0MDcgNy43NTAzODM1OSwxMC44OTkzMTk2IEwwLjA4NTY3MTgzNTMsMi44NDIyMzQ0MyBDMC4wMjcwMTM2MTI2LDIuNzgyMjEwNDIgLTAuMDAyNTI5NDY3MzksMi43MDIxNjE4NyAwLjAwNDAzOTU0MjcyLDIuNjIxMDQ3MzcgQzAuMDEwNjA4NTUyOCwyLjUzOTkzMjg3IDAuMDUyNzA1MzY2NywyLjQ2NDk2NzIyIDAuMTIwMzU5ODI2LDIuNDEzOTA1MTkgTDEuODQxNDE3ODIsMS4wNzI3MjI3IEMxLjkwMjM3NTY4LDEuMDI0OTU5OTMgMS45NzkzODgxNywwLjk5ODg2ODE3MSAyLjA1ODg4NDgzLDAuOTk5MDQ1MDczIEwyLjA4NDIzMzc1LDEuMDAwMjkzODUgQzIuMTcyMjEyOCwxLjAwNjI5MTkgMi4yNTQxNDkwMywxLjA0NDQxMzk4IDIuMzEyMzc0LDEuMTA2NDM5NTcgTDguMDAyNTM4NTksNy4yMDA0NTMxNiBMMTMuNjk1MzcxNSwxLjEwNjQzOTU3IEMxMy44MTU5NDIzLDAuOTc3Mjk2OTU3IDE0LjAyNDc5MDgsMC45NjIzMDI1MjMgMTQuMTY0OTkzNSwxLjA3MjcyMjcgTDE1Ljg4NzM4NTcsMi40MTM5MDUxOSBDMTUuOTU0MDkzMywyLjQ2NjM1MzY3IDE1Ljk5NTQ1MjEsMi41NDEyODAwNyAxNi4wMDIxMjI5LDIuNjIxMjAxNTYgQzE2LjAwOTA3MjcsMi43MDIwNTA2MSAxNS45ODAxMTU4LDIuNzgyMDA2NjQgMTUuOTIyMDczNywyLjg0MjIzNDQzIFoiIGlkPSJQYXRoIj48L3BhdGg+ICAgICAgICAgICAgICAgIDwvZz4gICAgICAgICAgICA8L2c+ICAgICAgICA8L2c+ICAgIDwvZz48L3N2Zz4=); }
-  select[disabled], select[aria-disabled="true"], select.is-disabled,
-  .fd-select[disabled],
+  select[aria-disabled="true"], select.is-disabled, select:disabled,
   .fd-select[aria-disabled="true"],
-  .fd-select.is-disabled {
+  .fd-select.is-disabled,
+  .fd-select:disabled {
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzYuOCAzNi44IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzNi44IDM2Ljg7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojRkFGQkZDO30uc3Qxe2ZpbGw6bm9uZTtzdHJva2U6I0VCRUJFQztzdHJva2UtbWl0ZXJsaW1pdDoxMDt9LnN0MntmaWxsOiNFQkVCRUM7fS5zdDN7Zm9udC1mYW1pbHk6J1NBUC1pY29ucyc7fS5zdDR7Zm9udC1zaXplOjE2cHg7fTwvc3R5bGU+PHJlY3QgY2xhc3M9InN0MCIgd2lkdGg9IjM2LjgiIGhlaWdodD0iMzYuOCIvPjxsaW5lIGNsYXNzPSJzdDEiIHgxPSIwLjQiIHkxPSIwIiB4Mj0iMC40IiB5Mj0iMzYuOCIvPjxnIGlkPSJNdWx0aS1JbnB1dCI+PGcgaWQ9IkZ1bmRhbWVudGFsX01vZHVsYXJfVUlfTXV0bGktSW5wdXQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zNjYuMDAwMDAwLCAtMjAyLjAwMDAwMCkiPjxnIGlkPSJTZWxlY3RGaWVsZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzAuMDAwMDAwLCAxMDMuMDAwMDAwKSI+PGcgaWQ9IklucHV0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgNjIuMDAwMDAwKSI+PHRleHQgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSAzMDguNDA3MyA2MS4zMTA3KSIgY2xhc3M9InN0MiBzdDMgc3Q0Ij7uh688L3RleHQ+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==); }
-  select[multiple],
-  .fd-select[multiple] {
-    height: 108px;
-    background-image: none;
-    padding-top: 12px; }
   select::after,
   .fd-select::after {
     content: "";
@@ -2416,6 +2450,17 @@ select,
     z-index: 2;
     top: calc(50% - 4px);
     left: calc(50% - 10px/2); }
+  select[multiple],
+  .fd-select[multiple] {
+    height: calc(var(--fd-forms-height) * 3);
+    background-image: none;
+    padding-top: 12px; }
+
+.fd-select--compact {
+  height: var(--fd-forms-height-compact); }
+
+[multiple].fd-select--compact {
+  height: calc(var(--fd-forms-height-compact) * 3); }
 
 @-moz-document url-prefix() {
   input[type=checkbox],
@@ -2433,56 +2478,57 @@ input[type=checkbox], input[type=radio],
   margin: 0;
   vertical-align: middle;
   position: relative;
-  cursor: pointer;
-  border-color: #89919a; }
-  input[type=checkbox]:hover, input[type=radio]:hover,
+  cursor: pointer; }
+  input[type=checkbox]:hover,
+  input[type=checkbox] .is-hover, input[type=radio]:hover,
+  input[type=radio] .is-hover,
   .fd-checkbox:hover,
-  .fd-radio:hover {
+  .fd-checkbox .is-hover,
+  .fd-radio:hover,
+  .fd-radio .is-hover {
     border-width: 2px; }
+    input[type=checkbox]:hover[aria-disabled="true"], input[type=checkbox]:hover.is-disabled, input[type=checkbox]:hover:disabled,
+    input[type=checkbox] .is-hover[aria-disabled="true"],
+    input[type=checkbox] .is-hover.is-disabled,
+    input[type=checkbox] .is-hover:disabled, input[type=radio]:hover[aria-disabled="true"], input[type=radio]:hover.is-disabled, input[type=radio]:hover:disabled,
+    input[type=radio] .is-hover[aria-disabled="true"],
+    input[type=radio] .is-hover.is-disabled,
+    input[type=radio] .is-hover:disabled,
+    .fd-checkbox:hover[aria-disabled="true"],
+    .fd-checkbox:hover.is-disabled,
+    .fd-checkbox:hover:disabled,
+    .fd-checkbox .is-hover[aria-disabled="true"],
+    .fd-checkbox .is-hover.is-disabled,
+    .fd-checkbox .is-hover:disabled,
+    .fd-radio:hover[aria-disabled="true"],
+    .fd-radio:hover.is-disabled,
+    .fd-radio:hover:disabled,
+    .fd-radio .is-hover[aria-disabled="true"],
+    .fd-radio .is-hover.is-disabled,
+    .fd-radio .is-hover:disabled {
+      border-width: 1px; }
   input[type=checkbox]:checked, input[type=radio]:checked,
   .fd-checkbox:checked,
   .fd-radio:checked {
-    border-color: #0854a1;
-    background-color: #0854a1; }
-  input[type=checkbox][disabled], input[type=checkbox][aria-disabled="true"], input[type=checkbox].is-disabled, input[type=radio][disabled], input[type=radio][aria-disabled="true"], input[type=radio].is-disabled,
-  .fd-checkbox[disabled],
-  .fd-checkbox[aria-disabled="true"],
-  .fd-checkbox.is-disabled,
-  .fd-radio[disabled],
-  .fd-radio[aria-disabled="true"],
-  .fd-radio.is-disabled {
-    border-color: #eeeeef;
-    background-color: #fafafa; }
-
-input[type="checkbox"]::before,
-.fd-checkbox::before {
-  content: "";
-  width: 10px;
-  height: 5px;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 0 0 2px 2px;
-  transform: rotate(-45deg);
-  position: absolute;
-  z-index: 2;
-  top: calc(50% - 4px);
-  left: calc(50% - 10px/2); }
-
-input[type="checkbox"]:checked::before,
-.fd-checkbox:checked::before {
-  border-color: white; }
-
-input[type="checkbox"]:indeterminate,
-.fd-checkbox:indeterminate {
-  border: 3px solid white;
-  background-color: #0854a1;
-  box-shadow: 0 0 0 1px #0854a1; }
-
-input[type="checkbox"][aria-disabled="true"]::before, input[type="checkbox"].is-disabled::before, input[type="checkbox"]:disabled::before,
-.fd-checkbox[aria-disabled="true"]::before,
-.fd-checkbox.is-disabled::before,
-.fd-checkbox:disabled::before {
-  border-color: rgba(10, 110, 209, 0.4); }
+    --fd-forms-border-color: var(--fd-color-action-selected);
+    --fd-forms-background-color: var(--fd-color-action-selected); }
+    input[type=checkbox]:checked[aria-disabled="true"], input[type=checkbox]:checked.is-disabled, input[type=checkbox]:checked:disabled, input[type=radio]:checked[aria-disabled="true"], input[type=radio]:checked.is-disabled, input[type=radio]:checked:disabled,
+    .fd-checkbox:checked[aria-disabled="true"],
+    .fd-checkbox:checked.is-disabled,
+    .fd-checkbox:checked:disabled,
+    .fd-radio:checked[aria-disabled="true"],
+    .fd-radio:checked.is-disabled,
+    .fd-radio:checked:disabled {
+      --fd-forms-border-color: var(--fd-color-action-disabled);
+      --fd-forms-background-color: var(--fd-color-action-disabled); }
+    input[type=checkbox]:checked:hover,
+    input[type=checkbox]:checked .is-hover, input[type=radio]:checked:hover,
+    input[type=radio]:checked .is-hover,
+    .fd-checkbox:checked:hover,
+    .fd-checkbox:checked .is-hover,
+    .fd-radio:checked:hover,
+    .fd-radio:checked .is-hover {
+      border-width: 1px; }
 
 input[type=radio],
 .fd-radio {
@@ -2500,15 +2546,48 @@ input[type=radio],
     background-color: transparent; }
   input[type="radio"]:checked,
   .fd-radio:checked {
-    background-color: white; }
+    --fd-forms-background-color: var(--fd-forms-background-color); }
     input[type="radio"]:checked::after,
     .fd-radio:checked::after {
-      background-color: #0854a1; }
-    input[type="radio"]:checked[disabled]::after, input[type="radio"]:checked[aria-disabled="true"]::after, input[type="radio"]:checked.is-disabled::after,
-    .fd-radio:checked[disabled]::after,
-    .fd-radio:checked[aria-disabled="true"]::after,
-    .fd-radio:checked.is-disabled::after {
-      background-color: rgba(10, 110, 209, 0.4); }
+      --fd-forms-background-color: var(--fd-color-action-selected);
+      background-color: var(--fd-forms-background-color); }
+    input[type="radio"]:checked[aria-disabled="true"], input[type="radio"]:checked.is-disabled, input[type="radio"]:checked:disabled,
+    .fd-radio:checked[aria-disabled="true"],
+    .fd-radio:checked.is-disabled,
+    .fd-radio:checked:disabled {
+      --fd-forms-background-color: var(--fd-forms-background-color); }
+      input[type="radio"]:checked[aria-disabled="true"]::after, input[type="radio"]:checked.is-disabled::after, input[type="radio"]:checked:disabled::after,
+      .fd-radio:checked[aria-disabled="true"]::after,
+      .fd-radio:checked.is-disabled::after,
+      .fd-radio:checked:disabled::after {
+        --fd-forms-background-color: var(--fd-color-action-disabled); }
+
+input[type="checkbox"]::before,
+.fd-checkbox::before {
+  content: "";
+  width: 10px;
+  height: 5px;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 0 2px 2px;
+  transform: rotate(-45deg);
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 4px);
+  left: calc(50% - 10px/2); }
+
+input[type="checkbox"]:checked::before,
+.fd-checkbox:checked::before {
+  --fd-forms-border-color: var(--fd-color-action-2);
+  border-color: var(--fd-forms-border-color); }
+
+input[type="checkbox"]:indeterminate,
+.fd-checkbox:indeterminate {
+  --fd-forms-border-color: var(--fd-color-action-2);
+  --fd-forms-background-color: var(--fd-color-action-selected);
+  border-width: 3px;
+  border-style: solid;
+  box-shadow: 0 0 0 1px var(--fd-forms-background-color); }
 
 /*!
 .fd-section+(--full-bleed, --no-border)
@@ -3083,28 +3162,22 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-alert__close
 */
 .fd-alert {
+  --fd-alert-background-color: var(--fd-color-neutral-1);
+  --fd-alert-border-color: var(--fd-color-neutral-4);
   font-size: 14px;
   line-height: 1.42857;
   color: #32363a;
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  position: relative;
   color: #32363a;
-  border: solid 1px #89919a;
-  background-color: #fafafa;
+  border-style: solid;
+  border-width: 1px;
+  background-color: var(--fd-alert-background-color);
+  border-color: var(--fd-alert-border-color);
   padding: 8px 12px;
   border-radius: 4px; }
-  .fd-alert [class*="sap-icon"] {
-    font-size: 1.14286rem;
-    line-height: 1.25;
-    font-weight: 400;
-    color: #89919a;
-    margin-right: 4px;
-    display: inline-block;
-    position: relative;
-    width: 16px;
-    height: 16px; }
-    .fd-alert [class*="sap-icon"]::before {
-      position: absolute;
-      top: 1px; }
+  .fd-alert .sap-icon--message-error, .fd-alert .sap-icon--message-warning, .fd-alert .sap-icon--message-success, .fd-alert .sap-icon--message-information {
+    display: none; }
   .fd-alert__close {
     position: absolute;
     right: 4px;
@@ -3146,34 +3219,211 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       line-height: 1; }
     .fd-alert__close:focus, .fd-alert__close.is-focus {
       box-shadow: 0 0 0 1px var(--fd-color-action-focus); }
-  .fd-alert[dir="rtl"] .fd-alert__close {
-    left: 4px;
-    right: auto; }
-  .fd-alert--warning {
-    border-color: #e9730c;
-    background-color: #fef7f0; }
-    .fd-alert--warning [class*="sap-icon"] {
-      color: #e9730c; }
-  .fd-alert--error {
-    border-color: #bd0000;
-    background-color: #ffb8b8; }
-    .fd-alert--error [class*="sap-icon"] {
-      color: #bd0000; }
-  .fd-alert--success {
-    border-color: #107f3e;
-    background-color: #e4fcee; }
-    .fd-alert--success [class*="sap-icon"] {
-      color: #107f3e; }
-  .fd-alert--information {
-    border-color: #0a6ed1;
-    background-color: rgba(10, 110, 209, 0.07); }
-    .fd-alert--information [class*="sap-icon"] {
-      color: #0a6ed1; }
+    [dir="rtl"] .fd-alert__close, .fd-alert__close[dir="rtl"] {
+      left: 4px;
+      right: auto; }
   .fd-alert--dismissible {
-    position: relative;
     padding-right: 48px; }
-    .fd-alert--dismissible[dir="rtl"] {
-      padding-right: 12px; }
+    [dir="rtl"] .fd-alert--dismissible, .fd-alert--dismissible[dir="rtl"] {
+      padding-right: 8px;
+      padding-left: 48px; }
+  .fd-alert--warning, .fd-alert--information, .fd-alert--success, .fd-alert--error {
+    padding-left: 48px; }
+    [dir="rtl"] .fd-alert--warning, .fd-alert--warning[dir="rtl"], [dir="rtl"] .fd-alert--information, .fd-alert--information[dir="rtl"], [dir="rtl"] .fd-alert--success, .fd-alert--success[dir="rtl"], [dir="rtl"] .fd-alert--error, .fd-alert--error[dir="rtl"] {
+      padding-right: 48px;
+      padding-left: 8px; }
+      [dir="rtl"] .fd-alert--warning::before, .fd-alert--warning[dir="rtl"]::before, [dir="rtl"] .fd-alert--information::before, .fd-alert--information[dir="rtl"]::before, [dir="rtl"] .fd-alert--success::before, .fd-alert--success[dir="rtl"]::before, [dir="rtl"] .fd-alert--error::before, .fd-alert--error[dir="rtl"]::before {
+        display: none; }
+    .fd-alert--warning.fd-alert--dismissible, .fd-alert--information.fd-alert--dismissible, .fd-alert--success.fd-alert--dismissible, .fd-alert--error.fd-alert--dismissible {
+      padding-right: 48px; }
+      [dir="rtl"] .fd-alert--warning.fd-alert--dismissible, .fd-alert--warning.fd-alert--dismissible[dir="rtl"], [dir="rtl"] .fd-alert--information.fd-alert--dismissible, .fd-alert--information.fd-alert--dismissible[dir="rtl"], [dir="rtl"] .fd-alert--success.fd-alert--dismissible, .fd-alert--success.fd-alert--dismissible[dir="rtl"], [dir="rtl"] .fd-alert--error.fd-alert--dismissible, .fd-alert--error.fd-alert--dismissible[dir="rtl"] {
+        padding-left: 48px; }
+    .fd-alert--warning::before, .fd-alert--information::before, .fd-alert--success::before, .fd-alert--error::before {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none;
+      position: absolute;
+      left: 16px;
+      top: 8px; }
+    [dir="rtl"] .fd-alert--warning::after, .fd-alert--warning[dir="rtl"]::after, [dir="rtl"] .fd-alert--information::after, .fd-alert--information[dir="rtl"]::after, [dir="rtl"] .fd-alert--success::after, .fd-alert--success[dir="rtl"]::after, [dir="rtl"] .fd-alert--error::after, .fd-alert--error[dir="rtl"]::after {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none;
+      position: absolute;
+      right: 16px;
+      top: 8px; }
+  .fd-alert--warning {
+    --fd-alert-background-color: var(--fd-color-background-alert);
+    --fd-alert-border-color: var(--fd-color-status-2); }
+    .fd-alert--warning::before, .fd-alert--warning::after {
+      color: var(--fd-alert-border-color); }
+    .fd-alert--warning::before {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none; }
+    .fd-alert--warning::before {
+      content: ""; }
+    .fd-alert--warning::before {
+      font-size: 1.42857rem;
+      line-height: 1; }
+    [dir="rtl"] .fd-alert--warning::after, .fd-alert--warning[dir="rtl"]::after {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none; }
+    [dir="rtl"] .fd-alert--warning::after, .fd-alert--warning[dir="rtl"]::after {
+      content: ""; }
+    [dir="rtl"] .fd-alert--warning::after, .fd-alert--warning[dir="rtl"]::after {
+      font-size: 1.42857rem;
+      line-height: 1; }
+  .fd-alert--error {
+    --fd-alert-background-color: var(--fd-color-background-negative);
+    --fd-alert-border-color: var(--fd-color-status-3); }
+    .fd-alert--error::before, .fd-alert--error::after {
+      color: var(--fd-alert-border-color); }
+    .fd-alert--error::before {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none; }
+    .fd-alert--error::before {
+      content: ""; }
+    .fd-alert--error::before {
+      font-size: 1.42857rem;
+      line-height: 1; }
+    [dir="rtl"] .fd-alert--error::after, .fd-alert--error[dir="rtl"]::after {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none; }
+    [dir="rtl"] .fd-alert--error::after, .fd-alert--error[dir="rtl"]::after {
+      content: ""; }
+    [dir="rtl"] .fd-alert--error::after, .fd-alert--error[dir="rtl"]::after {
+      font-size: 1.42857rem;
+      line-height: 1; }
+  .fd-alert--success {
+    --fd-alert-background-color: var(--fd-color-background-positive);
+    --fd-alert-border-color: var(--fd-color-status-1); }
+    .fd-alert--success::before, .fd-alert--success::after {
+      color: var(--fd-alert-border-color); }
+    .fd-alert--success::before {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none; }
+    .fd-alert--success::before {
+      content: ""; }
+    .fd-alert--success::before {
+      font-size: 1.42857rem;
+      line-height: 1; }
+    [dir="rtl"] .fd-alert--success::after, .fd-alert--success[dir="rtl"]::after {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none; }
+    [dir="rtl"] .fd-alert--success::after, .fd-alert--success[dir="rtl"]::after {
+      content: ""; }
+    [dir="rtl"] .fd-alert--success::after, .fd-alert--success[dir="rtl"]::after {
+      font-size: 1.42857rem;
+      line-height: 1; }
+  .fd-alert--information {
+    --fd-alert-background-color: var(--fd-color-background-selected);
+    --fd-alert-border-color: var(--fd-color-action-1); }
+    .fd-alert--information::before, .fd-alert--information::after {
+      color: var(--fd-alert-border-color); }
+    .fd-alert--information::before {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none; }
+    .fd-alert--information::before {
+      content: ""; }
+    .fd-alert--information::before {
+      font-size: 1.42857rem;
+      line-height: 1; }
+    [dir="rtl"] .fd-alert--information::after, .fd-alert--information[dir="rtl"]::after {
+      font-family: "SAP-icons";
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      display: inline-block;
+      text-decoration: inherit;
+      text-transform: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      speak: none; }
+    [dir="rtl"] .fd-alert--information::after, .fd-alert--information[dir="rtl"]::after {
+      content: ""; }
+    [dir="rtl"] .fd-alert--information::after, .fd-alert--information[dir="rtl"]::after {
+      font-size: 1.42857rem;
+      line-height: 1; }
 
 /*!
 .fd-action-bar
@@ -3384,10 +3634,18 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       margin-left: 0; }
   .fd-button:focus, .fd-button.is-focus, [class*="fd-button--"]:focus, [class*="fd-button--"].is-focus {
     box-shadow: 0 0 0 1px var(--fd-color-action-focus); }
-  .fd-button:hover, [class*="fd-button--"]:hover {
+  .fd-button:hover,
+  .fd-button .is-hover, [class*="fd-button--"]:hover,
+  [class*="fd-button--"] .is-hover {
     --fd-button-background-color: var(--fd-color-action-hover);
     --fd-button-color: var(--fd-color-action-2); }
-    .fd-button:hover[aria-disabled="true"], .fd-button:hover.is-disabled, .fd-button:hover:disabled, [class*="fd-button--"]:hover[aria-disabled="true"], [class*="fd-button--"]:hover.is-disabled, [class*="fd-button--"]:hover:disabled {
+    .fd-button:hover[aria-disabled="true"], .fd-button:hover.is-disabled, .fd-button:hover:disabled,
+    .fd-button .is-hover[aria-disabled="true"],
+    .fd-button .is-hover.is-disabled,
+    .fd-button .is-hover:disabled, [class*="fd-button--"]:hover[aria-disabled="true"], [class*="fd-button--"]:hover.is-disabled, [class*="fd-button--"]:hover:disabled,
+    [class*="fd-button--"] .is-hover[aria-disabled="true"],
+    [class*="fd-button--"] .is-hover.is-disabled,
+    [class*="fd-button--"] .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-background-2);
       --fd-button-color: var(--fd-color-action-1); }
   .fd-button:active, .fd-button.is-active, .fd-button[aria-selected="true"], .fd-button.is-selected, .fd-button[aria-pressed="true"], .fd-button.is-pressed, [class*="fd-button--"]:active, [class*="fd-button--"].is-active, [class*="fd-button--"][aria-selected="true"], [class*="fd-button--"].is-selected, [class*="fd-button--"][aria-pressed="true"], [class*="fd-button--"].is-pressed {
@@ -3410,10 +3668,14 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-button-color: var(--fd-color-action-2);
   --fd-button-border-color: var(--fd-color-action-1);
   --fd-button-background-color: var(--fd-color-action-1); }
-  .fd-button--emphasized:hover {
+  .fd-button--emphasized:hover,
+  .fd-button--emphasized .is-hover {
     --fd-button-background-color: var(--fd-color-action-hover);
     --fd-button-color: var(--fd-color-action-2); }
-    .fd-button--emphasized:hover[aria-disabled="true"], .fd-button--emphasized:hover.is-disabled, .fd-button--emphasized:hover:disabled {
+    .fd-button--emphasized:hover[aria-disabled="true"], .fd-button--emphasized:hover.is-disabled, .fd-button--emphasized:hover:disabled,
+    .fd-button--emphasized .is-hover[aria-disabled="true"],
+    .fd-button--emphasized .is-hover.is-disabled,
+    .fd-button--emphasized .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-action-1);
       --fd-button-color: var(--fd-color-action-2); }
   .fd-button--emphasized.fd-button--standard, .fd-button-group .fd-button--emphasized[class*="fd-button--"],
@@ -3422,7 +3684,25 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-button--emphasized.fd-button--standard:hover[aria-disabled="true"], .fd-button-group .fd-button--emphasized:hover[aria-disabled="true"][class*="fd-button--"],
     .fd-button-group .fd-button--emphasized.fd-button:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--standard:hover.is-disabled, .fd-button-group .fd-button--emphasized:hover.is-disabled[class*="fd-button--"],
     .fd-button-group .fd-button--emphasized.fd-button:hover.is-disabled, .fd-button--emphasized.fd-button--standard:hover:disabled, .fd-button-group .fd-button--emphasized:hover:disabled[class*="fd-button--"],
-    .fd-button-group .fd-button--emphasized.fd-button:hover:disabled, .fd-button--emphasized.fd-button--positive:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--positive:hover.is-disabled, .fd-button--emphasized.fd-button--positive:hover:disabled, .fd-button--emphasized.fd-button--negative:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--negative:hover.is-disabled, .fd-button--emphasized.fd-button--negative:hover:disabled, .fd-button--emphasized.fd-button--medium:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--medium:hover.is-disabled, .fd-button--emphasized.fd-button--medium:hover:disabled {
+    .fd-button-group .fd-button--emphasized.fd-button:hover:disabled,
+    .fd-button--emphasized.fd-button--standard .is-hover[aria-disabled="true"],
+    .fd-button-group .fd-button--emphasized[class*="fd-button--"] .is-hover[aria-disabled="true"],
+    .fd-button-group .fd-button--emphasized.fd-button .is-hover[aria-disabled="true"],
+    .fd-button--emphasized.fd-button--standard .is-hover.is-disabled,
+    .fd-button-group .fd-button--emphasized[class*="fd-button--"] .is-hover.is-disabled,
+    .fd-button-group .fd-button--emphasized.fd-button .is-hover.is-disabled,
+    .fd-button--emphasized.fd-button--standard .is-hover:disabled,
+    .fd-button-group .fd-button--emphasized[class*="fd-button--"] .is-hover:disabled,
+    .fd-button-group .fd-button--emphasized.fd-button .is-hover:disabled, .fd-button--emphasized.fd-button--positive:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--positive:hover.is-disabled, .fd-button--emphasized.fd-button--positive:hover:disabled,
+    .fd-button--emphasized.fd-button--positive .is-hover[aria-disabled="true"],
+    .fd-button--emphasized.fd-button--positive .is-hover.is-disabled,
+    .fd-button--emphasized.fd-button--positive .is-hover:disabled, .fd-button--emphasized.fd-button--negative:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--negative:hover.is-disabled, .fd-button--emphasized.fd-button--negative:hover:disabled,
+    .fd-button--emphasized.fd-button--negative .is-hover[aria-disabled="true"],
+    .fd-button--emphasized.fd-button--negative .is-hover.is-disabled,
+    .fd-button--emphasized.fd-button--negative .is-hover:disabled, .fd-button--emphasized.fd-button--medium:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--medium:hover.is-disabled, .fd-button--emphasized.fd-button--medium:hover:disabled,
+    .fd-button--emphasized.fd-button--medium .is-hover[aria-disabled="true"],
+    .fd-button--emphasized.fd-button--medium .is-hover.is-disabled,
+    .fd-button--emphasized.fd-button--medium .is-hover:disabled {
       --fd-button-color: var(--fd-color-action-2); }
   .fd-button--emphasized.fd-button--standard, .fd-button-group .fd-button--emphasized[class*="fd-button--"],
   .fd-button-group .fd-button--emphasized.fd-button {
@@ -3431,31 +3711,53 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-button--emphasized.fd-button--standard:hover[aria-disabled="true"], .fd-button-group .fd-button--emphasized:hover[aria-disabled="true"][class*="fd-button--"],
     .fd-button-group .fd-button--emphasized.fd-button:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--standard:hover.is-disabled, .fd-button-group .fd-button--emphasized:hover.is-disabled[class*="fd-button--"],
     .fd-button-group .fd-button--emphasized.fd-button:hover.is-disabled, .fd-button--emphasized.fd-button--standard:hover:disabled, .fd-button-group .fd-button--emphasized:hover:disabled[class*="fd-button--"],
-    .fd-button-group .fd-button--emphasized.fd-button:hover:disabled {
+    .fd-button-group .fd-button--emphasized.fd-button:hover:disabled,
+    .fd-button--emphasized.fd-button--standard .is-hover[aria-disabled="true"],
+    .fd-button-group .fd-button--emphasized[class*="fd-button--"] .is-hover[aria-disabled="true"],
+    .fd-button-group .fd-button--emphasized.fd-button .is-hover[aria-disabled="true"],
+    .fd-button--emphasized.fd-button--standard .is-hover.is-disabled,
+    .fd-button-group .fd-button--emphasized[class*="fd-button--"] .is-hover.is-disabled,
+    .fd-button-group .fd-button--emphasized.fd-button .is-hover.is-disabled,
+    .fd-button--emphasized.fd-button--standard .is-hover:disabled,
+    .fd-button-group .fd-button--emphasized[class*="fd-button--"] .is-hover:disabled,
+    .fd-button-group .fd-button--emphasized.fd-button .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-status-4); }
   .fd-button--emphasized.fd-button--negative {
     --fd-button-border-color: var(--fd-color-status-3);
     --fd-button-background-color: var(--fd-color-status-3); }
-    .fd-button--emphasized.fd-button--negative:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--negative:hover.is-disabled, .fd-button--emphasized.fd-button--negative:hover:disabled {
+    .fd-button--emphasized.fd-button--negative:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--negative:hover.is-disabled, .fd-button--emphasized.fd-button--negative:hover:disabled,
+    .fd-button--emphasized.fd-button--negative .is-hover[aria-disabled="true"],
+    .fd-button--emphasized.fd-button--negative .is-hover.is-disabled,
+    .fd-button--emphasized.fd-button--negative .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-status-3); }
   .fd-button--emphasized.fd-button--medium {
     --fd-button-border-color: var(--fd-color-status-2);
     --fd-button-background-color: var(--fd-color-status-2); }
-    .fd-button--emphasized.fd-button--medium:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--medium:hover.is-disabled, .fd-button--emphasized.fd-button--medium:hover:disabled {
+    .fd-button--emphasized.fd-button--medium:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--medium:hover.is-disabled, .fd-button--emphasized.fd-button--medium:hover:disabled,
+    .fd-button--emphasized.fd-button--medium .is-hover[aria-disabled="true"],
+    .fd-button--emphasized.fd-button--medium .is-hover.is-disabled,
+    .fd-button--emphasized.fd-button--medium .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-status-2); }
   .fd-button--emphasized.fd-button--positive {
     --fd-button-border-color: var(--fd-color-status-1);
     --fd-button-background-color: var(--fd-color-status-1); }
-    .fd-button--emphasized.fd-button--positive:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--positive:hover.is-disabled, .fd-button--emphasized.fd-button--positive:hover:disabled {
+    .fd-button--emphasized.fd-button--positive:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--positive:hover.is-disabled, .fd-button--emphasized.fd-button--positive:hover:disabled,
+    .fd-button--emphasized.fd-button--positive .is-hover[aria-disabled="true"],
+    .fd-button--emphasized.fd-button--positive .is-hover.is-disabled,
+    .fd-button--emphasized.fd-button--positive .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-status-1); }
 
 .fd-button--light {
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent; }
-  .fd-button--light:hover {
+  .fd-button--light:hover,
+  .fd-button--light .is-hover {
     --fd-button-background-color: var(--fd-color-neutral-1);
     --fd-button-color: var(--fd-color-action-1); }
-    .fd-button--light:hover[aria-disabled="true"], .fd-button--light:hover.is-disabled, .fd-button--light:hover:disabled {
+    .fd-button--light:hover[aria-disabled="true"], .fd-button--light:hover.is-disabled, .fd-button--light:hover:disabled,
+    .fd-button--light .is-hover[aria-disabled="true"],
+    .fd-button--light .is-hover.is-disabled,
+    .fd-button--light .is-hover:disabled {
       --fd-button-background-color: transparent;
       --fd-button-color: var(--fd-color-action-1); }
   .fd-button--light:active, .fd-button--light.is-active, .fd-button--light[aria-selected="true"], .fd-button--light.is-selected, .fd-button--light[aria-pressed="true"], .fd-button--light.is-pressed {
@@ -3466,23 +3768,59 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     --fd-button-border-color: transparent;
     --fd-button-background-color: transparent; }
     .fd-button--light.fd-button--standard:hover, .fd-button-group .fd-button--light:hover[class*="fd-button--"],
-    .fd-button-group .fd-button--light.fd-button:hover, .fd-button--light.fd-button--positive:hover, .fd-button--light.fd-button--negative:hover, .fd-button--light.fd-button--medium:hover {
+    .fd-button-group .fd-button--light.fd-button:hover,
+    .fd-button--light.fd-button--standard .is-hover,
+    .fd-button-group .fd-button--light[class*="fd-button--"] .is-hover,
+    .fd-button-group .fd-button--light.fd-button .is-hover, .fd-button--light.fd-button--positive:hover,
+    .fd-button--light.fd-button--positive .is-hover, .fd-button--light.fd-button--negative:hover,
+    .fd-button--light.fd-button--negative .is-hover, .fd-button--light.fd-button--medium:hover,
+    .fd-button--light.fd-button--medium .is-hover {
       --fd-button-background-color: var(--fd-color-neutral-1); }
       .fd-button--light.fd-button--standard:hover[aria-disabled="true"], .fd-button-group .fd-button--light:hover[aria-disabled="true"][class*="fd-button--"],
       .fd-button-group .fd-button--light.fd-button:hover[aria-disabled="true"], .fd-button--light.fd-button--standard:hover.is-disabled, .fd-button-group .fd-button--light:hover.is-disabled[class*="fd-button--"],
       .fd-button-group .fd-button--light.fd-button:hover.is-disabled, .fd-button--light.fd-button--standard:hover:disabled, .fd-button-group .fd-button--light:hover:disabled[class*="fd-button--"],
-      .fd-button-group .fd-button--light.fd-button:hover:disabled, .fd-button--light.fd-button--positive:hover[aria-disabled="true"], .fd-button--light.fd-button--positive:hover.is-disabled, .fd-button--light.fd-button--positive:hover:disabled, .fd-button--light.fd-button--negative:hover[aria-disabled="true"], .fd-button--light.fd-button--negative:hover.is-disabled, .fd-button--light.fd-button--negative:hover:disabled, .fd-button--light.fd-button--medium:hover[aria-disabled="true"], .fd-button--light.fd-button--medium:hover.is-disabled, .fd-button--light.fd-button--medium:hover:disabled {
+      .fd-button-group .fd-button--light.fd-button:hover:disabled,
+      .fd-button--light.fd-button--standard .is-hover[aria-disabled="true"],
+      .fd-button-group .fd-button--light[class*="fd-button--"] .is-hover[aria-disabled="true"],
+      .fd-button-group .fd-button--light.fd-button .is-hover[aria-disabled="true"],
+      .fd-button--light.fd-button--standard .is-hover.is-disabled,
+      .fd-button-group .fd-button--light[class*="fd-button--"] .is-hover.is-disabled,
+      .fd-button-group .fd-button--light.fd-button .is-hover.is-disabled,
+      .fd-button--light.fd-button--standard .is-hover:disabled,
+      .fd-button-group .fd-button--light[class*="fd-button--"] .is-hover:disabled,
+      .fd-button-group .fd-button--light.fd-button .is-hover:disabled, .fd-button--light.fd-button--positive:hover[aria-disabled="true"], .fd-button--light.fd-button--positive:hover.is-disabled, .fd-button--light.fd-button--positive:hover:disabled,
+      .fd-button--light.fd-button--positive .is-hover[aria-disabled="true"],
+      .fd-button--light.fd-button--positive .is-hover.is-disabled,
+      .fd-button--light.fd-button--positive .is-hover:disabled, .fd-button--light.fd-button--negative:hover[aria-disabled="true"], .fd-button--light.fd-button--negative:hover.is-disabled, .fd-button--light.fd-button--negative:hover:disabled,
+      .fd-button--light.fd-button--negative .is-hover[aria-disabled="true"],
+      .fd-button--light.fd-button--negative .is-hover.is-disabled,
+      .fd-button--light.fd-button--negative .is-hover:disabled, .fd-button--light.fd-button--medium:hover[aria-disabled="true"], .fd-button--light.fd-button--medium:hover.is-disabled, .fd-button--light.fd-button--medium:hover:disabled,
+      .fd-button--light.fd-button--medium .is-hover[aria-disabled="true"],
+      .fd-button--light.fd-button--medium .is-hover.is-disabled,
+      .fd-button--light.fd-button--medium .is-hover:disabled {
         --fd-button-background-color: transparent; }
   .fd-button--light.fd-button--standard, .fd-button-group .fd-button--light[class*="fd-button--"],
   .fd-button-group .fd-button--light.fd-button {
     --fd-button-color: var(--fd-color-status-4); }
     .fd-button--light.fd-button--standard:hover, .fd-button-group .fd-button--light:hover[class*="fd-button--"],
-    .fd-button-group .fd-button--light.fd-button:hover {
+    .fd-button-group .fd-button--light.fd-button:hover,
+    .fd-button--light.fd-button--standard .is-hover,
+    .fd-button-group .fd-button--light[class*="fd-button--"] .is-hover,
+    .fd-button-group .fd-button--light.fd-button .is-hover {
       --fd-button-color: var(--fd-color-status-4); }
       .fd-button--light.fd-button--standard:hover[aria-disabled="true"], .fd-button-group .fd-button--light:hover[aria-disabled="true"][class*="fd-button--"],
       .fd-button-group .fd-button--light.fd-button:hover[aria-disabled="true"], .fd-button--light.fd-button--standard:hover.is-disabled, .fd-button-group .fd-button--light:hover.is-disabled[class*="fd-button--"],
       .fd-button-group .fd-button--light.fd-button:hover.is-disabled, .fd-button--light.fd-button--standard:hover:disabled, .fd-button-group .fd-button--light:hover:disabled[class*="fd-button--"],
-      .fd-button-group .fd-button--light.fd-button:hover:disabled {
+      .fd-button-group .fd-button--light.fd-button:hover:disabled,
+      .fd-button--light.fd-button--standard .is-hover[aria-disabled="true"],
+      .fd-button-group .fd-button--light[class*="fd-button--"] .is-hover[aria-disabled="true"],
+      .fd-button-group .fd-button--light.fd-button .is-hover[aria-disabled="true"],
+      .fd-button--light.fd-button--standard .is-hover.is-disabled,
+      .fd-button-group .fd-button--light[class*="fd-button--"] .is-hover.is-disabled,
+      .fd-button-group .fd-button--light.fd-button .is-hover.is-disabled,
+      .fd-button--light.fd-button--standard .is-hover:disabled,
+      .fd-button-group .fd-button--light[class*="fd-button--"] .is-hover:disabled,
+      .fd-button-group .fd-button--light.fd-button .is-hover:disabled {
         --fd-button-color: var(--fd-color-status-4); }
     .fd-button--light.fd-button--standard:active, .fd-button-group .fd-button--light:active[class*="fd-button--"],
     .fd-button-group .fd-button--light.fd-button:active, .fd-button--light.fd-button--standard.is-active, .fd-button-group .fd-button--light.is-active[class*="fd-button--"],
@@ -3495,27 +3833,39 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       --fd-button-color: var(--fd-color-action-2); }
   .fd-button--light.fd-button--negative {
     --fd-button-color: var(--fd-color-status-3); }
-    .fd-button--light.fd-button--negative:hover {
+    .fd-button--light.fd-button--negative:hover,
+    .fd-button--light.fd-button--negative .is-hover {
       --fd-button-color: var(--fd-color-status-3); }
-      .fd-button--light.fd-button--negative:hover[aria-disabled="true"], .fd-button--light.fd-button--negative:hover.is-disabled, .fd-button--light.fd-button--negative:hover:disabled {
+      .fd-button--light.fd-button--negative:hover[aria-disabled="true"], .fd-button--light.fd-button--negative:hover.is-disabled, .fd-button--light.fd-button--negative:hover:disabled,
+      .fd-button--light.fd-button--negative .is-hover[aria-disabled="true"],
+      .fd-button--light.fd-button--negative .is-hover.is-disabled,
+      .fd-button--light.fd-button--negative .is-hover:disabled {
         --fd-button-color: var(--fd-color-status-3); }
     .fd-button--light.fd-button--negative:active, .fd-button--light.fd-button--negative.is-active, .fd-button--light.fd-button--negative[aria-selected="true"], .fd-button--light.fd-button--negative.is-selected, .fd-button--light.fd-button--negative[aria-pressed="true"], .fd-button--light.fd-button--negative.is-pressed {
       --fd-button-background-color: var(--fd-color-status-3);
       --fd-button-color: var(--fd-color-action-2); }
   .fd-button--light.fd-button--positive {
     --fd-button-color: var(--fd-color-status-1); }
-    .fd-button--light.fd-button--positive:hover {
+    .fd-button--light.fd-button--positive:hover,
+    .fd-button--light.fd-button--positive .is-hover {
       --fd-button-color: var(--fd-color-status-1); }
-      .fd-button--light.fd-button--positive:hover[aria-disabled="true"], .fd-button--light.fd-button--positive:hover.is-disabled, .fd-button--light.fd-button--positive:hover:disabled {
+      .fd-button--light.fd-button--positive:hover[aria-disabled="true"], .fd-button--light.fd-button--positive:hover.is-disabled, .fd-button--light.fd-button--positive:hover:disabled,
+      .fd-button--light.fd-button--positive .is-hover[aria-disabled="true"],
+      .fd-button--light.fd-button--positive .is-hover.is-disabled,
+      .fd-button--light.fd-button--positive .is-hover:disabled {
         --fd-button-color: var(--fd-color-status-1); }
     .fd-button--light.fd-button--positive:active, .fd-button--light.fd-button--positive.is-active, .fd-button--light.fd-button--positive[aria-selected="true"], .fd-button--light.fd-button--positive.is-selected, .fd-button--light.fd-button--positive[aria-pressed="true"], .fd-button--light.fd-button--positive.is-pressed {
       --fd-button-background-color: var(--fd-color-status-1);
       --fd-button-color: var(--fd-color-action-2); }
   .fd-button--light.fd-button--medium {
     --fd-button-color: var(--fd-color-status-2); }
-    .fd-button--light.fd-button--medium:hover {
+    .fd-button--light.fd-button--medium:hover,
+    .fd-button--light.fd-button--medium .is-hover {
       --fd-button-color: var(--fd-color-status-2); }
-      .fd-button--light.fd-button--medium:hover[aria-disabled="true"], .fd-button--light.fd-button--medium:hover.is-disabled, .fd-button--light.fd-button--medium:hover:disabled {
+      .fd-button--light.fd-button--medium:hover[aria-disabled="true"], .fd-button--light.fd-button--medium:hover.is-disabled, .fd-button--light.fd-button--medium:hover:disabled,
+      .fd-button--light.fd-button--medium .is-hover[aria-disabled="true"],
+      .fd-button--light.fd-button--medium .is-hover.is-disabled,
+      .fd-button--light.fd-button--medium .is-hover:disabled {
         --fd-button-color: var(--fd-color-status-2); }
     .fd-button--light.fd-button--medium:active, .fd-button--light.fd-button--medium.is-active, .fd-button--light.fd-button--medium[aria-selected="true"], .fd-button--light.fd-button--medium.is-selected, .fd-button--light.fd-button--medium[aria-pressed="true"], .fd-button--light.fd-button--medium.is-pressed {
       --fd-button-background-color: var(--fd-color-status-2);
@@ -3525,7 +3875,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-button-group .fd-button, .fd-button--positive, .fd-button--negative, .fd-button--medium {
   --fd-button-background-color: var(--fd-color-background-2); }
   .fd-button--standard:hover, .fd-button-group :hover[class*="fd-button--"],
-  .fd-button-group .fd-button:hover, .fd-button--positive:hover, .fd-button--negative:hover, .fd-button--medium:hover {
+  .fd-button-group .fd-button:hover,
+  .fd-button--standard .is-hover,
+  .fd-button-group [class*="fd-button--"] .is-hover,
+  .fd-button-group .fd-button .is-hover, .fd-button--positive:hover,
+  .fd-button--positive .is-hover, .fd-button--negative:hover,
+  .fd-button--negative .is-hover, .fd-button--medium:hover,
+  .fd-button--medium .is-hover {
     --fd-button-color: var(--fd-color-action-2); }
   .fd-button--standard:active, .fd-button-group :active[class*="fd-button--"],
   .fd-button-group .fd-button:active, .fd-button--standard.is-active, .fd-button-group .is-active[class*="fd-button--"],
@@ -3545,13 +3901,25 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-button-group .is-focus.fd-button {
     box-shadow: 0 0 0 1px var(--fd-color-status-4); }
   .fd-button--standard:hover, .fd-button-group :hover[class*="fd-button--"],
-  .fd-button-group .fd-button:hover {
+  .fd-button-group .fd-button:hover,
+  .fd-button--standard .is-hover,
+  .fd-button-group [class*="fd-button--"] .is-hover,
+  .fd-button-group .fd-button .is-hover {
     --fd-button-color: var(--fd-color-action-2);
     --fd-button-background-color: var(--fd-color-status-4); }
     .fd-button--standard:hover[aria-disabled="true"], .fd-button-group :hover[aria-disabled="true"][class*="fd-button--"],
     .fd-button-group .fd-button:hover[aria-disabled="true"], .fd-button--standard:hover.is-disabled, .fd-button-group :hover.is-disabled[class*="fd-button--"],
     .fd-button-group .fd-button:hover.is-disabled, .fd-button--standard:hover:disabled, .fd-button-group :hover:disabled[class*="fd-button--"],
-    .fd-button-group .fd-button:hover:disabled {
+    .fd-button-group .fd-button:hover:disabled,
+    .fd-button--standard .is-hover[aria-disabled="true"],
+    .fd-button-group [class*="fd-button--"] .is-hover[aria-disabled="true"],
+    .fd-button-group .fd-button .is-hover[aria-disabled="true"],
+    .fd-button--standard .is-hover.is-disabled,
+    .fd-button-group [class*="fd-button--"] .is-hover.is-disabled,
+    .fd-button-group .fd-button .is-hover.is-disabled,
+    .fd-button--standard .is-hover:disabled,
+    .fd-button-group [class*="fd-button--"] .is-hover:disabled,
+    .fd-button-group .fd-button .is-hover:disabled {
       --fd-button-color: var(--fd-color-status-4); }
   .fd-button--standard:active, .fd-button-group :active[class*="fd-button--"],
   .fd-button-group .fd-button:active, .fd-button--standard.is-active, .fd-button-group .is-active[class*="fd-button--"],
@@ -3567,9 +3935,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-button-border-color: var(--fd-color-status-1); }
   .fd-button--positive:focus, .fd-button--positive.is-focus {
     box-shadow: 0 0 0 1px var(--fd-color-status-1); }
-  .fd-button--positive:hover {
+  .fd-button--positive:hover,
+  .fd-button--positive .is-hover {
     --fd-button-background-color: var(--fd-color-status-1); }
-    .fd-button--positive:hover[aria-disabled="true"], .fd-button--positive:hover.is-disabled, .fd-button--positive:hover:disabled {
+    .fd-button--positive:hover[aria-disabled="true"], .fd-button--positive:hover.is-disabled, .fd-button--positive:hover:disabled,
+    .fd-button--positive .is-hover[aria-disabled="true"],
+    .fd-button--positive .is-hover.is-disabled,
+    .fd-button--positive .is-hover:disabled {
       --fd-button-color: var(--fd-color-status-1); }
   .fd-button--positive:active, .fd-button--positive.is-active, .fd-button--positive[aria-selected="true"], .fd-button--positive.is-selected, .fd-button--positive[aria-pressed="true"], .fd-button--positive.is-pressed {
     --fd-button-background-color: var(--fd-color-status-1); }
@@ -3579,9 +3951,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-button-border-color: var(--fd-color-status-2); }
   .fd-button--medium:focus, .fd-button--medium.is-focus {
     box-shadow: 0 0 0 1px var(--fd-color-status-2); }
-  .fd-button--medium:hover {
+  .fd-button--medium:hover,
+  .fd-button--medium .is-hover {
     --fd-button-background-color: var(--fd-color-status-2); }
-    .fd-button--medium:hover[aria-disabled="true"], .fd-button--medium:hover.is-disabled, .fd-button--medium:hover:disabled {
+    .fd-button--medium:hover[aria-disabled="true"], .fd-button--medium:hover.is-disabled, .fd-button--medium:hover:disabled,
+    .fd-button--medium .is-hover[aria-disabled="true"],
+    .fd-button--medium .is-hover.is-disabled,
+    .fd-button--medium .is-hover:disabled {
       --fd-button-color: var(--fd-color-status-2); }
   .fd-button--medium:active, .fd-button--medium.is-active, .fd-button--medium[aria-selected="true"], .fd-button--medium.is-selected, .fd-button--medium[aria-pressed="true"], .fd-button--medium.is-pressed {
     --fd-button-background-color: var(--fd-color-status-2); }
@@ -3591,9 +3967,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-button-border-color: var(--fd-color-status-3); }
   .fd-button--negative:focus, .fd-button--negative.is-focus {
     box-shadow: 0 0 0 1px var(--fd-color-status-3); }
-  .fd-button--negative:hover {
+  .fd-button--negative:hover,
+  .fd-button--negative .is-hover {
     --fd-button-background-color: var(--fd-color-status-3); }
-    .fd-button--negative:hover[aria-disabled="true"], .fd-button--negative:hover.is-disabled, .fd-button--negative:hover:disabled {
+    .fd-button--negative:hover[aria-disabled="true"], .fd-button--negative:hover.is-disabled, .fd-button--negative:hover:disabled,
+    .fd-button--negative .is-hover[aria-disabled="true"],
+    .fd-button--negative .is-hover.is-disabled,
+    .fd-button--negative .is-hover:disabled {
       --fd-button-color: var(--fd-color-status-3); }
   .fd-button--negative:active, .fd-button--negative.is-active, .fd-button--negative[aria-selected="true"], .fd-button--negative.is-selected, .fd-button--negative[aria-pressed="true"], .fd-button--negative.is-pressed {
     --fd-button-background-color: var(--fd-color-status-3); }
@@ -3609,11 +3989,15 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       margin-left: 0; }
   .fd-button--shell:focus {
     box-shadow: none; }
-  .fd-button--shell:hover {
+  .fd-button--shell:hover,
+  .fd-button--shell .is-hover {
     --fd-button-color: var(--fd-color-shell-2);
     --fd-button-border-color: transparent;
     --fd-button-background-color: hsl(217, 21%, 25%); }
-    .fd-button--shell:hover[aria-disabled="true"], .fd-button--shell:hover.is-disabled, .fd-button--shell:hover:disabled {
+    .fd-button--shell:hover[aria-disabled="true"], .fd-button--shell:hover.is-disabled, .fd-button--shell:hover:disabled,
+    .fd-button--shell .is-hover[aria-disabled="true"],
+    .fd-button--shell .is-hover.is-disabled,
+    .fd-button--shell .is-hover:disabled {
       --fd-button-color: var(--fd-color-shell-2);
       --fd-button-background-color: transparent; }
   .fd-button--shell:active, .fd-button--shell.is-active, .fd-button--shell[aria-selected="true"], .fd-button--shell.is-selected, .fd-button--shell[aria-pressed="true"], .fd-button--shell.is-pressed {
@@ -3682,33 +4066,57 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-button-color: var(--fd-color-action-2);
   --fd-button-border-color: var(--fd-color-action-1);
   --fd-button-background-color: var(--fd-color-action-1); }
-  .fd-button--main:hover, .fd-button--action-bar:hover {
+  .fd-button--main:hover,
+  .fd-button--main .is-hover, .fd-button--action-bar:hover,
+  .fd-button--action-bar .is-hover {
     --fd-button-background-color: var(--fd-color-action-hover);
     --fd-button-color: var(--fd-color-action-2); }
-    .fd-button--main:hover[aria-disabled="true"], .fd-button--main:hover.is-disabled, .fd-button--main:hover:disabled, .fd-button--action-bar:hover[aria-disabled="true"], .fd-button--action-bar:hover.is-disabled, .fd-button--action-bar:hover:disabled {
+    .fd-button--main:hover[aria-disabled="true"], .fd-button--main:hover.is-disabled, .fd-button--main:hover:disabled,
+    .fd-button--main .is-hover[aria-disabled="true"],
+    .fd-button--main .is-hover.is-disabled,
+    .fd-button--main .is-hover:disabled, .fd-button--action-bar:hover[aria-disabled="true"], .fd-button--action-bar:hover.is-disabled, .fd-button--action-bar:hover:disabled,
+    .fd-button--action-bar .is-hover[aria-disabled="true"],
+    .fd-button--action-bar .is-hover.is-disabled,
+    .fd-button--action-bar .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-action-1);
       --fd-button-color: var(--fd-color-action-2); }
   .fd-button--main.fd-button--negative, .fd-button--action-bar.fd-button--negative {
     --fd-button-color: var(--fd-color-action-2);
     --fd-button-border-color: var(--fd-color-status-3);
     --fd-button-background-color: var(--fd-color-status-3); }
-    .fd-button--main.fd-button--negative:hover[aria-disabled="true"], .fd-button--main.fd-button--negative:hover.is-disabled, .fd-button--main.fd-button--negative:hover:disabled, .fd-button--action-bar.fd-button--negative:hover[aria-disabled="true"], .fd-button--action-bar.fd-button--negative:hover.is-disabled, .fd-button--action-bar.fd-button--negative:hover:disabled {
+    .fd-button--main.fd-button--negative:hover[aria-disabled="true"], .fd-button--main.fd-button--negative:hover.is-disabled, .fd-button--main.fd-button--negative:hover:disabled,
+    .fd-button--main.fd-button--negative .is-hover[aria-disabled="true"],
+    .fd-button--main.fd-button--negative .is-hover.is-disabled,
+    .fd-button--main.fd-button--negative .is-hover:disabled, .fd-button--action-bar.fd-button--negative:hover[aria-disabled="true"], .fd-button--action-bar.fd-button--negative:hover.is-disabled, .fd-button--action-bar.fd-button--negative:hover:disabled,
+    .fd-button--action-bar.fd-button--negative .is-hover[aria-disabled="true"],
+    .fd-button--action-bar.fd-button--negative .is-hover.is-disabled,
+    .fd-button--action-bar.fd-button--negative .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-status-3);
       --fd-button-color: var(--fd-color-action-2); }
   .fd-button--main.fd-button--positive, .fd-button--action-bar.fd-button--positive {
     --fd-button-color: var(--fd-color-action-2);
     --fd-button-border-color: var(--fd-color-status-1);
     --fd-button-background-color: var(--fd-color-status-1); }
-    .fd-button--main.fd-button--positive:hover[aria-disabled="true"], .fd-button--main.fd-button--positive:hover.is-disabled, .fd-button--main.fd-button--positive:hover:disabled, .fd-button--action-bar.fd-button--positive:hover[aria-disabled="true"], .fd-button--action-bar.fd-button--positive:hover.is-disabled, .fd-button--action-bar.fd-button--positive:hover:disabled {
+    .fd-button--main.fd-button--positive:hover[aria-disabled="true"], .fd-button--main.fd-button--positive:hover.is-disabled, .fd-button--main.fd-button--positive:hover:disabled,
+    .fd-button--main.fd-button--positive .is-hover[aria-disabled="true"],
+    .fd-button--main.fd-button--positive .is-hover.is-disabled,
+    .fd-button--main.fd-button--positive .is-hover:disabled, .fd-button--action-bar.fd-button--positive:hover[aria-disabled="true"], .fd-button--action-bar.fd-button--positive:hover.is-disabled, .fd-button--action-bar.fd-button--positive:hover:disabled,
+    .fd-button--action-bar.fd-button--positive .is-hover[aria-disabled="true"],
+    .fd-button--action-bar.fd-button--positive .is-hover.is-disabled,
+    .fd-button--action-bar.fd-button--positive .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-status-1);
       --fd-button-color: var(--fd-color-action-2); }
 
 .fd-button--secondary {
   --fd-button-border-color: transparent; }
-  .fd-button--secondary:hover {
+  .fd-button--secondary:hover,
+  .fd-button--secondary .is-hover {
     --fd-button-background-color: var(--fd-color-neutral-1);
     --fd-button-color: var(--fd-color-action-1); }
-    .fd-button--secondary:hover[aria-disabled="true"], .fd-button--secondary:hover.is-disabled, .fd-button--secondary:hover:disabled {
+    .fd-button--secondary:hover[aria-disabled="true"], .fd-button--secondary:hover.is-disabled, .fd-button--secondary:hover:disabled,
+    .fd-button--secondary .is-hover[aria-disabled="true"],
+    .fd-button--secondary .is-hover.is-disabled,
+    .fd-button--secondary .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-background-2);
       --fd-button-color: var(--fd-color-action-1); }
   .fd-button--secondary:active, .fd-button--secondary.is-active, .fd-button--secondary[aria-selected="true"], .fd-button--secondary.is-selected, .fd-button--secondary[aria-pressed="true"], .fd-button--secondary.is-pressed {
@@ -3718,10 +4126,14 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     --fd-button-color: var(--fd-color-status-3);
     --fd-button-border-color: transparent;
     --fd-button-background-color: transparent; }
-    .fd-button--secondary.fd-button--negative:hover {
+    .fd-button--secondary.fd-button--negative:hover,
+    .fd-button--secondary.fd-button--negative .is-hover {
       --fd-button-background-color: var(--fd-color-neutral-1);
       --fd-button-color: var(--fd-color-status-3); }
-      .fd-button--secondary.fd-button--negative:hover[aria-disabled="true"], .fd-button--secondary.fd-button--negative:hover.is-disabled, .fd-button--secondary.fd-button--negative:hover:disabled {
+      .fd-button--secondary.fd-button--negative:hover[aria-disabled="true"], .fd-button--secondary.fd-button--negative:hover.is-disabled, .fd-button--secondary.fd-button--negative:hover:disabled,
+      .fd-button--secondary.fd-button--negative .is-hover[aria-disabled="true"],
+      .fd-button--secondary.fd-button--negative .is-hover.is-disabled,
+      .fd-button--secondary.fd-button--negative .is-hover:disabled {
         --fd-button-background-color: transparent;
         --fd-button-color: var(--fd-color-status-3); }
     .fd-button--secondary.fd-button--negative:active, .fd-button--secondary.fd-button--negative.is-active, .fd-button--secondary.fd-button--negative[aria-selected="true"], .fd-button--secondary.fd-button--negative.is-selected, .fd-button--secondary.fd-button--negative[aria-pressed="true"], .fd-button--secondary.fd-button--negative.is-pressed {
@@ -3731,10 +4143,14 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     --fd-button-color: var(--fd-color-status-1);
     --fd-button-border-color: transparent;
     --fd-button-background-color: transparent; }
-    .fd-button--secondary.fd-button--positive:hover {
+    .fd-button--secondary.fd-button--positive:hover,
+    .fd-button--secondary.fd-button--positive .is-hover {
       --fd-button-background-color: var(--fd-color-neutral-1);
       --fd-button-color: var(--fd-color-status-1); }
-      .fd-button--secondary.fd-button--positive:hover[aria-disabled="true"], .fd-button--secondary.fd-button--positive:hover.is-disabled, .fd-button--secondary.fd-button--positive:hover:disabled {
+      .fd-button--secondary.fd-button--positive:hover[aria-disabled="true"], .fd-button--secondary.fd-button--positive:hover.is-disabled, .fd-button--secondary.fd-button--positive:hover:disabled,
+      .fd-button--secondary.fd-button--positive .is-hover[aria-disabled="true"],
+      .fd-button--secondary.fd-button--positive .is-hover.is-disabled,
+      .fd-button--secondary.fd-button--positive .is-hover:disabled {
         --fd-button-background-color: transparent;
         --fd-button-color: var(--fd-color-status-1); }
     .fd-button--secondary.fd-button--positive:active, .fd-button--secondary.fd-button--positive.is-active, .fd-button--secondary.fd-button--positive[aria-selected="true"], .fd-button--secondary.fd-button--positive.is-selected, .fd-button--secondary.fd-button--positive[aria-pressed="true"], .fd-button--secondary.fd-button--positive.is-pressed {
@@ -3750,10 +4166,14 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-button--toolbar:active, .fd-button--toolbar.is-active, .fd-button--toolbar[aria-selected="true"], .fd-button--toolbar.is-selected, .fd-button--toolbar[aria-pressed="true"], .fd-button--toolbar.is-pressed {
     --fd-button-background-color: var(--fd-color-action-selected);
     --fd-button-color: var(--fd-color-action-2); }
-  .fd-button--toolbar:hover {
+  .fd-button--toolbar:hover,
+  .fd-button--toolbar .is-hover {
     --fd-button-background-color: var(--fd-color-action-hover);
     --fd-button-color: var(--fd-color-action-2); }
-    .fd-button--toolbar:hover[aria-disabled="true"], .fd-button--toolbar:hover.is-disabled, .fd-button--toolbar:hover:disabled {
+    .fd-button--toolbar:hover[aria-disabled="true"], .fd-button--toolbar:hover.is-disabled, .fd-button--toolbar:hover:disabled,
+    .fd-button--toolbar .is-hover[aria-disabled="true"],
+    .fd-button--toolbar .is-hover.is-disabled,
+    .fd-button--toolbar .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-neutral-3);
       --fd-button-color: var(--fd-color-text-2); }
 
@@ -3996,10 +4416,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 /*!
 .fd-form
     .fd-form__set?
-        .fd-form__legend(.is-required)
+        .fd-form__legend
         .fd-form__group?
             .fd-form__item+(--check, --inline)
-                .fd-form__label(.is-required)
+                .fd-form__label
                 .fd-form__control
             .fd-form__message(--help, --error, --warning)
 */
@@ -4090,8 +4510,6 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     margin-bottom: 8px;
     border: 0;
     color: #6a6d70; }
-    .fd-form__label.is-required:after, .fd-form__legend.is-required:after {
-      content: "*"; }
     .fd-form__label.is-disabled, .fd-form__legend.is-disabled {
       opacity: .4; }
   .fd-form__control {
@@ -4161,7 +4579,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   display: flex;
   vertical-align: bottom; }
-  .fd-input-group input[type=text], .fd-input-group input[type=password], .fd-input-group input[type=email], .fd-input-group input[type=url], .fd-input-group input[type=search], .fd-input-group input[type=tel], .fd-input-group input[type=number], .fd-input-group input[type=date], .fd-input-group input[type=time], .fd-input-group textarea {
+  .fd-input-group input[type=text], .fd-input-group input[type=password], .fd-input-group input[type=email], .fd-input-group input[type=url], .fd-input-group input[type=search], .fd-input-group input[type=tel], .fd-input-group input[type=number], .fd-input-group input[type=date], .fd-input-group input[type=time] {
     z-index: 1; }
   [dir="rtl"] .fd-input-group > * input:read-only, .fd-input-group[dir="rtl"] > * input:read-only {
     border-right: none; }
@@ -4254,10 +4672,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     [type="search"] + .fd-input-group__addon {
       border: 0;
       width: 0; }
-  .fd-input-group--before input[type=text], .fd-input-group--before input[type=password], .fd-input-group--before input[type=email], .fd-input-group--before input[type=url], .fd-input-group--before input[type=search], .fd-input-group--before input[type=tel], .fd-input-group--before input[type=number], .fd-input-group--before input[type=date], .fd-input-group--before input[type=time], .fd-input-group--before textarea {
+  .fd-input-group--before input[type=text], .fd-input-group--before input[type=password], .fd-input-group--before input[type=email], .fd-input-group--before input[type=url], .fd-input-group--before input[type=search], .fd-input-group--before input[type=tel], .fd-input-group--before input[type=number], .fd-input-group--before input[type=date], .fd-input-group--before input[type=time] {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; }
-  .fd-input-group--after input[type=text], .fd-input-group--after input[type=password], .fd-input-group--after input[type=email], .fd-input-group--after input[type=url], .fd-input-group--after input[type=search], .fd-input-group--after input[type=tel], .fd-input-group--after input[type=number], .fd-input-group--after input[type=date], .fd-input-group--after input[type=time], .fd-input-group--after textarea {
+  .fd-input-group--after input[type=text], .fd-input-group--after input[type=password], .fd-input-group--after input[type=email], .fd-input-group--after input[type=url], .fd-input-group--after input[type=search], .fd-input-group--after input[type=tel], .fd-input-group--after input[type=number], .fd-input-group--after input[type=date], .fd-input-group--after input[type=time] {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0; }
   .fd-input-group__button {
@@ -4419,11 +4837,17 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-table tr, .docs-table tr {
     transition: background-color 0.125s ease-in;
     cursor: pointer; }
-    .fd-table tr:hover, .docs-table tr:hover {
+    .fd-table tr:hover, .docs-table tr:hover,
+    .fd-table tr .is-hover,
+    .docs-table tr .is-hover {
       background-color: #fafafa; }
-    .fd-table tr:active, .docs-table tr:active, .fd-table tr.is-active, .docs-table tr.is-active, .fd-table tr[aria-selected="true"], .docs-table tr[aria-selected="true"], .fd-table tr.is-selected, .docs-table tr.is-selected, .fd-table tr[aria-pressed="true"], .docs-table tr[aria-pressed="true"], .fd-table tr.is-pressed, .docs-table tr.is-pressed {
+    .fd-table tr[aria-selected="true"], .docs-table tr[aria-selected="true"], .fd-table tr.is-selected, .docs-table tr.is-selected {
       background-color: rgba(10, 110, 209, 0.07); }
-      .fd-table tr:active:hover, .docs-table tr:active:hover, .fd-table tr.is-active:hover, .docs-table tr.is-active:hover, .fd-table tr[aria-selected="true"]:hover, .docs-table tr[aria-selected="true"]:hover, .fd-table tr.is-selected:hover, .docs-table tr.is-selected:hover, .fd-table tr[aria-pressed="true"]:hover, .docs-table tr[aria-pressed="true"]:hover, .fd-table tr.is-pressed:hover, .docs-table tr.is-pressed:hover {
+      .fd-table tr[aria-selected="true"]:hover, .docs-table tr[aria-selected="true"]:hover,
+      .fd-table tr[aria-selected="true"] .is-hover,
+      .docs-table tr[aria-selected="true"] .is-hover, .fd-table tr.is-selected:hover, .docs-table tr.is-selected:hover,
+      .fd-table tr.is-selected .is-hover,
+      .docs-table tr.is-selected .is-hover {
         background-color: rgba(10, 110, 209, 0.1); }
   .fd-table thead, .docs-table thead {
     font-size: 0.85714rem;
@@ -4571,7 +4995,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       width: 100%;
       background-color: transparent;
       border-radius: 4px 4px 0 0; }
-    .fd-tabs__link:hover {
+    .fd-tabs__link:hover,
+    .fd-tabs__link .is-hover {
       color: #0254a7; }
     .fd-tabs__link[aria-selected="true"], .fd-tabs__link.is-selected {
       color: #0a6ed1; }
@@ -4719,7 +5144,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     align-items: center;
     position: relative;
     transition: background-color 0.125s ease-in; }
-    .fd-tree__row:hover {
+    .fd-tree__row:hover,
+    .fd-tree__row .is-hover {
       background-color: #fafafa; }
     .fd-tree__row--header {
       font-size: 0.85714rem;
@@ -4728,9 +5154,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       color: #6a6d70;
       background-color: #edeef0;
       text-transform: uppercase; }
-      .fd-tree__row--header:hover {
+      .fd-tree__row--header:hover,
+      .fd-tree__row--header .is-hover {
         background-color: initial; }
-    .fd-tree__row:active, .fd-tree__row.is-active, .fd-tree__row[aria-selected="true"], .fd-tree__row.is-selected, .fd-tree__row[aria-pressed="true"], .fd-tree__row.is-pressed {
+    .fd-tree__row[aria-selected="true"], .fd-tree__row.is-selected {
       background-color: rgba(10, 110, 209, 0.07); }
   .fd-tree__col {
     flex: 1;
@@ -4807,7 +5234,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       transform: rotate(270deg); }
   .fd-tree a {
     color: #0a6ed1; }
-    .fd-tree a:hover {
+    .fd-tree a:hover,
+    .fd-tree a .is-hover {
       color: #0a6ed1; }
 
 /*!
@@ -5025,7 +5453,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       width: 100%;
       background-color: transparent;
       border-radius: 4px 4px 0 0; }
-    .fd-tabs__link:hover {
+    .fd-tabs__link:hover,
+    .fd-tabs__link .is-hover {
       color: #0254a7; }
     .fd-tabs__link[aria-selected="true"], .fd-tabs__link.is-selected {
       color: #0a6ed1; }
@@ -5051,46 +5480,14 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   display: inline-block;
-  height: 28px;
   width: 48px;
-  vertical-align: middle;
-  z-index: 0; }
-  .fd-toggle__switch {
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    right: 100%;
-    background-color: #fafafa;
-    border: 1px solid #d9d9d9;
-    transition: left 0.125s ease-in;
-    pointer-events: none;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15); }
+  height: 20px; }
   .fd-toggle input {
-    position: absolute;
-    width: 100%;
-    height: 71%;
-    top: calc((100% - 71%) /2);
-    z-index: 1;
-    border-color: transparent !important;
-    border-radius: 14px;
-    background-color: #d9d9d9; }
+    opacity: 0;
+    width: 0;
+    height: 0; }
     .fd-toggle input::before, .fd-toggle input::after {
       display: none; }
-    .fd-toggle input:checked {
-      background-color: #0a6ed1; }
-      .fd-toggle input:checked + .fd-toggle__switch {
-        left: calc(100% - 28px);
-        background: #0854a1;
-        border-color: #0854a1; }
-      .fd-toggle input:checked[disabled], .fd-toggle input:checked.is-disabled, .fd-toggle input:checked[aria-disabled="true"] {
-        background-color: rgba(10, 110, 209, 0.4); }
-        .fd-toggle input:checked[disabled] + .fd-toggle__switch, .fd-toggle input:checked.is-disabled + .fd-toggle__switch, .fd-toggle input:checked[aria-disabled="true"] + .fd-toggle__switch {
-          border-color: transparent;
-          background-color: #d8ebfd; }
     .fd-toggle input:hover {
       border-color: transparent; }
     .fd-toggle input:active, .fd-toggle input:focus {
@@ -5102,43 +5499,75 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         opacity: 1;
         border-color: #ededee;
         box-shadow: none;
-        background-color: white; }
+        background-color: #ededee;
+        pointer-events: none; }
+    .fd-toggle input:checked[disabled] + .fd-toggle__switch, .fd-toggle input:checked.is-disabled + .fd-toggle__switch, .fd-toggle input:checked[aria-disabled="true"] + .fd-toggle__switch {
+      border-color: transparent;
+      background-color: rgba(10, 110, 209, 0.4);
+      pointer-events: none; }
+    .fd-toggle input:checked[disabled] + .fd-toggle__switch:before, .fd-toggle input:checked.is-disabled + .fd-toggle__switch:before, .fd-toggle input:checked[aria-disabled="true"] + .fd-toggle__switch:before {
+      border-color: transparent;
+      background-color: #d8ebfd; }
+  .fd-toggle__switch {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d9d9d9;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px; }
+  .fd-toggle__switch:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: 0;
+    top: -5px;
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%; }
+  input:checked + .fd-toggle__switch {
+    background-color: #0a6ed1; }
+  input:checked + .fd-toggle__switch:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    background: #0854a1;
+    border-color: #0854a1;
+    pointer-events: none;
+    left: -6px; }
   .fd-toggle--xs {
-    height: 20px;
+    height: 14px;
     width: 36px; }
-    .fd-toggle--xs .fd-toggle__switch {
+    .fd-toggle--xs .fd-toggle__switch:before {
       height: 20px;
-      width: 20px; }
-    .fd-toggle--xs .fd-toggle__label {
-      padding-left: 46px; }
-    .fd-toggle--xs input {
-      border-radius: 10px; }
-      .fd-toggle--xs input:checked + .fd-toggle__switch {
-        left: calc(100% - 20px); }
+      width: 20px;
+      top: -3px; }
+    .fd-toggle--xs input:checked + .fd-toggle__switch:before {
+      left: -10px; }
   .fd-toggle--s {
-    height: 24px;
+    height: 17px;
     width: 40px; }
-    .fd-toggle--s .fd-toggle__switch {
+    .fd-toggle--s .fd-toggle__switch:before {
       height: 24px;
-      width: 24px; }
-    .fd-toggle--s .fd-toggle__label {
-      padding-left: 50px; }
-    .fd-toggle--s input {
-      border-radius: 12px; }
-      .fd-toggle--s input:checked + .fd-toggle__switch {
-        left: calc(100% - 24px); }
+      width: 24px;
+      top: -4px; }
+    .fd-toggle--s input:checked + .fd-toggle__switch:before {
+      left: -10px; }
   .fd-toggle--l {
-    height: 32px;
+    height: 22px;
     width: 56px; }
-    .fd-toggle--l .fd-toggle__switch {
+    .fd-toggle--l .fd-toggle__switch:before {
       height: 32px;
-      width: 32px; }
-    .fd-toggle--l .fd-toggle__label {
-      padding-left: 66px; }
-    .fd-toggle--l input {
-      border-radius: 16px; }
-      .fd-toggle--l input:checked + .fd-toggle__switch {
-        left: calc(100% - 32px); }
+      width: 32px;
+      top: -6px; }
+    .fd-toggle--l input:checked + .fd-toggle__switch:before {
+      left: -2px; }
 
 /*!
 .fd-spinner+(.is-hidden|[aria-hidden=true])
@@ -5442,7 +5871,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-link {
   color: #0a6ed1;
   border-bottom: solid 1px #0a6ed1; }
-  .fd-link:hover {
+  .fd-link:hover,
+  .fd-link .is-hover {
     color: #085caf;
     border-bottom-color: #085caf; }
   .fd-link:visited {
@@ -5695,6 +6125,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     opacity: 0.5; }
 
 .fd-menu {
+  --fd-menu-item-separator-color: var(--fd-color-neutral-2);
   font-size: 14px;
   line-height: 1.42857;
   color: #32363a;
@@ -5707,10 +6138,20 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-menu__group, .fd-menu__list {
     list-style: none;
     margin-bottom: 0; }
+  .fd-menu__group {
+    padding-left: 0; }
   .fd-menu__list {
     margin: 0;
     padding: 0;
     list-style: none; }
+    .fd-menu__list--separated > *,
+    .fd-menu__list--separated .fd-menu__list > * {
+      border-top-style: solid;
+      border-top-width: 1px;
+      border-top-color: var(--fd-menu-item-separator-color); }
+      .fd-menu__list--separated > *:first-child,
+      .fd-menu__list--separated .fd-menu__list > *:first-child {
+        border-top-width: 0; }
   .fd-menu__title {
     display: block;
     margin-bottom: 0;
@@ -5731,12 +6172,15 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     text-align: left; }
     .fd-menu__item > .fd-checkbox {
       margin: 0 10px 0 0; }
-    .fd-menu__item:hover {
+    .fd-menu__item:hover,
+    .fd-menu__item .is-hover {
       color: #32363a;
       background-color: #eeeeef; }
-    .fd-menu__item:active, .fd-menu__item.is-active, .fd-menu__item[aria-selected="true"], .fd-menu__item.is-selected, .fd-menu__item[aria-pressed="true"], .fd-menu__item.is-pressed {
+    .fd-menu__item[aria-selected="true"], .fd-menu__item.is-selected {
       background-color: rgba(10, 110, 209, 0.07); }
-      .fd-menu__item:active:hover, .fd-menu__item.is-active:hover, .fd-menu__item[aria-selected="true"]:hover, .fd-menu__item.is-selected:hover, .fd-menu__item[aria-pressed="true"]:hover, .fd-menu__item.is-pressed:hover {
+      .fd-menu__item[aria-selected="true"]:hover,
+      .fd-menu__item[aria-selected="true"] .is-hover, .fd-menu__item.is-selected:hover,
+      .fd-menu__item.is-selected .is-hover {
         background-color: rgba(10, 110, 209, 0.1); }
   .fd-menu--addon-before .fd-menu__item {
     padding-left: 32px; }
@@ -6474,9 +6918,6 @@ see layouts/panel
     opacity: 0.5; }
 
 /*!
-input-addon
-*/
-/*!
 .fd-combobox
 */
 .fd-combobox-input .fd-popover {
@@ -6601,8 +7042,10 @@ input-addon
     display: inline-block;
     vertical-align: middle; }
   .fd-shellbar__logo {
-    height: 24px;
-    max-height: 24px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    max-height: 40px;
     background-repeat: no-repeat;
     background-size: contain; }
     @media (min-width: 600px) {
@@ -6616,12 +7059,13 @@ input-addon
           display: none !important; } }
     .fd-shellbar__logo img,
     .fd-shellbar__logo svg {
-      max-height: 24px;
-      width: auto; }
+      max-height: 40px;
+      width: auto;
+      display: block; }
     .fd-shellbar__logo--image-replaced {
       background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MTIuMzggMjA0Ij48ZGVmcz48c3R5bGU+LmNscy0xLC5jbHMtMntmaWxsLXJ1bGU6ZXZlbm9kZH0uY2xzLTF7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCl9LmNscy0ye2ZpbGw6I2ZmZn08L3N0eWxlPjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB4MT0iMjA2LjE5IiB4Mj0iMjA2LjE5IiB5Mj0iMjA0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDBiOGYxIi8+PHN0b3Agb2Zmc2V0PSIuMDIiIHN0b3AtY29sb3I9IiMwMWI2ZjAiLz48c3RvcCBvZmZzZXQ9Ii4zMSIgc3RvcC1jb2xvcj0iIzBkOTBkOSIvPjxzdG9wIG9mZnNldD0iLjU4IiBzdG9wLWNvbG9yPSIjMTc3NWM4Ii8+PHN0b3Agb2Zmc2V0PSIuODIiIHN0b3AtY29sb3I9IiMxYzY1YmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTVmYmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+U0FQX2dyYWRfUl9zY3JuX1plaWNoZW5mbMOkY2hlIDE8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTAgMjA0aDIwOC40MUw0MTIuMzggMEgwdjIwNCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTI0NC43MyAzOC4zNmgtNDAuNnY5Ni41MmwtMzUuNDYtOTYuNTVoLTM1LjE2bC0zMC4yNyA4MC43MkMxMDAgOTguNyA3OSA5MS42NyA2Mi40IDg2LjQgNTEuNDYgODIuODkgMzkuODUgNzcuNzIgNDAgNzJjLjA5LTQuNjggNi4yMy05IDE4LjM4LTguMzggOC4xNy40MyAxNS4zNyAxLjA5IDI5LjcxIDhsMTQuMS0yNC41NUM4OS4wNiA0MC40MiA3MSAzNi4yMSA1Ni4xNyAzNi4xOWgtLjA5Yy0xNy4yOCAwLTMxLjY4IDUuNi00MC42IDE0LjgzQTM0LjIzIDM0LjIzIDAgMCAwIDUuNzcgNzQuN0M1LjU0IDg3LjE1IDEwLjExIDk2IDE5LjcxIDEwM2M4LjEgNS45NCAxOC40NiA5Ljc5IDI3LjYgMTIuNjIgMTEuMjcgMy40OSAyMC40NyA2LjUzIDIwLjM2IDEzQTkuNTcgOS41NyAwIDAgMSA2NSAxMzVjLTIuODEgMi45LTcuMTMgNC0xMy4wOSA0LjEtMTEuNDkuMjQtMjAtMS41Ni0zMy42MS05LjU5TDUuNzcgMTU0LjQyYTkzLjc3IDkzLjc3IDAgMCAwIDQ2IDEyLjIyaDIuMTFjMTQuMjQtLjI1IDI1Ljc0LTQuMzEgMzQuOTItMTEuNzEuNTMtLjQxIDEtLjg0IDEuNDktMS4yOGwtNC4xMiAxMC44NUgxMjNsNi4xOS0xOC44MmE2Ny40NiA2Ny40NiAwIDAgMCAyMS42OCAzLjQzIDY4LjMzIDY4LjMzIDAgMCAwIDIxLjE2LTMuMjVsNiAxOC42NGg2MC4xNHYtMzloMTMuMTFjMzEuNzEgMCA1MC40Ni0xNi4xNSA1MC40Ni00My4yIDAtMzAuMTEtMTguMjItNDMuOTQtNTcuMDEtNDMuOTR6TTE1MC45MSAxMjFhMzYuOTMgMzYuOTMgMCAwIDEtMTMtMi4yOGwxMi44Ny00MC41OWguMjJsMTIuNjUgNDAuNzFhMzguNSAzOC41IDAgMCAxLTEyLjc0IDIuMTZ6bTk2LjItMjMuMzNoLTguOTRWNjQuOTFoOC45NGMxMS45MyAwIDIxLjQ0IDQgMjEuNDQgMTYuMTQgMCAxMi42LTkuNTEgMTYuNTctMjEuNDQgMTYuNTciLz48L3N2Zz4=);
       width: 48px;
-      max-width: 60px; }
+      height: 24px; }
   .fd-shellbar__product {
     padding: 0 8px 0 0;
     text-overflow: ellipsis;
@@ -6717,12 +7161,6 @@ input-addon
     color: var(--fd-color-shell-2); }
     .fd-shellbar .fd-search-input .fd-input:focus {
       box-shadow: none; }
-  .fd-shellbar .fd-user-menu--control {
-    border-radius: 4px; }
-    .fd-shellbar .fd-user-menu--control:hover {
-      background-color: #323d4d; }
-    .fd-shellbar .fd-user-menu--control:active, .fd-shellbar .fd-user-menu--control.is-active, .fd-shellbar .fd-user-menu--control[aria-selected="true"], .fd-shellbar .fd-user-menu--control.is-selected, .fd-shellbar .fd-user-menu--control[aria-pressed="true"], .fd-shellbar .fd-user-menu--control.is-pressed {
-      background-color: #2a3341; }
   @media (min-width: 320px) {
     .fd-shellbar {
       padding: 4px 8px; } }

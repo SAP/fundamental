@@ -31,20 +31,20 @@ summary:
                 <nav class="fd-menu">
                 <ul class="fd-menu__list">
                     <li>
-                        <label for="a" class="fd-menu__item">
-                            <input type="checkbox" class="fd-checkbox" id="a">
+                        <label for="a1" class="fd-menu__item">
+                            <input type="checkbox" class="fd-checkbox" id="a1">
                             Apple
                         </label>
                     </li>
                     <li>
-                        <label for="b" class="fd-menu__item">
-                            <input type="checkbox" class="fd-checkbox" id="b">
+                        <label for="b1" class="fd-menu__item">
+                            <input type="checkbox" class="fd-checkbox" id="b1">
                             Berry
                         </label>
                     </li>
                     <li>
-                        <label for="c" class="fd-menu__item">
-                            <input type="checkbox" class="fd-checkbox" id="c">
+                        <label for="c1" class="fd-menu__item">
+                            <input type="checkbox" class="fd-checkbox" id="c1">
                             Banana
                         </label>
                     </li>
@@ -81,20 +81,20 @@ summary:
                 <nav class="fd-menu">
                 <ul class="fd-menu__list">
                     <li>
-                        <label for="a" class="fd-menu__item">
-                            <input type="checkbox" class="fd-checkbox" id="a">
+                        <label for="a2" class="fd-menu__item">
+                            <input type="checkbox" class="fd-checkbox" id="a2">
                             Apple
                         </label>
                     </li>
                     <li>
-                        <label for="b" class="fd-menu__item">
-                            <input type="checkbox" class="fd-checkbox" id="b">
+                        <label for="b2" class="fd-menu__item">
+                            <input type="checkbox" class="fd-checkbox" id="b2">
                             Berry
                         </label>
                     </li>
                     <li>
-                        <label for="c" class="fd-menu__item">
-                            <input type="checkbox" class="fd-checkbox" id="c">
+                        <label for="c2" class="fd-menu__item">
+                            <input type="checkbox" class="fd-checkbox" id="c2">
                             Banana
                         </label>
                     </li>

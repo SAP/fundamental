@@ -5,7 +5,7 @@ sidebar: left-navigation-sidebar
 toc: false
 permalink: components/toolbar.html
 folder: components
-summary: <span class="fd-badge fd-badge--error fd-badge--pill">Deprecated</span>
+summary: Deprecated
 ---
 > <small>`toolbar` component has been deprecated and no longer supported </small>
 

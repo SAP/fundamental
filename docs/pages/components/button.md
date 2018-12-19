@@ -93,8 +93,8 @@ The buttons can also be set to a state:
 <button class="fd-button" aria-disabled="true">Disabled State</button>
 <br><br>
 <button class="fd-button--light">Normal State</button>
-<button class="fd-button--light">Selected State</button>
-<button class="fd-button--light">Disabled State</button>
+<button class="fd-button--light" aria-selected="true">Selected State</button>
+<button class="fd-button--light" aria-disabled="true">Disabled State</button>
 <br><br>
 <button class="fd-button--standard">Normal State</button>
 <button class="fd-button--standard" aria-selected="true">Selected State</button>

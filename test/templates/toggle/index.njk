@@ -13,6 +13,8 @@
     </p>
     <!-- output the component example and the code snippet -->
 {% set example %}
+
+<label>
 {{  toggle(
         properties=data.properties,
         modifier={
@@ -20,6 +22,8 @@
         }
     )
 }}
+</label>
+<label>
 {{  toggle(
         properties=data.properties,
         modifier={
@@ -27,14 +31,16 @@
         }
     )
 }}
-
+</label>
+<label>
 {{  toggle(
         properties=data.properties,
         state=data.state,
         aria=data.aria
     )
 }}
-
+</label>
+<label>
 {{  toggle(
         properties=data.properties,
         modifier={
@@ -43,12 +49,14 @@
     )
 }}
 {% endset %}
+</label>
 {{ format(example) }}
 
     <br><br>
 
 <h2>checked</h2>
 {% set example %}
+<label>
 {{  toggle(
         properties=data.properties,
         modifier={
@@ -59,6 +67,8 @@
         }
     )
 }}
+</label>
+<label>
 {{  toggle(
         properties=data.properties,
         modifier={
@@ -69,7 +79,8 @@
         }
     )
 }}
-
+</label>
+<label>
 {{  toggle(
         properties=data.properties,
         state={
@@ -77,7 +88,8 @@
         }
     )
 }}
-
+</label>
+<label>
 {{  toggle(
         properties=data.properties,
         modifier={
@@ -88,6 +100,7 @@
         }
     )
 }}
+</label>
 {% endset %}
 {{ format(example) }}
 
@@ -96,6 +109,7 @@
 
 <h2>disabled</h2>
 {% set example %}
+<label>
 {{  toggle(
         properties=data.properties,
         modifier={
@@ -106,6 +120,8 @@
         }
     )
 }}
+</label>
+<label>
 {{  toggle(
         properties=data.properties,
         modifier={
@@ -116,7 +132,8 @@
         }
     )
 }}
-
+</label>
+<label>
 {{  toggle(
         properties=data.properties,
         state={
@@ -125,7 +142,8 @@
         }
     )
 }}
-
+</label>
+<label>
 {{  toggle(
         properties=data.properties,
         modifier={
@@ -137,6 +155,7 @@
         }
     )
 }}
+</label>
 {% endset %}
 {{ format(example) }}
 

@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.4.0
+* Fiori Fundamentals v1.4.1
 * Copyright (c) 2018 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -9,30 +9,26 @@
     .fd-alert__close
 */
 .fd-alert {
+  --fd-alert-background-color: var(--fd-color-neutral-1);
+  --fd-alert-border-color: var(--fd-color-neutral-4);
   font-size: 14px;
   line-height: 1.42857;
   color: #32363a;
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  position: relative;
   color: #32363a;
-  border: solid 1px #89919a;
-  background-color: #fafafa;
+  border-style: solid;
+  border-width: 1px;
+  background-color: var(--fd-alert-background-color);
+  border-color: var(--fd-alert-border-color);
   padding: 8px 12px;
   border-radius: 4px
 }
-.fd-alert [class*=sap-icon] {
-  font-size: 1.14286rem;
-  line-height: 1.25;
-  font-weight: 400;
-  color: #89919a;
-  margin-right: 4px;
-  display: inline-block;
-  position: relative;
-  width: 16px;
-  height: 16px
-}
-.fd-alert [class*=sap-icon]::before {
-  position: absolute;
-  top: 1px
+.fd-alert .sap-icon--message-error,
+.fd-alert .sap-icon--message-information,
+.fd-alert .sap-icon--message-success,
+.fd-alert .sap-icon--message-warning {
+  display: none
 }
 .fd-alert__close {
   position: absolute;
@@ -87,44 +83,307 @@
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
-.fd-alert[dir=rtl] .fd-alert__close {
+.fd-alert__close[dir=rtl],
+[dir=rtl] .fd-alert__close {
   left: 4px;
   right: auto
 }
-.fd-alert--warning {
-  border-color: #e9730c;
-  background-color: #fef7f0
-}
-.fd-alert--warning [class*=sap-icon] {
-  color: #e9730c
-}
-.fd-alert--error {
-  border-color: #bd0000;
-  background-color: #ffb8b8
-}
-.fd-alert--error [class*=sap-icon] {
-  color: #bd0000
-}
-.fd-alert--success {
-  border-color: #107f3e;
-  background-color: #e4fcee
-}
-.fd-alert--success [class*=sap-icon] {
-  color: #107f3e
-}
-.fd-alert--information {
-  border-color: #0a6ed1;
-  background-color: rgba(10,110,209,.07)
-}
-.fd-alert--information [class*=sap-icon] {
-  color: #0a6ed1
-}
 .fd-alert--dismissible {
-  position: relative;
   padding-right: 48px
 }
-.fd-alert--dismissible[dir=rtl] {
-  padding-right: 12px
+.fd-alert--dismissible[dir=rtl],
+[dir=rtl] .fd-alert--dismissible {
+  padding-right: 8px;
+  padding-left: 48px
+}
+.fd-alert--error,
+.fd-alert--information,
+.fd-alert--success,
+.fd-alert--warning {
+  padding-left: 48px
+}
+.fd-alert--error[dir=rtl],
+.fd-alert--information[dir=rtl],
+.fd-alert--success[dir=rtl],
+.fd-alert--warning[dir=rtl],
+[dir=rtl] .fd-alert--error,
+[dir=rtl] .fd-alert--information,
+[dir=rtl] .fd-alert--success,
+[dir=rtl] .fd-alert--warning {
+  padding-right: 48px;
+  padding-left: 8px
+}
+.fd-alert--error[dir=rtl]::before,
+.fd-alert--information[dir=rtl]::before,
+.fd-alert--success[dir=rtl]::before,
+.fd-alert--warning[dir=rtl]::before,
+[dir=rtl] .fd-alert--error::before,
+[dir=rtl] .fd-alert--information::before,
+[dir=rtl] .fd-alert--success::before,
+[dir=rtl] .fd-alert--warning::before {
+  display: none
+}
+.fd-alert--error.fd-alert--dismissible,
+.fd-alert--information.fd-alert--dismissible,
+.fd-alert--success.fd-alert--dismissible,
+.fd-alert--warning.fd-alert--dismissible {
+  padding-right: 48px
+}
+.fd-alert--error.fd-alert--dismissible[dir=rtl],
+.fd-alert--information.fd-alert--dismissible[dir=rtl],
+.fd-alert--success.fd-alert--dismissible[dir=rtl],
+.fd-alert--warning.fd-alert--dismissible[dir=rtl],
+[dir=rtl] .fd-alert--error.fd-alert--dismissible,
+[dir=rtl] .fd-alert--information.fd-alert--dismissible,
+[dir=rtl] .fd-alert--success.fd-alert--dismissible,
+[dir=rtl] .fd-alert--warning.fd-alert--dismissible {
+  padding-left: 48px
+}
+.fd-alert--error::before,
+.fd-alert--information::before,
+.fd-alert--success::before,
+.fd-alert--warning::before {
+  font-family: SAP-icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  position: absolute;
+  left: 16px;
+  top: 8px
+}
+.fd-alert--error[dir=rtl]::after,
+.fd-alert--information[dir=rtl]::after,
+.fd-alert--success[dir=rtl]::after,
+.fd-alert--warning[dir=rtl]::after,
+[dir=rtl] .fd-alert--error::after,
+[dir=rtl] .fd-alert--information::after,
+[dir=rtl] .fd-alert--success::after,
+[dir=rtl] .fd-alert--warning::after {
+  font-family: SAP-icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  position: absolute;
+  right: 16px;
+  top: 8px
+}
+.fd-alert--warning {
+  --fd-alert-background-color: var(--fd-color-background-alert);
+  --fd-alert-border-color: var(--fd-color-status-2)
+}
+.fd-alert--warning::after,
+.fd-alert--warning::before {
+  color: var(--fd-alert-border-color)
+}
+.fd-alert--warning::before {
+  font-family: SAP-icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none
+}
+.fd-alert--warning::before {
+  content: ""
+}
+.fd-alert--warning::before {
+  font-size: 1.42857rem;
+  line-height: 1
+}
+.fd-alert--warning[dir=rtl]::after,
+[dir=rtl] .fd-alert--warning::after {
+  font-family: SAP-icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none
+}
+.fd-alert--warning[dir=rtl]::after,
+[dir=rtl] .fd-alert--warning::after {
+  content: ""
+}
+.fd-alert--warning[dir=rtl]::after,
+[dir=rtl] .fd-alert--warning::after {
+  font-size: 1.42857rem;
+  line-height: 1
+}
+.fd-alert--error {
+  --fd-alert-background-color: var(--fd-color-background-negative);
+  --fd-alert-border-color: var(--fd-color-status-3)
+}
+.fd-alert--error::after,
+.fd-alert--error::before {
+  color: var(--fd-alert-border-color)
+}
+.fd-alert--error::before {
+  font-family: SAP-icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none
+}
+.fd-alert--error::before {
+  content: ""
+}
+.fd-alert--error::before {
+  font-size: 1.42857rem;
+  line-height: 1
+}
+.fd-alert--error[dir=rtl]::after,
+[dir=rtl] .fd-alert--error::after {
+  font-family: SAP-icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none
+}
+.fd-alert--error[dir=rtl]::after,
+[dir=rtl] .fd-alert--error::after {
+  content: ""
+}
+.fd-alert--error[dir=rtl]::after,
+[dir=rtl] .fd-alert--error::after {
+  font-size: 1.42857rem;
+  line-height: 1
+}
+.fd-alert--success {
+  --fd-alert-background-color: var(--fd-color-background-positive);
+  --fd-alert-border-color: var(--fd-color-status-1)
+}
+.fd-alert--success::after,
+.fd-alert--success::before {
+  color: var(--fd-alert-border-color)
+}
+.fd-alert--success::before {
+  font-family: SAP-icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none
+}
+.fd-alert--success::before {
+  content: ""
+}
+.fd-alert--success::before {
+  font-size: 1.42857rem;
+  line-height: 1
+}
+.fd-alert--success[dir=rtl]::after,
+[dir=rtl] .fd-alert--success::after {
+  font-family: SAP-icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none
+}
+.fd-alert--success[dir=rtl]::after,
+[dir=rtl] .fd-alert--success::after {
+  content: ""
+}
+.fd-alert--success[dir=rtl]::after,
+[dir=rtl] .fd-alert--success::after {
+  font-size: 1.42857rem;
+  line-height: 1
+}
+.fd-alert--information {
+  --fd-alert-background-color: var(--fd-color-background-selected);
+  --fd-alert-border-color: var(--fd-color-action-1)
+}
+.fd-alert--information::after,
+.fd-alert--information::before {
+  color: var(--fd-alert-border-color)
+}
+.fd-alert--information::before {
+  font-family: SAP-icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none
+}
+.fd-alert--information::before {
+  content: ""
+}
+.fd-alert--information::before {
+  font-size: 1.42857rem;
+  line-height: 1
+}
+.fd-alert--information[dir=rtl]::after,
+[dir=rtl] .fd-alert--information::after {
+  font-family: SAP-icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none
+}
+.fd-alert--information[dir=rtl]::after,
+[dir=rtl] .fd-alert--information::after {
+  content: ""
+}
+.fd-alert--information[dir=rtl]::after,
+[dir=rtl] .fd-alert--information::after {
+  font-size: 1.42857rem;
+  line-height: 1
 }
 /*!
 .fd-action-bar
@@ -415,14 +674,22 @@
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
+.fd-button .is-hover,
 .fd-button:hover,
+[class*=fd-button--] .is-hover,
 [class*=fd-button--]:hover {
   --fd-button-background-color: var(--fd-color-action-hover);
   --fd-button-color: var(--fd-color-action-2)
 }
+.fd-button .is-hover.is-disabled,
+.fd-button .is-hover:disabled,
+.fd-button .is-hover[aria-disabled=true],
 .fd-button:hover.is-disabled,
 .fd-button:hover:disabled,
 .fd-button:hover[aria-disabled=true],
+[class*=fd-button--] .is-hover.is-disabled,
+[class*=fd-button--] .is-hover:disabled,
+[class*=fd-button--] .is-hover[aria-disabled=true],
 [class*=fd-button--]:hover.is-disabled,
 [class*=fd-button--]:hover:disabled,
 [class*=fd-button--]:hover[aria-disabled=true] {
@@ -469,10 +736,14 @@
   --fd-button-border-color: var(--fd-color-action-1);
   --fd-button-background-color: var(--fd-color-action-1)
 }
+.fd-button--emphasized .is-hover,
 .fd-button--emphasized:hover {
   --fd-button-background-color: var(--fd-color-action-hover);
   --fd-button-color: var(--fd-color-action-2)
 }
+.fd-button--emphasized .is-hover.is-disabled,
+.fd-button--emphasized .is-hover:disabled,
+.fd-button--emphasized .is-hover[aria-disabled=true],
 .fd-button--emphasized:hover.is-disabled,
 .fd-button--emphasized:hover:disabled,
 .fd-button--emphasized:hover[aria-disabled=true] {
@@ -487,24 +758,42 @@
 .fd-button-group .fd-button--emphasized[class*=fd-button--] {
   --fd-button-color: var(--fd-color-action-2)
 }
+.fd-button--emphasized.fd-button--medium .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--medium .is-hover:disabled,
+.fd-button--emphasized.fd-button--medium .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--medium:hover.is-disabled,
 .fd-button--emphasized.fd-button--medium:hover:disabled,
 .fd-button--emphasized.fd-button--medium:hover[aria-disabled=true],
+.fd-button--emphasized.fd-button--negative .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--negative .is-hover:disabled,
+.fd-button--emphasized.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--negative:hover.is-disabled,
 .fd-button--emphasized.fd-button--negative:hover:disabled,
 .fd-button--emphasized.fd-button--negative:hover[aria-disabled=true],
+.fd-button--emphasized.fd-button--positive .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--positive .is-hover:disabled,
+.fd-button--emphasized.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--positive:hover.is-disabled,
 .fd-button--emphasized.fd-button--positive:hover:disabled,
 .fd-button--emphasized.fd-button--positive:hover[aria-disabled=true],
+.fd-button--emphasized.fd-button--standard .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--standard .is-hover:disabled,
+.fd-button--emphasized.fd-button--standard .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--standard:hover.is-disabled,
 .fd-button--emphasized.fd-button--standard:hover:disabled,
 .fd-button--emphasized.fd-button--standard:hover[aria-disabled=true],
+.fd-button-group .fd-button--emphasized.fd-button .is-hover.is-disabled,
+.fd-button-group .fd-button--emphasized.fd-button .is-hover:disabled,
+.fd-button-group .fd-button--emphasized.fd-button .is-hover[aria-disabled=true],
 .fd-button-group .fd-button--emphasized.fd-button:hover.is-disabled,
 .fd-button-group .fd-button--emphasized.fd-button:hover:disabled,
 .fd-button-group .fd-button--emphasized.fd-button:hover[aria-disabled=true],
 .fd-button-group .fd-button--emphasized:hover.is-disabled[class*=fd-button--],
 .fd-button-group .fd-button--emphasized:hover:disabled[class*=fd-button--],
-.fd-button-group .fd-button--emphasized:hover[aria-disabled=true][class*=fd-button--] {
+.fd-button-group .fd-button--emphasized:hover[aria-disabled=true][class*=fd-button--],
+.fd-button-group .fd-button--emphasized[class*=fd-button--] .is-hover.is-disabled,
+.fd-button-group .fd-button--emphasized[class*=fd-button--] .is-hover:disabled,
+.fd-button-group .fd-button--emphasized[class*=fd-button--] .is-hover[aria-disabled=true] {
   --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--emphasized.fd-button--standard,
@@ -513,21 +802,33 @@
   --fd-button-border-color: var(--fd-color-status-4);
   --fd-button-background-color: var(--fd-color-status-4)
 }
+.fd-button--emphasized.fd-button--standard .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--standard .is-hover:disabled,
+.fd-button--emphasized.fd-button--standard .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--standard:hover.is-disabled,
 .fd-button--emphasized.fd-button--standard:hover:disabled,
 .fd-button--emphasized.fd-button--standard:hover[aria-disabled=true],
+.fd-button-group .fd-button--emphasized.fd-button .is-hover.is-disabled,
+.fd-button-group .fd-button--emphasized.fd-button .is-hover:disabled,
+.fd-button-group .fd-button--emphasized.fd-button .is-hover[aria-disabled=true],
 .fd-button-group .fd-button--emphasized.fd-button:hover.is-disabled,
 .fd-button-group .fd-button--emphasized.fd-button:hover:disabled,
 .fd-button-group .fd-button--emphasized.fd-button:hover[aria-disabled=true],
 .fd-button-group .fd-button--emphasized:hover.is-disabled[class*=fd-button--],
 .fd-button-group .fd-button--emphasized:hover:disabled[class*=fd-button--],
-.fd-button-group .fd-button--emphasized:hover[aria-disabled=true][class*=fd-button--] {
+.fd-button-group .fd-button--emphasized:hover[aria-disabled=true][class*=fd-button--],
+.fd-button-group .fd-button--emphasized[class*=fd-button--] .is-hover.is-disabled,
+.fd-button-group .fd-button--emphasized[class*=fd-button--] .is-hover:disabled,
+.fd-button-group .fd-button--emphasized[class*=fd-button--] .is-hover[aria-disabled=true] {
   --fd-button-background-color: var(--fd-color-status-4)
 }
 .fd-button--emphasized.fd-button--negative {
   --fd-button-border-color: var(--fd-color-status-3);
   --fd-button-background-color: var(--fd-color-status-3)
 }
+.fd-button--emphasized.fd-button--negative .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--negative .is-hover:disabled,
+.fd-button--emphasized.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--negative:hover.is-disabled,
 .fd-button--emphasized.fd-button--negative:hover:disabled,
 .fd-button--emphasized.fd-button--negative:hover[aria-disabled=true] {
@@ -537,6 +838,9 @@
   --fd-button-border-color: var(--fd-color-status-2);
   --fd-button-background-color: var(--fd-color-status-2)
 }
+.fd-button--emphasized.fd-button--medium .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--medium .is-hover:disabled,
+.fd-button--emphasized.fd-button--medium .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--medium:hover.is-disabled,
 .fd-button--emphasized.fd-button--medium:hover:disabled,
 .fd-button--emphasized.fd-button--medium:hover[aria-disabled=true] {
@@ -546,6 +850,9 @@
   --fd-button-border-color: var(--fd-color-status-1);
   --fd-button-background-color: var(--fd-color-status-1)
 }
+.fd-button--emphasized.fd-button--positive .is-hover.is-disabled,
+.fd-button--emphasized.fd-button--positive .is-hover:disabled,
+.fd-button--emphasized.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--emphasized.fd-button--positive:hover.is-disabled,
 .fd-button--emphasized.fd-button--positive:hover:disabled,
 .fd-button--emphasized.fd-button--positive:hover[aria-disabled=true] {
@@ -555,10 +862,14 @@
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent
 }
+.fd-button--light .is-hover,
 .fd-button--light:hover {
   --fd-button-background-color: var(--fd-color-neutral-1);
   --fd-button-color: var(--fd-color-action-1)
 }
+.fd-button--light .is-hover.is-disabled,
+.fd-button--light .is-hover:disabled,
+.fd-button--light .is-hover[aria-disabled=true],
 .fd-button--light:hover.is-disabled,
 .fd-button--light:hover:disabled,
 .fd-button--light:hover[aria-disabled=true] {
@@ -583,32 +894,56 @@
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent
 }
+.fd-button--light.fd-button--medium .is-hover,
 .fd-button--light.fd-button--medium:hover,
+.fd-button--light.fd-button--negative .is-hover,
 .fd-button--light.fd-button--negative:hover,
+.fd-button--light.fd-button--positive .is-hover,
 .fd-button--light.fd-button--positive:hover,
+.fd-button--light.fd-button--standard .is-hover,
 .fd-button--light.fd-button--standard:hover,
+.fd-button-group .fd-button--light.fd-button .is-hover,
 .fd-button-group .fd-button--light.fd-button:hover,
-.fd-button-group .fd-button--light:hover[class*=fd-button--] {
+.fd-button-group .fd-button--light:hover[class*=fd-button--],
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover {
   --fd-button-background-color: var(--fd-color-neutral-1)
 }
+.fd-button--light.fd-button--medium .is-hover.is-disabled,
+.fd-button--light.fd-button--medium .is-hover:disabled,
+.fd-button--light.fd-button--medium .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--medium:hover.is-disabled,
 .fd-button--light.fd-button--medium:hover:disabled,
 .fd-button--light.fd-button--medium:hover[aria-disabled=true],
+.fd-button--light.fd-button--negative .is-hover.is-disabled,
+.fd-button--light.fd-button--negative .is-hover:disabled,
+.fd-button--light.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--negative:hover.is-disabled,
 .fd-button--light.fd-button--negative:hover:disabled,
 .fd-button--light.fd-button--negative:hover[aria-disabled=true],
+.fd-button--light.fd-button--positive .is-hover.is-disabled,
+.fd-button--light.fd-button--positive .is-hover:disabled,
+.fd-button--light.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--positive:hover.is-disabled,
 .fd-button--light.fd-button--positive:hover:disabled,
 .fd-button--light.fd-button--positive:hover[aria-disabled=true],
+.fd-button--light.fd-button--standard .is-hover.is-disabled,
+.fd-button--light.fd-button--standard .is-hover:disabled,
+.fd-button--light.fd-button--standard .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--standard:hover.is-disabled,
 .fd-button--light.fd-button--standard:hover:disabled,
 .fd-button--light.fd-button--standard:hover[aria-disabled=true],
+.fd-button-group .fd-button--light.fd-button .is-hover.is-disabled,
+.fd-button-group .fd-button--light.fd-button .is-hover:disabled,
+.fd-button-group .fd-button--light.fd-button .is-hover[aria-disabled=true],
 .fd-button-group .fd-button--light.fd-button:hover.is-disabled,
 .fd-button-group .fd-button--light.fd-button:hover:disabled,
 .fd-button-group .fd-button--light.fd-button:hover[aria-disabled=true],
 .fd-button-group .fd-button--light:hover.is-disabled[class*=fd-button--],
 .fd-button-group .fd-button--light:hover:disabled[class*=fd-button--],
-.fd-button-group .fd-button--light:hover[aria-disabled=true][class*=fd-button--] {
+.fd-button-group .fd-button--light:hover[aria-disabled=true][class*=fd-button--],
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover.is-disabled,
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover:disabled,
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover[aria-disabled=true] {
   --fd-button-background-color: transparent
 }
 .fd-button--light.fd-button--standard,
@@ -616,20 +951,32 @@
 .fd-button-group .fd-button--light[class*=fd-button--] {
   --fd-button-color: var(--fd-color-status-4)
 }
+.fd-button--light.fd-button--standard .is-hover,
 .fd-button--light.fd-button--standard:hover,
+.fd-button-group .fd-button--light.fd-button .is-hover,
 .fd-button-group .fd-button--light.fd-button:hover,
-.fd-button-group .fd-button--light:hover[class*=fd-button--] {
+.fd-button-group .fd-button--light:hover[class*=fd-button--],
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover {
   --fd-button-color: var(--fd-color-status-4)
 }
+.fd-button--light.fd-button--standard .is-hover.is-disabled,
+.fd-button--light.fd-button--standard .is-hover:disabled,
+.fd-button--light.fd-button--standard .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--standard:hover.is-disabled,
 .fd-button--light.fd-button--standard:hover:disabled,
 .fd-button--light.fd-button--standard:hover[aria-disabled=true],
+.fd-button-group .fd-button--light.fd-button .is-hover.is-disabled,
+.fd-button-group .fd-button--light.fd-button .is-hover:disabled,
+.fd-button-group .fd-button--light.fd-button .is-hover[aria-disabled=true],
 .fd-button-group .fd-button--light.fd-button:hover.is-disabled,
 .fd-button-group .fd-button--light.fd-button:hover:disabled,
 .fd-button-group .fd-button--light.fd-button:hover[aria-disabled=true],
 .fd-button-group .fd-button--light:hover.is-disabled[class*=fd-button--],
 .fd-button-group .fd-button--light:hover:disabled[class*=fd-button--],
-.fd-button-group .fd-button--light:hover[aria-disabled=true][class*=fd-button--] {
+.fd-button-group .fd-button--light:hover[aria-disabled=true][class*=fd-button--],
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover.is-disabled,
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover:disabled,
+.fd-button-group .fd-button--light[class*=fd-button--] .is-hover[aria-disabled=true] {
   --fd-button-color: var(--fd-color-status-4)
 }
 .fd-button--light.fd-button--standard.is-active,
@@ -656,9 +1003,13 @@
 .fd-button--light.fd-button--negative {
   --fd-button-color: var(--fd-color-status-3)
 }
+.fd-button--light.fd-button--negative .is-hover,
 .fd-button--light.fd-button--negative:hover {
   --fd-button-color: var(--fd-color-status-3)
 }
+.fd-button--light.fd-button--negative .is-hover.is-disabled,
+.fd-button--light.fd-button--negative .is-hover:disabled,
+.fd-button--light.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--negative:hover.is-disabled,
 .fd-button--light.fd-button--negative:hover:disabled,
 .fd-button--light.fd-button--negative:hover[aria-disabled=true] {
@@ -676,9 +1027,13 @@
 .fd-button--light.fd-button--positive {
   --fd-button-color: var(--fd-color-status-1)
 }
+.fd-button--light.fd-button--positive .is-hover,
 .fd-button--light.fd-button--positive:hover {
   --fd-button-color: var(--fd-color-status-1)
 }
+.fd-button--light.fd-button--positive .is-hover.is-disabled,
+.fd-button--light.fd-button--positive .is-hover:disabled,
+.fd-button--light.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--positive:hover.is-disabled,
 .fd-button--light.fd-button--positive:hover:disabled,
 .fd-button--light.fd-button--positive:hover[aria-disabled=true] {
@@ -696,9 +1051,13 @@
 .fd-button--light.fd-button--medium {
   --fd-button-color: var(--fd-color-status-2)
 }
+.fd-button--light.fd-button--medium .is-hover,
 .fd-button--light.fd-button--medium:hover {
   --fd-button-color: var(--fd-color-status-2)
 }
+.fd-button--light.fd-button--medium .is-hover.is-disabled,
+.fd-button--light.fd-button--medium .is-hover:disabled,
+.fd-button--light.fd-button--medium .is-hover[aria-disabled=true],
 .fd-button--light.fd-button--medium:hover.is-disabled,
 .fd-button--light.fd-button--medium:hover:disabled,
 .fd-button--light.fd-button--medium:hover[aria-disabled=true] {
@@ -721,12 +1080,18 @@
 .fd-button-group [class*=fd-button--] {
   --fd-button-background-color: var(--fd-color-background-2)
 }
+.fd-button--medium .is-hover,
 .fd-button--medium:hover,
+.fd-button--negative .is-hover,
 .fd-button--negative:hover,
+.fd-button--positive .is-hover,
 .fd-button--positive:hover,
+.fd-button--standard .is-hover,
 .fd-button--standard:hover,
+.fd-button-group .fd-button .is-hover,
 .fd-button-group .fd-button:hover,
-.fd-button-group :hover[class*=fd-button--] {
+.fd-button-group :hover[class*=fd-button--],
+.fd-button-group [class*=fd-button--] .is-hover {
   --fd-button-color: var(--fd-color-action-2)
 }
 .fd-button--medium.is-active,
@@ -782,21 +1147,33 @@
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-4);
   box-shadow: 0 0 0 1px var(--fd-color-status-4)
 }
+.fd-button--standard .is-hover,
 .fd-button--standard:hover,
+.fd-button-group .fd-button .is-hover,
 .fd-button-group .fd-button:hover,
-.fd-button-group :hover[class*=fd-button--] {
+.fd-button-group :hover[class*=fd-button--],
+.fd-button-group [class*=fd-button--] .is-hover {
   --fd-button-color: var(--fd-color-action-2);
   --fd-button-background-color: var(--fd-color-status-4)
 }
+.fd-button--standard .is-hover.is-disabled,
+.fd-button--standard .is-hover:disabled,
+.fd-button--standard .is-hover[aria-disabled=true],
 .fd-button--standard:hover.is-disabled,
 .fd-button--standard:hover:disabled,
 .fd-button--standard:hover[aria-disabled=true],
+.fd-button-group .fd-button .is-hover.is-disabled,
+.fd-button-group .fd-button .is-hover:disabled,
+.fd-button-group .fd-button .is-hover[aria-disabled=true],
 .fd-button-group .fd-button:hover.is-disabled,
 .fd-button-group .fd-button:hover:disabled,
 .fd-button-group .fd-button:hover[aria-disabled=true],
 .fd-button-group :hover.is-disabled[class*=fd-button--],
 .fd-button-group :hover:disabled[class*=fd-button--],
-.fd-button-group :hover[aria-disabled=true][class*=fd-button--] {
+.fd-button-group :hover[aria-disabled=true][class*=fd-button--],
+.fd-button-group [class*=fd-button--] .is-hover.is-disabled,
+.fd-button-group [class*=fd-button--] .is-hover:disabled,
+.fd-button-group [class*=fd-button--] .is-hover[aria-disabled=true] {
   --fd-button-color: var(--fd-color-status-4)
 }
 .fd-button--standard.is-active,
@@ -828,9 +1205,13 @@
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-1);
   box-shadow: 0 0 0 1px var(--fd-color-status-1)
 }
+.fd-button--positive .is-hover,
 .fd-button--positive:hover {
   --fd-button-background-color: var(--fd-color-status-1)
 }
+.fd-button--positive .is-hover.is-disabled,
+.fd-button--positive .is-hover:disabled,
+.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--positive:hover.is-disabled,
 .fd-button--positive:hover:disabled,
 .fd-button--positive:hover[aria-disabled=true] {
@@ -853,9 +1234,13 @@
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-2);
   box-shadow: 0 0 0 1px var(--fd-color-status-2)
 }
+.fd-button--medium .is-hover,
 .fd-button--medium:hover {
   --fd-button-background-color: var(--fd-color-status-2)
 }
+.fd-button--medium .is-hover.is-disabled,
+.fd-button--medium .is-hover:disabled,
+.fd-button--medium .is-hover[aria-disabled=true],
 .fd-button--medium:hover.is-disabled,
 .fd-button--medium:hover:disabled,
 .fd-button--medium:hover[aria-disabled=true] {
@@ -878,9 +1263,13 @@
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-3);
   box-shadow: 0 0 0 1px var(--fd-color-status-3)
 }
+.fd-button--negative .is-hover,
 .fd-button--negative:hover {
   --fd-button-background-color: var(--fd-color-status-3)
 }
+.fd-button--negative .is-hover.is-disabled,
+.fd-button--negative .is-hover:disabled,
+.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--negative:hover.is-disabled,
 .fd-button--negative:hover:disabled,
 .fd-button--negative:hover[aria-disabled=true] {
@@ -911,11 +1300,15 @@
   -webkit-box-shadow: none;
   box-shadow: none
 }
+.fd-button--shell .is-hover,
 .fd-button--shell:hover {
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
   --fd-button-background-color: hsl(217, 21%, 25%)
 }
+.fd-button--shell .is-hover.is-disabled,
+.fd-button--shell .is-hover:disabled,
+.fd-button--shell .is-hover[aria-disabled=true],
 .fd-button--shell:hover.is-disabled,
 .fd-button--shell:hover:disabled,
 .fd-button--shell:hover[aria-disabled=true] {
@@ -1005,14 +1398,22 @@
   --fd-button-border-color: var(--fd-color-action-1);
   --fd-button-background-color: var(--fd-color-action-1)
 }
+.fd-button--action-bar .is-hover,
 .fd-button--action-bar:hover,
+.fd-button--main .is-hover,
 .fd-button--main:hover {
   --fd-button-background-color: var(--fd-color-action-hover);
   --fd-button-color: var(--fd-color-action-2)
 }
+.fd-button--action-bar .is-hover.is-disabled,
+.fd-button--action-bar .is-hover:disabled,
+.fd-button--action-bar .is-hover[aria-disabled=true],
 .fd-button--action-bar:hover.is-disabled,
 .fd-button--action-bar:hover:disabled,
 .fd-button--action-bar:hover[aria-disabled=true],
+.fd-button--main .is-hover.is-disabled,
+.fd-button--main .is-hover:disabled,
+.fd-button--main .is-hover[aria-disabled=true],
 .fd-button--main:hover.is-disabled,
 .fd-button--main:hover:disabled,
 .fd-button--main:hover[aria-disabled=true] {
@@ -1025,9 +1426,15 @@
   --fd-button-border-color: var(--fd-color-status-3);
   --fd-button-background-color: var(--fd-color-status-3)
 }
+.fd-button--action-bar.fd-button--negative .is-hover.is-disabled,
+.fd-button--action-bar.fd-button--negative .is-hover:disabled,
+.fd-button--action-bar.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--action-bar.fd-button--negative:hover.is-disabled,
 .fd-button--action-bar.fd-button--negative:hover:disabled,
 .fd-button--action-bar.fd-button--negative:hover[aria-disabled=true],
+.fd-button--main.fd-button--negative .is-hover.is-disabled,
+.fd-button--main.fd-button--negative .is-hover:disabled,
+.fd-button--main.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--main.fd-button--negative:hover.is-disabled,
 .fd-button--main.fd-button--negative:hover:disabled,
 .fd-button--main.fd-button--negative:hover[aria-disabled=true] {
@@ -1040,9 +1447,15 @@
   --fd-button-border-color: var(--fd-color-status-1);
   --fd-button-background-color: var(--fd-color-status-1)
 }
+.fd-button--action-bar.fd-button--positive .is-hover.is-disabled,
+.fd-button--action-bar.fd-button--positive .is-hover:disabled,
+.fd-button--action-bar.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--action-bar.fd-button--positive:hover.is-disabled,
 .fd-button--action-bar.fd-button--positive:hover:disabled,
 .fd-button--action-bar.fd-button--positive:hover[aria-disabled=true],
+.fd-button--main.fd-button--positive .is-hover.is-disabled,
+.fd-button--main.fd-button--positive .is-hover:disabled,
+.fd-button--main.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--main.fd-button--positive:hover.is-disabled,
 .fd-button--main.fd-button--positive:hover:disabled,
 .fd-button--main.fd-button--positive:hover[aria-disabled=true] {
@@ -1052,10 +1465,14 @@
 .fd-button--secondary {
   --fd-button-border-color: transparent
 }
+.fd-button--secondary .is-hover,
 .fd-button--secondary:hover {
   --fd-button-background-color: var(--fd-color-neutral-1);
   --fd-button-color: var(--fd-color-action-1)
 }
+.fd-button--secondary .is-hover.is-disabled,
+.fd-button--secondary .is-hover:disabled,
+.fd-button--secondary .is-hover[aria-disabled=true],
 .fd-button--secondary:hover.is-disabled,
 .fd-button--secondary:hover:disabled,
 .fd-button--secondary:hover[aria-disabled=true] {
@@ -1076,10 +1493,14 @@
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent
 }
+.fd-button--secondary.fd-button--negative .is-hover,
 .fd-button--secondary.fd-button--negative:hover {
   --fd-button-background-color: var(--fd-color-neutral-1);
   --fd-button-color: var(--fd-color-status-3)
 }
+.fd-button--secondary.fd-button--negative .is-hover.is-disabled,
+.fd-button--secondary.fd-button--negative .is-hover:disabled,
+.fd-button--secondary.fd-button--negative .is-hover[aria-disabled=true],
 .fd-button--secondary.fd-button--negative:hover.is-disabled,
 .fd-button--secondary.fd-button--negative:hover:disabled,
 .fd-button--secondary.fd-button--negative:hover[aria-disabled=true] {
@@ -1100,10 +1521,14 @@
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent
 }
+.fd-button--secondary.fd-button--positive .is-hover,
 .fd-button--secondary.fd-button--positive:hover {
   --fd-button-background-color: var(--fd-color-neutral-1);
   --fd-button-color: var(--fd-color-status-1)
 }
+.fd-button--secondary.fd-button--positive .is-hover.is-disabled,
+.fd-button--secondary.fd-button--positive .is-hover:disabled,
+.fd-button--secondary.fd-button--positive .is-hover[aria-disabled=true],
 .fd-button--secondary.fd-button--positive:hover.is-disabled,
 .fd-button--secondary.fd-button--positive:hover:disabled,
 .fd-button--secondary.fd-button--positive:hover[aria-disabled=true] {
@@ -1138,10 +1563,14 @@
   --fd-button-background-color: var(--fd-color-action-selected);
   --fd-button-color: var(--fd-color-action-2)
 }
+.fd-button--toolbar .is-hover,
 .fd-button--toolbar:hover {
   --fd-button-background-color: var(--fd-color-action-hover);
   --fd-button-color: var(--fd-color-action-2)
 }
+.fd-button--toolbar .is-hover.is-disabled,
+.fd-button--toolbar .is-hover:disabled,
+.fd-button--toolbar .is-hover[aria-disabled=true],
 .fd-button--toolbar:hover.is-disabled,
 .fd-button--toolbar:hover:disabled,
 .fd-button--toolbar:hover[aria-disabled=true] {
@@ -1413,10 +1842,10 @@
 /*!
 .fd-form
     .fd-form__set?
-        .fd-form__legend(.is-required)
+        .fd-form__legend
         .fd-form__group?
             .fd-form__item+(--check, --inline)
-                .fd-form__label(.is-required)
+                .fd-form__label
                 .fd-form__control
             .fd-form__message(--help, --error, --warning)
 */
@@ -1539,10 +1968,6 @@
   border: 0;
   color: #6a6d70
 }
-.fd-form__label.is-required:after,
-.fd-form__legend.is-required:after {
-  content: "*"
-}
 .fd-form__label.is-disabled,
 .fd-form__legend.is-disabled {
   opacity: .4
@@ -1647,8 +2072,7 @@
 .fd-input-group input[type=tel],
 .fd-input-group input[type=text],
 .fd-input-group input[type=time],
-.fd-input-group input[type=url],
-.fd-input-group textarea {
+.fd-input-group input[type=url] {
   z-index: 1
 }
 .fd-input-group[dir=rtl] > * input:-moz-read-only,
@@ -1797,8 +2221,7 @@
 .fd-input-group--before input[type=tel],
 .fd-input-group--before input[type=text],
 .fd-input-group--before input[type=time],
-.fd-input-group--before input[type=url],
-.fd-input-group--before textarea {
+.fd-input-group--before input[type=url] {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0
 }
@@ -1810,8 +2233,7 @@
 .fd-input-group--after input[type=tel],
 .fd-input-group--after input[type=text],
 .fd-input-group--after input[type=time],
-.fd-input-group--after input[type=url],
-.fd-input-group--after textarea {
+.fd-input-group--after input[type=url] {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0
 }
@@ -2018,22 +2440,17 @@
   transition: background-color 125ms ease-in;
   cursor: pointer
 }
+.fd-table tr .is-hover,
 .fd-table tr:hover {
   background-color: #fafafa
 }
-.fd-table tr.is-active,
-.fd-table tr.is-pressed,
 .fd-table tr.is-selected,
-.fd-table tr:active,
-.fd-table tr[aria-pressed=true],
 .fd-table tr[aria-selected=true] {
   background-color: rgba(10,110,209,.07)
 }
-.fd-table tr.is-active:hover,
-.fd-table tr.is-pressed:hover,
+.fd-table tr.is-selected .is-hover,
 .fd-table tr.is-selected:hover,
-.fd-table tr:active:hover,
-.fd-table tr[aria-pressed=true]:hover,
+.fd-table tr[aria-selected=true] .is-hover,
 .fd-table tr[aria-selected=true]:hover {
   background-color: rgba(10,110,209,.1)
 }
@@ -2214,6 +2631,7 @@
   background-color: transparent;
   border-radius: 4px 4px 0 0
 }
+.fd-tabs__link .is-hover,
 .fd-tabs__link:hover {
   color: #0254a7
 }
@@ -2408,6 +2826,7 @@
   -webkit-transition: background-color 125ms ease-in;
   transition: background-color 125ms ease-in
 }
+.fd-tree__row .is-hover,
 .fd-tree__row:hover {
   background-color: #fafafa
 }
@@ -2419,14 +2838,11 @@
   background-color: #edeef0;
   text-transform: uppercase
 }
+.fd-tree__row--header .is-hover,
 .fd-tree__row--header:hover {
   background-color: initial
 }
-.fd-tree__row.is-active,
-.fd-tree__row.is-pressed,
 .fd-tree__row.is-selected,
-.fd-tree__row:active,
-.fd-tree__row[aria-pressed=true],
 .fd-tree__row[aria-selected=true] {
   background-color: rgba(10,110,209,.07)
 }
@@ -2540,6 +2956,7 @@
 .fd-tree a {
   color: #0a6ed1
 }
+.fd-tree a .is-hover,
 .fd-tree a:hover {
   color: #0a6ed1
 }
@@ -2811,6 +3228,7 @@
   background-color: transparent;
   border-radius: 4px 4px 0 0
 }
+.fd-tabs__link .is-hover,
 .fd-tabs__link:hover {
   color: #0254a7
 }
@@ -2847,60 +3265,17 @@
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
   display: inline-block;
-  height: 28px;
   width: 48px;
-  vertical-align: middle;
-  z-index: 0
-}
-.fd-toggle__switch {
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  right: 100%;
-  background-color: #fafafa;
-  border: 1px solid #d9d9d9;
-  -webkit-transition: left 125ms ease-in;
-  transition: left 125ms ease-in;
-  pointer-events: none;
-  -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
-  box-shadow: 0 1px 1px 0 rgba(0,0,0,.15)
+  height: 20px
 }
 .fd-toggle input {
-  position: absolute;
-  width: 100%;
-  height: 71%;
-  top: calc((100% - 71%)/ 2);
-  z-index: 1;
-  border-color: transparent!important;
-  border-radius: 14px;
-  background-color: #d9d9d9
+  opacity: 0;
+  width: 0;
+  height: 0
 }
 .fd-toggle input::after,
 .fd-toggle input::before {
   display: none
-}
-.fd-toggle input:checked {
-  background-color: #0a6ed1
-}
-.fd-toggle input:checked + .fd-toggle__switch {
-  left: calc(100% - 28px);
-  background: #0854a1;
-  border-color: #0854a1
-}
-.fd-toggle input:checked.is-disabled,
-.fd-toggle input:checked[aria-disabled=true],
-.fd-toggle input:checked[disabled] {
-  background-color: rgba(10,110,209,.4)
-}
-.fd-toggle input:checked.is-disabled + .fd-toggle__switch,
-.fd-toggle input:checked[aria-disabled=true] + .fd-toggle__switch,
-.fd-toggle input:checked[disabled] + .fd-toggle__switch {
-  border-color: transparent;
-  background-color: #d8ebfd
 }
 .fd-toggle input:hover {
   border-color: transparent
@@ -2922,58 +3297,93 @@
   border-color: #ededee;
   -webkit-box-shadow: none;
   box-shadow: none;
-  background-color: #fff
+  background-color: #ededee;
+  pointer-events: none
+}
+.fd-toggle input:checked.is-disabled + .fd-toggle__switch,
+.fd-toggle input:checked[aria-disabled=true] + .fd-toggle__switch,
+.fd-toggle input:checked[disabled] + .fd-toggle__switch {
+  border-color: transparent;
+  background-color: rgba(10,110,209,.4);
+  pointer-events: none
+}
+.fd-toggle input:checked.is-disabled + .fd-toggle__switch:before,
+.fd-toggle input:checked[aria-disabled=true] + .fd-toggle__switch:before,
+.fd-toggle input:checked[disabled] + .fd-toggle__switch:before {
+  border-color: transparent;
+  background-color: #d8ebfd
+}
+.fd-toggle__switch {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d9d9d9;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px
+}
+.fd-toggle__switch:before {
+  position: absolute;
+  content: "";
+  height: 28px;
+  width: 28px;
+  left: 0;
+  top: -5px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%
+}
+input:checked + .fd-toggle__switch {
+  background-color: #0a6ed1
+}
+input:checked + .fd-toggle__switch:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+  background: #0854a1;
+  border-color: #0854a1;
+  pointer-events: none;
+  left: -6px
 }
 .fd-toggle--xs {
-  height: 20px;
+  height: 14px;
   width: 36px
 }
-.fd-toggle--xs .fd-toggle__switch {
+.fd-toggle--xs .fd-toggle__switch:before {
   height: 20px;
-  width: 20px
+  width: 20px;
+  top: -3px
 }
-.fd-toggle--xs .fd-toggle__label {
-  padding-left: 46px
-}
-.fd-toggle--xs input {
-  border-radius: 10px
-}
-.fd-toggle--xs input:checked + .fd-toggle__switch {
-  left: calc(100% - 20px)
+.fd-toggle--xs input:checked + .fd-toggle__switch:before {
+  left: -10px
 }
 .fd-toggle--s {
-  height: 24px;
+  height: 17px;
   width: 40px
 }
-.fd-toggle--s .fd-toggle__switch {
+.fd-toggle--s .fd-toggle__switch:before {
   height: 24px;
-  width: 24px
+  width: 24px;
+  top: -4px
 }
-.fd-toggle--s .fd-toggle__label {
-  padding-left: 50px
-}
-.fd-toggle--s input {
-  border-radius: 12px
-}
-.fd-toggle--s input:checked + .fd-toggle__switch {
-  left: calc(100% - 24px)
+.fd-toggle--s input:checked + .fd-toggle__switch:before {
+  left: -10px
 }
 .fd-toggle--l {
-  height: 32px;
+  height: 22px;
   width: 56px
 }
-.fd-toggle--l .fd-toggle__switch {
+.fd-toggle--l .fd-toggle__switch:before {
   height: 32px;
-  width: 32px
+  width: 32px;
+  top: -6px
 }
-.fd-toggle--l .fd-toggle__label {
-  padding-left: 66px
-}
-.fd-toggle--l input {
-  border-radius: 16px
-}
-.fd-toggle--l input:checked + .fd-toggle__switch {
-  left: calc(100% - 32px)
+.fd-toggle--l input:checked + .fd-toggle__switch:before {
+  left: -2px
 }
 /*!
 .fd-spinner+(.is-hidden|[aria-hidden=true])
@@ -3391,6 +3801,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   color: #0a6ed1;
   border-bottom: solid 1px #0a6ed1
 }
+.fd-link .is-hover,
 .fd-link:hover {
   color: #085caf;
   border-bottom-color: #085caf
@@ -3702,6 +4113,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   opacity: .5
 }
 .fd-menu {
+  --fd-menu-item-separator-color: var(--fd-color-neutral-2);
   font-size: 14px;
   line-height: 1.42857;
   color: #32363a;
@@ -3717,10 +4129,23 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   list-style: none;
   margin-bottom: 0
 }
+.fd-menu__group {
+  padding-left: 0
+}
 .fd-menu__list {
   margin: 0;
   padding: 0;
   list-style: none
+}
+.fd-menu__list--separated .fd-menu__list > *,
+.fd-menu__list--separated > * {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: var(--fd-menu-item-separator-color)
+}
+.fd-menu__list--separated .fd-menu__list > :first-child,
+.fd-menu__list--separated > :first-child {
+  border-top-width: 0
 }
 .fd-menu__title {
   display: block;
@@ -3745,23 +4170,18 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-menu__item > .fd-checkbox {
   margin: 0 10px 0 0
 }
+.fd-menu__item .is-hover,
 .fd-menu__item:hover {
   color: #32363a;
   background-color: #eeeeef
 }
-.fd-menu__item.is-active,
-.fd-menu__item.is-pressed,
 .fd-menu__item.is-selected,
-.fd-menu__item:active,
-.fd-menu__item[aria-pressed=true],
 .fd-menu__item[aria-selected=true] {
   background-color: rgba(10,110,209,.07)
 }
-.fd-menu__item.is-active:hover,
-.fd-menu__item.is-pressed:hover,
+.fd-menu__item.is-selected .is-hover,
 .fd-menu__item.is-selected:hover,
-.fd-menu__item:active:hover,
-.fd-menu__item[aria-pressed=true]:hover,
+.fd-menu__item[aria-selected=true] .is-hover,
 .fd-menu__item[aria-selected=true]:hover {
   background-color: rgba(10,110,209,.1)
 }
@@ -4732,9 +5152,6 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   opacity: .5
 }
 /*!
-input-addon
-*/
-/*!
 .fd-combobox
 */
 .fd-combobox-input .fd-popover {
@@ -4897,8 +5314,14 @@ input-addon
   vertical-align: middle
 }
 .fd-shellbar__logo {
-  height: 24px;
-  max-height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  max-height: 40px;
   background-repeat: no-repeat;
   background-size: contain
 }
@@ -4918,13 +5341,14 @@ input-addon
 }
 .fd-shellbar__logo img,
 .fd-shellbar__logo svg {
-  max-height: 24px;
-  width: auto
+  max-height: 40px;
+  width: auto;
+  display: block
 }
 .fd-shellbar__logo--image-replaced {
   background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MTIuMzggMjA0Ij48ZGVmcz48c3R5bGU+LmNscy0xLC5jbHMtMntmaWxsLXJ1bGU6ZXZlbm9kZH0uY2xzLTF7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCl9LmNscy0ye2ZpbGw6I2ZmZn08L3N0eWxlPjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB4MT0iMjA2LjE5IiB4Mj0iMjA2LjE5IiB5Mj0iMjA0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjMDBiOGYxIi8+PHN0b3Agb2Zmc2V0PSIuMDIiIHN0b3AtY29sb3I9IiMwMWI2ZjAiLz48c3RvcCBvZmZzZXQ9Ii4zMSIgc3RvcC1jb2xvcj0iIzBkOTBkOSIvPjxzdG9wIG9mZnNldD0iLjU4IiBzdG9wLWNvbG9yPSIjMTc3NWM4Ii8+PHN0b3Agb2Zmc2V0PSIuODIiIHN0b3AtY29sb3I9IiMxYzY1YmYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMxZTVmYmIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+U0FQX2dyYWRfUl9zY3JuX1plaWNoZW5mbMOkY2hlIDE8L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTAgMjA0aDIwOC40MUw0MTIuMzggMEgwdjIwNCIvPjxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTI0NC43MyAzOC4zNmgtNDAuNnY5Ni41MmwtMzUuNDYtOTYuNTVoLTM1LjE2bC0zMC4yNyA4MC43MkMxMDAgOTguNyA3OSA5MS42NyA2Mi40IDg2LjQgNTEuNDYgODIuODkgMzkuODUgNzcuNzIgNDAgNzJjLjA5LTQuNjggNi4yMy05IDE4LjM4LTguMzggOC4xNy40MyAxNS4zNyAxLjA5IDI5LjcxIDhsMTQuMS0yNC41NUM4OS4wNiA0MC40MiA3MSAzNi4yMSA1Ni4xNyAzNi4xOWgtLjA5Yy0xNy4yOCAwLTMxLjY4IDUuNi00MC42IDE0LjgzQTM0LjIzIDM0LjIzIDAgMCAwIDUuNzcgNzQuN0M1LjU0IDg3LjE1IDEwLjExIDk2IDE5LjcxIDEwM2M4LjEgNS45NCAxOC40NiA5Ljc5IDI3LjYgMTIuNjIgMTEuMjcgMy40OSAyMC40NyA2LjUzIDIwLjM2IDEzQTkuNTcgOS41NyAwIDAgMSA2NSAxMzVjLTIuODEgMi45LTcuMTMgNC0xMy4wOSA0LjEtMTEuNDkuMjQtMjAtMS41Ni0zMy42MS05LjU5TDUuNzcgMTU0LjQyYTkzLjc3IDkzLjc3IDAgMCAwIDQ2IDEyLjIyaDIuMTFjMTQuMjQtLjI1IDI1Ljc0LTQuMzEgMzQuOTItMTEuNzEuNTMtLjQxIDEtLjg0IDEuNDktMS4yOGwtNC4xMiAxMC44NUgxMjNsNi4xOS0xOC44MmE2Ny40NiA2Ny40NiAwIDAgMCAyMS42OCAzLjQzIDY4LjMzIDY4LjMzIDAgMCAwIDIxLjE2LTMuMjVsNiAxOC42NGg2MC4xNHYtMzloMTMuMTFjMzEuNzEgMCA1MC40Ni0xNi4xNSA1MC40Ni00My4yIDAtMzAuMTEtMTguMjItNDMuOTQtNTcuMDEtNDMuOTR6TTE1MC45MSAxMjFhMzYuOTMgMzYuOTMgMCAwIDEtMTMtMi4yOGwxMi44Ny00MC41OWguMjJsMTIuNjUgNDAuNzFhMzguNSAzOC41IDAgMCAxLTEyLjc0IDIuMTZ6bTk2LjItMjMuMzNoLTguOTRWNjQuOTFoOC45NGMxMS45MyAwIDIxLjQ0IDQgMjEuNDQgMTYuMTQgMCAxMi42LTkuNTEgMTYuNTctMjEuNDQgMTYuNTciLz48L3N2Zz4=);
   width: 48px;
-  max-width: 60px
+  height: 24px
 }
 .fd-shellbar__product {
   padding: 0 8px 0 0;
@@ -5064,20 +5488,6 @@ input-addon
 .fd-shellbar .fd-search-input .fd-input:focus {
   -webkit-box-shadow: none;
   box-shadow: none
-}
-.fd-shellbar .fd-user-menu--control {
-  border-radius: 4px
-}
-.fd-shellbar .fd-user-menu--control:hover {
-  background-color: #323d4d
-}
-.fd-shellbar .fd-user-menu--control.is-active,
-.fd-shellbar .fd-user-menu--control.is-pressed,
-.fd-shellbar .fd-user-menu--control.is-selected,
-.fd-shellbar .fd-user-menu--control:active,
-.fd-shellbar .fd-user-menu--control[aria-pressed=true],
-.fd-shellbar .fd-user-menu--control[aria-selected=true] {
-  background-color: #2a3341
 }
 @media (min-width:320px) {
   .fd-shellbar {

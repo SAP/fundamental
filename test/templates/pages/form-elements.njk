@@ -94,6 +94,18 @@
     {{ button({ label: "Dolor" }, size="compact") }}
 </div>
 
+<h3>textarea</h3>
+<div class="fd-form__item fd-has-display-flex">
+    {{ forms.textarea() }}
+    {{ button({ label: "Dolor"}) }}
+</div>
+
+<div class="fd-form__item fd-has-display-flex">
+    {{ forms.textarea(size="compact") }}
+    {{ button({ label: "Dolor"}) }}
+</div>
+
+
 <h3>select</h3>
 <div class="fd-form__item fd-has-display-flex">
     {{ forms.select() }} {{ button({ label: "Dolor"}) }}
@@ -106,6 +118,9 @@
 <h4>select[multiple]</h4>
 <div class="fd-form__item fd-has-display-flex">
     {{ forms.select(state={ multiple: true }) }} {{ button({ label: "Dolor"}) }}
+</div>
+<div class="fd-form__item fd-has-display-flex">
+    {{ forms.select(size="compact", state={ multiple: true }) }} {{ button({ label: "Dolor"}) }}
 </div>
 
 <h3>input[type=radio]</h3>

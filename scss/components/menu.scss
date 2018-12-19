@@ -19,7 +19,8 @@ $block: #{$fd-namespace}-menu;
     $fd-menu-item-background-color--selected: fd-color-state("selected") !default;
     $fd-menu-item-padding: fd-space(3) fd-space(4) !default;
     $fd-menu-item-color--disabled: fd-color("text", 2);
-    $fd-menu-item-seperator-color: fd-color("neutral", 2);
+    $fd-menu-item-separator-color: fd-color("neutral", 2);
+    --fd-menu-item-separator-color: var(--fd-color-neutral-2);
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
@@ -35,10 +36,27 @@ $block: #{$fd-namespace}-menu;
       list-style: none;
       margin-bottom: 0;
     }
+    &__group {
+      padding-left: 0;
+    }
     &__list {
       margin: 0;
       padding: 0;
       list-style: none;
+      //modified with separator border
+      @at-root {
+        &--separated {
+          & > *,
+          .#{$block}__list > * {
+            border-top-style: solid;
+            border-top-width: 1px;
+            @include fd-var-color("border-top-color", $fd-menu-item-separator-color, --fd-menu-item-separator-color);
+            &:first-child {
+              border-top-width: 0;
+            }
+          }
+        }
+      }
     }
     &__title {
       display: block;
@@ -60,7 +78,6 @@ $block: #{$fd-namespace}-menu;
       > .fd-checkbox {
         margin: 0 10px 0 0;
       }
-
       @include fd-hover {
         color: $fd-menu-item-color--hover;
         background-color: $fd-menu-item-background-color--hover;
@@ -84,7 +101,7 @@ $block: #{$fd-namespace}-menu;
     }
     hr {
         border: none;
-        border-top: 1px solid $fd-menu-item-seperator-color;
+        border-top: 1px solid $fd-menu-item-separator-color;
         margin: 0;
       }
     &__link {
