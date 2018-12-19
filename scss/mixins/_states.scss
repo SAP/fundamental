@@ -1,4 +1,26 @@
 @import "./../functions/color";
+// These mixins ensure that all state selectors — ARIA, pseudos, `is` fallbacks — get applied properly.
+
+// ACTIVE state (press and hold)
+@mixin fd-active {
+  &:active,
+  &.is-active {
+    @content;
+  }
+}
+
+// DISABLED state (not editable, not focusable, not submitted with `form`)
+@mixin fd-disabled {
+  &[aria-disabled="true"],
+  &.is-disabled,
+  &:disabled {
+    @content;
+  }
+}
+
+// FOCUS state (tab onto, click into)
+// override params $shadow-var, $shadow-value
+// `.is-focus` is for demo purposes
 @mixin fd-focus($shadow-var: --fd-color-action-focus, $shadow-value: fd-color-state("hover","action")) {
   &:focus,
   &.is-focus {
@@ -10,9 +32,45 @@
   }
 }
 
+// HOVER state (mouseover)
+// `.is-hover` is for demo purposes
+@mixin fd-hover {
+  &:hover,
+  .is-hover {
+    @content;
+  }
+}
+
+// PRESSED state (toggle with full press-and-release)
+@mixin fd-pressed {
+  &[aria-pressed="true"],
+  &.is-pressed {
+    @content;
+  }
+}
+
+// READONLY state (not editable, focusable, submitted with `form`)
+@mixin fd-readonly {
+  &[aria-readonly="true"],
+  &.is-readonly,
+  &[readonly] {
+    @content;
+  }
+}
+
+// SELECTED state (current item in nav)
 @mixin fd-selected {
-  &:active,
-  &.is-active,
+  &[aria-selected="true"],
+  &.is-selected {
+    @content;
+  }
+}
+
+// COMBO MIXINS
+// convenience mixins for various elements like buttons
+
+// PRESSED and SELECTED state
+@mixin fd-pressed-selected {
   &[aria-selected="true"],
   &.is-selected,
   &[aria-pressed="true"],
@@ -21,16 +79,14 @@
   }
 }
 
-@mixin fd-disabled {
-  &[aria-disabled="true"],
-  &.is-disabled,
-  &:disabled {
-    @content;
-  }
-}
-
-@mixin fd-hover {
-  &:hover {
+// ACTIVE, PRESSED and SELECTED state
+@mixin fd-active-pressed-selected {
+  &:active,
+  &.is-active,
+  &[aria-selected="true"],
+  &.is-selected,
+  &[aria-pressed="true"],
+  &.is-pressed {
     @content;
   }
 }
