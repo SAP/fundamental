@@ -1,16 +1,20 @@
 ---
 title: Action Bar
+id: action-bar
 keywords: action bar, action, bar
 sidebar: left-navigation-sidebar
 toc: false
 permalink: components/action-bar.html
 folder: components
 ---
+
+
 The Action Bar is located at the top of the page and is used for the following:
+{: .docs-intro}
 - Page title
 - Main Actions for the page
 
-<hr>
+
 
 ## Action bar with back button, description and action buttons.
 {% capture default-action-bar %}

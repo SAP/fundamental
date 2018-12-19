@@ -28,8 +28,20 @@ layout: default
 
     <h1 class="docs-header-h1">{{ page.title }}</h1>
 
+  {% assign version = site.data.versions[page.id] %}
+  {% assign status = site.data.status[version.status] %}
+<p>
+<span class="fd-badge{% if status.type %} fd-badge--{{ status.type }}{% endif %}" style="cursor: help;" title="{{ status.description }}">{{status.label}}
+</span>
+
+<span class="fd-label fd-has-font-weight-normal"> Available since {{ version.since}}</span>
+  {% if version.updated %}
+<span class="fd-label">Last updated {{ version.updated}}</span>
+{% endif %}
+</p>
+
    {% if page.summary %}
-    <p>{{page.summary}}</p>
+    <p class="docs-component-intro">{{page.summary}}</p>
    {% endif %}
 
     {% unless page.toc == false %}
