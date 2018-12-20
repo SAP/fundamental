@@ -1,5 +1,6 @@
 @import "./../settings";
-@import "../functions.scss";
+@import "./../mixins";
+@import "./../functions";
 
 // Required variables:
 // 	$fd-background-color
@@ -31,6 +32,7 @@ body {
 body {
     margin: 0;
     background-color: $fd-background-color;
+    //@include fd-var-color("background-color", $fd-background-color, --fd-background-color)
     -webkit-font-smoothing: antialiased;
     color: $fd-color;
 }
