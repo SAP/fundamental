@@ -88,7 +88,8 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
 }
 %fd-calendar-item-blocked {
   text-decoration: line-through;
-  color: $fd-calendar-item-color--blocked;
+  --fd-calendar-item-color: var(--fd-color-text-1);
+  @include fd-var-color("color", $fd-calendar-item-color--blocked);
   &:hover {
     cursor: not-allowed;
     background-color: $fd-calendar-item-background-color;
