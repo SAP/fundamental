@@ -24,7 +24,7 @@ A basic example of a time picker.
             <div class="fd-input-group fd-input-group--after">
                 <input type="time" class="fd-input " id="" placeholder="hh:mm am/pm">
                 <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button ">
-                                  <button class=" fd-button--light sap-icon--fob-watch fd-popover__control" aria-controls="rthHR811" aria-expanded="false" aria-haspopup="true"></button>
+                                  <button class=" fd-button--light sap-icon--history fd-popover__control" aria-controls="rthHR811" aria-expanded="false" aria-haspopup="true"></button>
 
                       </span>
             </div>
@@ -103,7 +103,7 @@ A basic example of a time picker.
             <div class="fd-input-group fd-input-group--after fd-input-group--compact">
                 <input type="time" class="fd-input  fd-input--compact" id="" placeholder="hh:mm am/pm">
                 <span class="fd-input-group__addon fd-input-group__addon--after fd-input-group__addon--button ">
-                                  <button class=" fd-button--light fd-button--compact sap-icon--fob-watch fd-popover__control" aria-controls="bJuyJ846" aria-expanded="false" aria-haspopup="true"></button>
+                                  <button class=" fd-button--light fd-button--compact sap-icon--history fd-popover__control" aria-controls="bJuyJ846" aria-expanded="false" aria-haspopup="true"></button>
                       </span>
             </div>
         </div>
