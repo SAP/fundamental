@@ -34,14 +34,18 @@ $block: #{$fd-namespace}-input-group;
                   border-bottom-left-radius: $fd-border-radius;
                   border-top-right-radius: 0;
                   border-bottom-right-radius: 0;
-                  border-left: 1px $fd-forms-border-color solid;
+                  border-left-style: solid;
+                  border-left-width: 1px;
+                  @include fd-var-color("border-left-color", $fd-forms-border-color, --fd-forms-border-color);
               }
               &:first-child {
                   border-top-left-radius: 0;
                   border-bottom-left-radius: 0;
                   border-top-right-radius: $fd-border-radius;
                   border-bottom-right-radius: $fd-border-radius;
-                  border-right: 1px $fd-forms-border-color solid;
+                  border-right-style: solid;
+                  border-right-width: 1px;
+                  @include fd-var-color("border-right-color", $fd-forms-border-color, --fd-forms-border-color);
                 }
         }
     }

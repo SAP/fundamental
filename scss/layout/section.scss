@@ -8,6 +8,9 @@
         .fd-section__actions
     .fd-section__footer
 */
+:root {
+  --fd-section-background-color: transparent;
+}
 $block: #{$fd-namespace}-section;
 .#{$block} {
 
@@ -24,6 +27,9 @@ $block: #{$fd-namespace}-section;
     padding: $fd-section-padding--top $fd-section-padding $fd-section-padding--bottom;
     padding: $fd-section-padding--top var(--fd-section-padding-x) $fd-section-padding--bottom;
     border-bottom: none;
+
+    background-color: var(--fd-section-background-color, transparent);
+
     &:last-child,
     &--no-border {
         border-bottom: 0;

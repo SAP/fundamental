@@ -1,4 +1,4 @@
-// 
+//
 @import "./../settings";
 @import "./../mixins";
 @import "./../functions";
@@ -20,12 +20,11 @@ $block: #{$fd-namespace}-toggle;
     $fd-toggle-width: nth($_defaults, 1);
     $fd-toggle-height: nth($_defaults, 2);
     $fd-toggle-background-color: fd-color("neutral", 3) !default;
-    $fd-toggle-on-background-color--disabled: fd-color-state("disabled", "action");//rgba($fd-link-color, .08) !default;
+    $fd-toggle-on-background-color--disabled: fd-color-state("disabled", "action");
     $fd-toggle-switch-width: nth($_defaults, 2);
     $fd-toggle-switch-background-color--disabled: hsla(240, 2%, 93%, 1) !default;
     $fd-toggle-switch-on-background-color--disabled: hsla(209, 90%, 92%, 1) !default;
-    $fd-toggle-switch-box-shadow: 1px 0px 0px 1px #085caf;
-
+    
     @include fd-reset;
     position: relative;
     display: inline-block;
@@ -89,7 +88,8 @@ $block: #{$fd-namespace}-toggle;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: $fd-toggle-background-color;
+        //background-color: $fd-toggle-background-color;
+        @include fd-var-color("background-color", $fd-toggle-background-color, --fd-color-neutral-3);
         -webkit-transition: 0.4s;
         transition: 0.4s;
         border-radius: 34px;
@@ -102,8 +102,10 @@ $block: #{$fd-namespace}-toggle;
         width: fd-space(7);
         left: 0;
         top: -5px;
-        background-color: fd-color('background', 2);
-        border: 1px solid $fd-toggle-background-color;
+        @include fd-var-color("background-color", fd-color("background", 2), --fd-color-background-2);
+        border-style: solid;
+        border-width: 1px;
+        @include fd-var-color("border-color", $fd-toggle-background-color, --fd-color-neutral-3);
         -webkit-transition: 0.4s;
         transition: 0.4s;
         border-radius: 50%;
@@ -117,8 +119,8 @@ $block: #{$fd-namespace}-toggle;
         -webkit-transform: translateX(26px);
         -ms-transform: translateX(26px);
         transform: translateX(26px);
-        background: $fd-link-color--pressed;
-        border-color: $fd-link-color--pressed;
+        @include fd-var-color("background-color", fd-color-state("selected", "action"), --fd-color-action-selected);
+        @include fd-var-color("border-color", fd-color-state("selected", "action"), --fd-color-action-selected);
         pointer-events: none;
         left: -6px;
     }
