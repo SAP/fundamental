@@ -1,5 +1,6 @@
 ---
 title: Loading Spinner
+id: spinner
 keywords: loading, spinner
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,11 +9,12 @@ folder: components
 summary:
 ---
 
-A loading spinner informs the user of an ongoing operation. Only one busy indicator should be shown at a time. The aria-hidden attribute is used to hide and show the element.
-
+A loading spinner informs the user of an ongoing operation. Only one busy indicator should be shown at a time.
+{: .docs-intro}
+The aria-hidden attribute is used to hide and show the element.
 Loading indicators are not visible all the time, only when needed. To show and hide the loading indicator the `aria-hidden` attribute is used to hide/show the element.
 
-<hr>
+<br>
 
 ## Loader element
 

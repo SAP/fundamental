@@ -1,5 +1,6 @@
 ---
-title: Section Layout
+title: Section
+id: section
 keywords: section layout
 toc: false
 sidebar: left-navigation-sidebar
@@ -7,14 +8,16 @@ permalink: /layouts/section.html
 folder: layouts
 summary:
 ---
-The `fd-section` is a page-level structure container used to divide a page into stacked sections with appropriate padding applied. These should be used to separate large groups of content on a page.
+The section is a page-level structure container used to divide a page into stacked sections with appropriate padding applied. These should be used to separate large groups of content on a page.
+{: .docs-intro}
 
-A section can be used a well, e.g. a full-width container common on websites, and hold background colors or images.
+You will generally use a section inside a page container which will give you the appropriate side margins. Since a section is full-width by default it can be used as a well with background colors or images.
 
-A section can have two child types:
+Can hold two child types:
 - `.fd-panel` (optionally with `.fd-panel-grid`) is the most common use.
 - `.fd-container` and `fd-col--[num]` can be used to organize panels or content when a grid layout is not desired.
-<hr/>
+
+<br>
 
 ## Section structure
 Shows an example of a background color applied with a helper class.

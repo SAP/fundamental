@@ -1,5 +1,6 @@
 ---
 title: Modal
+id: modal
 keywords: modal, modals
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,9 +9,12 @@ folder: components
 summary:
 ---
 
-The modal is a container generally displayed in response to an action. It is used for short forms, confirmation messages or to display contextual information that does not require a page. The modal should always be used in conjunction with the [Application Layout Containers](/layouts/application-layout.html#application-with-ui-overlay). See an example [App layout page with Modal](/demo-pages/modal-overlay-demo-page.html)
+The modal is a container generally displayed in response to an action.
+{: .docs-intro}
+It is used for short forms, confirmation messages or to display contextual information that does not require a page. The modal should always be used in conjunction with the [Application Layout Containers](/layouts/application-layout.html#application-with-ui-overlay). See an example [App layout page with Modal](/demo-pages/modal-overlay-demo-page.html)
 
-<hr/>
+<br>  
+
 
 ## Informational Modal
 This is used to present information to the user but the Alert Component doesn’t fit all the information.

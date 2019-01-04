@@ -1,5 +1,6 @@
 ---
 title: Contextual Menu
+id: contextual-menu
 keywords: contextual, menu
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,7 +9,10 @@ folder: components
 summary:
 ---
 
-The contextual menu component is an opinionated composition of the "popover" and "menu" components with the use of a styled button. A More icon or the word, "More", is used to indicate there are more options than room to display them. On click or tap, a contextual menu opens. Composed by the "popover" and "menu" components.
+
+The contextual menu component is an opinionated composition of the `popover` and `menu` components with the use of a styled button.
+{: .docs-intro}
+A More icon or the word, "More", is used to indicate there are more options than room to display them. On click or tap, a contextual menu opens. Composed by the "popover" and "menu" components.
 
 This component is completely composed from other components CSS and doesn't have any of its own.
 
@@ -17,7 +21,7 @@ Implementation Guidelines:
 - Opening one menu should close all other menus
 - Clicking away from the menu should also close the menu
 
-<hr>
+<br>
 
 ## With Icon
 {% capture default-contextualmenu %}

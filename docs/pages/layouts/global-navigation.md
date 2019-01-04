@@ -1,5 +1,6 @@
 ---
 title: Global Navigation
+id: global-nav
 keywords: global navigation
 toc: false
 sidebar: left-navigation-sidebar
@@ -7,10 +8,12 @@ permalink: /layouts/global-navigation.html
 folder: layouts
 summary:
 ---
-<span class="fd-badge fd-badge--error fd-badge--pill">Deprecated</span>
-> <small> global navigation has been Deprecated in favor of shell-bar component. It will continue to work untill v1.5 release.</small>
 
 The global navigation component offers a similar navigation approach between Hybris applications. It allows for branding, application groupings, access to a left navigation, switch between applications, contexts and access tooling such as search or a users' profile.
+{: .docs-intro}
+
+> Use `shellbar` instead
+
 Elements and positioning in the global navigation are optional but included are:
 
 * **Suite name**: identifies the suite or common grouping of the applications
@@ -20,6 +23,8 @@ Elements and positioning in the global navigation are optional but included are:
 * **Context switcher**: allows for switching context of application such as an organization or subscription.
 * **Search icon**: on click, a search field is displayed.
 * **User icon**: on click, user options are displayed such as Sign Off and Preferences.
+
+<br>
 
 {% capture app-layout %}
 <nav class="fd-global-nav">

@@ -1,5 +1,6 @@
 ---
 title: Table
+id: table
 keywords: table
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,8 +9,9 @@ folder: components
 ---
 
 A table is a set of tabular data. Line items can support data, images and actions.
+{: .docs-intro}
 
-<hr />
+<br>
 
 ## Default Table
 

@@ -1,6 +1,7 @@
 body{
     font-family: '72', sans-serif;
     background-color: fd-color(background, 2);
+    //@include fd-type("1");
 }
 
 a, a:visited{
@@ -28,10 +29,15 @@ hr{
 .docs-tiles{
     $docs-tiles-color: docs-color(action, 3);
     margin: 0 -20px;
+     grid-auto-rows: 1fr;
+
     .fd-tile[role="button"]{
         border: 1px solid docs-color(neturals, 1);
-        margin:20px;
+        margin: 20px;
+        padding-top: 10px;
+        padding-bottom: 20px;
         text-decoration: none;
+
         &:hover{
             border-color: $docs-tiles-color;
         }
@@ -49,6 +55,9 @@ hr{
         &:last-child {
           margin-bottom: 0;
         }
+    }
+    .fd-tile__content{
+        align-self: auto;
     }
     .fd-tile__description{
         color: docs-color(text, 1);
@@ -83,4 +92,17 @@ hr{
     td{
         vertical-align: top;
     }
+}
+
+
+.docs-status {
+  padding: 10px 0;
+  margin-bottom: 30px;
+  border: solid 1px fd-color(neutral, 3);
+  border-width: 1px 0;
+
+}
+
+.docs-intro {
+  @include fd-type("3");
 }

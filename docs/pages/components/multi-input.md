@@ -1,5 +1,6 @@
 ---
 title: Multi Input
+id: multi-input
 keywords: multi input
 sidebar: left-navigation-sidebar
 toc: false

@@ -1,5 +1,6 @@
 ---
 title: Search Input
+id: search-input
 keywords: search input
 sidebar: left-navigation-sidebar
 toc: false

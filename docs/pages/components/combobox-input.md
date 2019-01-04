@@ -1,5 +1,6 @@
 ---
 title: Combobox Input
+id: combobox-input
 keywords: combobox input
 sidebar: left-navigation-sidebar
 toc: false
@@ -7,6 +8,7 @@ permalink: components/combobox-input.html
 folder: components
 summary:
 ---
+
 
 {% capture default %}
 <div class="fd-combobox-input">
