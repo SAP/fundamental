@@ -7,23 +7,29 @@
     --#{$fd-namespace}-color-#{$type}-#{$shade}: #{$value};
     }
   }
-  --fd-color-positive: #{$fd-color--positive};
-  --fd-color-negative: #{$fd-color--negative};
-  --fd-color-alert: #{$fd-color--alert};
 
-  //derived states
-  --fd-color-action-hover: #{map-get($fd-colors-action-states, "hover")};
-  --fd-color-action-focus: #{map-get($fd-colors-action-states, "hover")};
-  --fd-color-action-selected: #{map-get($fd-colors-action-states, "selected")};
-  --fd-color-action-disabled: #{map-get($fd-colors-action-states, "disabled")};
-  --fd-color-action-visited: #{map-get($fd-colors-action-states, "visited")};
-
+  //base colors
+  --fd-color: var(--fd-color-text-1);
+  --fd-background-color: var(--fd-color-background-1);
   --fd-color-background-hover: #{map-get($fd-colors-background-states, "hover")};
   --fd-color-background-selected: #{map-get($fd-colors-background-states, "selected")};
   --fd-color-background-selected-hover: #{map-get($fd-colors-background-states, "selected-hover")};
   --fd-color-background-positive: #{map-get($fd-colors-background-states, "positive")};
   --fd-color-background-alert: #{map-get($fd-colors-background-states, "alert")};
   --fd-color-background-negative: #{map-get($fd-colors-background-states, "negative")};
+
+  //action colors
+  --fd-color-action: var(--fd-color-action-1);
+  --fd-color-action-hover: #{map-get($fd-colors-action-states, "hover")};
+  --fd-color-action-focus: #{map-get($fd-colors-action-states, "hover")};
+  --fd-color-action-selected: #{map-get($fd-colors-action-states, "selected")};
+  --fd-color-action-disabled: #{map-get($fd-colors-action-states, "disabled")};
+  --fd-color-action-visited: #{map-get($fd-colors-action-states, "visited")};
+
+  //status colors
+  --fd-color-positive: #{$fd-color--positive};
+  --fd-color-negative: #{$fd-color--negative};
+  --fd-color-alert: #{$fd-color--alert};
 
   //form colors
   --fd-forms-color: #{$fd-color};
