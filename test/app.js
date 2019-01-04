@@ -182,7 +182,6 @@ router.get('/', (req, res) => {
 
 function getStarterData() {
     const data = {
-        "toolbar": require(`./templates/toolbar/data.json`),
         "tree": require(`./templates/tree/data.json`),
         "table": require(`./templates/table/data.json`),
         "tabs": require(`./templates/tabs/data.json`),
