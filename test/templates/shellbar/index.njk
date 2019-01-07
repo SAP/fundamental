@@ -32,31 +32,29 @@
 %}
 {% block content %}
 
-<style media="screen">
-    .fd-shellbar{
-        margin: 40px 0;
-    }
-</style>
 
 <div style="background-color: #f3f4f5; margin:-20px; padding:20px;">
-    <h1>shellbar</h1>
 
+  <h2>typical implentation</h2>
+    {% set example %}
+        {{  shellbar(switcher=true) }}
+    {% endset %}
+    {{ format(example) }}
+<br><br>
+<h2>search open</h2>
     {% set example %}
         {{  shellbar(switcher=true) }}
     {% endset %}
     {{ format(example) }}
 
-    {% set example %}
-        {{  shellbar(switcher=true) }}
-    {% endset %}
-    {{ format(example) }}
-
+    <br><br>
+<h2>no switcher</h2>
     {% set example %}
         {{  shellbar(switcher=false) }}
     {% endset %}
     {{ format(example) }}
 
-
+<br><br>
     {% set example %}
         {{  shellbar(product={ title: "Sales Cloud"}) }}
     {% endset %}
