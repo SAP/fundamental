@@ -7,20 +7,30 @@
 $block: #{$fd-namespace}-menu;
 
 .#{$block} {
-  //SETTINGS
     //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-menu-color: $fd-forms-color !default;
+
+    //group title
+    $fd-menu-title-color: fd-color("text", 3) !default;
+    $fd-menu-title-background-color: fd-color("neutral", 1) !default;
+    $fd-menu-title-padding: fd-space("tiny") !default;
 
     //items
-    $fd-menu-item-color: $fd-menu-color !default;
-    $fd-menu-item-color--hover: $fd-menu-color !default;
+    $fd-menu-item-color: fd-color("text", 2) !default;
+    $fd-menu-item-color--hover: $fd-color !default;
     $fd-menu-item-background-color: map-get($fd-colors-background, 2) !default;
     $fd-menu-item-background-color--hover: fd-color-state("hover") !default;
     $fd-menu-item-background-color--selected: fd-color-state("selected") !default;
-    $fd-menu-item-padding: fd-space(3) fd-space(4) !default;
-    $fd-menu-item-color--disabled: fd-color("text", 2);
-    $fd-menu-item-separator-color: fd-color("neutral", 2);
+
+    $fd-menu-item-padding-x: fd-space("regular") !default;
+    $fd-menu-item-padding-y: fd-space("tiny") + 2px !default;
+
+    $fd-menu-item-separator-color: fd-color("neutral", 2) !default;
     --fd-menu-item-separator-color: var(--fd-color-neutral-2);
+
+    --fd-menu-item-color: var(--fd-color-text-2);
+    --fd-menu-item-background-color: var(--fd-color-background-2);
+    --fd-menu-title-color: var(--fd-color-text-3);
+    --fd-menu-title-background-color: var(--fd-color-neutral-1);
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
@@ -30,7 +40,6 @@ $block: #{$fd-namespace}-menu;
     white-space: nowrap;
     padding-top: fd-space(base);
     padding-bottom: fd-space(base);
-
     &__group,
     &__list {
       list-style: none;
@@ -64,28 +73,29 @@ $block: #{$fd-namespace}-menu;
       padding: $fd-menu-title-padding $fd-menu-item-padding-x;
       @include fd-type("-1", "normal");
       text-transform: uppercase;
-      color: $fd-menu-title-color;
-      background: $fd-menu-title-background-color;
+      @include fd-var-color("color", $fd-menu-title-color, --fd-menu-title-color);
+      @include fd-var-color("background-color", $fd-menu-title-background-color, --fd-menu-title-background-color);
     }
     &__item {
       display: block;
       @include action-cursor;
       padding: $fd-menu-item-padding-y $fd-menu-item-padding-x;
-      color: $fd-menu-item-color;
-      background-color: $fd-menu-item-background-color;
+      @include fd-var-color("background-color", $fd-menu-item-background-color, --fd-menu-item-background-color);
+      @include fd-var-color("color", $fd-menu-item-color, --fd-menu-item-color);
       @include fd-weight("normal");
       text-align: left;
       > .fd-checkbox {
         margin: 0 10px 0 0;
       }
       @include fd-hover {
-        color: $fd-menu-item-color--hover;
-        background-color: $fd-menu-item-background-color--hover;
+        @include fd-var-color("color", $fd-menu-item-color--hover, --fd-color-text-1);
+        @include fd-var-color("background-color", $fd-menu-item-background-color--hover, --fd-color-background-hover);
       }
       @include fd-selected {
-          background-color: $fd-menu-item-background-color--selected;
+          @include fd-var-color("background-color", $fd-menu-item-background-color--selected, --fd-color-background-selected);
           @include fd-hover {
-            background-color: fd-color-state("selected-hover");
+            @include fd-var-color("background-color", fd-color-state("selected-hover"), --fd-color-background-selected-hover);
+
           }
       }
     }
@@ -102,16 +112,5 @@ $block: #{$fd-namespace}-menu;
         justify-content: center;
         align-items: center;
         width: 30px;
-    }
-    hr {
-        border: none;
-        border-top: 1px solid $fd-menu-item-separator-color;
-        margin: 0;
-      }
-    &__link {
-      color: $fd-color--action;
-      &:hover {
-        color: fd-color-state("hover", "action");
-      }
     }
 }
