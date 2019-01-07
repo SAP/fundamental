@@ -109,18 +109,4 @@ $block: #{$fd-namespace}-menu;
         clear: left;
         padding: fd-space(2.5);
     }
-    //this is invalid (deprecate)
-    hr {
-        border: none;
-        border-top-style: solid;
-        border-top-width: 1px;
-        @include fd-var-color("border-top-color", $fd-menu-item-separator-color, --fd-menu-item-separator-color)
-        margin: 0;
-      }
-    &__link {
-      @include fd-var-color("color", $fd-color--action, --fd-color-action-1);
-      &:hover {
-        @include fd-var-color("color", fd-color-state("hover", "action"), --fd-color-action-hover);
-      }
-    }
 }
