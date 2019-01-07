@@ -7,8 +7,10 @@
 $block: #{$fd-namespace}-tile-grid;
 .#{$block} {
   //VARS
-  $fd-tile-grid-border-color: fd-color("background") !default;
+  $fd-tile-grid-border-color: fd-color("neutral", 2) !default;
   $fd-tile-grid-items-per-row: 3 !default;
+
+  --fd-tile-grid-border-color: var(--fd-color-neutral-2);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -18,7 +20,8 @@ $block: #{$fd-namespace}-tile-grid;
     margin-bottom: 0;
     border-radius: 0 !important;
     position: relative;
-    border: solid 1px $fd-tile-grid-border-color;
+    border-style: solid;
+    @include fd-var-color("border-color", $fd-tile-grid-border-color, --fd-tile-grid-border-color);
     border-width: 0 1px 1px 0;
   }
   @include fd-screen(s) {
