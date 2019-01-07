@@ -8,7 +8,40 @@
 
 {% block content %}
 
-<h1>status-label with build-in icons</h1>
+<h2>default</h2>
+
+{% set example %}
+
+{{  status_label(
+        properties={ label: "Status with no icon" }
+    )
+}}
+
+{{  status_label(
+        properties={ label: "Success with no icon" },
+        modifier={ block: 'success'}
+    )
+}}
+
+{{  status_label(
+        properties={ label: "Warning with no icon" },
+        modifier={ block: 'warning'}
+    )
+}}
+
+{{  status_label(
+        properties={ label: "Error with no icon" },
+        modifier={ block: 'error'}
+    )
+}}
+
+{% endset %}
+{{ format(example) }}
+
+<br><br>
+
+<h2>w/ built-in icons</h2>
+
 
 <!-- output the component example and the code snippet -->
 {% set example %}
@@ -19,15 +52,11 @@
     )
 }}
 
-<br><br>
-
 {{  status_label(
         properties={ label: "Away" },
         modifier={ block: 'away' }
     )
 }}
-
-<br><br>
 
 {{  status_label(
         properties={ label: "Busy" },
@@ -35,10 +64,8 @@
     )
 }}
 
-<br><br>
-
 {{  status_label(
-        properties={ label: "Appear Offline" },
+        properties={ label: "Offline" },
         modifier={ block: 'offline' }
     )
 }}
@@ -48,11 +75,7 @@
 
 <br><br>
 
-<hr>
-
-<br>
-
-<h1>status-label any sap icon and colors</h1>
+<h1>with sap icon and colors</h1>
 
 {% set example %}
 
@@ -62,16 +85,12 @@
     )
 }}
 
-<br><br>
-
 {{  status_label(
         properties={ label: "Success" },
         modifier={ block: 'success' },
         classes="sap-icon--message-success"
     )
 }}
-
-<br><br>
 
 {{  status_label(
         properties={ label: "Warning" },
@@ -80,7 +99,6 @@
     )
 }}
 
-<br><br>
 
 {{  status_label(
         properties={ label: "Error" },
@@ -92,46 +110,5 @@
 {% endset %}
 {{ format(example) }}
 
-<br><br>
-
-<hr>
-
-<br>
-
-<h1>status-label any sap icon and colors</h1>
-
-{% set example %}
-
-{{  status_label(
-        properties={ label: "Status with no icon" }
-    )
-}}
-
-<br><br>
-
-{{  status_label(
-        properties={ label: "Success with no icon" },
-        modifier={ block: 'success'}
-    )
-}}
-
-<br><br>
-
-{{  status_label(
-        properties={ label: "Warning with no icon" },
-        modifier={ block: 'warning'}
-    )
-}}
-
-<br><br>
-
-{{  status_label(
-        properties={ label: "Error with no icon" },
-        modifier={ block: 'error'}
-    )
-}}
-
-{% endset %}
-{{ format(example) }}
 
 {% endblock %}

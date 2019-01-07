@@ -8,7 +8,7 @@ $fd-popover-top-position-noarrow: 100% !default;
 $fd-popover-left-position:        0 !default;
 $fd-popover-border:               solid 1px $fd-forms-border-color !default;
 $fd-popover-z-index:              map-get($fd-z-index-levels, "second") !default;
-$fd-popover-background-color:     fd-color(background, 2) !default;
+$fd-popover-background-color:     fd-color("background", 2) !default;
 $fd-popover-box-shadow:           0 0 1px 0 rgba(218 ,222, 230, .50), 0 2px 8px 0 rgba(0, 8, 26, .20) !default;
 
 $fd-popover-arrow-top-back:       -9px !default;
@@ -48,7 +48,7 @@ $block: #{$fd-namespace}-popover;
 
       @include fd-rtl {
         left: auto;
-        right: -3px;  
+        right: -3px;
 
         &::before {
           right: $fd-popover-arrow-x-offset;
@@ -56,19 +56,18 @@ $block: #{$fd-namespace}-popover;
         &::after {
           right: $fd-popover-arrow-x-offset;
         }
-      }   
-            
+      }
+
       &::before {
-        @include triangle(13px 8px, white, up);
+        @include triangle(13px 8px, $fd-popover-background-color, up, --fd-color-background-2);
         content: "";
         position: absolute;
         top: $fd-popover-arrow-top-front;
         left: $fd-popover-arrow-x-offset;
         z-index: $fd-popover-z-index + 2;
       }
-
       &::after {
-        @include triangle(13px 8px, fd-color('neutral', 4), up);
+        @include triangle(13px 8px, fd-color("neutral", 4), up, --fd-color-neutral-4);
         content: "";
         position: absolute;
         top: $fd-popover-arrow-top-back;
@@ -82,13 +81,13 @@ $block: #{$fd-namespace}-popover;
 
         @include fd-rtl {
           right: -3px;
-          left: auto;     
-          
+          left: auto;
+
           &::before,
           &::after {
             right: $fd-popover-arrow-right;
             left: unset;
-          }             
+          }
         }
 
         &::before,
@@ -104,13 +103,13 @@ $block: #{$fd-namespace}-popover;
 
         @include fd-rtl {
           right: auto;
-          left: -3px;     
-          
+          left: -3px;
+
           &::before,
           &::after {
             left: $fd-popover-arrow-right;
             right: unset;
-          }             
+          }
         }
 
         &::before,
@@ -136,6 +135,6 @@ $block: #{$fd-namespace}-popover;
           opacity: 0;
           visibility: hidden;
           transform: translateY($fd-popover-transition-distance);
-      }   
+      }
     }
 }

@@ -44,7 +44,7 @@
 	}
 }
 //Taken from https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/library/_triangle.scss
-@mixin triangle($size, $color, $direction) {
+@mixin triangle($size, $color, $direction, $varcolor:null) {
   $width: nth($size, 1);
   $height: nth($size, length($size));
   $foreground-color: nth($color, 1);
@@ -55,26 +55,41 @@
   @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
     $width: $width / 2;
     $height: if(length($size) > 1, $height, $height/2);
-
     @if $direction == up {
       border-width: 0 $width $height $width;
-      border-bottom-color:  $foreground-color;
+      @if $varcolor {
+        @include fd-var-color("border-bottom-color", $foreground-color, $varcolor);
+      } @else {
+        border-bottom-color:  $foreground-color;
+      }
       border-left-color:  $background-color;
       border-right-color:  $background-color;
     } @else if $direction == right {
       border-width: $width 0 $width $height;
       border-bottom-color: $background-color;
-      border-left-color: $foreground-color;
+      @if $varcolor {
+        @include fd-var-color("border-left-color", $foreground-color, $varcolor);
+      } @else {
+        border-left-color:  $foreground-color;
+      }
       border-top-color: $background-color;
     } @else if $direction == down {
       border-width: $height $width 0 $width;
-      border-top-color: $foreground-color;
+      @if $varcolor {
+        @include fd-var-color("border-top-color", $foreground-color, $varcolor);
+      } @else {
+        border-top-color:  $foreground-color;
+      }
       border-left-color: $background-color;
       border-right-color: $background-color;
     } @else if $direction == left {
       border-width: $width $height $width 0;
       border-bottom-color: $background-color;
-      border-right-color: $foreground-color;
+      @if $varcolor {
+        @include fd-var-color("border-right-color", $foreground-color, $varcolor);
+      } @else {
+        border-right-color:  $foreground-color;
+      }
       border-top-color: $background-color;
     }
   } @else if ($direction == up-right) or ($direction == up-left) {
