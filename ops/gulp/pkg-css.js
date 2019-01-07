@@ -28,7 +28,10 @@ const sassTask = () => {
     const prefix = config.tasks.css.prefix;
     const files = environment.production ? [`${paths.src}/*.${config.tasks.css.extensions}`,`!${paths.src}/*.less.${config.tasks.css.extensions}`] : `${paths.src}/all.scss`;
 
-    const isAllCss = file => file.path.includes('all');
+    const isAllCss = file => file.path.includes('all.css');
+    const isAllIE11Css = file => file.path.includes('all-ie11.css');
+
+
     return gulp.src(files)
         .pipe(gulpif(environment.development, sourcemaps.init()))
         .pipe(sass().on('error', (e) => {
@@ -39,6 +42,9 @@ const sassTask = () => {
         .pipe(gulpif(environment.production, cleanCSS(config.tasks.css.cleanCSS)))
         .pipe(gulpif(isAllCss, rename({
             basename: prefix
+        })))
+        .pipe(gulpif(isAllIE11Css, rename({
+            basename: `${prefix}-ie11`
         })))
         .pipe(gulpif(environment.development, sourcemaps.write()))
         .pipe(gulp.dest(paths.dest));
