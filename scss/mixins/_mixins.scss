@@ -218,23 +218,25 @@
 }
 
 @mixin fd-link($color: $fd-color--action) {
-  color: $fd-color--action;
-  border-bottom: solid 1px $fd-color--action;
+  @include fd-var-color("color", $fd-color--action, --fd-color-action-1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  @include fd-var-color("border-bottom-color", $fd-color--action, --fd-color-action-1);
   @include fd-hover {
-    color: map-get($fd-colors-action-states, "hover");
-    border-bottom-color: map-get($fd-colors-action-states, "hover");
+    @include fd-var-color("color", map-get($fd-colors-action-states, "hover"), --fd-color-action-hover);
+    @include fd-var-color("border-bottom-color", map-get($fd-colors-action-states, "hover"), --fd-color-action-hover);
   }
   &:visited {
-    color: map-get($fd-colors-action-states, "visited");
-    border-bottom-color: map-get($fd-colors-action-states, "visited");
+    @include fd-var-color("color", map-get($fd-colors-action-states, "visited"), --fd-color-action-visited);
+    @include fd-var-color("border-bottom-color", map-get($fd-colors-action-states, "visited"), --fd-color-action-visited);
   }
   @include fd-active-pressed-selected {
-      color: map-get($fd-colors-action-states, "selected");
-      border-bottom-color: map-get($fd-colors-action-states, "selected");
+    @include fd-var-color("color", map-get($fd-colors-action-states, "selected"), --fd-color-action-selected);
+    @include fd-var-color("border-bottom-color", map-get($fd-colors-action-states, "selected"), --fd-color-action-selected);
   }
   @include fd-disabled {
-      color: map-get($fd-colors-action-states, "disabled");
-      border-bottom-color: map-get($fd-colors-action-states, "disabled");
+    @include fd-var-color("color", map-get($fd-colors-action-states, "disabled"), --fd-color-action-disabled);
+    @include fd-var-color("border-bottom-color", map-get($fd-colors-action-states, "disabled"), --fd-color-action-disabled);
   }
 }
 

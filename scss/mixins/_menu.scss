@@ -1,6 +1,16 @@
 @import "../settings";
 
 @mixin fd-menu() {
+
+  $fd-menu-item-color: fd-color("text", 2) !default;
+  $fd-menu-item-background-color--hover: fd-color-state("hover") !default;
+  $fd-menu-item-background-color--selected: fd-color-state("selected") !default;
+  $fd-menu-item-padding-x: fd-space("regular") !default;
+  $fd-menu-item-padding-y: fd-space("tiny") + 2px !default;
+  $fd-menu-title-padding: fd-space("tiny") !default;
+  $fd-menu-title-color: fd-color("text", 3) !default;
+  $fd-menu-title-background-color: fd-color("neutral", 1) !default;
+
   &__group,
   &__list {
     list-style: none;
