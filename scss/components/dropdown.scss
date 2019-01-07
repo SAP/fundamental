@@ -20,18 +20,6 @@ $block: #{$fd-namespace}-dropdown;
   ) !default;
 
     //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-dropdown-menu-color: solid 1px $fd-forms-color !default;
-    $fd-dropdown-menu-border: solid 1px $fd-forms-border-color !default;
-    $fd-dropdown-menu-z-index: map-get($fd-z-index-levels, "second") !default;
-    $fd-dropdown-menu-background-color: fd-color(background) !default;
-    $fd-dropdown-menu-shadow: 0 0 4px 1px rgba(fd-color(neutral, 2), 1) !default;
-    //items
-    $fd-dropdown-menu-item-color: $fd-dropdown-menu-color !default;
-    $fd-dropdown-menu-item-color--hover: fd-color("text", 5) !default;
-    $fd-dropdown-menu-item-background-color: $fd-dropdown-menu-background-color !default;
-    $fd-dropdown-menu-item-background-color--hover: darken(fd-color(action), 5%) !default;
-    $fd-dropdown-menu-item-padding: fd-space(3) fd-space(4) !default;
-    $fd-dropdown-menu-item-color--disabled: fd-color(text, 2);
     //anim
     $fd-dropdown-menu-item-transition-params: $fd-animation--speed ease-in !default;
 
@@ -65,7 +53,9 @@ $block: #{$fd-namespace}-dropdown;
         }
         &:not(.fd-button--standard) {
             &::after {
-                border-right: 1px solid $fd-forms-border-color;
+                border-right-style: solid;
+                border-right-width: 1px;
+                @include fd-var-color("border-right-color", $fd-forms-border-color, --fd-color-neutral-4);
                 border-left: none;
             }
         }
@@ -74,15 +64,16 @@ $block: #{$fd-namespace}-dropdown;
             padding-right: fd-space("xs");
         }
       }
-
       &::after {
-        color: $fd-link-color;
+        @include fd-var-color("color", $fd-color--action, --fd-color-action-1);
         width: $fd-forms-height - 2;
         height: $fd-forms-height - 2;
         margin-top: -3px;
         padding-top: fd-space(2.5);
-        border-left: 1px solid $fd-forms-border-color;
-        background: fd-color("neutral", 1);
+        border-left-style: solid;
+        border-left-width: 1px;
+        @include fd-var-color("border-left-color", $fd-forms-border-color, --fd-color-neutral-4);
+        @include fd-var-color("background-color", fd-color("neutral", 1), --fd-color-neutral-1);
         border-top-right-radius: $fd-border-radius;
         border-bottom-right-radius: $fd-border-radius;
       }
@@ -134,36 +125,42 @@ $block: #{$fd-namespace}-dropdown;
       }
     }
     &__control.fd-button {
-        color: $fd-forms-color;
-        border-color: $fd-forms-border-color;
+        @include fd-var-color("color", $fd-forms-color, --fd-color-text-1);
+        @include fd-var-color("border-color", $fd-forms-border-color, --fd-color-neutral-4);
         padding-right: 0;
         padding-top: fd-space(1) - 2;
-        &:hover{
-            color: $fd-forms-color;
-            background-color:  $fd-forms-background-color;
-            border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
-            box-shadow: none;
+        @include fd-hover {
+          @include fd-var-color("color", $fd-forms-color, --fd-color-text-1);
+          @include fd-var-color("background-color", $fd-forms-background-color, --fd-color-background-2);
+          @include fd-var-color("border-color", fd-color-state("hover", "action"), --fd-color-action-hover);
+          box-shadow: none;
         }
-        &:active, &[aria-expanded="true"] {
-            color: $fd-forms-color;
-            background-color:  $fd-forms-background-color;
-            border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
-            box-shadow: 0 0 0 1px adjust-color($fd-forms-color--active, $lightness: 30%);
+        &:active,
+        &.is-active,
+        &[aria-expanded="true"] {
+            @include fd-var-color("color", $fd-forms-color, --fd-color-text-1);
+            @include fd-var-color("background-color", $fd-forms-background-color, --fd-color-background-2);
+            @if $fd-support-css-var-fallback {
+              box-shadow: 0 0 0 1px fd-color-state("hover", "action");
+            }
+            box-shadow: 0 0 0 1px var(--fd-color-action-hover);
         }
     }
     &__control.fd-button--standard {
 
-        &:hover, &:active {
-            color: fd-color("text", 2);
-            background-color: fd-color-darker(fd-color("neutral", 1));
-            border-color: fd-color-darker(fd-color("neutral", 1));
+        &:hover,
+        &:active,
+        &.is-active {
+            @include fd-var-color("color", fd-color("text", 2), --fd-color-text-2);
+            @include fd-var-color("background-color", fd-color("neutral", 1), --fd-color-neutral-1);
+            @include fd-var-color("border-color", fd-color("status", 1), --fd-color-status-4);
             box-shadow: none;
         }
 
         &::after{
             width: auto;
             margin-right: fd-space(2.5);
-            color: $fd-forms-color;
+            @include fd-var-color("color", $fd-forms-color, --fd-color-text-1);
             background-color:  transparent;
             border-left: none;
         }
