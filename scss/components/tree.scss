@@ -14,13 +14,14 @@
 $block: #{$fd-namespace}-tree;
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-tree-border-color: transparent !default;
+    $fd-tree-background-color:  fd-color("background", 2) !default;
+    $fd-tree-border-color: fd-color("neutral", 2) !default;
     $fd-tree-border-width: 0 !default;
     $fd-tree-link-color: fd-color(action, 1) !default;
     $fd-tree-cell-spacing: $fd-width--gutter !default;
     --fd-tree-cell-spacing: var(--fd-width-gutter);
     $fd-tree-cell-padding: fd-space(3) !default;
-
+    $fd-tree-header-color: fd-color("text", 3) !default;
     $fd-tree-header-background-color: fd-color("neutral", 2) !default;
     $fd-tree-row-background-color--hover: fd-color-state("hover") !default;
 
@@ -28,12 +29,22 @@ $block: #{$fd-namespace}-tree;
     $fd-tree-control-margin-right: fd-space(2) !default;
     $fd-tree-transition-params: $fd-animation--speed ease-in !default;
 
+    --fd-tree-border-color: var(--fd-color-neutral-2);
+    --fd-tree-background-color: var(--fd-color-background-2);
+    --fd-tree-link-color: var(--fd-color-action-1);
+    --fd-tree-header-color: var(--fd-color-text-3);
+    --fd-tree-header-background-color: var(--fd-color-neutral-2);
+
     @include fd-reset;
     @include fd-last-child;
     position: relative;
     width: 100%;
     max-width: 100%;
-    border-bottom: solid $fd-tree-border-width $fd-tree-border-color;
+    @include fd-var-color("background-color", $fd-tree-background-color, --fd-tree-background-color);
+    border-bottom-style: solid;
+    border-bottom-width: $fd-tree-border-width;
+    @include fd-var-color("border-bottom-color", $fd-tree-border-color, --fd-tree-border-color);
+
     margin-bottom: $fd-margin-bottom;
     margin-left: 0;
     &:last-child {
@@ -41,9 +52,11 @@ $block: #{$fd-namespace}-tree;
     }
     &--header {
         border-bottom: 0;
-        border-top: solid $fd-tree-border-width $fd-tree-border-color;
+        border-top-style: solid;
+        border-top-width: $fd-tree-border-width;
+        @include fd-var-color("border-top-color", $fd-tree-border-color, --fd-tree-border-color);
         margin-bottom: 0;
-        background-color: $fd-tree-header-background-color;
+        @include fd-var-color("background-color", $fd-tree-header-background-color, --fd-tree-header-background-color);
     }
     &__group {
         //see addt'l group classes under __col--first below
@@ -60,7 +73,9 @@ $block: #{$fd-namespace}-tree;
         }
     }
     &__item {
-        border-top: solid $fd-tree-border-width $fd-tree-border-color;
+        border-top-style: solid;
+        border-top-width: $fd-tree-border-width;
+        @include fd-var-color("border-top-color", $fd-tree-border-color, --fd-tree-border-color);
         margin-bottom: 0;
         list-style: none;
     }
@@ -75,12 +90,12 @@ $block: #{$fd-namespace}-tree;
         position: relative;
         transition: background-color $fd-tree-transition-params;
         @include fd-hover {
-            background-color: $fd-tree-row-background-color--hover;
+        @include fd-var-color("background-color", $fd-tree-row-background-color--hover, --fd-color-background-hover);
         }
         &--header {
             @include fd-type("-1");
-            color: fd-color("text", 3);
-            background-color: fd-color("background",1);
+            @include fd-var-color("color", $fd-tree-header-color, --fd-tree-header-color);
+            @include fd-var-color("background-color", $fd-tree-header-background-color, --fd-tree-header-background-color);
             text-transform: uppercase;
             @include fd-hover {
                 background-color: initial;
@@ -88,6 +103,7 @@ $block: #{$fd-namespace}-tree;
         }
         @include fd-selected {
             background-color: fd-color-state("selected");
+            @include fd-var-color("background-color", fd-color-state("selected"), --fd-color-background-selected);
         }
     }
     $_row_padding: $fd-tree-control-width + $fd-tree-control-margin-right + 4;
@@ -127,18 +143,11 @@ $block: #{$fd-namespace}-tree;
         vertical-align: middle;
         transition: transform $fd-animation--speed linear;
         @include fd-icon("nav-back");
-        color: $fd-link-color;
+        @include fd-var-color("color", $fd-link-color, --fd-color-action-1);
         @include fd-focus;
         &[aria-pressed="true"],
         &.is-pressed {
             transform: rotate(270deg);
         }
     }
-    a {
-        color: $fd-tree-link-color;
-        @include fd-hover{
-            color: $fd-tree-link-color;
-        }
-    }
-
 }

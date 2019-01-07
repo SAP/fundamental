@@ -15,7 +15,7 @@ $block: #{$fd-namespace}-tile;
   //VARS
   $fd-tile-color: fd-color("text",3) !default;
   $fd-tile-background-color: fd-color("background",2) !default;
-  $fd-tile-title-color: fd-color("text",2) !default;
+  $fd-tile-title-color: fd-color("text", 1) !default;
   $fd-tile-content-padding: fd-space(4) fd-space("reg") !default;
   $fd-tile-content-padding-x: fd-space("small") !default;
   $fd-tile-content-padding-y: fd-space(2) + 2px !default;
@@ -23,10 +23,14 @@ $block: #{$fd-namespace}-tile;
   //anim
   $fd-tile-transition-params: $fd-animation--speed ease-in !default;
 
+  --fd-tile-color: var(--fd-color-text-3);
+  --fd-tile-background-color: var(--fd-color-background-2);
+  --fd-tile-title-color: var(--fd-color-text-1);
+
   @include fd-reset;
   display: flex;
-  color: $fd-tile-color;
-  background-color: $fd-tile-background-color;
+  @include fd-var-color("color", $fd-tile-color, --fd-tile-color);
+  @include fd-var-color("background-color", $fd-tile-background-color, --fd-tile-background-color);
 
   //MODIFICATIONS
   &--button,
@@ -59,7 +63,7 @@ $block: #{$fd-namespace}-tile;
   }
   &__title {
     @include fd-type("0");
-    color: $fd-tile-title-color;
+    @include fd-var-color("color", $fd-tile-title-color, --fd-tile-title-color);
     margin-bottom: 0;
   }
   &__actions {
