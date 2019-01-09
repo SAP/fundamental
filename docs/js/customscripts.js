@@ -11,7 +11,7 @@ $(document).ready(function () {
 
     if (isMobile) {
 
-        if (location.pathname === '/index.html') {
+        if ((location.pathname === '/index.html') || (location.pathname === '/')) {
             $('#mobile-sidenav-btn').hide();
             $('.docs-top-nav__logo').css('padding-left', '0');
             $('.docs-home_hero-content').css('padding', '20px');
