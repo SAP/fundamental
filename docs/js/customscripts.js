@@ -7,7 +7,7 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-    const isMobile = jQuery.browser.mobile;
+    const isMobile = jQuery.browser.mobile || ($(window).width() <= 720);
 
     if (isMobile) {
 
