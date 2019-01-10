@@ -10,7 +10,7 @@ services:
  
 before_install:
 - docker pull backstopjs/backstopjs:3.8.5
-- HOSTIP=`ip route | awk 'NR==1 {print $3}'`
+- ip route | awk 'NR==1 {print $3}'
 - env
 - docker run --entrypoint=bash --add-host "host.docker.internal:${HOSTIP}" backstopjs/backstopjs:3.8.5
 
@@ -21,6 +21,7 @@ install:
 - npm install
 
 script:
+- bash env
 - gulp test:visual
 
 branches:
