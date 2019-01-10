@@ -130,9 +130,86 @@ Group a series of buttons together on a single line with the button group.
 {% endcapture %}
 {% include display-component.html component=button-group-small %}
 
+
+## Split Buttons 
+
+{% capture split-button %}
+<div>
+  <button class="fd-button--emphasized fd-button--splitbutton">Emphasize</button>
+  <div class="fd-div--dropdown">
+    <button class="fd-button--emphasized sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+  </div>
+</div>
+<br>
+<div>
+  <button class="fd-button--emphasized fd-button--standard  fd-button--splitbutton">Standard</button>
+  <div class="fd-div--dropdown">
+    <button class="fd-button--emphasized fd-button--standard sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+  </div>
+</div>
+<br>
+<div>
+  <button class="fd-button--emphasized fd-button--positive  fd-button--splitbutton">Approve</button>
+  <div class="fd-div--dropdown">
+    <button class="fd-button--emphasized fd-button--positive sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+  </div>
+</div>
+<br>
+<div>
+  <button class="fd-button--emphasized fd-button--negative  fd-button--splitbutton">Reject</button>
+  <div class="fd-div--dropdown">
+    <button class="fd-button--emphasized fd-button--negative sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+  </div>
+</div>
+<br>
+<div>
+  <button class="fd-button--emphasized fd-button--medium fd-button--splitbutton">Medium</button>
+  <div class="fd-div--dropdown">
+    <button class="fd-button--emphasized fd-button--medium sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+  </div>
+</div>
+<br>
+<div>
+  <button class="fd-button--emphasized sap-icon--delete fd-button--splitbutton">Emphasize</button>
+  <div class="fd-div--dropdown">
+    <button class="fd-button--emphasized sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+  </div>
+</div>
+<br>
+<div>
+  <button class="fd-button--emphasized sap-icon--delete fd-button--standard  fd-button--splitbutton">Standard</button>
+  <div class="fd-div--dropdown">
+    <button class="fd-button--emphasized fd-button--standard sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+  </div>
+</div>
+<br>
+<div>
+  <button class="fd-button--emphasized sap-icon--accept fd-button--positive  fd-button--splitbutton">Approve</button>
+  <div class="fd-div--dropdown">
+    <button class="fd-button--emphasized fd-button--positive sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+  </div>
+</div>
+<br>
+<div>
+  <button class="fd-button--emphasized fd-button--negative  sap-icon--decline fd-button--splitbutton">Reject</button>
+  <div class="fd-div--dropdown">
+    <button class="fd-button--emphasized fd-button--negative sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+  </div>
+</div>
+<br>
+<div>
+  <button class="fd-button--emphasized fd-button--medium sap-icon--message-warning fd-button--splitbutton">Medium</button>
+  <div class="fd-div--dropdown">
+    <button class="fd-button--emphasized fd-button--medium sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+  </div>
+</div>
+
+
+{% endcapture %}
+{% include display-component.html component=split-button %}
+
+
 ## Button RTL support
-
-
 {% capture button-group-small %}
 <div dir="rtl">
 <button class="fd-button--emphasized sap-icon--cart">Add to Cart</button>

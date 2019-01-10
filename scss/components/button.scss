@@ -214,7 +214,17 @@ $block: #{$fd-namespace}-button;
         }
       }
     }
+    &.#{$block}--splitbutton {
+      margin-right: 0px;
+      border-radius: 4px 0 0 4px; 
+    }
+
+    &.#{$block}--splitdropdown {
+      border-left: 1px solid white;
+      border-radius: 0 4px 4px 0;
+    }
   }
+  
   //.fd-button--light
   &--light {
     --fd-button-border-color: transparent;
@@ -625,3 +635,7 @@ $block: #{$fd-namespace}-button;
     }
 
 }
+.fd-div--dropdown {
+  position: absolute;
+  display: inline-block;
+} 
