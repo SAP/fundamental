@@ -3,7 +3,7 @@ const nodemon = require('gulp-nodemon');
 const waitForPort = require('wait-for-port');
 const backstop = require('backstopjs');
 const localAppPort = 3030;
-const backstopConfigLocation = 'test/visual-regression-tests/backstop.json';
+const backstopConfigLocation = 'test/visual-regression-tests/backstopConfig.js';
 
 // Starts the test server.  If the server port is already in use, it is assumed that the server is already running.
 gulp.task('server:start', function (cb) {	
