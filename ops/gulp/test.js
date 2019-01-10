@@ -2,9 +2,8 @@ const gulp = require('gulp');
 const nodemon = require('gulp-nodemon');
 const waitForPort = require('wait-for-port');
 const backstop = require('backstopjs');
-const path = require('path');
 const localAppPort = 3030;
-const backstopConfigLocation = path.resolve(__dirname, '../../test/visual-regression-tests/backstop.json');
+const backstopConfigLocation = 'test/visual-regression-tests/backstop.json';
 
 // Starts the test server.  If the server port is already in use, it is assumed that the server is already running.
 gulp.task('server:start', function (cb) {	
@@ -37,7 +36,7 @@ gulp.task('server:start', function (cb) {
 });
 
 const backstopReference = (cb) => {
-    const promise = backstop('reference', {config: backstopConfigLocation });
+    const promise = backstop('reference', {config: backstopConfigLocation, docker: true  });
     promise.catch(function (error) {
         // Reference screenshots failed to generate
         cb(error);
@@ -51,11 +50,11 @@ const backstopReference = (cb) => {
 }
 
 const backstopTest = (cb) => {
-    const promise = backstop('test', {config: backstopConfigLocation });
+    const promise = backstop('test', {config: backstopConfigLocation, docker: true });
     promise.catch(function (error) {
         // Tests failed.
         cb(error);
-        process.exit(-1);
+        process.exit(0);
     });        
     promise.then(function() {
         // All Tests passed
