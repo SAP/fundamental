@@ -58,7 +58,7 @@ const backstopTest = (cb) => {
     promise.catch(function (error) {
         // Tests failed.
         cb(error);
-        process.exit(0);
+        process.exit(-1);
     });        
     promise.then(function() {
         // All Tests passed
