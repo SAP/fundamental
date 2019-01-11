@@ -71,7 +71,7 @@ const generateCIConfig = (cb) => {
     const localIp = ip.address();
     const ciConfig = { ip: localIp };
     fs.writeFileSync(backstopCIConfigLocation, JSON.stringify(ciConfig));
-    console.log('Updated CI config with IP addresss:', localIp);
+    console.log('Updated CI config with IP address ', localIp);
     cb();
 };
 

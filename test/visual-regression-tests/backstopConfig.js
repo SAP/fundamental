@@ -5,13 +5,12 @@ var origin = 'host.docker.internal';
 
 // Check if there has been an IP address provided in the CI config JSON
 if (fs.existsSync(backstopCIConfigLocation)) {
-  console.log('found CI configuration!!!');
   const ciConfig = JSON.parse(fs.readFileSync(backstopCIConfigLocation));
   if (ciConfig.ip) {
     origin = ciConfig.ip;
   }
 }
-console.log('ORIGIN now:', origin);
+console.log('Using URL origin ', origin);
 
 module.exports = {
   "id": "visual_regression_fundamental",
