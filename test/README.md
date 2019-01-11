@@ -63,3 +63,29 @@ You now have all the dependencies you need to run the project.
 - From the macOS menu bar, select "Repository > Open in Terminal"
 - Type `npm test`
 - Go to [localhost:3030](http://localhost:3030) to find the components you are testing
+
+
+# Automated visual testing
+
+A visual testing framwork is available for automated testing.  The framework examines screenshots of individual components against expected screenshots, and the associated test will fail were visual differences occur.
+
+## Pre-requisites
+
+- Docker must be installed on the host machine.  Docker is used to ensure consistent screenshot comparisons when run locally on different platforms, and when run as part of a CI build.
+
+## Executing automated tests
+
+From the root of the project, execute `gulp test:visual`.  This will compare components that have screenshots defined against those in your current build.  After the build runs, a browser should laumch detailing the results of the run.
+
+## Updating automated tests
+
+If you have visually changed a component and are happy that the changes are as desired, you need to run the following commands to update the reference screenshots:
+
+- `gulp test:reference` will generate a new set of reference screenshots based on your current build.
+- `gulp test:approve` will promote the new generated screenshots to be the reference data to be used.
+- **Note:** You will need to commit the updated reference screenshots as part of your PR
+
+## Adding new components to the automation framwework
+
+To add new components, please update `test/visual-regression-tests/backstopConfig.js` with the new components that you would like to be tested.  The automation is using `BackstopJS` as the test framework.  For details on how to add new tests please see [https://github.com/garris/BackstopJS](https://github.com/garris/BackstopJS).
+
