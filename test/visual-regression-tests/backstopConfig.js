@@ -1,7 +1,15 @@
+const fs = require('fs');
+const backstopCIConfigLocation = 'test/visual-regression-tests/backstopConfigCI.json';
+
 var origin = 'host.docker.internal';
-if (process.env.HOSTIP) {
-  console.log('host IP env set:', process.env.HOSTIP);
-  origin = process.env.HOSTIP;
+
+// Check if there has been an IP address provided in the CI config JSON
+if (fs.existsSync(backstopCIConfigLocation)) {
+  console.log('found CI configuration!!!');
+  const ciConfig = JSON.parse(fs.readFileSync(backstopCIConfigLocation));
+  if (ciConfig.ip) {
+    origin = ciConfig.ip;
+  }
 }
 console.log('ORIGIN now:', origin);
 

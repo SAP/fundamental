@@ -1,9 +1,13 @@
 const gulp = require('gulp');
+const ip = require('ip');
 const nodemon = require('gulp-nodemon');
 const waitForPort = require('wait-for-port');
 const backstop = require('backstopjs');
+const fs = require('fs');
+
 const localAppPort = 3030;
 const backstopConfigLocation = 'test/visual-regression-tests/backstopConfig.js';
+const backstopCIConfigLocation = 'test/visual-regression-tests/backstopConfigCI.json';
 
 // Starts the test server.  If the server port is already in use, it is assumed that the server is already running.
 gulp.task('server:start', function (cb) {	
@@ -63,8 +67,21 @@ const backstopTest = (cb) => {
     });
 };
 
+const generateCIConfig = (cb) => {
+    const localIp = ip.address();
+    const ciConfig = { ip: localIp };
+    fs.writeFileSync(backstopCIConfigLocation, JSON.stringify(ciConfig));
+    console.log('Updated CI config with IP addresss:', localIp);
+    cb();
+};
+
 gulp.task('backstop:test', backstopTest);
 gulp.task('backstop:reference', backstopReference);
+
+// Generate a CI config file with the IP address of the current machine.
+// Linux Docker containers cannot use host.docker.internal to reference the parent IP address 
+// so we need to explicitly add it to the config.
+gulp.task('test:generateCIConfig', generateCIConfig);
 
 // Generates a set of reference screenshots from the backstopjs configuration.
 gulp.task('test:reference', gulp.series('server:start', 'backstop:reference'));
