@@ -67,7 +67,7 @@ You now have all the dependencies you need to run the project.
 
 # Automated visual testing
 
-A visual testing framwork is available for automated testing.  The framework examines screenshots of individual components against expected screenshots, and the associated test will fail were visual differences occur.
+A visual testing framwork is available for automated testing.  The framework examines screenshots of individual components against expected screenshots, and the associated test will fail where visual differences occur.
 
 ## Pre-requisites
 
@@ -75,7 +75,7 @@ A visual testing framwork is available for automated testing.  The framework exa
 
 ## Executing automated tests
 
-From the root of the project, execute `gulp test:visual`.  This will compare components that have screenshots defined against those in your current build.  After the build runs, a browser should laumch detailing the results of the run.
+From the root of the project, execute `gulp test:visual`.  This will compare components that have screenshots defined against those in your current build.  After the build runs, a browser should launch detailing the test results.
 
 ## Updating automated tests
 
