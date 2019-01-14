@@ -1,10 +1,10 @@
 ---
-title: Guides
-keywords: guide, guides
+title: Resources
+keywords: guide, guides, resources, 
 toc: false
 sidebar: left-navigation-sidebar
-permalink: /guides/index.html
-folder: guides
+permalink: /resources/index.html
+folder: resources
 summary:
 ---
 
@@ -22,6 +22,13 @@ summary:
         <div class="fd-tile__content">
              <h2 class="fd-tile__header">
                  Design System Utilities
+             </h2>
+        </div>
+    </a>
+    <a class="fd-tile" role="button" href="ui-toolkit.html">
+        <div class="fd-tile__content">
+             <h2 class="fd-tile__header">
+                 UI Kit
              </h2>
         </div>
     </a>

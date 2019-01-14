@@ -3,8 +3,8 @@ title: How to use Fiori Fundamentals SCSS with Angular
 keywords: how to use scss
 sidebar: left-navigation-sidebar
 toc: false
-permalink: guides/how-to-use-scss.html
-folder: guides
+permalink: resources/how-to-use-scss.html
+folder: resources
 summary: The following step-by-step guide will covers how to install Fiori Fundamentals in your angular project, import SCSS in your workflow and explain some built-in functions.
 ---
 

@@ -3,8 +3,8 @@ title: Design System Utilities
 keywords: design system cheat sheet
 sidebar: left-navigation-sidebar
 toc: false
-permalink: guides/design-system-utilities.html
-folder: guides
+permalink: resources/design-system-utilities.html
+folder: resources
 summary: The following guide covers all the major utility features of the Fiori Fundamentals (FDUI) design system toolkit. We recommend that you utilize these functions, mixins and helper classes to maintain consistency throughout your application. Using the toolkit features will ensure that you application will remain compatible and easy to upgrade with the future versions of FDUI, transition between themes and customization.
 ---
 
