@@ -1,11 +1,24 @@
 ---
-title: UI Kit
-keywords: ui kit
+title: SAP Fiori 3 Design Stencils
+keywords: ui toolkit sketch design stencils
+summary: Design stencils are ready-to-use, state-of-the-art drafts of SAP Fiori layouts, patterns and controls in sketch. You are welcome to use the design stencils to visualize your SAP Fiori app. They are easy to use and give you a realistic impression of your final design.
+permalink: foundation/ui-toolkit.html
+folder: foundation
 sidebar: left-navigation-sidebar
 toc: false
-permalink: ui-kit.html
-folder: resources
-summary:
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<hr>
+
+<div class="fd-alert fd-alert--information" role="alert">
+    Note: The design stencils are high-fidelity mock-ups and do not represent the exact visual design nor specifications.
+</div>
+
+
+<a class="fd-button docs-home_hero-btn" href="components/index.html">
+    Download Latest Version (v1.0.0)
+</a>
+
+
+## SAP Icon Font
+Please install the SAP icon font for using the sketch stencils for SAP Fiori.
