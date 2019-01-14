@@ -7,6 +7,7 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
+    $('#copyright-year').text(new Date().getFullYear());
 });
 
 (function () {
