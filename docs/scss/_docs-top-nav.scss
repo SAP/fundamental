@@ -25,5 +25,16 @@
         color: fd-color(text, 5) !important;
         padding: 18px 20px 0 0;
         display: inline-block;
+        @include media("<=tablet") {
+            display: none;
+        }
+    }
+
+    &__mobile {
+        @include media("<=tablet") {
+            display: flex;
+            justify-content: space-around;
+            align-items: baseline;
+        }
     }
 }
