@@ -9,15 +9,6 @@
     .fd-panel__footer
 */
 
-:root {
-  --fd-panel-background-color: var(--fd-color-background-2);
-  --fd-panel-border-color: var(--fd-color-neutral-2);
-  --fd-panel-box-shadow-color: var(--fd-color-neutral-2);
-  --fd-panel-divider-color: var(--fd-panel-border-color);
-  --fd-panel-border-width: 0;
-
-  --fd-panel-title-color: var(--fd-color-text-1);
-}
 $block: #{$fd-namespace}-panel;
 .#{$block} {
     $fd-panel-background-color: fd-color("background",2) !default;
@@ -32,7 +23,13 @@ $block: #{$fd-namespace}-panel;
     $fd-panel-filters-border-color: $fd-panel-header-border-color !default;
     $fd-panel-footer-padding: fd-space(4) fd-space("reg") !default;
     $fd-panel-footer-border-color: $fd-panel-header-border-color !default;
+    --fd-panel-background-color: var(--fd-color-background-2);
+    --fd-panel-border-color: var(--fd-color-neutral-2);
+    --fd-panel-box-shadow-color: var(--fd-color-neutral-2);
+    --fd-panel-divider-color: var(--fd-panel-border-color);
+    --fd-panel-border-width: 0;
 
+    --fd-panel-title-color: var(--fd-color-text-1);
     //anim
     $fd-panel-fiters-transition-params: 0.15s ease-in !default;
 
