@@ -8,6 +8,11 @@ $side-nav-links-color: docs-color(text, 1);
     width: 290px;
     min-width: 290px;
 
+    @include media("<=tablet") {
+        width: auto;
+        display: none;
+    }
+
     &__headers{
         font-size: 28px;
         font-weight: bold;
