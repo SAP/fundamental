@@ -2127,7 +2127,7 @@ input[type=checkbox], input[type=radio],
 .fd-radio {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -2212,7 +2212,7 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
 .fd-input {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -2291,7 +2291,7 @@ textarea,
 .fd-textarea {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -2361,7 +2361,7 @@ select,
 .fd-select {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -3067,18 +3067,19 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         .fd-panel__actions
     .fd-panel__footer
 */
-.fd-panel {
+:root {
   --fd-panel-background-color: var(--fd-color-background-2);
-  --fd-panel-border-color: transparent;
+  --fd-panel-border-color: var(--fd-color-neutral-2);
   --fd-panel-box-shadow-color: var(--fd-color-neutral-2);
-  --fd-panel-header-border-color: var(--fd-color-neutral-2);
-  --fd-panel-title-color: var(--fd-color-text-1);
-  --fd-panel-filters-border-color: var(--fd-panel-header-border-color);
-  --fd-panel-footer-border-color: var(--fd-panel-header-border-color);
+  --fd-panel-divider-color: var(--fd-panel-border-color);
+  --fd-panel-border-width: 0;
+  --fd-panel-title-color: var(--fd-color-text-1); }
+
+.fd-panel {
   background-color: var(--fd-panel-background-color);
   border-radius: 4px;
   border-style: solid;
-  border-width: 0;
+  border-width: var(--fd-panel-border-width);
   border-color: var(--fd-panel-border-color);
   box-shadow: 0 5px 20px 0 var(--fd-panel-box-shadow-color); }
   .fd-panel::after {
@@ -3091,7 +3092,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     align-items: center;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: var(--fd-panel-header-border-color);
+    border-bottom-color: var(--fd-panel-divider-color);
     padding: 16px 24px;
     font-size: 0.85714rem;
     line-height: 1.33333;
@@ -3114,7 +3115,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     padding: 12px 24px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: var(--fd-panel-filters-border-color);
+    border-bottom-color: var(--fd-panel-divider-color);
     transition: all 0.15s ease-in; }
     .fd-panel__filters.is-hidden, .fd-panel__filters[aria-hidden="true"] {
       padding-top: 0;
@@ -3131,7 +3132,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     padding: 16px 24px;
     border-top-style: solid;
     border-top-width: 1px;
-    border-top-color: var(--fd-panel-footer-border-color); }
+    border-top-color: var(--fd-panel-divider-color); }
 
 /*!
 .fd-tile-grid+(--2col | --4col | --5col | --6col)
@@ -3199,7 +3200,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-alert-border-color: var(--fd-color-neutral-4);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   color: #32363a;
@@ -3465,9 +3466,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         .fd-action-bar__action-item
 */
 .fd-action-bar {
+  --fd-action-bar-backbtn-separator-color: var(--fd-color-neutral-3);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   background-color: transparent;
   min-height: 64px;
@@ -3478,7 +3480,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-action-bar__header {
     font-size: 14px;
     line-height: 1.42857;
-    color: #32363a;
+    color: var(--fd-color-text-1);
     font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     font-size: 1rem;
     line-height: 1.42857;
@@ -3494,7 +3496,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         overflow: hidden;
         text-overflow: ellipsis; } }
   .fd-action-bar__back {
-    display: block; }
+    display: block;
+    position: relative;
+    margin-right: 20px; }
     @media (min-width: 320px) {
       .fd-action-bar__back {
         display: none !important; } }
@@ -3508,20 +3512,11 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       position: absolute;
       top: -4px;
       right: -4px;
-      border-right: 1px solid #d9d9d9; }
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-right-color: var(--fd-action-bar-backbtn-separator-color); }
     .fd-action-bar__back button {
       margin-top: -8px; }
-  .fd-action-bar__back {
-    position: relative;
-    margin-right: 20px; }
-    .fd-action-bar__back::after {
-      content: '';
-      width: 0;
-      height: 100%;
-      position: absolute;
-      top: -4px;
-      right: -4px;
-      border-right: 1px solid #d9d9d9; }
   .fd-action-bar__title {
     font-size: 1.71429rem;
     line-height: 1.33333;
@@ -3534,7 +3529,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         overflow: hidden;
         text-overflow: ellipsis; } }
   .fd-action-bar__description {
-    color: #6a6d70;
+    color: var(--fd-color-text-3);
     font-size: 1rem;
     line-height: 1.42857;
     font-weight: 400; }
@@ -3547,7 +3542,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-action-bar__actions {
     font-size: 14px;
     line-height: 1.42857;
-    color: #32363a;
+    color: var(--fd-color-text-1);
     font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     display: flex;
     align-items: center;
@@ -3569,15 +3564,18 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-badge+(( --success | --warning | --error ), (--pill | --filled))
 */
 .fd-badge {
+  --fd-badge-color: var(--fd-color-text-3);
+  --fd-badge-background-color: transparent;
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 0.85714rem;
   line-height: 1.33333;
   font-weight: 400;
   font-weight: 700;
-  color: #6a6d70;
+  color: var(--fd-badge-color);
+  background-color: var(--fd-badge-background-color);
   text-transform: uppercase;
   line-height: 16px;
   vertical-align: middle;
@@ -3590,20 +3588,20 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-badge--pill {
     border-radius: 12px; }
   .fd-badge--filled {
-    background-color: #fafafa;
+    --fd-badge-background-color: var(--fd-color-neutral-1);
     border: none; }
     .fd-badge--filled.fd-badge--success {
-      background-color: #e4fcee; }
+      --fd-badge-background-color: var(--fd-color-background-positive); }
     .fd-badge--filled.fd-badge--warning {
-      background-color: #fef7f0; }
+      --fd-badge-background-color: var(--fd-color-background-alert); }
     .fd-badge--filled.fd-badge--error {
-      background-color: #ffb8b8; }
+      --fd-badge-background-color: var(--fd-color-background-negative); }
   .fd-badge--success {
-    color: #107f3e; }
+    --fd-badge-color: var(--fd-color-positive); }
   .fd-badge--warning {
-    color: #e9730c; }
+    --fd-badge-color: var(--fd-color-alert); }
   .fd-badge--error {
-    color: #bd0000; }
+    --fd-badge-color: var(--fd-color-negative); }
 
 /*!
 .fd-button+( (--compact), (--emphasized, --light), (--standard, --positive, --medium, --negative))+( (.is-disabled | [aria-disabled=true]) | (.is-selected | [aria-selected=true] | (.is-pressed | [aria-pressed=true]))
@@ -4262,7 +4260,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-breadcrumb {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 0.85714rem;
   line-height: 1.33333;
@@ -4305,7 +4303,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-dropdown {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   display: inline-block; }
@@ -4335,19 +4333,23 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       border-top-right-radius: 0;
       border-bottom-right-radius: 0; }
     [dir="rtl"] .fd-dropdown__control:not(.fd-button--standard)::after, .fd-dropdown__control[dir="rtl"]:not(.fd-button--standard)::after {
-      border-right: 1px solid #89919a;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-right-color: var(--fd-color-neutral-4);
       border-left: none; }
     [dir="rtl"] .fd-dropdown__control.fd-button, .fd-dropdown__control[dir="rtl"].fd-button {
       padding-left: 0;
       padding-right: 12px; }
     .fd-dropdown__control::after {
-      color: #0a6ed1;
+      color: var(--fd-color-action-1);
       width: 34px;
       height: 34px;
       margin-top: -3px;
       padding-top: 10px;
-      border-left: 1px solid #89919a;
-      background: #fafafa;
+      border-left-style: solid;
+      border-left-width: 1px;
+      border-left-color: var(--fd-color-neutral-4);
+      background-color: var(--fd-color-neutral-1);
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px; }
     .fd-dropdown__control--no-border {
@@ -4390,32 +4392,33 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         height: 38px;
         padding-top: 10px; }
   .fd-dropdown__control.fd-button {
-    color: #32363a;
-    border-color: #89919a;
+    color: var(--fd-color-text-1);
+    border-color: var(--fd-color-neutral-4);
     padding-right: 0;
     padding-top: 2px; }
-    .fd-dropdown__control.fd-button:hover {
-      color: #32363a;
-      background-color: white;
-      border-color: #7bbaf9;
+    .fd-dropdown__control.fd-button:hover,
+    .fd-dropdown__control.fd-button .is-hover {
+      color: var(--fd-color-text-1);
+      background-color: var(--fd-color-background-2);
+      border-color: var(--fd-color-action-hover);
       box-shadow: none; }
-    .fd-dropdown__control.fd-button:active, .fd-dropdown__control.fd-button[aria-expanded="true"] {
-      color: #32363a;
-      background-color: white;
-      border-color: #7bbaf9;
-      box-shadow: 0 0 0 1px #7bbaf9; }
+    .fd-dropdown__control.fd-button:active, .fd-dropdown__control.fd-button.is-active, .fd-dropdown__control.fd-button[aria-expanded="true"] {
+      color: var(--fd-color-text-1);
+      background-color: var(--fd-color-background-2);
+      box-shadow: 0 0 0 1px var(--fd-color-action-hover); }
   .fd-dropdown__control.fd-button--standard:hover, .fd-button-group .fd-dropdown__control:hover[class*="fd-button--"],
   .fd-button-group .fd-dropdown__control.fd-button:hover, .fd-dropdown__control.fd-button--standard:active, .fd-button-group .fd-dropdown__control:active[class*="fd-button--"],
-  .fd-button-group .fd-dropdown__control.fd-button:active {
-    color: #51555a;
-    background-color: #e7e8e9;
-    border-color: #e7e8e9;
+  .fd-button-group .fd-dropdown__control.fd-button:active, .fd-dropdown__control.fd-button--standard.is-active, .fd-button-group .fd-dropdown__control.is-active[class*="fd-button--"],
+  .fd-button-group .fd-dropdown__control.is-active.fd-button {
+    color: var(--fd-color-text-2);
+    background-color: var(--fd-color-neutral-1);
+    border-color: var(--fd-color-status-4);
     box-shadow: none; }
   .fd-dropdown__control.fd-button--standard::after, .fd-button-group .fd-dropdown__control[class*="fd-button--"]::after,
   .fd-button-group .fd-dropdown__control.fd-button::after {
     width: auto;
     margin-right: 10px;
-    color: #32363a;
+    color: var(--fd-color-text-1);
     background-color: transparent;
     border-left: none; }
   [dir="rtl"] .fd-dropdown__control.fd-button--standard, [dir="rtl"] .fd-button-group .fd-dropdown__control[class*="fd-button--"], .fd-button-group [dir="rtl"] .fd-dropdown__control[class*="fd-button--"],
@@ -4441,7 +4444,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     color: #51555a; }
     .fd-dropdown__item:hover {
       color: #51555a;
-      background-color: #eeeeef; }
+      background-color: #fafafa; }
     .fd-dropdown__item.is-selected, .fd-dropdown__item[aria-selected="true"] {
       color: #51555a;
       background-color: rgba(10, 110, 209, 0.07); }
@@ -4457,9 +4460,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
             .fd-form__message(--help, --error, --warning)
 */
 .fd-form {
+  --fd-form-label-color: var(--fd-color-text-3);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; }
   .fd-form__group::after {
     content: "";
@@ -4534,7 +4538,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-form__label, .fd-form__legend {
     font-size: 14px;
     line-height: 1.42857;
-    color: #32363a;
+    color: var(--fd-color-text-1);
     font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     font-size: 1rem;
     line-height: 1.42857;
@@ -4542,7 +4546,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     display: block;
     margin-bottom: 8px;
     border: 0;
-    color: #6a6d70; }
+    color: var(--fd-color-text-3); }
     .fd-form__label.is-disabled, .fd-form__legend.is-disabled {
       opacity: .4; }
   .fd-form__control {
@@ -4608,7 +4612,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-input-group {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   display: flex;
   vertical-align: bottom; }
@@ -4767,15 +4771,16 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-label+(--success | --warning | --error)
 */
 .fd-label {
+  --fd-label-color: var(--fd-color-text-3);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 0.85714rem;
   line-height: 1.33333;
   font-weight: 400;
   font-weight: 700;
-  color: #6a6d70;
+  color: var(--fd-label-color);
   text-transform: uppercase;
   line-height: 24px;
   vertical-align: middle;
@@ -4783,25 +4788,28 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   padding-left: 8px;
   padding-right: 8px; }
   .fd-label--success {
-    color: #107f3e; }
+    --fd-label-color: var(--fd-color-positive); }
   .fd-label--warning {
-    color: #e9730c; }
+    --fd-label-color: var(--fd-color-alert); }
   .fd-label--error {
-    color: #bd0000; }
+    --fd-label-color: var(--fd-color-negative); }
 
 /*!
 .fd-pagination
 */
 .fd-pagination {
+  --fd-pagination-link-color: var(--fd-color-action-1);
+  --fd-pagination-link-color-active: var(--fd-color-text-2);
+  --fd-pagination-total-color: var(--fd-color-text-2);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400; }
   .fd-pagination__total {
-    color: #51555a;
+    color: var(--fd-pagination-total-color);
     margin-right: 8px; }
   .fd-pagination__nav {
     display: inline-block;
@@ -4810,13 +4818,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     list-style: none;
     margin-bottom: 0; }
   .fd-pagination__link {
-    color: #0a6ed1;
+    color: var(--fd-pagination-link-color);
     background-color: transparent;
     padding-left: 4px;
     padding-right: 4px;
     position: relative; }
-    .fd-pagination__link:active, .fd-pagination__link[aria-selected="true"], .fd-pagination__link.is-selected {
-      color: #51555a;
+    .fd-pagination__link[aria-selected="true"], .fd-pagination__link.is-selected {
+      color: var(--fd-pagination-link-color-active);
       text-decoration: none;
       cursor: default;
       font-weight: 700; }
@@ -4844,7 +4852,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       transform: scaleX(-1); }
     .fd-pagination__link--more::before {
       content: "...";
-      color: #51555a;
+      color: var(--fd-pagination-link-color-active);
       font-weight: 700; }
 
 /*!
@@ -4855,17 +4863,23 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 */
 .fd-table, .docs-table {
   --fd-table-cell-spacing: var(--fd-width-gutter);
+  --fd-table-border-color: var(--fd-color-neutral-2);
+  --fd-table-background-color: var(--fd-color-background-2);
+  --fd-table-link-color: var(--fd-color-action-1);
+  --fd-table-header-color: var(--fd-color-text-3);
+  --fd-table-header-background-color: var(--fd-color-neutral-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
   margin-bottom: 12px;
-  border-top: solid 1px #eeeeef;
-  background-color: white;
-  border: 1px solid #eeeeef; }
+  background-color: var(--fd-table-background-color);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--fd-table-border-color); }
   .fd-table:last-child, .docs-table:last-child {
     margin-bottom: 0;
     margin-right: 0; }
@@ -4875,21 +4889,21 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-table tr:hover, .docs-table tr:hover,
     .fd-table tr .is-hover,
     .docs-table tr .is-hover {
-      background-color: #fafafa; }
+      background-color: var(--fd-color-background-hover); }
     .fd-table tr[aria-selected="true"], .docs-table tr[aria-selected="true"], .fd-table tr.is-selected, .docs-table tr.is-selected {
-      background-color: rgba(10, 110, 209, 0.07); }
+      background-color: var(--fd-color-background-selected); }
       .fd-table tr[aria-selected="true"]:hover, .docs-table tr[aria-selected="true"]:hover,
       .fd-table tr[aria-selected="true"] .is-hover,
       .docs-table tr[aria-selected="true"] .is-hover, .fd-table tr.is-selected:hover, .docs-table tr.is-selected:hover,
       .fd-table tr.is-selected .is-hover,
       .docs-table tr.is-selected .is-hover {
-        background-color: rgba(10, 110, 209, 0.1); }
+        background-color: var(--fd-color-background-selected-hover); }
   .fd-table thead, .docs-table thead {
     font-size: 0.85714rem;
     line-height: 1.33333;
     font-weight: 400;
-    color: #6a6d70;
-    background-color: #fafafa;
+    color: var(--fd-table-header-color);
+    background-color: var(--fd-table-header-background-color);
     text-transform: uppercase; }
     .fd-table thead tr:hover, .docs-table thead tr:hover {
       background-color: inherit; }
@@ -4899,7 +4913,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       border: none;
       font-weight: 400; }
   .fd-table tbody tr, .docs-table tbody tr {
-    border: 1px solid #eeeeef;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--fd-table-border-color);
     border-left: none;
     border-right: none; }
   .fd-table td, .docs-table td,
@@ -4924,16 +4940,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .docs-table th .fd-dropdown__menu {
       min-width: auto;
       text-align: left; }
-    .fd-table td > a, .docs-table td > a,
-    .fd-table th > a,
-    .docs-table th > a {
-      color: #0a6ed1; }
-      .fd-table td > a:hover, .docs-table td > a:hover,
-      .fd-table th > a:hover,
-      .docs-table th > a:hover {
-        color: #0a6ed1; }
   .fd-table__sort-column:hover {
-    background: #f2f2f3;
+    background-color: var(--fd-color-neutral-2);
     cursor: pointer; }
   .fd-table__sort-column::after {
     content: "";
@@ -4943,14 +4951,12 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgOS41IDExIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA5LjUgMTE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojNkY3Mjc1O308L3N0eWxlPjx0aXRsZT5Tb3J0IEljb248L3RpdGxlPjxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPjxnIGlkPSJMaXN0LUVsZW1lbnRzLS0tVGlsZXNfeDJDXy1UYWJsZXNfeDJDXy1UcmVlIj48ZyBpZD0iRnVuZGFtZW50YWxfTW9kdWxhcl9VSV9MaXN0LUVsZW1lbnRfVGFibGVfRml4YWJsZS1Db2x1bW4iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDguMDAwMDAwLCAtMjQ0NC4wMDAwMDApIj48ZyBpZD0iVGFibGUtQ29weS00IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MS4wMDAwMDAsIDIzMDIuMDAwMDAwKSI+PHBhdGggaWQ9IkFycm93LWRvd24iIGNsYXNzPSJzdDAiIGQ9Ik04MS43LDE0Mmw0LjcsNC44SDc3TDgxLjcsMTQyeiBNODEuNywxNDNsLTMuMSwzLjFoNi4yTDgxLjcsMTQzeiIvPjxwYXRoIGlkPSJBcnJvdy1kb3duXzFfIiBjbGFzcz0ic3QwIiBkPSJNODEuOCwxNTNsLTQuNy00LjhoOS40TDgxLjgsMTUzeiBNODEuOCwxNTJsMy4xLTMuMWgtNi4yTDgxLjgsMTUyeiIvPjwvZz48L2c+PC9nPjwvc3ZnPg==") no-repeat center center;
     margin: 0 12px;
     vertical-align: text-top; }
-  .fd-table__sort-column--asc {
-    background: #eeeeef; }
-    .fd-table__sort-column--asc::after {
-      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgOS41IDExIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA5LjUgMTE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojNkY3Mjc1O308L3N0eWxlPjx0aXRsZT5Tb3J0IEljb248L3RpdGxlPjxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPjxnIGlkPSJMaXN0LUVsZW1lbnRzLS0tVGlsZXNfeDJDXy1UYWJsZXNfeDJDXy1UcmVlIj48ZyBpZD0iRnVuZGFtZW50YWxfTW9kdWxhcl9VSV9MaXN0LUVsZW1lbnRfVGFibGVfRml4YWJsZS1Db2x1bW4iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDguMDAwMDAwLCAtMjQ0NC4wMDAwMDApIj48ZyBpZD0iVGFibGUtQ29weS00IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MS4wMDAwMDAsIDIzMDIuMDAwMDAwKSI+PGcgaWQ9IlRhYmxlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgNzAuMDAwMDAwKSI+PGcgaWQ9IkNvbHVtbi1IZWFkZXJzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgNTYuMDAwMDAwKSI+PGcgaWQ9IlNvcnQtSWNvbiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzcuMDAwMDAwLCAxNi4wMDAwMDApIj48cGF0aCBpZD0iQXJyb3ctZG93biIgY2xhc3M9InN0MCIgZD0iTTQuNywxMUwwLDYuMmg5LjRMNC43LDExeiBNNC43LDEwbDMuMS0zLjFIMS42TDQuNywxMHoiLz48cGF0aCBpZD0iQXJyb3ctdXAiIGNsYXNzPSJzdDAiIGQ9Ik00LjcsMGw0LjcsNC44SDBMNC43LDB6Ii8+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PC9zdmc+"); }
-  .fd-table__sort-column--dsc {
-    background: #eeeeef; }
-    .fd-table__sort-column--dsc::after {
-      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgOS41IDExIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA5LjUgMTE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojNkY3Mjc1O308L3N0eWxlPjx0aXRsZT5Tb3J0IEljb248L3RpdGxlPjxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPjxnIGlkPSJMaXN0LUVsZW1lbnRzLS0tVGlsZXNfeDJDXy1UYWJsZXNfeDJDXy1UcmVlIj48ZyBpZD0iRnVuZGFtZW50YWxfTW9kdWxhcl9VSV9MaXN0LUVsZW1lbnRfVGFibGVfRml4YWJsZS1Db2x1bW4iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDguMDAwMDAwLCAtMjQ0NC4wMDAwMDApIj48ZyBpZD0iVGFibGUtQ29weS00IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MS4wMDAwMDAsIDIzMDIuMDAwMDAwKSI+PHBhdGggaWQ9IkFycm93LWRvd24iIGNsYXNzPSJzdDAiIGQ9Ik04MS43LDE0Mmw0LjcsNC44SDc3TDgxLjcsMTQyeiBNODEuNywxNDNsLTMuMSwzLjFoNi4yTDgxLjcsMTQzeiIvPjxwYXRoIGlkPSJBcnJvdy11cCIgY2xhc3M9InN0MCIgZD0iTTgxLjcsMTUzbC00LjctNC44aDkuNEw4MS43LDE1M3oiLz48L2c+PC9nPjwvZz48L3N2Zz4="); }
+  .fd-table__sort-column--asc, .fd-table__sort-column--dsc {
+    background-color: var(--fd-color-neutral-2); }
+  .fd-table__sort-column--asc::after {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgOS41IDExIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA5LjUgMTE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojNkY3Mjc1O308L3N0eWxlPjx0aXRsZT5Tb3J0IEljb248L3RpdGxlPjxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPjxnIGlkPSJMaXN0LUVsZW1lbnRzLS0tVGlsZXNfeDJDXy1UYWJsZXNfeDJDXy1UcmVlIj48ZyBpZD0iRnVuZGFtZW50YWxfTW9kdWxhcl9VSV9MaXN0LUVsZW1lbnRfVGFibGVfRml4YWJsZS1Db2x1bW4iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDguMDAwMDAwLCAtMjQ0NC4wMDAwMDApIj48ZyBpZD0iVGFibGUtQ29weS00IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MS4wMDAwMDAsIDIzMDIuMDAwMDAwKSI+PGcgaWQ9IlRhYmxlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgNzAuMDAwMDAwKSI+PGcgaWQ9IkNvbHVtbi1IZWFkZXJzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgNTYuMDAwMDAwKSI+PGcgaWQ9IlNvcnQtSWNvbiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzcuMDAwMDAwLCAxNi4wMDAwMDApIj48cGF0aCBpZD0iQXJyb3ctZG93biIgY2xhc3M9InN0MCIgZD0iTTQuNywxMUwwLDYuMmg5LjRMNC43LDExeiBNNC43LDEwbDMuMS0zLjFIMS42TDQuNywxMHoiLz48cGF0aCBpZD0iQXJyb3ctdXAiIGNsYXNzPSJzdDAiIGQ9Ik00LjcsMGw0LjcsNC44SDBMNC43LDB6Ii8+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PC9zdmc+"); }
+  .fd-table__sort-column--dsc::after {
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgOS41IDExIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA5LjUgMTE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojNkY3Mjc1O308L3N0eWxlPjx0aXRsZT5Tb3J0IEljb248L3RpdGxlPjxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPjxnIGlkPSJMaXN0LUVsZW1lbnRzLS0tVGlsZXNfeDJDXy1UYWJsZXNfeDJDXy1UcmVlIj48ZyBpZD0iRnVuZGFtZW50YWxfTW9kdWxhcl9VSV9MaXN0LUVsZW1lbnRfVGFibGVfRml4YWJsZS1Db2x1bW4iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDguMDAwMDAwLCAtMjQ0NC4wMDAwMDApIj48ZyBpZD0iVGFibGUtQ29weS00IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MS4wMDAwMDAsIDIzMDIuMDAwMDAwKSI+PHBhdGggaWQ9IkFycm93LWRvd24iIGNsYXNzPSJzdDAiIGQ9Ik04MS43LDE0Mmw0LjcsNC44SDc3TDgxLjcsMTQyeiBNODEuNywxNDNsLTMuMSwzLjFoNi4yTDgxLjcsMTQzeiIvPjxwYXRoIGlkPSJBcnJvdy11cCIgY2xhc3M9InN0MCIgZD0iTTgxLjcsMTUzbC00LjctNC44aDkuNEw4MS43LDE1M3oiLz48L2c+PC9nPjwvZz48L3N2Zz4="); }
   .fd-table__context-menu-label {
     display: block; }
     .fd-table__context-menu-label::after {
@@ -4962,18 +4968,18 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       margin: 0 12px;
       vertical-align: text-top; }
   .fd-table th.fd-table__context-menu:hover, .docs-table th.fd-table__context-menu:hover {
-    background: #f2f2f3;
+    background-color: var(--fd-color-neutral-2);
     cursor: pointer; }
   .fd-table__fixed-col {
     position: absolute;
     z-index: 1; }
   .fd-table th.fd-table__fixed-col, .docs-table th.fd-table__fixed-col {
-    background: #eeeeef;
+    background-color: var(--fd-color-neutral-2);
     z-index: 2;
-    box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.08); }
+    box-shadow: 2px 0 0 0 var(--fd-table-border-color); }
   .fd-table td.fd-table__fixed-col, .docs-table td.fd-table__fixed-col {
-    background: white;
-    box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.08); }
+    background-color: var(--fd-color-background-2);
+    box-shadow: 2px 0 0 0 var(--fd-table-border-color); }
   .fd-table--fixed-wrapper {
     position: relative; }
   .fd-table--fixed {
@@ -4986,7 +4992,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-table--no-borders tbody tr {
       border: none; }
   .fd-table--striped tbody tr:nth-child(even) {
-    background-color: #fafafa; }
+    background-color: var(--fd-color-background-hover); }
 
 /*!
 .fd-tabs+()
@@ -4995,17 +5001,23 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-tabs__panel+([aria-expanded]|.is-expanded)
 */
 .fd-tabs {
+  --fd-tabs-border-color: var(--fd-color-neutral-3);
+  --fd-tabs-background-color: var(--fd-color-background-2);
+  --fd-tabs-link-color: var(--fd-color-text-2);
+  --fd-tabs-link-border-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  background: white;
+  background-color: var(--fd-tabs-background-color);
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 12px;
   list-style: none;
-  border-bottom: solid 1px #d9d9d9; }
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--fd-tabs-background-color); }
   .fd-tabs__item {
     padding: 0 16px; }
   .fd-tabs__link {
@@ -5016,9 +5028,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     line-height: 1.42857;
     font-weight: 400;
     cursor: pointer;
-    color: #51555a; }
+    color: var(--fd-tabs-link-color); }
     .fd-tabs__link:link {
-      color: #51555a; }
+      color: var(--fd-tabs-link-color); }
     .fd-tabs__link::after {
       transition: all 0.125s ease-in;
       content: "";
@@ -5032,13 +5044,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       border-radius: 4px 4px 0 0; }
     .fd-tabs__link:hover,
     .fd-tabs__link .is-hover {
-      color: #0254a7; }
+      color: var(--fd-color-action-selected); }
     .fd-tabs__link[aria-selected="true"], .fd-tabs__link.is-selected {
-      color: #0a6ed1; }
+      color: var(--fd-color-action-1); }
       .fd-tabs__link[aria-selected="true"]::after, .fd-tabs__link.is-selected::after {
-        background-color: #0a6ed1; }
+        background-color: var(--fd-tabs-link-border-color); }
     .fd-tabs__link[aria-disabled="true"], .fd-tabs__link.is-disabled, .fd-tabs__link:disabled {
-      color: rgba(10, 110, 209, 0.4);
+      color: var(--fd-color-action-disabled);
       cursor: not-allowed; }
   .fd-tabs__panel[aria-expanded="false"] {
     display: none; }
@@ -5055,15 +5067,17 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       .fd-modal__button-secondary
 */
 .fd-modal {
+  --fd-modal-background-color: var(--fd-color-background-2);
+  --fd-modal-border-color: var(--fd-color-neutral-2);
   --fd-modal-padding-x: var(--fd-width-gutter);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   max-width: 460px; }
   .fd-modal__content {
     border-radius: 4px;
-    background-color: white; }
+    background-color: var(--fd-modal-background-color); }
   .fd-modal__header, .fd-modal__body, .fd-modal__footer {
     padding-left: var(--fd-modal-padding-x);
     padding-right: var(--fd-modal-padding-x);
@@ -5071,7 +5085,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     padding-bottom: 16px; }
   .fd-modal__header {
     position: relative;
-    border-bottom: 1px solid #eeeeef; }
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--fd-modal-border-color); }
   .fd-modal__title {
     font-size: 1.14286rem;
     line-height: 1.25;
@@ -5124,7 +5140,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       padding: 0; }
   .fd-modal__footer {
     text-align: right;
-    border-top: 1px solid #eeeeef; }
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: var(--fd-modal-border-color); }
 
 /*!
 .fd-tree+(--header)
@@ -5136,14 +5154,22 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 */
 .fd-tree {
   --fd-tree-cell-spacing: var(--fd-width-gutter);
+  --fd-tree-border-color: var(--fd-color-neutral-2);
+  --fd-tree-background-color: var(--fd-color-background-2);
+  --fd-tree-link-color: var(--fd-color-action-1);
+  --fd-tree-header-color: var(--fd-color-text-3);
+  --fd-tree-header-background-color: var(--fd-color-neutral-2);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   width: 100%;
   max-width: 100%;
-  border-bottom: solid 0 transparent;
+  background-color: var(--fd-tree-background-color);
+  border-bottom-style: solid;
+  border-bottom-width: 0;
+  border-bottom-color: var(--fd-tree-border-color);
   margin-bottom: 12px;
   margin-left: 0; }
   .fd-tree:last-child {
@@ -5153,9 +5179,11 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     margin-bottom: 0; }
   .fd-tree--header {
     border-bottom: 0;
-    border-top: solid 0 transparent;
+    border-top-style: solid;
+    border-top-width: 0;
+    border-top-color: var(--fd-tree-border-color);
     margin-bottom: 0;
-    background-color: #eeeeef; }
+    background-color: var(--fd-tree-header-background-color); }
   .fd-tree__group {
     transition: opacity 0.125s linear;
     max-height: auto;
@@ -5167,7 +5195,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       opacity: 0;
       overflow: hidden; }
   .fd-tree__item {
-    border-top: solid 0 transparent;
+    border-top-style: solid;
+    border-top-width: 0;
+    border-top-color: var(--fd-tree-border-color);
     margin-bottom: 0;
     list-style: none; }
   .fd-tree__row {
@@ -5181,19 +5211,20 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     transition: background-color 0.125s ease-in; }
     .fd-tree__row:hover,
     .fd-tree__row .is-hover {
-      background-color: #fafafa; }
+      background-color: var(--fd-color-background-hover); }
     .fd-tree__row--header {
       font-size: 0.85714rem;
       line-height: 1.33333;
       font-weight: 400;
-      color: #6a6d70;
-      background-color: #edeef0;
+      color: var(--fd-tree-header-color);
+      background-color: var(--fd-tree-header-background-color);
       text-transform: uppercase; }
       .fd-tree__row--header:hover,
       .fd-tree__row--header .is-hover {
         background-color: initial; }
     .fd-tree__row[aria-selected="true"], .fd-tree__row.is-selected {
-      background-color: rgba(10, 110, 209, 0.07); }
+      background-color: rgba(10, 110, 209, 0.07);
+      background-color: var(--fd-color-background-selected); }
   .fd-tree__col {
     flex: 1;
     padding: 12px 0;
@@ -5245,7 +5276,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     transform: rotate(180deg);
     vertical-align: middle;
     transition: transform 0.125s linear;
-    color: #0a6ed1; }
+    color: var(--fd-color-action-1); }
     .fd-tree__control::before {
       font-family: "SAP-icons";
       font-style: normal;
@@ -5267,11 +5298,6 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       box-shadow: 0 0 0 1px var(--fd-color-action-focus); }
     .fd-tree__control[aria-pressed="true"], .fd-tree__control.is-pressed {
       transform: rotate(270deg); }
-  .fd-tree a {
-    color: #0a6ed1; }
-    .fd-tree a:hover,
-    .fd-tree a .is-hover {
-      color: #0a6ed1; }
 
 /*!
 .fd-list-group
@@ -5279,9 +5305,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       .fd-list-group__action
 */
 .fd-list-group {
+  --fd-list-group-background-color: transparent;
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   margin-left: 0; }
   .fd-list-group__item {
@@ -5289,10 +5316,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     padding: 10px 16px;
     display: flex;
     position: relative;
-    background-color: none;
+    background-color: var(--fd-list-group-background-color);
     transition: background-color 0.125s ease-in; }
     .fd-list-group__item:hover {
-      background-color: #fafafa; }
+      --fd-list-group-background-color: var(--fd-color-background-hover); }
   .fd-list-group__action {
     flex: 1;
     text-align: right;
@@ -5309,9 +5336,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-tooltip__content+(left, right, bottom-left, bottom-right)
 */
 .fd-inline-help {
+  --fd-inline-help-color: var(--fd-color-text-1);
+  --fd-inline-help-background-color: var(--fd-color-background-2);
+  --fd-inline-help-icon-color: var(--fd-color-text-5);
+  --fd-inline-help-icon-background-color: var(--fd-color-status-4);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   display: inline-block;
@@ -5325,19 +5356,19 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     font-style: normal;
     position: absolute;
     left: 0;
-    color: white;
     border-radius: 50%;
-    background-color: #6a6d70;
+    color: var(--fd-inline-help-icon-color);
+    background-color: var(--fd-inline-help-icon-background-color);
     text-align: center; }
   .fd-inline-help__content {
     font-size: 0.85714rem;
     line-height: 1.33333;
     font-weight: 400;
-    background: white;
+    background-color: var(--fd-inline-help-background-color);
     padding: 12px;
     display: block;
     position: absolute;
-    color: #51555a;
+    color: var(--fd-inline-help-color);
     top: 30px;
     right: -12px;
     min-width: 350px;
@@ -5347,14 +5378,16 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     border-radius: 5px;
     visibility: hidden;
     opacity: 0;
-    border: 1px #89919a solid;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--fd-color-status-4);
     filter: drop-shadow(rgba(0, 0, 0, 0.1) 0 2px 10px); }
     .fd-inline-help__content::before {
       height: 0;
       width: 0;
       border-style: solid;
       border-width: 0 6.5px 8px 6.5px;
-      border-bottom-color: #89919a;
+      border-bottom-color: var(--fd-color-status-4);
       border-left-color: transparent;
       border-right-color: transparent;
       content: "";
@@ -5366,7 +5399,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       width: 0;
       border-style: solid;
       border-width: 0 6.5px 8px 6.5px;
-      border-bottom-color: white;
+      border-bottom-color: var(--fd-color-background-2);
       border-left-color: transparent;
       border-right-color: transparent;
       content: "";
@@ -5431,7 +5464,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-nav {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   display: flex;
   flex-wrap: wrap;
@@ -5443,8 +5476,8 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-nav__link {
     display: block;
     padding: 12px 16px; }
-    .fd-nav__link.is-selected, .fd-nav__link[aria-selected="true"] {
-      color: #32363a; }
+    .fd-nav__link[aria-selected="true"], .fd-nav__link.is-selected {
+      color: var(--fd-color-text-1); }
 
 /*!
 .fd-tabs+()
@@ -5453,17 +5486,23 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-tabs__panel+([aria-expanded]|.is-expanded)
 */
 .fd-tabs {
+  --fd-tabs-border-color: var(--fd-color-neutral-3);
+  --fd-tabs-background-color: var(--fd-color-background-2);
+  --fd-tabs-link-color: var(--fd-color-text-2);
+  --fd-tabs-link-border-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  background: white;
+  background-color: var(--fd-tabs-background-color);
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 12px;
   list-style: none;
-  border-bottom: solid 1px #d9d9d9; }
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--fd-tabs-background-color); }
   .fd-tabs__item {
     padding: 0 16px; }
   .fd-tabs__link {
@@ -5474,9 +5513,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     line-height: 1.42857;
     font-weight: 400;
     cursor: pointer;
-    color: #51555a; }
+    color: var(--fd-tabs-link-color); }
     .fd-tabs__link:link {
-      color: #51555a; }
+      color: var(--fd-tabs-link-color); }
     .fd-tabs__link::after {
       transition: all 0.125s ease-in;
       content: "";
@@ -5490,13 +5529,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       border-radius: 4px 4px 0 0; }
     .fd-tabs__link:hover,
     .fd-tabs__link .is-hover {
-      color: #0254a7; }
+      color: var(--fd-color-action-selected); }
     .fd-tabs__link[aria-selected="true"], .fd-tabs__link.is-selected {
-      color: #0a6ed1; }
+      color: var(--fd-color-action-1); }
       .fd-tabs__link[aria-selected="true"]::after, .fd-tabs__link.is-selected::after {
-        background-color: #0a6ed1; }
+        background-color: var(--fd-tabs-link-border-color); }
     .fd-tabs__link[aria-disabled="true"], .fd-tabs__link.is-disabled, .fd-tabs__link:disabled {
-      color: rgba(10, 110, 209, 0.4);
+      color: var(--fd-color-action-disabled);
       cursor: not-allowed; }
   .fd-tabs__panel[aria-expanded="false"] {
     display: none; }
@@ -5511,7 +5550,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-toggle {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   display: inline-block;
@@ -5614,9 +5653,10 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 * Licensed under MIT
 */
 .fd-spinner {
+  --fd-spinner-background-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   width: 29px;
@@ -5633,7 +5673,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     .is-busy::before,
     [aria-busy="true"]::before {
       position: absolute;
-      background-color: rgba(237, 238, 240, 0.95);
+      background-color: var(--fd-color-background-1);
+      opacity: 0.95;
       top: 0;
       right: 0;
       bottom: 0;
@@ -5651,13 +5692,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     position: relative;
     width: 5px;
     height: 100%;
-    background-color: #0a6ed1; }
+    background-color: var(--fd-spinner-background-color); }
   .fd-spinner div::before, .fd-spinner div::after {
     content: "";
     position: absolute;
     width: 5px;
     height: 100%;
-    background-color: #0a6ed1; }
+    background-color: var(--fd-spinner-background-color); }
   .fd-spinner div::before {
     left: 8px; }
   .fd-spinner div::after {
@@ -5689,7 +5730,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 [class*="fd-image"] {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   display: inline-block;
   vertical-align: middle;
@@ -5733,7 +5774,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-global-nav {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   border-bottom: solid 1px #eeeeef;
   background: white;
@@ -5859,7 +5900,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-side-nav__list, .fd-side-nav__sublist {
     font-size: 14px;
     line-height: 1.42857;
-    color: #32363a;
+    color: var(--fd-color-text-1);
     font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     display: flex;
     flex-wrap: wrap;
@@ -5906,168 +5947,163 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-link
 */
 .fd-link {
-  color: #0a6ed1;
-  border-bottom: solid 1px #0a6ed1; }
+  color: var(--fd-color-action-1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--fd-color-action-1); }
   .fd-link:hover,
   .fd-link .is-hover {
-    color: #085caf;
-    border-bottom-color: #085caf; }
+    color: var(--fd-color-action-hover);
+    border-bottom-color: var(--fd-color-action-hover); }
   .fd-link:visited {
-    color: #3c0ad1;
-    border-bottom-color: #3c0ad1; }
+    color: var(--fd-color-action-visited);
+    border-bottom-color: var(--fd-color-action-visited); }
   .fd-link:active, .fd-link.is-active, .fd-link[aria-selected="true"], .fd-link.is-selected, .fd-link[aria-pressed="true"], .fd-link.is-pressed {
-    color: #0254a7;
-    border-bottom-color: #0254a7; }
+    color: var(--fd-color-action-selected);
+    border-bottom-color: var(--fd-color-action-selected); }
   .fd-link[aria-disabled="true"], .fd-link.is-disabled, .fd-link:disabled {
-    color: rgba(10, 110, 209, 0.4);
-    border-bottom-color: rgba(10, 110, 209, 0.4); }
+    color: var(--fd-color-action-disabled);
+    border-bottom-color: var(--fd-color-action-disabled); }
 
 /*!
 .fd-identifier+((--circle), (--thumbnail), (--xxs|--xs|--s|--m|--l|--xl|--xxl))
 */
-[class*="fd-identifier"] {
-  font-size: 14px;
-  line-height: 1.42857;
-  color: #32363a;
-  font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
-  border-radius: 4px;
-  background-color: #6a6d70;
-  color: white; }
-
-.fd-identifier--xxs {
-  width: 20px;
-  height: 20px;
-  max-width: 20px;
-  max-height: 20px;
-  min-width: 20px;
-  min-height: 20px;
-  font-size: 0.85714rem;
-  line-height: 1.33333;
-  font-weight: 400;
-  font-weight: 400;
-  font-stretch: condensed;
-  line-height: 20px; }
-  .fd-identifier--xxs::before {
+.fd-identifier {
+  --fd-identifier-color: var(--fd-color-text-5);
+  --fd-identifier-background-color: var(--fd-color-status-4); }
+  [class*="fd-identifier"] {
+    font-size: 14px;
+    line-height: 1.42857;
+    color: var(--fd-color-text-1);
+    font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    border-radius: 4px;
+    background-color: var(--fd-identifier-background-color);
+    color: var(--fd-identifier-color); }
+  .fd-identifier--xxs {
+    width: 20px;
+    height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    min-width: 20px;
+    min-height: 20px;
     font-size: 0.85714rem;
-    line-height: 1;
+    line-height: 1.33333;
+    font-weight: 400;
+    font-weight: 400;
+    font-stretch: condensed;
     line-height: 20px; }
-
-.fd-identifier--xs {
-  width: 28px;
-  height: 28px;
-  max-width: 28px;
-  max-height: 28px;
-  min-width: 28px;
-  min-height: 28px;
-  font-size: 0.85714rem;
-  line-height: 1.33333;
-  font-weight: 400;
-  font-weight: 400;
-  font-stretch: condensed;
-  line-height: 28px; }
-  .fd-identifier--xs::before {
+    .fd-identifier--xxs::before {
+      font-size: 0.85714rem;
+      line-height: 1;
+      line-height: 20px; }
+  .fd-identifier--xs {
+    width: 28px;
+    height: 28px;
+    max-width: 28px;
+    max-height: 28px;
+    min-width: 28px;
+    min-height: 28px;
     font-size: 0.85714rem;
-    line-height: 1;
+    line-height: 1.33333;
+    font-weight: 400;
+    font-weight: 400;
+    font-stretch: condensed;
     line-height: 28px; }
-
-.fd-identifier--s {
-  width: 32px;
-  height: 32px;
-  max-width: 32px;
-  max-height: 32px;
-  min-width: 32px;
-  min-height: 32px;
-  font-size: 0.85714rem;
-  line-height: 1.33333;
-  font-weight: 400;
-  font-weight: 400;
-  font-stretch: condensed;
-  line-height: 32px; }
-  .fd-identifier--s::before {
-    font-size: 1.14286rem;
-    line-height: 1;
+    .fd-identifier--xs::before {
+      font-size: 0.85714rem;
+      line-height: 1;
+      line-height: 28px; }
+  .fd-identifier--s {
+    width: 32px;
+    height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    font-size: 0.85714rem;
+    line-height: 1.33333;
+    font-weight: 400;
+    font-weight: 400;
+    font-stretch: condensed;
     line-height: 32px; }
-
-.fd-identifier--m {
-  width: 48px;
-  height: 48px;
-  max-width: 48px;
-  max-height: 48px;
-  min-width: 48px;
-  min-height: 48px;
-  font-size: 1rem;
-  line-height: 1.42857;
-  font-weight: 400;
-  line-height: 48px; }
-  .fd-identifier--m::before {
-    font-size: 1.42857rem;
-    line-height: 1;
+    .fd-identifier--s::before {
+      font-size: 1.14286rem;
+      line-height: 1;
+      line-height: 32px; }
+  .fd-identifier--m {
+    width: 48px;
+    height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 1rem;
+    line-height: 1.42857;
+    font-weight: 400;
     line-height: 48px; }
-
-.fd-identifier--l {
-  width: 64px;
-  height: 64px;
-  max-width: 64px;
-  max-height: 64px;
-  min-width: 64px;
-  min-height: 64px;
-  font-size: 1.28571rem;
-  line-height: 1.33333;
-  font-weight: 400;
-  line-height: 64px; }
-  .fd-identifier--l::before {
-    font-size: 1.71429rem;
-    line-height: 1;
+    .fd-identifier--m::before {
+      font-size: 1.42857rem;
+      line-height: 1;
+      line-height: 48px; }
+  .fd-identifier--l {
+    width: 64px;
+    height: 64px;
+    max-width: 64px;
+    max-height: 64px;
+    min-width: 64px;
+    min-height: 64px;
+    font-size: 1.28571rem;
+    line-height: 1.33333;
+    font-weight: 400;
     line-height: 64px; }
-
-.fd-identifier--xl {
-  width: 88px;
-  height: 88px;
-  max-width: 88px;
-  max-height: 88px;
-  min-width: 88px;
-  min-height: 88px;
-  font-size: 1.28571rem;
-  line-height: 1.33333;
-  font-weight: 400;
-  line-height: 88px; }
-  .fd-identifier--xl::before {
-    font-size: 1.71429rem;
-    line-height: 1;
+    .fd-identifier--l::before {
+      font-size: 1.71429rem;
+      line-height: 1;
+      line-height: 64px; }
+  .fd-identifier--xl {
+    width: 88px;
+    height: 88px;
+    max-width: 88px;
+    max-height: 88px;
+    min-width: 88px;
+    min-height: 88px;
+    font-size: 1.28571rem;
+    line-height: 1.33333;
+    font-weight: 400;
     line-height: 88px; }
-
-.fd-identifier--xxl {
-  width: 112px;
-  height: 112px;
-  max-width: 112px;
-  max-height: 112px;
-  min-width: 112px;
-  min-height: 112px;
-  font-size: 1.28571rem;
-  line-height: 1.33333;
-  font-weight: 400;
-  line-height: 112px; }
-  .fd-identifier--xxl::before {
-    font-size: 1.71429rem;
-    line-height: 1;
+    .fd-identifier--xl::before {
+      font-size: 1.71429rem;
+      line-height: 1;
+      line-height: 88px; }
+  .fd-identifier--xxl {
+    width: 112px;
+    height: 112px;
+    max-width: 112px;
+    max-height: 112px;
+    min-width: 112px;
+    min-height: 112px;
+    font-size: 1.28571rem;
+    line-height: 1.33333;
+    font-weight: 400;
     line-height: 112px; }
-
-.fd-identifier--circle {
-  border-radius: 50%; }
-
-.fd-identifier--thumbnail {
-  text-indent: -200%;
-  overflow: hidden; }
-
-.fd-identifier--transparent {
-  background-color: transparent;
-  color: #32363a; }
+    .fd-identifier--xxl::before {
+      font-size: 1.71429rem;
+      line-height: 1;
+      line-height: 112px; }
+  .fd-identifier--circle {
+    border-radius: 50%; }
+  .fd-identifier--thumbnail {
+    text-indent: -200%;
+    overflow: hidden; }
+  .fd-identifier--transparent {
+    --fd-identifier-color: var(--fd-color-text-1);
+    --fd-identifier-background-color: transparent; }
 
 /*!
 .fd-mega-menu+(--no-border)
@@ -6077,7 +6113,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-mega-menu {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   background-color: white;
   width: 250px;
@@ -6112,7 +6148,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-mega-menu__list, .fd-mega-menu__sublist {
     font-size: 14px;
     line-height: 1.42857;
-    color: #32363a;
+    color: var(--fd-color-text-1);
     font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     display: flex;
     flex-wrap: wrap;
@@ -6163,9 +6199,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 
 .fd-menu {
   --fd-menu-item-separator-color: var(--fd-color-neutral-2);
+  --fd-menu-item-color: var(--fd-color-text-2);
+  --fd-menu-item-background-color: var(--fd-color-background-2);
+  --fd-menu-title-color: var(--fd-color-text-3);
+  --fd-menu-title-background-color: var(--fd-color-neutral-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   display: block;
@@ -6197,42 +6237,38 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     line-height: 1.33333;
     font-weight: 400;
     text-transform: uppercase;
-    color: #6a6d70;
-    background: #fafafa; }
+    color: var(--fd-menu-title-color);
+    background-color: var(--fd-menu-title-background-color); }
   .fd-menu__item {
     display: block;
     cursor: pointer;
     padding: 10px 24px;
-    color: #51555a;
-    background-color: white;
+    background-color: var(--fd-menu-item-background-color);
+    color: var(--fd-menu-item-color);
     font-weight: 400;
     text-align: left; }
     .fd-menu__item > .fd-checkbox {
       margin: 0 10px 0 0; }
     .fd-menu__item:hover,
     .fd-menu__item .is-hover {
-      color: #32363a;
-      background-color: #eeeeef; }
+      color: var(--fd-color-text-1);
+      background-color: var(--fd-color-background-hover); }
     .fd-menu__item[aria-selected="true"], .fd-menu__item.is-selected {
-      background-color: rgba(10, 110, 209, 0.07); }
+      background-color: var(--fd-color-background-selected); }
       .fd-menu__item[aria-selected="true"]:hover,
       .fd-menu__item[aria-selected="true"] .is-hover, .fd-menu__item.is-selected:hover,
       .fd-menu__item.is-selected .is-hover {
-        background-color: rgba(10, 110, 209, 0.1); }
+        background-color: var(--fd-color-background-selected-hover); }
   .fd-menu--addon-before .fd-menu__item {
     padding-left: 32px; }
   .fd-menu__addon-before {
     float: left;
     clear: left;
-    padding: 10px; }
-  .fd-menu hr {
-    border: none;
-    border-top: 1px solid #eeeeef;
-    margin: 0; }
-  .fd-menu__link {
-    color: #0a6ed1; }
-    .fd-menu__link:hover {
-      color: #085caf; }
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px; }
 
 /*!
 .fd-button-group+()
@@ -6289,13 +6325,16 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-tile__actions+()
 */
 .fd-tile {
+  --fd-tile-color: var(--fd-color-text-3);
+  --fd-tile-background-color: var(--fd-color-background-2);
+  --fd-tile-title-color: var(--fd-color-text-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   display: flex;
-  color: #6a6d70;
-  background-color: white; }
+  color: var(--fd-tile-color);
+  background-color: var(--fd-tile-background-color); }
   .fd-tile--button, .fd-tile[role="button"] {
     cursor: pointer;
     transition: box-shadow 0.125s ease-in; }
@@ -6317,7 +6356,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     font-size: 1rem;
     line-height: 1.42857;
     font-weight: 400;
-    color: #51555a;
+    color: var(--fd-tile-title-color);
     margin-bottom: 0; }
   .fd-tile__actions {
     padding: 12px 16px 12px 12px; }
@@ -6328,12 +6367,15 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-product-tile__title+()
 */
 .fd-product-tile {
+  --fd-product-tile-color: var(--fd-color-text-3);
+  --fd-product-tile-background-color: var(--fd-color-background-2);
+  --fd-product-tile-title-color: var(--fd-color-text-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  color: #6a6d70;
-  background-color: white; }
+  color: var(--fd-product-tile-color);
+  background-color: var(--fd-product-tile-background-color); }
   .fd-product-tile--button, .fd-product-tile[role="button"] {
     cursor: pointer;
     transition: box-shadow 0.125s ease-in; }
@@ -6355,13 +6397,15 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     font-size: 1.14286rem;
     line-height: 1.25;
     font-weight: 400;
-    color: #32363a;
+    color: var(--fd-product-tile-title-color);
+    margin-bottom: 0;
     margin-bottom: 0; }
 
 /*!
 .fd-tile-grid+(--2col | --4col | --5col | --6col)
 */
 .fd-tile-grid {
+  --fd-tile-grid-border-color: var(--fd-color-neutral-2);
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -6370,8 +6414,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     margin-bottom: 0;
     border-radius: 0 !important;
     position: relative;
-    border: solid 1px #edeef0;
-    border-width: 0 1px 1px 0; }
+    border-style: solid;
+    border-color: var(--fd-tile-grid-border-color);
+    border-width: 0 1px 1px 0;
+    min-width: calc(100% / 2);
+    width: auto;
+    flex: 1; }
   @media (min-width: 320px) {
     .fd-tile-grid {
       display: flex;
@@ -6382,14 +6430,24 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
       grid-gap: 0; }
       .fd-tile-grid--2col {
         grid-template-columns: repeat(2, 1fr); }
+        .fd-tile-grid--2col > * {
+          min-width: calc(100% / 2); }
       .fd-tile-grid--3col {
         grid-template-columns: repeat(3, 1fr); }
+        .fd-tile-grid--3col > * {
+          min-width: calc(100% / 3); }
       .fd-tile-grid--4col {
         grid-template-columns: repeat(4, 1fr); }
+        .fd-tile-grid--4col > * {
+          min-width: calc(100% / 4); }
       .fd-tile-grid--5col {
         grid-template-columns: repeat(5, 1fr); }
+        .fd-tile-grid--5col > * {
+          min-width: calc(100% / 5); }
       .fd-tile-grid--6col {
-        grid-template-columns: repeat(6, 1fr); } }
+        grid-template-columns: repeat(6, 1fr); }
+        .fd-tile-grid--6col > * {
+          min-width: calc(100% / 6); } }
 
 /*!
 .fd-token+(--no-border)
@@ -6397,15 +6455,18 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     .fd-token__title+()
 */
 .fd-token {
+  --fd-token-color: var(--fd-color-text-2);
+  --fd-token-background-color: var(--fd-color-background-selected);
+  --fd-token-border-color: transparent;
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 0.85714rem;
   line-height: 1.33333;
   font-weight: 400;
-  color: #51555a;
-  background-color: rgba(10, 110, 209, 0.07);
+  color: var(--fd-token-color);
+  background-color: var(--fd-token-background-color);
   line-height: 24px;
   vertical-align: middle;
   display: inline-block;
@@ -6414,7 +6475,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
-  border-color: transparent;
+  border-color: var(--fd-token-border-color);
   cursor: pointer; }
   .fd-token::after {
     font-family: "SAP-icons";
@@ -6434,7 +6495,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     font-size: 0.85714rem;
     line-height: 1; }
   .fd-token::after {
-    color: #0a6ed1;
+    color: var(--fd-color-action-1);
     margin-left: 4px;
     vertical-align: bottom;
     line-height: 24px; }
@@ -6456,7 +6517,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     font-size: 0.85714rem;
     line-height: 1; }
   [dir="rtl"] .fd-token::before, .fd-token[dir="rtl"]::before {
-    color: #0a6ed1;
+    color: var(--fd-color-action-1);
     margin-left: 4px;
     vertical-align: bottom;
     line-height: 24px; }
@@ -6475,7 +6536,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-tag {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 0.85714rem;
   line-height: 1.33333;
@@ -6637,7 +6698,7 @@ see layouts/panel
 .fd-calendar {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   width: 252px; }
 
@@ -6701,128 +6762,95 @@ see layouts/panel
 /*!
 .fd-status-label+(--available, --away, --busy, --offline, --success, --warning, --error)
 */
+.fd-status-label--available, .fd-status-label--away, .fd-status-label--busy, .fd-status-label--offline {
+  padding-left: 20px; }
+  .fd-status-label--available::before, .fd-status-label--away::before, .fd-status-label--busy::before, .fd-status-label--offline::before {
+    position: absolute;
+    z-index: 1;
+    background-repeat: no-repeat;
+    content: "";
+    line-height: 1; }
+  .fd-status-label--available::after, .fd-status-label--away::after, .fd-status-label--busy::after, .fd-status-label--offline::after {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    content: "";
+    line-height: 1;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--fd-status-label-icon-background-color); }
+  [dir="rtl"] .fd-status-label--available, [dir="rtl"] .fd-status-label--away, [dir="rtl"] .fd-status-label--busy, [dir="rtl"] .fd-status-label--offline, .fd-status-label--available[dir="rtl"], .fd-status-label--away[dir="rtl"], .fd-status-label--busy[dir="rtl"], .fd-status-label--offline[dir="rtl"] {
+    padding-left: initial;
+    padding-right: 20px; }
+    [dir="rtl"] .fd-status-label--available:before, [dir="rtl"] .fd-status-label--away:before, [dir="rtl"] .fd-status-label--busy:before, [dir="rtl"] .fd-status-label--offline:before, .fd-status-label--available[dir="rtl"]:before, .fd-status-label--away[dir="rtl"]:before, .fd-status-label--busy[dir="rtl"]:before, .fd-status-label--offline[dir="rtl"]:before {
+      left: initial; }
+    [dir="rtl"] .fd-status-label--available:after, [dir="rtl"] .fd-status-label--away:after, [dir="rtl"] .fd-status-label--busy:after, [dir="rtl"] .fd-status-label--offline:after, .fd-status-label--available[dir="rtl"]:after, .fd-status-label--away[dir="rtl"]:after, .fd-status-label--busy[dir="rtl"]:after, .fd-status-label--offline[dir="rtl"]:after {
+      left: initial;
+      right: 0; }
+
 .fd-status-label {
+  --fd-status-label-color: var(--fd-color-text-2);
+  --fd-status-label-icon-background-color: var(--fd-color-text-2);
   position: relative;
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  color: #51555a; }
+  color: var(--fd-status-label-color); }
   .fd-status-label::before {
     vertical-align: -8%;
     width: 20px;
     height: 16px;
     line-height: 1; }
-  .fd-status-label--available, .fd-status-label--away, .fd-status-label--busy, .fd-status-label--offline {
-    padding-left: 20px; }
-    [dir="rtl"] .fd-status-label--available, .fd-status-label--available[dir="rtl"], [dir="rtl"] .fd-status-label--away, .fd-status-label--away[dir="rtl"], [dir="rtl"] .fd-status-label--busy, .fd-status-label--busy[dir="rtl"], [dir="rtl"] .fd-status-label--offline, .fd-status-label--offline[dir="rtl"] {
-      padding-left: initial;
-      padding-right: 20px; }
-      [dir="rtl"] .fd-status-label--available:before, .fd-status-label--available[dir="rtl"]:before, [dir="rtl"] .fd-status-label--away:before, .fd-status-label--away[dir="rtl"]:before, [dir="rtl"] .fd-status-label--busy:before, .fd-status-label--busy[dir="rtl"]:before, [dir="rtl"] .fd-status-label--offline:before, .fd-status-label--offline[dir="rtl"]:before {
-        left: initial; }
-      [dir="rtl"] .fd-status-label--available:after, .fd-status-label--available[dir="rtl"]:after, [dir="rtl"] .fd-status-label--away:after, .fd-status-label--away[dir="rtl"]:after, [dir="rtl"] .fd-status-label--busy:after, .fd-status-label--busy[dir="rtl"]:after, [dir="rtl"] .fd-status-label--offline:after, .fd-status-label--offline[dir="rtl"]:after {
-        left: initial;
-        right: 0; }
-  .fd-status-label--available:before {
-    position: absolute;
-    z-index: 1;
-    background-repeat: no-repeat;
-    content: "";
-    line-height: 1;
-    width: 7px;
-    height: 7px;
-    top: 4px;
-    left: 4px;
-    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA2IDUuOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNiA1Ljk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTIuNywzLjJsMS40LTIuOEM0LjQsMCw1LTAuMSw1LjUsMC4xYzAuNCwwLjMsMC42LDAuOCwwLjQsMS4ybC0yLDRDMy42LDUuOSwzLDYuMSwyLjYsNS44CgljLTAuMSwwLTAuMi0wLjEtMC4zLTAuMmwtMi0yYy0wLjQtMC40LTAuNC0xLDAtMS40YzAuNC0wLjQsMS0wLjQsMS40LDBsMCwwTDIuNywzLjJ6Ii8+Cjwvc3ZnPg=="); }
-  .fd-status-label--available:after {
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    content: "";
-    line-height: 1;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #107f3e; }
-  .fd-status-label--away:before {
-    position: absolute;
-    z-index: 1;
-    background-repeat: no-repeat;
-    content: "";
-    line-height: 1;
-    width: 6px;
-    height: 6px;
-    top: 4px;
-    left: 6px;
-    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1IDUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUgNTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMSw1QzAuNCw1LDAsNC42LDAsNFYxYzAtMC42LDAuNC0xLDEtMXMxLDAuNCwxLDF2MmgyYzAuNiwwLDEsMC40LDEsMVM0LjYsNSw0LDVIMXoiLz4KPC9zdmc+"); }
-  .fd-status-label--away:after {
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    content: "";
-    line-height: 1;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #e9730c; }
-  .fd-status-label--busy:before {
-    position: absolute;
-    z-index: 1;
-    background-repeat: no-repeat;
-    content: "";
-    line-height: 1;
-    width: 4px;
-    height: 4px;
-    top: 6px;
-    left: 6px;
-    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA0IDQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQgNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNCwyYzAsMS4xLTAuOSwyLTIsMlMwLDMuMSwwLDJzMC45LTIsMi0yUzQsMC45LDQsMiIvPgo8L3N2Zz4="); }
-  .fd-status-label--busy:after {
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    content: "";
-    line-height: 1;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #bd0000; }
-  [dir="rtl"] .fd-status-label--busy:before, .fd-status-label--busy[dir="rtl"]:before {
-    right: 6px; }
+  .fd-status-label--success {
+    --fd-status-label-color: var(--fd-color-positive); }
+  .fd-status-label--warning {
+    --fd-status-label-color: var(--fd-color-alert); }
+  .fd-status-label--error {
+    --fd-status-label-color: var(--fd-color-negative); }
+  .fd-status-label--available {
+    --fd-status-label-icon-background-color: var(--fd-color-positive); }
+    .fd-status-label--available:before {
+      width: 7px;
+      height: 7px;
+      top: 4px;
+      left: 4px;
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA2IDUuOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNiA1Ljk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTIuNywzLjJsMS40LTIuOEM0LjQsMCw1LTAuMSw1LjUsMC4xYzAuNCwwLjMsMC42LDAuOCwwLjQsMS4ybC0yLDRDMy42LDUuOSwzLDYuMSwyLjYsNS44CgljLTAuMSwwLTAuMi0wLjEtMC4zLTAuMmwtMi0yYy0wLjQtMC40LTAuNC0xLDAtMS40YzAuNC0wLjQsMS0wLjQsMS40LDBsMCwwTDIuNywzLjJ6Ii8+Cjwvc3ZnPg=="); }
+    [dir="rtl"] .fd-status-label--available:before, .fd-status-label--available[dir="rtl"]:before {
+      right: 4px; }
+  .fd-status-label--away {
+    --fd-status-label-icon-background-color: var(--fd-color-alert); }
+    .fd-status-label--away:before {
+      width: 6px;
+      height: 6px;
+      top: 4px;
+      left: 6px;
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1IDUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUgNTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMSw1QzAuNCw1LDAsNC42LDAsNFYxYzAtMC42LDAuNC0xLDEtMXMxLDAuNCwxLDF2MmgyYzAuNiwwLDEsMC40LDEsMVM0LjYsNSw0LDVIMXoiLz4KPC9zdmc+"); }
+    [dir="rtl"] .fd-status-label--away:before, .fd-status-label--away[dir="rtl"]:before {
+      right: 4px; }
+  .fd-status-label--busy {
+    --fd-status-label-icon-background-color: var(--fd-color-negative); }
+    .fd-status-label--busy:before {
+      width: 4px;
+      height: 4px;
+      top: 6px;
+      left: 6px;
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA0IDQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQgNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNCwyYzAsMS4xLTAuOSwyLTIsMlMwLDMuMSwwLDJzMC45LTIsMi0yUzQsMC45LDQsMiIvPgo8L3N2Zz4="); }
+    [dir="rtl"] .fd-status-label--busy:before, .fd-status-label--busy[dir="rtl"]:before {
+      right: 6px; }
   .fd-status-label--offline:before {
-    position: absolute;
-    z-index: 1;
-    background-repeat: no-repeat;
-    content: "";
-    line-height: 1;
     width: 8px;
     height: 8px;
     top: 4px;
     left: 4px;
     background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA3LjkgNy45IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA3LjkgNy45OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik03LjksNGMwLDIuMi0xLjgsNC00LDRTMCw2LjIsMCw0czEuOC00LDQtNFM3LjksMS44LDcuOSw0Ii8+Cjwvc3ZnPg=="); }
-  .fd-status-label--offline:after {
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    content: "";
-    line-height: 1;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #51555a; }
-  .fd-status-label--success {
-    color: #107f3e; }
-  .fd-status-label--warning {
-    color: #e9730c; }
-  .fd-status-label--error {
-    color: #bd0000; }
-  [dir="rtl"] .fd-status-label--available:before, .fd-status-label--available[dir="rtl"]:before, [dir="rtl"] .fd-status-label--away:before, .fd-status-label--away[dir="rtl"]:before, [dir="rtl"] .fd-status-label--offline:before, .fd-status-label--offline[dir="rtl"]:before {
+  [dir="rtl"] .fd-status-label--offline:before, .fd-status-label--offline[dir="rtl"]:before {
     right: 4px; }
 
 .fd-popover {
+  --fd-popover-background-color: var(--fd-color-background-2);
   position: relative;
   display: inline-block; }
   .fd-popover__control {
@@ -6835,8 +6863,8 @@ see layouts/panel
     white-space: nowrap;
     z-index: 2;
     border-radius: 4px;
-    background-color: white;
-    box-shadow: 0 0 1px 0 rgba(218, 222, 230, 0.5), 0 2px 8px 0 rgba(0, 8, 26, 0.2);
+    background-color: var(--fd-popover-background-color);
+    box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3), 0 2px 8px 0 var(--fd-color-neutral-2);
     opacity: 1;
     visibility: visible;
     transition: all 0.125s;
@@ -6855,7 +6883,7 @@ see layouts/panel
       width: 0;
       border-style: solid;
       border-width: 0 6.5px 8px 6.5px;
-      border-bottom-color: white;
+      border-bottom-color: var(--fd-color-background-2);
       border-left-color: transparent;
       border-right-color: transparent;
       content: "";
@@ -6868,7 +6896,7 @@ see layouts/panel
       width: 0;
       border-style: solid;
       border-width: 0 6.5px 8px 6.5px;
-      border-bottom-color: #89919a;
+      border-bottom-color: var(--fd-color-neutral-4);
       border-left-color: transparent;
       border-right-color: transparent;
       content: "";
@@ -6949,7 +6977,7 @@ see layouts/panel
 .fd-localization-editor {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; }
   .fd-localization-editor__list li {
     padding: 8px; }
@@ -7038,7 +7066,7 @@ see layouts/panel
   display: inline-block; }
   .fd-product-switcher__body {
     padding: 20px 10px 0 10px;
-    color: #32363a; }
+    color: initial; }
     .fd-product-switcher__body > nav > ul {
       margin: 0;
       padding: 0;
@@ -7063,15 +7091,18 @@ see layouts/panel
     display: block; }
 
 .fd-shellbar {
+  --fd-shellbar-color: var(--fd-color-text-5);
+  --fd-shellbar-background-color: var(--fd-color-shell-1);
+  --fd-shellbar-link-color: var(--fd-color-shell-2);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  background: #354a5f;
+  background-color: var(--fd-shellbar-background-color);
   height: 48px;
   display: flex;
   align-items: center;
-  color: white;
+  color: var(--fd-shellbar-color);
   position: relative;
   padding: 4px 32px;
   justify-content: space-between; }
@@ -7130,7 +7161,7 @@ see layouts/panel
     font-weight: 400;
     font-weight: 700;
     line-height: 1;
-    color: white;
+    color: var(--fd-shellbar-color);
     white-space: nowrap;
     overflow: hidden;
     max-width: 100%;
@@ -7204,9 +7235,9 @@ see layouts/panel
   .fd-shellbar .fd-search-input .fd-input {
     border-style: solid;
     border-width: 1px;
-    border-color: var(--fd-color-shell-2);
-    background-color: var(--fd-color-shell-1);
-    color: var(--fd-color-shell-2); }
+    border-color: var(--fd-shellbar-link-color);
+    background-color: var(--fd-shellbar-background-color);
+    color: var(--fd-shellbar-link-color); }
     .fd-shellbar .fd-search-input .fd-input:focus {
       box-shadow: none; }
   @media (min-width: 320px) {
@@ -7231,7 +7262,7 @@ see layouts/panel
 .fd-user-menu {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   text-align: left; }
   .fd-user-menu__control {
@@ -7284,16 +7315,18 @@ see layouts/panel
 .fd-counter+(--notification)
 */
 .fd-counter {
+  --fd-counter-color: var(--fd-color-text-5);
+  --fd-counter-background-color: var(--fd-color-status-4);
   border-radius: 4px;
-  background: #6d7678;
-  color: white;
+  color: var(--fd-counter-color);
+  background-color: var(--fd-counter-background-color);
   font-size: 0.78571em;
   line-height: 1;
   display: inline-block;
   text-align: center;
   padding: 4px; }
   .fd-counter--notification {
-    background-color: #bd0000;
+    --fd-counter-background-color: var(--fd-color-status-3);
     position: absolute;
     transform: translate(-40%, -50%); }
     [dir="rtl"] .fd-counter--notification, .fd-counter--notification[dir="rtl"] {
@@ -7377,112 +7410,142 @@ see layouts/panel
 
 .fd-has-color-action,
 .fd-has-color-action-1 {
-  color: #0a6ed1 !important; }
+  color: var(--fd-color-action-1) !important; }
 
 .fd-has-color-action-2 {
-  color: white !important; }
+  color: var(--fd-color-action-2) !important; }
 
 .fd-has-color-text,
 .fd-has-color-text-1 {
-  color: #32363a !important; }
+  color: var(--fd-color-text-1) !important; }
 
 .fd-has-color-text-2 {
-  color: #51555a !important; }
+  color: var(--fd-color-text-2) !important; }
 
 .fd-has-color-text-3 {
-  color: #6a6d70 !important; }
+  color: var(--fd-color-text-3) !important; }
 
 .fd-has-color-text-4 {
-  color: #74777a !important; }
+  color: var(--fd-color-text-4) !important; }
 
 .fd-has-color-text-5 {
-  color: white !important; }
+  color: var(--fd-color-text-5) !important; }
 
 .fd-has-color-background,
 .fd-has-color-background-1 {
-  color: #edeef0 !important; }
+  color: var(--fd-color-background-1) !important; }
 
 .fd-has-color-background-2 {
-  color: white !important; }
+  color: var(--fd-color-background-2) !important; }
 
 .fd-has-color-neutral,
 .fd-has-color-neutral-1 {
-  color: #fafafa !important; }
+  color: var(--fd-color-neutral-1) !important; }
 
 .fd-has-color-neutral-2 {
-  color: #eeeeef !important; }
+  color: var(--fd-color-neutral-2) !important; }
 
 .fd-has-color-neutral-3 {
-  color: #d9d9d9 !important; }
+  color: var(--fd-color-neutral-3) !important; }
 
 .fd-has-color-neutral-4 {
-  color: #89919a !important; }
+  color: var(--fd-color-neutral-4) !important; }
 
 .fd-has-color-status,
 .fd-has-color-status-1 {
-  color: #107f3e !important; }
+  color: var(--fd-color-status-1) !important; }
 
 .fd-has-color-status-2 {
-  color: #e9730c !important; }
+  color: var(--fd-color-status-2) !important; }
 
 .fd-has-color-status-3 {
-  color: #bd0000 !important; }
+  color: var(--fd-color-status-3) !important; }
 
 .fd-has-color-status-4 {
-  color: #6d7678 !important; }
+  color: var(--fd-color-status-4) !important; }
 
 .fd-has-color-accent,
 .fd-has-color-accent-1 {
-  color: #e38b16 !important; }
+  color: var(--fd-color-accent-1) !important; }
 
 .fd-has-color-accent-2 {
-  color: #dc7474 !important; }
+  color: var(--fd-color-accent-2) !important; }
 
 .fd-has-color-accent-3 {
-  color: #db1f77 !important; }
+  color: var(--fd-color-accent-3) !important; }
 
 .fd-has-color-accent-4 {
-  color: #c0399f !important; }
+  color: var(--fd-color-accent-4) !important; }
 
 .fd-has-color-accent-5 {
-  color: #6367de !important; }
+  color: var(--fd-color-accent-5) !important; }
 
 .fd-has-color-accent-6 {
-  color: #5899da !important; }
+  color: var(--fd-color-accent-6) !important; }
 
 .fd-has-color-accent-7 {
-  color: #13a4b4 !important; }
+  color: var(--fd-color-accent-7) !important; }
 
 .fd-has-color-accent-8 {
-  color: #7ca10c !important; }
+  color: var(--fd-color-accent-8) !important; }
 
 .fd-has-color-accent-9 {
-  color: #955ecf !important; }
+  color: var(--fd-color-accent-9) !important; }
 
 .fd-has-color-accent-10 {
-  color: #6c8893 !important; }
+  color: var(--fd-color-accent-10) !important; }
 
 .fd-has-color-accent-11 {
-  color: #d17f15 !important; }
+  color: var(--fd-color-accent-11) !important; }
 
 .fd-has-color-accent-12 {
-  color: #d04343 !important; }
+  color: var(--fd-color-accent-12) !important; }
 
 .fd-has-color-accent-13 {
-  color: #2b78c5 !important; }
+  color: var(--fd-color-accent-13) !important; }
 
 .fd-has-color-accent-14 {
-  color: #0f828f !important; }
+  color: var(--fd-color-accent-14) !important; }
 
 .fd-has-color-accent-15 {
-  color: #647887 !important; }
+  color: var(--fd-color-accent-15) !important; }
 
 .fd-has-color-shell,
 .fd-has-color-shell-1 {
-  color: #354a5f !important; }
+  color: var(--fd-color-shell-1) !important; }
 
 .fd-has-color-shell-2 {
-  color: #d1e8ff !important; }
+  color: var(--fd-color-shell-2) !important; }
+
+.fd-has-color-action-hover {
+  color: var(--fd-color-action-hover) !important; }
+
+.fd-has-color-action-selected {
+  color: var(--fd-color-action-selected) !important; }
+
+.fd-has-color-action-disabled {
+  color: var(--fd-color-action-disabled) !important; }
+
+.fd-has-color-action-visited {
+  color: var(--fd-color-action-visited) !important; }
+
+.fd-has-color-background-hover {
+  color: var(--fd-color-background-hover) !important; }
+
+.fd-has-color-background-selected {
+  color: var(--fd-color-background-selected) !important; }
+
+.fd-has-color-background-selected-hover {
+  color: var(--fd-color-background-selected-hover) !important; }
+
+.fd-has-color-background-positive {
+  color: var(--fd-color-background-positive) !important; }
+
+.fd-has-color-background-negative {
+  color: var(--fd-color-background-negative) !important; }
+
+.fd-has-color-background-alert {
+  color: var(--fd-color-background-alert) !important; }
 
 .fd-has-background-image {
   background-repeat: no-repeat;
@@ -7506,112 +7569,142 @@ see layouts/panel
 
 .fd-has-background-color-action,
 .fd-has-background-color-action-1 {
-  background-color: #0a6ed1 !important; }
+  background-color: var(--fd-color-action-1) !important; }
 
 .fd-has-background-color-action-2 {
-  background-color: white !important; }
+  background-color: var(--fd-color-action-2) !important; }
 
 .fd-has-background-color-text,
 .fd-has-background-color-text-1 {
-  background-color: #32363a !important; }
+  background-color: var(--fd-color-text-1) !important; }
 
 .fd-has-background-color-text-2 {
-  background-color: #51555a !important; }
+  background-color: var(--fd-color-text-2) !important; }
 
 .fd-has-background-color-text-3 {
-  background-color: #6a6d70 !important; }
+  background-color: var(--fd-color-text-3) !important; }
 
 .fd-has-background-color-text-4 {
-  background-color: #74777a !important; }
+  background-color: var(--fd-color-text-4) !important; }
 
 .fd-has-background-color-text-5 {
-  background-color: white !important; }
+  background-color: var(--fd-color-text-5) !important; }
 
 .fd-has-background-color-background,
 .fd-has-background-color-background-1 {
-  background-color: #edeef0 !important; }
+  background-color: var(--fd-color-background-1) !important; }
 
 .fd-has-background-color-background-2 {
-  background-color: white !important; }
+  background-color: var(--fd-color-background-2) !important; }
 
 .fd-has-background-color-neutral,
 .fd-has-background-color-neutral-1 {
-  background-color: #fafafa !important; }
+  background-color: var(--fd-color-neutral-1) !important; }
 
 .fd-has-background-color-neutral-2 {
-  background-color: #eeeeef !important; }
+  background-color: var(--fd-color-neutral-2) !important; }
 
 .fd-has-background-color-neutral-3 {
-  background-color: #d9d9d9 !important; }
+  background-color: var(--fd-color-neutral-3) !important; }
 
 .fd-has-background-color-neutral-4 {
-  background-color: #89919a !important; }
+  background-color: var(--fd-color-neutral-4) !important; }
 
 .fd-has-background-color-status,
 .fd-has-background-color-status-1 {
-  background-color: #107f3e !important; }
+  background-color: var(--fd-color-status-1) !important; }
 
 .fd-has-background-color-status-2 {
-  background-color: #e9730c !important; }
+  background-color: var(--fd-color-status-2) !important; }
 
 .fd-has-background-color-status-3 {
-  background-color: #bd0000 !important; }
+  background-color: var(--fd-color-status-3) !important; }
 
 .fd-has-background-color-status-4 {
-  background-color: #6d7678 !important; }
+  background-color: var(--fd-color-status-4) !important; }
 
 .fd-has-background-color-accent,
 .fd-has-background-color-accent-1 {
-  background-color: #e38b16 !important; }
+  background-color: var(--fd-color-accent-1) !important; }
 
 .fd-has-background-color-accent-2 {
-  background-color: #dc7474 !important; }
+  background-color: var(--fd-color-accent-2) !important; }
 
 .fd-has-background-color-accent-3 {
-  background-color: #db1f77 !important; }
+  background-color: var(--fd-color-accent-3) !important; }
 
 .fd-has-background-color-accent-4 {
-  background-color: #c0399f !important; }
+  background-color: var(--fd-color-accent-4) !important; }
 
 .fd-has-background-color-accent-5 {
-  background-color: #6367de !important; }
+  background-color: var(--fd-color-accent-5) !important; }
 
 .fd-has-background-color-accent-6 {
-  background-color: #5899da !important; }
+  background-color: var(--fd-color-accent-6) !important; }
 
 .fd-has-background-color-accent-7 {
-  background-color: #13a4b4 !important; }
+  background-color: var(--fd-color-accent-7) !important; }
 
 .fd-has-background-color-accent-8 {
-  background-color: #7ca10c !important; }
+  background-color: var(--fd-color-accent-8) !important; }
 
 .fd-has-background-color-accent-9 {
-  background-color: #955ecf !important; }
+  background-color: var(--fd-color-accent-9) !important; }
 
 .fd-has-background-color-accent-10 {
-  background-color: #6c8893 !important; }
+  background-color: var(--fd-color-accent-10) !important; }
 
 .fd-has-background-color-accent-11 {
-  background-color: #d17f15 !important; }
+  background-color: var(--fd-color-accent-11) !important; }
 
 .fd-has-background-color-accent-12 {
-  background-color: #d04343 !important; }
+  background-color: var(--fd-color-accent-12) !important; }
 
 .fd-has-background-color-accent-13 {
-  background-color: #2b78c5 !important; }
+  background-color: var(--fd-color-accent-13) !important; }
 
 .fd-has-background-color-accent-14 {
-  background-color: #0f828f !important; }
+  background-color: var(--fd-color-accent-14) !important; }
 
 .fd-has-background-color-accent-15 {
-  background-color: #647887 !important; }
+  background-color: var(--fd-color-accent-15) !important; }
 
 .fd-has-background-color-shell,
 .fd-has-background-color-shell-1 {
-  background-color: #354a5f !important; }
+  background-color: var(--fd-color-shell-1) !important; }
 
 .fd-has-background-color-shell-2 {
-  background-color: #d1e8ff !important; }
+  background-color: var(--fd-color-shell-2) !important; }
+
+.fd-has-background-color-action-hover {
+  background-color: var(--fd-color-action-hover) !important; }
+
+.fd-has-background-color-action-selected {
+  background-color: var(--fd-color-action-selected) !important; }
+
+.fd-has-background-color-action-disabled {
+  background-color: var(--fd-color-action-disabled) !important; }
+
+.fd-has-background-color-action-visited {
+  background-color: var(--fd-color-action-visited) !important; }
+
+.fd-has-background-color-background-hover {
+  background-color: var(--fd-color-background-hover) !important; }
+
+.fd-has-background-color-background-selected {
+  background-color: var(--fd-color-background-selected) !important; }
+
+.fd-has-background-color-background-selected-hover {
+  background-color: var(--fd-color-background-selected-hover) !important; }
+
+.fd-has-background-color-background-positive {
+  background-color: var(--fd-color-background-positive) !important; }
+
+.fd-has-background-color-background-negative {
+  background-color: var(--fd-color-background-negative) !important; }
+
+.fd-has-background-color-background-alert {
+  background-color: var(--fd-color-background-alert) !important; }
 
 .fd-has-border-radius-0 {
   border-radius: 0 !important; }
@@ -7646,112 +7739,142 @@ see layouts/panel
 
 .fd-has-border-color-action,
 .fd-has-border-color-action-1 {
-  border-color: #0a6ed1 !important; }
+  border-color: var(--fd-color-action-1) !important; }
 
 .fd-has-border-color-action-2 {
-  border-color: white !important; }
+  border-color: var(--fd-color-action-2) !important; }
 
 .fd-has-border-color-text,
 .fd-has-border-color-text-1 {
-  border-color: #32363a !important; }
+  border-color: var(--fd-color-text-1) !important; }
 
 .fd-has-border-color-text-2 {
-  border-color: #51555a !important; }
+  border-color: var(--fd-color-text-2) !important; }
 
 .fd-has-border-color-text-3 {
-  border-color: #6a6d70 !important; }
+  border-color: var(--fd-color-text-3) !important; }
 
 .fd-has-border-color-text-4 {
-  border-color: #74777a !important; }
+  border-color: var(--fd-color-text-4) !important; }
 
 .fd-has-border-color-text-5 {
-  border-color: white !important; }
+  border-color: var(--fd-color-text-5) !important; }
 
 .fd-has-border-color-background,
 .fd-has-border-color-background-1 {
-  border-color: #edeef0 !important; }
+  border-color: var(--fd-color-background-1) !important; }
 
 .fd-has-border-color-background-2 {
-  border-color: white !important; }
+  border-color: var(--fd-color-background-2) !important; }
 
 .fd-has-border-color-neutral,
 .fd-has-border-color-neutral-1 {
-  border-color: #fafafa !important; }
+  border-color: var(--fd-color-neutral-1) !important; }
 
 .fd-has-border-color-neutral-2 {
-  border-color: #eeeeef !important; }
+  border-color: var(--fd-color-neutral-2) !important; }
 
 .fd-has-border-color-neutral-3 {
-  border-color: #d9d9d9 !important; }
+  border-color: var(--fd-color-neutral-3) !important; }
 
 .fd-has-border-color-neutral-4 {
-  border-color: #89919a !important; }
+  border-color: var(--fd-color-neutral-4) !important; }
 
 .fd-has-border-color-status,
 .fd-has-border-color-status-1 {
-  border-color: #107f3e !important; }
+  border-color: var(--fd-color-status-1) !important; }
 
 .fd-has-border-color-status-2 {
-  border-color: #e9730c !important; }
+  border-color: var(--fd-color-status-2) !important; }
 
 .fd-has-border-color-status-3 {
-  border-color: #bd0000 !important; }
+  border-color: var(--fd-color-status-3) !important; }
 
 .fd-has-border-color-status-4 {
-  border-color: #6d7678 !important; }
+  border-color: var(--fd-color-status-4) !important; }
 
 .fd-has-border-color-accent,
 .fd-has-border-color-accent-1 {
-  border-color: #e38b16 !important; }
+  border-color: var(--fd-color-accent-1) !important; }
 
 .fd-has-border-color-accent-2 {
-  border-color: #dc7474 !important; }
+  border-color: var(--fd-color-accent-2) !important; }
 
 .fd-has-border-color-accent-3 {
-  border-color: #db1f77 !important; }
+  border-color: var(--fd-color-accent-3) !important; }
 
 .fd-has-border-color-accent-4 {
-  border-color: #c0399f !important; }
+  border-color: var(--fd-color-accent-4) !important; }
 
 .fd-has-border-color-accent-5 {
-  border-color: #6367de !important; }
+  border-color: var(--fd-color-accent-5) !important; }
 
 .fd-has-border-color-accent-6 {
-  border-color: #5899da !important; }
+  border-color: var(--fd-color-accent-6) !important; }
 
 .fd-has-border-color-accent-7 {
-  border-color: #13a4b4 !important; }
+  border-color: var(--fd-color-accent-7) !important; }
 
 .fd-has-border-color-accent-8 {
-  border-color: #7ca10c !important; }
+  border-color: var(--fd-color-accent-8) !important; }
 
 .fd-has-border-color-accent-9 {
-  border-color: #955ecf !important; }
+  border-color: var(--fd-color-accent-9) !important; }
 
 .fd-has-border-color-accent-10 {
-  border-color: #6c8893 !important; }
+  border-color: var(--fd-color-accent-10) !important; }
 
 .fd-has-border-color-accent-11 {
-  border-color: #d17f15 !important; }
+  border-color: var(--fd-color-accent-11) !important; }
 
 .fd-has-border-color-accent-12 {
-  border-color: #d04343 !important; }
+  border-color: var(--fd-color-accent-12) !important; }
 
 .fd-has-border-color-accent-13 {
-  border-color: #2b78c5 !important; }
+  border-color: var(--fd-color-accent-13) !important; }
 
 .fd-has-border-color-accent-14 {
-  border-color: #0f828f !important; }
+  border-color: var(--fd-color-accent-14) !important; }
 
 .fd-has-border-color-accent-15 {
-  border-color: #647887 !important; }
+  border-color: var(--fd-color-accent-15) !important; }
 
 .fd-has-border-color-shell,
 .fd-has-border-color-shell-1 {
-  border-color: #354a5f !important; }
+  border-color: var(--fd-color-shell-1) !important; }
 
 .fd-has-border-color-shell-2 {
-  border-color: #d1e8ff !important; }
+  border-color: var(--fd-color-shell-2) !important; }
+
+.fd-has-border-color-action-hover {
+  border-color: var(--fd-color-action-hover) !important; }
+
+.fd-has-border-color-action-selected {
+  border-color: var(--fd-color-action-selected) !important; }
+
+.fd-has-border-color-action-disabled {
+  border-color: var(--fd-color-action-disabled) !important; }
+
+.fd-has-border-color-action-visited {
+  border-color: var(--fd-color-action-visited) !important; }
+
+.fd-has-border-color-background-hover {
+  border-color: var(--fd-color-background-hover) !important; }
+
+.fd-has-border-color-background-selected {
+  border-color: var(--fd-color-background-selected) !important; }
+
+.fd-has-border-color-background-selected-hover {
+  border-color: var(--fd-color-background-selected-hover) !important; }
+
+.fd-has-border-color-background-positive {
+  border-color: var(--fd-color-background-positive) !important; }
+
+.fd-has-border-color-background-negative {
+  border-color: var(--fd-color-background-negative) !important; }
+
+.fd-has-border-color-background-alert {
+  border-color: var(--fd-color-background-alert) !important; }
 
 .fd-has-height-base {
   height: 4px !important; }
@@ -8823,146 +8946,6 @@ see layouts/panel
   .fd-has-display-table-cell--xxl {
     display: table-cell !important; } }
 
-.fd-has-border-radius-0 {
-  border-radius: 0 !important; }
-
-.fd-has-border-radius-50percent {
-  border-radius: 50% !important; }
-
-.fd-has-border-none {
-  border: none !important; }
-
-.fd-has-top-border-none {
-  border: none !important; }
-
-.fd-has-right-border-none {
-  border: none !important; }
-
-.fd-has-bottom-border-none {
-  border: none !important; }
-
-.fd-has-left-border-none {
-  border: none !important; }
-
-.fd-has-border-begin-none {
-  border-left: none !important; }
-  [direction="rtl"] .fd-has-border-begin-none, .fd-has-border-begin-none[direction="rtl"] {
-    border-right: none !important; }
-
-.fd-has-border-after-none {
-  border-right: none !important; }
-  [direction="rtl"] .fd-has-border-after-none, .fd-has-border-after-none[direction="rtl"] {
-    border-left: none !important; }
-
-.fd-has-border-color-action,
-.fd-has-border-color-action-1 {
-  border-color: #0a6ed1 !important; }
-
-.fd-has-border-color-action-2 {
-  border-color: white !important; }
-
-.fd-has-border-color-text,
-.fd-has-border-color-text-1 {
-  border-color: #32363a !important; }
-
-.fd-has-border-color-text-2 {
-  border-color: #51555a !important; }
-
-.fd-has-border-color-text-3 {
-  border-color: #6a6d70 !important; }
-
-.fd-has-border-color-text-4 {
-  border-color: #74777a !important; }
-
-.fd-has-border-color-text-5 {
-  border-color: white !important; }
-
-.fd-has-border-color-background,
-.fd-has-border-color-background-1 {
-  border-color: #edeef0 !important; }
-
-.fd-has-border-color-background-2 {
-  border-color: white !important; }
-
-.fd-has-border-color-neutral,
-.fd-has-border-color-neutral-1 {
-  border-color: #fafafa !important; }
-
-.fd-has-border-color-neutral-2 {
-  border-color: #eeeeef !important; }
-
-.fd-has-border-color-neutral-3 {
-  border-color: #d9d9d9 !important; }
-
-.fd-has-border-color-neutral-4 {
-  border-color: #89919a !important; }
-
-.fd-has-border-color-status,
-.fd-has-border-color-status-1 {
-  border-color: #107f3e !important; }
-
-.fd-has-border-color-status-2 {
-  border-color: #e9730c !important; }
-
-.fd-has-border-color-status-3 {
-  border-color: #bd0000 !important; }
-
-.fd-has-border-color-status-4 {
-  border-color: #6d7678 !important; }
-
-.fd-has-border-color-accent,
-.fd-has-border-color-accent-1 {
-  border-color: #e38b16 !important; }
-
-.fd-has-border-color-accent-2 {
-  border-color: #dc7474 !important; }
-
-.fd-has-border-color-accent-3 {
-  border-color: #db1f77 !important; }
-
-.fd-has-border-color-accent-4 {
-  border-color: #c0399f !important; }
-
-.fd-has-border-color-accent-5 {
-  border-color: #6367de !important; }
-
-.fd-has-border-color-accent-6 {
-  border-color: #5899da !important; }
-
-.fd-has-border-color-accent-7 {
-  border-color: #13a4b4 !important; }
-
-.fd-has-border-color-accent-8 {
-  border-color: #7ca10c !important; }
-
-.fd-has-border-color-accent-9 {
-  border-color: #955ecf !important; }
-
-.fd-has-border-color-accent-10 {
-  border-color: #6c8893 !important; }
-
-.fd-has-border-color-accent-11 {
-  border-color: #d17f15 !important; }
-
-.fd-has-border-color-accent-12 {
-  border-color: #d04343 !important; }
-
-.fd-has-border-color-accent-13 {
-  border-color: #2b78c5 !important; }
-
-.fd-has-border-color-accent-14 {
-  border-color: #0f828f !important; }
-
-.fd-has-border-color-accent-15 {
-  border-color: #647887 !important; }
-
-.fd-has-border-color-shell,
-.fd-has-border-color-shell-1 {
-  border-color: #354a5f !important; }
-
-.fd-has-border-color-shell-2 {
-  border-color: #d1e8ff !important; }
-
 .fd-has-align-items-flex-start {
   align-items: flex-start !important; }
 
@@ -8984,52 +8967,52 @@ see layouts/panel
 .fd-table.fd-has-first-child-text-align-right th:first-child, .fd-has-first-child-text-align-right.docs-table th:first-child,
 .fd-table.fd-has-first-child-text-align-right td:first-child,
 .fd-has-first-child-text-align-right.docs-table td:first-child {
-  text-align: right; }
+  text-align: right !important; }
 
 .fd-table.fd-has-last-child-text-align-right th:last-child, .fd-has-last-child-text-align-right.docs-table th:last-child,
 .fd-table.fd-has-last-child-text-align-right td:last-child,
 .fd-has-last-child-text-align-right.docs-table td:last-child {
-  text-align: right; }
+  text-align: right !important; }
 
 .fd-table.fd-has-nth-child-2-text-align-right th:nth-child(2), .fd-has-nth-child-2-text-align-right.docs-table th:nth-child(2),
 .fd-table.fd-has-nth-child-2-text-align-right td:nth-child(2),
 .fd-has-nth-child-2-text-align-right.docs-table td:nth-child(2) {
-  text-align: right; }
+  text-align: right !important; }
 
 .fd-table.fd-has-nth-child-3-text-align-right th:nth-child(3), .fd-has-nth-child-3-text-align-right.docs-table th:nth-child(3),
 .fd-table.fd-has-nth-child-3-text-align-right td:nth-child(3),
 .fd-has-nth-child-3-text-align-right.docs-table td:nth-child(3) {
-  text-align: right; }
+  text-align: right !important; }
 
 .fd-table.fd-has-nth-child-4-text-align-right th:nth-child(4), .fd-has-nth-child-4-text-align-right.docs-table th:nth-child(4),
 .fd-table.fd-has-nth-child-4-text-align-right td:nth-child(4),
 .fd-has-nth-child-4-text-align-right.docs-table td:nth-child(4) {
-  text-align: right; }
+  text-align: right !important; }
 
 .fd-table.fd-has-nth-child-5-text-align-right th:nth-child(5), .fd-has-nth-child-5-text-align-right.docs-table th:nth-child(5),
 .fd-table.fd-has-nth-child-5-text-align-right td:nth-child(5),
 .fd-has-nth-child-5-text-align-right.docs-table td:nth-child(5) {
-  text-align: right; }
+  text-align: right !important; }
 
 .fd-table.fd-has-nth-child-6-text-align-right th:nth-child(6), .fd-has-nth-child-6-text-align-right.docs-table th:nth-child(6),
 .fd-table.fd-has-nth-child-6-text-align-right td:nth-child(6),
 .fd-has-nth-child-6-text-align-right.docs-table td:nth-child(6) {
-  text-align: right; }
+  text-align: right !important; }
 
 .fd-table.fd-has-nth-child-7-text-align-right th:nth-child(7), .fd-has-nth-child-7-text-align-right.docs-table th:nth-child(7),
 .fd-table.fd-has-nth-child-7-text-align-right td:nth-child(7),
 .fd-has-nth-child-7-text-align-right.docs-table td:nth-child(7) {
-  text-align: right; }
+  text-align: right !important; }
 
 .fd-table.fd-has-nth-child-8-text-align-right th:nth-child(8), .fd-has-nth-child-8-text-align-right.docs-table th:nth-child(8),
 .fd-table.fd-has-nth-child-8-text-align-right td:nth-child(8),
 .fd-has-nth-child-8-text-align-right.docs-table td:nth-child(8) {
-  text-align: right; }
+  text-align: right !important; }
 
 .fd-table.fd-has-nth-child-9-text-align-right th:nth-child(9), .fd-has-nth-child-9-text-align-right.docs-table th:nth-child(9),
 .fd-table.fd-has-nth-child-9-text-align-right td:nth-child(9),
 .fd-has-nth-child-9-text-align-right.docs-table td:nth-child(9) {
-  text-align: right; }
+  text-align: right !important; }
 
 .has-accent-color {
   color: #5FA8EF; }
@@ -9058,10 +9041,13 @@ hr {
   max-width: 1600px; }
 
 .docs-tiles {
-  margin: 0 -20px; }
+  margin: 0 -20px;
+  grid-auto-rows: 1fr; }
   .docs-tiles .fd-tile[role="button"] {
     border: 1px solid #cfdbe7;
     margin: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
     text-decoration: none; }
     .docs-tiles .fd-tile[role="button"]:hover {
       border-color: #5FA8EF; }
@@ -9075,6 +9061,8 @@ hr {
     margin-bottom: 10px; }
     .docs-tiles .fd-tile__header:last-child {
       margin-bottom: 0; }
+  .docs-tiles .fd-tile__content {
+    align-self: auto; }
   .docs-tiles .fd-tile__description {
     color: #424e5a; }
   .docs-tiles a:hover {
@@ -9099,6 +9087,17 @@ hr {
   width: 100%; }
   .docs-table td {
     vertical-align: top; }
+
+.docs-status {
+  padding: 10px 0;
+  margin-bottom: 30px;
+  border: solid 1px #d9d9d9;
+  border-width: 1px 0; }
+
+.docs-intro {
+  font-size: 1.42857rem;
+  line-height: 1.4;
+  font-weight: 400; }
 
 .docs-top-nav {
   background-color: #000;
@@ -9820,13 +9819,6 @@ hr {
     padding: 20px 20px; }
   .docs-component__page .docs-component__bg-toggle {
     display: none; }
-  .docs-component__section .fd-section,
-  .docs-component__section .fd-section__header,
-  .docs-component__section .fd-section__title,
-  .docs-component__section .fd-section__actions,
-  .docs-component__section .fd-section__footer,
-  .docs-component__section .fd-container {
-    padding: 10px; }
   .docs-component__section .fd-section {
     background-color: white; }
   .docs-component__section .fd-section__header {
