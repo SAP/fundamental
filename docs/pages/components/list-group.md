@@ -1,5 +1,6 @@
 ---
 title: List Group
+id: list-group
 keywords: list group, lists group, list, lists, groups
 sidebar: left-navigation-sidebar
 toc: false
@@ -7,9 +8,11 @@ permalink: components/list-group.html
 folder: components
 ---
 
-Lists and tables are similar as both usually contain a vertical list of data, but lists generally contain basic data and tables tend to hold more complex data. If the list is a complex hierarchy, it is best to use a tree.
+Lists and tables are similar as both usually contain a vertical list of data, but lists generally contain basic data and tables tend to hold more complex data.
+{: .docs-intro}
+If the list is a complex hierarchy, it is best to use a tree.
 
-<hr>
+<br>
 
 ## Simple List
 

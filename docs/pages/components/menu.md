@@ -1,5 +1,6 @@
 ---
 title: Menu
+id: menu
 keywords: menu
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,9 +9,11 @@ folder: components
 summary:
 ---
 
-The menu component is the listing structure with optional headers to create menus. Commonly used as the contents when composing "dropdowns", "contextual menus", "mega menu", etc, when paired with the popover component.
+The menu component is the listing structure with optional headers to create menus.
+{: .docs-intro}
+Commonly used as the contents when composing "dropdowns", "contextual menus", "mega menu", etc, when paired with the popover component.
 
-<hr/>
+<br>
 
 ## Menu
 The basic stucture of a menu.

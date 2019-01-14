@@ -1,4 +1,5 @@
 @import "./../settings";
+@import "../mixins/mixins";
 //set namespace using function to avoid hardcoding it
 .#{$fd-namespace}-has-background-image {
     background-repeat: no-repeat;
@@ -26,12 +27,22 @@
             //set default selector for convenience
             .#{$fd-namespace}-has-background-color-#{$type},
             .#{$fd-namespace}-has-background-color-#{$type}-#{$shade} {
-                background-color: $value !important;
+                @include fd-var-color("background-color", $value, --fd-color-#{$type}-#{$shade}, true);
             }
         } @else {
             .#{$fd-namespace}-has-background-color-#{$type}-#{$shade} {
-                background-color: $value !important;
+                @include fd-var-color("background-color", $value, --fd-color-#{$type}-#{$shade}, true);
             }
         }
     }
+}
+@each $state, $value in $fd-colors-action-states {
+  .#{$fd-namespace}-has-background-color-action-#{$state} {
+      @include fd-var-color("background-color", $value, --fd-color-action-#{$state}, true);
+  }
+}
+@each $state, $value in $fd-colors-background-states {
+  .#{$fd-namespace}-has-background-color-background-#{$state} {
+      @include fd-var-color("background-color", $value, --fd-color-background-#{$state}, true);
+  }
 }

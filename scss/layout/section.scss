@@ -8,9 +8,12 @@
         .fd-section__actions
     .fd-section__footer
 */
+:root {
+  --fd-section-background-color: transparent;
+}
 $block: #{$fd-namespace}-section;
 .#{$block} {
-    $fd-section-border-color: fd-color("neutral", 3) !default;
+
     $fd-section-padding: $fd-padding--ui !default;
     --fd-section-padding-x: var(--fd-padding-ui);
 
@@ -18,11 +21,15 @@ $block: #{$fd-namespace}-section;
     $fd-section-padding--bottom: fd-space("reg") !default;
     $fd-section-header-margin--bottom: fd-space("reg") !default;
     $fd-section-title-color: fd-color("text",2) !default;
+    --fd-section-title-color: var(--fd-color-text-2);
 
     @include fd-clearfix;
     padding: $fd-section-padding--top $fd-section-padding $fd-section-padding--bottom;
     padding: $fd-section-padding--top var(--fd-section-padding-x) $fd-section-padding--bottom;
     border-bottom: none;
+
+    background-color: var(--fd-section-background-color, transparent);
+
     &:last-child,
     &--no-border {
         border-bottom: 0;
@@ -46,7 +53,7 @@ $block: #{$fd-namespace}-section;
     }
     &__title {
         @include fd-type("4");
-        color: $fd-section-title-color;
+        @include fd-var-color("color", $fd-section-title-color, --fd-section-title-color);
         flex: 1;
         margin-bottom: 0;
     }

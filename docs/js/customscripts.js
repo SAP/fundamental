@@ -8,6 +8,15 @@ $(document).ready(function () {
     });
 
     $('#copyright-year').text(new Date().getFullYear());
+
+    if ((location.pathname === '/index.html') || (location.pathname === '/')) {
+        $('#mobile-sidenav-btn').hide();
+    }
+
+    $('#mobile-sidenav-btn').click(() => {
+        $("#tg-sb-sidebar").slideToggle('400');
+    });
+
 });
 
 (function () {
@@ -164,7 +173,7 @@ $(document).ready(function () {
     });
 
     function clearControls(displayControl) {
-        Array.from(displayControl.children).forEach( button => {
+        Array.from(displayControl.children).forEach(button => {
             button.setAttribute('aria-pressed', false);
         });
     }
@@ -174,11 +183,11 @@ $(document).ready(function () {
         switch (size) {
             case 'mobile':
                 frame.width = '414';
-                frame.height= '736'
+                frame.height = '736'
                 break;
             case 'tablet':
                 frame.width = '720';
-                frame.height= '1024'
+                frame.height = '1024'
                 break;
         }
     }

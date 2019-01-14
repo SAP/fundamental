@@ -1,5 +1,6 @@
 ---
 title: Tile Grid
+id: tile-grid
 keywords: tile grid
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,9 +9,12 @@ folder: components
 summary:
 ---
 
-A Tile Gird is a collection of [`fd-tiles`](tile.html) components in a gird layout.
+A tile grid is layout component used to display [`tiles`](tile.html) on a grid layout.
+{: .docs-intro}
 
-<hr>
+> This uses CSS grid which is [not supported by some older browsers](https://caniuse.com/#feat=css-grid). A flexbox fallback is included but it is recommended you test your page if you have a significant number of users on IE 11, for example.
+
+<br>
 
 ## 3-col grid (default)
 

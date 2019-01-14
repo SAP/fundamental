@@ -1,5 +1,6 @@
 ---
 title: Tag
+id: tag
 keywords: tag
 sidebar: left-navigation-sidebar
 toc: false
@@ -7,10 +8,13 @@ permalink: components/tag.html
 folder: components
 summary:
 ---
-<span class="fd-badge fd-badge--error fd-badge--pill">Depricated</span>
 
-This component has been renamed to <a href="token.html">Token</a>
-<hr>
+A tag is used to represent contextualizing information. They can be useful to show applied filters, selected values for form field or object metadata.
+{: .docs-intro}
+
+> Use [`token`](token.html) instead
+
+<br>
 
 {% capture default-alert %}
 <span class="fd-tag" role="button">Bibendum</span>

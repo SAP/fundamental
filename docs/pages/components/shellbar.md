@@ -1,5 +1,6 @@
 ---
 title: Shellbar
+id: shellbar
 keywords: shell shellbar global navigation
 toc: false
 sidebar: left-navigation-sidebar
@@ -8,10 +9,13 @@ folder: components
 summary:
 ---
 
-The shellbar offers consistent, responsive navigation across all products and applications. Includes support for branding, product navigation, search, notifications, user settings, and CoPilot. This is a composite component comprised of mandatory and optional elements.
+The shellbar offers consistent, responsive navigation across all products and applications.
+{: .docs-intro}
+Includes support for branding, product navigation, search, notifications, user settings, and CoPilot. This is a composite component comprised of mandatory and optional elements.
+
+<br>
 
 Before getting started, here are some things to know.
-
 
 ## How it works
 {: .docs-header-h2}

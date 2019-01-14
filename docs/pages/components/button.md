@@ -1,5 +1,6 @@
 ---
 title: Button
+id: button
 keywords: button, buttons
 sidebar: left-navigation-sidebar
 toc: false
@@ -7,10 +8,12 @@ permalink: components/button.html
 folder: components
 ---
 
-The Buttons allow users to perform actions. The priority of buttons within a page should be considered. For instance, only use the main button once within a page or modal.
+Buttons allow users to perform actions.
+{: .docs-intro}
+The priority of buttons within a page should be considered. For instance, only use the main button once within a page or modal.
 Color is also important. For instance, the most important button has a blue background where as a red button should only be used if the action it performs is potentially destructive.
 
-<hr>
+<br>
 
 ## Button Options
 There are three emphasis styles used to indicate the importance of the button on the page.
@@ -112,7 +115,8 @@ The buttons can also be set to a state:
 {% include display-component.html component=button-standard-state %}
 
 
-## Button Group
+# Button Group
+{% include status-container.html key="button-group" %}
 Group a series of buttons together on a single line with the button group.
 
 {% capture button-group-small %}

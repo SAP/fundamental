@@ -8,8 +8,9 @@
 */
 $block: #{$fd-namespace}-nav;
 .#{$block} {
-  $fd-nav-link-padding-x: fd-space("s") !default;
-  $fd-nav-link-padding-y: fd-space("xs") !default;
+  $fd-nav-link-padding-x: fd-space("small") !default;
+  $fd-nav-link-padding-y: fd-space(3) !default;
+
   $fd-nav-margin-bottom: 0 !default;
   @include fd-reset;
   display: flex;
@@ -25,9 +26,8 @@ $block: #{$fd-namespace}-nav;
   &__link {
     display: block;
     padding: $fd-nav-link-padding-y $fd-nav-link-padding-x;
-    &.is-selected,
-    &[aria-selected="true"] {
-      color: $fd-color;
+    @include fd-selected {
+      @include fd-var-color("color", $fd-color, --fd-color-text-1);
     }
   }
 }

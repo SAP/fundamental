@@ -22,9 +22,13 @@ $block: #{$fd-namespace}-product-tile;
   //anim
   $fd-product-tile-transition-params: $fd-animation--speed ease-in !default;
 
+  --fd-product-tile-color: var(--fd-color-text-3);
+  --fd-product-tile-background-color: var(--fd-color-background-2);
+  --fd-product-tile-title-color: var(--fd-color-text-1);
+
   @include fd-reset;
-  color: $fd-product-tile-color;
-  background-color: $fd-product-tile-background-color;
+  @include fd-var-color("color", $fd-product-tile-color, --fd-product-tile-color);
+  @include fd-var-color("background-color", $fd-product-tile-background-color, --fd-product-tile-background-color);
 
   //MODIFICATIONS
   &--button,
@@ -55,7 +59,8 @@ $block: #{$fd-namespace}-product-tile;
   }
   &__title {
     @include fd-type("1");
-    color: $fd-product-tile-title-color;
+    @include fd-var-color("color", $fd-product-tile-title-color, --fd-product-tile-title-color);
+    margin-bottom: 0;
     margin-bottom: 0;
   }
 

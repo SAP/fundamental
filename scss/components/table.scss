@@ -14,7 +14,6 @@ $block: #{$fd-namespace}-table;
     $fd-table-border-width: 1px !default;
     $fd-table-link-color: fd-color(action, 1) !default;
     $fd-table-background-color: fd-color("background", 2);
-
     $fd-table-header-color: fd-color("text", 3) !default;
     $fd-table-header-background-color: fd-color("neutral", 1) !default;
     $fd-table-row-background-color--hover:
@@ -28,8 +27,13 @@ $block: #{$fd-namespace}-table;
     $fd-table-transition-params: $fd-animation--speed ease-in !default;
     $fd-table-sort-icon-size: fd-space(3);
     $fd-table-sort-column-header-background-color: fd-color("neutral", 2);
-    $fd-table-sort-column-header-hover-color: #f2f2f3; //hsl +1 of Neutral 2.;
     $fd-table-fixed-column-cell-color: fd-color("background", 2);
+
+    --fd-table-border-color: var(--fd-color-neutral-2);
+    --fd-table-background-color: var(--fd-color-background-2);
+    --fd-table-link-color: var(--fd-color-action-1);
+    --fd-table-header-color: var(--fd-color-text-3);
+    --fd-table-header-background-color: var(--fd-color-neutral-1);
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
@@ -39,19 +43,20 @@ $block: #{$fd-namespace}-table;
     max-width: 100%;
     border-collapse: collapse;
     margin-bottom: $fd-margin-bottom;
-    border-top: solid $fd-table-border-width $fd-table-border-color;
-    background-color: $fd-table-background-color;
-    border: 1px solid $fd-table-border-color;
+    @include fd-var-color("background-color", $fd-table-background-color, --fd-table-background-color);
+    border-style: solid;
+    border-width: $fd-table-border-width;
+    @include fd-var-color("border-color", $fd-table-border-color, --fd-table-border-color);
 
     tr {
         transition: background-color $fd-table-transition-params;
         @include fd-hover {
-            background-color: $fd-table-row-background-color--hover;
+          @include fd-var-color("background-color", $fd-table-row-background-color--hover, --fd-color-background-hover);
         }
         @include fd-selected {
-            background-color: $fd-table-row-background-color--selected;
+            @include fd-var-color("background-color", $fd-table-row-background-color--selected, --fd-color-background-selected);
             @include fd-hover {
-                background-color: fd-color-state("selected-hover")
+              @include fd-var-color("background-color", fd-color-state("selected-hover"), --fd-color-background-selected-hover);
             }
         }
         cursor: pointer;
@@ -59,8 +64,8 @@ $block: #{$fd-namespace}-table;
 
     thead {
         @include fd-type("-1");
-        color: $fd-table-header-color;
-        background-color: $fd-table-header-background-color;
+        @include fd-var-color("color", $fd-table-header-color, --fd-table-header-color);
+        @include fd-var-color("background-color", $fd-table-header-background-color, --fd-table-header-background-color);
         text-transform: uppercase;
 
         tr {
@@ -77,7 +82,9 @@ $block: #{$fd-namespace}-table;
     }
     tbody{
         tr{
-            border: $fd-table-border-width solid $fd-table-border-color;
+            border-style: solid;
+            border-width: $fd-table-border-width;
+            @include fd-var-color("border-color", $fd-table-border-color, --fd-table-border-color);
             border-left: none;
             border-right: none;
         }
@@ -101,18 +108,11 @@ $block: #{$fd-namespace}-table;
             min-width: auto;
             text-align: left;
         }
-      
-        > a {
-            color: $fd-table-link-color;
-            &:hover{
-                color: $fd-table-link-color;
-            }
-        }
     }
 
     &__sort-column {
         &:hover {
-            background: $fd-table-sort-column-header-hover-color;
+            @include fd-var-color("background-color", $fd-table-sort-column-header-background-color, --fd-color-neutral-2);
             cursor: pointer;
         }
         &::after {
@@ -125,9 +125,12 @@ $block: #{$fd-namespace}-table;
             vertical-align: text-top;
         }
 
+        //these are the selected states, should be .is-selected, aria-selected=true
+        &--asc,
+        &--dsc {
+          @include fd-var-color("background-color", $fd-table-sort-column-header-background-color, --fd-color-neutral-2);
+        }
         &--asc {
-            background: $fd-table-sort-column-header-background-color;
-
             &::after
             {
                 background-image: url($fd-table-column-sort-icon--asc)
@@ -135,8 +138,6 @@ $block: #{$fd-namespace}-table;
         }
 
         &--dsc {
-            background: $fd-table-sort-column-header-background-color;
-
             &::after {
                 background-image: url($fd-table-column-sort-icon--dsc)
             }
@@ -158,7 +159,7 @@ $block: #{$fd-namespace}-table;
 
     th.fd-table__context-menu {
         &:hover {
-            background: $fd-table-sort-column-header-hover-color;
+            @include fd-var-color("background-color", $fd-table-sort-column-header-background-color, --fd-color-neutral-2);
             cursor: pointer;
         }
     }
@@ -169,13 +170,19 @@ $block: #{$fd-namespace}-table;
     }
 
     th.fd-table__fixed-col {
-        background: $fd-table-sort-column-header-background-color;
+        @include fd-var-color("background-color", $fd-table-sort-column-header-background-color, --fd-color-neutral-2);
         z-index: map-get($fd-z-index-levels, "second");
-        box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.08);
+        @if $fd-support-css-var-fallback {
+          box-shadow: 2px 0 0 0 $fd-table-border-color;
+        }
+        box-shadow: 2px 0 0 0 var(--fd-table-border-color);
     }
     td.fd-table__fixed-col {
-        background: $fd-table-fixed-column-cell-color;
-        box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.08);
+        @include fd-var-color("background-color", $fd-table-fixed-column-cell-color, --fd-color-background-2);
+        @if $fd-support-css-var-fallback {
+          box-shadow: 2px 0 0 0 $fd-table-border-color;
+        }
+        box-shadow: 2px 0 0 0 var(--fd-table-border-color);
     }
 
     &--fixed-wrapper {
@@ -198,8 +205,8 @@ $block: #{$fd-namespace}-table;
     }
 
     &--striped {
-        & tbody tr:nth-child(even) {
-            background-color: fd-color-state("hover");
+        tbody tr:nth-child(even) {
+            @include fd-var-color("background-color", fd-color-state("hover"), --fd-color-background-hover);
         }
     }
 }

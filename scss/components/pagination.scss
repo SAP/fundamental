@@ -13,10 +13,15 @@ $block: #{$fd-namespace}-pagination;
   $fd-pagination-link-color--active: fd-color("text", 2) !default;
   $fd-pagination-total-color: fd-color("text", 2) !default;
 
+  --fd-pagination-link-color: var(--fd-color-action-1);
+  --fd-pagination-link-color-active: var(--fd-color-text-2);
+  --fd-pagination-total-color: var(--fd-color-text-2);
+
+
   @include fd-reset;
   @include fd-type("0");
   &__total {
-    color: $fd-pagination-total-color;
+    @include fd-var-color("color", $fd-pagination-total-color, --fd-pagination-total-color);
     margin-right: fd-space("xxs");
   }
   &__nav {
@@ -27,15 +32,13 @@ $block: #{$fd-namespace}-pagination;
     margin-bottom: 0;
   }
   &__link {
-    color: $fd-pagination-link-color;
+    @include fd-var-color("color", $fd-pagination-link-color, --fd-pagination-link-color);
     background-color: transparent;
     padding-left: fd-space(1);
     padding-right: fd-space(1);
     position: relative;
-    &:active,
-    &[aria-selected="true"],
-    &.is-selected {
-      color: $fd-pagination-link-color--active;
+    @include fd-selected {
+      @include fd-var-color("color", $fd-pagination-link-color--active, --fd-pagination-link-color-active);
       text-decoration: none;
       cursor: default;
       @include fd-weight("bold");
@@ -52,7 +55,7 @@ $block: #{$fd-namespace}-pagination;
     &--more {
       &::before {
         content: "...";
-        color: $fd-pagination-link-color--active;
+        @include fd-var-color("color", $fd-pagination-link-color--active, --fd-pagination-link-color-active);
         @include fd-weight("bold");
       }
     }

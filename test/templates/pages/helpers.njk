@@ -1,0 +1,171 @@
+{% extends "./layouts/ui.njk" %}
+{% block ui_app %}
+
+
+{% set breakpoints = {
+  "s": [320,"320-599"],
+  "m": [600,"600-1023"],
+  "l": [1024,"1024-1440"],
+  "xl": [1441,"1441-1920"],
+  "xxl": [1921,">1920"]
+} %}
+<style>
+.fd-ui__header::before {
+  content: "default: <320px";
+  font-size: 2em;
+  background-color: white;
+}
+{% for size,width in breakpoints %}
+
+@media screen and (min-width: {{width[0]}}px) {
+  .fd-ui__header::before {
+    content: "{{size}}: {{width[1]}}px";
+  }
+}
+{% endfor %}
+
+.fd-container{ flex:1; margin:40px;}
+</style>
+
+{% set colors = {
+
+  "action": [
+    "hsl(210, 91%, 43%) / #0A6ED1 branded action",
+    "hsl(210, 0%, 100%) #FFFFFF inverse action"
+  ],
+
+  "text": [
+    "hsl(210, 7.5%, 21%) / #32363A default text",
+    "hsl(210, 5%, 33.5%) / #515559",
+    "hsl(210, 2.8%, 42.7%) / #6a6d70",
+    "hsl(210, 2.6%, 46.8%) / #74777A",
+    "hsl(210, 0%, 100%) / #ffffff inverse text"
+  ],
+
+  "background": [
+    "hsl(210, 9%, 93.5%) / #EDEFF0 body background",
+    "hsl(210, 9%, 93.5%) / #EDEFF0 body background"
+  ],
+
+  "neutral": [
+    "hsl(210, 3%, 98%) / #FAFAFA",
+    "hsl(210, 3%, 93.5%) / #EEEEEF",
+    "hsl(0, 0%, 85%) / #D9D9D9",
+    "hsl(212, 8%, 57%) / #89919A"
+  ],
+
+  "status": [
+    "hsl(145, 78%, 28%) / #107F3E positive",
+    "hsl(28, 90%, 48%) / #E9730C alert",
+    "hsl(0, 100%, 37%) / #BB0000 negative",
+    "hsl(191, 5%, 45%) / #6D7678 neutral"
+  ],
+
+  "accent": [
+    "hsl(34, 82%, 49%) / #E38B16" ,
+    "hsl(0, 60%, 66%) / #DC7474",
+    "hsl(332, 75%, 49%) / #DB1F77",
+    "hsl(315, 54%, 49%) / #C0399F",
+    "hsl(238, 65%, 63%) / #6367DE",
+    "hsl(210, 64%, 60%) / #5899DA",
+    "hsl(186, 81%, 39%) / #13A4B4",
+    "hsl(75, 86%, 34%) / #7CA10C",
+    "hsl(269, 54%, 59%) / #955ECF",
+    "hsl(197, 15%, 50%) / #6C8893",
+    "hsl(34, 82%, 45%) / #D17F15",
+    "hsl(0, 60%, 54%) / #D04343",
+    "hsl(210, 64%, 47%) / #2B78C5",
+    "hsl(186, 81%, 31%) / #0F828F",
+    "hsl(206, 15%, 46%) / #647887"
+    ],
+
+    "shell": [
+      "hsl(210, 28.4%, 29%) / #354A5F background",
+      "hsl(210, 100%, 91%) / #D1E8FF icons"
+    ]
+
+} %}
+
+{% set states = {
+  "action": [
+    ["hover", "hsla(210, 91%, 36%, 1) / #085caf"],
+    ["selected", "hsla(210, 98%, 33%, 1) / #0254a7"],
+    ["disabled", "hsla(210, 91%, 43%, 0.4) / n/a"]
+  ],
+  "background": [
+    ["hover", "hsla(210, 3%, 98%, 1) / #fafafa"],
+    ["selected", "hsla(210, 91%, 43%, 0.07) / n/a"],
+    ["selected-hover", "hsla(210, 91%, 43%, 0.1) / n/a"],
+    ["positive", "hsla(144.86486, 77.62238%, 94.03922%, 1) / #e4fcee"],
+    ["alert", "hsla(28, 87%, 97%, 1) / #fef7f1"],
+    ["negative", "hsla(0, 100%, 95.66667%, 1) / #ffe9e9"]
+  ]
+} %}
+
+<div class="fd-container">
+
+    <h1>Color</h1>
+{% for group, values in colors %}
+  <h2>{{ group }}</h2>
+
+  {% for item in values %}
+  {% if group == "accent" %}
+    <h3>
+      {% if loop.first%}
+        3:1
+      {% endif %}
+{% if loop.index == 11 %}
+  4.5:1
+{% endif %}
+    </h3>
+  {% endif %}
+  <div class="fd-has-display-flex">
+    <div class="fd-has-flex-grow-1">
+      <span>.fd-has-color-{{group}}-{{ loop.index }}</span>
+      <div style="height: 20px;padding: 5px;" class="fd-has-color-{{group}}-{{ loop.index }}"> Lorem ipsum dolor </div>
+    </div>
+  <div class="fd-has-flex-grow-1">
+    <span>.fd-has-background-color-{{group}}-{{ loop.index }}</span>
+    <div style="height: 20px;padding: 5px; " class="fd-has-background-color-{{group}}-{{ loop.index }}">  </div>
+  </div>
+  <div class="fd-has-flex-grow-1">
+    <span>.fd-has-border-color-{{group}}-{{ loop.index }}</span>
+    <div style="height: 20px;padding: 5px; border-style: solid; border-width: 1px;" class="fd-has-border-color-{{group}}-{{ loop.index }}"> </div>
+  </div>
+  </div>
+
+<br>
+  {% endfor %}
+
+{% endfor %}
+
+
+{% for group, values in states %}
+  <h1>State Colors</h1>
+  <h2>{{ group }}</h2>
+  {% for item in values %}
+
+    <div class="fd-has-display-flex">
+      <div class="fd-has-flex-grow-1">
+        <span>.fd-has-color-{{group}}-{{ item[0] }}</span>
+        <div style="height: 20px;padding: 5px;" class="fd-has-color-{{group}}-{{ item[0] }}"> Lorem ipsum dolor </div>
+      </div>
+    <div class="fd-has-flex-grow-1">
+      <span>.fd-has-background-color-{{group}}-{{ item[0] }}</span>
+      <div style="height: 20px;padding: 5px; " class="fd-has-background-color-{{group}}-{{ item[0] }}">  </div>
+    </div>
+    <div class="fd-has-flex-grow-1">
+      <span>.fd-has-border-color-{{group}}-{{ item[0] }}</span>
+      <div style="height: 20px;padding: 5px; border-style: solid; border-width: 1px;" class="fd-has-border-color-{{group}}-{{ item[0] }}"> </div>
+    </div>
+    </div>
+<br>
+  {% endfor %}
+
+{% endfor %}
+
+
+</div>
+<br><br>
+
+{% endblock %}
