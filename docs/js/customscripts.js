@@ -7,6 +7,8 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
+    $('#copyright-year').text(new Date().getFullYear());
+
     if ((location.pathname === '/index.html') || (location.pathname === '/')) {
         $('#mobile-sidenav-btn').hide();
     }
