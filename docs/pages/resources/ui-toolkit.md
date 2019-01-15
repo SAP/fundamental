@@ -15,10 +15,14 @@ toc: false
 </div>
 
 
-<a class="fd-button docs-home_hero-btn" href="components/index.html">
-    Download Latest Version (v1.0.0)
+<a class="fd-button docs-home_hero-btn" href="/resources/SAP-Fiori-Fundamental-UI-Kit_v1-4-1.sketch">
+    Download Sketch UI Toolkit (v1.0.0)
 </a>
 
 
 ## SAP Icon Font
 Please install the SAP icon font for using the sketch stencils for SAP Fiori.
+<br>
+<a class="fd-button docs-home_hero-btn" href="/resources/SAP-icons.zip">
+    Download SAP Icon font
+</a>
