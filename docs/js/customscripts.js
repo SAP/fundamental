@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     $('#copyright-year').text(new Date().getFullYear());
 
-    if ((location.pathname === '/index.html') || (location.pathname === '/') || (location.pathname === '/fundamental/')) {
+    if ((location.pathname === '/index.html') || (location.pathname === '/')) {
         $('#mobile-sidenav-btn').hide();
     }
 
