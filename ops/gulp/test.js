@@ -20,7 +20,8 @@ gulp.task('server:start', function (cb) {
                 cb();
             } else {
                 return nodemon({
-                    script: 'test/app.js'
+                    script: 'test/app.js',
+                    ignore: ['test/*']
                 }).once('start', function (data) {
                     waitForPort('localhost', localAppPort, {numRetries: 5, retryInterval: 1000},
                         function(err) {
