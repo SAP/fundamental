@@ -1,7 +1,7 @@
 const fs = require('fs');
 const backstopCIConfigLocation = 'test/visual-regression-tests/backstopConfigCI.json';
 
-var origin = 'host.docker.internal';
+let origin = 'host.docker.internal';
 
 // Check if there has been an IP address provided in the CI config JSON
 if (fs.existsSync(backstopCIConfigLocation)) {
