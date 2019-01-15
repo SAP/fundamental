@@ -1,5 +1,6 @@
 ---
 title: Link
+id: link
 keywords: link
 sidebar: left-navigation-sidebar
 toc: false
@@ -9,8 +10,9 @@ summary:
 ---
 
 Used when extra emphasis is needed especially when a link needs to standout from the surrounding text.
+{: .docs-intro}
 
-<hr>
+<br>
 
 ## Link States
 * Selected state can be rendered using class `is-selected` and/or `aria-selected="true"` attribute

@@ -92,7 +92,7 @@ fieldset {
     @include fd-var-size("height", $fd-forms-height, --fd-forms-height);
     width: 100%;
     &::placeholder {
-      color: $fd-forms-color--placeholder;
+      @include fd-var-color("color", $fd-forms-color--placeholder, --fd-color-neutral-4);
     }
 }
 input.#{$fd-namespace}-input--compact {
@@ -266,6 +266,5 @@ input[type="checkbox"],
         box-shadow: 0 0 0 1px fd-color-state("selected", "action");
       }
       box-shadow: 0 0 0 1px var(--fd-forms-background-color);
-
     }
 }

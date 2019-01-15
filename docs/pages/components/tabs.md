@@ -1,5 +1,6 @@
 ---
 title: Tabs
+id: tabs
 keywords: tab, tabs
 sidebar: left-navigation-sidebar
 toc: false
@@ -9,8 +10,9 @@ summary:
 ---
 
 Tabs are based on a folder metaphor and used to separate content into different sections. Tabs should be ordered to create a visual hierarchy based on priority.
+{: .docs-intro}
 
-<hr>
+<br>
 
 ## Tabs with `list` element
 

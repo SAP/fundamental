@@ -8,8 +8,8 @@
 
 {% block content %}
 
-    <h1>badge</h1>
 
+<h2>default</h2>
     <!-- output the component example and the code snippet -->
     {% set example %}
 {{  badge({label: "Default"}) }}
@@ -66,6 +66,28 @@
 }}
     {% endset %}
     {{ format(example) }}
+
+
+    <br><br>
+        <h2>pill + filled</h2>
+
+        {% set example %}
+    {{  badge(
+            {label: "Default"},
+            modifier={ block: ["filled", "pill"] }
+        )
+    }}
+    {{  badge({label: "Default"},
+            modifier={block: ["success", "filled", "pill"]})
+    }}
+    {{  badge({label: "Default"},
+            modifier={block: ["warning", "filled", "pill"]})
+    }}
+    {{  badge({label: "Default"},
+            modifier={block: ["error", "filled", "pill"]})
+    }}
+        {% endset %}
+        {{ format(example) }}
 
 
 

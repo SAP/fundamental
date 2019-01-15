@@ -11,12 +11,19 @@
         background-color: #242424;
         color: #d4d4d4;
         padding-top: 100px;
+        @include media("<=tablet") {
+            padding-top: 0;
+        }
+
 
         &-heading{
             font-size: 70px;
             font-weight: 100;
             line-height: 1.1;
             text-shadow: 1px 3px 6px rgba(0, 0, 0, 0.09);
+            @include media("<=tablet") {
+                font-size: 40px;
+            }
         }
 
         &-bold{
@@ -25,10 +32,16 @@
 
         &-img{
             float: right;
+            @include media("<=tablet") {
+                width: 100%;
+            }
         }
 
         &-content{
             padding: 100px;
+            @include media("<=tablet") {
+                padding: 20px;
+            }
         }
 
         &-description{
@@ -50,6 +63,10 @@
             line-height: 0;
             padding: 20px;
             border:none;
+            @include media("<=tablet") {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
 
             &:hover{
                 background-color: $accent-color;
@@ -71,6 +88,9 @@
     &_panel{
         padding:100px;
         background: #181818;
+        @include media("<=tablet") {
+            padding: 20px;
+        }
 
         &--alt{
             background: #242424;

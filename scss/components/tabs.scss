@@ -21,14 +21,22 @@ $block: #{$fd-namespace}-tabs;
   $fd-tabs-link-border-color: fd-color("action", 1) !default;
   $fd-tabs-link-transition-params: $fd-animation--speed ease-in !default;
 
+  --fd-tabs-border-color: var(--fd-color-neutral-3);
+  --fd-tabs-background-color: var(--fd-color-background-2);
+  --fd-tabs-link-color: var(--fd-color-text-2);
+  --fd-tabs-link-border-color: var(--fd-color-action-1);
+
   @include fd-reset;
-  background: $fd-tabs-background-color;
+  @include fd-var-color("background-color", $fd-tabs-background-color, --fd-tabs-background-color);
+
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: $fd-tabs-margin-bottom;
   list-style: none;
-  border-bottom: solid $fd-tabs-border-width $fd-tabs-border-color;
+  border-bottom-style: solid;
+  border-bottom-width: $fd-tabs-border-width;
+  @include fd-var-color("border-bottom-color", $fd-tabs-background-color, --fd-tabs-background-color);
   &__item{
       padding: 0 $fd-tabs-link-padding-x;
   }
@@ -38,9 +46,9 @@ $block: #{$fd-namespace}-tabs;
     padding: $fd-tabs-link-padding-y 0;
     @include fd-type("0");
     @include action-cursor;
-    color: $fd-tabs-link-color;
+    @include fd-var-color("color", $fd-tabs-link-color, --fd-tabs-link-color);
     &:link {
-      color: $fd-tabs-link-color;
+      @include fd-var-color("color", $fd-tabs-link-color, --fd-tabs-link-color);
     }
     &::after {
       transition: all $fd-tabs-link-transition-params;
@@ -55,17 +63,16 @@ $block: #{$fd-namespace}-tabs;
       border-radius: $fd-border-radius $fd-border-radius 0 0;
     }
     @include fd-hover {
-      color: fd-color-state("selected", "action");
+      @include fd-var-color("color", fd-color-state("selected", "action"), --fd-color-action-selected);
     }
-    &[aria-selected="true"],
-    &.is-selected {
-      color: $fd-link-color;
+    @include fd-selected {
+      @include fd-var-color("color", $fd-color--action, --fd-color-action-1);
       &::after {
-        background-color: $fd-tabs-link-border-color;
+        @include fd-var-color("background-color", $fd-tabs-link-border-color, --fd-tabs-link-border-color);
       }
     }
     @include fd-disabled {
-      color: fd-color-state("disabled", "action");
+      @include fd-var-color("color", fd-color-state("disabled", "action"), --fd-color-action-disabled);
       cursor: not-allowed;
     }
   }

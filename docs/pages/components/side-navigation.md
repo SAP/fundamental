@@ -1,5 +1,6 @@
 ---
 title: Side Navigation
+id: side-nav
 keywords: side navigation
 sidebar: left-navigation-sidebar
 toc: false
@@ -9,10 +10,9 @@ summary:
 ---
 
 The left navigation can always display or expand/collapse using the menu icon within the global navigation.
+{: .docs-intro}
 
-
-<hr>
-
+<br>
 
 ## Side Navigation with one level
 {% capture default %}

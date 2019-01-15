@@ -1,5 +1,6 @@
 ---
 title: Identifier
+id: identifier
 keywords: icon, identifier
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,8 +9,9 @@ folder: components
 ---
 
 Identifier is a way to visually present something using an icon or user initials.
+{: .docs-intro}
 
-There are four sizes:
+There are multiple sizes:
 - Default matches the base font size (14px)
 - Extra Extra Small (`--xxs` - 20px)
 - Extra Small (`--xs` - 28px)
@@ -19,7 +21,7 @@ There are four sizes:
 - Extra Large (`--xl`) - 88px
 - Extra Extra Large (`--xxl`) - 112px
 
-<hr>
+<br>
 
 ## Icon
 Include `role="presentation"` when the identifier is used for only illustrative purposes. For example, if the icon sits right next to a label, use role.

@@ -6,28 +6,24 @@
 */
 $block: #{$fd-namespace}-overlay;
 .#{$block} {
-
-  $fd-overlay-background-color: rgba(#4A505C,0.3) !default;
+  $fd-overlay-background-color: rgba(#4A505C, 0.3) !default;
+  --fd-overlay-background-color: #{$fd-overlay-background-color};
   $fd-overlay-alert-top-margin: fd-space(7);
-
   position: fixed;
   display: flex;
   top: 0;
   align-items: center;
   justify-content: center;
   z-index: map-get($fd-z-index-levels, "top");
-
   &[aria-hidden="true"] {
       display: none;
   }
-
-  &--modal{
-    background: $fd-overlay-background-color;
+  &--modal {
+    @include fd-var-color("background-color", $fd-overlay-background-color, --fd-overlay-background-color);
     height: 100vh;
     width: 100vw;
   }
-
-  &--alert{
+  &--alert {
     position: fixed;
     left: 50%;
     transform: translate(-50%, 0);

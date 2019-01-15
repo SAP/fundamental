@@ -12,10 +12,11 @@ $block: #{$fd-namespace}-action-bar;
 
     //LOCAL VARS (set all themeable properties, always include !default)
     $fd-action-bar-background-color: transparent !default;
-    $fd-action-bard-description-color: fd-color('text', 3);
+    $fd-action-bar-description-color: fd-color("text", 3);
     $fd-action-bar-height: fd-space(16) !default;
     $fd-action-bar-transition-params: 0.25s ease-in !default;
-    $fd-action-bar-backbtn-seperator-color: fd-color('neutral', 3);
+    --fd-action-bar-backbtn-separator-color: var(--fd-color-neutral-3);
+    $fd-action-bar-backbtn-separator-color: fd-color("neutral", 3);
 
     //LOCAL mixins
     @mixin fd-action-bar-responsive {
@@ -62,21 +63,6 @@ $block: #{$fd-namespace}-action-bar;
     &__back {
         display: block;
         @include fd-hide-on-mobile;
-        &::after {
-                content: '';
-                width: 0;
-                height: 100%;
-                position: absolute;
-                top: - fd-space(1);
-                right: - fd-space(1);
-                border-right: 1px solid $fd-action-bar-backbtn-seperator-color;
-        }
-        button {
-            margin-top: - fd-space(2);
-        }
-    }
-
-    &__back {
         position: relative;
         margin-right: fd-space(5);
         &::after {
@@ -86,10 +72,14 @@ $block: #{$fd-namespace}-action-bar;
                 position: absolute;
                 top: - fd-space(1);
                 right: - fd-space(1);
-                border-right: 1px solid $fd-action-bar-backbtn-seperator-color;
+                border-right-style: solid;
+                border-right-width: 1px;
+                @include fd-var-color("border-right-color", $fd-action-bar-backbtn-separator-color, --fd-action-bar-backbtn-separator-color);
+        }
+        button {
+            margin-top: - fd-space(2);
         }
     }
-
     &__title {
         @include fd-type("4");
         @include fd-action-bar-responsive;
@@ -97,7 +87,7 @@ $block: #{$fd-namespace}-action-bar;
     }
 
     &__description{
-        color: $fd-action-bard-description-color;
+        @include fd-var-color("color", $fd-action-bar-description-color, --fd-color-text-3);
         @include fd-type("0");
         @include fd-hide-on-mobile;
     }

@@ -1,5 +1,6 @@
 ---
 title: Date Picker
+id: date-picker
 keywords: date-picker
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,11 +9,12 @@ folder: components
 summary:
 ---
 
-The date-picker component is an opinionated composition of the "input-group", "popover" and "calendar" components to accomplish the UI pattern for picking a date.
-
+The date-picker component is an opinionated composition of the `input-group`, `popover` and `calendar` components to accomplish the UI pattern for picking a date.
+{: .docs-intro}
 This component mostly relies on the CSS of other components and has very little CSS of its own.
 
-<hr/>
+<br>
+
 ## Default and Compact sizes
 
 {% capture default-date-picker %}

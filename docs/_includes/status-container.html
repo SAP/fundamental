@@ -1,0 +1,22 @@
+{% assign version = site.data.versions[include.key] %}
+{% assign status = site.data.status[version.status] %}
+{% if version %}
+<p class="docs-status">
+  <span class="fd-badge{% if status.type %} fd-badge--{{ status.type }}{% endif %}" style="cursor: help;" title="{{ status.description }}">
+    {{ status.label }}
+  </span>
+  <span class="fd-label fd-has-font-weight-normal">
+    Available since {{ version.since }}
+  </span>
+  {% if version.updated %}
+    <span class="fd-label">
+      Last updated {{ version.updated }}
+    </span>
+  {% endif %}
+  {% if version.remove %}
+    <span class="fd-label">
+      Remove {{ version.remove }}
+    </span>
+  {% endif %}
+</p>
+{% endif %}

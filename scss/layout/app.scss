@@ -10,6 +10,7 @@
 $block: #{$fd-namespace}-app;
 .#{$block} {
   $fd-app-navigation-background-color: fd-color("background", 2) !default;
+
   $fd-app-navigation-height: fd-space(13) !default;
   $fd-app-sidebar-width: 250px !default;
   position: relative;
@@ -20,7 +21,8 @@ $block: #{$fd-namespace}-app;
     align-content: flex-start;
   }
   &__navigation {
-    background-color: $fd-app-navigation-background-color;
+    --fd-background-color: var(--fd-color-background-2);
+    @include fd-var-color("background-color", $fd-app-navigation-background-color, --fd-background-color);
     height: $fd-app-navigation-height;
     max-height: $fd-app-navigation-height;
     display: flex;

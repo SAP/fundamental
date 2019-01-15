@@ -1,18 +1,18 @@
 ---
 title: Mega Menu
+id: mega-menu
 keywords: mega, menu
 sidebar: left-navigation-sidebar
 toc: false
 permalink: components/mega-menu.html
 folder: components
-summary: Deprecated
+summary:
 ---
 
-> <small>`mega-menu` component has been deprecated. It will continue to work until v1.5 release.</small>
-
 Mega menu is used in conjunction with Context Switcher within the Global Navigation (link to Global Nav page) and supports two levels within a hierarchy.
+{: .docs-intro}
 
-<hr>
+<br>
 
 ## Default Mega Menu
 

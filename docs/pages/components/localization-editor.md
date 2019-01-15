@@ -1,5 +1,6 @@
 ---
 title: Localization Editor
+id: localization-editor
 keywords: localization editor
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,8 +9,7 @@ folder: components
 summary:
 ---
 
-
-## with input
+## With input
 
 {% capture default %}
 <div class="fd-localization-editor">
@@ -66,7 +66,7 @@ summary:
    <div class="fd-popover">
       <div class="fd-popover__control">
          <label class="fd-form__label" for="vTshu851">
-         Localization Editor Compact Mode 
+         Localization Editor Compact Mode
          </label>
          <div class="fd-input-group fd-input-group--compact fd-input-group--after">
             <input type="text" class="fd-input fd-input--compact" id="" aria-controls="test22" aria-expanded="false"
@@ -114,7 +114,7 @@ summary:
 
 <br><br>
 
-## with textarea
+## With textarea
 
 {% capture default %}
 <div class="fd-localization-editor">

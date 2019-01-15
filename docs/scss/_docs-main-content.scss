@@ -9,8 +9,17 @@
     min-width: 1024px;
     max-width: 1600px;
     width: 80%;
+    @include media("<=tablet") {
+        padding: 10px;
+        min-width: auto;
+        width: 100%;
+    }
 }
 .post-content-full-width{
     padding: 40px 40px 80px 40px;
     width: 100%;
+    @include media("<=tablet") {
+        text-align: center;
+        padding-top: 20px;
+    }
 }

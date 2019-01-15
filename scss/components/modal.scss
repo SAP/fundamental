@@ -19,6 +19,9 @@ $block: #{$fd-namespace}-modal;
   $fd-modal-header-height: 60px !default;
   $fd-modal-footer-height: 68px !default;
 
+  --fd-modal-background-color: var(--fd-color-background-2);
+  --fd-modal-border-color: var(--fd-color-neutral-2);
+
   $fd-modal-border-color: fd-color("neutral", 2) !default;
   $fd-modal-padding-x: $fd-width--gutter !default;
   --fd-modal-padding-x: var(--fd-width-gutter);
@@ -29,7 +32,7 @@ $block: #{$fd-namespace}-modal;
   max-width: $fd-modal-width;
   &__content{
     border-radius: $fd-border-radius;
-    background-color: $fd-modal-inner-content-background;
+    @include fd-var-color("background-color", $fd-modal-inner-content-background, --fd-modal-background-color);
   }
   &__header,
   &__body,
@@ -41,7 +44,9 @@ $block: #{$fd-namespace}-modal;
   }
   &__header {
     position: relative;
-    border-bottom: 1px solid $fd-modal-border-color;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    @include fd-var-color("border-bottom-color", $fd-modal-border-color, --fd-modal-border-color);
   }
   &__title{
     @include fd-type("1");
@@ -67,6 +72,8 @@ $block: #{$fd-namespace}-modal;
   }
   &__footer {
     text-align: right;
-    border-top: 1px solid $fd-modal-border-color;
+    border-top-style: solid;
+    border-top-width: 1px;
+    @include fd-var-color("border-top-color", $fd-modal-border-color, --fd-modal-border-color);
   }
 }
