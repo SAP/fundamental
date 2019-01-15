@@ -1,5 +1,6 @@
 ---
 title: Token
+id: token
 keywords: tag, token
 sidebar: left-navigation-sidebar
 toc: false
@@ -9,8 +10,9 @@ summary:
 ---
 
 Token are used to represent contextualizing information. They can be useful to show applied filters, selected values for form field or object metadata.
+{: .docs-intro}
 
-<hr>
+<br>
 
 {% capture default-alert %}
 <span class="fd-token" role="button">Bibendum</span>

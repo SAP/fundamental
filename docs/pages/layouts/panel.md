@@ -1,5 +1,6 @@
 ---
 title: Panel
+id: panel
 keywords: panel, panel-grid, gird
 sidebar: left-navigation-sidebar
 toc: false
@@ -7,11 +8,14 @@ permalink: layouts/panel.html
 folder: layouts
 summary:
 ---
-Panels are used to encapsulate part of the content, form elements, lists, collections, etc., on a page. Place patterns and interactions within panels on your pages to achieve focus and separation for the tasks at-hand with the information displayed inside the panel.
+Panels are used to encapsulate part of the content, form elements, lists, collections, etc., on a page.
+{: .docs-intro}
 
-<hr/>
+Place patterns and interactions within panels on your pages to achieve focus and separation for the tasks at-hand with the information displayed inside the panel.
 
-## Panel Structure
+<br>
+
+## Elements
 
 - `.fd-panel__title`: Title of the panel.
 - `.fd-panel__description`: Title of the description.
@@ -49,6 +53,13 @@ Panels are used to encapsulate part of the content, form elements, lists, collec
 {% include display-component.html component=default %}
 
 <br/>
+
+
+# Panel Grid
+{% include status-container.html key="panel-grid" %}
+Use a panel grid to arrange panels evenly in a grid layout.
+
+> This uses CSS grid which is [not supported by some older browsers](https://caniuse.com/#feat=css-grid). A flexbox fallback is included but it is recommended you test your page if you have a significant number of users on IE 11, for example.
 
 ## Default Panel Grid (3 columns)
 {% capture default %}

@@ -1,5 +1,6 @@
 ---
 title: Time
+id: time
 keywords: time
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,11 +9,12 @@ folder: components
 summary:
 ---
 
-The time component is used for a single time value. Multiple components can be used in the time-picker to assemble a clock time. A max of four will account for hours, minutes, seconds and period of the day.
+The time component is used to select a time value.
+{: .docs-intro}
 
-<strong>It will be rare to see this component used outside of it being composed in the time-picker component.</strong>
+Multiple instances can be used in the `time-picker` to choose hours, minutes, seconds and period of the day. It will be rare to see this component used alone.
 
-<hr/>
+<br>
 
 ## With Values
 

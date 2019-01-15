@@ -7,10 +7,15 @@
 $block: #{$fd-namespace}-label;
 
 .#{$block} {
+
+  $fd-label-color: fd-color("text", 3);
+  --fd-label-color: var(--fd-color-text-3);
+
   @include fd-reset;
   @include fd-type("-1");
   @include fd-weight("bold");
-  color: fd-color("text", 3);
+  @include fd-var-color("color", $fd-label-color, --fd-label-color);
+
   text-transform: uppercase;
   line-height: fd-space(6);
   vertical-align: middle;
@@ -19,14 +24,15 @@ $block: #{$fd-namespace}-label;
   padding-right: fd-space(2);
 
   &--success {
-    color: $fd-color--success;
+    --fd-label-color: var(--fd-color-positive);
+    @include fd-var-color("color", $fd-color--success);
   }
-
   &--warning {
-    color: $fd-color--warning;
+    --fd-label-color: var(--fd-color-alert);
+    @include fd-var-color("color", $fd-color--warning);
   }
-
   &--error {
-    color: $fd-color--error;
+    --fd-label-color: var(--fd-color-negative);
+    @include fd-var-color("color", $fd-color--error);
   }
 }

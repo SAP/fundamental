@@ -1,5 +1,6 @@
 ---
 title: Calendar
+id: calendar
 keywords: calendar
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,13 +9,12 @@ folder: components
 summary:
 ---
 
-Commonly used as the contents of a popover when composing "date-picker", rarely used on its own as a standalone component.
+Commonly used as the contents of a popover when composing `date-picker`, rarely used on its own as a standalone component.
+{: .docs-intro}
+The `.fd-calendar__item` container takes the majority of styling. The rest of the markup provides the structure and layout.
+Classes available for `.fd-calendar__item`. All are available to dates, months, and years.
 
-The <code>.fd-calendar__item</code> container takes the majority of styling. The rest of the markup provides the structure and layout.
-
-Classes available for <code>.fd-calendar__item</code>. All are available to dates, months, and years.
-
-<hr/>
+<br>
 
 ## Modifiers
 These are static classes set at load time, not affected by any user selections in the calendar itself

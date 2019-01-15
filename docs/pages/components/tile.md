@@ -1,5 +1,6 @@
 ---
 title: Tile
+id: tile
 keywords: tile
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,10 +9,12 @@ folder: components
 summary:
 ---
 
-- A Tile component can be used to display information in a simple container format.
-- A collection of tile can be displayed using [`fd-tile-grid`](tile-grid.html).
 
-<hr>
+A tile component can be used to display information in a simple container format.
+{: .docs-intro}
+The component is ideal for displaying collection data when a grid or list layout is preferred. See [`tile-grid`](tile-grid.html).
+
+<br>
 
 ## Simple Tile
 

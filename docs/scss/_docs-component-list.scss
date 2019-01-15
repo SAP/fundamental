@@ -12,6 +12,9 @@ $grid-transition-delay: 100ms;
     border-right: none;
     margin: 0 -40px -100px -40px;
 
+    @include media("<=tablet") {
+        grid-template-columns: auto;
+    }
 
     &--item{
         background: $grid-item-bg-color;

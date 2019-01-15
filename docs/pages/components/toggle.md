@@ -1,5 +1,6 @@
 ---
 title: Toggle
+id: toggle
 keywords: toggle
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,10 +9,11 @@ folder: components
 ---
 
 The toggle component is used to activate or deactivate an element. Uses a visual metaphor that is know to the user with visible differences between on and off state.
+{: .docs-intro}
 
 It is recommended to always display the toggle with a label above it as well as the label of the selected state. For example, the label above would be Active, the toggle state would be "on" and the selected state label displayed to the right of the toggle would be "Yes".
 
-<hr/>
+<br>
 
 ## Toggle Sizes
 

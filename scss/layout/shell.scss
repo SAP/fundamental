@@ -11,7 +11,6 @@
 */
 
 $fd-shell-header-fixed: true !default;
-$fd-shell-footer-background-color: fd-color("background", 1) !default;
 $fd-shell-footer-height: 40px !default;
 
 $block: #{$fd-namespace}-shell;
@@ -43,7 +42,7 @@ $block: #{$fd-namespace}-shell;
     }
   }
   &__header {
-    background-color: $fd-shell-header-background-color;
+    @include fd-var-color("background-color", $fd-shell-header-background-color, --fd-color-shell-1);
     position: absolute;
     z-index: map-get($fd-z-index-levels, "first");
     width: 100%;

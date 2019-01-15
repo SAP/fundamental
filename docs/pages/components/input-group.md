@@ -1,5 +1,6 @@
 ---
 title: Input Group
+id: input-group
 keywords: input group, input groups, input, groups
 sidebar: left-navigation-sidebar
 toc: false
@@ -14,8 +15,9 @@ folder: components
 </style>
 
 The input group includes form inputs with add-ons that allow the user to better understand the information being entered.
+{: .docs-intro}
 
-<hr/>
+<br>
 
 ## Sizes
 The Input Group supports `--compact` mode

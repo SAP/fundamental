@@ -1,5 +1,6 @@
 ---
 title: Popover
+id: popover
 keywords: popover
 sidebar: left-navigation-sidebar
 toc: false
@@ -8,11 +9,14 @@ folder: components
 summary:
 ---
 
-The popover is a wrapping component that accepts a "control" as well as a "body. A control can be anything that you want to trigger the interaction from. The body will be the contents of what you reveal on the page after triggering the popover. Commonly used as the interaction/wrapping component when composing "dropdowns", "contextual menus", "mega menu", etc, when paired with the menu component.
+The popover is a wrapping component that accepts a "control" as well as a "body.
+{: .docs-intro}
+
+A control can be anything that you want to trigger the interaction from. The body will be the contents of what you reveal on the page after triggering the popover. Commonly used as the interaction/wrapping component when composing "dropdowns", "contextual menus", "mega menu", etc, when paired with the menu component.
 
 As a general rule, it is suggested that one popover be revealed on the page at any given time. Opening one popover should close all others to prevent multiple layers and collisions of several popovers.
 
-<hr/>
+<br>
 
 ## Popover Structure
 The basic wrapping structure of a popover.
