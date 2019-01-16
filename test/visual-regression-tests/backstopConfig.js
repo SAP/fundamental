@@ -1,4 +1,18 @@
-{
+const fs = require('fs');
+const backstopCIConfigLocation = 'test/visual-regression-tests/backstopConfigCI.json';
+
+let origin = 'host.docker.internal';
+
+// Check if there has been an IP address provided in the CI config JSON
+if (fs.existsSync(backstopCIConfigLocation)) {
+  const ciConfig = JSON.parse(fs.readFileSync(backstopCIConfigLocation));
+  if (ciConfig.ip) {
+    origin = ciConfig.ip;
+  }
+}
+console.log('Using URL origin ', origin);
+
+module.exports = {
   "id": "visual_regression_fundamental",
   "viewports": [
     {
@@ -10,7 +24,7 @@
   "scenarios": [
     {
       "label": "Button",
-      "url": "http://localhost:3030/button",
+      "url": "http://" + origin + ":3030/button",
       "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",
@@ -53,7 +67,7 @@
     },
     {
       "label": "Alerts",
-      "url": "http://localhost:3030/alert",
+      "url": "http://" + origin + ":3030/alert",
       "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",
@@ -92,13 +106,13 @@
     "html_report": "test/visual-regression-tests/backstop_data/html_report",
     "ci_report": "test/visual-regression-tests/backstop_data/ci_report"
   },
-  "report": ["browser"],
+  "report": ["CI"],
   "engine": "chrome-headless",
   "engineOptions": {
     "args": ["--no-sandbox"]
   },
-  "asyncCaptureLimit": 15,
-  "asyncCompareLimit": 50,
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 1,
   "debug": false,
   "debugWindow": false
 }
