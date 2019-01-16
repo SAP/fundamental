@@ -40,10 +40,10 @@ Tabs are based on a folder metaphor and used to separate content into different 
     </li>
     <li class="fd-tabs__item">
         <div class="fd-popover fd-popover--right">
-            <a class="fd-tabs__link fd-popover__control sap-icon--overflow" aria-controls="jhqD"
+            <a class="fd-tabs__link fd-popover__control sap-icon--overflow" aria-controls="jhqDa1"
             aria-expanded="false" aria-haspopup="true" role="tab"></a>
             <div class="fd-popover__body fd-popover__body--right fd-popover__body--no-arrow"
-            aria-hidden="true" id="jhqD">
+            aria-hidden="true" id="jhqDa1">
                 <nav class="fd-menu">
                     <ul class="fd-menu__list">
                         <li><a href="#" class="fd-menu__item">Option 1</a></li>

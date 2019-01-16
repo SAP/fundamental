@@ -2127,7 +2127,7 @@ input[type=checkbox], input[type=radio],
 .fd-radio {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -2212,7 +2212,7 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
 .fd-input {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -2291,7 +2291,7 @@ textarea,
 .fd-textarea {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -2361,7 +2361,7 @@ select,
 .fd-select {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -3069,16 +3069,15 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 */
 .fd-panel {
   --fd-panel-background-color: var(--fd-color-background-2);
-  --fd-panel-border-color: transparent;
+  --fd-panel-border-color: var(--fd-color-neutral-2);
   --fd-panel-box-shadow-color: var(--fd-color-neutral-2);
-  --fd-panel-header-border-color: var(--fd-color-neutral-2);
+  --fd-panel-divider-color: var(--fd-panel-border-color);
+  --fd-panel-border-width: 0;
   --fd-panel-title-color: var(--fd-color-text-1);
-  --fd-panel-filters-border-color: var(--fd-panel-header-border-color);
-  --fd-panel-footer-border-color: var(--fd-panel-header-border-color);
   background-color: var(--fd-panel-background-color);
   border-radius: 4px;
   border-style: solid;
-  border-width: 0;
+  border-width: var(--fd-panel-border-width);
   border-color: var(--fd-panel-border-color);
   box-shadow: 0 5px 20px 0 var(--fd-panel-box-shadow-color); }
   .fd-panel::after {
@@ -3091,7 +3090,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     align-items: center;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: var(--fd-panel-header-border-color);
+    border-bottom-color: var(--fd-panel-divider-color);
     padding: 16px 24px;
     font-size: 0.85714rem;
     line-height: 1.33333;
@@ -3114,7 +3113,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     padding: 12px 24px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: var(--fd-panel-filters-border-color);
+    border-bottom-color: var(--fd-panel-divider-color);
     transition: all 0.15s ease-in; }
     .fd-panel__filters.is-hidden, .fd-panel__filters[aria-hidden="true"] {
       padding-top: 0;
@@ -3131,7 +3130,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     padding: 16px 24px;
     border-top-style: solid;
     border-top-width: 1px;
-    border-top-color: var(--fd-panel-footer-border-color); }
+    border-top-color: var(--fd-panel-divider-color); }
 
 /*!
 .fd-tile-grid+(--2col | --4col | --5col | --6col)
@@ -3199,7 +3198,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-alert-border-color: var(--fd-color-neutral-4);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   color: #32363a;
@@ -3468,7 +3467,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-action-bar-backbtn-separator-color: var(--fd-color-neutral-3);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   background-color: transparent;
   min-height: 64px;
@@ -3479,7 +3478,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-action-bar__header {
     font-size: 14px;
     line-height: 1.42857;
-    color: #32363a;
+    color: var(--fd-color-text-1);
     font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     font-size: 1rem;
     line-height: 1.42857;
@@ -3541,7 +3540,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-action-bar__actions {
     font-size: 14px;
     line-height: 1.42857;
-    color: #32363a;
+    color: var(--fd-color-text-1);
     font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     display: flex;
     align-items: center;
@@ -3567,7 +3566,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-badge-background-color: transparent;
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 0.85714rem;
   line-height: 1.33333;
@@ -4259,7 +4258,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-breadcrumb {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 0.85714rem;
   line-height: 1.33333;
@@ -4302,7 +4301,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-dropdown {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   display: inline-block; }
@@ -4459,9 +4458,10 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
             .fd-form__message(--help, --error, --warning)
 */
 .fd-form {
+  --fd-form-label-color: var(--fd-color-text-3);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; }
   .fd-form__group::after {
     content: "";
@@ -4536,7 +4536,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-form__label, .fd-form__legend {
     font-size: 14px;
     line-height: 1.42857;
-    color: #32363a;
+    color: var(--fd-color-text-1);
     font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     font-size: 1rem;
     line-height: 1.42857;
@@ -4544,7 +4544,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     display: block;
     margin-bottom: 8px;
     border: 0;
-    color: #6a6d70; }
+    color: var(--fd-color-text-3); }
     .fd-form__label.is-disabled, .fd-form__legend.is-disabled {
       opacity: .4; }
   .fd-form__control {
@@ -4610,7 +4610,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-input-group {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   display: flex;
   vertical-align: bottom; }
@@ -4772,7 +4772,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-label-color: var(--fd-color-text-3);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 0.85714rem;
   line-height: 1.33333;
@@ -4801,7 +4801,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-pagination-total-color: var(--fd-color-text-2);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -4868,7 +4868,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-table-header-background-color: var(--fd-color-neutral-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   width: 100%;
   max-width: 100%;
@@ -5005,7 +5005,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-tabs-link-border-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   background-color: var(--fd-tabs-background-color);
   display: flex;
@@ -5070,7 +5070,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-modal-padding-x: var(--fd-width-gutter);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   max-width: 460px; }
   .fd-modal__content {
@@ -5159,7 +5159,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-tree-header-background-color: var(--fd-color-neutral-2);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   width: 100%;
@@ -5306,7 +5306,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-list-group-background-color: transparent;
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   margin-left: 0; }
   .fd-list-group__item {
@@ -5340,7 +5340,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-inline-help-icon-background-color: var(--fd-color-status-4);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   display: inline-block;
@@ -5462,7 +5462,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-nav {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   display: flex;
   flex-wrap: wrap;
@@ -5490,7 +5490,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   --fd-tabs-link-border-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   background-color: var(--fd-tabs-background-color);
   display: flex;
@@ -5548,7 +5548,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-toggle {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   display: inline-block;
@@ -5654,7 +5654,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   --fd-spinner-background-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   width: 29px;
@@ -5728,7 +5728,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 [class*="fd-image"] {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   display: inline-block;
   vertical-align: middle;
@@ -5772,7 +5772,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-global-nav {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   border-bottom: solid 1px #eeeeef;
   background: white;
@@ -5898,7 +5898,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-side-nav__list, .fd-side-nav__sublist {
     font-size: 14px;
     line-height: 1.42857;
-    color: #32363a;
+    color: var(--fd-color-text-1);
     font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     display: flex;
     flex-wrap: wrap;
@@ -5972,7 +5972,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   [class*="fd-identifier"] {
     font-size: 14px;
     line-height: 1.42857;
-    color: #32363a;
+    color: var(--fd-color-text-1);
     font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     display: inline-block;
     vertical-align: middle;
@@ -6111,7 +6111,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-mega-menu {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   background-color: white;
   width: 250px;
@@ -6146,7 +6146,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-mega-menu__list, .fd-mega-menu__sublist {
     font-size: 14px;
     line-height: 1.42857;
-    color: #32363a;
+    color: var(--fd-color-text-1);
     font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     display: flex;
     flex-wrap: wrap;
@@ -6203,7 +6203,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   --fd-menu-title-background-color: var(--fd-color-neutral-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   position: relative;
   display: block;
@@ -6328,7 +6328,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   --fd-tile-title-color: var(--fd-color-text-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   display: flex;
   color: var(--fd-tile-color);
@@ -6370,7 +6370,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   --fd-product-tile-title-color: var(--fd-color-text-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   color: var(--fd-product-tile-color);
   background-color: var(--fd-product-tile-background-color); }
@@ -6458,7 +6458,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   --fd-token-border-color: transparent;
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 0.85714rem;
   line-height: 1.33333;
@@ -6534,7 +6534,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-tag {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 0.85714rem;
   line-height: 1.33333;
@@ -6696,7 +6696,7 @@ see layouts/panel
 .fd-calendar {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   width: 252px; }
 
@@ -6794,7 +6794,7 @@ see layouts/panel
   position: relative;
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   color: var(--fd-status-label-color); }
   .fd-status-label::before {
@@ -6975,7 +6975,7 @@ see layouts/panel
 .fd-localization-editor {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; }
   .fd-localization-editor__list li {
     padding: 8px; }
@@ -7094,7 +7094,7 @@ see layouts/panel
   --fd-shellbar-link-color: var(--fd-color-shell-2);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   background-color: var(--fd-shellbar-background-color);
   height: 48px;
@@ -7260,7 +7260,7 @@ see layouts/panel
 .fd-user-menu {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   text-align: left; }
   .fd-user-menu__control {
@@ -8713,236 +8713,6 @@ see layouts/panel
 
 .fd-has-grid-gap-1 {
   grid-gap: 1px !important; }
-
-.fd-has-display-none {
-  display: none !important; }
-
-.fd-has-display-block {
-  display: block !important; }
-
-.fd-has-display-inline-block {
-  display: inline-block !important; }
-
-.fd-has-display-grid {
-  display: grid !important; }
-
-.fd-has-display-inline-grid {
-  display: inline-grid !important; }
-
-.fd-has-display-flex {
-  display: flex !important; }
-
-.fd-has-display-inline-flex {
-  display: inline-flex !important; }
-
-.fd-has-display-table {
-  display: table !important; }
-
-.fd-has-display-table-row {
-  display: table-row !important; }
-
-.fd-has-display-table-cell {
-  display: table-cell !important; }
-
-@media (min-width: 320px) {
-  .fd-display-s-none {
-    display: none !important; }
-  .fd-display-s-inline {
-    display: inline !important; }
-  .fd-display-s-inline-block {
-    display: inline-block !important; }
-  .fd-display-s-block {
-    display: block !important; }
-  .fd-display-s-table {
-    display: table !important; }
-  .fd-display-s-table-row {
-    display: table-row !important; }
-  .fd-display-s-table-cell {
-    display: table-cell !important; }
-  .fd-display-s-flex {
-    display: flex !important; }
-  .fd-display-s-inline-flex {
-    display: inline-flex !important; }
-  .fd-has-display-none--s {
-    display: none !important; }
-  .fd-has-display-block--s {
-    display: block !important; }
-  .fd-has-display-inline-block--s {
-    display: inline-block !important; }
-  .fd-has-display-grid--s {
-    display: grid !important; }
-  .fd-has-display-inline-grid--s {
-    display: inline-grid !important; }
-  .fd-has-display-flex--s {
-    display: flex !important; }
-  .fd-has-display-inline-flex--s {
-    display: inline-flex !important; }
-  .fd-has-display-table--s {
-    display: table !important; }
-  .fd-has-display-table-row--s {
-    display: table-row !important; }
-  .fd-has-display-table-cell--s {
-    display: table-cell !important; } }
-
-@media (min-width: 600px) {
-  .fd-display-m-none {
-    display: none !important; }
-  .fd-display-m-inline {
-    display: inline !important; }
-  .fd-display-m-inline-block {
-    display: inline-block !important; }
-  .fd-display-m-block {
-    display: block !important; }
-  .fd-display-m-table {
-    display: table !important; }
-  .fd-display-m-table-row {
-    display: table-row !important; }
-  .fd-display-m-table-cell {
-    display: table-cell !important; }
-  .fd-display-m-flex {
-    display: flex !important; }
-  .fd-display-m-inline-flex {
-    display: inline-flex !important; }
-  .fd-has-display-none--m {
-    display: none !important; }
-  .fd-has-display-block--m {
-    display: block !important; }
-  .fd-has-display-inline-block--m {
-    display: inline-block !important; }
-  .fd-has-display-grid--m {
-    display: grid !important; }
-  .fd-has-display-inline-grid--m {
-    display: inline-grid !important; }
-  .fd-has-display-flex--m {
-    display: flex !important; }
-  .fd-has-display-inline-flex--m {
-    display: inline-flex !important; }
-  .fd-has-display-table--m {
-    display: table !important; }
-  .fd-has-display-table-row--m {
-    display: table-row !important; }
-  .fd-has-display-table-cell--m {
-    display: table-cell !important; } }
-
-@media (min-width: 1024px) {
-  .fd-display-l-none {
-    display: none !important; }
-  .fd-display-l-inline {
-    display: inline !important; }
-  .fd-display-l-inline-block {
-    display: inline-block !important; }
-  .fd-display-l-block {
-    display: block !important; }
-  .fd-display-l-table {
-    display: table !important; }
-  .fd-display-l-table-row {
-    display: table-row !important; }
-  .fd-display-l-table-cell {
-    display: table-cell !important; }
-  .fd-display-l-flex {
-    display: flex !important; }
-  .fd-display-l-inline-flex {
-    display: inline-flex !important; }
-  .fd-has-display-none--l {
-    display: none !important; }
-  .fd-has-display-block--l {
-    display: block !important; }
-  .fd-has-display-inline-block--l {
-    display: inline-block !important; }
-  .fd-has-display-grid--l {
-    display: grid !important; }
-  .fd-has-display-inline-grid--l {
-    display: inline-grid !important; }
-  .fd-has-display-flex--l {
-    display: flex !important; }
-  .fd-has-display-inline-flex--l {
-    display: inline-flex !important; }
-  .fd-has-display-table--l {
-    display: table !important; }
-  .fd-has-display-table-row--l {
-    display: table-row !important; }
-  .fd-has-display-table-cell--l {
-    display: table-cell !important; } }
-
-@media (min-width: 1441px) {
-  .fd-display-xl-none {
-    display: none !important; }
-  .fd-display-xl-inline {
-    display: inline !important; }
-  .fd-display-xl-inline-block {
-    display: inline-block !important; }
-  .fd-display-xl-block {
-    display: block !important; }
-  .fd-display-xl-table {
-    display: table !important; }
-  .fd-display-xl-table-row {
-    display: table-row !important; }
-  .fd-display-xl-table-cell {
-    display: table-cell !important; }
-  .fd-display-xl-flex {
-    display: flex !important; }
-  .fd-display-xl-inline-flex {
-    display: inline-flex !important; }
-  .fd-has-display-none--xl {
-    display: none !important; }
-  .fd-has-display-block--xl {
-    display: block !important; }
-  .fd-has-display-inline-block--xl {
-    display: inline-block !important; }
-  .fd-has-display-grid--xl {
-    display: grid !important; }
-  .fd-has-display-inline-grid--xl {
-    display: inline-grid !important; }
-  .fd-has-display-flex--xl {
-    display: flex !important; }
-  .fd-has-display-inline-flex--xl {
-    display: inline-flex !important; }
-  .fd-has-display-table--xl {
-    display: table !important; }
-  .fd-has-display-table-row--xl {
-    display: table-row !important; }
-  .fd-has-display-table-cell--xl {
-    display: table-cell !important; } }
-
-@media (min-width: 1921px) {
-  .fd-display-xxl-none {
-    display: none !important; }
-  .fd-display-xxl-inline {
-    display: inline !important; }
-  .fd-display-xxl-inline-block {
-    display: inline-block !important; }
-  .fd-display-xxl-block {
-    display: block !important; }
-  .fd-display-xxl-table {
-    display: table !important; }
-  .fd-display-xxl-table-row {
-    display: table-row !important; }
-  .fd-display-xxl-table-cell {
-    display: table-cell !important; }
-  .fd-display-xxl-flex {
-    display: flex !important; }
-  .fd-display-xxl-inline-flex {
-    display: inline-flex !important; }
-  .fd-has-display-none--xxl {
-    display: none !important; }
-  .fd-has-display-block--xxl {
-    display: block !important; }
-  .fd-has-display-inline-block--xxl {
-    display: inline-block !important; }
-  .fd-has-display-grid--xxl {
-    display: grid !important; }
-  .fd-has-display-inline-grid--xxl {
-    display: inline-grid !important; }
-  .fd-has-display-flex--xxl {
-    display: flex !important; }
-  .fd-has-display-inline-flex--xxl {
-    display: inline-flex !important; }
-  .fd-has-display-table--xxl {
-    display: table !important; }
-  .fd-has-display-table-row--xxl {
-    display: table-row !important; }
-  .fd-has-display-table-cell--xxl {
-    display: table-cell !important; } }
 
 .fd-has-align-items-flex-start {
   align-items: flex-start !important; }
