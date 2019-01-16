@@ -77,6 +77,9 @@ hr{
     width: 100%;
     display: flex;
     min-height: calc(100vh - 87px - 89px);
+    @include media("<=tablet") {
+        display: inline;
+    }
 }
 
 .docs-landing-page{
@@ -105,4 +108,12 @@ hr{
 
 .docs-intro {
   @include fd-type("3");
+}
+
+
+#mobile-sidenav-btn {
+    display: none;
+    @include media("<=tablet") {
+        display: block;
+    }
 }

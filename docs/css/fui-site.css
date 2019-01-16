@@ -3067,15 +3067,13 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
         .fd-panel__actions
     .fd-panel__footer
 */
-:root {
+.fd-panel {
   --fd-panel-background-color: var(--fd-color-background-2);
   --fd-panel-border-color: var(--fd-color-neutral-2);
   --fd-panel-box-shadow-color: var(--fd-color-neutral-2);
   --fd-panel-divider-color: var(--fd-panel-border-color);
   --fd-panel-border-width: 0;
-  --fd-panel-title-color: var(--fd-color-text-1); }
-
-.fd-panel {
+  --fd-panel-title-color: var(--fd-color-text-1);
   background-color: var(--fd-panel-background-color);
   border-radius: 4px;
   border-style: solid;
@@ -9077,6 +9075,9 @@ hr {
   width: 100%;
   display: flex;
   min-height: calc(100vh - 87px - 89px); }
+  @media (max-width: 768px) {
+    .docs-container {
+      display: inline; } }
 
 .docs-landing-page {
   width: 100%;
@@ -9098,6 +9099,12 @@ hr {
   font-size: 1.42857rem;
   line-height: 1.4;
   font-weight: 400; }
+
+#mobile-sidenav-btn {
+  display: none; }
+  @media (max-width: 768px) {
+    #mobile-sidenav-btn {
+      display: block; } }
 
 .docs-top-nav {
   background-color: #000;
@@ -9121,6 +9128,14 @@ hr {
     color: white !important;
     padding: 18px 20px 0 0;
     display: inline-block; }
+    @media (max-width: 768px) {
+      .docs-top-nav__support {
+        display: none; } }
+  @media (max-width: 768px) {
+    .docs-top-nav__mobile {
+      display: flex;
+      justify-content: space-around;
+      align-items: baseline; } }
 
 .side-nav {
   background-color: #EEEEEE;
@@ -9129,6 +9144,10 @@ hr {
   vertical-align: top;
   width: 290px;
   min-width: 290px; }
+  @media (max-width: 768px) {
+    .side-nav {
+      width: auto;
+      display: none; } }
   .side-nav__headers {
     font-size: 28px;
     font-weight: bold;
@@ -9220,10 +9239,19 @@ hr {
   min-width: 1024px;
   max-width: 1600px;
   width: 80%; }
+  @media (max-width: 768px) {
+    .post-content {
+      padding: 10px;
+      min-width: auto;
+      width: 100%; } }
 
 .post-content-full-width {
   padding: 40px 40px 80px 40px;
   width: 100%; }
+  @media (max-width: 768px) {
+    .post-content-full-width {
+      text-align: center;
+      padding-top: 20px; } }
 
 .docs-home_hero {
   background-image: url("../images/home-hero-bg.png");
@@ -9233,17 +9261,29 @@ hr {
   background-color: #242424;
   color: #d4d4d4;
   padding-top: 100px; }
+  @media (max-width: 768px) {
+    .docs-home_hero {
+      padding-top: 0; } }
   .docs-home_hero-heading {
     font-size: 70px;
     font-weight: 100;
     line-height: 1.1;
     text-shadow: 1px 3px 6px rgba(0, 0, 0, 0.09); }
+    @media (max-width: 768px) {
+      .docs-home_hero-heading {
+        font-size: 40px; } }
   .docs-home_hero-bold {
     font-weight: bold; }
   .docs-home_hero-img {
     float: right; }
+    @media (max-width: 768px) {
+      .docs-home_hero-img {
+        width: 100%; } }
   .docs-home_hero-content {
     padding: 100px; }
+    @media (max-width: 768px) {
+      .docs-home_hero-content {
+        padding: 20px; } }
   .docs-home_hero-description {
     font-size: 20px;
     line-height: 1.2;
@@ -9261,6 +9301,10 @@ hr {
     line-height: 0;
     padding: 20px;
     border: none; }
+    @media (max-width: 768px) {
+      .docs-home_hero-btn {
+        margin-top: 20px;
+        margin-bottom: 20px; } }
     .docs-home_hero-btn:hover {
       background-color: #5FA8EF;
       text-decoration: none;
@@ -9276,6 +9320,9 @@ hr {
 .docs-home_panel {
   padding: 100px;
   background: #181818; }
+  @media (max-width: 768px) {
+    .docs-home_panel {
+      padding: 20px; } }
   .docs-home_panel--alt {
     background: #242424; }
   .docs-home_panel-title {
@@ -9422,6 +9469,9 @@ hr {
   font-weight: bold;
   line-height: 1.06;
   text-align: left; }
+  @media (max-width: 768px) {
+    .docs-header-h1 {
+      margin-bottom: 24px; } }
 
 .docs-header-h2 {
   font-size: 28px;
@@ -9570,6 +9620,9 @@ hr {
   border-left: none;
   border-right: none;
   margin: 0 -40px -100px -40px; }
+  @media (max-width: 768px) {
+    .docs-component-grid {
+      grid-template-columns: auto; } }
   .docs-component-grid--item {
     background: white;
     padding: 40px 10px;
