@@ -4,7 +4,7 @@ keywords: guide, guides
 toc: false
 sidebar: left-navigation-sidebar
 permalink: foundation/index.html
-folder: guides
+folder: foundation
 summary:
 ---
 
