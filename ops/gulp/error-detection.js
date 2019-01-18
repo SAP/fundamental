@@ -17,7 +17,7 @@ const task = (cb) => {
             ));
             let numOfErrors = 0;
             errors.forEach((v, k) => {
-                if (v > 2) {
+                if (v > 3) {
                     numOfErrors++;
                     signale.warn(`Duplicate ids detected. ${k} appears in your examples ${v} times`);
                 }

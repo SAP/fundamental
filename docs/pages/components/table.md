@@ -227,9 +227,9 @@ a contextual menu can be substituted in order to display all actions in one menu
             <td>
                 <div class="fd-popover">
                     <div class="fd-popover__control">
-                        <button class="fd-button--light sap-icon--overflow" aria-controls="pQqQR213" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+                        <button class="fd-button--light sap-icon--overflow" aria-controls="pQqQR213a" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
                     </div>
-                    <div class="fd-popover__body" aria-hidden="true" id="pQqQR213">
+                    <div class="fd-popover__body" aria-hidden="true" id="pQqQR213a">
                         <nav class="fd-menu">
                             <ul class="fd-menu__list">
                                 <li><a href="#" class="fd-menu__item">Edit</a></li>
