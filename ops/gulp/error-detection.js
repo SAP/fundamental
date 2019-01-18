@@ -10,7 +10,9 @@ const task = (cb) => {
         if (er) return signale.error(er);
 
         const idsArray = [];
+        let itemsProcessed = 0;
 
+        // Logic for grouping ids fron parsed files and throwing errors if needed
         const checkParsedFiles = () => {
             const errors = new Map([...new Set(idsArray)].map(
                 x => [x, idsArray.filter(y => y === x).length]
@@ -27,10 +29,9 @@ const task = (cb) => {
                 signale.error('Please fix the issues above');
                 process.exit(-1);
             }
-        }
+        };
 
-        let itemsProcessed = 0;
-
+        // Parsing files
         files.forEach((file, idx, array) => {
             read(file, 'utf8', (err, buffer) => {
 
@@ -41,7 +42,6 @@ const task = (cb) => {
                 const parser = new htmlparser.Parser({
                     onopentag(name, attribs) {
                         if (attribs['aria-controls'] !== undefined) {
-                            // signale.info('aria-controls', attribs['aria-controls']);
                             idsArray.push(attribs['aria-controls']);
                         }
 
