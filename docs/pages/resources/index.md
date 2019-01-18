@@ -1,6 +1,6 @@
 ---
 title: Resources
-keywords: guide, guides, resources, 
+keywords: guide, guides, resources,
 toc: false
 sidebar: left-navigation-sidebar
 permalink: /resources/index.html
@@ -25,6 +25,13 @@ summary:
              </h2>
         </div>
     </a>
+    <a class="fd-tile" role="button" href="/office-hours/">
+        <div class="fd-tile__content">
+             <h2 class="fd-tile__header">
+                 Office Hours
+                 </h2>
+            </div>
+    </a>
     <a class="fd-tile" role="button" href="ui-kit.html">
         <div class="fd-tile__content">
              <h2 class="fd-tile__header">
@@ -32,4 +39,5 @@ summary:
              </h2>
         </div>
     </a>
-</div>
+
+    </div>
