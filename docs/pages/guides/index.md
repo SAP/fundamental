@@ -25,4 +25,11 @@ summary:
              </h2>
         </div>
     </a>
+    <a class="fd-tile" role="button" href="office-hours.html">
+        <div class="fd-tile__content">
+             <h2 class="fd-tile__header">
+                 Office Hours
+             </h2>
+        </div>
+    </a>
 </div>
