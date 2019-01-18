@@ -1,6 +1,6 @@
 ---
 title: Resources
-keywords: guide, guides, resources, 
+keywords: guide, guides, resources,
 toc: false
 sidebar: left-navigation-sidebar
 permalink: /resources/index.html
@@ -32,4 +32,5 @@ summary:
              </h2>
         </div>
     </a>
-</div>
+
+    </div>
