@@ -1,5 +1,7 @@
 const fs = require('fs');
+const mergeJSON  = require ('merge-json');  
 const backstopCIConfigLocation = 'test/visual-regression-tests/config/backstopConfigCI.json';
+const backstopComponentConfigLocation = 'test/visual-regression-tests/config/components';
 
 let origin = 'host.docker.internal';
 
@@ -12,6 +14,39 @@ if (fs.existsSync(backstopCIConfigLocation)) {
 }
 console.log('Using URL origin ', origin);
 
+const scenarios = [];
+
+// The default scenario configuration. This can be overwritten in each of the config files as needed.
+const defaultScenario = {
+  "urlPrefix": "http://" + origin + ":3030",
+  "referenceUrl": "",
+  "readyEvent": "",
+  "readySelector": "",
+  "delay": 100,
+  "hideSelectors": [],
+  "removeSelectors": [],
+  "hoverSelector": "",
+  "clickSelector": "",
+  "postInteractionWait": 0,
+  "selectorExpansion": false,
+  "expect": 0,
+  "misMatchThreshold" : 0.1,
+  "requireSameDimensions": true  
+}
+
+// Specific visual test component configurations.  Read the associated component configuration directory and merge the json.
+fs.readdirSync(backstopComponentConfigLocation).forEach(function(configFile) {
+  const scenario = mergeJSON.merge(defaultScenario, require('./components/' + configFile));
+  // Ensure each config file has a urlSuffix, label and selectors defined.
+  if (!scenario.urlSuffix || !scenario.label || !scenario.selectors) {
+    throw "Error with backstop config file '" + configFile + "', must include urlSuffix, label and selectors";
+  }
+  scenario.url = scenario.urlPrefix + scenario.urlSuffix;
+  scenarios.push(scenario);
+});
+
+console.log('Found ' + scenarios.length + ' Visual test scenarios to execute');
+
 module.exports = {
   "id": "visual_regression_fundamental",
   "viewports": [
@@ -21,84 +56,7 @@ module.exports = {
       "height": 1080
     }
   ],
-  "scenarios": [
-    {
-      "label": "Button",
-      "url": "http://" + origin + ":3030/button",
-      "referenceUrl": "",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [
-        "button.fd-button",
-        "button.fd-button.sap-icon--cart",
-        "button.fd-button.sap-icon--attachment",
-        "button.fd-button[aria-selected=true]",
-        "button.fd-button.is-disabled",
-        "button.fd-button--compact",
-        "button.fd-button--compact[aria-selected=true]",
-        "button.fd-button--compact.is-disabled",
-        "button.fd-button--emphasized",
-        "button.fd-button--emphasized[aria-selected=true]",
-        "button.fd-button--emphasized.is-disabled",
-        "button.fd-button--emphasized.fd-button--compact",
-        "button.fd-button--emphasized.fd-button--compact[aria-selected=true]",
-        "button.fd-button--emphasized.fd-button--compact.is-disabled",
-        "button.fd-button--light",
-        "button.fd-button--light[aria-selected=true]",
-        "button.fd-button--light.is-disabled",
-        "button.fd-button--light.fd-button--compact",
-        "button.fd-button--light.fd-button--compact[aria-selected=true]",
-        "button.fd-button--light.fd-button--compact.is-disabled",
-        "button.fd-button--standard",
-        "button.fd-button--positive",
-        "button.fd-button--medium",
-        "button.fd-button--negative"
-      ],
-      "selectorExpansion": false,
-      "expect": 0,
-      "misMatchThreshold" : 0.1,
-      "requireSameDimensions": true
-    },
-    {
-      "label": "Alerts",
-      "url": "http://" + origin + ":3030/alert",
-      "referenceUrl": "",
-      "readyEvent": "",
-      "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
-      "removeSelectors": [],
-      "hoverSelector": "",
-      "clickSelector": "",
-      "postInteractionWait": 0,
-      "selectors": [
-        "div.fd-alert",
-        "div.fd-alert.fd-alert--information",
-        "div.fd-alert.fd-alert--success",
-        "div.fd-alert.fd-alert--warning",
-        "div.fd-alert.fd-alert--error",
-        "div.fd-alert.fd-alert--dismissible",
-        "div.fd-alert.fd-alert--information.fd-alert--dismissible",
-        "div.fd-alert.fd-alert--success.fd-alert--dismissible",
-        "div.fd-alert.fd-alert--warning.fd-alert--dismissible",
-        "div.fd-alert.fd-alert--error.fd-alert--dismissible",
-        "div.fd-alert.fd-alert--dismissible[dir=rtl]",
-        "div.fd-alert.fd-alert--success[dir=rtl]",
-        "div.fd-alert.fd-alert--warning.fd-alert--dismissible[dir=rtl]",
-        "div.fd-alert.fd-alert--error.fd-alert--dismissible[dir=rtl]"
-      ],
-      "selectorExpansion": true,
-      "expect": 0,
-      "misMatchThreshold" : 0.1,
-      "requireSameDimensions": true
-    }
-  ],
+  "scenarios": scenarios,
   "paths": {
     "bitmaps_reference": "test/visual-regression-tests/resources/reference_images",
     "bitmaps_test": "test/visual-regression-tests/backstop_data/bitmaps_test",
@@ -112,7 +70,7 @@ module.exports = {
     "args": ["--no-sandbox"]
   },
   "asyncCaptureLimit": 1,
-  "asyncCompareLimit": 1,
+  "asyncCompareLimit": 0,
   "debug": false,
   "debugWindow": false
 }

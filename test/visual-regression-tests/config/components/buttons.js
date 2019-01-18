@@ -1,0 +1,30 @@
+module.exports = {
+    "label": "Button",
+    "urlSuffix": "/button",
+    "selectors": [
+        "button.fd-button",
+        "button.fd-button.sap-icon--cart",
+        "button.fd-button.sap-icon--attachment",
+        "button.fd-button[aria-selected=true]",
+        "button.fd-button.is-disabled",
+        "button.fd-button--compact",
+        "button.fd-button--compact[aria-selected=true]",
+        "button.fd-button--compact.is-disabled",
+        "button.fd-button--emphasized",
+        "button.fd-button--emphasized[aria-selected=true]",
+        "button.fd-button--emphasized.is-disabled",
+        "button.fd-button--emphasized.fd-button--compact",
+        "button.fd-button--emphasized.fd-button--compact[aria-selected=true]",
+        "button.fd-button--emphasized.fd-button--compact.is-disabled",
+        "button.fd-button--light",
+        "button.fd-button--light[aria-selected=true]",
+        "button.fd-button--light.is-disabled",
+        "button.fd-button--light.fd-button--compact",
+        "button.fd-button--light.fd-button--compact[aria-selected=true]",
+        "button.fd-button--light.fd-button--compact.is-disabled",
+        "button.fd-button--standard",
+        "button.fd-button--positive",
+        "button.fd-button--medium",
+        "button.fd-button--negative"
+      ]    
+};
