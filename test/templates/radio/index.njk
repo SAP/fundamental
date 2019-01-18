@@ -6,14 +6,38 @@
 
 {% block content %}
 
-    <h1>Radio</h1>
+
     {% set basic_radio %}
-        {{ forms.radio(
-            type="radio",
-            properties={
-                placeholder: "Placeholder Text"
-            })
-        }}
+{{ forms.radio(
+    type="radio",
+    properties={
+    })
+}}
+{{ forms.radio(
+    type="radio",
+    properties={
+    },
+    state={
+      checked: true
+    })
+}}
+{{ forms.radio(
+    type="radio",
+    properties={
+    },
+    state={
+      disabled: true
+    })
+}}
+{{ forms.radio(
+    type="radio",
+    properties={
+    },
+    state={
+      checked: true,
+      disabled: true
+    })
+}}
     {% endset %}
 
     {{ format(basic_radio) }}

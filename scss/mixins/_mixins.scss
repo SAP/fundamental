@@ -1,8 +1,9 @@
+@import "vars";
 //utils
 @mixin fd-reset {
     font-size: $fd-font-size;
     line-height: $fd-line-height;
-    color: $fd-color;
+    @include fd-var-color("color", $fd-color, --fd-color-text-1);
     font-family: $fd-font-family;
 }
 @mixin fd-reset-spacing {
