@@ -12,23 +12,10 @@
 $block: #{$fd-namespace}-panel;
 .#{$block} {
     $fd-panel-background-color: fd-color("background",2) !default;
-<<<<<<< HEAD
-    --fd-panel-background-color: var(--fd-color-background-2);
-
-    $fd-panel-padding: fd-space("s") fd-space("reg") !default;
-    $fd-panel-border-width: 0 !default;
-    $fd-panel-border-color: transparent !default;
-    --fd-panel-border-color: #{$fd-panel-border-color};
-
-    $fd-panel-box-shadow-color: rgba(fd-color("text"), 0.08) !default;
-    --fd-panel-box-shadow-color: var(--fd-color-neutral-2);
-
-=======
     $fd-panel-padding: fd-space("s") fd-space("reg") !default;
     $fd-panel-border-width: 0 !default;
     $fd-panel-border-color: transparent !default;
     $fd-panel-box-shadow-color: rgba(fd-color("text"), 0.08) !default;
->>>>>>> develop
     $fd-panel-border-radius: $fd-border-radius !default;
     $fd-panel-header-border-color: fd-color("neutral",2) !default;
     --fd-panel-header-border-color: var(--fd-color-neutral-2);
@@ -41,15 +28,11 @@ $block: #{$fd-namespace}-panel;
     --fd-panel-filters-border-color: var(--fd-panel-header-border-color);
     $fd-panel-footer-padding: fd-space(4) fd-space("reg") !default;
     $fd-panel-footer-border-color: $fd-panel-header-border-color !default;
-<<<<<<< HEAD
-    --fd-panel-footer-border-color: var(--fd-panel-header-border-color);
-=======
     --fd-panel-background-color: var(--fd-color-background-2);
     --fd-panel-border-color: var(--fd-color-neutral-2);
     --fd-panel-box-shadow-color: var(--fd-color-neutral-2);
     --fd-panel-divider-color: var(--fd-panel-border-color);
     --fd-panel-border-width: 0;
->>>>>>> develop
 
     --fd-panel-title-color: var(--fd-color-text-1);
     //anim
@@ -59,12 +42,8 @@ $block: #{$fd-namespace}-panel;
     @include fd-var-color("background-color", $fd-panel-background-color, --fd-panel-background-color);
     border-radius: $fd-border-radius;
     border-style: solid;
-<<<<<<< HEAD
-    border-width: $fd-panel-border-width;
-=======
     //border-width: $fd-panel-border-width;
     @include fd-var-size("border-width", $fd-panel-border-width, --fd-panel-border-width);
->>>>>>> develop
     @include fd-var-color("border-color", $fd-panel-border-color, --fd-panel-border-color);
 
     @if $fd-support-css-var-fallback {
@@ -77,11 +56,7 @@ $block: #{$fd-namespace}-panel;
         align-items: center;
         border-bottom-style: solid;
         border-bottom-width: 1px;
-<<<<<<< HEAD
-        @include fd-var-color("border-bottom-color", $fd-panel-header-border-color, --fd-panel-header-border-color);
-=======
         @include fd-var-color("border-bottom-color", $fd-panel-header-border-color, --fd-panel-divider-color);
->>>>>>> develop
         padding: $fd-panel-padding;
         @include fd-type("-1");
         @include fd-var-color("color", fd-color("text", 3), --fd-color-text-3);
@@ -105,11 +80,7 @@ $block: #{$fd-namespace}-panel;
         //border-bottom: solid 1px $fd-panel-filters-border-color;
         border-bottom-style: solid;
         border-bottom-width: 1px;
-<<<<<<< HEAD
-        @include fd-var-color("border-bottom-color", $fd-panel-filters-border-color, --fd-panel-filters-border-color);
-=======
         @include fd-var-color("border-bottom-color", $fd-panel-filters-border-color, --fd-panel-divider-color);
->>>>>>> develop
         transition: all $fd-panel-fiters-transition-params;
         &.is-hidden,
         &[aria-hidden="true"] {
@@ -132,10 +103,6 @@ $block: #{$fd-namespace}-panel;
         padding: $fd-panel-footer-padding;
         border-top-style: solid;
         border-top-width: 1px;
-<<<<<<< HEAD
-        @include fd-var-color("border-top-color", $fd-panel-footer-border-color, --fd-panel-footer-border-color);
-=======
         @include fd-var-color("border-top-color", $fd-panel-footer-border-color, --fd-panel-divider-color);
->>>>>>> develop
     }
 }
