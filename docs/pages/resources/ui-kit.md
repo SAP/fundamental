@@ -15,7 +15,7 @@ toc: false
             <p>
                 <img src="../images/ui-kit/sketch-mac-icon.png" alt="Sketch Logo" width="100">
             </p>
-            <a class="fd-button docs-ui-kit_hero-btn" href="/resources/SAP-Fiori-Fundamentals-UI-Kit-v1-4-1.sketch">
+            <a class="fd-button docs-ui-kit_hero-btn" href="SAP-Fiori-Fundamentals-UI-Kit-v1-4-1.sketch">
                 Download UI Kit
             </a>
             <p class="docs-ui-kit_hero-description">
@@ -32,7 +32,7 @@ toc: false
             <img src="../images/ui-kit/icons-grid.png" alt="SAP Icons example" height="112">
         </p>
         <p>SAP icons have been created with a friendly, yet elegant style that is consistent in terms of size, stroke and balance. The icons are tailored for simple and direct user interaction, using metaphors that are easy to understand. Each icon has been hand-crafted, hand-hinted, and aligned in font format. The icons are essentially vector graphics which can be resized easily without compromising their appearance.</p>
-        <a class="fd-button docs-ui-kit_hero-btn" href="/resources/SAP-icons.zip">
+        <a class="fd-button docs-ui-kit_hero-btn" href="SAP-icons.zip">
             Download SAP Icon font
         </a>
         <br><br>
@@ -46,7 +46,7 @@ toc: false
             SAP 72 font family was designed from the ground up and made it possible to meet SAP Fiori’s typographic requirements, including - Legibility Enhancements, Font Styles, Brand Voice, Character Set and Language Support.
         </p>
         <br><br>
-        <a class="fd-button docs-ui-kit_hero-btn" href="/resources/SAP-72-font.zip">
+        <a class="fd-button docs-ui-kit_hero-btn" href="SAP-72-font.zip">
             Download 72 Typeface
         </a>
     </div>
