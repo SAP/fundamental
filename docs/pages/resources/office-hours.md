@@ -16,6 +16,6 @@ In addition to fielding some questions live that can be answered on the spot wit
 ## Next Session
 {: .docs-header-h2}
 
-Our first session is live on Thursday, January 24th 2019 @ 10am. Zack Frazier will be presenting a demo of some basics around library usage and theming for your product.
+Our first session is live on Thursday, January 24th 2019 @ 10am Chicago Time (CST). Zack Frazier will be presenting a demo of some basics around setting up the SAP Fiori Fundamentals library in an Angular project.
 
 You can tune in right here on this page or subscribe/follow our <a href="https://youtube.com/channel/UCkq8zSSBngKze-rUypz0t2w/live" target="_blank">YouTube channel</a>.
