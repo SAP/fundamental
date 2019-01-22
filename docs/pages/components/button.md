@@ -134,73 +134,163 @@ Group a series of buttons together on a single line with the button group.
 ## Split Buttons 
 
 {% capture split-button %}
-<div>
+<div class="fd-splitbutton" role="group" aria-label="">
   <button class="fd-button--emphasized fd-button--splitbutton">Emphasize</button>
-  <div class="fd-div--dropdown">
-    <button class="fd-button--emphasized sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+  <div class="fd-popover"> 
+      <button class="fd-button--emphasized sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+   <div class="fd-popover__body fd-split-dropdown">
+      <nav class="fd-menu">
+        <ul class="fd-menu__list">
+          <li><a role="button" class="fd-menu__item">Option 1</a></li>
+          <li><a role="button" class="fd-menu__item">Option 2</a></li>
+          <li><a role="button" class="fd-menu__item">Option 3</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </div>
 <br>
-<div>
-  <button class="fd-button--emphasized fd-button--standard  fd-button--splitbutton">Standard</button>
-  <div class="fd-div--dropdown">
-    <button class="fd-button--emphasized fd-button--standard sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+<div class="fd-splitbutton" role="group" aria-label="">
+  <button class=" fd-button--emphasized fd-button--standard fd-button--splitbutton">Standard</button>
+  <div class="fd-popover"> 
+      <button class="fd-button--emphasized fd-button--standard sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+   <div class="fd-popover__body fd-split-dropdown">
+      <nav class="fd-menu">
+        <ul class="fd-menu__list">
+          <li><a role="button" class="fd-menu__item">Option 1</a></li>
+          <li><a role="button" class="fd-menu__item">Option 2</a></li>
+          <li><a role="button" class="fd-menu__item">Option 3</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </div>
 <br>
-<div>
-  <button class="fd-button--emphasized fd-button--positive  fd-button--splitbutton">Approve</button>
-  <div class="fd-div--dropdown">
-    <button class="fd-button--emphasized fd-button--positive sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+ <div class="fd-splitbutton" role="group" aria-label="">
+  <button class="fd-button--emphasized fd-button--positive fd-button--splitbutton">Approve</button>
+  <div class="fd-popover"> 
+      <button class="fd-button--emphasized fd-button--positive sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+   <div class="fd-popover__body fd-split-dropdown">
+      <nav class="fd-menu">
+        <ul class="fd-menu__list">
+          <li><a role="button" class="fd-menu__item">Option 1</a></li>
+          <li><a role="button" class="fd-menu__item">Option 2</a></li>
+          <li><a role="button" class="fd-menu__item">Option 3</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </div>
 <br>
-<div>
-  <button class="fd-button--emphasized fd-button--negative  fd-button--splitbutton">Reject</button>
-  <div class="fd-div--dropdown">
-    <button class="fd-button--emphasized fd-button--negative sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+<div class="fd-splitbutton" role="group" aria-label="">
+  <button class="fd-button--emphasized fd-button--negative fd-button--splitbutton">Reject</button>
+  <div class="fd-popover"> 
+      <button class="fd-button--emphasized fd-button--negative sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+   <div class="fd-popover__body fd-split-dropdown">
+      <nav class="fd-menu">
+        <ul class="fd-menu__list">
+          <li><a role="button" class="fd-menu__item">Option 1</a></li>
+          <li><a role="button" class="fd-menu__item">Option 2</a></li>
+          <li><a role="button" class="fd-menu__item">Option 3</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </div>
 <br>
-<div>
+<div class="fd-splitbutton" role="group" aria-label="">
   <button class="fd-button--emphasized fd-button--medium fd-button--splitbutton">Medium</button>
-  <div class="fd-div--dropdown">
-    <button class="fd-button--emphasized fd-button--medium sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+  <div class="fd-popover"> 
+      <button class="fd-button--emphasized fd-button--medium sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+   <div class="fd-popover__body fd-split-dropdown">
+      <nav class="fd-menu">
+        <ul class="fd-menu__list">
+          <li><a role="button" class="fd-menu__item">Option 1</a></li>
+          <li><a role="button" class="fd-menu__item">Option 2</a></li>
+          <li><a role="button" class="fd-menu__item">Option 3</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </div>
 <br>
-<div>
-  <button class="fd-button--emphasized sap-icon--delete fd-button--splitbutton">Emphasize</button>
-  <div class="fd-div--dropdown">
-    <button class="fd-button--emphasized sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+<div class="fd-splitbutton" role="group" aria-label="">
+  <button class="fd-button--emphasized  sap-icon--delete fd-button--splitbutton">Emphasize</button>
+  <div class="fd-popover"> 
+      <button class="fd-button--emphasized sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+   <div class="fd-popover__body fd-split-dropdown">
+      <nav class="fd-menu">
+        <ul class="fd-menu__list">
+          <li><a role="button" class="fd-menu__item">Option 1</a></li>
+          <li><a role="button" class="fd-menu__item">Option 2</a></li>
+          <li><a role="button" class="fd-menu__item">Option 3</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </div>
 <br>
-<div>
-  <button class="fd-button--emphasized sap-icon--delete fd-button--standard  fd-button--splitbutton">Standard</button>
-  <div class="fd-div--dropdown">
-    <button class="fd-button--emphasized fd-button--standard sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+<div class="fd-splitbutton" role="group" aria-label="">
+  <button class="fd-button--emphasized  sap-icon--delete fd-button--splitbutton">Standard</button>
+  <div class="fd-popover"> 
+      <button class="fd-button--emphasized sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+   <div class="fd-popover__body fd-split-dropdown">
+      <nav class="fd-menu">
+        <ul class="fd-menu__list">
+          <li><a role="button" class="fd-menu__item">Option 1</a></li>
+          <li><a role="button" class="fd-menu__item">Option 2</a></li>
+          <li><a role="button" class="fd-menu__item">Option 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div> 
+<br>
+<div class="fd-splitbutton" role="group" aria-label="">
+  <button class="fd-button--emphasized sap-icon--accept fd-button--positive fd-button--splitbutton">Approve</button>
+  <div class="fd-popover"> 
+      <button class="fd-button--emphasized fd-button--positive sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+   <div class="fd-popover__body fd-split-dropdown">
+      <nav class="fd-menu">
+        <ul class="fd-menu__list">
+          <li><a role="button" class="fd-menu__item">Option 1</a></li>
+          <li><a role="button" class="fd-menu__item">Option 2</a></li>
+          <li><a role="button" class="fd-menu__item">Option 3</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </div>
 <br>
-<div>
-  <button class="fd-button--emphasized sap-icon--accept fd-button--positive  fd-button--splitbutton">Approve</button>
-  <div class="fd-div--dropdown">
-    <button class="fd-button--emphasized fd-button--positive sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+<div class="fd-splitbutton" role="group" aria-label="">
+  <button class="fd-button--emphasized sap-icon--decline fd-button--negative fd-button--splitbutton">Reject</button>
+  <div class="fd-popover"> 
+      <button class="fd-button--emphasized fd-button--negative sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+   <div class="fd-popover__body fd-split-dropdown">
+      <nav class="fd-menu">
+        <ul class="fd-menu__list">
+          <li><a role="button" class="fd-menu__item">Option 1</a></li>
+          <li><a role="button" class="fd-menu__item">Option 2</a></li>
+          <li><a role="button" class="fd-menu__item">Option 3</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </div>
 <br>
-<div>
-  <button class="fd-button--emphasized fd-button--negative  sap-icon--decline fd-button--splitbutton">Reject</button>
-  <div class="fd-div--dropdown">
-    <button class="fd-button--emphasized fd-button--negative sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
-  </div>
-</div>
-<br>
-<div>
+<div class="fd-splitbutton" role="group" aria-label="">
   <button class="fd-button--emphasized fd-button--medium sap-icon--message-warning fd-button--splitbutton">Medium</button>
-  <div class="fd-div--dropdown">
-    <button class="fd-button--emphasized fd-button--medium sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+  <div class="fd-popover"> 
+      <button class="fd-button--emphasized fd-button--medium sap-icon--slim-arrow-down fd-button--splitdropdown"></button>
+   <div class="fd-popover__body fd-split-dropdown">
+      <nav class="fd-menu">
+        <ul class="fd-menu__list">
+          <li><a role="button" class="fd-menu__item">Option 1</a></li>
+          <li><a role="button" class="fd-menu__item">Option 2</a></li>
+          <li><a role="button" class="fd-menu__item">Option 3</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </div>
 
