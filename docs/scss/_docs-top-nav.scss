@@ -2,8 +2,8 @@
     background-color: #000;
     height: 87px;
     &__logo{
-        padding-top: 25px;
-        padding-left: 35px;
+        margin-top: 25px;
+        margin-left: 35px;
         display: inline-block;
         font-size: 24px;
         font-weight: bold;
@@ -23,10 +23,14 @@
     &__support{
         @include fd-type("1");
         color: fd-color(text, 5) !important;
-        padding: 18px 20px 0 0;
+        padding: 30px 20px 0 0;
         display: inline-block;
         @include media("<=tablet") {
             display: none;
+        }
+        &--link{
+            display: inline-block;
+            vertical-align: top
         }
     }
 
