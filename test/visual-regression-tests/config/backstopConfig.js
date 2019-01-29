@@ -67,14 +67,22 @@ module.exports = {
     "ci_report": "test/visual-regression-tests/backstop_data/ci_report"
   },
   "report": ["browser"],
-  "engine": "puppet",
+  "engine": "chromy",
   "engineOptions": {
-    "args": [
+    "chromeFlags": [
+      "--shm-size=1gb",
+      "--privileged",
+      "--disable-gpu",
       "--no-sandbox"
+    ], 
+    "args": [
+      "--no-sandbox",
+      "--privileged",
+      "--shm-size=2gb"
     ]
   },
-  "asyncCaptureLimit": 0,
-  "asyncCompareLimit": 0,
+  "asyncCaptureLimit": 1,
+  "asyncCompareLimit": 1,
   "debug": false,
   "debugWindow": false
 }
