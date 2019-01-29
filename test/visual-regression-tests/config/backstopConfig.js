@@ -56,6 +56,8 @@ module.exports = {
       "height": 1080
     }
   ],
+  onBeforeScript: `onBefore.js`,
+  onReadyScript: `onReady.js`,
   "scenarios": scenarios,
   "paths": {
     "bitmaps_reference": "test/visual-regression-tests/resources/reference_images",
@@ -64,12 +66,14 @@ module.exports = {
     "html_report": "test/visual-regression-tests/backstop_data/html_report",
     "ci_report": "test/visual-regression-tests/backstop_data/ci_report"
   },
-  "report": ["CI"],
-  "engine": "chrome-headless",
+  "report": ["browser"],
+  "engine": "puppet",
   "engineOptions": {
-    "args": ["--no-sandbox"]
+    "args": [
+      "--no-sandbox"
+    ]
   },
-  "asyncCaptureLimit": 1,
+  "asyncCaptureLimit": 0,
   "asyncCompareLimit": 0,
   "debug": false,
   "debugWindow": false
