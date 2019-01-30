@@ -66,19 +66,11 @@ module.exports = {
     "html_report": "test/visual-regression-tests/backstop_data/html_report",
     "ci_report": "test/visual-regression-tests/backstop_data/ci_report"
   },
-  "report": ["browser"],
+  "report": ["CI"],
   "engine": "chromy",
   "engineOptions": {
     "chromeFlags": [
-      "--shm-size=1gb",
-      "--privileged",
-      "--disable-gpu",
-      "--no-sandbox"
-    ], 
-    "args": [
-      "--no-sandbox",
-      "--privileged",
-      "--shm-size=2gb"
+      "--disable-dev-shm-usage"
     ]
   },
   "asyncCaptureLimit": 1,
