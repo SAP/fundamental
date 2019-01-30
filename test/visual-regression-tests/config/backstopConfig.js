@@ -56,8 +56,6 @@ module.exports = {
       "height": 1080
     }
   ],
-  onBeforeScript: `onBefore.js`,
-  onReadyScript: `onReady.js`,
   "scenarios": scenarios,
   "paths": {
     "bitmaps_reference": "test/visual-regression-tests/resources/reference_images",

@@ -87,5 +87,15 @@ If you have visually changed a component and are happy that the changes are as d
 
 ## Adding new components to the automation framwework
 
-To add new components, please update `test/visual-regression-tests/backstopConfig.js` with the new components that you would like to be tested.  The automation is using `BackstopJS` as the test framework.  For details on how to add new tests please see [https://github.com/garris/BackstopJS](https://github.com/garris/BackstopJS).
+To add new components, please add a new JS config file to the directory `test/visual-regression-tests/config/components/` with the new component details that youwould like to be tested.  
+
+There is default config in the file `test/visual-regression-tests/config/backstopConfig.js` which will get merged with the config for the component you have added.  You can therefore override any of the default config by just adding an entry for your component.  For example, `"selectorExpansion": false` is set for the default scenario, but you can override this for your component if needed to select everything on the page explicitly.
+
+In order for your component to be successfully merged into the backstop configuration, the following JSON attributes are mandatory:
+
+ * `label` The label of the component to be used in the report.
+ * `urlSuffix` The url suffix (to be appended to the running server) that represents the test page to be examined visually.
+ * `selectors` The CSS selectors representing the component elements on the page to be visually compared.
+
+The automation is using `BackstopJS` as the test framework.  For details on how to add new tests please see [https://github.com/garris/BackstopJS](https://github.com/garris/BackstopJS).
 

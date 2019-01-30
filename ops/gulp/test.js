@@ -28,9 +28,7 @@ gulp.task('server:start', function (cb) {
                             if (err) {
                                 throw "Could not connect to port " + localAppPort;
                             }
-                            setTimeout(function() {
-                                cb();
-                            }, 4000);
+                            cb();
                         }
                     );
                 }).on('crash', function() {
