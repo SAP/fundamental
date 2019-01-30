@@ -89,7 +89,11 @@ $fd-colors: map-merge((
   ),
   "background": (
     1: hsl(210, 9%, 93.5%), // #EDEFF0 body background
-    2: hsl(210, 0%, 100%)  // #FFFFFF content background
+    2: hsl(210, 0%, 100%),  // #FFFFFF content background
+    3: hsl(145, 77%, 97%),  // #F1FDF6 positive background
+    4: hsl(30, 87.5%, 97%), // #FEF7F1 alert background
+    5: hsl(0, 100%, 96%),  // #FFEBEB negative background
+    6: hsl(210, 100%, 98%), // #F5FAFF information background
   ),
   "neutral": (
     1: hsl(210, 3%, 98%), // #FAFAFA
@@ -164,9 +168,10 @@ $fd-colors-background-states: map-merge((
   "hover": map-get($fd-colors-neutral, 1),
   "selected": change-color($fd-color--action, $alpha: .07),
   "selected-hover": change-color($fd-color--action, $alpha: .1),
-  "positive": adjust-color($fd-color--positive, $lightness: 66%),
-  "negative": adjust-color($fd-color--negative, $lightness: 49%),
-  "alert": adjust-color($fd-color--alert, $lightness: 49%),
+  "positive": map-get($fd-colors-background, 3),
+  "negative": map-get($fd-colors-background, 5),
+  "alert": map-get($fd-colors-background, 4),
+  "information": map-get($fd-colors-background, 6),
 ), $fd-colors-background-states);
 
 //————————^ FIORI FUNDAMENTALS FOUNDATION ————————^
