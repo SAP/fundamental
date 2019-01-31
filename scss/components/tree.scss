@@ -44,7 +44,8 @@ $block: #{$fd-namespace}-tree;
     border-bottom-style: solid;
     border-bottom-width: $fd-tree-border-width;
     @include fd-var-color("border-bottom-color", $fd-tree-border-color, --fd-tree-border-color);
-
+    padding-left: 0;
+    padding-right: 0;
     margin-bottom: $fd-margin-bottom;
     margin-left: 0;
     &:last-child {
@@ -65,6 +66,8 @@ $block: #{$fd-namespace}-tree;
         opacity: 1;
         margin-bottom: 0;
         margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
         &.is-hidden,
         &[aria-hidden="true"] {
             max-height: 0;
@@ -90,7 +93,7 @@ $block: #{$fd-namespace}-tree;
         position: relative;
         transition: background-color $fd-tree-transition-params;
         @include fd-hover {
-        @include fd-var-color("background-color", $fd-tree-row-background-color--hover, --fd-color-background-hover);
+          @include fd-var-color("background-color", $fd-tree-row-background-color--hover, --fd-color-background-hover);
         }
         &--header {
             @include fd-type("-1");
@@ -112,6 +115,10 @@ $block: #{$fd-namespace}-tree;
         padding: $fd-tree-cell-padding 0;
         //pad to account for control
         padding-left: $_row_padding;
+        @include fd-rtl() {
+          padding-left: 0;
+          padding-right: $_row_padding;
+        }
         &--control {
             flex: auto;
             width: 20%;
@@ -120,6 +127,10 @@ $block: #{$fd-namespace}-tree;
                 @each $i in 1,2,3,4,5,6,7,8 {
                     .#{$block}__group--sublevel-#{$i} & {
                         padding-left: $_row_padding * ($i + 1);
+                        @include fd-rtl() {
+                          padding-left: 0;
+                          padding-right: $_row_padding * ($i + 1);
+                        }
                     }
                 }
             }
@@ -128,6 +139,9 @@ $block: #{$fd-namespace}-tree;
             padding-top: 0;
             padding-bottom: 0;
             text-align: right;
+            @include fd-rtl {
+              text-align: left;
+            }
         }
     }
 
@@ -136,9 +150,12 @@ $block: #{$fd-namespace}-tree;
         position: absolute;
         top: calc(50% - #{$fd-tree-control-width}/2);
         margin-left: -#{$_row_padding};
-        width: $fd-tree-control-width;
-        //height: $fd-tree-control-width;
         margin-right: fd-space(3);
+        @include fd-rtl() {
+          margin-left: fd-space(3);
+          margin-right: -#{$_row_padding};;
+        }
+        width: $fd-tree-control-width;
         transform: rotate(180deg);
         vertical-align: middle;
         transition: transform $fd-animation--speed linear;
