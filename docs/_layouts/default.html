@@ -6,33 +6,40 @@
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M953JX6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    {% if site.mvxDisabled %}
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M953JX6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    {% endif %}
     <div class="docs-wrapper">
 
 
-        {% include topnav.html %}
+        {% if site.mvxDisabled %} {% include topnav.html %} {% endif %}
 
         <!-- Page Content -->
         <div class="docs-container">
             <!-- Sidebar Column -->
-            <div class="side-nav" id="tg-sb-sidebar">
-                {% include side-nav.html %}
-            </div>
+            {% if site.mvxDisabled %}
+                <div class="side-nav" id="tg-sb-sidebar">
+                    {% include side-nav.html %}
+                </div>
+            {% endif %}
 
             <div class="main-content" id="tg-sb-content">
                 <!-- Content Column -->
                 {{content}}
-
-
             </div>
 
         </div>
-
-        {% include footer.html %}
+        {% if site.mvxDisabled %}
+            {% include footer.html %}
+        {% else %}
+            {% include footer-mvx.html %}
+        {% endif %}
     </div>
-    {% if site.google_analytics %} {% include google_analytics.html %} {% endif %}
+    {% if site.mvxDisabled %}
+        {% if site.google_analytics %} {% include google_analytics.html %} {% endif %}
+    {% endif %}
 </body>
 
 </html>
