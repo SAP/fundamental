@@ -55,6 +55,10 @@ $block: #{$fd-namespace}-modal;
   &__close {
     position: absolute;
     right: fd-space(1);
+    @include fd-rtl() {
+      left: fd-space(1);
+      right: auto;
+    }
     top: fd-space(2);
     @include fd-icon("decline", "l");
     @include fd-button-reset;
