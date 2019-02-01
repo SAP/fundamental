@@ -118,8 +118,13 @@ select,
     -moz-appearance: none;
     background-image: url(#{$fd-forms-select-background-image});
     background-repeat: no-repeat;
-    background-position: calc(100%) center;
-    padding-right: ($fd-forms-padding * 3) + $fd-forms-select-width--background-image;
+    background-position: calc(100% + 1px) center;
+    padding-right: $fd-forms-padding + $fd-forms-select-width--background-image;
+    @include fd-rtl() {
+      background-position: -1px center;
+      padding-right: $fd-forms-padding;
+      padding-left: $fd-forms-padding + $fd-forms-select-width--background-image;
+    }
     width: 100%;
     @include fd-var-size("height", $fd-forms-height, --fd-forms-height);
     &:focus,
