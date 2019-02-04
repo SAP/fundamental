@@ -79,10 +79,21 @@ $flow_width_of_gutter: map-get($fd-spacing, xxs); // Should match var(--fd-width
   //set margin for gutter
   margin-right: $flow_width_of_gutter;
   margin-right: var(--fd-width-gutter);
-
   &:last-child {
     margin-right: 0;
   }
+
+  @include fd-rtl() {
+    float: right;
+    //set margin for gutter
+    margin-right: 0;
+    margin-left: $flow_width_of_gutter;
+    margin-left: var(--fd-width-gutter);
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+
   //calc width without gutters
   $num_of_gutters: $cols - 1;
   $gutter_width_total: $num_of_gutters * $flow_width_of_gutter;
@@ -139,4 +150,23 @@ $flow_width_of_gutter: map-get($fd-spacing, xxs); // Should match var(--fd-width
       ) * #{$span}
     ) + (var(--fd-width-gutter) * (#{$span}))
   );
+  @include fd-rtl() {
+    margin-left: 0;
+    margin-right: calc(
+      (
+        (
+          (100% - #{$gutter_width_total})
+            / #{$cols}
+        ) * #{$span}
+      ) + #{$gutter_width_spanned}
+    );
+    margin-right: calc(
+      (
+        (
+          (100% - (#{$num_of_gutters} * var(--fd-width-gutter)))
+            / #{$cols}
+        ) * #{$span}
+      ) + (var(--fd-width-gutter) * (#{$span}))
+    );
+  }
 }
