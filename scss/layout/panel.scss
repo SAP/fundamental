@@ -69,6 +69,10 @@ $block: #{$fd-namespace}-panel;
         margin-left: auto;
         margin-top: -#{fd-space(base)};
         margin-bottom: -#{fd-space(base)};
+        @include fd-rtl() {
+          margin-right: auto;
+          margin-left: 0;          
+        }
     }
     &__filters {
         padding: $fd-panel-filters-padding;
