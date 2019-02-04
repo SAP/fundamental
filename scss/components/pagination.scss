@@ -46,11 +46,17 @@ $block: #{$fd-namespace}-pagination;
     &--previous,
     &--next {
       @include fd-icon("nav-back","s");
+      @include fd-rtl() {
+        transform: scaleX(-1);
+      }
       padding-left: fd-space(2);
       padding-right: fd-space(2);
     }
     &--next {
       transform: scaleX(-1);
+      @include fd-rtl() {
+        transform: scaleX(1);
+      }
     }
     &--more {
       &::before {
