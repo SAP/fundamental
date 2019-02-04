@@ -79,7 +79,7 @@
     {% set example %}
     {%- call container() -%}
         {%- for i in range(1,13) %}
-            {%- call col(1) %}{% endcall %}
+            {%- call col(1) %}{{i}}{% endcall %}
         {%- endfor %}
     {%- endcall %}
     {% endset %}
@@ -89,7 +89,7 @@
     {% set example %}
     {%- call container(modifier="bleed") -%}
         {%- for i in range(1,13) %}
-            {%- call col(1) %}{% endcall %}
+            {%- call col(1) %}{{i}}{% endcall %}
         {%- endfor %}
     {%- endcall %}
     {% endset %}
@@ -101,7 +101,7 @@
     {% set example %}
     {%- call container() -%}
         {%- for i in range(1,7) %}
-            {%- call col(2) %}{% endcall %}
+            {%- call col(2) %}{{i}}{% endcall %}
         {%- endfor %}
     {%- endcall %}
     {% endset %}
@@ -114,7 +114,7 @@
     {% set example %}
     {%- call container() -%}
         {%- for i in range(1,5) %}
-            {%- call col(3) -%}{%- endcall %}
+            {%- call col(3) -%}{{i}}{%- endcall %}
         {%- endfor %}
     {%- endcall %}
     {% endset %}
@@ -125,7 +125,7 @@
     {% set example %}
     {%- call container() -%}
         {%- for i in range(1,4) %}
-            {%- call col(4) -%}{%- endcall %}
+            {%- call col(4) -%}{{i}}{%- endcall %}
         {%- endfor %}
     {%- endcall %}
     {% endset %}
@@ -135,8 +135,8 @@
     <strong>2 col (3/9)</strong>
     {% set example %}
     {%- call container(classes="has-align-items-center") -%}
-        {%- call col(3) -%}{%- endcall %}
-        {%- call col(9) -%}{%- endcall %}
+        {%- call col(3) -%}1{%- endcall %}
+        {%- call col(9) -%}2{%- endcall %}
     {%- endcall %}
     {% endset %}
     {{ format(example) }}
@@ -146,9 +146,9 @@
     <strong>3 col (3/6/3)</strong>
     {% set example %}
     {%- call container() -%}
-        {%- call col(3) -%}{%- endcall %}
-        {%- call col(6) -%}{%- endcall %}
-        {%- call col(3) -%}{%- endcall %}
+        {%- call col(3) -%}1{%- endcall %}
+        {%- call col(6) -%}2{%- endcall %}
+        {%- call col(3) -%}3{%- endcall %}
     {%- endcall %}
     {% endset %}
     {{ format(example) }}
@@ -157,7 +157,7 @@
     <strong>1 col, shifted 3 cols (9)</strong>
     {% set example %}
     {%- call container() -%}
-        {%- call col(9, "shift-3") -%}{%- endcall %}
+        {%- call col(9, "shift-3") -%}1{%- endcall %}
     {%- endcall %}
     {% endset %}
     {{ format(example) }}
@@ -168,10 +168,10 @@
     <p>Inside flex containers, use .fd-col to evenly fill the left over space</p>
     {% set example %}
     {%- call container(modifier="flex") -%}
-        {%- call col(9) -%}{%- endcall %}
-        {%- call col(0) -%}{%- endcall %}
-        {%- call col(0) -%}{%- endcall %}
-        {%- call col(0) -%}{%- endcall %}
+        {%- call col(9) -%}1{%- endcall %}
+        {%- call col(0) -%}2{%- endcall %}
+        {%- call col(0) -%}3{%- endcall %}
+        {%- call col(0) -%}4{%- endcall %}
     {%- endcall %}
     {% endset %}
     {{ format(example) }}
@@ -180,9 +180,9 @@
     <p>Inside flex containers, use .fd-col to distirbute space with no margin</p>
     {% set example %}
     {%- call container(modifier="flex") -%}
-        {%- call col(0) -%}{%- endcall %}
-        {%- call col(0) -%}{%- endcall %}
-        {%- call col(0) -%}{%- endcall %}
+        {%- call col(0) -%}1{%- endcall %}
+        {%- call col(0) -%}2{%- endcall %}
+        {%- call col(0) -%}3{%- endcall %}
     {%- endcall %}
     {% endset %}
     {{ format(example) }}
