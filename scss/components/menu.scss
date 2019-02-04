@@ -83,7 +83,6 @@ $block: #{$fd-namespace}-menu;
       @include fd-var-color("background-color", $fd-menu-item-background-color, --fd-menu-item-background-color);
       @include fd-var-color("color", $fd-menu-item-color, --fd-menu-item-color);
       @include fd-weight("normal");
-      text-align: left;
       > .fd-checkbox {
         margin: 0 10px 0 0;
       }
@@ -107,6 +106,10 @@ $block: #{$fd-namespace}-menu;
     &__addon-before {
         float: left;
         clear: left;
+        @include fd-rtl() {
+          float: right;
+          clear: right;
+        }
         height: 39px;
         display: flex;
         justify-content: center;
