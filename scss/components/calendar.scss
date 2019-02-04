@@ -151,6 +151,13 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
     display: flex;
     align-items: center;
   }
+  &__action {
+    [class*="sap-icon"] {
+      @include fd-rtl() {
+        transform: scaleX(-1);
+      }
+    }
+  }
   &__content {
     padding: fd-space(xs) 0;
   }
@@ -194,6 +201,8 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
     }
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    padding-left: 0;
+    padding-right: 0;
   }
   &__item {
     @extend %fd-calendar-item;
