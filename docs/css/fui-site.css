@@ -8791,6 +8791,10 @@ see layouts/panel
 .has-accent-background {
   background-color: #5FA8EF; }
 
+.img-fluid {
+  max-width: 100%;
+  height: auto; }
+
 body {
   font-family: '72', sans-serif;
   background-color: white; }
@@ -8809,7 +8813,8 @@ hr {
   clear: both; }
 
 .highlight {
-  max-width: 1600px; }
+  max-width: 1440px;
+  margin: 25px 0 0 0; }
 
 .docs-tiles {
   margin: 0 -20px;
@@ -8829,6 +8834,7 @@ hr {
     color: #5FA8EF !important;
     font-weight: normal;
     font-size: 20px;
+    margin-top: 10px;
     margin-bottom: 10px; }
     .docs-tiles .fd-tile__header:last-child {
       margin-bottom: 0; }
@@ -8842,6 +8848,39 @@ hr {
 
 hr {
   margin: 36px 0; }
+
+pre {
+  display: block;
+  padding: 10px;
+  margin: 0 0 20px;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #666;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px; }
+  pre code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0; }
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px; }
+
+blockquote {
+  margin: 15px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-left-width: 5px;
+  border-radius: 5px;
+  background: #fffde4; }
 
 .docs-container {
   margin-left: 0;
@@ -8883,8 +8922,8 @@ hr {
   background-color: #000;
   height: 87px; }
   .docs-top-nav__logo {
-    padding-top: 25px;
-    padding-left: 35px;
+    margin-top: 25px;
+    margin-left: 35px;
     display: inline-block;
     font-size: 24px;
     font-weight: bold;
@@ -8899,11 +8938,14 @@ hr {
     line-height: 1.25;
     font-weight: 400;
     color: white !important;
-    padding: 18px 20px 0 0;
+    padding: 30px 20px 0 0;
     display: inline-block; }
     @media (max-width: 768px) {
       .docs-top-nav__support {
         display: none; } }
+    .docs-top-nav__support--link {
+      display: inline-block;
+      vertical-align: top; }
   @media (max-width: 768px) {
     .docs-top-nav__mobile {
       display: flex;
@@ -9007,22 +9049,25 @@ hr {
   display: flex;
   flex-direction: column; }
 
-.post-content {
+.docs-content {
   padding: 40px 40px 80px 60px;
   min-width: 1024px;
-  max-width: 1600px;
+  max-width: 1440px;
   width: 80%; }
   @media (max-width: 768px) {
-    .post-content {
+    .docs-content {
       padding: 10px;
       min-width: auto;
       width: 100%; } }
+  .docs-content > ol li,
+  .docs-content > ul li {
+    margin: 10px 0px 10px 0; }
 
-.post-content-full-width {
+.docs-content-full-width {
   padding: 40px 40px 80px 40px;
   width: 100%; }
   @media (max-width: 768px) {
-    .post-content-full-width {
+    .docs-content-full-width {
       text-align: center;
       padding-top: 20px; } }
 
@@ -9283,7 +9328,7 @@ hr {
       text-decoration: none;
       box-shadow: none; }
 
-.docs-ui-kit .docs-header-h3 {
+.docs-ui-kit .docs-header-h3, .docs-ui-kit .docs-content h3, .docs-content .docs-ui-kit h3 {
   margin-top: 20px;
   text-transform: unset; }
 
@@ -9300,13 +9345,13 @@ hr {
     .docs-header-h1 {
       margin-bottom: 24px; } }
 
-.docs-header-h2 {
+.docs-header-h2, .docs-content h2 {
   font-size: 28px;
   font-weight: 100;
   line-height: 1.14;
   margin-top: 40px; }
 
-.docs-header-h3 {
+.docs-header-h3, .docs-content h3 {
   font-size: 16px;
   font-weight: bold;
   line-height: 1.88;
@@ -9585,7 +9630,8 @@ hr {
     padding: 60px 20px;
     overflow: visible; }
   .docs-component pre {
-    background-color: white; }
+    background-color: #fff !important;
+    margin: 25px 0px; }
   .docs-component ul {
     list-style: none;
     margin-left: 0;

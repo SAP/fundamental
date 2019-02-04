@@ -4,18 +4,31 @@
     display: flex;
     flex-direction: column;
 }
-.post-content{
+.docs-content{
     padding: 40px 40px 80px 60px;
     min-width: 1024px;
-    max-width: 1600px;
+    max-width: 1440px;
     width: 80%;
     @include media("<=tablet") {
         padding: 10px;
         min-width: auto;
         width: 100%;
     }
+    &>ol li, 
+    &>ul li {
+        margin: 10px 0px 10px 0;
+    }
+
+    h2{
+        @extend .docs-header-h2;
+    }
+
+    h3{
+        @extend .docs-header-h3;
+    }
+    
 }
-.post-content-full-width{
+.docs-content-full-width{
     padding: 40px 40px 80px 40px;
     width: 100%;
     @include media("<=tablet") {
@@ -23,3 +36,5 @@
         padding-top: 20px;
     }
 }
+
+
