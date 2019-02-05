@@ -6,8 +6,8 @@ const backstop = require('backstopjs');
 const fs = require('fs');
 
 const localAppPort = 3030;
-const backstopConfigLocation = 'test/visual-regression-tests/backstopConfig.js';
-const backstopCIConfigLocation = 'test/visual-regression-tests/backstopConfigCI.json';
+const backstopConfigLocation = 'test/visual-regression-tests/config/backstopConfig.js';
+const backstopCIConfigLocation = 'test/visual-regression-tests/config/backstopConfigCI.json';
 
 // Starts the test server.  If the server port is already in use, it is assumed that the server is already running.
 gulp.task('server:start', function (cb) {	
