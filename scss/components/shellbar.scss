@@ -84,6 +84,10 @@ $block: #{$fd-namespace}-shellbar;
       @include fd-screen(m) {
         display: inline-block;
         margin-right: fd-space("tiny");
+        @include fd-rtl {
+          margin-right: 0;
+          margin-left: fd-space("tiny");
+        }
       }
       &--control {
         display: inline-block;
@@ -112,6 +116,9 @@ $block: #{$fd-namespace}-shellbar;
         }
         @include fd-screen(m) {
           max-width: 60%;
+        }
+        @include fd-rtl {
+          padding: 0 0 0 fd-space(2);
         }
     }
     &__title {
