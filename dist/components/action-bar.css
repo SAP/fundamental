@@ -1,6 +1,6 @@
 /*!
 * Fiori Fundamentals v1.4.1
-* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Copyright (c) 2019 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 /*!
@@ -10,9 +10,10 @@
         .fd-action-bar__action-item
 */
 .fd-action-bar {
+  --fd-action-bar-backbtn-separator-color: var(--fd-color-neutral-3);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   background-color: transparent;
   min-height: 64px;
@@ -28,7 +29,7 @@
 .fd-action-bar__header {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -49,7 +50,9 @@
   }
 }
 .fd-action-bar__back {
-  display: block
+  display: block;
+  position: relative;
+  margin-right: 20px
 }
 @media (min-width:320px) {
   .fd-action-bar__back {
@@ -68,23 +71,19 @@
   position: absolute;
   top: -4px;
   right: -4px;
-  border-right: 1px solid #d9d9d9
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: var(--fd-action-bar-backbtn-separator-color)
 }
 .fd-action-bar__back button {
   margin-top: -8px
 }
-.fd-action-bar__back {
-  position: relative;
-  margin-right: 20px
-}
-.fd-action-bar__back::after {
-  content: '';
-  width: 0;
-  height: 100%;
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  border-right: 1px solid #d9d9d9
+.fd-action-bar__back[dir=rtl],
+[dir=rtl] .fd-action-bar__back {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  margin-left: 20px;
+  margin-right: 0
 }
 .fd-action-bar__title {
   font-size: 1.71429rem;
@@ -101,7 +100,7 @@
   }
 }
 .fd-action-bar__description {
-  color: #6a6d70;
+  color: var(--fd-color-text-3);
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400
@@ -119,7 +118,7 @@
 .fd-action-bar__actions {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -143,6 +142,19 @@
 .fd-action-bar__actions > :first-child,
 .fd-action-bar__actions > button:first-child {
   margin-left: 0
+}
+.fd-action-bar__actions > [dir=rtl],
+.fd-action-bar__actions > button[dir=rtl],
+[dir=rtl] .fd-action-bar__actions > *,
+[dir=rtl] .fd-action-bar__actions > button {
+  margin-right: 8px;
+  margin-left: 0
+}
+.fd-action-bar__actions > [dir=rtl]:first-child,
+.fd-action-bar__actions > button[dir=rtl]:first-child,
+[dir=rtl] .fd-action-bar__actions > :first-child,
+[dir=rtl] .fd-action-bar__actions > button:first-child {
+  margin-right: 0
 }
 .fd-action-bar__actions .fd-popover {
   top: -4px

@@ -1,6 +1,6 @@
 /*!
 * Fiori Fundamentals v1.4.1
-* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Copyright (c) 2019 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 @charset "UTF-8";
@@ -14,16 +14,18 @@
       .fd-modal__button-secondary
 */
 .fd-modal {
+  --fd-modal-background-color: var(--fd-color-background-2);
+  --fd-modal-border-color: var(--fd-color-neutral-2);
   --fd-modal-padding-x: var(--fd-width-gutter);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   max-width: 460px
 }
 .fd-modal__content {
   border-radius: 4px;
-  background-color: #fff
+  background-color: var(--fd-modal-background-color)
 }
 .fd-modal__body,
 .fd-modal__footer,
@@ -35,7 +37,9 @@
 }
 .fd-modal__header {
   position: relative;
-  border-bottom: 1px solid #eeeeef
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--fd-modal-border-color)
 }
 .fd-modal__title {
   font-size: 1.14286rem;
@@ -69,6 +73,11 @@
   border-radius: 4px;
   width: 36px;
   height: 36px
+}
+.fd-modal__close[dir=rtl],
+[dir=rtl] .fd-modal__close {
+  left: 4px;
+  right: auto
 }
 .fd-modal__close::before {
   font-family: SAP-icons;
@@ -104,5 +113,11 @@
 }
 .fd-modal__footer {
   text-align: right;
-  border-top: 1px solid #eeeeef
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: var(--fd-modal-border-color)
+}
+.fd-modal__footer[dir=rtl],
+[dir=rtl] .fd-modal__footer {
+  text-align: left
 }

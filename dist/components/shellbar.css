@@ -1,15 +1,18 @@
 /*!
 * Fiori Fundamentals v1.4.1
-* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Copyright (c) 2019 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 @charset "UTF-8";
 .fd-shellbar {
+  --fd-shellbar-color: var(--fd-color-text-5);
+  --fd-shellbar-background-color: var(--fd-color-shell-1);
+  --fd-shellbar-link-color: var(--fd-color-shell-2);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  background: #354a5f;
+  background-color: var(--fd-shellbar-background-color);
   height: 48px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,7 +20,7 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #fff;
+  color: var(--fd-shellbar-color);
   position: relative;
   padding: 4px 32px;
   -webkit-box-pack: justify;
@@ -71,6 +74,11 @@
     display: inline-block;
     margin-right: 8px
   }
+  .fd-shellbar__logo[dir=rtl],
+  [dir=rtl] .fd-shellbar__logo {
+    margin-right: 0;
+    margin-left: 8px
+  }
 }
 .fd-shellbar__logo--control {
   display: inline-block
@@ -106,13 +114,17 @@
     max-width: 60%
   }
 }
+.fd-shellbar__product[dir=rtl],
+[dir=rtl] .fd-shellbar__product {
+  padding: 0 0 0 8px
+}
 .fd-shellbar__title {
   font-size: 1.14286rem;
   line-height: 1.25;
   font-weight: 400;
   font-weight: 700;
   line-height: 1;
-  color: #fff;
+  color: var(--fd-shellbar-color);
   white-space: nowrap;
   overflow: hidden;
   max-width: 100%;
@@ -222,9 +234,9 @@
 .fd-shellbar .fd-search-input .fd-input {
   border-style: solid;
   border-width: 1px;
-  border-color: var(--fd-color-shell-2);
-  background-color: var(--fd-color-shell-1);
-  color: var(--fd-color-shell-2)
+  border-color: var(--fd-shellbar-link-color);
+  background-color: var(--fd-shellbar-background-color);
+  color: var(--fd-shellbar-link-color)
 }
 .fd-shellbar .fd-search-input .fd-input:focus {
   -webkit-box-shadow: none;
@@ -245,12 +257,12 @@
     padding: 4px 32px
   }
 }
-@media (min-width:1441px) {
+@media (min-width:1440px) {
   .fd-shellbar {
     padding: 4px 32px
   }
 }
-@media (min-width:1921px) {
+@media (min-width:1920px) {
   .fd-shellbar {
     padding: 4px 32px
   }

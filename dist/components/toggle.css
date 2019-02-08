@@ -1,6 +1,6 @@
 /*!
 * Fiori Fundamentals v1.4.1
-* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Copyright (c) 2019 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 /*!
@@ -11,7 +11,7 @@
 .fd-toggle {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
   display: inline-block;
@@ -70,7 +70,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #d9d9d9;
+  background-color: var(--fd-color-neutral-3);
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 34px
@@ -82,8 +82,10 @@
   width: 28px;
   left: 0;
   top: -5px;
-  background-color: #fff;
-  border: 1px solid #d9d9d9;
+  background-color: var(--fd-color-background-2);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--fd-color-neutral-3);
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 50%
@@ -94,8 +96,8 @@ input:checked + .fd-toggle__switch {
 input:checked + .fd-toggle__switch:before {
   -webkit-transform: translateX(26px);
   transform: translateX(26px);
-  background: #0854a1;
-  border-color: #0854a1;
+  background-color: var(--fd-color-action-selected);
+  border-color: var(--fd-color-action-selected);
   pointer-events: none;
   left: -6px
 }

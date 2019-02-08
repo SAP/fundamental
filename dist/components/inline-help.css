@@ -1,6 +1,6 @@
 /*!
 * Fiori Fundamentals v1.4.1
-* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Copyright (c) 2019 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 /*!
@@ -8,9 +8,13 @@
     .fd-tooltip__content+(left, right, bottom-left, bottom-right)
 */
 .fd-inline-help {
+  --fd-inline-help-color: var(--fd-color-text-1);
+  --fd-inline-help-background-color: var(--fd-color-background-2);
+  --fd-inline-help-icon-color: var(--fd-color-text-5);
+  --fd-inline-help-icon-background-color: var(--fd-color-status-4);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
   display: inline-block;
@@ -25,20 +29,20 @@
   font-style: normal;
   position: absolute;
   left: 0;
-  color: #fff;
   border-radius: 50%;
-  background-color: #6a6d70;
+  color: var(--fd-inline-help-icon-color);
+  background-color: var(--fd-inline-help-icon-background-color);
   text-align: center
 }
 .fd-inline-help__content {
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
-  background: #fff;
+  background-color: var(--fd-inline-help-background-color);
   padding: 12px;
   display: block;
   position: absolute;
-  color: #51555a;
+  color: var(--fd-inline-help-color);
   top: 30px;
   right: -12px;
   min-width: 350px;
@@ -49,7 +53,9 @@
   border-radius: 5px;
   visibility: hidden;
   opacity: 0;
-  border: 1px #89919a solid;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--fd-color-status-4);
   -webkit-filter: drop-shadow(rgba(0, 0, 0, .1) 0 2px 10px);
   filter: drop-shadow(rgba(0, 0, 0, .1) 0 2px 10px)
 }
@@ -58,7 +64,7 @@
   width: 0;
   border-style: solid;
   border-width: 0 6.5px 8px 6.5px;
-  border-bottom-color: #89919a;
+  border-bottom-color: var(--fd-color-status-4);
   border-left-color: transparent;
   border-right-color: transparent;
   content: "";
@@ -71,7 +77,7 @@
   width: 0;
   border-style: solid;
   border-width: 0 6.5px 8px 6.5px;
-  border-bottom-color: #fff;
+  border-bottom-color: var(--fd-color-background-2);
   border-left-color: transparent;
   border-right-color: transparent;
   content: "";
@@ -95,6 +101,25 @@
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg)
 }
+.fd-inline-help__content--right[dir=rtl],
+[dir=rtl] .fd-inline-help__content--right {
+  left: auto;
+  right: 30px
+}
+.fd-inline-help__content--right[dir=rtl]::before,
+[dir=rtl] .fd-inline-help__content--right::before {
+  left: auto;
+  right: -10px;
+  -webkit-transform: rotate(-270deg);
+  transform: rotate(-270deg)
+}
+.fd-inline-help__content--right[dir=rtl]::after,
+[dir=rtl] .fd-inline-help__content--right::after {
+  left: auto;
+  right: -9px;
+  -webkit-transform: rotate(-270deg);
+  transform: rotate(-270deg)
+}
 .fd-inline-help__content--left {
   top: -12px;
   right: 30px
@@ -111,8 +136,32 @@
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg)
 }
+.fd-inline-help__content--left[dir=rtl],
+[dir=rtl] .fd-inline-help__content--left {
+  right: auto;
+  left: 30px
+}
+.fd-inline-help__content--left[dir=rtl]::before,
+[dir=rtl] .fd-inline-help__content--left::before {
+  right: auto;
+  left: -10px;
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg)
+}
+.fd-inline-help__content--left[dir=rtl]::after,
+[dir=rtl] .fd-inline-help__content--left::after {
+  right: auto;
+  left: -9px;
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg)
+}
 .fd-inline-help__content--bottom-right {
   left: -8px
+}
+.fd-inline-help__content--bottom-right[dir=rtl],
+[dir=rtl] .fd-inline-help__content--bottom-right {
+  left: auto;
+  right: -8px
 }
 .fd-inline-help__content--bottom-right::before {
   top: -8px;
@@ -131,6 +180,21 @@
 }
 .fd-inline-help__content--bottom-left::after {
   top: -7px
+}
+.fd-inline-help__content--bottom-left[dir=rtl],
+[dir=rtl] .fd-inline-help__content--bottom-left {
+  right: auto;
+  left: -8px
+}
+.fd-inline-help__content--bottom-left[dir=rtl]::before,
+[dir=rtl] .fd-inline-help__content--bottom-left::before {
+  right: auto;
+  left: 10px
+}
+.fd-inline-help__content--bottom-left[dir=rtl]::after,
+[dir=rtl] .fd-inline-help__content--bottom-left::after {
+  right: auto;
+  left: 10px
 }
 .fd-inline-help__content--bottom-center {
   right: -162px
