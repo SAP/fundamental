@@ -1,6 +1,6 @@
 /*!
 * Fiori Fundamentals v1.4.1
-* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Copyright (c) 2019 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 @charset "UTF-8";
@@ -13,7 +13,7 @@
   --fd-alert-border-color: var(--fd-color-neutral-4);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
   color: #32363a;
@@ -335,7 +335,7 @@
   line-height: 1
 }
 .fd-alert--information {
-  --fd-alert-background-color: var(--fd-color-background-selected);
+  --fd-alert-background-color: var(--fd-color-background-information);
   --fd-alert-border-color: var(--fd-color-action-1)
 }
 .fd-alert--information::after,
@@ -392,9 +392,10 @@
         .fd-action-bar__action-item
 */
 .fd-action-bar {
+  --fd-action-bar-backbtn-separator-color: var(--fd-color-neutral-3);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   background-color: transparent;
   min-height: 64px;
@@ -410,7 +411,7 @@
 .fd-action-bar__header {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -431,7 +432,9 @@
   }
 }
 .fd-action-bar__back {
-  display: block
+  display: block;
+  position: relative;
+  margin-right: 20px
 }
 @media (min-width:320px) {
   .fd-action-bar__back {
@@ -450,23 +453,19 @@
   position: absolute;
   top: -4px;
   right: -4px;
-  border-right: 1px solid #d9d9d9
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: var(--fd-action-bar-backbtn-separator-color)
 }
 .fd-action-bar__back button {
   margin-top: -8px
 }
-.fd-action-bar__back {
-  position: relative;
-  margin-right: 20px
-}
-.fd-action-bar__back::after {
-  content: '';
-  width: 0;
-  height: 100%;
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  border-right: 1px solid #d9d9d9
+.fd-action-bar__back[dir=rtl],
+[dir=rtl] .fd-action-bar__back {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  margin-left: 20px;
+  margin-right: 0
 }
 .fd-action-bar__title {
   font-size: 1.71429rem;
@@ -483,7 +482,7 @@
   }
 }
 .fd-action-bar__description {
-  color: #6a6d70;
+  color: var(--fd-color-text-3);
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400
@@ -501,7 +500,7 @@
 .fd-action-bar__actions {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -526,6 +525,19 @@
 .fd-action-bar__actions > button:first-child {
   margin-left: 0
 }
+.fd-action-bar__actions > [dir=rtl],
+.fd-action-bar__actions > button[dir=rtl],
+[dir=rtl] .fd-action-bar__actions > *,
+[dir=rtl] .fd-action-bar__actions > button {
+  margin-right: 8px;
+  margin-left: 0
+}
+.fd-action-bar__actions > [dir=rtl]:first-child,
+.fd-action-bar__actions > button[dir=rtl]:first-child,
+[dir=rtl] .fd-action-bar__actions > :first-child,
+[dir=rtl] .fd-action-bar__actions > button:first-child {
+  margin-right: 0
+}
 .fd-action-bar__actions .fd-popover {
   top: -4px
 }
@@ -533,15 +545,18 @@
 .fd-badge+(( --success | --warning | --error ), (--pill | --filled))
 */
 .fd-badge {
+  --fd-badge-color: var(--fd-color-text-3);
+  --fd-badge-background-color: transparent;
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
   font-weight: 700;
-  color: #6a6d70;
+  color: var(--fd-badge-color);
+  background-color: var(--fd-badge-background-color);
   text-transform: uppercase;
   line-height: 16px;
   vertical-align: middle;
@@ -556,26 +571,26 @@
   border-radius: 12px
 }
 .fd-badge--filled {
-  background-color: #fafafa;
+  --fd-badge-background-color: var(--fd-color-neutral-1);
   border: none
 }
 .fd-badge--filled.fd-badge--success {
-  background-color: #e4fcee
+  --fd-badge-background-color: var(--fd-color-background-positive)
 }
 .fd-badge--filled.fd-badge--warning {
-  background-color: #fef7f0
+  --fd-badge-background-color: var(--fd-color-background-alert)
 }
 .fd-badge--filled.fd-badge--error {
-  background-color: #ffb8b8
+  --fd-badge-background-color: var(--fd-color-background-negative)
 }
 .fd-badge--success {
-  color: #107f3e
+  --fd-badge-color: var(--fd-color-positive)
 }
 .fd-badge--warning {
-  color: #e9730c
+  --fd-badge-color: var(--fd-color-alert)
 }
 .fd-badge--error {
-  color: #bd0000
+  --fd-badge-color: var(--fd-color-negative)
 }
 /*!
 .fd-button+( (--compact), (--emphasized, --light), (--standard, --positive, --medium, --negative))+( (.is-disabled | [aria-disabled=true]) | (.is-selected | [aria-selected=true] | (.is-pressed | [aria-pressed=true]))
@@ -1585,7 +1600,7 @@
 .fd-breadcrumb {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: .85714rem;
   line-height: 1.33333;
@@ -1646,7 +1661,7 @@
 .fd-dropdown {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
   display: inline-block
@@ -1686,7 +1701,9 @@
 }
 .fd-dropdown__control[dir=rtl]:not(.fd-button--standard)::after,
 [dir=rtl] .fd-dropdown__control:not(.fd-button--standard)::after {
-  border-right: 1px solid #89919a;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: var(--fd-color-neutral-4);
   border-left: none
 }
 .fd-dropdown__control[dir=rtl].fd-button,
@@ -1695,13 +1712,15 @@
   padding-right: 12px
 }
 .fd-dropdown__control::after {
-  color: #0a6ed1;
+  color: var(--fd-color-action-1);
   width: 34px;
   height: 34px;
   margin-top: -3px;
   padding-top: 10px;
-  border-left: 1px solid #89919a;
-  background: #fafafa;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: var(--fd-color-neutral-4);
+  background-color: var(--fd-color-neutral-1);
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px
 }
@@ -1758,35 +1777,39 @@
   padding-top: 10px
 }
 .fd-dropdown__control.fd-button {
-  color: #32363a;
-  border-color: #89919a;
+  color: var(--fd-color-text-1);
+  border-color: var(--fd-color-neutral-4);
   padding-right: 0;
   padding-top: 2px
 }
+.fd-dropdown__control.fd-button .is-hover,
 .fd-dropdown__control.fd-button:hover {
-  color: #32363a;
-  background-color: #fff;
-  border-color: #7bbaf9;
+  color: var(--fd-color-text-1);
+  background-color: var(--fd-color-background-2);
+  border-color: var(--fd-color-action-hover);
   -webkit-box-shadow: none;
   box-shadow: none
 }
+.fd-dropdown__control.fd-button.is-active,
 .fd-dropdown__control.fd-button:active,
 .fd-dropdown__control.fd-button[aria-expanded=true] {
-  color: #32363a;
-  background-color: #fff;
-  border-color: #7bbaf9;
-  -webkit-box-shadow: 0 0 0 1px #7bbaf9;
-  box-shadow: 0 0 0 1px #7bbaf9
+  color: var(--fd-color-text-1);
+  background-color: var(--fd-color-background-2);
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-hover);
+  box-shadow: 0 0 0 1px var(--fd-color-action-hover)
 }
 .fd-button-group .fd-dropdown__control.fd-button:active,
 .fd-button-group .fd-dropdown__control.fd-button:hover,
+.fd-button-group .fd-dropdown__control.is-active.fd-button,
+.fd-button-group .fd-dropdown__control.is-active[class*=fd-button--],
 .fd-button-group .fd-dropdown__control:active[class*=fd-button--],
 .fd-button-group .fd-dropdown__control:hover[class*=fd-button--],
+.fd-dropdown__control.fd-button--standard.is-active,
 .fd-dropdown__control.fd-button--standard:active,
 .fd-dropdown__control.fd-button--standard:hover {
-  color: #51555a;
-  background-color: #e7e8e9;
-  border-color: #e7e8e9;
+  color: var(--fd-color-text-2);
+  background-color: var(--fd-color-neutral-1);
+  border-color: var(--fd-color-status-4);
   -webkit-box-shadow: none;
   box-shadow: none
 }
@@ -1795,7 +1818,7 @@
 .fd-dropdown__control.fd-button--standard::after {
   width: auto;
   margin-right: 10px;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   background-color: transparent;
   border-left: none
 }
@@ -1832,7 +1855,7 @@
 }
 .fd-dropdown__item:hover {
   color: #51555a;
-  background-color: #eeeeef
+  background-color: #fafafa
 }
 .fd-dropdown__item.is-selected,
 .fd-dropdown__item[aria-selected=true] {
@@ -1850,9 +1873,10 @@
             .fd-form__message(--help, --error, --warning)
 */
 .fd-form {
+  --fd-form-label-color: var(--fd-color-text-3);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
 }
 .fd-form__group::after {
@@ -1958,7 +1982,7 @@
 .fd-form__legend {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
@@ -1966,7 +1990,7 @@
   display: block;
   margin-bottom: 8px;
   border: 0;
-  color: #6a6d70
+  color: var(--fd-color-text-3)
 }
 .fd-form__label.is-disabled,
 .fd-form__legend.is-disabled {
@@ -2057,7 +2081,7 @@
 .fd-input-group {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2093,7 +2117,9 @@
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  border-left: 1px #89919a solid
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: var(--fd-forms-border-color)
 }
 .fd-input-group[dir=rtl] > :first-child,
 [dir=rtl] .fd-input-group > :first-child {
@@ -2101,7 +2127,9 @@
   border-bottom-left-radius: 0;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  border-right: 1px #89919a solid
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: var(--fd-forms-border-color)
 }
 .fd-input-group [type=number] {
   -moz-appearance: textfield
@@ -2149,12 +2177,12 @@
   border-color: transparent
 }
 .fd-input-group__addon {
-  color: #6a6d70;
+  color: var(--fd-color-text-3);
   padding: 0 12px;
   border-style: solid;
   border-width: 1px;
-  border-color: #89919a;
-  background-color: #fafafa;
+  border-color: var(--fd-forms-border-color);
+  background-color: var(--fd-color-neutral-1);
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -2264,14 +2292,14 @@
   width: 100%;
   display: block;
   min-width: 48px;
-  background: #fafafa
+  background-color: var(--fd-color-neutral-1)
 }
 .fd-input-group__button--step-down,
 .fd-input-group__button--step-up {
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
-  color: #0a6ed1;
+  color: var(--fd-color-action);
   position: relative
 }
 .fd-input-group__button--step-down::before,
@@ -2289,14 +2317,11 @@
   transform: translateX(50%)
 }
 .fd-input-group__button--step-up {
-  border-bottom: solid 1px #89919a;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--fd-forms-border-color);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0
-}
-.fd-input-group__button--step-down {
-  border-top: solid 1px #89919a;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0
 }
 .fd-input-group__button--clear {
   background-color: transparent;
@@ -2311,15 +2336,16 @@
 .fd-label+(--success | --warning | --error)
 */
 .fd-label {
+  --fd-label-color: var(--fd-color-text-3);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
   font-weight: 700;
-  color: #6a6d70;
+  color: var(--fd-label-color);
   text-transform: uppercase;
   line-height: 24px;
   vertical-align: middle;
@@ -2328,28 +2354,31 @@
   padding-right: 8px
 }
 .fd-label--success {
-  color: #107f3e
+  --fd-label-color: var(--fd-color-positive)
 }
 .fd-label--warning {
-  color: #e9730c
+  --fd-label-color: var(--fd-color-alert)
 }
 .fd-label--error {
-  color: #bd0000
+  --fd-label-color: var(--fd-color-negative)
 }
 /*!
 .fd-pagination
 */
 .fd-pagination {
+  --fd-pagination-link-color: var(--fd-color-action-1);
+  --fd-pagination-link-color-active: var(--fd-color-text-2);
+  --fd-pagination-total-color: var(--fd-color-text-2);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400
 }
 .fd-pagination__total {
-  color: #51555a;
+  color: var(--fd-pagination-total-color);
   margin-right: 8px
 }
 .fd-pagination__nav {
@@ -2360,16 +2389,15 @@
   margin-bottom: 0
 }
 .fd-pagination__link {
-  color: #0a6ed1;
+  color: var(--fd-pagination-link-color);
   background-color: transparent;
   padding-left: 4px;
   padding-right: 4px;
   position: relative
 }
 .fd-pagination__link.is-selected,
-.fd-pagination__link:active,
 .fd-pagination__link[aria-selected=true] {
-  color: #51555a;
+  color: var(--fd-pagination-link-color-active);
   text-decoration: none;
   cursor: default;
   font-weight: 700
@@ -2402,13 +2430,25 @@
   font-size: .85714rem;
   line-height: 1
 }
+.fd-pagination__link--next[dir=rtl],
+.fd-pagination__link--previous[dir=rtl],
+[dir=rtl] .fd-pagination__link--next,
+[dir=rtl] .fd-pagination__link--previous {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1)
+}
 .fd-pagination__link--next {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1)
 }
+.fd-pagination__link--next[dir=rtl],
+[dir=rtl] .fd-pagination__link--next {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1)
+}
 .fd-pagination__link--more::before {
   content: "...";
-  color: #51555a;
+  color: var(--fd-pagination-link-color-active);
   font-weight: 700
 }
 /*!
@@ -2419,17 +2459,23 @@
 */
 .fd-table {
   --fd-table-cell-spacing: var(--fd-width-gutter);
+  --fd-table-border-color: var(--fd-color-neutral-2);
+  --fd-table-background-color: var(--fd-color-background-2);
+  --fd-table-link-color: var(--fd-color-action-1);
+  --fd-table-header-color: var(--fd-color-text-3);
+  --fd-table-header-background-color: var(--fd-color-neutral-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
   margin-bottom: 12px;
-  border-top: solid 1px #eeeeef;
-  background-color: #fff;
-  border: 1px solid #eeeeef
+  background-color: var(--fd-table-background-color);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--fd-table-border-color)
 }
 .fd-table:last-child {
   margin-bottom: 0;
@@ -2442,24 +2488,24 @@
 }
 .fd-table tr .is-hover,
 .fd-table tr:hover {
-  background-color: #fafafa
+  background-color: var(--fd-color-background-hover)
 }
 .fd-table tr.is-selected,
 .fd-table tr[aria-selected=true] {
-  background-color: rgba(10,110,209,.07)
+  background-color: var(--fd-color-background-selected)
 }
 .fd-table tr.is-selected .is-hover,
 .fd-table tr.is-selected:hover,
 .fd-table tr[aria-selected=true] .is-hover,
 .fd-table tr[aria-selected=true]:hover {
-  background-color: rgba(10,110,209,.1)
+  background-color: var(--fd-color-background-selected-hover)
 }
 .fd-table thead {
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
-  color: #6a6d70;
-  background-color: #fafafa;
+  color: var(--fd-table-header-color);
+  background-color: var(--fd-table-header-background-color);
   text-transform: uppercase
 }
 .fd-table thead tr:hover {
@@ -2471,7 +2517,9 @@
   font-weight: 400
 }
 .fd-table tbody tr {
-  border: 1px solid #eeeeef;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--fd-table-border-color);
   border-left: none;
   border-right: none
 }
@@ -2497,16 +2545,8 @@
   min-width: auto;
   text-align: left
 }
-.fd-table td > a,
-.fd-table th > a {
-  color: #0a6ed1
-}
-.fd-table td > a:hover,
-.fd-table th > a:hover {
-  color: #0a6ed1
-}
 .fd-table__sort-column:hover {
-  background: #f2f2f3;
+  background-color: var(--fd-color-neutral-2);
   cursor: pointer
 }
 .fd-table__sort-column::after {
@@ -2518,14 +2558,12 @@
   margin: 0 12px;
   vertical-align: text-top
 }
-.fd-table__sort-column--asc {
-  background: #eeeeef
+.fd-table__sort-column--asc,
+.fd-table__sort-column--dsc {
+  background-color: var(--fd-color-neutral-2)
 }
 .fd-table__sort-column--asc::after {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgOS41IDExIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA5LjUgMTE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojNkY3Mjc1O308L3N0eWxlPjx0aXRsZT5Tb3J0IEljb248L3RpdGxlPjxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPjxnIGlkPSJMaXN0LUVsZW1lbnRzLS0tVGlsZXNfeDJDXy1UYWJsZXNfeDJDXy1UcmVlIj48ZyBpZD0iRnVuZGFtZW50YWxfTW9kdWxhcl9VSV9MaXN0LUVsZW1lbnRfVGFibGVfRml4YWJsZS1Db2x1bW4iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDguMDAwMDAwLCAtMjQ0NC4wMDAwMDApIj48ZyBpZD0iVGFibGUtQ29weS00IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MS4wMDAwMDAsIDIzMDIuMDAwMDAwKSI+PGcgaWQ9IlRhYmxlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgNzAuMDAwMDAwKSI+PGcgaWQ9IkNvbHVtbi1IZWFkZXJzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgNTYuMDAwMDAwKSI+PGcgaWQ9IlNvcnQtSWNvbiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzcuMDAwMDAwLCAxNi4wMDAwMDApIj48cGF0aCBpZD0iQXJyb3ctZG93biIgY2xhc3M9InN0MCIgZD0iTTQuNywxMUwwLDYuMmg5LjRMNC43LDExeiBNNC43LDEwbDMuMS0zLjFIMS42TDQuNywxMHoiLz48cGF0aCBpZD0iQXJyb3ctdXAiIGNsYXNzPSJzdDAiIGQ9Ik00LjcsMGw0LjcsNC44SDBMNC43LDB6Ii8+PC9nPjwvZz48L2c+PC9nPjwvZz48L2c+PC9zdmc+)
-}
-.fd-table__sort-column--dsc {
-  background: #eeeeef
 }
 .fd-table__sort-column--dsc::after {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgOS41IDExIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA5LjUgMTE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojNkY3Mjc1O308L3N0eWxlPjx0aXRsZT5Tb3J0IEljb248L3RpdGxlPjxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPjxnIGlkPSJMaXN0LUVsZW1lbnRzLS0tVGlsZXNfeDJDXy1UYWJsZXNfeDJDXy1UcmVlIj48ZyBpZD0iRnVuZGFtZW50YWxfTW9kdWxhcl9VSV9MaXN0LUVsZW1lbnRfVGFibGVfRml4YWJsZS1Db2x1bW4iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDguMDAwMDAwLCAtMjQ0NC4wMDAwMDApIj48ZyBpZD0iVGFibGUtQ29weS00IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MS4wMDAwMDAsIDIzMDIuMDAwMDAwKSI+PHBhdGggaWQ9IkFycm93LWRvd24iIGNsYXNzPSJzdDAiIGQ9Ik04MS43LDE0Mmw0LjcsNC44SDc3TDgxLjcsMTQyeiBNODEuNywxNDNsLTMuMSwzLjFoNi4yTDgxLjcsMTQzeiIvPjxwYXRoIGlkPSJBcnJvdy11cCIgY2xhc3M9InN0MCIgZD0iTTgxLjcsMTUzbC00LjctNC44aDkuNEw4MS43LDE1M3oiLz48L2c+PC9nPjwvZz48L3N2Zz4=)
@@ -2543,7 +2581,7 @@
   vertical-align: text-top
 }
 .fd-table th.fd-table__context-menu:hover {
-  background: #f2f2f3;
+  background-color: var(--fd-color-neutral-2);
   cursor: pointer
 }
 .fd-table__fixed-col {
@@ -2551,15 +2589,15 @@
   z-index: 1
 }
 .fd-table th.fd-table__fixed-col {
-  background: #eeeeef;
+  background-color: var(--fd-color-neutral-2);
   z-index: 2;
-  -webkit-box-shadow: 2px 0 0 0 rgba(0,0,0,.08);
-  box-shadow: 2px 0 0 0 rgba(0,0,0,.08)
+  -webkit-box-shadow: 2px 0 0 0 var(--fd-table-border-color);
+  box-shadow: 2px 0 0 0 var(--fd-table-border-color)
 }
 .fd-table td.fd-table__fixed-col {
-  background: #fff;
-  -webkit-box-shadow: 2px 0 0 0 rgba(0,0,0,.08);
-  box-shadow: 2px 0 0 0 rgba(0,0,0,.08)
+  background-color: var(--fd-color-background-2);
+  -webkit-box-shadow: 2px 0 0 0 var(--fd-table-border-color);
+  box-shadow: 2px 0 0 0 var(--fd-table-border-color)
 }
 .fd-table--fixed-wrapper {
   position: relative
@@ -2578,7 +2616,7 @@
   border: none
 }
 .fd-table--striped tbody tr:nth-child(even) {
-  background-color: #fafafa
+  background-color: var(--fd-color-background-hover)
 }
 /*!
 .fd-tabs+()
@@ -2587,11 +2625,15 @@
 .fd-tabs__panel+([aria-expanded]|.is-expanded)
 */
 .fd-tabs {
+  --fd-tabs-border-color: var(--fd-color-neutral-3);
+  --fd-tabs-background-color: var(--fd-color-background-2);
+  --fd-tabs-link-color: var(--fd-color-text-2);
+  --fd-tabs-link-border-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  background: #fff;
+  background-color: var(--fd-tabs-background-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2600,7 +2642,9 @@
   padding-left: 0;
   margin-bottom: 12px;
   list-style: none;
-  border-bottom: solid 1px #d9d9d9
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--fd-tabs-background-color)
 }
 .fd-tabs__item {
   padding: 0 16px
@@ -2613,10 +2657,10 @@
   line-height: 1.42857;
   font-weight: 400;
   cursor: pointer;
-  color: #51555a
+  color: var(--fd-tabs-link-color)
 }
 .fd-tabs__link:link {
-  color: #51555a
+  color: var(--fd-tabs-link-color)
 }
 .fd-tabs__link::after {
   -webkit-transition: all 125ms ease-in;
@@ -2633,20 +2677,20 @@
 }
 .fd-tabs__link .is-hover,
 .fd-tabs__link:hover {
-  color: #0254a7
+  color: var(--fd-color-action-selected)
 }
 .fd-tabs__link.is-selected,
 .fd-tabs__link[aria-selected=true] {
-  color: #0a6ed1
+  color: var(--fd-color-action-1)
 }
 .fd-tabs__link.is-selected::after,
 .fd-tabs__link[aria-selected=true]::after {
-  background-color: #0a6ed1
+  background-color: var(--fd-tabs-link-border-color)
 }
 .fd-tabs__link.is-disabled,
 .fd-tabs__link:disabled,
 .fd-tabs__link[aria-disabled=true] {
-  color: rgba(10,110,209,.4);
+  color: var(--fd-color-action-disabled);
   cursor: not-allowed
 }
 .fd-tabs__panel[aria-expanded=false] {
@@ -2666,16 +2710,18 @@
       .fd-modal__button-secondary
 */
 .fd-modal {
+  --fd-modal-background-color: var(--fd-color-background-2);
+  --fd-modal-border-color: var(--fd-color-neutral-2);
   --fd-modal-padding-x: var(--fd-width-gutter);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   max-width: 460px
 }
 .fd-modal__content {
   border-radius: 4px;
-  background-color: #fff
+  background-color: var(--fd-modal-background-color)
 }
 .fd-modal__body,
 .fd-modal__footer,
@@ -2687,7 +2733,9 @@
 }
 .fd-modal__header {
   position: relative;
-  border-bottom: 1px solid #eeeeef
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--fd-modal-border-color)
 }
 .fd-modal__title {
   font-size: 1.14286rem;
@@ -2721,6 +2769,11 @@
   border-radius: 4px;
   width: 36px;
   height: 36px
+}
+.fd-modal__close[dir=rtl],
+[dir=rtl] .fd-modal__close {
+  left: 4px;
+  right: auto
 }
 .fd-modal__close::before {
   font-family: SAP-icons;
@@ -2756,7 +2809,13 @@
 }
 .fd-modal__footer {
   text-align: right;
-  border-top: 1px solid #eeeeef
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: var(--fd-modal-border-color)
+}
+.fd-modal__footer[dir=rtl],
+[dir=rtl] .fd-modal__footer {
+  text-align: left
 }
 /*!
 .fd-tree+(--header)
@@ -2768,14 +2827,24 @@
 */
 .fd-tree {
   --fd-tree-cell-spacing: var(--fd-width-gutter);
+  --fd-tree-border-color: var(--fd-color-neutral-2);
+  --fd-tree-background-color: var(--fd-color-background-2);
+  --fd-tree-link-color: var(--fd-color-action-1);
+  --fd-tree-header-color: var(--fd-color-text-3);
+  --fd-tree-header-background-color: var(--fd-color-neutral-2);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
   width: 100%;
   max-width: 100%;
-  border-bottom: solid 0 transparent;
+  background-color: var(--fd-tree-background-color);
+  border-bottom-style: solid;
+  border-bottom-width: 0;
+  border-bottom-color: var(--fd-tree-border-color);
+  padding-left: 0;
+  padding-right: 0;
   margin-bottom: 12px;
   margin-left: 0
 }
@@ -2788,9 +2857,11 @@
 }
 .fd-tree--header {
   border-bottom: 0;
-  border-top: solid 0 transparent;
+  border-top-style: solid;
+  border-top-width: 0;
+  border-top-color: var(--fd-tree-border-color);
   margin-bottom: 0;
-  background-color: #eeeeef
+  background-color: var(--fd-tree-header-background-color)
 }
 .fd-tree__group {
   -webkit-transition: opacity 125ms linear;
@@ -2798,7 +2869,9 @@
   max-height: auto;
   opacity: 1;
   margin-bottom: 0;
-  margin-left: 0
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 0
 }
 .fd-tree__group.is-hidden,
 .fd-tree__group[aria-hidden=true] {
@@ -2807,7 +2880,9 @@
   overflow: hidden
 }
 .fd-tree__item {
-  border-top: solid 0 transparent;
+  border-top-style: solid;
+  border-top-width: 0;
+  border-top-color: var(--fd-tree-border-color);
   margin-bottom: 0;
   list-style: none
 }
@@ -2828,14 +2903,14 @@
 }
 .fd-tree__row .is-hover,
 .fd-tree__row:hover {
-  background-color: #fafafa
+  background-color: var(--fd-color-background-hover)
 }
 .fd-tree__row--header {
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
-  color: #6a6d70;
-  background-color: #edeef0;
+  color: var(--fd-tree-header-color);
+  background-color: var(--fd-tree-header-background-color);
   text-transform: uppercase
 }
 .fd-tree__row--header .is-hover,
@@ -2844,7 +2919,8 @@
 }
 .fd-tree__row.is-selected,
 .fd-tree__row[aria-selected=true] {
-  background-color: rgba(10,110,209,.07)
+  background-color: rgba(10,110,209,.07);
+  background-color: var(--fd-color-background-selected)
 }
 .fd-tree__col {
   -webkit-box-flex: 1;
@@ -2852,6 +2928,11 @@
   flex: 1;
   padding: 12px 0;
   padding-left: 30px
+}
+.fd-tree__col[dir=rtl],
+[dir=rtl] .fd-tree__col {
+  padding-left: 0;
+  padding-right: 30px
 }
 .fd-tree__col--control {
   -webkit-box-flex: 1;
@@ -2862,31 +2943,75 @@
 .fd-tree__group--sublevel-1 .fd-tree__col--control {
   padding-left: 60px
 }
+.fd-tree__group--sublevel-1 .fd-tree__col--control[dir=rtl],
+[dir=rtl] .fd-tree__group--sublevel-1 .fd-tree__col--control {
+  padding-left: 0;
+  padding-right: 60px
+}
 .fd-tree__group--sublevel-2 .fd-tree__col--control {
   padding-left: 90px
+}
+.fd-tree__group--sublevel-2 .fd-tree__col--control[dir=rtl],
+[dir=rtl] .fd-tree__group--sublevel-2 .fd-tree__col--control {
+  padding-left: 0;
+  padding-right: 90px
 }
 .fd-tree__group--sublevel-3 .fd-tree__col--control {
   padding-left: 120px
 }
+.fd-tree__group--sublevel-3 .fd-tree__col--control[dir=rtl],
+[dir=rtl] .fd-tree__group--sublevel-3 .fd-tree__col--control {
+  padding-left: 0;
+  padding-right: 120px
+}
 .fd-tree__group--sublevel-4 .fd-tree__col--control {
   padding-left: 150px
+}
+.fd-tree__group--sublevel-4 .fd-tree__col--control[dir=rtl],
+[dir=rtl] .fd-tree__group--sublevel-4 .fd-tree__col--control {
+  padding-left: 0;
+  padding-right: 150px
 }
 .fd-tree__group--sublevel-5 .fd-tree__col--control {
   padding-left: 180px
 }
+.fd-tree__group--sublevel-5 .fd-tree__col--control[dir=rtl],
+[dir=rtl] .fd-tree__group--sublevel-5 .fd-tree__col--control {
+  padding-left: 0;
+  padding-right: 180px
+}
 .fd-tree__group--sublevel-6 .fd-tree__col--control {
   padding-left: 210px
+}
+.fd-tree__group--sublevel-6 .fd-tree__col--control[dir=rtl],
+[dir=rtl] .fd-tree__group--sublevel-6 .fd-tree__col--control {
+  padding-left: 0;
+  padding-right: 210px
 }
 .fd-tree__group--sublevel-7 .fd-tree__col--control {
   padding-left: 240px
 }
+.fd-tree__group--sublevel-7 .fd-tree__col--control[dir=rtl],
+[dir=rtl] .fd-tree__group--sublevel-7 .fd-tree__col--control {
+  padding-left: 0;
+  padding-right: 240px
+}
 .fd-tree__group--sublevel-8 .fd-tree__col--control {
   padding-left: 270px
+}
+.fd-tree__group--sublevel-8 .fd-tree__col--control[dir=rtl],
+[dir=rtl] .fd-tree__group--sublevel-8 .fd-tree__col--control {
+  padding-left: 0;
+  padding-right: 270px
 }
 .fd-tree__col--actions {
   padding-top: 0;
   padding-bottom: 0;
   text-align: right
+}
+.fd-tree__col--actions[dir=rtl],
+[dir=rtl] .fd-tree__col--actions {
+  text-align: left
 }
 .fd-tree__control {
   display: inline-block;
@@ -2912,8 +3037,8 @@
   position: absolute;
   top: calc(50% - 18px/2);
   margin-left: -30px;
-  width: 18px;
   margin-right: 12px;
+  width: 18px;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
   vertical-align: middle;
@@ -2921,7 +3046,7 @@
   transition: -webkit-transform 125ms linear;
   transition: transform 125ms linear;
   transition: transform 125ms linear,-webkit-transform 125ms linear;
-  color: #0a6ed1
+  color: var(--fd-color-action-1)
 }
 .fd-tree__control::before {
   font-family: SAP-icons;
@@ -2948,17 +3073,17 @@
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
+.fd-tree__control[dir=rtl],
+[dir=rtl] .fd-tree__control {
+  margin-left: 12px;
+  margin-right: -30px;
+  -webkit-transform: rotate(0);
+  transform: rotate(0)
+}
 .fd-tree__control.is-pressed,
 .fd-tree__control[aria-pressed=true] {
   -webkit-transform: rotate(270deg);
   transform: rotate(270deg)
-}
-.fd-tree a {
-  color: #0a6ed1
-}
-.fd-tree a .is-hover,
-.fd-tree a:hover {
-  color: #0a6ed1
 }
 /*!
 .fd-list-group
@@ -2966,9 +3091,10 @@
       .fd-list-group__action
 */
 .fd-list-group {
+  --fd-list-group-background-color: transparent;
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   margin-left: 0
 }
@@ -2979,12 +3105,12 @@
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  background-color: none;
+  background-color: var(--fd-list-group-background-color);
   -webkit-transition: background-color 125ms ease-in;
   transition: background-color 125ms ease-in
 }
 .fd-list-group__item:hover {
-  background-color: #fafafa
+  --fd-list-group-background-color: var(--fd-color-background-hover)
 }
 .fd-list-group__action {
   -webkit-box-flex: 1;
@@ -3004,9 +3130,13 @@
     .fd-tooltip__content+(left, right, bottom-left, bottom-right)
 */
 .fd-inline-help {
+  --fd-inline-help-color: var(--fd-color-text-1);
+  --fd-inline-help-background-color: var(--fd-color-background-2);
+  --fd-inline-help-icon-color: var(--fd-color-text-5);
+  --fd-inline-help-icon-background-color: var(--fd-color-status-4);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
   display: inline-block;
@@ -3021,20 +3151,20 @@
   font-style: normal;
   position: absolute;
   left: 0;
-  color: #fff;
   border-radius: 50%;
-  background-color: #6a6d70;
+  color: var(--fd-inline-help-icon-color);
+  background-color: var(--fd-inline-help-icon-background-color);
   text-align: center
 }
 .fd-inline-help__content {
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
-  background: #fff;
+  background-color: var(--fd-inline-help-background-color);
   padding: 12px;
   display: block;
   position: absolute;
-  color: #51555a;
+  color: var(--fd-inline-help-color);
   top: 30px;
   right: -12px;
   min-width: 350px;
@@ -3045,7 +3175,9 @@
   border-radius: 5px;
   visibility: hidden;
   opacity: 0;
-  border: 1px #89919a solid;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--fd-color-status-4);
   -webkit-filter: drop-shadow(rgba(0, 0, 0, .1) 0 2px 10px);
   filter: drop-shadow(rgba(0, 0, 0, .1) 0 2px 10px)
 }
@@ -3054,7 +3186,7 @@
   width: 0;
   border-style: solid;
   border-width: 0 6.5px 8px 6.5px;
-  border-bottom-color: #89919a;
+  border-bottom-color: var(--fd-color-status-4);
   border-left-color: transparent;
   border-right-color: transparent;
   content: "";
@@ -3067,7 +3199,7 @@
   width: 0;
   border-style: solid;
   border-width: 0 6.5px 8px 6.5px;
-  border-bottom-color: #fff;
+  border-bottom-color: var(--fd-color-background-2);
   border-left-color: transparent;
   border-right-color: transparent;
   content: "";
@@ -3091,6 +3223,25 @@
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg)
 }
+.fd-inline-help__content--right[dir=rtl],
+[dir=rtl] .fd-inline-help__content--right {
+  left: auto;
+  right: 30px
+}
+.fd-inline-help__content--right[dir=rtl]::before,
+[dir=rtl] .fd-inline-help__content--right::before {
+  left: auto;
+  right: -10px;
+  -webkit-transform: rotate(-270deg);
+  transform: rotate(-270deg)
+}
+.fd-inline-help__content--right[dir=rtl]::after,
+[dir=rtl] .fd-inline-help__content--right::after {
+  left: auto;
+  right: -9px;
+  -webkit-transform: rotate(-270deg);
+  transform: rotate(-270deg)
+}
 .fd-inline-help__content--left {
   top: -12px;
   right: 30px
@@ -3107,8 +3258,32 @@
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg)
 }
+.fd-inline-help__content--left[dir=rtl],
+[dir=rtl] .fd-inline-help__content--left {
+  right: auto;
+  left: 30px
+}
+.fd-inline-help__content--left[dir=rtl]::before,
+[dir=rtl] .fd-inline-help__content--left::before {
+  right: auto;
+  left: -10px;
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg)
+}
+.fd-inline-help__content--left[dir=rtl]::after,
+[dir=rtl] .fd-inline-help__content--left::after {
+  right: auto;
+  left: -9px;
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg)
+}
 .fd-inline-help__content--bottom-right {
   left: -8px
+}
+.fd-inline-help__content--bottom-right[dir=rtl],
+[dir=rtl] .fd-inline-help__content--bottom-right {
+  left: auto;
+  right: -8px
 }
 .fd-inline-help__content--bottom-right::before {
   top: -8px;
@@ -3127,6 +3302,21 @@
 }
 .fd-inline-help__content--bottom-left::after {
   top: -7px
+}
+.fd-inline-help__content--bottom-left[dir=rtl],
+[dir=rtl] .fd-inline-help__content--bottom-left {
+  right: auto;
+  left: -8px
+}
+.fd-inline-help__content--bottom-left[dir=rtl]::before,
+[dir=rtl] .fd-inline-help__content--bottom-left::before {
+  right: auto;
+  left: 10px
+}
+.fd-inline-help__content--bottom-left[dir=rtl]::after,
+[dir=rtl] .fd-inline-help__content--bottom-left::after {
+  right: auto;
+  left: 10px
 }
 .fd-inline-help__content--bottom-center {
   right: -162px
@@ -3152,14 +3342,14 @@
 .fd-nav {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding-left: 0;
+  padding: 0;
   margin-bottom: 0;
   list-style: none
 }
@@ -3175,7 +3365,7 @@
 }
 .fd-nav__link.is-selected,
 .fd-nav__link[aria-selected=true] {
-  color: #32363a
+  color: var(--fd-color-text-1)
 }
 /*!
 .fd-tabs+()
@@ -3184,11 +3374,15 @@
 .fd-tabs__panel+([aria-expanded]|.is-expanded)
 */
 .fd-tabs {
+  --fd-tabs-border-color: var(--fd-color-neutral-3);
+  --fd-tabs-background-color: var(--fd-color-background-2);
+  --fd-tabs-link-color: var(--fd-color-text-2);
+  --fd-tabs-link-border-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  background: #fff;
+  background-color: var(--fd-tabs-background-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3197,7 +3391,9 @@
   padding-left: 0;
   margin-bottom: 12px;
   list-style: none;
-  border-bottom: solid 1px #d9d9d9
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--fd-tabs-background-color)
 }
 .fd-tabs__item {
   padding: 0 16px
@@ -3210,10 +3406,10 @@
   line-height: 1.42857;
   font-weight: 400;
   cursor: pointer;
-  color: #51555a
+  color: var(--fd-tabs-link-color)
 }
 .fd-tabs__link:link {
-  color: #51555a
+  color: var(--fd-tabs-link-color)
 }
 .fd-tabs__link::after {
   -webkit-transition: all 125ms ease-in;
@@ -3230,20 +3426,20 @@
 }
 .fd-tabs__link .is-hover,
 .fd-tabs__link:hover {
-  color: #0254a7
+  color: var(--fd-color-action-selected)
 }
 .fd-tabs__link.is-selected,
 .fd-tabs__link[aria-selected=true] {
-  color: #0a6ed1
+  color: var(--fd-color-action-1)
 }
 .fd-tabs__link.is-selected::after,
 .fd-tabs__link[aria-selected=true]::after {
-  background-color: #0a6ed1
+  background-color: var(--fd-tabs-link-border-color)
 }
 .fd-tabs__link.is-disabled,
 .fd-tabs__link:disabled,
 .fd-tabs__link[aria-disabled=true] {
-  color: rgba(10,110,209,.4);
+  color: var(--fd-color-action-disabled);
   cursor: not-allowed
 }
 .fd-tabs__panel[aria-expanded=false] {
@@ -3261,7 +3457,7 @@
 .fd-toggle {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
   display: inline-block;
@@ -3320,7 +3516,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #d9d9d9;
+  background-color: var(--fd-color-neutral-3);
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 34px
@@ -3332,8 +3528,10 @@
   width: 28px;
   left: 0;
   top: -5px;
-  background-color: #fff;
-  border: 1px solid #d9d9d9;
+  background-color: var(--fd-color-background-2);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--fd-color-neutral-3);
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 50%
@@ -3344,8 +3542,8 @@ input:checked + .fd-toggle__switch {
 input:checked + .fd-toggle__switch:before {
   -webkit-transform: translateX(26px);
   transform: translateX(26px);
-  background: #0854a1;
-  border-color: #0854a1;
+  background-color: var(--fd-color-action-selected);
+  border-color: var(--fd-color-action-selected);
   pointer-events: none;
   left: -6px
 }
@@ -3393,9 +3591,10 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 * Licensed under MIT
 */
 .fd-spinner {
+  --fd-spinner-background-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
   width: 29px;
@@ -3420,7 +3619,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .is-busy::before,
 [aria-busy=true]::before {
   position: absolute;
-  background-color: rgba(237,238,240,.95);
+  background-color: var(--fd-color-background-1);
+  opacity: .95;
   top: 0;
   right: 0;
   bottom: 0;
@@ -3441,7 +3641,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   position: relative;
   width: 5px;
   height: 100%;
-  background-color: #0a6ed1
+  background-color: var(--fd-spinner-background-color)
 }
 .fd-spinner div::after,
 .fd-spinner div::before {
@@ -3449,7 +3649,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   position: absolute;
   width: 5px;
   height: 100%;
-  background-color: #0a6ed1
+  background-color: var(--fd-spinner-background-color)
 }
 .fd-spinner div::before {
   left: 8px
@@ -3511,7 +3711,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 [class*=fd-image] {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: inline-block;
   vertical-align: middle;
@@ -3555,7 +3755,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-global-nav {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   border-bottom: solid 1px #eeeeef;
   background: #fff;
@@ -3626,7 +3826,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   min-height: 48px;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI5Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMyMTI2MkMiIGQ9Ik0xMS45MzUgMS40NzVMNi4xODggNy45MjdhLjI2NC4yNjQgMCAwIDEtLjM3OCAwTC4wNjUgMS40NzVhLjIzNi4yMzYgMCAwIDEgLjAyNi0uMzQzTDEuMzgxLjA1OGEuMjUzLjI1MyAwIDAgMSAuMTYzLS4wNTlMMS41NjMgMGEuMjUyLjI1MiAwIDAgMSAuMTcxLjA4NWw0LjI2NSA0Ljg4IDQuMjY3LTQuODhhLjI1Mi4yNTIgMCAwIDEgLjM1Mi0uMDI3bDEuMjkxIDEuMDc0Yy4wNS4wNDIuMDgxLjEwMi4wODYuMTY2YS4yMzYuMjM2IDAgMCAxLS4wNi4xNzd6Ii8+PC9zdmc+);
   background-repeat: no-repeat;
-  background-position: calc(100% - 12px) center;
+  background-position: calc(100% - 36px) center;
   padding-right: 30px;
   color: #51555a
 }
@@ -3720,7 +3920,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-side-nav__sublist {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3772,7 +3972,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-side-nav__link.has-child {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI5Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMyMTI2MkMiIGQ9Ik0xMS45MzUgMS40NzVMNi4xODggNy45MjdhLjI2NC4yNjQgMCAwIDEtLjM3OCAwTC4wNjUgMS40NzVhLjIzNi4yMzYgMCAwIDEgLjAyNi0uMzQzTDEuMzgxLjA1OGEuMjUzLjI1MyAwIDAgMSAuMTYzLS4wNTlMMS41NjMgMGEuMjUyLjI1MiAwIDAgMSAuMTcxLjA4NWw0LjI2NSA0Ljg4IDQuMjY3LTQuODhhLjI1Mi4yNTIgMCAwIDEgLjM1Mi0uMDI3bDEuMjkxIDEuMDc0Yy4wNS4wNDIuMDgxLjEwMi4wODYuMTY2YS4yMzYuMjM2IDAgMCAxLS4wNi4xNzd6Ii8+PC9zdmc+);
   background-repeat: no-repeat;
-  background-position: calc(100% - 12px) center
+  background-position: calc(100% - 36px) center
 }
 .fd-side-nav__link.is-expanded,
 .fd-side-nav__link[aria-expanded=true] {
@@ -3798,17 +3998,19 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-link
 */
 .fd-link {
-  color: #0a6ed1;
-  border-bottom: solid 1px #0a6ed1
+  color: var(--fd-color-action-1);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--fd-color-action-1)
 }
 .fd-link .is-hover,
 .fd-link:hover {
-  color: #085caf;
-  border-bottom-color: #085caf
+  color: var(--fd-color-action-hover);
+  border-bottom-color: var(--fd-color-action-hover)
 }
 .fd-link:visited {
-  color: #3c0ad1;
-  border-bottom-color: #3c0ad1
+  color: var(--fd-color-action-visited);
+  border-bottom-color: var(--fd-color-action-visited)
 }
 .fd-link.is-active,
 .fd-link.is-pressed,
@@ -3816,22 +4018,26 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-link:active,
 .fd-link[aria-pressed=true],
 .fd-link[aria-selected=true] {
-  color: #0254a7;
-  border-bottom-color: #0254a7
+  color: var(--fd-color-action-selected);
+  border-bottom-color: var(--fd-color-action-selected)
 }
 .fd-link.is-disabled,
 .fd-link:disabled,
 .fd-link[aria-disabled=true] {
-  color: rgba(10,110,209,.4);
-  border-bottom-color: rgba(10,110,209,.4)
+  color: var(--fd-color-action-disabled);
+  border-bottom-color: var(--fd-color-action-disabled)
 }
 /*!
 .fd-identifier+((--circle), (--thumbnail), (--xxs|--xs|--s|--m|--l|--xl|--xxl))
 */
+.fd-identifier {
+  --fd-identifier-color: var(--fd-color-text-5);
+  --fd-identifier-background-color: var(--fd-color-status-4)
+}
 [class*=fd-identifier] {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: inline-block;
   vertical-align: middle;
@@ -3840,8 +4046,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   background-size: cover;
   background-position: 50%;
   border-radius: 4px;
-  background-color: #6a6d70;
-  color: #fff
+  background-color: var(--fd-identifier-background-color);
+  color: var(--fd-identifier-color)
 }
 .fd-identifier--xxs {
   width: 20px;
@@ -3976,8 +4182,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   overflow: hidden
 }
 .fd-identifier--transparent {
-  background-color: transparent;
-  color: #32363a
+  --fd-identifier-color: var(--fd-color-text-1);
+  --fd-identifier-background-color: transparent
 }
 /*!
 .fd-mega-menu+(--no-border)
@@ -3987,7 +4193,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-mega-menu {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   background-color: #fff;
   width: 250px;
@@ -4031,7 +4237,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-mega-menu__sublist {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4114,9 +4320,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-menu {
   --fd-menu-item-separator-color: var(--fd-color-neutral-2);
+  --fd-menu-item-color: var(--fd-color-text-2);
+  --fd-menu-item-background-color: var(--fd-color-background-2);
+  --fd-menu-title-color: var(--fd-color-text-3);
+  --fd-menu-title-background-color: var(--fd-color-neutral-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
   display: block;
@@ -4155,35 +4365,34 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   line-height: 1.33333;
   font-weight: 400;
   text-transform: uppercase;
-  color: #6a6d70;
-  background: #fafafa
+  color: var(--fd-menu-title-color);
+  background-color: var(--fd-menu-title-background-color)
 }
 .fd-menu__item {
   display: block;
   cursor: pointer;
   padding: 10px 24px;
-  color: #51555a;
-  background-color: #fff;
-  font-weight: 400;
-  text-align: left
+  background-color: var(--fd-menu-item-background-color);
+  color: var(--fd-menu-item-color);
+  font-weight: 400
 }
 .fd-menu__item > .fd-checkbox {
   margin: 0 10px 0 0
 }
 .fd-menu__item .is-hover,
 .fd-menu__item:hover {
-  color: #32363a;
-  background-color: #eeeeef
+  color: var(--fd-color-text-1);
+  background-color: var(--fd-color-background-hover)
 }
 .fd-menu__item.is-selected,
 .fd-menu__item[aria-selected=true] {
-  background-color: rgba(10,110,209,.07)
+  background-color: var(--fd-color-background-selected)
 }
 .fd-menu__item.is-selected .is-hover,
 .fd-menu__item.is-selected:hover,
 .fd-menu__item[aria-selected=true] .is-hover,
 .fd-menu__item[aria-selected=true]:hover {
-  background-color: rgba(10,110,209,.1)
+  background-color: var(--fd-color-background-selected-hover)
 }
 .fd-menu--addon-before .fd-menu__item {
   padding-left: 32px
@@ -4191,18 +4400,22 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-menu__addon-before {
   float: left;
   clear: left;
-  padding: 10px
+  height: 39px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 30px
 }
-.fd-menu hr {
-  border: none;
-  border-top: 1px solid #eeeeef;
-  margin: 0
-}
-.fd-menu__link {
-  color: #0a6ed1
-}
-.fd-menu__link:hover {
-  color: #085caf
+.fd-menu__addon-before[dir=rtl],
+[dir=rtl] .fd-menu__addon-before {
+  float: right;
+  clear: right
 }
 /*!
 .fd-button-group+()
@@ -4272,15 +4485,18 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-tile__actions+()
 */
 .fd-tile {
+  --fd-tile-color: var(--fd-color-text-3);
+  --fd-tile-background-color: var(--fd-color-background-2);
+  --fd-tile-title-color: var(--fd-color-text-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: #6a6d70;
-  background-color: #fff
+  color: var(--fd-tile-color);
+  background-color: var(--fd-tile-background-color)
 }
 .fd-tile--button,
 .fd-tile[role=button] {
@@ -4304,6 +4520,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-tile__media {
   padding: 10px 0 10px 16px
 }
+.fd-tile__media[dir=rtl],
+[dir=rtl] .fd-tile__media {
+  padding-right: 16px;
+  padding-left: 0
+}
 .fd-tile__content {
   -webkit-box-flex: 1;
   -ms-flex: 1;
@@ -4312,14 +4533,23 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   -ms-flex-item-align: center;
   align-self: center
 }
+.fd-tile__content[dir=rtl],
+[dir=rtl] .fd-tile__content {
+  padding-right: 12px;
+  padding-left: 16px
+}
 .fd-tile__content:first-child {
   padding-left: 16px
+}
+.fd-tile__content:first-child[dir=rtl],
+[dir=rtl] .fd-tile__content:first-child {
+  padding-right: 16px
 }
 .fd-tile__title {
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
-  color: #51555a;
+  color: var(--fd-tile-title-color);
   margin-bottom: 0
 }
 .fd-tile__actions {
@@ -4331,12 +4561,15 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-product-tile__title+()
 */
 .fd-product-tile {
+  --fd-product-tile-color: var(--fd-color-text-3);
+  --fd-product-tile-background-color: var(--fd-color-background-2);
+  --fd-product-tile-title-color: var(--fd-color-text-1);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #6a6d70;
-  background-color: #fff
+  color: var(--fd-product-tile-color);
+  background-color: var(--fd-product-tile-background-color)
 }
 .fd-product-tile--button,
 .fd-product-tile[role=button] {
@@ -4371,13 +4604,15 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   font-size: 1.14286rem;
   line-height: 1.25;
   font-weight: 400;
-  color: #32363a;
+  color: var(--fd-product-tile-title-color);
+  margin-bottom: 0;
   margin-bottom: 0
 }
 /*!
 .fd-tile-grid+(--2col | --4col | --5col | --6col)
 */
 .fd-tile-grid {
+  --fd-tile-grid-border-color: var(--fd-color-neutral-2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4393,8 +4628,14 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   margin-bottom: 0;
   border-radius: 0!important;
   position: relative;
-  border: solid 1px #edeef0;
-  border-width: 0 1px 1px 0
+  border-style: solid;
+  border-color: var(--fd-tile-grid-border-color);
+  border-width: 0 1px 1px 0;
+  min-width: calc(100% / 2);
+  width: auto;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1
 }
 @media (min-width:320px) {
   .fd-tile-grid {
@@ -4414,17 +4655,32 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   .fd-tile-grid--2col {
     grid-template-columns: repeat(2,1fr)
   }
+  .fd-tile-grid--2col > * {
+    min-width: calc(100% / 2)
+  }
   .fd-tile-grid--3col {
     grid-template-columns: repeat(3,1fr)
+  }
+  .fd-tile-grid--3col > * {
+    min-width: calc(100% / 3)
   }
   .fd-tile-grid--4col {
     grid-template-columns: repeat(4,1fr)
   }
+  .fd-tile-grid--4col > * {
+    min-width: calc(100% / 4)
+  }
   .fd-tile-grid--5col {
     grid-template-columns: repeat(5,1fr)
   }
+  .fd-tile-grid--5col > * {
+    min-width: calc(100% / 5)
+  }
   .fd-tile-grid--6col {
     grid-template-columns: repeat(6,1fr)
+  }
+  .fd-tile-grid--6col > * {
+    min-width: calc(100% / 6)
   }
 }
 /*!
@@ -4433,15 +4689,18 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     .fd-token__title+()
 */
 .fd-token {
+  --fd-token-color: var(--fd-color-text-2);
+  --fd-token-background-color: var(--fd-color-background-information);
+  --fd-token-border-color: transparent;
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
-  color: #51555a;
-  background-color: rgba(10,110,209,.07);
+  color: var(--fd-token-color);
+  background-color: var(--fd-token-background-color);
   line-height: 24px;
   vertical-align: middle;
   display: inline-block;
@@ -4450,7 +4709,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
-  border-color: transparent;
+  border-color: var(--fd-token-border-color);
   cursor: pointer
 }
 .fd-token::after {
@@ -4474,7 +4733,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   line-height: 1
 }
 .fd-token::after {
-  color: #0a6ed1;
+  color: var(--fd-color-action-1);
   margin-left: 4px;
   vertical-align: bottom;
   line-height: 24px
@@ -4504,7 +4763,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-token[dir=rtl]::before,
 [dir=rtl] .fd-token::before {
-  color: #0a6ed1;
+  color: var(--fd-color-action-1);
   margin-left: 4px;
   vertical-align: bottom;
   line-height: 24px
@@ -4527,7 +4786,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-tag {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: .85714rem;
   line-height: 1.33333;
@@ -4627,11 +4886,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 */
 .fd-calendar .fd-calendar__column-header,
 .fd-calendar .fd-calendar__item {
+  --fd-calendar-item-color: var(--fd-color-action-selected);
+  --fd-calendar-item-background-color: var(--fd-color-background-2);
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
-  color: #0254a7;
-  background-color: #fff;
+  color: var(--fd-calendar-item-color);
+  background-color: var(--fd-calendar-item-background-color);
   height: 36px;
   min-width: 36px;
   padding: 0;
@@ -4651,26 +4912,26 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-calendar .fd-calendar__column-header:hover,
 .fd-calendar .fd-calendar__item:hover {
   cursor: pointer;
-  background-color: #fafafa
+  --fd-calendar-item-background-color: var(--fd-color-neutral-1)
 }
 .fd-calendar .fd-calendar__item--other-month {
-  color: #32363a;
+  --fd-calendar-item-color: var(--fd-color-text-1);
   opacity: .4
 }
 .fd-calendar .fd-calendar__item--disabled,
 .fd-calendar .fd-calendar__item.is-disabled,
 .fd-calendar .fd-calendar__item[aria-disabled=true] {
-  color: rgba(10,110,209,.4)
+  --fd-calendar-item-color: var(--fd-color-action-disabled)
 }
 .fd-calendar .fd-calendar__item--disabled:hover,
 .fd-calendar .fd-calendar__item.is-disabled:hover,
 .fd-calendar .fd-calendar__item:hover[aria-disabled=true] {
   cursor: not-allowed;
-  background-color: #fff
+  --fd-calendar-item-background-color: var(--fd-color-background-2)
 }
 .fd-calendar .fd-calendar__item--current {
   position: relative;
-  color: #0254a7
+  --fd-calendar-item-color: var(--fd-color-action-selected)
 }
 .fd-calendar .fd-calendar__item--current::after {
   content: "";
@@ -4679,13 +4940,16 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   right: 0;
   bottom: 0;
   left: 0;
-  border: solid 2px #0a6ed1;
+  height: 36px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--fd-color-action);
   border-radius: 4px
 }
 .fd-calendar .fd-calendar__item--blocked,
 .fd-calendar .fd-calendar__item.is-blocked {
   text-decoration: line-through;
-  color: #32363a
+  --fd-calendar-item-color: var(--fd-color-text-1)
 }
 .fd-calendar .fd-calendar__item--blocked:hover,
 .fd-calendar .fd-calendar__item.is-blocked:hover {
@@ -4693,11 +4957,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   background-color: #fff
 }
 .fd-calendar .fd-calendar__item.is-selected {
-  background-color: #0254a7;
-  color: #fff
+  --fd-calendar-item-background-color: var(--fd-color-action-selected);
+  --fd-calendar-item-color: var(--fd-color-text-5)
 }
 .fd-calendar .fd-calendar__item.is-selected-range {
-  background-color: rgba(10,110,209,.07);
+  --fd-calendar-item-background-color: var(--fd-color-background-selected);
   border-radius: 0
 }
 .fd-calendar .fd-calendar__item.is-selected-range-first {
@@ -4717,7 +4981,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-calendar {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   width: 252px
 }
@@ -4725,11 +4989,16 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: grid
 }
 .fd-calendar .fd-calendar__years {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   display: grid
 }
 .fd-calendar .fd-calendar__header {
-  -webkit-box-shadow: inset 0 -1px 0 0 #eeeeef;
-  box-shadow: inset 0 -1px 0 0 #eeeeef;
+  -webkit-box-shadow: inset 0 -1px 0 0 var(--fd-color-neutral-2);
+  box-shadow: inset 0 -1px 0 0 var(--fd-color-neutral-2);
   height: 52px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4737,6 +5006,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center
+}
+.fd-calendar .fd-calendar__action [class*=sap-icon][dir=rtl],
+[dir=rtl] .fd-calendar .fd-calendar__action [class*=sap-icon] {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1)
 }
 .fd-calendar .fd-calendar__content {
   padding: 12px 0
@@ -4774,41 +5048,62 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-calendar .fd-calendar__column-header:hover {
   cursor: default;
-  background-color: #fff
+  --fd-calendar-item-background-color: var(--fd-color-background-2)
 }
 .fd-calendar .fd-calendar__list {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   display: grid;
-  grid-template-columns: repeat(4,1fr)
+  grid-template-columns: repeat(4,1fr);
+  padding-left: 0;
+  padding-right: 0
+}
+.fd-calendar .fd-calendar__list > * {
+  min-width: 25%
 }
 .fd-calendar .fd-calendar__day-of-week {
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
-  color: #6a6d70
+  color: var(--fd-color-text-1)
 }
 /*!
 .fd-status-label+(--available, --away, --busy, --offline, --success, --warning, --error)
 */
-.fd-status-label {
-  position: relative;
-  font-size: 14px;
-  line-height: 1.42857;
-  color: #32363a;
-  font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #51555a
-}
-.fd-status-label::before {
-  vertical-align: -8%;
-  width: 20px;
-  height: 16px;
-  line-height: 1
-}
 .fd-status-label--available,
 .fd-status-label--away,
 .fd-status-label--busy,
 .fd-status-label--offline {
   padding-left: 20px
+}
+.fd-status-label--available::before,
+.fd-status-label--away::before,
+.fd-status-label--busy::before,
+.fd-status-label--offline::before {
+  position: absolute;
+  z-index: 1;
+  background-repeat: no-repeat;
+  content: "";
+  line-height: 1
+}
+.fd-status-label--available::after,
+.fd-status-label--away::after,
+.fd-status-label--busy::after,
+.fd-status-label--offline::after {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  content: "";
+  line-height: 1;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--fd-status-label-icon-background-color)
 }
 .fd-status-label--available[dir=rtl],
 .fd-status-label--away[dir=rtl],
@@ -4842,124 +5137,86 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   left: initial;
   right: 0
 }
+.fd-status-label {
+  --fd-status-label-color: var(--fd-color-text-2);
+  --fd-status-label-icon-background-color: var(--fd-color-text-2);
+  position: relative;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: var(--fd-color-text-1);
+  font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: var(--fd-status-label-color)
+}
+.fd-status-label::before {
+  vertical-align: -8%;
+  width: 20px;
+  height: 16px;
+  line-height: 1
+}
+.fd-status-label--success {
+  --fd-status-label-color: var(--fd-color-positive)
+}
+.fd-status-label--warning {
+  --fd-status-label-color: var(--fd-color-alert)
+}
+.fd-status-label--error {
+  --fd-status-label-color: var(--fd-color-negative)
+}
+.fd-status-label--available {
+  --fd-status-label-icon-background-color: var(--fd-color-positive)
+}
 .fd-status-label--available:before {
-  position: absolute;
-  z-index: 1;
-  background-repeat: no-repeat;
-  content: "";
-  line-height: 1;
   width: 7px;
   height: 7px;
   top: 4px;
   left: 4px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA2IDUuOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNiA1Ljk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTIuNywzLjJsMS40LTIuOEM0LjQsMCw1LTAuMSw1LjUsMC4xYzAuNCwwLjMsMC42LDAuOCwwLjQsMS4ybC0yLDRDMy42LDUuOSwzLDYuMSwyLjYsNS44CgljLTAuMSwwLTAuMi0wLjEtMC4zLTAuMmwtMi0yYy0wLjQtMC40LTAuNC0xLDAtMS40YzAuNC0wLjQsMS0wLjQsMS40LDBsMCwwTDIuNywzLjJ6Ii8+Cjwvc3ZnPg==)
 }
-.fd-status-label--available:after {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  content: "";
-  line-height: 1;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #107f3e
+.fd-status-label--available[dir=rtl]:before,
+[dir=rtl] .fd-status-label--available:before {
+  right: 4px
+}
+.fd-status-label--away {
+  --fd-status-label-icon-background-color: var(--fd-color-alert)
 }
 .fd-status-label--away:before {
-  position: absolute;
-  z-index: 1;
-  background-repeat: no-repeat;
-  content: "";
-  line-height: 1;
   width: 6px;
   height: 6px;
   top: 4px;
   left: 6px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1IDUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUgNTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMSw1QzAuNCw1LDAsNC42LDAsNFYxYzAtMC42LDAuNC0xLDEtMXMxLDAuNCwxLDF2MmgyYzAuNiwwLDEsMC40LDEsMVM0LjYsNSw0LDVIMXoiLz4KPC9zdmc+)
 }
-.fd-status-label--away:after {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  content: "";
-  line-height: 1;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #e9730c
+.fd-status-label--away[dir=rtl]:before,
+[dir=rtl] .fd-status-label--away:before {
+  right: 4px
+}
+.fd-status-label--busy {
+  --fd-status-label-icon-background-color: var(--fd-color-negative)
 }
 .fd-status-label--busy:before {
-  position: absolute;
-  z-index: 1;
-  background-repeat: no-repeat;
-  content: "";
-  line-height: 1;
   width: 4px;
   height: 4px;
   top: 6px;
   left: 6px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA0IDQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQgNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNCwyYzAsMS4xLTAuOSwyLTIsMlMwLDMuMSwwLDJzMC45LTIsMi0yUzQsMC45LDQsMiIvPgo8L3N2Zz4=)
 }
-.fd-status-label--busy:after {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  content: "";
-  line-height: 1;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #bd0000
-}
 .fd-status-label--busy[dir=rtl]:before,
 [dir=rtl] .fd-status-label--busy:before {
   right: 6px
 }
 .fd-status-label--offline:before {
-  position: absolute;
-  z-index: 1;
-  background-repeat: no-repeat;
-  content: "";
-  line-height: 1;
   width: 8px;
   height: 8px;
   top: 4px;
   left: 4px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA3LjkgNy45IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA3LjkgNy45OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik03LjksNGMwLDIuMi0xLjgsNC00LDRTMCw2LjIsMCw0czEuOC00LDQtNFM3LjksMS44LDcuOSw0Ii8+Cjwvc3ZnPg==)
 }
-.fd-status-label--offline:after {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  content: "";
-  line-height: 1;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #51555a
-}
-.fd-status-label--success {
-  color: #107f3e
-}
-.fd-status-label--warning {
-  color: #e9730c
-}
-.fd-status-label--error {
-  color: #bd0000
-}
-.fd-status-label--available[dir=rtl]:before,
-.fd-status-label--away[dir=rtl]:before,
 .fd-status-label--offline[dir=rtl]:before,
-[dir=rtl] .fd-status-label--available:before,
-[dir=rtl] .fd-status-label--away:before,
 [dir=rtl] .fd-status-label--offline:before {
   right: 4px
 }
 .fd-popover {
+  --fd-popover-background-color: var(--fd-color-background-2);
   position: relative;
   display: inline-block
 }
@@ -4974,9 +5231,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   white-space: nowrap;
   z-index: 2;
   border-radius: 4px;
-  background-color: #fff;
-  -webkit-box-shadow: 0 0 1px 0 rgba(218,222,230,.5),0 2px 8px 0 rgba(0,8,26,.2);
-  box-shadow: 0 0 1px 0 rgba(218,222,230,.5),0 2px 8px 0 rgba(0,8,26,.2);
+  background-color: var(--fd-popover-background-color);
+  -webkit-box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
+  box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
   opacity: 1;
   visibility: visible;
   -webkit-transition: all 125ms;
@@ -5004,7 +5261,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   width: 0;
   border-style: solid;
   border-width: 0 6.5px 8px 6.5px;
-  border-bottom-color: #fff;
+  border-bottom-color: var(--fd-color-background-2);
   border-left-color: transparent;
   border-right-color: transparent;
   content: "";
@@ -5018,7 +5275,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   width: 0;
   border-style: solid;
   border-width: 0 6.5px 8px 6.5px;
-  border-bottom-color: #89919a;
+  border-bottom-color: var(--fd-color-neutral-4);
   border-left-color: transparent;
   border-right-color: transparent;
   content: "";
@@ -5127,7 +5384,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-localization-editor {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
 }
 .fd-localization-editor__list li {
@@ -5190,6 +5447,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   width: 300px;
   z-index: 1
 }
+.fd-search-input__closedcontrol[dir=rtl],
+[dir=rtl] .fd-search-input__closedcontrol {
+  right: auto;
+  left: 0
+}
 .fd-search-input__closedcontrol.is-hidden,
 .fd-search-input__closedcontrol[aria-hidden=true] {
   opacity: 0;
@@ -5206,9 +5468,18 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: block;
   text-align: left
 }
+.fd-search-input .fd-menu[dir=rtl],
+[dir=rtl] .fd-search-input .fd-menu {
+  text-align: right
+}
 .fd-search-input--closed .fd-popover__body {
   width: 300px;
   left: -264px
+}
+.fd-search-input--closed .fd-popover__body[dir=rtl],
+[dir=rtl] .fd-search-input--closed .fd-popover__body {
+  left: 0;
+  right: auto
 }
 /*!
 .fd-multi-input
@@ -5234,7 +5505,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-product-switcher__body {
   padding: 20px 10px 0 10px;
-  color: #32363a
+  color: initial
 }
 .fd-product-switcher__body > nav > ul {
   margin: 0;
@@ -5250,6 +5521,10 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   padding: 0 5px;
   margin: 0 0 30px 0
 }
+.fd-product-switcher__body > nav > ul > li[dir=rtl],
+[dir=rtl] .fd-product-switcher__body > nav > ul > li {
+  float: right
+}
 .fd-product-switcher__product-icon {
   display: block;
   height: 40px;
@@ -5264,11 +5539,14 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: block
 }
 .fd-shellbar {
+  --fd-shellbar-color: var(--fd-color-text-5);
+  --fd-shellbar-background-color: var(--fd-color-shell-1);
+  --fd-shellbar-link-color: var(--fd-color-shell-2);
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  background: #354a5f;
+  background-color: var(--fd-shellbar-background-color);
   height: 48px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5276,7 +5554,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #fff;
+  color: var(--fd-shellbar-color);
   position: relative;
   padding: 4px 32px;
   -webkit-box-pack: justify;
@@ -5330,6 +5608,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     display: inline-block;
     margin-right: 8px
   }
+  .fd-shellbar__logo[dir=rtl],
+  [dir=rtl] .fd-shellbar__logo {
+    margin-right: 0;
+    margin-left: 8px
+  }
 }
 .fd-shellbar__logo--control {
   display: inline-block
@@ -5365,13 +5648,17 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     max-width: 60%
   }
 }
+.fd-shellbar__product[dir=rtl],
+[dir=rtl] .fd-shellbar__product {
+  padding: 0 0 0 8px
+}
 .fd-shellbar__title {
   font-size: 1.14286rem;
   line-height: 1.25;
   font-weight: 400;
   font-weight: 700;
   line-height: 1;
-  color: #fff;
+  color: var(--fd-shellbar-color);
   white-space: nowrap;
   overflow: hidden;
   max-width: 100%;
@@ -5481,9 +5768,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-shellbar .fd-search-input .fd-input {
   border-style: solid;
   border-width: 1px;
-  border-color: var(--fd-color-shell-2);
-  background-color: var(--fd-color-shell-1);
-  color: var(--fd-color-shell-2)
+  border-color: var(--fd-shellbar-link-color);
+  background-color: var(--fd-shellbar-background-color);
+  color: var(--fd-shellbar-link-color)
 }
 .fd-shellbar .fd-search-input .fd-input:focus {
   -webkit-box-shadow: none;
@@ -5504,12 +5791,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     padding: 4px 32px
   }
 }
-@media (min-width:1441px) {
+@media (min-width:1440px) {
   .fd-shellbar {
     padding: 4px 32px
   }
 }
-@media (min-width:1921px) {
+@media (min-width:1920px) {
   .fd-shellbar {
     padding: 4px 32px
   }
@@ -5520,7 +5807,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-user-menu {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   text-align: left
 }
@@ -5532,6 +5819,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 */
 .fd-product-menu {
   padding-right: 8px
+}
+.fd-product-menu[dir=rtl],
+[dir=rtl] .fd-product-menu {
+  padding-right: 0;
+  padding-left: 8px
 }
 .fd-product-menu__control {
   color: inherit;
@@ -5561,6 +5853,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   padding-right: 20px;
   padding-left: 0
 }
+.fd-product-menu__control[dir=rtl],
+[dir=rtl] .fd-product-menu__control {
+  padding-right: 0;
+  padding-left: 20px
+}
 .fd-product-menu__control::after {
   height: 0;
   width: 0;
@@ -5578,13 +5875,20 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-product-menu .fd-popover__body--right {
   right: -10px
 }
+.fd-product-menu .fd-popover__body--right[dir=rtl],
+[dir=rtl] .fd-product-menu .fd-popover__body--right {
+  right: auto;
+  left: -14px
+}
 /*!
 .fd-counter+(--notification)
 */
 .fd-counter {
+  --fd-counter-color: var(--fd-color-text-5);
+  --fd-counter-background-color: var(--fd-color-status-4);
   border-radius: 4px;
-  background: #6d7678;
-  color: #fff;
+  color: var(--fd-counter-color);
+  background-color: var(--fd-counter-background-color);
   font-size: .78571em;
   line-height: 1;
   display: inline-block;
@@ -5592,7 +5896,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   padding: 4px
 }
 .fd-counter--notification {
-  background-color: #bd0000;
+  --fd-counter-background-color: var(--fd-color-status-3);
   position: absolute;
   -webkit-transform: translate(-40%,-50%);
   transform: translate(-40%,-50%)

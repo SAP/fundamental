@@ -1,9 +1,10 @@
 /*!
 * Fiori Fundamentals v1.4.1
-* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Copyright (c) 2019 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 .fd-popover {
+  --fd-popover-background-color: var(--fd-color-background-2);
   position: relative;
   display: inline-block
 }
@@ -18,9 +19,9 @@
   white-space: nowrap;
   z-index: 2;
   border-radius: 4px;
-  background-color: #fff;
-  -webkit-box-shadow: 0 0 1px 0 rgba(218,222,230,.5),0 2px 8px 0 rgba(0,8,26,.2);
-  box-shadow: 0 0 1px 0 rgba(218,222,230,.5),0 2px 8px 0 rgba(0,8,26,.2);
+  background-color: var(--fd-popover-background-color);
+  -webkit-box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
+  box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
   opacity: 1;
   visibility: visible;
   -webkit-transition: all 125ms;
@@ -48,7 +49,7 @@
   width: 0;
   border-style: solid;
   border-width: 0 6.5px 8px 6.5px;
-  border-bottom-color: #fff;
+  border-bottom-color: var(--fd-color-background-2);
   border-left-color: transparent;
   border-right-color: transparent;
   content: "";
@@ -62,7 +63,7 @@
   width: 0;
   border-style: solid;
   border-width: 0 6.5px 8px 6.5px;
-  border-bottom-color: #89919a;
+  border-bottom-color: var(--fd-color-neutral-4);
   border-left-color: transparent;
   border-right-color: transparent;
   content: "";

@@ -1,6 +1,6 @@
 /*!
 * Fiori Fundamentals v1.4.1
-* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Copyright (c) 2019 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 /*!
@@ -11,7 +11,7 @@
 .fd-input-group {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,7 +47,9 @@
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  border-left: 1px #89919a solid
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: var(--fd-forms-border-color)
 }
 .fd-input-group[dir=rtl] > :first-child,
 [dir=rtl] .fd-input-group > :first-child {
@@ -55,7 +57,9 @@
   border-bottom-left-radius: 0;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  border-right: 1px #89919a solid
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: var(--fd-forms-border-color)
 }
 .fd-input-group [type=number] {
   -moz-appearance: textfield
@@ -103,12 +107,12 @@
   border-color: transparent
 }
 .fd-input-group__addon {
-  color: #6a6d70;
+  color: var(--fd-color-text-3);
   padding: 0 12px;
   border-style: solid;
   border-width: 1px;
-  border-color: #89919a;
-  background-color: #fafafa;
+  border-color: var(--fd-forms-border-color);
+  background-color: var(--fd-color-neutral-1);
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -218,14 +222,14 @@
   width: 100%;
   display: block;
   min-width: 48px;
-  background: #fafafa
+  background-color: var(--fd-color-neutral-1)
 }
 .fd-input-group__button--step-down,
 .fd-input-group__button--step-up {
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
-  color: #0a6ed1;
+  color: var(--fd-color-action);
   position: relative
 }
 .fd-input-group__button--step-down::before,
@@ -243,14 +247,11 @@
   transform: translateX(50%)
 }
 .fd-input-group__button--step-up {
-  border-bottom: solid 1px #89919a;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--fd-forms-border-color);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0
-}
-.fd-input-group__button--step-down {
-  border-top: solid 1px #89919a;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0
 }
 .fd-input-group__button--clear {
   background-color: transparent;
