@@ -83,7 +83,7 @@ $block: #{$fd-namespace}-inline-help;
         &--right{
             top: -$fd-tooltip-padding;
             left: $fd-tooltip-padding * 2.5;
-            &::before{
+            &::before {
                 top: $fd-tooltip-arrow-offset + 8;
                 left: -($fd-tooltip-arrow-offset + 2);
                 transform: rotate(-90deg);
@@ -92,6 +92,20 @@ $block: #{$fd-namespace}-inline-help;
                 top: $fd-tooltip-arrow-offset + 8;
                 left: -($fd-tooltip-arrow-offset + 1);
                 transform: rotate(-90deg);
+            }
+            @include fd-rtl {
+              left: auto;
+              right: $fd-tooltip-padding * 2.5;
+              &::before {
+                left: auto;
+                right: -($fd-tooltip-arrow-offset + 2);
+                transform: rotate(-270deg);
+              }
+              &::after {
+                left: auto;
+                right: -($fd-tooltip-arrow-offset + 1);
+                transform: rotate(-270deg);
+              }
             }
         }
         &--left{
@@ -107,9 +121,27 @@ $block: #{$fd-namespace}-inline-help;
                 right: -($fd-tooltip-arrow-offset + 1);
                 transform: rotate(90deg);
             }
+            @include fd-rtl {
+              right: auto;
+              left: $fd-tooltip-padding * 2.5;
+              &::before {
+                right: auto;
+                left: -($fd-tooltip-arrow-offset + 2);
+                transform: rotate(270deg);
+              }
+              &::after {
+                right: auto;
+                left: -($fd-tooltip-arrow-offset + 1);
+                transform: rotate(270deg);
+              }
+            }
         }
         &--bottom-right{
             left: -$fd-tooltip-arrow-offset;
+            @include fd-rtl {
+              left: auto;
+              right: -$fd-tooltip-arrow-offset;
+            }
             &::before{
                 top: -($fd-tooltip-arrow-offset) ;
                 left: $fd-tooltip-arrow-offset * 1.4;
@@ -127,6 +159,18 @@ $block: #{$fd-namespace}-inline-help;
             }
             &::after{
                 top: -($fd-tooltip-arrow-offset - 1);
+            }
+            @include fd-rtl {
+              right: auto;
+              left: -$fd-tooltip-arrow-offset;
+              &::before {
+                right: auto;
+                left: $fd-tooltip-arrow-offset * 1.25;
+              }
+              &::after {
+                right: auto;
+                left: $fd-tooltip-arrow-offset * 1.25;
+              }
             }
         }
         &--bottom-center{

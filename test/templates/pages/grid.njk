@@ -21,9 +21,9 @@
 {% set breakpoints = {
   "s": [320,"320-599"],
   "m": [600,"600-1023"],
-  "l": [1024,"1024-1440"],
-  "xl": [1441,"1441-1920"],
-  "xxl": [1921,">1920"]
+  "l": [1024,"1024-1439"],
+  "xl": [1440,"1440-1919"],
+  "xxl": [1920,">1920"]
 } %}
 <style>
 .fd-shell__header::before {
@@ -48,12 +48,9 @@
 
 {# SET CONTENT #}
 
-{% set div %}
-<div class="fd-has-background-color-accent-2" style="height: 50px;"></div>
-{%- endset %}
-{% set div_2 %}
-<div class="fd-has-background-color-accent-7" style="height: 50px;"></div>
-{%- endset %}
+{% macro div(content="", color=2) %}
+<div class="fd-has-background-color-accent-{{color}} fd-has-color-text-5" style="height: 50px;">{{content}}</div>
+{%- endmacro %}
 
 
 {% set cols %}
@@ -61,14 +58,14 @@
   {%- call layout.container() -%}
       {%- for i in range(1,13) %}
           {%- call layout.col(1) %}
-          {{div}}
+          {{div(i)}}
           {% endcall %}
       {%- endfor %}
   {%- endcall %}
   {%- call layout.container() -%}
       {%- for i in range(1,7) %}
           {%- call layout.col(2) %}
-          {{div}}
+          {{div(i)}}
           {% endcall %}
       {%- endfor %}
   {%- endcall %}
@@ -76,7 +73,7 @@
   {%- call layout.container() -%}
       {%- for i in range(1,5) %}
           {%- call layout.col(3) %}
-          {{div}}
+          {{div(i)}}
           {% endcall %}
       {%- endfor %}
   {%- endcall %}
@@ -84,7 +81,7 @@
     {%- call layout.container() -%}
         {%- for i in range(1,4) %}
             {%- call layout.col(4) %}
-            {{div}}
+            {{div(i)}}
             {% endcall %}
         {%- endfor %}
     {%- endcall %}
@@ -92,7 +89,7 @@
     {%- call layout.container() -%}
         {%- for i in range(1,3) %}
             {%- call layout.col(6) %}
-            {{div}}
+            {{div(i)}}
             {% endcall %}
         {%- endfor %}
     {%- endcall %}
@@ -100,22 +97,22 @@
     {%- call layout.container() -%}
         {%- for i in range(1,13) %}
             {%- call layout.col(1) %}
-            {{div}}
+            {{div(i)}}
             {% endcall %}
         {%- endfor %}
     {%- endcall %}
 
     {%- call layout.container() -%}
             {%- call layout.col(11, classes="col--shift-1") %}
-            {{div}}
+            {{div(i)}}
             {% endcall %}
     {%- endcall %}
     {%- call layout.container() -%}
             {%- call layout.col(6, classes="col--shift-3") %}
-            {{div}}
+            {{div(i)}}
             {% endcall %}
             {%- call layout.col(1, classes="col--shift-1") %}
-            {{div}}
+            {{div(i)}}
             {% endcall %}
     {%- endcall %}
 
@@ -126,14 +123,14 @@
   {%- call layout.container(modifier="fluid") -%}
       {%- for i in range(1,13) %}
           {%- call layout.col(1) %}
-          {{div_2}}
+          {{div(i,7)}}
           {% endcall %}
       {%- endfor %}
   {%- endcall %}
   {%- call layout.container(modifier="fluid") -%}
       {%- for i in range(1,7) %}
           {%- call layout.col(2) %}
-          {{div_2}}
+          {{div(i,7)}}
           {% endcall %}
       {%- endfor %}
   {%- endcall %}
@@ -141,7 +138,7 @@
   {%- call layout.container(modifier="fluid") -%}
       {%- for i in range(1,5) %}
           {%- call layout.col(3) %}
-          {{div_2}}
+          {{div(i,7)}}
           {% endcall %}
       {%- endfor %}
   {%- endcall %}
@@ -149,7 +146,7 @@
     {%- call layout.container(modifier="fluid") -%}
         {%- for i in range(1,4) %}
             {%- call layout.col(4) %}
-            {{div_2}}
+            {{div(i,7)}}
             {% endcall %}
         {%- endfor %}
     {%- endcall %}
@@ -157,7 +154,7 @@
     {%- call layout.container(modifier="fluid") -%}
         {%- for i in range(1,3) %}
             {%- call layout.col(6) %}
-            {{div_2}}
+            {{div(i,7)}}
             {% endcall %}
         {%- endfor %}
     {%- endcall %}
@@ -165,22 +162,22 @@
     {%- call layout.container(modifier="fluid") -%}
         {%- for i in range(1,13) %}
             {%- call layout.col(1) %}
-            {{div_2}}
+            {{div(i,7)}}
             {% endcall %}
         {%- endfor %}
     {%- endcall %}
 
     {%- call layout.container(modifier="fluid") -%}
             {%- call layout.col(11, classes="col--shift-1") %}
-            {{div_2}}
+            {{div(i,7)}}
             {% endcall %}
     {%- endcall %}
     {%- call layout.container(modifier="fluid") -%}
             {%- call layout.col(6, classes="col--shift-3") %}
-            {{div_2}}
+            {{div(i,7)}}
             {% endcall %}
             {%- call layout.col(1, classes="col--shift-1") %}
-            {{div_2}}
+            {{div(i,7)}}
             {% endcall %}
     {%- endcall %}
 

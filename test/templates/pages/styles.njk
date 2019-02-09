@@ -5,9 +5,9 @@
 {% set breakpoints = {
   "s": [320,"320-599"],
   "m": [600,"600-1023"],
-  "l": [1024,"1024-1440"],
-  "xl": [1441,"1441-1920"],
-  "xxl": [1921,">1920"]
+  "l": [1024,"1024-1439"],
+  "xl": [1440,"1440-1919"],
+  "xxl": [1920,">1920"]
 } %}
 <style>
 .fd-ui__header::before {
@@ -44,7 +44,11 @@
 
   "background": [
     "hsl(210, 9%, 93.5%) / #EDEFF0 body background",
-    "hsl(210, 9%, 93.5%) / #EDEFF0 body background"
+    "hsl(210, 9%, 93.5%) / #EDEFF0 content background",
+    "hsl(145, 77%, 97%) / #F1FDF6 positive background",
+    "hsl(30, 87.5%, 97%) / #FEF7F1 alert background",
+    "hsl(0, 100%, 96%) / #FFEBEB negative background",
+    "hsl(210, 100%, 98%) / #F5FAFF information background"
   ],
 
   "neutral": [
@@ -95,10 +99,7 @@
   "background": [
     ["hover", "hsla(210, 3%, 98%, 1) / #fafafa"],
     ["selected", "hsla(210, 91%, 43%, 0.07) / n/a"],
-    ["selected-hover", "hsla(210, 91%, 43%, 0.1) / n/a"],
-    ["positive", "hsla(144.86486, 77.62238%, 94.03922%, 1) / #e4fcee"],
-    ["alert", "hsla(28, 87%, 97%, 1) / #fef7f1"],
-    ["negative", "hsla(0, 100%, 95.66667%, 1) / #ffe9e9"]
+    ["selected-hover", "hsla(210, 91%, 43%, 0.1) / n/a"]
   ]
 } %}
 

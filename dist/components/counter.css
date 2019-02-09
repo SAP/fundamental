@@ -1,15 +1,17 @@
 /*!
 * Fiori Fundamentals v1.4.1
-* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Copyright (c) 2019 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 /*!
 .fd-counter+(--notification)
 */
 .fd-counter {
+  --fd-counter-color: var(--fd-color-text-5);
+  --fd-counter-background-color: var(--fd-color-status-4);
   border-radius: 4px;
-  background: #6d7678;
-  color: #fff;
+  color: var(--fd-counter-color);
+  background-color: var(--fd-counter-background-color);
   font-size: .78571em;
   line-height: 1;
   display: inline-block;
@@ -17,7 +19,7 @@
   padding: 4px
 }
 .fd-counter--notification {
-  background-color: #bd0000;
+  --fd-counter-background-color: var(--fd-color-status-3);
   position: absolute;
   -webkit-transform: translate(-40%,-50%);
   transform: translate(-40%,-50%)

@@ -1,15 +1,19 @@
 /*!
 * Fiori Fundamentals v1.4.1
-* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Copyright (c) 2019 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 /*!
 .fd-identifier+((--circle), (--thumbnail), (--xxs|--xs|--s|--m|--l|--xl|--xxl))
 */
+.fd-identifier {
+  --fd-identifier-color: var(--fd-color-text-5);
+  --fd-identifier-background-color: var(--fd-color-status-4)
+}
 [class*=fd-identifier] {
   font-size: 14px;
   line-height: 1.42857;
-  color: #32363a;
+  color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: inline-block;
   vertical-align: middle;
@@ -18,8 +22,8 @@
   background-size: cover;
   background-position: 50%;
   border-radius: 4px;
-  background-color: #6a6d70;
-  color: #fff
+  background-color: var(--fd-identifier-background-color);
+  color: var(--fd-identifier-color)
 }
 .fd-identifier--xxs {
   width: 20px;
@@ -154,6 +158,6 @@
   overflow: hidden
 }
 .fd-identifier--transparent {
-  background-color: transparent;
-  color: #32363a
+  --fd-identifier-color: var(--fd-color-text-1);
+  --fd-identifier-background-color: transparent
 }

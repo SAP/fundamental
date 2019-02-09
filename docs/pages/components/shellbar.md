@@ -223,7 +223,7 @@ When a product has multiple links, the product links should collapse into an ove
             </div>
           </div>
         </div>
-      </div>    
+      </div>
       <div class="fd-shellbar__action fd-shellbar__action--collapsible">
         <button class=" fd-button--shell sap-icon--bell" aria-label="Notifications">
         <span class="fd-counter fd-counter--notification" aria-label="Unread count">25</span></button>
@@ -302,12 +302,12 @@ This example shows an application with CoPilot, integration with other products,
         <div class="fd-shellbar-collapse">
           <div class="fd-popover fd-popover--right">
             <div class="fd-popover__control">
-              <div class="fd-shellbar-collapse--control" aria-controls="CWaGX278" aria-expanded="false" aria-haspopup="true" role="button">
+              <div class="fd-shellbar-collapse--control" aria-controls="CWaGX278a" aria-expanded="false" aria-haspopup="true" role="button">
                 <button class=" fd-button--shell sap-icon--overflow" aria-controls="undefined" aria-haspopup="true" aria-expanded="false">
                 <span class="fd-counter fd-counter--notification" aria-label="Unread count">25</span></button>
               </div>
             </div>
-            <div class="fd-popover__body fd-popover__body--right" aria-hidden="true" id="CWaGX278">
+            <div class="fd-popover__body fd-popover__body--right" aria-hidden="true" id="CWaGX278a">
               <nav class="fd-menu">
                 <ul class="fd-menu__list">
                   <li><a role="button" class="fd-menu__item">Product Switcher</a></li>

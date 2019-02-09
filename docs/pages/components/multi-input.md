@@ -17,7 +17,7 @@ summary:
     <div class="fd-multi-input-field">
         <div class="fd-popover">
             <div class="fd-popover__control">
-                <div class="fd-combobox-control" aria-label="Image label" aria-controls="F4GcX348"
+                <div class="fd-combobox-control" aria-label="Image label" aria-controls="F4GcX348a"
                 aria-expanded="false" aria-haspopup="true">
                     <div class="fd-input-group fd-input-group--after">
                         <input type="text" class="fd-input" id="" placeholder="Select Fruit">
@@ -28,7 +28,7 @@ summary:
                     </div>
                 </div>
             </div>
-            <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="F4GcX348">
+            <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="F4GcX348a">
                 <nav class="fd-menu">
                 <ul class="fd-menu__list">
                     <li>
@@ -67,7 +67,7 @@ summary:
     <div class="fd-multi-input-field">
         <div class="fd-popover">
             <div class="fd-popover__control">
-                <div class="fd-combobox-control" aria-label="Image label" aria-controls="F4GcX34"
+                <div class="fd-combobox-control" aria-label="Image label" aria-controls="F4GcX34a"
                 aria-expanded="false" aria-haspopup="true">
                     <div class="fd-input-group fd-input-group--after fd-input-group--compact">
                         <input type="text" class="fd-input fd-input--compact" id="" placeholder="Select Fruit">
@@ -78,7 +78,7 @@ summary:
                     </div>
                 </div>
             </div>
-            <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="F4GcX34">
+            <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="F4GcX34a">
                 <nav class="fd-menu">
                 <ul class="fd-menu__list">
                     <li>

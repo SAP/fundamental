@@ -55,6 +55,10 @@ $block: #{$fd-namespace}-modal;
   &__close {
     position: absolute;
     right: fd-space(1);
+    @include fd-rtl() {
+      left: fd-space(1);
+      right: auto;
+    }
     top: fd-space(2);
     @include fd-icon("decline", "l");
     @include fd-button-reset;
@@ -65,13 +69,15 @@ $block: #{$fd-namespace}-modal;
   &__body{
     max-height: calc(100vh - #{$fd-modal-header-height} - #{$fd-modal-footer-height});
     overflow-y: auto;
-
     > p {
       padding: 0;
     }
   }
   &__footer {
     text-align: right;
+    @include fd-rtl() {
+      text-align: left;
+    }
     border-top-style: solid;
     border-top-width: 1px;
     @include fd-var-color("border-top-color", $fd-modal-border-color, --fd-modal-border-color);

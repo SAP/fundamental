@@ -18,76 +18,76 @@ const config = {
     id: "fundamentals"
 }
 // looks for html in templates folder, static resources in public
-var env = nunjucks.configure([TEMPLATE_DIRECTORY,PUBLIC_DIRECTORY,MODULES_DIRECTORY], {
+var env = nunjucks.configure([TEMPLATE_DIRECTORY, PUBLIC_DIRECTORY, MODULES_DIRECTORY], {
     autoescape: false,
     cache: false,
     express: app,
     watch: true
 });
 // convert SASS to CSS from the lib source
-env.addFilter('sass_to_css', (sassFile="app.scss") => {
+env.addFilter('sass_to_css', (sassFile = "app.scss") => {
     try {
         const scss_filename = `${SASS_DIRECTORY}/${sassFile}`;
         return sass.renderSync({
             file: scss_filename
         }).css.toString();
-    } catch(err) {
+    } catch (err) {
         signale.error(`sassToCss: ${err.message}`);
     }
 });
 // convert an array to classes
 // returns [ fd-element--mod ]
-env.addFilter('modifier', (array=[], element="", namespace="") => {
+env.addFilter('modifier', (array = [], element = "", namespace = "") => {
     const _ns = namespace || GLOBALS.namespace;
     //is string
     if (typeof array === "string") {
-        if(array === "") { return; }
+        if (array === "") { return; }
         return ` ${_ns}-${element}--${array}`;
     }
     const mods = array.map((mod) => {
-      if(mod === "") { return; }
-         return ` ${_ns}-${element}--${mod}`;
+        if (mod === "") { return; }
+        return ` ${_ns}-${element}--${mod}`;
     });
-    return mods.join('') ;
+    return mods.join('');
 });
 // convert an array to classes
 // returns [ fd-cls ]
-env.addFilter('classes', (array=[]) => {
+env.addFilter('classes', (array = []) => {
     if (!array) {
         return;
     }
     let _ns = `${GLOBALS.namespace}-`;
     //is string
     if (typeof array === "string") {
-      if (array.startsWith("sap-icon") || array.startsWith("fd-")) {
-        _ns = "";
-      }
+        if (array.startsWith("sap-icon") || array.startsWith("fd-")) {
+            _ns = "";
+        }
         return ` ${_ns}${array}`;
     }
     const classes = array.map((cls) => {
-      if (cls.startsWith("sap-icon") || cls.startsWith("fd-")) {
-        _ns = "";
-      }
-         return ` ${_ns}${cls}`;
+        if (cls.startsWith("sap-icon") || cls.startsWith("fd-")) {
+            _ns = "";
+        }
+        return ` ${_ns}${cls}`;
     });
-    return classes.join('') ;
+    return classes.join('');
 });
 // convert an object to classes
 // returns [ is-key ]
-env.addFilter('state', (obj=[]) => {
+env.addFilter('state', (obj = []) => {
     const classes = [];
     for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        if (!!obj[key]) {
-            classes.push(` is-${key}`);
+        if (obj.hasOwnProperty(key)) {
+            if (!!obj[key]) {
+                classes.push(` is-${key}`);
+            }
         }
-      }
     }
-    return classes.join('') ;
+    return classes.join('');
 });
 // convert an object to classes
 // returns [ aria-key="true", role="" ]
-env.addFilter('aria', (obj=[]) => {
+env.addFilter('aria', (obj = []) => {
     const attrs = [];
     for (const key in obj) {
         if (obj.hasOwnProperty(key)) {
@@ -98,11 +98,11 @@ env.addFilter('aria', (obj=[]) => {
             }
         }
     }
-    return attrs.join('') ;
+    return attrs.join('');
 });
 // random_number
 // returns 123
-env.addFilter('random_number', (length=3) => {
+env.addFilter('random_number', (length = 3) => {
     const randomFixedInteger = length => Math.floor(10 ** (length - 1) + Math.random() * (10 ** length - 10 ** (length - 1) - 1));
     return randomFixedInteger(length);
 });
@@ -120,7 +120,7 @@ env.addFilter('random_string', () => {
 // pluck
 // returns array from an object
 // obj | pluck("key")
-env.addFilter('pluck', (obj={}, key="") => {
+env.addFilter('pluck', (obj = {}, key = "") => {
     const result = obj.map(a => a[key]);
     return result;
 });
@@ -128,21 +128,21 @@ env.addFilter('pluck', (obj={}, key="") => {
 // filter_array
 // returns obj
 // obj | pluck("key")
-env.addFilter('filter_array', (array={}, key="", value="") => {
+env.addFilter('filter_array', (array = {}, key = "", value = "") => {
     const result = array.filter(obj => obj[key] === value);
     return result;
 });
 
 // unshift_array
 // returns obj
-env.addFilter('unshift_array', (obj={}, array={}) => {
+env.addFilter('unshift_array', (obj = {}, array = {}) => {
     const result = array.unshift(obj);
     return result;
 });
 
 // push_array
 // returns obj
-env.addFilter('push', (obj={}, array={}) => {
+env.addFilter('push', (obj = {}, array = {}) => {
     const result = array.push(obj);
     return result;
 });
@@ -150,9 +150,9 @@ env.addFilter('push', (obj={}, array={}) => {
 // merge_objs
 // returns obj
 // obj1 | merge_objs(obj2)
-env.addFilter('merge_objs', function(obj1={},obj2={}) {
-  var result = {...obj1, ...obj2 };
-  return result;
+env.addFilter('merge_objs', function (obj1 = {}, obj2 = {}) {
+    var result = { ...obj1, ...obj2 };
+    return result;
 });
 
 app.set('views', TEMPLATE_DIRECTORY);
@@ -173,11 +173,11 @@ router.get('/(*/)?72/72-:key', (req, res) => {
 });
 
 router.all('/', (req, res, next) => {
-  next();
+    next();
 });
 
 router.get('/', (req, res) => {
-  res.render('index', GLOBALS);
+    res.render('index', GLOBALS);
 });
 
 function getStarterData() {

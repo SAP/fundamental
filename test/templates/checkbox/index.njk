@@ -6,14 +6,58 @@
 
 {% block content %}
 
-    <h1>Checkbox</h1>
     {% set basic_checkbox %}
-        {{ forms.checkbox(
-            type="checkbox",
-            properties={
-                placeholder: "Placeholder Text"
-            })
-        }}
+
+{{ forms.checkbox(
+    type="radio",
+    properties={
+    })
+}}
+{{ forms.checkbox(
+    type="radio",
+    properties={
+    },
+    state={
+      checked: true
+    })
+}}
+{{ forms.checkbox(
+    type="radio",
+    properties={
+
+    },
+    state={
+      indeterminate:true
+    })
+}}
+{{ forms.checkbox(
+    type="radio",
+    properties={
+    },
+    state={
+      disabled: true
+    })
+}}
+{{ forms.checkbox(
+    type="radio",
+    properties={
+    },
+    state={
+      checked: true,
+      disabled: true
+    })
+}}
+{{ forms.checkbox(
+    type="radio",
+    properties={
+
+    },
+    state={
+      indeterminate: true,
+      disabled: true
+    })
+}}
+
     {% endset %}
 
     {{ format(basic_checkbox) }}

@@ -52,13 +52,24 @@ $block: #{$fd-namespace}-tile;
   //ELEMENTS
   &__media {
     padding: $fd-tile-content-padding-y 0 $fd-tile-content-padding-y $fd-tile-content-padding-x;
+    @include fd-rtl() {
+      padding-right: $fd-tile-content-padding-x;
+      padding-left: 0;
+    }
   }
   &__content {
     flex: 1;
     padding: $fd-tile-content-padding-y $fd-tile-content-padding-x $fd-tile-content-padding-y fd-space(3);
+    @include fd-rtl() {
+      padding-right: fd-space(3);
+      padding-left: $fd-tile-content-padding-x;
+    }
     align-self: center;
     &:first-child {
       padding-left: $fd-tile-content-padding-x;
+      @include fd-rtl() {
+        padding-right: $fd-tile-content-padding-x;
+      }
     }
   }
   &__title {

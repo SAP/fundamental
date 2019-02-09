@@ -1,6 +1,6 @@
 /*!
 * Fiori Fundamentals v1.4.1
-* Copyright (c) 2018 SAP SE or an SAP affiliate company.
+* Copyright (c) 2019 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
 /*!
@@ -30,6 +30,11 @@
   width: 300px;
   z-index: 1
 }
+.fd-search-input__closedcontrol[dir=rtl],
+[dir=rtl] .fd-search-input__closedcontrol {
+  right: auto;
+  left: 0
+}
 .fd-search-input__closedcontrol.is-hidden,
 .fd-search-input__closedcontrol[aria-hidden=true] {
   opacity: 0;
@@ -46,7 +51,16 @@
   display: block;
   text-align: left
 }
+.fd-search-input .fd-menu[dir=rtl],
+[dir=rtl] .fd-search-input .fd-menu {
+  text-align: right
+}
 .fd-search-input--closed .fd-popover__body {
   width: 300px;
   left: -264px
+}
+.fd-search-input--closed .fd-popover__body[dir=rtl],
+[dir=rtl] .fd-search-input--closed .fd-popover__body {
+  left: 0;
+  right: auto
 }

@@ -48,9 +48,9 @@ There are four placement options:
 {% capture default-popoverwmenu %}
 <div class="fd-popover">
     <div class="fd-popover__control">
-        <button class="fd-button fd-popover__control" aria-label="Image label" aria-controls="jhqD0558" aria-expanded="false" aria-haspopup="true">Left Aligned (default)</button>
+        <button class="fd-button fd-popover__control" aria-label="Image label" aria-controls="jhqD0558a" aria-expanded="false" aria-haspopup="true">Left Aligned (default)</button>
     </div>
-    <div class="fd-popover__body" aria-hidden="true" id="jhqD0558">
+    <div class="fd-popover__body" aria-hidden="true" id="jhqD0558a">
         <nav class="fd-menu" id="">
             <ul class="fd-menu__list">
                 <li><a href="#" class="fd-menu__item">Option 1</a></li>
@@ -96,9 +96,9 @@ There are four placement options:
 
 <div class="fd-popover fd-popover--right">
     <div class="fd-popover__control">
-        <button class="fd-button fd-popover__control" aria-label="Image label" aria-controls="jhqD" aria-expanded="false" aria-haspopup="true">No Arrow & Right Aligned</button>
+        <button class="fd-button fd-popover__control" aria-label="Image label" aria-controls="jhqDa2" aria-expanded="false" aria-haspopup="true">No Arrow & Right Aligned</button>
     </div>
-    <div class="fd-popover__body fd-popover__body--right fd-popover__body--no-arrow" aria-hidden="true" id="jhqD">
+    <div class="fd-popover__body fd-popover__body--right fd-popover__body--no-arrow" aria-hidden="true" id="jhqDa2">
         <nav class="fd-menu" id="">
             <ul class="fd-menu__list">
                 <li><a href="#" class="fd-menu__item">Option 1</a></li>
