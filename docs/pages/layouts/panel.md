@@ -21,7 +21,7 @@ Place patterns and interactions within panels on your pages to achieve focus and
 - `.fd-panel__description`: Title of the description.
 - `.fd-panel__actions`: Panel level actions such as add, remove, delete, sort, etc.
 - `.fd-panel__filters`: Panel level filters that is specific to the data being displayed within the panel.
-- `.fd-panel__content`: Main content of the panel can that hold lists, table, tree, text, form or any other infomation.
+- `.fd-panel__body`: Main content of the panel can that hold lists, table, tree, text, form or any other infomation.
 - `.fd-panel__footer`: Panel footer can be utilized for pagination, secondary actions, add more data, etc.
 
 {% capture default %}
