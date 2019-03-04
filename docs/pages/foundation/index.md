@@ -8,7 +8,7 @@ folder: foundation
 summary:
 ---
 
-<p>Fiori Fundamentals is an unified, flexible design system that solves complex
+<p>Fiori Fundamentals is a unified, flexible design system that solves complex
 problems in a meaningful way and creates simple intuitive experience.
 </p>
 
