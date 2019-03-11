@@ -3,18 +3,18 @@ node_js: 8.5
 cache: npm
 sudo: required
 dist: trusty
-services:
-  - docker
-before_install:
-- docker pull backstopjs/backstopjs:3.8.5
+#services:
+#  - docker
+#before_install:
+#- docker pull backstopjs/backstopjs:3.8.5
 git:
   depth: false
 script:
   - npm run build
 jobs:
   include:
-  - stage: Lint and Test
-    script: gulp test:generateCIConfig && gulp test:visual
+  #- stage: Lint and Test
+    #script: gulp test:generateCIConfig && gulp test:visual
   - stage: Pre-release
     if: branch = master
     before_deploy:
