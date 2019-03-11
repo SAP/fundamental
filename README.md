@@ -1,3 +1,8 @@
+[![npm version](https://badge.fury.io/js/fiori-fundamentals.svg)](https://badge.fury.io/js/fiori-fundamentals)
+[![Build Status](https://travis-ci.org/SAP/fundamental.svg?branch=master)](https://travis-ci.org/SAP/fundamental)
+[![Slack](https://img.shields.io/badge/slack-ui--fundamentals-blue.svg?logo=slack)](https://ui-fundamentals.slack.com)
+
+
 # What is SAP Fiori Fundamentals?
 
 SAP Fiori Fundamentals is a light-weight presentation layer that can be used with your UI framework of choice (e.g. Angular, React, Vue, etc.). With Fiori Fundamentals’ library of stylesheets and HTML tags, developers can build consistent Fiori apps in any web-based technology.
@@ -6,10 +11,6 @@ SAP Fiori Fundamentals is a light-weight presentation layer that can be used wit
 
 We are also working on [Angular](https://github.com/SAP/fundamental-ngx), [React](https://github.com/SAP/fundamental-react) and [Vue](https://github.com/SAP/fundamental-vue) implementations.
 
-## Current version
-````
-v1.4.3
-````
 
 # Getting started
 The library is modular so you can use as little or as much as you need.
@@ -18,7 +19,7 @@ The library is modular so you can use as little or as much as you need.
 The fully compiled, minified library is available via CDN for inclusion in your application.
 
 ```
-<link href="//unpkg.com/fiori-fundamentals@1.4.3/dist/fiori-fundamentals.min.css" rel="stylesheet">
+<link href="//unpkg.com/fiori-fundamentals@latest/dist/fiori-fundamentals.min.css" rel="stylesheet">
 ```
 
 #### NPM
@@ -104,5 +105,5 @@ Create a pull request against branch  develop  and assign it for review. When ac
 
 # License
 
-Copyright (c) 2018 SAP SE or an SAP affiliate company. All rights reserved.
+Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
 This file is licensed under the Apache Software License, v. 2 except as noted otherwise in the [LICENSE](https://github.com/SAP/fundamental/blob/master/LICENSE) file.
