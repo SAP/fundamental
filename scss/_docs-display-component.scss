@@ -1,0 +1,413 @@
+
+.docs-component{
+
+    $docs-example-bg-color: fd-color(text, 5);
+
+    margin-bottom: -28px;
+    border-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-bottom: 8px;
+    border:1px solid #ccc;
+    position: relative;
+    background-color: #f3f4f5;
+    transition: background-color .25s;
+
+    > .fd-tile__content {
+        padding: 60px 20px;
+        overflow: visible;
+    }
+
+    > p {
+        @extend .fd-has-padding-xs;
+    }
+
+    pre {
+        background-color: #fff!important;
+        margin: 25px 0px;
+         
+    }
+
+    ul {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+        text-align: left;
+
+        a:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .fd-identifier--s {
+        display: inline-block;
+        background: transperant ;
+    }
+
+    .fd-mega-menu__header-link,
+    .fd-mega-menu__link,
+    .fd-mega-menu__sublink,
+    .fd-dropdown__item,
+    .fd-breadcrumb__link,
+    .fd-side-nav__link {
+        color: inherit;
+        &:hover{
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .fd-mega-menu__list,
+    .fd-mega-menu__sublist {
+        margin-left: 0;
+    }
+
+    .fd-tabs__link:hover,
+    .fd-tabs__link:focus
+    {
+        text-decoration: none;
+    }
+
+    &__app {
+        height: 500px;
+        color: fd-color(text, 5);
+        position: relative;
+
+
+          .fd-shell
+         {
+              width: 100%;
+              max-width: 100%;
+              min-height: 410px;
+              max-height: 410px;
+              position: relative;
+          }
+
+          .fd-shell__app
+         {
+              height: calc(100%  - 48px);
+              margin-top: 0;
+          }
+          .fd-app__navigation
+           {
+              height: calc(100%  - 48px);
+              margin-top: 48px;
+          }
+
+
+
+        .fd-shell__app,
+          .fd-shell,
+          .fd-app {
+              width: 100%;
+              max-width: 100%;
+              min-height: 410px;
+              max-height: 410px;
+          }
+
+
+
+        .fd-shell__header,
+        .fd-app__navigation,
+        .fd-shell__footer,
+        .fd-app__main {
+            padding: 10px;
+            text-align: center;
+            color: #000;
+        }
+
+        .fd-shell__header, .fd-shell__footer {
+            background-color: fd-color(neutral, 3);
+        }
+
+        .fd-app__navigation {
+            background-color: fd-color(background, 2);
+        }
+
+        .fd-app__main {
+            background-color: fd-color(neutral, 1);
+            padding-top: 50px;
+        }
+
+        .fd-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .fd-overlay--alert{
+            .fd-alert{
+                margin-top: -410px;
+            }
+        }
+
+        .docs-component__bg-toggle{
+            display: none;
+        }
+    }
+
+    &__app-example {
+        color: fd-color(text, 5);
+        position: relative;
+
+        .fd-shell__app, .fd-shell, .fd-app {
+            width: 100%;
+            min-height: 410px;
+            position: relative;
+            margin-top: 0;
+        }
+        .fd-app__navigation{
+
+            padding-top:50px;
+        }
+        .fd-app__navigation--vertical {
+            width:250px;
+
+        }
+
+        .fd-app__main {
+            background-color: fd-color(neutral, 1);
+            padding-top: 50px;
+        }
+
+        .fd-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        .fd-side-nav__list,
+        .fd-side-nav__sublist,
+        .fd-breadcrumb {
+            margin-left: 0;
+        }
+
+        .fd-action-bar__description {
+            padding: 0;
+        }
+    }
+
+    &__page {
+        .fd-page,
+        .fd-page__header,
+        .fd-page__intro,
+        .fd-page__content {
+            padding: 10px;
+        }
+
+        .fd-tile__content{
+            padding: 20px 20px;
+        }
+        .docs-component__bg-toggle{
+            display: none;
+        }
+    }
+
+    &__section {
+        .fd-section,
+        .fd-section__header,
+        .fd-section__title,
+        .fd-section__actions,
+        .fd-section__footer,
+        .fd-container {
+            //padding:10px;
+        }
+
+        .fd-section {
+            background-color: $docs-example-bg-color;
+        }
+
+        .fd-section__header {
+            background-color: fd-color(background, 1);
+        }
+
+        .fd-section__title {
+            background-color: fd-color(text, 5);
+        }
+
+        .fd-section__actions {
+            background-color: fd-color(text, 5);
+            padding:14px 10px;
+        }
+
+        .fd-section__footer {
+            background-color: fd-color(background, 1);
+        }
+
+        .fd-container {
+            background-color: fd-color(background, 1);
+        }
+    }
+
+    &__panel {
+        .fd-panel,
+        .fd-panel__header,
+        .fd-panel__title,
+        .fd-panel__actions,
+        .fd-panel__footer,
+        .fd-container {
+            padding:10px;
+        }
+
+        .fd-panel {
+            background-color: $docs-example-bg-color;
+        }
+
+        .fd-panel__header {
+            background-color: fd-color(background, 1);
+        }
+
+        .fd-panel__title {
+            background-color: fd-color(text, 5);
+        }
+
+        .fd-panel__actions {
+            background-color: fd-color(text, 5);
+            padding:14px 10px;
+        }
+
+        .fd-panel__footer {
+            background-color: fd-color(background, 1);
+        }
+
+        .fd-container {
+            background-color: fd-color(background, 1);
+        }
+    }
+
+    &__container {
+        .fd-container {
+            background-color: $docs-example-bg-color;
+            padding: 20px;
+            max-width: 800px;
+        }
+
+        .fd-container--fluid {
+            max-width: 100%;
+        }
+
+        [class^="fd-col"] {
+            background-color: fd-color(background, 1);
+            height: 70px;
+            border: 1px solid fd-color(neutral, 3);
+            text-align: center;
+            padding: 10px 5px;
+        }
+    }
+
+    &__global-nav {
+        .fd-dropdown__list {
+            margin-left: 0;
+        }
+    }
+
+    &__bg-toggle{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    .fd-breadcrumb__link {
+        color: #0a6ed1;
+        &:hover{
+            color: #0a6ed1;
+            text-decoration: none;
+        }
+    }
+
+    .fd-side-nav {
+        max-width: 250px;
+    }
+
+    .fd-side-nav__link {
+        color: inherit;
+    }
+
+    .fd-side-nav--icons {
+        max-width: 65px;
+    }
+
+    .fd-dropdown {
+        margin-right: 20px;
+    }
+
+    > [class*="fd-identifier"] {
+        margin-right: 20px;
+    }
+
+    > .fd-product-tile {
+        min-width: 30%;
+        float: left;
+        margin-right: 20px;
+    }
+
+    .fd-tile-grid {
+        .fd-product-tile {
+            margin-right: 0;
+        }
+    }
+
+    a[aria-disabled="true"]:hover,
+    a[aria-disabled="true"]:visited,
+    a[aria-disabled="true"]:active,
+    a[aria-disabled="true"]:focus,
+    a.is-disabled {
+        color: rgba(10, 110, 209, 0.4);
+        cursor: not-allowed;
+        text-decoration: none;
+    }
+
+    .fd-link:hover,
+    .fd-link:active,
+    .fd-link:focus {
+        text-decoration: none;
+    }
+
+    .fd-panel__description, .fd-action-bar__description {
+        padding: 0;
+    }
+
+    .fd-calendar__content{
+        background: white;
+    }
+
+    .fd-toggle input {
+        border-radius: 15px;
+    }
+
+    &__spacing-example{
+        .fd-tile__content [class^="fd-has"]{
+            border: 1px solid #ccc;
+            background: fd-color(background, 2);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .fd-tile__content [class^="fd-has-margin"]{
+            padding:10px;
+        }
+    }
+
+    &__margin-padding-helpers{
+        .fd-tile__content [class^="fd-has"]{
+            display: block;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .fd-tile__content [class^="fd-has-padding"]{
+            margin:10px;
+        }
+    }
+
+    &__color-examples{
+        .fd-tile__content p {
+            padding: 10px;
+            display: inline-block;
+            width: calc(33%);
+        }
+    }
+
+}

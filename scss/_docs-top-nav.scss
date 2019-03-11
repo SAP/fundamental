@@ -1,0 +1,44 @@
+.docs-top-nav {
+    background-color: #000;
+    height: 87px;
+    &__logo{
+        margin-top: 25px;
+        margin-left: 35px;
+        display: inline-block;
+        font-size: 24px;
+        font-weight: bold;
+        color: fd-color(text, 5) !important;
+
+        &:hover{
+            text-decoration: none;
+            color: fd-color(text, 5) !important;
+        }
+        &__accent{
+            font-weight: 100;
+        }
+
+    }
+
+
+    &__support{
+        @include fd-type("1");
+        color: fd-color(text, 5) !important;
+        padding: 30px 20px 0 0;
+        display: inline-block;
+        @include media("<=tablet") {
+            display: none;
+        }
+        &--link{
+            display: inline-block;
+            vertical-align: top
+        }
+    }
+
+    &__mobile {
+        @include media("<=tablet") {
+            display: flex;
+            justify-content: space-around;
+            align-items: baseline;
+        }
+    }
+}
