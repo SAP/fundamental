@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp build:dist",
-    "build-doc": "gulp docs-site && cd docs && bundle exec jekyll build && cd ..",
+    "build-doc": "gulp docs-site && gem install ruby bundle jekyll && cd docs && bundle install && bundle exec jekyll build && cd ..",
     "deploy": "gh-pages -d docs",
     "release": "./scripts/publish-release.sh",
     "release:create": "create-release",
