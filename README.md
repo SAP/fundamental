@@ -5,7 +5,7 @@
 
 # What is SAP Fiori Fundamentals?
 
-SAP Fiori Fundamentals is a light-weight presentation layer that can be used with your UI framework of choice (e.g. Angular, React, Vue, etc.). With Fiori Fundamentals’ library of stylesheets and HTML tags, developers can build consistent Fiori apps in any web-based technology.
+SAP Fiori Fundamentals is a light-weight presentation layer that can be used with your UI framework of choice (e.g. Angular, React, Vue, etc.). With Fiori Fundamentals’ library of stylesheets and HTML tags, masterers can build consistent Fiori apps in any web-based technology.
 
 #### Learn more at http://sap.github.io/fundamental/
 
@@ -31,10 +31,10 @@ This gives you incredible flexibility to use individual components and enable [a
 npm install fiori-fundamentals --save
 ````
 
-> NOTE: We only distribute the [fonts, icons and CSS](https://github.com/SAP/fundamental/tree/develop/dist) and [the SASS source](https://github.com/SAP/fundamental/tree/develop/scss), not the full project or HTML for specific components.
+> NOTE: We only distribute the [fonts, icons and CSS](https://github.com/SAP/fundamental/tree/master/dist) and [the SASS source](https://github.com/SAP/fundamental/tree/master/scss), not the full project or HTML for specific components.
 
 # Working with the project
-You can clone the entire repo and work in the full project where we manage the [documentation](https://github.com/SAP/fundamental/tree/develop/docs) and the [test framework](https://github.com/SAP/fundamental/tree/develop/test).
+You can clone the entire repo and work in the full project where we manage the [documentation](https://github.com/SAP/fundamental/tree/master/docs) and the [test framework](https://github.com/SAP/fundamental/tree/master/test).
 
 #### Download and Installation
 
@@ -92,16 +92,14 @@ If you encounter an issue, you can [create a ticket](https://github.com/SAP/fund
 
 # Contributing
 
-Details of where and how to start developing the new component can be found in `test/README.MD` file.
-New branches should include the type (feature, bug, or hotfix) and the issue number or release number.
+If you want to contribute, please check the [Contribution Guidelines](https://github.com/SAP/fundamental/blob/master/.github/CONTRIBUTING.md).
 
-```
-git checkout -b feature/000
-git checkout -b bug/000
-git checkout -b hotfix/000
-```
 
-Create a pull request against branch  develop  and assign it for review. When accepted, the reviewer will merge and delete the branch.
+## Versioning
+
+The `fiori-fundamentals` library follows [Semantic Versioning](https://semver.org/). These components strictly adhere to the `[MAJOR].[MINOR].[PATCH]` numbering system (also known as `[BREAKING].[FEATURE].[FIX]`).
+
+Merges to the `master` branch will be published as a prerelease. Prereleases will include an **rc** version (_e.g._ `[MAJOR].[MINOR].[PATCH]-rc.[RC]`).
 
 # License
 
