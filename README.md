@@ -89,7 +89,7 @@ $fd-icons-path : "../node_modules/fiori-fundamentals/scss/icons/"; // should be 
 
 ## Support
 
-If you encounter an issue, you can [create a ticket](https://github.com/SAP/fundamental/issues) or write an email to fundamental@sap.com
+If you encounter an issue, you can create a [ticket](https://github.com/SAP/fundamental/issues/new/choose) or post on the [Fundamentals Slack channel](https://join.slack.com/t/ui-fundamentals/shared_invite/enQtNTIzOTU0Mzc2NTc5LThlOTYxOGE3NGIzZDY3MGYyNjRiYWFlM2U0OGFjMGQ5YTA1MWU0ZjRjOTZmMGIzYWU1MmMyNzNjMjJhNzZhYzY).
 
 
 ## Contributing
