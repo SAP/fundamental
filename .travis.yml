@@ -14,7 +14,6 @@ script:
 jobs:
   include:
   - stage: Test
-    script: gulp test:generateCIConfig && gulp test:reference
     script: gulp test:visual
   - stage: Pre-release
     if: branch = master
