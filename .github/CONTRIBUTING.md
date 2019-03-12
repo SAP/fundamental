@@ -104,9 +104,9 @@ met.
 
 ## Helpful Resources
 
-[Make a new issue](https://github.com/SAP/fundamental/issues/new)
-[Search the issue tracker](https://github.com/SAP/fundamental/issues?utf8=✓&q=is%3Aissue)
-[How to Fork Fundamentals](https://help.github.com/articles/fork-a-repo)
-[Make a pull request](https://help.github.com/articles/creating-a-pull-request)
-[git rebasing](http://git-scm.com/book/en/Git-Branching-Rebasing)
-[interactive rebase](https://help.github.com/articles/interactive-rebase)
+* [Make a new issue](https://github.com/SAP/fundamental/issues/new)
+* [Search the issue tracker](https://github.com/SAP/fundamental/issues?utf8=✓&q=is%3Aissue)
+* [How to Fork Fundamentals](https://help.github.com/articles/fork-a-repo)
+* [Make a pull request](https://help.github.com/articles/creating-a-pull-request)
+* [git rebasing](http://git-scm.com/book/en/Git-Branching-Rebasing)
+* [interactive rebase](https://help.github.com/articles/interactive-rebase)
