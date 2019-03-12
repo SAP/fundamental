@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp build:dist",
-    "build-doc": "gulp docs-site && gem install ruby bundle jekyll && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
+    "build-doc": "gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
     "deploy": "gh-pages -d docs",
     "postinstall": "./scripts/create-library-config.js",
     "release": "./scripts/publish-release.sh",
