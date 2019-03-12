@@ -1,7 +1,7 @@
 language: node_js
 node_js: 10.15.0
 #cache: npm
-sudo: required
+#sudo: required
 dist: trusty
 services:
   - docker
@@ -14,6 +14,7 @@ script:
 jobs:
   include:
   - stage: Test
+    script: gulp test:generateCIConfig
     script: gulp test:visual
   - stage: Pre-release
     if: branch = master
