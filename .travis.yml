@@ -5,15 +5,17 @@ sudo: required
 dist: trusty
 services:
   - docker
+before_install:
+- docker pull backstopjs/backstopjs:3.8.5
 git:
   depth: false
 script:
   - npm run build
 jobs:
   include:
-  - stage: Lint and Test
-    before_script: docker pull backstopjs/backstopjs:3.8.5
-    script: gulp test:generateCIConfig && gulp test:visual
+  - stage: Test
+    script: gulp test:generateCIConfig
+    script: gulp test:visual
   - stage: Pre-release
     if: branch = master
     before_deploy:
