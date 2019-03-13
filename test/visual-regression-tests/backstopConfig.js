@@ -107,9 +107,11 @@ module.exports = {
     "ci_report": "test/visual-regression-tests/backstop_data/ci_report"
   },
   "report": ["CI"],
-  "engine": "puppeteer",
+  "engine": "chromy",
   "engineOptions": {
-    "args": ["--no-sandbox"]
+    "chromeFlags": [
+      "--disable-dev-shm-usage"
+    ]
   },
   "asyncCaptureLimit": 1,
   "asyncCompareLimit": 1,
