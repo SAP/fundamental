@@ -92,7 +92,7 @@ If you encounter an issue, you can create a [ticket](https://github.com/SAP/fund
 
 ## Contributing
 
-If you want to contribute, please check the [Contribution Guidelines](https://github.com/SAP/fundamental/blob/master/.github/CONTRIBUTING.md).
+If you want to contribute, please check the [Contribution Guidelines](https://github.com/SAP/fundamental/wiki/Contribution-Guidelines).
 
 
 ## Versioning
