@@ -33,10 +33,10 @@ $fd-status-label-icon-size: fd-space(4) !default;
   @include fd-rtl {
     padding-left: initial;
     padding-right: fd-space(5);
-    &:before {
+    &::before {
       left: initial;
     }
-    &:after {
+    &::after {
       left: initial;
       right: 0;
     }
@@ -107,18 +107,18 @@ $fd-status-label-icon-size: fd-space(4) !default;
     &--available {
       --fd-status-label-icon-background-color: var(--fd-color-positive);
       @extend %fd-status-icon;
-      &:before {
+      &::before {
         width: 7px;
         height: 7px;
         top: 4px;
         left: 4px;
         background-image: url($fd-status-indicator-available);
       }
-      &:after {
+      &::after {
         @include fd-var-color("background-color", $fd-color--success);
       }
       @include fd-rtl {
-        &:before {
+        &::before {
           right: 4px;
         }
       }
@@ -126,18 +126,18 @@ $fd-status-label-icon-size: fd-space(4) !default;
     &--away {
       --fd-status-label-icon-background-color: var(--fd-color-alert);
       @extend %fd-status-icon;
-      &:before {
+      &::before {
         width: 6px;
         height: 6px;
         top: 4px;
         left: 6px;
         background-image: url($fd-status-indicator-away);
       }
-      &:after {
+      &::after {
         @include fd-var-color("background-color", $fd-color--warning);
       }
       @include fd-rtl {
-        &:before {
+        &::before {
           right: 4px;
         }
       }
@@ -145,36 +145,36 @@ $fd-status-label-icon-size: fd-space(4) !default;
     &--busy {
       --fd-status-label-icon-background-color: var(--fd-color-negative);
       @extend %fd-status-icon;
-      &:before {
+      &::before {
         width: 4px;
         height: 4px;
         top: 6px;
         left: 6px;
         background-image: url($fd-status-indicator-busy);
       }
-      &:after {
+      &::after {
         @include fd-var-color("background-color", $fd-color--error);
       }
       @include fd-rtl {
-        &:before {
+        &::before {
           right: 6px;
         }
       }
     }
     &--offline {
       @extend %fd-status-icon;
-      &:before {
+      &::before {
           width: 8px;
           height: 8px;
           top: 4px;
           left: 4px;
           background-image: url($fd-status-indicator-offline);
       }
-      &:after {
+      &::after {
         //default
       }
       @include fd-rtl {
-        &:before {
+        &::before {
           right: 4px;
         }
       }
