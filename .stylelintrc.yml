@@ -1,30 +1,81 @@
+# master ruleset availabe here
+# https://stylelint.io/user-guide/rules/
+
 rules:
-  block-closing-brace-empty-line-before: never
-  block-no-empty: true
-  block-opening-brace-space-before: always
+  # Possible errors
+
+  ## Color
   color-no-invalid-hex: true
+  
+  ## Font family
+  font-family-no-duplicate-names: true
+
+  ## String
+  string-no-newline: true
+  
+  ## Unit
+  unit-no-unknown: true
+  
+  ## Keyframe declaration
+  keyframe-declaration-no-important: true
+
+  ## Block
+  block-no-empty: true
+
+  ## Selector
+  selector-pseudo-class-no-unknown: true
+
+  ## General / Sheet
+  no-duplicate-selectors: true
+  no-empty-source: true
+  no-extra-semicolons: true
+
+
+  # Limit language features
+
+  ## Declaration
+  #declaration-property-value-blacklist: [ { '/^outline$/': 'none' }]
+
+
+  # Stylistic issues
+
+  ## Number
+  number-no-trailing-zeros: true
+
+  ## Length
+  length-zero-no-unit: true
+
+  ## Unit
+  unit-case: lower
+
+  ## Value
+
+  ## Value list
+  max-empty-lines: 2
+
+  ## Property
+  property-case: lower
+
+  ## Declaration
   declaration-bang-space-before: always
-  declaration-block-trailing-semicolon: always
   declaration-colon-space-after: always
   declaration-colon-space-before: never
-  #declaration-property-value-blacklist: [ { '/^outline$/': 'none' }]
-  font-family-no-duplicate-names: true
-  #indentation: 4
-  keyframe-declaration-no-important: true
-  length-zero-no-unit: true
-  max-empty-lines: 2
-  #no-duplicate-selectors: true
-  no-empty-source: true
-  no-eol-whitespace: true
-  no-extra-semicolons: true
-  number-leading-zero: always
-  number-no-trailing-zeros: true
-  property-case: lower
-  selector-list-comma-space-after: always-single-line
-  selector-list-comma-space-before: never
-  selector-pseudo-class-no-unknown: true
+
+  ## Declaration block
+  declaration-block-trailing-semicolon: always
+
+  ## Block
+  block-closing-brace-empty-line-before: never
+  block-opening-brace-space-before: always
+
+  ## Selector
   selector-pseudo-element-case: lower
   selector-pseudo-element-colon-notation: double
-  string-no-newline: true
-  unit-case: lower
-  unit-no-unknown: true
+
+  ## Selector list
+  selector-list-comma-space-after: always-single-line
+  selector-list-comma-space-before: never
+
+  ## General / Sheet
+  #indentation: 4
+  no-eol-whitespace: true

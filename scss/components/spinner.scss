@@ -70,6 +70,11 @@ $block: #{$fd-namespace}-spinner;
         height: 100%;
         @include fd-var-color("background-color", $fd-spinner-background-color, --fd-spinner-background-color);
     }
+    //1
+    &::before {
+        animation: line-scale $fd-spinner-animation-speed infinite ease;
+        animation-delay: -($fd-spinner-animation-speed);
+    }
     div {
         &::before,
         &::after {
@@ -77,28 +82,17 @@ $block: #{$fd-namespace}-spinner;
             position: absolute;
             width: $fd-spinner-width--bar;
             height: 100%;
-            @include fd-var-color("background-color", $fd-spinner-background-color, --fd-spinner-background-color);        }
-        &::before {
-            left: $fd-spinner-width--bar + $fd-spinner-width--gutter;
+            @include fd-var-color("background-color", $fd-spinner-background-color, --fd-spinner-background-color);
         }
-        &::after {
-            right: $fd-spinner-width--bar + $fd-spinner-width--gutter;
-        }
-    }
-
-    //1
-    &::before {
-        animation: line-scale $fd-spinner-animation-speed infinite ease;
-        animation-delay: -($fd-spinner-animation-speed);
-    }
-    div {
         //2
         &::before {
+            left: $fd-spinner-width--bar + $fd-spinner-width--gutter;
             animation: line-scale $fd-spinner-animation-speed infinite ease;
             animation-delay: -($fd-spinner-animation-speed - 0.1s);
         }
         //3
         &::after {
+            right: $fd-spinner-width--bar + $fd-spinner-width--gutter;
             animation: line-scale $fd-spinner-animation-speed infinite ease;
             animation-delay: -($fd-spinner-animation-speed - 0.2s);
         }
