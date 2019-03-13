@@ -61,17 +61,17 @@
       @if $varcolor {
         @include fd-var-color("border-bottom-color", $foreground-color, $varcolor);
       } @else {
-        border-bottom-color:  $foreground-color;
+        border-bottom-color: $foreground-color;
       }
-      border-left-color:  $background-color;
-      border-right-color:  $background-color;
+      border-left-color: $background-color;
+      border-right-color: $background-color;
     } @else if $direction == right {
       border-width: $width 0 $width $height;
       border-bottom-color: $background-color;
       @if $varcolor {
         @include fd-var-color("border-left-color", $foreground-color, $varcolor);
       } @else {
-        border-left-color:  $foreground-color;
+        border-left-color: $foreground-color;
       }
       border-top-color: $background-color;
     } @else if $direction == down {
@@ -79,7 +79,7 @@
       @if $varcolor {
         @include fd-var-color("border-top-color", $foreground-color, $varcolor);
       } @else {
-        border-top-color:  $foreground-color;
+        border-top-color: $foreground-color;
       }
       border-left-color: $background-color;
       border-right-color: $background-color;
@@ -89,7 +89,7 @@
       @if $varcolor {
         @include fd-var-color("border-right-color", $foreground-color, $varcolor);
       } @else {
-        border-right-color:  $foreground-color;
+        border-right-color: $foreground-color;
       }
       border-top-color: $background-color;
     }
@@ -97,7 +97,7 @@
     border-top: $height solid $foreground-color;
 
     @if $direction == up-right {
-      border-left:  $width solid $background-color;
+      border-left: $width solid $background-color;
     } @else if $direction == up-left {
       border-right: $width solid $background-color;
     }
@@ -105,7 +105,7 @@
     border-bottom: $height solid $foreground-color;
 
     @if $direction == down-right {
-      border-left:  $width solid $background-color;
+      border-left: $width solid $background-color;
     } @else if $direction == down-left {
       border-right: $width solid $background-color;
     }
