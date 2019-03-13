@@ -3,7 +3,7 @@ const child = require('child_process');
 const signale = require('signale');
 
 gulp.task('dev-jekyll', (cb) => {
-  const jekyll = child.exec('bundle exec jekyll build --watch --incremental', { cwd: 'docs' })
+    const jekyll = child.exec('bundle exec jekyll build --watch --incremental --config _config.yml,_config-library.yml', { cwd: 'docs' })
 
   const jekyllLogger = (buffer) => {
     buffer.toString()

@@ -8,7 +8,7 @@ about: Suggest an idea for this project
 
 Before opening:
 - [Search for duplicate or closed issues](https://github.com/SAP/fundamental/issues?utf8=✓&q=is%3Aissue)
-- Read the [contributing guidelines](https://github.com/SAP/fundamental/tree/develop/.github/CONTRIBUTING.md)
+- Read the [contributing guidelines](https://github.com/SAP/fundamental/wiki/Contribution-Guidelines)
 
 Feature requests must include:
 - As much detail as possible for what we should add and why it's important
