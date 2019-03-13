@@ -66,7 +66,7 @@ $block: #{$fd-namespace}-side-nav;
         flex-direction: column;
     }
 
-    &__sublist{
+    &__sublist {
         &[aria-hidden="true"] {
             display: none;
         }
@@ -80,13 +80,13 @@ $block: #{$fd-namespace}-side-nav;
         @include fd-type("0", "normal");
 
         //STATES *******************************************
-        &:hover{
+        &:hover {
             background-color: $fd-side-nav-hover-background-color;
         }
         &.is-selected,
         &.is-expanded,
         &[aria-selected="true"],
-        &[aria-expanded="true"]{
+        &[aria-expanded="true"] {
             color: $fd-side-nav-link-color;
             background-color: $fd-side-nav-selected-background-color;
             @include fd-weight("bold");
@@ -102,34 +102,33 @@ $block: #{$fd-namespace}-side-nav;
     &__link {
 
         //STATES *******************************************
-        &.has-child{
+        &.has-child {
             background-image: url(#{$fd-down-arrow-icon});
             background-repeat: no-repeat;
             background-position: calc(100% - #{$fd-forms-select-width--background-image}) center;
         }
 
         &.is-expanded,
-        &[aria-expanded="true"]
-        {
+        &[aria-expanded="true"] {
             background-image: url(#{$fd-forms-select-background-image--expanded});
         }
     }
 
-    &__sublink{
+    &__sublink {
         font-weight: normal;
         padding-left: fd-space(5) * 2;
-        &[aria-hidden="true"]{
+        &[aria-hidden="true"] {
             display: none;
         }
     }
 
-    &__icon{
+    &__icon {
         padding-right: $fd-side-nav-icon-right-padding;
     }
 
-    &--icons{
+    &--icons {
         min-width: auto;
-        .#{$block}__icon{
+        .#{$block}__icon {
             padding-right: 0;
         }
     }

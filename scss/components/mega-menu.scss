@@ -42,13 +42,13 @@ $block: #{$fd-namespace}-mega-menu;
     border: $fd-mega-menu-border;
 
     //ELEMENTS *******************************************
-    &__header{
+    &__header {
         box-shadow: $fd-mega-menu-header-box-shadow;
-        &-link{
+        &-link {
             padding: fd-space(2.5) fd-space(5);
             color: $fd-mega-menu-link-color;
 
-            &:before{
+            &:before {
                 padding-right: fd-space(2.5);
                 font-size: 22px;
                 vertical-align: sub;
@@ -82,11 +82,11 @@ $block: #{$fd-namespace}-mega-menu;
         flex-direction: column;
     }
 
-    &__item{
+    &__item {
         position: relative;
     }
 
-    &__sublist{
+    &__sublist {
         width: $fd-mega-menu-sub-list-max-width;
         background-color: $fd-mega-menu-background-color;
         box-shadow: $fd-mega-menu-box-shadow;
@@ -108,14 +108,14 @@ $block: #{$fd-namespace}-mega-menu;
         @include fd-type("0", "normal");
 
         //STATES *******************************************
-        &:hover{
+        &:hover {
             background-color: $fd-mega-menu-hover-background-color;
         }
 
         &.is-selected,
         &.is-expanded,
         &[aria-selected="true"],
-        &[aria-expanded="true"]{
+        &[aria-expanded="true"] {
             color: $fd-mega-menu-link-color;
             background-color: $fd-mega-menu-selected-background-color;
             font-weight: bold;
@@ -130,7 +130,7 @@ $block: #{$fd-namespace}-mega-menu;
     &__link {
 
         //STATES *******************************************
-        &.has-child{
+        &.has-child {
             background-image: url(#{$fd-mega-menu-link-background-image});
 
             background-repeat: no-repeat;
@@ -139,15 +139,15 @@ $block: #{$fd-namespace}-mega-menu;
         }
     }
 
-    &__sublink{
+    &__sublink {
         font-weight: normal;
-        &[aria-hidden="true"]{
+        &[aria-hidden="true"] {
             display: none;
         }
     }
 
     //STATES *******************************************
-    &[aria-hidden="true"]{
+    &[aria-hidden="true"] {
         display: none;
     }
 
