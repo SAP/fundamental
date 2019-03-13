@@ -28,7 +28,7 @@ module.exports = {
       "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",
-      "delay": 0,
+      "delay": 1000,
       "hideSelectors": [],
       "removeSelectors": [],
       "hoverSelector": "",
@@ -71,7 +71,7 @@ module.exports = {
       "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",
-      "delay": 0,
+      "delay": 1000,
       "hideSelectors": [],
       "removeSelectors": [],
       "hoverSelector": "",
@@ -107,7 +107,7 @@ module.exports = {
     "ci_report": "test/visual-regression-tests/backstop_data/ci_report"
   },
   "report": ["CI"],
-  "engine": "chromy",
+  "engine": "puppeteer",
   "engineOptions": {
     "args": ["--no-sandbox"]
   },
