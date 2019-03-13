@@ -107,7 +107,7 @@ module.exports = {
     "ci_report": "test/visual-regression-tests/backstop_data/ci_report"
   },
   "report": ["CI"],
-  "engine": "chrome-headless",
+  "engine": "puppeteer",
   "engineOptions": {
     "args": ["--no-sandbox"]
   },
