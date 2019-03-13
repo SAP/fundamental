@@ -90,5 +90,8 @@ gulp.task('test:reference', gulp.series('server:start', 'backstop:reference'));
 // Tests the current visual elements against the reference screenshots.
 gulp.task('test:visual', gulp.series('server:start', 'backstop:test'));
 
+// Tests the current visual elements against the reference screenshots in CI.
+gulp.task('test:visualCI', gulp.series('test:generateCIConfig', 'server:start', 'backstop:test'));
+
 // Approves any changes to the screenshots and promotes them to the reference data set.
 gulp.task('test:approve', () => backstop('approve', {config: backstopConfigLocation }));
