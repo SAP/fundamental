@@ -1,6 +1,5 @@
 language: node_js
 node_js: 10.15.0
-cache: npm
 #sudo: required
 dist: trusty
 #services:
@@ -31,6 +30,7 @@ jobs:
     - git fetch
     - git checkout master
     - bash ./ci-scripts/setup-npm.sh
+    - gem install ruby bundle jekyll
     deploy:
     - provider: script
       script: bash ./ci-scripts/publish.sh
