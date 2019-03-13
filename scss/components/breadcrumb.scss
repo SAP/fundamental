@@ -27,12 +27,12 @@ $block: #{$fd-namespace}-breadcrumb;
     @include fd-rtl {
         padding: 0 0 0 fd-space(4);
         &__item {
-            &::after{
+            &::after {
                 content: "/";
                 margin-right: initial;
                 margin-left: $fd-breadcrumb-link-margin;
             }
-            &:last-child::after{
+            &:last-child::after {
                 content: none;
             }
         }
@@ -40,20 +40,20 @@ $block: #{$fd-namespace}-breadcrumb;
 
     //ELEMENTS *******************************************
     &__item {
-        &::after{
+        &::after {
             content: "/";
             margin-right: $fd-breadcrumb-link-margin;
         }
-        &:last-child::after{
+        &:last-child::after {
             content: none;
         }
         @include fd-rtl {
-            &::after{
+            &::after {
                 content: "/";
                 margin-right: initial;
                 margin-left: $fd-breadcrumb-link-margin;
             }
-            &:last-child::after{
+            &:last-child::after {
                 content: none;
             }
         }
@@ -66,5 +66,4 @@ $block: #{$fd-namespace}-breadcrumb;
             margin-left: $fd-breadcrumb-link-margin;
         }
     }
-
 }

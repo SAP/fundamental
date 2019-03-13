@@ -12,8 +12,8 @@ script:
   - npm run build
 jobs:
   include:
-  #- stage: Lint and Test
-    #script: gulp test:generateCIConfig && gulp test:visual
+  - stage: Lint and Test
+    script: npm run lint # && gulp test:generateCIConfig && gulp test:visual
   - stage: Pre-release
     if: branch = master
     before_deploy:

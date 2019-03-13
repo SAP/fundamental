@@ -95,27 +95,26 @@ $block: #{$fd-namespace}-spinner;
         //2
         &::before {
             animation: line-scale $fd-spinner-animation-speed infinite ease;
-            animation-delay: -($fd-spinner-animation-speed - .1s);
+            animation-delay: -($fd-spinner-animation-speed - 0.1s);
         }
         //3
         &::after {
             animation: line-scale $fd-spinner-animation-speed infinite ease;
-            animation-delay: -($fd-spinner-animation-speed - .2s);
+            animation-delay: -($fd-spinner-animation-speed - 0.2s);
         }
     }
     //4
     &::after {
         animation: line-scale $fd-spinner-animation-speed infinite ease;
-        animation-delay: -($fd-spinner-animation-speed - .3s);
+        animation-delay: -($fd-spinner-animation-speed - 0.3s);
     }
-
 }
 
 @keyframes line-scale {
     0%,
     40%,
     100% {
-        transform: scaleY(.4);
+        transform: scaleY(0.4);
     }
     80% {
         transform: scaleY(1);

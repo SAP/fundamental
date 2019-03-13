@@ -21,7 +21,7 @@ $block: #{$fd-namespace}-side-nav;
     //LOCAL VARS
     $fd-side-nav-text-size: fd-type("1");
     $fd-side-nav-background-color: fd-color("background", 2);
-    $fd-side-nav-selected-background-color: rgba(fd-color("action", 1), .07);
+    $fd-side-nav-selected-background-color: rgba(fd-color("action", 1), 0.07);
     $fd-side-nav-hover-background-color: fd-color("neutral", 1);
     $fd-side-nav-link-color: fd-color("text", 2);
     $fd-side-nav-max-width: 249px;
@@ -52,8 +52,7 @@ $block: #{$fd-namespace}-side-nav;
         @include fd-type("-1", "normal");
         text-transform: uppercase;
         color: $fd-side-nav-link-disabled-color;
-        background:$fd-side-nav-title-background-color;
-
+        background: $fd-side-nav-title-background-color;
     }
 
     &__list,
@@ -63,11 +62,11 @@ $block: #{$fd-namespace}-side-nav;
         flex-wrap: wrap;
         padding-left: 0;
         margin-bottom: 0;
-        list-style:  none;
+        list-style: none;
         flex-direction: column;
     }
 
-    &__sublist{
+    &__sublist {
         &[aria-hidden="true"] {
             display: none;
         }
@@ -81,60 +80,56 @@ $block: #{$fd-namespace}-side-nav;
         @include fd-type("0", "normal");
 
         //STATES *******************************************
-        &:hover{
+        &:hover {
             background-color: $fd-side-nav-hover-background-color;
         }
         &.is-selected,
         &.is-expanded,
         &[aria-selected="true"],
-        &[aria-expanded="true"]{
+        &[aria-expanded="true"] {
             color: $fd-side-nav-link-color;
             background-color: $fd-side-nav-selected-background-color;
             @include fd-weight("bold");
         }
 
 
-
         &.is-disabled,
         &[aria-disabled="true"] {
             color: $fd-side-nav-link-disabled-color;
         }
-
     }
 
     &__link {
 
         //STATES *******************************************
-        &.has-child{
+        &.has-child {
             background-image: url(#{$fd-down-arrow-icon});
             background-repeat: no-repeat;
             background-position: calc(100% - #{$fd-forms-select-width--background-image}) center;
         }
 
         &.is-expanded,
-        &[aria-expanded="true"]
-        {
+        &[aria-expanded="true"] {
             background-image: url(#{$fd-forms-select-background-image--expanded});
         }
     }
 
-    &__sublink{
+    &__sublink {
         font-weight: normal;
         padding-left: fd-space(5) * 2;
-        &[aria-hidden="true"]{
+        &[aria-hidden="true"] {
             display: none;
         }
     }
 
-    &__icon{
+    &__icon {
         padding-right: $fd-side-nav-icon-right-padding;
     }
 
-    &--icons{
+    &--icons {
         min-width: auto;
-        .#{$block}__icon{
-            padding-right:0;
+        .#{$block}__icon {
+            padding-right: 0;
         }
     }
-
 }
