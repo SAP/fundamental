@@ -1,6 +1,7 @@
 # master ruleset availabe here
 # https://stylelint.io/user-guide/rules/
 
+plugins: stylelint-scss
 rules:
   # Possible errors
 
@@ -79,3 +80,78 @@ rules:
   ## General / Sheet
   #indentation: 4
   no-eol-whitespace: true
+
+  # stylelint-scss
+  ## Rules
+
+  ### `@`-else
+  #[TODO]scss/at-else-closing-brace-newline-after: always-last-in-chain
+  #[TODO]scss/at-else-closing-brace-space-after: always-intermediate
+  #[TODO]scss/at-else-empty-line-before: never
+  #[TODO]scss/at-else-if-parentheses-space-before: always
+
+  ### `@`-extend
+  #scss/at-extend-no-missing-placeholder: true
+
+  ### `@`-function
+  #scss/at-function-named-arguments: never
+  #[TODO]scss/at-function-parentheses-space-before: never
+  # scss/at-function-pattern: 
+
+  ### `@`-if
+  #[TODO]scss/at-if-closing-brace-newline-after: always-last-in-chain
+  #[TODO]scss/at-if-closing-brace-space-after: always-intermediate
+
+  ### `@`-import
+  #[TODO]scss/at-import-no-partial-leading-underscore: true
+  # scss/at-import-partial-extension-blacklist: 
+  # scss/at-import-partial-extension-whitelist: 
+
+  ### `@`-mixin
+  #[TODO]scss/at-mixin-argumentless-call-parentheses: always  
+  #scss/at-mixin-named-arguments: never 
+  #[TODO]scss/at-mixin-parentheses-space-before: never
+  # scss/at-mixin-pattern: 
+
+  ### `@`-rule
+  #[TODO]scss/at-rule-no-unknown: true
+
+  ### `$`-variable
+  #scss/dollar-variable-colon-newline-after: always-multi-line
+  #[TODO]scss/dollar-variable-colon-space-after: always
+  #[TODO]scss/dollar-variable-colon-space-before: never
+  # scss/dollar-variable-default: true
+  # scss/dollar-variable-empty-line-before: always
+  #[TODO]scss/dollar-variable-no-missing-interpolation: true
+  # scss/dollar-variable-pattern: 
+
+  ### `%`-placeholder
+  # scss/percent-placeholder-pattern: 
+
+  ### `//`-comment
+  #scss/double-slash-comment-empty-line-before: always
+  #scss/double-slash-comment-inline: always
+  #scss/double-slash-comment-whitespace-inside: always
+
+  ### Declaration
+  #[TODO]scss/declaration-nested-properties: never
+  #[TODO]scss/declaration-nested-properties-no-divided-groups: true
+
+  ### Media feature
+  #scss/media-feature-value-dollar-variable: always
+
+  ### Operator
+  #[TODO]scss/operator-no-newline-after: true
+  #[TODO]scss/operator-no-newline-before: true
+  #scss/operator-no-unspaced: true
+
+  ### Partial
+  #scss/partial-no-import: true
+
+  ### Selector
+  #scss/selector-nest-combinators: always
+  #scss/selector-no-redundant-nesting-selector: true
+
+  ### General / Sheet
+  #scss/no-dollar-variables: true
+  #scss/no-duplicate-dollar-variables: true 
