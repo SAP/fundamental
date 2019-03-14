@@ -12,7 +12,7 @@ $block: #{$fd-namespace}-nav;
   $fd-nav-link-padding-y: fd-space(3) !default;
 
   $fd-nav-margin-bottom: 0 !default;
-  @include fd-reset;
+  @include fd-reset();
   display: flex;
   flex-wrap: wrap;
   padding: 0;
@@ -26,7 +26,7 @@ $block: #{$fd-namespace}-nav;
   &__link {
     display: block;
     padding: $fd-nav-link-padding-y $fd-nav-link-padding-x;
-    @include fd-selected {
+    @include fd-selected() {
       @include fd-var-color("color", $fd-color, --fd-color-text-1);
     }
   }

@@ -27,7 +27,7 @@ $block: #{$fd-namespace}-tile;
   --fd-tile-background-color: var(--fd-color-background-2);
   --fd-tile-title-color: var(--fd-color-text-1);
 
-  @include fd-reset;
+  @include fd-reset();
   display: flex;
   @include fd-var-color("color", $fd-tile-color, --fd-tile-color);
   @include fd-var-color("background-color", $fd-tile-background-color, --fd-tile-background-color);
@@ -35,7 +35,7 @@ $block: #{$fd-namespace}-tile;
   //MODIFICATIONS
   &--button,
   &[role="button"] {
-    @include action-cursor;
+    @include action-cursor();
     transition: box-shadow $fd-tile-transition-params;
     &:hover {
       box-shadow: $fd-tile-box-shadow;

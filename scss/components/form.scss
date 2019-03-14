@@ -24,12 +24,12 @@ $block: #{$fd-namespace}-form;
     $fd-form-item-margin-bottom: fd-space("small") !default;
     $fd-form-item-focus-gutter: fd-space(1) !default;
 
-    @include fd-reset;
+    @include fd-reset();
     &__group {
-        @include fd-clearfix;
-        @include fd-last-child;
+        @include fd-clearfix();
+        @include fd-last-child();
         .#{$block}__item {
-            @include fd-last-child;
+            @include fd-last-child();
             // margin-right: $fd-form-item-gutter;
         }
     }
@@ -50,10 +50,10 @@ $block: #{$fd-namespace}-form;
         }
     }
     &__item {
-        @include fd-last-child;
+        @include fd-last-child();
         margin-bottom: $fd-form-item-margin-bottom;
         &--check {
-            @include fd-clearfix;
+            @include fd-clearfix();
             position: relative;
             display: block;
             .#{$block}__label {
@@ -71,13 +71,13 @@ $block: #{$fd-namespace}-form;
                 display: inline-flex;
                 align-items: center;
                 line-height: $fd-forms-height--input-check;
-                @include action-cursor;
+                @include action-cursor();
             }
             .#{$block}__control {
                 float: left;
                 vertical-align: middle;
                 margin-right: fd-space(2);
-                @include fd-rtl {
+                @include fd-rtl() {
                     float: right;
                     margin-left: fd-space(2);
                     margin-right: 0;
@@ -94,7 +94,7 @@ $block: #{$fd-namespace}-form;
             .#{$block}__label {
                 width: auto;
             }
-            @include fd-rtl {
+            @include fd-rtl() {
               float: right;
               margin-right: 0;
               margin-left: fd-space(3);
@@ -106,7 +106,7 @@ $block: #{$fd-namespace}-form;
     }
     &__label,
     &__legend {
-        @include fd-reset;
+        @include fd-reset();
         @include fd-type(#{$fd-form-label-font-size});
         display: block;
         margin-bottom: fd-space(2);
@@ -124,7 +124,7 @@ $block: #{$fd-namespace}-form;
     }
     &__help {
         float: right;
-        @include fd-rtl {
+        @include fd-rtl() {
             float: left;
         }
     }

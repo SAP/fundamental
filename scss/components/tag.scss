@@ -21,7 +21,7 @@ $block: #{$fd-namespace}-tag;
     $fd-tag-border-color: transparent !default;
     $fd-tag-background-color: fd-color-state("selected") !default;
 
-    @include fd-reset;
+    @include fd-reset();
     @include fd-type("-1");
     color: fd-color("text",2);
     background-color: $fd-tag-background-color;
@@ -34,7 +34,7 @@ $block: #{$fd-namespace}-tag;
     border-width: 1px;
     border-style: solid;
     border-color: $fd-tag-border-color;
-    @include action-cursor;
+    @include action-cursor();
 
     @include fd-icon("sys-cancel","s","after") {
       color: inherit;
@@ -43,7 +43,7 @@ $block: #{$fd-namespace}-tag;
       line-height: fd-space(6);
     }
 
-    @include fd-rtl {
+    @include fd-rtl() {
         @include fd-icon("sys-cancel","s","before") {
             color: fd-color("action",1);
             margin-left: fd-space(base);

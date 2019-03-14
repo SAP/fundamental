@@ -25,7 +25,7 @@ $block: #{$fd-namespace}-dropdown;
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
-    @include fd-reset;
+    @include fd-reset();
     position: relative;
     display: inline-block;
 
@@ -44,7 +44,7 @@ $block: #{$fd-namespace}-dropdown;
       width: 100%;
       text-align: left;
 
-      @include fd-rtl {
+      @include fd-rtl() {
         &::after {
             border-top-left-radius: $fd-border-radius;
             border-bottom-left-radius: $fd-border-radius;
@@ -121,7 +121,7 @@ $block: #{$fd-namespace}-dropdown;
         @include fd-var-color("border-color", $fd-forms-border-color, --fd-color-neutral-4);
         padding-right: 0;
         padding-top: fd-space(1) - 2;
-        @include fd-hover {
+        @include fd-hover() {
           @include fd-var-color("color", $fd-forms-color, --fd-color-text-1);
           @include fd-var-color("background-color", $fd-forms-background-color, --fd-color-background-2);
           @include fd-var-color("border-color", fd-color-state("hover", "action"), --fd-color-action-hover);
@@ -157,7 +157,7 @@ $block: #{$fd-namespace}-dropdown;
             border-left: none;
         }
 
-        @include fd-rtl {
+        @include fd-rtl() {
             padding-left: fd-space("xs");
         }
     }

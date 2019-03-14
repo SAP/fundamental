@@ -13,7 +13,7 @@
 		display: none;
 	}
 	@if $direction = horizontal {
-	    @include fd-clearfix;
+	    @include fd-clearfix();
 		margin: 0;
 		li {
 			float: left;
@@ -70,7 +70,7 @@ $flow_width_of_gutter: map-get($fd-spacing, xxs); // Should match var(--fd-width
 
 //Apply to outer container
 @mixin fd-flow-box {
-  @include fd-clearfix;
+  @include fd-clearfix();
 }
 
 //Apply to "columned" containers

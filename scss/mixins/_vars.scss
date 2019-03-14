@@ -4,16 +4,14 @@
   @if $fd-support-css-var-fallback {
     @if $important {
       #{$property}: #{$value} !important;
-    }
-    @else {
+    } @else {
       #{$property}: #{$value};
     }
   }
   @if $var {
     @if $important {
       #{$property}: var(#{$var}) !important;
-    }
-    @else {
+    } @else {
       #{$property}: var(#{$var});
     }
   }

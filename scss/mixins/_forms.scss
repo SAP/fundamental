@@ -2,7 +2,7 @@
 
 // Form Mixins
 @mixin fd-form-base {
-    @include fd-reset;
+    @include fd-reset();
     @include fd-type("0");
     appearance: none;
     -webkit-appearance: textfield;
@@ -18,10 +18,10 @@
     background-color: $fd-forms-background-color;
     transition: border-color $fd-animation--speed;
     //states
-    @include fd-hover {
+    @include fd-hover() {
         border-color: fd-color-state("hover", "action");
     }
-    @include fd-focus {
+    @include fd-focus() {
       border-color: adjust-color($fd-forms-color--active, $lightness: 30%);
     }
     &.is-invalid {
@@ -36,7 +36,7 @@
         border-color: $fd-color--alert;
         border-width: 2px;
     }
-    @include fd-disabled {
+    @include fd-disabled() {
         cursor: not-allowed;
         color: $fd-forms-color--disabled;
         border-color: $fd-forms-border-color--disabled;
@@ -53,7 +53,7 @@
 }
 
 @mixin fd-form-text() {
-    @include fd-form-base;
+    @include fd-form-base();
     padding-left: $fd-forms-padding;
     padding-right: $fd-forms-padding;
     @content;

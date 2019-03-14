@@ -28,7 +28,7 @@ $block: #{$fd-namespace}-modal;
   $fd-modal-padding-y: fd-space(4) !default;
   $fd-modal-inner-content-background: fd-color("background", 2) !default;
 
-  @include fd-reset;
+  @include fd-reset();
   max-width: $fd-modal-width;
   &__content {
     border-radius: $fd-border-radius;
@@ -61,10 +61,10 @@ $block: #{$fd-namespace}-modal;
     }
     top: fd-space(2);
     @include fd-icon("decline", "l");
-    @include fd-button-reset;
+    @include fd-button-reset();
     width: fd-space(9);
     height: fd-space(9);
-    @include fd-focus;
+    @include fd-focus();
   }
   &__body {
     max-height: calc(100vh - #{$fd-modal-header-height} - #{$fd-modal-footer-height});

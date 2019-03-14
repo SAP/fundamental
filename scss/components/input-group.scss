@@ -12,7 +12,7 @@ $block: #{$fd-namespace}-input-group;
 .#{$block} {
 
     //BLOCK BASE *******************************************
-    @include fd-reset;
+    @include fd-reset();
     display: flex;
     vertical-align: bottom;
 
@@ -21,7 +21,7 @@ $block: #{$fd-namespace}-input-group;
         z-index: map-get($fd-z-index-levels, "first");
     }
 
-    @include fd-rtl {
+    @include fd-rtl() {
         > * {
             & input:read-only {
               border-right: none;
@@ -75,7 +75,7 @@ $block: #{$fd-namespace}-input-group;
         }
         -moz-appearance: textfield;
 
-        @include fd-rtl {
+        @include fd-rtl() {
             padding-right: fd-space(12);
             padding-left: fd-space(15);
             background-position: right fd-space(4) center;
@@ -177,7 +177,7 @@ $block: #{$fd-namespace}-input-group;
         }
     }
     &__button {
-        @include fd-button-reset;
+        @include fd-button-reset();
         flex: 1;
         width: 100%;
         display: block;
@@ -193,7 +193,7 @@ $block: #{$fd-namespace}-input-group;
                 transform: translateX(-50%);
                 top: -2px;
             }
-            @include fd-rtl {
+            @include fd-rtl() {
                 &::before {
                     transform: translateX(50%);
                 }

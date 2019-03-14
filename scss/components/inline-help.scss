@@ -25,7 +25,7 @@ $block: #{$fd-namespace}-inline-help;
     --fd-inline-help-icon-background-color: var(--fd-color-status-4);
 
     //BLOCK BASE *******************************************
-    @include fd-reset;
+    @include fd-reset();
     position: relative;
     display: inline-block;
     width: $fd-tooltip-icon-size;
@@ -93,7 +93,7 @@ $block: #{$fd-namespace}-inline-help;
                 left: -($fd-tooltip-arrow-offset + 1);
                 transform: rotate(-90deg);
             }
-            @include fd-rtl {
+            @include fd-rtl() {
               left: auto;
               right: $fd-tooltip-padding * 2.5;
               &::before {
@@ -121,7 +121,7 @@ $block: #{$fd-namespace}-inline-help;
                 right: -($fd-tooltip-arrow-offset + 1);
                 transform: rotate(90deg);
             }
-            @include fd-rtl {
+            @include fd-rtl() {
               right: auto;
               left: $fd-tooltip-padding * 2.5;
               &::before {
@@ -138,7 +138,7 @@ $block: #{$fd-namespace}-inline-help;
         }
         &--bottom-right {
             left: -$fd-tooltip-arrow-offset;
-            @include fd-rtl {
+            @include fd-rtl() {
               left: auto;
               right: -$fd-tooltip-arrow-offset;
             }
@@ -160,7 +160,7 @@ $block: #{$fd-namespace}-inline-help;
             &::after {
                 top: -($fd-tooltip-arrow-offset - 1);
             }
-            @include fd-rtl {
+            @include fd-rtl() {
               right: auto;
               left: -$fd-tooltip-arrow-offset;
               &::before {
