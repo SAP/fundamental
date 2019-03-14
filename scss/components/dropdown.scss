@@ -36,9 +36,9 @@ $block: #{$fd-namespace}-dropdown;
 
     &__control {
       @include fd-icon-base("after");
-      @include fd-icon-glyph("navigation-down-arrow","after"){
+      @include fd-icon-glyph("navigation-down-arrow","after") {
         transition: transform $fd-dropdown-menu-item-transition-params;
-      };
+      }
       position: relative;
       margin-left: 0;
       width: 100%;
@@ -79,14 +79,6 @@ $block: #{$fd-namespace}-dropdown;
       }
       &--no-border {
         border: none;
-      }
-      &.fd-button--compact {
-          padding-top: fd-space(1) - 1;
-        &::after {
-            margin-top: -3px;
-            height: $fd-forms-height - 6;
-            padding-top: fd-space(2) - 1;
-        }
       }
       // DEPCRECATE these other sizes -------V
       &.fd-button--xs {
@@ -157,11 +149,11 @@ $block: #{$fd-namespace}-dropdown;
             box-shadow: none;
         }
 
-        &::after{
+        &::after {
             width: auto;
             margin-right: fd-space(2.5);
             @include fd-var-color("color", $fd-forms-color, --fd-color-text-1);
-            background-color:  transparent;
+            background-color: transparent;
             border-left: none;
         }
 

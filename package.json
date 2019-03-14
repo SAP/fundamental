@@ -1,15 +1,18 @@
 {
   "name": "fiori-fundamentals",
-  "version": "1.4.5",
+  "version": "1.4.6-rc.4",
   "description": "Fiori Fundamentals is a Design System and HTML/CSS Component Library used to build modern Product User Experiences with the SAP look and feel. Learn more about this project at - http://sap.github.io/fundamental/",
   "main": "index.js",
   "scripts": {
-    "build": "gulp build:dist",
-    "build-doc": "gulp docs-site && gem install ruby bundle jekyll && cd docs && bundle install && bundle exec jekyll build && cd ..",
+    "build": "npx gulp build:dist",
+    "build-doc": "gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
     "deploy": "gh-pages -d docs",
+    "lint": "stylelint './scss/**/*.scss'",
+    "lint:pre-commit": "printf \"running pre-commit lint...\"  && npm run lint && printf \"done!\n\"",
+    "postinstall": "./scripts/create-library-config.js",
     "release": "./scripts/publish-release.sh",
     "release:create": "create-release",
-    "start": "gulp default",
+    "start": "npx gulp default",
     "std-version": "standard-version -m \"chore(release): version %s build ${TRAVIS_BUILD_NUMBER} [ci skip]\"",
     "test": "node test/app.js"
   },
@@ -18,7 +21,7 @@
     "url": ""
   },
   "author": "",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "homepage": "https://sap.github.io/fundamental/",
   "devDependencies": {
     "backstopjs": "^3.9.2",
@@ -49,15 +52,19 @@
     "htmlparser2": "^3.10.0",
     "ip": "^1.1.5",
     "merge-json": "0.1.0-b.3",
+    "load-json-file": "^5.2.0",
     "node-sass": "^4.9.4",
     "nunjucks": "^3.1.3",
+    "pre-commit": "^1.2.2",
     "read-file": "^0.2.0",
     "require-dir": "^1.1.0",
     "set-immediate-shim": "^1.0.1",
     "signale": "^1.3.0",
     "standard-version": "4.2.0",
+    "stylelint": "^7.9.0",
     "undertaker-forward-reference": "^1.0.2",
     "wait-for-port": "0.0.2",
+    "write-yaml": "^1.0.0",
     "yargs": "^12.0.2"
   },
   "directories": {
@@ -67,5 +74,12 @@
   "dependencies": {},
   "engines": {
     "node": ">=8.12.0"
+  },
+  "pre-commit": {
+    "colors": true,
+    "run": [
+      "lint:pre-commit"
+    ],
+    "silent": false
   }
 }

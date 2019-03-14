@@ -467,7 +467,7 @@ $block: #{$fd-namespace}-button;
   @extend .#{$block}--standard;
 }
 
-
+/* stylelint-disable no-duplicate-selectors */
 //DEPRECATED
 .#{$block} {
   //SETTINGS
@@ -510,7 +510,7 @@ $block: #{$fd-namespace}-button;
             padding-left: $fd-button-padding-x-deprecated * 1.2;
             padding-right: $fd-button-padding-x-deprecated * 1.2;
           }
-          @if $key == "xs" or $key == "s"  {
+          @if $key == "xs" or $key == "s" {
             @include fd-icon-size("default", "after");
           }
         }
@@ -584,7 +584,6 @@ $block: #{$fd-namespace}-button;
           --fd-button-background-color: var(--fd-color-status-3);
           --fd-button-color: var(--fd-color-action-2);
         }
-
       }
       &.#{$block}--positive {
         --fd-button-color: var(--fd-color-status-1);
@@ -623,5 +622,5 @@ $block: #{$fd-namespace}-button;
         }
       }
     }
-
 }
+/* stylelint-enable */

@@ -33,10 +33,10 @@ $fd-status-label-icon-size: fd-space(4) !default;
   @include fd-rtl {
     padding-left: initial;
     padding-right: fd-space(5);
-    &:before {
+    &::before {
       left: initial;
     }
-    &:after {
+    &::after {
       left: initial;
       right: 0;
     }
@@ -58,7 +58,6 @@ $fd-status-label-icon-size: fd-space(4) !default;
     $fd-status-indicator-offline:"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA3LjkgNy45IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA3LjkgNy45OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik03LjksNGMwLDIuMi0xLjgsNC00LDRTMCw2LjIsMCw0czEuOC00LDQtNFM3LjksMS44LDcuOSw0Ii8+Cjwvc3ZnPg==" !default;
 
 
-
     @mixin fd-status-icon-bg {
         width: $fd-status-label-icon-size;
         height: $fd-status-label-icon-size;
@@ -70,7 +69,7 @@ $fd-status-label-icon-size: fd-space(4) !default;
         top: 0;
         left: 0;
     }
-    @mixin fd-status-icon{
+    @mixin fd-status-icon {
         position: absolute;
         z-index: map-get($fd-z-index-levels, "first");
         background-repeat: no-repeat;
@@ -85,10 +84,7 @@ $fd-status-label-icon-size: fd-space(4) !default;
     @include fd-var-color("color", $fd-status-label-color, --fd-status-label-color);
 
 
-
-
-
-    &::before{
+    &::before {
         vertical-align: -8%;
         width: fd-space(5);
         height: $fd-status-label-icon-size;
@@ -111,18 +107,18 @@ $fd-status-label-icon-size: fd-space(4) !default;
     &--available {
       --fd-status-label-icon-background-color: var(--fd-color-positive);
       @extend %fd-status-icon;
-      &:before{
+      &::before {
         width: 7px;
         height: 7px;
         top: 4px;
         left: 4px;
         background-image: url($fd-status-indicator-available);
       }
-      &:after{
+      &::after {
         @include fd-var-color("background-color", $fd-color--success);
       }
       @include fd-rtl {
-        &:before {
+        &::before {
           right: 4px;
         }
       }
@@ -130,18 +126,18 @@ $fd-status-label-icon-size: fd-space(4) !default;
     &--away {
       --fd-status-label-icon-background-color: var(--fd-color-alert);
       @extend %fd-status-icon;
-      &:before{
+      &::before {
         width: 6px;
         height: 6px;
         top: 4px;
         left: 6px;
         background-image: url($fd-status-indicator-away);
       }
-      &:after{
+      &::after {
         @include fd-var-color("background-color", $fd-color--warning);
       }
       @include fd-rtl {
-        &:before {
+        &::before {
           right: 4px;
         }
       }
@@ -149,39 +145,38 @@ $fd-status-label-icon-size: fd-space(4) !default;
     &--busy {
       --fd-status-label-icon-background-color: var(--fd-color-negative);
       @extend %fd-status-icon;
-      &:before{
+      &::before {
         width: 4px;
         height: 4px;
         top: 6px;
         left: 6px;
         background-image: url($fd-status-indicator-busy);
       }
-      &:after{
+      &::after {
         @include fd-var-color("background-color", $fd-color--error);
       }
       @include fd-rtl {
-        &:before {
+        &::before {
           right: 6px;
         }
       }
     }
     &--offline {
       @extend %fd-status-icon;
-      &:before{
+      &::before {
           width: 8px;
           height: 8px;
           top: 4px;
           left: 4px;
           background-image: url($fd-status-indicator-offline);
       }
-      &:after{
+      &::after {
         //default
       }
       @include fd-rtl {
-        &:before {
+        &::before {
           right: 4px;
         }
       }
     }
-
 }

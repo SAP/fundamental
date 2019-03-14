@@ -72,7 +72,7 @@ $block: #{$fd-namespace}-toggle;
                     pointer-events: none;
                 }
 
-                &+.#{$block}__switch:before {
+                &+.#{$block}__switch::before {
                     border-color: transparent;
                     background-color: $fd-toggle-switch-on-background-color--disabled;
                 }
@@ -93,7 +93,7 @@ $block: #{$fd-namespace}-toggle;
         border-radius: 34px;
     }
 
-    &__switch:before {
+    &__switch::before {
         position: absolute;
         content: "";
         height: fd-space(7);
@@ -113,7 +113,7 @@ $block: #{$fd-namespace}-toggle;
         background-color: adjust-color($fd-link-color, $alpha: 0.6);
     }
 
-    input:checked+&__switch:before {
+    input:checked+&__switch::before {
         -webkit-transform: translateX(26px);
         -ms-transform: translateX(26px);
         transform: translateX(26px);
@@ -131,13 +131,13 @@ $block: #{$fd-namespace}-toggle;
                 height: nth($list, 3);
                 width: nth($list, 1);
 
-                .#{$block}__switch:before {
+                .#{$block}__switch::before {
                     height: nth($list, 2);
                     width: nth($list, 2);
                     top: nth($list, 4);
                 }
 
-                input:checked+.#{$block}__switch:before {
+                input:checked+.#{$block}__switch::before {
                     left: nth($list, 5);
                 }
             }

@@ -21,12 +21,11 @@ $block: #{$fd-namespace}-action-bar;
     //LOCAL mixins
     @mixin fd-action-bar-responsive {
         // Changed from deprecated fd-screen(xs)
-        @include fd-screen(s){
+        @include fd-screen(s) {
             white-space: nowrap;
             width: calc(100% - 10px);
             overflow: hidden;
             text-overflow: ellipsis;
-
         }
     }
 
@@ -91,7 +90,7 @@ $block: #{$fd-namespace}-action-bar;
         margin-bottom: fd-space(base);
     }
 
-    &__description{
+    &__description {
         @include fd-var-color("color", $fd-action-bar-description-color, --fd-color-text-3);
         @include fd-type("0");
         @include fd-hide-on-mobile;

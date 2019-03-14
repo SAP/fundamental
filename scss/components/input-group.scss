@@ -17,7 +17,7 @@ $block: #{$fd-namespace}-input-group;
     vertical-align: bottom;
 
     //ELEMENTS *******************************************
-    #{$fd-elements-inputs--text}{
+    #{$fd-elements-inputs--text} {
         z-index: map-get($fd-z-index-levels, "first");
     }
 
@@ -107,7 +107,7 @@ $block: #{$fd-namespace}-input-group;
         flex-direction: column;
         border-radius: $fd-border-radius;
         @include fd-var-size("height", $fd-forms-height, --fd-forms-height);
-        &--readonly{
+        &--readonly {
             border: none;
             border-top-color: transparent;
             border-right-color: transparent;
@@ -117,8 +117,8 @@ $block: #{$fd-namespace}-input-group;
           .#{$block}--compact & {
           @include fd-var-size("height", $fd-forms-height--compact, --fd-forms-height-compact);
             .#{$block}__button {
-                &--step-up:before,
-                &--step-down:before {
+                &--step-up::before,
+                &--step-down::before {
                     top: -4px;
                 }
             }
@@ -147,7 +147,7 @@ $block: #{$fd-namespace}-input-group;
             border-bottom-left-radius: 0;
         }
 
-        &--textarea{
+        &--textarea {
             height: auto;
         }
         @at-root {
@@ -165,7 +165,7 @@ $block: #{$fd-namespace}-input-group;
         }
     }
     &--before {
-        #{$fd-elements-inputs--text}{
+        #{$fd-elements-inputs--text} {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
@@ -184,17 +184,17 @@ $block: #{$fd-namespace}-input-group;
         min-width: fd-space(12);
         @include fd-var-color("background-color", fd-color(neutral, 1), --fd-color-neutral-1);
         &--step-up,
-        &--step-down  {
+        &--step-down {
             @include fd-type("0");
             @include fd-var-color("color", $fd-color--action, --fd-color-action);
             position: relative;
-            &::before{
+            &::before {
                 position: absolute;
                 transform: translateX(-50%);
                 top: -2px;
             }
             @include fd-rtl {
-                &::before{
+                &::before {
                     transform: translateX(50%);
                 }
             }
@@ -205,9 +205,6 @@ $block: #{$fd-namespace}-input-group;
             @include fd-var-color("border-bottom-color", $fd-forms-border-color, --fd-forms-border-color);
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
-        }
-        &--step-down  {
-
         }
         &--clear {
             background-color: transparent;

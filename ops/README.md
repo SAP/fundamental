@@ -16,18 +16,18 @@ Each output has a `build` task that chains the tasks together. Individual tasks 
 * Outputs: `dist` (and `tmp`)
 
 ### Generate the package
-`gulp build:dist --production` builds to `dist`
+`npx gulp build:dist --production` builds to `dist`
 
 ### For local development
-`npm run build` or `gulp build:dist` builds to `tmp`
+`npm run build` or `npx gulp build:dist` builds to `tmp`
 
 > Local development has no dependency on `dist`. It only needs to be built for releases and deployments.
 
 ### Individual tasks
-* `gulp pkg-clean` removes the contents of `dist` (production mode) or `tmp`
-* `gulp pkg-css` compiles SASS for the full library, prefixes and cleans (production mode), includes sourcemaps (development mode)
-* `gulp pkg-css-minify` minifies compiled CSS (for production mode only)
-* `gulp pkg-css-components` compiles, minifies, and prefixes individual component files (for production mode only)
+* `npx gulp pkg-clean` removes the contents of `dist` (production mode) or `tmp`
+* `npx gulp pkg-css` compiles SASS for the full library, prefixes and cleans (production mode), includes sourcemaps (development mode)
+* `npx gulp pkg-css-minify` minifies compiled CSS (for production mode only)
+* `npx gulp pkg-css-components` compiles, minifies, and prefixes individual component files (for production mode only)
 
 
 ## The docs
@@ -37,10 +37,10 @@ Each output has a `build` task that chains the tasks together. Individual tasks 
 The documentation uses Jekyll to generate a static site. Dependencies on packaging tasks should be very clearly defined in the main build task, i.e., build the package before including it into the website. Do not mix packaging tasks into the unrelated docs tasks.
 
 ### Generate the documentation
-`gulp`
+`npx gulp`
 
 ### Individual tasks
-* `gulp docs-resources` optimizes and outputs svgs to `docs/_site/images` (should handle images as well)
+* `npx gulp docs-resources` optimizes and outputs svgs to `docs/_site/images` (should handle images as well)
 * `docs-css`
 * `docs-icons`
 * `docs-styleguide`
@@ -51,7 +51,7 @@ The documentation uses Jekyll to generate a static site. Dependencies on packagi
 Local development requires a server and includes watch tasks which auto-compiles files and refreshes the browser.
 
 ### Start the server
-`npm start` or `gulp`
+`npm start`
 
 > The default Gulp task is the "build" task for local development
 
@@ -73,7 +73,7 @@ Assuming "foo" is the component, the following are created:
 * `test/templates/foo/component.njk` is Nunjucks macro with a basic constructor
 * `test/templates/foo/index.njk` imports above macro and data file to output the base component
 
-> Read more about the `test` framework and [Simple visual testing](https://github.com/SAP/fundamental/blob/develop/test/README.md#simple-visual-testing)
+> Read more about the `test` framework and [Simple visual testing](https://github.com/SAP/fundamental/blob/master/test/README.md#simple-visual-testing)
 
 Run `npm test`. Navigate to [`localhost:3030/foo`](localhost:3030/foo) to see the page.
 

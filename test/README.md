@@ -7,7 +7,7 @@ The component test framework loads only `core.scss` and individual component `.s
 - Go to [localhost:3030](http://localhost:3030)
 
 ### Get started
-> Read about the `gulp create` task at [Contributing Components](https://github.com/SAP/fundamental/tree/develop/ops#contributing-components) which can automatically generate the required component files.
+> Read about the `npx gulp create` task at [Contributing Components](https://github.com/SAP/fundamental/tree/master/ops#contributing-components) which can automatically generate the required component files.
 
 To get started add a new directory matching the component block with an `index.njk` file inside.
 
@@ -52,7 +52,7 @@ If you have never setup the project, you need to do a few things first.
 - Install node from https://nodejs.org/en/
 - Install the [Github desktop application](https://desktop.github.com)
 - Choose "Clone a repository" and input URL `https://github.com/SAP/fundamental.git`
-- Change "Current Branch" to `develop`
+- Change "Current Branch" to `master`
 - From the macOS menu bar, select "Repository > Open in Terminal"
 - Type `npm install`
 
@@ -75,14 +75,14 @@ A visual testing framwork is available for automated testing.  The framework exa
 
 ## Executing automated tests
 
-From the root of the project, execute `gulp test:visual`.  This will compare components that have screenshots defined against those in your current build.  After the build runs, a browser should launch detailing the test results.
+From the root of the project, execute `npx gulp test:visual`.  This will compare components that have screenshots defined against those in your current build.  After the build runs, a browser should launch detailing the test results.
 
 ## Updating automated tests
 
 If you have visually changed a component and are happy that the changes are as desired, you need to run the following commands to update the reference screenshots:
 
-- `gulp test:reference` will generate a new set of reference screenshots based on your current build.
-- `gulp test:approve` will promote the new generated screenshots to be the reference data to be used.
+- `npx gulp test:reference` will generate a new set of reference screenshots based on your current build.
+- `npx gulp test:approve` will promote the new generated screenshots to be the reference data to be used.
 - **Note:** You will need to commit the updated reference screenshots as part of your PR
 
 ## Adding new components to the automation framwework
