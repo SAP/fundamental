@@ -40,8 +40,7 @@
   @if map-has-key($_map, $state) {
     $_color: map-get($_map, $state);
     @return $_color;
-  }
-  @else {
+  } @else {
       @warn "Invalid map $state of `#{$state}`. Valid $state values are #{map-keys($_map)}. Returning `black`.";
       @return black;
   }
