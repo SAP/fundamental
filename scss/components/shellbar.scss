@@ -35,7 +35,7 @@ $block: #{$fd-namespace}-shellbar;
   --fd-shellbar-background-color: var(--fd-color-shell-1);
   --fd-shellbar-link-color: var(--fd-color-shell-2);
 
-    @include fd-reset;
+    @include fd-reset();
     @include fd-var-color("background-color", $fd-shellbar-background-color, --fd-shellbar-background-color);
     height: $fd-shellbar-height;
     display: flex;
@@ -60,7 +60,7 @@ $block: #{$fd-namespace}-shellbar;
         }
         &--end {
             text-align: right;
-            @include fd-rtl {
+            @include fd-rtl() {
                 text-align: left;
             }
         }
@@ -84,7 +84,7 @@ $block: #{$fd-namespace}-shellbar;
       @include fd-screen(m) {
         display: inline-block;
         margin-right: fd-space("tiny");
-        @include fd-rtl {
+        @include fd-rtl() {
           margin-right: 0;
           margin-left: fd-space("tiny");
         }
@@ -117,7 +117,7 @@ $block: #{$fd-namespace}-shellbar;
         @include fd-screen(m) {
           max-width: 60%;
         }
-        @include fd-rtl {
+        @include fd-rtl() {
           padding: 0 0 0 fd-space(2);
         }
     }
@@ -176,7 +176,7 @@ $block: #{$fd-namespace}-shellbar;
         position: relative;
         padding-right: 0;
         padding-left: $fd-shellbar-item-spacing;
-        @include fd-rtl {
+        @include fd-rtl() {
           padding-right: $fd-shellbar-item-spacing;
           padding-left: 0;
         }

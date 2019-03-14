@@ -35,8 +35,8 @@ $block: #{$fd-namespace}-tree;
     --fd-tree-header-color: var(--fd-color-text-3);
     --fd-tree-header-background-color: var(--fd-color-neutral-2);
 
-    @include fd-reset;
-    @include fd-last-child;
+    @include fd-reset();
+    @include fd-last-child();
     position: relative;
     width: 100%;
     max-width: 100%;
@@ -92,7 +92,7 @@ $block: #{$fd-namespace}-tree;
         align-items: center;
         position: relative;
         transition: background-color $fd-tree-transition-params;
-        @include fd-hover {
+        @include fd-hover() {
           @include fd-var-color("background-color", $fd-tree-row-background-color--hover, --fd-color-background-hover);
         }
         &--header {
@@ -100,11 +100,11 @@ $block: #{$fd-namespace}-tree;
             @include fd-var-color("color", $fd-tree-header-color, --fd-tree-header-color);
             @include fd-var-color("background-color", $fd-tree-header-background-color, --fd-tree-header-background-color);
             text-transform: uppercase;
-            @include fd-hover {
+            @include fd-hover() {
                 background-color: initial;
             }
         }
-        @include fd-selected {
+        @include fd-selected() {
             background-color: fd-color-state("selected");
             @include fd-var-color("background-color", fd-color-state("selected"), --fd-color-background-selected);
         }
@@ -139,14 +139,14 @@ $block: #{$fd-namespace}-tree;
             padding-top: 0;
             padding-bottom: 0;
             text-align: right;
-            @include fd-rtl {
+            @include fd-rtl() {
               text-align: left;
             }
         }
     }
 
     &__control {
-        @include fd-button-reset;
+        @include fd-button-reset();
         position: absolute;
         top: calc(50% - #{$fd-tree-control-width}/2);
         margin-left: -#{$_row_padding};
@@ -157,7 +157,7 @@ $block: #{$fd-namespace}-tree;
         transition: transform $fd-animation--speed linear;
         @include fd-icon("nav-back");
         @include fd-var-color("color", $fd-link-color, --fd-color-action-1);
-        @include fd-focus;
+        @include fd-focus();
         @include fd-rtl() {
           margin-left: fd-space(3);
           margin-right: -#{$_row_padding};

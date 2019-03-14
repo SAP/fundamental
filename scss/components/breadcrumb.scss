@@ -15,7 +15,7 @@ $block: #{$fd-namespace}-breadcrumb;
 .#{$block} {
 
     //BLOCK BASE *******************************************
-    @include fd-reset;
+    @include fd-reset();
     @include fd-type("-1");
     display: flex;
     flex-wrap: wrap;
@@ -24,7 +24,7 @@ $block: #{$fd-namespace}-breadcrumb;
     list-style: none;
     padding-right: fd-space(4);
 
-    @include fd-rtl {
+    @include fd-rtl() {
         padding: 0 0 0 fd-space(4);
         &__item {
             &::after {
@@ -47,7 +47,7 @@ $block: #{$fd-namespace}-breadcrumb;
         &:last-child::after {
             content: none;
         }
-        @include fd-rtl {
+        @include fd-rtl() {
             &::after {
                 content: "/";
                 margin-right: initial;
@@ -61,7 +61,7 @@ $block: #{$fd-namespace}-breadcrumb;
 
     &__link {
         margin-right: $fd-breadcrumb-link-margin;
-        @include fd-rtl {
+        @include fd-rtl() {
             margin-right: initial;
             margin-left: $fd-breadcrumb-link-margin;
         }

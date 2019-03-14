@@ -30,7 +30,7 @@ $fd-status-label-icon-size: fd-space(4) !default;
     left: 0;
     @include fd-var-color("background-color", $fd-status-label-color, --fd-status-label-icon-background-color);
   }
-  @include fd-rtl {
+  @include fd-rtl() {
     padding-left: initial;
     padding-right: fd-space(5);
     &::before {
@@ -79,7 +79,7 @@ $fd-status-label-icon-size: fd-space(4) !default;
 
     //BLOCK BASE *******************************************
     position: relative;
-    @include fd-reset;
+    @include fd-reset();
 
     @include fd-var-color("color", $fd-status-label-color, --fd-status-label-color);
 
@@ -117,7 +117,7 @@ $fd-status-label-icon-size: fd-space(4) !default;
       &::after {
         @include fd-var-color("background-color", $fd-color--success);
       }
-      @include fd-rtl {
+      @include fd-rtl() {
         &::before {
           right: 4px;
         }
@@ -136,7 +136,7 @@ $fd-status-label-icon-size: fd-space(4) !default;
       &::after {
         @include fd-var-color("background-color", $fd-color--warning);
       }
-      @include fd-rtl {
+      @include fd-rtl() {
         &::before {
           right: 4px;
         }
@@ -155,7 +155,7 @@ $fd-status-label-icon-size: fd-space(4) !default;
       &::after {
         @include fd-var-color("background-color", $fd-color--error);
       }
-      @include fd-rtl {
+      @include fd-rtl() {
         &::before {
           right: 6px;
         }
@@ -173,7 +173,7 @@ $fd-status-label-icon-size: fd-space(4) !default;
       &::after {
         //default
       }
-      @include fd-rtl {
+      @include fd-rtl() {
         &::before {
           right: 4px;
         }

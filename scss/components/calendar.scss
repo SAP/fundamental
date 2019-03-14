@@ -50,7 +50,7 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
   align-items: center;
   justify-content: center;
   &:hover {
-    @include action-cursor;
+    @include action-cursor();
     --fd-calendar-item-background-color: var(--fd-color-neutral-1);
     @include fd-var-color("background-color", $fd-calendar-item-background-color--hover);
   }
@@ -122,7 +122,7 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
 .#{$block} {
   //BLOCK BASE *******************************************
   //set all BLOCK reset and baseline styles
-  @include fd-reset;
+  @include fd-reset();
   width: $fd-calendar-table-width;
 }
 

@@ -12,7 +12,7 @@ $block-alt: #{$fd-namespace}-segmented-button;
 .#{$block},
 .#{$block-alt} {
 
-  @include fd-reset-spacing;
+  @include fd-reset-spacing();
   display: inline-flex;
   vertical-align: middle;
   & > * {
@@ -31,7 +31,7 @@ $block-alt: #{$fd-namespace}-segmented-button;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
-    @include fd-rtl {
+    @include fd-rtl() {
       &:not(:first-child) {
         border-right: none;
       }

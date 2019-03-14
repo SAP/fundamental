@@ -31,7 +31,7 @@ $block: #{$fd-namespace}-popover;
     &__control {
       position: relative;
       margin-left: 0;
-      @include action-cursor;
+      @include action-cursor();
     }
     &__body {
       border: $fd-popover-border;
@@ -51,7 +51,7 @@ $block: #{$fd-namespace}-popover;
       top: $fd-popover-top-position;
       transform: translateY(0);
 
-      @include fd-rtl {
+      @include fd-rtl() {
         left: auto;
         right: -3px;
 
@@ -84,7 +84,7 @@ $block: #{$fd-namespace}-popover;
         right: auto;
         left: -3px;
 
-        @include fd-rtl {
+        @include fd-rtl() {
           right: -3px;
           left: auto;
 
@@ -105,7 +105,7 @@ $block: #{$fd-namespace}-popover;
         left: auto;
         right: -3px;
 
-        @include fd-rtl {
+        @include fd-rtl() {
           right: auto;
           left: -3px;
 

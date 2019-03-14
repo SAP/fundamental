@@ -20,7 +20,7 @@ $block: #{$fd-namespace}-token;
     --fd-token-background-color: var(--fd-color-background-information);
     --fd-token-border-color: transparent;
 
-    @include fd-reset;
+    @include fd-reset();
     @include fd-type("-1");
     @include fd-var-color("color", $fd-token-color, --fd-token-color);
     @include fd-var-color("background-color", $fd-token-background-color, --fd-token-background-color);
@@ -40,7 +40,7 @@ $block: #{$fd-namespace}-token;
         vertical-align: bottom;
         line-height: fd-space(6);
     }
-    @include fd-rtl {
+    @include fd-rtl() {
         @include fd-icon("sys-cancel", "s", "before") {
             @include fd-var-color("color", fd-color("action", 1), --fd-color-action-1);
             margin-left: fd-space(base);

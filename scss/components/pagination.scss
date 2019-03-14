@@ -18,7 +18,7 @@ $block: #{$fd-namespace}-pagination;
   --fd-pagination-total-color: var(--fd-color-text-2);
 
 
-  @include fd-reset;
+  @include fd-reset();
   @include fd-type("0");
   &__total {
     @include fd-var-color("color", $fd-pagination-total-color, --fd-pagination-total-color);
@@ -37,7 +37,7 @@ $block: #{$fd-namespace}-pagination;
     padding-left: fd-space(1);
     padding-right: fd-space(1);
     position: relative;
-    @include fd-selected {
+    @include fd-selected() {
       @include fd-var-color("color", $fd-pagination-link-color--active, --fd-pagination-link-color-active);
       text-decoration: none;
       cursor: default;
