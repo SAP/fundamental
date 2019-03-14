@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.6-rc.5"></a>
+## [1.4.6-rc.5](https://github.com/SAP/fundamental/compare/v1.4.6-rc.4...v1.4.6-rc.5) (2019-03-14)
+
+
+### Bug Fixes
+
+* init scsslint ([#1315](https://github.com/SAP/fundamental/issues/1315)) ([35c8340](https://github.com/SAP/fundamental/commit/35c8340))
+
+
+
 <a name="1.4.6-rc.4"></a>
 ## [1.4.6-rc.4](https://github.com/SAP/fundamental/compare/v1.4.6-rc.3...v1.4.6-rc.4) (2019-03-14)
 
