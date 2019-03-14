@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.6-rc.4"></a>
+## [1.4.6-rc.4](https://github.com/SAP/fundamental/compare/v1.4.6-rc.3...v1.4.6-rc.4) (2019-03-14)
+
+
+### Bug Fixes
+
+* stylelint - no-duplicate-selectors ([#1314](https://github.com/SAP/fundamental/issues/1314)) ([b449002](https://github.com/SAP/fundamental/commit/b449002))
+
+
+
 <a name="1.4.6-rc.3"></a>
 ## [1.4.6-rc.3](https://github.com/SAP/fundamental/compare/v1.4.6-rc.2...v1.4.6-rc.3) (2019-03-13)
 
