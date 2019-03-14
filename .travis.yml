@@ -2,10 +2,10 @@ language: node_js
 node_js: 10.15.0
 #sudo: required
 dist: trusty
-#services:
-#  - docker
-#before_install:
-#- docker pull backstopjs/backstopjs:3.8.5
+services:
+  - docker
+before_install:
+- docker pull backstopjs/backstopjs:3.9.2
 git:
   depth: false
 script:
@@ -13,7 +13,7 @@ script:
 jobs:
   include:
   - stage: Lint and Test
-    script: npm run lint # && gulp test:generateCIConfig && gulp test:visual
+    script: npm run lint && gulp test:generateCIConfig && gulp test:visual
   - stage: Pre-release
     if: branch = master
     before_deploy:
