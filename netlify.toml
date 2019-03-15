@@ -6,11 +6,10 @@
 #    that is where we will look for package.json/.nvmrc/etc not repo root!
 
 [build]
-  base    = "docs/"
   publish = "docs/_site"
-  command = "cp ../package.json . && npm i && gulp docs-site && ls css && bundle exec jekyll build --config _config.yml,_config-library.yml"
+  command = "npm run build-doc"
 
 # Production context: All deploys to the main
 # repository branch will inherit these settings.
 [context.production]
-  command = "bundle exec jekyll build --config _config.yml,_config-library.yml"
+  command = "npm run build-doc"
