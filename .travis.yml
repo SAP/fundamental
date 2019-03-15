@@ -1,22 +1,46 @@
 language: node_js
-sudo: required
+node_js: 10.15.0
+#sudo: required
 dist: trusty
 services:
   - docker
- 
 before_install:
-- docker pull backstopjs/backstopjs:3.8.5
-
-node_js:
-- 8.5
-
-install:
-- npm install
-
+- docker pull backstopjs/backstopjs:3.9.2
+git:
+  depth: false
 script:
-- gulp test:generateCIConfig
-- gulp test:visual
-
-branches:
-  only:
-  - develop
+  - npm run build
+jobs:
+  include:
+  - stage: Lint and Test
+    script: npm run lint && gulp test:generateCIConfig && gulp test:visual
+  - stage: Pre-release
+    if: branch = master
+    before_deploy:
+    - git checkout master
+    - bash ./ci-scripts/setup-npm.sh
+    deploy:
+    - provider: script
+      script: bash ./ci-scripts/publish-rc.sh
+      skip_cleanup: true
+  - stage: Release
+    if: branch = tmp_branch_for_automated_release_do_not_use
+    before_deploy:
+    - git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+    - git fetch
+    - git checkout master
+    - bash ./ci-scripts/setup-npm.sh
+    - gem install ruby bundle jekyll
+    deploy:
+    - provider: script
+      script: bash ./ci-scripts/publish.sh
+      skip_cleanup: true
+      on:
+        all_branches: true
+notifications:
+  email:
+    on_failure: always
+    on_success: change
+  slack: 
+    rooms:
+      - ui-fundamentals:zVRyxlqkYnQFD7p8QHkWM8Fd#ui-automated

@@ -29,7 +29,7 @@ $block: #{$fd-namespace}-alert;
     $fd-alert-padding-y: fd-space("xs") !default;
 
     // Block
-    @include fd-reset;
+    @include fd-reset();
     position: relative;
     color: $fd-alert-color;
     border-style: solid;
@@ -50,12 +50,12 @@ $block: #{$fd-namespace}-alert;
       right: fd-space(1);
       top: 0;
       @include fd-icon("decline", "l");
-      @include fd-button-reset;
+      @include fd-button-reset();
       color: fd-color("text", 1);
       width: fd-space(9);
       height: fd-space(9);
-      @include fd-focus;
-      @include fd-rtl {
+      @include fd-focus();
+      @include fd-rtl() {
         left: fd-space(1);
         right: auto;
       }
@@ -65,7 +65,7 @@ $block: #{$fd-namespace}-alert;
     // Modifiers
     &--dismissible {
       padding-right: fd-space("large");
-      @include fd-rtl {
+      @include fd-rtl() {
         padding-right: $fd-alert-padding-x;
         padding-left: fd-space("large");
       }
@@ -75,7 +75,7 @@ $block: #{$fd-namespace}-alert;
     &--success,
     &--error {
       padding-left: fd-space("large");
-      @include fd-rtl {
+      @include fd-rtl() {
         padding-right: fd-space("large");
         padding-left: $fd-alert-padding-x;
         &::before {
@@ -84,7 +84,7 @@ $block: #{$fd-namespace}-alert;
       }
       &.#{$block}--dismissible {
         padding-right: fd-space("large");
-        @include fd-rtl {
+        @include fd-rtl() {
           padding-left: fd-space("large");
         }
       }
@@ -93,7 +93,7 @@ $block: #{$fd-namespace}-alert;
         left: fd-space("small");
         top: fd-space("tiny");
       }
-      @include fd-rtl {
+      @include fd-rtl() {
         @include fd-icon-base("after") {
           position: absolute;
           right: fd-space("small");
@@ -111,7 +111,7 @@ $block: #{$fd-namespace}-alert;
       @include fd-var-color("background-color", $fd-alert-border-color--warning);
       @include fd-var-color("border-color", $fd-alert-border-color--warning);
       @include fd-icon("message-warning", "l");
-      @include fd-rtl {
+      @include fd-rtl() {
         @include fd-icon("message-warning", "l", "after");
       }
     }
@@ -123,7 +123,7 @@ $block: #{$fd-namespace}-alert;
         @include fd-var-color("color", $fd-alert-border-color--error, --fd-alert-border-color);
       }
       @include fd-icon("message-error", "l");
-      @include fd-rtl {
+      @include fd-rtl() {
         @include fd-icon("message-error", "l", "after");
       }
     }
@@ -135,7 +135,7 @@ $block: #{$fd-namespace}-alert;
         @include fd-var-color("color", $fd-alert-border-color--success, --fd-alert-border-color);
       }
       @include fd-icon("message-success", "l");
-      @include fd-rtl {
+      @include fd-rtl() {
         @include fd-icon("message-success", "l", "after");
       }
     }
@@ -147,7 +147,7 @@ $block: #{$fd-namespace}-alert;
         @include fd-var-color("color", $fd-alert-border-color--information, --fd-alert-border-color);
       }
       @include fd-icon("message-information", "l");
-      @include fd-rtl {
+      @include fd-rtl() {
         @include fd-icon("message-information", "l", "after");
       }
     }

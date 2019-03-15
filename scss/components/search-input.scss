@@ -37,7 +37,7 @@ $fd-search-closed-conrol-transition: all $fd-animation--speed !default;
     visibility: visible;
     width: $fd-search-closed-control-body-width;
     z-index: map-get($fd-z-index-levels, "first");
-    @include fd-rtl {
+    @include fd-rtl() {
       right: auto;
       left: 0;
     }
@@ -57,10 +57,10 @@ $fd-search-closed-conrol-transition: all $fd-animation--speed !default;
     }
   }
 
-  & .fd-menu{
+  & .fd-menu {
     display: block;
     text-align: left;
-    @include fd-rtl {
+    @include fd-rtl() {
       text-align: right;
     }
   }
@@ -69,7 +69,7 @@ $fd-search-closed-conrol-transition: all $fd-animation--speed !default;
     & .fd-popover__body {
       width: $fd-search-closed-control-body-width;
       left: -$fd-search-closed-control-body-position;
-      @include fd-rtl {
+      @include fd-rtl() {
         left: 0;
         right: auto;
       }

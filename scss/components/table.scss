@@ -16,8 +16,7 @@ $block: #{$fd-namespace}-table;
     $fd-table-background-color: fd-color("background", 2);
     $fd-table-header-color: fd-color("text", 3) !default;
     $fd-table-header-background-color: fd-color("neutral", 1) !default;
-    $fd-table-row-background-color--hover:
-    fd-color-state("hover") !default;
+    $fd-table-row-background-color--hover: fd-color-state("hover") !default;
     $fd-table-row-background-color--selected: fd-color-state("selected") !default;
 
     $fd-table-cell-spacing: $fd-width--gutter !default;
@@ -37,8 +36,8 @@ $block: #{$fd-namespace}-table;
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
-    @include fd-reset;
-    @include fd-last-child;
+    @include fd-reset();
+    @include fd-last-child();
     width: 100%;
     max-width: 100%;
     border-collapse: collapse;
@@ -50,12 +49,12 @@ $block: #{$fd-namespace}-table;
 
     tr {
         transition: background-color $fd-table-transition-params;
-        @include fd-hover {
+        @include fd-hover() {
           @include fd-var-color("background-color", $fd-table-row-background-color--hover, --fd-color-background-hover);
         }
-        @include fd-selected {
+        @include fd-selected() {
             @include fd-var-color("background-color", $fd-table-row-background-color--selected, --fd-color-background-selected);
-            @include fd-hover {
+            @include fd-hover() {
               @include fd-var-color("background-color", fd-color-state("selected-hover"), --fd-color-background-selected-hover);
             }
         }
@@ -80,8 +79,8 @@ $block: #{$fd-namespace}-table;
             @include fd-weight();
         }
     }
-    tbody{
-        tr{
+    tbody {
+        tr {
             border-style: solid;
             border-width: $fd-table-border-width;
             @include fd-var-color("border-color", $fd-table-border-color, --fd-table-border-color);
@@ -131,15 +130,14 @@ $block: #{$fd-namespace}-table;
           @include fd-var-color("background-color", $fd-table-sort-column-header-background-color, --fd-color-neutral-2);
         }
         &--asc {
-            &::after
-            {
-                background-image: url($fd-table-column-sort-icon--asc)
+            &::after {
+                background-image: url($fd-table-column-sort-icon--asc);
             }
         }
 
         &--dsc {
             &::after {
-                background-image: url($fd-table-column-sort-icon--dsc)
+                background-image: url($fd-table-column-sort-icon--dsc);
             }
         }
     }
@@ -190,9 +188,9 @@ $block: #{$fd-namespace}-table;
     }
     &--fixed {
         overflow-x: scroll;
-        padding-left:200px;
+        padding-left: 200px;
 
-        td{
+        td {
             min-width: 200px;
         }
     }

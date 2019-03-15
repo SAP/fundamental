@@ -34,7 +34,7 @@ $block: #{$fd-namespace}-menu;
 
     //BLOCK BASE *******************************************
     //set all BLOCK reset and baseline styles
-    @include fd-reset;
+    @include fd-reset();
     position: relative;
     display: block;
     white-space: nowrap;
@@ -78,7 +78,7 @@ $block: #{$fd-namespace}-menu;
     }
     &__item {
       display: block;
-      @include action-cursor;
+      @include action-cursor();
       padding: $fd-menu-item-padding-y $fd-menu-item-padding-x;
       @include fd-var-color("background-color", $fd-menu-item-background-color, --fd-menu-item-background-color);
       @include fd-var-color("color", $fd-menu-item-color, --fd-menu-item-color);
@@ -86,20 +86,19 @@ $block: #{$fd-namespace}-menu;
       > .fd-checkbox {
         margin: 0 10px 0 0;
       }
-      @include fd-hover {
+      @include fd-hover() {
         @include fd-var-color("color", $fd-menu-item-color--hover, --fd-color-text-1);
         @include fd-var-color("background-color", $fd-menu-item-background-color--hover, --fd-color-background-hover);
       }
-      @include fd-selected {
+      @include fd-selected() {
           @include fd-var-color("background-color", $fd-menu-item-background-color--selected, --fd-color-background-selected);
-          @include fd-hover {
+          @include fd-hover() {
             @include fd-var-color("background-color", fd-color-state("selected-hover"), --fd-color-background-selected-hover);
-
           }
       }
     }
-    &--addon-before{
-        .fd-menu__item{
+    &--addon-before {
+        .fd-menu__item {
             padding-left: fd-space(8);
         }
     }

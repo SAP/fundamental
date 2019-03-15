@@ -20,7 +20,7 @@ $block: #{$fd-namespace}-spinner;
     $fd-spinner-backdrop-opacity: 0.95 !default;
 
     //BLOCK BASE *******************************************
-    @include fd-reset;
+    @include fd-reset();
     $_width: $fd-spinner-width--bar*4 + $fd-spinner-width--gutter*3;
     $_height: $fd-spinner-height;
 
@@ -70,6 +70,11 @@ $block: #{$fd-namespace}-spinner;
         height: 100%;
         @include fd-var-color("background-color", $fd-spinner-background-color, --fd-spinner-background-color);
     }
+    //1
+    &::before {
+        animation: line-scale $fd-spinner-animation-speed infinite ease;
+        animation-delay: -($fd-spinner-animation-speed);
+    }
     div {
         &::before,
         &::after {
@@ -77,45 +82,33 @@ $block: #{$fd-namespace}-spinner;
             position: absolute;
             width: $fd-spinner-width--bar;
             height: 100%;
-            @include fd-var-color("background-color", $fd-spinner-background-color, --fd-spinner-background-color);        }
-        &::before {
-            left: $fd-spinner-width--bar + $fd-spinner-width--gutter;
+            @include fd-var-color("background-color", $fd-spinner-background-color, --fd-spinner-background-color);
         }
-        &::after {
-            right: $fd-spinner-width--bar + $fd-spinner-width--gutter;
-        }
-    }
-
-    //1
-    &::before {
-        animation: line-scale $fd-spinner-animation-speed infinite ease;
-        animation-delay: -($fd-spinner-animation-speed);
-    }
-    div {
         //2
         &::before {
+            left: $fd-spinner-width--bar + $fd-spinner-width--gutter;
             animation: line-scale $fd-spinner-animation-speed infinite ease;
-            animation-delay: -($fd-spinner-animation-speed - .1s);
+            animation-delay: -($fd-spinner-animation-speed - 0.1s);
         }
         //3
         &::after {
+            right: $fd-spinner-width--bar + $fd-spinner-width--gutter;
             animation: line-scale $fd-spinner-animation-speed infinite ease;
-            animation-delay: -($fd-spinner-animation-speed - .2s);
+            animation-delay: -($fd-spinner-animation-speed - 0.2s);
         }
     }
     //4
     &::after {
         animation: line-scale $fd-spinner-animation-speed infinite ease;
-        animation-delay: -($fd-spinner-animation-speed - .3s);
+        animation-delay: -($fd-spinner-animation-speed - 0.3s);
     }
-
 }
 
 @keyframes line-scale {
     0%,
     40%,
     100% {
-        transform: scaleY(.4);
+        transform: scaleY(0.4);
     }
     80% {
         transform: scaleY(1);

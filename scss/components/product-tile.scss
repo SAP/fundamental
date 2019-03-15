@@ -26,14 +26,14 @@ $block: #{$fd-namespace}-product-tile;
   --fd-product-tile-background-color: var(--fd-color-background-2);
   --fd-product-tile-title-color: var(--fd-color-text-1);
 
-  @include fd-reset;
+  @include fd-reset();
   @include fd-var-color("color", $fd-product-tile-color, --fd-product-tile-color);
   @include fd-var-color("background-color", $fd-product-tile-background-color, --fd-product-tile-background-color);
 
   //MODIFICATIONS
   &--button,
   &[role="button"] {
-    @include action-cursor;
+    @include action-cursor();
     transition: box-shadow $fd-product-tile-transition-params;
     &:hover {
       box-shadow: $fd-product-tile-box-shadow;
@@ -63,5 +63,4 @@ $block: #{$fd-namespace}-product-tile;
     margin-bottom: 0;
     margin-bottom: 0;
   }
-
 }

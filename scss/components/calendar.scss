@@ -29,7 +29,7 @@ $fd-calendar-item-color--blocked: fd-color("text", 1) !default;
 $fd-calendar-item-background-color: fd-color("background", 2) !default;
 $fd-calendar-item-background-color--hover: fd-color("neutral", 1) !default;
 $fd-calendar-item-background-color--selected: fd-color-state("selected", "action") !default;
-$fd-calendar-item-background-color--selected-range:  fd-color-state("selected", "background") !default;
+$fd-calendar-item-background-color--selected-range: fd-color-state("selected", "background") !default;
 $fd-calendar-item-border-color--current: $fd-color--action !default;
 $fd-calendar-table-item-width: fd-space(9) !default;
 $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
@@ -50,7 +50,7 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
   align-items: center;
   justify-content: center;
   &:hover {
-    @include action-cursor;
+    @include action-cursor();
     --fd-calendar-item-background-color: var(--fd-color-neutral-1);
     @include fd-var-color("background-color", $fd-calendar-item-background-color--hover);
   }
@@ -122,7 +122,7 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
 .#{$block} {
   //BLOCK BASE *******************************************
   //set all BLOCK reset and baseline styles
-  @include fd-reset;
+  @include fd-reset();
   width: $fd-calendar-table-width;
 }
 
@@ -204,14 +204,12 @@ $fd-calendar-table-width: $fd-calendar-table-item-width * 7 !default;
     padding-left: 0;
     padding-right: 0;
   }
-  &__item {
-    @extend %fd-calendar-item;
-  }
   &__day-of-week {
     @include fd-type("-1");
     @include fd-var-color("color", fd-color("text", 3), --fd-color-text-1);
   }
   &__item {
+    @extend %fd-calendar-item;
     &--other-month {
       @extend %fd-calendar-item-other-month;
     }

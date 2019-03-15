@@ -8,9 +8,9 @@
 [build]
   base    = "docs/"
   publish = "docs/_site"
-  command = "cp ../package.json . && npm i && gulp docs-site && ls css && bundle exec jekyll build"
+  command = "cp ../package.json . && npm i && gulp docs-site && ls css && bundle exec jekyll build --config _config.yml,_config-library.yml"
 
 # Production context: All deploys to the main
 # repository branch will inherit these settings.
 [context.production]
-  command = "bundle exec jekyll build"
+  command = "bundle exec jekyll build --config _config.yml,_config-library.yml"

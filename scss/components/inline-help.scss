@@ -25,7 +25,7 @@ $block: #{$fd-namespace}-inline-help;
     --fd-inline-help-icon-background-color: var(--fd-color-status-4);
 
     //BLOCK BASE *******************************************
-    @include fd-reset;
+    @include fd-reset();
     position: relative;
     display: inline-block;
     width: $fd-tooltip-icon-size;
@@ -80,7 +80,7 @@ $block: #{$fd-namespace}-inline-help;
             top: -($fd-tooltip-arrow-offset - 2);
             right: $fd-tooltip-arrow-offset * 1.25;
         }
-        &--right{
+        &--right {
             top: -$fd-tooltip-padding;
             left: $fd-tooltip-padding * 2.5;
             &::before {
@@ -88,12 +88,12 @@ $block: #{$fd-namespace}-inline-help;
                 left: -($fd-tooltip-arrow-offset + 2);
                 transform: rotate(-90deg);
             }
-            &::after{
+            &::after {
                 top: $fd-tooltip-arrow-offset + 8;
                 left: -($fd-tooltip-arrow-offset + 1);
                 transform: rotate(-90deg);
             }
-            @include fd-rtl {
+            @include fd-rtl() {
               left: auto;
               right: $fd-tooltip-padding * 2.5;
               &::before {
@@ -108,20 +108,20 @@ $block: #{$fd-namespace}-inline-help;
               }
             }
         }
-        &--left{
+        &--left {
             top: -$fd-tooltip-padding;
             right: $fd-tooltip-padding * 2.5;
-            &::before{
+            &::before {
                 top: $fd-tooltip-arrow-offset + 8;
                 right: -($fd-tooltip-arrow-offset + 2);
                 transform: rotate(90deg);
             }
-            &::after{
+            &::after {
                 top: $fd-tooltip-arrow-offset + 8;
                 right: -($fd-tooltip-arrow-offset + 1);
                 transform: rotate(90deg);
             }
-            @include fd-rtl {
+            @include fd-rtl() {
               right: auto;
               left: $fd-tooltip-padding * 2.5;
               &::before {
@@ -136,13 +136,13 @@ $block: #{$fd-namespace}-inline-help;
               }
             }
         }
-        &--bottom-right{
+        &--bottom-right {
             left: -$fd-tooltip-arrow-offset;
-            @include fd-rtl {
+            @include fd-rtl() {
               left: auto;
               right: -$fd-tooltip-arrow-offset;
             }
-            &::before{
+            &::before {
                 top: -($fd-tooltip-arrow-offset) ;
                 left: $fd-tooltip-arrow-offset * 1.4;
             }
@@ -151,16 +151,16 @@ $block: #{$fd-namespace}-inline-help;
                 left: $fd-tooltip-arrow-offset * 1.375;
             }
         }
-        &--bottom-left{
+        &--bottom-left {
             right: -$fd-tooltip-arrow-offset;
-            &::before{
+            &::before {
                 top: -($fd-tooltip-arrow-offset);
                 right: $fd-tooltip-arrow-offset * 1.25;
             }
-            &::after{
+            &::after {
                 top: -($fd-tooltip-arrow-offset - 1);
             }
-            @include fd-rtl {
+            @include fd-rtl() {
               right: auto;
               left: -$fd-tooltip-arrow-offset;
               &::before {
@@ -173,20 +173,20 @@ $block: #{$fd-namespace}-inline-help;
               }
             }
         }
-        &--bottom-center{
+        &--bottom-center {
             right: -$fd-tooltip-arrow-offset * 20.25;
-            &::before{
+            &::before {
                 top: -($fd-tooltip-arrow-offset) ;
                 right: $fd-tooltip-arrow-offset * 20.5;
             }
-            &::after{
+            &::after {
                 top: -($fd-tooltip-arrow-offset - 1);
                 right: $fd-tooltip-arrow-offset * 20.5;
             }
         }
     }
-    &:hover{
-        .#{$block}__content{
+    &:hover {
+        .#{$block}__content {
             visibility: visible;
             opacity: 1;
             overflow: visible;
