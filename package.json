@@ -4,7 +4,7 @@
   "description": "Fiori Fundamentals is a Design System and HTML/CSS Component Library used to build modern Product User Experiences with the SAP look and feel. Learn more about this project at - http://sap.github.io/fundamental/",
   "main": "index.js",
   "scripts": {
-    "build-doc": "npm run postinstall && gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
+    "build-doc": "gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
     "build": "npx gulp build:dist",
     "deploy": "gh-pages -d docs",
     "lint:fix": "stylelint './scss/**/*.scss' --fix",
