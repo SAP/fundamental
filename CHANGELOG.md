@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.6-rc.8"></a>
+## [1.4.6-rc.8](https://github.com/SAP/fundamental/compare/v1.4.6-rc.7...v1.4.6-rc.8) (2019-03-17)
+
+
+
+<a name="1.4.6-rc.7"></a>
+## [1.4.6-rc.7](https://github.com/SAP/fundamental/compare/v1.4.6-rc.6...v1.4.6-rc.7) (2019-03-15)
+
+
+
+<a name="1.4.6-rc.6"></a>
+## [1.4.6-rc.6](https://github.com/SAP/fundamental/compare/v1.4.6-rc.5...v1.4.6-rc.6) (2019-03-15)
+
+
+
 <a name="1.4.6-rc.5"></a>
 ## [1.4.6-rc.5](https://github.com/SAP/fundamental/compare/v1.4.6-rc.4...v1.4.6-rc.5) (2019-03-14)
 
