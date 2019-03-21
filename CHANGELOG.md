@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.6-rc.10"></a>
+## [1.4.6-rc.10](https://github.com/SAP/fundamental/compare/v1.4.6-rc.9...v1.4.6-rc.10) (2019-03-21)
+
+
+### Bug Fixes
+
+* add trailing semi's ([#1331](https://github.com/SAP/fundamental/issues/1331)) ([c22d6d5](https://github.com/SAP/fundamental/commit/c22d6d5))
+
+
+
 <a name="1.4.6-rc.9"></a>
 ## [1.4.6-rc.9](https://github.com/SAP/fundamental/compare/v1.4.6-rc.8...v1.4.6-rc.9) (2019-03-20)
 
