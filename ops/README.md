@@ -16,15 +16,10 @@ Each output has a `build` task that chains the tasks together. Individual tasks 
 * Outputs: `dist`
 
 ### Generate the package
-`npx gulp build:dist --production` builds to `dist`
-
-### For local development
 `npm run build`
 
-> Local development has no dependency on `dist`. It only needs to be built for releases and deployments.
-
 ### Individual tasks
-* `npx gulp pkg-clean` removes the contents of `dist` (production mode) or `tmp`
+* `npx gulp pkg-clean` removes the contents of `dist`
 * `npx gulp pkg-css` compiles SASS for the full library, prefixes and cleans (production mode), includes sourcemaps (development mode)
 * `npx gulp pkg-css-minify` minifies compiled CSS (for production mode only)
 * `npx gulp pkg-css-components` compiles, minifies, and prefixes individual component files (for production mode only)
@@ -37,7 +32,7 @@ Each output has a `build` task that chains the tasks together. Individual tasks 
 The documentation uses Jekyll to generate a static site. Dependencies on packaging tasks should be very clearly defined in the main build task, i.e., build the package before including it into the website. Do not mix packaging tasks into the unrelated docs tasks.
 
 ### Generate the documentation
-`npx gulp`
+`npm run build:docs`
 
 ### Individual tasks
 * `npx gulp docs-resources` optimizes and outputs svgs to `docs/_site/images` (should handle images as well)
@@ -51,7 +46,7 @@ The documentation uses Jekyll to generate a static site. Dependencies on packagi
 Local development requires a server and includes watch tasks which auto-compiles files and refreshes the browser.
 
 ### Start the server
-`npm start`
+`npm run start:docs`
 
 > The default Gulp task is the "build" task for local development
 
