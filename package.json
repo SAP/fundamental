@@ -4,7 +4,7 @@
   "description": "Fiori Fundamentals is a Design System and HTML/CSS Component Library used to build modern Product User Experiences with the SAP look and feel. Learn more about this project at - http://sap.github.io/fundamental/",
   "main": "index.js",
   "scripts": {
-    "build-doc": "npm run build:config && npm run build && gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
+    "build:docs": "npm run build:config && npm run build && npx gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
     "build:config": "./scripts/create-library-config.js",
     "build": "npx gulp build:dist",
     "deploy": "gh-pages -d docs/_site",
@@ -16,7 +16,8 @@
     "start": "node test/app.js",
     "start:docs": "npm run build:config && npx gulp default",
     "std-version": "standard-version -m \"chore(release): version %s build ${TRAVIS_BUILD_NUMBER} [ci skip]\"",
-    "test:update": "npx gulp test:reference && npm gulp test:approve"
+    "test": "npx gulp test:visual",
+    "test:update": "npx gulp test:reference && npx gulp test:approve"
   },
   "repository": {
     "type": "git",

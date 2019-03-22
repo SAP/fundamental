@@ -22,5 +22,5 @@ npm run build -- --production
 
 npm publish
 
-npm run build-doc
+npm run build:docs
 npm run deploy -- --repo "https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG"
