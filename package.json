@@ -15,6 +15,9 @@
     "release": "./scripts/publish-release.sh",
     "start": "npx gulp default",
     "std-version": "standard-version -m \"chore(release): version %s build ${TRAVIS_BUILD_NUMBER} [ci skip]\"",
+    "test:visual:approve-diffs": "gulp test:approve",
+    "test:visual:generate-reference": "npx gulp test:reference",
+    "test:visual": "npx gulp test:visual",
     "test": "node test/app.js"
   },
   "repository": {
