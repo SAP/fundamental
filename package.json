@@ -13,7 +13,7 @@
     "lint": "stylelint './scss/**/*.scss'",
     "release:create": "create-release",
     "release": "./scripts/publish-release.sh",
-    "start": "node test/app.js",
+    "start": "npm run build && node test/app.js",
     "start:docs": "npm run build:config && npx gulp default",
     "std-version": "standard-version -m \"chore(release): version %s build ${TRAVIS_BUILD_NUMBER} [ci skip]\"",
     "test": "npx gulp test:visual",
