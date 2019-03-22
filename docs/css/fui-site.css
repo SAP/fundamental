@@ -3354,7 +3354,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     display: none; }
   .fd-alert__close {
     position: absolute;
-    right: 4px;
+    right: 0;
     top: 0;
     display: inline-block;
     margin: 0;
@@ -3394,7 +3394,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-alert__close:focus, .fd-alert__close.is-focus {
       box-shadow: 0 0 0 1px var(--fd-color-action-focus); }
     [dir="rtl"] .fd-alert__close, .fd-alert__close[dir="rtl"] {
-      left: 4px;
+      left: 0;
       right: auto; }
   .fd-alert--dismissible {
     padding-right: 48px; }
@@ -4189,6 +4189,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     --fd-button-border-color: transparent;
     --fd-button-background-color: hsl(217, 21%, 21%); }
 
+/* stylelint-disable no-duplicate-selectors */
 .fd-button--xs {
   font-size: 0.85714rem;
   line-height: 1.33333;
@@ -4361,6 +4362,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       --fd-button-background-color: var(--fd-color-neutral-3);
       --fd-button-color: var(--fd-color-text-2); }
 
+/* stylelint-enable */
 /*
 WHY THIS:
 Other semantic grids don't eaily allow for fixed gutter widths
@@ -4507,12 +4509,6 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       border-bottom-right-radius: 4px; }
     .fd-dropdown__control--no-border {
       border: none; }
-    .fd-dropdown__control.fd-button--compact {
-      padding-top: 3px; }
-      .fd-dropdown__control.fd-button--compact::after {
-        margin-top: -3px;
-        height: 30px;
-        padding-top: 7px; }
     .fd-dropdown__control.fd-button--xs::after {
       height: 21.5px;
       padding-top: 5px; }
@@ -4701,7 +4697,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     border: 0;
     color: var(--fd-color-text-3); }
     .fd-form__label.is-disabled, .fd-form__legend.is-disabled {
-      opacity: .4; }
+      opacity: 0.4; }
   .fd-form__control {
     min-width: 16px; }
   .fd-form__legend {
@@ -4841,7 +4837,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       border-radius: 0; }
     .fd-input-group--compact .fd-input-group__addon {
       height: var(--fd-forms-height-compact); }
-      .fd-input-group--compact .fd-input-group__addon .fd-input-group__button--step-up:before, .fd-input-group--compact .fd-input-group__addon .fd-input-group__button--step-down:before {
+      .fd-input-group--compact .fd-input-group__addon .fd-input-group__button--step-up::before, .fd-input-group--compact .fd-input-group__addon .fd-input-group__button--step-down::before {
         top: -4px; }
     .fd-input-group__addon:first-child {
       border-right-width: 0; }
@@ -5801,7 +5797,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       border-color: transparent;
       background-color: rgba(10, 110, 209, 0.4);
       pointer-events: none; }
-    .fd-toggle input:checked[disabled] + .fd-toggle__switch:before, .fd-toggle input:checked.is-disabled + .fd-toggle__switch:before, .fd-toggle input:checked[aria-disabled="true"] + .fd-toggle__switch:before {
+    .fd-toggle input:checked[disabled] + .fd-toggle__switch::before, .fd-toggle input:checked.is-disabled + .fd-toggle__switch::before, .fd-toggle input:checked[aria-disabled="true"] + .fd-toggle__switch::before {
       border-color: transparent;
       background-color: #d8ebfd; }
   .fd-toggle__switch {
@@ -5815,7 +5811,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 34px; }
-  .fd-toggle__switch:before {
+  .fd-toggle__switch::before {
     position: absolute;
     content: "";
     height: 28px;
@@ -5831,7 +5827,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     border-radius: 50%; }
   input:checked + .fd-toggle__switch {
     background-color: #0a6ed1; }
-  input:checked + .fd-toggle__switch:before {
+  input:checked + .fd-toggle__switch::before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
@@ -5842,29 +5838,29 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-toggle--xs {
     height: 14px;
     width: 36px; }
-    .fd-toggle--xs .fd-toggle__switch:before {
+    .fd-toggle--xs .fd-toggle__switch::before {
       height: 20px;
       width: 20px;
       top: -3px; }
-    .fd-toggle--xs input:checked + .fd-toggle__switch:before {
+    .fd-toggle--xs input:checked + .fd-toggle__switch::before {
       left: -10px; }
   .fd-toggle--s {
     height: 17px;
     width: 40px; }
-    .fd-toggle--s .fd-toggle__switch:before {
+    .fd-toggle--s .fd-toggle__switch::before {
       height: 24px;
       width: 24px;
       top: -4px; }
-    .fd-toggle--s input:checked + .fd-toggle__switch:before {
+    .fd-toggle--s input:checked + .fd-toggle__switch::before {
       left: -10px; }
   .fd-toggle--l {
     height: 22px;
     width: 56px; }
-    .fd-toggle--l .fd-toggle__switch:before {
+    .fd-toggle--l .fd-toggle__switch::before {
       height: 32px;
       width: 32px;
       top: -6px; }
-    .fd-toggle--l input:checked + .fd-toggle__switch:before {
+    .fd-toggle--l input:checked + .fd-toggle__switch::before {
       left: -2px; }
 
 /*!
@@ -5915,6 +5911,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     width: 5px;
     height: 100%;
     background-color: var(--fd-spinner-background-color); }
+  .fd-spinner::before {
+    animation: line-scale 1s infinite ease;
+    animation-delay: -1s; }
   .fd-spinner div::before, .fd-spinner div::after {
     content: "";
     position: absolute;
@@ -5922,16 +5921,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     height: 100%;
     background-color: var(--fd-spinner-background-color); }
   .fd-spinner div::before {
-    left: 8px; }
-  .fd-spinner div::after {
-    right: 8px; }
-  .fd-spinner::before {
-    animation: line-scale 1s infinite ease;
-    animation-delay: -1s; }
-  .fd-spinner div::before {
+    left: 8px;
     animation: line-scale 1s infinite ease;
     animation-delay: -0.9s; }
   .fd-spinner div::after {
+    right: 8px;
     animation: line-scale 1s infinite ease;
     animation-delay: -0.8s; }
   .fd-spinner::after {
@@ -6078,13 +6072,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     .fd-global-nav__search input {
       position: absolute;
       left: -176px;
-      top: 0px;
+      top: 0;
       background: white;
       border-radius: 0;
       border: none;
       min-width: 176px;
       border-bottom: 1px solid #eeeeef;
-      box-shadow: 0 5px #fff,  0px -5px #fff; }
+      box-shadow: 0 5px #fff,  0 -5px #fff; }
       .fd-global-nav__search input[aria-hidden="true"] {
         display: none; }
   .fd-global-nav.is-disabled, .fd-global-nav[disabled] {
@@ -6350,7 +6344,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
     .fd-mega-menu__header-link {
       padding: 10px 20px;
       color: #51555a; }
-      .fd-mega-menu__header-link:before {
+      .fd-mega-menu__header-link::before {
         padding-right: 10px;
         font-size: 22px;
         vertical-align: sub; }
@@ -7021,9 +7015,9 @@ see layouts/panel
   [dir="rtl"] .fd-status-label--available, [dir="rtl"] .fd-status-label--away, [dir="rtl"] .fd-status-label--busy, [dir="rtl"] .fd-status-label--offline, .fd-status-label--available[dir="rtl"], .fd-status-label--away[dir="rtl"], .fd-status-label--busy[dir="rtl"], .fd-status-label--offline[dir="rtl"] {
     padding-left: initial;
     padding-right: 20px; }
-    [dir="rtl"] .fd-status-label--available:before, [dir="rtl"] .fd-status-label--away:before, [dir="rtl"] .fd-status-label--busy:before, [dir="rtl"] .fd-status-label--offline:before, .fd-status-label--available[dir="rtl"]:before, .fd-status-label--away[dir="rtl"]:before, .fd-status-label--busy[dir="rtl"]:before, .fd-status-label--offline[dir="rtl"]:before {
+    [dir="rtl"] .fd-status-label--available::before, [dir="rtl"] .fd-status-label--away::before, [dir="rtl"] .fd-status-label--busy::before, [dir="rtl"] .fd-status-label--offline::before, .fd-status-label--available[dir="rtl"]::before, .fd-status-label--away[dir="rtl"]::before, .fd-status-label--busy[dir="rtl"]::before, .fd-status-label--offline[dir="rtl"]::before {
       left: initial; }
-    [dir="rtl"] .fd-status-label--available:after, [dir="rtl"] .fd-status-label--away:after, [dir="rtl"] .fd-status-label--busy:after, [dir="rtl"] .fd-status-label--offline:after, .fd-status-label--available[dir="rtl"]:after, .fd-status-label--away[dir="rtl"]:after, .fd-status-label--busy[dir="rtl"]:after, .fd-status-label--offline[dir="rtl"]:after {
+    [dir="rtl"] .fd-status-label--available::after, [dir="rtl"] .fd-status-label--away::after, [dir="rtl"] .fd-status-label--busy::after, [dir="rtl"] .fd-status-label--offline::after, .fd-status-label--available[dir="rtl"]::after, .fd-status-label--away[dir="rtl"]::after, .fd-status-label--busy[dir="rtl"]::after, .fd-status-label--offline[dir="rtl"]::after {
       left: initial;
       right: 0; }
 
@@ -7049,41 +7043,41 @@ see layouts/panel
     --fd-status-label-color: var(--fd-color-negative); }
   .fd-status-label--available {
     --fd-status-label-icon-background-color: var(--fd-color-positive); }
-    .fd-status-label--available:before {
+    .fd-status-label--available::before {
       width: 7px;
       height: 7px;
       top: 4px;
       left: 4px;
       background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA2IDUuOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNiA1Ljk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTIuNywzLjJsMS40LTIuOEM0LjQsMCw1LTAuMSw1LjUsMC4xYzAuNCwwLjMsMC42LDAuOCwwLjQsMS4ybC0yLDRDMy42LDUuOSwzLDYuMSwyLjYsNS44CgljLTAuMSwwLTAuMi0wLjEtMC4zLTAuMmwtMi0yYy0wLjQtMC40LTAuNC0xLDAtMS40YzAuNC0wLjQsMS0wLjQsMS40LDBsMCwwTDIuNywzLjJ6Ii8+Cjwvc3ZnPg=="); }
-    [dir="rtl"] .fd-status-label--available:before, .fd-status-label--available[dir="rtl"]:before {
+    [dir="rtl"] .fd-status-label--available::before, .fd-status-label--available[dir="rtl"]::before {
       right: 4px; }
   .fd-status-label--away {
     --fd-status-label-icon-background-color: var(--fd-color-alert); }
-    .fd-status-label--away:before {
+    .fd-status-label--away::before {
       width: 6px;
       height: 6px;
       top: 4px;
       left: 6px;
       background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1IDUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUgNTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMSw1QzAuNCw1LDAsNC42LDAsNFYxYzAtMC42LDAuNC0xLDEtMXMxLDAuNCwxLDF2MmgyYzAuNiwwLDEsMC40LDEsMVM0LjYsNSw0LDVIMXoiLz4KPC9zdmc+"); }
-    [dir="rtl"] .fd-status-label--away:before, .fd-status-label--away[dir="rtl"]:before {
+    [dir="rtl"] .fd-status-label--away::before, .fd-status-label--away[dir="rtl"]::before {
       right: 4px; }
   .fd-status-label--busy {
     --fd-status-label-icon-background-color: var(--fd-color-negative); }
-    .fd-status-label--busy:before {
+    .fd-status-label--busy::before {
       width: 4px;
       height: 4px;
       top: 6px;
       left: 6px;
       background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA0IDQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQgNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNCwyYzAsMS4xLTAuOSwyLTIsMlMwLDMuMSwwLDJzMC45LTIsMi0yUzQsMC45LDQsMiIvPgo8L3N2Zz4="); }
-    [dir="rtl"] .fd-status-label--busy:before, .fd-status-label--busy[dir="rtl"]:before {
+    [dir="rtl"] .fd-status-label--busy::before, .fd-status-label--busy[dir="rtl"]::before {
       right: 6px; }
-  .fd-status-label--offline:before {
+  .fd-status-label--offline::before {
     width: 8px;
     height: 8px;
     top: 4px;
     left: 4px;
     background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA3LjkgNy45IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA3LjkgNy45OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik03LjksNGMwLDIuMi0xLjgsNC00LDRTMCw2LjIsMCw0czEuOC00LDQtNFM3LjksMS44LDcuOSw0Ii8+Cjwvc3ZnPg=="); }
-  [dir="rtl"] .fd-status-label--offline:before, .fd-status-label--offline[dir="rtl"]:before {
+  [dir="rtl"] .fd-status-label--offline::before, .fd-status-label--offline[dir="rtl"]::before {
     right: 4px; }
 
 .fd-popover {
