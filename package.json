@@ -14,7 +14,7 @@
     "release:create": "create-release",
     "release": "./scripts/publish-release.sh",
     "start": "npm run build && node test/app.js",
-    "start:docs": "npm run build:config && npx gulp default",
+    "start:docs": "npm run build:docs && npx gulp default",
     "std-version": "standard-version -m \"chore(release): version %s build ${TRAVIS_BUILD_NUMBER} [ci skip]\"",
     "test": "npx gulp test:visual",
     "test:update": "npx gulp test:reference && npx gulp test:approve"
