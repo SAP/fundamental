@@ -91,7 +91,7 @@ A foreground color class applies the color property to the element for example `
 {: .docs-table}
 | Class structure                 | {group}-{shade} options |
 | ------------------------------- | ----------------------- |
-| Foreground Class: <br> `.fd-has-color-{group}-{shade}` <br><br> Background Class:<br>`.fd-has-background-color-{group}-{shade}` | `action` - `1`, `2` <br> `shell` - `1`, `2` <br> `text` - `1`, `2`, `3`, `4` <br> `background` - `1`, `2` <br> `neutral` - `1`, `2`, `3`, `4`  <br> `status` - `1`, `2`, `3`, `4` <br> `accent` - `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`|
+| Foreground Class: <br> `.fd-has-color-{group}-{shade}` <br><br> Background Class:<br>`.fd-has-background-color-{group}-{shade}` | `action` - `1`, `2`, `3` <br> `shell` - `1`, `2` <br> `text` - `1`, `2`, `3`, `4` <br> `background` - `1`, `2`, `3`, `4`, `5`, `6` <br> `neutral` - `1`, `2`, `3`, `4`  <br> `status` - `1`, `2`, `3`, `4`, `5` <br> `accent` - `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`|
 
 Please check the [colors page](colors.html){:target="_blank"} to see full color pallet.
 
@@ -110,10 +110,15 @@ Some examples of color helper classes.
 <p class="fd-has-color-text-1">.fd-has-color-text-1</p>
 <p class="fd-has-color-text-2">.fd-has-color-text-2</p>
 <p class="fd-has-color-text-3">.fd-has-color-text-3</p>
+<p class="fd-has-color-text-4">.fd-has-color-text-4</p>
 
 <h3>Background Color Group</h3>
 <p class="fd-has-background-color-background-1 fd-has-color-text-1">.fd-has-color-background-1</p>
 <p class="fd-has-background-color-background-2 fd-has-color-text-1">.fd-has-color-background-2</p>
+<p class="fd-has-background-color-background-3 fd-has-color-text-1">.fd-has-color-background-3</p>
+<p class="fd-has-background-color-background-4 fd-has-color-text-1">.fd-has-color-background-4</p>
+<p class="fd-has-background-color-background-5 fd-has-color-text-1">.fd-has-color-background-5</p>
+<p class="fd-has-background-color-background-6 fd-has-color-text-1">.fd-has-color-background-6</p>
 
 <h3>Neutral Color Group</h3>
 <p class="fd-has-background-color-neutral-1 fd-has-color-text-1">.fd-has-background-color-netural-1</p>
@@ -126,6 +131,7 @@ Some examples of color helper classes.
 <p class="fd-has-background-color-status-2 fd-has-color-text-5">.fd-has-background-color-status-2</p>
 <p class="fd-has-background-color-status-3 fd-has-color-text-5">.fd-has-background-color-status-3</p>
 <p class="fd-has-background-color-status-4 fd-has-color-text-5">.fd-has-background-color-status-4</p>
+<p class="fd-has-background-color-status-5 fd-has-color-text-5">.fd-has-background-color-status-5</p>
 
 <h3>Accent Color Group</h3>
 <p class="fd-has-background-color-accent-1 fd-has-color-text-5">.fd-has-background-color-accent-1</p>
