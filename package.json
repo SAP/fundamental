@@ -10,7 +10,7 @@
     "lint:fix": "stylelint './scss/**/*.scss' --fix",
     "lint:pre-commit": "printf \"running pre-commit lint...\"  && npm run lint && printf \"done!\n\"",
     "lint": "stylelint './scss/**/*.scss'",
-    "postinstall": "./scripts/create-library-config.js",
+    "postinstall": "npm i && ./scripts/create-library-config.js",
     "release:create": "create-release",
     "release": "./scripts/publish-release.sh",
     "start": "npx gulp default",
