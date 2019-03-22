@@ -1,5 +1,5 @@
 /*!
-* Fiori Fundamentals v1.4.3
+* Fiori Fundamentals v1.4.8
 * Copyright (c) 2019 SAP SE or an SAP affiliate company.
 * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
 */
@@ -7,42 +7,42 @@
 :root {
   --fd-color-action-1: #0a6ed1;
   --fd-color-action-2: white;
-  --fd-color-action-3: #0854a1;
+  --fd-color-action-3: #0854a0;
   --fd-color-text-1: #32363a;
   --fd-color-text-2: #51555a;
   --fd-color-text-3: #6a6d70;
   --fd-color-text-4: #74777a;
   --fd-color-text-5: white;
-  --fd-color-background-1: #edeef0;
+  --fd-color-background-1: #edeff0;
   --fd-color-background-2: white;
-  --fd-color-background-3: #f1fdf6;
+  --fd-color-background-3: #f0fdf6;
   --fd-color-background-4: #fef7f1;
   --fd-color-background-5: #ffebeb;
-  --fd-color-background-6: #f5faff;
+  --fd-color-background-6: #ffe4e4;
   --fd-color-neutral-1: #fafafa;
   --fd-color-neutral-2: #eeeeef;
   --fd-color-neutral-3: #d9d9d9;
   --fd-color-neutral-4: #89919a;
-  --fd-color-status-1: #107e3e;
+  --fd-color-status-1: #0a7e3e;
   --fd-color-status-2: #e9730c;
   --fd-color-status-3: #bb0000;
   --fd-color-status-4: #6a6d70;
-  --fd-color-status-5: #0a6ed1;
+  --fd-color-status-5: #0a6dd1;
   --fd-color-accent-1: #e38b16;
-  --fd-color-accent-2: #dc7474;
+  --fd-color-accent-2: #ee6868;
   --fd-color-accent-3: #db1f77;
   --fd-color-accent-4: #c0399f;
   --fd-color-accent-5: #6367de;
   --fd-color-accent-6: #5899da;
   --fd-color-accent-7: #13a4b4;
   --fd-color-accent-8: #7ca10c;
-  --fd-color-accent-9: #955ecf;
-  --fd-color-accent-10: #6c8893;
+  --fd-color-accent-9: #925ace;
+  --fd-color-accent-10: #8497a4;
   --fd-color-accent-11: #d17f15;
   --fd-color-accent-12: #d04343;
   --fd-color-accent-13: #2b78c5;
-  --fd-color-accent-14: #0f828f;
-  --fd-color-accent-15: #647887;
+  --fd-color-accent-14: #6367de;
+  --fd-color-accent-15: #984bd2;
   --fd-color-shell-1: #354a5f;
   --fd-color-shell-2: #d1e8ff;
   --fd-color: var(--fd-color-text-1);
@@ -50,8 +50,8 @@
   --fd-color-background-hover: #fafafa;
   --fd-color-background-selected: rgba(10, 110, 209, 0.07);
   --fd-color-background-selected-hover: rgba(10, 110, 209, 0.1);
-  --fd-color-background-information: #f5faff;
-  --fd-color-background-positive: #f1fdf6;
+  --fd-color-background-information: #ffe4e4;
+  --fd-color-background-positive: #f0fdf6;
   --fd-color-background-alert: #fef7f1;
   --fd-color-background-negative: #ffebeb;
   --fd-color-action: var(--fd-color-action-1);
@@ -60,8 +60,8 @@
   --fd-color-action-selected: #0254a7;
   --fd-color-action-disabled: rgba(10, 110, 209, 0.4);
   --fd-color-action-visited: #3c0ad1;
-  --fd-color-positive: #107f3e;
-  --fd-color-negative: #bd0000;
+  --fd-color-positive: #0a7e3e;
+  --fd-color-negative: #bb0000;
   --fd-color-alert: #e9730c;
   --fd-forms-color: #32363a;
   --fd-forms-border-color: #89919a;
@@ -1646,8 +1646,8 @@ input[type=checkbox]:indeterminate {
 }
 .fd-app__main {
   -webkit-box-flex: 1;
-  -ms-flex: 1 auto;
-  flex: 1 auto;
+  -ms-flex: 1 1;
+  flex: 1 1;
   overflow: auto
 }
 .fd-page {
@@ -3668,14 +3668,6 @@ input[type=checkbox]:indeterminate {
 .fd-dropdown__control--no-border {
   border: none
 }
-.fd-dropdown__control.fd-button--compact {
-  padding-top: 3px
-}
-.fd-dropdown__control.fd-button--compact::after {
-  margin-top: -3px;
-  height: 30px;
-  padding-top: 7px
-}
 .fd-dropdown__control.fd-button--xs::after {
   height: 21.5px;
   padding-top: 5px
@@ -4008,11 +4000,11 @@ input[type=checkbox]:indeterminate {
   content: ""
 }
 .fd-form__message--error {
-  color: #bd0000
+  color: #b00
 }
 .fd-form__message--error::before {
   content: "";
-  color: #bd0000
+  color: #b00
 }
 /*!
 .fd-input-group+(--inline)
@@ -4146,8 +4138,8 @@ input[type=checkbox]:indeterminate {
 .fd-input-group--compact .fd-input-group__addon {
   height: var(--fd-forms-height-compact)
 }
-.fd-input-group--compact .fd-input-group__addon .fd-input-group__button--step-down:before,
-.fd-input-group--compact .fd-input-group__addon .fd-input-group__button--step-up:before {
+.fd-input-group--compact .fd-input-group__addon .fd-input-group__button--step-down::before,
+.fd-input-group--compact .fd-input-group__addon .fd-input-group__button--step-up::before {
   top: -4px
 }
 .fd-input-group__addon:first-child {
@@ -4682,38 +4674,24 @@ input[type=checkbox]:indeterminate {
   font-size: 1.14286rem;
   line-height: 1.25;
   font-weight: 400;
-  margin-bottom: 0
+  margin-bottom: 0;
+  padding-right: 36px
+}
+.fd-modal__title[dir=rtl],
+[dir=rtl] .fd-modal__title {
+  padding-left: 36px;
+  padding-right: 0
 }
 .fd-modal__close {
   position: absolute;
-  right: 4px;
+  right: 8px;
   top: 8px;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  font-smoothing: antialiased;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: 0;
-  border: 0;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  background-color: transparent;
-  border-radius: 4px;
   width: 36px;
   height: 36px
 }
 .fd-modal__close[dir=rtl],
 [dir=rtl] .fd-modal__close {
-  left: 4px;
+  left: 8px;
   right: auto
 }
 .fd-modal__close::before {
@@ -5444,9 +5422,9 @@ input[type=checkbox]:indeterminate {
   background-color: rgba(10,110,209,.4);
   pointer-events: none
 }
-.fd-toggle input:checked.is-disabled + .fd-toggle__switch:before,
-.fd-toggle input:checked[aria-disabled=true] + .fd-toggle__switch:before,
-.fd-toggle input:checked[disabled] + .fd-toggle__switch:before {
+.fd-toggle input:checked.is-disabled + .fd-toggle__switch::before,
+.fd-toggle input:checked[aria-disabled=true] + .fd-toggle__switch::before,
+.fd-toggle input:checked[disabled] + .fd-toggle__switch::before {
   border-color: transparent;
   background-color: #d8ebfd
 }
@@ -5462,7 +5440,7 @@ input[type=checkbox]:indeterminate {
   transition: .4s;
   border-radius: 34px
 }
-.fd-toggle__switch:before {
+.fd-toggle__switch::before {
   position: absolute;
   content: "";
   height: 28px;
@@ -5480,7 +5458,7 @@ input[type=checkbox]:indeterminate {
 input:checked + .fd-toggle__switch {
   background-color: #0a6ed1
 }
-input:checked + .fd-toggle__switch:before {
+input:checked + .fd-toggle__switch::before {
   -webkit-transform: translateX(26px);
   transform: translateX(26px);
   background-color: var(--fd-color-action-selected);
@@ -5492,36 +5470,36 @@ input:checked + .fd-toggle__switch:before {
   height: 14px;
   width: 36px
 }
-.fd-toggle--xs .fd-toggle__switch:before {
+.fd-toggle--xs .fd-toggle__switch::before {
   height: 20px;
   width: 20px;
   top: -3px
 }
-.fd-toggle--xs input:checked + .fd-toggle__switch:before {
+.fd-toggle--xs input:checked + .fd-toggle__switch::before {
   left: -10px
 }
 .fd-toggle--s {
   height: 17px;
   width: 40px
 }
-.fd-toggle--s .fd-toggle__switch:before {
+.fd-toggle--s .fd-toggle__switch::before {
   height: 24px;
   width: 24px;
   top: -4px
 }
-.fd-toggle--s input:checked + .fd-toggle__switch:before {
+.fd-toggle--s input:checked + .fd-toggle__switch::before {
   left: -10px
 }
 .fd-toggle--l {
   height: 22px;
   width: 56px
 }
-.fd-toggle--l .fd-toggle__switch:before {
+.fd-toggle--l .fd-toggle__switch::before {
   height: 32px;
   width: 32px;
   top: -6px
 }
-.fd-toggle--l input:checked + .fd-toggle__switch:before {
+.fd-toggle--l input:checked + .fd-toggle__switch::before {
   left: -2px
 }
 /*!
@@ -5584,6 +5562,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   height: 100%;
   background-color: var(--fd-spinner-background-color)
 }
+.fd-spinner::before {
+  -webkit-animation: line-scale 1s infinite ease;
+  animation: line-scale 1s infinite ease;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s
+}
 .fd-spinner div::after,
 .fd-spinner div::before {
   content: "";
@@ -5593,24 +5577,14 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   background-color: var(--fd-spinner-background-color)
 }
 .fd-spinner div::before {
-  left: 8px
-}
-.fd-spinner div::after {
-  right: 8px
-}
-.fd-spinner::before {
-  -webkit-animation: line-scale 1s infinite ease;
-  animation: line-scale 1s infinite ease;
-  -webkit-animation-delay: -1s;
-  animation-delay: -1s
-}
-.fd-spinner div::before {
+  left: 8px;
   -webkit-animation: line-scale 1s infinite ease;
   animation: line-scale 1s infinite ease;
   -webkit-animation-delay: -.9s;
   animation-delay: -.9s
 }
 .fd-spinner div::after {
+  right: 8px;
   -webkit-animation: line-scale 1s infinite ease;
   animation: line-scale 1s infinite ease;
   -webkit-animation-delay: -.8s;
@@ -6154,7 +6128,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   padding: 10px 20px;
   color: #51555a
 }
-.fd-mega-menu__header-link:before {
+.fd-mega-menu__header-link::before {
   padding-right: 10px;
   font-size: 22px;
   vertical-align: sub
@@ -7057,24 +7031,24 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   padding-left: initial;
   padding-right: 20px
 }
-.fd-status-label--available[dir=rtl]:before,
-.fd-status-label--away[dir=rtl]:before,
-.fd-status-label--busy[dir=rtl]:before,
-.fd-status-label--offline[dir=rtl]:before,
-[dir=rtl] .fd-status-label--available:before,
-[dir=rtl] .fd-status-label--away:before,
-[dir=rtl] .fd-status-label--busy:before,
-[dir=rtl] .fd-status-label--offline:before {
+.fd-status-label--available[dir=rtl]::before,
+.fd-status-label--away[dir=rtl]::before,
+.fd-status-label--busy[dir=rtl]::before,
+.fd-status-label--offline[dir=rtl]::before,
+[dir=rtl] .fd-status-label--available::before,
+[dir=rtl] .fd-status-label--away::before,
+[dir=rtl] .fd-status-label--busy::before,
+[dir=rtl] .fd-status-label--offline::before {
   left: initial
 }
-.fd-status-label--available[dir=rtl]:after,
-.fd-status-label--away[dir=rtl]:after,
-.fd-status-label--busy[dir=rtl]:after,
-.fd-status-label--offline[dir=rtl]:after,
-[dir=rtl] .fd-status-label--available:after,
-[dir=rtl] .fd-status-label--away:after,
-[dir=rtl] .fd-status-label--busy:after,
-[dir=rtl] .fd-status-label--offline:after {
+.fd-status-label--available[dir=rtl]::after,
+.fd-status-label--away[dir=rtl]::after,
+.fd-status-label--busy[dir=rtl]::after,
+.fd-status-label--offline[dir=rtl]::after,
+[dir=rtl] .fd-status-label--available::after,
+[dir=rtl] .fd-status-label--away::after,
+[dir=rtl] .fd-status-label--busy::after,
+[dir=rtl] .fd-status-label--offline::after {
   left: initial;
   right: 0
 }
@@ -7106,54 +7080,54 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-status-label--available {
   --fd-status-label-icon-background-color: var(--fd-color-positive)
 }
-.fd-status-label--available:before {
+.fd-status-label--available::before {
   width: 7px;
   height: 7px;
   top: 4px;
   left: 4px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA2IDUuOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNiA1Ljk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTIuNywzLjJsMS40LTIuOEM0LjQsMCw1LTAuMSw1LjUsMC4xYzAuNCwwLjMsMC42LDAuOCwwLjQsMS4ybC0yLDRDMy42LDUuOSwzLDYuMSwyLjYsNS44CgljLTAuMSwwLTAuMi0wLjEtMC4zLTAuMmwtMi0yYy0wLjQtMC40LTAuNC0xLDAtMS40YzAuNC0wLjQsMS0wLjQsMS40LDBsMCwwTDIuNywzLjJ6Ii8+Cjwvc3ZnPg==)
 }
-.fd-status-label--available[dir=rtl]:before,
-[dir=rtl] .fd-status-label--available:before {
+.fd-status-label--available[dir=rtl]::before,
+[dir=rtl] .fd-status-label--available::before {
   right: 4px
 }
 .fd-status-label--away {
   --fd-status-label-icon-background-color: var(--fd-color-alert)
 }
-.fd-status-label--away:before {
+.fd-status-label--away::before {
   width: 6px;
   height: 6px;
   top: 4px;
   left: 6px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1IDUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUgNTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMSw1QzAuNCw1LDAsNC42LDAsNFYxYzAtMC42LDAuNC0xLDEtMXMxLDAuNCwxLDF2MmgyYzAuNiwwLDEsMC40LDEsMVM0LjYsNSw0LDVIMXoiLz4KPC9zdmc+)
 }
-.fd-status-label--away[dir=rtl]:before,
-[dir=rtl] .fd-status-label--away:before {
+.fd-status-label--away[dir=rtl]::before,
+[dir=rtl] .fd-status-label--away::before {
   right: 4px
 }
 .fd-status-label--busy {
   --fd-status-label-icon-background-color: var(--fd-color-negative)
 }
-.fd-status-label--busy:before {
+.fd-status-label--busy::before {
   width: 4px;
   height: 4px;
   top: 6px;
   left: 6px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA0IDQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQgNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNCwyYzAsMS4xLTAuOSwyLTIsMlMwLDMuMSwwLDJzMC45LTIsMi0yUzQsMC45LDQsMiIvPgo8L3N2Zz4=)
 }
-.fd-status-label--busy[dir=rtl]:before,
-[dir=rtl] .fd-status-label--busy:before {
+.fd-status-label--busy[dir=rtl]::before,
+[dir=rtl] .fd-status-label--busy::before {
   right: 6px
 }
-.fd-status-label--offline:before {
+.fd-status-label--offline::before {
   width: 8px;
   height: 8px;
   top: 4px;
   left: 4px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA3LjkgNy45IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA3LjkgNy45OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik03LjksNGMwLDIuMi0xLjgsNC00LDRTMCw2LjIsMCw0czEuOC00LDQtNFM3LjksMS44LDcuOSw0Ii8+Cjwvc3ZnPg==)
 }
-.fd-status-label--offline[dir=rtl]:before,
-[dir=rtl] .fd-status-label--offline:before {
+.fd-status-label--offline[dir=rtl]::before,
+[dir=rtl] .fd-status-label--offline::before {
   right: 4px
 }
 .fd-popover {
@@ -7930,6 +7904,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-has-color-action-2 {
   color: var(--fd-color-action-2)!important
 }
+.fd-has-color-action-3 {
+  color: var(--fd-color-action-3)!important
+}
 .fd-has-color-text,
 .fd-has-color-text-1 {
   color: var(--fd-color-text-1)!important
@@ -7990,6 +7967,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-has-color-status-4 {
   color: var(--fd-color-status-4)!important
+}
+.fd-has-color-status-5 {
+  color: var(--fd-color-status-5)!important
 }
 .fd-has-color-accent,
 .fd-has-color-accent-1 {
@@ -8104,6 +8084,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-has-background-color-action-2 {
   background-color: var(--fd-color-action-2)!important
 }
+.fd-has-background-color-action-3 {
+  background-color: var(--fd-color-action-3)!important
+}
 .fd-has-background-color-text,
 .fd-has-background-color-text-1 {
   background-color: var(--fd-color-text-1)!important
@@ -8164,6 +8147,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-has-background-color-status-4 {
   background-color: var(--fd-color-status-4)!important
+}
+.fd-has-background-color-status-5 {
+  background-color: var(--fd-color-status-5)!important
 }
 .fd-has-background-color-accent,
 .fd-has-background-color-accent-1 {
@@ -8293,6 +8279,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-has-border-color-action-2 {
   border-color: var(--fd-color-action-2)!important
 }
+.fd-has-border-color-action-3 {
+  border-color: var(--fd-color-action-3)!important
+}
 .fd-has-border-color-text,
 .fd-has-border-color-text-1 {
   border-color: var(--fd-color-text-1)!important
@@ -8353,6 +8342,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-has-border-color-status-4 {
   border-color: var(--fd-color-status-4)!important
+}
+.fd-has-border-color-status-5 {
+  border-color: var(--fd-color-status-5)!important
 }
 .fd-has-border-color-accent,
 .fd-has-border-color-accent-1 {
