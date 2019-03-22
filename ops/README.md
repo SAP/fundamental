@@ -13,13 +13,13 @@ Each output has a `build` task that chains the tasks together. Individual tasks 
 
 ## The package
 * Inputs: `scss`,
-* Outputs: `dist` (and `tmp`)
+* Outputs: `dist`
 
 ### Generate the package
 `npx gulp build:dist --production` builds to `dist`
 
 ### For local development
-`npm run build` or `npx gulp build:dist` builds to `tmp`
+`npm run build`
 
 > Local development has no dependency on `dist`. It only needs to be built for releases and deployments.
 
