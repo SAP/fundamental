@@ -46,7 +46,7 @@ The documentation uses Jekyll to generate a static site. Dependencies on packagi
 Local development requires a server and includes watch tasks which auto-compiles files and refreshes the browser.
 
 ### Start the server
-`npm run start:docs`
+`npm start`
 
 > The default Gulp task is the "build" task for local development
 
@@ -70,6 +70,6 @@ Assuming "foo" is the component, the following are created:
 
 > Read more about the `test` framework and [Simple visual testing](https://github.com/SAP/fundamental/blob/master/test/README.md#simple-visual-testing)
 
-Run `npm test`. Navigate to [`localhost:3030/foo`](localhost:3030/foo) to see the page.
+Run `npm run start:playground`. Navigate to [`localhost:3030/foo`](localhost:3030/foo) to see the page.
 
 > Note: The server must be restarted if `data.json` changes.

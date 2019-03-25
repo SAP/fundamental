@@ -46,9 +46,9 @@ You can clone the entire repo and work in the full project where we manage the [
 
 1. **Install Ruby Gems** - These gems are needed to be installed for the documentation site: `gem install ruby bundle jekyll`
 
-1. **Serve the documentation website locally** - `npm run start:docs`
+1. **Serve the documentation website locally** - `npm start`
 
-1. **Serve the development playground locally**: `npm start`
+1. **Serve the development playground locally**: `npm run start:playground`
 
 
 ### Project Dependencies
@@ -56,8 +56,7 @@ The project has the following prerequisites and works best with the noted versio
 
 * Git (for downloading this repo)
 * [Node LTS](https://nodejs.org/)
-* Python 2 (for Jekyll - documentation site)
-* Xcode (for some macOS users)
+* Ruby (for running the documentation website locally)
 
 ## Limitations
 

@@ -3,7 +3,7 @@
 ## Components
 The component test framework loads only `core.scss` and individual component `.scss` files. **The HTML created here will be used on the documentation site.**
 
-- Run `npm start`
+- Run `npm run start:playground`
 - Go to [localhost:3030](http://localhost:3030)
 
 > Read about the `npx gulp create` task at [Contributing Components](https://github.com/SAP/fundamental/tree/master/ops#contributing-components) which can automatically generate the required component files.
@@ -60,7 +60,7 @@ You now have all the dependencies you need to run the project.
 ### Testing a feature branch
 - In Github application, change "Current Branch" to the feature branch you are testing, e.g., `feature/999`
 - From the macOS menu bar, select "Repository > Open in Terminal"
-- Type `npm start`
+- Type `npm run start:playground`
 - Go to [localhost:3030](http://localhost:3030) to find the components you are testing
 
 
