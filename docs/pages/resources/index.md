@@ -41,4 +41,12 @@ summary:
         </div>
     </a>
 
+    <a class="fd-tile" role="button" href="{{site.baseurl}}/fundamentals-libraries/">
+        <div class="fd-tile__content">
+            <h2 class="fd-tile__header">
+                Fundamentals Libraries
+            </h2>
+        </div>
+    </a>
+
 </div>
