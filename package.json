@@ -1,26 +1,32 @@
 {
   "name": "fiori-fundamentals",
-  "version": "1.4.8",
+  "version": "1.4.9-rc.0",
   "description": "Fiori Fundamentals is a Design System and HTML/CSS Component Library used to build modern Product User Experiences with the SAP look and feel. Learn more about this project at - http://sap.github.io/fundamental/",
   "main": "index.js",
   "scripts": {
-    "build-doc": "npm run build:config && gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
-    "build": "npx gulp build:dist",
+    "build:docs": "npm run build:config && npm run build && npx gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
     "build:config": "./scripts/create-library-config.js",
-    "deploy": "gh-pages -d docs",
+    "build": "npx gulp build:dist",
+    "deploy": "gh-pages -d docs/_site",
     "lint:fix": "stylelint './scss/**/*.scss' --fix",
     "lint:pre-commit": "printf \"running pre-commit lint...\"  && npm run lint && printf \"done!\n\"",
     "lint": "stylelint './scss/**/*.scss'",
     "release:create": "create-release",
     "release": "./scripts/publish-release.sh",
-    "start": "npm run build:config && npx gulp default",
+    "start": "npm run build:docs && npx gulp default",
+    "start:playground": "npm run build && node test/app.js",
     "std-version": "standard-version -m \"chore(release): version %s build ${TRAVIS_BUILD_NUMBER} [ci skip]\"",
-    "test": "node test/app.js"
+    "test": "npx gulp test:visual",
+    "test:update": "npx gulp test:reference && npx gulp test:approve"
   },
   "repository": {
     "type": "git",
     "url": ""
   },
+  "files": [
+    "/dist",
+    "/less"
+  ],
   "author": "",
   "license": "Apache-2.0",
   "homepage": "https://sap.github.io/fundamental/",

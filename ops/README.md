@@ -13,18 +13,13 @@ Each output has a `build` task that chains the tasks together. Individual tasks 
 
 ## The package
 * Inputs: `scss`,
-* Outputs: `dist` (and `tmp`)
+* Outputs: `dist`
 
 ### Generate the package
-`npx gulp build:dist --production` builds to `dist`
-
-### For local development
-`npm run build` or `npx gulp build:dist` builds to `tmp`
-
-> Local development has no dependency on `dist`. It only needs to be built for releases and deployments.
+`npm run build`
 
 ### Individual tasks
-* `npx gulp pkg-clean` removes the contents of `dist` (production mode) or `tmp`
+* `npx gulp pkg-clean` removes the contents of `dist`
 * `npx gulp pkg-css` compiles SASS for the full library, prefixes and cleans (production mode), includes sourcemaps (development mode)
 * `npx gulp pkg-css-minify` minifies compiled CSS (for production mode only)
 * `npx gulp pkg-css-components` compiles, minifies, and prefixes individual component files (for production mode only)
@@ -37,7 +32,7 @@ Each output has a `build` task that chains the tasks together. Individual tasks 
 The documentation uses Jekyll to generate a static site. Dependencies on packaging tasks should be very clearly defined in the main build task, i.e., build the package before including it into the website. Do not mix packaging tasks into the unrelated docs tasks.
 
 ### Generate the documentation
-`npx gulp`
+`npm run build:docs`
 
 ### Individual tasks
 * `npx gulp docs-resources` optimizes and outputs svgs to `docs/_site/images` (should handle images as well)
@@ -75,6 +70,6 @@ Assuming "foo" is the component, the following are created:
 
 > Read more about the `test` framework and [Simple visual testing](https://github.com/SAP/fundamental/blob/master/test/README.md#simple-visual-testing)
 
-Run `npm test`. Navigate to [`localhost:3030/foo`](localhost:3030/foo) to see the page.
+Run `npm run start:playground`. Navigate to [`localhost:3030/foo`](localhost:3030/foo) to see the page.
 
 > Note: The server must be restarted if `data.json` changes.
