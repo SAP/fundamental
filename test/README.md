@@ -1,12 +1,11 @@
-# Simple visual testing
+# Simple Visual Testing
 
 ## Components
 The component test framework loads only `core.scss` and individual component `.scss` files. **The HTML created here will be used on the documentation site.**
 
-- Run `npm test`
+- Run `npm run start:playground`
 - Go to [localhost:3030](http://localhost:3030)
 
-### Get started
 > Read about the `npx gulp create` task at [Contributing Components](https://github.com/SAP/fundamental/tree/master/ops#contributing-components) which can automatically generate the required component files.
 
 To get started add a new directory matching the component block with an `index.njk` file inside.
@@ -42,7 +41,7 @@ This area is to test compositions of components with layout and base UI elements
 
 👍
 
-# How to test a feature branch
+## Testing
 If you need to visually test a component, follow these simple steps.
 
 ### First time setting up?
@@ -58,34 +57,31 @@ If you have never setup the project, you need to do a few things first.
 
 You now have all the dependencies you need to run the project.
 
-### To test a feature branch
+### Testing a feature branch
 - In Github application, change "Current Branch" to the feature branch you are testing, e.g., `feature/999`
 - From the macOS menu bar, select "Repository > Open in Terminal"
-- Type `npm test`
+- Type `npm run start:playground`
 - Go to [localhost:3030](http://localhost:3030) to find the components you are testing
 
 
-# Automated visual testing
+### Automated Visual Testing
 
 A visual testing framwork is available for automated testing.  The framework examines screenshots of individual components against expected screenshots, and the associated test will fail where visual differences occur.
 
-## Pre-requisites
+#### Prerequisites
 
 - Docker must be installed on the host machine.  Docker is used to ensure consistent screenshot comparisons when run locally on different platforms, and when run as part of a CI build.
 
-## Executing automated tests
+#### Executing Automated Tests
 
-From the root of the project, execute `npx gulp test:visual`.  This will compare components that have screenshots defined against those in your current build.  After the build runs, a browser should launch detailing the test results.
+From the root of the project, execute `npm run test`.  This will compare components that have screenshots defined against those in your current build.  After the build runs, a browser should launch detailing the test results.
 
-## Updating automated tests
+#### Updating Automated Tests
 
-If you have visually changed a component and are happy that the changes are as desired, you need to run the following commands to update the reference screenshots:
-
-- `npx gulp test:reference` will generate a new set of reference screenshots based on your current build.
-- `npx gulp test:approve` will promote the new generated screenshots to be the reference data to be used.
+If you have visually changed a component and are happy that the changes are as desired, you need to run the following command to update the reference screenshots: `npm run test:update`
 - **Note:** You will need to commit the updated reference screenshots as part of your PR
 
-## Adding new components to the automation framwework
+#### Adding New Components to the Automation Framwework
 
 To add new components, please add a new JS config file to the directory `test/visual-regression-tests/config/components/` with the new component details that youwould like to be tested.  
 

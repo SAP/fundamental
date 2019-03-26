@@ -4,7 +4,7 @@ let environment = require('../lib/environment');
 
 const paths = {
 	src: 'scss',
-	dest: environment.production ? 'dist' : 'tmp'
+	dest: 'dist'
 }
 
 const task = () => {

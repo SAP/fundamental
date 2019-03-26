@@ -15,7 +15,7 @@ const replace = require('gulp-replace')
 const del    = require('del');
 const paths = {
     src: config.root.css,
-    dest: environment.production ? config.root.dest : config.root.tmp
+    dest: config.root.dest
 }
 
 const d = new Date();
