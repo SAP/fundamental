@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.9-rc.0"></a>
+## [1.4.9-rc.0](https://github.com/SAP/fundamental/compare/v1.4.8...v1.4.9-rc.0) (2019-03-26)
+
+
+### Bug Fixes
+
+* organize scripts and change dist folder workflow ([#1345](https://github.com/SAP/fundamental/issues/1345)) ([356114d](https://github.com/SAP/fundamental/commit/356114d))
+
+
+
 <a name="1.4.8"></a>
 ## [1.4.8](https://github.com/SAP/fundamental/compare/v1.4.8-rc.0...v1.4.8) (2019-03-22)
 
