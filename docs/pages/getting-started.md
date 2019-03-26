@@ -8,11 +8,11 @@ folder:
 summary:
 
 ---
- SAP Fiori Fundamentals is a light-weight presentation layer using HTML and CSS with the following implementations under active development: [Angular](https://sap.github.io/fundamental-ngx/), [React](https://sap.github.io/fundamental-react/), and [Vue](https://sap.github.io/fundamental-vue/). With Fiori Fundamentals’ library of stylesheets and HTML tags, developers can build consistent Fiori apps in any web-based technology.
+ SAP Fiori Fundamentals is a light-weight presentation layer using HTML and CSS with the following implementations under active development: [Angular](https://sap.github.io/fundamental-ngx/){:target="_blank"}, [React](https://sap.github.io/fundamental-react/){:target="_blank"}, and [Vue](https://sap.github.io/fundamental-vue/){:target="_blank"}. With Fiori Fundamentals’ library of stylesheets and HTML tags, developers can build consistent Fiori apps in any web-based technology.
  
 <hr>
 
-## Current version ([GitHub](https://github.com/SAP/fundamental/releases))
+## Current version ([GitHub](https://github.com/SAP/fundamental/releases){:target="_blank"})
 {:.docs-header-h2}
 
 ````

@@ -9,14 +9,14 @@ summary: SAP Fiori Fundamentals can be used with your framework of choice, howev
 ---
 <hr> 
 
-## Fundamental NGX ([GitHub](https://github.com/SAP/fundamental-ngx))
+## Fundamental NGX ([GitHub](https://github.com/SAP/fundamental-ngx){:target="_blank"})
 {: .docs-header-h2}
-<a href="https://sap.github.io/fundamental-ngx/" target="_blank">Fundamental NGX</a> is a set of Angular components built with the SAP Fiori Fundamentals library. 
+[Fundamental NGX](https://sap.github.io/fundamental-ngx/){:target="_blank"} is a set of Angular components built with the SAP Fiori Fundamentals library. 
 
-## Fundamental React ([GitHub](https://github.com/SAP/fundamental-react))
+## Fundamental React ([GitHub](https://github.com/SAP/fundamental-react){:target="_blank"})
 {: .docs-header-h2}
-<a href="https://sap.github.io/fundamental-react/" target="_blank">Fundamental React</a> is a set of React components built with the SAP Fiori Fundamentals library. 
+[Fundamental React](https://sap.github.io/fundamental-react/){:target="_blank"} is a set of React components built with the SAP Fiori Fundamentals library. 
 
-## Fundamental Vue ([GitHub](https://github.com/SAP/fundamental-vue))
+## Fundamental Vue ([GitHub](https://github.com/SAP/fundamental-vue){:target="_blank"})
 {: .docs-header-h2}
-<a href="https://sap.github.io/fundamental-vue/" target="_blank">Fundamental Vue</a> is a set of Vue components built with the SAP Fiori Fundamentals library. 
+[Fundamental Vue](https://sap.github.io/fundamental-vue/){:target="_blank"} is a set of Vue components built with the SAP Fiori Fundamentals library. 
