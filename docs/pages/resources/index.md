@@ -41,7 +41,7 @@ summary:
         </div>
     </a>
 
-    <a class="fd-tile" role="button" href="{{site.baseurl}}/fundamentals-libraries/">
+    <a class="fd-tile" role="button" href="fundamentals-libraries.html">
         <div class="fd-tile__content">
             <h2 class="fd-tile__header">
                 SAP Fiori Fundamentals Libraries

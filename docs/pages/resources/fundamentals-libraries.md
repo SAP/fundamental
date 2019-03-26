@@ -1,9 +1,9 @@
 ---
 title: SAP Fiori Fundamentals Libraries
-keywords: libraries, frameworks
+keywords: libraries frameworks angular vue react
 sidebar: left-navigation-sidebar
 toc: false
-permalink: /fundamentals-libraries/
+permalink: resources/fundamentals-libraries.html
 folder: resources
 summary: SAP Fiori Fundamentals can be used with your framework of choice, however fundamentals-react, fundamentals-ngx, and fundamentals-vue are currently in active development.
 ---
