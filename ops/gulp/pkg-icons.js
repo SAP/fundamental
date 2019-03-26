@@ -4,7 +4,7 @@ const environment = require('../lib/environment');
 
 const paths = {
 	src: `${config.root.css}/icons`,
-	dest: environment.production ? config.root.dest : config.root.tmp
+	dest: config.root.dest
 }
 
 const task = (cb) => {

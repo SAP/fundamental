@@ -49,7 +49,7 @@ The Basic SCSS configuration is now complete.
 ## Installing Fiori Fundamentals via NPM
 {:.docs-header-h2}
 
-Fiori Fundamentals is currently available as an [NPM package](https://www.npmjs.com/package/fiori-fundamentals){:target="_blank"} and a compiled and minified [CDN file](https://unpkg.com/fiori-fundamentals@1.0.0-beta-2/dist/fiori-fundamentals.min.css){:target="_blank"}. The following steps will cover how to install it via NPM.
+Fiori Fundamentals is currently available as an [NPM package](https://www.npmjs.com/package/fiori-fundamentals){:target="_blank"} and a compiled and minified [CDN file](https://unpkg.com/fiori-fundamentals@latest/dist/fiori-fundamentals.min.css){:target="_blank"}. The following steps will cover how to install it via NPM.
 
 1. Type `npm install fiori-fundamentals --save-dev`. This will install the package as a dev dependency.
 2. Verify the installation was successful by typing `npm list fiori-fundamentals`

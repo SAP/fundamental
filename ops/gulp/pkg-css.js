@@ -12,7 +12,7 @@ const environment = require('../lib/environment');
 const signale = require('signale');
 const paths = {
     src: config.root.css,
-    dest: environment.production ? config.root.dest : config.root.tmp
+    dest: './dist'
 }
 
 const d = new Date();
@@ -26,7 +26,7 @@ const banner = `/*!
 //compile top-level files
 const sassTask = () => {
     const prefix = config.tasks.css.prefix;
-    const files = environment.production ? [`${paths.src}/*.${config.tasks.css.extensions}`,`!${paths.src}/*.less.${config.tasks.css.extensions}`] : `${paths.src}/all.scss`;
+    const files = [`${paths.src}/*.${config.tasks.css.extensions}`,`!${paths.src}/*.less.${config.tasks.css.extensions}`];
 
     const isAllCss = file => file.path.includes('all.css');
     const isAllIE11Css = file => file.path.includes('all-ie11.css');
