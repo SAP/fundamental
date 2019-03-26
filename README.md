@@ -17,15 +17,16 @@ We are also working on [Angular](https://github.com/SAP/fundamental-ngx), [React
 ## Getting Started
 The library is modular so you can use as little or as much as you need.
 
-### Full library
+### CDN
 The fully compiled, minified library is available via CDN for inclusion in your application.
 
 ```
 <link href="//unpkg.com/fiori-fundamentals@latest/dist/fiori-fundamentals.min.css" rel="stylesheet">
 ```
 
-### NPM
-The compiled CSS for the full library and modules, e.g., core, layout, etc., are distributed via NPM along with the SASS source.
+### NPM Package
+
+The compiled CSS for the full library and modules, e.g., core, layout, etc., are distributed via [NPM](https://www.npmjs.com/package/fiori-fundamentals) along with the SASS source.
 
 This gives you incredible flexibility to use individual components and enable [advanced customization](https://github.com/SAP/fundamental/wiki/Advanced-Customization) options.
 
@@ -35,8 +36,19 @@ npm install fiori-fundamentals --save
 
 > NOTE: We only distribute the [fonts, icons and CSS](https://github.com/SAP/fundamental/tree/master/dist) and [the SASS source](https://github.com/SAP/fundamental/tree/master/scss), not the full project or HTML for specific components.
 
+
+### LESS compatible Fiori Fundamentals
+
+The distributed `less` folder is NOT a full port of the library to LESS. We are providing only select files that can be used in a LESS environment. For example, some `calc` functions are escaped to avoid errors when the library is processed as LESS.
+
+> NOTE: The `fonts` and `icons` are not included as part of this file. You will need to bring the regular `dist` versions of those files into your project separately.
+
+We are offering these files to ease the transition for some teams that are migrating their UI to a new look and feel but who are not in a position to adopt a SASS workflow.
+
+We welcome ideas and contributions to build this out if there is a strong need.
+
+
 ## Working with the Project
-You can clone the entire repo and work in the full project where we manage the [documentation](https://github.com/SAP/fundamental/tree/master/docs) and the [test framework](https://github.com/SAP/fundamental/tree/master/test).
 
 ### Download and Installation
 
@@ -50,17 +62,12 @@ You can clone the entire repo and work in the full project where we manage the [
 
 1. **Serve the development playground locally**: `npm run start:playground`
 
-
 ### Project Dependencies
-The project has the following prerequisites and works best with the noted versions.
+The project has the following prerequisites:
 
 * Git (for downloading this repo)
 * [Node LTS](https://nodejs.org/)
 * Ruby (for running the documentation website locally)
-
-## Limitations
-
-At the time this version was released, there are no known limitations.
 
 
 ## Known Issues
@@ -76,7 +83,6 @@ $fd-icons-path : "../node_modules/fiori-fundamentals/scss/icons/"; // should be 
 
 ```
 
-
 ## Support
 
 If you encounter an issue, you can create a [ticket](https://github.com/SAP/fundamental/issues/new/choose) or post on the [Fundamentals Slack channel](https://join.slack.com/t/ui-fundamentals/shared_invite/enQtNTIzOTU0Mzc2NTc5LThlOTYxOGE3NGIzZDY3MGYyNjRiYWFlM2U0OGFjMGQ5YTA1MWU0ZjRjOTZmMGIzYWU1MmMyNzNjMjJhNzZhYzY).
@@ -84,7 +90,7 @@ If you encounter an issue, you can create a [ticket](https://github.com/SAP/fund
 
 ## Contributing
 
-If you want to contribute, please check the [Contribution Guidelines](https://github.com/SAP/fundamental/wiki/Contribution-Guidelines).
+If you want to contribute, please check the [Contribution Guidelines](https://github.com/SAP/fundamental/wiki/Contribution-Guidelines). Also check the [Visual Testing Guide](https://github.com/SAP/fundamental/wiki/Visual-Testing-(Simple-and-Automated)).
 
 
 ## Versioning
