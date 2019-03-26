@@ -10,6 +10,6 @@ npm run std-version -- --prerelease rc --no-verify
 git push --follow-tags "https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG" "$TRAVIS_BRANCH" > /dev/null 2>&1;
 
 #build dist folder
-npm run build:production
+npm run build:prod
 
 npm publish --tag prerelease
