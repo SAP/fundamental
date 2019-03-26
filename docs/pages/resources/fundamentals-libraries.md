@@ -1,5 +1,5 @@
 ---
-title: SAP Fiori Fundamentals Libraries
+title: SAP Fiori Fundamentals Implementation Libraries
 keywords: libraries frameworks angular vue react
 sidebar: left-navigation-sidebar
 toc: false
