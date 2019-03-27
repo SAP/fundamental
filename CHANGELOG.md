@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.9-rc.1"></a>
+## [1.4.9-rc.1](https://github.com/SAP/fundamental/compare/v1.4.9-rc.0...v1.4.9-rc.1) (2019-03-27)
+
+
+### Bug Fixes
+
+* remove space that is messing with button alignment. ([#1341](https://github.com/SAP/fundamental/issues/1341)) ([9849274](https://github.com/SAP/fundamental/commit/9849274))
+
+
+
 <a name="1.4.9-rc.0"></a>
 ## [1.4.9-rc.0](https://github.com/SAP/fundamental/compare/v1.4.8...v1.4.9-rc.0) (2019-03-26)
 
