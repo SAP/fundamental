@@ -7,6 +7,7 @@
     "build:config": "./scripts/create-library-config.js",
     "build:docs": "npm run build:config && npm run build && npx gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
     "build": "npx gulp build:dist",
+    "build:prod": "npm run build -- --production",
     "deploy": "gh-pages -d docs/_site",
     "lint:fix": "stylelint './scss/**/*.scss' --fix",
     "lint:pre-commit": "printf \"running pre-commit lint...\"  && npm run lint && printf \"done!\n\"",
@@ -21,11 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/SAP/fundamental.git"
   },
   "files": [
     "/dist",
-    "/less"
+    "/less",
+    "/scss"
   ],
   "author": "",
   "license": "Apache-2.0",
