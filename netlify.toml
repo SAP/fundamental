@@ -7,9 +7,9 @@
 
 [build]
   publish = "docs/_site"
-  command = "npm run postinstall && npm run build-doc"
+  command = "npm run build:docs"
 
 # Production context: All deploys to the main
 # repository branch will inherit these settings.
 [context.production]
-  command = "npm run postinstall && npm run build-doc"
+  command = "npm run build:docs"

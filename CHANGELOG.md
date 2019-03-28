@@ -2,6 +2,76 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.9-rc.2"></a>
+## [1.4.9-rc.2](https://github.com/SAP/fundamental/compare/v1.4.9-rc.1...v1.4.9-rc.2) (2019-03-27)
+
+
+
+<a name="1.4.9-rc.1"></a>
+## [1.4.9-rc.1](https://github.com/SAP/fundamental/compare/v1.4.9-rc.0...v1.4.9-rc.1) (2019-03-27)
+
+
+### Bug Fixes
+
+* remove space that is messing with button alignment. ([#1341](https://github.com/SAP/fundamental/issues/1341)) ([9849274](https://github.com/SAP/fundamental/commit/9849274))
+
+
+
+<a name="1.4.9-rc.0"></a>
+## [1.4.9-rc.0](https://github.com/SAP/fundamental/compare/v1.4.8...v1.4.9-rc.0) (2019-03-26)
+
+
+### Bug Fixes
+
+* organize scripts and change dist folder workflow ([#1345](https://github.com/SAP/fundamental/issues/1345)) ([356114d](https://github.com/SAP/fundamental/commit/356114d))
+
+
+
+<a name="1.4.8"></a>
+## [1.4.8](https://github.com/SAP/fundamental/compare/v1.4.8-rc.0...v1.4.8) (2019-03-22)
+
+
+
+<a name="1.4.8-rc.0"></a>
+## [1.4.8-rc.0](https://github.com/SAP/fundamental/compare/v1.4.7...v1.4.8-rc.0) (2019-03-22)
+
+
+### Bug Fixes
+
+* move postinstall script ([#1343](https://github.com/SAP/fundamental/issues/1343)) ([cf30b83](https://github.com/SAP/fundamental/commit/cf30b83))
+
+
+
+<a name="1.4.7"></a>
+## [1.4.7](https://github.com/SAP/fundamental/compare/v1.4.7-rc.0...v1.4.7) (2019-03-21)
+
+
+
+<a name="1.4.7-rc.0"></a>
+## [1.4.7-rc.0](https://github.com/SAP/fundamental/compare/v1.4.6...v1.4.7-rc.0) (2019-03-21)
+
+
+### Bug Fixes
+
+* modify build-doc script ([#1340](https://github.com/SAP/fundamental/issues/1340)) ([4df7a3e](https://github.com/SAP/fundamental/commit/4df7a3e))
+
+
+
+<a name="1.4.6"></a>
+## [1.4.6](https://github.com/SAP/fundamental/compare/v1.4.6-rc.12...v1.4.6) (2019-03-21)
+
+
+
+<a name="1.4.6-rc.12"></a>
+## [1.4.6-rc.12](https://github.com/SAP/fundamental/compare/v1.4.6-rc.11...v1.4.6-rc.12) (2019-03-21)
+
+
+
+<a name="1.4.6-rc.11"></a>
+## [1.4.6-rc.11](https://github.com/SAP/fundamental/compare/v1.4.6-rc.10...v1.4.6-rc.11) (2019-03-21)
+
+
+
 <a name="1.4.6-rc.10"></a>
 ## [1.4.6-rc.10](https://github.com/SAP/fundamental/compare/v1.4.6-rc.9...v1.4.6-rc.10) (2019-03-21)
 

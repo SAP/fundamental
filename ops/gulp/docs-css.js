@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const environment = require('../lib/environment');
 const paths = {
-	src: environment.production ? './dist' : './tmp',
+	src: './dist',
 	dest: './docs/css'
 }
 
