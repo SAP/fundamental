@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:config": "./scripts/create-library-config.js",
-    "build:docs": "npm run build:config && npm run build && npx gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
+    "build:docs": "npm run build:config && npm run build && npx gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-build.yml,_config-library.yml && cd ..",
     "build": "npx gulp build:dist",
     "deploy": "gh-pages -d docs/_site",
     "lint:fix": "stylelint './scss/**/*.scss' --fix",
@@ -14,7 +14,7 @@
     "release:create": "create-release",
     "release": "./scripts/publish-release.sh",
     "start:playground": "npm run build && node test/app.js",
-    "start": "npm run build:docs && npx gulp default",
+    "start": "npx gulp default",
     "std-version": "standard-version -m \"chore(release): version %s build ${TRAVIS_BUILD_NUMBER} [ci skip]\"",
     "test:update": "npx gulp test:reference && npx gulp test:approve",
     "test": "npx gulp test:visual"
