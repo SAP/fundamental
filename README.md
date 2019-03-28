@@ -79,7 +79,7 @@ If you encounter an issue, you can create a [ticket](https://github.com/SAP/fund
 
 ## Contributing
 
-If you want to contribute, please check the [Contribution Guidelines](https://github.com/SAP/fundamental/wiki/Contribution-Guidelines). Also check the [Visual Testing Guide](https://github.com/SAP/fundamental/wiki/Visual-Testing-(Simple-and-Automated)) and [Icon Overview](https://github.com/SAP/fundamental/wiki/Generating-Icons).
+If you want to contribute, please check the [Contribution Guidelines](https://github.com/SAP/fundamental/wiki/Contribution-Guidelines). Also check the [SCSS Style Guide](https://github.com/SAP/fundamental/wiki/SCSS-Style-Guide), [Visual Testing Guide](https://github.com/SAP/fundamental/wiki/Visual-Testing-(Simple-and-Automated)) and [Icon Overview](https://github.com/SAP/fundamental/wiki/Generating-Icons).
 
 
 ## Versioning
