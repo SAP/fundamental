@@ -88,6 +88,17 @@ The `fiori-fundamentals` library follows [Semantic Versioning](https://semver.or
 
 Merges to the `master` branch will be published as a prerelease. Prereleases will include an **rc** version (_e.g._ `[MAJOR].[MINOR].[PATCH]-rc.[RC]`).
 
+The following circumstances will be considered a MAJOR or BREAKING change:
+* Droppping existing classnames, css variables, color names, color groups, spacing parameters
+* The existing underlying HTML markup of a component is altered
+* An existing unit test is altered to account for either of the above
+
+The following circumstances will NOT be considered a MAJOR or BREAKING change:
+* Introducing new  classnames, css variables, color names, color groups, spacing parameters
+* Non-visual HTML attribute changes/additions (such as `role`, `aria-*`, `data-*`)
+* Adding or modifying CSS properties and values of existing classnames.
+* An existing unit test is altered to account for non-visual HTML attribute changes/additions (such as `role`, `aria-*`, `data-*`)
+
 ## License
 
 Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
