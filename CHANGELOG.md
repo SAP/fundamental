@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.9-rc.5"></a>
+## [1.4.9-rc.5](https://github.com/SAP/fundamental/compare/v1.4.9-rc.4...v1.4.9-rc.5) (2019-03-29)
+
+
+
 <a name="1.4.9-rc.4"></a>
 ## [1.4.9-rc.4](https://github.com/SAP/fundamental/compare/v1.4.9-rc.3...v1.4.9-rc.4) (2019-03-29)
 
