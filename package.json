@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build:config": "./scripts/create-library-config.js",
-    "build:docs": "npm run build:config && npm run build && npx gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-build.yml,_config-library.yml && cd ..",
+    "build:docs": "npm run build:config && npm run build && npx gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-prod.yml,_config-library.yml",
+    "build:docs:netlify": "npm run build:config && npm run build && npx gulp docs-site && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml",
     "build": "npx gulp build:dist",
     "deploy": "gh-pages -d docs/_site",
     "lint:fix": "stylelint './scss/**/*.scss' --fix",
