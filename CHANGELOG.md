@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.9-rc.7"></a>
+## [1.4.9-rc.7](https://github.com/SAP/fundamental/compare/v1.4.9-rc.6...v1.4.9-rc.7) (2019-03-29)
+
+
+### Bug Fixes
+
+* color updates ([#1363](https://github.com/SAP/fundamental/issues/1363)) ([2de33af](https://github.com/SAP/fundamental/commit/2de33af))
+* restores display helpers with relevant mixins ([#1357](https://github.com/SAP/fundamental/issues/1357)) ([aed69f2](https://github.com/SAP/fundamental/commit/aed69f2))
+
+
+
 <a name="1.4.9-rc.6"></a>
 ## [1.4.9-rc.6](https://github.com/SAP/fundamental/compare/v1.4.9-rc.5...v1.4.9-rc.6) (2019-03-29)
 
