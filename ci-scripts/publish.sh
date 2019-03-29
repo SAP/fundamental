@@ -18,7 +18,7 @@ git push --follow-tags "https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG" master >
 npm run release:create -- --repo $TRAVIS_REPO_SLUG --tag $release_tag --branch master
 
 #build dist folder
-npm run build -- --production
+npm run build:prod
 
 npm publish
 
