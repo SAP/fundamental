@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.9"></a>
+## [1.4.9](https://github.com/SAP/fundamental/compare/v1.4.9-rc.7...v1.4.9) (2019-03-29)
+
+
+
+<a name="1.4.9-rc.7"></a>
+## [1.4.9-rc.7](https://github.com/SAP/fundamental/compare/v1.4.9-rc.6...v1.4.9-rc.7) (2019-03-29)
+
+
+### Bug Fixes
+
+* color updates ([#1363](https://github.com/SAP/fundamental/issues/1363)) ([2de33af](https://github.com/SAP/fundamental/commit/2de33af))
+* restores display helpers with relevant mixins ([#1357](https://github.com/SAP/fundamental/issues/1357)) ([aed69f2](https://github.com/SAP/fundamental/commit/aed69f2))
+
+
+
+<a name="1.4.9-rc.6"></a>
+## [1.4.9-rc.6](https://github.com/SAP/fundamental/compare/v1.4.9-rc.5...v1.4.9-rc.6) (2019-03-29)
+
+
+### Bug Fixes
+
+* updates needed for for github pages publishing ([#1364](https://github.com/SAP/fundamental/issues/1364)) ([d3ffb0a](https://github.com/SAP/fundamental/commit/d3ffb0a))
+
+
+
+<a name="1.4.9-rc.5"></a>
+## [1.4.9-rc.5](https://github.com/SAP/fundamental/compare/v1.4.9-rc.4...v1.4.9-rc.5) (2019-03-29)
+
+
+
+<a name="1.4.9-rc.4"></a>
+## [1.4.9-rc.4](https://github.com/SAP/fundamental/compare/v1.4.9-rc.3...v1.4.9-rc.4) (2019-03-29)
+
+
+
+<a name="1.4.9-rc.3"></a>
+## [1.4.9-rc.3](https://github.com/SAP/fundamental/compare/v1.4.9-rc.2...v1.4.9-rc.3) (2019-03-29)
+
+
+
+<a name="1.4.9-rc.2"></a>
+## [1.4.9-rc.2](https://github.com/SAP/fundamental/compare/v1.4.9-rc.1...v1.4.9-rc.2) (2019-03-27)
+
+
+
 <a name="1.4.9-rc.1"></a>
 ## [1.4.9-rc.1](https://github.com/SAP/fundamental/compare/v1.4.9-rc.0...v1.4.9-rc.1) (2019-03-27)
 

@@ -17,15 +17,16 @@ We are also working on [Angular](https://github.com/SAP/fundamental-ngx), [React
 ## Getting Started
 The library is modular so you can use as little or as much as you need.
 
-### Full library
+### CDN
 The fully compiled, minified library is available via CDN for inclusion in your application.
 
 ```
 <link href="//unpkg.com/fiori-fundamentals@latest/dist/fiori-fundamentals.min.css" rel="stylesheet">
 ```
 
-### NPM
-The compiled CSS for the full library and modules, e.g., core, layout, etc., are distributed via NPM along with the SASS source.
+### NPM Package
+
+The compiled CSS for the full library and modules, e.g., core, layout, etc., are distributed via [NPM](https://www.npmjs.com/package/fiori-fundamentals) along with the SASS source.
 
 This gives you incredible flexibility to use individual components and enable [advanced customization](https://github.com/SAP/fundamental/wiki/Advanced-Customization) options.
 
@@ -33,10 +34,10 @@ This gives you incredible flexibility to use individual components and enable [a
 npm install fiori-fundamentals --save
 ````
 
-> NOTE: We only distribute the [fonts, icons and CSS](https://github.com/SAP/fundamental/tree/master/dist) and [the SASS source](https://github.com/SAP/fundamental/tree/master/scss), not the full project or HTML for specific components.
+> NOTE: We only distribute the [fonts, icons and CSS](https://github.com/SAP/fundamental/tree/master/dist) and [the SASS source](https://github.com/SAP/fundamental/tree/master/scss), not the full project or HTML for specific components. If your project uses LESS, see [LESS compatible Fiori Fundamentals](https://github.com/SAP/fundamental/wiki/LESS-compatible-Fiori-Fundamentals).
+
 
 ## Working with the Project
-You can clone the entire repo and work in the full project where we manage the [documentation](https://github.com/SAP/fundamental/tree/master/docs) and the [test framework](https://github.com/SAP/fundamental/tree/master/test).
 
 ### Download and Installation
 
@@ -50,17 +51,12 @@ You can clone the entire repo and work in the full project where we manage the [
 
 1. **Serve the development playground locally**: `npm run start:playground`
 
-
 ### Project Dependencies
-The project has the following prerequisites and works best with the noted versions.
+The project has the following prerequisites:
 
 * Git (for downloading this repo)
 * [Node LTS](https://nodejs.org/)
 * Ruby (for running the documentation website locally)
-
-## Limitations
-
-At the time this version was released, there are no known limitations.
 
 
 ## Known Issues
@@ -76,7 +72,6 @@ $fd-icons-path : "../node_modules/fiori-fundamentals/scss/icons/"; // should be 
 
 ```
 
-
 ## Support
 
 If you encounter an issue, you can create a [ticket](https://github.com/SAP/fundamental/issues/new/choose) or post on the [Fundamentals Slack channel](https://join.slack.com/t/ui-fundamentals/shared_invite/enQtNTIzOTU0Mzc2NTc5LThlOTYxOGE3NGIzZDY3MGYyNjRiYWFlM2U0OGFjMGQ5YTA1MWU0ZjRjOTZmMGIzYWU1MmMyNzNjMjJhNzZhYzY).
@@ -84,7 +79,7 @@ If you encounter an issue, you can create a [ticket](https://github.com/SAP/fund
 
 ## Contributing
 
-If you want to contribute, please check the [Contribution Guidelines](https://github.com/SAP/fundamental/wiki/Contribution-Guidelines).
+If you want to contribute, please check the [Contribution Guidelines](https://github.com/SAP/fundamental/wiki/Contribution-Guidelines). Also check the [SCSS Style Guide](https://github.com/SAP/fundamental/wiki/SCSS-Style-Guide), [Visual Testing Guide](https://github.com/SAP/fundamental/wiki/Visual-Testing-(Simple-and-Automated)) and [Icon Overview](https://github.com/SAP/fundamental/wiki/Generating-Icons).
 
 
 ## Versioning
@@ -92,6 +87,17 @@ If you want to contribute, please check the [Contribution Guidelines](https://gi
 The `fiori-fundamentals` library follows [Semantic Versioning](https://semver.org/). These components strictly adhere to the `[MAJOR].[MINOR].[PATCH]` numbering system (also known as `[BREAKING].[FEATURE].[FIX]`).
 
 Merges to the `master` branch will be published as a prerelease. Prereleases will include an **rc** version (_e.g._ `[MAJOR].[MINOR].[PATCH]-rc.[RC]`).
+
+The following circumstances will be considered a MAJOR or BREAKING change:
+* Droppping existing classnames, css variables, color names, color groups, spacing parameters
+* The existing underlying HTML markup of a component is altered
+* An existing unit test is altered to account for either of the above
+
+The following circumstances will NOT be considered a MAJOR or BREAKING change:
+* Introducing new  classnames, css variables, color names, color groups, spacing parameters
+* Non-visual HTML attribute changes/additions (such as `role`, `aria-*`, `data-*`)
+* Adding or modifying CSS properties and values of existing classnames.
+* An existing unit test is altered to account for non-visual HTML attribute changes/additions (such as `role`, `aria-*`, `data-*`)
 
 ## License
 
