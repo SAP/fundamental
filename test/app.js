@@ -244,7 +244,8 @@ function getLibs(libQuery) {
         b3: false,
         b4: false,
         md: false,
-        tn: false
+        tn: false,
+        ie: false
     };
     let libsChecked = libQuery;
     if (libsChecked) {
@@ -264,6 +265,9 @@ function getLibs(libQuery) {
                     break;
                 case "tn":
                     libs.tn = true;
+                    break;
+                case "ie11":
+                    libs.ie = true;
                     break;
                 default:
             }
