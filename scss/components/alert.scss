@@ -15,6 +15,7 @@ $block: #{$fd-namespace}-alert;
     $fd-alert-border-color--error: fd-color("status", 3) !default;
     $fd-alert-border-color--success: fd-color("status", 1) !default;
     $fd-alert-border-color--information: fd-color("action", 1) !default;
+    $fd-alert-action-color: fd-color("action", 1) !default;
 
     $fd-alert-background-color: fd-color("neutral", 1) !default;
     $fd-alert-background-color--warning: fd-color-state("alert") !default;
@@ -24,6 +25,7 @@ $block: #{$fd-namespace}-alert;
 
     --fd-alert-background-color: var(--fd-color-neutral-1);
     --fd-alert-border-color: var(--fd-color-neutral-4);
+    --fd-alert-action-color: var(--fd-color-action-1);
 
     $fd-alert-padding-x: fd-space("xxs") !default;
     $fd-alert-padding-y: fd-space("xs") !default;
@@ -51,7 +53,8 @@ $block: #{$fd-namespace}-alert;
       top: 0;
       @include fd-icon("decline", "l");
       @include fd-button-reset();
-      color: fd-color("text", 1);
+      @include fd-var-color("color", $fd-alert-action-color, --fd-alert-action-color);
+
       width: fd-space(9);
       height: fd-space(9);
       @include fd-focus();
@@ -108,8 +111,8 @@ $block: #{$fd-namespace}-alert;
       &::after {
         @include fd-var-color("color", $fd-alert-border-color--warning, --fd-alert-border-color);
       }
-      @include fd-var-color("background-color", $fd-alert-border-color--warning);
-      @include fd-var-color("border-color", $fd-alert-border-color--warning);
+      @include fd-var-color("background-color", $fd-alert-background-color--warning, --fd-alert-background-color);
+      @include fd-var-color("border-color", $fd-alert-border-color--warning, --fd-alert-border-color);
       @include fd-icon("message-warning", "l");
       @include fd-rtl() {
         @include fd-icon("message-warning", "l", "after");
@@ -122,6 +125,8 @@ $block: #{$fd-namespace}-alert;
       &::after {
         @include fd-var-color("color", $fd-alert-border-color--error, --fd-alert-border-color);
       }
+      @include fd-var-color("background-color", $fd-alert-background-color--error, --fd-alert-background-color);
+      @include fd-var-color("border-color", $fd-alert-border-color--error, --fd-alert-border-color);
       @include fd-icon("message-error", "l");
       @include fd-rtl() {
         @include fd-icon("message-error", "l", "after");
@@ -134,6 +139,8 @@ $block: #{$fd-namespace}-alert;
       &::after {
         @include fd-var-color("color", $fd-alert-border-color--success, --fd-alert-border-color);
       }
+      @include fd-var-color("background-color", $fd-alert-background-color--success, --fd-alert-background-color);
+      @include fd-var-color("border-color", $fd-alert-border-color--success, --fd-alert-border-color);
       @include fd-icon("message-success", "l");
       @include fd-rtl() {
         @include fd-icon("message-success", "l", "after");
@@ -146,6 +153,8 @@ $block: #{$fd-namespace}-alert;
       &::after {
         @include fd-var-color("color", $fd-alert-border-color--information, --fd-alert-border-color);
       }
+      @include fd-var-color("background-color", $fd-alert-background-color--information, --fd-alert-background-color);
+      @include fd-var-color("border-color", $fd-alert-border-color--information, --fd-alert-border-color);
       @include fd-icon("message-information", "l");
       @include fd-rtl() {
         @include fd-icon("message-information", "l", "after");
