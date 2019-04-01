@@ -9,7 +9,12 @@ modal:
 <div class="fd-modal" role="dialog">
   <div class="fd-modal__content" role="document">
       <header class="fd-modal__header">
-          <h1 class="fd-modal__title">{{properties.header}}</h1>
+      {%- if properties.header_size %}
+      {%- set header_size = properties.header_size %}
+          <{{header_size}} class="fd-modal__title">{{ properties.header }}</{{header_size}}>
+      {%- else %}   
+          <h3 class="fd-modal__title">{{properties.header}}</h3>
+      {%- endif %}
           {{  button(
                   {
                       label: item.label

@@ -12,10 +12,18 @@ action_bar:
         <button class="fd-button--light sap-icon--nav-back"></button>
     </div>
     {%- endif %}
+
     <div class="fd-action-bar__header">
-        <h1 class="fd-action-bar__title">
-        {{ properties.title }}
-        </h1>
+        {%- if properties.title_size %}
+        {%- set title_size = properties.title_size %}
+        <{{title_size}} class="fd-action-bar__title">
+            {{ properties.title }}
+        </ {{title_size}}>
+        {%- else %}
+        <h3 class="fd-action-bar__title">
+            {{ properties.title }}
+        </h3>
+        {%- endif %}
         {%- if properties.description %}
         <p class="fd-action-bar__description">{{ properties.description }}</p>
         {%- endif %}

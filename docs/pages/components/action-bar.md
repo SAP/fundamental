@@ -22,9 +22,9 @@ The Action Bar is located at the top of the page and is used for the following:
         <button class="fd-button--light fd-button--compact sap-icon--nav-back"></button>
     </div>
     <div class="fd-action-bar__header">
-        <h1 class="fd-action-bar__title">
+        <h3 class="fd-action-bar__title">
         Page Title
-        </h1>
+        </h3>
         <p class="fd-action-bar__description">Action bar Description </p>
     </div>
     <div class="fd-action-bar__actions">
@@ -42,9 +42,9 @@ The Action Bar is located at the top of the page and is used for the following:
 {% capture default-action-bar-multi %}
 <div class="fd-action-bar">
     <div class="fd-action-bar__header">
-        <h1 class="fd-action-bar__title">
+        <h3 class="fd-action-bar__title">
             Page Title
-        </h1>
+        </h3>
         <p class="fd-action-bar__description">Action bar Description </p>
     </div>
     <div class="fd-action-bar__actions">
@@ -65,9 +65,9 @@ When there are several main actions for a page, consider displaying them under a
 {% capture default-action-bar-menu %}
 <div class="fd-action-bar">
     <div class="fd-action-bar__header">
-      <h1 class="fd-action-bar__title">
+      <h3 class="fd-action-bar__title">
           Page Title
-      </h1>
+      </h3>
     </div>
     <div class="fd-action-bar__actions">
             <div class="fd-popover">
@@ -130,4 +130,4 @@ When there are several main actions for a page, consider displaying them under a
 </div>
 {% endcapture %}
 
-{% include display-component.html component=default-action-bar-multi %}
+{% include display-component.html default-action-bar-multi %}
