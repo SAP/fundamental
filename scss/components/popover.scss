@@ -25,8 +25,6 @@ $block: #{$fd-namespace}-popover;
   $fd-popover-transition-params: $fd-animation--speed !default;
   $fd-popover-transition-distance: -15px !default;
 
-  --fd-popover-background-color: var(--fd-color-background-2);
-
     // Consider removing this reset, look into its use and seeing font-size/line-height/color...
     // @include fd-reset;
     position: relative;
@@ -43,7 +41,7 @@ $block: #{$fd-namespace}-popover;
       white-space: nowrap;
       z-index: $fd-popover-z-index;
       border-radius: $fd-border-radius;
-      @include fd-var-color("background-color", $fd-popover-background-color, --fd-popover-background-color);
+      @include fd-var-color("background-color", $fd-popover-background-color, --fd-color-background-2);
       @if $fd-support-css-var-fallback {
         box-shadow: 0 5px 20px 0 fd-color("neutral", 3), 0 2px 8px 0 fd-color("neutral", 2);
       }
@@ -151,7 +149,7 @@ $block: #{$fd-namespace}-popover;
         white-space: nowrap;
         z-index: $fd-popover-z-index;
         border-radius: $fd-border-radius;
-        @include fd-var-color("background-color", $fd-popover-background-color, --fd-popover-background-color);
+        @include fd-var-color("background-color", $fd-popover-background-color, --fd-color-background-2);
         @if $fd-support-css-var-fallback {
             box-shadow: 0 5px 20px 0 fd-color("neutral", 3), 0 2px 8px 0 fd-color("neutral", 2);
         }
