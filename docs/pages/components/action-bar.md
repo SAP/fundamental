@@ -104,9 +104,9 @@ When there are several main actions for a page, consider displaying them under a
             <button class="fd-button--light fd-button--compact sap-icon--nav-back"></button>
         </div>
         <div class="fd-action-bar__header">
-            <h1 class="fd-action-bar__title">
+            <h3 class="fd-action-bar__title">
                 Action Bar with description and back button
-            </h1>
+            </h3>
         </div>
         <div class="fd-action-bar__actions">
             <div class="fd-popover">
@@ -130,4 +130,4 @@ When there are several main actions for a page, consider displaying them under a
 </div>
 {% endcapture %}
 
-{% include display-component.html default-action-bar-multi %}
+{% include display-component.html component=default-action-bar-multi %}
