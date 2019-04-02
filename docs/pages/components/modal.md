@@ -25,7 +25,7 @@ This is used to present information to the user but the Alert Component doesn’
 <div class="fd-modal">
     <div class="fd-modal__content" role="document">
         <div class="fd-modal__header">
-            <h1 class="fd-modal__title">Product Added</h1>
+            <h3 class="fd-modal__title">Product Added</h3>
             <button class="fd-button--light fd-modal__close" aria-label="close"></button>
         </div>
         <div class="fd-modal__body">

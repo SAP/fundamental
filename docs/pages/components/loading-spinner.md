@@ -41,7 +41,7 @@ The spinner should be included inside the container. Visibility can be toggled i
         <div></div>
     </div>
     <div class="fd-panel__header">
-        <h1 class="fd-panel__title">Lorem ipsum</h1>
+        <h3 class="fd-panel__title">Lorem ipsum</h3>
     </div>
     <!-- Loaded content goes here -->
     <div class="fd-panel__footer">
