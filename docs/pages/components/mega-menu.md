@@ -13,13 +13,15 @@ Mega menu is used in conjunction with Context Switcher within the Global Navigat
 {: .docs-intro}
 
 <br>
+We use an H3 header here, however header sizes from H2 to H6 are also acceptable.
+<br>
 
 ## Default Mega Menu
 
 {% capture default-alert %}
 <nav class="fd-mega-menu" id="">
     <div class="fd-mega-menu__group">
-        <h1 class="fd-mega-menu__title">Group Name</h1>
+        <h3 class="fd-mega-menu__title">Group Name</h3>
         <ul class="fd-mega-menu__list">
             <li class="fd-mega-menu__item">
                 <a class="fd-mega-menu__link" href="#">
@@ -56,7 +58,7 @@ Mega menu is used in conjunction with Context Switcher within the Global Navigat
         </ul>
     </div>
     <div class="fd-mega-menu__group">
-        <h1 class="fd-mega-menu__title">Group Name</h1>
+        <h3 class="fd-mega-menu__title">Group Name</h3>
         <ul class="fd-mega-menu__list">
             <li class="fd-mega-menu__item">
                 <a class="fd-mega-menu__link" href="#">

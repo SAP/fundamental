@@ -12,7 +12,9 @@ The Action Bar is located at the top of the page and is used for the following:
 {: .docs-intro}
 - Page title
 - Main Actions for the page
-
+  
+<br>
+We use an H3 header here, however header sizes from H2 to H6 are also acceptable.
 <br>
 
 ## Action bar with back button, description and action buttons.
@@ -98,7 +100,7 @@ When there are several main actions for a page, consider displaying them under a
 ## Action bar mobile view
 
 {% capture default-action-bar-multi %}
-<div style="width:319px">
+<div style="width:319px;">
     <div class="fd-action-bar">
         <div class="fd-action-bar__back">
             <button class="fd-button--light fd-button--compact sap-icon--nav-back"></button>
