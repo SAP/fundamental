@@ -12,9 +12,7 @@ summary:
 Mega menu is used in conjunction with Context Switcher within the Global Navigation (link to Global Nav page) and supports two levels within a hierarchy.
 {: .docs-intro}
 
-<br>
-We use an H3 header here, however header sizes from H2 to H6 are also acceptable.
-<br>
+> Although the following examples use the `<h3>` tag for the title element, the styling provided by Fiori Fundamentals will remain consistent for any heading level used. `<h1>` should be reserved for the page title.
 
 ## Default Mega Menu
 

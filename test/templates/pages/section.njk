@@ -1,6 +1,7 @@
 {% extends "./layouts/page.njk" %}
 {# {% import "../layout/layout.section_njk" as section %} #}
 {% import "../layout/component.njk" as layout %}
+{% from "./../format.njk" import format %}
 
 {% from "../tree/component.njk" import tree %}
 {% from "../table/component.njk" import table %}
@@ -9,7 +10,7 @@
 {% set hide_page_header = true %}
 {% block page_content %}
 
-<div class="fd-has-background-color-neutral-2">
+{% set example %}
 {% call layout.section() -%}
     {% call layout.section_header({ title: ".fd-section__title" }) -%}
         {% call layout.section_actions() -%}
@@ -24,7 +25,13 @@
 .fd-section__footer
     {%- endcall %}
 {%- endcall %}
-</div>
+
+{% endset %}
+{{ format(example) }}
+
+<br><br>
+
+{% set example %}
 <div class="fd-has-background-color-status-1">
 {% call layout.section(modifier="full-bleed") -%}
     {% call layout.section_header({ title: ".fd-section__title" }) -%}
@@ -41,69 +48,63 @@
     {%- endcall %}
 {%- endcall %}
 </div>
+{% endset %}
+{{ format(example) }}
 
-
-
+<br><br>
 
 {% set badgetitle %}
 Vivamus sagittis <span class="fd-badge fd-badge--success">Active</span>
 {% endset %}
 
+{% set example %}
     {% call layout.section(classes="") -%}
         {% call layout.section_header({ title: badgetitle }) -%}
 
         {%- endcall %}
 
-<div class="fd-container">
-
-    <div class="fd-col--6">
-
-        <div class="fd-form__group">
-            <div class="fd-form__item">
-                <label class="fd-form__label" for="input-1">Field Label</label>
-                <input class="fd-form__control" type="text" id="input-1" name="" value="" placeholder="Field placeholder text">
-            </div>
-        </div>
-        <fieldset class="fd-form__group">
-            <legend class="fd-form__legend">Select an option</legend>
-            <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-                <input class="fd-form__control" type="radio" id="radio-13" name="radio-name-5" value="" checked>
-                <label class="fd-form__label" for="radio-13">Option One</label>
-            </div>
-            <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-                <input class="fd-form__control" type="radio" id="radio-14" name="radio-name-5" value="">
-                <label class="fd-form__label" for="radio-14">Option Two</label>
-            </div>
-            <div class="fd-form__item fd-form__item--inline fd-form__item--check">
-                <input class="fd-form__control" type="radio" id="radio-15" name="radio-name-5" value="">
-                <label class="fd-form__label" for="radio-15">Option Three</label>
-            </div>
-        </fieldset>
-
-    </div>
+    <div class="fd-container">
         <div class="fd-col--6">
-
-            <fieldset class="fd-form__group">
+            <div class="fd-form__group">
                 <div class="fd-form__item">
-                    <label class="fd-form__label" for="textarea-1">Field Label</label>
-                    <textarea class="fd-form__control" id="textarea-1" name="" >Pellentesque metus lacus commodo eget justo ut rutrum varius nunc. Sed non rhoncus risus. Morbi sodales gravida pulvinar. Duis malesuada odio volutpat elementum vulputate massa magna scelerisque ante et accumsan tellus nunc in sem.</textarea>
+                    <label class="fd-form__label" for="input-1">Field Label</label>
+                    <input class="fd-form__control" type="text" id="input-1" name="" value="" placeholder="Field placeholder text">
+                </div>
+            </div>
+            <fieldset class="fd-form__group">
+                <legend class="fd-form__legend">Select an option</legend>
+                <div class="fd-form__item fd-form__item--inline fd-form__item--check">
+                    <input class="fd-form__control" type="radio" id="radio-13" name="radio-name-5" value="" checked>
+                    <label class="fd-form__label" for="radio-13">Option One</label>
+                </div>
+                <div class="fd-form__item fd-form__item--inline fd-form__item--check">
+                    <input class="fd-form__control" type="radio" id="radio-14" name="radio-name-5" value="">
+                    <label class="fd-form__label" for="radio-14">Option Two</label>
+                </div>
+                <div class="fd-form__item fd-form__item--inline fd-form__item--check">
+                    <input class="fd-form__control" type="radio" id="radio-15" name="radio-name-5" value="">
+                    <label class="fd-form__label" for="radio-15">Option Three</label>
                 </div>
             </fieldset>
-
+            </div>
+            <div class="fd-col--6">
+                <fieldset class="fd-form__group">
+                    <div class="fd-form__item">
+                        <label class="fd-form__label" for="textarea-1">Field Label</label>
+                        <textarea class="fd-form__control" id="textarea-1" name="" >Pellentesque metus lacus commodo eget justo ut rutrum varius nunc. Sed non rhoncus risus. Morbi sodales gravida pulvinar. Duis malesuada odio volutpat elementum vulputate massa magna scelerisque ante et accumsan tellus nunc in sem.</textarea>
+                    </div>
+                </fieldset>
+            </div>
         </div>
-
-</div>
-
-
-
         {% call layout.section_footer() -%}
         <em>Vivamus sagittis diam in vehicula lobortis sapien arcu mattis erat vel aliquet.</em>
         {%- endcall %}
     {%- endcall %}
 
+{% endset %}
+{{ format(example) }}
 
-
-
+{% set example %}
     {% call layout.section(modifier="full-bleed", classes="") -%}
 
         {% call layout.section_header({ title: "Table" }) -%}
@@ -122,62 +123,53 @@ Vivamus sagittis <span class="fd-badge fd-badge--success">Active</span>
         {%- endcall %}
     {%- endcall %}
 
+{% endset %}
+{{ format(example) }}
 
-
-
-
-
-
-
-    <hr>
-
-    <section class="fd-section">
-        <div class="fd-section__header">
-            <h1 class="fd-section__title">
-                Code
-            </h1>
-        </div>
-
-{%- set code_example %}
-{% call layout.section() -%}
-    {% call layout.section_header({ title: "//title (optional)" }) -%}
-        {% call layout.section_actions() -%}
-//buttons (optional)
+<h2> Example with H2 </h2>
+{% set example %}
+    {% call layout.section() -%}
+        {% call layout.section_header({ title: ".fd-section__title", title_size: "h2" }) -%}
         {%- endcall %}
     {%- endcall %}
-
-//content (.fd-container, .fd-card-group)
-    {% call layout.section_footer() -%}
-//link or info (optional)
-    {%- endcall %}
-{%- endcall %}
-
-{% call layout.section(modifier="full-bleed") -%}
-    {% call layout.section_header({ title: "//title (optional)" }) -%}
-        {% call layout.section_actions() -%}
-//buttons (optional)
-        {%- endcall %}
-    {%- endcall %}
-
-//content (.fd-table, .fd-tree)
-    {% call layout.section_footer() -%}
-//link or info (optional)
-    {%- endcall %}
-{%- endcall %}
 {% endset %}
 
-<pre>
-{{code_example | e | trim }}
-</pre>
+{{ format(example) }}
 
+<br><br>
 
+<h2> Example with H4 </h2>
+{% set example %}
+    {% call layout.section() -%}
+        {% call layout.section_header({ title: ".fd-section__title", title_size: "h4" }) -%}
+        {%- endcall %}
+    {%- endcall %}
+{% endset %}
 
+{{ format(example) }}
 
+<br><br>
 
+<h2> Example with H5 </h2>
+{% set example %}
+    {% call layout.section() -%}
+        {% call layout.section_header({ title: ".fd-section__title", title_size: "h5" }) -%}
+        {%- endcall %}
+    {%- endcall %}
+{% endset %}
 
+{{ format(example) }}
 
+<br><br>
 
+<h2> Example with H6 </h2>
+{% set example %}
+    {% call layout.section() -%}
+        {% call layout.section_header({ title: ".fd-section__title", title_size: "h6" }) -%}
+        {%- endcall %}
+    {%- endcall %}
+{% endset %}
 
-
+{{ format(example) }}
 
 {% endblock %}

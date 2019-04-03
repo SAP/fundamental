@@ -12,10 +12,9 @@ The Action Bar is located at the top of the page and is used for the following:
 {: .docs-intro}
 - Page title
 - Main Actions for the page
-  
-<br>
-We use an H3 header here, however header sizes from H2 to H6 are also acceptable.
-<br>
+
+> Although the following examples use the `<h3>` tag for the title element, the styling provided by Fiori Fundamentals will remain consistent for any heading level used. `<h1>` should be reserved for the page title.
+
 
 ## Action bar with back button, description and action buttons.
 {% capture default-action-bar %}

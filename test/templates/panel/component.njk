@@ -15,10 +15,17 @@ panel:
 <div class="fd-panel__header{{ classes | classes }}{{ modifier | modifier("panel__header") }}">
     {%- if properties.title %}
     <div class="fd-panel__head">
-        <h3 class="fd-panel__title">
+        {%- if properties.title_size %}
+        {%- set title_size = properties.title_size %}
+        <{{title_size}} class="fd-panel__title">
+            {{ properties.title }}
+        </{{title_size}}>
+        {%- else %}
+         <h3 class="fd-panel__title">
             {{ properties.title }}
         </h3>
         {%- endif %}
+    {%- endif %}
         {%- if properties.description %}
         <p class="fd-panel__description">
             {{ properties.description }}

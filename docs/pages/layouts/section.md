@@ -95,10 +95,13 @@ Shows an alternate layout option using columns. This may be more appropriate dep
 ## Section with header
 {: .docs-header-h3}
 Header and title elements are available when necessary to label content groups.
+
+> Although the following example uses the `<h3>` tag for the title element, the styling provided by Fiori Fundamentals will remain consistent for any heading level used. `<h1>` should be reserved for the page title.
+
 {% capture section-layout-example %}
 <section class="fd-section">
     <div class="fd-section__header">
-      <h1 class="fd-section__title">Section title</h1>
+      <h3 class="fd-section__title">Section title</h3>
     </div>
     <div class="fd-panel">
         .fd-panel

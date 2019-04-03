@@ -12,9 +12,8 @@ summary:
 The modal is a container generally displayed in response to an action.
 {: .docs-intro}
 It is used for short forms, confirmation messages or to display contextual information that does not require a page. The modal should always be used in conjunction with the [Application Layout Containers](/layouts/application-layout.html#application-with-ui-overlay). See an example [App layout page with Modal](/demo-pages/modal-overlay-demo-page.html)
-<br>
-We use an H3 header here, however header sizes from H2 to H6 are also acceptable.
-<br>  
+
+> Although the following examples use the `<h3>` tag for the title element, the styling provided by Fiori Fundamentals will remain consistent for any heading level used. `<h1>` should be reserved for the page title.
 
 
 ## Informational Modal
