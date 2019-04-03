@@ -20,13 +20,13 @@ $block: #{$fd-namespace}-identifier;
     ) !default;
     $fd-identifier-border-radius: $fd-border-radius !default;
     $fd-identifier-color: fd-color("text", 5) !default;
-    $fd-identifier-background: fd-color("status", 4) !default;
-    --fd-identifier-color: var(--fd-color-text-5);
-    --fd-identifier-background-color: var(--fd-color-status-4);
+    $fd-identifier-background-color: fd-color("status", 4) !default;
 
     //BLOCK BASE *******************************************
     @at-root {
       [class*="#{$block}"] {
+        --fd-identifier-color: var(--fd-color-text-5);
+        --fd-identifier-background-color: var(--fd-color-status-4);
         @include fd-reset();
         display: inline-block;
         vertical-align: middle;
@@ -35,7 +35,7 @@ $block: #{$fd-namespace}-identifier;
         background-size: cover;
         background-position: 50%;
         border-radius: $fd-identifier-border-radius;
-        @include fd-var-color("background-color", $fd-identifier-background, --fd-identifier-background-color);
+        @include fd-var-color("background-color", $fd-identifier-background-color, --fd-identifier-background-color);
         @include fd-var-color("color", $fd-identifier-color, --fd-identifier-color);
       }
     }
