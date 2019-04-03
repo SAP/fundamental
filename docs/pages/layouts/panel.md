@@ -13,6 +13,7 @@ Panels are used to encapsulate part of the content, form elements, lists, collec
 
 Place patterns and interactions within panels on your pages to achieve focus and separation for the tasks at-hand with the information displayed inside the panel.
 
+> {{ site.data.strings.headerDisclaimer }}
 
 ## Elements
 
@@ -22,8 +23,6 @@ Place patterns and interactions within panels on your pages to achieve focus and
 - `.fd-panel__filters`: Panel level filters that is specific to the data being displayed within the panel.
 - `.fd-panel__body`: Main content of the panel can that hold lists, table, tree, text, form or any other infomation.
 - `.fd-panel__footer`: Panel footer can be utilized for pagination, secondary actions, add more data, etc.
-
-> Although the following example uses the `<h3>` tag for the title element, the styling provided by Fiori Fundamentals will remain consistent for any heading level used. `<h1>` should be reserved for the page title.
 
 {% capture default %}
 <div class="fd-panel">

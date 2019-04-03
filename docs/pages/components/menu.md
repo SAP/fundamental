@@ -13,6 +13,8 @@ The menu component is the listing structure with optional headers to create menu
 {: .docs-intro}
 Commonly used as the contents when composing "dropdowns", "contextual menus", "mega menu", etc, when paired with the popover component.
 
+> {{ site.data.strings.headerDisclaimer }}
+
 ## Menu
 The basic stucture of a menu.
 
@@ -53,8 +55,6 @@ Use a modifier on the list element to add separators between the items.
 
 ## Menu with group headers
 You can optionally add hierarchy to menus by grouping sub-menus and adding headers.
-
-> Although the following example uses the `<h3>` tag for the menu title element, the styling provided by Fiori Fundamentals will remain consistent for any heading level used. `<h1>` should be reserved for the page title.
 
 {% capture default-menuwgroup %}
 <nav class="fd-menu">

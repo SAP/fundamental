@@ -17,7 +17,8 @@ Can hold two child types:
 - `.fd-panel` (optionally with `.fd-panel-grid`) is the most common use.
 - `.fd-container` and `fd-col--[num]` can be used to organize panels or content when a grid layout is not desired.
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
+
 
 ## Section structure
 Shows an example of a background color applied with a helper class.
@@ -95,8 +96,6 @@ Shows an alternate layout option using columns. This may be more appropriate dep
 ## Section with header
 {: .docs-header-h3}
 Header and title elements are available when necessary to label content groups.
-
-> Although the following example uses the `<h3>` tag for the title element, the styling provided by Fiori Fundamentals will remain consistent for any heading level used. `<h1>` should be reserved for the page title.
 
 {% capture section-layout-example %}
 <section class="fd-section">

@@ -14,7 +14,7 @@ A tile component can be used to display information in a simple container format
 {: .docs-intro}
 The component is ideal for displaying collection data when a grid or list layout is preferred. See [`tile-grid`](tile-grid.html).
 
-> Although the following examples use the `<h3>` tag for the title element, the styling provided by Fiori Fundamentals will remain consistent for any heading level used. `<h1>` should be reserved for the page title.
+> {{ site.data.strings.headerDisclaimer }}
 
 ## Simple Tile
 
