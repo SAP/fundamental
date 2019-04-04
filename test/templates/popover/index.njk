@@ -1,7 +1,7 @@
 {% extends "layout.njk" %}
 {% import "./../utils.njk" as utils %}
 {% from "./../format.njk" import format %}
-{% from "./component.njk" import popover %}
+{% from "./component.njk" import popover, popover_popperjs %}
 {% from "./../menu/component.njk" import menu %}
 
 <!-- include add'tl css from src/styles/, e.g., ['helpers','components/button'] -->
@@ -18,6 +18,8 @@
 {%- set _id2 = utils.id() %}
 {%- set _id3 = utils.id() %}
 {%- set _id4 = utils.id() %}
+{%- set _id5 = utils.id() %}
+{%- set _id6 = utils.id() %}
 
 {%- macro sample_control(properties={}) -%}
   <span class="fd-popover__control{{ modifier.control | modifier('popover__control') }}  fd-image--m fd-image--circle" aria-label="Image label" aria-controls="{{ properties.id }}" aria-expanded="false" aria-haspopup="true"{{ " disabled" if state.disabled }}{{ aria | aria }} style="background-image: url('https://placeimg.com/400/400/nature');"></span>
@@ -100,6 +102,54 @@
         ]
       })
   }, modifier={ block: ['no-arrow', 'right']})
+}}
+
+{% endset %}
+{{ format(example) }}
+
+<br><br><br><br>
+
+<h2>Use with popper.js</h2>
+<p>NOTE: This will not be functional as the popper.js library is not being used here so this
+is simply a styling example.</p>
+{% set example %}
+
+{{  popover_popperjs(properties={
+    id: _id5,
+    control: sample_control(properties={id: _id5}),
+    body: menu(properties={
+      items: [
+          { "label": "Option 1" },
+          { "label": "Option 2" },
+          { "label": "Option 3" },
+          { "label": "Option 4" }
+        ]
+      })
+  }, modifier={ block: []})
+}}
+
+{% endset %}
+{{ format(example) }}
+
+<br><br><br><br>
+
+<h2>No Arrow with popper.js</h2>
+<p>NOTE: This will not be functional as the popper.js library is not being used here so this
+is simply a styling example.</p>
+{% set example %}
+
+{{  popover_popperjs(properties={
+    id: _id6,
+    control: sample_control(properties={id: _id6}),
+    body: menu(properties={
+      items: [
+          { "label": "Option 1" },
+          { "label": "Option 2" },
+          { "label": "Option 3" },
+          { "label": "Option 4" }
+        ]
+      })
+  }, modifier={ block: ['no-arrow']})
 }}
 
 {% endset %}

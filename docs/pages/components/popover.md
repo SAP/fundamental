@@ -9,7 +9,7 @@ folder: components
 summary:
 ---
 
-The popover is a wrapping component that accepts a "control" as well as a "body.
+The popover is a wrapping component that accepts a "control" as well as a "body".
 {: .docs-intro}
 
 A control can be anything that you want to trigger the interaction from. The body will be the contents of what you reveal on the page after triggering the popover. Commonly used as the interaction/wrapping component when composing "dropdowns", "contextual menus", "mega menu", etc, when paired with the menu component.
@@ -23,13 +23,14 @@ The basic wrapping structure of a popover.
 
 * `fd-popover` - wrapper for the whole container
 * `fd-popover__control` - control element to toggle the display of the popover
-* `fd-popover__body` - wrapper that contains the popover content
+* `fd-popover__body` - wrapper that contains the popover content for CSS-only implementations
+* `fd-popover__popper` - wrapper that contains the popover content when implemented using [popper.js](https://github.com/FezVrasta/popper.js) (use this instead of `fd-popover__body`). See [Implementation Options](#implementation-options) for more information.
 
 <br>
 
 ## Modifiers
 * `--left`, `--right` - modifier classes for `fd-popover__body` placement
-* `--no-arrow` - modifier to render `popover__body` without an arrow
+* `--no-arrow` - modifier to render `fd-popover__body` or `fd-popover__popper` without an arrow
 
 <br>
 
@@ -193,3 +194,13 @@ style="background-image: url('https://placeimg.com/400/400/nature');"></span>
 
 {% endcapture %}
 {% include display-component.html component=default-popoverwmenu %}
+
+<br>
+
+## Implementation Options
+
+Using [popper.js](https://github.com/FezVrasta/popper.js) allows for programmatic positioning, but requires slightly different styling.  Use the `fd-popover__popper` class for wrapping the popover content instead of `fd-popover__body`. See the implementation libraries for specifc details:
+
+* [Fundamental React](https://sap.github.io/fundamental-react/popover)
+* [Fundamental NGX](https://sap.github.io/fundamental-ngx/popover)
+* [Fundamental Vue](https://sap.github.io/fundamental-vue/#/example/popover)
