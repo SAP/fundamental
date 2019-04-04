@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.0-rc.3"></a>
+# [1.5.0-rc.3](https://github.com/SAP/fundamental/compare/v1.5.0-rc.2...v1.5.0-rc.3) (2019-04-04)
+
+
+### Bug Fixes
+
+* default header changed for components ([#1367](https://github.com/SAP/fundamental/issues/1367)) ([9e7b8d5](https://github.com/SAP/fundamental/commit/9e7b8d5))
+
+
+
 <a name="1.5.0-rc.2"></a>
 # [1.5.0-rc.2](https://github.com/SAP/fundamental/compare/v1.5.0-rc.1...v1.5.0-rc.2) (2019-04-04)
 
