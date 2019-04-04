@@ -11,8 +11,15 @@ $block: #{$fd-namespace}-time-picker;
 
 .#{$block} {
     .#{$fd-namespace}-popover {
-        &__body,
-        &__popper {
+        &__body {
+            padding: fd-space(s);
+        }
+    }
+}
+
+.#{$fd-namespace}-popover {
+    &__popper {
+        .#{$fd-namespace}-time {
             padding: fd-space(s);
         }
     }
