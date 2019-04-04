@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.0-rc.0"></a>
+# [1.5.0-rc.0](https://github.com/SAP/fundamental/compare/v1.4.10-rc.1...v1.5.0-rc.0) (2019-04-04)
+
+
+### Features
+
+* Popover popper styles ([#1366](https://github.com/SAP/fundamental/issues/1366)) ([c756cc4](https://github.com/SAP/fundamental/commit/c756cc4))
+
+
+
 <a name="1.4.10-rc.1"></a>
 ## [1.4.10-rc.1](https://github.com/SAP/fundamental/compare/v1.4.10-rc.0...v1.4.10-rc.1) (2019-04-03)
 
