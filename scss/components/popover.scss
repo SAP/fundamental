@@ -18,10 +18,12 @@ $block: #{$fd-namespace}-popover;
   $fd-popover-arrow-right: 14px !default;
   $fd-popover-arrow-x-offset: fd-space(2.5) !default;
 
+  $fd-popover-arrow-width: 13px;
+  $fd-popover-arrow-height: 8px;
+  $fd-popover-arrow-width-half: $fd-popover-arrow-width/2;
+
   $fd-popover-transition-params: $fd-animation--speed !default;
   $fd-popover-transition-distance: -15px !default;
-
-  --fd-popover-background-color: var(--fd-color-background-2);
 
     // Consider removing this reset, look into its use and seeing font-size/line-height/color...
     // @include fd-reset;
@@ -39,7 +41,7 @@ $block: #{$fd-namespace}-popover;
       white-space: nowrap;
       z-index: $fd-popover-z-index;
       border-radius: $fd-border-radius;
-      @include fd-var-color("background-color", $fd-popover-background-color, --fd-popover-background-color);
+      @include fd-var-color("background-color", $fd-popover-background-color, --fd-color-background-2);
       @if $fd-support-css-var-fallback {
         box-shadow: 0 5px 20px 0 fd-color("neutral", 3), 0 2px 8px 0 fd-color("neutral", 2);
       }
@@ -139,5 +141,118 @@ $block: #{$fd-namespace}-popover;
           visibility: hidden;
           transform: translateY($fd-popover-transition-distance);
       }
+    }
+
+    &__popper {
+        border: $fd-popover-border;
+        position: absolute;
+        white-space: nowrap;
+        z-index: $fd-popover-z-index;
+        border-radius: $fd-border-radius;
+        @include fd-var-color("background-color", $fd-popover-background-color, --fd-color-background-2);
+        @if $fd-support-css-var-fallback {
+            box-shadow: 0 5px 20px 0 fd-color("neutral", 3), 0 2px 8px 0 fd-color("neutral", 2);
+        }
+        box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3), 0 2px 8px 0 var(--fd-color-neutral-2);
+        opacity: 1;
+
+        &--no-arrow {
+            margin: 0 !important;
+
+            .fd-popover__arrow {
+                display: none;
+            }
+        }
+
+        .fd-popover__arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: transparent;
+
+            &::after {
+                position: absolute;
+                content: "";
+                border-style: solid;
+                border-color: transparent;
+            }
+        }
+
+        &[data-x-out-of-boundaries] {
+            display: none;
+        }
+
+        &[data-placement^="top"] {
+            margin-bottom: $fd-popover-arrow-height;
+
+            .fd-popover__arrow {
+                bottom: -$fd-popover-arrow-height;
+                margin: 0 $fd-popover-arrow-width-half;
+                border-width: $fd-popover-arrow-height $fd-popover-arrow-width-half 0 $fd-popover-arrow-width-half;
+                @include fd-var-color("border-top-color", $fd-forms-border-color, --fd-color-neutral-4);
+
+                &::after {
+                    bottom: 1px;
+                    margin: 0 (-$fd-popover-arrow-width-half);
+                    border-width: $fd-popover-arrow-height $fd-popover-arrow-width-half 0 $fd-popover-arrow-width-half;
+                    @include fd-var-color("border-top-color", $fd-popover-background-color, --fd-color-background-2);
+                }
+            }
+        }
+
+        &[data-placement^="bottom"] {
+            margin-top: $fd-popover-arrow-height;
+
+            .fd-popover__arrow {
+                top: -$fd-popover-arrow-height;
+                margin: 0 $fd-popover-arrow-width-half;
+                border-width: 0 $fd-popover-arrow-width-half $fd-popover-arrow-height $fd-popover-arrow-width-half;
+                @include fd-var-color("border-bottom-color", $fd-forms-border-color, --fd-color-neutral-4);
+
+                &::after {
+                    top: 1px;
+                    margin: 0 (-$fd-popover-arrow-width-half);
+                    border-width: 0 $fd-popover-arrow-width-half $fd-popover-arrow-height $fd-popover-arrow-width-half;
+                    @include fd-var-color("border-bottom-color", $fd-popover-background-color, --fd-color-background-2);
+                }
+            }
+        }
+
+        &[data-placement^="left"] {
+            margin-right: $fd-popover-arrow-height;
+
+            .fd-popover__arrow {
+                right: -$fd-popover-arrow-height;
+                margin: $fd-popover-arrow-width-half 0;
+                border-width: $fd-popover-arrow-width-half 0 $fd-popover-arrow-width-half $fd-popover-arrow-height;
+                @include fd-var-color("border-left-color", $fd-forms-border-color, --fd-color-neutral-4);
+
+                &::after {
+                    right: 1px;
+                    margin: -$fd-popover-arrow-width-half 0;
+                    border-width: $fd-popover-arrow-width-half 0 $fd-popover-arrow-width-half $fd-popover-arrow-height;
+                    @include fd-var-color("border-left-color", $fd-popover-background-color, --fd-color-background-2);
+                }
+            }
+        }
+
+        &[data-placement^="right"] {
+            margin-left: $fd-popover-arrow-height;
+
+            .fd-popover__arrow {
+                left: -$fd-popover-arrow-height;
+                margin: $fd-popover-arrow-width-half 0;
+                border-width: $fd-popover-arrow-width-half $fd-popover-arrow-height $fd-popover-arrow-width-half 0;
+                @include fd-var-color("border-right-color", $fd-forms-border-color, --fd-color-neutral-4);
+
+                &::after {
+                    left: 1px;
+                    margin: -$fd-popover-arrow-width-half 0;
+                    border-width: $fd-popover-arrow-width-half $fd-popover-arrow-height $fd-popover-arrow-width-half 0;
+                    @include fd-var-color("border-right-color", $fd-popover-background-color, --fd-color-background-2);
+                }
+            }
+        }
     }
 }
