@@ -14,7 +14,7 @@ A loading spinner informs the user of an ongoing operation. Only one busy indica
 The aria-hidden attribute is used to hide and show the element.
 Loading indicators are not visible all the time, only when needed. To show and hide the loading indicator the `aria-hidden` attribute is used to hide/show the element.
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
 
 ## Loader element
 
@@ -41,7 +41,7 @@ The spinner should be included inside the container. Visibility can be toggled i
         <div></div>
     </div>
     <div class="fd-panel__header">
-        <h1 class="fd-panel__title">Lorem ipsum</h1>
+        <h3 class="fd-panel__title">Lorem ipsum</h3>
     </div>
     <!-- Loaded content goes here -->
     <div class="fd-panel__footer">

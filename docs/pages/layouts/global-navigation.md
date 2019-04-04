@@ -24,7 +24,7 @@ Elements and positioning in the global navigation are optional but included are:
 * **Search icon**: on click, a search field is displayed.
 * **User icon**: on click, user options are displayed such as Sign Off and Preferences.
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
 
 {% capture app-layout %}
 <nav class="fd-global-nav">
@@ -44,7 +44,7 @@ Elements and positioning in the global navigation are optional but included are:
             <a href="#" class="fd-mega-menu__header-link sap-icon--home">SAP Hybris Home</a>
          </div>
          <div class="fd-mega-menu__group">
-            <h1 class="fd-mega-menu__title">Group Name</h1>
+            <h3 class="fd-mega-menu__title">Group Name</h3>
             <ul class="fd-mega-menu__list">
                <li class="fd-mega-menu__item"><a class="fd-mega-menu__link" href="#">
                   item link
@@ -79,7 +79,7 @@ Elements and positioning in the global navigation are optional but included are:
             </ul>
          </div>
          <div class="fd-mega-menu__group">
-            <h1 class="fd-mega-menu__title">Group Name</h1>
+            <h3 class="fd-mega-menu__title">Group Name</h3>
             <ul class="fd-mega-menu__list">
                <li class="fd-mega-menu__item"><a class="fd-mega-menu__link" href="#">
                   item link

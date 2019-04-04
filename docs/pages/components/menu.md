@@ -13,7 +13,7 @@ The menu component is the listing structure with optional headers to create menu
 {: .docs-intro}
 Commonly used as the contents when composing "dropdowns", "contextual menus", "mega menu", etc, when paired with the popover component.
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
 
 ## Menu
 The basic stucture of a menu.
@@ -64,7 +64,7 @@ You can optionally add hierarchy to menus by grouping sub-menus and adding heade
         <li><a href="#" class="fd-menu__item">Option 3</a></li>
     </ul>
     <div class="fd-menu__group">
-        <h1 class="fd-menu__title">Group Header</h1>
+        <h3 class="fd-menu__title">Group Header</h3>
         <ul class="fd-menu__list">
             <li><a href="#" class="fd-menu__item">Option 4</a></li>
             <li><a href="#" class="fd-menu__item">Option 5</a></li>

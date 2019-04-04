@@ -21,7 +21,7 @@ Implementation Guidelines:
 - Opening one menu should close all other menus
 - Clicking away from the menu should also close the menu
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
 
 ## With Icon
 {% capture default-contextualmenu %}
@@ -59,7 +59,7 @@ Implementation Guidelines:
                 <li><a href="#" class="fd-menu__item">Option 3</a></li>
             </ul>
             <div class="fd-menu__group">
-                <h1 class="fd-menu__title">Group Header</h1>
+                <h3 class="fd-menu__title">Group Header</h3>
                 <ul class="fd-menu__list">
                     <li><a href="#" class="fd-menu__item">Option 4</a></li>
                     <li><a href="#" class="fd-menu__item">Option 5</a></li>

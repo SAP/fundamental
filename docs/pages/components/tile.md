@@ -14,14 +14,14 @@ A tile component can be used to display information in a simple container format
 {: .docs-intro}
 The component is ideal for displaying collection data when a grid or list layout is preferred. See [`tile-grid`](tile-grid.html).
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
 
 ## Simple Tile
 
 {% capture tile %}
 <div class="fd-tile">
     <div class="fd-tile__content">
-        <h2 class="fd-tile__title">Tile Title</h2>
+        <h3 class="fd-tile__title">Tile Title</h3>
         <p>Tile Description</p>
     </div>
 </div>
@@ -38,7 +38,7 @@ The component is ideal for displaying collection data when a grid or list layout
         <span class=" fd-identifier--m fd-identifier--transparent sap-icon--home"></span>
     </div>
     <div class="fd-tile__content">
-        <h2 class="fd-tile__title">Tile Title</h2>
+        <h3 class="fd-tile__title">Tile Title</h3>
     </div>
 </div>
 
@@ -49,7 +49,7 @@ The component is ideal for displaying collection data when a grid or list layout
         <span class=" fd-identifier--m sap-icon--home fd-has-background-color-accent-3"></span>
     </div>
     <div class="fd-tile__content">
-        <h2 class="fd-tile__title">Tile Title</h2>
+        <h3 class="fd-tile__title">Tile Title</h3>
         <p>Tile Description</p>
     </div>
 </div>
@@ -61,7 +61,7 @@ The component is ideal for displaying collection data when a grid or list layout
         <span class=" fd-image--m" aria-label="TILE_MEDIA_ALT" style="background-image: url('http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png');"></span>
     </div>
     <div class="fd-tile__content">
-        <h2 class="fd-tile__title">Tile Title</h2>
+        <h3 class="fd-tile__title">Tile Title</h3>
     </div>
 </div>
 
@@ -72,7 +72,7 @@ The component is ideal for displaying collection data when a grid or list layout
         <span class=" fd-image--m fd-image--circle" aria-label="TILE_MEDIA_ALT" style="background-image: url('http://api.adorable.io/avatars/50/rodney.artichoke@hybris.com.png');"></span>
     </div>
     <div class="fd-tile__content">
-        <h2 class="fd-tile__title">Tile Title</h2>
+        <h3 class="fd-tile__title">Tile Title</h3>
         <p>Tile Description</p>
     </div>
 </div>
@@ -84,7 +84,7 @@ The component is ideal for displaying collection data when a grid or list layout
 {% capture tile %}
 <div class="fd-tile">
     <div class="fd-tile__content">
-        <h2 class="fd-tile__title">Tile Title</h2>
+        <h3 class="fd-tile__title">Tile Title</h3>
     </div>
     <div class="fd-tile__actions">
         <div class="fd-popover fd-popover--right">
@@ -115,7 +115,7 @@ Add `role=button` to rendering a tile as a button
 {% capture tile %}
 <div class="fd-tile" role="button">
     <div class="fd-tile__content">
-        <h2 class="fd-tile__title">Tile Title</h2>
+        <h3 class="fd-tile__title">Tile Title</h3>
     </div>
 </div>
 {% endcapture %}
@@ -130,14 +130,14 @@ Add `role=button` to rendering a tile as a button
 <div class="fd-product-tile">
     <div class="fd-product-tile__media" style="background-image: url('https://techne.yaas.io/images/product-thumbnail-wide.png');"></div>
     <div class="fd-product-tile__content">
-        <h2 class="fd-product-tile__title">Default Product Tile</h2>
+        <h3 class="fd-product-tile__title">Default Product Tile</h3>
     </div>
 </div>
 
 <div class="fd-product-tile" role="button">
     <div class="fd-product-tile__media" style="background-image: url('https://techne.yaas.io/images/product-thumbnail-wide.png');"></div>
     <div class="fd-product-tile__content">
-        <h2 class="fd-product-tile__title">Product Tile Button</h2>
+        <h3 class="fd-product-tile__title">Product Tile Button</h3>
     </div>
 </div>
 
@@ -152,7 +152,7 @@ Add class `is-disabled` and/or `aria-disabled="true"` attribute
 {% capture tile %}
 <div class="fd-tile" aria-disabled="true">
     <div class="fd-tile__content">
-        <h2 class="fd-tile__title">Tile Title</h2>
+        <h3 class="fd-tile__title">Tile Title</h3>
     </div>
 </div>
 
@@ -163,7 +163,7 @@ Add class `is-disabled` and/or `aria-disabled="true"` attribute
         <span class=" fd-identifier--m fd-identifier--transparent sap-icon--home"></span>
     </div>
     <div class="fd-tile__content">
-        <h2 class="fd-tile__title">Tile Title</h2>
+        <h3 class="fd-tile__title">Tile Title</h3>
     </div>
 </div>
 
@@ -172,7 +172,7 @@ Add class `is-disabled` and/or `aria-disabled="true"` attribute
 <div class="fd-product-tile" aria-disabled="true">
     <div class="fd-product-tile__media" style="background-image: url('https://techne.yaas.io/images/product-thumbnail-wide.png');"></div>
     <div class="fd-product-tile__content">
-        <h2 class="fd-product-tile__title">Disabled Product Tile</h2>
+        <h3 class="fd-product-tile__title">Disabled Product Tile</h3>
     </div>
 </div>
 

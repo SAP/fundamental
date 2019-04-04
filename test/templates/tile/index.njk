@@ -172,10 +172,56 @@
 {% endset %}
     {{ format(example) }}
 
-    <br><br>
+<br><br>
 
+<h2> Example with H2 </h2>
 
+{%- set example %}
+  {% call tile() -%}
+    {% call tile_content({ title: data.properties.title, title_size: "h2" }) -%}
+    {%- endcall %}
+  {%- endcall %}
+{% endset %}
 
+{{ format(example) }}
 
+<br><br>
+
+<h2> Example with H4 </h2>
+
+{%- set example %}
+  {% call tile() -%}
+    {% call tile_content({ title: data.properties.title, title_size: "h4" }) -%}
+    {%- endcall %}
+  {%- endcall %}
+{% endset %}
+
+{{ format(example) }}
+
+<br><br>
+
+<h2> Example with H5 </h2>
+
+{%- set example %}
+  {% call tile() -%}
+    {% call tile_content({ title: data.properties.title, title_size: "h5" }) -%}
+    {%- endcall %}
+  {%- endcall %}
+{% endset %}
+
+{{ format(example) }}
+
+<br><br>
+
+<h2> Example with H6 </h2>
+
+{%- set example %}
+  {% call tile() -%}
+    {% call tile_content({ title: data.properties.title, title_size: "h6" }) -%}
+    {%- endcall %}
+  {%- endcall %}
+{% endset %}
+
+{{ format(example) }}
 
 {% endblock %}
