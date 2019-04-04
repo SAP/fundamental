@@ -12,14 +12,14 @@ summary:
 Mega menu is used in conjunction with Context Switcher within the Global Navigation (link to Global Nav page) and supports two levels within a hierarchy.
 {: .docs-intro}
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
 
 ## Default Mega Menu
 
 {% capture default-alert %}
 <nav class="fd-mega-menu" id="">
     <div class="fd-mega-menu__group">
-        <h1 class="fd-mega-menu__title">Group Name</h1>
+        <h3 class="fd-mega-menu__title">Group Name</h3>
         <ul class="fd-mega-menu__list">
             <li class="fd-mega-menu__item">
                 <a class="fd-mega-menu__link" href="#">
@@ -56,7 +56,7 @@ Mega menu is used in conjunction with Context Switcher within the Global Navigat
         </ul>
     </div>
     <div class="fd-mega-menu__group">
-        <h1 class="fd-mega-menu__title">Group Name</h1>
+        <h3 class="fd-mega-menu__title">Group Name</h3>
         <ul class="fd-mega-menu__list">
             <li class="fd-mega-menu__item">
                 <a class="fd-mega-menu__link" href="#">

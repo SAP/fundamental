@@ -14,8 +14,10 @@ tile:
 {%- macro tile_content(properties={}, modifier=[], aria={}, classes=[]) %}
 <div class="fd-tile__content">
   {%- if properties.title %}
-  <h2 class="fd-tile__title">{{ properties.title }}</h2>    
+    {% set title_size = properties.title_size  if properties.title_size  else "h3" %}
+    <{{title_size}} class="fd-tile__title">{{ properties.title }}</{{title_size}}>
   {%- endif %}
+
   {%- if properties.description %}
   <p>{{ properties.description }}</p>
   {%- endif %}

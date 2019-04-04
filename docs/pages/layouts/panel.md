@@ -13,7 +13,7 @@ Panels are used to encapsulate part of the content, form elements, lists, collec
 
 Place patterns and interactions within panels on your pages to achieve focus and separation for the tasks at-hand with the information displayed inside the panel.
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
 
 ## Elements
 
@@ -28,9 +28,9 @@ Place patterns and interactions within panels on your pages to achieve focus and
 <div class="fd-panel">
     <div class="fd-panel__header">
         <div class="fd-panel__head">
-            <h1 class="fd-panel__title">
+            <h3 class="fd-panel__title">
                 .fd-panel__title
-            </h1>
+            </h3>
             <p class="fd-panel__description">
                 .fd-panel__description
             </p>

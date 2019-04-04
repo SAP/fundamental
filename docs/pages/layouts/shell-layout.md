@@ -148,7 +148,7 @@ The container visibility can be toggled with the `aria-hidden` attribute.
         <div class="fd-modal" role="dialog">
           <div class="fd-modal__content" role="document">
               <header class="fd-modal__header">
-                  <h1 class="fd-modal__title">fd-modal__header</h1>
+                  <h3 class="fd-modal__title">fd-modal__header</h3>
                   <button class="fd-button--light fd-modal__close"></button>
               </header>
               <div class="fd-modal__body">

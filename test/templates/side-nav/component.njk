@@ -75,7 +75,8 @@ nav.fd-side-nav
 {%- for navgroup in properties -%}
 <div class="fd-side-nav__group">
   {%- if navgroup.title %}
-  <h1 class="fd-side-nav__title">{{ navgroup.title }}</h1>
+  {% set title_size = navgroup.title_size  if navgroup.title_size  else "h3" %}
+    <{{title_size}} class="fd-side-nav__title">{{ navgroup.title }}</{{title_size}}>
   {%- endif %}
     {{ navlist(navgroup.items) }}
 </div>

@@ -17,7 +17,8 @@ Can hold two child types:
 - `.fd-panel` (optionally with `.fd-panel-grid`) is the most common use.
 - `.fd-container` and `fd-col--[num]` can be used to organize panels or content when a grid layout is not desired.
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
+
 
 ## Section structure
 Shows an example of a background color applied with a helper class.
@@ -95,10 +96,11 @@ Shows an alternate layout option using columns. This may be more appropriate dep
 ## Section with header
 {: .docs-header-h3}
 Header and title elements are available when necessary to label content groups.
+
 {% capture section-layout-example %}
 <section class="fd-section">
     <div class="fd-section__header">
-      <h1 class="fd-section__title">Section title</h1>
+      <h3 class="fd-section__title">Section title</h3>
     </div>
     <div class="fd-panel">
         .fd-panel

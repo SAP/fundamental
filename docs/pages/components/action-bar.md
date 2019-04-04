@@ -13,7 +13,8 @@ The Action Bar is located at the top of the page and is used for the following:
 - Page title
 - Main Actions for the page
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
+
 
 ## Action bar with back button, description and action buttons.
 {% capture default-action-bar %}
@@ -22,9 +23,9 @@ The Action Bar is located at the top of the page and is used for the following:
         <button class="fd-button--light fd-button--compact sap-icon--nav-back"></button>
     </div>
     <div class="fd-action-bar__header">
-        <h1 class="fd-action-bar__title">
+        <h3 class="fd-action-bar__title">
         Page Title
-        </h1>
+        </h3>
         <p class="fd-action-bar__description">Action bar Description </p>
     </div>
     <div class="fd-action-bar__actions">
@@ -42,9 +43,9 @@ The Action Bar is located at the top of the page and is used for the following:
 {% capture default-action-bar-multi %}
 <div class="fd-action-bar">
     <div class="fd-action-bar__header">
-        <h1 class="fd-action-bar__title">
+        <h3 class="fd-action-bar__title">
             Page Title
-        </h1>
+        </h3>
         <p class="fd-action-bar__description">Action bar Description </p>
     </div>
     <div class="fd-action-bar__actions">
@@ -65,9 +66,9 @@ When there are several main actions for a page, consider displaying them under a
 {% capture default-action-bar-menu %}
 <div class="fd-action-bar">
     <div class="fd-action-bar__header">
-      <h1 class="fd-action-bar__title">
+      <h3 class="fd-action-bar__title">
           Page Title
-      </h1>
+      </h3>
     </div>
     <div class="fd-action-bar__actions">
             <div class="fd-popover">
@@ -98,15 +99,15 @@ When there are several main actions for a page, consider displaying them under a
 ## Action bar mobile view
 
 {% capture default-action-bar-multi %}
-<div style="width:319px">
+<div style="width:319px;">
     <div class="fd-action-bar">
         <div class="fd-action-bar__back">
             <button class="fd-button--light fd-button--compact sap-icon--nav-back"></button>
         </div>
         <div class="fd-action-bar__header">
-            <h1 class="fd-action-bar__title">
+            <h3 class="fd-action-bar__title">
                 Action Bar with description and back button
-            </h1>
+            </h3>
         </div>
         <div class="fd-action-bar__actions">
             <div class="fd-popover">

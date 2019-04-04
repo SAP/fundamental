@@ -13,7 +13,7 @@ The modal is a container generally displayed in response to an action.
 {: .docs-intro}
 It is used for short forms, confirmation messages or to display contextual information that does not require a page. The modal should always be used in conjunction with the [Application Layout Containers](/layouts/application-layout.html#application-with-ui-overlay). See an example [App layout page with Modal](/demo-pages/modal-overlay-demo-page.html)
 
-<br>  
+> {{ site.data.strings.headerDisclaimer }}
 
 
 ## Informational Modal
@@ -24,7 +24,7 @@ This is used to present information to the user but the Alert Component doesn’
 <div class="fd-modal">
     <div class="fd-modal__content" role="document">
         <div class="fd-modal__header">
-            <h1 class="fd-modal__title">Product Added</h1>
+            <h3 class="fd-modal__title">Product Added</h3>
             <button class="fd-button--light fd-modal__close" aria-label="close"></button>
         </div>
         <div class="fd-modal__body">
@@ -52,7 +52,7 @@ This is used to confirm with the user before continuing with a destructive or co
 <div class="fd-modal">
     <div class="fd-modal__content" role="document">
         <div class="fd-modal__header">
-            <h1 class="fd-modal__title">Delete</h1>
+            <h3 class="fd-modal__title">Delete</h3>
             <button class="fd-button--light fd-modal__close" aria-label="close"></button>
         </div>
         <div class="fd-modal__body">
@@ -81,7 +81,7 @@ This is used for short forms in order to collect information from the user.
 <div class="fd-modal">
     <div class="fd-modal__content" role="document">
         <div class="fd-modal__header">
-            <h1 class="fd-modal__title">Invite user</h1>
+            <h3 class="fd-modal__title">Invite user</h3>
             <button class="fd-button--light fd-modal__close" aria-label="close"></button>
         </div>
         <div class="fd-modal__body">

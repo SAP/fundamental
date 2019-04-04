@@ -12,7 +12,7 @@ summary:
 The left navigation can always display or expand/collapse using the menu icon within the global navigation.
 {: .docs-intro}
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
 
 ## Side Navigation with one level
 {% capture default %}
@@ -61,7 +61,7 @@ Use this to group navigation. Titles are not clickable.
 {% capture default %}
 <nav class="fd-side-nav">
     <div class="fd-side-nav__group">
-        <h1 class="fd-side-nav__title">Group Title</h1>
+        <h3 class="fd-side-nav__title">Group Title</h3>
         <ul class="fd-side-nav__list">
             <li class="fd-side-nav__item">
                 <a class="fd-side-nav__link" href="#">
@@ -91,7 +91,7 @@ Use this to group navigation. Titles are not clickable.
         </ul>
     </div>
     <div class="fd-side-nav__group">
-        <h1 class="fd-side-nav__title">Group Title</h1>
+        <h3 class="fd-side-nav__title">Group Title</h3>
         <ul class="fd-side-nav__list">
             <li class="fd-side-nav__item">
                 <a class="fd-side-nav__link" href="#">
@@ -131,7 +131,7 @@ Use this when there is more than one level of hierarchy in the left navigation. 
 {% capture default %}
 <nav class="fd-side-nav">
     <div class="fd-side-nav__group">
-        <h1 class="fd-side-nav__title">Group Name</h1>
+        <h3 class="fd-side-nav__title">Group Name</h3>
         <ul class="fd-side-nav__list">
             <li class="fd-side-nav__item">
                 <a class="fd-side-nav__link" href="#">
@@ -215,7 +215,7 @@ Use this when there is more than one level of hierarchy in the left navigation. 
 </ul>
 </div>
 <div class="fd-side-nav__group">
-    <h1 class="fd-side-nav__title">Group Name</h1>
+    <h3 class="fd-side-nav__title">Group Name</h3>
     <ul class="fd-side-nav__list">
         <li class="fd-side-nav__item">
             <a class="fd-side-nav__link" href="#">

@@ -13,7 +13,8 @@ product_tile:
 
 {%- macro product_tile_content(properties={}, modifier=[], aria={}, classes=[]) %}
 <div class="fd-product-tile__content">
-  <h2 class="fd-product-tile__title">{{ properties.title }}</h2>
+    {% set title_size = properties.title_size  if properties.title_size  else "h3" %}
+    <{{title_size}} class="fd-product-tile__title">{{ properties.title }}</{{title_size}}>
   {%- if properties.description %}
   <p>{{ properties.description }}</p>
   {%- endif %}
