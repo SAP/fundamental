@@ -21,8 +21,6 @@ Implementation Guidelines:
 - Opening one menu should close all other menus
 - Clicking away from the menu should also close the menu
 
-<br>
-
 > {{ site.data.strings.headerDisclaimer }}
 
 ## With Icon

@@ -24,7 +24,7 @@ Elements and positioning in the global navigation are optional but included are:
 * **Search icon**: on click, a search field is displayed.
 * **User icon**: on click, user options are displayed such as Sign Off and Preferences.
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
 
 {% capture app-layout %}
 <nav class="fd-global-nav">

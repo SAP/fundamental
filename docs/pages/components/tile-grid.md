@@ -14,7 +14,7 @@ A tile grid is layout component used to display [`tiles`](tile.html) on a grid l
 
 > This uses CSS grid which is [not supported by some older browsers](https://caniuse.com/#feat=css-grid). A flexbox fallback is included but it is recommended you test your page if you have a significant number of users on IE 11, for example.
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
 
 ## 3-col grid (default)
 
