@@ -14,12 +14,8 @@ section:
 {%- macro section_header(properties={}, modifier=[], aria={}, classes=[]) %}
 <header class="fd-section__header{{ classes | classes }}{{ modifier | modifier("section__header") }}">
     {%- if properties.title %}
-    {%- if properties.title_size %}
-        {%- set title_size = properties.title_size %}
+        {% set title_size = properties.title_size  if properties.title_size  else "h3" %}
         <{{title_size}} class="fd-section__title">{{ properties.title }}</{{title_size}}>
-        {%- else %}
-           <h3 class="fd-section__title">{{ properties.title }}</h3>
-        {%- endif %}
     {%- endif %}
     {{- caller() | indent -}}
 </header>

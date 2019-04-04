@@ -14,7 +14,7 @@ A loading spinner informs the user of an ongoing operation. Only one busy indica
 The aria-hidden attribute is used to hide and show the element.
 Loading indicators are not visible all the time, only when needed. To show and hide the loading indicator the `aria-hidden` attribute is used to hide/show the element.
 
-<br>
+> {{ site.data.strings.headerDisclaimer }}
 
 ## Loader element
 

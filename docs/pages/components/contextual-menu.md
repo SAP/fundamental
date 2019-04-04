@@ -23,6 +23,8 @@ Implementation Guidelines:
 
 <br>
 
+> {{ site.data.strings.headerDisclaimer }}
+
 ## With Icon
 {% capture default-contextualmenu %}
 <div class="fd-popover">

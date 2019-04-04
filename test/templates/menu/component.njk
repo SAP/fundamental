@@ -46,12 +46,8 @@ menu:
 {% macro optgroup(properties={}, separated=false) -%}
     <div class="fd-menu__group">
     {%- if properties.label %}
-      {%- if properties.header_size %}
-      {%- set header_size = properties.header_size %}
-        <{{header_size}} class="fd-menu__title">{{ properties.label }}</{{header_size}}>
-      {%- else %}
-        <h3 class="fd-menu__title">{{ properties.label }}</h3>
-      {%- endif %}
+      {% set title_size = properties.header_size if properties.header_size else "h3" %}
+      <{{title_size}} class="fd-menu__title">{{ properties.label }}</{{title_size}}>
     {%- endif %}
       <ul class="fd-menu__list{{ 'separated' | modifier('menu__list') if separated }}">
           {%- for item in properties.items %}
