@@ -62,8 +62,8 @@ A circle style can be rendered using the `--circle` modifier.
 <span class=" fd-identifier--s fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--m fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
 <span class=" fd-identifier--l fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
-<span class=" fd-identifier--l fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
-<span class=" fd-identifier--l fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
+<span class=" fd-identifier--xl fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
+<span class=" fd-identifier--xxl fd-identifier--circle sap-icon--money-bills" role="presentation"></span>
 
 <span class=" fd-identifier--xxs fd-identifier--circle" aria-label="Wendy Wallace">WW</span>
 <span class=" fd-identifier--xs fd-identifier--circle" aria-label="Wendy Wallace">WW</span>
