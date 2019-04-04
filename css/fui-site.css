@@ -3346,6 +3346,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 .fd-alert {
   --fd-alert-background-color: var(--fd-color-neutral-1);
   --fd-alert-border-color: var(--fd-color-neutral-4);
+  --fd-alert-action-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
   color: var(--fd-color-text-1);
@@ -3379,7 +3380,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     white-space: nowrap;
     background-color: transparent;
     border-radius: 4px;
-    color: #32363a;
+    color: var(--fd-alert-action-color);
     width: 36px;
     height: 36px; }
     .fd-alert__close::before {
@@ -3452,7 +3453,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       top: 8px; }
   .fd-alert--warning {
     --fd-alert-background-color: var(--fd-color-background-alert);
-    --fd-alert-border-color: var(--fd-color-status-2); }
+    --fd-alert-border-color: var(--fd-color-status-2);
+    background-color: var(--fd-alert-background-color);
+    border-color: var(--fd-alert-border-color); }
     .fd-alert--warning::before, .fd-alert--warning::after {
       color: var(--fd-alert-border-color); }
     .fd-alert--warning::before {
@@ -3491,7 +3494,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       line-height: 1; }
   .fd-alert--error {
     --fd-alert-background-color: var(--fd-color-background-negative);
-    --fd-alert-border-color: var(--fd-color-status-3); }
+    --fd-alert-border-color: var(--fd-color-status-3);
+    background-color: var(--fd-alert-background-color);
+    border-color: var(--fd-alert-border-color); }
     .fd-alert--error::before, .fd-alert--error::after {
       color: var(--fd-alert-border-color); }
     .fd-alert--error::before {
@@ -3530,7 +3535,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       line-height: 1; }
   .fd-alert--success {
     --fd-alert-background-color: var(--fd-color-background-positive);
-    --fd-alert-border-color: var(--fd-color-status-1); }
+    --fd-alert-border-color: var(--fd-color-status-1);
+    background-color: var(--fd-alert-background-color);
+    border-color: var(--fd-alert-border-color); }
     .fd-alert--success::before, .fd-alert--success::after {
       color: var(--fd-alert-border-color); }
     .fd-alert--success::before {
@@ -3569,7 +3576,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       line-height: 1; }
   .fd-alert--information {
     --fd-alert-background-color: var(--fd-color-background-information);
-    --fd-alert-border-color: var(--fd-color-action-1); }
+    --fd-alert-border-color: var(--fd-color-action-1);
+    background-color: var(--fd-alert-background-color);
+    border-color: var(--fd-alert-border-color); }
     .fd-alert--information::before, .fd-alert--information::after {
       color: var(--fd-alert-border-color); }
     .fd-alert--information::before {
@@ -6192,142 +6201,151 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 /*!
 .fd-identifier+((--circle), (--thumbnail), (--xxs|--xs|--s|--m|--l|--xl|--xxl))
 */
-.fd-identifier {
+[class*="fd-identifier"] {
   --fd-identifier-color: var(--fd-color-text-5);
-  --fd-identifier-background-color: var(--fd-color-status-4); }
-  [class*="fd-identifier"] {
-    font-size: 14px;
-    line-height: 1.42857;
-    color: var(--fd-color-text-1);
-    font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
-    border-radius: 4px;
-    background-color: var(--fd-identifier-background-color);
-    color: var(--fd-identifier-color); }
-  .fd-identifier--xxs {
-    width: 20px;
-    height: 20px;
-    max-width: 20px;
-    max-height: 20px;
-    min-width: 20px;
-    min-height: 20px;
+  --fd-identifier-background-color: var(--fd-color-status-4);
+  font-size: 14px;
+  line-height: 1.42857;
+  color: var(--fd-color-text-1);
+  font-family: '72', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 4px;
+  background-color: var(--fd-identifier-background-color);
+  color: var(--fd-identifier-color); }
+
+.fd-identifier--xxs {
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  font-size: 0.85714rem;
+  line-height: 1.33333;
+  font-weight: 400;
+  font-weight: 400;
+  font-stretch: condensed;
+  line-height: 20px; }
+  .fd-identifier--xxs::before {
     font-size: 0.85714rem;
-    line-height: 1.33333;
-    font-weight: 400;
-    font-weight: 400;
-    font-stretch: condensed;
+    line-height: 1;
     line-height: 20px; }
-    .fd-identifier--xxs::before {
-      font-size: 0.85714rem;
-      line-height: 1;
-      line-height: 20px; }
-  .fd-identifier--xs {
-    width: 28px;
-    height: 28px;
-    max-width: 28px;
-    max-height: 28px;
-    min-width: 28px;
-    min-height: 28px;
+
+.fd-identifier--xs {
+  width: 28px;
+  height: 28px;
+  max-width: 28px;
+  max-height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  font-size: 0.85714rem;
+  line-height: 1.33333;
+  font-weight: 400;
+  font-weight: 400;
+  font-stretch: condensed;
+  line-height: 28px; }
+  .fd-identifier--xs::before {
     font-size: 0.85714rem;
-    line-height: 1.33333;
-    font-weight: 400;
-    font-weight: 400;
-    font-stretch: condensed;
+    line-height: 1;
     line-height: 28px; }
-    .fd-identifier--xs::before {
-      font-size: 0.85714rem;
-      line-height: 1;
-      line-height: 28px; }
-  .fd-identifier--s {
-    width: 32px;
-    height: 32px;
-    max-width: 32px;
-    max-height: 32px;
-    min-width: 32px;
-    min-height: 32px;
-    font-size: 0.85714rem;
-    line-height: 1.33333;
-    font-weight: 400;
-    font-weight: 400;
-    font-stretch: condensed;
+
+.fd-identifier--s {
+  width: 32px;
+  height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  font-size: 0.85714rem;
+  line-height: 1.33333;
+  font-weight: 400;
+  font-weight: 400;
+  font-stretch: condensed;
+  line-height: 32px; }
+  .fd-identifier--s::before {
+    font-size: 1.14286rem;
+    line-height: 1;
     line-height: 32px; }
-    .fd-identifier--s::before {
-      font-size: 1.14286rem;
-      line-height: 1;
-      line-height: 32px; }
-  .fd-identifier--m {
-    width: 48px;
-    height: 48px;
-    max-width: 48px;
-    max-height: 48px;
-    min-width: 48px;
-    min-height: 48px;
-    font-size: 1rem;
-    line-height: 1.42857;
-    font-weight: 400;
+
+.fd-identifier--m {
+  width: 48px;
+  height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  font-size: 1rem;
+  line-height: 1.42857;
+  font-weight: 400;
+  line-height: 48px; }
+  .fd-identifier--m::before {
+    font-size: 1.42857rem;
+    line-height: 1;
     line-height: 48px; }
-    .fd-identifier--m::before {
-      font-size: 1.42857rem;
-      line-height: 1;
-      line-height: 48px; }
-  .fd-identifier--l {
-    width: 64px;
-    height: 64px;
-    max-width: 64px;
-    max-height: 64px;
-    min-width: 64px;
-    min-height: 64px;
-    font-size: 1.28571rem;
-    line-height: 1.33333;
-    font-weight: 400;
+
+.fd-identifier--l {
+  width: 64px;
+  height: 64px;
+  max-width: 64px;
+  max-height: 64px;
+  min-width: 64px;
+  min-height: 64px;
+  font-size: 1.28571rem;
+  line-height: 1.33333;
+  font-weight: 400;
+  line-height: 64px; }
+  .fd-identifier--l::before {
+    font-size: 1.71429rem;
+    line-height: 1;
     line-height: 64px; }
-    .fd-identifier--l::before {
-      font-size: 1.71429rem;
-      line-height: 1;
-      line-height: 64px; }
-  .fd-identifier--xl {
-    width: 88px;
-    height: 88px;
-    max-width: 88px;
-    max-height: 88px;
-    min-width: 88px;
-    min-height: 88px;
-    font-size: 1.28571rem;
-    line-height: 1.33333;
-    font-weight: 400;
+
+.fd-identifier--xl {
+  width: 88px;
+  height: 88px;
+  max-width: 88px;
+  max-height: 88px;
+  min-width: 88px;
+  min-height: 88px;
+  font-size: 1.28571rem;
+  line-height: 1.33333;
+  font-weight: 400;
+  line-height: 88px; }
+  .fd-identifier--xl::before {
+    font-size: 1.71429rem;
+    line-height: 1;
     line-height: 88px; }
-    .fd-identifier--xl::before {
-      font-size: 1.71429rem;
-      line-height: 1;
-      line-height: 88px; }
-  .fd-identifier--xxl {
-    width: 112px;
-    height: 112px;
-    max-width: 112px;
-    max-height: 112px;
-    min-width: 112px;
-    min-height: 112px;
-    font-size: 1.28571rem;
-    line-height: 1.33333;
-    font-weight: 400;
+
+.fd-identifier--xxl {
+  width: 112px;
+  height: 112px;
+  max-width: 112px;
+  max-height: 112px;
+  min-width: 112px;
+  min-height: 112px;
+  font-size: 1.28571rem;
+  line-height: 1.33333;
+  font-weight: 400;
+  line-height: 112px; }
+  .fd-identifier--xxl::before {
+    font-size: 1.71429rem;
+    line-height: 1;
     line-height: 112px; }
-    .fd-identifier--xxl::before {
-      font-size: 1.71429rem;
-      line-height: 1;
-      line-height: 112px; }
-  .fd-identifier--circle {
-    border-radius: 50%; }
-  .fd-identifier--thumbnail {
-    text-indent: -200%;
-    overflow: hidden; }
-  .fd-identifier--transparent {
-    --fd-identifier-color: var(--fd-color-text-1);
-    --fd-identifier-background-color: transparent; }
+
+.fd-identifier--circle {
+  border-radius: 50%; }
+
+.fd-identifier--thumbnail {
+  text-indent: -200%;
+  overflow: hidden; }
+
+.fd-identifier--transparent {
+  --fd-identifier-color: var(--fd-color-text-1);
+  --fd-identifier-background-color: transparent; }
 
 /*!
 .fd-mega-menu+(--no-border)
@@ -7089,7 +7107,6 @@ see layouts/panel
     right: 4px; }
 
 .fd-popover {
-  --fd-popover-background-color: var(--fd-color-background-2);
   position: relative;
   display: inline-block; }
   .fd-popover__control {
@@ -7100,9 +7117,9 @@ see layouts/panel
     border: solid 1px #89919a;
     position: absolute;
     white-space: nowrap;
-    z-index: 2;
+    z-index: 1000;
     border-radius: 4px;
-    background-color: var(--fd-popover-background-color);
+    background-color: var(--fd-color-background-2);
     box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3), 0 2px 8px 0 var(--fd-color-neutral-2);
     opacity: 1;
     visibility: visible;
@@ -7129,7 +7146,7 @@ see layouts/panel
       position: absolute;
       top: -8px;
       left: 10px;
-      z-index: 4; }
+      z-index: 1002; }
     .fd-popover__body::after {
       height: 0;
       width: 0;
@@ -7142,7 +7159,7 @@ see layouts/panel
       position: absolute;
       top: -9px;
       left: 10px;
-      z-index: 3; }
+      z-index: 1001; }
     .fd-popover__body--left {
       right: auto;
       left: -3px; }
@@ -7175,6 +7192,80 @@ see layouts/panel
       opacity: 0;
       visibility: hidden;
       transform: translateY(-15px); }
+  .fd-popover__popper {
+    border: solid 1px #89919a;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 1000;
+    border-radius: 4px;
+    background-color: var(--fd-color-background-2);
+    box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3), 0 2px 8px 0 var(--fd-color-neutral-2);
+    opacity: 1; }
+    .fd-popover__popper--no-arrow {
+      margin: 0 !important; }
+      .fd-popover__popper--no-arrow .fd-popover__arrow {
+        display: none; }
+    .fd-popover__popper .fd-popover__arrow {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent; }
+      .fd-popover__popper .fd-popover__arrow::after {
+        position: absolute;
+        content: "";
+        border-style: solid;
+        border-color: transparent; }
+    .fd-popover__popper[data-x-out-of-boundaries] {
+      display: none; }
+    .fd-popover__popper[data-placement^="top"] {
+      margin-bottom: 8px; }
+      .fd-popover__popper[data-placement^="top"] .fd-popover__arrow {
+        bottom: -8px;
+        margin: 0 6.5px;
+        border-width: 8px 6.5px 0 6.5px;
+        border-top-color: var(--fd-color-neutral-4); }
+        .fd-popover__popper[data-placement^="top"] .fd-popover__arrow::after {
+          bottom: 1px;
+          margin: 0 -6.5px;
+          border-width: 8px 6.5px 0 6.5px;
+          border-top-color: var(--fd-color-background-2); }
+    .fd-popover__popper[data-placement^="bottom"] {
+      margin-top: 8px; }
+      .fd-popover__popper[data-placement^="bottom"] .fd-popover__arrow {
+        top: -8px;
+        margin: 0 6.5px;
+        border-width: 0 6.5px 8px 6.5px;
+        border-bottom-color: var(--fd-color-neutral-4); }
+        .fd-popover__popper[data-placement^="bottom"] .fd-popover__arrow::after {
+          top: 1px;
+          margin: 0 -6.5px;
+          border-width: 0 6.5px 8px 6.5px;
+          border-bottom-color: var(--fd-color-background-2); }
+    .fd-popover__popper[data-placement^="left"] {
+      margin-right: 8px; }
+      .fd-popover__popper[data-placement^="left"] .fd-popover__arrow {
+        right: -8px;
+        margin: 6.5px 0;
+        border-width: 6.5px 0 6.5px 8px;
+        border-left-color: var(--fd-color-neutral-4); }
+        .fd-popover__popper[data-placement^="left"] .fd-popover__arrow::after {
+          right: 1px;
+          margin: -6.5px 0;
+          border-width: 6.5px 0 6.5px 8px;
+          border-left-color: var(--fd-color-background-2); }
+    .fd-popover__popper[data-placement^="right"] {
+      margin-left: 8px; }
+      .fd-popover__popper[data-placement^="right"] .fd-popover__arrow {
+        left: -8px;
+        margin: 6.5px 0;
+        border-width: 6.5px 8px 6.5px 0;
+        border-right-color: var(--fd-color-neutral-4); }
+        .fd-popover__popper[data-placement^="right"] .fd-popover__arrow::after {
+          left: 1px;
+          margin: -6.5px 0;
+          border-width: 6.5px 8px 6.5px 0;
+          border-right-color: var(--fd-color-background-2); }
 
 /*!
 .fd-date-picker+(--no-border)
@@ -7206,6 +7297,9 @@ see layouts/panel
     .fd-time-picker__title+()
 */
 .fd-time-picker .fd-popover__body {
+  padding: 16px; }
+
+.fd-popover__popper .fd-time {
   padding: 16px; }
 
 /*!
