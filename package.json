@@ -21,13 +21,15 @@
     "std-version": "standard-version -m \"chore(release): version %s build ${TRAVIS_BUILD_NUMBER} [ci skip]\"",
     "test:update": "npx gulp test:reference && npx gulp test:approve",
     "test": "npx gulp test:visual",
-    "style:clean": "rm -rf dist2/",
+    "style:remove": "rm -rf dist2/ && rm -rf less2/fiori-fundamentals*.less",
     "style:sassTask": "node-sass --output-style expanded --precision 5 scss/all.scss dist2/fiori-fundamentals.css",
     "style:componentTask": "node-sass --output-style expanded --precision 5 scss/ --output dist2/",
-    "style:autoprefix": "postcss --use autoprefixer --replace dist2/**/*.css",
-    "style:min": "foreach -g \"dist2/**/*\" -x \"cleancss --level 1 #{path} -o dist2/#{reldir}/#{name}.min.css\" --no-c",
+    "style:clean": "foreach -g \"dist2/**/*\" -x \"cleancss --format beautify #{path} -o dist2/#{reldir}/#{name}.css\" --no-c",
+    "style:autoprefix": "postcss --config config/postcss.config.js  --replace dist2/**/*.css",
+    "style:min": "foreach -g \"dist2/**/*\" -x \"cleancss -01 'specialComments:1' #{path} -o dist2/#{reldir}/#{name}.min.css\" --no-c",
     "style:copy": "cp scss/icons/**.{eot,svg,ttf,woff} dist2/ && mkdir dist2/fonts/72 && cp scss/fonts/**/*.{eot,svg,ttf,woff,woff2} dist2/fonts/72/ && mkdir dist2/images && cp public/images/* dist2/images",
-    "style": "npm run style:clean && npm run style:sassTask && npm run style:componentTask && npm run style:autoprefix && npm run style:min && npm run style:copy"
+    "style:less": "./scripts/publish-less.sh",
+    "style": "npm run style:remove && npm run style:sassTask && npm run style:componentTask && npm run style:clean && npm run style:autoprefix && npm run style:min && npm run style:copy"
   },
   "repository": {
     "type": "git",
