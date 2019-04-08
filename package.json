@@ -7,7 +7,7 @@
     "build": "npx gulp build:dist",
     "build:prod": "npm run build -- --production",
     "deploy": "gh-pages -d docs/_site",
-    "docs:compile": "npm run docs:config && npm run build && npx gulp docs-site",
+    "docs:compile": "npm run docs:config && npm run build && npx gulp docs-css && npx gulp docs-site",
     "docs:config": "./scripts/create-library-config.js",
     "docs:prod": "npm run docs:compile && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml,_config-prod.yml && cd ..",
     "docs": "npm run docs:compile && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
