@@ -45,7 +45,7 @@ npm install fiori-fundamentals --save
 
 1. **Install NPM Dependencies**: `npm install`
 
-1. **Install Ruby Gems** - These gems are needed to be installed for the documentation site: `gem install ruby bundle jekyll`
+1. **Install Ruby Gems** - These gems are needed to be installed for the documentation site. Navigate to the `docs` folder and `gem install ruby bundle jekyll`
 
 1. **Serve the documentation website locally** - `npm start`
 

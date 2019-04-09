@@ -2,6 +2,76 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.3"></a>
+## [1.5.3](https://github.com/SAP/fundamental/compare/v1.5.3-rc.3...v1.5.3) (2019-04-09)
+
+
+
+<a name="1.5.3-rc.3"></a>
+## [1.5.3-rc.3](https://github.com/SAP/fundamental/compare/v1.5.3-rc.2...v1.5.3-rc.3) (2019-04-09)
+
+
+
+<a name="1.5.3-rc.2"></a>
+## [1.5.3-rc.2](https://github.com/SAP/fundamental/compare/v1.5.3-rc.1...v1.5.3-rc.2) (2019-04-09)
+
+
+### Bug Fixes
+
+* renaming private scss files ([#1379](https://github.com/SAP/fundamental/issues/1379)) ([5b38506](https://github.com/SAP/fundamental/commit/5b38506))
+
+
+
+<a name="1.5.3-rc.1"></a>
+## [1.5.3-rc.1](https://github.com/SAP/fundamental/compare/v1.5.3-rc.0...v1.5.3-rc.1) (2019-04-09)
+
+
+### Bug Fixes
+
+* remove typo from shellbar ([#1381](https://github.com/SAP/fundamental/issues/1381)) ([ad68655](https://github.com/SAP/fundamental/commit/ad68655))
+
+
+
+<a name="1.5.3-rc.0"></a>
+## [1.5.3-rc.0](https://github.com/SAP/fundamental/compare/v1.5.2...v1.5.3-rc.0) (2019-04-08)
+
+
+### Bug Fixes
+
+* update slack channel for travis ([#1377](https://github.com/SAP/fundamental/issues/1377)) ([0b0d123](https://github.com/SAP/fundamental/commit/0b0d123))
+
+
+
+<a name="1.5.2"></a>
+## [1.5.2](https://github.com/SAP/fundamental/compare/v1.5.2-rc.1...v1.5.2) (2019-04-08)
+
+
+
+<a name="1.5.2-rc.1"></a>
+## [1.5.2-rc.1](https://github.com/SAP/fundamental/compare/v1.5.2-rc.0...v1.5.2-rc.1) (2019-04-08)
+
+
+
+<a name="1.5.2-rc.0"></a>
+## [1.5.2-rc.0](https://github.com/SAP/fundamental/compare/v1.5.1...v1.5.2-rc.0) (2019-04-07)
+
+
+
+<a name="1.5.1"></a>
+## [1.5.1](https://github.com/SAP/fundamental/compare/v1.5.1-rc.0...v1.5.1) (2019-04-04)
+
+
+
+<a name="1.5.1-rc.0"></a>
+## [1.5.1-rc.0](https://github.com/SAP/fundamental/compare/v1.5.0...v1.5.1-rc.0) (2019-04-04)
+
+
+### Bug Fixes
+
+* docs site works out of the box ([#1372](https://github.com/SAP/fundamental/issues/1372)) ([404074e](https://github.com/SAP/fundamental/commit/404074e))
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/SAP/fundamental/compare/v1.5.0-rc.4...v1.5.0) (2019-04-04)
 
