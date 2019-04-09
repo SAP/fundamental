@@ -33,7 +33,7 @@ a.#{$block} {
       @include fd-type("0");
       @include fd-icon-size("m", "before");
       @include fd-icon-size("m", "after");
-      @include fd-var-size("line-height", $fd-forms-height, --fd-forms-height);
+      @include fd-var-size("line-height", $fd-button-line-height, --fd-button-line-height);
       padding-left: $fd-button-padding-x;
       padding-right: $fd-button-padding-x;
       text-align: center;
@@ -117,23 +117,23 @@ a.#{$block} {
     @include fd-var-size("height", $fd-forms-height, --fd-forms-height-compact);
     @include fd-var-size("max-height", $fd-forms-height, --fd-forms-height-compact);
     @include fd-var-size("min-width", $fd-forms-height, --fd-forms-height-compact);
-    @include fd-var-size("line-height", $fd-forms-height, --fd-forms-height-compact);
+    @include fd-var-size("line-height", $fd-button-line-height--compact, --fd-button-line-height-compact);
     @at-root {
       .fd-for-touch & {
-        @include fd-var-size("height", $fd-forms-height);
-        @include fd-var-size("min-width", $fd-forms-height);
-        @include fd-var-size("line-height", $fd-forms-height);
+        @include fd-var-size("height", $fd-forms-height, --fd-forms-height);
+        @include fd-var-size("min-width", $fd-forms-height, --fd-forms-height);
+        @include fd-var-size("line-height", $fd-button-line-height, --fd-button-line-height);
       }
       .fd-for-compact & {
-        @include fd-var-size("height", $fd-forms-height--compact);
-        @include fd-var-size("min-width", $fd-forms-height--compact);
-        @include fd-var-size("line-height", $fd-forms-height--compact);
+        @include fd-var-size("height", $fd-forms-height--compact, --fd-forms-height-compact);
+        @include fd-var-size("min-width", $fd-forms-height--compact, --fd-forms-height-compact);
+        @include fd-var-size("line-height", $fd-button-line-height--compact, --fd-button-line-height-compact);
       }
     }
     @include fd-screen(m) {
-      @include fd-var-size("height", $fd-forms-height--compact);
-      @include fd-var-size("min-width", $fd-forms-height--compact, --fd-forms-height);
-      @include fd-var-size("line-height", $fd-forms-height--compact);
+      @include fd-var-size("height", $fd-forms-height--compact, --fd-forms-height-compact);
+      @include fd-var-size("min-width", $fd-forms-height--compact, --fd-forms-height-compact);
+      @include fd-var-size("line-height", $fd-button-line-height--compact, --fd-button-line-height-compact);
     }
   }
   //BUTTON emphasis variations
