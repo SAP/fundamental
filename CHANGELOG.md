@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.4-rc.1"></a>
+## [1.5.4-rc.1](https://github.com/SAP/fundamental/compare/v1.5.4-rc.0...v1.5.4-rc.1) (2019-04-10)
+
+
+### Bug Fixes
+
+* Using anchors as selectors for fd-button ([#1383](https://github.com/SAP/fundamental/issues/1383)) ([001f5d7](https://github.com/SAP/fundamental/commit/001f5d7))
+
+
+
 <a name="1.5.4-rc.0"></a>
 ## [1.5.4-rc.0](https://github.com/SAP/fundamental/compare/v1.5.3...v1.5.4-rc.0) (2019-04-09)
 
