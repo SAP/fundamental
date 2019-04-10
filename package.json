@@ -21,7 +21,7 @@
     "std-version": "standard-version -m \"chore(release): version %s build ${TRAVIS_BUILD_NUMBER} [ci skip]\"",
     "style:assets": "mkdir -p dist/{fonts,images} dist/fonts/72 && cp scss/icons/**.{eot,svg,ttf,woff} dist/ && cp scss/fonts/**/*.{eot,svg,ttf,woff,woff2} dist/fonts/72/ && cp public/images/* dist/images/",
     "style:clean": "foreach -g \"dist/**/*.css\" -x \"cleancss --format beautify #{path} -o dist/#{reldir}/#{name}.css\" --no-c",
-    "style:compile": "node-sass --output-style expanded --precision 5 scss/ --output dist/",
+    "style:compile": "node-sass -q --output-style expanded --precision 5 scss/ --output dist/",
     "style:less": "npx gulp pkg-less",
     "style:minify": "foreach -g \"dist/**/*.css\" -x \"cleancss -O1 specialComments:1 --format 'afterComment=on' #{path} -o dist/#{reldir}/#{name}.min.css\" --no-c",
     "style:postCSS": "postcss --config config/postcss.config.js  --replace dist/**/*.css && postcss --config config/postcss.config.js  --replace dist/*.css",
