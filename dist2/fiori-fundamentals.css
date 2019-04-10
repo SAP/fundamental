@@ -1,3 +1,8 @@
+/*!
+ * Fiori Fundamentals v1.5.3
+ * Copyright (c) 2019 SAP SE or an SAP affiliate company.
+ * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
+ */
 @charset "UTF-8";
 @font-face {
   font-family: '72Condensed';
@@ -1945,18 +1950,32 @@
 }
 .sap-icon--animate-spin {
   display: inline-block;
-  animation: sap-icon-spin 2s infinite linear
+  -webkit-animation: sap-icon-spin 2s infinite linear;
+          animation: sap-icon-spin 2s infinite linear
 }
 .sap-icon--animate-pulse {
   display: inline-block;
-  animation: sap-icon-spin 2s infinite steps(8)
+  -webkit-animation: sap-icon-spin 2s infinite steps(8);
+          animation: sap-icon-spin 2s infinite steps(8)
+}
+@-webkit-keyframes sap-icon-spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0)
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg)
+  }
 }
 @keyframes sap-icon-spin {
   0% {
-    transform: rotate(0)
+    -webkit-transform: rotate(0);
+            transform: rotate(0)
   }
   100% {
-    transform: rotate(359deg)
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg)
   }
 }
 :root {
@@ -2059,7 +2078,8 @@
 * Default styles for root elements
 */
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   min-height: 100%
 }
 body,
@@ -2069,11 +2089,13 @@ html {
   line-height: 1.42857
 }
 * {
-  box-sizing: inherit
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit
 }
 ::after,
 ::before {
-  box-sizing: inherit
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit
 }
 body {
   margin: 0;
@@ -2131,6 +2153,7 @@ img {
 a {
   text-decoration: none;
   display: inline-block;
+  -webkit-transition: all 125ms ease-in;
   transition: all 125ms ease-in;
   color: var(--fd-color-action)
 }
@@ -2186,7 +2209,8 @@ input[type=radio] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   font-size: inherit;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   outline: 0;
   border-style: solid;
   border-width: 1px;
@@ -2194,7 +2218,9 @@ input[type=radio] {
   border-color: var(--fd-forms-border-color);
   background-color: var(--fd-forms-background-color);
   border-radius: 4px;
+  -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
+  -webkit-transition: border-color 125ms ease-in,background-color 125ms ease-in,background-image 125ms ease-in;
   transition: border-color 125ms ease-in,background-color 125ms ease-in,background-image 125ms ease-in
 }
 .fd-checkbox .is-hover,
@@ -2215,7 +2241,8 @@ input.is-focus[type=checkbox],
 input.is-focus[type=radio],
 input:focus[type=checkbox],
 input:focus[type=radio] {
-  box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+          box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   --fd-forms-border-color: var(--fd-color-action-focus)
 }
 .is-invalid.fd-checkbox,
@@ -2277,6 +2304,7 @@ input[readonly][type=radio] {
 .fd-radio::after,
 input[type=checkbox]::after,
 input[type=radio]::after {
+  -webkit-transition: border-color 125ms ease-in;
   transition: border-color 125ms ease-in
 }
 fieldset {
@@ -2305,7 +2333,8 @@ input[type=url] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   font-size: inherit;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   outline: 0;
   border-style: solid;
   border-width: 1px;
@@ -2313,6 +2342,7 @@ input[type=url] {
   border-color: var(--fd-forms-border-color);
   background-color: var(--fd-forms-background-color);
   border-radius: 4px;
+  -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
   padding-left: 12px;
   padding-right: 12px;
@@ -2361,7 +2391,8 @@ input[type=time].is-focus,
 input[type=time]:focus,
 input[type=url].is-focus,
 input[type=url]:focus {
-  box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+          box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   --fd-forms-border-color: var(--fd-color-action-focus)
 }
 .fd-input.is-invalid,
@@ -2473,6 +2504,42 @@ input[type=url][readonly] {
   border-width: 0 0 1px;
   border-radius: 0
 }
+.fd-input::-webkit-input-placeholder,
+input[type=date]::-webkit-input-placeholder,
+input[type=email]::-webkit-input-placeholder,
+input[type=number]::-webkit-input-placeholder,
+input[type=password]::-webkit-input-placeholder,
+input[type=search]::-webkit-input-placeholder,
+input[type=tel]::-webkit-input-placeholder,
+input[type=text]::-webkit-input-placeholder,
+input[type=time]::-webkit-input-placeholder,
+input[type=url]::-webkit-input-placeholder {
+  color: var(--fd-color-neutral-4)
+}
+.fd-input:-ms-input-placeholder,
+input[type=date]:-ms-input-placeholder,
+input[type=email]:-ms-input-placeholder,
+input[type=number]:-ms-input-placeholder,
+input[type=password]:-ms-input-placeholder,
+input[type=search]:-ms-input-placeholder,
+input[type=tel]:-ms-input-placeholder,
+input[type=text]:-ms-input-placeholder,
+input[type=time]:-ms-input-placeholder,
+input[type=url]:-ms-input-placeholder {
+  color: var(--fd-color-neutral-4)
+}
+.fd-input::-ms-input-placeholder,
+input[type=date]::-ms-input-placeholder,
+input[type=email]::-ms-input-placeholder,
+input[type=number]::-ms-input-placeholder,
+input[type=password]::-ms-input-placeholder,
+input[type=search]::-ms-input-placeholder,
+input[type=tel]::-ms-input-placeholder,
+input[type=text]::-ms-input-placeholder,
+input[type=time]::-ms-input-placeholder,
+input[type=url]::-ms-input-placeholder {
+  color: var(--fd-color-neutral-4)
+}
 .fd-input::placeholder,
 input[type=date]::placeholder,
 input[type=email]::placeholder,
@@ -2501,7 +2568,8 @@ textarea {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   font-size: inherit;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   outline: 0;
   border-style: solid;
   border-width: 1px;
@@ -2509,6 +2577,7 @@ textarea {
   border-color: var(--fd-forms-border-color);
   background-color: var(--fd-forms-background-color);
   border-radius: 4px;
+  -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
   padding-left: 12px;
   padding-right: 12px;
@@ -2526,7 +2595,8 @@ textarea:hover {
 .fd-textarea:focus,
 textarea.is-focus,
 textarea:focus {
-  box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+          box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   --fd-forms-border-color: var(--fd-color-action-focus)
 }
 .fd-textarea.is-invalid,
@@ -2583,7 +2653,8 @@ select {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   font-size: inherit;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   outline: 0;
   border-style: solid;
   border-width: 1px;
@@ -2591,10 +2662,12 @@ select {
   border-color: var(--fd-forms-border-color);
   background-color: var(--fd-forms-background-color);
   border-radius: 4px;
+  -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
   padding-left: 12px;
   padding-right: 12px;
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   -moz-appearance: none;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzkiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzOSAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiNGQUZCRkMiIGQ9Ik0xIDBoMzd2MzZIMXoiLz48cGF0aCBkPSJNMSAwdjM2TTM4IDB2MzYiIHN0cm9rZT0iI0NFQ0VEMCIvPjxwYXRoIGQ9Ik0yNi45MTkgMTYuODQzbC03LjY2NyA4LjA1OGEuMzY0LjM2NCAwIDAgMS0uMjUzLjA5OS4zNjQuMzY0IDAgMCAxLS4yNTItLjFsLTcuNjY0LTguMDU3YS4yODMuMjgzIDAgMCAxIC4wMzQtLjQyOGwxLjcyMS0xLjM0MWEuMzUyLjM1MiAwIDAgMSAuMjE4LS4wNzRsLjAyNS4wMDFjLjA4OC4wMDYuMTcuMDQ1LjIyOC4xMDdMMTkgMjEuMjAybDUuNjkzLTYuMDk0Yy4xMi0uMTMuMzMtLjE0NS40Ny0uMDM0bDEuNzIyIDEuMzQxYS4yOTcuMjk3IDAgMCAxIC4xMTUuMjA3LjI4My4yODMgMCAwIDEtLjA4LjIyMXoiIGZpbGw9IiMwQTZFRDEiLz48L2c+PC9zdmc+);
   background-repeat: no-repeat;
@@ -2613,7 +2686,8 @@ select:hover {
 .fd-select:focus,
 select.is-focus,
 select:focus {
-  box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+          box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   --fd-forms-border-color: var(--fd-color-action-focus)
 }
 .fd-select.is-invalid,
@@ -2689,7 +2763,8 @@ select::after {
   border-color: transparent;
   border-style: solid;
   border-width: 0 0 2px 2px;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   position: absolute;
   z-index: 2;
   top: calc(50% - 4px);
@@ -2809,6 +2884,7 @@ input[type=radio]::after {
   position: absolute;
   top: calc(50% - (8px/2));
   left: calc(50% - (8px/2));
+  -webkit-transition: background-color 125ms ease-in;
   transition: background-color 125ms ease-in;
   background-color: transparent
 }
@@ -2845,7 +2921,8 @@ input[type=checkbox]::before {
   border-color: transparent;
   border-style: solid;
   border-width: 0 0 2px 2px;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   position: absolute;
   z-index: 2;
   top: calc(50% - 4px);
@@ -2862,7 +2939,8 @@ input[type=checkbox]:indeterminate {
   --fd-forms-background-color: var(--fd-color-action-selected);
   border-width: 3px;
   border-style: solid;
-  box-shadow: 0 0 0 1px var(--fd-forms-background-color)
+  -webkit-box-shadow: 0 0 0 1px var(--fd-forms-background-color);
+          box-shadow: 0 0 0 1px var(--fd-forms-background-color)
 }
 /*!
 .fd-section+(--full-bleed, --no-border)
@@ -2907,8 +2985,12 @@ input[type=checkbox]:indeterminate {
 }
 .fd-section__header {
   min-height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 24px
 }
 .fd-section__title {
@@ -2916,15 +2998,21 @@ input[type=checkbox]:indeterminate {
   line-height: 1.33333;
   font-weight: 400;
   color: var(--fd-section-title-color);
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin-bottom: 0
 }
 .fd-section__actions {
   margin-left: auto
 }
 .fd-section__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center
 }
 .fd-container {
   margin-bottom: 12px;
@@ -2942,6 +3030,8 @@ input[type=checkbox]:indeterminate {
   max-width: 100%
 }
 .fd-container--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex
 }
 .fd-container--centered {
@@ -3316,7 +3406,9 @@ input[type=checkbox]:indeterminate {
   }
 }
 [class^=fd-col] {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin-bottom: 12px
 }
 [class^=fd-col]:last-child {
@@ -3344,22 +3436,33 @@ input[type=checkbox]:indeterminate {
   background-attachment: fixed
 }
 .fd-ui--fixed {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   max-height: 100vh
 }
 .fd-ui--fixed .fd-ui__header {
-  flex: 0 0 50px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50px;
+          flex: 0 0 50px;
   position: static
 }
 .fd-ui--fixed .fd-ui__footer {
-  flex: 0 0 40px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40px;
+          flex: 0 0 40px;
   position: static
 }
 .fd-ui--fixed .fd-ui__app {
   overflow: scroll;
   margin-top: 0;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   min-height: auto
 }
 .fd-ui__header {
@@ -3389,6 +3492,8 @@ input[type=checkbox]:indeterminate {
   margin-top: 50px;
   min-height: calc(100vh - 40px - 50px);
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative
 }
@@ -3412,22 +3517,33 @@ input[type=checkbox]:indeterminate {
   background-attachment: fixed
 }
 .fd-shell--fixed {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   max-height: 100vh
 }
 .fd-shell--fixed .fd-shell__header {
-  flex: 0 0 48px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48px;
+          flex: 0 0 48px;
   position: static
 }
 .fd-shell--fixed .fd-shell__footer {
-  flex: 0 0 40px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40px;
+          flex: 0 0 40px;
   position: static
 }
 .fd-shell--fixed .fd-shell__app {
   overflow: scroll;
   margin-top: 0;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   min-height: auto
 }
 .fd-shell__header {
@@ -3448,6 +3564,8 @@ input[type=checkbox]:indeterminate {
   margin-top: 48px;
   min-height: calc(100vh - 40px - 48px);
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative
 }
@@ -3466,9 +3584,15 @@ input[type=checkbox]:indeterminate {
 }
 @media (min-width:600px) {
   .fd-app {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row wrap;
-    align-content: flex-start
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -ms-flex-line-pack: start;
+        align-content: flex-start
   }
 }
 .fd-app__navigation {
@@ -3476,15 +3600,21 @@ input[type=checkbox]:indeterminate {
   background-color: var(--fd-background-color);
   height: 52px;
   max-height: 52px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex
 }
 .fd-app__navigation--horizontal {
-  flex: 1 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 100%;
+          flex: 1 100%;
   padding: 0 32px;
   padding: 0 var(--fd-padding-ui)
 }
 .fd-app__navigation--vertical {
-  flex: 0
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0
 }
 @media (min-width:600px) {
   .fd-app__navigation--vertical {
@@ -3495,7 +3625,9 @@ input[type=checkbox]:indeterminate {
   }
 }
 .fd-app__main {
-  flex: 1 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
   overflow: auto
 }
 .fd-page {
@@ -3503,8 +3635,13 @@ input[type=checkbox]:indeterminate {
   --fd-page-header-padding-x: var(--fd-padding-ui);
   --fd-page-header-border-color: var(--fd-color-neutral-3);
   --fd-page-header-background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100%;
   width: 100%;
   background-color: var(--fd-page-background-color)
@@ -3519,7 +3656,9 @@ input[type=checkbox]:indeterminate {
   padding: 0 var(--fd-page-header-padding-x)
 }
 .fd-page__content {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   margin-bottom: 32px
 }
 /*!
@@ -3565,8 +3704,12 @@ input[type=checkbox]:indeterminate {
 }
 .fd-section__header {
   min-height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 24px
 }
 .fd-section__title {
@@ -3574,15 +3717,21 @@ input[type=checkbox]:indeterminate {
   line-height: 1.33333;
   font-weight: 400;
   color: var(--fd-section-title-color);
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin-bottom: 0
 }
 .fd-section__actions {
   margin-left: auto
 }
 .fd-section__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center
 }
 /*!
 .fd-panel
@@ -3603,7 +3752,8 @@ input[type=checkbox]:indeterminate {
   border-style: solid;
   border-width: var(--fd-panel-border-width);
   border-color: var(--fd-panel-border-color);
-  box-shadow: 0 5px 20px 0 var(--fd-panel-box-shadow-color)
+  -webkit-box-shadow: 0 5px 20px 0 var(--fd-panel-box-shadow-color);
+          box-shadow: 0 5px 20px 0 var(--fd-panel-box-shadow-color)
 }
 .fd-panel::after {
   content: "";
@@ -3612,8 +3762,12 @@ input[type=checkbox]:indeterminate {
 }
 .fd-panel__header {
   min-height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: var(--fd-panel-divider-color);
@@ -3627,7 +3781,9 @@ input[type=checkbox]:indeterminate {
   font-size: 1.14286rem;
   line-height: 1.25;
   font-weight: 400;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin-bottom: 0;
   color: var(--fd-panel-title-color)
 }
@@ -3649,6 +3805,7 @@ input[type=checkbox]:indeterminate {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: var(--fd-panel-divider-color);
+  -webkit-transition: all .15s ease-in;
   transition: all .15s ease-in
 }
 .fd-panel__filters.is-hidden,
@@ -3666,8 +3823,12 @@ input[type=checkbox]:indeterminate {
   padding: 0
 }
 .fd-panel__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 16px 24px;
   border-top-style: solid;
   border-top-width: 1px;
@@ -3677,16 +3838,28 @@ input[type=checkbox]:indeterminate {
 .fd-tile-grid+(--2col | --4col | --5col | --6col)
 */
 .fd-panel-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative
 }
 @media (min-width:320px) {
   .fd-panel-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: var(--fd-width-gutter)
@@ -3715,7 +3888,8 @@ input[type=checkbox]:indeterminate {
   }
   .fd-panel-grid--nogap > *,
   .fd-panel-grid--nogutter > * {
-    box-shadow: none
+    -webkit-box-shadow: none;
+            box-shadow: none
   }
 }
 /*!
@@ -3724,10 +3898,16 @@ input[type=checkbox]:indeterminate {
 .fd-overlay {
   --fd-overlay-background-color: rgba(74, 80, 92, 0.3);
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   top: 0;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 1000
 }
 .fd-overlay[aria-hidden=true] {
@@ -3741,7 +3921,8 @@ input[type=checkbox]:indeterminate {
 .fd-overlay--alert {
   position: fixed;
   left: 50%;
-  transform: translate(-50%,0);
+  -webkit-transform: translate(-50%,0);
+          transform: translate(-50%,0);
   margin-top: 28px
 }
 /*!
@@ -3760,8 +3941,12 @@ input[type=checkbox]:indeterminate {
   min-height: 64px;
   padding-right: 0;
   padding-left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: baseline
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline
 }
 .fd-action-bar__header {
   font-size: 14px;
@@ -3774,7 +3959,9 @@ input[type=checkbox]:indeterminate {
   margin-bottom: 0;
   padding-top: 16px;
   padding-bottom: 16px;
-  flex-grow: 1
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1
 }
 @media (min-width:320px) {
   .fd-action-bar__header {
@@ -3815,7 +4002,8 @@ input[type=checkbox]:indeterminate {
 }
 .fd-action-bar__back[dir=rtl],
 [dir=rtl] .fd-action-bar__back {
-  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
   margin-left: 20px;
   margin-right: 0
 }
@@ -3854,8 +4042,13 @@ input[type=checkbox]:indeterminate {
   line-height: 1.428571;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity .25s ease-in;
   transition: opacity .25s ease-in;
   visibility: visible
 }
@@ -3904,8 +4097,12 @@ input[type=checkbox]:indeterminate {
   min-height: 64px;
   padding-right: 0;
   padding-left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: baseline
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline
 }
 .fd-action-bar__header {
   font-size: 14px;
@@ -3918,7 +4115,9 @@ input[type=checkbox]:indeterminate {
   margin-bottom: 0;
   padding-top: 16px;
   padding-bottom: 16px;
-  flex-grow: 1
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1
 }
 @media (min-width:320px) {
   .fd-action-bar__header {
@@ -3959,7 +4158,8 @@ input[type=checkbox]:indeterminate {
 }
 .fd-action-bar__back[dir=rtl],
 [dir=rtl] .fd-action-bar__back {
-  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
   margin-left: 20px;
   margin-right: 0
 }
@@ -3998,8 +4198,13 @@ input[type=checkbox]:indeterminate {
   line-height: 1.42857;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity .25s ease-in;
   transition: opacity .25s ease-in;
   visibility: visible
 }
@@ -4095,13 +4300,18 @@ input[type=checkbox]:indeterminate {
   margin: 0;
   padding: 0;
   font-smoothing: antialiased;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   outline: 0;
   border: 0;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   vertical-align: middle;
   white-space: nowrap;
   background-color: transparent;
@@ -4120,6 +4330,7 @@ input[type=checkbox]:indeterminate {
   color: var(--fd-button-color);
   border-color: var(--fd-button-border-color);
   background-color: var(--fd-button-background-color);
+  -webkit-transition: all 125ms ease-in;
   transition: all 125ms ease-in
 }
 .fd-button::before,
@@ -4171,7 +4382,8 @@ input[type=checkbox]:indeterminate {
 .fd-button:focus,
 [class*=fd-button--].is-focus,
 [class*=fd-button--]:focus {
-  box-shadow: 0 0 0 1px var(--fd-color-action-focus)
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+          box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
 .fd-button .is-hover,
 .fd-button:hover,
@@ -4643,7 +4855,8 @@ input[type=checkbox]:indeterminate {
 .fd-button-group .is-focus.fd-button,
 .fd-button-group .is-focus[class*=fd-button--],
 .fd-button-group :focus[class*=fd-button--] {
-  box-shadow: 0 0 0 1px var(--fd-color-status-4)
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-4);
+          box-shadow: 0 0 0 1px var(--fd-color-status-4)
 }
 .fd-button--standard .is-hover,
 .fd-button--standard:hover,
@@ -4700,7 +4913,8 @@ input[type=checkbox]:indeterminate {
 }
 .fd-button--positive.is-focus,
 .fd-button--positive:focus {
-  box-shadow: 0 0 0 1px var(--fd-color-status-1)
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-1);
+          box-shadow: 0 0 0 1px var(--fd-color-status-1)
 }
 .fd-button--positive .is-hover,
 .fd-button--positive:hover {
@@ -4728,7 +4942,8 @@ input[type=checkbox]:indeterminate {
 }
 .fd-button--medium.is-focus,
 .fd-button--medium:focus {
-  box-shadow: 0 0 0 1px var(--fd-color-status-2)
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-2);
+          box-shadow: 0 0 0 1px var(--fd-color-status-2)
 }
 .fd-button--medium .is-hover,
 .fd-button--medium:hover {
@@ -4756,7 +4971,8 @@ input[type=checkbox]:indeterminate {
 }
 .fd-button--negative.is-focus,
 .fd-button--negative:focus {
-  box-shadow: 0 0 0 1px var(--fd-color-status-3)
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-3);
+          box-shadow: 0 0 0 1px var(--fd-color-status-3)
 }
 .fd-button--negative .is-hover,
 .fd-button--negative:hover {
@@ -4792,7 +5008,8 @@ input[type=checkbox]:indeterminate {
   margin-left: 0
 }
 .fd-button--shell:focus {
-  box-shadow: none
+  -webkit-box-shadow: none;
+          box-shadow: none
 }
 .fd-button--shell .is-hover,
 .fd-button--shell:hover {
@@ -5045,7 +5262,8 @@ input[type=checkbox]:indeterminate {
 }
 .fd-button--toolbar.is-focus,
 .fd-button--toolbar:focus {
-  box-shadow: 0 0 0 1px var(--fd-color-neutral-3)
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-neutral-3);
+          box-shadow: 0 0 0 1px var(--fd-color-neutral-3)
 }
 .fd-button--toolbar.is-active,
 .fd-button--toolbar.is-pressed,
@@ -5083,8 +5301,11 @@ input[type=checkbox]:indeterminate {
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: -12px;
   list-style: none;
@@ -5162,7 +5383,10 @@ input[type=checkbox]:indeterminate {
 }
 .fd-dropdown__control::after {
   content: "";
-  transition: transform 125ms ease-in
+  -webkit-transition: -webkit-transform 125ms ease-in;
+  transition: -webkit-transform 125ms ease-in;
+  transition: transform 125ms ease-in;
+  transition: transform 125ms ease-in, -webkit-transform 125ms ease-in
 }
 .fd-dropdown__control[dir=rtl]::after,
 [dir=rtl] .fd-dropdown__control::after {
@@ -5251,14 +5475,16 @@ input[type=checkbox]:indeterminate {
   color: var(--fd-color-text-1);
   background-color: var(--fd-color-background-2);
   border-color: var(--fd-color-action-hover);
-  box-shadow: none
+  -webkit-box-shadow: none;
+          box-shadow: none
 }
 .fd-dropdown__control.fd-button.is-active,
 .fd-dropdown__control.fd-button:active,
 .fd-dropdown__control.fd-button[aria-expanded=true] {
   color: var(--fd-color-text-1);
   background-color: var(--fd-color-background-2);
-  box-shadow: 0 0 0 1px var(--fd-color-action-hover)
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-hover);
+          box-shadow: 0 0 0 1px var(--fd-color-action-hover)
 }
 .fd-button-group .fd-dropdown__control.fd-button:active,
 .fd-button-group .fd-dropdown__control.fd-button:hover,
@@ -5272,7 +5498,8 @@ input[type=checkbox]:indeterminate {
   color: var(--fd-color-text-2);
   background-color: var(--fd-color-neutral-1);
   border-color: var(--fd-color-status-4);
-  box-shadow: none
+  -webkit-box-shadow: none;
+          box-shadow: none
 }
 .fd-button-group .fd-dropdown__control.fd-button::after,
 .fd-button-group .fd-dropdown__control[class*=fd-button--]::after,
@@ -5384,14 +5611,19 @@ input[type=checkbox]:indeterminate {
   clear: both
 }
 .fd-form__item--check .fd-form__label {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
   margin-bottom: 0;
   vertical-align: middle;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   line-height: 16px;
   cursor: pointer
 }
@@ -5476,11 +5708,13 @@ input[type=checkbox]:indeterminate {
   position: relative
 }
 .fd-form__item--check + .fd-form__message {
-  transform: translateY(-12px);
+  -webkit-transform: translateY(-12px);
+          transform: translateY(-12px);
   margin-bottom: -12px
 }
 .fd-form__item--inline.fd-form__item--check + .fd-form__message {
-  transform: translateY(8px);
+  -webkit-transform: translateY(8px);
+          transform: translateY(8px);
   margin-bottom: 8px
 }
 .fd-form__message::before {
@@ -5537,6 +5771,8 @@ input[type=checkbox]:indeterminate {
   line-height: 1.42857;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   vertical-align: bottom
 }
@@ -5550,6 +5786,10 @@ input[type=checkbox]:indeterminate {
 .fd-input-group input[type=time],
 .fd-input-group input[type=url] {
   z-index: 1
+}
+.fd-input-group[dir=rtl] > * input:-moz-read-only,
+[dir=rtl] .fd-input-group > * input:-moz-read-only {
+  border-right: none
 }
 .fd-input-group[dir=rtl] > * input:read-only,
 [dir=rtl] .fd-input-group > * input:read-only {
@@ -5617,6 +5857,8 @@ input[type=checkbox]:indeterminate {
   border-left: none
 }
 .fd-input-group--inline {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex
 }
 .fd-input-group--no-border input {
@@ -5629,9 +5871,16 @@ input[type=checkbox]:indeterminate {
   border-width: 1px;
   border-color: var(--fd-forms-border-color);
   background-color: var(--fd-color-neutral-1);
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-radius: 4px;
   height: var(--fd-forms-height)
 }
@@ -5709,18 +5958,25 @@ input[type=checkbox]:indeterminate {
   margin: 0;
   padding: 0;
   font-smoothing: antialiased;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   outline: 0;
   border: 0;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   vertical-align: middle;
   white-space: nowrap;
   background-color: transparent;
   border-radius: 4px;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   width: 100%;
   display: block;
   min-width: 48px;
@@ -5737,14 +5993,16 @@ input[type=checkbox]:indeterminate {
 .fd-input-group__button--step-down::before,
 .fd-input-group__button--step-up::before {
   position: absolute;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   top: -2px
 }
 .fd-input-group__button--step-down[dir=rtl]::before,
 .fd-input-group__button--step-up[dir=rtl]::before,
 [dir=rtl] .fd-input-group__button--step-down::before,
 [dir=rtl] .fd-input-group__button--step-up::before {
-  transform: translateX(50%)
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%)
 }
 .fd-input-group__button--step-up {
   border-bottom-style: solid;
@@ -5864,14 +6122,17 @@ input[type=checkbox]:indeterminate {
 .fd-pagination__link--previous[dir=rtl],
 [dir=rtl] .fd-pagination__link--next,
 [dir=rtl] .fd-pagination__link--previous {
-  transform: scaleX(-1)
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1)
 }
 .fd-pagination__link--next {
-  transform: scaleX(-1)
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1)
 }
 .fd-pagination__link--next[dir=rtl],
 [dir=rtl] .fd-pagination__link--next {
-  transform: scaleX(1)
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1)
 }
 .fd-pagination__link--more::before {
   content: "...";
@@ -5909,6 +6170,7 @@ input[type=checkbox]:indeterminate {
   margin-right: 0
 }
 .fd-table tr {
+  -webkit-transition: background-color 125ms ease-in;
   transition: background-color 125ms ease-in;
   cursor: pointer
 }
@@ -6016,11 +6278,13 @@ input[type=checkbox]:indeterminate {
 .fd-table th.fd-table__fixed-col {
   background-color: var(--fd-color-neutral-2);
   z-index: 2;
-  box-shadow: 2px 0 0 0 var(--fd-table-border-color)
+  -webkit-box-shadow: 2px 0 0 0 var(--fd-table-border-color);
+          box-shadow: 2px 0 0 0 var(--fd-table-border-color)
 }
 .fd-table td.fd-table__fixed-col {
   background-color: var(--fd-color-background-2);
-  box-shadow: 2px 0 0 0 var(--fd-table-border-color)
+  -webkit-box-shadow: 2px 0 0 0 var(--fd-table-border-color);
+          box-shadow: 2px 0 0 0 var(--fd-table-border-color)
 }
 .fd-table--fixed-wrapper {
   position: relative
@@ -6057,8 +6321,11 @@ input[type=checkbox]:indeterminate {
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   background-color: var(--fd-tabs-background-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 12px;
   list-style: none;
@@ -6083,6 +6350,7 @@ input[type=checkbox]:indeterminate {
   color: var(--fd-tabs-link-color)
 }
 .fd-tabs__link::after {
+  -webkit-transition: all 125ms ease-in;
   transition: all 125ms ease-in;
   content: "";
   position: absolute;
@@ -6202,7 +6470,8 @@ input[type=checkbox]:indeterminate {
 }
 .fd-modal__close.is-focus,
 .fd-modal__close:focus {
-  box-shadow: 0 0 0 1px var(--fd-color-action-focus)
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+          box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
 .fd-modal__body {
   max-height: calc(100vh - 60px - 68px);
@@ -6268,6 +6537,7 @@ input[type=checkbox]:indeterminate {
   background-color: var(--fd-tree-header-background-color)
 }
 .fd-tree__group {
+  -webkit-transition: opacity 125ms linear;
   transition: opacity 125ms linear;
   max-height: auto;
   opacity: 1;
@@ -6294,9 +6564,14 @@ input[type=checkbox]:indeterminate {
   padding-right: var(--fd-tree-cell-spacing);
   padding-top: 0;
   padding-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
+  -webkit-transition: background-color 125ms ease-in;
   transition: background-color 125ms ease-in
 }
 .fd-tree__row .is-hover,
@@ -6321,7 +6596,9 @@ input[type=checkbox]:indeterminate {
   background-color: var(--fd-color-background-selected)
 }
 .fd-tree__col {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: 12px 0;
   padding-left: 30px
 }
@@ -6331,7 +6608,9 @@ input[type=checkbox]:indeterminate {
   padding-right: 30px
 }
 .fd-tree__col--control {
-  flex: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
   width: 20%
 }
 .fd-tree__group--sublevel-1 .fd-tree__col--control {
@@ -6412,13 +6691,18 @@ input[type=checkbox]:indeterminate {
   margin: 0;
   padding: 0;
   font-smoothing: antialiased;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   outline: 0;
   border: 0;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   vertical-align: middle;
   white-space: nowrap;
   background-color: transparent;
@@ -6428,9 +6712,13 @@ input[type=checkbox]:indeterminate {
   margin-left: -30px;
   margin-right: 12px;
   width: 18px;
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
   vertical-align: middle;
+  -webkit-transition: -webkit-transform 125ms linear;
+  transition: -webkit-transform 125ms linear;
   transition: transform 125ms linear;
+  transition: transform 125ms linear, -webkit-transform 125ms linear;
   color: var(--fd-color-action-1)
 }
 .fd-tree__control::before {
@@ -6455,17 +6743,20 @@ input[type=checkbox]:indeterminate {
 }
 .fd-tree__control.is-focus,
 .fd-tree__control:focus {
-  box-shadow: 0 0 0 1px var(--fd-color-action-focus)
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+          box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
 .fd-tree__control[dir=rtl],
 [dir=rtl] .fd-tree__control {
   margin-left: 12px;
   margin-right: -30px;
-  transform: rotate(0)
+  -webkit-transform: rotate(0);
+          transform: rotate(0)
 }
 .fd-tree__control.is-pressed,
 .fd-tree__control[aria-pressed=true] {
-  transform: rotate(270deg)
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg)
 }
 /*!
 .fd-list-group
@@ -6483,16 +6774,21 @@ input[type=checkbox]:indeterminate {
 .fd-list-group__item {
   list-style: none;
   padding: 10px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
   background-color: var(--fd-list-group-background-color);
+  -webkit-transition: background-color 125ms ease-in;
   transition: background-color 125ms ease-in
 }
 .fd-list-group__item:hover {
   --fd-list-group-background-color: var(--fd-color-background-hover)
 }
 .fd-list-group__action {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   text-align: right;
   position: relative;
   display: inline-block;
@@ -6545,6 +6841,7 @@ input[type=checkbox]:indeterminate {
   top: 30px;
   right: -12px;
   min-width: 350px;
+  -webkit-transition: opacity 125ms ease-in;
   transition: opacity 125ms ease-in;
   text-align: left;
   z-index: 1;
@@ -6554,7 +6851,8 @@ input[type=checkbox]:indeterminate {
   border-width: 1px;
   border-style: solid;
   border-color: var(--fd-color-status-4);
-  filter: drop-shadow(rgba(0, 0, 0, .1) 0 2px 10px)
+  -webkit-filter: drop-shadow(rgba(0, 0, 0, .1) 0 2px 10px);
+          filter: drop-shadow(rgba(0, 0, 0, .1) 0 2px 10px)
 }
 .fd-inline-help__content::before {
   height: 0;
@@ -6589,12 +6887,14 @@ input[type=checkbox]:indeterminate {
 .fd-inline-help__content--right::before {
   top: 16px;
   left: -10px;
-  transform: rotate(-90deg)
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg)
 }
 .fd-inline-help__content--right::after {
   top: 16px;
   left: -9px;
-  transform: rotate(-90deg)
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg)
 }
 .fd-inline-help__content--right[dir=rtl],
 [dir=rtl] .fd-inline-help__content--right {
@@ -6605,13 +6905,15 @@ input[type=checkbox]:indeterminate {
 [dir=rtl] .fd-inline-help__content--right::before {
   left: auto;
   right: -10px;
-  transform: rotate(-270deg)
+  -webkit-transform: rotate(-270deg);
+          transform: rotate(-270deg)
 }
 .fd-inline-help__content--right[dir=rtl]::after,
 [dir=rtl] .fd-inline-help__content--right::after {
   left: auto;
   right: -9px;
-  transform: rotate(-270deg)
+  -webkit-transform: rotate(-270deg);
+          transform: rotate(-270deg)
 }
 .fd-inline-help__content--left {
   top: -12px;
@@ -6620,12 +6922,14 @@ input[type=checkbox]:indeterminate {
 .fd-inline-help__content--left::before {
   top: 16px;
   right: -10px;
-  transform: rotate(90deg)
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg)
 }
 .fd-inline-help__content--left::after {
   top: 16px;
   right: -9px;
-  transform: rotate(90deg)
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg)
 }
 .fd-inline-help__content--left[dir=rtl],
 [dir=rtl] .fd-inline-help__content--left {
@@ -6636,13 +6940,15 @@ input[type=checkbox]:indeterminate {
 [dir=rtl] .fd-inline-help__content--left::before {
   right: auto;
   left: -10px;
-  transform: rotate(270deg)
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg)
 }
 .fd-inline-help__content--left[dir=rtl]::after,
 [dir=rtl] .fd-inline-help__content--left::after {
   right: auto;
   left: -9px;
-  transform: rotate(270deg)
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg)
 }
 .fd-inline-help__content--bottom-right {
   left: -8px
@@ -6711,14 +7017,20 @@ input[type=checkbox]:indeterminate {
   line-height: 1.42857;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0;
   margin-bottom: 0;
   list-style: none
 }
 .fd-nav--vertical {
-  flex-direction: column
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column
 }
 .fd-nav__link {
   display: block;
@@ -6744,8 +7056,11 @@ input[type=checkbox]:indeterminate {
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   background-color: var(--fd-tabs-background-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 12px;
   list-style: none;
@@ -6770,6 +7085,7 @@ input[type=checkbox]:indeterminate {
   color: var(--fd-tabs-link-color)
 }
 .fd-tabs__link::after {
+  -webkit-transition: all 125ms ease-in;
   transition: all 125ms ease-in;
   content: "";
   position: absolute;
@@ -6848,7 +7164,8 @@ input[type=checkbox]:indeterminate {
 .fd-toggle input[disabled] + .fd-toggle__switch {
   opacity: 1;
   border-color: #ededee;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   background-color: #ededee;
   pointer-events: none
 }
@@ -6897,7 +7214,6 @@ input:checked + .fd-toggle__switch {
 }
 input:checked + .fd-toggle__switch::before {
   -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
   transform: translateX(26px);
   background-color: var(--fd-color-action-selected);
   border-color: var(--fd-color-action-selected);
@@ -6956,8 +7272,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   position: relative;
   width: 29px;
   height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 0 auto
 }
 .fd-spinner.is-hidden,
@@ -6997,8 +7317,10 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   background-color: var(--fd-spinner-background-color)
 }
 .fd-spinner::before {
-  animation: line-scale 1s infinite ease;
-  animation-delay: -1s
+  -webkit-animation: line-scale 1s infinite ease;
+          animation: line-scale 1s infinite ease;
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s
 }
 .fd-spinner div::after,
 .fd-spinner div::before {
@@ -7010,26 +7332,46 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-spinner div::before {
   left: 8px;
-  animation: line-scale 1s infinite ease;
-  animation-delay: -.9s
+  -webkit-animation: line-scale 1s infinite ease;
+          animation: line-scale 1s infinite ease;
+  -webkit-animation-delay: -.9s;
+          animation-delay: -.9s
 }
 .fd-spinner div::after {
   right: 8px;
-  animation: line-scale 1s infinite ease;
-  animation-delay: -.8s
+  -webkit-animation: line-scale 1s infinite ease;
+          animation: line-scale 1s infinite ease;
+  -webkit-animation-delay: -.8s;
+          animation-delay: -.8s
 }
 .fd-spinner::after {
-  animation: line-scale 1s infinite ease;
-  animation-delay: -.7s
+  -webkit-animation: line-scale 1s infinite ease;
+          animation: line-scale 1s infinite ease;
+  -webkit-animation-delay: -.7s;
+          animation-delay: -.7s
+}
+@-webkit-keyframes line-scale {
+  0%,
+  100%,
+  40% {
+    -webkit-transform: scaleY(.4);
+            transform: scaleY(.4)
+  }
+  80% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1)
+  }
 }
 @keyframes line-scale {
   0%,
   100%,
   40% {
-    transform: scaleY(.4)
+    -webkit-transform: scaleY(.4);
+            transform: scaleY(.4)
   }
   80% {
-    transform: scaleY(1)
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1)
   }
 }
 /*!
@@ -7087,6 +7429,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   border-bottom: solid 1px #eeeeef;
   background: #fff;
   height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   color: #51555a;
   position: relative
@@ -7103,8 +7447,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   position: absolute;
   right: 0;
   top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center
 }
 .fd-global-nav__logo,
 .fd-global-nav__product-name,
@@ -7114,8 +7462,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   vertical-align: middle
 }
 .fd-global-nav__side-menu {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center
 }
 .fd-global-nav__logo {
   padding-left: 16px;
@@ -7171,7 +7523,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   color: #51555a;
   background: 0 0;
   border-color: transparent;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border-radius: 0
 }
 .fd-global-nav__actions {
@@ -7190,7 +7543,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   border: none;
   min-width: 176px;
   border-bottom: 1px solid #eeeeef;
-  box-shadow: 0 5px #fff,0 -5px #fff
+  -webkit-box-shadow: 0 5px #fff,0 -5px #fff;
+          box-shadow: 0 5px #fff,0 -5px #fff
 }
 .fd-global-nav__search input[aria-hidden=true] {
   display: none
@@ -7237,12 +7591,18 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   line-height: 1.42857;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-  flex-direction: column
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column
 }
 .fd-side-nav__sublist[aria-hidden=true] {
   display: none
@@ -7507,12 +7867,14 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   margin: 0;
   padding: 0;
   background-color: #fff;
-  box-shadow: 0 5px 20px 0 rgba(50,54,58,.08);
+  -webkit-box-shadow: 0 5px 20px 0 rgba(50,54,58,.08);
+          box-shadow: 0 5px 20px 0 rgba(50,54,58,.08);
   border-radius: 4px;
   border: none
 }
 .fd-mega-menu__header {
-  box-shadow: inset 0 -1px 0 0 rgba(0,0,0,.07)
+  -webkit-box-shadow: inset 0 -1px 0 0 rgba(0,0,0,.07);
+          box-shadow: inset 0 -1px 0 0 rgba(0,0,0,.07)
 }
 .fd-mega-menu__header-link {
   padding: 10px 20px;
@@ -7544,12 +7906,18 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   line-height: 1.42857;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-  flex-direction: column
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column
 }
 .fd-mega-menu__item {
   position: relative
@@ -7557,7 +7925,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-mega-menu__sublist {
   width: 200px;
   background-color: #fff;
-  box-shadow: 0 5px 20px 0 rgba(50,54,58,.08);
+  -webkit-box-shadow: 0 5px 20px 0 rgba(50,54,58,.08);
+          box-shadow: 0 5px 20px 0 rgba(50,54,58,.08);
   border-radius: 4px;
   position: absolute;
   right: -200px;
@@ -7699,9 +8068,15 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   float: left;
   clear: left;
   height: 39px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 30px
 }
 .fd-menu__addon-before[dir=rtl],
@@ -7717,6 +8092,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-segmented-button {
   padding: 0;
   margin: 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   vertical-align: middle
 }
@@ -7782,6 +8159,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   line-height: 1.42857;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   color: var(--fd-tile-color);
   background-color: var(--fd-tile-background-color)
@@ -7789,11 +8168,15 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-tile--button,
 .fd-tile[role=button] {
   cursor: pointer;
-  transition: box-shadow 125ms ease-in
+  -webkit-transition: -webkit-box-shadow 125ms ease-in;
+  transition: -webkit-box-shadow 125ms ease-in;
+  transition: box-shadow 125ms ease-in;
+  transition: box-shadow 125ms ease-in, -webkit-box-shadow 125ms ease-in
 }
 .fd-tile--button:hover,
 .fd-tile[role=button]:hover {
-  box-shadow: 0 0 5px 0 rgba(106,109,112,.4);
+  -webkit-box-shadow: 0 0 5px 0 rgba(106,109,112,.4);
+          box-shadow: 0 0 5px 0 rgba(106,109,112,.4);
   position: relative;
   z-index: 1
 }
@@ -7810,9 +8193,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   padding-left: 0
 }
 .fd-tile__content {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: 10px 16px 10px 12px;
-  align-self: center
+  -ms-flex-item-align: center;
+      align-self: center
 }
 .fd-tile__content[dir=rtl],
 [dir=rtl] .fd-tile__content {
@@ -7855,11 +8241,15 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-product-tile--button,
 .fd-product-tile[role=button] {
   cursor: pointer;
-  transition: box-shadow 125ms ease-in
+  -webkit-transition: -webkit-box-shadow 125ms ease-in;
+  transition: -webkit-box-shadow 125ms ease-in;
+  transition: box-shadow 125ms ease-in;
+  transition: box-shadow 125ms ease-in, -webkit-box-shadow 125ms ease-in
 }
 .fd-product-tile--button:hover,
 .fd-product-tile[role=button]:hover {
-  box-shadow: 0 0 5px 0 rgba(106,109,112,.4);
+  -webkit-box-shadow: 0 0 5px 0 rgba(106,109,112,.4);
+          box-shadow: 0 0 5px 0 rgba(106,109,112,.4);
   position: relative;
   z-index: 1
 }
@@ -7890,9 +8280,15 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 */
 .fd-tile-grid {
   --fd-tile-grid-border-color: var(--fd-color-neutral-2);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative
 }
 .fd-tile-grid > * {
@@ -7904,13 +8300,21 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   border-width: 0 1px 1px 0;
   min-width: calc(100% / 2);
   width: auto;
-  flex: 1
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1
 }
 @media (min-width:320px) {
   .fd-tile-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 0
@@ -8162,9 +8566,15 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   margin: 0;
   text-align: center;
   border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center
 }
 .fd-calendar .fd-calendar__column-header:hover,
 .fd-calendar .fd-calendar__item:hover {
@@ -8246,28 +8656,45 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: grid
 }
 .fd-calendar .fd-calendar__years {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   display: grid
 }
 .fd-calendar .fd-calendar__header {
-  box-shadow: inset 0 -1px 0 0 var(--fd-color-neutral-2);
+  -webkit-box-shadow: inset 0 -1px 0 0 var(--fd-color-neutral-2);
+          box-shadow: inset 0 -1px 0 0 var(--fd-color-neutral-2);
   height: 52px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center
 }
 .fd-calendar .fd-calendar__action [class*=sap-icon][dir=rtl],
 [dir=rtl] .fd-calendar .fd-calendar__action [class*=sap-icon] {
-  transform: scaleX(-1)
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1)
 }
 .fd-calendar .fd-calendar__content {
   padding: 12px 0
 }
 .fd-calendar .fd-calendar__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex: 1;
-  justify-content: space-between;
-  align-items: center
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center
 }
 .fd-calendar .fd-calendar__table {
   display: table;
@@ -8292,8 +8719,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-calendar .fd-calendar__list {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   display: grid;
   grid-template-columns: repeat(4,1fr);
   padding-left: 0;
@@ -8468,13 +8898,16 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   z-index: 1000;
   border-radius: 4px;
   background-color: var(--fd-color-background-2);
-  box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
+  -webkit-box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
+          box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
   opacity: 1;
   visibility: visible;
+  -webkit-transition: all 125ms;
   transition: all 125ms;
   left: 0;
   top: 120%;
-  transform: translateY(0)
+  -webkit-transform: translateY(0);
+          transform: translateY(0)
 }
 .fd-popover__body[dir=rtl],
 [dir=rtl] .fd-popover__body {
@@ -8570,7 +9003,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   z-index: 1;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-15px)
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px)
 }
 .fd-popover__popper {
   border: solid 1px #89919a;
@@ -8579,7 +9013,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   z-index: 1000;
   border-radius: 4px;
   background-color: var(--fd-color-background-2);
-  box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
+  -webkit-box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
+          box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
   opacity: 1
 }
 .fd-popover__popper--no-arrow {
@@ -8760,12 +9195,14 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   --fd-button-background-color: transparent
 }
 .fd-search-input__control > .fd-button--shell[aria-expanded=true]:focus {
-  box-shadow: none
+  -webkit-box-shadow: none;
+          box-shadow: none
 }
 .fd-search-input__closedcontrol {
   position: absolute;
   top: 0;
   right: 0;
+  -webkit-transition: all 125ms;
   transition: all 125ms;
   opacity: 1;
   visibility: visible;
@@ -8873,20 +9310,32 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   background-color: var(--fd-shellbar-background-color);
   height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: var(--fd-shellbar-color);
   position: relative;
   padding: 4px 32px;
-  justify-content: space-between
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between
 }
 .fd-shellbar__group--start {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center
 }
 .fd-shellbar__group--end,
 .fd-shellbar__group--start {
-  flex: 1
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1
 }
 .fd-shellbar__group--middle {
   width: 30px
@@ -8905,8 +9354,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   vertical-align: middle
 }
 .fd-shellbar__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   vertical-align: middle;
   max-height: 40px;
   background-repeat: no-repeat;
@@ -9083,7 +9536,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   color: var(--fd-shellbar-link-color)
 }
 .fd-shellbar .fd-search-input .fd-input:focus {
-  box-shadow: none
+  -webkit-box-shadow: none;
+          box-shadow: none
 }
 @media (min-width:320px) {
   .fd-shellbar {
@@ -9141,13 +9595,18 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   margin: 0;
   padding: 0;
   font-smoothing: antialiased;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   outline: 0;
   border: 0;
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   vertical-align: middle;
   white-space: nowrap;
   background-color: transparent;
@@ -9202,11 +9661,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-counter--notification {
   --fd-counter-background-color: var(--fd-color-status-3);
   position: absolute;
-  transform: translate(-40%,-50%)
+  -webkit-transform: translate(-40%,-50%);
+          transform: translate(-40%,-50%)
 }
 .fd-counter--notification[dir=rtl],
 [dir=rtl] .fd-counter--notification {
-  transform: translate(40%,-50%)
+  -webkit-transform: translate(40%,-50%);
+          transform: translate(40%,-50%)
 }
 .fd-has-type-minus-1 {
   font-size: .85714rem;
@@ -9889,9 +10350,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: inline-grid!important
 }
 .fd-has-display-flex {
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
   display: flex!important
 }
 .fd-has-display-inline-flex {
+  display: -webkit-inline-box!important;
+  display: -ms-inline-flexbox!important;
   display: inline-flex!important
 }
 .fd-has-display-table {
@@ -9925,9 +10390,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: table-cell!important
 }
 .fd-display-s-flex {
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
   display: flex!important
 }
 .fd-display-s-inline-flex {
+  display: -webkit-inline-box!important;
+  display: -ms-inline-flexbox!important;
   display: inline-flex!important
 }
 .fd-has-display-none--s {
@@ -9946,9 +10415,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: inline-grid!important
 }
 .fd-has-display-flex--s {
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
   display: flex!important
 }
 .fd-has-display-inline-flex--s {
+  display: -webkit-inline-box!important;
+  display: -ms-inline-flexbox!important;
   display: inline-flex!important
 }
 .fd-has-display-table--s {
@@ -9982,9 +10455,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: table-cell!important
 }
 .fd-display-m-flex {
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
   display: flex!important
 }
 .fd-display-m-inline-flex {
+  display: -webkit-inline-box!important;
+  display: -ms-inline-flexbox!important;
   display: inline-flex!important
 }
 .fd-has-display-none--m {
@@ -10003,9 +10480,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: inline-grid!important
 }
 .fd-has-display-flex--m {
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
   display: flex!important
 }
 .fd-has-display-inline-flex--m {
+  display: -webkit-inline-box!important;
+  display: -ms-inline-flexbox!important;
   display: inline-flex!important
 }
 .fd-has-display-table--m {
@@ -10039,9 +10520,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: table-cell!important
 }
 .fd-display-l-flex {
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
   display: flex!important
 }
 .fd-display-l-inline-flex {
+  display: -webkit-inline-box!important;
+  display: -ms-inline-flexbox!important;
   display: inline-flex!important
 }
 .fd-has-display-none--l {
@@ -10060,9 +10545,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: inline-grid!important
 }
 .fd-has-display-flex--l {
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
   display: flex!important
 }
 .fd-has-display-inline-flex--l {
+  display: -webkit-inline-box!important;
+  display: -ms-inline-flexbox!important;
   display: inline-flex!important
 }
 .fd-has-display-table--l {
@@ -10096,9 +10585,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: table-cell!important
 }
 .fd-display-xl-flex {
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
   display: flex!important
 }
 .fd-display-xl-inline-flex {
+  display: -webkit-inline-box!important;
+  display: -ms-inline-flexbox!important;
   display: inline-flex!important
 }
 .fd-has-display-none--xl {
@@ -10117,9 +10610,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: inline-grid!important
 }
 .fd-has-display-flex--xl {
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
   display: flex!important
 }
 .fd-has-display-inline-flex--xl {
+  display: -webkit-inline-box!important;
+  display: -ms-inline-flexbox!important;
   display: inline-flex!important
 }
 .fd-has-display-table--xl {
@@ -10153,9 +10650,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: table-cell!important
 }
 .fd-display-xxl-flex {
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
   display: flex!important
 }
 .fd-display-xxl-inline-flex {
+  display: -webkit-inline-box!important;
+  display: -ms-inline-flexbox!important;
   display: inline-flex!important
 }
 .fd-has-display-none--xxl {
@@ -10174,9 +10675,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: inline-grid!important
 }
 .fd-has-display-flex--xxl {
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
   display: flex!important
 }
 .fd-has-display-inline-flex--xxl {
+  display: -webkit-inline-box!important;
+  display: -ms-inline-flexbox!important;
   display: inline-flex!important
 }
 .fd-has-display-table--xxl {
@@ -11069,22 +11574,34 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   grid-gap: 1px!important
 }
 .fd-has-align-items-flex-start {
-  align-items: flex-start!important
+  -webkit-box-align: start!important;
+      -ms-flex-align: start!important;
+          align-items: flex-start!important
 }
 .fd-has-align-items-flex-end {
-  align-items: flex-end!important
+  -webkit-box-align: end!important;
+      -ms-flex-align: end!important;
+          align-items: flex-end!important
 }
 .fd-has-align-items-center {
-  align-items: center!important
+  -webkit-box-align: center!important;
+      -ms-flex-align: center!important;
+          align-items: center!important
 }
 .fd-has-align-items-baseline {
-  align-items: baseline!important
+  -webkit-box-align: baseline!important;
+      -ms-flex-align: baseline!important;
+          align-items: baseline!important
 }
 .fd-has-align-items-stretch {
-  align-items: stretch!important
+  -webkit-box-align: stretch!important;
+      -ms-flex-align: stretch!important;
+          align-items: stretch!important
 }
 .fd-has-flex-grow-1 {
-  flex-grow: 1!important
+  -webkit-box-flex: 1!important;
+      -ms-flex-positive: 1!important;
+          flex-grow: 1!important
 }
 .fd-table.fd-has-first-child-text-align-right td:first-child,
 .fd-table.fd-has-first-child-text-align-right th:first-child {

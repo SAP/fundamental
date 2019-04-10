@@ -1,3 +1,8 @@
+/*!
+ * Fiori Fundamentals v1.5.3
+ * Copyright (c) 2019 SAP SE or an SAP affiliate company.
+ * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
+ */
 :root {
   --fd-color-action-1: #0a6ed1;
   --fd-color-action-2: white;
@@ -98,7 +103,8 @@
 * Default styles for root elements
 */
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   min-height: 100%
 }
 body,
@@ -108,11 +114,13 @@ html {
   line-height: 1.42857
 }
 * {
-  box-sizing: inherit
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit
 }
 ::after,
 ::before {
-  box-sizing: inherit
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit
 }
 body {
   margin: 0;
@@ -170,6 +178,7 @@ img {
 a {
   text-decoration: none;
   display: inline-block;
+  -webkit-transition: all 125ms ease-in;
   transition: all 125ms ease-in;
   color: var(--fd-color-action)
 }
@@ -225,7 +234,8 @@ input[type=radio] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   font-size: inherit;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   outline: 0;
   border-style: solid;
   border-width: 1px;
@@ -233,7 +243,9 @@ input[type=radio] {
   border-color: var(--fd-forms-border-color);
   background-color: var(--fd-forms-background-color);
   border-radius: 4px;
+  -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
+  -webkit-transition: border-color 125ms ease-in,background-color 125ms ease-in,background-image 125ms ease-in;
   transition: border-color 125ms ease-in,background-color 125ms ease-in,background-image 125ms ease-in
 }
 .fd-checkbox .is-hover,
@@ -254,7 +266,8 @@ input.is-focus[type=checkbox],
 input.is-focus[type=radio],
 input:focus[type=checkbox],
 input:focus[type=radio] {
-  box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+          box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   --fd-forms-border-color: var(--fd-color-action-focus)
 }
 .is-invalid.fd-checkbox,
@@ -316,6 +329,7 @@ input[readonly][type=radio] {
 .fd-radio::after,
 input[type=checkbox]::after,
 input[type=radio]::after {
+  -webkit-transition: border-color 125ms ease-in;
   transition: border-color 125ms ease-in
 }
 fieldset {
@@ -344,7 +358,8 @@ input[type=url] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   font-size: inherit;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   outline: 0;
   border-style: solid;
   border-width: 1px;
@@ -352,6 +367,7 @@ input[type=url] {
   border-color: var(--fd-forms-border-color);
   background-color: var(--fd-forms-background-color);
   border-radius: 4px;
+  -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
   padding-left: 12px;
   padding-right: 12px;
@@ -400,7 +416,8 @@ input[type=time].is-focus,
 input[type=time]:focus,
 input[type=url].is-focus,
 input[type=url]:focus {
-  box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+          box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   --fd-forms-border-color: var(--fd-color-action-focus)
 }
 .fd-input.is-invalid,
@@ -512,6 +529,42 @@ input[type=url][readonly] {
   border-width: 0 0 1px;
   border-radius: 0
 }
+.fd-input::-webkit-input-placeholder,
+input[type=date]::-webkit-input-placeholder,
+input[type=email]::-webkit-input-placeholder,
+input[type=number]::-webkit-input-placeholder,
+input[type=password]::-webkit-input-placeholder,
+input[type=search]::-webkit-input-placeholder,
+input[type=tel]::-webkit-input-placeholder,
+input[type=text]::-webkit-input-placeholder,
+input[type=time]::-webkit-input-placeholder,
+input[type=url]::-webkit-input-placeholder {
+  color: var(--fd-color-neutral-4)
+}
+.fd-input:-ms-input-placeholder,
+input[type=date]:-ms-input-placeholder,
+input[type=email]:-ms-input-placeholder,
+input[type=number]:-ms-input-placeholder,
+input[type=password]:-ms-input-placeholder,
+input[type=search]:-ms-input-placeholder,
+input[type=tel]:-ms-input-placeholder,
+input[type=text]:-ms-input-placeholder,
+input[type=time]:-ms-input-placeholder,
+input[type=url]:-ms-input-placeholder {
+  color: var(--fd-color-neutral-4)
+}
+.fd-input::-ms-input-placeholder,
+input[type=date]::-ms-input-placeholder,
+input[type=email]::-ms-input-placeholder,
+input[type=number]::-ms-input-placeholder,
+input[type=password]::-ms-input-placeholder,
+input[type=search]::-ms-input-placeholder,
+input[type=tel]::-ms-input-placeholder,
+input[type=text]::-ms-input-placeholder,
+input[type=time]::-ms-input-placeholder,
+input[type=url]::-ms-input-placeholder {
+  color: var(--fd-color-neutral-4)
+}
 .fd-input::placeholder,
 input[type=date]::placeholder,
 input[type=email]::placeholder,
@@ -540,7 +593,8 @@ textarea {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   font-size: inherit;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   outline: 0;
   border-style: solid;
   border-width: 1px;
@@ -548,6 +602,7 @@ textarea {
   border-color: var(--fd-forms-border-color);
   background-color: var(--fd-forms-background-color);
   border-radius: 4px;
+  -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
   padding-left: 12px;
   padding-right: 12px;
@@ -565,7 +620,8 @@ textarea:hover {
 .fd-textarea:focus,
 textarea.is-focus,
 textarea:focus {
-  box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+          box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   --fd-forms-border-color: var(--fd-color-action-focus)
 }
 .fd-textarea.is-invalid,
@@ -622,7 +678,8 @@ select {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   font-size: inherit;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   outline: 0;
   border-style: solid;
   border-width: 1px;
@@ -630,10 +687,12 @@ select {
   border-color: var(--fd-forms-border-color);
   background-color: var(--fd-forms-background-color);
   border-radius: 4px;
+  -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
   padding-left: 12px;
   padding-right: 12px;
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   -moz-appearance: none;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzkiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzOSAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiNGQUZCRkMiIGQ9Ik0xIDBoMzd2MzZIMXoiLz48cGF0aCBkPSJNMSAwdjM2TTM4IDB2MzYiIHN0cm9rZT0iI0NFQ0VEMCIvPjxwYXRoIGQ9Ik0yNi45MTkgMTYuODQzbC03LjY2NyA4LjA1OGEuMzY0LjM2NCAwIDAgMS0uMjUzLjA5OS4zNjQuMzY0IDAgMCAxLS4yNTItLjFsLTcuNjY0LTguMDU3YS4yODMuMjgzIDAgMCAxIC4wMzQtLjQyOGwxLjcyMS0xLjM0MWEuMzUyLjM1MiAwIDAgMSAuMjE4LS4wNzRsLjAyNS4wMDFjLjA4OC4wMDYuMTcuMDQ1LjIyOC4xMDdMMTkgMjEuMjAybDUuNjkzLTYuMDk0Yy4xMi0uMTMuMzMtLjE0NS40Ny0uMDM0bDEuNzIyIDEuMzQxYS4yOTcuMjk3IDAgMCAxIC4xMTUuMjA3LjI4My4yODMgMCAwIDEtLjA4LjIyMXoiIGZpbGw9IiMwQTZFRDEiLz48L2c+PC9zdmc+);
   background-repeat: no-repeat;
@@ -652,7 +711,8 @@ select:hover {
 .fd-select:focus,
 select.is-focus,
 select:focus {
-  box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+  -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
+          box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   --fd-forms-border-color: var(--fd-color-action-focus)
 }
 .fd-select.is-invalid,
@@ -728,7 +788,8 @@ select::after {
   border-color: transparent;
   border-style: solid;
   border-width: 0 0 2px 2px;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   position: absolute;
   z-index: 2;
   top: calc(50% - 4px);
@@ -848,6 +909,7 @@ input[type=radio]::after {
   position: absolute;
   top: calc(50% - (8px/2));
   left: calc(50% - (8px/2));
+  -webkit-transition: background-color 125ms ease-in;
   transition: background-color 125ms ease-in;
   background-color: transparent
 }
@@ -884,7 +946,8 @@ input[type=checkbox]::before {
   border-color: transparent;
   border-style: solid;
   border-width: 0 0 2px 2px;
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   position: absolute;
   z-index: 2;
   top: calc(50% - 4px);
@@ -901,5 +964,6 @@ input[type=checkbox]:indeterminate {
   --fd-forms-background-color: var(--fd-color-action-selected);
   border-width: 3px;
   border-style: solid;
-  box-shadow: 0 0 0 1px var(--fd-forms-background-color)
+  -webkit-box-shadow: 0 0 0 1px var(--fd-forms-background-color);
+          box-shadow: 0 0 0 1px var(--fd-forms-background-color)
 }
