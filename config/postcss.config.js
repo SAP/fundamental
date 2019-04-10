@@ -12,6 +12,10 @@ module.exports = {
             cascade: true,
             browsers: ["last 2 versions"]
         },
+        'postcss-clean': {
+            format: 'beautify',
+            level: 1
+        },
         'postcss-banner': {
             banner: `Fiori Fundamentals v${packageVersion}
 Copyright (c) ${year} SAP SE or an SAP affiliate company.
