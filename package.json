@@ -19,7 +19,7 @@
     "start:playground": "npm run build && node test/app.js",
     "start": "npm run docs && npx gulp default",
     "std-version": "standard-version -m \"chore(release): version %s build ${TRAVIS_BUILD_NUMBER} [ci skip]\"",
-    "style:assets": "mkdir -p dist/{fonts,images} dist/fonts/72 && cp scss/icons/**.{eot,svg,ttf,woff} dist/ && cp scss/fonts/**/*.{eot,svg,ttf,woff,woff2} dist/fonts/72/ && cp public/images/* dist/images/",
+    "style:assets": "mkdir -p dist/{fonts,images} dist/fonts/72 && cp scss/icons/*.{eot,svg,ttf,woff} dist/ && cp scss/fonts/**/*.{eot,svg,ttf,woff,woff2} dist/fonts/72/ && cp public/images/* dist/images/",
     "style:compile": "node-sass -q --output-style expanded --precision 5 scss/ --output dist/",
     "style:less": "npx gulp pkg-less",
     "style:minify": "foreach -t -g \"dist/*.css\" -x \"cleancss -O1 specialComments:1 #{path} -o #{dir}/#{name}.min.css\" --no-c && foreach -t -g \"dist/components/*.css\" -x \"cleancss -O1 specialComments:1 #{path} -o #{dir}/#{name}.min.css\" --no-c",
