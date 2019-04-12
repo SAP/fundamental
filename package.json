@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run style:remove && npm run style:compile && npm run style:rename && npm run style:postCSS && npm run style:assets",
-    "build:all": "npm run build && npm run style:minify && npm run style:less",
+    "build:prod": "npm run build && npm run style:minify && npm run style:less",
     "deploy": "gh-pages -d docs/_site",
     "docs:compile": "npm run docs:config && npm run build && npx gulp docs-build",
     "docs:config": "./scripts/create-library-config.js",
