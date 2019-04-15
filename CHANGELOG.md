@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.4-rc.3"></a>
+## [1.5.4-rc.3](https://github.com/SAP/fundamental/compare/v1.5.4-rc.2...v1.5.4-rc.3) (2019-04-15)
+
+
+### Bug Fixes
+
+* remove gulp from dist folder build pipeline ([#1385](https://github.com/SAP/fundamental/issues/1385)) ([2ae183a](https://github.com/SAP/fundamental/commit/2ae183a))
+
+
+
+<a name="1.5.4-rc.2"></a>
+## [1.5.4-rc.2](https://github.com/SAP/fundamental/compare/v1.5.4-rc.1...v1.5.4-rc.2) (2019-04-15)
+
+
+### Bug Fixes
+
+* remove anchor modifier ([#1401](https://github.com/SAP/fundamental/issues/1401)) ([99a1899](https://github.com/SAP/fundamental/commit/99a1899))
+
+
+
 <a name="1.5.4-rc.1"></a>
 ## [1.5.4-rc.1](https://github.com/SAP/fundamental/compare/v1.5.4-rc.0...v1.5.4-rc.1) (2019-04-10)
 
