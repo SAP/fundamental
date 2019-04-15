@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.4-rc.2"></a>
+## [1.5.4-rc.2](https://github.com/SAP/fundamental/compare/v1.5.4-rc.1...v1.5.4-rc.2) (2019-04-15)
+
+
+### Bug Fixes
+
+* remove anchor modifier ([#1401](https://github.com/SAP/fundamental/issues/1401)) ([99a1899](https://github.com/SAP/fundamental/commit/99a1899))
+
+
+
 <a name="1.5.4-rc.1"></a>
 ## [1.5.4-rc.1](https://github.com/SAP/fundamental/compare/v1.5.4-rc.0...v1.5.4-rc.1) (2019-04-10)
 
