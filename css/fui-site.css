@@ -2026,7 +2026,9 @@
   --fd-forms-border-color: #89919a;
   --fd-forms-background-color: white;
   --fd-forms-height: 36px;
-  --fd-forms-height-compact: 36px;
+  --fd-forms-height-compact: 28px;
+  --fd-button-line-height: 34px;
+  --fd-button-line-height-compact: 26px;
   --fd-padding-ui: 8px;
   --fd-width-gutter: 8px; }
   .fd-for-touch {
@@ -3777,7 +3779,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
 /*!
 .fd-button+( (--compact), (--emphasized, --light), (--standard, --positive, --medium, --negative))+( (.is-disabled | [aria-disabled=true]) | (.is-selected | [aria-selected=true] | (.is-pressed | [aria-pressed=true]))
 */
-.fd-button, [class*="fd-button--"] {
+.fd-button, [class*="fd-button--"], a[class*="fd-button--"] {
   --fd-button-color: var(--fd-color-action-1);
   --fd-button-border-color: var(--fd-color-action-1);
   --fd-button-background-color: var(--fd-color-background-2);
@@ -3803,43 +3805,45 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
-  line-height: 1;
+  line-height: var(--fd-button-line-height);
   padding-left: 12px;
   padding-right: 12px;
+  text-align: center;
   border-style: solid;
   border-width: 1px;
   color: var(--fd-button-color);
   border-color: var(--fd-button-border-color);
   background-color: var(--fd-button-background-color);
   transition: all 0.125s ease-in; }
-  .fd-button::before, [class*="fd-button--"]::before {
+  .fd-button::before, [class*="fd-button--"]::before, a[class*="fd-button--"]::before {
     font-size: 1.14286rem;
     line-height: 1; }
-  .fd-button::after, [class*="fd-button--"]::after {
+  .fd-button::after, [class*="fd-button--"]::after, a[class*="fd-button--"]::after {
     font-size: 1.14286rem;
     line-height: 1; }
-  .fd-button::before, [class*="fd-button--"]::before {
+  .fd-button::before, [class*="fd-button--"]::before, a[class*="fd-button--"]::before {
     margin-right: 8px;
     vertical-align: text-bottom; }
-  [dir="rtl"] .fd-button::before, .fd-button[dir="rtl"]::before, [dir="rtl"] [class*="fd-button--"]::before, [class*="fd-button--"][dir="rtl"]::before {
+  [dir="rtl"] .fd-button::before, .fd-button[dir="rtl"]::before, [dir="rtl"] [class*="fd-button--"]::before, [class*="fd-button--"][dir="rtl"]::before, [dir="rtl"] a[class*="fd-button--"]::before, a[class*="fd-button--"][dir="rtl"]::before {
     margin-right: 0;
     margin-left: 8px; }
-  .fd-button::after, [class*="fd-button--"]::after {
+  .fd-button::after, [class*="fd-button--"]::after, a[class*="fd-button--"]::after {
     margin-left: 8px;
     vertical-align: middle; }
-  [dir="rtl"] .fd-button::after, .fd-button[dir="rtl"]::after, [dir="rtl"] [class*="fd-button--"]::after, [class*="fd-button--"][dir="rtl"]::after {
+  [dir="rtl"] .fd-button::after, .fd-button[dir="rtl"]::after, [dir="rtl"] [class*="fd-button--"]::after, [class*="fd-button--"][dir="rtl"]::after, [dir="rtl"] a[class*="fd-button--"]::after, a[class*="fd-button--"][dir="rtl"]::after {
     margin-left: 0;
     margin-right: 8px; }
-  .fd-button:empty, [class*="fd-button--"]:empty {
+  .fd-button:empty, [class*="fd-button--"]:empty, a[class*="fd-button--"]:empty {
     padding: 0; }
-    .fd-button:empty::before, .fd-button:empty::after, [class*="fd-button--"]:empty::before, [class*="fd-button--"]:empty::after {
+    .fd-button:empty::before, .fd-button:empty::after, [class*="fd-button--"]:empty::before, [class*="fd-button--"]:empty::after, a[class*="fd-button--"]:empty::before, a[class*="fd-button--"]:empty::after {
       margin-right: 0;
       margin-left: 0; }
-  .fd-button:focus, .fd-button.is-focus, [class*="fd-button--"]:focus, [class*="fd-button--"].is-focus {
+  .fd-button:focus, .fd-button.is-focus, [class*="fd-button--"]:focus, [class*="fd-button--"].is-focus, a[class*="fd-button--"]:focus, a[class*="fd-button--"].is-focus {
     box-shadow: 0 0 0 1px var(--fd-color-action-focus); }
   .fd-button:hover,
   .fd-button .is-hover, [class*="fd-button--"]:hover,
-  [class*="fd-button--"] .is-hover {
+  [class*="fd-button--"] .is-hover, a[class*="fd-button--"]:hover,
+  a[class*="fd-button--"] .is-hover {
     --fd-button-background-color: var(--fd-color-action-hover);
     --fd-button-color: var(--fd-color-action-2); }
     .fd-button:hover[aria-disabled="true"], .fd-button:hover.is-disabled, .fd-button:hover:disabled,
@@ -3848,41 +3852,74 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-button .is-hover:disabled, [class*="fd-button--"]:hover[aria-disabled="true"], [class*="fd-button--"]:hover.is-disabled, [class*="fd-button--"]:hover:disabled,
     [class*="fd-button--"] .is-hover[aria-disabled="true"],
     [class*="fd-button--"] .is-hover.is-disabled,
-    [class*="fd-button--"] .is-hover:disabled {
+    [class*="fd-button--"] .is-hover:disabled, a[class*="fd-button--"]:hover[aria-disabled="true"], a[class*="fd-button--"]:hover.is-disabled, a[class*="fd-button--"]:hover:disabled,
+    a[class*="fd-button--"] .is-hover[aria-disabled="true"],
+    a[class*="fd-button--"] .is-hover.is-disabled,
+    a[class*="fd-button--"] .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-background-2);
       --fd-button-color: var(--fd-color-action-1); }
-  .fd-button:active, .fd-button.is-active, .fd-button[aria-selected="true"], .fd-button.is-selected, .fd-button[aria-pressed="true"], .fd-button.is-pressed, [class*="fd-button--"]:active, [class*="fd-button--"].is-active, [class*="fd-button--"][aria-selected="true"], [class*="fd-button--"].is-selected, [class*="fd-button--"][aria-pressed="true"], [class*="fd-button--"].is-pressed {
+  .fd-button:active, .fd-button.is-active, .fd-button[aria-selected="true"], .fd-button.is-selected, .fd-button[aria-pressed="true"], .fd-button.is-pressed, [class*="fd-button--"]:active, [class*="fd-button--"].is-active, [class*="fd-button--"][aria-selected="true"], [class*="fd-button--"].is-selected, [class*="fd-button--"][aria-pressed="true"], [class*="fd-button--"].is-pressed, a[class*="fd-button--"]:active, a[class*="fd-button--"].is-active, a[class*="fd-button--"][aria-selected="true"], a[class*="fd-button--"].is-selected, a[class*="fd-button--"][aria-pressed="true"], a[class*="fd-button--"].is-pressed {
     --fd-button-background-color: var(--fd-color-action-selected);
     --fd-button-color: var(--fd-color-action-2); }
-  .fd-button[aria-disabled="true"], .fd-button.is-disabled, .fd-button:disabled, [class*="fd-button--"][aria-disabled="true"], [class*="fd-button--"].is-disabled, [class*="fd-button--"]:disabled {
+  .fd-button[aria-disabled="true"], .fd-button.is-disabled, .fd-button:disabled, [class*="fd-button--"][aria-disabled="true"], [class*="fd-button--"].is-disabled, [class*="fd-button--"]:disabled, a[class*="fd-button--"][aria-disabled="true"], a[class*="fd-button--"].is-disabled, a[class*="fd-button--"]:disabled {
     opacity: 0.4;
     cursor: not-allowed; }
 
-.fd-button--compact {
+.fd-button--compact,
+a.fd-button--compact {
   height: var(--fd-forms-height-compact);
   max-height: var(--fd-forms-height-compact);
-  min-width: var(--fd-forms-height-compact); }
+  min-width: var(--fd-forms-height-compact);
+  line-height: var(--fd-button-line-height-compact); }
+  .fd-for-touch .fd-button--compact, .fd-for-touch
+  a.fd-button--compact {
+    height: var(--fd-forms-height);
+    min-width: var(--fd-forms-height);
+    line-height: var(--fd-button-line-height); }
+  .fd-for-compact .fd-button--compact, .fd-for-compact
+  a.fd-button--compact {
+    height: var(--fd-forms-height-compact);
+    min-width: var(--fd-forms-height-compact);
+    line-height: var(--fd-button-line-height-compact); }
   @media (min-width: 600px) {
-    .fd-button--compact {
-      min-width: var(--fd-forms-height); } }
+    .fd-button--compact,
+    a.fd-button--compact {
+      height: var(--fd-forms-height-compact);
+      min-width: var(--fd-forms-height-compact);
+      line-height: var(--fd-button-line-height-compact); } }
 
-.fd-button--emphasized {
+.fd-button--emphasized,
+a.fd-button--emphasized {
   font-weight: 700;
   --fd-button-color: var(--fd-color-action-2);
   --fd-button-border-color: var(--fd-color-action-1);
   --fd-button-background-color: var(--fd-color-action-1); }
   .fd-button--emphasized:hover,
-  .fd-button--emphasized .is-hover {
+  .fd-button--emphasized .is-hover,
+  a.fd-button--emphasized:hover,
+  a.fd-button--emphasized .is-hover {
     --fd-button-background-color: var(--fd-color-action-hover);
     --fd-button-color: var(--fd-color-action-2); }
     .fd-button--emphasized:hover[aria-disabled="true"], .fd-button--emphasized:hover.is-disabled, .fd-button--emphasized:hover:disabled,
     .fd-button--emphasized .is-hover[aria-disabled="true"],
     .fd-button--emphasized .is-hover.is-disabled,
-    .fd-button--emphasized .is-hover:disabled {
+    .fd-button--emphasized .is-hover:disabled,
+    a.fd-button--emphasized:hover[aria-disabled="true"],
+    a.fd-button--emphasized:hover.is-disabled,
+    a.fd-button--emphasized:hover:disabled,
+    a.fd-button--emphasized .is-hover[aria-disabled="true"],
+    a.fd-button--emphasized .is-hover.is-disabled,
+    a.fd-button--emphasized .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-action-1);
       --fd-button-color: var(--fd-color-action-2); }
   .fd-button--emphasized.fd-button--standard, .fd-button-group .fd-button--emphasized[class*="fd-button--"],
-  .fd-button-group .fd-button--emphasized.fd-button, .fd-button--emphasized.fd-button--positive, .fd-button--emphasized.fd-button--negative, .fd-button--emphasized.fd-button--medium {
+  .fd-button-group .fd-button--emphasized.fd-button, .fd-button--emphasized.fd-button--positive, .fd-button--emphasized.fd-button--negative, .fd-button--emphasized.fd-button--medium,
+  a.fd-button--emphasized.fd-button--standard,
+  .fd-button-group a.fd-button--emphasized[class*="fd-button--"],
+  .fd-button-group a.fd-button--emphasized.fd-button,
+  a.fd-button--emphasized.fd-button--positive,
+  a.fd-button--emphasized.fd-button--negative,
+  a.fd-button--emphasized.fd-button--medium {
     --fd-button-color: var(--fd-color-action-2); }
     .fd-button--emphasized.fd-button--standard:hover[aria-disabled="true"], .fd-button-group .fd-button--emphasized:hover[aria-disabled="true"][class*="fd-button--"],
     .fd-button-group .fd-button--emphasized.fd-button:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--standard:hover.is-disabled, .fd-button-group .fd-button--emphasized:hover.is-disabled[class*="fd-button--"],
@@ -3905,10 +3942,49 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-button--emphasized.fd-button--negative .is-hover:disabled, .fd-button--emphasized.fd-button--medium:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--medium:hover.is-disabled, .fd-button--emphasized.fd-button--medium:hover:disabled,
     .fd-button--emphasized.fd-button--medium .is-hover[aria-disabled="true"],
     .fd-button--emphasized.fd-button--medium .is-hover.is-disabled,
-    .fd-button--emphasized.fd-button--medium .is-hover:disabled {
+    .fd-button--emphasized.fd-button--medium .is-hover:disabled,
+    a.fd-button--emphasized.fd-button--standard:hover[aria-disabled="true"],
+    .fd-button-group a.fd-button--emphasized:hover[aria-disabled="true"][class*="fd-button--"],
+    .fd-button-group a.fd-button--emphasized.fd-button:hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--standard:hover.is-disabled,
+    .fd-button-group a.fd-button--emphasized:hover.is-disabled[class*="fd-button--"],
+    .fd-button-group a.fd-button--emphasized.fd-button:hover.is-disabled,
+    a.fd-button--emphasized.fd-button--standard:hover:disabled,
+    .fd-button-group a.fd-button--emphasized:hover:disabled[class*="fd-button--"],
+    .fd-button-group a.fd-button--emphasized.fd-button:hover:disabled,
+    a.fd-button--emphasized.fd-button--standard .is-hover[aria-disabled="true"],
+    .fd-button-group a.fd-button--emphasized[class*="fd-button--"] .is-hover[aria-disabled="true"],
+    .fd-button-group a.fd-button--emphasized.fd-button .is-hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--standard .is-hover.is-disabled,
+    .fd-button-group a.fd-button--emphasized[class*="fd-button--"] .is-hover.is-disabled,
+    .fd-button-group a.fd-button--emphasized.fd-button .is-hover.is-disabled,
+    a.fd-button--emphasized.fd-button--standard .is-hover:disabled,
+    .fd-button-group a.fd-button--emphasized[class*="fd-button--"] .is-hover:disabled,
+    .fd-button-group a.fd-button--emphasized.fd-button .is-hover:disabled,
+    a.fd-button--emphasized.fd-button--positive:hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--positive:hover.is-disabled,
+    a.fd-button--emphasized.fd-button--positive:hover:disabled,
+    a.fd-button--emphasized.fd-button--positive .is-hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--positive .is-hover.is-disabled,
+    a.fd-button--emphasized.fd-button--positive .is-hover:disabled,
+    a.fd-button--emphasized.fd-button--negative:hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--negative:hover.is-disabled,
+    a.fd-button--emphasized.fd-button--negative:hover:disabled,
+    a.fd-button--emphasized.fd-button--negative .is-hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--negative .is-hover.is-disabled,
+    a.fd-button--emphasized.fd-button--negative .is-hover:disabled,
+    a.fd-button--emphasized.fd-button--medium:hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--medium:hover.is-disabled,
+    a.fd-button--emphasized.fd-button--medium:hover:disabled,
+    a.fd-button--emphasized.fd-button--medium .is-hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--medium .is-hover.is-disabled,
+    a.fd-button--emphasized.fd-button--medium .is-hover:disabled {
       --fd-button-color: var(--fd-color-action-2); }
   .fd-button--emphasized.fd-button--standard, .fd-button-group .fd-button--emphasized[class*="fd-button--"],
-  .fd-button-group .fd-button--emphasized.fd-button {
+  .fd-button-group .fd-button--emphasized.fd-button,
+  a.fd-button--emphasized.fd-button--standard,
+  .fd-button-group a.fd-button--emphasized[class*="fd-button--"],
+  .fd-button-group a.fd-button--emphasized.fd-button {
     --fd-button-border-color: var(--fd-color-status-4);
     --fd-button-background-color: var(--fd-color-status-4); }
     .fd-button--emphasized.fd-button--standard:hover[aria-disabled="true"], .fd-button-group .fd-button--emphasized:hover[aria-disabled="true"][class*="fd-button--"],
@@ -3923,51 +3999,111 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-button-group .fd-button--emphasized.fd-button .is-hover.is-disabled,
     .fd-button--emphasized.fd-button--standard .is-hover:disabled,
     .fd-button-group .fd-button--emphasized[class*="fd-button--"] .is-hover:disabled,
-    .fd-button-group .fd-button--emphasized.fd-button .is-hover:disabled {
+    .fd-button-group .fd-button--emphasized.fd-button .is-hover:disabled,
+    a.fd-button--emphasized.fd-button--standard:hover[aria-disabled="true"],
+    .fd-button-group a.fd-button--emphasized:hover[aria-disabled="true"][class*="fd-button--"],
+    .fd-button-group a.fd-button--emphasized.fd-button:hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--standard:hover.is-disabled,
+    .fd-button-group a.fd-button--emphasized:hover.is-disabled[class*="fd-button--"],
+    .fd-button-group a.fd-button--emphasized.fd-button:hover.is-disabled,
+    a.fd-button--emphasized.fd-button--standard:hover:disabled,
+    .fd-button-group a.fd-button--emphasized:hover:disabled[class*="fd-button--"],
+    .fd-button-group a.fd-button--emphasized.fd-button:hover:disabled,
+    a.fd-button--emphasized.fd-button--standard .is-hover[aria-disabled="true"],
+    .fd-button-group a.fd-button--emphasized[class*="fd-button--"] .is-hover[aria-disabled="true"],
+    .fd-button-group a.fd-button--emphasized.fd-button .is-hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--standard .is-hover.is-disabled,
+    .fd-button-group a.fd-button--emphasized[class*="fd-button--"] .is-hover.is-disabled,
+    .fd-button-group a.fd-button--emphasized.fd-button .is-hover.is-disabled,
+    a.fd-button--emphasized.fd-button--standard .is-hover:disabled,
+    .fd-button-group a.fd-button--emphasized[class*="fd-button--"] .is-hover:disabled,
+    .fd-button-group a.fd-button--emphasized.fd-button .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-status-4); }
-  .fd-button--emphasized.fd-button--negative {
+  .fd-button--emphasized.fd-button--negative,
+  a.fd-button--emphasized.fd-button--negative {
     --fd-button-border-color: var(--fd-color-status-3);
     --fd-button-background-color: var(--fd-color-status-3); }
     .fd-button--emphasized.fd-button--negative:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--negative:hover.is-disabled, .fd-button--emphasized.fd-button--negative:hover:disabled,
     .fd-button--emphasized.fd-button--negative .is-hover[aria-disabled="true"],
     .fd-button--emphasized.fd-button--negative .is-hover.is-disabled,
-    .fd-button--emphasized.fd-button--negative .is-hover:disabled {
+    .fd-button--emphasized.fd-button--negative .is-hover:disabled,
+    a.fd-button--emphasized.fd-button--negative:hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--negative:hover.is-disabled,
+    a.fd-button--emphasized.fd-button--negative:hover:disabled,
+    a.fd-button--emphasized.fd-button--negative .is-hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--negative .is-hover.is-disabled,
+    a.fd-button--emphasized.fd-button--negative .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-status-3); }
-  .fd-button--emphasized.fd-button--medium {
+  .fd-button--emphasized.fd-button--medium,
+  a.fd-button--emphasized.fd-button--medium {
     --fd-button-border-color: var(--fd-color-status-2);
     --fd-button-background-color: var(--fd-color-status-2); }
     .fd-button--emphasized.fd-button--medium:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--medium:hover.is-disabled, .fd-button--emphasized.fd-button--medium:hover:disabled,
     .fd-button--emphasized.fd-button--medium .is-hover[aria-disabled="true"],
     .fd-button--emphasized.fd-button--medium .is-hover.is-disabled,
-    .fd-button--emphasized.fd-button--medium .is-hover:disabled {
+    .fd-button--emphasized.fd-button--medium .is-hover:disabled,
+    a.fd-button--emphasized.fd-button--medium:hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--medium:hover.is-disabled,
+    a.fd-button--emphasized.fd-button--medium:hover:disabled,
+    a.fd-button--emphasized.fd-button--medium .is-hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--medium .is-hover.is-disabled,
+    a.fd-button--emphasized.fd-button--medium .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-status-2); }
-  .fd-button--emphasized.fd-button--positive {
+  .fd-button--emphasized.fd-button--positive,
+  a.fd-button--emphasized.fd-button--positive {
     --fd-button-border-color: var(--fd-color-status-1);
     --fd-button-background-color: var(--fd-color-status-1); }
     .fd-button--emphasized.fd-button--positive:hover[aria-disabled="true"], .fd-button--emphasized.fd-button--positive:hover.is-disabled, .fd-button--emphasized.fd-button--positive:hover:disabled,
     .fd-button--emphasized.fd-button--positive .is-hover[aria-disabled="true"],
     .fd-button--emphasized.fd-button--positive .is-hover.is-disabled,
-    .fd-button--emphasized.fd-button--positive .is-hover:disabled {
+    .fd-button--emphasized.fd-button--positive .is-hover:disabled,
+    a.fd-button--emphasized.fd-button--positive:hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--positive:hover.is-disabled,
+    a.fd-button--emphasized.fd-button--positive:hover:disabled,
+    a.fd-button--emphasized.fd-button--positive .is-hover[aria-disabled="true"],
+    a.fd-button--emphasized.fd-button--positive .is-hover.is-disabled,
+    a.fd-button--emphasized.fd-button--positive .is-hover:disabled {
       --fd-button-background-color: var(--fd-color-status-1); }
 
-.fd-button--light {
+.fd-button--light,
+a.fd-button--light {
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent; }
   .fd-button--light:hover,
-  .fd-button--light .is-hover {
+  .fd-button--light .is-hover,
+  a.fd-button--light:hover,
+  a.fd-button--light .is-hover {
     --fd-button-background-color: var(--fd-color-neutral-1);
     --fd-button-color: var(--fd-color-action-1); }
     .fd-button--light:hover[aria-disabled="true"], .fd-button--light:hover.is-disabled, .fd-button--light:hover:disabled,
     .fd-button--light .is-hover[aria-disabled="true"],
     .fd-button--light .is-hover.is-disabled,
-    .fd-button--light .is-hover:disabled {
+    .fd-button--light .is-hover:disabled,
+    a.fd-button--light:hover[aria-disabled="true"],
+    a.fd-button--light:hover.is-disabled,
+    a.fd-button--light:hover:disabled,
+    a.fd-button--light .is-hover[aria-disabled="true"],
+    a.fd-button--light .is-hover.is-disabled,
+    a.fd-button--light .is-hover:disabled {
       --fd-button-background-color: transparent;
       --fd-button-color: var(--fd-color-action-1); }
-  .fd-button--light:active, .fd-button--light.is-active, .fd-button--light[aria-selected="true"], .fd-button--light.is-selected, .fd-button--light[aria-pressed="true"], .fd-button--light.is-pressed {
+  .fd-button--light:active, .fd-button--light.is-active, .fd-button--light[aria-selected="true"], .fd-button--light.is-selected, .fd-button--light[aria-pressed="true"], .fd-button--light.is-pressed,
+  a.fd-button--light:active,
+  a.fd-button--light.is-active,
+  a.fd-button--light[aria-selected="true"],
+  a.fd-button--light.is-selected,
+  a.fd-button--light[aria-pressed="true"],
+  a.fd-button--light.is-pressed {
     --fd-button-background-color: var(--fd-color-action-selected);
     --fd-button-color: var(--fd-color-action-2); }
   .fd-button--light.fd-button--standard, .fd-button-group .fd-button--light[class*="fd-button--"],
-  .fd-button-group .fd-button--light.fd-button, .fd-button--light.fd-button--positive, .fd-button--light.fd-button--negative, .fd-button--light.fd-button--medium {
+  .fd-button-group .fd-button--light.fd-button, .fd-button--light.fd-button--positive, .fd-button--light.fd-button--negative, .fd-button--light.fd-button--medium,
+  a.fd-button--light.fd-button--standard,
+  .fd-button-group a.fd-button--light[class*="fd-button--"],
+  .fd-button-group a.fd-button--light.fd-button,
+  a.fd-button--light.fd-button--positive,
+  a.fd-button--light.fd-button--negative,
+  a.fd-button--light.fd-button--medium {
     --fd-button-border-color: transparent;
     --fd-button-background-color: transparent; }
     .fd-button--light.fd-button--standard:hover, .fd-button-group .fd-button--light:hover[class*="fd-button--"],
@@ -3977,7 +4113,19 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-button-group .fd-button--light.fd-button .is-hover, .fd-button--light.fd-button--positive:hover,
     .fd-button--light.fd-button--positive .is-hover, .fd-button--light.fd-button--negative:hover,
     .fd-button--light.fd-button--negative .is-hover, .fd-button--light.fd-button--medium:hover,
-    .fd-button--light.fd-button--medium .is-hover {
+    .fd-button--light.fd-button--medium .is-hover,
+    a.fd-button--light.fd-button--standard:hover,
+    .fd-button-group a.fd-button--light:hover[class*="fd-button--"],
+    .fd-button-group a.fd-button--light.fd-button:hover,
+    a.fd-button--light.fd-button--standard .is-hover,
+    .fd-button-group a.fd-button--light[class*="fd-button--"] .is-hover,
+    .fd-button-group a.fd-button--light.fd-button .is-hover,
+    a.fd-button--light.fd-button--positive:hover,
+    a.fd-button--light.fd-button--positive .is-hover,
+    a.fd-button--light.fd-button--negative:hover,
+    a.fd-button--light.fd-button--negative .is-hover,
+    a.fd-button--light.fd-button--medium:hover,
+    a.fd-button--light.fd-button--medium .is-hover {
       --fd-button-background-color: var(--fd-color-neutral-1); }
       .fd-button--light.fd-button--standard:hover[aria-disabled="true"], .fd-button-group .fd-button--light:hover[aria-disabled="true"][class*="fd-button--"],
       .fd-button-group .fd-button--light.fd-button:hover[aria-disabled="true"], .fd-button--light.fd-button--standard:hover.is-disabled, .fd-button-group .fd-button--light:hover.is-disabled[class*="fd-button--"],
@@ -4000,16 +4148,61 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       .fd-button--light.fd-button--negative .is-hover:disabled, .fd-button--light.fd-button--medium:hover[aria-disabled="true"], .fd-button--light.fd-button--medium:hover.is-disabled, .fd-button--light.fd-button--medium:hover:disabled,
       .fd-button--light.fd-button--medium .is-hover[aria-disabled="true"],
       .fd-button--light.fd-button--medium .is-hover.is-disabled,
-      .fd-button--light.fd-button--medium .is-hover:disabled {
+      .fd-button--light.fd-button--medium .is-hover:disabled,
+      a.fd-button--light.fd-button--standard:hover[aria-disabled="true"],
+      .fd-button-group a.fd-button--light:hover[aria-disabled="true"][class*="fd-button--"],
+      .fd-button-group a.fd-button--light.fd-button:hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--standard:hover.is-disabled,
+      .fd-button-group a.fd-button--light:hover.is-disabled[class*="fd-button--"],
+      .fd-button-group a.fd-button--light.fd-button:hover.is-disabled,
+      a.fd-button--light.fd-button--standard:hover:disabled,
+      .fd-button-group a.fd-button--light:hover:disabled[class*="fd-button--"],
+      .fd-button-group a.fd-button--light.fd-button:hover:disabled,
+      a.fd-button--light.fd-button--standard .is-hover[aria-disabled="true"],
+      .fd-button-group a.fd-button--light[class*="fd-button--"] .is-hover[aria-disabled="true"],
+      .fd-button-group a.fd-button--light.fd-button .is-hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--standard .is-hover.is-disabled,
+      .fd-button-group a.fd-button--light[class*="fd-button--"] .is-hover.is-disabled,
+      .fd-button-group a.fd-button--light.fd-button .is-hover.is-disabled,
+      a.fd-button--light.fd-button--standard .is-hover:disabled,
+      .fd-button-group a.fd-button--light[class*="fd-button--"] .is-hover:disabled,
+      .fd-button-group a.fd-button--light.fd-button .is-hover:disabled,
+      a.fd-button--light.fd-button--positive:hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--positive:hover.is-disabled,
+      a.fd-button--light.fd-button--positive:hover:disabled,
+      a.fd-button--light.fd-button--positive .is-hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--positive .is-hover.is-disabled,
+      a.fd-button--light.fd-button--positive .is-hover:disabled,
+      a.fd-button--light.fd-button--negative:hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--negative:hover.is-disabled,
+      a.fd-button--light.fd-button--negative:hover:disabled,
+      a.fd-button--light.fd-button--negative .is-hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--negative .is-hover.is-disabled,
+      a.fd-button--light.fd-button--negative .is-hover:disabled,
+      a.fd-button--light.fd-button--medium:hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--medium:hover.is-disabled,
+      a.fd-button--light.fd-button--medium:hover:disabled,
+      a.fd-button--light.fd-button--medium .is-hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--medium .is-hover.is-disabled,
+      a.fd-button--light.fd-button--medium .is-hover:disabled {
         --fd-button-background-color: transparent; }
   .fd-button--light.fd-button--standard, .fd-button-group .fd-button--light[class*="fd-button--"],
-  .fd-button-group .fd-button--light.fd-button {
+  .fd-button-group .fd-button--light.fd-button,
+  a.fd-button--light.fd-button--standard,
+  .fd-button-group a.fd-button--light[class*="fd-button--"],
+  .fd-button-group a.fd-button--light.fd-button {
     --fd-button-color: var(--fd-color-status-4); }
     .fd-button--light.fd-button--standard:hover, .fd-button-group .fd-button--light:hover[class*="fd-button--"],
     .fd-button-group .fd-button--light.fd-button:hover,
     .fd-button--light.fd-button--standard .is-hover,
     .fd-button-group .fd-button--light[class*="fd-button--"] .is-hover,
-    .fd-button-group .fd-button--light.fd-button .is-hover {
+    .fd-button-group .fd-button--light.fd-button .is-hover,
+    a.fd-button--light.fd-button--standard:hover,
+    .fd-button-group a.fd-button--light:hover[class*="fd-button--"],
+    .fd-button-group a.fd-button--light.fd-button:hover,
+    a.fd-button--light.fd-button--standard .is-hover,
+    .fd-button-group a.fd-button--light[class*="fd-button--"] .is-hover,
+    .fd-button-group a.fd-button--light.fd-button .is-hover {
       --fd-button-color: var(--fd-color-status-4); }
       .fd-button--light.fd-button--standard:hover[aria-disabled="true"], .fd-button-group .fd-button--light:hover[aria-disabled="true"][class*="fd-button--"],
       .fd-button-group .fd-button--light.fd-button:hover[aria-disabled="true"], .fd-button--light.fd-button--standard:hover.is-disabled, .fd-button-group .fd-button--light:hover.is-disabled[class*="fd-button--"],
@@ -4023,7 +4216,25 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
       .fd-button-group .fd-button--light.fd-button .is-hover.is-disabled,
       .fd-button--light.fd-button--standard .is-hover:disabled,
       .fd-button-group .fd-button--light[class*="fd-button--"] .is-hover:disabled,
-      .fd-button-group .fd-button--light.fd-button .is-hover:disabled {
+      .fd-button-group .fd-button--light.fd-button .is-hover:disabled,
+      a.fd-button--light.fd-button--standard:hover[aria-disabled="true"],
+      .fd-button-group a.fd-button--light:hover[aria-disabled="true"][class*="fd-button--"],
+      .fd-button-group a.fd-button--light.fd-button:hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--standard:hover.is-disabled,
+      .fd-button-group a.fd-button--light:hover.is-disabled[class*="fd-button--"],
+      .fd-button-group a.fd-button--light.fd-button:hover.is-disabled,
+      a.fd-button--light.fd-button--standard:hover:disabled,
+      .fd-button-group a.fd-button--light:hover:disabled[class*="fd-button--"],
+      .fd-button-group a.fd-button--light.fd-button:hover:disabled,
+      a.fd-button--light.fd-button--standard .is-hover[aria-disabled="true"],
+      .fd-button-group a.fd-button--light[class*="fd-button--"] .is-hover[aria-disabled="true"],
+      .fd-button-group a.fd-button--light.fd-button .is-hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--standard .is-hover.is-disabled,
+      .fd-button-group a.fd-button--light[class*="fd-button--"] .is-hover.is-disabled,
+      .fd-button-group a.fd-button--light.fd-button .is-hover.is-disabled,
+      a.fd-button--light.fd-button--standard .is-hover:disabled,
+      .fd-button-group a.fd-button--light[class*="fd-button--"] .is-hover:disabled,
+      .fd-button-group a.fd-button--light.fd-button .is-hover:disabled {
         --fd-button-color: var(--fd-color-status-4); }
     .fd-button--light.fd-button--standard:active, .fd-button-group .fd-button--light:active[class*="fd-button--"],
     .fd-button-group .fd-button--light.fd-button:active, .fd-button--light.fd-button--standard.is-active, .fd-button-group .fd-button--light.is-active[class*="fd-button--"],
@@ -4031,51 +4242,120 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-button-group .fd-button--light.fd-button[aria-selected="true"], .fd-button--light.fd-button--standard.is-selected, .fd-button-group .fd-button--light.is-selected[class*="fd-button--"],
     .fd-button-group .fd-button--light.is-selected.fd-button, .fd-button--light.fd-button--standard[aria-pressed="true"], .fd-button-group .fd-button--light[aria-pressed="true"][class*="fd-button--"],
     .fd-button-group .fd-button--light.fd-button[aria-pressed="true"], .fd-button--light.fd-button--standard.is-pressed, .fd-button-group .fd-button--light.is-pressed[class*="fd-button--"],
-    .fd-button-group .fd-button--light.is-pressed.fd-button {
+    .fd-button-group .fd-button--light.is-pressed.fd-button,
+    a.fd-button--light.fd-button--standard:active,
+    .fd-button-group a.fd-button--light:active[class*="fd-button--"],
+    .fd-button-group a.fd-button--light.fd-button:active,
+    a.fd-button--light.fd-button--standard.is-active,
+    .fd-button-group a.fd-button--light.is-active[class*="fd-button--"],
+    .fd-button-group a.fd-button--light.is-active.fd-button,
+    a.fd-button--light.fd-button--standard[aria-selected="true"],
+    .fd-button-group a.fd-button--light[aria-selected="true"][class*="fd-button--"],
+    .fd-button-group a.fd-button--light.fd-button[aria-selected="true"],
+    a.fd-button--light.fd-button--standard.is-selected,
+    .fd-button-group a.fd-button--light.is-selected[class*="fd-button--"],
+    .fd-button-group a.fd-button--light.is-selected.fd-button,
+    a.fd-button--light.fd-button--standard[aria-pressed="true"],
+    .fd-button-group a.fd-button--light[aria-pressed="true"][class*="fd-button--"],
+    .fd-button-group a.fd-button--light.fd-button[aria-pressed="true"],
+    a.fd-button--light.fd-button--standard.is-pressed,
+    .fd-button-group a.fd-button--light.is-pressed[class*="fd-button--"],
+    .fd-button-group a.fd-button--light.is-pressed.fd-button {
       --fd-button-background-color: var(--fd-color-status-4);
       --fd-button-color: var(--fd-color-action-2); }
-  .fd-button--light.fd-button--negative {
+  .fd-button--light.fd-button--negative,
+  a.fd-button--light.fd-button--negative {
     --fd-button-color: var(--fd-color-status-3); }
     .fd-button--light.fd-button--negative:hover,
-    .fd-button--light.fd-button--negative .is-hover {
+    .fd-button--light.fd-button--negative .is-hover,
+    a.fd-button--light.fd-button--negative:hover,
+    a.fd-button--light.fd-button--negative .is-hover {
       --fd-button-color: var(--fd-color-status-3); }
       .fd-button--light.fd-button--negative:hover[aria-disabled="true"], .fd-button--light.fd-button--negative:hover.is-disabled, .fd-button--light.fd-button--negative:hover:disabled,
       .fd-button--light.fd-button--negative .is-hover[aria-disabled="true"],
       .fd-button--light.fd-button--negative .is-hover.is-disabled,
-      .fd-button--light.fd-button--negative .is-hover:disabled {
+      .fd-button--light.fd-button--negative .is-hover:disabled,
+      a.fd-button--light.fd-button--negative:hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--negative:hover.is-disabled,
+      a.fd-button--light.fd-button--negative:hover:disabled,
+      a.fd-button--light.fd-button--negative .is-hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--negative .is-hover.is-disabled,
+      a.fd-button--light.fd-button--negative .is-hover:disabled {
         --fd-button-color: var(--fd-color-status-3); }
-    .fd-button--light.fd-button--negative:active, .fd-button--light.fd-button--negative.is-active, .fd-button--light.fd-button--negative[aria-selected="true"], .fd-button--light.fd-button--negative.is-selected, .fd-button--light.fd-button--negative[aria-pressed="true"], .fd-button--light.fd-button--negative.is-pressed {
+    .fd-button--light.fd-button--negative:active, .fd-button--light.fd-button--negative.is-active, .fd-button--light.fd-button--negative[aria-selected="true"], .fd-button--light.fd-button--negative.is-selected, .fd-button--light.fd-button--negative[aria-pressed="true"], .fd-button--light.fd-button--negative.is-pressed,
+    a.fd-button--light.fd-button--negative:active,
+    a.fd-button--light.fd-button--negative.is-active,
+    a.fd-button--light.fd-button--negative[aria-selected="true"],
+    a.fd-button--light.fd-button--negative.is-selected,
+    a.fd-button--light.fd-button--negative[aria-pressed="true"],
+    a.fd-button--light.fd-button--negative.is-pressed {
       --fd-button-background-color: var(--fd-color-status-3);
       --fd-button-color: var(--fd-color-action-2); }
-  .fd-button--light.fd-button--positive {
+  .fd-button--light.fd-button--positive,
+  a.fd-button--light.fd-button--positive {
     --fd-button-color: var(--fd-color-status-1); }
     .fd-button--light.fd-button--positive:hover,
-    .fd-button--light.fd-button--positive .is-hover {
+    .fd-button--light.fd-button--positive .is-hover,
+    a.fd-button--light.fd-button--positive:hover,
+    a.fd-button--light.fd-button--positive .is-hover {
       --fd-button-color: var(--fd-color-status-1); }
       .fd-button--light.fd-button--positive:hover[aria-disabled="true"], .fd-button--light.fd-button--positive:hover.is-disabled, .fd-button--light.fd-button--positive:hover:disabled,
       .fd-button--light.fd-button--positive .is-hover[aria-disabled="true"],
       .fd-button--light.fd-button--positive .is-hover.is-disabled,
-      .fd-button--light.fd-button--positive .is-hover:disabled {
+      .fd-button--light.fd-button--positive .is-hover:disabled,
+      a.fd-button--light.fd-button--positive:hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--positive:hover.is-disabled,
+      a.fd-button--light.fd-button--positive:hover:disabled,
+      a.fd-button--light.fd-button--positive .is-hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--positive .is-hover.is-disabled,
+      a.fd-button--light.fd-button--positive .is-hover:disabled {
         --fd-button-color: var(--fd-color-status-1); }
-    .fd-button--light.fd-button--positive:active, .fd-button--light.fd-button--positive.is-active, .fd-button--light.fd-button--positive[aria-selected="true"], .fd-button--light.fd-button--positive.is-selected, .fd-button--light.fd-button--positive[aria-pressed="true"], .fd-button--light.fd-button--positive.is-pressed {
+    .fd-button--light.fd-button--positive:active, .fd-button--light.fd-button--positive.is-active, .fd-button--light.fd-button--positive[aria-selected="true"], .fd-button--light.fd-button--positive.is-selected, .fd-button--light.fd-button--positive[aria-pressed="true"], .fd-button--light.fd-button--positive.is-pressed,
+    a.fd-button--light.fd-button--positive:active,
+    a.fd-button--light.fd-button--positive.is-active,
+    a.fd-button--light.fd-button--positive[aria-selected="true"],
+    a.fd-button--light.fd-button--positive.is-selected,
+    a.fd-button--light.fd-button--positive[aria-pressed="true"],
+    a.fd-button--light.fd-button--positive.is-pressed {
       --fd-button-background-color: var(--fd-color-status-1);
       --fd-button-color: var(--fd-color-action-2); }
-  .fd-button--light.fd-button--medium {
+  .fd-button--light.fd-button--medium,
+  a.fd-button--light.fd-button--medium {
     --fd-button-color: var(--fd-color-status-2); }
     .fd-button--light.fd-button--medium:hover,
-    .fd-button--light.fd-button--medium .is-hover {
+    .fd-button--light.fd-button--medium .is-hover,
+    a.fd-button--light.fd-button--medium:hover,
+    a.fd-button--light.fd-button--medium .is-hover {
       --fd-button-color: var(--fd-color-status-2); }
       .fd-button--light.fd-button--medium:hover[aria-disabled="true"], .fd-button--light.fd-button--medium:hover.is-disabled, .fd-button--light.fd-button--medium:hover:disabled,
       .fd-button--light.fd-button--medium .is-hover[aria-disabled="true"],
       .fd-button--light.fd-button--medium .is-hover.is-disabled,
-      .fd-button--light.fd-button--medium .is-hover:disabled {
+      .fd-button--light.fd-button--medium .is-hover:disabled,
+      a.fd-button--light.fd-button--medium:hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--medium:hover.is-disabled,
+      a.fd-button--light.fd-button--medium:hover:disabled,
+      a.fd-button--light.fd-button--medium .is-hover[aria-disabled="true"],
+      a.fd-button--light.fd-button--medium .is-hover.is-disabled,
+      a.fd-button--light.fd-button--medium .is-hover:disabled {
         --fd-button-color: var(--fd-color-status-2); }
-    .fd-button--light.fd-button--medium:active, .fd-button--light.fd-button--medium.is-active, .fd-button--light.fd-button--medium[aria-selected="true"], .fd-button--light.fd-button--medium.is-selected, .fd-button--light.fd-button--medium[aria-pressed="true"], .fd-button--light.fd-button--medium.is-pressed {
+    .fd-button--light.fd-button--medium:active, .fd-button--light.fd-button--medium.is-active, .fd-button--light.fd-button--medium[aria-selected="true"], .fd-button--light.fd-button--medium.is-selected, .fd-button--light.fd-button--medium[aria-pressed="true"], .fd-button--light.fd-button--medium.is-pressed,
+    a.fd-button--light.fd-button--medium:active,
+    a.fd-button--light.fd-button--medium.is-active,
+    a.fd-button--light.fd-button--medium[aria-selected="true"],
+    a.fd-button--light.fd-button--medium.is-selected,
+    a.fd-button--light.fd-button--medium[aria-pressed="true"],
+    a.fd-button--light.fd-button--medium.is-pressed {
       --fd-button-background-color: var(--fd-color-status-2);
       --fd-button-color: var(--fd-color-action-2); }
 
 .fd-button--standard, .fd-button-group [class*="fd-button--"],
-.fd-button-group .fd-button, .fd-button--positive, .fd-button--negative, .fd-button--medium {
+.fd-button-group .fd-button, .fd-button--positive, .fd-button--negative, .fd-button--medium,
+a.fd-button--standard,
+.fd-button-group a[class*="fd-button--"],
+.fd-button-group a.fd-button,
+a.fd-button--positive,
+a.fd-button--negative,
+a.fd-button--medium {
   --fd-button-background-color: var(--fd-color-background-2); }
   .fd-button--standard:hover, .fd-button-group :hover[class*="fd-button--"],
   .fd-button-group .fd-button:hover,
@@ -4084,7 +4364,19 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-button-group .fd-button .is-hover, .fd-button--positive:hover,
   .fd-button--positive .is-hover, .fd-button--negative:hover,
   .fd-button--negative .is-hover, .fd-button--medium:hover,
-  .fd-button--medium .is-hover {
+  .fd-button--medium .is-hover,
+  a.fd-button--standard:hover,
+  .fd-button-group a:hover[class*="fd-button--"],
+  .fd-button-group a.fd-button:hover,
+  a.fd-button--standard .is-hover,
+  .fd-button-group a[class*="fd-button--"] .is-hover,
+  .fd-button-group a.fd-button .is-hover,
+  a.fd-button--positive:hover,
+  a.fd-button--positive .is-hover,
+  a.fd-button--negative:hover,
+  a.fd-button--negative .is-hover,
+  a.fd-button--medium:hover,
+  a.fd-button--medium .is-hover {
     --fd-button-color: var(--fd-color-action-2); }
   .fd-button--standard:active, .fd-button-group :active[class*="fd-button--"],
   .fd-button-group .fd-button:active, .fd-button--standard.is-active, .fd-button-group .is-active[class*="fd-button--"],
@@ -4092,22 +4384,73 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-button-group .fd-button[aria-selected="true"], .fd-button--standard.is-selected, .fd-button-group .is-selected[class*="fd-button--"],
   .fd-button-group .is-selected.fd-button, .fd-button--standard[aria-pressed="true"], .fd-button-group [aria-pressed="true"][class*="fd-button--"],
   .fd-button-group .fd-button[aria-pressed="true"], .fd-button--standard.is-pressed, .fd-button-group .is-pressed[class*="fd-button--"],
-  .fd-button-group .is-pressed.fd-button, .fd-button--positive:active, .fd-button--positive.is-active, .fd-button--positive[aria-selected="true"], .fd-button--positive.is-selected, .fd-button--positive[aria-pressed="true"], .fd-button--positive.is-pressed, .fd-button--negative:active, .fd-button--negative.is-active, .fd-button--negative[aria-selected="true"], .fd-button--negative.is-selected, .fd-button--negative[aria-pressed="true"], .fd-button--negative.is-pressed, .fd-button--medium:active, .fd-button--medium.is-active, .fd-button--medium[aria-selected="true"], .fd-button--medium.is-selected, .fd-button--medium[aria-pressed="true"], .fd-button--medium.is-pressed {
+  .fd-button-group .is-pressed.fd-button, .fd-button--positive:active, .fd-button--positive.is-active, .fd-button--positive[aria-selected="true"], .fd-button--positive.is-selected, .fd-button--positive[aria-pressed="true"], .fd-button--positive.is-pressed, .fd-button--negative:active, .fd-button--negative.is-active, .fd-button--negative[aria-selected="true"], .fd-button--negative.is-selected, .fd-button--negative[aria-pressed="true"], .fd-button--negative.is-pressed, .fd-button--medium:active, .fd-button--medium.is-active, .fd-button--medium[aria-selected="true"], .fd-button--medium.is-selected, .fd-button--medium[aria-pressed="true"], .fd-button--medium.is-pressed,
+  a.fd-button--standard:active,
+  .fd-button-group a:active[class*="fd-button--"],
+  .fd-button-group a.fd-button:active,
+  a.fd-button--standard.is-active,
+  .fd-button-group a.is-active[class*="fd-button--"],
+  .fd-button-group a.is-active.fd-button,
+  a.fd-button--standard[aria-selected="true"],
+  .fd-button-group a[aria-selected="true"][class*="fd-button--"],
+  .fd-button-group a.fd-button[aria-selected="true"],
+  a.fd-button--standard.is-selected,
+  .fd-button-group a.is-selected[class*="fd-button--"],
+  .fd-button-group a.is-selected.fd-button,
+  a.fd-button--standard[aria-pressed="true"],
+  .fd-button-group a[aria-pressed="true"][class*="fd-button--"],
+  .fd-button-group a.fd-button[aria-pressed="true"],
+  a.fd-button--standard.is-pressed,
+  .fd-button-group a.is-pressed[class*="fd-button--"],
+  .fd-button-group a.is-pressed.fd-button,
+  a.fd-button--positive:active,
+  a.fd-button--positive.is-active,
+  a.fd-button--positive[aria-selected="true"],
+  a.fd-button--positive.is-selected,
+  a.fd-button--positive[aria-pressed="true"],
+  a.fd-button--positive.is-pressed,
+  a.fd-button--negative:active,
+  a.fd-button--negative.is-active,
+  a.fd-button--negative[aria-selected="true"],
+  a.fd-button--negative.is-selected,
+  a.fd-button--negative[aria-pressed="true"],
+  a.fd-button--negative.is-pressed,
+  a.fd-button--medium:active,
+  a.fd-button--medium.is-active,
+  a.fd-button--medium[aria-selected="true"],
+  a.fd-button--medium.is-selected,
+  a.fd-button--medium[aria-pressed="true"],
+  a.fd-button--medium.is-pressed {
     --fd-button-color: var(--fd-color-action-2); }
 
 .fd-button--standard, .fd-button-group [class*="fd-button--"],
-.fd-button-group .fd-button {
+.fd-button-group .fd-button,
+a.fd-button--standard,
+.fd-button-group a[class*="fd-button--"],
+.fd-button-group a.fd-button {
   --fd-button-color: var(--fd-color-status-4);
   --fd-button-border-color: var(--fd-color-status-4); }
   .fd-button--standard:focus, .fd-button-group :focus[class*="fd-button--"],
   .fd-button-group .fd-button:focus, .fd-button--standard.is-focus, .fd-button-group .is-focus[class*="fd-button--"],
-  .fd-button-group .is-focus.fd-button {
+  .fd-button-group .is-focus.fd-button,
+  a.fd-button--standard:focus,
+  .fd-button-group a:focus[class*="fd-button--"],
+  .fd-button-group a.fd-button:focus,
+  a.fd-button--standard.is-focus,
+  .fd-button-group a.is-focus[class*="fd-button--"],
+  .fd-button-group a.is-focus.fd-button {
     box-shadow: 0 0 0 1px var(--fd-color-status-4); }
   .fd-button--standard:hover, .fd-button-group :hover[class*="fd-button--"],
   .fd-button-group .fd-button:hover,
   .fd-button--standard .is-hover,
   .fd-button-group [class*="fd-button--"] .is-hover,
-  .fd-button-group .fd-button .is-hover {
+  .fd-button-group .fd-button .is-hover,
+  a.fd-button--standard:hover,
+  .fd-button-group a:hover[class*="fd-button--"],
+  .fd-button-group a.fd-button:hover,
+  a.fd-button--standard .is-hover,
+  .fd-button-group a[class*="fd-button--"] .is-hover,
+  .fd-button-group a.fd-button .is-hover {
     --fd-button-color: var(--fd-color-action-2);
     --fd-button-background-color: var(--fd-color-status-4); }
     .fd-button--standard:hover[aria-disabled="true"], .fd-button-group :hover[aria-disabled="true"][class*="fd-button--"],
@@ -4122,7 +4465,25 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     .fd-button-group .fd-button .is-hover.is-disabled,
     .fd-button--standard .is-hover:disabled,
     .fd-button-group [class*="fd-button--"] .is-hover:disabled,
-    .fd-button-group .fd-button .is-hover:disabled {
+    .fd-button-group .fd-button .is-hover:disabled,
+    a.fd-button--standard:hover[aria-disabled="true"],
+    .fd-button-group a:hover[aria-disabled="true"][class*="fd-button--"],
+    .fd-button-group a.fd-button:hover[aria-disabled="true"],
+    a.fd-button--standard:hover.is-disabled,
+    .fd-button-group a:hover.is-disabled[class*="fd-button--"],
+    .fd-button-group a.fd-button:hover.is-disabled,
+    a.fd-button--standard:hover:disabled,
+    .fd-button-group a:hover:disabled[class*="fd-button--"],
+    .fd-button-group a.fd-button:hover:disabled,
+    a.fd-button--standard .is-hover[aria-disabled="true"],
+    .fd-button-group a[class*="fd-button--"] .is-hover[aria-disabled="true"],
+    .fd-button-group a.fd-button .is-hover[aria-disabled="true"],
+    a.fd-button--standard .is-hover.is-disabled,
+    .fd-button-group a[class*="fd-button--"] .is-hover.is-disabled,
+    .fd-button-group a.fd-button .is-hover.is-disabled,
+    a.fd-button--standard .is-hover:disabled,
+    .fd-button-group a[class*="fd-button--"] .is-hover:disabled,
+    .fd-button-group a.fd-button .is-hover:disabled {
       --fd-button-color: var(--fd-color-status-4); }
   .fd-button--standard:active, .fd-button-group :active[class*="fd-button--"],
   .fd-button-group .fd-button:active, .fd-button--standard.is-active, .fd-button-group .is-active[class*="fd-button--"],
@@ -4130,80 +4491,168 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
   .fd-button-group .fd-button[aria-selected="true"], .fd-button--standard.is-selected, .fd-button-group .is-selected[class*="fd-button--"],
   .fd-button-group .is-selected.fd-button, .fd-button--standard[aria-pressed="true"], .fd-button-group [aria-pressed="true"][class*="fd-button--"],
   .fd-button-group .fd-button[aria-pressed="true"], .fd-button--standard.is-pressed, .fd-button-group .is-pressed[class*="fd-button--"],
-  .fd-button-group .is-pressed.fd-button {
+  .fd-button-group .is-pressed.fd-button,
+  a.fd-button--standard:active,
+  .fd-button-group a:active[class*="fd-button--"],
+  .fd-button-group a.fd-button:active,
+  a.fd-button--standard.is-active,
+  .fd-button-group a.is-active[class*="fd-button--"],
+  .fd-button-group a.is-active.fd-button,
+  a.fd-button--standard[aria-selected="true"],
+  .fd-button-group a[aria-selected="true"][class*="fd-button--"],
+  .fd-button-group a.fd-button[aria-selected="true"],
+  a.fd-button--standard.is-selected,
+  .fd-button-group a.is-selected[class*="fd-button--"],
+  .fd-button-group a.is-selected.fd-button,
+  a.fd-button--standard[aria-pressed="true"],
+  .fd-button-group a[aria-pressed="true"][class*="fd-button--"],
+  .fd-button-group a.fd-button[aria-pressed="true"],
+  a.fd-button--standard.is-pressed,
+  .fd-button-group a.is-pressed[class*="fd-button--"],
+  .fd-button-group a.is-pressed.fd-button {
     --fd-button-background-color: var(--fd-color-status-4); }
 
-.fd-button--positive {
+.fd-button--positive,
+a.fd-button--positive {
   --fd-button-color: var(--fd-color-status-1);
   --fd-button-border-color: var(--fd-color-status-1); }
-  .fd-button--positive:focus, .fd-button--positive.is-focus {
+  .fd-button--positive:focus, .fd-button--positive.is-focus,
+  a.fd-button--positive:focus,
+  a.fd-button--positive.is-focus {
     box-shadow: 0 0 0 1px var(--fd-color-status-1); }
   .fd-button--positive:hover,
-  .fd-button--positive .is-hover {
+  .fd-button--positive .is-hover,
+  a.fd-button--positive:hover,
+  a.fd-button--positive .is-hover {
     --fd-button-background-color: var(--fd-color-status-1); }
     .fd-button--positive:hover[aria-disabled="true"], .fd-button--positive:hover.is-disabled, .fd-button--positive:hover:disabled,
     .fd-button--positive .is-hover[aria-disabled="true"],
     .fd-button--positive .is-hover.is-disabled,
-    .fd-button--positive .is-hover:disabled {
+    .fd-button--positive .is-hover:disabled,
+    a.fd-button--positive:hover[aria-disabled="true"],
+    a.fd-button--positive:hover.is-disabled,
+    a.fd-button--positive:hover:disabled,
+    a.fd-button--positive .is-hover[aria-disabled="true"],
+    a.fd-button--positive .is-hover.is-disabled,
+    a.fd-button--positive .is-hover:disabled {
       --fd-button-color: var(--fd-color-status-1); }
-  .fd-button--positive:active, .fd-button--positive.is-active, .fd-button--positive[aria-selected="true"], .fd-button--positive.is-selected, .fd-button--positive[aria-pressed="true"], .fd-button--positive.is-pressed {
+  .fd-button--positive:active, .fd-button--positive.is-active, .fd-button--positive[aria-selected="true"], .fd-button--positive.is-selected, .fd-button--positive[aria-pressed="true"], .fd-button--positive.is-pressed,
+  a.fd-button--positive:active,
+  a.fd-button--positive.is-active,
+  a.fd-button--positive[aria-selected="true"],
+  a.fd-button--positive.is-selected,
+  a.fd-button--positive[aria-pressed="true"],
+  a.fd-button--positive.is-pressed {
     --fd-button-background-color: var(--fd-color-status-1); }
 
-.fd-button--medium {
+.fd-button--medium,
+a.fd-button--medium {
   --fd-button-color: var(--fd-color-status-2);
   --fd-button-border-color: var(--fd-color-status-2); }
-  .fd-button--medium:focus, .fd-button--medium.is-focus {
+  .fd-button--medium:focus, .fd-button--medium.is-focus,
+  a.fd-button--medium:focus,
+  a.fd-button--medium.is-focus {
     box-shadow: 0 0 0 1px var(--fd-color-status-2); }
   .fd-button--medium:hover,
-  .fd-button--medium .is-hover {
+  .fd-button--medium .is-hover,
+  a.fd-button--medium:hover,
+  a.fd-button--medium .is-hover {
     --fd-button-background-color: var(--fd-color-status-2); }
     .fd-button--medium:hover[aria-disabled="true"], .fd-button--medium:hover.is-disabled, .fd-button--medium:hover:disabled,
     .fd-button--medium .is-hover[aria-disabled="true"],
     .fd-button--medium .is-hover.is-disabled,
-    .fd-button--medium .is-hover:disabled {
+    .fd-button--medium .is-hover:disabled,
+    a.fd-button--medium:hover[aria-disabled="true"],
+    a.fd-button--medium:hover.is-disabled,
+    a.fd-button--medium:hover:disabled,
+    a.fd-button--medium .is-hover[aria-disabled="true"],
+    a.fd-button--medium .is-hover.is-disabled,
+    a.fd-button--medium .is-hover:disabled {
       --fd-button-color: var(--fd-color-status-2); }
-  .fd-button--medium:active, .fd-button--medium.is-active, .fd-button--medium[aria-selected="true"], .fd-button--medium.is-selected, .fd-button--medium[aria-pressed="true"], .fd-button--medium.is-pressed {
+  .fd-button--medium:active, .fd-button--medium.is-active, .fd-button--medium[aria-selected="true"], .fd-button--medium.is-selected, .fd-button--medium[aria-pressed="true"], .fd-button--medium.is-pressed,
+  a.fd-button--medium:active,
+  a.fd-button--medium.is-active,
+  a.fd-button--medium[aria-selected="true"],
+  a.fd-button--medium.is-selected,
+  a.fd-button--medium[aria-pressed="true"],
+  a.fd-button--medium.is-pressed {
     --fd-button-background-color: var(--fd-color-status-2); }
 
-.fd-button--negative {
+.fd-button--negative,
+a.fd-button--negative {
   --fd-button-color: var(--fd-color-status-3);
   --fd-button-border-color: var(--fd-color-status-3); }
-  .fd-button--negative:focus, .fd-button--negative.is-focus {
+  .fd-button--negative:focus, .fd-button--negative.is-focus,
+  a.fd-button--negative:focus,
+  a.fd-button--negative.is-focus {
     box-shadow: 0 0 0 1px var(--fd-color-status-3); }
   .fd-button--negative:hover,
-  .fd-button--negative .is-hover {
+  .fd-button--negative .is-hover,
+  a.fd-button--negative:hover,
+  a.fd-button--negative .is-hover {
     --fd-button-background-color: var(--fd-color-status-3); }
     .fd-button--negative:hover[aria-disabled="true"], .fd-button--negative:hover.is-disabled, .fd-button--negative:hover:disabled,
     .fd-button--negative .is-hover[aria-disabled="true"],
     .fd-button--negative .is-hover.is-disabled,
-    .fd-button--negative .is-hover:disabled {
+    .fd-button--negative .is-hover:disabled,
+    a.fd-button--negative:hover[aria-disabled="true"],
+    a.fd-button--negative:hover.is-disabled,
+    a.fd-button--negative:hover:disabled,
+    a.fd-button--negative .is-hover[aria-disabled="true"],
+    a.fd-button--negative .is-hover.is-disabled,
+    a.fd-button--negative .is-hover:disabled {
       --fd-button-color: var(--fd-color-status-3); }
-  .fd-button--negative:active, .fd-button--negative.is-active, .fd-button--negative[aria-selected="true"], .fd-button--negative.is-selected, .fd-button--negative[aria-pressed="true"], .fd-button--negative.is-pressed {
+  .fd-button--negative:active, .fd-button--negative.is-active, .fd-button--negative[aria-selected="true"], .fd-button--negative.is-selected, .fd-button--negative[aria-pressed="true"], .fd-button--negative.is-pressed,
+  a.fd-button--negative:active,
+  a.fd-button--negative.is-active,
+  a.fd-button--negative[aria-selected="true"],
+  a.fd-button--negative.is-selected,
+  a.fd-button--negative[aria-pressed="true"],
+  a.fd-button--negative.is-pressed {
     --fd-button-background-color: var(--fd-color-status-3); }
 
-.fd-button--shell {
+.fd-button--shell,
+a.fd-button--shell {
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
   --fd-button-background-color: transparent; }
-  .fd-button--shell[class*="sap-icon"] {
+  .fd-button--shell[class*="sap-icon"],
+  a.fd-button--shell[class*="sap-icon"] {
     padding: 0; }
-    .fd-button--shell[class*="sap-icon"]::before, .fd-button--shell[class*="sap-icon"]::after {
+    .fd-button--shell[class*="sap-icon"]::before, .fd-button--shell[class*="sap-icon"]::after,
+    a.fd-button--shell[class*="sap-icon"]::before,
+    a.fd-button--shell[class*="sap-icon"]::after {
       margin-right: 0;
       margin-left: 0; }
-  .fd-button--shell:focus {
+  .fd-button--shell:focus,
+  a.fd-button--shell:focus {
     box-shadow: none; }
   .fd-button--shell:hover,
-  .fd-button--shell .is-hover {
+  .fd-button--shell .is-hover,
+  a.fd-button--shell:hover,
+  a.fd-button--shell .is-hover {
     --fd-button-color: var(--fd-color-shell-2);
     --fd-button-border-color: transparent;
     --fd-button-background-color: hsl(217, 21%, 25%); }
     .fd-button--shell:hover[aria-disabled="true"], .fd-button--shell:hover.is-disabled, .fd-button--shell:hover:disabled,
     .fd-button--shell .is-hover[aria-disabled="true"],
     .fd-button--shell .is-hover.is-disabled,
-    .fd-button--shell .is-hover:disabled {
+    .fd-button--shell .is-hover:disabled,
+    a.fd-button--shell:hover[aria-disabled="true"],
+    a.fd-button--shell:hover.is-disabled,
+    a.fd-button--shell:hover:disabled,
+    a.fd-button--shell .is-hover[aria-disabled="true"],
+    a.fd-button--shell .is-hover.is-disabled,
+    a.fd-button--shell .is-hover:disabled {
       --fd-button-color: var(--fd-color-shell-2);
       --fd-button-background-color: transparent; }
-  .fd-button--shell:active, .fd-button--shell.is-active, .fd-button--shell[aria-selected="true"], .fd-button--shell.is-selected, .fd-button--shell[aria-pressed="true"], .fd-button--shell.is-pressed {
+  .fd-button--shell:active, .fd-button--shell.is-active, .fd-button--shell[aria-selected="true"], .fd-button--shell.is-selected, .fd-button--shell[aria-pressed="true"], .fd-button--shell.is-pressed,
+  a.fd-button--shell:active,
+  a.fd-button--shell.is-active,
+  a.fd-button--shell[aria-selected="true"],
+  a.fd-button--shell.is-selected,
+  a.fd-button--shell[aria-pressed="true"],
+  a.fd-button--shell.is-pressed {
     --fd-button-color: var(--fd-color-shell-2);
     --fd-button-border-color: transparent;
     --fd-button-background-color: hsl(217, 21%, 21%); }
@@ -5057,8 +5506,7 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     margin-bottom: 0;
     margin-right: 0; }
   .fd-table tr, .docs-table tr {
-    transition: background-color 0.125s ease-in;
-    cursor: pointer; }
+    transition: background-color 0.125s ease-in; }
     .fd-table tr:hover, .docs-table tr:hover,
     .fd-table tr .is-hover,
     .docs-table tr .is-hover {
@@ -5470,9 +5918,9 @@ This will render 4 boxes spanning 2 cols each indented 2 cols
     border-radius: 4px;
     position: absolute;
     top: calc(50% - 18px/2);
-    margin-left: -30px;
-    margin-right: 12px;
-    width: 18px;
+    margin: -8px 12px 0 -36px;
+    width: 34px;
+    height: 34px;
     transform: rotate(180deg);
     vertical-align: middle;
     transition: transform 0.125s linear;
@@ -7219,52 +7667,52 @@ see layouts/panel
         content: "";
         border-style: solid;
         border-color: transparent; }
-    .fd-popover__popper[data-x-out-of-boundaries] {
+    .fd-popover__popper[x-out-of-boundaries] {
       display: none; }
-    .fd-popover__popper[data-placement^="top"] {
+    .fd-popover__popper[x-placement^="top"] {
       margin-bottom: 8px; }
-      .fd-popover__popper[data-placement^="top"] .fd-popover__arrow {
+      .fd-popover__popper[x-placement^="top"] .fd-popover__arrow {
         bottom: -8px;
         margin: 0 6.5px;
         border-width: 8px 6.5px 0 6.5px;
         border-top-color: var(--fd-color-neutral-4); }
-        .fd-popover__popper[data-placement^="top"] .fd-popover__arrow::after {
+        .fd-popover__popper[x-placement^="top"] .fd-popover__arrow::after {
           bottom: 1px;
           margin: 0 -6.5px;
           border-width: 8px 6.5px 0 6.5px;
           border-top-color: var(--fd-color-background-2); }
-    .fd-popover__popper[data-placement^="bottom"] {
+    .fd-popover__popper[x-placement^="bottom"] {
       margin-top: 8px; }
-      .fd-popover__popper[data-placement^="bottom"] .fd-popover__arrow {
+      .fd-popover__popper[x-placement^="bottom"] .fd-popover__arrow {
         top: -8px;
         margin: 0 6.5px;
         border-width: 0 6.5px 8px 6.5px;
         border-bottom-color: var(--fd-color-neutral-4); }
-        .fd-popover__popper[data-placement^="bottom"] .fd-popover__arrow::after {
+        .fd-popover__popper[x-placement^="bottom"] .fd-popover__arrow::after {
           top: 1px;
           margin: 0 -6.5px;
           border-width: 0 6.5px 8px 6.5px;
           border-bottom-color: var(--fd-color-background-2); }
-    .fd-popover__popper[data-placement^="left"] {
+    .fd-popover__popper[x-placement^="left"] {
       margin-right: 8px; }
-      .fd-popover__popper[data-placement^="left"] .fd-popover__arrow {
+      .fd-popover__popper[x-placement^="left"] .fd-popover__arrow {
         right: -8px;
         margin: 6.5px 0;
         border-width: 6.5px 0 6.5px 8px;
         border-left-color: var(--fd-color-neutral-4); }
-        .fd-popover__popper[data-placement^="left"] .fd-popover__arrow::after {
+        .fd-popover__popper[x-placement^="left"] .fd-popover__arrow::after {
           right: 1px;
           margin: -6.5px 0;
           border-width: 6.5px 0 6.5px 8px;
           border-left-color: var(--fd-color-background-2); }
-    .fd-popover__popper[data-placement^="right"] {
+    .fd-popover__popper[x-placement^="right"] {
       margin-left: 8px; }
-      .fd-popover__popper[data-placement^="right"] .fd-popover__arrow {
+      .fd-popover__popper[x-placement^="right"] .fd-popover__arrow {
         left: -8px;
         margin: 6.5px 0;
         border-width: 6.5px 8px 6.5px 0;
         border-right-color: var(--fd-color-neutral-4); }
-        .fd-popover__popper[data-placement^="right"] .fd-popover__arrow::after {
+        .fd-popover__popper[x-placement^="right"] .fd-popover__arrow::after {
           left: 1px;
           margin: -6.5px 0;
           border-width: 6.5px 8px 6.5px 0;
