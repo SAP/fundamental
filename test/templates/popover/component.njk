@@ -32,7 +32,7 @@ popover:
 {%- endmacro -%}
 
 {%- macro popover_popper(properties={}, modifier={}, state={}, aria={ hidden: true }) -%}
-<div class="fd-popover__popper{{ modifier.block | modifier('popover__popper') }}" {{ aria | aria }} id="{{ properties.id }}" data-placement="bottom">
+<div class="fd-popover__popper{{ modifier.block | modifier('popover__popper') }}" {{ aria | aria }} id="{{ properties.id }}" x-placement="bottom">
   {{properties.body}}
   <div class="fd-popover__arrow"></div>
 </div>
