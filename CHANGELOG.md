@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.4"></a>
+## [1.5.4](https://github.com/SAP/fundamental/compare/v1.5.4-rc.3...v1.5.4) (2019-04-18)
+
+
+### Bug Fixes
+
+* Changed popper attributes to match default popper.js ([#1405](https://github.com/SAP/fundamental/issues/1405)) ([ff65fe7](https://github.com/SAP/fundamental/commit/ff65fe7))
+
+
+
 <a name="1.5.4-rc.3"></a>
 ## [1.5.4-rc.3](https://github.com/SAP/fundamental/compare/v1.5.4-rc.2...v1.5.4-rc.3) (2019-04-15)
 
