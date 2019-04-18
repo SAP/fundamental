@@ -1,8 +1,12 @@
 ---
 # Front matter comment to ensure Jekyll properly reads file.
 ---
-// Imports
-@import "../../scss/all.scss";
+//base component styles - do not import SCSS as the underlying sass engine is different
+@import "./fiori-fundamentals.min.css";
+//needed for color variables
+@import "../../scss/functions/_color.scss";
+@import "../../scss/_settings.scss";
+//docs site specific styles
 @import "include-media.scss";
 @import "docs-settings";
 @import "docs-functions";

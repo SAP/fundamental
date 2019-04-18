@@ -12,17 +12,17 @@
 }
 
 // get line-height from main map
-// @function fd-line-height($size: "0") {
-//   $_map: $fd-type;
-//   $_size: "0";
-//   $list: map-get($_map, "0");
-//   @if map-has-key($_map, $size) {
-//     $list: map-get($_map, $size);
-//   } @else {
-//     @warn "Invalid $size of `#{$size}` in the map $fd-type. Valid $size values are #{map-keys($_map)}. Returning `#{$_size}`.";
-//   }
-//   @return nth($list, 2);
-// }
+@function fd-line-height($size: "0") {
+  $_map: $fd-type;
+  $_size: "0";
+  $list: map-get($_map, "0");
+  @if map-has-key($_map, $size) {
+    $list: map-get($_map, $size);
+  } @else {
+    @warn "Invalid $size of `#{$size}` in the map $fd-type. Valid $size values are #{map-keys($_map)}. Returning `#{$_size}`.";
+  }
+  @return nth($list, 2);
+}
 
 // get weights from main map
 @function fd-font-weight($weight: "normal") {

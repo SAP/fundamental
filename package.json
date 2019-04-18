@@ -7,7 +7,7 @@
     "build": "npm run style:remove && npm run style:compile && npm run style:rename && npm run style:postCSS && npm run style:assets",
     "build:prod": "npm run build && npm run style:minify && npm run style:less",
     "deploy": "gh-pages -d docs/_site",
-    "docs:config": "./scripts/create-library-config.js; for file in scss/fonts/72/*.{eot,svg,ttf,woff,woff2}; do cp $file docs/css/fonts/72; done; cp scss/icons/SAP-icons.woff docs/css/",
+    "docs:config": "npm run build:prod; ./scripts/create-library-config.js; for file in scss/fonts/72/*.{eot,svg,ttf,woff,woff2}; do cp $file docs/css/fonts/72; done; cp scss/icons/SAP-icons.woff docs/css/; cp dist/fiori-fundamentals.min.css docs/css",
     "docs:prod": "npm run docs:config && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml,_config-prod.yml && cd ..",
     "docs": "npm run docs:config && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
     "lint:fix": "stylelint './scss/**/*.scss' --fix",
