@@ -4,7 +4,8 @@ const ip = require('ip');
 const backstopComponentConfigLocation = 'test/visual-regression-tests/config/components';
 
 
-let origin = ip.address();
+let origin = 'host.docker.internal';
+
 console.log('Using URL origin ', origin);
 
 const scenarios = [];
