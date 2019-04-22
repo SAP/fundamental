@@ -30,7 +30,7 @@
     "test": "server-test start:playground http-get://localhost:3030 test:visual",
     "test:reference": "backstop reference --config ./test/visual-regression-tests/config/backstopConfig.js --docker",
     "test:update": "server-test start:playground http-get://localhost:3030 test:reference && backstop approve --config ./test/visual-regression-tests/config/backstopConfig.js",
-    "test:visual": "CI=${CI} && backstop test --config ./test/visual-regression-tests/config/backstopConfig.js --docker"
+    "test:visual": "backstop test --config ./test/visual-regression-tests/config/backstopConfig.js --docker"
   },
   "repository": {
     "type": "git",

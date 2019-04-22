@@ -7,6 +7,9 @@ before_install:
   - docker pull backstopjs/backstopjs:3.9.2
 git:
   depth: false
+env:
+  global:
+    - CI: true
 script:
   - npm run build
 jobs:
