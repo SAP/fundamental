@@ -3,8 +3,15 @@ const mergeJSON  = require ('merge-json');
 const ip = require('ip');
 const backstopComponentConfigLocation = 'test/visual-regression-tests/config/components';
 
+const cp = require('child_process');
 
-let origin = process.env.CI ? ip.address() : 'host.docker.internal';
+var hostIP = "";
+cp.exec("ip -4 route list match 0/0", (e, stdout, stderr) => {
+  hostIP = stdout.split(" ")[2];
+});
+
+
+let origin = process.env.CI ? hostIP : 'host.docker.internal';
 
 console.log('Using URL origin ', origin);
 
