@@ -1,9 +1,10 @@
 const fs = require('fs');
 const mergeJSON  = require ('merge-json');  
+const ip = require('ip');
 const backstopCIConfigLocation = 'test/visual-regression-tests/config/backstopConfigCI.json';
 const backstopComponentConfigLocation = 'test/visual-regression-tests/config/components';
 
-let origin = 'host.docker.internal';
+let origin = fs.statSync('/.dockerenv') || fs.readFileSync('/proc/self/cgroup', 'utf8').includes('docker') ? ip.address() : 'host.docker.internal';
 
 // Check if there has been an IP address provided in the CI config JSON
 if (fs.existsSync(backstopCIConfigLocation)) {
