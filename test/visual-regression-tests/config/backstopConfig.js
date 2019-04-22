@@ -10,7 +10,7 @@ cp.exec("ip -4 route list match 0/0", (e, stdout, stderr) => {
   hostIP = stdout.split(" ")[2];
 });
 
-let origin = process.env.CI ? hostIP : 'host.docker.internal';
+let origin = hostIP;
 
 console.log('Using URL origin ', origin);
 
