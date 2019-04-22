@@ -27,7 +27,7 @@
     "style:postCSS": "postcss --config config/postcss.config.js  --replace dist/**/*.css && postcss --config config/postcss.config.js  --replace dist/*.css",
     "style:remove": "if [ -d dist/ ]; then rm -rf dist/; fi",
     "style:rename": "mv dist/all.css dist/fiori-fundamentals.css && mv dist/all-ie11.css dist/fiori-fundamentals-ie11.css && rm dist/fundamentals-ie11.less.css dist/fundamentals.less.css",
-    "test:visual:": "backstop test --config ./test/visual-regression-tests/config/backstopConfig.js --docker",
+    "test:visual": "backstop test --config ./test/visual-regression-tests/config/backstopConfig.js --docker",
     "test:reference": "backstop reference --config ./test/visual-regression-tests/config/backstopConfig.js --docker",
     "test": "server-test start:playground http-get://localhost:3030 test:visual",
     "test:update": "server-test start:playground http-get://localhost:3030 test:reference && backstop approve --config ./test/visual-regression-tests/config/backstopConfig.js"
