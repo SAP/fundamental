@@ -6,7 +6,7 @@ const backstopComponentConfigLocation = 'test/visual-regression-tests/config/com
 console.log(process.env.TRAVIS);
 console.log(ip.address());
 
-let origin = process.env.TRAVIS === true ? ip.address() : 'host.docker.internal';
+let origin = process.env.TRAVIS === 'true' ? ip.address() : 'host.docker.internal';
 
 console.log('Using URL origin ', origin);
 
