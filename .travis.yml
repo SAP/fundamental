@@ -8,7 +8,7 @@ script:
 jobs:
   include:
   - stage: Lint and Test
-    script: npm run lint && CI=true npm run test
+    script: npm run lint && npm run test
   - stage: Pre-release
     if: branch = master
     before_deploy:
