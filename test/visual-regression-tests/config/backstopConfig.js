@@ -5,7 +5,6 @@ const backstopComponentConfigLocation = 'test/visual-regression-tests/config/com
 
 
 let origin = ip.address();
-
 console.log('Using URL origin ', origin);
 
 const scenarios = [];
