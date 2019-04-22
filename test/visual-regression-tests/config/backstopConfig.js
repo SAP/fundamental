@@ -30,7 +30,7 @@ const defaultScenario = {
   "postInteractionWait": 0,
   "selectorExpansion": false,
   "expect": 0,
-  "misMatchThreshold" : 0.1,
+  "misMatchThreshold" : 0,
   "requireSameDimensions": true  
 }
 
