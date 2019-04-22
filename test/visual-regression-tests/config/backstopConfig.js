@@ -4,7 +4,7 @@ const ip = require('ip');
 const backstopComponentConfigLocation = 'test/visual-regression-tests/config/components';
 
 
-let origin = fs.existsSync('/.dockerenv') || fs.existsSync('/proc/self/cgroup') && fs.readFileSync('/proc/self/cgroup', 'utf8').includes('docker') ? ip.address() : 'host.docker.internal';
+let origin = process.env.CI ? ip.address() : 'host.docker.internal';
 
 console.log('Using URL origin ', origin);
 
