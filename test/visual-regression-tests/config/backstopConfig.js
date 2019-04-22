@@ -2,11 +2,17 @@ const fs = require('fs');
 const mergeJSON  = require ('merge-json');  
 const ip = require('ip');
 const backstopComponentConfigLocation = 'test/visual-regression-tests/config/components';
+const backstopCIConfigLocation = 'test/visual-regression-tests/config/backstopConfigCI.json';
 
-console.log(process.env.TRAVIS);
-console.log(ip.address());
 
-let origin = process.env.TRAVIS === 'true' ? ip.address() : 'host.docker.internal';
+let origin = 'host.docker.internal';
+
+if (fs.existsSync(backstopCIConfigLocation)) {
+  const ciConfig = JSON.parse(fs.readFileSync(backstopCIConfigLocation));
+  if (ciConfig.ip) {
+    origin = ciConfig.ip;
+  }
+}
 
 console.log('Using URL origin ', origin);
 
