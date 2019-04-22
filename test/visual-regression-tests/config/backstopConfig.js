@@ -3,14 +3,8 @@ const mergeJSON  = require ('merge-json');
 const ip = require('ip');
 const backstopComponentConfigLocation = 'test/visual-regression-tests/config/components';
 
-const cp = require('child_process');
 
-var hostIP = "";
-cp.exec("ip -4 route list match 0/0", (e, stdout, stderr) => {
-  hostIP = stdout.split(" ")[2];
-});
-
-let origin = hostIP;
+let origin = ip.address();
 
 console.log('Using URL origin ', origin);
 
