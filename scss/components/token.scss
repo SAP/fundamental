@@ -13,12 +13,12 @@ $block: #{$fd-namespace}-token;
 
 .#{$block} {
     //LOCAL VARS (set all themeable properties, always include !default)
-    $fd-token-border-color: transparent !default;
+    $fd-token-border-color: fd-color("neutral", 3) !default;
     $fd-token-color: fd-color("text", 2) !default;
     $fd-token-background-color: fd-color-state("information") !default;
     --fd-token-color: var(--fd-color-text-2);
     --fd-token-background-color: var(--fd-color-background-information);
-    --fd-token-border-color: transparent;
+    --fd-token-border-color: var(--fd-color-neutral-3);
 
     @include fd-reset();
     @include fd-type("-1");
@@ -34,16 +34,16 @@ $block: #{$fd-namespace}-token;
     border-style: solid;
     @include fd-var-color("border-color", $fd-token-border-color, --fd-token-border-color);
     cursor: pointer;
-    @include fd-icon("sys-cancel", "s", "after") {
+    @include fd-icon("decline", "s", "after") {
         @include fd-var-color("color", fd-color("action", 1), --fd-color-action-1);
-        margin-left: fd-space(base);
+        margin-left: fd-space(tiny);
         vertical-align: bottom;
         line-height: fd-space(6);
     }
     @include fd-rtl() {
-        @include fd-icon("sys-cancel", "s", "before") {
+        @include fd-icon("decline", "s", "before") {
             @include fd-var-color("color", fd-color("action", 1), --fd-color-action-1);
-            margin-left: fd-space(base);
+            margin-left: fd-space(tiny);
             vertical-align: bottom;
             line-height: fd-space(6);
         }
@@ -51,7 +51,7 @@ $block: #{$fd-namespace}-token;
         &::before {
             display: inline;
             margin-left: 0;
-            margin-right: fd-space(base);
+            margin-right: fd-space(tiny);
         }
         &::after {
             content: none;
