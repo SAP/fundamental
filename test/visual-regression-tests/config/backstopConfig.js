@@ -3,8 +3,9 @@ const mergeJSON  = require ('merge-json');
 const ip = require('ip');
 const backstopComponentConfigLocation = 'test/visual-regression-tests/config/components';
 
-console.log(process.env.TRAVIS)
+console.log(process.env.TRAVIS);
 console.log(process.env.CI); 
+console.log(process.env['TRAVIS']);
 
 let origin = process.env.CI ? ip.address() : 'host.docker.internal';
 
