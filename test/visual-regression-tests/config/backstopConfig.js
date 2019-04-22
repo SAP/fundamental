@@ -1,9 +1,7 @@
 const fs = require('fs');
 const mergeJSON  = require ('merge-json');  
 const ip = require('ip');
-const backstopCIConfigLocation = 'test/visual-regression-tests/config/backstopConfigCI.json';
 const backstopComponentConfigLocation = 'test/visual-regression-tests/config/components';
-
 
 let origin = process.env.CI === true ? ip.address() : 'host.docker.internal';
 
