@@ -2,7 +2,6 @@ const fs = require('fs');
 const backstopComponentConfigLocation = 'test/visual-regression-tests/config/components';
 const backstopCIConfigLocation = 'test/visual-regression-tests/config/backstopConfigCI.json';
 
-
 let origin = 'host.docker.internal';
 
 if (fs.existsSync(backstopCIConfigLocation)) {
@@ -11,7 +10,6 @@ if (fs.existsSync(backstopCIConfigLocation)) {
     origin = ciConfig.ip;
   }
 }
-
 console.log('Using URL origin ', origin);
 
 const scenarios = [];
@@ -30,7 +28,7 @@ const defaultScenario = {
   "postInteractionWait": 0,
   "selectorExpansion": false,
   "expect": 0,
-  "misMatchThreshold" : 0,
+  "misMatchThreshold" : 0.1,
   "requireSameDimensions": true  
 }
 
