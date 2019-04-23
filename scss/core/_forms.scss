@@ -185,26 +185,13 @@ select,
     vertical-align: middle;
     position: relative;
     @include action-cursor();
-    @include fd-hover() {
-      border-width: 2px;
-      @include fd-disabled() {
-        border-width: 1px;
-      }
-    }
+
     &:checked {
-      --fd-forms-border-color: var(--fd-color-action-selected);
-      --fd-forms-background-color: var(--fd-color-action-selected);
-      @include fd-var-color("border-color", fd-color-state("selected", "action"));
-      @include fd-var-color("background-color", fd-color-state("selected", "action"));
-      @include fd-disabled() {
-        --fd-forms-border-color: var(--fd-color-action-disabled);
-        --fd-forms-background-color: var(--fd-color-action-disabled);
-        @include fd-var-color("border-color", fd-color-state("disabled", "action"));
-        @include fd-var-color("background-color", fd-color-state("disabled", "action"));
-      }
-      @include fd-hover() {
-        border-width: 1px;
-      }
+        @include fd-var-color("border-color", $fd-forms-border-color--check, --fd-forms-border-color--check);
+
+        @include fd-disabled() {
+            @include fd-var-color("border-color", $fd-forms-border-color--disabled, --fd-forms-border-color--disabled);
+        }
     }
 }
 input[type="radio"],
@@ -223,18 +210,13 @@ input[type="radio"],
         background-color: transparent;
     }
     &:checked {
-        --fd-forms-background-color: var(--fd-forms-background-color);
-        @include fd-var-color("background-color", $fd-forms-background-color);
         &::after {
-            --fd-forms-background-color: var(--fd-color-action-selected);
-            @include fd-var-color("background-color", fd-color-state("selected", "action"), --fd-forms-background-color);
+            @include fd-var-color("background-color", $fd-forms-border-color--check, --fd-forms-border-color--check);
         }
+
         @include fd-disabled() {
-          --fd-forms-background-color: var(--fd-forms-background-color);
-          @include fd-var-color("background-color", $fd-forms-background-color);
           &::after {
-            --fd-forms-background-color: var(--fd-color-action-disabled);
-            @include fd-var-color("background-color", fd-color-state("disabled", "action"));
+            @include fd-var-color("background-color", $fd-forms-border-color--disabled, --fd-forms-border-color--disabled);
           }
         }
     }
@@ -256,20 +238,41 @@ input[type="checkbox"],
     }
     &:checked {
         &::before {
-          --fd-forms-border-color: var(--fd-color-action-2);
-          @include fd-var-color("border-color", $fd-forms-background-color, --fd-forms-border-color);
+          @include fd-var-color("border-color", $fd-forms-border-color--check, --fd-forms-border-color--check);
+        }
+        @include fd-disabled() {
+          &::before {
+            @include fd-var-color("border-color", $fd-forms-border-color--disabled, --fd-forms-border-color--disabled);
+          }
         }
     }
     &:indeterminate {
-      --fd-forms-border-color: var(--fd-color-action-2);
-      --fd-forms-background-color: var(--fd-color-action-selected);
-      border-width: 3px;
-      border-style: solid;
-      @include fd-var-color("border-color", $fd-forms-background-color);
-      @include fd-var-color("background-color", fd-color-state("selected", "action"));
-      @if $fd-support-css-var-fallback {
-        box-shadow: 0 0 0 1px fd-color-state("selected", "action");
-      }
-      box-shadow: 0 0 0 1px var(--fd-forms-background-color);
+        border-width: 3px;
+        border-style: solid;
+        @include fd-var-color("border-color", $fd-forms-background-color, --fd-forms-background-color);
+        @include fd-var-color("background-color", $fd-forms-background-color--indeterminate, --fd-forms-background-color--indeterminate);
+
+        @if $fd-support-css-var-fallback {
+            box-shadow: 0 0 0 1px $fd-forms-border-color--check;
+        }
+        box-shadow: 0 0 0 1px var(--fd-forms-border-color--check);
+
+        @include fd-hover() {
+            border-width: 3px;
+        }
+
+        @include fd-disabled() {
+            @include fd-var-color("border-color", $fd-forms-background-color, --fd-forms-background-color);
+            @include fd-var-color("background-color", $fd-forms-border-color--disabled, --fd-forms-border-color--disabled);
+
+            @if $fd-support-css-var-fallback {
+                box-shadow: 0 0 0 1px $fd-forms-border-color--disabled;
+            }
+            box-shadow: 0 0 0 1px var(--fd-forms-border-color--disabled);
+
+            &::before {
+                @include fd-var-color("border-color", $fd-forms-border-color--disabled, --fd-forms-border-color--disabled);
+            }
+        }
     }
 }
