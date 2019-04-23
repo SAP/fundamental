@@ -1,5 +1,4 @@
 const fs = require('fs');
-const mergeJSON  = require ('merge-json');  
 const backstopComponentConfigLocation = 'test/visual-regression-tests/config/components';
 const backstopCIConfigLocation = 'test/visual-regression-tests/config/backstopConfigCI.json';
 
@@ -37,7 +36,7 @@ const defaultScenario = {
 
 // Specific visual test component configurations.  Read the associated component configuration directory and merge the json.
 fs.readdirSync(backstopComponentConfigLocation).forEach(function(configFile) {
-  const scenario = mergeJSON.merge(defaultScenario, require('./components/' + configFile));
+  const scenario = {...defaultScenario, ...require('./components/' + configFile)};
   // Ensure each config file has a urlSuffix, label and selectors defined.
   if (!scenario.urlSuffix || !scenario.label || !scenario.selectors) {
     throw "Error with backstop config file '" + configFile + "', must include urlSuffix, label and selectors";
