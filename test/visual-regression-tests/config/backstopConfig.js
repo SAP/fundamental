@@ -1,6 +1,5 @@
 const fs = require('fs');
 const mergeJSON  = require ('merge-json');  
-const ip = require('ip');
 const backstopComponentConfigLocation = 'test/visual-regression-tests/config/components';
 const backstopCIConfigLocation = 'test/visual-regression-tests/config/backstopConfigCI.json';
 
