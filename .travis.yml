@@ -4,12 +4,11 @@ dist: trusty
 services:
   - docker
 before_install:
-  - node ./ci-scripts/generateBackstopConfig.js
   - docker pull backstopjs/backstopjs:3.9.2
 git:
   depth: false
 script:
-  - npm run build
+  - npm run build && node ./ci-scripts/generateBackstopConfig.js
 jobs:
   include:
   - stage: Lint and Test
