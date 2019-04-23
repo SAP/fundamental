@@ -1,45 +1,38 @@
 #!/usr/bin/env node
 
+const fs = require('fs');
 const yargs = require('yargs');
+
 const componentId = yargs.argv.component;
 
 const paths = {
-	src: './ops/misc',
+	src: './test/patterns',
     dest: {
         lib: './scss',
         test: './test'
     }
 }
 
-const _capitalizeEachWord = (str) => {
-    var index, word, words, _i, _len;
-    words = str.split(" ");
-    for (index = _i = 0, _len = words.length; _i < _len; index = ++_i) {
-      word = words[index].charAt(0).toUpperCase();
-      words[index] = word + words[index].substr(1);
-    }
-    return words.join(" ");
-}
+const capitalize = (str) => {
+    return str.toLowerCase()
+     .split(' ')
+     .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+     .join(' ');
+ }
 
 const underscorize = (str) => {
-    return str.replace(/[A-Z]/g, function(char, index) {
+    return str.replace(/[A-Z]/g, (char, index) => {
       return (index !== 0 ? '_' : '') + char.toLowerCase();
     });
 }
 
-const namerize = (str) => {
-    var name = str.replace(/[_-]/g, " ");
-    return _capitalizeEachWord(name);
-}
+const namerize = (str) => capitalize(str.replace(/[_-]/g, ' '));
 
 const camelize = (str) => {
-    var words;
-    words = _namerize(str).split(" ");
+    let words = namerize(str).split(' ');
     words[0] = words[0].toLowerCase();
-    return words.join("");
+    return words.join('');
 }
-
-
 
 if (!componentId) {
     return;
@@ -47,6 +40,22 @@ if (!componentId) {
 const componentMethod = underscorize(camelize(componentId));
 const componentName = namerize(componentId);
 const templatePath = `${paths.dest.test}/templates/${componentId}`;
+
+
+const replace = (file, destination) => { 
+    fs.rename(file, destination, function (err) {
+        if (err) throw err;
+        fs.readFile(destination, 'utf8', function (err,data) {
+            if (err) throw err;
+            let result = data.replace(/__COMPONENT_ID__/g, componentId);
+            result = data.replace(/__COMPONENT_NAME__/g, componentName);
+
+            fs.writeFile(file, result, 'utf8', function (err) {
+            if (err) return console.log(err);
+            });
+        });
+    });
+}
 
 //data file
 gulp.src(`${paths.src}/test-data.json`)

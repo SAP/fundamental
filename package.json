@@ -18,7 +18,7 @@
     "release": "./scripts/publish-release.sh",
     "start:playground": "node test/app.js",
     "start:browser-sync": "browser-sync start --proxy 'localhost:4000' --files 'docs/_site/**/*' --reloadDelay '2000'",
-    "start": "npm run docs:compile && cd docs && bundle exec jekyll serve --incremental --config _config.yml,_config-library.yml",
+    "start": "npm run docs:compile && cd docs && bundle install && bundle exec jekyll serve --incremental --config _config.yml,_config-library.yml",
     "std-version": "standard-version -m \"chore(release): version %s build ${TRAVIS_BUILD_NUMBER} [ci skip]\"",
     "style:assets": "./scripts/copy-assets.sh",
     "style:compile": "node-sass -q --output-style expanded --precision 5 scss/ --output dist/",
@@ -78,7 +78,6 @@
     "start-server-and-test": "^1.7.13",
     "stylelint": "^9.10.1",
     "stylelint-scss": "^3.5.4",
-    "wait-for-port": "0.0.2",
     "write-yaml": "^1.0.0",
     "yargs": "^12.0.2"
   },
