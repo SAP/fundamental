@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.6-rc.6"></a>
+## [1.5.6-rc.6](https://github.com/SAP/fundamental/compare/v1.5.6-rc.5...v1.5.6-rc.6) (2019-04-24)
+
+
+### Bug Fixes
+
+* remove gulp from testing framework ([#1417](https://github.com/SAP/fundamental/issues/1417)) ([d3bac1d](https://github.com/SAP/fundamental/commit/d3bac1d))
+
+
+
 <a name="1.5.6-rc.5"></a>
 ## [1.5.6-rc.5](https://github.com/SAP/fundamental/compare/v1.5.6-rc.4...v1.5.6-rc.5) (2019-04-24)
 
