@@ -25,7 +25,6 @@ Icons can be used adaptively if desired, but at this point they are used more as
 {% include display-component.html component=icon class="icon" %}
 
 <br />
-
 ## Icon animations
 {% capture icon %}
 <span class="sap-icon--synchronize sap-icon--xl sap-icon--animate-spin"></span>
