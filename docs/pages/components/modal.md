@@ -11,7 +11,7 @@ summary:
 
 The modal is a container generally displayed in response to an action.
 {: .docs-intro}
-It is used for short forms, confirmation messages or to display contextual information that does not require a page. The modal should always be used in conjunction with the [Application Layout Containers]({{site.baseurl}}/layouts/application-layout.html#application-with-ui-overlay). See an example [App layout page with Modal]({{site.baseurl}}/demo-pages/modal-overlay-demo-page.html)
+It is used for short forms, confirmation messages or to display contextual information that does not require a page. The modal should always be used in conjunction with the [Application Layout Containers]({{site.baseurl}}/layouts/shell-layout.html#application-with-ui-overlay). See an example [App layout page with Modal]({{site.baseurl}}/demo-pages/modal-overlay-demo-page.html)
 
 > {{ site.data.strings.headerDisclaimer }}
 
