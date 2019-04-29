@@ -4,8 +4,8 @@
   "description": "Fiori Fundamentals is a Design System and HTML/CSS Component Library used to build modern Product User Experiences with the SAP look and feel. Learn more about this project at - http://sap.github.io/fundamental/",
   "main": "index.js",
   "scripts": {
-    "build": "npm run style:remove && npm run style:compile && npm run style:rename && npm run style:postCSS && npm run style:assets",
-    "build:prod": "npm run build && npm run style:minify && npm run style:less",
+    "build": "npm run style:remove && npm run style:compile && npm run style:rename && npm run style:postCSS && npm run style:assets && npm run style:less",
+    "build:prod": "npm run build && npm run style:minify",
     "deploy": "gh-pages -d docs/_site",
     "docs:compile": "npm run build && npm run docs:config && cp scss/icons/SAP-icons.woff docs/css/; cp dist/fiori-fundamentals.css docs/css",
     "docs:config": "./scripts/create-library-config.js",
