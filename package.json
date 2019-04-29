@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run style:remove && npm run style:compile && npm run style:rename && npm run style:postCSS && npm run style:assets",
-    "build:prod": "npm run build && npm run style:minify && npm run style:less",
+    "build:prod": "npm run build && npm run style:less && npm run style:minify",
     "deploy": "gh-pages -d docs/_site",
     "docs:compile": "npm run build && npm run docs:config && cp scss/icons/SAP-icons.woff docs/css/; cp dist/fiori-fundamentals.css docs/css",
     "docs:config": "./scripts/create-library-config.js",
