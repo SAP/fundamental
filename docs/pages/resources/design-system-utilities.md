@@ -75,7 +75,7 @@ Use these CSS classes to control the text size. Used mainly for content text, al
 ## Colors
 {: .docs-header-h2}
 
-All colors on the [color palette](/foundation/colors.html). Can be accessed via SCSS function and respective CSS classes.
+All colors on the [color palette]({{site.baseurl}}/foundation/colors.html). Can be accessed via SCSS function and respective CSS classes.
 
 ### Color Function
 {: .docs-header-h3}
