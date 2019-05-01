@@ -34,7 +34,7 @@ This gives you incredible flexibility to use individual components and enable [a
 npm install fiori-fundamentals --save
 ````
 
-> NOTE: We only distribute the [fonts, icons and CSS](https://github.com/SAP/fundamental/tree/master/dist) and [the SASS source](https://github.com/SAP/fundamental/tree/master/scss), not the full project or HTML for specific components. If your project uses LESS, see [LESS compatible Fiori Fundamentals](https://github.com/SAP/fundamental/wiki/LESS-compatible-Fiori-Fundamentals).
+> NOTE: We only distribute the fonts, icons and compiled CSS and [the SASS source](https://github.com/SAP/fundamental/tree/master/scss), not the full project or HTML for specific components. If your project uses LESS, see [LESS compatible Fiori Fundamentals](https://github.com/SAP/fundamental/wiki/LESS-compatible-Fiori-Fundamentals).
 
 
 ## Working with the Project
@@ -79,7 +79,7 @@ If you encounter an issue, you can create a [ticket](https://github.com/SAP/fund
 
 ## Contributing
 
-If you want to contribute, please check the [Contribution Guidelines](https://github.com/SAP/fundamental/wiki/Contribution-Guidelines). Also check the [SCSS Style Guide](https://github.com/SAP/fundamental/wiki/SCSS-Style-Guide), [Visual Testing Guide](https://github.com/SAP/fundamental/wiki/Visual-Testing-(Simple-and-Automated)) and [Icon Overview](https://github.com/SAP/fundamental/wiki/Generating-Icons).
+If you want to contribute, please check the [Contribution Guidelines](https://github.com/SAP/fundamental/wiki/Contribution-Guidelines). Also check the [Development Guidelines](https://github.com/SAP/fundamental/wiki/Development-Guidelines) and [Visual Testing Guide](https://github.com/SAP/fundamental/wiki/Visual-Testing).
 
 
 ## Versioning
