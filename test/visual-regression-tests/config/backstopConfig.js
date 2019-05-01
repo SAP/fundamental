@@ -34,7 +34,7 @@ const defaultScenario = {
 
 // Specific visual test component configurations.  Read the associated component configuration directory and merge the json.
 fs.readdirSync("test/templates").forEach(function(component) {
-  if(!component.includes('.njk')){
+  if(!component.includes('.njk') && component != 'spinner'){
     let componentScenario = {
       "label": component,
       "urlSuffix": `/${component}`,
