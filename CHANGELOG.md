@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.7-rc.4"></a>
+## [1.5.7-rc.4](https://github.com/SAP/fundamental/compare/v1.5.7-rc.3...v1.5.7-rc.4) (2019-05-01)
+
+
+### Bug Fixes
+
+* update some links in documentation site ([#1433](https://github.com/SAP/fundamental/issues/1433)) ([62a9dcd](https://github.com/SAP/fundamental/commit/62a9dcd))
+
+
+
 <a name="1.5.7-rc.3"></a>
 ## [1.5.7-rc.3](https://github.com/SAP/fundamental/compare/v1.5.7-rc.2...v1.5.7-rc.3) (2019-04-30)
 
