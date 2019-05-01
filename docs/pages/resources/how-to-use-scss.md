@@ -157,7 +157,7 @@ If you have a need to apply a color to any of your scss/css class, you can use t
 }
 {% endhighlight %}
 
-You can refer to the [colors page](/fundamentals/colors.html){:target="_blank"} for the complete list of the available color options.
+You can refer to the [colors page]({{site.baseurl}}/foundation/colors.html){:target="_blank"} for the complete list of the available color options.
 
 ## Spacing Function
 {:.docs-header-h3}
@@ -171,7 +171,7 @@ The space function can be utilized for heights, padding, margins and other posit
 
 
 
-The design system defines a variety of spacing increments that are commonly used throughout and [all of those are available](https://github.com/SAP/fundamental/blob/develop/scss/_settings.scss#L18) using the mixin by passing the key. However, there are four units that will be used most often when building and extending components. These are accessible with special keys to apply consistent padding and margins.
+The design system defines a variety of spacing increments that are commonly used throughout and [all of those are available](https://github.com/SAP/fundamental/blob/master/scss/_settings.scss#L18) using the mixin by passing the key. However, there are four units that will be used most often when building and extending components. These are accessible with special keys to apply consistent padding and margins.
 
 {% highlight css %}
 .foo {
