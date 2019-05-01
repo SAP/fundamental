@@ -1,5 +1,5 @@
 /*!
- * Fiori Fundamentals v1.5.5
+ * Fiori Fundamentals v1.5.7
  * Copyright (c) 2019 SAP SE or an SAP affiliate company.
  * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
  */
@@ -617,6 +617,9 @@
   content: ""
 }
 .sap-icon--message-error::before {
+  content: ""
+}
+.sap-icon--notification::before {
   content: ""
 }
 .sap-icon--comment::before {
@@ -1369,13 +1372,22 @@
 .sap-icon--status-positive::before {
   content: ""
 }
+.sap-icon--status-completed::before {
+  content: ""
+}
 .sap-icon--status-negative::before {
+  content: ""
+}
+.sap-icon--status-error::before {
   content: ""
 }
 .sap-icon--status-inactive::before {
   content: ""
 }
 .sap-icon--status-critical::before {
+  content: ""
+}
+.sap-icon--status-in-progress::before {
   content: ""
 }
 .sap-icon--blank-tag-2::before {
@@ -1502,6 +1514,9 @@
   content: ""
 }
 .sap-icon--detail-view::before {
+  content: ""
+}
+.sap-icon--show-edit::before {
   content: ""
 }
 .sap-icon--collapse::before {
@@ -1948,6 +1963,84 @@
 .sap-icon--increase-line-height::before {
   content: ""
 }
+.sap-icon--fx::before {
+  content: ""
+}
+.sap-icon--add-folder::before {
+  content: ""
+}
+.sap-icon--away::before {
+  content: ""
+}
+.sap-icon--busy::before {
+  content: ""
+}
+.sap-icon--appear-offline::before {
+  content: ""
+}
+.sap-icon--blur::before {
+  content: ""
+}
+.sap-icon--pixelate::before {
+  content: ""
+}
+.sap-icon--horizontal-combination-chart::before {
+  content: ""
+}
+.sap-icon--add-employee::before {
+  content: ""
+}
+.sap-icon--text-color::before {
+  content: ""
+}
+.sap-icon--browse-folder::before {
+  content: ""
+}
+.sap-icon--primary-key::before {
+  content: ""
+}
+.sap-icon--two-keys::before {
+  content: ""
+}
+.sap-icon--strikethrough::before {
+  content: ""
+}
+.sap-icon--text::before {
+  content: ""
+}
+.sap-icon--responsive::before {
+  content: ""
+}
+.sap-icon--desktop-mobile::before {
+  content: ""
+}
+.sap-icon--table-row::before {
+  content: ""
+}
+.sap-icon--table-column::before {
+  content: ""
+}
+.sap-icon--validate::before {
+  content: ""
+}
+.sap-icon--keyboard-and-mouse::before {
+  content: "󢠛"
+}
+.sap-icon--touch::before {
+  content: ""
+}
+.sap-icon--expand-all::before {
+  content: ""
+}
+.sap-icon--collapse-all::before {
+  content: ""
+}
+.sap-icon--combine::before {
+  content: ""
+}
+.sap-icon--split::before {
+  content: ""
+}
 .sap-icon--animate-spin {
   display: inline-block;
   -webkit-animation: sap-icon-spin 2s infinite linear;
@@ -1989,11 +2082,11 @@
   --fd-color-text-5: white;
   --fd-color-background-1: #edeff0;
   --fd-color-background-2: white;
-  --fd-color-background-3: #f7f8f7;
+  --fd-color-background-3: #f1fdf6;
   --fd-color-background-4: #fef7f1;
   --fd-color-background-5: #ffebeb;
-  --fd-color-background-6: #fafafa;
-  --fd-color-background-7: whitesmoke;
+  --fd-color-background-6: #f5faff;
+  --fd-color-background-7: #f4f4f4;
   --fd-color-neutral-1: #fafafa;
   --fd-color-neutral-2: #eeeeef;
   --fd-color-neutral-3: #d9d9d9;
@@ -2030,10 +2123,11 @@
   --fd-color-background-hover: #fafafa;
   --fd-color-background-selected: rgba(10, 110, 209, 0.07);
   --fd-color-background-selected-hover: rgba(10, 110, 209, 0.1);
-  --fd-color-background-information: #fafafa;
-  --fd-color-background-positive: #f7f8f7;
+  --fd-color-background-information: #f5faff;
+  --fd-color-background-positive: #f1fdf6;
   --fd-color-background-alert: #fef7f1;
   --fd-color-background-negative: #ffebeb;
+  --fd-color-background-default: #f4f4f4;
   --fd-color-action: var(--fd-color-action-1);
   --fd-color-action-hover: #085caf;
   --fd-color-action-focus: #085caf;
@@ -2043,9 +2137,18 @@
   --fd-color-positive: #0a7e3e;
   --fd-color-negative: #bb0000;
   --fd-color-alert: #e9730c;
-  --fd-forms-color: #32363a;
-  --fd-forms-border-color: #89919a;
+  --fd-forms-color--focus: #32363a;
+  --fd-forms-color--disabled: #6a6d70;
+  --fd-forms-color--active: #0a6ed1;
   --fd-forms-background-color: white;
+  --fd-forms-background-color--disabled: #fafafa;
+  --fd-forms-background-color--check: white;
+  --fd-forms-background-color--indeterminate: #0854a0;
+  --fd-forms-background-color--check-disabled: rgba(10, 110, 209, 0.4);
+  --fd-forms-border-color: #89919a;
+  --fd-forms-border-color--check: #0854a0;
+  --fd-forms-border-color--focus: #0854a0;
+  --fd-forms-border-color--disabled: #eeeeef;
   --fd-forms-height: 36px;
   --fd-forms-height-compact: 28px;
   --fd-button-line-height: 34px;
@@ -2101,8 +2204,10 @@ html {
 }
 body {
   margin: 0;
+  background-color: #edeff0;
   background-color: var(--fd-background-color);
   -webkit-font-smoothing: antialiased;
+  color: #32363a;
   color: var(--fd-color)
 }
 h1,
@@ -2157,10 +2262,12 @@ a {
   display: inline-block;
   -webkit-transition: all 125ms ease-in;
   transition: all 125ms ease-in;
+  color: #0a6ed1;
   color: var(--fd-color-action)
 }
 a .is-hover,
 a:hover {
+  color: #085caf;
   color: var(--fd-color-action-hover)
 }
 a.is-active,
@@ -2169,17 +2276,20 @@ a.is-selected,
 a:active,
 a[aria-pressed=true],
 a[aria-selected=true] {
+  color: #0254a7;
   color: var(--fd-color-action-selected);
   outline: 0
 }
 a:focus {
   outline-style: dotted;
   outline-width: 1px;
+  outline-color: #085caf;
   outline-color: var(--fd-color-action-focus)
 }
 a.is-disabled,
 a:disabled,
 a[aria-disabled=true] {
+  outline-color: rgba(10,110,209,.4);
   outline-color: var(--fd-color-action-disabled);
   cursor: not-allowed
 }
@@ -2202,6 +2312,7 @@ input[type=checkbox],
 input[type=radio] {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
@@ -2216,8 +2327,11 @@ input[type=radio] {
   outline: 0;
   border-style: solid;
   border-width: 1px;
+  color: #32363a;
   color: var(--fd-forms-color);
+  border-color: #89919a;
   border-color: var(--fd-forms-border-color);
+  background-color: #fff;
   background-color: var(--fd-forms-background-color);
   border-radius: 4px;
   -webkit-transition: border-color 125ms;
@@ -2233,6 +2347,7 @@ input:hover[type=checkbox],
 input:hover[type=radio],
 input[type=checkbox] .is-hover,
 input[type=radio] .is-hover {
+  border-color: #085caf;
   --fd-forms-border-color: var(--fd-color-action-hover)
 }
 .fd-checkbox:focus,
@@ -2243,15 +2358,19 @@ input.is-focus[type=checkbox],
 input.is-focus[type=radio],
 input:focus[type=checkbox],
 input:focus[type=radio] {
+  -webkit-box-shadow: 0 0 0 1px #085caf;
+  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus);
-  --fd-forms-border-color: var(--fd-color-action-focus)
+  --fd-forms-border-color: var(--fd-color-action-focus);
+  border-color: #085caf
 }
 .is-invalid.fd-checkbox,
 .is-invalid.fd-radio,
 input.is-invalid[type=checkbox],
 input.is-invalid[type=radio] {
   --fd-forms-border-color: var(--fd-color-negative);
+  border-color: #b00;
   border-width: 2px
 }
 .is-valid.fd-checkbox,
@@ -2259,6 +2378,7 @@ input.is-invalid[type=radio] {
 input.is-valid[type=checkbox],
 input.is-valid[type=radio] {
   --fd-forms-border-color: var(--fd-color-positive);
+  border-color: #0a7e3e;
   border-width: 2px
 }
 .is-alert.fd-checkbox,
@@ -2270,6 +2390,7 @@ input.is-alert[type=radio],
 input.is-warning[type=checkbox],
 input.is-warning[type=radio] {
   --fd-forms-border-color: var(--fd-color-alert);
+  border-color: #e9730c;
   border-width: 2px
 }
 .fd-checkbox:disabled,
@@ -2287,7 +2408,10 @@ input[aria-disabled=true][type=radio] {
   cursor: not-allowed;
   --fd-forms-color: var(--fd-color-text-3);
   --fd-forms-border-color: var(--fd-color-neutral-2);
-  --fd-forms-background-color: var(--fd-color-neutral-1)
+  --fd-forms-background-color: var(--fd-color-neutral-1);
+  color: #6a6d70;
+  border-color: #eeeeef;
+  background-color: #fafafa
 }
 .fd-checkbox[readonly],
 .fd-radio[readonly],
@@ -2299,6 +2423,8 @@ input[readonly][type=checkbox],
 input[readonly][type=radio] {
   --fd-forms-color: var(--fd-forms-color);
   --fd-forms-border-color: var(--fd-color-neutral-2);
+  color: #32363a;
+  border-color: #eeeeef;
   border-width: 0 0 1px;
   border-radius: 0
 }
@@ -2326,6 +2452,7 @@ input[type=time],
 input[type=url] {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
@@ -2340,14 +2467,18 @@ input[type=url] {
   outline: 0;
   border-style: solid;
   border-width: 1px;
+  color: #32363a;
   color: var(--fd-forms-color);
+  border-color: #89919a;
   border-color: var(--fd-forms-border-color);
+  background-color: #fff;
   background-color: var(--fd-forms-background-color);
   border-radius: 4px;
   -webkit-transition: border-color 125ms;
   transition: border-color 125ms;
   padding-left: 12px;
   padding-right: 12px;
+  height: 36px;
   height: var(--fd-forms-height);
   width: 100%
 }
@@ -2371,6 +2502,7 @@ input[type=time] .is-hover,
 input[type=time]:hover,
 input[type=url] .is-hover,
 input[type=url]:hover {
+  border-color: #085caf;
   --fd-forms-border-color: var(--fd-color-action-hover)
 }
 .fd-input.is-focus,
@@ -2393,9 +2525,12 @@ input[type=time].is-focus,
 input[type=time]:focus,
 input[type=url].is-focus,
 input[type=url]:focus {
+  -webkit-box-shadow: 0 0 0 1px #085caf;
+  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus);
-  --fd-forms-border-color: var(--fd-color-action-focus)
+  --fd-forms-border-color: var(--fd-color-action-focus);
+  border-color: #085caf
 }
 .fd-input.is-invalid,
 input[type=date].is-invalid,
@@ -2408,6 +2543,7 @@ input[type=text].is-invalid,
 input[type=time].is-invalid,
 input[type=url].is-invalid {
   --fd-forms-border-color: var(--fd-color-negative);
+  border-color: #b00;
   border-width: 2px
 }
 .fd-input.is-valid,
@@ -2421,6 +2557,7 @@ input[type=text].is-valid,
 input[type=time].is-valid,
 input[type=url].is-valid {
   --fd-forms-border-color: var(--fd-color-positive);
+  border-color: #0a7e3e;
   border-width: 2px
 }
 .fd-input.is-alert,
@@ -2444,6 +2581,7 @@ input[type=time].is-warning,
 input[type=url].is-alert,
 input[type=url].is-warning {
   --fd-forms-border-color: var(--fd-color-alert);
+  border-color: #e9730c;
   border-width: 2px
 }
 .fd-input.is-disabled,
@@ -2479,7 +2617,10 @@ input[type=url][aria-disabled=true] {
   cursor: not-allowed;
   --fd-forms-color: var(--fd-color-text-3);
   --fd-forms-border-color: var(--fd-color-neutral-2);
-  --fd-forms-background-color: var(--fd-color-neutral-1)
+  --fd-forms-background-color: var(--fd-color-neutral-1);
+  color: #6a6d70;
+  border-color: #eeeeef;
+  background-color: #fafafa
 }
 .fd-input.is-readonly,
 .fd-input[readonly],
@@ -2503,6 +2644,8 @@ input[type=url].is-readonly,
 input[type=url][readonly] {
   --fd-forms-color: var(--fd-forms-color);
   --fd-forms-border-color: var(--fd-color-neutral-2);
+  color: #32363a;
+  border-color: #eeeeef;
   border-width: 0 0 1px;
   border-radius: 0
 }
@@ -2516,6 +2659,20 @@ input[type=tel]::-webkit-input-placeholder,
 input[type=text]::-webkit-input-placeholder,
 input[type=time]::-webkit-input-placeholder,
 input[type=url]::-webkit-input-placeholder {
+  color: #8d9194;
+  color: var(--fd-color-neutral-4)
+}
+.fd-input::-moz-placeholder,
+input[type=date]::-moz-placeholder,
+input[type=email]::-moz-placeholder,
+input[type=number]::-moz-placeholder,
+input[type=password]::-moz-placeholder,
+input[type=search]::-moz-placeholder,
+input[type=tel]::-moz-placeholder,
+input[type=text]::-moz-placeholder,
+input[type=time]::-moz-placeholder,
+input[type=url]::-moz-placeholder {
+  color: #8d9194;
   color: var(--fd-color-neutral-4)
 }
 .fd-input:-ms-input-placeholder,
@@ -2528,6 +2685,7 @@ input[type=tel]:-ms-input-placeholder,
 input[type=text]:-ms-input-placeholder,
 input[type=time]:-ms-input-placeholder,
 input[type=url]:-ms-input-placeholder {
+  color: #8d9194;
   color: var(--fd-color-neutral-4)
 }
 .fd-input::-ms-input-placeholder,
@@ -2540,6 +2698,7 @@ input[type=tel]::-ms-input-placeholder,
 input[type=text]::-ms-input-placeholder,
 input[type=time]::-ms-input-placeholder,
 input[type=url]::-ms-input-placeholder {
+  color: #8d9194;
   color: var(--fd-color-neutral-4)
 }
 .fd-input::placeholder,
@@ -2552,15 +2711,18 @@ input[type=tel]::placeholder,
 input[type=text]::placeholder,
 input[type=time]::placeholder,
 input[type=url]::placeholder {
+  color: #8d9194;
   color: var(--fd-color-neutral-4)
 }
 input.fd-input--compact {
+  height: 28px;
   height: var(--fd-forms-height-compact)
 }
 .fd-textarea,
 textarea {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
@@ -2575,8 +2737,11 @@ textarea {
   outline: 0;
   border-style: solid;
   border-width: 1px;
+  color: #32363a;
   color: var(--fd-forms-color);
+  border-color: #89919a;
   border-color: var(--fd-forms-border-color);
+  background-color: #fff;
   background-color: var(--fd-forms-background-color);
   border-radius: 4px;
   -webkit-transition: border-color 125ms;
@@ -2584,6 +2749,7 @@ textarea {
   padding-left: 12px;
   padding-right: 12px;
   width: 100%;
+  height: 72px;
   height: calc(var(--fd-forms-height) * 2);
   padding-top: 12px
 }
@@ -2591,24 +2757,30 @@ textarea {
 .fd-textarea:hover,
 textarea .is-hover,
 textarea:hover {
+  border-color: #085caf;
   --fd-forms-border-color: var(--fd-color-action-hover)
 }
 .fd-textarea.is-focus,
 .fd-textarea:focus,
 textarea.is-focus,
 textarea:focus {
+  -webkit-box-shadow: 0 0 0 1px #085caf;
+  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus);
-  --fd-forms-border-color: var(--fd-color-action-focus)
+  --fd-forms-border-color: var(--fd-color-action-focus);
+  border-color: #085caf
 }
 .fd-textarea.is-invalid,
 textarea.is-invalid {
   --fd-forms-border-color: var(--fd-color-negative);
+  border-color: #b00;
   border-width: 2px
 }
 .fd-textarea.is-valid,
 textarea.is-valid {
   --fd-forms-border-color: var(--fd-color-positive);
+  border-color: #0a7e3e;
   border-width: 2px
 }
 .fd-textarea.is-alert,
@@ -2616,6 +2788,7 @@ textarea.is-valid {
 textarea.is-alert,
 textarea.is-warning {
   --fd-forms-border-color: var(--fd-color-alert);
+  border-color: #e9730c;
   border-width: 2px
 }
 .fd-textarea.is-disabled,
@@ -2627,7 +2800,10 @@ textarea[aria-disabled=true] {
   cursor: not-allowed;
   --fd-forms-color: var(--fd-color-text-3);
   --fd-forms-border-color: var(--fd-color-neutral-2);
-  --fd-forms-background-color: var(--fd-color-neutral-1)
+  --fd-forms-background-color: var(--fd-color-neutral-1);
+  color: #6a6d70;
+  border-color: #eeeeef;
+  background-color: #fafafa
 }
 .fd-textarea.is-readonly,
 .fd-textarea[readonly],
@@ -2635,10 +2811,13 @@ textarea.is-readonly,
 textarea[readonly] {
   --fd-forms-color: var(--fd-forms-color);
   --fd-forms-border-color: var(--fd-color-neutral-2);
+  color: #32363a;
+  border-color: #eeeeef;
   border-width: 0 0 1px;
   border-radius: 0
 }
 .fd-textarea--compact {
+  height: 28px;
   height: calc(var(--fd-forms-height-compact) * 2);
   padding-top: 12px
 }
@@ -2646,6 +2825,7 @@ textarea[readonly] {
 select {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
@@ -2660,8 +2840,11 @@ select {
   outline: 0;
   border-style: solid;
   border-width: 1px;
+  color: #32363a;
   color: var(--fd-forms-color);
+  border-color: #89919a;
   border-color: var(--fd-forms-border-color);
+  background-color: #fff;
   background-color: var(--fd-forms-background-color);
   border-radius: 4px;
   -webkit-transition: border-color 125ms;
@@ -2676,30 +2859,37 @@ select {
   background-position: calc(100% + 1px) center;
   padding-right: 48px;
   width: 100%;
+  height: 36px;
   height: var(--fd-forms-height)
 }
 .fd-select .is-hover,
 .fd-select:hover,
 select .is-hover,
 select:hover {
+  border-color: #085caf;
   --fd-forms-border-color: var(--fd-color-action-hover)
 }
 .fd-select.is-focus,
 .fd-select:focus,
 select.is-focus,
 select:focus {
+  -webkit-box-shadow: 0 0 0 1px #085caf;
+  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus);
-  --fd-forms-border-color: var(--fd-color-action-focus)
+  --fd-forms-border-color: var(--fd-color-action-focus);
+  border-color: #085caf
 }
 .fd-select.is-invalid,
 select.is-invalid {
   --fd-forms-border-color: var(--fd-color-negative);
+  border-color: #b00;
   border-width: 2px
 }
 .fd-select.is-valid,
 select.is-valid {
   --fd-forms-border-color: var(--fd-color-positive);
+  border-color: #0a7e3e;
   border-width: 2px
 }
 .fd-select.is-alert,
@@ -2707,6 +2897,7 @@ select.is-valid {
 select.is-alert,
 select.is-warning {
   --fd-forms-border-color: var(--fd-color-alert);
+  border-color: #e9730c;
   border-width: 2px
 }
 .fd-select.is-disabled,
@@ -2718,7 +2909,10 @@ select[aria-disabled=true] {
   cursor: not-allowed;
   --fd-forms-color: var(--fd-color-text-3);
   --fd-forms-border-color: var(--fd-color-neutral-2);
-  --fd-forms-background-color: var(--fd-color-neutral-1)
+  --fd-forms-background-color: var(--fd-color-neutral-1);
+  color: #6a6d70;
+  border-color: #eeeeef;
+  background-color: #fafafa
 }
 .fd-select.is-readonly,
 .fd-select[readonly],
@@ -2726,6 +2920,8 @@ select.is-readonly,
 select[readonly] {
   --fd-forms-color: var(--fd-forms-color);
   --fd-forms-border-color: var(--fd-color-neutral-2);
+  color: #32363a;
+  border-color: #eeeeef;
   border-width: 0 0 1px;
   border-radius: 0
 }
@@ -2774,14 +2970,17 @@ select::after {
 }
 .fd-select[multiple],
 select[multiple] {
+  height: 108px;
   height: calc(var(--fd-forms-height) * 3);
   background-image: none;
   padding-top: 12px
 }
 .fd-select--compact {
+  height: 28px;
   height: var(--fd-forms-height-compact)
 }
 [multiple].fd-select--compact {
+  height: 84px;
   height: calc(var(--fd-forms-height-compact) * 3)
 }
 @-moz-document url-prefix() {
@@ -2805,48 +3004,12 @@ input[type=radio] {
   position: relative;
   cursor: pointer
 }
-.fd-checkbox .is-hover,
-.fd-checkbox:hover,
-.fd-radio .is-hover,
-.fd-radio:hover,
-input[type=checkbox] .is-hover,
-input[type=checkbox]:hover,
-input[type=radio] .is-hover,
-input[type=radio]:hover {
-  border-width: 2px
-}
-.fd-checkbox .is-hover.is-disabled,
-.fd-checkbox .is-hover:disabled,
-.fd-checkbox .is-hover[aria-disabled=true],
-.fd-checkbox:hover.is-disabled,
-.fd-checkbox:hover:disabled,
-.fd-checkbox:hover[aria-disabled=true],
-.fd-radio .is-hover.is-disabled,
-.fd-radio .is-hover:disabled,
-.fd-radio .is-hover[aria-disabled=true],
-.fd-radio:hover.is-disabled,
-.fd-radio:hover:disabled,
-.fd-radio:hover[aria-disabled=true],
-input[type=checkbox] .is-hover.is-disabled,
-input[type=checkbox] .is-hover:disabled,
-input[type=checkbox] .is-hover[aria-disabled=true],
-input[type=checkbox]:hover.is-disabled,
-input[type=checkbox]:hover:disabled,
-input[type=checkbox]:hover[aria-disabled=true],
-input[type=radio] .is-hover.is-disabled,
-input[type=radio] .is-hover:disabled,
-input[type=radio] .is-hover[aria-disabled=true],
-input[type=radio]:hover.is-disabled,
-input[type=radio]:hover:disabled,
-input[type=radio]:hover[aria-disabled=true] {
-  border-width: 1px
-}
 .fd-checkbox:checked,
 .fd-radio:checked,
 input[type=checkbox]:checked,
 input[type=radio]:checked {
-  --fd-forms-border-color: var(--fd-color-action-selected);
-  --fd-forms-background-color: var(--fd-color-action-selected)
+  border-color: #0854a0;
+  border-color: var(--fd-forms-border-color--check)
 }
 .fd-checkbox:checked.is-disabled,
 .fd-checkbox:checked:disabled,
@@ -2860,18 +3023,8 @@ input[type=checkbox]:checked[aria-disabled=true],
 input[type=radio]:checked.is-disabled,
 input[type=radio]:checked:disabled,
 input[type=radio]:checked[aria-disabled=true] {
-  --fd-forms-border-color: var(--fd-color-action-disabled);
-  --fd-forms-background-color: var(--fd-color-action-disabled)
-}
-.fd-checkbox:checked .is-hover,
-.fd-checkbox:checked:hover,
-.fd-radio:checked .is-hover,
-.fd-radio:checked:hover,
-input[type=checkbox]:checked .is-hover,
-input[type=checkbox]:checked:hover,
-input[type=radio]:checked .is-hover,
-input[type=radio]:checked:hover {
-  border-width: 1px
+  border-color: #eeeeef;
+  border-color: var(--fd-forms-border-color--disabled)
 }
 .fd-radio,
 input[type=radio] {
@@ -2881,31 +3034,19 @@ input[type=radio] {
 input[type=radio]::after {
   content: "";
   border-radius: 50%;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   position: absolute;
-  top: calc(50% - (8px/2));
-  left: calc(50% - (8px/2));
+  top: calc(50% - (10px/2));
+  left: calc(50% - (10px/2));
   -webkit-transition: background-color 125ms ease-in;
   transition: background-color 125ms ease-in;
   background-color: transparent
 }
-.fd-radio:checked,
-input[type=radio]:checked {
-  --fd-forms-background-color: var(--fd-forms-background-color)
-}
 .fd-radio:checked::after,
 input[type=radio]:checked::after {
-  --fd-forms-background-color: var(--fd-color-action-selected);
-  background-color: var(--fd-forms-background-color)
-}
-.fd-radio:checked.is-disabled,
-.fd-radio:checked:disabled,
-.fd-radio:checked[aria-disabled=true],
-input[type=radio]:checked.is-disabled,
-input[type=radio]:checked:disabled,
-input[type=radio]:checked[aria-disabled=true] {
-  --fd-forms-background-color: var(--fd-forms-background-color)
+  background-color: #0854a0;
+  background-color: var(--fd-forms-border-color--check)
 }
 .fd-radio:checked.is-disabled::after,
 .fd-radio:checked:disabled::after,
@@ -2913,7 +3054,8 @@ input[type=radio]:checked[aria-disabled=true] {
 input[type=radio]:checked.is-disabled::after,
 input[type=radio]:checked:disabled::after,
 input[type=radio]:checked[aria-disabled=true]::after {
-  --fd-forms-background-color: var(--fd-color-action-disabled)
+  background-color: #eeeeef;
+  background-color: var(--fd-forms-border-color--disabled)
 }
 .fd-checkbox::before,
 input[type=checkbox]::before {
@@ -2932,17 +3074,60 @@ input[type=checkbox]::before {
 }
 .fd-checkbox:checked::before,
 input[type=checkbox]:checked::before {
-  --fd-forms-border-color: var(--fd-color-action-2);
-  border-color: var(--fd-forms-border-color)
+  border-color: #0854a0;
+  border-color: var(--fd-forms-border-color--check)
+}
+.fd-checkbox:checked.is-disabled::before,
+.fd-checkbox:checked:disabled::before,
+.fd-checkbox:checked[aria-disabled=true]::before,
+input[type=checkbox]:checked.is-disabled::before,
+input[type=checkbox]:checked:disabled::before,
+input[type=checkbox]:checked[aria-disabled=true]::before {
+  border-color: #eeeeef;
+  border-color: var(--fd-forms-border-color--disabled)
 }
 .fd-checkbox:indeterminate,
 input[type=checkbox]:indeterminate {
-  --fd-forms-border-color: var(--fd-color-action-2);
-  --fd-forms-background-color: var(--fd-color-action-selected);
   border-width: 3px;
   border-style: solid;
-  -webkit-box-shadow: 0 0 0 1px var(--fd-forms-background-color);
-  box-shadow: 0 0 0 1px var(--fd-forms-background-color)
+  border-color: #fff;
+  border-color: var(--fd-forms-background-color);
+  background-color: #0854a0;
+  background-color: var(--fd-forms-background-color--indeterminate);
+  -webkit-box-shadow: 0 0 0 1px #0854a0;
+  box-shadow: 0 0 0 1px #0854a0;
+  -webkit-box-shadow: 0 0 0 1px var(--fd-forms-border-color--check);
+  box-shadow: 0 0 0 1px var(--fd-forms-border-color--check)
+}
+.fd-checkbox:indeterminate .is-hover,
+.fd-checkbox:indeterminate:hover,
+input[type=checkbox]:indeterminate .is-hover,
+input[type=checkbox]:indeterminate:hover {
+  border-width: 3px
+}
+.fd-checkbox:indeterminate.is-disabled,
+.fd-checkbox:indeterminate:disabled,
+.fd-checkbox:indeterminate[aria-disabled=true],
+input[type=checkbox]:indeterminate.is-disabled,
+input[type=checkbox]:indeterminate:disabled,
+input[type=checkbox]:indeterminate[aria-disabled=true] {
+  border-color: #fff;
+  border-color: var(--fd-forms-background-color);
+  background-color: #eeeeef;
+  background-color: var(--fd-forms-border-color--disabled);
+  -webkit-box-shadow: 0 0 0 1px #eeeeef;
+  box-shadow: 0 0 0 1px #eeeeef;
+  -webkit-box-shadow: 0 0 0 1px var(--fd-forms-border-color--disabled);
+  box-shadow: 0 0 0 1px var(--fd-forms-border-color--disabled)
+}
+.fd-checkbox:indeterminate.is-disabled::before,
+.fd-checkbox:indeterminate:disabled::before,
+.fd-checkbox:indeterminate[aria-disabled=true]::before,
+input[type=checkbox]:indeterminate.is-disabled::before,
+input[type=checkbox]:indeterminate:disabled::before,
+input[type=checkbox]:indeterminate[aria-disabled=true]::before {
+  border-color: #eeeeef;
+  border-color: var(--fd-forms-border-color--disabled)
 }
 /*!
 .fd-section+(--full-bleed, --no-border)
@@ -2999,6 +3184,7 @@ input[type=checkbox]:indeterminate {
   font-size: 1.71429rem;
   line-height: 1.33333;
   font-weight: 400;
+  color: #51555a;
   color: var(--fd-section-title-color);
   -webkit-box-flex: 1;
   -ms-flex: 1;
@@ -3549,6 +3735,7 @@ input[type=checkbox]:indeterminate {
   min-height: auto
 }
 .fd-shell__header {
+  background-color: #354a5f;
   background-color: var(--fd-color-shell-1);
   position: absolute;
   z-index: 1;
@@ -3599,6 +3786,7 @@ input[type=checkbox]:indeterminate {
 }
 .fd-app__navigation {
   --fd-background-color: var(--fd-color-background-2);
+  background-color: #fff;
   background-color: var(--fd-background-color);
   height: 52px;
   max-height: 52px;
@@ -3646,12 +3834,15 @@ input[type=checkbox]:indeterminate {
   flex-direction: column;
   min-height: 100%;
   width: 100%;
+  background-color: #edeff0;
   background-color: var(--fd-page-background-color)
 }
 .fd-page__header {
   border-style: solid;
   border-width: 0;
+  border-color: #d9d9d9;
   border-color: var(--fd-page-header-border-color);
+  background-color: transparent;
   background-color: var(--fd-page-header-background-color);
   min-height: auto;
   padding: 0 32px;
@@ -3718,6 +3909,7 @@ input[type=checkbox]:indeterminate {
   font-size: 1.71429rem;
   line-height: 1.33333;
   font-weight: 400;
+  color: #51555a;
   color: var(--fd-section-title-color);
   -webkit-box-flex: 1;
   -ms-flex: 1;
@@ -3749,11 +3941,16 @@ input[type=checkbox]:indeterminate {
   --fd-panel-divider-color: var(--fd-panel-border-color);
   --fd-panel-border-width: 0;
   --fd-panel-title-color: var(--fd-color-text-1);
+  background-color: #fff;
   background-color: var(--fd-panel-background-color);
   border-radius: 4px;
   border-style: solid;
+  border-width: 0;
   border-width: var(--fd-panel-border-width);
+  border-color: transparent;
   border-color: var(--fd-panel-border-color);
+  -webkit-box-shadow: 0 5px 20px 0 rgba(50,54,58,.08);
+  box-shadow: 0 5px 20px 0 rgba(50,54,58,.08);
   -webkit-box-shadow: 0 5px 20px 0 var(--fd-panel-box-shadow-color);
   box-shadow: 0 5px 20px 0 var(--fd-panel-box-shadow-color)
 }
@@ -3772,11 +3969,13 @@ input[type=checkbox]:indeterminate {
   align-items: center;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  border-bottom-color: #eeeeef;
   border-bottom-color: var(--fd-panel-divider-color);
   padding: 16px 24px;
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
+  color: #6a6d70;
   color: var(--fd-color-text-3)
 }
 .fd-panel__title {
@@ -3787,6 +3986,7 @@ input[type=checkbox]:indeterminate {
   -ms-flex: 1;
   flex: 1;
   margin-bottom: 0;
+  color: #32363a;
   color: var(--fd-panel-title-color)
 }
 .fd-panel__description {
@@ -3806,6 +4006,7 @@ input[type=checkbox]:indeterminate {
   padding: 12px 24px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  border-bottom-color: #eeeeef;
   border-bottom-color: var(--fd-panel-divider-color);
   -webkit-transition: all .15s ease-in;
   transition: all .15s ease-in
@@ -3834,6 +4035,7 @@ input[type=checkbox]:indeterminate {
   padding: 16px 24px;
   border-top-style: solid;
   border-top-width: 1px;
+  border-top-color: #eeeeef;
   border-top-color: var(--fd-panel-divider-color)
 }
 /*!
@@ -3864,6 +4066,7 @@ input[type=checkbox]:indeterminate {
     flex-wrap: wrap;
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    grid-gap: 16px;
     grid-gap: var(--fd-width-gutter)
   }
   .fd-panel-grid--1col {
@@ -3916,6 +4119,7 @@ input[type=checkbox]:indeterminate {
   display: none
 }
 .fd-overlay--modal {
+  background-color: rgba(74,80,92,.3);
   background-color: var(--fd-overlay-background-color);
   height: 100vh;
   width: 100vw
@@ -3932,18 +4136,21 @@ input[type=checkbox]:indeterminate {
     .fd-alert__close
 */
 .fd-alert {
-  --fd-alert-background-color: var(--fd-color-neutral-1);
+  --fd-alert-background-color: var(--fd-color-background-default);
   --fd-alert-border-color: var(--fd-color-neutral-4);
   --fd-alert-action-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
   color: #32363a;
   border-style: solid;
   border-width: 1px;
+  background-color: #f4f4f4;
   background-color: var(--fd-alert-background-color);
+  border-color: #89919a;
   border-color: var(--fd-alert-border-color);
   padding: 8px 12px;
   border-radius: 4px
@@ -3978,6 +4185,7 @@ input[type=checkbox]:indeterminate {
   white-space: nowrap;
   background-color: transparent;
   border-radius: 4px;
+  color: #0a6ed1;
   color: var(--fd-alert-action-color);
   width: 36px;
   height: 36px
@@ -4004,6 +4212,8 @@ input[type=checkbox]:indeterminate {
 }
 .fd-alert__close.is-focus,
 .fd-alert__close:focus {
+  -webkit-box-shadow: 0 0 0 1px #085caf;
+  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
@@ -4108,11 +4318,14 @@ input[type=checkbox]:indeterminate {
 .fd-alert--warning {
   --fd-alert-background-color: var(--fd-color-background-alert);
   --fd-alert-border-color: var(--fd-color-status-2);
+  background-color: #fef7f1;
   background-color: var(--fd-alert-background-color);
+  border-color: #e9730c;
   border-color: var(--fd-alert-border-color)
 }
 .fd-alert--warning::after,
 .fd-alert--warning::before {
+  color: #e9730c;
   color: var(--fd-alert-border-color)
 }
 .fd-alert--warning::before {
@@ -4161,11 +4374,14 @@ input[type=checkbox]:indeterminate {
 .fd-alert--error {
   --fd-alert-background-color: var(--fd-color-background-negative);
   --fd-alert-border-color: var(--fd-color-status-3);
+  background-color: #ffebeb;
   background-color: var(--fd-alert-background-color);
+  border-color: #b00;
   border-color: var(--fd-alert-border-color)
 }
 .fd-alert--error::after,
 .fd-alert--error::before {
+  color: #b00;
   color: var(--fd-alert-border-color)
 }
 .fd-alert--error::before {
@@ -4214,11 +4430,14 @@ input[type=checkbox]:indeterminate {
 .fd-alert--success {
   --fd-alert-background-color: var(--fd-color-background-positive);
   --fd-alert-border-color: var(--fd-color-status-1);
+  background-color: #f1fdf6;
   background-color: var(--fd-alert-background-color);
+  border-color: #0a7e3e;
   border-color: var(--fd-alert-border-color)
 }
 .fd-alert--success::after,
 .fd-alert--success::before {
+  color: #0a7e3e;
   color: var(--fd-alert-border-color)
 }
 .fd-alert--success::before {
@@ -4267,11 +4486,14 @@ input[type=checkbox]:indeterminate {
 .fd-alert--information {
   --fd-alert-background-color: var(--fd-color-background-information);
   --fd-alert-border-color: var(--fd-color-action-1);
+  background-color: #f5faff;
   background-color: var(--fd-alert-background-color);
+  border-color: #0a6ed1;
   border-color: var(--fd-alert-border-color)
 }
 .fd-alert--information::after,
 .fd-alert--information::before {
+  color: #0a6ed1;
   color: var(--fd-alert-border-color)
 }
 .fd-alert--information::before {
@@ -4327,6 +4549,7 @@ input[type=checkbox]:indeterminate {
   --fd-action-bar-backbtn-separator-color: var(--fd-color-neutral-3);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   background-color: transparent;
@@ -4343,6 +4566,7 @@ input[type=checkbox]:indeterminate {
 .fd-action-bar__header {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
@@ -4387,6 +4611,7 @@ input[type=checkbox]:indeterminate {
   right: -4px;
   border-right-style: solid;
   border-right-width: 1px;
+  border-right-color: #d9d9d9;
   border-right-color: var(--fd-action-bar-backbtn-separator-color)
 }
 .fd-action-bar__back button {
@@ -4414,6 +4639,7 @@ input[type=checkbox]:indeterminate {
   }
 }
 .fd-action-bar__description {
+  color: #6a6d70;
   color: var(--fd-color-text-3);
   font-size: 1rem;
   line-height: 1.42857;
@@ -4432,6 +4658,7 @@ input[type=checkbox]:indeterminate {
 .fd-action-bar__actions {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
@@ -4481,13 +4708,16 @@ input[type=checkbox]:indeterminate {
   --fd-badge-background-color: transparent;
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
   font-weight: 700;
+  color: #6a6d70;
   color: var(--fd-badge-color);
+  background-color: transparent;
   background-color: var(--fd-badge-background-color);
   text-transform: uppercase;
   line-height: 16px;
@@ -4504,25 +4734,32 @@ input[type=checkbox]:indeterminate {
 }
 .fd-badge--filled {
   --fd-badge-background-color: var(--fd-color-neutral-1);
+  background-color: #fafafa;
   border: none
 }
 .fd-badge--filled.fd-badge--success {
-  --fd-badge-background-color: var(--fd-color-background-positive)
+  --fd-badge-background-color: var(--fd-color-background-positive);
+  background-color: #f1fdf6
 }
 .fd-badge--filled.fd-badge--warning {
-  --fd-badge-background-color: var(--fd-color-background-alert)
+  --fd-badge-background-color: var(--fd-color-background-alert);
+  background-color: #fef7f1
 }
 .fd-badge--filled.fd-badge--error {
-  --fd-badge-background-color: var(--fd-color-background-negative)
+  --fd-badge-background-color: var(--fd-color-background-negative);
+  background-color: #ffebeb
 }
 .fd-badge--success {
-  --fd-badge-color: var(--fd-color-positive)
+  --fd-badge-color: var(--fd-color-positive);
+  color: #0a7e3e
 }
 .fd-badge--warning {
-  --fd-badge-color: var(--fd-color-alert)
+  --fd-badge-color: var(--fd-color-alert);
+  color: #e9730c
 }
 .fd-badge--error {
-  --fd-badge-color: var(--fd-color-negative)
+  --fd-badge-color: var(--fd-color-negative);
+  color: #b00
 }
 /*!
 .fd-button+( (--compact), (--emphasized, --light), (--standard, --positive, --medium, --negative))+( (.is-disabled | [aria-disabled=true]) | (.is-selected | [aria-selected=true] | (.is-pressed | [aria-pressed=true]))
@@ -4553,20 +4790,27 @@ a[class*=fd-button--] {
   white-space: nowrap;
   background-color: transparent;
   border-radius: 4px;
+  height: 36px;
   height: var(--fd-forms-height);
+  max-height: 36px;
   max-height: var(--fd-forms-height);
+  min-width: 36px;
   min-width: var(--fd-forms-height);
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
+  line-height: 34px;
   line-height: var(--fd-button-line-height);
   padding-left: 12px;
   padding-right: 12px;
   text-align: center;
   border-style: solid;
   border-width: 1px;
+  color: #0a6ed1;
   color: var(--fd-button-color);
+  border-color: #0a6ed1;
   border-color: var(--fd-button-border-color);
+  background-color: #fff;
   background-color: var(--fd-button-background-color);
   -webkit-transition: all 125ms ease-in;
   transition: all 125ms ease-in
@@ -4633,6 +4877,8 @@ a[class*=fd-button--]:empty::before {
 [class*=fd-button--]:focus,
 a[class*=fd-button--].is-focus,
 a[class*=fd-button--]:focus {
+  -webkit-box-shadow: 0 0 0 1px #085caf;
+  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
@@ -4643,7 +4889,9 @@ a[class*=fd-button--]:focus {
 a[class*=fd-button--] .is-hover,
 a[class*=fd-button--]:hover {
   --fd-button-background-color: var(--fd-color-action-hover);
-  --fd-button-color: var(--fd-color-action-2)
+  --fd-button-color: var(--fd-color-action-2);
+  color: #fff;
+  background-color: #085caf
 }
 .fd-button .is-hover.is-disabled,
 .fd-button .is-hover:disabled,
@@ -4664,7 +4912,9 @@ a[class*=fd-button--]:hover.is-disabled,
 a[class*=fd-button--]:hover:disabled,
 a[class*=fd-button--]:hover[aria-disabled=true] {
   --fd-button-background-color: var(--fd-color-background-2);
-  --fd-button-color: var(--fd-color-action-1)
+  --fd-button-color: var(--fd-color-action-1);
+  color: #0a6ed1;
+  background-color: #fff
 }
 .fd-button.is-active,
 .fd-button.is-pressed,
@@ -4685,7 +4935,9 @@ a[class*=fd-button--]:active,
 a[class*=fd-button--][aria-pressed=true],
 a[class*=fd-button--][aria-selected=true] {
   --fd-button-background-color: var(--fd-color-action-selected);
-  --fd-button-color: var(--fd-color-action-2)
+  --fd-button-color: var(--fd-color-action-2);
+  color: #fff;
+  background-color: #0254a7
 }
 .fd-button.is-disabled,
 .fd-button:disabled,
@@ -4701,28 +4953,41 @@ a[class*=fd-button--][aria-disabled=true] {
 }
 .fd-button--compact,
 a.fd-button--compact {
+  height: 36px;
   height: var(--fd-forms-height-compact);
+  max-height: 36px;
   max-height: var(--fd-forms-height-compact);
+  min-width: 36px;
   min-width: var(--fd-forms-height-compact);
+  line-height: 26px;
   line-height: var(--fd-button-line-height-compact)
 }
 .fd-for-touch .fd-button--compact,
 .fd-for-touch a.fd-button--compact {
+  height: 36px;
   height: var(--fd-forms-height);
+  min-width: 36px;
   min-width: var(--fd-forms-height);
+  line-height: 34px;
   line-height: var(--fd-button-line-height)
 }
 .fd-for-compact .fd-button--compact,
 .fd-for-compact a.fd-button--compact {
+  height: 28px;
   height: var(--fd-forms-height-compact);
+  min-width: 28px;
   min-width: var(--fd-forms-height-compact);
+  line-height: 26px;
   line-height: var(--fd-button-line-height-compact)
 }
 @media (min-width:600px) {
   .fd-button--compact,
   a.fd-button--compact {
+    height: 28px;
     height: var(--fd-forms-height-compact);
+    min-width: 28px;
     min-width: var(--fd-forms-height-compact);
+    line-height: 26px;
     line-height: var(--fd-button-line-height-compact)
   }
 }
@@ -4731,14 +4996,19 @@ a.fd-button--emphasized {
   font-weight: 700;
   --fd-button-color: var(--fd-color-action-2);
   --fd-button-border-color: var(--fd-color-action-1);
-  --fd-button-background-color: var(--fd-color-action-1)
+  --fd-button-background-color: var(--fd-color-action-1);
+  color: #fff;
+  border-color: #0a6ed1;
+  background-color: #0a6ed1
 }
 .fd-button--emphasized .is-hover,
 .fd-button--emphasized:hover,
 a.fd-button--emphasized .is-hover,
 a.fd-button--emphasized:hover {
   --fd-button-background-color: var(--fd-color-action-hover);
-  --fd-button-color: var(--fd-color-action-2)
+  --fd-button-color: var(--fd-color-action-2);
+  color: #fff;
+  background-color: #085caf
 }
 .fd-button--emphasized .is-hover.is-disabled,
 .fd-button--emphasized .is-hover:disabled,
@@ -4753,7 +5023,9 @@ a.fd-button--emphasized:hover.is-disabled,
 a.fd-button--emphasized:hover:disabled,
 a.fd-button--emphasized:hover[aria-disabled=true] {
   --fd-button-background-color: var(--fd-color-action-1);
-  --fd-button-color: var(--fd-color-action-2)
+  --fd-button-color: var(--fd-color-action-2);
+  color: #fff;
+  background-color: #0a6ed1
 }
 .fd-button--emphasized.fd-button--medium,
 .fd-button--emphasized.fd-button--negative,
@@ -4767,7 +5039,8 @@ a.fd-button--emphasized.fd-button--medium,
 a.fd-button--emphasized.fd-button--negative,
 a.fd-button--emphasized.fd-button--positive,
 a.fd-button--emphasized.fd-button--standard {
-  --fd-button-color: var(--fd-color-action-2)
+  --fd-button-color: var(--fd-color-action-2);
+  color: #fff
 }
 .fd-button--emphasized.fd-button--medium .is-hover.is-disabled,
 .fd-button--emphasized.fd-button--medium .is-hover:disabled,
@@ -4841,7 +5114,8 @@ a.fd-button--emphasized.fd-button--standard .is-hover[aria-disabled=true],
 a.fd-button--emphasized.fd-button--standard:hover.is-disabled,
 a.fd-button--emphasized.fd-button--standard:hover:disabled,
 a.fd-button--emphasized.fd-button--standard:hover[aria-disabled=true] {
-  --fd-button-color: var(--fd-color-action-2)
+  --fd-button-color: var(--fd-color-action-2);
+  color: #fff
 }
 .fd-button--emphasized.fd-button--standard,
 .fd-button-group .fd-button--emphasized.fd-button,
@@ -4850,7 +5124,9 @@ a.fd-button--emphasized.fd-button--standard:hover[aria-disabled=true] {
 .fd-button-group a.fd-button--emphasized[class*=fd-button--],
 a.fd-button--emphasized.fd-button--standard {
   --fd-button-border-color: var(--fd-color-status-4);
-  --fd-button-background-color: var(--fd-color-status-4)
+  --fd-button-background-color: var(--fd-color-status-4);
+  border-color: #6a6d70;
+  background-color: #6a6d70
 }
 .fd-button--emphasized.fd-button--standard .is-hover.is-disabled,
 .fd-button--emphasized.fd-button--standard .is-hover:disabled,
@@ -4888,12 +5164,15 @@ a.fd-button--emphasized.fd-button--standard .is-hover[aria-disabled=true],
 a.fd-button--emphasized.fd-button--standard:hover.is-disabled,
 a.fd-button--emphasized.fd-button--standard:hover:disabled,
 a.fd-button--emphasized.fd-button--standard:hover[aria-disabled=true] {
-  --fd-button-background-color: var(--fd-color-status-4)
+  --fd-button-background-color: var(--fd-color-status-4);
+  background-color: #6a6d70
 }
 .fd-button--emphasized.fd-button--negative,
 a.fd-button--emphasized.fd-button--negative {
   --fd-button-border-color: var(--fd-color-status-3);
-  --fd-button-background-color: var(--fd-color-status-3)
+  --fd-button-background-color: var(--fd-color-status-3);
+  border-color: #b00;
+  background-color: #b00
 }
 .fd-button--emphasized.fd-button--negative .is-hover.is-disabled,
 .fd-button--emphasized.fd-button--negative .is-hover:disabled,
@@ -4907,12 +5186,15 @@ a.fd-button--emphasized.fd-button--negative .is-hover[aria-disabled=true],
 a.fd-button--emphasized.fd-button--negative:hover.is-disabled,
 a.fd-button--emphasized.fd-button--negative:hover:disabled,
 a.fd-button--emphasized.fd-button--negative:hover[aria-disabled=true] {
-  --fd-button-background-color: var(--fd-color-status-3)
+  --fd-button-background-color: var(--fd-color-status-3);
+  background-color: #b00
 }
 .fd-button--emphasized.fd-button--medium,
 a.fd-button--emphasized.fd-button--medium {
   --fd-button-border-color: var(--fd-color-status-2);
-  --fd-button-background-color: var(--fd-color-status-2)
+  --fd-button-background-color: var(--fd-color-status-2);
+  border-color: #e9730c;
+  background-color: #e9730c
 }
 .fd-button--emphasized.fd-button--medium .is-hover.is-disabled,
 .fd-button--emphasized.fd-button--medium .is-hover:disabled,
@@ -4926,12 +5208,15 @@ a.fd-button--emphasized.fd-button--medium .is-hover[aria-disabled=true],
 a.fd-button--emphasized.fd-button--medium:hover.is-disabled,
 a.fd-button--emphasized.fd-button--medium:hover:disabled,
 a.fd-button--emphasized.fd-button--medium:hover[aria-disabled=true] {
-  --fd-button-background-color: var(--fd-color-status-2)
+  --fd-button-background-color: var(--fd-color-status-2);
+  background-color: #e9730c
 }
 .fd-button--emphasized.fd-button--positive,
 a.fd-button--emphasized.fd-button--positive {
   --fd-button-border-color: var(--fd-color-status-1);
-  --fd-button-background-color: var(--fd-color-status-1)
+  --fd-button-background-color: var(--fd-color-status-1);
+  border-color: #0a7e3e;
+  background-color: #0a7e3e
 }
 .fd-button--emphasized.fd-button--positive .is-hover.is-disabled,
 .fd-button--emphasized.fd-button--positive .is-hover:disabled,
@@ -4945,19 +5230,24 @@ a.fd-button--emphasized.fd-button--positive .is-hover[aria-disabled=true],
 a.fd-button--emphasized.fd-button--positive:hover.is-disabled,
 a.fd-button--emphasized.fd-button--positive:hover:disabled,
 a.fd-button--emphasized.fd-button--positive:hover[aria-disabled=true] {
-  --fd-button-background-color: var(--fd-color-status-1)
+  --fd-button-background-color: var(--fd-color-status-1);
+  background-color: #0a7e3e
 }
 .fd-button--light,
 a.fd-button--light {
   --fd-button-border-color: transparent;
-  --fd-button-background-color: transparent
+  --fd-button-background-color: transparent;
+  border-color: transparent;
+  background-color: transparent
 }
 .fd-button--light .is-hover,
 .fd-button--light:hover,
 a.fd-button--light .is-hover,
 a.fd-button--light:hover {
   --fd-button-background-color: var(--fd-color-neutral-1);
-  --fd-button-color: var(--fd-color-action-1)
+  --fd-button-color: var(--fd-color-action-1);
+  color: #0a6ed1;
+  background-color: #fafafa
 }
 .fd-button--light .is-hover.is-disabled,
 .fd-button--light .is-hover:disabled,
@@ -4972,7 +5262,9 @@ a.fd-button--light:hover.is-disabled,
 a.fd-button--light:hover:disabled,
 a.fd-button--light:hover[aria-disabled=true] {
   --fd-button-background-color: transparent;
-  --fd-button-color: var(--fd-color-action-1)
+  --fd-button-color: var(--fd-color-action-1);
+  color: #0a6ed1;
+  background-color: transparent
 }
 .fd-button--light.is-active,
 .fd-button--light.is-pressed,
@@ -4987,7 +5279,9 @@ a.fd-button--light:active,
 a.fd-button--light[aria-pressed=true],
 a.fd-button--light[aria-selected=true] {
   --fd-button-background-color: var(--fd-color-action-selected);
-  --fd-button-color: var(--fd-color-action-2)
+  --fd-button-color: var(--fd-color-action-2);
+  color: #fff;
+  background-color: #0254a7
 }
 .fd-button--light.fd-button--medium,
 .fd-button--light.fd-button--negative,
@@ -5002,7 +5296,9 @@ a.fd-button--light.fd-button--negative,
 a.fd-button--light.fd-button--positive,
 a.fd-button--light.fd-button--standard {
   --fd-button-border-color: transparent;
-  --fd-button-background-color: transparent
+  --fd-button-background-color: transparent;
+  border-color: transparent;
+  background-color: transparent
 }
 .fd-button--light.fd-button--medium .is-hover,
 .fd-button--light.fd-button--medium:hover,
@@ -5028,7 +5324,8 @@ a.fd-button--light.fd-button--positive .is-hover,
 a.fd-button--light.fd-button--positive:hover,
 a.fd-button--light.fd-button--standard .is-hover,
 a.fd-button--light.fd-button--standard:hover {
-  --fd-button-background-color: var(--fd-color-neutral-1)
+  --fd-button-background-color: var(--fd-color-neutral-1);
+  background-color: #fafafa
 }
 .fd-button--light.fd-button--medium .is-hover.is-disabled,
 .fd-button--light.fd-button--medium .is-hover:disabled,
@@ -5102,7 +5399,8 @@ a.fd-button--light.fd-button--standard .is-hover[aria-disabled=true],
 a.fd-button--light.fd-button--standard:hover.is-disabled,
 a.fd-button--light.fd-button--standard:hover:disabled,
 a.fd-button--light.fd-button--standard:hover[aria-disabled=true] {
-  --fd-button-background-color: transparent
+  --fd-button-background-color: transparent;
+  background-color: transparent
 }
 .fd-button--light.fd-button--standard,
 .fd-button-group .fd-button--light.fd-button,
@@ -5124,7 +5422,8 @@ a.fd-button--light.fd-button--standard {
 .fd-button-group a.fd-button--light[class*=fd-button--] .is-hover,
 a.fd-button--light.fd-button--standard .is-hover,
 a.fd-button--light.fd-button--standard:hover {
-  --fd-button-color: var(--fd-color-status-4)
+  --fd-button-color: var(--fd-color-status-4);
+  color: #6a6d70
 }
 .fd-button--light.fd-button--standard .is-hover.is-disabled,
 .fd-button--light.fd-button--standard .is-hover:disabled,
@@ -5201,7 +5500,9 @@ a.fd-button--light.fd-button--standard:active,
 a.fd-button--light.fd-button--standard[aria-pressed=true],
 a.fd-button--light.fd-button--standard[aria-selected=true] {
   --fd-button-background-color: var(--fd-color-status-4);
-  --fd-button-color: var(--fd-color-action-2)
+  --fd-button-color: var(--fd-color-action-2);
+  color: #fff;
+  background-color: #6a6d70
 }
 .fd-button--light.fd-button--negative,
 a.fd-button--light.fd-button--negative {
@@ -5211,7 +5512,8 @@ a.fd-button--light.fd-button--negative {
 .fd-button--light.fd-button--negative:hover,
 a.fd-button--light.fd-button--negative .is-hover,
 a.fd-button--light.fd-button--negative:hover {
-  --fd-button-color: var(--fd-color-status-3)
+  --fd-button-color: var(--fd-color-status-3);
+  color: #b00
 }
 .fd-button--light.fd-button--negative .is-hover.is-disabled,
 .fd-button--light.fd-button--negative .is-hover:disabled,
@@ -5240,7 +5542,9 @@ a.fd-button--light.fd-button--negative:active,
 a.fd-button--light.fd-button--negative[aria-pressed=true],
 a.fd-button--light.fd-button--negative[aria-selected=true] {
   --fd-button-background-color: var(--fd-color-status-3);
-  --fd-button-color: var(--fd-color-action-2)
+  --fd-button-color: var(--fd-color-action-2);
+  color: #fff;
+  background-color: #b00
 }
 .fd-button--light.fd-button--positive,
 a.fd-button--light.fd-button--positive {
@@ -5250,7 +5554,8 @@ a.fd-button--light.fd-button--positive {
 .fd-button--light.fd-button--positive:hover,
 a.fd-button--light.fd-button--positive .is-hover,
 a.fd-button--light.fd-button--positive:hover {
-  --fd-button-color: var(--fd-color-status-1)
+  --fd-button-color: var(--fd-color-status-1);
+  color: #0a7e3e
 }
 .fd-button--light.fd-button--positive .is-hover.is-disabled,
 .fd-button--light.fd-button--positive .is-hover:disabled,
@@ -5279,7 +5584,9 @@ a.fd-button--light.fd-button--positive:active,
 a.fd-button--light.fd-button--positive[aria-pressed=true],
 a.fd-button--light.fd-button--positive[aria-selected=true] {
   --fd-button-background-color: var(--fd-color-status-1);
-  --fd-button-color: var(--fd-color-action-2)
+  --fd-button-color: var(--fd-color-action-2);
+  color: #fff;
+  background-color: #0a7e3e
 }
 .fd-button--light.fd-button--medium,
 a.fd-button--light.fd-button--medium {
@@ -5289,7 +5596,8 @@ a.fd-button--light.fd-button--medium {
 .fd-button--light.fd-button--medium:hover,
 a.fd-button--light.fd-button--medium .is-hover,
 a.fd-button--light.fd-button--medium:hover {
-  --fd-button-color: var(--fd-color-status-2)
+  --fd-button-color: var(--fd-color-status-2);
+  color: #e9730c
 }
 .fd-button--light.fd-button--medium .is-hover.is-disabled,
 .fd-button--light.fd-button--medium .is-hover:disabled,
@@ -5318,7 +5626,9 @@ a.fd-button--light.fd-button--medium:active,
 a.fd-button--light.fd-button--medium[aria-pressed=true],
 a.fd-button--light.fd-button--medium[aria-selected=true] {
   --fd-button-background-color: var(--fd-color-status-2);
-  --fd-button-color: var(--fd-color-action-2)
+  --fd-button-color: var(--fd-color-action-2);
+  color: #fff;
+  background-color: #e9730c
 }
 .fd-button--medium,
 .fd-button--negative,
@@ -5441,7 +5751,9 @@ a.fd-button--standard[aria-selected=true] {
 .fd-button-group a[class*=fd-button--],
 a.fd-button--standard {
   --fd-button-color: var(--fd-color-status-4);
-  --fd-button-border-color: var(--fd-color-status-4)
+  --fd-button-border-color: var(--fd-color-status-4);
+  color: #6a6d70;
+  border-color: #6a6d70
 }
 .fd-button--standard.is-focus,
 .fd-button--standard:focus,
@@ -5455,6 +5767,8 @@ a.fd-button--standard {
 .fd-button-group a:focus[class*=fd-button--],
 a.fd-button--standard.is-focus,
 a.fd-button--standard:focus {
+  -webkit-box-shadow: 0 0 0 1px #6a6d70;
+  box-shadow: 0 0 0 1px #6a6d70;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-4);
   box-shadow: 0 0 0 1px var(--fd-color-status-4)
 }
@@ -5471,7 +5785,9 @@ a.fd-button--standard:focus {
 a.fd-button--standard .is-hover,
 a.fd-button--standard:hover {
   --fd-button-color: var(--fd-color-action-2);
-  --fd-button-background-color: var(--fd-color-status-4)
+  --fd-button-background-color: var(--fd-color-status-4);
+  color: #fff;
+  background-color: #6a6d70
 }
 .fd-button--standard .is-hover.is-disabled,
 .fd-button--standard .is-hover:disabled,
@@ -5509,7 +5825,8 @@ a.fd-button--standard .is-hover[aria-disabled=true],
 a.fd-button--standard:hover.is-disabled,
 a.fd-button--standard:hover:disabled,
 a.fd-button--standard:hover[aria-disabled=true] {
-  --fd-button-color: var(--fd-color-status-4)
+  --fd-button-color: var(--fd-color-status-4);
+  color: #6a6d70
 }
 .fd-button--standard.is-active,
 .fd-button--standard.is-pressed,
@@ -5547,17 +5864,23 @@ a.fd-button--standard.is-selected,
 a.fd-button--standard:active,
 a.fd-button--standard[aria-pressed=true],
 a.fd-button--standard[aria-selected=true] {
-  --fd-button-background-color: var(--fd-color-status-4)
+  --fd-button-background-color: var(--fd-color-status-4);
+  background-color: #6a6d70;
+  color: #fff
 }
 .fd-button--positive,
 a.fd-button--positive {
   --fd-button-color: var(--fd-color-status-1);
-  --fd-button-border-color: var(--fd-color-status-1)
+  --fd-button-border-color: var(--fd-color-status-1);
+  color: #0a7e3e;
+  border-color: #0a7e3e
 }
 .fd-button--positive.is-focus,
 .fd-button--positive:focus,
 a.fd-button--positive.is-focus,
 a.fd-button--positive:focus {
+  -webkit-box-shadow: 0 0 0 1px #0a7e3e;
+  box-shadow: 0 0 0 1px #0a7e3e;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-1);
   box-shadow: 0 0 0 1px var(--fd-color-status-1)
 }
@@ -5565,7 +5888,8 @@ a.fd-button--positive:focus {
 .fd-button--positive:hover,
 a.fd-button--positive .is-hover,
 a.fd-button--positive:hover {
-  --fd-button-background-color: var(--fd-color-status-1)
+  --fd-button-background-color: var(--fd-color-status-1);
+  background-color: #0a7e3e
 }
 .fd-button--positive .is-hover.is-disabled,
 .fd-button--positive .is-hover:disabled,
@@ -5579,7 +5903,8 @@ a.fd-button--positive .is-hover[aria-disabled=true],
 a.fd-button--positive:hover.is-disabled,
 a.fd-button--positive:hover:disabled,
 a.fd-button--positive:hover[aria-disabled=true] {
-  --fd-button-color: var(--fd-color-status-1)
+  --fd-button-color: var(--fd-color-status-1);
+  color: #0a7e3e
 }
 .fd-button--positive.is-active,
 .fd-button--positive.is-pressed,
@@ -5593,17 +5918,22 @@ a.fd-button--positive.is-selected,
 a.fd-button--positive:active,
 a.fd-button--positive[aria-pressed=true],
 a.fd-button--positive[aria-selected=true] {
-  --fd-button-background-color: var(--fd-color-status-1)
+  --fd-button-background-color: var(--fd-color-status-1);
+  background-color: #0a7e3e
 }
 .fd-button--medium,
 a.fd-button--medium {
   --fd-button-color: var(--fd-color-status-2);
-  --fd-button-border-color: var(--fd-color-status-2)
+  --fd-button-border-color: var(--fd-color-status-2);
+  color: #e9730c;
+  border-color: #e9730c
 }
 .fd-button--medium.is-focus,
 .fd-button--medium:focus,
 a.fd-button--medium.is-focus,
 a.fd-button--medium:focus {
+  -webkit-box-shadow: 0 0 0 1px #e9730c;
+  box-shadow: 0 0 0 1px #e9730c;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-2);
   box-shadow: 0 0 0 1px var(--fd-color-status-2)
 }
@@ -5611,7 +5941,8 @@ a.fd-button--medium:focus {
 .fd-button--medium:hover,
 a.fd-button--medium .is-hover,
 a.fd-button--medium:hover {
-  --fd-button-background-color: var(--fd-color-status-2)
+  --fd-button-background-color: var(--fd-color-status-2);
+  background-color: #e9730c
 }
 .fd-button--medium .is-hover.is-disabled,
 .fd-button--medium .is-hover:disabled,
@@ -5625,7 +5956,8 @@ a.fd-button--medium .is-hover[aria-disabled=true],
 a.fd-button--medium:hover.is-disabled,
 a.fd-button--medium:hover:disabled,
 a.fd-button--medium:hover[aria-disabled=true] {
-  --fd-button-color: var(--fd-color-status-2)
+  --fd-button-color: var(--fd-color-status-2);
+  color: #e9730c
 }
 .fd-button--medium.is-active,
 .fd-button--medium.is-pressed,
@@ -5639,17 +5971,22 @@ a.fd-button--medium.is-selected,
 a.fd-button--medium:active,
 a.fd-button--medium[aria-pressed=true],
 a.fd-button--medium[aria-selected=true] {
-  --fd-button-background-color: var(--fd-color-status-2)
+  --fd-button-background-color: var(--fd-color-status-2);
+  background-color: #e9730c
 }
 .fd-button--negative,
 a.fd-button--negative {
   --fd-button-color: var(--fd-color-status-3);
-  --fd-button-border-color: var(--fd-color-status-3)
+  --fd-button-border-color: var(--fd-color-status-3);
+  color: #b00;
+  border-color: #b00
 }
 .fd-button--negative.is-focus,
 .fd-button--negative:focus,
 a.fd-button--negative.is-focus,
 a.fd-button--negative:focus {
+  -webkit-box-shadow: 0 0 0 1px #b00;
+  box-shadow: 0 0 0 1px #b00;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-status-3);
   box-shadow: 0 0 0 1px var(--fd-color-status-3)
 }
@@ -5657,7 +5994,8 @@ a.fd-button--negative:focus {
 .fd-button--negative:hover,
 a.fd-button--negative .is-hover,
 a.fd-button--negative:hover {
-  --fd-button-background-color: var(--fd-color-status-3)
+  --fd-button-background-color: var(--fd-color-status-3);
+  background-color: #b00
 }
 .fd-button--negative .is-hover.is-disabled,
 .fd-button--negative .is-hover:disabled,
@@ -5671,7 +6009,8 @@ a.fd-button--negative .is-hover[aria-disabled=true],
 a.fd-button--negative:hover.is-disabled,
 a.fd-button--negative:hover:disabled,
 a.fd-button--negative:hover[aria-disabled=true] {
-  --fd-button-color: var(--fd-color-status-3)
+  --fd-button-color: var(--fd-color-status-3);
+  color: #b00
 }
 .fd-button--negative.is-active,
 .fd-button--negative.is-pressed,
@@ -5685,13 +6024,17 @@ a.fd-button--negative.is-selected,
 a.fd-button--negative:active,
 a.fd-button--negative[aria-pressed=true],
 a.fd-button--negative[aria-selected=true] {
-  --fd-button-background-color: var(--fd-color-status-3)
+  --fd-button-background-color: var(--fd-color-status-3);
+  background-color: #b00
 }
 .fd-button--shell,
 a.fd-button--shell {
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
-  --fd-button-background-color: transparent
+  --fd-button-background-color: transparent;
+  color: #d1e8ff;
+  border-color: transparent;
+  background-color: transparent
 }
 .fd-button--shell[class*=sap-icon],
 a.fd-button--shell[class*=sap-icon] {
@@ -5715,7 +6058,10 @@ a.fd-button--shell .is-hover,
 a.fd-button--shell:hover {
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
-  --fd-button-background-color: hsl(217, 21%, 25%)
+  --fd-button-background-color: hsl(217, 21%, 25%);
+  color: #d1e8ff;
+  border-color: transparent;
+  background-color: #323d4d
 }
 .fd-button--shell .is-hover.is-disabled,
 .fd-button--shell .is-hover:disabled,
@@ -5730,7 +6076,9 @@ a.fd-button--shell:hover.is-disabled,
 a.fd-button--shell:hover:disabled,
 a.fd-button--shell:hover[aria-disabled=true] {
   --fd-button-color: var(--fd-color-shell-2);
-  --fd-button-background-color: transparent
+  --fd-button-background-color: transparent;
+  color: #d1e8ff;
+  background-color: transparent
 }
 .fd-button--shell.is-active,
 .fd-button--shell.is-pressed,
@@ -5746,7 +6094,10 @@ a.fd-button--shell[aria-pressed=true],
 a.fd-button--shell[aria-selected=true] {
   --fd-button-color: var(--fd-color-shell-2);
   --fd-button-border-color: transparent;
-  --fd-button-background-color: hsl(217, 21%, 21%)
+  --fd-button-background-color: hsl(217, 21%, 21%);
+  color: #d1e8ff;
+  border-color: transparent;
+  background-color: #2a3341
 }
 .fd-button--xs {
   font-size: .85714rem;
@@ -5974,6 +6325,8 @@ a.fd-button--shell[aria-selected=true] {
 }
 .fd-button--toolbar.is-focus,
 .fd-button--toolbar:focus {
+  -webkit-box-shadow: 0 0 0 1px #085caf;
+  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-neutral-3);
   box-shadow: 0 0 0 1px var(--fd-color-neutral-3)
 }
@@ -6008,6 +6361,7 @@ a.fd-button--shell[aria-selected=true] {
 .fd-breadcrumb {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: .85714rem;
@@ -6069,6 +6423,7 @@ a.fd-button--shell[aria-selected=true] {
 .fd-dropdown {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
@@ -6111,6 +6466,7 @@ a.fd-button--shell[aria-selected=true] {
 [dir=rtl] .fd-dropdown__control:not(.fd-button--standard)::after {
   border-right-style: solid;
   border-right-width: 1px;
+  border-right-color: #89919a;
   border-right-color: var(--fd-color-neutral-4);
   border-left: none
 }
@@ -6120,6 +6476,7 @@ a.fd-button--shell[aria-selected=true] {
   padding-right: 12px
 }
 .fd-dropdown__control::after {
+  color: #0a6ed1;
   color: var(--fd-color-action-1);
   width: 34px;
   height: 34px;
@@ -6127,7 +6484,9 @@ a.fd-button--shell[aria-selected=true] {
   padding-top: 10px;
   border-left-style: solid;
   border-left-width: 1px;
+  border-left-color: #89919a;
   border-left-color: var(--fd-color-neutral-4);
+  background-color: #fafafa;
   background-color: var(--fd-color-neutral-1);
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px
@@ -6167,14 +6526,19 @@ a.fd-button--shell[aria-selected=true] {
   padding-top: 10px
 }
 .fd-dropdown__control.fd-button {
+  color: #32363a;
   color: var(--fd-color-text-1);
+  border-color: #89919a;
   border-color: var(--fd-color-neutral-4);
   padding-right: 0
 }
 .fd-dropdown__control.fd-button .is-hover,
 .fd-dropdown__control.fd-button:hover {
+  color: #32363a;
   color: var(--fd-color-text-1);
+  background-color: #fff;
   background-color: var(--fd-color-background-2);
+  border-color: #085caf;
   border-color: var(--fd-color-action-hover);
   -webkit-box-shadow: none;
   box-shadow: none
@@ -6182,8 +6546,12 @@ a.fd-button--shell[aria-selected=true] {
 .fd-dropdown__control.fd-button.is-active,
 .fd-dropdown__control.fd-button:active,
 .fd-dropdown__control.fd-button[aria-expanded=true] {
+  color: #32363a;
   color: var(--fd-color-text-1);
+  background-color: #fff;
   background-color: var(--fd-color-background-2);
+  -webkit-box-shadow: 0 0 0 1px #085caf;
+  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-hover);
   box-shadow: 0 0 0 1px var(--fd-color-action-hover)
 }
@@ -6196,8 +6564,11 @@ a.fd-button--shell[aria-selected=true] {
 .fd-dropdown__control.fd-button--standard.is-active,
 .fd-dropdown__control.fd-button--standard:active,
 .fd-dropdown__control.fd-button--standard:hover {
+  color: #51555a;
   color: var(--fd-color-text-2);
+  background-color: #fafafa;
   background-color: var(--fd-color-neutral-1);
+  border-color: #0a7e3e;
   border-color: var(--fd-color-status-4);
   -webkit-box-shadow: none;
   box-shadow: none
@@ -6207,6 +6578,7 @@ a.fd-button--shell[aria-selected=true] {
 .fd-dropdown__control.fd-button--standard::after {
   width: auto;
   margin-right: 10px;
+  color: #32363a;
   color: var(--fd-color-text-1);
   background-color: transparent;
   border-left: none
@@ -6265,6 +6637,7 @@ a.fd-button--shell[aria-selected=true] {
   --fd-form-label-color: var(--fd-color-text-3);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
 }
@@ -6331,6 +6704,7 @@ a.fd-button--shell[aria-selected=true] {
 .fd-form__item--check .fd-form__label:focus-within {
   outline-width: 1px;
   outline-style: dotted;
+  outline-color: #085caf;
   outline-color: var(--fd-color-action-focus);
   padding: 4px;
   margin: -4px
@@ -6371,6 +6745,7 @@ a.fd-button--shell[aria-selected=true] {
 .fd-form__legend {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
@@ -6379,6 +6754,7 @@ a.fd-button--shell[aria-selected=true] {
   display: block;
   margin-bottom: 8px;
   border: 0;
+  color: #6a6d70;
   color: var(--fd-color-text-3)
 }
 .fd-form__label.is-disabled,
@@ -6470,6 +6846,7 @@ a.fd-button--shell[aria-selected=true] {
 .fd-input-group {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
@@ -6508,6 +6885,7 @@ a.fd-button--shell[aria-selected=true] {
   border-bottom-right-radius: 0;
   border-left-style: solid;
   border-left-width: 1px;
+  border-left-color: #89919a;
   border-left-color: var(--fd-forms-border-color)
 }
 .fd-input-group[dir=rtl] > :first-child,
@@ -6518,6 +6896,7 @@ a.fd-button--shell[aria-selected=true] {
   border-bottom-right-radius: 4px;
   border-right-style: solid;
   border-right-width: 1px;
+  border-right-color: #89919a;
   border-right-color: var(--fd-forms-border-color)
 }
 .fd-input-group [type=number] {
@@ -6566,11 +6945,14 @@ a.fd-button--shell[aria-selected=true] {
   border-color: transparent
 }
 .fd-input-group__addon {
+  color: #6a6d70;
   color: var(--fd-color-text-3);
   padding: 0 12px;
   border-style: solid;
   border-width: 1px;
+  border-color: #89919a;
   border-color: var(--fd-forms-border-color);
+  background-color: #fafafa;
   background-color: var(--fd-color-neutral-1);
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -6583,6 +6965,7 @@ a.fd-button--shell[aria-selected=true] {
   -ms-flex-direction: column;
   flex-direction: column;
   border-radius: 4px;
+  height: 36px;
   height: var(--fd-forms-height)
 }
 .fd-input-group__addon--readonly {
@@ -6592,6 +6975,7 @@ a.fd-button--shell[aria-selected=true] {
   border-radius: 0
 }
 .fd-input-group--compact .fd-input-group__addon {
+  height: 28px;
   height: var(--fd-forms-height-compact)
 }
 .fd-input-group--compact .fd-input-group__addon .fd-input-group__button--step-down::before,
@@ -6681,6 +7065,7 @@ a.fd-button--shell[aria-selected=true] {
   width: 100%;
   display: block;
   min-width: 48px;
+  background-color: #fafafa;
   background-color: var(--fd-color-neutral-1)
 }
 .fd-input-group__button--step-down,
@@ -6688,6 +7073,7 @@ a.fd-button--shell[aria-selected=true] {
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
+  color: #0a6ed1;
   color: var(--fd-color-action);
   position: relative
 }
@@ -6708,6 +7094,7 @@ a.fd-button--shell[aria-selected=true] {
 .fd-input-group__button--step-up {
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  border-bottom-color: #89919a;
   border-bottom-color: var(--fd-forms-border-color);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0
@@ -6728,12 +7115,14 @@ a.fd-button--shell[aria-selected=true] {
   --fd-label-color: var(--fd-color-text-3);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
   font-weight: 700;
+  color: #6a6d70;
   color: var(--fd-label-color);
   text-transform: uppercase;
   line-height: 24px;
@@ -6743,13 +7132,16 @@ a.fd-button--shell[aria-selected=true] {
   padding-right: 8px
 }
 .fd-label--success {
-  --fd-label-color: var(--fd-color-positive)
+  --fd-label-color: var(--fd-color-positive);
+  color: #0a7e3e
 }
 .fd-label--warning {
-  --fd-label-color: var(--fd-color-alert)
+  --fd-label-color: var(--fd-color-alert);
+  color: #e9730c
 }
 .fd-label--error {
-  --fd-label-color: var(--fd-color-negative)
+  --fd-label-color: var(--fd-color-negative);
+  color: #b00
 }
 /*!
 .fd-pagination
@@ -6760,6 +7152,7 @@ a.fd-button--shell[aria-selected=true] {
   --fd-pagination-total-color: var(--fd-color-text-2);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 1rem;
@@ -6767,6 +7160,7 @@ a.fd-button--shell[aria-selected=true] {
   font-weight: 400
 }
 .fd-pagination__total {
+  color: #51555a;
   color: var(--fd-pagination-total-color);
   margin-right: 8px
 }
@@ -6778,6 +7172,7 @@ a.fd-button--shell[aria-selected=true] {
   margin-bottom: 0
 }
 .fd-pagination__link {
+  color: #0a6ed1;
   color: var(--fd-pagination-link-color);
   background-color: transparent;
   padding-left: 4px;
@@ -6786,6 +7181,7 @@ a.fd-button--shell[aria-selected=true] {
 }
 .fd-pagination__link.is-selected,
 .fd-pagination__link[aria-selected=true] {
+  color: #51555a;
   color: var(--fd-pagination-link-color-active);
   text-decoration: none;
   cursor: default;
@@ -6837,6 +7233,7 @@ a.fd-button--shell[aria-selected=true] {
 }
 .fd-pagination__link--more::before {
   content: "...";
+  color: #51555a;
   color: var(--fd-pagination-link-color-active);
   font-weight: 700
 }
@@ -6852,18 +7249,21 @@ a.fd-button--shell[aria-selected=true] {
   --fd-table-background-color: var(--fd-color-background-2);
   --fd-table-link-color: var(--fd-color-action-1);
   --fd-table-header-color: var(--fd-color-text-3);
-  --fd-table-header-background-color: var(--fd-color-neutral-1);
+  --fd-table-header-background-color: var(--fd-color-neutral-5);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   width: 100%;
   max-width: 100%;
   border-collapse: collapse;
   margin-bottom: 12px;
+  background-color: #fff;
   background-color: var(--fd-table-background-color);
   border-style: solid;
   border-width: 1px;
+  border-color: #eeeeef;
   border-color: var(--fd-table-border-color)
 }
 .fd-table:last-child {
@@ -6876,23 +7276,28 @@ a.fd-button--shell[aria-selected=true] {
 }
 .fd-table tr .is-hover,
 .fd-table tr:hover {
+  background-color: #fafafa;
   background-color: var(--fd-color-background-hover)
 }
 .fd-table tr.is-selected,
 .fd-table tr[aria-selected=true] {
+  background-color: rgba(10,110,209,.07);
   background-color: var(--fd-color-background-selected)
 }
 .fd-table tr.is-selected .is-hover,
 .fd-table tr.is-selected:hover,
 .fd-table tr[aria-selected=true] .is-hover,
 .fd-table tr[aria-selected=true]:hover {
+  background-color: rgba(10,110,209,.1);
   background-color: var(--fd-color-background-selected-hover)
 }
 .fd-table thead {
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
+  color: #6a6d70;
   color: var(--fd-table-header-color);
+  background-color: #fafafa;
   background-color: var(--fd-table-header-background-color)
 }
 .fd-table thead tr:hover {
@@ -6906,6 +7311,7 @@ a.fd-button--shell[aria-selected=true] {
 .fd-table tbody tr {
   border-style: solid;
   border-width: 1px;
+  border-color: #eeeeef;
   border-color: var(--fd-table-border-color);
   border-left: none;
   border-right: none
@@ -6914,17 +7320,21 @@ a.fd-button--shell[aria-selected=true] {
 .fd-table th {
   text-align: left;
   --fd-table-cell-spacing: calc(var(--fd-width-gutter) / 2);
+  padding-left: 8px;
   padding-left: var(--fd-table-cell-spacing);
+  padding-right: 8px;
   padding-right: var(--fd-table-cell-spacing);
   padding-top: 16px;
   padding-bottom: 16px
 }
 .fd-table td:first-child,
 .fd-table th:first-child {
+  padding-left: 16px;
   padding-left: var(--fd-width-gutter)
 }
 .fd-table td:last-child,
 .fd-table th:last-child {
+  padding-right: 16px;
   padding-right: var(--fd-width-gutter)
 }
 .fd-table td .fd-dropdown__menu,
@@ -6933,6 +7343,7 @@ a.fd-button--shell[aria-selected=true] {
   text-align: left
 }
 .fd-table__sort-column:hover {
+  background-color: #eeeeef;
   background-color: var(--fd-color-neutral-2);
   cursor: pointer
 }
@@ -6947,6 +7358,7 @@ a.fd-button--shell[aria-selected=true] {
 }
 .fd-table__sort-column--asc,
 .fd-table__sort-column--dsc {
+  background-color: #eeeeef;
   background-color: var(--fd-color-neutral-2)
 }
 .fd-table__sort-column--asc::after {
@@ -6968,6 +7380,7 @@ a.fd-button--shell[aria-selected=true] {
   vertical-align: text-top
 }
 .fd-table th.fd-table__context-menu:hover {
+  background-color: #eeeeef;
   background-color: var(--fd-color-neutral-2);
   cursor: pointer
 }
@@ -6976,13 +7389,19 @@ a.fd-button--shell[aria-selected=true] {
   z-index: 1
 }
 .fd-table th.fd-table__fixed-col {
+  background-color: #eeeeef;
   background-color: var(--fd-color-neutral-2);
   z-index: 2;
+  -webkit-box-shadow: 2px 0 0 0 #eeeeef;
+  box-shadow: 2px 0 0 0 #eeeeef;
   -webkit-box-shadow: 2px 0 0 0 var(--fd-table-border-color);
   box-shadow: 2px 0 0 0 var(--fd-table-border-color)
 }
 .fd-table td.fd-table__fixed-col {
+  background-color: #fff;
   background-color: var(--fd-color-background-2);
+  -webkit-box-shadow: 2px 0 0 0 #eeeeef;
+  box-shadow: 2px 0 0 0 #eeeeef;
   -webkit-box-shadow: 2px 0 0 0 var(--fd-table-border-color);
   box-shadow: 2px 0 0 0 var(--fd-table-border-color)
 }
@@ -7003,6 +7422,7 @@ a.fd-button--shell[aria-selected=true] {
   border: none
 }
 .fd-table--striped tbody tr:nth-child(even) {
+  background-color: #fafafa;
   background-color: var(--fd-color-background-hover)
 }
 /*!
@@ -7018,8 +7438,10 @@ a.fd-button--shell[aria-selected=true] {
   --fd-tabs-link-border-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  background-color: #fff;
   background-color: var(--fd-tabs-background-color);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7031,6 +7453,7 @@ a.fd-button--shell[aria-selected=true] {
   list-style: none;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  border-bottom-color: #fff;
   border-bottom-color: var(--fd-tabs-background-color)
 }
 .fd-tabs__item {
@@ -7044,9 +7467,11 @@ a.fd-button--shell[aria-selected=true] {
   line-height: 1.42857;
   font-weight: 400;
   cursor: pointer;
+  color: #51555a;
   color: var(--fd-tabs-link-color)
 }
 .fd-tabs__link:link {
+  color: #51555a;
   color: var(--fd-tabs-link-color)
 }
 .fd-tabs__link::after {
@@ -7064,19 +7489,23 @@ a.fd-button--shell[aria-selected=true] {
 }
 .fd-tabs__link .is-hover,
 .fd-tabs__link:hover {
+  color: #0254a7;
   color: var(--fd-color-action-selected)
 }
 .fd-tabs__link.is-selected,
 .fd-tabs__link[aria-selected=true] {
+  color: #0a6ed1;
   color: var(--fd-color-action-1)
 }
 .fd-tabs__link.is-selected::after,
 .fd-tabs__link[aria-selected=true]::after {
+  background-color: #0a6ed1;
   background-color: var(--fd-tabs-link-border-color)
 }
 .fd-tabs__link.is-disabled,
 .fd-tabs__link:disabled,
 .fd-tabs__link[aria-disabled=true] {
+  color: rgba(10,110,209,.4);
   color: var(--fd-color-action-disabled);
   cursor: not-allowed
 }
@@ -7102,18 +7531,22 @@ a.fd-button--shell[aria-selected=true] {
   --fd-modal-padding-x: var(--fd-width-gutter);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   max-width: 460px
 }
 .fd-modal__content {
   border-radius: 4px;
+  background-color: #fff;
   background-color: var(--fd-modal-background-color)
 }
 .fd-modal__body,
 .fd-modal__footer,
 .fd-modal__header {
+  padding-left: 16px;
   padding-left: var(--fd-modal-padding-x);
+  padding-right: 16px;
   padding-right: var(--fd-modal-padding-x);
   padding-top: 16px;
   padding-bottom: 16px
@@ -7122,6 +7555,7 @@ a.fd-button--shell[aria-selected=true] {
   position: relative;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  border-bottom-color: #eeeeef;
   border-bottom-color: var(--fd-modal-border-color)
 }
 .fd-modal__title {
@@ -7170,6 +7604,8 @@ a.fd-button--shell[aria-selected=true] {
 }
 .fd-modal__close.is-focus,
 .fd-modal__close:focus {
+  -webkit-box-shadow: 0 0 0 1px #085caf;
+  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
@@ -7184,6 +7620,7 @@ a.fd-button--shell[aria-selected=true] {
   text-align: right;
   border-top-style: solid;
   border-top-width: 1px;
+  border-top-color: #eeeeef;
   border-top-color: var(--fd-modal-border-color)
 }
 .fd-modal__footer[dir=rtl],
@@ -7207,14 +7644,17 @@ a.fd-button--shell[aria-selected=true] {
   --fd-tree-header-background-color: var(--fd-color-neutral-2);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
   width: 100%;
   max-width: 100%;
+  background-color: #fff;
   background-color: var(--fd-tree-background-color);
   border-bottom-style: solid;
   border-bottom-width: 0;
+  border-bottom-color: #eeeeef;
   border-bottom-color: var(--fd-tree-border-color);
   padding-left: 0;
   padding-right: 0;
@@ -7232,8 +7672,10 @@ a.fd-button--shell[aria-selected=true] {
   border-bottom: 0;
   border-top-style: solid;
   border-top-width: 0;
+  border-top-color: #eeeeef;
   border-top-color: var(--fd-tree-border-color);
   margin-bottom: 0;
+  background-color: #eeeeef;
   background-color: var(--fd-tree-header-background-color)
 }
 .fd-tree__group {
@@ -7255,12 +7697,15 @@ a.fd-button--shell[aria-selected=true] {
 .fd-tree__item {
   border-top-style: solid;
   border-top-width: 0;
+  border-top-color: #eeeeef;
   border-top-color: var(--fd-tree-border-color);
   margin-bottom: 0;
   list-style: none
 }
 .fd-tree__row {
+  padding-left: 16px;
   padding-left: var(--fd-tree-cell-spacing);
+  padding-right: 16px;
   padding-right: var(--fd-tree-cell-spacing);
   padding-top: 0;
   padding-bottom: 0;
@@ -7276,13 +7721,16 @@ a.fd-button--shell[aria-selected=true] {
 }
 .fd-tree__row .is-hover,
 .fd-tree__row:hover {
+  background-color: #fafafa;
   background-color: var(--fd-color-background-hover)
 }
 .fd-tree__row--header {
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
+  color: #6a6d70;
   color: var(--fd-tree-header-color);
+  background-color: #eeeeef;
   background-color: var(--fd-tree-header-background-color);
   text-transform: uppercase
 }
@@ -7292,6 +7740,7 @@ a.fd-button--shell[aria-selected=true] {
 }
 .fd-tree__row.is-selected,
 .fd-tree__row[aria-selected=true] {
+  background-color: rgba(10,110,209,.07);
   background-color: rgba(10,110,209,.07);
   background-color: var(--fd-color-background-selected)
 }
@@ -7419,6 +7868,7 @@ a.fd-button--shell[aria-selected=true] {
   transition: -webkit-transform 125ms linear;
   transition: transform 125ms linear;
   transition: transform 125ms linear,-webkit-transform 125ms linear;
+  color: #0a6ed1;
   color: var(--fd-color-action-1)
 }
 .fd-tree__control::before {
@@ -7443,6 +7893,8 @@ a.fd-button--shell[aria-selected=true] {
 }
 .fd-tree__control.is-focus,
 .fd-tree__control:focus {
+  -webkit-box-shadow: 0 0 0 1px #085caf;
+  box-shadow: 0 0 0 1px #085caf;
   -webkit-box-shadow: 0 0 0 1px var(--fd-color-action-focus);
   box-shadow: 0 0 0 1px var(--fd-color-action-focus)
 }
@@ -7467,6 +7919,7 @@ a.fd-button--shell[aria-selected=true] {
   --fd-list-group-background-color: transparent;
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   margin-left: 0
@@ -7478,12 +7931,14 @@ a.fd-button--shell[aria-selected=true] {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  background-color: transparent;
   background-color: var(--fd-list-group-background-color);
   -webkit-transition: background-color 125ms ease-in;
   transition: background-color 125ms ease-in
 }
 .fd-list-group__item:hover {
-  --fd-list-group-background-color: var(--fd-color-background-hover)
+  --fd-list-group-background-color: var(--fd-color-background-hover);
+  background-color: #fafafa
 }
 .fd-list-group__action {
   -webkit-box-flex: 1;
@@ -7509,6 +7964,7 @@ a.fd-button--shell[aria-selected=true] {
   --fd-inline-help-icon-background-color: var(--fd-color-status-4);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
@@ -7525,7 +7981,9 @@ a.fd-button--shell[aria-selected=true] {
   position: absolute;
   left: 0;
   border-radius: 50%;
+  color: #fff;
   color: var(--fd-inline-help-icon-color);
+  background-color: #6a6d70;
   background-color: var(--fd-inline-help-icon-background-color);
   text-align: center
 }
@@ -7533,10 +7991,12 @@ a.fd-button--shell[aria-selected=true] {
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
+  background-color: #fff;
   background-color: var(--fd-inline-help-background-color);
   padding: 12px;
   display: block;
   position: absolute;
+  color: #51555a;
   color: var(--fd-inline-help-color);
   top: 30px;
   right: -12px;
@@ -7550,6 +8010,7 @@ a.fd-button--shell[aria-selected=true] {
   opacity: 0;
   border-width: 1px;
   border-style: solid;
+  border-color: #6a6d70;
   border-color: var(--fd-color-status-4);
   -webkit-filter: drop-shadow(rgba(0, 0, 0, .1) 0 2px 10px);
   filter: drop-shadow(rgba(0, 0, 0, .1) 0 2px 10px)
@@ -7559,6 +8020,7 @@ a.fd-button--shell[aria-selected=true] {
   width: 0;
   border-style: solid;
   border-width: 0 6.5px 8px 6.5px;
+  border-bottom-color: #6a6d70;
   border-bottom-color: var(--fd-color-status-4);
   border-left-color: transparent;
   border-right-color: transparent;
@@ -7572,6 +8034,7 @@ a.fd-button--shell[aria-selected=true] {
   width: 0;
   border-style: solid;
   border-width: 0 6.5px 8px 6.5px;
+  border-bottom-color: #fff;
   border-bottom-color: var(--fd-color-background-2);
   border-left-color: transparent;
   border-right-color: transparent;
@@ -7715,6 +8178,7 @@ a.fd-button--shell[aria-selected=true] {
 .fd-nav {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
@@ -7738,6 +8202,7 @@ a.fd-button--shell[aria-selected=true] {
 }
 .fd-nav__link.is-selected,
 .fd-nav__link[aria-selected=true] {
+  color: #32363a;
   color: var(--fd-color-text-1)
 }
 /*!
@@ -7753,8 +8218,10 @@ a.fd-button--shell[aria-selected=true] {
   --fd-tabs-link-border-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  background-color: #fff;
   background-color: var(--fd-tabs-background-color);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7766,6 +8233,7 @@ a.fd-button--shell[aria-selected=true] {
   list-style: none;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  border-bottom-color: #fff;
   border-bottom-color: var(--fd-tabs-background-color)
 }
 .fd-tabs__item {
@@ -7779,9 +8247,11 @@ a.fd-button--shell[aria-selected=true] {
   line-height: 1.42857;
   font-weight: 400;
   cursor: pointer;
+  color: #51555a;
   color: var(--fd-tabs-link-color)
 }
 .fd-tabs__link:link {
+  color: #51555a;
   color: var(--fd-tabs-link-color)
 }
 .fd-tabs__link::after {
@@ -7799,19 +8269,23 @@ a.fd-button--shell[aria-selected=true] {
 }
 .fd-tabs__link .is-hover,
 .fd-tabs__link:hover {
+  color: #0254a7;
   color: var(--fd-color-action-selected)
 }
 .fd-tabs__link.is-selected,
 .fd-tabs__link[aria-selected=true] {
+  color: #0a6ed1;
   color: var(--fd-color-action-1)
 }
 .fd-tabs__link.is-selected::after,
 .fd-tabs__link[aria-selected=true]::after {
+  background-color: #0a6ed1;
   background-color: var(--fd-tabs-link-border-color)
 }
 .fd-tabs__link.is-disabled,
 .fd-tabs__link:disabled,
 .fd-tabs__link[aria-disabled=true] {
+  color: rgba(10,110,209,.4);
   color: var(--fd-color-action-disabled);
   cursor: not-allowed
 }
@@ -7830,6 +8304,7 @@ a.fd-button--shell[aria-selected=true] {
 .fd-toggle {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
@@ -7889,6 +8364,7 @@ a.fd-button--shell[aria-selected=true] {
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: #d9d9d9;
   background-color: var(--fd-color-neutral-3);
   -webkit-transition: .4s;
   transition: .4s;
@@ -7901,9 +8377,11 @@ a.fd-button--shell[aria-selected=true] {
   width: 28px;
   left: 0;
   top: -5px;
+  background-color: #fff;
   background-color: var(--fd-color-background-2);
   border-style: solid;
   border-width: 1px;
+  border-color: #d9d9d9;
   border-color: var(--fd-color-neutral-3);
   -webkit-transition: .4s;
   transition: .4s;
@@ -7915,7 +8393,9 @@ input:checked + .fd-toggle__switch {
 input:checked + .fd-toggle__switch::before {
   -webkit-transform: translateX(26px);
   transform: translateX(26px);
+  background-color: #0254a7;
   background-color: var(--fd-color-action-selected);
+  border-color: #0254a7;
   border-color: var(--fd-color-action-selected);
   pointer-events: none;
   left: -6px
@@ -7967,6 +8447,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   --fd-spinner-background-color: var(--fd-color-action-1);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
@@ -7992,6 +8473,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .is-busy::before,
 [aria-busy=true]::before {
   position: absolute;
+  background-color: #edeff0;
   background-color: var(--fd-color-background-1);
   opacity: .95;
   top: 0;
@@ -8014,6 +8496,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   position: relative;
   width: 5px;
   height: 100%;
+  background-color: #0a6ed1;
   background-color: var(--fd-spinner-background-color)
 }
 .fd-spinner::before {
@@ -8028,6 +8511,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   position: absolute;
   width: 5px;
   height: 100%;
+  background-color: #0a6ed1;
   background-color: var(--fd-spinner-background-color)
 }
 .fd-spinner div::before {
@@ -8080,6 +8564,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 [class*=fd-image] {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: inline-block;
@@ -8124,6 +8609,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-global-nav {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   border-bottom: solid 1px #eeeeef;
@@ -8289,6 +8775,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-side-nav__sublist {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
@@ -8367,18 +8854,24 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-link
 */
 .fd-link {
+  color: #0a6ed1;
   color: var(--fd-color-action-1);
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  border-bottom-color: #0a6ed1;
   border-bottom-color: var(--fd-color-action-1)
 }
 .fd-link .is-hover,
 .fd-link:hover {
+  color: #085caf;
   color: var(--fd-color-action-hover);
+  border-bottom-color: #085caf;
   border-bottom-color: var(--fd-color-action-hover)
 }
 .fd-link:visited {
+  color: #3c0ad1;
   color: var(--fd-color-action-visited);
+  border-bottom-color: #3c0ad1;
   border-bottom-color: var(--fd-color-action-visited)
 }
 .fd-link.is-active,
@@ -8387,13 +8880,17 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-link:active,
 .fd-link[aria-pressed=true],
 .fd-link[aria-selected=true] {
+  color: #0254a7;
   color: var(--fd-color-action-selected);
+  border-bottom-color: #0254a7;
   border-bottom-color: var(--fd-color-action-selected)
 }
 .fd-link.is-disabled,
 .fd-link:disabled,
 .fd-link[aria-disabled=true] {
+  color: rgba(10,110,209,.4);
   color: var(--fd-color-action-disabled);
+  border-bottom-color: rgba(10,110,209,.4);
   border-bottom-color: var(--fd-color-action-disabled)
 }
 /*!
@@ -8404,6 +8901,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   --fd-identifier-background-color: var(--fd-color-status-4);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: inline-block;
@@ -8413,7 +8911,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   background-size: cover;
   background-position: 50%;
   border-radius: 4px;
+  background-color: #6a6d70;
   background-color: var(--fd-identifier-background-color);
+  color: #fff;
   color: var(--fd-identifier-color)
 }
 .fd-identifier--xxs {
@@ -8550,7 +9050,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-identifier--transparent {
   --fd-identifier-color: var(--fd-color-text-1);
-  --fd-identifier-background-color: transparent
+  --fd-identifier-background-color: transparent;
+  color: #32363a;
+  background-color: transparent
 }
 /*!
 .fd-mega-menu+(--no-border)
@@ -8560,6 +9062,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-mega-menu {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   background-color: #fff;
@@ -8604,6 +9107,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-mega-menu__sublist {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
@@ -8693,6 +9197,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   --fd-menu-title-background-color: var(--fd-color-neutral-1);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   position: relative;
@@ -8718,6 +9223,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-menu__list--separated > * {
   border-top-style: solid;
   border-top-width: 1px;
+  border-top-color: #eeeeef;
   border-top-color: var(--fd-menu-item-separator-color)
 }
 .fd-menu__list--separated .fd-menu__list > :first-child,
@@ -8732,14 +9238,18 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   line-height: 1.33333;
   font-weight: 400;
   text-transform: uppercase;
+  color: #6a6d70;
   color: var(--fd-menu-title-color);
+  background-color: #fafafa;
   background-color: var(--fd-menu-title-background-color)
 }
 .fd-menu__item {
   display: block;
   cursor: pointer;
   padding: 10px 24px;
+  background-color: #fff;
   background-color: var(--fd-menu-item-background-color);
+  color: #51555a;
   color: var(--fd-menu-item-color);
   font-weight: 400
 }
@@ -8748,17 +9258,21 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-menu__item .is-hover,
 .fd-menu__item:hover {
+  color: #32363a;
   color: var(--fd-color-text-1);
+  background-color: #fafafa;
   background-color: var(--fd-color-background-hover)
 }
 .fd-menu__item.is-selected,
 .fd-menu__item[aria-selected=true] {
+  background-color: rgba(10,110,209,.07);
   background-color: var(--fd-color-background-selected)
 }
 .fd-menu__item.is-selected .is-hover,
 .fd-menu__item.is-selected:hover,
 .fd-menu__item[aria-selected=true] .is-hover,
 .fd-menu__item[aria-selected=true]:hover {
+  background-color: rgba(10,110,209,.1);
   background-color: var(--fd-color-background-selected-hover)
 }
 .fd-menu--addon-before .fd-menu__item {
@@ -8857,12 +9371,15 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   --fd-tile-title-color: var(--fd-color-text-1);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: #6a6d70;
   color: var(--fd-tile-color);
+  background-color: #fff;
   background-color: var(--fd-tile-background-color)
 }
 .fd-tile--button,
@@ -8916,6 +9433,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   font-size: 1rem;
   line-height: 1.42857;
   font-weight: 400;
+  color: #32363a;
   color: var(--fd-tile-title-color);
   margin-bottom: 0
 }
@@ -8933,9 +9451,12 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   --fd-product-tile-title-color: var(--fd-color-text-1);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #6a6d70;
   color: var(--fd-product-tile-color);
+  background-color: #fff;
   background-color: var(--fd-product-tile-background-color)
 }
 .fd-product-tile--button,
@@ -8971,6 +9492,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   font-size: 1.14286rem;
   line-height: 1.25;
   font-weight: 400;
+  color: #32363a;
   color: var(--fd-product-tile-title-color);
   margin-bottom: 0;
   margin-bottom: 0
@@ -8996,6 +9518,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   border-radius: 0!important;
   position: relative;
   border-style: solid;
+  border-color: #eeeeef;
   border-color: var(--fd-tile-grid-border-color);
   border-width: 0 1px 1px 0;
   min-width: calc(100% / 2);
@@ -9058,15 +9581,18 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-token {
   --fd-token-color: var(--fd-color-text-2);
   --fd-token-background-color: var(--fd-color-background-information);
-  --fd-token-border-color: transparent;
+  --fd-token-border-color: var(--fd-color-neutral-3);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
+  color: #51555a;
   color: var(--fd-token-color);
+  background-color: #f5faff;
   background-color: var(--fd-token-background-color);
   line-height: 24px;
   vertical-align: middle;
@@ -9076,6 +9602,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
+  border-color: #d9d9d9;
   border-color: var(--fd-token-border-color);
   cursor: pointer
 }
@@ -9093,15 +9620,16 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   speak: none
 }
 .fd-token::after {
-  content: ""
+  content: ""
 }
 .fd-token::after {
   font-size: .85714rem;
   line-height: 1
 }
 .fd-token::after {
+  color: #0a6ed1;
   color: var(--fd-color-action-1);
-  margin-left: 4px;
+  margin-left: 8px;
   vertical-align: bottom;
   line-height: 24px
 }
@@ -9121,7 +9649,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-token[dir=rtl]::before,
 [dir=rtl] .fd-token::before {
-  content: ""
+  content: ""
 }
 .fd-token[dir=rtl]::before,
 [dir=rtl] .fd-token::before {
@@ -9130,8 +9658,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-token[dir=rtl]::before,
 [dir=rtl] .fd-token::before {
+  color: #0a6ed1;
   color: var(--fd-color-action-1);
-  margin-left: 4px;
+  margin-left: 8px;
   vertical-align: bottom;
   line-height: 24px
 }
@@ -9139,7 +9668,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 [dir=rtl] .fd-token::before {
   display: inline;
   margin-left: 0;
-  margin-right: 4px
+  margin-right: 8px
 }
 .fd-token[dir=rtl]::after,
 [dir=rtl] .fd-token::after {
@@ -9153,6 +9682,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-tag {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: .85714rem;
@@ -9258,7 +9788,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
+  color: #0254a7;
   color: var(--fd-calendar-item-color);
+  background-color: #fff;
   background-color: var(--fd-calendar-item-background-color);
   height: 36px;
   min-width: 36px;
@@ -9279,26 +9811,31 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-calendar .fd-calendar__column-header:hover,
 .fd-calendar .fd-calendar__item:hover {
   cursor: pointer;
-  --fd-calendar-item-background-color: var(--fd-color-neutral-1)
+  --fd-calendar-item-background-color: var(--fd-color-neutral-1);
+  background-color: #fafafa
 }
 .fd-calendar .fd-calendar__item--other-month {
   --fd-calendar-item-color: var(--fd-color-text-1);
+  color: #32363a;
   opacity: .4
 }
 .fd-calendar .fd-calendar__item--disabled,
 .fd-calendar .fd-calendar__item.is-disabled,
 .fd-calendar .fd-calendar__item[aria-disabled=true] {
-  --fd-calendar-item-color: var(--fd-color-action-disabled)
+  --fd-calendar-item-color: var(--fd-color-action-disabled);
+  color: rgba(10,110,209,.4)
 }
 .fd-calendar .fd-calendar__item--disabled:hover,
 .fd-calendar .fd-calendar__item.is-disabled:hover,
 .fd-calendar .fd-calendar__item:hover[aria-disabled=true] {
   cursor: not-allowed;
-  --fd-calendar-item-background-color: var(--fd-color-background-2)
+  --fd-calendar-item-background-color: var(--fd-color-background-2);
+  background-color: #fff
 }
 .fd-calendar .fd-calendar__item--current {
   position: relative;
-  --fd-calendar-item-color: var(--fd-color-action-selected)
+  --fd-calendar-item-color: var(--fd-color-action-selected);
+  color: #0254a7
 }
 .fd-calendar .fd-calendar__item--current::after {
   content: "";
@@ -9310,13 +9847,15 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   height: 36px;
   border-style: solid;
   border-width: 2px;
+  border-color: #0a6ed1;
   border-color: var(--fd-color-action);
   border-radius: 4px
 }
 .fd-calendar .fd-calendar__item--blocked,
 .fd-calendar .fd-calendar__item.is-blocked {
   text-decoration: line-through;
-  --fd-calendar-item-color: var(--fd-color-text-1)
+  --fd-calendar-item-color: var(--fd-color-text-1);
+  color: #32363a
 }
 .fd-calendar .fd-calendar__item--blocked:hover,
 .fd-calendar .fd-calendar__item.is-blocked:hover {
@@ -9325,10 +9864,13 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-calendar .fd-calendar__item.is-selected {
   --fd-calendar-item-background-color: var(--fd-color-action-selected);
-  --fd-calendar-item-color: var(--fd-color-text-5)
+  background-color: #0254a7;
+  --fd-calendar-item-color: var(--fd-color-text-5);
+  color: #fff
 }
 .fd-calendar .fd-calendar__item.is-selected-range {
   --fd-calendar-item-background-color: var(--fd-color-background-selected);
+  background-color: rgba(10,110,209,.07);
   border-radius: 0
 }
 .fd-calendar .fd-calendar__item.is-selected-range-first {
@@ -9348,6 +9890,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-calendar {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   width: 252px
@@ -9364,6 +9907,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   display: grid
 }
 .fd-calendar .fd-calendar__header {
+  -webkit-box-shadow: inset 0 -1px 0 0 #eeeeef;
+  box-shadow: inset 0 -1px 0 0 #eeeeef;
   -webkit-box-shadow: inset 0 -1px 0 0 var(--fd-color-neutral-2);
   box-shadow: inset 0 -1px 0 0 var(--fd-color-neutral-2);
   height: 52px;
@@ -9415,7 +9960,8 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-calendar .fd-calendar__column-header:hover {
   cursor: default;
-  --fd-calendar-item-background-color: var(--fd-color-background-2)
+  --fd-calendar-item-background-color: var(--fd-color-background-2);
+  background-color: #fff
 }
 .fd-calendar .fd-calendar__list {
   width: 100%;
@@ -9436,6 +9982,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   font-size: .85714rem;
   line-height: 1.33333;
   font-weight: 400;
+  color: #6a6d70;
   color: var(--fd-color-text-1)
 }
 /*!
@@ -9470,6 +10017,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   position: absolute;
   top: 0;
   left: 0;
+  background-color: #51555a;
   background-color: var(--fd-status-label-icon-background-color)
 }
 .fd-status-label--available[dir=rtl],
@@ -9510,8 +10058,10 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   position: relative;
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #51555a;
   color: var(--fd-status-label-color)
 }
 .fd-status-label::before {
@@ -9521,13 +10071,16 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   line-height: 1
 }
 .fd-status-label--success {
-  --fd-status-label-color: var(--fd-color-positive)
+  --fd-status-label-color: var(--fd-color-positive);
+  color: #0a7e3e
 }
 .fd-status-label--warning {
-  --fd-status-label-color: var(--fd-color-alert)
+  --fd-status-label-color: var(--fd-color-alert);
+  color: #e9730c
 }
 .fd-status-label--error {
-  --fd-status-label-color: var(--fd-color-negative)
+  --fd-status-label-color: var(--fd-color-negative);
+  color: #b00
 }
 .fd-status-label--available {
   --fd-status-label-icon-background-color: var(--fd-color-positive)
@@ -9538,6 +10091,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   top: 4px;
   left: 4px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA2IDUuOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNiA1Ljk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTIuNywzLjJsMS40LTIuOEM0LjQsMCw1LTAuMSw1LjUsMC4xYzAuNCwwLjMsMC42LDAuOCwwLjQsMS4ybC0yLDRDMy42LDUuOSwzLDYuMSwyLjYsNS44CgljLTAuMSwwLTAuMi0wLjEtMC4zLTAuMmwtMi0yYy0wLjQtMC40LTAuNC0xLDAtMS40YzAuNC0wLjQsMS0wLjQsMS40LDBsMCwwTDIuNywzLjJ6Ii8+Cjwvc3ZnPg==)
+}
+.fd-status-label--available::after {
+  background-color: #0a7e3e
 }
 .fd-status-label--available[dir=rtl]::before,
 [dir=rtl] .fd-status-label--available::before {
@@ -9553,6 +10109,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   left: 6px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1IDUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUgNTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMSw1QzAuNCw1LDAsNC42LDAsNFYxYzAtMC42LDAuNC0xLDEtMXMxLDAuNCwxLDF2MmgyYzAuNiwwLDEsMC40LDEsMVM0LjYsNSw0LDVIMXoiLz4KPC9zdmc+)
 }
+.fd-status-label--away::after {
+  background-color: #e9730c
+}
 .fd-status-label--away[dir=rtl]::before,
 [dir=rtl] .fd-status-label--away::before {
   right: 4px
@@ -9566,6 +10125,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   top: 6px;
   left: 6px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA0IDQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQgNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNCwyYzAsMS4xLTAuOSwyLTIsMlMwLDMuMSwwLDJzMC45LTIsMi0yUzQsMC45LDQsMiIvPgo8L3N2Zz4=)
+}
+.fd-status-label--busy::after {
+  background-color: #b00
 }
 .fd-status-label--busy[dir=rtl]::before,
 [dir=rtl] .fd-status-label--busy::before {
@@ -9597,7 +10159,10 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   white-space: nowrap;
   z-index: 1000;
   border-radius: 4px;
+  background-color: #fff;
   background-color: var(--fd-color-background-2);
+  -webkit-box-shadow: 0 5px 20px 0 #d9d9d9,0 2px 8px 0 #eeeeef;
+  box-shadow: 0 5px 20px 0 #d9d9d9,0 2px 8px 0 #eeeeef;
   -webkit-box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
   box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
   opacity: 1;
@@ -9627,6 +10192,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   width: 0;
   border-style: solid;
   border-width: 0 6.5px 8px 6.5px;
+  border-bottom-color: #fff;
   border-bottom-color: var(--fd-color-background-2);
   border-left-color: transparent;
   border-right-color: transparent;
@@ -9641,6 +10207,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   width: 0;
   border-style: solid;
   border-width: 0 6.5px 8px 6.5px;
+  border-bottom-color: #89919a;
   border-bottom-color: var(--fd-color-neutral-4);
   border-left-color: transparent;
   border-right-color: transparent;
@@ -9712,7 +10279,10 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   white-space: nowrap;
   z-index: 1000;
   border-radius: 4px;
+  background-color: #fff;
   background-color: var(--fd-color-background-2);
+  -webkit-box-shadow: 0 5px 20px 0 #d9d9d9,0 2px 8px 0 #eeeeef;
+  box-shadow: 0 5px 20px 0 #d9d9d9,0 2px 8px 0 #eeeeef;
   -webkit-box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
   box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3),0 2px 8px 0 var(--fd-color-neutral-2);
   opacity: 1
@@ -9746,12 +10316,14 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   bottom: -8px;
   margin: 0 6.5px;
   border-width: 8px 6.5px 0 6.5px;
+  border-top-color: #89919a;
   border-top-color: var(--fd-color-neutral-4)
 }
 .fd-popover__popper[x-placement^=top] .fd-popover__arrow::after {
   bottom: 1px;
   margin: 0 -6.5px;
   border-width: 8px 6.5px 0 6.5px;
+  border-top-color: #fff;
   border-top-color: var(--fd-color-background-2)
 }
 .fd-popover__popper[x-placement^=bottom] {
@@ -9761,12 +10333,14 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   top: -8px;
   margin: 0 6.5px;
   border-width: 0 6.5px 8px 6.5px;
+  border-bottom-color: #89919a;
   border-bottom-color: var(--fd-color-neutral-4)
 }
 .fd-popover__popper[x-placement^=bottom] .fd-popover__arrow::after {
   top: 1px;
   margin: 0 -6.5px;
   border-width: 0 6.5px 8px 6.5px;
+  border-bottom-color: #fff;
   border-bottom-color: var(--fd-color-background-2)
 }
 .fd-popover__popper[x-placement^=left] {
@@ -9776,12 +10350,14 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   right: -8px;
   margin: 6.5px 0;
   border-width: 6.5px 0 6.5px 8px;
+  border-left-color: #89919a;
   border-left-color: var(--fd-color-neutral-4)
 }
 .fd-popover__popper[x-placement^=left] .fd-popover__arrow::after {
   right: 1px;
   margin: -6.5px 0;
   border-width: 6.5px 0 6.5px 8px;
+  border-left-color: #fff;
   border-left-color: var(--fd-color-background-2)
 }
 .fd-popover__popper[x-placement^=right] {
@@ -9791,12 +10367,14 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   left: -8px;
   margin: 6.5px 0;
   border-width: 6.5px 8px 6.5px 0;
+  border-right-color: #89919a;
   border-right-color: var(--fd-color-neutral-4)
 }
 .fd-popover__popper[x-placement^=right] .fd-popover__arrow::after {
   left: 1px;
   margin: -6.5px 0;
   border-width: 6.5px 8px 6.5px 0;
+  border-right-color: #fff;
   border-right-color: var(--fd-color-background-2)
 }
 /*!
@@ -9846,6 +10424,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-localization-editor {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
 }
@@ -10006,8 +10585,10 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   --fd-shellbar-link-color: var(--fd-color-shell-2);
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  background-color: #354a5f;
   background-color: var(--fd-shellbar-background-color);
   height: 48px;
   display: -webkit-box;
@@ -10016,6 +10597,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #fff;
   color: var(--fd-shellbar-color);
   position: relative;
   padding: 4px 32px;
@@ -10120,6 +10702,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   font-weight: 400;
   font-weight: 700;
   line-height: 1;
+  color: #fff;
   color: var(--fd-shellbar-color);
   white-space: nowrap;
   overflow: hidden;
@@ -10231,8 +10814,11 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-shellbar .fd-search-input .fd-input {
   border-style: solid;
   border-width: 1px;
+  border-color: #d1e8ff;
   border-color: var(--fd-shellbar-link-color);
+  background-color: #354a5f;
   background-color: var(--fd-shellbar-background-color);
+  color: #d1e8ff;
   color: var(--fd-shellbar-link-color)
 }
 .fd-shellbar .fd-search-input .fd-input:focus {
@@ -10270,6 +10856,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 .fd-user-menu {
   font-size: 14px;
   line-height: 1.42857;
+  color: #32363a;
   color: var(--fd-color-text-1);
   font-family: '72',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   text-align: left
@@ -10311,6 +10898,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   white-space: nowrap;
   background-color: transparent;
   border-radius: 4px;
+  height: 36px;
   height: var(--fd-forms-height);
   position: relative;
   padding-right: 20px;
@@ -10326,6 +10914,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   width: 0;
   border-style: solid;
   border-width: 5px 5px 0 5px;
+  border-top-color: #d1e8ff;
   border-top-color: var(--fd-color-shell-2);
   border-left-color: transparent;
   border-right-color: transparent;
@@ -10350,7 +10939,9 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
   --fd-counter-color: var(--fd-color-text-5);
   --fd-counter-background-color: var(--fd-color-status-4);
   border-radius: 4px;
+  color: #fff;
   color: var(--fd-counter-color);
+  background-color: #6a6d70;
   background-color: var(--fd-counter-background-color);
   font-size: .78571em;
   line-height: 1;
@@ -10360,6 +10951,7 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-counter--notification {
   --fd-counter-background-color: var(--fd-color-status-3);
+  background-color: #b00;
   position: absolute;
   -webkit-transform: translate(-40%,-50%);
   transform: translate(-40%,-50%)
@@ -10447,181 +11039,242 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-has-color-action,
 .fd-has-color-action-1 {
+  color: #0a6ed1!important;
   color: var(--fd-color-action-1)!important
 }
 .fd-has-color-action-2 {
+  color: #fff!important;
   color: var(--fd-color-action-2)!important
 }
 .fd-has-color-action-3 {
+  color: #0854a0!important;
   color: var(--fd-color-action-3)!important
 }
 .fd-has-color-text,
 .fd-has-color-text-1 {
+  color: #32363a!important;
   color: var(--fd-color-text-1)!important
 }
 .fd-has-color-text-2 {
+  color: #51555a!important;
   color: var(--fd-color-text-2)!important
 }
 .fd-has-color-text-3 {
+  color: #6a6d70!important;
   color: var(--fd-color-text-3)!important
 }
 .fd-has-color-text-4 {
+  color: #74777a!important;
   color: var(--fd-color-text-4)!important
 }
 .fd-has-color-text-5 {
+  color: #fff!important;
   color: var(--fd-color-text-5)!important
 }
 .fd-has-color-background,
 .fd-has-color-background-1 {
+  color: #edeff0!important;
   color: var(--fd-color-background-1)!important
 }
 .fd-has-color-background-2 {
+  color: #fff!important;
   color: var(--fd-color-background-2)!important
 }
 .fd-has-color-background-3 {
+  color: #f1fdf6!important;
   color: var(--fd-color-background-3)!important
 }
 .fd-has-color-background-4 {
+  color: #fef7f1!important;
   color: var(--fd-color-background-4)!important
 }
 .fd-has-color-background-5 {
+  color: #ffebeb!important;
   color: var(--fd-color-background-5)!important
 }
 .fd-has-color-background-6 {
+  color: #f5faff!important;
   color: var(--fd-color-background-6)!important
 }
 .fd-has-color-background-7 {
+  color: #f4f4f4!important;
   color: var(--fd-color-background-7)!important
 }
 .fd-has-color-neutral,
 .fd-has-color-neutral-1 {
+  color: #fafafa!important;
   color: var(--fd-color-neutral-1)!important
 }
 .fd-has-color-neutral-2 {
+  color: #eeeeef!important;
   color: var(--fd-color-neutral-2)!important
 }
 .fd-has-color-neutral-3 {
+  color: #d9d9d9!important;
   color: var(--fd-color-neutral-3)!important
 }
 .fd-has-color-neutral-4 {
+  color: #89919a!important;
   color: var(--fd-color-neutral-4)!important
 }
 .fd-has-color-neutral-5 {
+  color: #f7f7f7!important;
   color: var(--fd-color-neutral-5)!important
 }
 .fd-has-color-neutral-6 {
+  color: #f2f2f2!important;
   color: var(--fd-color-neutral-6)!important
 }
 .fd-has-color-status,
 .fd-has-color-status-1 {
+  color: #0a7e3e!important;
   color: var(--fd-color-status-1)!important
 }
 .fd-has-color-status-2 {
+  color: #e9730c!important;
   color: var(--fd-color-status-2)!important
 }
 .fd-has-color-status-3 {
+  color: #b00!important;
   color: var(--fd-color-status-3)!important
 }
 .fd-has-color-status-4 {
+  color: #6a6d70!important;
   color: var(--fd-color-status-4)!important
 }
 .fd-has-color-status-5 {
+  color: #0a6dd1!important;
   color: var(--fd-color-status-5)!important
 }
 .fd-has-color-accent,
 .fd-has-color-accent-1 {
+  color: #f5a742!important;
   color: var(--fd-color-accent-1)!important
 }
 .fd-has-color-accent-2 {
+  color: #d62929!important;
   color: var(--fd-color-accent-2)!important
 }
 .fd-has-color-accent-3 {
+  color: #db1f77!important;
   color: var(--fd-color-accent-3)!important
 }
 .fd-has-color-accent-4 {
+  color: #c0399f!important;
   color: var(--fd-color-accent-4)!important
 }
 .fd-has-color-accent-5 {
+  color: #6367de!important;
   color: var(--fd-color-accent-5)!important
 }
 .fd-has-color-accent-6 {
+  color: #1973cc!important;
   color: var(--fd-color-accent-6)!important
 }
 .fd-has-color-accent-7 {
+  color: #0cd7ed!important;
   color: var(--fd-color-accent-7)!important
 }
 .fd-has-color-accent-8 {
+  color: #7ca10c!important;
   color: var(--fd-color-accent-8)!important
 }
 .fd-has-color-accent-9 {
+  color: #925ace!important;
   color: var(--fd-color-accent-9)!important
 }
 .fd-has-color-accent-10 {
+  color: #5c819d!important;
   color: var(--fd-color-accent-10)!important
 }
 .fd-has-color-accent-11 {
+  color: #d17f15!important;
   color: var(--fd-color-accent-11)!important
 }
 .fd-has-color-accent-12 {
+  color: #d04343!important;
   color: var(--fd-color-accent-12)!important
 }
 .fd-has-color-accent-13 {
+  color: #2b78c5!important;
   color: var(--fd-color-accent-13)!important
 }
 .fd-has-color-accent-14 {
+  color: #6367de!important;
   color: var(--fd-color-accent-14)!important
 }
 .fd-has-color-accent-15 {
+  color: #984bd2!important;
   color: var(--fd-color-accent-15)!important
 }
 .fd-has-color-shell,
 .fd-has-color-shell-1 {
+  color: #354a5f!important;
   color: var(--fd-color-shell-1)!important
 }
 .fd-has-color-shell-2 {
+  color: #d1e8ff!important;
   color: var(--fd-color-shell-2)!important
 }
 .fd-has-color-shell-3 {
+  color: #213b54!important;
   color: var(--fd-color-shell-3)!important
 }
 .fd-has-color-shell-4 {
+  color: #1b3046!important;
   color: var(--fd-color-shell-4)!important
 }
 .fd-has-color-shell-5 {
+  color: #7b9abc!important;
   color: var(--fd-color-shell-5)!important
 }
 .fd-has-color-action-hover {
+  color: #085caf!important;
   color: var(--fd-color-action-hover)!important
 }
 .fd-has-color-action-selected {
+  color: #0254a7!important;
   color: var(--fd-color-action-selected)!important
 }
 .fd-has-color-action-disabled {
+  color: rgba(10,110,209,.4)!important;
   color: var(--fd-color-action-disabled)!important
 }
 .fd-has-color-action-visited {
+  color: #3c0ad1!important;
   color: var(--fd-color-action-visited)!important
 }
 .fd-has-color-background-hover {
+  color: #fafafa!important;
   color: var(--fd-color-background-hover)!important
 }
 .fd-has-color-background-selected {
+  color: rgba(10,110,209,.07)!important;
   color: var(--fd-color-background-selected)!important
 }
 .fd-has-color-background-selected-hover {
+  color: rgba(10,110,209,.1)!important;
   color: var(--fd-color-background-selected-hover)!important
 }
 .fd-has-color-background-positive {
+  color: #f1fdf6!important;
   color: var(--fd-color-background-positive)!important
 }
 .fd-has-color-background-negative {
+  color: #ffebeb!important;
   color: var(--fd-color-background-negative)!important
 }
 .fd-has-color-background-alert {
+  color: #fef7f1!important;
   color: var(--fd-color-background-alert)!important
 }
 .fd-has-color-background-information {
+  color: #f5faff!important;
   color: var(--fd-color-background-information)!important
+}
+.fd-has-color-background-default {
+  color: #f4f4f4!important;
+  color: var(--fd-color-background-default)!important
 }
 .fd-has-background-image {
   background-repeat: no-repeat;
@@ -10645,181 +11298,242 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-has-background-color-action,
 .fd-has-background-color-action-1 {
+  background-color: #0a6ed1!important;
   background-color: var(--fd-color-action-1)!important
 }
 .fd-has-background-color-action-2 {
+  background-color: #fff!important;
   background-color: var(--fd-color-action-2)!important
 }
 .fd-has-background-color-action-3 {
+  background-color: #0854a0!important;
   background-color: var(--fd-color-action-3)!important
 }
 .fd-has-background-color-text,
 .fd-has-background-color-text-1 {
+  background-color: #32363a!important;
   background-color: var(--fd-color-text-1)!important
 }
 .fd-has-background-color-text-2 {
+  background-color: #51555a!important;
   background-color: var(--fd-color-text-2)!important
 }
 .fd-has-background-color-text-3 {
+  background-color: #6a6d70!important;
   background-color: var(--fd-color-text-3)!important
 }
 .fd-has-background-color-text-4 {
+  background-color: #74777a!important;
   background-color: var(--fd-color-text-4)!important
 }
 .fd-has-background-color-text-5 {
+  background-color: #fff!important;
   background-color: var(--fd-color-text-5)!important
 }
 .fd-has-background-color-background,
 .fd-has-background-color-background-1 {
+  background-color: #edeff0!important;
   background-color: var(--fd-color-background-1)!important
 }
 .fd-has-background-color-background-2 {
+  background-color: #fff!important;
   background-color: var(--fd-color-background-2)!important
 }
 .fd-has-background-color-background-3 {
+  background-color: #f1fdf6!important;
   background-color: var(--fd-color-background-3)!important
 }
 .fd-has-background-color-background-4 {
+  background-color: #fef7f1!important;
   background-color: var(--fd-color-background-4)!important
 }
 .fd-has-background-color-background-5 {
+  background-color: #ffebeb!important;
   background-color: var(--fd-color-background-5)!important
 }
 .fd-has-background-color-background-6 {
+  background-color: #f5faff!important;
   background-color: var(--fd-color-background-6)!important
 }
 .fd-has-background-color-background-7 {
+  background-color: #f4f4f4!important;
   background-color: var(--fd-color-background-7)!important
 }
 .fd-has-background-color-neutral,
 .fd-has-background-color-neutral-1 {
+  background-color: #fafafa!important;
   background-color: var(--fd-color-neutral-1)!important
 }
 .fd-has-background-color-neutral-2 {
+  background-color: #eeeeef!important;
   background-color: var(--fd-color-neutral-2)!important
 }
 .fd-has-background-color-neutral-3 {
+  background-color: #d9d9d9!important;
   background-color: var(--fd-color-neutral-3)!important
 }
 .fd-has-background-color-neutral-4 {
+  background-color: #89919a!important;
   background-color: var(--fd-color-neutral-4)!important
 }
 .fd-has-background-color-neutral-5 {
+  background-color: #f7f7f7!important;
   background-color: var(--fd-color-neutral-5)!important
 }
 .fd-has-background-color-neutral-6 {
+  background-color: #f2f2f2!important;
   background-color: var(--fd-color-neutral-6)!important
 }
 .fd-has-background-color-status,
 .fd-has-background-color-status-1 {
+  background-color: #0a7e3e!important;
   background-color: var(--fd-color-status-1)!important
 }
 .fd-has-background-color-status-2 {
+  background-color: #e9730c!important;
   background-color: var(--fd-color-status-2)!important
 }
 .fd-has-background-color-status-3 {
+  background-color: #b00!important;
   background-color: var(--fd-color-status-3)!important
 }
 .fd-has-background-color-status-4 {
+  background-color: #6a6d70!important;
   background-color: var(--fd-color-status-4)!important
 }
 .fd-has-background-color-status-5 {
+  background-color: #0a6dd1!important;
   background-color: var(--fd-color-status-5)!important
 }
 .fd-has-background-color-accent,
 .fd-has-background-color-accent-1 {
+  background-color: #f5a742!important;
   background-color: var(--fd-color-accent-1)!important
 }
 .fd-has-background-color-accent-2 {
+  background-color: #d62929!important;
   background-color: var(--fd-color-accent-2)!important
 }
 .fd-has-background-color-accent-3 {
+  background-color: #db1f77!important;
   background-color: var(--fd-color-accent-3)!important
 }
 .fd-has-background-color-accent-4 {
+  background-color: #c0399f!important;
   background-color: var(--fd-color-accent-4)!important
 }
 .fd-has-background-color-accent-5 {
+  background-color: #6367de!important;
   background-color: var(--fd-color-accent-5)!important
 }
 .fd-has-background-color-accent-6 {
+  background-color: #1973cc!important;
   background-color: var(--fd-color-accent-6)!important
 }
 .fd-has-background-color-accent-7 {
+  background-color: #0cd7ed!important;
   background-color: var(--fd-color-accent-7)!important
 }
 .fd-has-background-color-accent-8 {
+  background-color: #7ca10c!important;
   background-color: var(--fd-color-accent-8)!important
 }
 .fd-has-background-color-accent-9 {
+  background-color: #925ace!important;
   background-color: var(--fd-color-accent-9)!important
 }
 .fd-has-background-color-accent-10 {
+  background-color: #5c819d!important;
   background-color: var(--fd-color-accent-10)!important
 }
 .fd-has-background-color-accent-11 {
+  background-color: #d17f15!important;
   background-color: var(--fd-color-accent-11)!important
 }
 .fd-has-background-color-accent-12 {
+  background-color: #d04343!important;
   background-color: var(--fd-color-accent-12)!important
 }
 .fd-has-background-color-accent-13 {
+  background-color: #2b78c5!important;
   background-color: var(--fd-color-accent-13)!important
 }
 .fd-has-background-color-accent-14 {
+  background-color: #6367de!important;
   background-color: var(--fd-color-accent-14)!important
 }
 .fd-has-background-color-accent-15 {
+  background-color: #984bd2!important;
   background-color: var(--fd-color-accent-15)!important
 }
 .fd-has-background-color-shell,
 .fd-has-background-color-shell-1 {
+  background-color: #354a5f!important;
   background-color: var(--fd-color-shell-1)!important
 }
 .fd-has-background-color-shell-2 {
+  background-color: #d1e8ff!important;
   background-color: var(--fd-color-shell-2)!important
 }
 .fd-has-background-color-shell-3 {
+  background-color: #213b54!important;
   background-color: var(--fd-color-shell-3)!important
 }
 .fd-has-background-color-shell-4 {
+  background-color: #1b3046!important;
   background-color: var(--fd-color-shell-4)!important
 }
 .fd-has-background-color-shell-5 {
+  background-color: #7b9abc!important;
   background-color: var(--fd-color-shell-5)!important
 }
 .fd-has-background-color-action-hover {
+  background-color: #085caf!important;
   background-color: var(--fd-color-action-hover)!important
 }
 .fd-has-background-color-action-selected {
+  background-color: #0254a7!important;
   background-color: var(--fd-color-action-selected)!important
 }
 .fd-has-background-color-action-disabled {
+  background-color: rgba(10,110,209,.4)!important;
   background-color: var(--fd-color-action-disabled)!important
 }
 .fd-has-background-color-action-visited {
+  background-color: #3c0ad1!important;
   background-color: var(--fd-color-action-visited)!important
 }
 .fd-has-background-color-background-hover {
+  background-color: #fafafa!important;
   background-color: var(--fd-color-background-hover)!important
 }
 .fd-has-background-color-background-selected {
+  background-color: rgba(10,110,209,.07)!important;
   background-color: var(--fd-color-background-selected)!important
 }
 .fd-has-background-color-background-selected-hover {
+  background-color: rgba(10,110,209,.1)!important;
   background-color: var(--fd-color-background-selected-hover)!important
 }
 .fd-has-background-color-background-positive {
+  background-color: #f1fdf6!important;
   background-color: var(--fd-color-background-positive)!important
 }
 .fd-has-background-color-background-negative {
+  background-color: #ffebeb!important;
   background-color: var(--fd-color-background-negative)!important
 }
 .fd-has-background-color-background-alert {
+  background-color: #fef7f1!important;
   background-color: var(--fd-color-background-alert)!important
 }
 .fd-has-background-color-background-information {
+  background-color: #f5faff!important;
   background-color: var(--fd-color-background-information)!important
+}
+.fd-has-background-color-background-default {
+  background-color: #f4f4f4!important;
+  background-color: var(--fd-color-background-default)!important
 }
 .fd-has-border-radius-0 {
   border-radius: 0!important
@@ -10858,181 +11572,242 @@ Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcar
 }
 .fd-has-border-color-action,
 .fd-has-border-color-action-1 {
+  border-color: #0a6ed1!important;
   border-color: var(--fd-color-action-1)!important
 }
 .fd-has-border-color-action-2 {
+  border-color: #fff!important;
   border-color: var(--fd-color-action-2)!important
 }
 .fd-has-border-color-action-3 {
+  border-color: #0854a0!important;
   border-color: var(--fd-color-action-3)!important
 }
 .fd-has-border-color-text,
 .fd-has-border-color-text-1 {
+  border-color: #32363a!important;
   border-color: var(--fd-color-text-1)!important
 }
 .fd-has-border-color-text-2 {
+  border-color: #51555a!important;
   border-color: var(--fd-color-text-2)!important
 }
 .fd-has-border-color-text-3 {
+  border-color: #6a6d70!important;
   border-color: var(--fd-color-text-3)!important
 }
 .fd-has-border-color-text-4 {
+  border-color: #74777a!important;
   border-color: var(--fd-color-text-4)!important
 }
 .fd-has-border-color-text-5 {
+  border-color: #fff!important;
   border-color: var(--fd-color-text-5)!important
 }
 .fd-has-border-color-background,
 .fd-has-border-color-background-1 {
+  border-color: #edeff0!important;
   border-color: var(--fd-color-background-1)!important
 }
 .fd-has-border-color-background-2 {
+  border-color: #fff!important;
   border-color: var(--fd-color-background-2)!important
 }
 .fd-has-border-color-background-3 {
+  border-color: #f1fdf6!important;
   border-color: var(--fd-color-background-3)!important
 }
 .fd-has-border-color-background-4 {
+  border-color: #fef7f1!important;
   border-color: var(--fd-color-background-4)!important
 }
 .fd-has-border-color-background-5 {
+  border-color: #ffebeb!important;
   border-color: var(--fd-color-background-5)!important
 }
 .fd-has-border-color-background-6 {
+  border-color: #f5faff!important;
   border-color: var(--fd-color-background-6)!important
 }
 .fd-has-border-color-background-7 {
+  border-color: #f4f4f4!important;
   border-color: var(--fd-color-background-7)!important
 }
 .fd-has-border-color-neutral,
 .fd-has-border-color-neutral-1 {
+  border-color: #fafafa!important;
   border-color: var(--fd-color-neutral-1)!important
 }
 .fd-has-border-color-neutral-2 {
+  border-color: #eeeeef!important;
   border-color: var(--fd-color-neutral-2)!important
 }
 .fd-has-border-color-neutral-3 {
+  border-color: #d9d9d9!important;
   border-color: var(--fd-color-neutral-3)!important
 }
 .fd-has-border-color-neutral-4 {
+  border-color: #89919a!important;
   border-color: var(--fd-color-neutral-4)!important
 }
 .fd-has-border-color-neutral-5 {
+  border-color: #f7f7f7!important;
   border-color: var(--fd-color-neutral-5)!important
 }
 .fd-has-border-color-neutral-6 {
+  border-color: #f2f2f2!important;
   border-color: var(--fd-color-neutral-6)!important
 }
 .fd-has-border-color-status,
 .fd-has-border-color-status-1 {
+  border-color: #0a7e3e!important;
   border-color: var(--fd-color-status-1)!important
 }
 .fd-has-border-color-status-2 {
+  border-color: #e9730c!important;
   border-color: var(--fd-color-status-2)!important
 }
 .fd-has-border-color-status-3 {
+  border-color: #b00!important;
   border-color: var(--fd-color-status-3)!important
 }
 .fd-has-border-color-status-4 {
+  border-color: #6a6d70!important;
   border-color: var(--fd-color-status-4)!important
 }
 .fd-has-border-color-status-5 {
+  border-color: #0a6dd1!important;
   border-color: var(--fd-color-status-5)!important
 }
 .fd-has-border-color-accent,
 .fd-has-border-color-accent-1 {
+  border-color: #f5a742!important;
   border-color: var(--fd-color-accent-1)!important
 }
 .fd-has-border-color-accent-2 {
+  border-color: #d62929!important;
   border-color: var(--fd-color-accent-2)!important
 }
 .fd-has-border-color-accent-3 {
+  border-color: #db1f77!important;
   border-color: var(--fd-color-accent-3)!important
 }
 .fd-has-border-color-accent-4 {
+  border-color: #c0399f!important;
   border-color: var(--fd-color-accent-4)!important
 }
 .fd-has-border-color-accent-5 {
+  border-color: #6367de!important;
   border-color: var(--fd-color-accent-5)!important
 }
 .fd-has-border-color-accent-6 {
+  border-color: #1973cc!important;
   border-color: var(--fd-color-accent-6)!important
 }
 .fd-has-border-color-accent-7 {
+  border-color: #0cd7ed!important;
   border-color: var(--fd-color-accent-7)!important
 }
 .fd-has-border-color-accent-8 {
+  border-color: #7ca10c!important;
   border-color: var(--fd-color-accent-8)!important
 }
 .fd-has-border-color-accent-9 {
+  border-color: #925ace!important;
   border-color: var(--fd-color-accent-9)!important
 }
 .fd-has-border-color-accent-10 {
+  border-color: #5c819d!important;
   border-color: var(--fd-color-accent-10)!important
 }
 .fd-has-border-color-accent-11 {
+  border-color: #d17f15!important;
   border-color: var(--fd-color-accent-11)!important
 }
 .fd-has-border-color-accent-12 {
+  border-color: #d04343!important;
   border-color: var(--fd-color-accent-12)!important
 }
 .fd-has-border-color-accent-13 {
+  border-color: #2b78c5!important;
   border-color: var(--fd-color-accent-13)!important
 }
 .fd-has-border-color-accent-14 {
+  border-color: #6367de!important;
   border-color: var(--fd-color-accent-14)!important
 }
 .fd-has-border-color-accent-15 {
+  border-color: #984bd2!important;
   border-color: var(--fd-color-accent-15)!important
 }
 .fd-has-border-color-shell,
 .fd-has-border-color-shell-1 {
+  border-color: #354a5f!important;
   border-color: var(--fd-color-shell-1)!important
 }
 .fd-has-border-color-shell-2 {
+  border-color: #d1e8ff!important;
   border-color: var(--fd-color-shell-2)!important
 }
 .fd-has-border-color-shell-3 {
+  border-color: #213b54!important;
   border-color: var(--fd-color-shell-3)!important
 }
 .fd-has-border-color-shell-4 {
+  border-color: #1b3046!important;
   border-color: var(--fd-color-shell-4)!important
 }
 .fd-has-border-color-shell-5 {
+  border-color: #7b9abc!important;
   border-color: var(--fd-color-shell-5)!important
 }
 .fd-has-border-color-action-hover {
+  border-color: #085caf!important;
   border-color: var(--fd-color-action-hover)!important
 }
 .fd-has-border-color-action-selected {
+  border-color: #0254a7!important;
   border-color: var(--fd-color-action-selected)!important
 }
 .fd-has-border-color-action-disabled {
+  border-color: rgba(10,110,209,.4)!important;
   border-color: var(--fd-color-action-disabled)!important
 }
 .fd-has-border-color-action-visited {
+  border-color: #3c0ad1!important;
   border-color: var(--fd-color-action-visited)!important
 }
 .fd-has-border-color-background-hover {
+  border-color: #fafafa!important;
   border-color: var(--fd-color-background-hover)!important
 }
 .fd-has-border-color-background-selected {
+  border-color: rgba(10,110,209,.07)!important;
   border-color: var(--fd-color-background-selected)!important
 }
 .fd-has-border-color-background-selected-hover {
+  border-color: rgba(10,110,209,.1)!important;
   border-color: var(--fd-color-background-selected-hover)!important
 }
 .fd-has-border-color-background-positive {
+  border-color: #f1fdf6!important;
   border-color: var(--fd-color-background-positive)!important
 }
 .fd-has-border-color-background-negative {
+  border-color: #ffebeb!important;
   border-color: var(--fd-color-background-negative)!important
 }
 .fd-has-border-color-background-alert {
+  border-color: #fef7f1!important;
   border-color: var(--fd-color-background-alert)!important
 }
 .fd-has-border-color-background-information {
+  border-color: #f5faff!important;
   border-color: var(--fd-color-background-information)!important
+}
+.fd-has-border-color-background-default {
+  border-color: #f4f4f4!important;
+  border-color: var(--fd-color-background-default)!important
 }
 .fd-has-display-none {
   display: none!important
