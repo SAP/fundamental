@@ -33,14 +33,24 @@ const defaultScenario = {
 }
 
 // Specific visual test component configurations.  Read the associated component configuration directory and merge the json.
-fs.readdirSync(backstopComponentConfigLocation).forEach(function(configFile) {
-  const scenario = {...defaultScenario, ...require('./components/' + configFile)};
-  // Ensure each config file has a urlSuffix, label and selectors defined.
-  if (!scenario.urlSuffix || !scenario.label || !scenario.selectors) {
-    throw "Error with backstop config file '" + configFile + "', must include urlSuffix, label and selectors";
+fs.readdirSync("test/templates").forEach(function(component) {
+  if(!component.includes('.njk')){
+    let componentScenario = {
+      "label": component,
+      "urlSuffix": `/${component}`,
+      "selectors": [
+          `#example-container .fd-${component}`,
+        ],
+        "selectorExpansion": true
+    }
+    const scenario = {...defaultScenario, ...componentScenario};
+    // Ensure each config file has a urlSuffix, label and selectors defined.
+    if (!scenario.urlSuffix || !scenario.label || !scenario.selectors) {
+      throw "Error with backstop config file '" + configFile + "', must include urlSuffix, label and selectors";
+    }
+    scenario.url = scenario.urlPrefix + scenario.urlSuffix;
+    scenarios.push(scenario);
   }
-  scenario.url = scenario.urlPrefix + scenario.urlSuffix;
-  scenarios.push(scenario);
 });
 
 console.log('Found ' + scenarios.length + ' Visual test scenarios to execute');

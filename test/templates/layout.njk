@@ -21,11 +21,15 @@
         {{ core_sass | sass_to_css }}
 
         {% if id === 'icon' %}
-            {{ 'icons.scss' | sass_to_css }}
+            {% set component_sass = 'icons.scss' %}
+        {% elif id === 'radio' or id === 'checkbox' or id === 'input' %}
+            {% set component_sass = 'components/form.scss' %}
+        {% elif id === 'panel' or id === 'panel-grid' or id === 'layout' %}
+            {% set component_sass = 'layout.scss' %}
         {% else %}
             {% set component_sass = 'components/' + id + '.scss'  %}
-            {{ component_sass | sass_to_css }}
         {% endif %}
+        {{ component_sass | sass_to_css }}
 
         {% for sass in css_deps %}
             {% set dep_sass = sass + '.scss' %}
@@ -106,7 +110,7 @@
 
         </div>
 
-        <div style="padding: 20px;">
+        <div id="example-container" style="padding: 20px;">
             {% block content %}
             {% endblock %}
         </div>
