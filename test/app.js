@@ -157,7 +157,7 @@ env.addFilter('merge_objs', function (obj1 = {}, obj2 = {}) {
 
 app.set('port', process.env.PORT || 3030);
 
-let dynamicPort = app.get('port');
+let port = app.get('port');
 
 app.set('views', TEMPLATE_DIRECTORY);
 app.set('view engine', 'njk');
@@ -217,28 +217,28 @@ router.get('/:key', (req, res) => {
     } finally {
 
     }
-    signale.info(`Requested http://localhost:${dynamicPort}/${key}`);
+    signale.info(`Requested http://localhost:${port}/${key}`);
     res.render(`${key}/index`, Object.assign(GLOBALS, { id: key, component: getStarterData(), data, selfContained: process.env.SELF_CONTAINED }));
 });
 
 
 router.get('/pages/:key', (req, res) => {
     const key = req.params.key;
-    signale.info(`Requested http://localhost:${dynamicPort}/pages/${key}`);
+    signale.info(`Requested http://localhost:${port}/pages/${key}`);
     res.render(`pages/${key}`, Object.assign(GLOBALS, { id: key, data: getStarterData(), app: config }));
 });
 router.get('/pages/app/:key', (req, res) => {
     const key = req.params.key;
-    signale.info(`Requested http://localhost:${dynamicPort}/pages/app/${key}`);
+    signale.info(`Requested http://localhost:${port}/pages/app/${key}`);
     res.render(`pages/app/${key}`, Object.assign(GLOBALS, { id: key, data: getStarterData(), app: config }));
 });
 router.get('/pages/floorplans/:key', (req, res) => {
     const key = req.params.key;
-    signale.info(`Requested http://localhost:${dynamicPort}/pages/floorplans/${key}`);
+    signale.info(`Requested http://localhost:${port}/pages/floorplans/${key}`);
     res.render(`pages/floorplans/${key}`, Object.assign(GLOBALS, { id: key, data: getStarterData(), app: config }));
 });
 
 
-app.listen(app.get('port'));
-signale.watch(`Listening at http://localhost:${dynamicPort}`);
+app.listen(port);
+signale.watch(`Listening at http://localhost:${port}`);
 module.exports = app;
