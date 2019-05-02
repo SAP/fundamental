@@ -25,6 +25,7 @@
         {% else %}
             {% set component_sass = 'components/' + id + '.scss'  %}
         {% endif %}
+        {{ component_sass | sass_to_css }}
     </style>
 </head>
 
