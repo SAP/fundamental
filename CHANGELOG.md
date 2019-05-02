@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.8-rc.0"></a>
+## [1.5.8-rc.0](https://github.com/SAP/fundamental/compare/v1.5.7...v1.5.8-rc.0) (2019-05-02)
+
+
+### Bug Fixes
+
+* automate scenario creation for automated visual testing ([#1437](https://github.com/SAP/fundamental/issues/1437)) ([36071bd](https://github.com/SAP/fundamental/commit/36071bd))
+
+
+
 <a name="1.5.7"></a>
 ## [1.5.7](https://github.com/SAP/fundamental/compare/v1.5.7-rc.6...v1.5.7) (2019-05-01)
 
