@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.8-rc.0"></a>
+## [1.5.8-rc.0](https://github.com/SAP/fundamental/compare/v1.5.7...v1.5.8-rc.0) (2019-05-02)
+
+
+### Bug Fixes
+
+* automate scenario creation for automated visual testing ([#1437](https://github.com/SAP/fundamental/issues/1437)) ([36071bd](https://github.com/SAP/fundamental/commit/36071bd))
+
+
+
+<a name="1.5.7"></a>
+## [1.5.7](https://github.com/SAP/fundamental/compare/v1.5.7-rc.6...v1.5.7) (2019-05-01)
+
+
+
+<a name="1.5.7-rc.6"></a>
+## [1.5.7-rc.6](https://github.com/SAP/fundamental/compare/v1.5.7-rc.5...v1.5.7-rc.6) (2019-05-01)
+
+
+
+<a name="1.5.7-rc.5"></a>
+## [1.5.7-rc.5](https://github.com/SAP/fundamental/compare/v1.5.7-rc.4...v1.5.7-rc.5) (2019-05-01)
+
+
+### Bug Fixes
+
+* readme links now point to updated wiki pages  ([#1434](https://github.com/SAP/fundamental/issues/1434)) ([003c0ef](https://github.com/SAP/fundamental/commit/003c0ef))
+
+
+
+<a name="1.5.7-rc.4"></a>
+## [1.5.7-rc.4](https://github.com/SAP/fundamental/compare/v1.5.7-rc.3...v1.5.7-rc.4) (2019-05-01)
+
+
+### Bug Fixes
+
+* update some links in documentation site ([#1433](https://github.com/SAP/fundamental/issues/1433)) ([62a9dcd](https://github.com/SAP/fundamental/commit/62a9dcd))
+
+
+
 <a name="1.5.7-rc.3"></a>
 ## [1.5.7-rc.3](https://github.com/SAP/fundamental/compare/v1.5.7-rc.2...v1.5.7-rc.3) (2019-04-30)
 

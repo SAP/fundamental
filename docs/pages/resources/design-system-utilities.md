@@ -75,12 +75,12 @@ Use these CSS classes to control the text size. Used mainly for content text, al
 ## Colors
 {: .docs-header-h2}
 
-All colors on the [color pallete](/foundation/colors.html). Can be accessed via SCSS function and respective CSS classes.
+All colors on the [color palette]({{site.baseurl}}/foundation/colors.html). Can be accessed via SCSS function and respective CSS classes.
 
 ### Color Function
 {: .docs-header-h3}
 
-Colors can be accessed via color function [`fd-color({group}, {shade})`](how-to-use-scss.html#core-functions-and-mixins){:target:"_blank"}
+Colors can be accessed via color function [`fd-color({group}, {shade})`](how-to-use-scss.html#core-functions-and-mixins)
 
 ### Color Helper classes
 {: .docs-header-h3}
@@ -93,7 +93,7 @@ A foreground color class applies the color property to the element for example `
 | ------------------------------- | ----------------------- |
 | Foreground Class: <br> `.fd-has-color-{group}-{shade}` <br><br> Background Class:<br>`.fd-has-background-color-{group}-{shade}` | `action` - `1`, `2`, `3` <br> `shell` - `1`, `2` <br> `text` - `1`, `2`, `3`, `4` <br> `background` - `1`, `2`, `3`, `4`, `5`, `6` <br> `neutral` - `1`, `2`, `3`, `4`  <br> `status` - `1`, `2`, `3`, `4`, `5` <br> `accent` - `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`, `13`, `14`, `15`, `16`|
 
-Please check the [colors page](colors.html){:target="_blank"} to see full color pallet.
+Please check the [colors page]({{site.baseurl}}/foundation/colors.html) to see full color palette.
 
 Some examples of color helper classes.
 {% capture color %}

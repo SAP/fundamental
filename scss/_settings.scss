@@ -91,11 +91,11 @@ $fd-colors: map-merge((
   "background": (
     1: hsl(210, 9%, 93.7%), // #EDEFF0 UI Shell/ App background
     2: hsl(210, 0%, 100%),  // #FFFFFF UI content background
-    3: hsl(145, 10%, 97%),  // #E4FCEE Semantic Colors positive background
+    3: hsl(145, 75%, 96.9%),  // #F1FDF6 Semantic Colors positive background
     4: hsl(28, 86.7%, 97.1%), // #FEF7F1 Semantic Colors alert background
     5: hsl(0, 100%, 96.1%),  // #FFEBEB Semantic Colors negative background
-    6: hsl(210, 4%, 98%), // #F5FAFF Semantic Colors Neutral background
-    7: hsl(0, 0, 96%) // #F4F4F4
+    6: hsl(210, 100%, 98%), // #F5FAFF Semantic Colors info background
+    7: hsl(0, 0, 95.7%) // #F4F4F4 neutral alert background
   ),
   "neutral": (
     1: hsl(210, 3%, 98%), // #FAFAFA UI Neutral UI 1
@@ -179,7 +179,8 @@ $fd-colors-background-states: map-merge((
   "positive": map-get($fd-colors-background, 3),
   "negative": map-get($fd-colors-background, 5),
   "alert": map-get($fd-colors-background, 4),
-  "information": map-get($fd-colors-neutral, 1),
+  "information": map-get($fd-colors-background, 6),
+  "default": map-get($fd-colors-background, 7)
 ), $fd-colors-background-states);
 
 //————————^ FIORI FUNDAMENTALS FOUNDATION ————————^
