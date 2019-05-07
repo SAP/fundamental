@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.8-rc.1"></a>
+## [1.5.8-rc.1](https://github.com/SAP/fundamental/compare/v1.5.8-rc.0...v1.5.8-rc.1) (2019-05-07)
+
+
+### Bug Fixes
+
+* remove duplicate buttons from playground ([#1438](https://github.com/SAP/fundamental/issues/1438)) ([bad4bf3](https://github.com/SAP/fundamental/commit/bad4bf3))
+
+
+
 <a name="1.5.8-rc.0"></a>
 ## [1.5.8-rc.0](https://github.com/SAP/fundamental/compare/v1.5.7...v1.5.8-rc.0) (2019-05-02)
 
