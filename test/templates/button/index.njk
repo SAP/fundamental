@@ -1,6 +1,7 @@
 {% extends "layout.njk" %}
 {% from "./../format.njk" import format %}
 {% from "./component.njk" import button %}
+{% from "./component-anchor.njk" import anchor_button %}
 {% set css_deps = ['fonts','helpers','icons'] %}
 
 {% macro btncode(content="",bgcolor="transparent") %}
@@ -62,6 +63,20 @@
     modifier={ block: [type,size,e] },
     aria={ label: 'Add Attachment' })
 }}
+{{- anchor_button(
+  { label: 'Button' },
+  modifier={ block: [type,size,e] })
+}}
+{{- anchor_button(
+  { label: 'Add to Cart',
+    icon: 'cart' },
+    modifier={ block: [type,size,e] })
+}}
+{{-  anchor_button(
+  { icon: 'attachment' },
+    modifier={ block: [type,size,e] },
+    aria={ label: 'Add Attachment' })
+}}
 {% endset %}
 {{ btncode(example) }}
 
@@ -80,6 +95,23 @@
   aria={ selected: true })
 }}
 {{-  button(
+  { label: 'Disabled',
+    icon: 'cart' },
+    modifier={ block: [type,size,e] },
+    state={ disabled: true })
+}}
+{{-  anchor_button(
+  { label: 'Focused',
+    icon: 'cart' },
+    modifier={ block: [type,size,e] },
+    state={ focus: true })
+}}
+{{- anchor_button(
+  { label: 'Selected' },
+  modifier={ block: [type,size,e] },
+  aria={ selected: true })
+}}
+{{-  anchor_button(
   { label: 'Disabled',
     icon: 'cart' },
     modifier={ block: [type,size,e] },
@@ -343,6 +375,201 @@ block: ['action-bar','negative']
     )
 }}
 
+{{  anchor_button(
+        { label: 'Button' },
+        modifier={ block: ['action-bar','compact'] })
+}}
+{{  anchor_button(
+        { label: 'Button' },
+        modifier={ block: ['action-bar'] })
+}}
+<br>
+{{  anchor_button(
+  { label: 'Add to Cart',
+    icon: 'cart' },
+        modifier={ block: ['action-bar','compact'] })
+}}
+{{  anchor_button(
+  { label: 'Add to Cart',
+    icon: 'cart' },
+        modifier={ block: ['action-bar'] })
+}}
+<br>
+{{  anchor_button(
+  {
+    icon: 'attachment' },
+        modifier={ block: ['action-bar','compact'] },
+        aria={ label: 'Add Attachment' })
+}}
+{{  anchor_button(
+  {
+    icon: 'attachment' },
+        modifier={ block: ['action-bar'] },
+        aria={ label: 'Add Attachment' })
+}}
+<br>
+{{  anchor_button(
+        { label: 'Selected' },
+        modifier={ block: ['action-bar'] },
+        state={ selected: true }
+    )
+}}
+{{  anchor_button(
+  { label: 'Selected' },
+  modifier={ block: ['action-bar'] },
+        aria={ selected: true }
+    )
+}}
+{{  anchor_button(
+  { label: 'Disabled' },
+  modifier={ block: ['action-bar'] },
+        state={ disabled: true }
+    )
+}}
+{{  anchor_button(
+  { label: 'Disabled' },
+  modifier={ block: ['action-bar'] },
+        aria={ disabled: true }
+    )
+}}
+
+
+
+<br>
+{{  anchor_button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+          block: ['compact','action-bar','positive']
+        })
+}}
+{{  anchor_button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+block: ['action-bar','positive']
+        })
+}}
+<br>
+{{  anchor_button(
+        { label: 'Approve' },
+        modifier={
+            block: ['positive']
+        },
+        state={ selected: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Approve' },
+        modifier={
+            block: ['positive']
+        },
+        aria={ selected: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Approve' },
+        modifier={
+            block: ['positive']
+        },
+        state={ disabled: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Approve' },
+        modifier={
+            block: ['positive']
+        },
+        aria={ disabled: true }
+    )
+}}
+
+
+
+
+<br>
+{{  anchor_button(
+        {
+            label: 'Reject',
+            icon: 'decline'
+        },
+        modifier={
+            block: ['xs','action-bar','negative']
+        })
+}}
+{{  anchor_button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+            block: ['s','action-bar','negative']
+        })
+}}
+{{  anchor_button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+          block: ['compact','action-bar','negative']
+        })
+}}
+{{  anchor_button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+block: ['action-bar','negative']
+        })
+}}
+{{  anchor_button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+            block: ['l','action-bar','negative']
+        })
+}}
+<br>
+{{  anchor_button(
+        { label: 'Reject' },
+        modifier={
+            block: ['negative']
+        },
+        state={ selected: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Reject' },
+        modifier={
+            block: ['negative']
+        },
+        aria={ selected: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Reject' },
+        modifier={
+            block: ['negative']
+        },
+        state={ disabled: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Reject' },
+        modifier={
+            block: ['negative']
+        },
+        aria={ disabled: true }
+    )
+}}
 
 {% endset %}
 {{ format(example) }}
@@ -669,7 +896,323 @@ block: ['negative']
         aria={ disabled: true }
     )
 }}
+{{  anchor_button(
+        {
+            label: 'Button Label'
+        },
+        modifier={
+            block: ['xs']
+        })
+}}
+{{  anchor_button(
+        {
+            label: 'Button Label'
+        },
+        modifier={
+            block: ['s']
+        })
+}}
+{{  anchor_button(
+        {
+            label: 'Button Label'
+        },
+        modifier={
+          block: ['compact']
+        })
+}}
+{{  anchor_button(
+        {
+            label: 'Button Label'
+        },
+        modifier={
 
+        })
+}}
+{{  anchor_button(
+        {
+            label: 'Button Label'
+        },
+        modifier={
+            block: ['l']
+        })
+}}
+<br>
+{{  anchor_button(
+        {
+            label: 'Accept',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['xs']
+        })
+}}
+{{  anchor_button(
+        {
+            label: 'Accept',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['s']
+        })
+}}
+{{  anchor_button(
+        {
+            label: 'Accept',
+            icon: 'accept'
+        },
+        modifier={
+          block: ['compact']
+        })
+}}
+{{  anchor_button(
+        {
+            label: 'Accept',
+            icon: 'accept'
+        },
+        modifier={
+
+        })
+}}
+{{  anchor_button(
+        {
+            label: 'Accept',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['l']
+        })
+}}
+<br>
+{{  anchor_button(
+        {
+            icon: 'add-favorite'
+        },
+        modifier={
+            block: ['xs']
+        },
+        aria={ label: 'Add favorite' })
+}}
+{{  anchor_button(
+        {
+            icon: 'add-favorite'
+        },
+        modifier={
+            block: ['s']
+        },
+        aria={ label: 'Add favorite' })
+}}
+{{  anchor_button(
+        {
+            icon: 'add-favorite'
+        },
+        modifier={
+          block: ['compact']
+        },
+        aria={ label: 'Add favorite' })
+}}
+{{  anchor_button(
+        {
+            icon: 'add-favorite'
+        },
+        modifier={
+
+        },
+        aria={ label: 'Add favorite' })
+}}
+{{  anchor_button(
+        {
+            icon: 'add-favorite'
+        },
+        modifier={
+            block: ['l']
+        },
+        aria={ label: 'Add favorite' })
+}}
+<br>
+{{  anchor_button(
+        { label: 'Selected' },
+        state={ selected: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Selected' },
+        aria={ selected: true }
+    )
+}}
+
+{{  anchor_button(
+        { label: 'Disabled' },
+        state={ disabled: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Disabled' },
+        aria={ disabled: true }
+    )
+}}
+
+<br>
+{{  anchor_button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['xs','positive']
+        })
+}}
+{{  anchor_button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['s','positive']
+        })
+}}
+{{  anchor_button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+          block: ['compact','positive']
+        })
+}}
+{{  anchor_button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+block: ['positive']
+        })
+}}
+{{  anchor_button(
+        {
+            label: 'Approve',
+            icon: 'accept'
+        },
+        modifier={
+            block: ['l','positive']
+        })
+}}
+<br>
+{{  anchor_button(
+        { label: 'Approve' },
+        modifier={
+            block: ['main','positive']
+        },
+        state={ selected: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Approve' },
+        modifier={
+            block: ['main','positive']
+        },
+        aria={ selected: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Approve' },
+        modifier={
+            block: ['main','positive']
+        },
+        state={ disabled: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Approve' },
+        modifier={
+            block: ['main','positive']
+        },
+        aria={ disabled: true }
+    )
+}}
+<br>
+
+
+
+{{  anchor_button(
+        {
+            label: 'Reject',
+            icon: 'decline'
+        },
+        modifier={
+            block: ['xs','negative']
+        })
+}}
+{{  anchor_button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+            block: ['s','negative']
+        })
+}}
+{{  anchor_button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+          block: ['compact','negative']
+        })
+}}
+{{  anchor_button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+block: ['negative']
+        })
+}}
+{{  anchor_button(
+        {
+          label: 'Reject',
+          icon: 'decline'
+        },
+        modifier={
+            block: ['l','negative']
+        })
+}}
+
+<br>
+{{  anchor_button(
+        { label: 'Reject' },
+        modifier={
+            block: ['main','negative']
+        },
+        state={ selected: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Reject' },
+        modifier={
+            block: ['main','negative']
+        },
+        aria={ selected: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Reject' },
+        modifier={
+            block: ['main','negative']
+        },
+        state={ disabled: true }
+    )
+}}
+{{  anchor_button(
+        { label: 'Reject' },
+        modifier={
+            block: ['main','negative']
+        },
+        aria={ disabled: true }
+    )
+}}
 
 
 
@@ -787,6 +1330,108 @@ block: ['negative']
         aria={ disabled: true }
     )
 }}
+{{  anchor_button(
+        { label: 'Button' },
+        modifier={ block: ['secondary','xs'] })
+}}
+{{  anchor_button(
+        { label: 'Button' },
+        modifier={ block: ['secondary','s'] })
+}}
+{{  anchor_button(
+        { label: 'Button' },
+        modifier={ block: ['secondary','compact'] })
+}}
+{{  anchor_button(
+        { label: 'Button' },
+        modifier={ block: ['secondary'] })
+}}
+{{  anchor_button(
+        { label: 'Button' },
+        modifier={ block: ['secondary','l'] })
+}}
+<br>
+{{  anchor_button(
+        { label: 'Cancel',
+          icon: 'cancel' },
+        modifier={ block: ['secondary','xs'] })
+}}
+{{  anchor_button(
+  { label: 'Cancel',
+    icon: 'cancel' },
+        modifier={ block: ['secondary','s'] })
+}}
+{{  anchor_button(
+  { label: 'Cancel',
+    icon: 'cancel' },
+        modifier={ block: ['secondary','compact'] })
+}}
+{{  anchor_button(
+  { label: 'Cancel',
+    icon: 'cancel' },
+        modifier={ block: ['secondary'] })
+}}
+{{  anchor_button(
+  { label: 'Cancel',
+    icon: 'cancel' },
+        modifier={ block: ['secondary','l'] })
+}}
+<br>
+{{  anchor_button(
+        {
+          icon: 'edit' },
+        modifier={ block: ['secondary','xs'] },
+        aria={ label: 'Edit' })
+}}
+{{  anchor_button(
+        {  icon: 'edit' },
+        modifier={ block: ['secondary','s'] },
+        aria={ label: 'Edit' })
+}}
+{{  anchor_button(
+  {
+    icon: 'edit' },
+        modifier={ block: ['secondary','compact'] },
+        aria={ label: 'Edit' })
+}}
+{{  anchor_button(
+  {
+    icon: 'edit' },
+        modifier={ block: ['secondary'] },
+        aria={ label: 'Edit' })
+}}
+{{  anchor_button(
+  {
+    icon: 'edit' },
+        modifier={ block: ['secondary','l'] },
+        aria={ label: 'Edit' })
+}}
+<br>
+{{  anchor_button(
+        { label: 'Selected' },
+        modifier={ block: ['secondary'] },
+        state={ selected: true }
+    )
+}}
+{{  anchor_button(
+  { label: 'Selected' },
+  modifier={ block: ['secondary'] },
+        aria={ selected: true }
+    )
+}}
+
+{{  anchor_button(
+  { label: 'Disabled' },
+  modifier={ block: ['secondary'] },
+        state={ disabled: true }
+    )
+}}
+{{  anchor_button(
+  { label: 'Disabled' },
+  modifier={ block: ['secondary'] },
+        aria={ disabled: true }
+    )
+}}
 
 {% endset %}
 {{ format(example,"white") }}
@@ -896,6 +1541,109 @@ block: ['negative']
     )
 }}
 {{  button(
+  { label: 'Disabled' },
+  modifier={ block: ['toolbar'] },
+        aria={ disabled: true }
+    )
+}}
+
+{{  anchor_button(
+        { label: 'Button' },
+        modifier={ block: ['toolbar','xs'] })
+}}
+{{  anchor_button(
+        { label: 'Button' },
+        modifier={ block: ['toolbar','s'] })
+}}
+{{  anchor_button(
+        { label: 'Button' },
+        modifier={ block: ['toolbar','compact'] })
+}}
+{{  anchor_button(
+        { label: 'Button' },
+        modifier={ block: ['toolbar'] })
+}}
+{{  anchor_button(
+        { label: 'Button' },
+        modifier={ block: ['toolbar','l'] })
+}}
+<br>
+{{  anchor_button(
+  { label: 'Sort',
+    icon: 'alphabetical-order' },
+        modifier={ block: ['toolbar','xs'] })
+}}
+{{  anchor_button(
+  { label: 'Sort',
+    icon: 'alphabetical-order' },
+        modifier={ block: ['toolbar','s'] })
+}}
+{{  anchor_button(
+  { label: 'Sort',
+    icon: 'alphabetical-order' },
+        modifier={ block: ['toolbar','compact'] })
+}}
+{{  anchor_button(
+  { label: 'Sort',
+    icon: 'alphabetical-order' },
+        modifier={ block: ['toolbar'] })
+}}
+{{  anchor_button(
+  { label: 'Sort',
+    icon: 'alphabetical-order' },
+        modifier={ block: ['toolbar','l'] })
+}}
+<br>
+{{  anchor_button(
+        {
+          icon: 'filter' },
+        modifier={ block: ['toolbar','xs'] },
+        aria={ label: 'Filter' })
+}}
+{{  anchor_button(
+        {  icon: 'filter' },
+        modifier={ block: ['toolbar','s'] },
+        aria={ label: 'Filter' })
+}}
+{{  anchor_button(
+  {
+    icon: 'filter' },
+        modifier={ block: ['toolbar','compact'] },
+        aria={ label: 'Filter' })
+}}
+{{  anchor_button(
+  {
+    icon: 'filter' },
+        modifier={ block: ['toolbar'] },
+        aria={ label: 'Filter' })
+}}
+{{  anchor_button(
+  {
+    icon: 'filter' },
+        modifier={ block: ['toolbar','l'] },
+        aria={ label: 'Filter' })
+}}
+<br>
+{{  anchor_button(
+        { label: 'Selected' },
+        modifier={ block: ['toolbar'] },
+        state={ selected: true }
+    )
+}}
+{{  anchor_button(
+  { label: 'Selected' },
+  modifier={ block: ['toolbar'] },
+        aria={ selected: true }
+    )
+}}
+
+{{  anchor_button(
+  { label: 'Disabled' },
+  modifier={ block: ['toolbar'] },
+        state={ disabled: true }
+    )
+}}
+{{  anchor_button(
   { label: 'Disabled' },
   modifier={ block: ['toolbar'] },
         aria={ disabled: true }
