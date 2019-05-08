@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.8-rc.2"></a>
+## [1.5.8-rc.2](https://github.com/SAP/fundamental/compare/v1.5.8-rc.1...v1.5.8-rc.2) (2019-05-08)
+
+
+### Bug Fixes
+
+* create playground to evaluate self-contained styles ([#1436](https://github.com/SAP/fundamental/issues/1436)) ([960fb66](https://github.com/SAP/fundamental/commit/960fb66))
+
+
+
 <a name="1.5.8-rc.1"></a>
 ## [1.5.8-rc.1](https://github.com/SAP/fundamental/compare/v1.5.8-rc.0...v1.5.8-rc.1) (2019-05-07)
 
