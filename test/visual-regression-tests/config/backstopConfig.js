@@ -1,5 +1,4 @@
 const fs = require('fs');
-const backstopComponentConfigLocation = 'test/visual-regression-tests/config/components';
 const backstopCIConfigLocation = 'test/visual-regression-tests/config/backstopConfigCI.json';
 
 let origin = 'host.docker.internal';
@@ -79,8 +78,6 @@ module.exports = {
       "--disable-dev-shm-usage"
     ]
   },
-  "asyncCaptureLimit": 1,
-  "asyncCompareLimit": 1,
   "debug": false,
   "debugWindow": false
 }
