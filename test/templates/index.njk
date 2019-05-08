@@ -10,9 +10,10 @@ li {
             font-size: 14px;
         }
 </style>
+<h1>{% if selfContained %}Self-Contained Styles Playground{% else %}Playground{% endif %}</h1>
 <div style="display: flex;">
     <div class="" style="flex: 1;">
-      <h1>Components</h1>
+      <h2>Components</h2>
       <ul>
           <li><a href="action-bar">.fd-action-bar</a></li>
           <li><a href="alert">.fd-alert</a></li>
@@ -65,8 +66,9 @@ li {
           <li><a href="user-menu">.fd-user-menu</a></li>
       </ul>
     </div>
+    {% if not selfContained %}
     <div class=""  style="flex: 1;">
-      <h1>Layout</h1>
+      <h2>Layout</h2>
       <ul>
           <li><a href="pages/shell">.fd-shell</a></li>
           <li><a href="pages/app">.fd-shell .fd-app</a></li>
@@ -78,23 +80,22 @@ li {
           <li><a href="layout">.fd-container .fd-col</a></li>
       </ul>
 
-      <h1>App Template Pages</h1>
+      <h2>App Template Pages</h2>
       <ul>
         <li><a href="pages/app/product-overview">Product Overview</a></li>
         <li><a href="pages/app/application-horizontal">Application (Horizontal Nav)</a></li>
         <li><a href="pages/app/application-vertical">Application (Vertical Nav)</a></li>
-<s>
-        <li><a href="pages/app/fullwidth">Full-width</a></li>
-        <li><a href="pages/app/sidebar">Sidebar</a></li></s>
+        <li><s><a href="pages/app/fullwidth">Full-width</a></s></li>
+        <li><s><a href="pages/app/sidebar">Sidebar</a></s></li>
       </ul>
 
 
-      <h1>Floorplan Examples</h1>
+      <h2>Floorplan Examples</h2>
       <ul>
         <li><a href="pages/floorplans/object">Object</a></li>
       </ul>
 
-      <h1>Content Pages</h1>
+      <h2>Content Pages</h2>
       <ul>
       <li><a href="pages/tiles">Tiles</a></li>
         <li><a href="pages/table">Table</a></li>
@@ -104,7 +105,7 @@ li {
     </div>
 
     <div class=""  style="flex: 1;">
-      <h1>Specs</h1>
+      <h2>Specs</h2>
       <ul>
           <li><a href="pages/styles">Styles</a></li>
           <li><a href="pages/text">Text</a></li>
@@ -113,7 +114,7 @@ li {
           <li><a href="pages/grid">Grid</a></li>
       </ul>
 
-      <h1>Deprecated</h1>
+      <h2>Deprecated</h2>
       <ul>
           <li><s><a href="tag">.fd-tag</a></s> 1.5</li>
           <li><s><a href="global-nav">.fd-global-nav</a></s> 1.7</li>
@@ -122,4 +123,5 @@ li {
       </ul>
 
     </div>
+    {% endif %}
 </div>
