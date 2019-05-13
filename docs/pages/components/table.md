@@ -19,11 +19,11 @@ A table is a set of tabular data. Line items can support data, images and action
 <table class="fd-table">
     <thead>
         <tr>
-            <th></th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
+            <th scope="col"></th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
         </tr>
     </thead>
     <tbody>
@@ -69,11 +69,11 @@ A table is a set of tabular data. Line items can support data, images and action
 <table class="fd-table fd-table--no-borders">
     <thead>
         <tr>
-            <th></th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
+            <th scope="col"></th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
         </tr>
     </thead>
     <tbody>
@@ -119,11 +119,11 @@ A table is a set of tabular data. Line items can support data, images and action
 <table class="fd-table fd-table--striped">
     <thead>
         <tr>
-            <th></th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
+            <th scope="col"></th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
         </tr>
     </thead>
     <tbody>
@@ -169,11 +169,11 @@ It is recommended to add the parameter `area-selected="true` to the row that is 
 <table class="fd-table">
     <thead>
         <tr>
-            <th><input type="checkbox"></th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
+            <th scope="col"><input type="checkbox"></th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
         </tr>
     </thead>
     <tbody>
@@ -213,10 +213,10 @@ a contextual menu can be substituted in order to display all actions in one menu
 <table class="fd-table" >
     <thead>
         <tr>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th></th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -298,9 +298,9 @@ a contextual menu can be substituted in order to display all actions in one menu
 <table class="fd-table">
    <thead>
       <tr>
-         <th class="fd-table__sort-column">Header Column</th>
-         <th class="fd-table__sort-column">Header Column</th>
-         <th class="fd-table__sort-column">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
       </tr>
    </thead>
    <tbody>
@@ -331,9 +331,9 @@ a contextual menu can be substituted in order to display all actions in one menu
 <table class="fd-table">
    <thead>
       <tr>
-         <th class="fd-table__sort-column fd-table__sort-column--asc">Header Column</th>
-         <th class="fd-table__sort-column">Header Column</th>
-         <th class="fd-table__sort-column">Header Column</th>
+         <th class="fd-table__sort-column fd-table__sort-column--asc" scope="col">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
       </tr>
    </thead>
    <tbody>
@@ -364,9 +364,9 @@ a contextual menu can be substituted in order to display all actions in one menu
 <table class="fd-table">
    <thead>
       <tr>
-         <th class="fd-table__sort-column fd-table__sort-column--dsc">Header Column</th>
-         <th class="fd-table__sort-column">Header Column</th>
-         <th class="fd-table__sort-column">Header Column</th>
+         <th class="fd-table__sort-column fd-table__sort-column--dsc" scope="col">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
       </tr>
    </thead>
    <tbody>
@@ -397,7 +397,7 @@ a contextual menu can be substituted in order to display all actions in one menu
 <table class="fd-table">
    <thead>
       <tr>
-         <th class="fd-table__context-menu" aria-controls="col1" aria-haspopup="true" >
+         <th class="fd-table__context-menu" aria-controls="col1" aria-haspopup="true" scope="col" >
             <div class="fd-popover">
                <div class="fd-popover__control">
                   <span class="fd-table__context-menu-label">Header Column</span>
@@ -417,7 +417,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                </div>
             </div>
          </th>
-         <th class="fd-table__context-menu" aria-controls="col2" aria-haspopup="true" >
+         <th class="fd-table__context-menu" aria-controls="col2" aria-haspopup="true" scope="col" >
             <div class="fd-popover">
                <div class="fd-popover__control">
                   <span class="fd-table__context-menu-label">Header Column</span>
@@ -437,7 +437,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                </div>
             </div>
          </th>
-         <th class="fd-table__context-menu" aria-controls="col3" aria-haspopup="true" >
+         <th class="fd-table__context-menu" aria-controls="col3" aria-haspopup="true" scope="col" >
             <div class="fd-popover">
                <div class="fd-popover__control">
                   <span class="fd-table__context-menu-label">Header Column</span>
@@ -496,7 +496,7 @@ a contextual menu can be substituted in order to display all actions in one menu
       <table class="fd-table">
          <thead>
             <tr>
-               <th class="fd-table__context-menu fd-table__fixed-col" style="left:0; width:200px" aria-controls="col1.2" aria-haspopup="true">
+               <th class="fd-table__context-menu fd-table__fixed-col" style="left:0; width:200px" aria-controls="col1.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
@@ -522,7 +522,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col2.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col2.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
@@ -539,7 +539,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col3.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col3.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
@@ -556,7 +556,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col4.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col4.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
@@ -573,7 +573,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col5.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col5.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
@@ -590,7 +590,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col6.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col6.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
@@ -607,7 +607,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col7.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col7.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
@@ -624,7 +624,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col8.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col8.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
@@ -645,7 +645,7 @@ a contextual menu can be substituted in order to display all actions in one menu
          </thead>
          <tbody>
             <tr>
-               <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
+               <th class="fd-table__fixed-col" style="left:0; width:200px" scope="row">Lorem ipsum dolor sit amet ipsum</th>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -655,7 +655,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                <td>Lorem ipsum dolor sit amet ipsum</td>
             </tr>
             <tr>
-               <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
+               <th class="fd-table__fixed-col" style="left:0; width:200px" scope="row">Lorem ipsum dolor sit amet ipsum</th>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -665,7 +665,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                <td>Lorem ipsum dolor sit amet ipsum</td>
             </tr>
             <tr>
-               <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
+               <th class="fd-table__fixed-col" style="left:0; width:200px" scope="row">Lorem ipsum dolor sit amet ipsum</th>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>

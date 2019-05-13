@@ -45,13 +45,13 @@ table:
         <tr>
             {%- for header in properties.headers %}
             {%- if header.context_menu -%}
-            <th class="fd-table__context-menu {{header.classes | classes}}" style="left:{{0 if header.fixed_col else header.offset}}; width:{{header.width}}" {{header.aria | aria}} >
+            <th class="fd-table__context-menu {{header.classes | classes}}" style="left:{{0 if header.fixed_col else header.offset}}; width:{{header.width}}" {{header.aria | aria}}  scope="col" >
                 {{ table_contextual_header(header) }}
             </th>
             {%- else -%}
             {% set sort_class = "fd-table__sort-column" if header.sortable else "" %}
             {% set sort_order_class = "fd-table__sort-column--"+header.sort_order if header.sort_order and header.sortable  else "" %}
-            <th class="{{sort_class}} {{sort_order_class}}">{{header.label}}</th>
+            <th class="{{sort_class}} {{sort_order_class}}" scope="col">{{header.label}}</th>
             {%- endif -%}
             {%- endfor %}
         </tr>
