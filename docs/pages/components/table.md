@@ -19,11 +19,11 @@ A table is a set of tabular data. Line items can support data, images and action
 <table class="fd-table">
     <thead>
         <tr>
-            <th></th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
+            <th scope="col"></th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
         </tr>
     </thead>
     <tbody>
@@ -69,11 +69,11 @@ A table is a set of tabular data. Line items can support data, images and action
 <table class="fd-table fd-table--no-borders">
     <thead>
         <tr>
-            <th></th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
+            <th scope="col"></th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
         </tr>
     </thead>
     <tbody>
@@ -119,11 +119,11 @@ A table is a set of tabular data. Line items can support data, images and action
 <table class="fd-table fd-table--striped">
     <thead>
         <tr>
-            <th></th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
+            <th scope="col"></th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
         </tr>
     </thead>
     <tbody>
@@ -169,11 +169,11 @@ It is recommended to add the parameter `area-selected="true` to the row that is 
 <table class="fd-table">
     <thead>
         <tr>
-            <th><input type="checkbox"></th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
+            <th scope="col"><input type="checkbox"></th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
         </tr>
     </thead>
     <tbody>
@@ -213,10 +213,10 @@ a contextual menu can be substituted in order to display all actions in one menu
 <table class="fd-table" >
     <thead>
         <tr>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th>Column Header</th>
-            <th></th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col">Column Header</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -229,7 +229,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                     <div class="fd-popover__control">
                         <button class="fd-button--light sap-icon--overflow" aria-controls="pQqQR213a" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
                     </div>
-                    <div class="fd-popover__body" aria-hidden="true" id="pQqQR213a">
+                    <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="pQqQR213a">
                         <nav class="fd-menu">
                             <ul class="fd-menu__list">
                                 <li><a href="#" class="fd-menu__item">Edit</a></li>
@@ -251,7 +251,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                     <div class="fd-popover__control">
                         <button class="fd-button--light sap-icon--overflow" aria-controls="lkjlkj23" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
                     </div>
-                    <div class="fd-popover__body" aria-hidden="true" id="lkjlkj23">
+                    <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="lkjlkj23">
                         <nav class="fd-menu">
                             <ul class="fd-menu__list">
                                 <li><a href="#" class="fd-menu__item">Edit</a></li>
@@ -273,7 +273,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                     <div class="fd-popover__control">
                         <button class="fd-button--light sap-icon--overflow" aria-controls="uu4324" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
                     </div>
-                    <div class="fd-popover__body" aria-hidden="true" id="uu4324">
+                    <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="uu4324">
                         <nav class="fd-menu">
                             <ul class="fd-menu__list">
                                 <li><a href="#" class="fd-menu__item">Edit</a></li>
@@ -298,9 +298,9 @@ a contextual menu can be substituted in order to display all actions in one menu
 <table class="fd-table">
    <thead>
       <tr>
-         <th class="fd-table__sort-column">Header Column</th>
-         <th class="fd-table__sort-column">Header Column</th>
-         <th class="fd-table__sort-column">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
       </tr>
    </thead>
    <tbody>
@@ -331,9 +331,9 @@ a contextual menu can be substituted in order to display all actions in one menu
 <table class="fd-table">
    <thead>
       <tr>
-         <th class="fd-table__sort-column fd-table__sort-column--asc">Header Column</th>
-         <th class="fd-table__sort-column">Header Column</th>
-         <th class="fd-table__sort-column">Header Column</th>
+         <th class="fd-table__sort-column fd-table__sort-column--asc" scope="col">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
       </tr>
    </thead>
    <tbody>
@@ -364,9 +364,9 @@ a contextual menu can be substituted in order to display all actions in one menu
 <table class="fd-table">
    <thead>
       <tr>
-         <th class="fd-table__sort-column fd-table__sort-column--dsc">Header Column</th>
-         <th class="fd-table__sort-column">Header Column</th>
-         <th class="fd-table__sort-column">Header Column</th>
+         <th class="fd-table__sort-column fd-table__sort-column--dsc" scope="col">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
+         <th class="fd-table__sort-column" scope="col">Header Column</th>
       </tr>
    </thead>
    <tbody>
@@ -397,19 +397,18 @@ a contextual menu can be substituted in order to display all actions in one menu
 <table class="fd-table">
    <thead>
       <tr>
-         <th class="fd-table__context-menu" aria-controls="col1" aria-haspopup="true" >
+         <th class="fd-table__context-menu" aria-controls="col1" aria-haspopup="true" scope="col" >
             <div class="fd-popover">
                <div class="fd-popover__control">
                   <span class="fd-table__context-menu-label">Header Column</span>
                </div>
-               <div class="fd-popover__body"  aria-hidden="true" id="col1">
+               <div class="fd-popover__body fd-popover__body--no-arrow"  aria-hidden="true" id="col1">
                   <nav class="fd-menu fd-menu--addon-before">
                      <ul class="fd-menu__list">
                         <li><a href="#" class="fd-menu__item">Ascending</a>
                         </li>
                         <li><a href="#" class="fd-menu__item">Decensing</a>
                         </li>
-                        <hr>
                         <li><a href="#" class="fd-menu__item">Fix Column</a>
                         </li>
                      </ul>
@@ -417,19 +416,18 @@ a contextual menu can be substituted in order to display all actions in one menu
                </div>
             </div>
          </th>
-         <th class="fd-table__context-menu" aria-controls="col2" aria-haspopup="true" >
+         <th class="fd-table__context-menu" aria-controls="col2" aria-haspopup="true" scope="col" >
             <div class="fd-popover">
                <div class="fd-popover__control">
                   <span class="fd-table__context-menu-label">Header Column</span>
                </div>
-               <div class="fd-popover__body"  aria-hidden="true" id="col2">
+               <div class="fd-popover__body fd-popover__body--no-arrow"  aria-hidden="true" id="col2">
                   <nav class="fd-menu fd-menu--addon-before">
                      <ul class="fd-menu__list">
                         <li><a href="#" class="fd-menu__item">Ascending</a>
                         </li>
                         <li><a href="#" class="fd-menu__item">Decensing</a>
                         </li>
-                        <hr>
                         <li><a href="#" class="fd-menu__item">Fix Column</a>
                         </li>
                      </ul>
@@ -437,19 +435,18 @@ a contextual menu can be substituted in order to display all actions in one menu
                </div>
             </div>
          </th>
-         <th class="fd-table__context-menu" aria-controls="col3" aria-haspopup="true" >
+         <th class="fd-table__context-menu" aria-controls="col3" aria-haspopup="true" scope="col" >
             <div class="fd-popover">
                <div class="fd-popover__control">
                   <span class="fd-table__context-menu-label">Header Column</span>
                </div>
-               <div class="fd-popover__body" aria-hidden="true" id="col3">
+               <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="col3">
                   <nav class="fd-menu fd-menu--addon-before">
                      <ul class="fd-menu__list">
                         <li><a href="#" class="fd-menu__item">Ascending</a>
                         </li>
                         <li><a href="#" class="fd-menu__item">Decensing</a>
                         </li>
-                        <hr>
                         <li><a href="#" class="fd-menu__item">Fix Column</a>
                         </li>
                      </ul>
@@ -496,12 +493,12 @@ a contextual menu can be substituted in order to display all actions in one menu
       <table class="fd-table">
          <thead>
             <tr>
-               <th class="fd-table__context-menu fd-table__fixed-col" style="left:0; width:200px" aria-controls="col1.2" aria-haspopup="true">
+               <th class="fd-table__context-menu fd-table__fixed-col" style="left:0; width:200px" aria-controls="col1.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
                      </div>
-                     <div class="fd-popover__body" aria-hidden="true" id="col1.2">
+                     <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="col1.2">
                         <nav class="fd-menu fd-menu--addon-before">
                            <ul class="fd-menu__list">
                               <li>
@@ -512,7 +509,6 @@ a contextual menu can be substituted in order to display all actions in one menu
                                  <div class="fd-menu__addon-before"></div>
                                  <a href="#" class="fd-menu__item">Decensing</a>
                               </li>
-                              <hr>
                               <li>
                                  <div class="fd-menu__addon-before"><span class="sap-icon--accept"></span></div>
                                  <a href="#" class="fd-menu__item">Fix Column</a>
@@ -522,119 +518,112 @@ a contextual menu can be substituted in order to display all actions in one menu
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col2.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col2.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
                      </div>
-                     <div class="fd-popover__body" aria-hidden="true" id="col2.2">
+                     <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="col2.2">
                         <nav class="fd-menu fd-menu--addon-before">
                            <ul class="fd-menu__list">
                               <li><a href="#" class="fd-menu__item">Ascending</a></li>
                               <li><a href="#" class="fd-menu__item">Decensing</a></li>
-                              <hr>
                               <li><a href="#" class="fd-menu__item">Fix Column</a></li>
                            </ul>
                         </nav>
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col3.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col3.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
                      </div>
-                     <div class="fd-popover__body" aria-hidden="true" id="col3.2">
+                     <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="col3.2">
                         <nav class="fd-menu fd-menu--addon-before">
                            <ul class="fd-menu__list">
                               <li><a href="#" class="fd-menu__item">Ascending</a></li>
                               <li><a href="#" class="fd-menu__item">Decensing</a></li>
-                              <hr>
                               <li><a href="#" class="fd-menu__item">Fix Column</a></li>
                            </ul>
                         </nav>
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col4.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col4.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
                      </div>
-                     <div class="fd-popover__body" aria-hidden="true" id="col4.2">
+                     <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="col4.2">
                         <nav class="fd-menu fd-menu--addon-before">
                            <ul class="fd-menu__list">
                               <li><a href="#" class="fd-menu__item">Ascending</a></li>
                               <li><a href="#" class="fd-menu__item">Decensing</a></li>
-                              <hr>
                               <li><a href="#" class="fd-menu__item">Fix Column</a></li>
                            </ul>
                         </nav>
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col5.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col5.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
                      </div>
-                     <div class="fd-popover__body" aria-hidden="true" id="col5.2">
+                     <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="col5.2">
                         <nav class="fd-menu fd-menu--addon-before">
                            <ul class="fd-menu__list">
                               <li><a href="#" class="fd-menu__item">Ascending</a></li>
                               <li><a href="#" class="fd-menu__item">Decensing</a></li>
-                              <hr>
                               <li><a href="#" class="fd-menu__item">Fix Column</a></li>
                            </ul>
                         </nav>
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col6.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col6.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
                      </div>
-                     <div class="fd-popover__body" aria-hidden="true" id="col6.2">
+                     <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="col6.2">
                         <nav class="fd-menu fd-menu--addon-before">
                            <ul class="fd-menu__list">
                               <li><a href="#" class="fd-menu__item">Ascending</a></li>
                               <li><a href="#" class="fd-menu__item">Decensing</a></li>
-                              <hr>
                               <li><a href="#" class="fd-menu__item">Fix Column</a></li>
                            </ul>
                         </nav>
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col7.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col7.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
                      </div>
-                     <div class="fd-popover__body" aria-hidden="true" id="col7.2">
+                     <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="col7.2">
                         <nav class="fd-menu fd-menu--addon-before">
                            <ul class="fd-menu__list">
                               <li><a href="#" class="fd-menu__item">Ascending</a></li>
                               <li><a href="#" class="fd-menu__item">Decensing</a></li>
-                              <hr>
                               <li><a href="#" class="fd-menu__item">Fix Column</a></li>
                            </ul>
                         </nav>
                      </div>
                   </div>
                </th>
-               <th class="fd-table__context-menu" aria-controls="col8.2" aria-haspopup="true">
+               <th class="fd-table__context-menu" aria-controls="col8.2" aria-haspopup="true" scope="col">
                   <div class="fd-popover">
                      <div class="fd-popover__control">
                         <span class="fd-table__context-menu-label">Header Column</span>
                      </div>
-                     <div class="fd-popover__body" aria-hidden="true" id="col8.2">
+                     <div class="fd-popover__body fd-popover__body--no-arrow" aria-hidden="true" id="col8.2">
                         <nav class="fd-menu fd-menu--addon-before">
                            <ul class="fd-menu__list">
                               <li><a href="#" class="fd-menu__item">Ascending</a></li>
                               <li><a href="#" class="fd-menu__item">Decensing</a></li>
-                              <hr>
                               <li><a href="#" class="fd-menu__item">Fix Column</a></li>
                            </ul>
                         </nav>
@@ -645,7 +634,7 @@ a contextual menu can be substituted in order to display all actions in one menu
          </thead>
          <tbody>
             <tr>
-               <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
+               <th class="fd-table__fixed-col" style="left:0; width:200px" scope="row">Lorem ipsum dolor sit amet ipsum</th>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -655,7 +644,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                <td>Lorem ipsum dolor sit amet ipsum</td>
             </tr>
             <tr>
-               <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
+               <th class="fd-table__fixed-col" style="left:0; width:200px" scope="row">Lorem ipsum dolor sit amet ipsum</th>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
@@ -665,7 +654,7 @@ a contextual menu can be substituted in order to display all actions in one menu
                <td>Lorem ipsum dolor sit amet ipsum</td>
             </tr>
             <tr>
-               <td class="fd-table__fixed-col" style="left:0; width:200px">Lorem ipsum dolor sit amet ipsum</td>
+               <th class="fd-table__fixed-col" style="left:0; width:200px" scope="row">Lorem ipsum dolor sit amet ipsum</th>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>
                <td>Lorem ipsum dolor sit amet ipsum</td>

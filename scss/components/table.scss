@@ -75,6 +75,11 @@ $block: #{$fd-namespace}-table;
         th {
             border: none;
             @include fd-weight();
+
+            &.fd-table__fixed-col {
+                @include fd-var-color("background-color", $fd-table-sort-column-header-background-color, --fd-color-neutral-2);
+                z-index: map-get($fd-z-index-levels, "second");
+            }
         }
     }
     tbody {
@@ -88,6 +93,7 @@ $block: #{$fd-namespace}-table;
     }
     td,
     th {
+        @include fd-weight();
         text-align: left;
         --fd-table-cell-spacing: calc(var(--fd-width-gutter) / 2);
         @include fd-var-size("padding-left", $fd-table-cell-spacing/2, --fd-table-cell-spacing);
@@ -104,6 +110,10 @@ $block: #{$fd-namespace}-table;
         .fd-dropdown__menu {
             min-width: auto;
             text-align: left;
+        }
+
+        &.fd-table__fixed-col {
+            @include fd-var-color("background-color", $fd-table-fixed-column-cell-color, --fd-color-background-2);
         }
     }
 
@@ -165,18 +175,9 @@ $block: #{$fd-namespace}-table;
         z-index: map-get($fd-z-index-levels, "first");
     }
 
-    th.fd-table__fixed-col {
-        @include fd-var-color("background-color", $fd-table-sort-column-header-background-color, --fd-color-neutral-2);
-        z-index: map-get($fd-z-index-levels, "second");
+    .fd-table__fixed-col {
         @if $fd-support-css-var-fallback {
-          box-shadow: 2px 0 0 0 $fd-table-border-color;
-        }
-        box-shadow: 2px 0 0 0 var(--fd-table-border-color);
-    }
-    td.fd-table__fixed-col {
-        @include fd-var-color("background-color", $fd-table-fixed-column-cell-color, --fd-color-background-2);
-        @if $fd-support-css-var-fallback {
-          box-shadow: 2px 0 0 0 $fd-table-border-color;
+            box-shadow: 2px 0 0 0 $fd-table-border-color;
         }
         box-shadow: 2px 0 0 0 var(--fd-table-border-color);
     }
