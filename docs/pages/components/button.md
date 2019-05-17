@@ -136,43 +136,45 @@ Group a series of buttons together on a single line with the button group.
 
 # Split Button
 {% include status-container.html key="button-group" %}
-Group a series of buttons together on a single line with the button group.
+Button with multiple actions
 
-{% capture button-group-small %}
-<div class="fd-popover fd-contextual-menu fd-has-margin-small">
-  <div class="fd-button-split" role="group" aria-label="Split Button example">
-    <button class="fd-button--emphasized sap-icon--cart" aria-label="button">Button</button>
-    <button class="fd-button--emphasized sap-icon--slim-arrow-down" aria-controls="0T1zk179" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
-  </div>
-  <div class="fd-popover__body fd-popover__body--no-arrow fd-popover__body--right" aria-hidden="true" id="0T1zk179">
+{% capture button-split %}
+<div class="fd-button-split fd-has-margin-right-small" role="group" aria-label="button-split">
+  <button class="fd-button sap-icon--cart" aria-label="button">Button with text</button>
+  <button class="fd-button sap-icon--slim-arrow-down" aria-controls="t4c0o273" aria-haspopup="true" 
+  aria-expanded="false" aria-label="More"></button>
+  <div class="fd-popover__body fd-popover__body--no-arrow fd-popover__body--right"  aria-hidden="true" 
+  id="t4c0o273">
     <nav class="fd-menu">
-      <ul class="fd-menu__list">
-        <li><a role="button" class="fd-menu__item">Add to list</a>
+        <ul class="fd-menu__list">
+          <li><a role="button" class="fd-menu__item">Add to list</a>
         </li>
-        <li><a role="button" class="fd-menu__item">Save for later</a>
+          <li><a role="button" class="fd-menu__item">Save for later</a>
         </li>
-      </ul>
+        </ul>
     </nav>
   </div>
 </div>
-<div class="fd-popover fd-contextual-menu">
-  <div class="fd-button-split" role="group" aria-label="Split Button example">
-    <button class="fd-button sap-icon--cart" aria-label="button">Button</button>
-    <button class="fd-button sap-icon--slim-arrow-down" aria-controls="0T1zk1792" aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
-  </div>
-  <div class="fd-popover__body fd-popover__body--no-arrow fd-popover__body--right" aria-hidden="true" id="0T1zk1792">
+
+<div class="fd-button-split" role="group" aria-label="button-split">
+  <button class="fd-button--emphasized sap-icon--cart" aria-label="button">Button with text</button>
+  <button class="fd-button--emphasized sap-icon--slim-arrow-down" aria-controls="t4c0o2732" 
+  aria-haspopup="true" aria-expanded="false" aria-label="More"></button>
+  <div class="fd-popover__body fd-popover__body--no-arrow fd-popover__body--right"  aria-hidden="true" 
+    id="t4c0o2732">
     <nav class="fd-menu">
-      <ul class="fd-menu__list">
-        <li><a role="button" class="fd-menu__item">Add to list</a>
+        <ul class="fd-menu__list">
+          <li><a role="button" class="fd-menu__item">Add to list</a>
         </li>
-        <li><a role="button" class="fd-menu__item">Save for later</a>
+          <li><a role="button" class="fd-menu__item">Save for later</a>
         </li>
-      </ul>
+        </ul>
     </nav>
   </div>
 </div>
+
 {% endcapture %}
-{% include display-component.html component=button-group-small %}
+{% include display-component.html component=button-split %}
 
 ## Button RTL support
 

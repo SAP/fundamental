@@ -45,7 +45,7 @@
   }}
 {%- endcall %}
 {% endfor %}
-<br>
+<br><br>
 {% endfor %}
 {% endset %}
 {{ format(example) }}
@@ -57,18 +57,16 @@
 <h2>with popover menu</h2>
 {% set example %}
 {%- set _id = utils.id() %}
-<div class="fd-popover fd-contextual-menu">
 {% call button_split() -%}
     {{-  button(
       { 
         icon: 'cart',
-        label: 'Button' 
+        label: 'Button with text' 
       },
       modifier={ block: ['emphasized'] },
       aria={ label: 'button' })
     }}
     {{- button({ icon: 'slim-arrow-down' }, modifier={ block: ['emphasized'] }, aria={ controls: _id, haspopup: true, expanded: false, label: 'More' }) | indent(4) }}
-    {%- endcall %}
     {{  popover_body(properties={
             id: _id,
             body: menu(properties={
@@ -82,7 +80,8 @@
         classes="contextual-menu"
         ) | indent(4)
     }}
-</div>
+
+    {%- endcall %}
 
 {% endset %}
 {{ format(example) }}
