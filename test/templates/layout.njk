@@ -8,13 +8,8 @@
     <link rel="stylesheet" href="static/layout.css">
     <style>
         {% if not selfContained %}
-            {% set core_sass = 'core.scss' %}
-            {{ core_sass | sass_to_css }}
-
-            {% for sass in css_deps %}
-                {% set dep_sass = sass + '.scss' %}
-                {{ dep_sass | sass_to_css }}
-            {% endfor %}
+            {% set sass = 'all.scss' %}
+            {{ sass | sass_to_css }}
         {% endif %}
         {% if id === 'icon' %}
             {% set component_sass = 'icons.scss' %}
