@@ -17,12 +17,16 @@ $block: #{$fd-namespace}-badge;
   $fd-badge-background-color--warning: fd-color-state("alert") !default;
   $fd-badge-background-color--error: fd-color-state("negative") !default;
 
-  --fd-badge-color: var(--fd-color-action-1);
+  --fd-badge-color: var(--fd-color-action);
   --fd-badge-color--filled: var(--fd-color-text-5);
-  --fd-badge-color--success: var(--fd-color-status-1);
-  --fd-badge-color--warning: var(--fd-color-status-2);
-  --fd-badge-color--error: var(--fd-color-status-3);
+  --fd-badge-color--success: var(--fd-color-positive);
+  --fd-badge-color--warning: var(--fd-color-alert);
+  --fd-badge-color--error: var(--fd-color-negative);
+
   --fd-badge-background-color: var(--fd-color-background-6);
+  --fd-badge-background-color--success: var(--fd-color-background-3);
+  --fd-badge-background-color--warning: var(--fd-color-background-4);
+  --fd-badge-background-color--error: var(--fd-color-background-5);
 
   @include fd-reset();
   @include fd-type("-1");
@@ -44,33 +48,37 @@ $block: #{$fd-namespace}-badge;
   &--pill {
     border-radius: fd-space(6)/2;
   }
+
   &--filled {
     @include fd-weight("bold");
     @include fd-var-color("color", $fd-badge-color--filled, --fd-badge-color--filled);
     @include fd-var-color("background-color", $fd-badge-color, --fd-badge-color);
 
     border: none;
+
     &.#{$block}--success {
-      @include fd-var-color("color", $fd-badge-color--filled, --fd-badge-color--filled);
       @include fd-var-color("background-color", $fd-badge-color--success, --fd-badge-color--success);
     }
+
     &.#{$block}--warning {
-      @include fd-var-color("color", $fd-badge-color--filled, --fd-badge-color--filled);
       @include fd-var-color("background-color", $fd-badge-color--warning, --fd-badge-color--warning);
     }
+
     &.#{$block}--error {
-      @include fd-var-color("color", $fd-badge-color--filled, --fd-badge-color--filled);
       @include fd-var-color("background-color", $fd-badge-color--error, --fd-badge-color--error);
     }
   }
+
   &--success {
     @include fd-var-color("background-color", $fd-badge-background-color--success, --fd-badge-background-color--success);
     @include fd-var-color("border-color", $fd-badge-color--success, --fd-badge-color--success);
-}
+  }
+
   &--warning {
     @include fd-var-color("background-color", $fd-badge-background-color--warning, --fd-badge-background-color--warning);
     @include fd-var-color("border-color", $fd-badge-color--warning, --fd-badge-color--warning);
   }
+
   &--error {
     @include fd-var-color("background-color", $fd-badge-background-color--error, --fd-badge-background-color--error);
     @include fd-var-color("border-color", $fd-badge-color--error, --fd-badge-color--error);
