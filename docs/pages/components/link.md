@@ -21,7 +21,7 @@ Used when extra emphasis is needed especially when a link needs to standout from
 {% capture default %}
 <a href="#" class="fd-link">Standard Link</a>
 <br><br>
-<a href="#" class="fd-link"><strong>Emphsized Link</strong></a>
+<a href="#" class="fd-link"><strong>Emphasized Link</strong></a>
 <br><br>
 <a href="#" class="fd-link" aria-disabled="true">Disabled Link</a>
 <br><br>
