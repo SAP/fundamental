@@ -6,33 +6,12 @@
 */
 $block: #{$fd-namespace}-badge;
 .#{$block} {
-  $fd-badge-color: $fd-color--action !default;
-  $fd-badge-color--filled: fd-color("text", 5) !default;
-  $fd-badge-color--success: $fd-color--success !default;
-  $fd-badge-color--warning: $fd-color--warning !default;
-  $fd-badge-color--error: $fd-color--error !default;
-
-  $fd-badge-background-color: fd-color("background", 6) !default;
-  $fd-badge-background-color--success: fd-color-state("positive") !default;
-  $fd-badge-background-color--warning: fd-color-state("alert") !default;
-  $fd-badge-background-color--error: fd-color-state("negative") !default;
-
-  --fd-badge-color: var(--fd-color-action);
-  --fd-badge-color--filled: var(--fd-color-text-5);
-  --fd-badge-color--success: var(--fd-color-positive);
-  --fd-badge-color--warning: var(--fd-color-alert);
-  --fd-badge-color--error: var(--fd-color-negative);
-
-  --fd-badge-background-color: var(--fd-color-background-6);
-  --fd-badge-background-color--success: var(--fd-color-background-3);
-  --fd-badge-background-color--warning: var(--fd-color-background-4);
-  --fd-badge-background-color--error: var(--fd-color-background-5);
 
   @include fd-reset();
   @include fd-type("-1");
 
-  @include fd-var-color("border-color", $fd-badge-color, --fd-badge-color);
-  @include fd-var-color("background-color", $fd-badge-background-color, --fd-badge-background-color);
+  @include fd-var-color("border-color", $fd-color--action, --fd-color-action);
+  @include fd-var-color("background-color", fd-color("background", 6), --fd-color-background-6);
 
   line-height: fd-space(4);
   vertical-align: middle;
@@ -51,36 +30,36 @@ $block: #{$fd-namespace}-badge;
 
   &--filled {
     @include fd-weight("bold");
-    @include fd-var-color("color", $fd-badge-color--filled, --fd-badge-color--filled);
-    @include fd-var-color("background-color", $fd-badge-color, --fd-badge-color);
+    @include fd-var-color("color", fd-color("text", 5), --fd-color-text-5);
+    @include fd-var-color("background-color", $fd-color--action, --fd-color-action);
 
     border: none;
 
     &.#{$block}--success {
-      @include fd-var-color("background-color", $fd-badge-color--success, --fd-badge-color--success);
+      @include fd-var-color("background-color", $fd-color--success, --fd-color-positive);
     }
 
     &.#{$block}--warning {
-      @include fd-var-color("background-color", $fd-badge-color--warning, --fd-badge-color--warning);
+      @include fd-var-color("background-color", $fd-color--warning, --fd-color-alert);
     }
 
     &.#{$block}--error {
-      @include fd-var-color("background-color", $fd-badge-color--error, --fd-badge-color--error);
+      @include fd-var-color("background-color", $fd-color--error, --fd-color-negative);
     }
   }
 
   &--success {
-    @include fd-var-color("background-color", $fd-badge-background-color--success, --fd-badge-background-color--success);
-    @include fd-var-color("border-color", $fd-badge-color--success, --fd-badge-color--success);
+    @include fd-var-color("background-color", fd-color-state("positive"), --fd-color-background-3);
+    @include fd-var-color("border-color", $fd-color--success, --fd-color-positive);
   }
 
   &--warning {
-    @include fd-var-color("background-color", $fd-badge-background-color--warning, --fd-badge-background-color--warning);
-    @include fd-var-color("border-color", $fd-badge-color--warning, --fd-badge-color--warning);
+    @include fd-var-color("background-color", fd-color-state("alert"), --fd-color-background-4);
+    @include fd-var-color("border-color", $fd-color--warning, --fd-color-alert);
   }
 
   &--error {
-    @include fd-var-color("background-color", $fd-badge-background-color--error, --fd-badge-background-color--error);
-    @include fd-var-color("border-color", $fd-badge-color--error, --fd-badge-color--error);
+    @include fd-var-color("background-color", fd-color-state("negative"), --fd-color-background-5);
+    @include fd-var-color("border-color", $fd-color--error, --fd-color-negative);
   }
 }
