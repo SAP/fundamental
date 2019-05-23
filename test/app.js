@@ -208,7 +208,6 @@ router.get('/:key', (req, res) => {
         res.end();
         return;
     }
-
     const key = req.params.key;
     let data = {};
     try {
