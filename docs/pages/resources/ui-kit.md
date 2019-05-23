@@ -112,7 +112,7 @@ toc: false
             Components, Foundation, Page Types, and UI Kit Tools have sub sections for easier access. 
         </p>
         <p>
-            <img src="{{site.baseurl}}/images/ui-kit/symbol-structure.png" alt="Updated Menu Structure" width="260">
+            <img src="{{site.baseurl}}/images/ui-kit/symbol-structure.png" alt="Updated Menu Structure" width="210">
         </p>
     </div>
     <div class="fd-col--4">
