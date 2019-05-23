@@ -1,5 +1,5 @@
 /*!
- * Fiori Fundamentals v1.5.7
+ * Fiori Fundamentals v1.5.8
  * Copyright (c) 2019 SAP SE or an SAP affiliate company.
  * Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)
  */
@@ -3696,6 +3696,7 @@ input[type=checkbox]:indeterminate[aria-disabled=true]::before {
     .fd-shell__overlay
 */
 .fd-shell {
+  overflow: hidden;
   position: absolute;
   min-height: 100vh;
   height: 100vh;
@@ -3727,7 +3728,7 @@ input[type=checkbox]:indeterminate[aria-disabled=true]::before {
   position: static
 }
 .fd-shell--fixed .fd-shell__app {
-  overflow: scroll;
+  overflow: hidden;
   margin-top: 0;
   -webkit-box-flex: 1;
   -ms-flex: 1;
@@ -3802,6 +3803,7 @@ input[type=checkbox]:indeterminate[aria-disabled=true]::before {
   padding: 0 var(--fd-padding-ui)
 }
 .fd-app__navigation--vertical {
+  overflow-y: auto;
   -webkit-box-flex: 0;
   -ms-flex: 0;
   flex: 0
@@ -3818,7 +3820,8 @@ input[type=checkbox]:indeterminate[aria-disabled=true]::before {
   -webkit-box-flex: 1;
   -ms-flex: 1 1;
   flex: 1 1;
-  overflow: auto
+  overflow-y: auto;
+  height: 100%
 }
 .fd-page {
   --fd-page-background-color: transparent;
@@ -7308,6 +7311,12 @@ a.fd-button--shell[aria-selected=true] {
   border: none;
   font-weight: 400
 }
+.fd-table thead td.fd-table__fixed-col,
+.fd-table thead th.fd-table__fixed-col {
+  background-color: #eeeeef;
+  background-color: var(--fd-color-neutral-2);
+  z-index: 2
+}
 .fd-table tbody tr {
   border-style: solid;
   border-width: 1px;
@@ -7316,8 +7325,12 @@ a.fd-button--shell[aria-selected=true] {
   border-left: none;
   border-right: none
 }
+.fd-table tbody td {
+  word-break: break-word
+}
 .fd-table td,
 .fd-table th {
+  font-weight: 400;
   text-align: left;
   --fd-table-cell-spacing: calc(var(--fd-width-gutter) / 2);
   padding-left: 8px;
@@ -7341,6 +7354,11 @@ a.fd-button--shell[aria-selected=true] {
 .fd-table th .fd-dropdown__menu {
   min-width: auto;
   text-align: left
+}
+.fd-table td.fd-table__fixed-col,
+.fd-table th.fd-table__fixed-col {
+  background-color: #fff;
+  background-color: var(--fd-color-background-2)
 }
 .fd-table__sort-column:hover {
   background-color: #eeeeef;
@@ -7388,18 +7406,7 @@ a.fd-button--shell[aria-selected=true] {
   position: absolute;
   z-index: 1
 }
-.fd-table th.fd-table__fixed-col {
-  background-color: #eeeeef;
-  background-color: var(--fd-color-neutral-2);
-  z-index: 2;
-  -webkit-box-shadow: 2px 0 0 0 #eeeeef;
-  box-shadow: 2px 0 0 0 #eeeeef;
-  -webkit-box-shadow: 2px 0 0 0 var(--fd-table-border-color);
-  box-shadow: 2px 0 0 0 var(--fd-table-border-color)
-}
-.fd-table td.fd-table__fixed-col {
-  background-color: #fff;
-  background-color: var(--fd-color-background-2);
+.fd-table .fd-table__fixed-col {
   -webkit-box-shadow: 2px 0 0 0 #eeeeef;
   box-shadow: 2px 0 0 0 #eeeeef;
   -webkit-box-shadow: 2px 0 0 0 var(--fd-table-border-color);
