@@ -5,12 +5,9 @@ toc: false
 sidebar: left-navigation-sidebar
 permalink: foundation/index.html
 folder: foundation
-summary:
+summary: Fiori Fundamentals is a unified, flexible design system that solves complex
+        problems in a meaningful way and creates simple intuitive experience.
 ---
-
-<p>Fiori Fundamentals is a unified, flexible design system that solves complex
-problems in a meaningful way and creates simple intuitive experience.
-</p>
 
 <div class="fd-tile-grid fd-tile-grid--2col docs-tiles">
     <a class="fd-tile" role="button" href="colors.html">
