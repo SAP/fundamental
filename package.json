@@ -19,6 +19,7 @@
     "start:playground": "npm-run-all --parallel start:playground:all start:playground:scs start:playground:comparison",
     "start:playground:all": "node test/app.js",
     "start:playground:comparison": "node playground/app.js",
+    "start:playground:ie11": "PORT=3032 IE11=true npm run start:playground:all",
     "start:playground:scs": "PORT=3031 SELF_CONTAINED=true npm run start:playground:all",
     "start:browser-sync": "browser-sync start --proxy 'localhost:4000' --files 'docs/_site/**/*' --reloadDelay '2000'",
     "start": "npm run docs:compile && cd docs && bundle install && bundle exec jekyll serve --incremental --config _config.yml,_config-library.yml",

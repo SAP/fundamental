@@ -208,6 +208,7 @@ router.get('/:key', (req, res) => {
         res.end();
         return;
     }
+
     const key = req.params.key;
     let data = {};
     try {
@@ -218,7 +219,7 @@ router.get('/:key', (req, res) => {
 
     }
     signale.info(`Requested http://localhost:${port}/${key}`);
-    res.render(`${key}/index`, Object.assign(GLOBALS, { id: key, component: getStarterData(), data, selfContained: process.env.SELF_CONTAINED }));
+    res.render(`${key}/index`, Object.assign(GLOBALS, { id: key, component: getStarterData(), data, selfContained: process.env.SELF_CONTAINED, ie11: process.env.IE11 }));
 });
 
 
