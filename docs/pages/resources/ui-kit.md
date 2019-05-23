@@ -39,8 +39,8 @@ toc: false
                 Our Sketch file has over 30 unique components refined and streamlined to allow any user the ability quickly and effeciently build Fiori 3 interfaces using the Fundamentals design system.
             </p>
         </div>
-        <div class="fd-col--3 fd-has-text-align-center fd-has-margin-top-medium">
-            <a href="{{site.baseurl}}/resources/SAP-Fiori-Fundamentals-UI-Kit.sketch" class="fd-has-font-weight-bold">
+        <div class="fd-col--3 fd-has-text-align-left fd-has-margin-top-medium">
+            <a href="{{site.baseurl}}/resources/SAP-Fiori-Fundamentals-UI-Kit.sketch" class="fd-has-font-weight-bold fd-has-padding-left-small">
                 Download Sketch File
             </a>
         </div>
@@ -57,8 +57,8 @@ toc: false
                 SAP 72 font family was designed from the ground up and made it possible to meet SAP Fiori’s typographic requirements, including - Legibility Enhancements, Font Styles, Brand Voice, Character Set and Language Support.
             </p>
         </div>
-        <div class="fd-col--3 fd-has-text-align-center fd-has-margin-top-medium">
-            <a href="{{site.baseurl}}/resources/SAP-72-font.zip" class="fd-has-font-weight-bold">
+        <div class="fd-col--3 fd-has-text-align-left fd-has-margin-top-medium">
+            <a href="{{site.baseurl}}/resources/SAP-72-font.zip" class="fd-has-font-weight-bold fd-has-padding-left-small">
                 Download 72 Typeface
             </a>
         </div>
@@ -73,8 +73,8 @@ toc: false
             <h3>Icon Font</h3>
             <p>SAP icons have been created with a friendly, yet elegant style that is consistent in terms of size, stroke and balance. The icons are tailored for simple and direct user interaction, using metaphors that are easy to understand. </p>
         </div>
-        <div class="fd-col--3 fd-has-text-align-center fd-has-margin-top-medium">    
-            <a href="{{site.baseurl}}/resources/SAP-icons.zip" class="fd-has-font-weight-bold">
+        <div class="fd-col--3 fd-has-text-align-left fd-has-margin-top-medium">    
+            <a href="{{site.baseurl}}/resources/SAP-icons.zip" class="fd-has-font-weight-bold fd-has-padding-left-small">
                 Download SAP Icon Font
             </a>
         </div>
@@ -89,8 +89,8 @@ toc: false
             <h3>Sketch Plugin</h3>
             <p>Symbol Swapper makes it easy to remove your old library, attach a new version, and update all symbols in your document to the newest version in 4 easy steps. </p>
        </div>
-       <div class="fd-col--3 fd-has-text-align-center fd-has-margin-top-medium">
-            <a href="{{site.baseurl}}/resources/symbol-swapper-master.zip" class="fd-has-font-weight-bold">
+       <div class="fd-col--3 fd-has-text-align-left fd-has-margin-top-medium">
+            <a href="{{site.baseurl}}/resources/symbol-swapper-master.zip" class="fd-has-font-weight-bold fd-has-padding-left-small">
                 Download Plugin
             </a>
         </div>
