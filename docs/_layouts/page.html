@@ -31,7 +31,12 @@ layout: default
   {% include status-container.html key=page.id %}
 
    {% if page.summary %}
-    <p class="docs-component-intro">{{page.summary}}</p>
+   <div class="fd-container">
+        <div class="fd-col--10">
+            <p class="docs-component-intro">{{page.summary}}</p>
+        </div>
+   </div>
+    
    {% endif %}
 
     {% unless page.toc == false %}
