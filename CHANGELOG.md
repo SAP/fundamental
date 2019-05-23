@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.9-rc.0"></a>
+## [1.5.9-rc.0](https://github.com/SAP/fundamental/compare/v1.5.8...v1.5.9-rc.0) (2019-05-23)
+
+
+### Bug Fixes
+
+* update tar dependency - node-sass ([#1461](https://github.com/SAP/fundamental/issues/1461)) ([c8cdc53](https://github.com/SAP/fundamental/commit/c8cdc53))
+
+
+
 <a name="1.5.8"></a>
 ## [1.5.8](https://github.com/SAP/fundamental/compare/v1.5.8-rc.9...v1.5.8) (2019-05-23)
 
