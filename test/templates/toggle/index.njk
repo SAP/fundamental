@@ -11,15 +11,56 @@
     <!-- output the component example and the code snippet -->
 {% set example %}
 
+<h3>Cozy Toggle (default)</h3>
+<label>
+{{  toggle(
+        properties={},
+        state=data.state,
+        aria=data.aria
+    )
+}}
+</label>
+
+<br><br>
+
+<h3>Compact Toggle</h3>
+<label>
+{{  toggle(
+        properties={},
+        state=data.state,
+        aria=data.aria,
+        modifier={
+            block: "compact"
+        }
+
+    )
+}}
+</label>
+
+<br><br>
+<hr>
+
+
+<h2>Other Sizes</h2>
+
+
+<h3>Large</h3>
+
 <label>
 {{  toggle(
         properties=data.properties,
         modifier={
-            block: "xs"
+            block: "l"
         }
     )
 }}
+
 </label>
+
+<br><br>
+
+<h3>Small</h3>
+
 <label>
 {{  toggle(
         properties=data.properties,
@@ -29,24 +70,21 @@
     )
 }}
 </label>
-<label>
-{{  toggle(
-        properties=data.properties,
-        state=data.state,
-        aria=data.aria
-    )
-}}
-</label>
+
+<br><br>
+
+<h3>Extra small</h3>
+
 <label>
 {{  toggle(
         properties=data.properties,
         modifier={
-            block: "l"
+            block: "xs"
         }
     )
 }}
-{% endset %}
 </label>
+{% endset %}
 {{ format(example) }}
 
     <br><br>
