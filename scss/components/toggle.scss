@@ -20,12 +20,12 @@ $block: #{$fd-namespace}-toggle;
     $fd-toggle-width: nth($_defaults, 1);
     $fd-toggle-height: nth($_defaults, 2);
     $fd-toggle-background-color: fd-color("neutral", 4) !default;
-    $fd-toggle-on-background-color--disabled: fd-color-state("disabled", "action");
+    $fd-toggle-on-background-color--disabled: #c5dcf2;
     $fd-toggle-switch-width: nth($_defaults, 2);
     $fd-toggle-switch-background-color--disabled: hsla(240, 2%, 93%, 1) !default;
     $fd-toggle-switch-border-color--disabled: hsla(212, 8%, 57%, 0.4) !default;
-    $fd-toggle-switch-on-background-color--disabled: hsla(209, 90%, 92%, 1) !default;
-
+    $fd-toggle-switch-on-background-color--disabled: #9ebbd8 !default;
+    $fd-toggle-switch-hover-background-color: #EBF5FE;
     @include fd-reset();
     position: relative;
     display: inline-block;
@@ -64,7 +64,6 @@ $block: #{$fd-namespace}-toggle;
             }
             &+.#{$block}__switch::before {
                 border-color: $fd-toggle-switch-border-color--disabled;
-                // background-color: $fd-toggle-switch-background-color--disabled;
             }
         }
 
@@ -101,6 +100,13 @@ $block: #{$fd-namespace}-toggle;
         -webkit-transition: 0.4s;
         transition: 0.4s;
         border-radius: 34px;
+        &:hover {
+            @include fd-var-color("border-color", fd-color-state("selected", "action"), --fd-color-action-selected);
+            &::before {
+                @include fd-var-color("border-color", fd-color-state("selected", "action"), --fd-color-action-selected);
+                background-color: $fd-toggle-switch-hover-background-color;
+            }
+        }
     }
 
     &__switch::before {
@@ -117,6 +123,7 @@ $block: #{$fd-namespace}-toggle;
         -webkit-transition: 0.4s;
         transition: 0.4s;
         border-radius: 50%;
+        z-index: 1;
     }
 
     input:checked+&__switch {
@@ -151,6 +158,62 @@ $block: #{$fd-namespace}-toggle;
                     left: nth($list, 5);
                 }
             }
+        }
+    }
+
+    // block level modifier for inline lables
+    &--label {
+        width: 62px;
+        height: 22px;
+        .#{$block}__label--on {
+            visibility: hidden;
+        }
+    }
+
+    &--label input:checked+&__switch {
+        &::before {
+            -webkit-transform: translateX(36px);
+            -ms-transform: translateX(36px);
+            transform: translateX(36px);
+        }
+        .#{$block}__label--off {
+            visibility: hidden;
+        }
+        .#{$block}__label--on {
+            visibility: visible;
+        }
+    }
+
+    &--label.#{$block}--compact input:checked+&__switch::before {
+        -webkit-transform: translateX(39px);
+        -ms-transform: translateX(39px);
+        transform: translateX(39px);
+    }
+
+    &--label {
+        &.#{$block}--compact {
+            width: 56px;
+
+            .#{$block}__switch::before {
+                top: -3px;
+            }
+        }
+    }
+
+    // label elements
+    &__label {
+
+        &--off {
+            @include fd-type("-1");
+            position: absolute;
+            right: 6px;
+            top: 3px;
+        }
+        &--on {
+            @include fd-type("-1");
+            position: absolute;
+            left: 8px;
+            top: 3px;
         }
     }
 }
