@@ -6,12 +6,16 @@
 {% block content %}
 
 
-    <p>Wrap a regular <code>input[type=checkbox]</code> and an empty <code>.fd-toggle__switch</code>. <i>The empty switch container is necessary for compatibilty with Firefox.</i>
-    </p>
-    <!-- output the component example and the code snippet -->
-{% set example %}
+<style>
+.fd-toggle{
+    margin: 20px 20px 20px 0;
+}
+</style>
+
+<p>Wrap a regular <code>input[type=checkbox]</code> and an empty <code>.fd-toggle__switch</code>. <i>The empty switch container is necessary for compatibilty with Firefox.</i></p>
 
 <h3>Cozy Toggle (default)</h3>
+{% set example %}
 <label>
 {{  toggle(
         properties={},
@@ -21,25 +25,6 @@
 }}
 </label>
 
-<br><br>
-
-<h3>Compact Toggle</h3>
-<label>
-{{  toggle(
-        properties={},
-        state=data.state,
-        aria=data.aria,
-        modifier={
-            block: "compact"
-        }
-
-    )
-}}
-</label>
-
-<br><br>
-
-<h3>Toggle with labels</h3>
 <label>
 {{  toggle(
         properties={
@@ -49,16 +34,45 @@
         state=data.state,
         aria=data.aria,
         modifier={
-            block: 'label'
+            block: ['label']
         }
 
     )
 }}
 </label>
 
-<br><br>
+<label>
+{{  toggle(
+        properties={},
+        state=data.state,
+        aria=data.aria,
+        modifier={
+            block: ['semantic']
+        }
 
-<h3>Toggle with labels</h3>
+    )
+}}
+</label>
+{% endset %}
+{{ format(example) }}
+
+<br><br><br>
+
+<h3>Compact Toggle</h3>
+{% set example %}
+<label>
+{{  toggle(
+        properties={},
+        state=data.state,
+        aria=data.aria,
+        modifier={
+            block: ['compact']
+        }
+
+    )
+}}
+</label>
+
 <label>
 {{  toggle(
         properties={
@@ -75,13 +89,25 @@
 }}
 </label>
 
-<br><br>
+<label>
+{{  toggle(
+        properties={},
+        state=data.state,
+        aria=data.aria,
+        modifier={
+            block: ['compact', 'semantic']
+        }
+
+    )
+}}
+</label>
+{% endset %}
+{{ format(example) }}
 
 <hr>
 
-
 <h2>Other Sizes</h2>
-
+{% set example %}
 
 <h3>Large</h3>
 
@@ -89,14 +115,14 @@
 {{  toggle(
         properties=data.properties,
         modifier={
-            block: "l"
+            block: ['l']
         }
     )
 }}
 
 </label>
 
-<br><br>
+<br><br><br>
 
 <h3>Small</h3>
 
@@ -104,13 +130,13 @@
 {{  toggle(
         properties=data.properties,
         modifier={
-            block: "s"
+            block: ['s']
         }
     )
 }}
 </label>
 
-<br><br>
+<br><br><br>
 
 <h3>Extra small</h3>
 
@@ -118,7 +144,7 @@
 {{  toggle(
         properties=data.properties,
         modifier={
-            block: "xs"
+            block: ['xs']
         }
     )
 }}
@@ -126,7 +152,9 @@
 {% endset %}
 {{ format(example) }}
 
-    <br><br>
+<br><br><br>
+
+<hr> 
 
 <h2>checked</h2>
 {% set example %}
@@ -134,7 +162,7 @@
 {{  toggle(
         properties=data.properties,
         modifier={
-            block: "xs"
+            block: ['xs']
         },
         state={
             checked: true
@@ -146,7 +174,7 @@
 {{  toggle(
         properties=data.properties,
         modifier={
-            block: "s"
+            block: ['s']
         },
         state={
             checked: true
@@ -167,7 +195,7 @@
 {{  toggle(
         properties=data.properties,
         modifier={
-            block: "l"
+            block: ['l']
         },
         state={
             checked: true
@@ -179,7 +207,9 @@
 {{ format(example) }}
 
 
-<br><br>
+<br><br><br>
+
+<hr>
 
 <h2>disabled</h2>
 {% set example %}
@@ -187,7 +217,7 @@
 {{  toggle(
         properties=data.properties,
         modifier={
-            block: "xs"
+            block: ['xs']
         },
         state={
             disabled: true
@@ -199,7 +229,7 @@
 {{  toggle(
         properties=data.properties,
         modifier={
-            block: "small"
+            block: ['small']
         },
         state={
             disabled: true
@@ -221,7 +251,7 @@
 {{  toggle(
         properties=data.properties,
         modifier={
-            block: "l"
+            block: ['l']
         },
         state={
             disabled: true,
@@ -233,7 +263,9 @@
 {% endset %}
 {{ format(example) }}
 
-<br><br>
+<br><br><br>
+
+<hr>
 
 <h1>Use with <code>.fd-form__item--check</code></h1>
 <p>Replace the normal checkbox with the <code>.fd-toggle</code> component. Apply the <code>.fd-form__control</code> class to the <code>.fd-toggle</code> component instead of to the <code>input</code> element. Everything else works the same.</p>

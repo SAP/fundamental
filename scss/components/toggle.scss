@@ -68,7 +68,6 @@ $block: #{$fd-namespace}-toggle;
         }
 
         &:checked {
-
             &[disabled],
             &.is-disabled,
             &[aria-disabled="true"] {
@@ -162,7 +161,8 @@ $block: #{$fd-namespace}-toggle;
     }
 
     // block level modifier for inline lables
-    &--label {
+    &--label,
+    &--semantic {
         width: 62px;
         height: 22px;
         .#{$block}__label--on {
@@ -170,7 +170,7 @@ $block: #{$fd-namespace}-toggle;
         }
     }
 
-    &--label input:checked+&__switch {
+    &--label input:checked+&__switch, {
         &::before {
             -webkit-transform: translateX(36px);
             -ms-transform: translateX(36px);
@@ -184,13 +184,15 @@ $block: #{$fd-namespace}-toggle;
         }
     }
 
-    &--label.#{$block}--compact input:checked+&__switch::before {
+    &--label.#{$block}--compact input:checked+&__switch::before,
+    &--semantic input:checked+&__switch::before {
         -webkit-transform: translateX(39px);
         -ms-transform: translateX(39px);
         transform: translateX(39px);
     }
 
-    &--label {
+    &--label,
+    &--semantic {
         &.#{$block}--compact {
             width: 56px;
 
@@ -214,6 +216,47 @@ $block: #{$fd-namespace}-toggle;
             position: absolute;
             left: 8px;
             top: 3px;
+        }
+    }
+
+    // semantic modifier
+    &--semantic {
+        .#{$block}__switch {
+            @include fd-var-color("background-color", fd-color-state("background", "5"), --fd-color-background-5);
+            @include fd-var-color("border-color", fd-color-state("status", "3"), --fd-color-status-3);
+        }
+
+        .#{$block}__switch::before {
+            @include fd-var-color("background-color", fd-color-state("status", "3"), --fd-color-status-3);
+            @include fd-var-color("border-color", fd-color-state("status", "3"), --fd-color-status-3);
+        }
+
+        input:checked + .#{$block}__switch {
+            @include fd-var-color("background-color", fd-color-state("background", "3"), --fd-color-background-3);
+            @include fd-var-color("border-color", fd-color-state("status", "1"), --fd-color-status-1);
+        }
+        input:checked + .#{$block}__switch::before {
+            @include fd-var-color("background-color", fd-color-state("status", "1"), --fd-color-status-1);
+            @include fd-var-color("border-color", fd-color-state("status", "1"), --fd-color-status-1);
+        }
+    }
+
+    // semantic elements
+    &__semantic {
+
+        &--off {
+            @include fd-type("-1");
+            position: absolute;
+            right: 12px;
+            top: 2px;
+            @include fd-var-color("color", fd-color-state("status", "3"), --fd-color-status-3);
+        }
+        &--on {
+            @include fd-type("-1");
+            position: absolute;
+            left: 12px;
+            top: 2px;
+            @include fd-var-color("color", fd-color-state("status", "1"), --fd-color-status-1);
         }
     }
 }
