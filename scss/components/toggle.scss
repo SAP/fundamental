@@ -10,11 +10,11 @@ $block: #{$fd-namespace}-toggle;
 
 .#{$block} {
 
-    $fd-toggle-sizes: ("default": fd-space(13) fd-space(5.5) 20px -5px -5px, //52px 22px
-        "xs": fd-space(9) fd-space(5) 14px -4px -10px, //36px 20px
-        "s": fd-space(10) fd-space(6) 17px -5px -10px, //40px 24px
-        "compact": fd-space(10) fd-space(6.5) 16px -6px -10px, //40px 24px
-        "l": fd-space(14) fd-space(8) 22px -6px -2px, //56px 32px
+    $fd-toggle-sizes: ("default": fd-space(13) fd-space(5.5) 20px -5px -5px,
+        "xs": fd-space(9) fd-space(5) 14px -4px 15px,
+        "s": fd-space(10) fd-space(6) 17px -5px 15px,
+        "compact": fd-space(10) fd-space(6.5) 16px -6px 13px,
+        "l": fd-space(14) fd-space(8) 22px -6px 23px,
         ) !default;
     $_defaults: map-get($fd-toggle-sizes, "default");
     $fd-toggle-width: nth($_defaults, 1);
@@ -96,8 +96,7 @@ $block: #{$fd-namespace}-toggle;
         border-width: 1px;
         @include fd-var-color("border-color", $fd-toggle-background-color, --fd-color-neutral-4);
         @include fd-var-color("background-color", $fd-toggle-background-color, --fd-color-neutral-3);
-        -webkit-transition: 0.4s;
-        transition: 0.4s;
+        transition: all 0.4s;
         border-radius: 34px;
         &:hover {
             @include fd-var-color("border-color", fd-color-state("selected", "action"), --fd-color-action-selected);
@@ -119,8 +118,7 @@ $block: #{$fd-namespace}-toggle;
         border-style: solid;
         border-width: 1px;
         @include fd-var-color("border-color", $fd-toggle-background-color, --fd-color-neutral-4);
-        -webkit-transition: 0.4s;
-        transition: 0.4s;
+        transition: all 0.4s;
         border-radius: 50%;
         z-index: 1;
     }
@@ -130,13 +128,13 @@ $block: #{$fd-namespace}-toggle;
     }
 
     input:checked+&__switch::before {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
+        // -webkit-transform: translateX(26px);
+        // -ms-transform: translateX(26px);
+        // transform: translateX(26px);
         @include fd-var-color("background-color", fd-color-state("selected", "action"), --fd-color-action-selected);
         @include fd-var-color("border-color", fd-color-state("selected", "action"), --fd-color-action-selected);
         pointer-events: none;
-        left: -6px;
+        left: calc(100% - 31px);
     }
 
     //SIZES
@@ -170,11 +168,10 @@ $block: #{$fd-namespace}-toggle;
         }
     }
 
-    &--label input:checked+&__switch, {
+    &--label input:checked+&__switch,
+    &--semantic input:checked+&__switch {
         &::before {
-            -webkit-transform: translateX(36px);
-            -ms-transform: translateX(36px);
-            transform: translateX(36px);
+            left: calc(100% - 31px);
         }
         .#{$block}__label--off {
             visibility: hidden;
@@ -184,11 +181,11 @@ $block: #{$fd-namespace}-toggle;
         }
     }
 
-    &--label.#{$block}--compact input:checked+&__switch::before,
-    &--semantic input:checked+&__switch::before {
-        -webkit-transform: translateX(39px);
-        -ms-transform: translateX(39px);
-        transform: translateX(39px);
+    &--label.#{$block}--compact input:checked+&__switch,
+    &--semantic.#{$block}--compact input:checked+&__switch {
+        &::before {
+            left: calc(100% - 25px);
+        }
     }
 
     &--label,
@@ -204,7 +201,6 @@ $block: #{$fd-namespace}-toggle;
 
     // label elements
     &__label {
-
         &--off {
             @include fd-type("-1");
             position: absolute;
@@ -243,7 +239,6 @@ $block: #{$fd-namespace}-toggle;
 
     // semantic elements
     &__semantic {
-
         &--off {
             @include fd-type("-1");
             position: absolute;
