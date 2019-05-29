@@ -218,22 +218,22 @@ $block: #{$fd-namespace}-toggle;
     // semantic modifier
     &--semantic {
         .#{$block}__switch {
-            @include fd-var-color("background-color", fd-color-state("background", "5"), --fd-color-background-5);
-            @include fd-var-color("border-color", fd-color-state("status", "3"), --fd-color-status-3);
+            @include fd-var-color("background-color", fd-color("background", 5), --fd-color-background-5);
+            @include fd-var-color("border-color", fd-color("status", 3), --fd-color-status-3);
         }
 
         .#{$block}__switch::before {
-            @include fd-var-color("background-color", fd-color-state("status", "3"), --fd-color-status-3);
-            @include fd-var-color("border-color", fd-color-state("status", "3"), --fd-color-status-3);
+            @include fd-var-color("background-color", fd-color("status", 3), --fd-color-status-3);
+            @include fd-var-color("border-color", fd-color("status", 3), --fd-color-status-3);
         }
 
         input:checked + .#{$block}__switch {
-            @include fd-var-color("background-color", fd-color-state("background", "3"), --fd-color-background-3);
-            @include fd-var-color("border-color", fd-color-state("status", "1"), --fd-color-status-1);
+            @include fd-var-color("background-color", fd-color("background", 3), --fd-color-background-3);
+            @include fd-var-color("border-color", fd-color("status", 1), --fd-color-status-1);
         }
         input:checked + .#{$block}__switch::before {
-            @include fd-var-color("background-color", fd-color-state("status", "1"), --fd-color-status-1);
-            @include fd-var-color("border-color", fd-color-state("status", "1"), --fd-color-status-1);
+            @include fd-var-color("background-color", fd-color("status", 1), --fd-color-status-1);
+            @include fd-var-color("border-color", fd-color("status", 1), --fd-color-status-1);
         }
     }
 
@@ -244,14 +244,14 @@ $block: #{$fd-namespace}-toggle;
             position: absolute;
             right: 12px;
             top: 2px;
-            @include fd-var-color("color", fd-color-state("status", "3"), --fd-color-status-3);
+            @include fd-var-color("color", fd-color("status", 3), --fd-color-status-3);
         }
         &--on {
             @include fd-type("-1");
             position: absolute;
             left: 12px;
             top: 2px;
-            @include fd-var-color("color", fd-color-state("status", "1"), --fd-color-status-1);
+            @include fd-var-color("color", fd-color("status", 1), --fd-color-status-1);
         }
     }
 }
