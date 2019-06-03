@@ -9,10 +9,10 @@ $block: #{$fd-namespace}-popover;
   $fd-popover-top-position: 120% !default;
   $fd-popover-top-position-noarrow: 100% !default;
   $fd-popover-left-position: 0 !default;
-  $fd-popover-border: solid 1px $fd-forms-border-color !default;
+  $fd-popover-border: none !default;
   $fd-popover-z-index: map-get($fd-z-index-levels, "top") !default;
   $fd-popover-background-color: fd-color(background, 2) !default;
-
+  $fd-popover-shadow: 0 0 0 1px rgba(0, 0, 0, .15), 0 10px 30px 0 rgba(0, 0, 0, .3) !default;
   $fd-popover-arrow-top-back: -9px !default;
   $fd-popover-arrow-top-front: -8px !default;
   $fd-popover-arrow-right: 14px !default;
@@ -42,10 +42,7 @@ $block: #{$fd-namespace}-popover;
       z-index: $fd-popover-z-index;
       border-radius: $fd-border-radius;
       @include fd-var-color("background-color", $fd-popover-background-color, --fd-color-background-2);
-      @if $fd-support-css-var-fallback {
-        box-shadow: 0 5px 20px 0 fd-color("neutral", 3), 0 2px 8px 0 fd-color("neutral", 2);
-      }
-      box-shadow: 0 5px 20px 0 var(--fd-color-neutral-3), 0 2px 8px 0 var(--fd-color-neutral-2);
+      box-shadow: $fd-popover-shadow;
       opacity: 1;
       visibility: visible;
       transition: all $fd-popover-transition-params;
