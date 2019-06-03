@@ -1,6 +1,22 @@
-# Changelog
+# Change Log
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="1.6.0-rc.0"></a>
+# [1.6.0-rc.0](https://github.com/SAP/fundamental/compare/v1.5.9-rc.2...v1.6.0-rc.0) (2019-06-03)
+
+
+### Bug Fixes
+
+* Bumped standard-version to 4.4.0 to fix issue with the tag prefix ([#1464](https://github.com/SAP/fundamental/issues/1464)) ([1567d0f](https://github.com/SAP/fundamental/commit/1567d0f))
+
+
+### Features
+
+* split button implementation ([#1448](https://github.com/SAP/fundamental/issues/1448)) ([a0d61b8](https://github.com/SAP/fundamental/commit/a0d61b8)), closes [#925](https://github.com/SAP/fundamental/issues/925)
+* status indicators ([#1456](https://github.com/SAP/fundamental/issues/1456)) ([875d5e3](https://github.com/SAP/fundamental/commit/875d5e3))
+
+
 
 <a name="1.5.9-rc.2"></a>
 ## [1.5.9-rc.2](https://github.com/SAP/fundamental/compare/v1.5.9-rc.1...v1.5.9-rc.2) (2019-05-24)
