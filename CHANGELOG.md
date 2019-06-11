@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/SAP/fundamental/compare/v1.6.0-rc.3...v1.6.0) (2019-06-11)
+
+
+
 <a name="1.6.0-rc.3"></a>
 # [1.6.0-rc.3](https://github.com/SAP/fundamental/compare/v1.6.0-rc.2...v1.6.0-rc.3) (2019-06-06)
 
