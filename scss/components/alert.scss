@@ -160,4 +160,16 @@ $block: #{$fd-namespace}-alert;
         @include fd-icon("message-information", "l", "after");
       }
     }
+    &--no-icon {
+      padding-left: $fd-alert-padding-x;
+      &::before {
+        display: none;
+      }
+      @include fd-rtl() {
+        padding-right: $fd-alert-padding-x;
+        &::after {
+          display: none;
+        }
+      }
+    }
 }
