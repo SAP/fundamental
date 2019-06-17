@@ -30,7 +30,6 @@ $block: #{$fd-namespace}-form;
         @include fd-last-child();
         .#{$block}__item {
             @include fd-last-child();
-            // margin-right: $fd-form-item-gutter;
         }
     }
     &__set {
@@ -165,7 +164,7 @@ $block: #{$fd-namespace}-form;
             text-align: center;
             line-height: 18px;
         }
-        &--warning, &--error, &--help {
+        &--information, &--valid, &--warning, &--error, &--help {
             padding-left: fd-space(6);
             &::before {
                 left: 0;
@@ -179,6 +178,21 @@ $block: #{$fd-namespace}-form;
                 content: "";
             }
         }
+        &--information {
+            color: $fd-color--information;
+            &::before {
+                color: $fd-color--information;
+                content: "";
+            }
+        }
+        &--valid {
+            color: $fd-color--success;
+            &::before {
+                color: $fd-color--success;
+                content: "";
+            }
+        }
+
         &--warning {
             color: $fd-color--warning;
             &::before {
