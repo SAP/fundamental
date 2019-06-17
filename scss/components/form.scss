@@ -116,6 +116,13 @@ $block: #{$fd-namespace}-form;
             opacity: 0.4;
         }
     }
+    &__label[aria-required="true"] {
+        &::after {
+            content: "*";
+            color: fd-color("status", 3);
+            margin-left: fd-space(.5);
+        }
+    }
     &__control {
         min-width: $fd-forms-height--input-check;
     }
