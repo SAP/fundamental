@@ -9,7 +9,7 @@
             .fd-form__item+(--check, --inline)
                 .fd-form__label
                 .fd-form__control
-            .fd-form__message(--help, --error, --warning, --success, --information, --no-icon)
+            .fd-form__message(--help, --error, --warning, --valid, --information, --no-icon)
 */
 $block: #{$fd-namespace}-form;
 .#{$block} {
@@ -119,7 +119,7 @@ $block: #{$fd-namespace}-form;
         &::after {
             content: "*";
             color: fd-color("status", 3);
-            margin-left: fd-space(.5);
+            margin-left: fd-space(1);
         }
     }
     &__control {
@@ -166,7 +166,7 @@ $block: #{$fd-namespace}-form;
             text-align: center;
             line-height: $fd-form-message-icon-size;
         }
-        &--information, &--success, &--warning, &--error, &--help {
+        &--information, &--valid, &--warning, &--error, &--help {
             margin: fd-space(.25) fd-space(.5);
             padding-left: fd-space(8);
             padding-right: fd-space(1);
@@ -200,7 +200,7 @@ $block: #{$fd-namespace}-form;
                 content: "";
             }
         }
-        &--success {
+        &--valid {
             color: $fd-color--success;
             background: fd-color("background", 3);
             &::before {
