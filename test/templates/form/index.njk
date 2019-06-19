@@ -115,9 +115,9 @@
         placeholder: "Field placeholder text",
         message: "Pellentesque metus lacus commodo eget justo ut rutrum varius nunc" },
     modifier={
-        message: "valid"
+        message: "success"
     },
-    state={ status: "valid" }
+    state={ status: "success" }
     )
 }}
 
@@ -139,10 +139,23 @@
         placeholder: "Field placeholder text",
         message: "Pellentesque metus lacus commodo eget justo ut rutrum varius nunc" },
     modifier={
+        message: ["information", "no-icon"]
+    },
+    state={ status: "information" }
+    )
+}}
+
+{{ form_item(
+    properties={
+        label: "Field Label",
+        placeholder: "Field placeholder text",
+        message: "Pellentesque metus lacus commodo eget justo ut rutrum varius nunc" },
+    modifier={
         message: "help"
     }
     )
 }}
+
 {% endset %}
 {{ format(example) }}
 <br><br>
