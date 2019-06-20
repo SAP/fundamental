@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.0-rc.0"></a>
+# [1.7.0-rc.0](https://github.com/SAP/fundamental/compare/v1.6.1-rc.0...v1.7.0-rc.0) (2019-06-20)
+
+
+### Features
+
+* [#1390](https://github.com/SAP/fundamental/issues/1390) Added two additional type sizes ([#1477](https://github.com/SAP/fundamental/issues/1477)) ([73c3a0a](https://github.com/SAP/fundamental/commit/73c3a0a))
+
+
+
 <a name="1.6.1-rc.0"></a>
 ## [1.6.1-rc.0](https://github.com/SAP/fundamental/compare/v1.6.0...v1.6.1-rc.0) (2019-06-17)
 
