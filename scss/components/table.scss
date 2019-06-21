@@ -209,4 +209,66 @@ $block: #{$fd-namespace}-table;
             @include fd-var-color("background-color", fd-color-state("hover"), --fd-color-background-hover);
         }
     }
+
+    &__row--valid,
+    &__row--warning,
+    &__row--error,
+    &__row--information {
+        & td:first-child {
+            position: relative;
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-left: fd-space(1.25) solid;
+                content: "";
+                height: 100%;
+            }
+        }
+    }
+    &__row--valid {
+        &:hover {
+            --fd-color-background-hover: var(--fd-color-background-3);
+        }
+        @include fd-var-color("background-color", fd-color('background', 3), --fd-color-background-3);
+        & td:first-child {
+            &::before {
+                @include fd-var-color("border-color", fd-color('status', 1), --fd-color-status-1);
+            }
+        }
+    }
+    &__row--warning {
+        &:hover {
+            --fd-color-background-hover: var(--fd-color-background-4);
+        }
+        @include fd-var-color("background-color", fd-color('background', 4), --fd-color-background-4);
+        & td:first-child {
+            &::before {
+                @include fd-var-color("border-color", fd-color('status', 2), --fd-color-status-2);
+            }
+        }
+    }
+    &__row--error {
+        &:hover {
+            --fd-color-background-hover: var(--fd-color-background-5);
+        }
+        @include fd-var-color("background-color", fd-color('background', 5), --fd-color-background-5);
+        & td:first-child {
+            &::before {
+                @include fd-var-color("border-color", fd-color('status', 3), --fd-color-status-3);
+            }
+        }
+    }
+    &__row--information {
+        &:hover {
+            --fd-color-background-hover: var(--fd-color-background-6);
+        }
+        @include fd-var-color("background-color", fd-color('background', 6), --fd-color-background-6);
+        & td:first-child {
+            &::before {
+                @include fd-var-color("border-color", fd-color('status', 5), --fd-color-status-5);
+                border-color: fd-color('status', 5);
+            }
+        }
+    }
 }
