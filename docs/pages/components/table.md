@@ -755,3 +755,9 @@ a contextual menu can be substituted in order to display all actions in one menu
 </div>
 {% endcapture %}
 {% include display-component.html component=table-sort %}
+
+<style>
+   .fd-table a{ 
+      color: #0a6ed1; 
+   }
+</style>
