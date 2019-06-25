@@ -2,7 +2,8 @@
 @import "./../mixins";
 @import "./../functions";
 /*!
-.fd-loading-spinner+(.is-hidden|[aria-hidden=true])
+.fd-loading-spinner+(.is-hidden|[aria-hidden=true] --small, --large)
+
 
 Inspired by line scale spinner from Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
 * Copyright 2015 Daniel Cardoso <@DanielCardoso>
@@ -28,9 +29,8 @@ $block: #{$fd-namespace}-loading-spinner;
     height: $fd-spinner-size;
     display: block;
     font-size: 0;
-    color: --fd-spinner-background-color;
+    color: var(--fd-spinner-background-color);
     @include fd-var-color("color", $fd-spinner-background-color);
-    color: $fd-spinner-background-color;
     margin: 10px auto;
 
     // ELEMENTS
@@ -47,14 +47,13 @@ $block: #{$fd-namespace}-loading-spinner;
     }
 
     &::after {
-        border-color: --fd-spinner-ring-color;
+        border-color: var(--fd-spinner-ring-color);
         @include fd-var-color("border-color", $fd-spinner-ring-color);
-        border-color: $fd-spinner-ring-color;
         border-top-color: transparent;
         border-right-color: transparent;
         border-left-color: transparent;
         margin-top: -$fd-spinner-size;
-        animation: fd-spinner-spin 1s linear infinite;
+        animation: fd-loading-spinner-spin 1s linear infinite;
     }
 
     // MODIFIERS
@@ -83,7 +82,7 @@ $block: #{$fd-namespace}-loading-spinner;
 }
 
 // ANIMATION
-@keyframes fd-spinner-spin {
+@keyframes fd-loading-spinner-spin {
     0% {
         transform: rotate(0deg);
     }
