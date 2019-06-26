@@ -166,6 +166,14 @@ $block: #{$fd-namespace}-toggle;
         .#{$block}__label--on {
             visibility: hidden;
         }
+
+        &.#{$block}--compact {
+            width: 56px;
+
+            .#{$block}__switch::before {
+                top: -3px;
+            }
+        }
     }
 
     &--label input:checked+&__switch,
@@ -185,17 +193,6 @@ $block: #{$fd-namespace}-toggle;
     &--semantic.#{$block}--compact input:checked+&__switch {
         &::before {
             left: calc(100% - 25px);
-        }
-    }
-
-    &--label,
-    &--semantic {
-        &.#{$block}--compact {
-            width: 56px;
-
-            .#{$block}__switch::before {
-                top: -3px;
-            }
         }
     }
 
