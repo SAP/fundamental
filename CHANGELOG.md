@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.0-rc.3"></a>
+# [1.7.0-rc.3](https://github.com/SAP/fundamental/compare/v1.7.0-rc.2...v1.7.0-rc.3) (2019-06-26)
+
+
+### Features
+
+* add new busy indicators per UI Kit v1.4.3 ([#1505](https://github.com/SAP/fundamental/issues/1505)) ([4ab3d02](https://github.com/SAP/fundamental/commit/4ab3d02))
+
+
+
 <a name="1.7.0-rc.2"></a>
 # [1.7.0-rc.2](https://github.com/SAP/fundamental/compare/v1.7.0-rc.1...v1.7.0-rc.2) (2019-06-24)
 
