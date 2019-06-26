@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.0-rc.4"></a>
+# [1.7.0-rc.4](https://github.com/SAP/fundamental/compare/v1.7.0-rc.3...v1.7.0-rc.4) (2019-06-26)
+
+
+### Features
+
+* table updates to match UI Kit v1.4.3  ([#1501](https://github.com/SAP/fundamental/issues/1501)) ([b1d721c](https://github.com/SAP/fundamental/commit/b1d721c))
+
+
+
 <a name="1.7.0-rc.3"></a>
 # [1.7.0-rc.3](https://github.com/SAP/fundamental/compare/v1.7.0-rc.2...v1.7.0-rc.3) (2019-06-26)
 
