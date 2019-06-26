@@ -82,6 +82,39 @@ Add the modifier class `fd-alert--error` for Error alert.
 
 {% include display-component.html component=error-alert %}
 
+## No Icons
+
+Add the modifier class `fd-alert--no-icon` to render alert without any icon
+
+{% capture no-icon %}
+<div class="fd-alert fd-alert--information fd-alert--no-icon fd-alert--dismissible" 
+     role="alert" id="SsoiW591">
+  <button class="fd-alert__close" aria-controls="SsoiW591" aria-label="Close"></button>
+  Vivamus sagittis diam in vehicula lobortis sapien arcu mattis erat vel aliquet sem urna et.
+</div>
+
+<div class="fd-alert fd-alert--success fd-alert--no-icon fd-alert--dismissible" 
+     role="alert" id="SsoiW591">
+  <button class="fd-alert__close" aria-controls="SsoiW591" aria-label="Close"></button>
+  Vivamus sagittis diam in vehicula lobortis sapien arcu mattis erat vel aliquet sem urna et.
+</div>
+
+<div class="fd-alert fd-alert--warning fd-alert--no-icon fd-alert--dismissible" 
+     role="alert" id="SsoiW591">
+  <button class="fd-alert__close" aria-controls="SsoiW591" aria-label="Close"></button>
+  Vivamus sagittis diam in vehicula lobortis sapien arcu mattis erat vel aliquet sem urna et.
+</div>
+
+<div class="fd-alert fd-alert--error fd-alert--no-icon fd-alert--dismissible" 
+     role="alert" id="SsoiW591">
+  <button class="fd-alert__close" aria-controls="SsoiW591" aria-label="Close"></button>
+  Vivamus sagittis diam in vehicula lobortis sapien arcu mattis erat vel aliquet sem urna et.
+</div>
+{% endcapture %}
+
+{% include display-component.html component=no-icon class='no-icon' %}
+
+
 ## Right to left support
 If right to left text direction is provided, the dismiss button moves to left side.
 
@@ -93,3 +126,9 @@ If right to left text direction is provided, the dismiss button moves to left si
 {% endcapture %}
 
 {% include display-component.html component=default-alert %}
+
+<style>
+  .docs-component__no-icon .fd-alert--no-icon{
+    margin-bottom: 20px;
+  }
+</style>
