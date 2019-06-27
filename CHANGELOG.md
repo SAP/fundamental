@@ -2,6 +2,61 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.0-rc.4"></a>
+# [1.7.0-rc.4](https://github.com/SAP/fundamental/compare/v1.7.0-rc.3...v1.7.0-rc.4) (2019-06-26)
+
+
+### Features
+
+* table updates to match UI Kit v1.4.3  ([#1501](https://github.com/SAP/fundamental/issues/1501)) ([b1d721c](https://github.com/SAP/fundamental/commit/b1d721c))
+
+
+
+<a name="1.7.0-rc.3"></a>
+# [1.7.0-rc.3](https://github.com/SAP/fundamental/compare/v1.7.0-rc.2...v1.7.0-rc.3) (2019-06-26)
+
+
+### Features
+
+* add new busy indicators per UI Kit v1.4.3 ([#1505](https://github.com/SAP/fundamental/issues/1505)) ([4ab3d02](https://github.com/SAP/fundamental/commit/4ab3d02))
+
+
+
+<a name="1.7.0-rc.2"></a>
+# [1.7.0-rc.2](https://github.com/SAP/fundamental/compare/v1.7.0-rc.1...v1.7.0-rc.2) (2019-06-24)
+
+
+### Bug Fixes
+
+* radio checkbox style updates ([#1497](https://github.com/SAP/fundamental/issues/1497)) ([ecdb4c2](https://github.com/SAP/fundamental/commit/ecdb4c2))
+
+
+
+<a name="1.7.0-rc.1"></a>
+# [1.7.0-rc.1](https://github.com/SAP/fundamental/compare/v1.7.0-rc.0...v1.7.0-rc.1) (2019-06-21)
+
+
+### Bug Fixes
+
+* Fixed popover in action bar misaligned with other buttons ([#1478](https://github.com/SAP/fundamental/issues/1478)) ([cae6d02](https://github.com/SAP/fundamental/commit/cae6d02))
+
+
+
+<a name="1.7.0-rc.0"></a>
+# [1.7.0-rc.0](https://github.com/SAP/fundamental/compare/v1.6.1-rc.0...v1.7.0-rc.0) (2019-06-20)
+
+
+### Features
+
+* [#1390](https://github.com/SAP/fundamental/issues/1390) Added two additional type sizes ([#1477](https://github.com/SAP/fundamental/issues/1477)) ([73c3a0a](https://github.com/SAP/fundamental/commit/73c3a0a))
+
+
+
+<a name="1.6.1-rc.0"></a>
+## [1.6.1-rc.0](https://github.com/SAP/fundamental/compare/v1.6.0...v1.6.1-rc.0) (2019-06-17)
+
+
+
 <a name="1.6.0"></a>
 # [1.6.0](https://github.com/SAP/fundamental/compare/v1.6.0-rc.3...v1.6.0) (2019-06-11)
 
