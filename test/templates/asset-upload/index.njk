@@ -1,0 +1,23 @@
+{% extends "layout.njk" %}
+{% from "./../format.njk" import format %}
+{# {% from "../button/component.njk" import button %} #}
+{% from "./component.njk" import asset_upload %}
+{% from "../icon/component.njk" import icon %}
+
+{% block content %}
+
+
+<h2>default</h2>
+    <!-- output the component example and the code snippet -->
+    {% set example %}
+{{  asset_upload({
+    icon: true,
+    text: "Select File",
+    message: "Maximum file size is 100MB"
+    }) 
+}}
+
+    {% endset %}
+    {{ format(example) }}
+
+{% endblock %}

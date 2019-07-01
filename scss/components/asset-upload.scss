@@ -1,0 +1,51 @@
+@import "./../settings";
+@import "./../mixins";
+@import "./../functions";
+/*!
+.fd-asset-upload
+*/
+$block: #{$fd-namespace}-asset-upload;
+.#{$block} {
+
+  @include fd-reset();
+  @include fd-type("0");
+  $fd-asset-upload-padding: fd-space(3);
+  $fd-asset-upload-border-radius: fd-space(1);
+
+  &__input {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+
+    &:focus + .#{$block}__label {
+        border: 1px solid #7BBAF9;
+        box-shadow: 0 0 0 1px #7BBAF9;
+    }
+  }
+
+  &__input + .#{$block}__label {
+    border: 1px dashed grey;
+    text-align: center;
+    background-color: #FAFAFA;
+    border-radius: $fd-asset-upload-border-radius;
+    cursor: pointer;
+    display: block;
+    padding: $fd-asset-upload-padding;
+    position: relative;
+
+    &:hover {
+      border-style: solid;
+      border-color: #085CAF;
+    }
+  }
+
+  &__icon,
+  &__text {
+    display: block;
+    color: fd-color('action', 1);
+  }
+
+  &__icon {
+    @include fd-type("0");
+  }
+}
