@@ -10,12 +10,33 @@
 <h2>default</h2>
     <!-- output the component example and the code snippet -->
     {% set example %}
-{{  asset_upload({
-    icon: true,
-    text: "Select File",
-    message: "Maximum file size is 100MB"
-    }) 
+{{  asset_upload(
+        properties={
+            text: "Upload Link",
+        message: "Maximum file size is 100MB"
+        }
+    ) 
 }}
+{{  asset_upload(
+        properties={
+            text: "Upload Link"
+        }
+    ) 
+}}
+{{  asset_upload(
+        properties={
+        text: "Upload Link",
+        message: "Maximum file size is 100MB"
+        },
+        modifier={ block:['no-icon']}) 
+}}
+{{  asset_upload(
+        properties={
+        text: "Upload Link"
+        },
+        modifier={ block:['no-icon']}) 
+}}
+
 
     {% endset %}
     {{ format(example) }}
