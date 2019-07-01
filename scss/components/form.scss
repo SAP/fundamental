@@ -138,8 +138,8 @@ $block: #{$fd-namespace}-form;
         clear: both;
         display: block;
         @include fd-type(#{$fd-form-message-font-size});
-        color: $fd-form-message-color;
-        padding: fd-space(2) 0;
+        color: fd-color("text", 1);
+        padding: fd-space(1.625) 0;
         position: relative;
 
         //adjust for checks
@@ -174,7 +174,7 @@ $block: #{$fd-namespace}-form;
             border-bottom-right-radius: fd-space(1);
             &::before {
                 left: fd-space(2);
-                top: fd-space(1.5);
+                top: fd-space(1.25);
             }
             @include fd-rtl() {
                 padding-left: fd-space(1);
@@ -186,14 +186,12 @@ $block: #{$fd-namespace}-form;
             }
         }
         &--help {
-            color: fd-color(text);
             &::before {
                 color: fd-color(text);
                 content: "";
             }
         }
         &--information {
-            color: $fd-color--information;
             background: fd-color("background", 6);
             &::before {
                 color: $fd-color--information;
@@ -201,7 +199,6 @@ $block: #{$fd-namespace}-form;
             }
         }
         &--valid {
-            color: $fd-color--success;
             background: fd-color("background", 3);
             &::before {
                 color: $fd-color--success;
@@ -209,7 +206,6 @@ $block: #{$fd-namespace}-form;
             }
         }
         &--warning {
-            color: $fd-color--warning;
             background: fd-color("background", 4);
             &::before {
                 color: $fd-color--warning;
@@ -217,7 +213,6 @@ $block: #{$fd-namespace}-form;
             }
         }
         &--error {
-            color: $fd-color--error;
             background: fd-color("background", 5);
 
             &::before {
