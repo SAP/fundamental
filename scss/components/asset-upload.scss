@@ -1,6 +1,7 @@
 @import "./../settings";
 @import "./../mixins";
 @import "./../functions";
+@import "./../icons/mixins";
 /*!
 .fd-asset-upload+(--no-icon)
   .fd-asset-upload__label
@@ -21,12 +22,10 @@ $block: #{$fd-namespace}-asset-upload;
   $fd-asset-upload-border-color--focus: var(--fd-color-action-focus);
 
   &__input {
-    // hide form input
     height: 0;
     width: 0;
     overflow: hidden;
 
-    // enabled focus sate
     &:focus + .#{$block}__label {
         border: 1px solid $fd-asset-upload-border-color--focus;
         box-shadow: 0 0 0 1px $fd-asset-upload-border-color--focus;
