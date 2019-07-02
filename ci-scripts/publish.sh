@@ -11,6 +11,12 @@ git push "https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG" ":$TRAVIS_BRANCH" > /d
 std_ver=$(npm run std-version)
 release_tag=$(echo "$std_ver" | grep "tagging release" | awk '{print $4}')
 
+# some versions of standard-version are not echoing the "v" prefix on the "tagging release" line
+# if it doesn't exist, let's add it so creating a release works properly
+if [[ ${release_tag::1} != "v" ]]; then
+    release_tag="v${release_tag}";
+fi
+
 echo "$std_ver"
 
 git push --follow-tags "https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG" master > /dev/null 2>&1;

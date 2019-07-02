@@ -59,6 +59,8 @@ $fd-type: map-merge((
   "4": #{24/$fd-type--base}rem 32/24 16px, //23/32 16
   "5": #{36/$fd-type--base}rem 40/36 20px, //36/40 20
   "6": #{48/$fd-type--base}rem 52/48 24px, //48/52 24
+  "7": #{72/$fd-type--base}rem 84/72 32px, //84/72 32
+  "8": #{96/$fd-type--base}rem 105/96 36px, //105/96 36
 ), $fd-type);
 
 $fd-font-size: #{$fd-type--base}px !default;
@@ -99,7 +101,7 @@ $fd-colors: map-merge((
   ),
   "neutral": (
     1: hsl(210, 3%, 98%), // #FAFAFA UI Neutral UI 1
-    2: hsl(210, 3%, 93.5%), // #EEEEEF UI Neutral UI 2
+    2: hsl(0, 0%, 93%), // #E5E5E5 UI Neutral UI 2
     3: hsl(0, 0%, 85%), // #D9D9D9 UI Neutral UI 3
     4: hsl(212, 8%, 57%), // #89919A UI Neutral UI 4
     5: hsl(0, 0%, 97%), // #F7F7F7 UI Neutral UI 5
@@ -151,6 +153,7 @@ $fd-color--action: map-get($fd-colors-action, 1) !default;
 $fd-colors-action-states: () !default;
 $fd-colors-action-states: map-merge((
   "hover": adjust-color($fd-color--action, $lightness: -7%),
+  "focus": adjust-color($fd-color--action, $lightness: 30%),
   "selected": adjust-color($fd-color--action, $lightness: -10%, $saturation: 7%),
   "disabled": change-color($fd-color--action, $alpha: 0.4),
   "visited": adjust-hue($fd-color--action, 45deg),
@@ -170,6 +173,7 @@ $fd-color--alert: map-get($fd-colors-status, 2) !default;
 $fd-color--warning: $fd-color--alert !default;
 $fd-color--positive: map-get($fd-colors-status, 1) !default;
 $fd-color--success: $fd-color--positive !default;
+$fd-color--information: map-get($fd-colors-status, 5) !default;
 
 $fd-colors-background-states: () !default;
 $fd-colors-background-states: map-merge((
@@ -241,7 +245,7 @@ $fd-button-line-height: $fd-forms-height - 2;
 $fd-button-line-height--compact: $fd-forms-height--compact - 2;
 
 $fd-forms-color: $fd-color !default;
-$fd-forms-color--placeholder: adjust-color(map-get($fd-colors-text, 3), $lightness: 14) !default;
+$fd-forms-color--placeholder: map-get($fd-colors-text, 4) !default;
 
 $fd-forms-color--focus: $fd-forms-color !default;
 $fd-forms-color--disabled: map-get($fd-colors-text, 3) !default;
