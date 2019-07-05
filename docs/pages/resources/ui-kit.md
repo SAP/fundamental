@@ -1,7 +1,7 @@
 ---
-title: SAP Fiori Fundamentals UI Kit
+title: SAP Fundamentals UI Kit
 keywords: ui ki toolkit sketch design stencils
-summary: UI Kit includes ready-to-use, state-of-the-art drafts of SAP Fiori layouts, patterns and controls in sketch. You are welcome to use the design stencils to visualize your SAP Fiori app. They are easy to use and give you a realistic impression of your final design.
+summary: UI Kit includes ready-to-use, state-of-the-art drafts of SAP layouts, patterns and controls in sketch. You are welcome to use the design stencils to visualize your SAP app. They are easy to use and give you a realistic impression of your final design.
 permalink: resources/ui-kit.html
 folder: resources
 sidebar: left-navigation-sidebar
@@ -36,7 +36,7 @@ toc: false
         <div class="fd-col--7">
             <h3>Sketch File v1.4.3</h3>
             <p>
-                Our Sketch file has over 30 unique components refined and streamlined to allow any user the ability quickly and effeciently build Fiori 3 interfaces using the Fundamentals design system.
+                Our Sketch file has over 30 unique components refined and streamlined to allow any user the ability quickly and effeciently build SAP interfaces using the Fundamentals design system.
             </p>
         </div>
         <div class="fd-col--3 fd-has-text-align-left fd-has-margin-top-medium">
@@ -54,7 +54,7 @@ toc: false
         <div class="fd-col--7">
             <h3>72 Font</h3>
             <p>
-                SAP 72 font family was designed from the ground up and made it possible to meet SAP Fiori’s typographic requirements, including - Legibility Enhancements, Font Styles, Brand Voice, Character Set and Language Support.
+                SAP 72 font family was designed from the ground up and made it possible to meet SAP's typographic requirements, including - Legibility Enhancements, Font Styles, Brand Voice, Character Set and Language Support.
             </p>
         </div>
         <div class="fd-col--3 fd-has-text-align-left fd-has-margin-top-medium">
@@ -136,6 +136,5 @@ toc: false
         <p>
             <img src="{{site.baseurl}}/images/ui-kit/design-system-lock-up.png" alt="Design system updates" width="260">
         </p>
-
     </div>
 </div>

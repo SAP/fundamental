@@ -17,7 +17,7 @@ module.exports = {
             level: 1
         },
         'postcss-banner': {
-            banner: `Fiori Fundamentals v${packageVersion}
+            banner: `Fundamentals v${packageVersion}
 Copyright (c) ${year} SAP SE or an SAP affiliate company.
 Licensed under Apache License 2.0 (https://github.com/SAP/Fundamental/blob/master/LICENSE)`,
             important: true
