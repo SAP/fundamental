@@ -5,7 +5,7 @@ toc: false
 sidebar: left-navigation-sidebar
 permalink: foundation/index.html
 folder: foundation
-summary: Fiori Fundamentals is a unified, flexible design system that solves complex
+summary: SAP Fundamentals is a unified, flexible design system that solves complex
         problems in a meaningful way and creates simple intuitive experience.
 ---
 
@@ -26,7 +26,7 @@ summary: Fiori Fundamentals is a unified, flexible design system that solves com
                  Grid
              </h2>
              <p class="fd-tile__description">
-                 Fiori Fundamentals uses responsive grid system that achieves flexible 12-column flow layout. It is used to create flexible layouts for various screen sizes and device types.
+                 SAP Fundamentals uses responsive grid system that achieves flexible 12-column flow layout. It is used to create flexible layouts for various screen sizes and device types.
              </p>
         </div>
     </a>
@@ -46,7 +46,7 @@ summary: Fiori Fundamentals is a unified, flexible design system that solves com
                  Type
              </h2>
              <p class="fd-tile__description">
-                 Fiori Fundamentals uses a set of sans-serif system fonts.
+                 SAP Fundamentals uses a set of sans-serif system fonts.
              </p>
         </div>
     </a>
