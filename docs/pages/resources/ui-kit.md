@@ -36,7 +36,7 @@ toc: false
         <div class="fd-col--7">
             <h3>Sketch File v1.4.3</h3>
             <p>
-                Our Sketch file has over 30 unique components refined and streamlined to allow any user the ability quickly and effeciently build SAP interfaces using the Fundamentals design system.
+                Our Sketch file has over 30 unique components refined and streamlined to allow any user the ability quickly and effeciently build Fiori 3 interfaces using the Fundamentals design system.
             </p>
         </div>
         <div class="fd-col--3 fd-has-text-align-left fd-has-margin-top-medium">
