@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/SAP/fundamental/compare/v1.7.0-rc.4...v1.7.0) (2019-07-10)
+
+
+### Bug Fixes
+
+*  Fixed list item misalignment issue ([#1474](https://github.com/SAP/fundamental/issues/1474)) ([e27c12d](https://github.com/SAP/fundamental/commit/e27c12d))
+* Feature/toggle updates ([#1487](https://github.com/SAP/fundamental/issues/1487)) ([c4d9d84](https://github.com/SAP/fundamental/commit/c4d9d84))
+
+
+### Features
+
+* add no-icon modifier for alert to match UI Kit v1.4.3  ([#1493](https://github.com/SAP/fundamental/issues/1493)) ([a85e37b](https://github.com/SAP/fundamental/commit/a85e37b))
+* Asset Upload component ([#1509](https://github.com/SAP/fundamental/issues/1509)) ([49dd334](https://github.com/SAP/fundamental/commit/49dd334))
+* update form inputs to match UI Kit v1.4.3 ([#1499](https://github.com/SAP/fundamental/issues/1499)) ([32c50e7](https://github.com/SAP/fundamental/commit/32c50e7))
+
+
+
 <a name="1.7.0-rc.4"></a>
 # [1.7.0-rc.4](https://github.com/SAP/fundamental/compare/v1.7.0-rc.3...v1.7.0-rc.4) (2019-06-26)
 
