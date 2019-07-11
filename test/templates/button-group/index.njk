@@ -57,6 +57,23 @@
           }}
   {%- endcall %}
 
+  {% call button_group() -%}
+    {{-  button(
+      { label: 'First' },
+        modifier={ block: [size] },
+        aria={ disabled: true, selected: true })
+      }}
+    {{-  button(
+        { label: 'Second' },
+          modifier={ block: [size] },
+          aria={ })
+        }}
+    {{-  button(
+          { label: 'Third' },
+            modifier={ block: [size] },
+            aria={ disabled: true })
+          }}
+  {%- endcall %}
 
     {% endset %}
     {{ format(example) }}

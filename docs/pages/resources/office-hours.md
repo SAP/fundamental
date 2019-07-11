@@ -5,7 +5,7 @@ sidebar: left-navigation-sidebar
 toc: false
 permalink: /office-hours/
 folder: resources
-summary: Every month the SAP Fiori Fundamentals' team hosts a live stream of a presentation covering anything from library updates, how-to's and demos. It's also an opportunity for us to engage with our users and answer pre-submitted questions.
+summary: Every month the SAP Fundamentals' team hosts a live stream of a presentation covering anything from library updates, how-to's and demos. It's also an opportunity for us to engage with our users and answer pre-submitted questions.
 ---
 
 ## How to participate
