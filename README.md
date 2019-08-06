@@ -1,13 +1,13 @@
-# SAP Fiori Fundamentals
+# SAP Fundamentals
 
 [![npm version](https://badge.fury.io/js/fiori-fundamentals.svg)](https://badge.fury.io/js/fiori-fundamentals)
 [![Build Status](https://travis-ci.org/SAP/fundamental.svg?branch=master)](https://travis-ci.org/SAP/fundamental)
 [![Slack](https://img.shields.io/badge/slack-ui--fundamentals-blue.svg?logo=slack)](https://ui-fundamentals.slack.com)
 
 
-## What is SAP Fiori Fundamentals?
+## What is SAP Fundamentals?
 
-SAP Fiori Fundamentals is a light-weight presentation layer that can be used with your UI framework of choice (e.g. Angular, React, Vue, etc.). With Fiori Fundamentals’ library of stylesheets and HTML tags, developers can build consistent Fiori apps in any web-based technology.
+SAP Fundamentals is a light-weight presentation layer that can be used with your UI framework of choice (e.g. Angular, React, Vue, etc.). With Fundamentals’ library of stylesheets and HTML tags, developers can build consistent Fiori apps in any web-based technology.
 
 **Learn more at http://sap.github.io/fundamental/**
 
