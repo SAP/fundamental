@@ -34,11 +34,15 @@ mergeable:
       - do: approvals
         and:
           - min:
-            count: 2 # Number of minimum reviewers. In this case 2.
+            count: 1 # Number of minimum reviewers. In this case 2.
             message: 'Custom message...1'
-          - required:
-            reviewers: [ 'InnaAtanasova' ] # list of github usernames required to review
-            message: 'Custom message...2'
+          - or:
+            - required:
+              reviewers: [ 'InnaAtanasova' ] 
+              message: 'Custom message...2'
+            - required:
+              reviewers: [ 'saad-mo' ] 
+              message: 'Custom message...3'
     # fail:
     #   - do: comment
     #     payload:
