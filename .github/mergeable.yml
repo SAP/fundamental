@@ -32,10 +32,13 @@ mergeable:
       #     enabled: true # Cannot be empty when true.
       #     message: 'The PR must be part of a milestone.'
       - do: approvals
-
-        required:
-          reviewers: [ 'InnaAtanasova', 'saad-mo' ] 
-          message: 'Custom message...3'
+        and: 
+          - required:
+            reviewers: [ 'saad-mo' ] 
+            message: 'Custom message...3'
+          - required:
+            reviewers: [ 'InnaAtanasova' ] 
+            message: 'Custom message...3'
     # fail:
     #   - do: comment
     #     payload:
