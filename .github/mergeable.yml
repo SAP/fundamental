@@ -5,13 +5,6 @@ mergeable:
       - do: title
         begins_with:
           match: ['fix:', 'feat:', 'docs:', 'chore:']
-    fail:
-      - do: comment
-        payload:
-          body: >
-            The following problems were found with this issue:
-              - Title must begin with `fix:`, `feat:`, `docs:`, or `chore:`
-    validate:
       - do: approvals
         min:
           count: 2 # Number of minimum reviewers. In this case 2.
@@ -19,4 +12,10 @@ mergeable:
         required:
           reviewers: [ droshev, InnaAtanasova, saad-mo ] # list of github usernames required to review
           message: 'The PR would need an approval from at least one from `droshev`, `InnaAtanasova`, `saad-mo` '
+    # fail:
+    #   - do: comment
+    #     payload:
+    #       body: >
+    #         The following problems were found with this issue:
+    #           - Title must begin with `fix:`, `feat:`, `docs:`, or `chore:`
     
