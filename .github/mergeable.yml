@@ -15,6 +15,9 @@ mergeable:
         no_empty:
           enabled: true
           message: Description matter and should not be empty. Provide detail with **what** was changed, **why** it was changed, and **how** it was changed.
+        must_exclude:
+          regex: 'DO NOT MERGE'
+          message: 'There is a comment "DO NOT MERGE"' # optional
       - do: title
         must_exclude:
           regex: ^\[WIP\]
@@ -29,6 +32,9 @@ mergeable:
           enabled: true # Cannot be empty when true.
           message: 'The PR must be part of a milestone.'
       - do: approvals
+        min:
+          count: 2 # Number of minimum reviewers. In this case 2.
+          message: 'The PR needs at least 2 approvals.'
         or:
           - required:
               reviewers: ['droshev']
