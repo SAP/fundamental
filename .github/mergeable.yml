@@ -42,10 +42,14 @@ mergeable:
               reviewers: ['InnaAtanasova']
           - required:
               reviewers: ['saad-mo'] 
-    # fail:
-    #   - do: comment
-    #     payload:
-    #       body: >
-    #         The following problems were found with this issue:
-    #           - Title must begin with `fix:`, `feat:`, `docs:`, or `chore:`
+    fail:
+      - do: comment
+        payload:
+          body: >
+            The PR is validated against :
+              - Title must begin with `fix:`, `feat:`, `docs:`, or `chore:`
+              - Description matter and should not be empty. Provide detail with **what** was changed, **why** it was changed, and **how** it was changed.`
+              - Title should not contain `[WIP]` and the label should not contain `wip`
+              - A milestone should be assigned
+              - 2 minimum approvals
     
