@@ -32,9 +32,6 @@ mergeable:
           enabled: true # Cannot be empty when true.
           message: 'The PR must be part of a milestone.'
       - do: approvals
-        min:
-          count: 2 
-          message: 'The PR needs at least 2 approvals.'
         required:
           reviewers: ['droshev', 'InnaAtanasova', 'saad-mo']
     fail:
