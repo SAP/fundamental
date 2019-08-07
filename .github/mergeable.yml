@@ -1,52 +1,10 @@
 version: 2
 mergeable:
-  # - when: schedule.repository
-  #   validate:
-  #     - do: stale
-  #       days: 20
-  #       type: pull_request, issues
-  #   pass:
-  #     - do: comment
-  #       payload:
-  #         body: This is old. Is it still relevant?
   - when: pull_request.*
     validate:
-      # - do: description
-      #   no_empty:
-      #     enabled: true
-      #     message: Description matter and should not be empty. Provide detail with **what** was changed, **why** it was changed, and **how** it was changed.
-      #   must_exclude:
-      #     regex: 'DO NOT MERGE'
-      #     message: 'There is a comment "DO NOT MERGE"' # optional
-      # - do: title
-      #   must_exclude:
-      #     regex: ^\[WIP\]
-      # - do: label
-      #   must_exclude:
-      #     regex: 'wip'
-      # - do: title
-      #   begins_with:
-      #     match: ['fix:', 'feat:', 'docs:', 'chore:']
-      # - do: milestone
-      #   no_empty:
-      #     enabled: true # Cannot be empty when true.
-      #     message: 'The PR must be part of a milestone.'
       - do: approvals
         or: 
           - required:
             reviewers: [ 'saad-mo' ] 
-            message: 'Custom message...3'
           - required:
             reviewers: [ 'InnaAtanasova' ] 
-            message: 'Custom message...3'
-    # fail:
-    #   - do: comment
-    #     payload:
-    #       body: >
-    #         The PR is validated against :
-    #           - Title must begin with `fix:`, `feat:`, `docs:`, or `chore:`
-    #           - Description matter and should not be empty. Provide detail with **what** was changed, **why** it was changed, and **how** it was changed.`
-    #           - Title should not contain `[WIP]` and the label should not contain `wip`
-    #           - A milestone should be assigned
-    #           - 2 minimum approvals 
-    
