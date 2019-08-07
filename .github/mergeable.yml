@@ -3,8 +3,10 @@ mergeable:
   - when: pull_request.*
     validate:
       - do: approvals
+        min:
+          count: 2
         or: 
           - required:
-            reviewers: [ 'saad-mo' ] 
+            reviewers: [ saad-mo ] 
           - required:
-            reviewers: [ 'InnaAtanasova' ] 
+            reviewers: [ InnaAtanasova ] 
