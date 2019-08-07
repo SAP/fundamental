@@ -32,8 +32,8 @@ mergeable:
       #     enabled: true # Cannot be empty when true.
       #     message: 'The PR must be part of a milestone.'
       - do: approvals
-        and:
-          - min:
+        # and:
+        min:
             count: 1 # Number of minimum reviewers. In this case 2.
             message: 'Custom message...1'
           # - or:
