@@ -31,9 +31,6 @@ mergeable:
         no_empty:
           enabled: true # Cannot be empty when true.
           message: 'The PR must be part of a milestone.'
-      - do: approvals
-        required:
-          reviewers: ['droshev', 'InnaAtanasova', 'saad-mo']
     fail:
       - do: comment
         payload:
