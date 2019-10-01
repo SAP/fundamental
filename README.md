@@ -1,5 +1,8 @@
 # SAP Fundamentals
 
+**SAP Fundamentals will be deprecated soon. [Fundamental Styles](https://sap.github.io/fundamental-styles) is its successor. If you are using this library consider migrating over to fundamental-styles.
+SAP Fundamentals' Documentation Site will be hosted [here](https://sap.github.io/fundamental/old.html) for time being.**
+
 [![npm version](https://badge.fury.io/js/fiori-fundamentals.svg)](https://badge.fury.io/js/fiori-fundamentals)
 [![Build Status](https://travis-ci.org/SAP/fundamental.svg?branch=master)](https://travis-ci.org/SAP/fundamental)
 [![Slack](https://img.shields.io/badge/slack-ui--fundamentals-blue.svg?logo=slack)](https://ui-fundamentals.slack.com)
@@ -9,7 +12,7 @@
 
 SAP Fundamentals is a light-weight presentation layer that can be used with your UI framework of choice (e.g. Angular, React, Vue, etc.). With Fundamentals’ library of stylesheets and HTML tags, developers can build consistent Fiori apps in any web-based technology.
 
-**Learn more at http://sap.github.io/fundamental/**
+**Learn more at http://sap.github.io/fundamental/old.html**
 
 We are also working on [Angular](https://github.com/SAP/fundamental-ngx), [React](https://github.com/SAP/fundamental-react) and [Vue](https://github.com/SAP/fundamental-vue) implementations.
 
