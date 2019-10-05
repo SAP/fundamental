@@ -3,6 +3,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
 <meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
+
+{% if page.permalink == 'index.html' %}
+<meta http-equiv='refresh' content='0; URL=/old.html'>
+{% endif %}
 <title>
 	{% if page.title%}
 	{{ page.title }} - {{ site.site_title }}
