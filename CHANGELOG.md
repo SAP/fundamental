@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.4-rc.3"></a>
+## [1.7.4-rc.3](https://github.com/SAP/fundamental/compare/v1.7.4-rc.2...v1.7.4-rc.3) (2020-02-21)
+
+
+### Bug Fixes
+
+* update accent color 10 value ([#1537](https://github.com/SAP/fundamental/issues/1537)) ([dae36bf](https://github.com/SAP/fundamental/commit/dae36bf))
+
+
+
 <a name="1.7.4-rc.2"></a>
 ## [1.7.4-rc.2](https://github.com/SAP/fundamental/compare/v1.7.4-rc.1...v1.7.4-rc.2) (2020-02-21)
 
