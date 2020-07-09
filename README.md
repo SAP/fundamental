@@ -1,7 +1,7 @@
 # SAP Fundamentals
 
-**SAP Fundamentals will be deprecated soon. [Fundamental Styles](https://sap.github.io/fundamental-styles) is its successor. If you are using this library consider migrating over to fundamental-styles.
-SAP Fundamentals' Documentation Site will be hosted [here](https://sap.github.io/fundamental/old.html) for time being.**
+**SAP Fundamentals is deprecated. [Fundamental Styles](https://sap.github.io/fundamental-styles) is its successor. If you are using this library consider migrating over to fundamental-styles.
+SAP Fundamentals' Documentation Site is hosted [here](https://sap.github.io/fundamental/old.html) for time being.**
 
 [![npm version](https://badge.fury.io/js/fiori-fundamentals.svg)](https://badge.fury.io/js/fiori-fundamentals)
 [![Build Status](https://travis-ci.org/SAP/fundamental.svg?branch=master)](https://travis-ci.org/SAP/fundamental)
