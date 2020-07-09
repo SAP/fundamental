@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     {% include head.html %}
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 
 <body>
 
-    {% include topnav.html %}
+    {% if page.topnavhidden != true %}
+      {% include topnav.html %}
+    {%  endif %}
 
     <!-- Page Content -->
     <div class="docs-container">
@@ -17,7 +20,9 @@
             {{content}}
 
             <!-- footer -->
-            {% include footer.html %}
+            {% if page.footerhidden != true %}
+                {% include footer.html %}
+            {%  endif %}
         </div>
     </div>
 </body>
