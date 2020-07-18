@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.7-rc.0"></a>
+## [1.7.7-rc.0](https://github.com/SAP/fundamental/compare/v1.7.6...v1.7.7-rc.0) (2020-07-18)
+
+
+
 <a name="1.7.6"></a>
 ## [1.7.6](https://github.com/SAP/fundamental/compare/v1.7.6-rc.2...v1.7.6) (2020-07-17)
 
