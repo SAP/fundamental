@@ -1,42 +1,11 @@
-# Changelog
+# Change Log
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.7.8-rc.18](https://github.com/SAP/fundamental/compare/v1.7.8-rc.17...v1.7.8-rc.18) (2020-07-23)
+<a name="1.7.8-rc.19"></a>
+## [1.7.8-rc.19](https://github.com/SAP/fundamental/compare/v1.7.8-rc.18...v1.7.8-rc.19) (2020-07-24)
 
-### [1.7.8-rc.17](https://github.com/SAP/fundamental/compare/v1.7.8-rc.16...v1.7.8-rc.17) (2020-07-23)
 
-### [1.7.8-rc.16](https://github.com/SAP/fundamental/compare/v1.7.8-rc.15...v1.7.8-rc.16) (2020-07-23)
-
-### [1.7.8-rc.15](https://github.com/SAP/fundamental/compare/v1.7.8-rc.14...v1.7.8-rc.15) (2020-07-23)
-
-### [1.7.8-rc.14](https://github.com/SAP/fundamental/compare/v1.7.8-rc.13...v1.7.8-rc.14) (2020-07-23)
-
-### [1.7.8-rc.13](https://github.com/SAP/fundamental/compare/v1.7.8-rc.12...v1.7.8-rc.13) (2020-07-23)
-
-### [1.7.8-rc.12](https://github.com/SAP/fundamental/compare/v1.7.8-rc.11...v1.7.8-rc.12) (2020-07-23)
-
-### [1.7.8-rc.11](https://github.com/SAP/fundamental/compare/v1.7.8-rc.10...v1.7.8-rc.11) (2020-07-23)
-
-### [1.7.8-rc.10](https://github.com/SAP/fundamental/compare/v1.7.8-rc.9...v1.7.8-rc.10) (2020-07-23)
-
-### [1.7.8-rc.9](https://github.com/SAP/fundamental/compare/v1.7.8-rc.8...v1.7.8-rc.9) (2020-07-23)
-
-### [1.7.8-rc.8](https://github.com/SAP/fundamental/compare/v1.7.8-rc.7...v1.7.8-rc.8) (2020-07-23)
-
-### [1.7.8-rc.7](https://github.com/SAP/fundamental/compare/v1.7.8-rc.6...v1.7.8-rc.7) (2020-07-23)
-
-### [1.7.8-rc.6](https://github.com/SAP/fundamental/compare/v1.7.8-rc.1...v1.7.8-rc.6) (2020-07-23)
-
-### [1.7.8-rc.5](https://github.com/SAP/fundamental/compare/v1.7.8-rc.1...v1.7.8-rc.5) (2020-07-23)
-
-### [1.7.8-rc.1](https://github.com/SAP/fundamental/compare/v1.7.8-rc.0...v1.7.8-rc.1) (2020-07-23)
-
-### [1.7.8-rc.0](https://github.com/SAP/fundamental/compare/v1.7.7...v1.7.8-rc.0) (2020-07-21)
-
-### [1.7.7](https://github.com/SAP/fundamental/compare/v1.7.7-rc.1...v1.7.7) (2020-07-21)
-
-### [1.7.7-rc.1](https://github.com/SAP/fundamental/compare/v1.7.7-rc.0...v1.7.7-rc.1) (2020-07-18)
 
 <a name="1.7.7-rc.0"></a>
 ## [1.7.7-rc.0](https://github.com/SAP/fundamental/compare/v1.7.6...v1.7.7-rc.0) (2020-07-18)
