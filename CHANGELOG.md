@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 <a name="1.7.8-rc.22"></a>
+## [1.7.8-rc.22](https://github.com/SAP/fundamental/compare/v1.7.8-rc.20...v1.7.8-rc.22) (2020-07-24)
+
+
+
+<a name="1.7.8-rc.22"></a>
 ## [1.7.8-rc.22](https://github.com/SAP/fundamental/compare/v1.7.8-rc.21...v1.7.8-rc.22) (2020-07-24)
 
 
