@@ -42,9 +42,80 @@
     line-height: 1.2;
     font-weight: 300;
   }
+
+  @mixin text-reset {
+    font-family: 72;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+  }
   
   $home-page-action-color: #007ea3;
   
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8.75rem;
+    padding: 0 8.125rem;
+
+    &__button-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    
+    &__description {
+      @include text-reset();
+      font-size: 20px;
+      color: #404040;
+    }
+
+    &__quotations {
+      width: 67px;
+      position: relative;
+    }
+
+    &__testemonial {
+      display: flex;
+      align-items: flex-start;
+      border: solid 1px #979797;
+      border-radius: 8px;
+      padding: 7.5rem 7.3125rem 7.5rem 3.40625rem;
+
+      .company {
+        display: flex;
+        flex-direction: column;
+        margin-right: 4.5625rem;
+        margin-left: 3.65625rem;
+      }
+
+
+      .company-name {
+        @include text-reset();
+        font-size: 30px;
+        font-weight: bold;
+        color: #404040;
+      }
+
+      .logo {
+        width: 160px;
+        height: 160px;
+      }
+
+      .quote {
+          @include text-reset();
+          width: 668px;;
+          font-size: 25px;
+          color: #404040;
+      }
+    }
+  }
+
   body {
     font-family: "72", sans-serif;
     width: 100%;
