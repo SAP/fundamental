@@ -13,7 +13,7 @@
     white-space: nowrap;
   }
   
-  %text {
+  @mixin text() {
     font-family: "72";
     font-size: 48px;
     font-weight: 300;
@@ -44,6 +44,262 @@
   }
   
   $home-page-action-color: #007ea3;
+
+  @media (min-width: 0) {
+    .design-section {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 2.75rem 2rem 0 2rem;
+
+      &__button {
+        display: flex;
+        width: 88px;
+        height: 36px;
+        border-radius: 4px;
+        color: white;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+        border: solid 1px #007ea3;
+        background-color: #007ea3;
+        &:visited {
+          color: white;
+        }
+      }
+
+      &__container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__logo {
+        height: 4.875rem;
+      }
+    
+      &__title {
+        @include text();
+        margin-bottom: 4.1875rem;
+        text-align: center;
+      }
+
+      &__subtitle {
+        @include text();
+        font-size: 1.875rem;
+        margin-top: 4.0625rem;
+        margin-bottom: 3.4375rem;
+        text-align: center;
+        font-weight: normal;
+      }
+    
+      &__text {
+        @include text();  
+        font-size: 20px;
+        line-height: 1.4;
+        text-align: left;
+        margin-bottom: 1.25rem;
+      }
+
+      &__item{
+        max-width: 22rem;
+        text-align: center;
+      }
+
+      &__item-title {
+        @include text();
+        @include title-mobile();
+        margin: 1.25rem 0 1rem 0;
+        font-weight: normal;
+      }
+    }
+
+    .learn-section {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 8.75rem 7.5rem 0 7.5rem;
+
+      &__button {
+          width: 88px;
+          height: 36px;
+          border-radius: 4px;
+          color: white;
+          border: solid 1px #007ea3;
+          background-color: #007ea3;
+      }
+
+      &__container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__logo {
+        width: 22rem;
+        height: 18.9375rem;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        text-align: center;
+      }
+    
+      &__title {
+        @include text();
+        margin-bottom: 4.1875rem;
+        text-align: center;
+      }
+
+      &__subtitle {
+        @include text();
+        font-size: 1.875rem;
+        margin-top: 4.0625rem;
+        margin-bottom: 3.4375rem;
+        text-align: center;
+        font-weight: normal;
+      }
+    
+      &__text {
+        @include text();  
+        font-size: 1.875rem;
+        line-height: 1.4;
+        text-align: left;
+        margin-bottom: 1.25rem;
+      }
+
+      &__item{
+        max-width: 22rem;
+        text-align: center;
+      }
+
+      &__item-title {
+        @include text();
+        text-align: left;
+        margin: 12.9px 0;
+        font-size: 1.25rem;
+        font-weight: normal;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .design-section {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 8.75rem 7.5rem 0 7.5rem;
+
+      &__button {
+          width: 88px;
+          height: 36px;
+          border-radius: 4px;
+          color: white;
+          border: solid 1px #007ea3;
+          background-color: #007ea3;
+      }
+
+      &__container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__logo {
+        height: 4.875rem;
+      }
+    
+      &__title {
+        @include text();
+        margin-bottom: 4.1875rem;
+        text-align: center;
+      }
+
+      &__subtitle {
+        @include text();
+        font-size: 1.875rem;
+        margin-top: 4.0625rem;
+        margin-bottom: 3.4375rem;
+        text-align: center;
+        font-weight: normal;
+      }
+    
+      &__text {
+        @include text();  
+        font-size: 20px;
+        line-height: 1.4;
+        text-align: left;
+        margin-bottom: 1.25rem;
+      }
+
+      &__item{
+        max-width: 22rem;
+        text-align: center;
+      }
+
+      &__item-title {
+        @include text();
+        @include title-mobile();
+        margin: 1.25rem 0 1rem 0;
+        font-weight: normal;
+      }
+    }
+
+    .learn-section {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 8.75rem 7.5rem 0 7.5rem;
+
+      &__button {
+          width: 88px;
+          height: 36px;
+          border-radius: 4px;
+          color: white;
+          border: solid 1px #007ea3;
+          background-color: #007ea3;
+      }
+
+      &__container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__logo {
+        width: 22rem;
+        height: 18.9375rem;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        text-align: center;
+      }
+    
+      &__title {
+        @include text();
+        margin-bottom: 4.1875rem;
+        text-align: center;
+      }
+
+      &__subtitle {
+        @include text();
+        font-size: 1.875rem;
+        margin-top: 4.0625rem;
+        margin-bottom: 3.4375rem;
+        text-align: center;
+        font-weight: normal;
+      }
+    
+      &__text {
+        @include text();  
+        font-size: 1.875rem;
+        line-height: 1.4;
+        text-align: left;
+        margin-bottom: 1.25rem;
+      }
+
+      &__item{
+        max-width: 22rem;
+        text-align: center;
+      }
+
+      &__item-title {
+        @include text();
+        @include title-mobile();
+        margin: 1.25rem 0 1rem 0;
+        font-weight: normal;
+      }
+    }
+  }
   
   body {
     font-family: "72", sans-serif;
@@ -106,7 +362,7 @@
       }
   
       a {
-        @extend %text;
+        @include text();
   
         height: 52px;
         display: flex;
@@ -178,7 +434,7 @@
       width: 70%;
       margin-top: 16px;
   
-      @extend %text;
+      @include text();
     }
   }
   
@@ -192,7 +448,7 @@
     }
   
     &__title {
-      @extend %text;
+      @include text();
   
       text-align: center;
       margin-bottom: 64px;
@@ -222,7 +478,7 @@
     }
   
     &__item-title {
-      @extend %text;
+      @include text();
   
       font-size: 30px;
       line-height: 1.2;
@@ -230,7 +486,7 @@
     }
   
     &__text {
-      @extend %text;
+      @include text();
   
       font-size: 20px;
       line-height: 1.4;
@@ -241,7 +497,7 @@
     }
   
     &__more {
-      @extend %text;
+      @include text();
   
       font-size: 16px;
       line-height: 1.75;
@@ -264,7 +520,7 @@
     }
   
     &__title {
-      @extend %text;
+      @include text();
   
       text-align: center;
       margin-bottom: 52px;
@@ -283,14 +539,14 @@
     }
   
     &__item-title {
-      @extend %text;
+      @include text();
   
       font-size: 30px;
       line-height: 1.2;
     }
   
     &__text {
-      @extend %text;
+      @include text();
   
       font-size: 20px;
       line-height: 1.4;
@@ -305,7 +561,7 @@
     background-size: cover;
   
     &__title {
-      @extend %text;
+      @include text();
   
       text-align: center;
       margin-bottom: 64px;
@@ -320,7 +576,7 @@
     }
   
     &__item {
-      @extend %text;
+      @include text();
   
       font-size: 20px;
       line-height: 1.4;
@@ -334,7 +590,7 @@
     margin: 0 auto;
   
     &__title {
-      @extend %text;
+      @include text();
   
       text-align: center;
     }
@@ -343,7 +599,7 @@
       width: 50%;
       margin: 16px auto 44px;
   
-      @extend %text;
+      @include text();
   
       font-size: 20px;
       line-height: 1.4;
@@ -382,7 +638,7 @@
     margin: 16px 120px 0;
     padding: 16px 0;
   
-    @extend %text;
+    @include text();
   
     font-size: 12px;
     line-height: 1.33;
