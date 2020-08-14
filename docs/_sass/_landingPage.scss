@@ -113,15 +113,14 @@ $learn-section-side-margin: 0 2rem;
     }
 
     &__item {
-      max-width: 22rem;
       text-align: center;
       margin-bottom: 2.75rem;
 
       &--learn {
         border-radius: 8px;
         border: solid 1px #d3d3d3;
-        max-width: none;
         width: 100%;
+        max-width: 100%;
         max-height: 352px;
         overflow: scroll;
       }
@@ -147,7 +146,6 @@ $learn-section-side-margin: 0 2rem;
 
     &__logo {
       height: 4.875rem;
-      width: 5rem;
       border-radius: 8px;
 
       &--learn {
@@ -198,7 +196,7 @@ $learn-section-side-margin: 0 2rem;
 
   .section {
     flex-direction: column;
-    padding: 8.75rem 7.5rem 0 7.5rem;
+    padding: 5rem 2rem 0 2rem;
 
     &--learn {
       padding: 2.75rem 0 0 0;
@@ -211,10 +209,15 @@ $learn-section-side-margin: 0 2rem;
     &__container {
       flex-direction: row;
       justify-content: space-between;
+      padding: 0;
+      min-width: 100%;
+      margin-left: -0.5rem;
+      margin-right: -0.5rem;
+    }
 
-      &--learn {
-        padding: 0 7.5rem 0 7.5rem;
-      }
+    &__container-inner {
+      flex-direction: row;
+      padding: 0 0.5rem;
     }
 
     &__container-button {
@@ -224,26 +227,20 @@ $learn-section-side-margin: 0 2rem;
     }
 
     &__item {
-      max-width: 22rem;
       text-align: center;
       margin-bottom: 2.75rem;
+      padding: 0 0.5rem;
 
       &--learn {
         max-width: 50%;
-        width: 50%;
-        flex: 0 0 50%;
-        margin: 0 15px;
+        padding: 0;
+        margin: 0 2rem;
         border-radius: 8px;
       }
     }
 
     &__item-title {
       margin: 1.25rem 0 1rem 0;
-
-      &--learn {
-        margin: 0.8125rem 0 0.8125rem 0;
-        padding: 0;
-      }
     }
 
     &__logo {
@@ -267,16 +264,83 @@ $learn-section-side-margin: 0 2rem;
       font-size: 20px;
       line-height: normal;
       margin: 0;
-
-      &--learn {
-        font-size: 30px;
-        line-height: normal;
-        font-weight: normal;
-      }
     }
 
     &__title {
       margin-bottom: 4.1875rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: 8.75rem 7.5rem 0 7.5rem;
+
+    &__container {
+      flex-direction: row;
+      justify-content: space-between;
+
+      &--learn {
+        padding: 0 7.5rem 0 7.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .section {
+    padding: 8rem 10rem 0 10rem;
+
+    &__button {
+      width: auto;
+      height: auto;
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      font-size: 30px;
+    }
+    
+    &__container-button {
+      justify-content: center;
+    }
+
+    &__container--learn {
+      justify-content: center;
+    }
+
+    &__item {
+      max-width: 33%;
+      text-align: center;
+      margin-bottom: 2.75rem;
+
+      &--learn {
+        max-width: 50%;
+      }
+    }
+
+    &__item-title {
+      font-size: 30px;
+    }
+
+    &__logo {
+      height: 8rem;
+
+      &--learn {
+        height: 352px;
+      }
+    }
+    
+    &__text {
+      font-size: 30px;
+      line-height: normal;
+      margin: 0;
+    }
+    
+    &__title {
+      font-size: 48px;
+    }
+
+    &__subtitle {
+      font-size: 40px;
     }
   }
 }
