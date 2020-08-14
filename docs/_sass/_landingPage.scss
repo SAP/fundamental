@@ -53,7 +53,90 @@
   }
   
   $home-page-action-color: #007ea3;
-  
+  // @media (min-width: 0) {
+  //   .section {
+
+  //     &__testemonial {
+  //       width: 100%;
+  //       padding: 0;
+  //     }
+
+  //     &__quotations {
+  //       display: none;
+  //     }
+      
+  //     .company{
+  //       &__quotes {
+  //         width: 100%;
+  //       }
+  //     }
+  //   }
+  // }
+  @media (min-width: 0) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8.75rem;
+    padding: 0 35px;
+
+    &__button-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    
+    &__description {
+      @include text-reset();
+      font-size: 20px;
+      color: #404040;
+    }
+
+    &__quotations {
+      display: none;
+    }
+
+    &__testemonial {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      margin-top: 44px;
+      padding: 0;
+
+      .company {
+        display: flex;
+        flex-direction: column;
+      }
+
+
+      .company-name {
+        @include text-reset();
+        font-size: 21px;
+        font-weight: bold;
+        color: #404040;
+      }
+
+      .logo {
+        width: 79.5px;
+        height: 79.5px;
+        margin-bottom: 26px;
+      }
+
+      .quote {
+          @include text-reset();
+          width: 100%;
+          font-size: 16px;
+          color: #404040;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
   .section {
     display: flex;
     flex-direction: column;
@@ -76,6 +159,7 @@
     }
 
     &__quotations {
+      display: block;
       width: 67px;
       position: relative;
     }
@@ -83,6 +167,7 @@
     &__testemonial {
       display: flex;
       align-items: flex-start;
+      flex-direction: row;
       border: solid 1px #979797;
       border-radius: 8px;
       padding: 7.5rem 7.3125rem 7.5rem 3.40625rem;
@@ -109,12 +194,13 @@
 
       .quote {
           @include text-reset();
-          width: 668px;;
+          width: 668px;
           font-size: 25px;
           color: #404040;
       }
     }
   }
+}
 
   body {
     font-family: "72", sans-serif;
