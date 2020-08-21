@@ -52,8 +52,8 @@
 }
 
 @mixin button {
-  width: 88px;
   height: 36px;
+  padding: 0 5px;
   border-radius: 4px;
   color: white;
   border: solid 1px #007ea3;
@@ -378,6 +378,12 @@ $learn-section-side-margin: 0 2rem;
       }
     }
 
+    &__button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     &__container {
       display: flex;
       flex-direction: column;
@@ -472,6 +478,39 @@ $learn-section-side-margin: 0 2rem;
       margin-bottom: 1rem;
       text-align: center;
       font-weight: normal;
+    }
+
+    #testemonial {
+      display: none;
+    }
+
+    &__testemonial {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+
+      .company-name {
+        @include text();  
+        font-size: 21px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .quotations {
+        display: none;
+      }
+
+      .quote {
+        @include text();  
+        line-height: 1.25;
+        font-size: 16px;
+      }
+
+      .logo {
+        margin: 44px 0 26px 0;
+        height: 79.5px;
+      }
+
     }
 
     &__text {
@@ -654,6 +693,44 @@ $learn-section-side-margin: 0 2rem;
         max-width: 100%;
       }
     }
+
+    &__testemonial {
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: row;
+      margin-top: 65px;
+      padding: 98px 54px 98px 107px;
+      border-radius: 8px;
+      border: solid 1px #979797;
+      background-color: #ffffff;
+
+      .company {
+        padding: 0 72px 0 58px;
+      }
+
+      .company-name {
+        text-align: left;
+        font-size: 30px;
+      }
+
+      .quotations {
+        display: block;
+        width: 67px;
+      }
+
+      .quote {
+        @include text();  
+        line-height: 1.25;
+        font-size: 16px;
+      }
+
+      .logo {
+        margin: 0;
+        height: 79.5px;
+      }
+
+    }
+
   }
 }
 
@@ -768,6 +845,24 @@ $learn-section-side-margin: 0 2rem;
 
       &--learn {
         height: 352px;
+      }
+    }
+
+    &__testemonial {
+      .quote {
+        font-size: 24px;
+      }
+
+      .quotations {
+        width: 80px;
+      }
+
+      .logo {
+        height: 100px;
+      }
+
+      .company-name {
+        font-size: 30px;
       }
     }
     

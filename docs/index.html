@@ -16,6 +16,7 @@ footerhidden: true
         position: relative;
     }
 </style>
+<script src="./js/landing-page.js"></script>
 <header style="width: 100%;">
     <div class="header-section" id="headerSection">
         <div class="header-section__hamburger">
@@ -246,76 +247,20 @@ footerhidden: true
         </div>
       </div>
   </section>
-    <section class="section section--testemonials">
-      <h1 class="section__title">Testimonials</h1>
-      <div class="section__button-container">
-        <p class="section__description">Learn about what other companies have to say about their experience with Fundamental Library.</p>
-        <button role="button" aria-label="add-company-button">Add your company</button>
+  <section class="section section--testemonials">
+    <h1 class="section__title">Testimonials</h1>
+    <div class="section__button-container">
+      <p class="section__text">Learn about what other companies have to say about their experience with Fundamental Library.</p>
+      <button class="section__button" role="button" aria-label="add-company-button">Add your company</button>
+    </div>
+    <div class="section__testemonial" id="testemonial">
+      <img src="./images/land-page-assets/quotes-icon.svg" class="quotations">
+      <div class="company">
+        <p class="quote" id="company-quote">
+        </p>
+        <h3 class="company-name" id="company-name"></h3>
       </div>
-      <div class="libraries-section__item">
-        <div>
-          <img
-            src="{{site.baseurl}}/images/land-page-assets/react.svg"
-            alt="Logo of the React Framework"
-            class="libraries-section__logo"
-          />
-
-          <h3 class="libraries-section__item-title">
-            Fundamental Library for React
-          </h3>
-          <p class="libraries-section__text">
-            Offers a React implementation of the components designed in
-            Fundamental Styles.
-          </p>
-        </div>
-        <div class="libraries-section__links">
-          <a
-            class="libraries-section__more"
-            href="https://sap.github.io/fundamental-react/"
-            target="_blank"
-            >Learn More
-            <span class="vh">about Fundamental Library for React</span></a
-          >
-          <a
-            class="libraries-section__more"
-            href="https://github.com/SAP/fundamental-react"
-            target="_blank"
-            >GitHub</a
-          >
-        </div>
-      </div>
-      <div class="libraries-section__item">
-        <div>
-          <img
-            src="{{site.baseurl}}/images/land-page-assets/vue.svg"
-            alt="Logo of the Vue.js Framework"
-            class="libraries-section__logo"
-          />
-
-          <h3 class="libraries-section__item-title">
-            Fundamental Library for Vue
-          </h3>
-          <p class="libraries-section__text">
-            Supplies a Vue implementation of the components designed in
-            Fundamental Styles.
-          </p>
-        </div>
-        <div class="libraries-section__links">
-          <a
-            class="libraries-section__more"
-            href="https://sap.github.io/fundamental-vue/"
-            target="_blank"
-            >Learn More
-            <span class="vh">about Fundamental Library for Vue</span></a
-          >
-          <a
-            class="libraries-section__more"
-            href="https://github.com/SAP/fundamental-vue"
-            target="_blank"
-            >GitHub</a
-          >
-        </div>
-      </div>
+      <img id="company-logo" class="logo"/>
     </div>
   </section>
     <section class="community-section" id="community">

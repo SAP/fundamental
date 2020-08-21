@@ -14,15 +14,13 @@ const testemonials = [
 ];
 
 let index = 0;
-
-// Will execute myCallback every 5 seconds
 var intervalID = window.setInterval(() => {
   document.getElementById("company-name").innerHTML =
     testemonials[index].company;
   document.getElementById("company-quote").innerHTML =
     testemonials[index].quote;
   document.getElementById("company-logo").src = testemonials[index].logo;
-  document.getElementById("testemonials").style.display = "flex";
+  document.getElementById("testemonial").style.display = "flex";
   if (testemonials.length == 2) {
     if (index == 0) {
       index = 1;
