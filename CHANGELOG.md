@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.8-rc.29](https://github.com/SAP/fundamental/compare/v1.7.8-rc.28...v1.7.8-rc.29) (2020-08-21)
+
 ### [1.7.8-rc.28](https://github.com/SAP/fundamental/compare/v1.7.8-rc.27...v1.7.8-rc.28) (2020-08-14)
 
 ### [1.7.8-rc.27](https://github.com/SAP/fundamental/compare/v1.7.8-rc.26...v1.7.8-rc.27) (2020-07-28)
