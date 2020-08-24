@@ -7,20 +7,37 @@ const testemonials = [
   },
   {
     logo: "./images/logos/sap-fieldglass-vector-logo.png",
-    company: "SAP Fieldglass",
     quote:
       "The fundamentals team is amazing to work with!  They were willing to work with our existing stack, and continue to go above and beyond to help us meet our consistency goals.  They are a true asset and incredibly responsive!!",
   },
 ];
 
 let index = 0;
-var intervalID = window.setInterval(() => {
-  document.getElementById("company-name").innerHTML =
-    testemonials[index].company;
-  document.getElementById("company-quote").innerHTML =
-    testemonials[index].quote;
+var intervalID = setInterval(() => {
+  setTestemonial();
+  setIntervalIndexNext();
+}, 5000);
+
+
+function intervalFunction () {
+  setTestemonial();
+  setIntervalIndexNext();
+}
+
+
+function setTestemonial() {
+  if(testemonials[index].company) {
+    document.getElementById("company-name").style.display = "flex";
+    document.getElementById("company-name").innerHTML =testemonials[index].company;
+  } else {
+    document.getElementById("company-name").style.display = "none";
+  }
+  document.getElementById("company-quote").innerHTML =testemonials[index].quote;
   document.getElementById("company-logo").src = testemonials[index].logo;
   document.getElementById("testemonial").style.display = "flex";
+}
+
+function setIntervalIndexNext() {
   if (testemonials.length == 2) {
     if (index == 0) {
       index = 1;
@@ -30,4 +47,43 @@ var intervalID = window.setInterval(() => {
   } else {
     index = index + (1 % (testemonials.length - 1));
   }
-}, 5000);
+}
+
+function setIntervalIndexPrev() {
+  if (testemonials.length == 2) {
+    if (index == 0) {
+      index = 1;
+    } else {
+      index = 0;
+    }
+  } else {
+    index = index - (1 % (testemonials.length - 1));
+  }
+}
+
+function next(setIntervalIndexNext) {
+  clearInterval(intervalID);
+  setIntervalIndexNext;
+  intervalFunction();
+  nextInterval(()=>{  
+  intervalID = setInterval(() => {
+    intervalFunction();
+  }, 5000);})
+}
+
+function nextInterval(func) {
+  func();
+}
+
+function prevInterval(func) {
+  func();
+}
+
+function prev() {
+  setIntervalIndexPrev();
+  clearInterval(intervalID);
+  intervalFunction();
+  intervalID = setInterval(() => {
+    intervalFunction();
+  }, 5000);
+}

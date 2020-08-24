@@ -376,6 +376,31 @@ $learn-section-side-margin: 0 2rem;
         color: white;
         outline: dotted 0.125rem white;
       }
+
+      &--next-prev {
+        height: auto;
+        width: 55px;
+        font-size: 34px;
+        font-weight: 300;
+        border-radius: 50%;
+        border: 2px solid #007ea3;
+        background-color: white;
+        color: #007ea3;
+
+        &:hover {
+          color: #007ea3;
+        }
+
+        &:active {
+          color: white;
+          background-color: #007ea3;
+          font-weight: bold;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
     }
 
     &__button-container {
@@ -489,11 +514,30 @@ $learn-section-side-margin: 0 2rem;
       align-items: center;
       flex-direction: column-reverse;
 
+      &--outer {
+        flex-direction: row;
+        max-width: 100%;
+      }
+
+      .company {
+        justify-content: center;
+        margin-top: 54px;
+
+        &--logo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 44px 0 26px 0;
+          padding: 0;
+        }
+      }
+
       .company-name {
         @include text();  
         font-size: 21px;
         text-align: center;
         font-weight: bold;
+        margin: 0;
       }
 
       .quotations {
@@ -504,10 +548,10 @@ $learn-section-side-margin: 0 2rem;
         @include text();  
         line-height: 1.25;
         font-size: 16px;
+        padding: 0 4rem;
       }
 
       .logo {
-        margin: 44px 0 26px 0;
         height: 79.5px;
       }
 
@@ -698,19 +742,37 @@ $learn-section-side-margin: 0 2rem;
       justify-content: center;
       align-items: flex-start;
       flex-direction: row;
-      margin-top: 65px;
-      padding: 98px 54px 98px 107px;
-      border-radius: 8px;
-      border: solid 1px #979797;
-      background-color: #ffffff;
+      padding: 0 58px 0 58px;
+      
+      &--outer {
+        border-radius: 8px;
+        margin-top: 65px;
+        border: solid 1px #979797;
+        background-color: #ffffff;
+        padding: 98px 54px 98px 107px;
+        align-items: center;
+      }
 
       .company {
-        padding: 0 72px 0 58px;
+        justify-content: center;
+        margin: 0;
+
+        &--logo {
+          display: flex;
+          align-items: center;
+          padding: 0;
+        }
+
+        .quote {
+          font-size: 25px;
+        }
       }
 
       .company-name {
         text-align: left;
         font-size: 30px;
+        margin: 0;
+        padding-left: 1rem;
       }
 
       .quotations {
@@ -718,11 +780,6 @@ $learn-section-side-margin: 0 2rem;
         width: 67px;
       }
 
-      .quote {
-        @include text();  
-        line-height: 1.25;
-        font-size: 16px;
-      }
 
       .logo {
         margin: 0;
@@ -826,6 +883,10 @@ $learn-section-side-margin: 0 2rem;
       padding: 0.5rem 1rem;
       border-radius: 0.5rem;
       font-size: 24px;
+
+      &--next-prev {
+        border-radius: 50%;
+      }
     }
     
     &__container-button {
