@@ -1,4 +1,4 @@
-const testemonials = [
+const testimonials = [
   {
     logo: "./images/logos/sap-fsm.png",
     company: "SAP FSM",
@@ -14,31 +14,40 @@ const testemonials = [
 
 var index = -1;
 function setTestemonial() {
-  if(testemonials[index].company) {
+  document.getElementById("company").classList.remove( "animate");
+  document.getElementById("quotations").classList.remove( "animate");
+  void document.getElementById("company").offsetWidth;
+  void document.getElementById("quotations").offsetWidth;
+
+  if(testimonials[index].company) {
     document.getElementById("company-name").style.display = "flex";
-    document.getElementById("company-name").innerHTML =testemonials[index].company;
+    document.getElementById("company-name").innerHTML =testimonials[index].company;
   } else {
     document.getElementById("company-name").style.display = "none";
   }
-  document.getElementById("company-quote").innerHTML =testemonials[index].quote;
-  document.getElementById("company-logo").src = testemonials[index].logo;
+  document.getElementById("company-quote").innerHTML =testimonials[index].quote;
+
+  document.getElementById("company").classList.add( "animate");
+  document.getElementById("quotations").classList.add( "animate");
+
+  document.getElementById("company-logo").src = testimonials[index].logo;
   document.getElementById("testemonial").style.display = "flex";
 }
 
 function setIntervalIndexNext() {
-  if (testemonials.length == 2) {
+  if (testimonials.length == 2) {
     if (index == 0) {
       index = 1;
     } else {
       index = 0;
     }
   } else {
-    index = ((index + 1) % (testemonials.length));
+    index = ((index + 1) % (testimonials.length));
   }
 }
 
 function setIntervalIndexPrev() {
-  if (testemonials.length <= 2) {
+  if (testimonials.length <= 2) {
     if (index == 0) {
       index = 1;
     } else {
@@ -46,10 +55,10 @@ function setIntervalIndexPrev() {
     }
   } else {
     if(index === 0) {
-      index = testemonials.length - 1;
+      index = testimonials.length - 1;
     }
     else {
-      index = ((index - 1) % (testemonials.length));
+      index = ((index - 1) % (testimonials.length));
     }
   }
 }
@@ -57,13 +66,13 @@ function setIntervalIndexPrev() {
 function next() {
   clearInterval(intervalID);
   intervalFunction();
-  intervalID = setInterval(intervalFunction, 3000);
+  intervalID = setInterval(intervalFunction, 10000);
 }
 
 function prev() {
-  intervalPrevFunction();
   clearInterval(intervalID);
-  intervalID = setInterval(intervalFunction, 3000);
+  intervalPrevFunction();
+  intervalID = setInterval(intervalFunction, 10000);
 }
 
 
@@ -77,4 +86,4 @@ function intervalPrevFunction () {
   setTestemonial();
 }
 
-var intervalID = setInterval(intervalFunction , 3000);
+var intervalID = setInterval(intervalFunction , 10000);
