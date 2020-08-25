@@ -9,22 +9,10 @@ const testemonials = [
     logo: "./images/logos/sap-fieldglass-vector-logo.png",
     quote:
       "The fundamentals team is amazing to work with!  They were willing to work with our existing stack, and continue to go above and beyond to help us meet our consistency goals.  They are a true asset and incredibly responsive!!",
-  },
+  }
 ];
 
-let index = 0;
-var intervalID = setInterval(() => {
-  setTestemonial();
-  setIntervalIndexNext();
-}, 5000);
-
-
-function intervalFunction () {
-  setTestemonial();
-  setIntervalIndexNext();
-}
-
-
+var index = -1;
 function setTestemonial() {
   if(testemonials[index].company) {
     document.getElementById("company-name").style.display = "flex";
@@ -45,45 +33,48 @@ function setIntervalIndexNext() {
       index = 0;
     }
   } else {
-    index = index + (1 % (testemonials.length - 1));
+    index = ((index + 1) % (testemonials.length));
   }
 }
 
 function setIntervalIndexPrev() {
-  if (testemonials.length == 2) {
+  if (testemonials.length <= 2) {
     if (index == 0) {
       index = 1;
     } else {
       index = 0;
     }
   } else {
-    index = index - (1 % (testemonials.length - 1));
+    if(index === 0) {
+      index = testemonials.length - 1;
+    }
+    else {
+      index = ((index - 1) % (testemonials.length));
+    }
   }
 }
 
-function next(setIntervalIndexNext) {
+function next() {
   clearInterval(intervalID);
-  setIntervalIndexNext;
   intervalFunction();
-  nextInterval(()=>{  
-  intervalID = setInterval(() => {
-    intervalFunction();
-  }, 5000);})
-}
-
-function nextInterval(func) {
-  func();
-}
-
-function prevInterval(func) {
-  func();
+  intervalID = setInterval(intervalFunction, 3000);
 }
 
 function prev() {
-  setIntervalIndexPrev();
+  intervalPrevFunction();
   clearInterval(intervalID);
-  intervalFunction();
-  intervalID = setInterval(() => {
-    intervalFunction();
-  }, 5000);
+  intervalID = setInterval(intervalFunction, 3000);
 }
+
+
+function intervalFunction () {
+  setIntervalIndexNext();
+  setTestemonial();
+}
+
+function intervalPrevFunction () {
+  setIntervalIndexPrev();
+  setTestemonial();
+}
+
+var intervalID = setInterval(intervalFunction , 3000);
