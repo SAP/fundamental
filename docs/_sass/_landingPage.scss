@@ -13,6 +13,9 @@
   white-space: nowrap;
 }
 
+$fd-carousel-dot-active-size: 0.75rem;
+$fd-carousel-dot-size: 0.5rem;
+
 @keyframes fade {
   from {opacity: 1}
   to {opacity: 0}
@@ -448,6 +451,9 @@ $learn-section-side-margin: 0 2rem;
         max-height: 352px;
         overflow: scroll;
       }
+      &--learn-inner {
+        margin-bottom: 0;
+      }
 
       &--img {
         text-align: left;
@@ -542,8 +548,32 @@ $learn-section-side-margin: 0 2rem;
       align-items: center;
       flex-direction: column-reverse;
 
+      .carousel-dot-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+
+        .carousel-dot {
+          list-style-type: none;
+          margin: 0 0.375rem;
+          width: $fd-carousel-dot-size;
+          height: $fd-carousel-dot-size;
+          border-radius: 50%;
+          background-color: grey;
+
+          &--active {
+            margin: 0 0.25rem;
+            width: $fd-carousel-dot-active-size;
+            height: $fd-carousel-dot-active-size;
+            background-color: #007ea3;
+          }
+        }
+      }
+
       &--outer {
-        flex-direction: row;
+        flex-direction: column;
         max-width: 100%;
       }
 
@@ -556,8 +586,12 @@ $learn-section-side-margin: 0 2rem;
           display: flex;
           justify-content: center;
           align-items: center;
-          margin: 44px 0 26px 0;
+          margin: 26px 0 26px 0;
           padding: 0;
+        }
+
+        .logo {
+          height: 60px;
         }
       }
 
@@ -566,6 +600,7 @@ $learn-section-side-margin: 0 2rem;
         font-size: 21px;
         text-align: center;
         font-weight: bold;
+        padding-left: 1rem;
         margin: 0;
       }
 
@@ -573,12 +608,26 @@ $learn-section-side-margin: 0 2rem;
         display: none;
       }
 
+      .read-more {
+        @include text();
+        outline: none;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.75;
+        font-weight: normal;
+        margin-top: 16px;
+        color: $home-page-action-color;
+        text-decoration: none;
+        margin-right: 20px;
+      }
+
       .quote {
-        
         @include text();  
         line-height: 1.25;
         font-size: 16px;
-        padding: 0 4rem;
       }
 
       .logo {
@@ -611,6 +660,12 @@ $learn-section-side-margin: 0 2rem;
       &--learn {
         margin-bottom: 40px;
       }
+    }
+
+    .animate {
+      -moz-animation: fade 2000ms 8000ms;
+      -webkit-animation: fade 2000ms 8000ms;
+      animation: fade 2000ms 8000ms;
     }
   }
 }
@@ -730,17 +785,6 @@ $learn-section-side-margin: 0 2rem;
   }
 }
 
-@media (min-width: 1200px) {
-  .section {
-    &__testemonial {
-      &--outer {
-        height: 1100px;
-        padding: 104px 98px 104px 98px;
-      }
-    }
-  }
-}
-
 @media (min-width: 1024px) {
   .section {
 
@@ -780,6 +824,7 @@ $learn-section-side-margin: 0 2rem;
 
       &--youtube {
         margin-top: 0;
+        height: 352px;
       }
 
       &--learn {
@@ -806,7 +851,7 @@ $learn-section-side-margin: 0 2rem;
       &--outer {
         border-radius: 8px;
         margin-top: 65px;
-        height: 1200px;
+        flex-direction: column;
         border: solid 1px #979797;
         background-color: #ffffff;
         padding: 104px 98px 104px 98px;
@@ -832,7 +877,10 @@ $learn-section-side-margin: 0 2rem;
         text-align: left;
         font-size: 30px;
         margin: 0;
-        padding-left: 1rem;
+      }
+
+      .carousel-dot-container {
+        margin-top: 3rem;
       }
 
       .quotations {

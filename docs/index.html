@@ -241,9 +241,9 @@ footerhidden: true
           </div>
         </div>
         <div class="section__item section__item--learn section__item--youtube">
-          <iframe type="text/html" width="1px" class="section__logo section__logo--learn"
-          src="https://www.youtube.com/embed/?listType=playlist&list=PLChUxte5emJbKO8z7K68tBeXdlwi8ZFkv"
-          frameborder="0"></iframe>
+                <iframe type="text/html" class="section__logo section__logo--learn"
+                src="https://www.youtube.com/embed/?listType=playlist&list=PLChUxte5emJbKO8z7K68tBeXdlwi8ZFkv"
+                frameborder="0"></iframe>
         </div>
       </div>
   </section>
@@ -254,18 +254,21 @@ footerhidden: true
       <a href="https://github.com/SAP/fundamental/wiki/Add-new-testimonial-to-landing-page" class="section__button" role="button" aria-label="add-company-button">Add your company</a>
     </div>
     <div class="section__testemonial section__testemonial--outer" id="testemonial">
-      <button id="prevQuote" onclick="prev()" class="section__button section__button--next-prev">&#60;</button>
       <div class="section__testemonial">
         <img src="./images/land-page-assets/quotes-icon.svg" class="quotations" id="quotations">
-        <div class="company animate-in animate" id="company">
+        <div class="company animate" id="company">
           <p class="quote" id="company-quote"></p>
+          <button role="button" onclick="readMore()" class="read-more" id="read-more">Read More</button>
           <div class="company company--logo">
             <img id="company-logo" class="logo"/>
             <h3 class="company-name" id="company-name"></h3>
           </div>
         </div>
       </div>
-      <button id="nextQuote" onclick="next()" class="section__button section__button--next-prev">&#62;</button>
+      <ul class="carousel-dot-container">
+          <li id="dot0" role="button" onclick="changeItem(0)" class="carousel-dot"></li>
+          <li id="dot1" role="button" onclick="changeItem(1)" class="carousel-dot"></li>
+      </ul>
       </div>
   </section>
     <section class="community-section" id="community">

@@ -12,7 +12,8 @@ const testimonials = [
   }
 ];
 
-var index = -1;
+var index = 0;
+
 function setTestemonial() {
   document.getElementById("company").classList.remove( "animate");
   document.getElementById("quotations").classList.remove( "animate");
@@ -25,7 +26,14 @@ function setTestemonial() {
   } else {
     document.getElementById("company-name").style.display = "none";
   }
-  document.getElementById("company-quote").innerHTML =testimonials[index].quote;
+  const maxChar = ((screen.width) / 4);
+  if(testimonials[index].quote.length <= maxChar) {
+    document.getElementById("company-quote").innerHTML =testimonials[index].quote;
+    document.getElementById("read-more").style.display = "none";
+  } else {
+    document.getElementById("company-quote").innerHTML =testimonials[index].quote.substring(0, maxChar) + '...';
+    document.getElementById("read-more").style.display = "block";
+  }
 
   document.getElementById("company").classList.add( "animate");
   document.getElementById("quotations").classList.add( "animate");
@@ -34,31 +42,36 @@ function setTestemonial() {
   document.getElementById("testemonial").style.display = "flex";
 }
 
+function readMore () {
+  document.getElementById("company-quote").innerHTML =testimonials[index].quote;
+  document.getElementById("read-more").style.display = "none";
+}
+
 function setIntervalIndexNext() {
   if (testimonials.length == 2) {
     if (index == 0) {
-      index = 1;
+      changeItem(1);
     } else {
-      index = 0;
+      changeItem(0);
     }
   } else {
-    index = ((index + 1) % (testimonials.length));
+    changeItem((index + 1) % (testimonials.length));
   }
 }
 
 function setIntervalIndexPrev() {
   if (testimonials.length <= 2) {
     if (index == 0) {
-      index = 1;
+      changeItem(1);
     } else {
-      index = 0;
+      changeItem(0);
     }
   } else {
     if(index === 0) {
-      index = testimonials.length - 1;
+      changeItem(testimonials.length - 1);
     }
     else {
-      index = ((index - 1) % (testimonials.length));
+      changeItem((index - 1) % (testimonials.length));
     }
   }
 }
@@ -75,6 +88,15 @@ function prev() {
   intervalID = setInterval(intervalFunction, 10000);
 }
 
+function changeItem (indexChanged) {
+  document.getElementById('dot'+index).classList.remove( "carousel-dot--active");
+  void document.getElementById('dot'+index).offsetWidth;
+  document.getElementById('dot'+indexChanged).classList.add( "carousel-dot--active");
+  index = indexChanged;
+  clearInterval(intervalID);
+  setTestemonial();
+  intervalID = setInterval(intervalFunction, 10000);
+}
 
 function intervalFunction () {
   setIntervalIndexNext();
@@ -85,5 +107,12 @@ function intervalPrevFunction () {
   setIntervalIndexPrev();
   setTestemonial();
 }
+document.addEventListener('DOMContentLoaded', (event) => {
+  if(event.target == document) {
+    index = 0;
+    changeItem(0);
+    setTestemonial();
+  }
+})
 
 var intervalID = setInterval(intervalFunction , 10000);
