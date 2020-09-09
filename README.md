@@ -101,8 +101,3 @@ The following circumstances will NOT be considered a MAJOR or BREAKING change:
 * Non-visual HTML attribute changes/additions (such as `role`, `aria-*`, `data-*`)
 * Adding or modifying CSS properties and values of existing classnames.
 * An existing unit test is altered to account for non-visual HTML attribute changes/additions (such as `role`, `aria-*`, `data-*`)
-
-## License
-
-Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
-This file is licensed under the Apache Software License, v. 2 except as noted otherwise in the [LICENSE](https://github.com/SAP/fundamental/blob/master/LICENSE) file.
