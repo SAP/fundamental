@@ -13,12 +13,13 @@ const testimonials = [
 ];
 
 var index = 0;
-
+var maxChar = null;
+testimonials.forEach(element => {
+  if (element.quote.length < maxChar || maxChar == null) {
+    maxChar = element.quote.length;
+  }
+});
 function setTestemonial() {
-  document.getElementById("company").classList.remove( "animate");
-  document.getElementById("quotations").classList.remove( "animate");
-  void document.getElementById("company").offsetWidth;
-  void document.getElementById("quotations").offsetWidth;
 
   if(testimonials[index].company) {
     document.getElementById("company-name").style.display = "flex";
@@ -26,17 +27,24 @@ function setTestemonial() {
   } else {
     document.getElementById("company-name").style.display = "none";
   }
-  const maxChar = ((screen.width) / 4);
   if(testimonials[index].quote.length <= maxChar) {
     document.getElementById("company-quote").innerHTML =testimonials[index].quote;
     document.getElementById("read-more").style.display = "none";
+    if(screen.width >= 768) {
+      document.getElementById("company-container").style.paddingTop = "46px";
+    } else {
+      document.getElementById("company-container").style.paddingTop = "30px";
+    }
   } else {
     document.getElementById("company-quote").innerHTML =testimonials[index].quote.substring(0, maxChar) + '...';
     document.getElementById("read-more").style.display = "block";
+      if(screen.width >= 768) {
+        document.getElementById("company-container").style.paddingTop = "14px";
+      } else {
+        document.getElementById("read-more").style.marginTop = "0";
+        document.getElementById("company-container").style.paddingTop = "2px";
+      }
   }
-
-  document.getElementById("company").classList.add( "animate");
-  document.getElementById("quotations").classList.add( "animate");
 
   document.getElementById("company-logo").src = testimonials[index].logo;
   document.getElementById("testemonial").style.display = "flex";
@@ -89,9 +97,6 @@ function prev() {
 }
 
 function changeItem (indexChanged) {
-  document.getElementById('dot'+index).classList.remove( "carousel-dot--active");
-  void document.getElementById('dot'+index).offsetWidth;
-  document.getElementById('dot'+indexChanged).classList.add( "carousel-dot--active");
   index = indexChanged;
   clearInterval(intervalID);
   setTestemonial();

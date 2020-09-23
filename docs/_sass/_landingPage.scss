@@ -13,17 +13,22 @@
   white-space: nowrap;
 }
 
-$fd-carousel-dot-active-size: 0.75rem;
-$fd-carousel-dot-size: 0.5rem;
-
 @keyframes fade {
-  from {opacity: 1}
-  to {opacity: 0}
+  from {
+    transform: translateX(0);
+ }
+ to {
+    transform: translateX(300px);
+ }
 }
 
 @keyframes fade-in {
-  from {opacity: 0}
-  to {opacity: 1}
+  from {
+    transform: translateX(300px);
+ }
+ to {
+    transform: translateX(0);
+ }
 }
 
 @mixin text() {
@@ -361,6 +366,19 @@ $learn-section-side-margin: 0 2rem;
       padding: 2.75rem 0 0 0;
     }
 
+    &--testemonials {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 14px;
+      background-size: cover;
+      background-image: url("../images/land-page-assets/FL_Banner_50Opacity.png");
+
+      .company,
+      .company-container {
+        max-width: 1440px;
+      }
+    }
+
     &__button {
       @include button();
       font-weight: bold;
@@ -388,39 +406,6 @@ $learn-section-side-margin: 0 2rem;
       &:focus {
         color: white;
         outline: dotted 0.125rem white;
-      }
-
-      &--next-prev {
-        height: 2rem;
-        width: 2rem;
-        font-size: 2rem;
-        padding: 2rem;
-        box-shadow: 0 0 4px 0 #b0b0b0;
-        font-weight: 300;
-        border-radius: 50%;
-        border: none;
-        background-color: white;
-        color: #007ea3;
-        margin: 0;
-
-        &:hover {
-          color: #007ea3;
-        }
-
-        &:active {
-          color: white;
-          background-color: #007ea3;
-          font-weight: bold;
-
-          &:focus {
-            color: white;
-          }
-        }
-
-        &:focus {
-          outline: none;
-          color: #007ea3;
-        }
       }
     }
 
@@ -548,34 +533,15 @@ $learn-section-side-margin: 0 2rem;
       align-items: center;
       flex-direction: column-reverse;
 
-      .carousel-dot-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-        opacity: 1;
-
-        .carousel-dot {
-          list-style-type: none;
-          margin: 0 0.375rem;
-          width: $fd-carousel-dot-size;
-          height: $fd-carousel-dot-size;
-          border-radius: 50%;
-          background-color: grey;
-
-          &--active {
-            margin: 0 0.25rem;
-            width: $fd-carousel-dot-active-size;
-            height: $fd-carousel-dot-active-size;
-            background-color: #007ea3;
-          }
-        }
-      }
-
       &--outer {
         flex-direction: column;
         max-width: 100%;
+      }
+
+      .testemonial-inner {
+        max-width: 1440px;
+        padding: 0 30px 0 30px;
+        text-align: center;
       }
 
       .company {
@@ -587,7 +553,8 @@ $learn-section-side-margin: 0 2rem;
           display: flex;
           justify-content: center;
           align-items: center;
-          margin: 26px 0 26px 0;
+          margin-bottom: 16px;
+          margin-top: 0;
           padding: 0;
         }
 
@@ -637,6 +604,29 @@ $learn-section-side-margin: 0 2rem;
 
     }
 
+    &__testemonial-arrows {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      top: 120px;
+      margin-top: -60px;
+
+      .left-arrow,
+      .right-arrow {
+        outline: none;
+        background-color: transparent;
+        border: none;
+        font-size: 30px;
+        color: #767676;
+
+        &:hover {
+          cursor: pointer;
+          color: black;
+        }
+      }
+    }
+
     &__text {
       @include text();  
       font-size: 16px;
@@ -664,9 +654,9 @@ $learn-section-side-margin: 0 2rem;
     }
 
     .animate {
-      -moz-animation: fade 2000ms 8000ms;
-      -webkit-animation: fade 2000ms 8000ms;
-      animation: fade 2000ms 8000ms;
+      -moz-animation: fade 2000ms ease-in-out 8000ms;
+      -webkit-animation: fade 2000ms ease-in-out 8000ms;
+      animation: fade 2000ms ease-in-out 8000ms;
     }
   }
 }
@@ -780,6 +770,22 @@ $learn-section-side-margin: 0 2rem;
       margin: 0;
     }
 
+    &--testemonials {
+      margin-top: 55px;
+
+      .testemonial-inner {
+        padding: 0 100px 0 165px;
+        text-align: left;
+      }
+
+      &__testemonial-arrows {
+        .left-arrow,
+        .right-arrow {
+          font-size: 48px;
+        }
+      }
+    }
+
     &__title {
       margin-bottom: 4.1875rem;
     }
@@ -847,15 +853,12 @@ $learn-section-side-margin: 0 2rem;
       justify-content: center;
       align-items: flex-start;
       flex-direction: row;
-      padding: 0 58px 0 58px;
       
       &--outer {
-        border-radius: 8px;
-        margin-top: 65px;
+        margin-top: 40px;
         flex-direction: column;
-        border: solid 1px #979797;
-        background-color: #ffffff;
-        padding: 104px 98px 104px 98px;
+        padding: 0;
+        padding-bottom: 104px;
         align-items: center;
       }
 
@@ -880,15 +883,11 @@ $learn-section-side-margin: 0 2rem;
         margin: 0;
       }
 
-      .carousel-dot-container {
-        margin-top: 3rem;
-      }
-
       .quotations {
         display: block;
         position: relative;
-        right: 8%;
-        width: 67px;
+        width: 49px;
+        left: -65px;
       }
 
       .animate {
@@ -1027,6 +1026,7 @@ $learn-section-side-margin: 0 2rem;
     }
 
     &__testemonial {
+
       .quote {
         font-size: 24px;
       }
@@ -1041,10 +1041,6 @@ $learn-section-side-margin: 0 2rem;
 
       .company-name {
         font-size: 30px;
-      }
-
-      &--outer {
-        height: 700px;
       }
     }
     
