@@ -6,6 +6,7 @@ SAP Fundamentals' Documentation Site is hosted [here](https://sap.github.io/fund
 [![npm version](https://badge.fury.io/js/fiori-fundamentals.svg)](https://badge.fury.io/js/fiori-fundamentals)
 [![Build Status](https://travis-ci.org/SAP/fundamental.svg?branch=master)](https://travis-ci.org/SAP/fundamental)
 [![Slack](https://img.shields.io/badge/slack-ui--fundamentals-blue.svg?logo=slack)](https://ui-fundamentals.slack.com)
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP/fundamental)](https://api.reuse.software/info/github.com/SAP/fundamental)
 
 
 ## What is SAP Fundamentals?
