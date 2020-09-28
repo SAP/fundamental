@@ -13,22 +13,23 @@
   white-space: nowrap;
 }
 
-@keyframes fade {
-  from {
-    transform: translateX(0);
- }
- to {
-    transform: translateX(300px);
- }
-}
 
 @keyframes fade-in {
-  from {
-    transform: translateX(300px);
- }
- to {
-    transform: translateX(0);
- }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @mixin text() {
@@ -653,10 +654,16 @@ $learn-section-side-margin: 0 2rem;
       }
     }
 
-    .animate {
-      -moz-animation: fade 2000ms ease-in-out 8000ms;
-      -webkit-animation: fade 2000ms ease-in-out 8000ms;
-      animation: fade 2000ms ease-in-out 8000ms;
+    .animate-in {
+      -moz-animation: fade-in 1s;
+      -webkit-animation: fade-in 1s;
+      animation: fade-in 1s;
+    }
+
+    .animate-out {
+      -moz-animation: fade-out 1s;
+      -webkit-animation: fade-out 1s;
+      animation: fade-out 1s;
     }
   }
 }
@@ -774,7 +781,7 @@ $learn-section-side-margin: 0 2rem;
       margin-top: 55px;
 
       .testemonial-inner {
-        padding: 0 100px 0 165px;
+        padding: 0 120px 0 120px;
         text-align: left;
       }
 
@@ -890,10 +897,16 @@ $learn-section-side-margin: 0 2rem;
         left: -65px;
       }
 
-      .animate {
-        -moz-animation: fade 2s 8s;
-        -webkit-animation: fade 2s 8s;
-        animation: fade 2s 8s;
+      .animate-in {
+        -moz-animation: fade-in 1s;
+        -webkit-animation: fade-in 1s;
+        animation: fade-in 1s;
+      }
+
+      .animate-out {
+        -moz-animation: fade-out 1s;
+        -webkit-animation: fade-out 1s;
+        animation: fade-out 1s;
       }
 
       .logo {
@@ -1029,10 +1042,6 @@ $learn-section-side-margin: 0 2rem;
 
       .quote {
         font-size: 24px;
-      }
-
-      .quotations {
-        width: 80px;
       }
 
       .logo {
