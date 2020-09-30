@@ -14,6 +14,7 @@ const testimonials = [
 
 var index = 0;
 var maxChar = null;
+let x0 = null;
 
 testimonials.forEach(element => {
   if (element.quote.length < maxChar || maxChar == null) {
@@ -71,6 +72,15 @@ function next() {
   setIntervalCompany();
 }
 
+function setIntervalIndexPrev() {
+  if(index==0) {
+    index = testimonials.length - 1;
+  }
+  else {
+    index = ((index - 1) % testimonials.length);
+  }
+}
+
 function prev() {
   clearInterval(intervalID);
   const element = document.getElementById("company");
@@ -87,12 +97,28 @@ function prev() {
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  const element = document.getElementById("company");
   if(event.target == document) {
     index = 0;
     setTestemonial();
   }
+  document.getElementById("company").addEventListener('touchstart', lock, false);
+  document.getElementById("company").addEventListener('touchend', move, false);
 })
+
+function lock(e) {
+  x0 = e.targetTouches[0].clientX;
+}
+
+function move(e) {
+  const end = e.changedTouches[0].clientX;
+  if(Math.abs(end - x0)>100) {
+    if (end > x0) {
+      next();
+    } else {
+      prev();
+    }
+  }
+}
 
 function setIntervalCompany () {
   intervalID = setInterval(()=> {
@@ -105,7 +131,7 @@ function setIntervalCompany () {
       element.style.animation = "fade-in 1000ms"; 
       element.style.opacity = "1";
     }, 1000);
-  } , 3000);
+  } , 8000);
 }
 
 setIntervalCompany();
