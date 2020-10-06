@@ -56,6 +56,7 @@ function setTestemonial() {
 function readMore () {
   document.getElementById("company-quote").innerHTML =testimonials[index].quote;
   document.getElementById("read-more").style.display = "none";
+  clearInterval(intervalID);
 }
 
 function next() {
