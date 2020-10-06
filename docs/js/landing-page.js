@@ -42,7 +42,7 @@ function setTestemonial() {
     document.getElementById("company-quote").innerHTML =testimonials[index].quote.substring(0, maxChar) + '...';
     document.getElementById("read-more").style.display = "block";
       if(screen.width >= 768) {
-        document.getElementById("company-container").style.paddingTop = "14px";
+        document.getElementById("company-container").style.paddingTop = "14.5px";
       } else {
         document.getElementById("read-more").style.marginTop = "0";
         document.getElementById("company-container").style.paddingTop = "2px";
