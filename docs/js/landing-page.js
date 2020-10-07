@@ -34,7 +34,7 @@ function setTestemonial() {
     document.getElementById("company-quote").innerHTML =testimonials[index].quote;
     document.getElementById("read-more").style.display = "none";
     if(screen.width >= 768) {
-      document.getElementById("company-container").style.paddingTop = "46px";
+      document.getElementById("company-container").style.paddingTop = "62px";
     } else {
       document.getElementById("company-container").style.paddingTop = "30px";
     }
@@ -42,7 +42,7 @@ function setTestemonial() {
     document.getElementById("company-quote").innerHTML =testimonials[index].quote.substring(0, maxChar) + '...';
     document.getElementById("read-more").style.display = "block";
       if(screen.width >= 768) {
-        document.getElementById("company-container").style.paddingTop = "14.5px";
+        document.getElementById("company-container").style.paddingTop = "0";
       } else {
         document.getElementById("read-more").style.marginTop = "0";
         document.getElementById("company-container").style.paddingTop = "2px";
