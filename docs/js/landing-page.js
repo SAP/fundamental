@@ -34,7 +34,7 @@ function setTestemonial() {
     document.getElementById("company-quote").innerHTML =testimonials[index].quote;
     document.getElementById("read-more").style.display = "none";
     if(screen.width >= 768) {
-      document.getElementById("company-container").style.paddingTop = "62px";
+      document.getElementById("company-container").style.paddingTop = "34px";
     } else {
       document.getElementById("company-container").style.paddingTop = "30px";
     }

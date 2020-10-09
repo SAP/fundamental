@@ -363,10 +363,6 @@ $learn-section-side-margin: 0 2rem;
     padding: 2.75rem 44px 0 44px;
     max-width: 1440px;
 
-    &--learn {
-      padding: 2.75rem 0 0 0;
-    }
-
     &--testemonials {
       width: 100%;
       max-width: 100%;
@@ -377,6 +373,23 @@ $learn-section-side-margin: 0 2rem;
       .company,
       .company-container {
         max-width: 1440px;
+      }
+      
+      .add-testimonial {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 59px;
+        margin-top: -20px;
+
+        p,a {
+          @include text();
+          font-size: 14px;
+        }
+
+        a {
+          color: #007ea3;
+          text-decoration: none;
+        }
       }
     }
 
@@ -421,7 +434,7 @@ $learn-section-side-margin: 0 2rem;
       flex-direction: column;
       align-items: center;
       width: 100%;
-      padding: 0 44px;
+      padding: 0;
     }
 
     &__item {
@@ -533,6 +546,7 @@ $learn-section-side-margin: 0 2rem;
       justify-content: center;
       align-items: center;
       flex-direction: column-reverse;
+      width: 100%;
 
       &--outer {
         flex-direction: column;
@@ -562,7 +576,7 @@ $learn-section-side-margin: 0 2rem;
         }
 
         .logo {
-          height: 60px;
+          height: 40px;
         }
       }
 
@@ -789,24 +803,36 @@ $learn-section-side-margin: 0 2rem;
       margin: 0;
     }
 
-    &--testemonials {
-      margin-top: 55px;
 
-      .testemonial-inner {
-        padding: 0 125px;
-        text-align: left;
+      &--testemonials {
+        margin-top: 55px;
+  
+        .testemonial-inner {
+          padding: 0 125px;
+          text-align: left;
+  
+          .company {
+  
+            .logo {
+              height: 60px;
+            }
 
-        .company {  
-          &--logo {
-            margin-bottom: 140px;
+            .quote {
+              margin-right: -50px;
+            }
           }
+        }
 
-          .quote {
-            margin-right: -50px;
+        .add-testimonial {
+          margin-top: 65px;
+          margin-bottom: 140px;
+
+          span, a {
+            font-size: 18px;
           }
         }
       }
-    }
+
 
     &__title {
       font-size: 55px;
@@ -884,6 +910,10 @@ $learn-section-side-margin: 0 2rem;
       align-items: flex-start;
       flex-direction: row;
       
+      .add-testimonial {
+        flex-direction: row;
+      }
+
       &--outer {
         margin-top: 40px;
         flex-direction: column;
@@ -933,7 +963,6 @@ $learn-section-side-margin: 0 2rem;
 
       .logo {
         margin: 0;
-        height: 79.5px;
       }
 
     }
