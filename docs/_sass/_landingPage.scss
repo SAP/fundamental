@@ -386,6 +386,10 @@ $learn-section-side-margin: 0 2rem;
           font-size: 14px;
         }
 
+         > :first-child {
+          color: #767676; 
+        }
+
         a {
           color: #007ea3;
           text-decoration: none;
@@ -603,10 +607,8 @@ $learn-section-side-margin: 0 2rem;
         font-size: 16px;
         line-height: 1.75;
         font-weight: normal;
-        margin-top: 16px;
         color: $home-page-action-color;
         text-decoration: none;
-        margin-right: 20px;
       }
 
       .quote {
@@ -614,6 +616,7 @@ $learn-section-side-margin: 0 2rem;
         text-align: left; 
         line-height: 1.25;
         font-size: 16px;
+        margin-bottom: 0;
       }
 
       .logo {
@@ -808,17 +811,12 @@ $learn-section-side-margin: 0 2rem;
         margin-top: 55px;
   
         .testemonial-inner {
-          padding: 0 125px;
           text-align: left;
   
           .company {
   
             .logo {
               height: 60px;
-            }
-
-            .quote {
-              margin-right: -50px;
             }
           }
         }
@@ -909,12 +907,17 @@ $learn-section-side-margin: 0 2rem;
       justify-content: center;
       align-items: flex-start;
       flex-direction: row;
+
+      .testemonial-inner {
+        padding: 0 125px;
+      }
       
       .add-testimonial {
         flex-direction: row;
       }
 
       &--outer {
+        max-width: 1440px;
         margin-top: 40px;
         flex-direction: column;
         padding: 0;
@@ -932,6 +935,13 @@ $learn-section-side-margin: 0 2rem;
 
         .quote {
           font-size: 25px;
+          margin-right: -50px;
+        }
+
+        .read-more {
+          font-size: 24px;
+          margin: 0;
+          margin-right: 20px;
         }
       }
 
