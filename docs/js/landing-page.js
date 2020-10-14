@@ -35,8 +35,11 @@ function setTestemonial() {
     document.getElementById("company-quote").innerHTML =testimonials[index].quote;
     document.getElementById("read-less").style.display = "none";
     document.getElementById("read-more").style.display = "none";
-    if(screen.width >= 1024) {
-      document.getElementById("company-container").style.paddingTop = "41px";
+    if(screen.width >= 1440) {
+      document.getElementById("company-container").style.paddingTop = "69px";
+    } 
+    else if(screen.width >= 1024) {
+      document.getElementById("company-container").style.paddingTop = "42px";
     } else {
       document.getElementById("company-container").style.paddingTop = "28px";
     }
