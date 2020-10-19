@@ -16,6 +16,7 @@ footerhidden: true
         position: relative;
     }
 </style>
+<script src="./js/landing-page.js"></script>
 <header style="width: 100%;">
     <div class="header-section" id="headerSection">
         <div class="header-section__hamburger">
@@ -250,13 +251,48 @@ footerhidden: true
           </div>
         </div>
         <div class="section__item section__item--learn section__item--youtube">
-          <iframe type="text/html" width="1px" class="section__logo section__logo--learn"
-          src="https://www.youtube.com/embed/?listType=playlist&list=PLChUxte5emJbKO8z7K68tBeXdlwi8ZFkv"
-          frameborder="0"></iframe>
+                <iframe type="text/html" class="section__logo section__logo--learn"
+                src="https://www.youtube.com/embed/?listType=playlist&list=PLChUxte5emJbKO8z7K68tBeXdlwi8ZFkv"
+                frameborder="0"></iframe>
         </div>
       </div>
   </section>
-
+  <section class="section section--testemonials">
+    <h1 class="section__title">Testimonials</h1>
+    <div class="section__button-container">
+      <p class="section__text">Learn about what other companies have to say about their experience with Fundamental Library.</p>
+    </div>
+    <div class="section__testemonial section__testemonial--outer" id="testemonial">
+        <div class="section__testemonial-arrows">
+            <button class="left-arrow" onclick="prev()">
+                <span class="sap-icon sap-icon--navigation-left-arrow"></span>
+            </button>
+            <button class="right-arrow" onclick="next()">
+                <span class="sap-icon sap-icon--navigation-right-arrow"></span>
+            </button>
+        </div>
+      <div class="section__testemonial">
+          <div class="testemonial-inner">
+              <div class="company" id="company">
+                <img src="./images/land-page-assets/quotes-icon.svg" class="quotations" id="quotations">
+                  <p class="quote" id="company-quote"></p>
+                  <button role="button" onclick="readMore()" class="read-more" id="read-more">View More</button>
+                  <button role="button" onclick="readLess()" class="read-less" id="read-less">View Less</button>
+                  <div id="company-container" class="company company--logo">
+                <img id="company-logo" class="logo"/>
+                <h3 class="company-name" id="company-name"></h3>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="add-testimonial">
+          <span>Have an experience you'd like to share?&nbsp;</span>
+          <span>
+            <a href="https://github.com/SAP/fundamental/wiki/Add-new-testimonial-to-landing-page"  aria-label="add-company-button">Add your company's testimonial.</a>
+          </span>
+      </div>
+      </div>
+  </section>
     <section class="community-section" id="community">
         <h2 class="community-section__title">Community</h2>
         <p class="community-section__text">Join our vibrant community of developers and help drive the Fundamental Libraries forward! Take part in the conversation via our various channels.</p>
