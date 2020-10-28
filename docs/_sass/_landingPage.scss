@@ -41,6 +41,28 @@ $button-outline-focus: #006f91;
   white-space: nowrap;
 }
 
+.truncate-overflow {
+  max-height: 4.6rem;
+  position: relative;
+  overflow: hidden;
+  word-wrap: break-word;
+  &::before {
+    content: "...";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0; /* note: not using bottom */
+    width: 1rem;
+    height: 2rem;
+    background: white;
+  }
+}
+
 
 @keyframes fade-in {
   0% {
@@ -492,6 +514,29 @@ $learn-section-side-margin: 0 2rem;
 
     &--learn {
       padding-top: 0;
+
+      .blog {
+         &__img {
+          object-fit: cover;
+          border-radius: 8px;
+          width: 100%;
+          height: 300px;
+         }
+
+         &__title {
+          @include text();
+          font-weight: bold;
+          font-size: 20px;
+          text-align: left;
+          margin: 15px 0;
+         }
+
+         &__description {
+          @include text();
+          font-size: 20px;
+          text-align: left;
+         }
+      }
     }
 
     &--testemonials {
@@ -665,6 +710,7 @@ $learn-section-side-margin: 0 2rem;
 
     &__container {
       display: flex;
+      flex-wrap: wrap;
       flex-direction: column;
       align-items: center;
       width: 100%;
@@ -678,69 +724,6 @@ $learn-section-side-margin: 0 2rem;
     &__item {
       text-align: center;
       margin-bottom: 2.75rem;
-
-      &--learn {
-        text-align: left;
-        border-radius: 8px;
-        border: solid 1px #d3d3d3;
-        width: 100%;
-        max-width: 100%;
-        max-height: 352px;
-        overflow: scroll;
-      }
-      &--learn-inner {
-        margin-bottom: 0;
-      }
-
-      &--img {
-        text-align: left;
-
-        img {
-          width: 100%;
-        }
-  
-        h3 {
-          font-size: 20px;
-          font-weight: 500;
-          border-bottom: 1px solid lightgrey;
-          padding: 0.5rem 0 0.5rem 1rem;
-        }
-  
-        a {
-          font-weight: 900;
-          margin: 0;
-        }
-  
-        .blog {
-          padding-left: 1rem;
-        }
-
-        p {
-          padding: 0.25rem 0 2rem 0;
-        } 
-
-        span {
-          color: grey;
-          font-weight: 300;
-          font-size: 14px;
-        }
-      }
-
-
-      &--youtube {
-        border: 1px solid transparent;
-        border-radius: 8px;
-        display: flex;
-        justify-content: center;
-        overflow: hidden;
-
-        iframe {
-          -webkit-transform: scale(1.0);
-          -webkit-transform-origin: 0 0;
-          width: 100%;
-          height: 100%;
-        }
-      }
     }
 
     &__item-title {
@@ -759,13 +742,6 @@ $learn-section-side-margin: 0 2rem;
     &__logo {
       height: 4.875rem;
       border-radius: 8px;
-
-      &--learn {
-        width: 100%;
-        object-fit: cover;
-        text-align: center;
-        height: 100vw;
-      }
     }
 
     &__subtitle {
@@ -900,7 +876,7 @@ $learn-section-side-margin: 0 2rem;
       font-size: 16px;
       line-height: 1.25;
       text-align: left;
-      margin-bottom: 1.25rem;
+      margin-bottom: 44px;
 
       &--subtitle {
         margin-bottom: 44px;
@@ -919,10 +895,7 @@ $learn-section-side-margin: 0 2rem;
       font-size: 30px;
       margin-bottom: 1rem;
       text-align: center;
-
-      &--learn {
-        margin-bottom: 40px;
-      }
+      font-weight: 400;
     }
 
     .animate-in {
@@ -993,7 +966,7 @@ $learn-section-side-margin: 0 2rem;
     flex-direction: column;
     padding: 140px 44px;
 
-    &--learn {
+    &--blog {
       padding-top: 0;
     }
 
@@ -1054,15 +1027,15 @@ $learn-section-side-margin: 0 2rem;
       > :not(:last-child) {
         margin-bottom: 24px;
       }
-    }
 
-    &__container-inner {
-      flex-direction: row;
-      flex-wrap: wrap;
-      padding: 0;
+      &--blog {
+        margin-top: 45px;
+        width: auto;
+        flex-direction: row;
 
-      > :not(:last-child) {
-        margin-bottom: 0;
+        > :not(:last-child) {
+          margin-bottom: 37px;
+        }
       }
     }
 
@@ -1076,27 +1049,9 @@ $learn-section-side-margin: 0 2rem;
       margin-bottom: 0;
       max-width: 100%;
 
-      &--learn {
-        padding: 0 24px;
-        width: 50%;
-        border: none;
-      }
-  
-      &--learn-inner {
-        border-radius: 8px;
-        border: solid 1px #d3d3d3;
-        padding: 0;
-        width: 100%;
-        max-width: 100%;
-      }
-
-      &--youtube {
-        width: 100%;
-        margin-top: 24px;
-      }
-
-      &--img {
-        text-align: left;
+      &--blog {
+        min-width: 33%;
+        max-width: 50%;
       }
     }
 
@@ -1107,13 +1062,6 @@ $learn-section-side-margin: 0 2rem;
     &__logo {
       height: 4.875rem;
       width: auto;
-
-      &--learn {
-        height: auto;
-        width: 100%;
-        height: 352px;
-        border-radius: 0.5rem;
-      }
     }
 
     &__subtitle {
@@ -1332,6 +1280,7 @@ $learn-section-side-margin: 0 2rem;
     }
 
     &__container {
+      margin-top: 40px;
       flex-direction: row;
       justify-content: space-between;
       margin-left: -36px;
@@ -1342,38 +1291,18 @@ $learn-section-side-margin: 0 2rem;
         margin-bottom: 0;
       }
 
-      &--learn {
-        padding: 0 7.5rem 0 7.5rem;
+      &--blog {
+        > :not(:last-child) {
+          margin-bottom: 36px;
+        }
       }
-    }
-
-    &__container-inner {
-      padding: 0;
     }
 
     &__item {
       margin-bottom: 0;
       padding: 0 36px;
+      min-width: 33%;
       max-width: 33%;
-
-      &--youtube {
-        margin-top: 0;
-        height: 352px;
-      }
-
-      &--learn {
-        padding: 0 36px;
-        border: none;
-        width: 33%;
-      }
-
-      &--learn-inner {
-        border-radius: 8px;
-        border: solid 1px #d3d3d3;
-        padding: 0;
-        width: 100%;
-        max-width: 100%;
-      }
     }
 
     &__testemonial-arrows {
@@ -1630,20 +1559,12 @@ $learn-section-side-margin: 0 2rem;
       justify-content: center;
     }
 
-    &__container--learn {
-      justify-content: center;
-    }
-
     &__item-title {
       font-size: 30px;
     }
 
     &__logo {
       height: 8rem;
-
-      &--learn {
-        height: 352px;
-      }
     }
 
     &__testemonial {
