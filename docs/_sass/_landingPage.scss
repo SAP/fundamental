@@ -1,3 +1,31 @@
+$button-focus: #02617e;
+$button-hover: #006f91;
+$button-regular: #007ea3;
+$button-outline-hover: #007ea3;
+$button-outline-focus: #006f91;
+
+@mixin button-focus() {
+  background-color: #02617e;
+  border-color: #02617e;
+}
+
+@mixin button-hover() {
+  background-color: #006f91;
+  border-color: #006f91;
+}
+
+
+@mixin button-outline-hover() {
+  background-color: #007ea3;
+  border-color: #007ea3;
+}
+
+@mixin button-outline-focus() {
+  background-color: #006f91;
+  border-color: #006f91;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -383,6 +411,34 @@ $learn-section-side-margin: 0 2rem;
     padding: 2.75rem 44px;
     max-width: 1440px;
 
+    .cta {
+      margin-top: 64px;
+      background-color: #eeeeef;
+      padding: 20px;
+      width: 100%;
+
+      &__button-container {
+        display: flex;
+        flex-direction: column;
+
+        :first-child {
+          margin-right: 8px;
+        }
+      }
+
+      &__title {
+        @include text();
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      &__description {
+        @include text-mobile();
+        font-size: 16px;
+        font-weight: normal;
+      }
+    }
+
     &--learn {
       padding-top: 0;
     }
@@ -427,26 +483,124 @@ $learn-section-side-margin: 0 2rem;
       justify-content: center;
       align-items: center;
       outline-offset: -0.25rem;
+      padding: 12px 20px;
 
       &:visited {
-        color: white;
+        color: $button-regular;
         
         &:hover {
           color: white;
+          @include button-hover();
         }
 
         &:focus {
           color: white;
+          @include button-focus();
           outline: dotted 0.125rem white;
+
+          :hover {
+            @include button-focus();
+          }
         }
       }
+      
       &:hover {
+        cursor: pointer;
+        background-color: $button-hover;
         color: white;
+      }
+
+      &:active {
+        @include button-focus();
       }
 
       &:focus {
         color: white;
         outline: dotted 0.125rem white;
+        @include button-focus();
+        
+        :hover {
+          @include button-focus();
+
+        }
+      }
+
+      &--outline {
+        background-color: white;
+        color: #007ea3;
+        border: solid 3px #007ea3;
+
+        &:visited {
+          &:hover {
+            @include button-outline-hover();
+            color: white;
+          }
+
+          &:focus {
+            color: white;
+            @include button-outline-focus();
+            outline: dotted 0.125rem white;
+  
+            &:hover {
+              @include button-outline-focus();
+            }
+          }
+
+          &:active {
+            color: white;
+            @include button-outline-focus();
+  
+            &:hover {
+              @include button-outline-hover();
+              color: white;
+            }
+  
+            &:focus {
+              color: white;
+              @include button-outline-focus();
+              outline: dotted 0.125rem white;
+    
+              &:hover {
+                @include button-outline-focus();
+              }
+            }
+          }
+        }
+
+        &:active {
+          color: white;
+          @include button-outline-focus();
+
+          &:hover {
+            @include button-outline-hover();
+            color: white;
+          }
+
+          &:focus {
+            color: white;
+            @include button-outline-focus();
+            outline: dotted 0.125rem white;
+  
+            &:hover {
+              @include button-outline-focus();
+            }
+          }
+        }
+
+        &:focus {
+          color: white;
+          @include button-outline-focus();
+          outline: dotted 0.125rem white;
+
+          &:hover {
+            @include button-outline-focus();
+          }
+        }
+
+        &:hover {
+          @include button-outline-hover();
+          color: white;
+        }
       }
     }
 
@@ -945,6 +1099,32 @@ $learn-section-side-margin: 0 2rem;
       font-size: 48px;
       margin-bottom: 4.1875rem;
     }
+
+    .cta {
+      padding: 42px;
+
+      &__title {
+        font-size: 30px;
+      }
+
+      &__description {
+        margin: 20px 0;
+        font-size: 20px;
+      }
+
+      &__button-container {
+        flex-direction: row;
+
+        button, a {
+          margin: 0;
+          font-size: 18px;
+        }
+
+        :first-child {
+          margin-right: 8px;
+        }
+      }
+    }
   }
 }
 
@@ -974,6 +1154,11 @@ $learn-section-side-margin: 0 2rem;
   }
 
   .section {
+    padding: 140px 120px;
+
+    &--learn {
+      padding-top: 0;
+    }
 
     &--testemonials {
       margin-top: 55px;
@@ -998,6 +1183,9 @@ $learn-section-side-margin: 0 2rem;
     }
 
     &__button {
+      font-size: 18px;
+      padding: 12px 20px;
+
       &--next-prev{
         height: 2rem;
         width: 2rem;
@@ -1135,6 +1323,28 @@ $learn-section-side-margin: 0 2rem;
     &__title {
       font-size: 55px;
       margin-bottom: 4.1875rem;
+    }
+
+    .cta {
+      padding: 34px;
+
+      &__button-container {
+        margin: 32px 0;
+      }
+
+      &__title, &__description {
+        @include text();
+      }
+
+      &__title {
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      &__description {
+        font-size: 20px;
+        font-weight: normal;
+      }
     }
   }
 }
@@ -1466,8 +1676,10 @@ body {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
   .libraries-section {
+    padding: 80px 44px;
+
     &__container {
       grid-template-columns: auto;
     }
