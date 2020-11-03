@@ -156,11 +156,18 @@ $learn-section-side-margin: 0 2rem;
       flex-direction: column;
       align-items: center;
       color: $home-page-action-color;
+      min-width: 33.33%;
+      max-width: 33.33%;
     }
   
     &__logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
       img {
-        width: 48px;
+        min-width: 48px;
+        max-width: 60%;
         display: block;
         margin-bottom: 8px;
       }
@@ -749,6 +756,8 @@ $learn-section-side-margin: 0 2rem;
 
     &__item {
       padding: 0 55px 20px 55px;
+      min-width: 16.66%;
+      max-width: 16.66%;
     }
 
     &__logo {
@@ -929,6 +938,21 @@ $learn-section-side-margin: 0 2rem;
   .community-section {
     &__text {
       max-width: 66.66%;
+    }
+    
+    &__item {
+      min-width: 16.666%;
+      max-width: 16.666%;
+    }
+
+    &__logo {
+      font-size: 20px;
+
+      img {
+        margin-bottom: 16px;
+        min-width: 96px;
+        max-width: 75%;
+      }
     }
   }
 
