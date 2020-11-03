@@ -711,9 +711,20 @@ $learn-section-side-margin: 0 2rem;
     }
   }
 
+  .libraries-section,.features-section,.about-section,.community-section, .section {
+    padding: 140px 44px;
+  }
+
+  .community-section {
+    &__text {
+      width: 100%;
+      text-align: left;
+    }
+  }
+
   .section {
     flex-direction: column;
-    padding: 140px 120px;
+    padding: 140px 44px;
 
     &--learn {
       padding-top: 0;
@@ -757,7 +768,7 @@ $learn-section-side-margin: 0 2rem;
     &__container {
       flex-direction: column;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       padding: 0;
       min-width: 100%;
       margin-left: -24px;
@@ -786,7 +797,6 @@ $learn-section-side-margin: 0 2rem;
 
     &__item {
       margin-bottom: 0;
-      padding: 0 24px;
       max-width: 100%;
 
       &--learn {
@@ -838,6 +848,11 @@ $learn-section-side-margin: 0 2rem;
       font-size: 20px;
       line-height: normal;
       margin: 0;
+      max-width: 450px;
+
+      &--full-width {
+        max-width: 100%;
+      }
     }
 
     &__title {
@@ -848,6 +863,12 @@ $learn-section-side-margin: 0 2rem;
 }
 
 @media (min-width: 1024px) {
+  .community-section {
+    &__text {
+      max-width: 66.66%;
+    }
+  }
+
   .section {
 
     &--testemonials {
@@ -1347,8 +1368,6 @@ body {
 
 @media (max-width: 900px) {
   .libraries-section {
-    padding: 80px 120px;
-
     &__container {
       grid-template-columns: auto;
     }
