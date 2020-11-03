@@ -115,10 +115,14 @@ $learn-section-side-margin: 0 2rem;
   }
   
   .community-section {
-    padding: 140px 120px;
+    padding: 2.75rem 44px;
     max-width: 1440px;
     margin: 0 auto;
   
+    &__item-title {
+      @include item-title-mobile();
+    }
+
     &__title {
       @include text();
   
@@ -126,23 +130,28 @@ $learn-section-side-margin: 0 2rem;
     }
   
     &__text {
-      width: 50%;
       margin: 16px auto 44px;
   
       @include text();
   
       font-size: 20px;
       line-height: 1.4;
-      text-align: center;
+      text-align: left;
     }
   
     &__container {
-      display: grid;
-      grid-gap: 24px;
-      grid-template-columns: auto auto auto auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      min-width: 100%;
+      margin-right: -44px;
+      margin-left: -44px;
+      margin-bottom: -16px;
     }
   
     &__item {
+      padding: 0 44px 16px 44px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -151,9 +160,9 @@ $learn-section-side-margin: 0 2rem;
   
     &__logo {
       img {
-        height: 80px;
+        width: 48px;
         display: block;
-        margin-bottom: 24px;
+        margin-bottom: 8px;
       }
     }
   
@@ -715,15 +724,38 @@ $learn-section-side-margin: 0 2rem;
     padding: 140px 44px;
   }
 
-  .community-section {
-    &__text {
-      width: 100%;
-      text-align: left;
-    }
-  }
+  // .community-section {
+  //   &__text {
+  //     width: 100%;
+  //     text-align: left;
+  //   }
+  // }
 
   .features-section {
     padding: 0 44px 140px 44px;
+  }
+  .community-section {
+    padding: 140px 120px;
+
+    &__container {
+      margin-left: -55px;
+      margin-right: -55px;
+      margin-bottom: -20px;
+    }
+
+    &__text {
+      margin-top: 44px;
+    }
+
+    &__item {
+      padding: 0 55px 20px 55px;
+    }
+
+    &__logo {
+      img {
+        width: 62px;
+      }
+    }
   }
 
   .section {
@@ -1519,32 +1551,6 @@ body {
     }
 
     &__item {
-      @include text-mobile();
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .community-section {
-    &__text {
-      width: 100%;
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .community-section {
-    padding: 44px;
-
-    &__title {
-      @include title-mobile();
-    }
-
-    &__item-title {
-      @include item-title-mobile();
-    }
-
-    &__text {
       @include text-mobile();
     }
   }
