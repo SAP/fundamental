@@ -125,16 +125,15 @@ $learn-section-side-margin: 0 2rem;
 
     &__title {
       @include text();
-  
+      margin: 0;
       text-align: center;
     }
   
     &__text {
-      margin: 16px auto 44px;
+      margin: 16px auto 24px;
   
       @include text();
-  
-      font-size: 20px;
+      font-size: 16px;
       line-height: 1.4;
       text-align: left;
     }
@@ -145,29 +144,33 @@ $learn-section-side-margin: 0 2rem;
       flex-wrap: wrap;
       justify-content: center;
       min-width: 100%;
-      margin-right: -44px;
-      margin-left: -44px;
+      margin-right: -5px;
+      margin-left: -5px;
       margin-bottom: -16px;
     }
   
     &__item {
-      padding: 0 44px 16px 44px;
+      padding: 0 5px 16px 5px;
       display: flex;
       flex-direction: column;
       align-items: center;
       color: $home-page-action-color;
-      min-width: 33.33%;
-      max-width: 33.33%;
+      min-width: 16.66%;
+      max-width: 16.66%;
+
+      .contact {
+        display: none;
+      }
     }
   
     &__logo {
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
 
       img {
-        min-width: 48px;
-        max-width: 60%;
+        max-width: 100%;
         display: block;
         margin-bottom: 8px;
       }
@@ -745,24 +748,30 @@ $learn-section-side-margin: 0 2rem;
     padding: 140px 120px;
 
     &__container {
-      margin-left: -55px;
-      margin-right: -55px;
+      margin-left: -22px;
+      margin-right: -22px;
       margin-bottom: -20px;
     }
 
     &__text {
+      font-size: 20px;
       margin-top: 44px;
     }
 
     &__item {
-      padding: 0 55px 20px 55px;
+      padding: 0 22px 20px 22px;
       min-width: 16.66%;
       max-width: 16.66%;
+
+      .contact {
+        display: inline-block;
+        font-size: 20px;
+      }
     }
 
     &__logo {
       img {
-        width: 62px;
+        margin-bottom: 16px;
       }
     }
   }
@@ -953,6 +962,10 @@ $learn-section-side-margin: 0 2rem;
         min-width: 96px;
         max-width: 75%;
       }
+    }
+    
+    &__text {
+      margin: 64px auto 40px;
     }
   }
 
