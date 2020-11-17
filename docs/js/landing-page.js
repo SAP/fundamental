@@ -198,3 +198,18 @@ function setIntervalCompany () {
 }
 
 setIntervalCompany();
+
+function search() {
+  fetch('https://content.services-qa.sap.com/cse/search/type?types=blogpost&text=ui5&size=20', 
+  {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  ).then(resp=> {
+  console.log(resp);
+  }).catch(err=> {
+    alert(err);
+  })
+}
