@@ -36,7 +36,7 @@ function setTestemonial() {
     document.getElementById("read-less").style.display = "none";
     document.getElementById("read-more").style.display = "none";
     if(screen.width >= 1440) {
-      document.getElementById("company-container").style.paddingTop = "69px";
+      document.getElementById("company-container").style.paddingTop = "42px";
     } 
     else if(screen.width >= 1024) {
       document.getElementById("company-container").style.paddingTop = "42px";
@@ -47,7 +47,7 @@ function setTestemonial() {
     document.getElementById("company-quote").innerHTML =testimonials[index].quote.substring(0, maxChar) + '...';
     document.getElementById("read-more").style.display = "block";
     document.getElementById("read-less").style.display = "none";
-    document.getElementById("company-container").style.paddingTop = "0";
+    document.getElementById("company-container").style.paddingTop = "2px";
   }
 
   document.getElementById("company-logo").src = testimonials[index].logo;
