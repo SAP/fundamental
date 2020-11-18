@@ -711,9 +711,24 @@ $learn-section-side-margin: 0 2rem;
     }
   }
 
+  .libraries-section,.about-section,.community-section, .section {
+    padding: 140px 44px;
+  }
+
+  .community-section {
+    &__text {
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  .features-section {
+    padding: 0 44px 140px 44px;
+  }
+
   .section {
     flex-direction: column;
-    padding: 140px 120px;
+    padding: 140px 44px;
 
     &--learn {
       padding-top: 0;
@@ -729,6 +744,12 @@ $learn-section-side-margin: 0 2rem;
           .logo {
             height: 60px;
           }
+          .quote, .read-more, .read-less {
+            font-size: 22px;
+          }
+          .quote {
+            font-weight: 500;
+          }
         }
       }
 
@@ -737,7 +758,7 @@ $learn-section-side-margin: 0 2rem;
         margin-bottom: 0;
 
         span, a {
-          font-size: 16px;
+          font-size: 20px;
         }
       }
     }
@@ -757,7 +778,7 @@ $learn-section-side-margin: 0 2rem;
     &__container {
       flex-direction: column;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       padding: 0;
       min-width: 100%;
       margin-left: -24px;
@@ -786,7 +807,6 @@ $learn-section-side-margin: 0 2rem;
 
     &__item {
       margin-bottom: 0;
-      padding: 0 24px;
       max-width: 100%;
 
       &--learn {
@@ -838,6 +858,32 @@ $learn-section-side-margin: 0 2rem;
       font-size: 20px;
       line-height: normal;
       margin: 0;
+      max-width: 450px;
+
+      &--full-width {
+        max-width: 100%;
+      }
+    }
+
+    &__testemonial {
+      .testemonial-inner {
+        padding: 0 44px;
+      }
+    }
+
+    &__testemonial-arrows {
+      top: 120px;
+
+      .left-arrow, .right-arrow {
+        padding: 0 44px;
+        font-size: 40px;
+      }
+      .left-arrow {
+        margin-left: -44px;
+      }
+      .right-arrow {
+        margin-right: -44px;
+      }
     }
 
     &__title {
@@ -848,6 +894,12 @@ $learn-section-side-margin: 0 2rem;
 }
 
 @media (min-width: 1024px) {
+  .community-section {
+    &__text {
+      max-width: 66.66%;
+    }
+  }
+
   .section {
 
     &--testemonials {
@@ -1347,8 +1399,6 @@ body {
 
 @media (max-width: 900px) {
   .libraries-section {
-    padding: 80px 120px;
-
     &__container {
       grid-template-columns: auto;
     }
@@ -1428,7 +1478,7 @@ body {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .features-section {
     padding: 0 44px 44px 44px;
 
