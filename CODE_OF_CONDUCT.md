@@ -10,4 +10,4 @@ In the attempt to adopt the best practices from the most renowned open-source pr
 
 ## Violations
 
-If you observe any instance of abusive, harassing, or otherwise unacceptable behavior, report it as an issue to the project maintainers specified in the `CODEOWNERS` document.
+If you observe any instance of abusive, harassing, or otherwise unacceptable behavior, report it as an issue to the project.
