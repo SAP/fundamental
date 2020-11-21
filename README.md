@@ -8,6 +8,10 @@ SAP Fundamentals' Documentation Site is hosted [here](https://sap.github.io/fund
 [![Slack](https://img.shields.io/badge/slack-ui--fundamentals-blue.svg?logo=slack)](https://ui-fundamentals.slack.com)
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP/fundamental)](https://api.reuse.software/info/github.com/SAP/fundamental)
 
+<a href="https://www.netlify.com">
+  <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="Deploys by Netlify" />
+</a>
+
 
 ## What is SAP Fundamentals?
 
