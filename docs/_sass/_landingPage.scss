@@ -1248,6 +1248,17 @@ $learn-section-side-margin: 0 2rem;
       margin: 10px 0 10px 0;
     }
 
+
+    &__slogan-logo {
+      width: auto;
+      flex-direction: row-reverse;
+    }
+
+    &__slogan {
+      margin: 0 4px 0 0;
+      font-size: 16px;
+    }
+
     &__text {
       font-size: 18px;
 
@@ -1508,8 +1519,8 @@ $learn-section-side-margin: 0 2rem;
       &--right {
         position: relative;
         top: -16px;
-        left: 140px;
-        padding-right: 140px;
+        left: 155px;
+        padding-right: 155px;
         flex-direction: row;
         justify-content: space-between;
       }
@@ -1522,6 +1533,16 @@ $learn-section-side-margin: 0 2rem;
           justify-content: flex-start;
         }
       }
+    }
+
+    &__text {
+      &--copyright {
+        font-size: 16px;  
+      }
+    }
+
+    &__slogan {
+      font-size: 16px;  
     }
 
     &__logo {
@@ -1551,6 +1572,9 @@ $learn-section-side-margin: 0 2rem;
 
   .community-section {
     &__item {
+      min-width: 9%;
+      max-width: 9%;
+
       .contact {
         font-size: 22px;
       }
@@ -1597,8 +1621,31 @@ $learn-section-side-margin: 0 2rem;
   }
 
   .footer-section {
-    &__logo {
-      width: 96px;
+    &__container {
+      max-width: 1440px;
+
+      &--responsive {
+        .footer-section__logo {
+          width: 86px;
+          margin-right: -40px;
+        }
+      }
+
+      &--right {
+        left: 155px;
+        padding-right: 155px;
+      }
+    }
+
+    &__text {
+      font-size: 20px;
+
+      &--copyright {
+        font-size: 18px;  
+      }
+      &--tilte {
+        font-size: 22px;
+      }
     }
   }
 

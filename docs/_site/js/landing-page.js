@@ -12,58 +12,9 @@ const testimonials = [
   }
 ];
 
-const blogs = [
-  {
-  author: "Stefano Scalzo",
-  image: "../images/ipad-example.jpg",
-  description: "Integrating SAP Apps from a UX POV: About Fundamental Library and UI5 Web Components"
-  },
-  {
-    author: "Stefano Scalzo",
-    image: "../images/ipad-example.jpg",
-    description: "Integrating SAP Apps from a UX POV: About Fundamental Library and UI5 Web Components"
-  },
-  {
-    author: "Stefano Scalzo",
-    image: "../images/ipad-example.jpg",
-    description: "Integrating SAP Apps from a UX POV: About Fundamental Library and UI5 Web Components"
-  },
-  {
-    author: "Stefano Scalzo",
-    image: "../images/ipad-example.jpg",
-    description: "Integrating SAP Apps from a UX POV: About Fundamental Library and UI5 Web Components"
-  }
-]
-
 var index = 0;
 var maxChar = null;
 let x0 = null;
-
-document.onreadystatechange = () => {
-  if (document.readyState === 'complete') {
-    // document ready
-    blogs.forEach(blog => {
-      var element = document.createElement("div");
-      element.classList.add("section__item");
-      element.classList.add("section__item--blog");
-      var image = document.createElement("img");
-      image.src = blog.image;
-      image.classList.add("blog__img");
-      var author = document.createElement("h1");
-      author.innerText = blog.author;
-      author.classList.add("blog__title");
-      var description = document.createElement("h2");
-      description.innerText = blog.description;
-      description.classList.add("blog__description"); 
-      description.classList.add("truncate-overflow");
-      element.appendChild(image);
-      element.appendChild(author);
-      element.appendChild(description);
-      document.getElementById("blog-container").appendChild(element);
-    });
-  }
-};
-
 
 testimonials.forEach(element => {
   if (element.quote.length < maxChar || maxChar == null) {
@@ -85,7 +36,7 @@ function setTestemonial() {
     document.getElementById("read-less").style.display = "none";
     document.getElementById("read-more").style.display = "none";
     if(screen.width >= 1440) {
-      document.getElementById("company-container").style.paddingTop = "69px";
+      document.getElementById("company-container").style.paddingTop = "42px";
     } 
     else if(screen.width >= 1024) {
       document.getElementById("company-container").style.paddingTop = "42px";
@@ -96,7 +47,7 @@ function setTestemonial() {
     document.getElementById("company-quote").innerHTML =testimonials[index].quote.substring(0, maxChar) + '...';
     document.getElementById("read-more").style.display = "block";
     document.getElementById("read-less").style.display = "none";
-    document.getElementById("company-container").style.paddingTop = "0";
+    document.getElementById("company-container").style.paddingTop = "2px";
   }
 
   document.getElementById("company-logo").src = testimonials[index].logo;
@@ -198,18 +149,3 @@ function setIntervalCompany () {
 }
 
 setIntervalCompany();
-
-function search() {
-  fetch('https://content.services-qa.sap.com/cse/search/type?types=blogpost&text=ui5&size=20', 
-  {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  }
-  ).then(resp=> {
-  console.log(resp);
-  }).catch(err=> {
-    alert(err);
-  })
-}
