@@ -953,7 +953,7 @@ $learn-section-side-margin: 0 2rem;
     padding: 0 44px 140px 44px;
   }
   .community-section {
-    padding: 140px 44;
+    padding: 140px 44px;
 
     &__container {
       margin-left: -22px;
@@ -1277,8 +1277,10 @@ $learn-section-side-margin: 0 2rem;
 
 @media (min-width: 1024px) {
   .community-section {
+    padding: 140px 120px;
+
     &__text {
-      max-width: 66.66%;
+      max-width: 100%;
     }
     
     &__item {
@@ -1476,6 +1478,7 @@ $learn-section-side-margin: 0 2rem;
       &--subtitle {
         font-size: 20px;
         max-width: 100%;
+        margin-bottom: 44px;
       }
     }
 
@@ -1504,7 +1507,7 @@ $learn-section-side-margin: 0 2rem;
   }
 
   .footer-section {
-    padding: 100px 122px 44px 122px;
+    padding: 100px 120px 44px 120px;
     &__container {
       margin-right: 0;
 
@@ -1562,7 +1565,7 @@ $learn-section-side-margin: 0 2rem;
     }
 
     &__container {
-      max-width: 1560px;
+      max-width: 1440px;
       padding: 0 120px;
     }
     &__item {
@@ -1595,7 +1598,7 @@ $learn-section-side-margin: 0 2rem;
 
   .features-section {
     padding: 80px 120px 140px 120px;
-    max-width: 1560px;
+    max-width: 1440px;
 
     &__title {
       font-size: 55px;
@@ -1612,7 +1615,8 @@ $learn-section-side-margin: 0 2rem;
 
   .intro-section {
     &__container {
-      max-width: 1560px;
+      max-width: 1440px;
+      padding: 100px 140px;
     }
 
     &__text {
@@ -1622,7 +1626,13 @@ $learn-section-side-margin: 0 2rem;
 
   .footer-section {
     &__container {
-      max-width: 1440px;
+      max-width: 1200px;
+
+      &--inner {
+        :not(:last-child) {
+          margin-right: 48px;
+        }
+      }
 
       &--responsive {
         .footer-section__logo {
@@ -1651,7 +1661,7 @@ $learn-section-side-margin: 0 2rem;
 
   .libraries-section {
     padding: 140px 120px 64px 120px;
-    max-width: 1560px;
+    max-width: 1440px;
 
     &__item-title{
       font-size: 30px;
@@ -1698,7 +1708,7 @@ $learn-section-side-margin: 0 2rem;
     }
 
     &__logo {
-      height: 8rem;
+      height: 82px;
 
       &--learn {
         height: 352px;
@@ -1706,6 +1716,11 @@ $learn-section-side-margin: 0 2rem;
     }
 
     &__testemonial {
+
+      &--outer {
+        max-width: 1440px;
+        padding: 0 140px;
+      }
 
       .quote {
         font-size: 24px;
