@@ -200,16 +200,27 @@ function setIntervalCompany () {
 setIntervalCompany();
 
 function search() {
-  fetch('https://content.services-qa.sap.com/cse/search/type?types=blogpost&text=ui5&size=20', 
-  {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
+  const http = new XMLHttpRequest();
+  const url = "https://content.services-qa.sap.com/cse/search/type?types=blogpost&text=Fundamental%2CLibrary";
+  http.open("GET",url);
+  http.setRequestHeader('Content-Type', 'application/json');
+  http.send();
+  http.onreadystatechange = (e) => {
+    console.log(http.responseText);
+    console.log('look here')
+    console.log(http.responseText._embedded)
   }
-  ).then(resp=> {
-  console.log(resp);
-  }).catch(err=> {
-    alert(err);
-  })
+
+  // fetch('https://content.services-qa.sap.com/cse/search/type?types=blogpost&page=0&size=20', 
+  // {
+  //   method: 'GET',
+  //   headers: {
+  //     'Content-Type': 'application/json'
+  //   }
+  // }
+  // ).then(resp=> {
+  // console.log(resp);
+  // }).catch(err=> {
+  //   alert(err);
+  // })
 }
