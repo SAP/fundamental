@@ -392,7 +392,7 @@ footerhidden: true
         src="{{site.baseurl}}/images/land-page-assets/logo.svg"
         alt="Fundamental Library Logo"
         />
-        <div class="footer-section__container">
+        <div class="footer-section__container" id="footer-desction-explore">
             <a class="footer-section__text footer-section__text--title">EXPLORE</a>
             <a class="footer-section__text" href="#features">Key Features</a>
             <a class="footer-section__text" href="#about">About</a>
@@ -453,6 +453,14 @@ footerhidden: true
 </div> -->
 
 <script>
+
+
+    if(window.location.href.indexOf('netlify.app') !== -1){
+        var node = document.createElement("A");
+        node.innerHTML = "<img src=\"https://www.netlify.com/img/global/badges/netlify-color-accent.svg\" alt=\"Deploys by Netlify\" />";
+        node.href = `href="https://www.netlify.com"`;
+        document.getElementById('footer-desction-explore').appendChild(node);
+    }
     document.getElementById("tg-sb-content").onscroll = function() {
         const mainContent = document.getElementById("tg-sb-content");
 
