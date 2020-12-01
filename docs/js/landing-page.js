@@ -12,29 +12,6 @@ const testimonials = [
   }
 ];
 
-const blogs = [
-  {
-  author: "Stefano Scalzo",
-  image: "../images/ipad-example.jpg",
-  description: "Integrating SAP Apps from a UX POV: About Fundamental Library and UI5 Web Components"
-  },
-  {
-    author: "Stefano Scalzo",
-    image: "../images/ipad-example.jpg",
-    description: "Integrating SAP Apps from a UX POV: About Fundamental Library and UI5 Web Components"
-  },
-  {
-    author: "Stefano Scalzo",
-    image: "../images/ipad-example.jpg",
-    description: "Integrating SAP Apps from a UX POV: About Fundamental Library and UI5 Web Components"
-  },
-  {
-    author: "Stefano Scalzo",
-    image: "../images/ipad-example.jpg",
-    description: "Integrating SAP Apps from a UX POV: About Fundamental Library and UI5 Web Components"
-  }
-]
-
 var index = 0;
 var maxChar = null;
 let x0 = null;
@@ -42,25 +19,53 @@ let x0 = null;
 document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
     // document ready
-    blogs.forEach(blog => {
-      var element = document.createElement("div");
-      element.classList.add("section__item");
-      element.classList.add("section__item--blog");
-      var image = document.createElement("img");
-      image.src = blog.image;
-      image.classList.add("blog__img");
-      var author = document.createElement("h1");
-      author.innerText = blog.author;
-      author.classList.add("blog__title");
-      var description = document.createElement("h2");
+    this.search().then(result=>{
+      result.forEach(blog => {
+
+      let col = document.createElement("div");
+      col.classList.add("section__item");
+        
+      let element = document.createElement("div");
+      element.classList.add("blog-item");
+
+      let title = document.createElement("h1");
+      title.innerText = blog.title;
+      title.classList.add("blog-item__title");
+
+      let subcontainer = document.createElement("div");
+      subcontainer.classList.add("blog-item__subcontainer");
+
+      let author = document.createElement("H2");
+      author.innerText = blog.author +" | ";
+      author.classList.add("blog-item__subtitle");
+
+      let date = document.createElement("H3");
+      date.innerText = blog.date.substring(0,10);
+      date.classList.add("blog-item__date");
+
+      subcontainer.appendChild(author);
+      subcontainer.appendChild(date);
+
+
+      let description = document.createElement("p");
       description.innerText = blog.description;
-      description.classList.add("blog__description"); 
+      description.classList.add("blog-item__description"); 
       description.classList.add("truncate-overflow");
-      element.appendChild(image);
-      element.appendChild(author);
+
+      let link = document.createElement("A");
+      link.innerText = "Read More";
+      link.href= blog.anchor;
+      link.classList.add("blog-item__anchor"); 
+
+      element.appendChild(title);
+      element.appendChild(subcontainer);
       element.appendChild(description);
-      document.getElementById("blog-container").appendChild(element);
+      element.appendChild(link);
+      col.appendChild(element)
+      document.getElementById("blog-posts-container").appendChild(col);
+      });
     });
+
   }
 };
 
@@ -199,28 +204,32 @@ function setIntervalCompany () {
 
 setIntervalCompany();
 
-function search() {
-  const http = new XMLHttpRequest();
-  const url = "https://content.services-qa.sap.com/cse/search/type?types=blogpost&text=Fundamental%2CLibrary";
-  http.open("GET",url);
-  http.setRequestHeader('Content-Type', 'application/json');
-  http.send();
-  http.onreadystatechange = (e) => {
-    console.log(http.responseText);
-    console.log('look here')
-    console.log(http.responseText._embedded)
-  }
-
-  // fetch('https://content.services-qa.sap.com/cse/search/type?types=blogpost&page=0&size=20', 
-  // {
-  //   method: 'GET',
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   }
-  // }
-  // ).then(resp=> {
-  // console.log(resp);
-  // }).catch(err=> {
-  //   alert(err);
-  // })
+function search () {
+  return new Promise(function(resolve,reject) {
+    const http = new XMLHttpRequest();
+    const url = "https://content.services.sap.com/cse/search/type?types=blogpost&text=Fundamental+Library&size=6";
+    http.open("GET",url);
+    http.setRequestHeader('Content-Type', 'application/json');
+    http.send();
+    http.onreadystatechange = (e) => {
+      
+      if(http.responseText) {
+        const arr = [];
+        const jsonParse = JSON.parse(http.responseText);
+        const obj = jsonParse._embedded.contents;
+        Object.keys(obj).forEach(key => {
+          console.log(obj[key]);
+         let object = {
+          author:obj[key].author.displayName,
+          date:obj[key].created,
+          title:obj[key].displayName,
+          description: obj[key].content.substring(0,120)+"...",
+          anchor: obj[key].prettyUrl
+          };
+          arr.push(object);
+        });
+        resolve(arr);
+      }
+    }
+  });
 }
