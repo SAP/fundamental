@@ -85,9 +85,15 @@ $button-outline-focus: #006f91;
 }
 
 @mixin border() {
-  border: 0.5px solid darkgrey;
   border-radius: 8px;
-  box-shadow: 8px 8px 6px -6px grey;
+  border: solid 1px #d3d3d3;
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 10px 0 rgba(211, 211, 211, 0.9);
+    transform: scale(1.005);
+  }
 }
 
 @mixin text() {
@@ -324,8 +330,8 @@ $learn-section-side-margin: 0 2rem;
 
       .section__item {
         margin-bottom: 20px;
-        min-width: 50%;
-        max-width: 50%;
+        min-width: 100%;
+        max-width: 100%;
       }
 
       .blog-item {
