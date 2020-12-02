@@ -19,53 +19,54 @@ let x0 = null;
 document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
     // document ready
-    this.search().then(result=>{
-      result.forEach(blog => {
+    // this.search().then(result=>{
+    //   result.forEach(blog => {
 
-      let col = document.createElement("div");
-      col.classList.add("section__item");
+    //   let col = document.createElement("div");
+    //   col.classList.add("section__item");
         
-      let element = document.createElement("div");
-      element.classList.add("blog-item");
+    //   let element = document.createElement("div");
+    //   element.classList.add("blog-item");
 
-      let title = document.createElement("h1");
-      title.innerText = blog.title;
-      title.classList.add("blog-item__title");
+    //   let title = document.createElement("h1");
+    //   title.innerText = blog.title;
+    //   title.classList.add("blog-item__title");
 
-      let subcontainer = document.createElement("div");
-      subcontainer.classList.add("blog-item__subcontainer");
+    //   let subcontainer = document.createElement("div");
+    //   subcontainer.classList.add("blog-item__subcontainer");
 
-      let author = document.createElement("H2");
-      author.innerText = blog.author +" | ";
-      author.classList.add("blog-item__subtitle");
+    //   let author = document.createElement("H2");
+    //   author.innerText = blog.author +" | ";
+    //   author.classList.add("blog-item__subtitle");
 
-      let date = document.createElement("H3");
-      date.innerText = blog.date.substring(0,10);
-      date.classList.add("blog-item__date");
+    //   let date = document.createElement("H3");
+    //   date.innerText = blog.date.substring(0,10);
+    //   date.classList.add("blog-item__date");
 
-      subcontainer.appendChild(author);
-      subcontainer.appendChild(date);
+    //   subcontainer.appendChild(author);
+    //   subcontainer.appendChild(date);
 
 
-      let description = document.createElement("p");
-      description.innerText = blog.description;
-      description.classList.add("blog-item__description"); 
-      description.classList.add("truncate-overflow");
+    //   let description = document.createElement("p");
+    //   description.innerText = blog.description;
+    //   description.classList.add("blog-item__description"); 
+    //   description.classList.add("truncate-overflow");
 
-      let link = document.createElement("A");
-      link.innerText = "Read More";
-      link.href= blog.anchor;
-      link.classList.add("blog-item__anchor"); 
+    //   let link = document.createElement("A");
+    //   link.innerText = "Read More";
+    //   link.href= blog.anchor;
+    //   link.classList.add("blog-item__anchor"); 
 
-      element.appendChild(title);
-      element.appendChild(subcontainer);
-      element.appendChild(description);
-      element.appendChild(link);
-      col.appendChild(element)
-      document.getElementById("blog-posts-container").appendChild(col);
-      });
-    });
+    //   element.appendChild(title);
+    //   element.appendChild(subcontainer);
+    //   element.appendChild(description);
+    //   element.appendChild(link);
+    //   col.appendChild(element)
+    //   document.getElementById("blog-posts-container").appendChild(col);
+    //   });
+    // });
 
+    addBlogs();
   }
 };
 
@@ -171,6 +172,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
   document.getElementById("company").addEventListener('touchstart', lock, false);
   document.getElementById("company").addEventListener('touchend', move, false);
+
+  if(screen.width>=768) {
+    document.getElementById('search-button').innerText = "Search";
+    document.getElementById('search-button').classList.remove("sap-icon--navigation-right-arrow");
+  }
 })
 
 function lock(e) {
@@ -207,23 +213,26 @@ setIntervalCompany();
 function search () {
   return new Promise(function(resolve,reject) {
     const http = new XMLHttpRequest();
-    const url = "https://content.services.sap.com/cse/search/type?types=blogpost&text=Fundamental+Library&size=6";
+    const searchField = document.getElementById('search-1').value;
+    let url = "https://content.services.sap.com/cse/search/type?types=blogpost&size=6&text=Fundamental%20Library";
+    if(searchField) {
+      url = url + "%20"+encodeURI(searchField);
+      addTag(searchField);
+    }
     http.open("GET",url);
     http.setRequestHeader('Content-Type', 'application/json');
     http.send();
     http.onreadystatechange = (e) => {
-      
       if(http.responseText) {
         const arr = [];
         const jsonParse = JSON.parse(http.responseText);
         const obj = jsonParse._embedded.contents;
         Object.keys(obj).forEach(key => {
-          console.log(obj[key]);
          let object = {
           author:obj[key].author.displayName,
           date:obj[key].created,
           title:obj[key].displayName,
-          description: obj[key].content.substring(0,120)+"...",
+          description: obj[key].content.substring(0,330)+"...",
           anchor: obj[key].prettyUrl
           };
           arr.push(object);
@@ -231,5 +240,80 @@ function search () {
         resolve(arr);
       }
     }
+  });
+}
+
+function addTag(text) {
+  container = document.getElementById('search-tags-container');
+
+  let element = document.createElement("div");
+  element.classList.add("search-tag");
+
+  let tag = document.createElement("h1");
+  tag.innerText = text;
+  tag.classList.add("search-tag-text");
+
+  element.appendChild(tag);
+  container.appendChild(element)
+}
+
+
+function addBlogs() {
+
+  this.search().then(result=>{
+
+    result.forEach(blog => {
+
+    let col = document.createElement("div");
+    col.classList.add("section__item");
+      
+    let element = document.createElement("div");
+    element.classList.add("blog-item");
+
+    let title = document.createElement("h1");
+    title.innerText = blog.title;
+    title.classList.add("blog-item__title");
+
+    let subcontainer = document.createElement("div");
+    subcontainer.classList.add("blog-item__subcontainer");
+
+    let author = document.createElement("H2");
+    author.innerText = blog.author +" | ";
+    author.classList.add("blog-item__subtitle");
+
+    let date = document.createElement("H3");
+    date.innerText = blog.date.substring(0,10);
+    date.classList.add("blog-item__date");
+
+    subcontainer.appendChild(author);
+    subcontainer.appendChild(date);
+
+
+    let description = document.createElement("p");
+    description.innerText = blog.description;
+    description.classList.add("blog-item__description"); 
+
+    let link = document.createElement("A");
+    link.innerText = "READ ON SAP BLOG";
+    link.href= blog.anchor;
+    link.classList.add("blog-item__anchor"); 
+    
+    let iconContainer = document.createElement("div");
+    iconContainer.classList.add("blog-item__icon-container"); 
+
+    let icon = document.createElement("i");
+    icon.classList.add("blog-item__icon"); 
+    icon.classList.add("sap-icon--arrow-right"); 
+
+    iconContainer.appendChild(link);
+    iconContainer.appendChild(icon);
+
+    element.appendChild(title);
+    element.appendChild(subcontainer);
+    element.appendChild(description);
+    element.appendChild(iconContainer);
+    col.appendChild(element)
+    document.getElementById("blog-posts-container").appendChild(col);
+    });
   });
 }

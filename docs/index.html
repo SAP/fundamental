@@ -230,11 +230,25 @@ footerhidden: true
     <section class="blog-section" id="blog">
       <h2 class="blog-section__title">Blog</h2>
       <p class="blog-section__text">Read the latest blog posts from the Fundamental Library team and contributors!</p>
-      <div class="section__container section__container--blog">  
+      <div class="input-group-container">
+        <div class="input-group">
+            <i class="sap-icon sap-icon--search" tabindex="-1"></i>
+            <input aria-label="search-blog" placeholder="Blog titles or keywords" class="input-search" type="text" id="search-1" name="search-1">
+        <button aria-label="delete-search" type="button" class="button-remove sap-icon sap-icon--decline" onclick="document.getElementById('search-1').value = '';"></button>
+        </div>
+        <button aria-label="search" type="button" class="search-button" id="search-button" onclick="search()">
+            <i class="sap-icon sap-icon--navigation-right-arrow"></i>
+        </button>
+    </div>
+    <div class="search-tags-container" id="search-tags-container">
+        
+    </div>
+
+      <!-- <div class="section__container">   -->
         <div id="blog-posts-container" class="blog-posts-container">
 
         </div>
-      </div>
+      <!-- </div> -->
   </section>
   <section class="section section--testemonials">
     <h1 class="section__title">Testimonials</h1>
