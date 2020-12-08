@@ -217,8 +217,8 @@ function search () {
     let url = "https://content.services.sap.com/cse/search/type?types=blogpost&size=6&text=Fundamental%20Library";
     if(searchField) {
       url = url + "%20"+encodeURI(searchField);
-      addTag(searchField);
     }
+    document.getElementById('search-1').value = '';
     http.open("GET",url);
     http.setRequestHeader('Content-Type', 'application/json');
     http.send();
@@ -241,20 +241,6 @@ function search () {
       }
     }
   });
-}
-
-function addTag(text) {
-  container = document.getElementById('search-tags-container');
-
-  let element = document.createElement("div");
-  element.classList.add("search-tag");
-
-  let tag = document.createElement("h1");
-  tag.innerText = text;
-  tag.classList.add("search-tag-text");
-
-  element.appendChild(tag);
-  container.appendChild(element)
 }
 
 

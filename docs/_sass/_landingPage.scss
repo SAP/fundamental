@@ -338,11 +338,16 @@ $learn-section-side-margin: 0 2rem;
             outline:0 0 0 1px #007ea3 !important;
           }
         }
+        ::placeholder {
+          font-style: normal;
+          font-size: 14px;
+          padding: 0;
+        }
 
         .sap-icon {
           color: #BABABA;
           font-size: 14px;
-          padding: 0 1rem;
+          padding: 0 8px;
 
           &:focus {
             outline: 0;
@@ -387,7 +392,7 @@ $learn-section-side-margin: 0 2rem;
         width: 35px;
         height: 35px;
         font-weight: bold;
-        font-size: 20px;
+        font-size: 16px;
 
         &:hover {
           background-color: #006b8c;
@@ -408,7 +413,7 @@ $learn-section-side-margin: 0 2rem;
       padding-left: 34px;
       width: 100%;
       flex-wrap: nowrap;
-      margin: 16px 0 30px 0;
+      margin: 24px 0 30px 0;
       min-height: 30px;
       overflow-x: scroll;
       white-space: nowrap;
@@ -417,11 +422,18 @@ $learn-section-side-margin: 0 2rem;
         background-color: #DBEFF5;
         border: 1px solid #006482;
         border-radius: 50px;
+        padding: 5px 12px;
         margin-right: 4px;
+        display: flex;
+        align-items: center;
 
-        .search-tag-text {
+        &__logo {
+          height: 12px;
+          margin-right: 4px;
+        }
+
+        &__text {
           margin: 0;
-          padding: 5px 12px;
           font-size: 12px;
           font-weight: 300;
           color: #006482;
@@ -460,8 +472,14 @@ $learn-section-side-margin: 0 2rem;
         border-color: #D0E7EE;
         border-radius: 20px;
 
+        &__icon-container {
+          display: flex;
+          align-items: center;
+        }
+
         &:hover {
-          box-shadow: 1px 1px 15px -5px #3397B5;
+          background-color: #FBFBFB;
+          box-shadow: 1px 1px 15px -10px #3397B5;
 
           .blog-item__subtitle, .blog-item__date {
             color: #767676
@@ -477,7 +495,7 @@ $learn-section-side-margin: 0 2rem;
           margin: 0;
           text-align: left;
           font-weight: bold;
-          min-height: 44px;
+          min-height: 50px;
           font-size: 18px;
           color: #007EA3;
         }
@@ -486,7 +504,7 @@ $learn-section-side-margin: 0 2rem;
           margin: 0;
           text-align: left;
           font-weight: normal;
-          font-size: 16px;
+          font-size: 14px;
           white-space: break-spaces;
           color: #AFAFAF;
         }
@@ -1164,19 +1182,35 @@ $learn-section-side-margin: 0 2rem;
       margin: 0;
     }
     .search-tags-container {
-      padding-left: 120px;
+      padding-left: 44px;
+
+      .search-tag {
+        margin-right: 8px;
+        padding: 10px 35px;
+
+        &__logo {
+          height: 16px;
+        }
+        &__text {
+          font-size: 16px;
+        }
+      }
     }
     &__text, &__title, .input-group-container {
-      padding: 0 120px;
+      padding: 0 44px;
     }
 
     .input-group-container {
       .input-group {
         .sap-icon {
+          padding: 0 16px;
           font-size: 20px;
         }
         ::placeholder {
           font-size: 20px;
+        }
+        .input-search {
+          padding: 0;
         }
       }
 
@@ -1189,7 +1223,7 @@ $learn-section-side-margin: 0 2rem;
     }
 
     .blog-posts-container {
-      padding: 0 120px;
+      padding: 0 44px;
       flex-wrap: wrap;
 
       .section__item {
@@ -1204,6 +1238,8 @@ $learn-section-side-margin: 0 2rem;
 
         &__title {
           font-size: 20px;
+          min-height: 0;
+          margin-bottom: 8px;
         }
         &__subtitle {
           font-size: 16px;
@@ -1526,6 +1562,37 @@ $learn-section-side-margin: 0 2rem;
 }
 
 @media (min-width: 1024px) {
+  .blog-section {
+    align-items: center;
+
+    .search-tags-container {
+      padding-left: 120px;
+      margin: 24px 0 44px 0;
+    }
+    &__text, &__title, .input-group-container {
+      padding: 0 120px;
+    }
+
+    .blog-posts-container {
+      padding: 0 102.5px;
+      flex-wrap: wrap;
+
+      .section__item {
+        min-width: 50%;
+        max-width: 50%;
+        margin-bottom: 35px;
+        padding: 0 17.5px;
+      }
+
+      .blog-item {
+        margin-bottom: 0;
+
+        &__title {
+          font-size: 22px;
+        }
+      }
+    }
+  }
   .community-section {
     &__text {
       max-width: 66.66%;
@@ -1547,66 +1614,6 @@ $learn-section-side-margin: 0 2rem;
     
     &__text {
       margin: 64px auto 40px;
-    }
-  }
-  .blog-section {
-    // padding: 0 120px 120px 120px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-
-    .blog-posts-container {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-
-      .section__item {
-        margin-bottom: 20px;
-      }
-
-      .blog-item {
-        &__title {
-          min-height: 4.6rem;
-          margin: 0;
-          text-align: left;
-          font-weight: bold;
-          font-size: 22px;
-          color: #007EA3;
-        }
-        &__subtitle {
-          margin: 0;
-          text-align: left;
-          font-weight: 400;
-          font-size: 22px;
-        }
-        &__date {
-          margin: 0;
-          text-align: left;
-          font-weight: 300;
-          font-size: 20px;
-        }
-        &__description {
-          margin: 0;
-          text-align: left;
-          font-weight: 300;
-          font-size: 20px;
-        } 
-        &__anchor {
-          margin: 0;
-          text-align: left;
-          font-weight: 300;
-          font-size: 20px;
-        } 
-      }
-    }
-
-    &__title {
-      margin: 0;
-      font-weight: 400;
-      font-size: 55px;
-      margin-bottom: 64px;
     }
   }
 
@@ -1852,10 +1859,43 @@ $learn-section-side-margin: 0 2rem;
 
   .blog-section {
     max-width: 1440px;
+    padding-bottom: 140px;
 
-    .section__item {
-      min-width: 50%;
-      max-width: 50%;
+    .input-group-container {
+      .search-button {
+        font-size: 20px;
+        height: 46px;
+      }
+    }
+
+    .blog-posts-container {
+
+      .blog-item {
+        &__title {
+          font-size: 24px;
+        }
+        &__subtitle {
+          font-size: 18px;
+        }
+        &__date {
+          font-size: 18px;
+        }
+        &__description {
+          font-size: 20px;
+        } 
+        &__anchor {
+          font-size: 20px;
+        } 
+      }
+    }
+    &__text {
+      font-size: 22px;
+      margin-bottom:24px;
+    }
+
+    &__title {
+      margin-bottom: 60px;
+      font-size: 54px;
     }
   }
 
