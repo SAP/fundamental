@@ -213,6 +213,7 @@ setIntervalCompany();
 function search (field) {
   return new Promise(function(resolve,reject) {
     const http = new XMLHttpRequest();
+    http.responseType = 'json';
     const searchField = document.getElementById('search-1').value;
     let url = "https://content.services.sap.com/cse/search/type?types=blogpost&size=6&text=Fundamental%20Library";
     if(searchField) {
@@ -225,9 +226,9 @@ function search (field) {
     http.setRequestHeader('Content-Type', 'application/json');
     http.send();
     http.onreadystatechange = (e) => {
-      if(http.responseText) {
+      if(http.response) {
         const arr = [];
-        const jsonParse = JSON.parse(http.responseText);
+        const jsonParse = http.response;
         const obj = jsonParse._embedded.contents;
         Object.keys(obj).forEach(key => {
          let object = {
