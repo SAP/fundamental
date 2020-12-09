@@ -2,7 +2,14 @@ $button-focus: #02617e;
 $button-hover: #006f91;
 $button-regular: #007ea3;
 $button-outline-hover: #007ea3;
-$button-outline-focus: #006f91;
+$button-outline-focus: hsl(194, 100%, 28%);
+
+@mixin fd-focus() {
+  box-shadow: none;
+  outline-offset: -0.25rem;
+  outline: 1px dotted black;
+  @content;
+}
 
 @mixin button-focus() {
   background-color: #02617e;
@@ -333,10 +340,7 @@ $learn-section-side-margin: 0 2rem;
         background-color: #F6F6F6;
         border-radius: 4px;
         &:focus {
-          outline:0 0 0 1px #007ea3 !important;
-          &:hover {
-            outline:0 0 0 1px #007ea3 !important;
-          }
+          outline: 1px solid #007ea3 !important;
         }
         ::placeholder {
           font-style: normal;
@@ -378,7 +382,7 @@ $learn-section-side-margin: 0 2rem;
             color: #007ea3;
           }
           &:focus {
-            outline: 0;
+            @include fd-focus();
           }
         }
       }
@@ -403,7 +407,9 @@ $learn-section-side-margin: 0 2rem;
         }
         &:focus {
           cursor: pointer;
-          outline: 0;
+          @include fd-focus() {
+            outline-color: white;
+          };
         }
       }
     }
@@ -421,11 +427,23 @@ $learn-section-side-margin: 0 2rem;
       .search-tag {
         background-color: #DBEFF5;
         border: 1px solid #006482;
-        border-radius: 50px;
+        border-radius: 25px;
         padding: 5px 12px;
         margin-right: 4px;
         display: flex;
         align-items: center;
+
+        &:focus {
+          @include fd-focus(){
+            outline-offset: -0.625rem;
+          };
+          background-color: #c9e8f0;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background-color: #d1edf5;
+        }
 
         &__logo {
           height: 12px;
@@ -1440,6 +1458,14 @@ $learn-section-side-margin: 0 2rem;
       .left-arrow, .right-arrow {
         padding: 0 44px;
         font-size: 40px;
+
+        &:focus {
+          .sap-icon {
+            @include fd-focus(){
+              outline-offset: 0.5rem;
+            };
+          }
+        }
       }
       .left-arrow {
         margin-left: -44px;

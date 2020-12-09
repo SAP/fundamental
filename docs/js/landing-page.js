@@ -210,13 +210,15 @@ function setIntervalCompany () {
 
 setIntervalCompany();
 
-function search () {
+function search (field) {
   return new Promise(function(resolve,reject) {
     const http = new XMLHttpRequest();
     const searchField = document.getElementById('search-1').value;
     let url = "https://content.services.sap.com/cse/search/type?types=blogpost&size=6&text=Fundamental%20Library";
     if(searchField) {
       url = url + "%20"+encodeURI(searchField);
+    } else if (field) {
+      url = url + "%20"+encodeURI(field);
     }
     document.getElementById('search-1').value = '';
     http.open("GET",url);
