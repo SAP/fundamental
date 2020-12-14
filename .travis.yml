@@ -13,9 +13,9 @@ jobs:
   - stage: Lint and Test
     script: npm run lint && npm run test:ci-config && npm run test
   - stage: Pre-release
-    if: branch = master
+    if: branch = main
     before_deploy:
-    - git checkout master
+    - git checkout main
     - bash ./ci-scripts/setup-npm.sh
     deploy:
     - provider: script
@@ -26,7 +26,7 @@ jobs:
     before_deploy:
     - git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
     - git fetch
-    - git checkout master
+    - git checkout main
     - bash ./ci-scripts/setup-npm.sh
     - gem update --system
     - gem install ruby bundler jekyll

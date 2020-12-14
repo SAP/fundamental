@@ -4,7 +4,7 @@
 SAP Fundamentals' Documentation Site is hosted [here](https://sap.github.io/fundamental/old.html) for time being.**
 
 [![npm version](https://badge.fury.io/js/fiori-fundamentals.svg)](https://badge.fury.io/js/fiori-fundamentals)
-[![Build Status](https://travis-ci.org/SAP/fundamental.svg?branch=master)](https://travis-ci.org/SAP/fundamental)
+[![Build Status](https://travis-ci.org/SAP/fundamental.svg?branch=main)](https://travis-ci.org/SAP/fundamental)
 [![Slack](https://img.shields.io/badge/slack-ui--fundamentals-blue.svg?logo=slack)](https://ui-fundamentals.slack.com)
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP/fundamental)](https://api.reuse.software/info/github.com/SAP/fundamental)
 
@@ -42,7 +42,7 @@ This gives you incredible flexibility to use individual components and enable [a
 npm install fiori-fundamentals --save
 ````
 
-> NOTE: We only distribute the fonts, icons and compiled CSS and [the SASS source](https://github.com/SAP/fundamental/tree/master/scss), not the full project or HTML for specific components. If your project uses LESS, see [LESS compatible Fiori Fundamentals](https://github.com/SAP/fundamental/wiki/LESS-compatible-Fiori-Fundamentals).
+> NOTE: We only distribute the fonts, icons and compiled CSS and [the SASS source](https://github.com/SAP/fundamental/tree/main/scss), not the full project or HTML for specific components. If your project uses LESS, see [LESS compatible Fiori Fundamentals](https://github.com/SAP/fundamental/wiki/LESS-compatible-Fiori-Fundamentals).
 
 
 ## Working with the Project
@@ -94,7 +94,7 @@ If you want to contribute, please check the [Contribution Guidelines](https://gi
 
 The `fiori-fundamentals` library follows [Semantic Versioning](https://semver.org/). These components strictly adhere to the `[MAJOR].[MINOR].[PATCH]` numbering system (also known as `[BREAKING].[FEATURE].[FIX]`).
 
-Merges to the `master` branch will be published as a prerelease. Prereleases will include an **rc** version (_e.g._ `[MAJOR].[MINOR].[PATCH]-rc.[RC]`).
+Merges to the `main` branch will be published as a prerelease. Prereleases will include an **rc** version (_e.g._ `[MAJOR].[MINOR].[PATCH]-rc.[RC]`).
 
 The following circumstances will be considered a MAJOR or BREAKING change:
 * Droppping existing classnames, css variables, color names, color groups, spacing parameters
