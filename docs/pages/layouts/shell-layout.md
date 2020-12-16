@@ -9,7 +9,7 @@ folder: layouts
 summary:
 ---
 
-Shell layout containers are used to construct the master template and application containers, providing structure to your application. The structure is divided into two layout components — `shell` and `app`.
+Shell layout containers are used to construct the main template and application containers, providing structure to your application. The structure is divided into two layout components — `shell` and `app`.
 
 - The `shell` layer is only for high-level containers: global header, app content, global footer and full-page overlay.
 - The `app` layer is for application-level containers: sidebar and page content.
@@ -33,7 +33,7 @@ These are dumb containers only concerned with placement with no effect on their 
 
 ## Application with only Top Bar
 {: .docs-header-h2}
-This is the master layout which provides the foundation for all page templates. Use this foundation when a full-width layout is needed, e.g., home page, launchpad, dashboard, etc.
+This is the main layout which provides the foundation for all page templates. Use this foundation when a full-width layout is needed, e.g., home page, launchpad, dashboard, etc.
 
 Both the header and footer can be fixed by applying the `.fd-shell--fixed` modifier to the `.fd-shell` container, or each can be fixed individual by apply `.fd-shell__header--fixed` or `.fd-shell__footer--fixed`.
 
