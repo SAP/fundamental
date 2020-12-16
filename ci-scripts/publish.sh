@@ -19,7 +19,7 @@ fi
 
 echo "$std_ver"
 
-git push --follow-tags "https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG" master > /dev/null 2>&1;
+git push --follow-tags "https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG" main > /dev/null 2>&1;
 
 # build dist and less folders
 npm run build:prod
@@ -27,7 +27,7 @@ npm run build:prod
 npm publish
 
 # run this after publish to make sure GitHub finishes updating from the push
-npm run release:create -- --repo $TRAVIS_REPO_SLUG --tag $release_tag --branch master
+npm run release:create -- --repo $TRAVIS_REPO_SLUG --tag $release_tag --branch main
 
 npm run docs:prod
 npm run deploy -- --repo "https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG"
