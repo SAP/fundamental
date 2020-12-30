@@ -236,12 +236,12 @@ footerhidden: true
             <input aria-label="search-blog" placeholder="Blog titles or keywords" class="input-search" type="text" id="search-1" name="search-1">
         <button aria-label="delete-search" type="button" class="button-remove sap-icon sap-icon--decline" onclick="document.getElementById('search-1').value = '';"></button>
         </div>
-        <button aria-label="search" type="button" class="search-button" id="search-button" onclick="search()">
+        <button aria-label="search" type="button" class="search-button" id="search-button" onclick="addBlogs(null, true)">
             <i class="sap-icon sap-icon--navigation-right-arrow"></i>
         </button>
     </div>
     <div class="search-tags-container" id="search-tags-container">
-        <button class="search-tag" onclick="search('angular')">
+        <button class="search-tag" onclick="addBlogs('angular', true)">
             <img
             src="{{site.baseurl}}/images/land-page-assets/angular.svg"
             alt="Logo of the AngularJS Framework"
@@ -251,7 +251,7 @@ footerhidden: true
                 Angular
             </h1>
         </button>
-        <button class="search-tag" onclick="search('react')">
+        <button class="search-tag" onclick="addBlogs('react', true)">
             <img
             src="{{site.baseurl}}/images/land-page-assets/react.svg"
             alt="Logo of the AngularJS Framework"
@@ -261,7 +261,7 @@ footerhidden: true
                 React
             </h1>
         </button>
-        <button class="search-tag" onclick="search('vue')">
+        <button class="search-tag" onclick="addBlogs('vue', true)">
             <img
             src="{{site.baseurl}}/images/land-page-assets/vue.svg"
             alt="Logo of the AngularJS Framework"
@@ -271,7 +271,7 @@ footerhidden: true
                 Vue
             </h1>
         </button>
-        <button class="search-tag" onclick="search('tutorial')">
+        <button class="search-tag" onclick="addBlogs('tutorial', true)">
             <img
             src="{{site.baseurl}}/images/land-page-assets/youtube-play.png"
             class="search-tag__logo" 
@@ -281,7 +281,7 @@ footerhidden: true
                 Tutorials
             </h1>
         </button>
-        <button class="search-tag" onclick="search('release')">
+        <button class="search-tag" onclick="addBlogs('release', true)">
             <img
             src="{{site.baseurl}}/images/land-page-assets/release.png"
             class="search-tag__logo" 
@@ -293,11 +293,10 @@ footerhidden: true
         </button>
     </div>
 
-      <!-- <div class="section__container">   -->
         <div id="blog-posts-container" class="blog-posts-container">
 
         </div>
-      <!-- </div> -->
+        <button class="section__button section__button--outline" onclick="moreArticles()">See More Articles</button>
   </section>
   <section class="section section--testemonials">
     <h1 class="section__title">Testimonials</h1>

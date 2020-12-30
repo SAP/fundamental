@@ -433,18 +433,6 @@ $learn-section-side-margin: 0 2rem;
         display: flex;
         align-items: center;
 
-        &:focus {
-          @include fd-focus(){
-            outline-offset: -0.625rem;
-          };
-          background-color: #c9e8f0;
-        }
-
-        &:hover {
-          cursor: pointer;
-          background-color: #d1edf5;
-        }
-
         &__logo {
           height: 12px;
           margin-right: 4px;
@@ -455,6 +443,32 @@ $learn-section-side-margin: 0 2rem;
           font-size: 12px;
           font-weight: 300;
           color: #006482;
+        }
+
+        &:focus {
+          @include fd-focus(){
+            outline-offset: -0.625rem;
+            outline-color: white;
+          };
+          @include button-focus();
+          .search-tag__text{
+            color: white;
+          }
+
+          &:hover {
+            @include button-focus();
+            .search-tag__text{
+              color: white;
+            }
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+          @include button-hover();
+          .search-tag__text{
+            color: white;
+          }
         }
       }
     }
