@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.9-rc.19](https://github.com/SAP/fundamental/compare/v1.7.9-rc.18...v1.7.9-rc.19) (2021-01-06)
+
+
+### Bug Fixes
+
+* Compilation error ([#1592](https://github.com/SAP/fundamental/issues/1592)) ([396e079](https://github.com/SAP/fundamental/commit/396e079b5c6f531599d2e5db5c4ff8c5f77fd325))
+
 ### [1.7.9-rc.18](https://github.com/SAP/fundamental/compare/v1.7.9-rc.17...v1.7.9-rc.18) (2020-12-16)
 
 
