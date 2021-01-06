@@ -8,7 +8,7 @@ mergeable:
           regex: ^\[WIP\]
           message: This is work in progress. Do not merge yet.
         must_include:
-          regex: ^(feat|docs|chore|fix|test)(\(\w+\))?(:|\().+$
+          regex: ^(feat|docs|chore|fix|test|build)(\(\w+\))?(:|\().+$
           message: Semantic release conventions must be followed.
       - do: description
         must_exclude:
@@ -23,18 +23,6 @@ mergeable:
           - required:
               reviewers: [ 'droshev' ]
           - required:
-              reviewers: [ 'salarenko' ]
-          - required:
               reviewers: [ 'JKMarkowski' ]
           - required:
               reviewers: [ 'mikerodonnell89' ]
-          - required:
-              reviewers: [ 'jessmetivier' ]
-          - required:
-              reviewers: [ 'jbadan' ]
-          - required:
-              reviewers: [ 'katekozlowska' ]
-          - required:
-              reviewers: [ 'Vanessa-Cusmich' ]
-          - required:
-              reviewers: [ 'stefanoScalzo' ]
