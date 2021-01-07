@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.9"></a>
+## [1.5.9](https://github.com/SAP/fundamental/compare/v1.5.8...v1.5.9) (2021-01-07)
+
+
+### Bug Fixes
+
+* Compilation error ([2d413b6](https://github.com/SAP/fundamental/commit/2d413b6))
+
+
+
 <a name="1.5.8"></a>
 ## [1.5.8](https://github.com/SAP/fundamental/compare/v1.5.8-rc.9...v1.5.8) (2019-05-23)
 
