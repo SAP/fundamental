@@ -95,7 +95,7 @@ $fd-colors: map-merge((
     4: hsl(28, 86.7%, 97.1%), // #FEF7F1 Semantic Colors alert background
     5: hsl(0, 100%, 96.1%),  // #FFEBEB Semantic Colors negative background
     6: hsl(210, 100%, 98%), // #F5FAFF Semantic Colors info background
-    7: hsl(0, 0, 95.7%) // #F4F4F4 neutral alert background
+    7: hsl(0, 0%, 95.7%) // #F4F4F4 neutral alert background
   ),
   "neutral": (
     1: hsl(210, 3%, 98%), // #FAFAFA UI Neutral UI 1
@@ -160,7 +160,7 @@ $fd-colors-action-states: map-merge((
 $fd-link-color: map-get($fd-colors-action, 1) !default;
 $fd-link-color--hover: adjust-color($fd-link-color, $lightness: -7%) !default;
 $fd-link-color--active: darken($fd-link-color, 10) !default;
-$fd-link-color--pressed: adjust-color($fd-link-color, $lightness: -10) !default;
+$fd-link-color--pressed: adjust-color($fd-link-color, $lightness: -10%) !default;
 $fd-link-color--disabled: rgba($fd-link-color, 0.4) !default;
 //deprecate these ----^
 
@@ -241,7 +241,7 @@ $fd-button-line-height: $fd-forms-height - 2;
 $fd-button-line-height--compact: $fd-forms-height--compact - 2;
 
 $fd-forms-color: $fd-color !default;
-$fd-forms-color--placeholder: adjust-color(map-get($fd-colors-text, 3), $lightness: 14) !default;
+$fd-forms-color--placeholder: adjust-color(map-get($fd-colors-text, 3), $lightness: 14%) !default;
 
 $fd-forms-color--focus: $fd-forms-color !default;
 $fd-forms-color--disabled: map-get($fd-colors-text, 3) !default;
