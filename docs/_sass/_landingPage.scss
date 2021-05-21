@@ -256,9 +256,12 @@ $learn-section-side-margin: 0 2rem;
     }
   }
 
+  .intro-section__banner{
+    width: 100%;
+  }
+
   .intro-section {
     padding: 100px 120px;
-    background-image: url("../images/land-page-assets/hero_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   
@@ -277,6 +280,16 @@ $learn-section-side-margin: 0 2rem;
   
       @include text();
     }
+
+    &__conf {
+      width: 100%;
+
+      &--mobile{
+        width: 100%;
+
+      }
+    }
+
   }
 
   .libraries-section {
@@ -937,6 +950,25 @@ $learn-section-side-margin: 0 2rem;
       animation: fade-out 1s;
     }
   }
+}
+
+@media (max-width: 768px){
+  .intro-section__conf{
+    display: none;
+  }
+  .intro-section__conf--mobile{
+    display: block;
+  }
+}
+
+@media (min-width: 769px){
+  .intro-section__conf{
+    display: block;
+  }
+  .intro-section__conf--mobile{
+    display: none;
+  }
+
 }
 
 @media (min-width: 768px) {
