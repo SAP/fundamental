@@ -10,6 +10,8 @@ script:
   - npm run build
 jobs:
   include:
+  - stage: Lint commit message
+    script: commitlint-travis
   - stage: Lint and Test
     script: npm run lint && npm run test:ci-config && npm run test
   - stage: Pre-release

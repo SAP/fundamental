@@ -7,7 +7,7 @@ git config --global user.name "fundamental-bot"
 
 git status
 
-std_ver=$(npm run std-version -- --prerelease rc --no-verify)
+std_ver=$(npm run version.rc)
 release_tag=$(echo "$std_ver" | grep "tagging release" | awk '{print $4}')
 
 echo "$release_tag"

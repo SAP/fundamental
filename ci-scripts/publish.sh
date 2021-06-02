@@ -8,7 +8,7 @@ git config --global user.name "fundamental-bot"
 # delete temp branch
 git push "https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG" ":$TRAVIS_BRANCH" > /dev/null 2>&1;
 
-std_ver=$(npm run std-version)
+std_ver=$(npm run version.patch)
 release_tag=$(echo "$std_ver" | grep "tagging release" | awk '{print $4}')
 
 # some versions of standard-version are not echoing the "v" prefix on the "tagging release" line
