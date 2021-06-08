@@ -1,3 +1,6 @@
+
+### [1.7.9-rc.39](https://github.com/SAP/fundamental/compare/v1.7.9-rc.38...v1.7.9-rc.39) (2021-06-08)
+
 ## [1.7.9-rc.38](https://github.com/SAP/fundamental/compare/v1.7.9-rc.37...v1.7.9-rc.38) (2021-06-04)
 
 
@@ -542,6 +545,3 @@
 
 
 # [1.0.0-beta-4](https://github.com/SAP/fundamental/compare/v1.0.0-beta-3...v1.0.0-beta-4) (2018-05-08)
-
-
-
