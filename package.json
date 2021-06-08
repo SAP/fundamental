@@ -36,11 +36,7 @@
     "test:update": "server-test start:playground:default http-get://localhost:3030 test:reference && backstop approve --config ./test/visual-regression-tests/config/backstopConfig.js",
     "test:visual": "backstop test --config ./test/visual-regression-tests/config/backstopConfig.js --docker",
     "prepare": "husky install",
-    "version": "npm run changelog && npm run git-add",
-    "version.rc": "npm version prerelease --preid=rc -m \"chore(release): version %s build ${TRAVIS_BUILD_NUMBER} [ci skip]\"",
-    "version.patch": "npm version patch -m \"chore(release): version %s build ${TRAVIS_BUILD_NUMBER} [ci skip]\"",
-    "git-add": "git add -A",
-    "changelog": "conventional-changelog -i ./CHANGELOG.md -s -p angular -r 0"
+    "std-version": "standard-version --infile ./CHANGELOG.md --releaseCommitMessageFormat \"chore(release): version {{currentTag}} build ${TRAVIS_BUILD_NUMBER} [ci skip]\" --header \"\""
   },
   "repository": {
     "type": "git",
@@ -61,7 +57,6 @@
     "backstopjs": "3.9.2",
     "browser-sync": "^2.26.12",
     "clean-css-cli": "^4.3.0",
-    "conventional-changelog-cli": "^2.1.1",
     "del": "^3.0.0",
     "express": "^4.17.1",
     "foreach-cli": "^1.8.1",
@@ -77,6 +72,7 @@
     "postcss-clean": "^1.1.0",
     "postcss-cli": "^7.1.0",
     "signale": "^1.4.0",
+    "standard-version": "9.3.0",
     "start-server-and-test": "^1.10.11",
     "stylelint": "^13.3.0",
     "stylelint-scss": "^3.16.0",
