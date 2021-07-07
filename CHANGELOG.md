@@ -1,4 +1,6 @@
 
+### [1.7.9-rc.44](https://github.com/SAP/fundamental/compare/v1.7.9-rc.43...v1.7.9-rc.44) (2021-07-07)
+
 ### [1.7.9-rc.43](https://github.com/SAP/fundamental/compare/v1.7.9-rc.42...v1.7.9-rc.43) (2021-06-30)
 
 ### [1.7.9-rc.42](https://github.com/SAP/fundamental/compare/v1.7.9-rc.41...v1.7.9-rc.42) (2021-06-13)
