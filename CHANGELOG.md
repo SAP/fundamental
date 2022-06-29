@@ -1,4 +1,11 @@
 
+### [1.7.10-rc.1](https://github.com/SAP/fundamental/compare/v1.7.10-rc.0...v1.7.10-rc.1) (2022-06-29)
+
+
+### Bug Fixes
+
+* **styles:** updadte conf banner ([#1652](https://github.com/SAP/fundamental/issues/1652)) ([9b8b75d](https://github.com/SAP/fundamental/commit/9b8b75da0cf4a9494cdd2a9777094cb72671ae18))
+
 ### [1.7.10-rc.0](https://github.com/SAP/fundamental/compare/v1.7.9...v1.7.10-rc.0) (2021-08-06)
 
 ### [1.7.9](https://github.com/SAP/fundamental/compare/v1.7.9-rc.46...v1.7.9) (2021-08-06)
