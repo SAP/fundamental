@@ -1,4 +1,11 @@
 
+### [1.7.11-rc.2](https://github.com/SAP/fundamental/compare/v1.7.11-rc.1...v1.7.11-rc.2) (2022-07-28)
+
+
+### Bug Fixes
+
+* add link to fundamentalconf.com ([#1664](https://github.com/SAP/fundamental/issues/1664)) ([ff2e3e2](https://github.com/SAP/fundamental/commit/ff2e3e2b68115e2c645c4aa2d4f1303a66eee8ae))
+
 ### [1.7.11-rc.1](https://github.com/SAP/fundamental/compare/v1.7.11-rc.0...v1.7.11-rc.1) (2022-07-28)
 
 ### [1.7.11-rc.0](https://github.com/SAP/fundamental/compare/v1.7.10...v1.7.11-rc.0) (2022-06-29)
