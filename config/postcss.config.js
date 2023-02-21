@@ -13,7 +13,7 @@ module.exports = {
         },
         'postcss-clean': {
             format: 'beautify',
-            level: 1
+            level: 2
         },
         'postcss-banner': {
             banner: `Fundamentals v${packageVersion}
