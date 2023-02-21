@@ -6,23 +6,11 @@
   "scripts": {
     "build": "npm run style:remove && npm run style:compile && npm run style:rename && npm run style:postCSS && npm run style:assets",
     "build:prod": "npm run build && npm run style:less && npm run style:minify",
-    "deploy": "gh-pages -d docs/_site",
-    "docs:compile": "npm run build && npm run docs:config && cp scss/icons/SAP-icons.woff docs/css/; cp dist/fiori-fundamentals-ie11.css docs/css",
-    "docs:config": "./scripts/create-library-config.js",
-    "docs:prod": "npm run docs:compile && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml,_config-prod.yml && cd ..",
-    "docs": "npm run docs:compile && cd docs && bundle install && bundle exec jekyll build --config _config.yml,_config-library.yml && cd ..",
     "lint:fix": "stylelint './scss/**/*.scss' --fix",
     "lint:pre-commit": "printf \"running pre-commit lint...\"  && npm run lint && printf \"done!\n\"",
     "lint": "stylelint './scss/**/*.scss'",
     "release:create": "create-release",
     "release": "./scripts/publish-release.sh",
-    "start:playground": "npm-run-all --parallel start:playground:default start:playground:scs start:playground:comparison",
-    "start:playground:default": "node test/app.js",
-    "start:playground:comparison": "node playground/app.js",
-    "start:playground:ie11": "PORT=3032 IE11=true npm run start:playground:default",
-    "start:playground:scs": "PORT=3031 SELF_CONTAINED=true npm run start:playground:default",
-    "start:browser-sync": "browser-sync start --proxy 'localhost:4000' --files 'docs/_site/**/*' --reloadDelay '2000'",
-    "start": "npm run docs:compile && cd docs && bundle install && bundle exec jekyll serve --incremental --config _config.yml,_config-library.yml",
     "style:assets": "./scripts/copy-assets.sh",
     "style:compile": "node-sass -q --output-style expanded --precision 5 scss/ --output dist/",
     "style:less": " mv dist/fundamentals-ie11.less.css less/fiori-fundamentals-ie11.less && mv dist/fundamentals.less.css less/fiori-fundamentals.less && ./scripts/less.js",
@@ -30,11 +18,6 @@
     "style:postCSS": "postcss --config config/postcss.config.js  --replace dist/**/*.css && postcss --config config/postcss.config.js  --replace dist/*.css",
     "style:remove": "if [ -d dist/ ]; then rm -rf dist/; fi",
     "style:rename": "mv dist/all.css dist/fiori-fundamentals.css && mv dist/all-ie11.css dist/fiori-fundamentals-ie11.css",
-    "test": "server-test start:playground:default http-get://localhost:3030 test:visual",
-    "test:ci-config": "./ci-scripts/generateBackstopConfig.js",
-    "test:reference": "backstop reference --config ./test/visual-regression-tests/config/backstopConfig.js --docker",
-    "test:update": "server-test start:playground:default http-get://localhost:3030 test:reference && backstop approve --config ./test/visual-regression-tests/config/backstopConfig.js",
-    "test:visual": "backstop test --config ./test/visual-regression-tests/config/backstopConfig.js --docker",
     "prepare": "husky install",
     "std-version": "standard-version --infile ./CHANGELOG.md --releaseCommitMessageFormat \"chore(release): version {{currentTag}} build ${TRAVIS_BUILD_NUMBER} [ci skip]\" --header \"\""
   },
@@ -54,41 +37,23 @@
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@commitlint/travis-cli": "^12.1.4",
-    "backstopjs": "3.9.2",
-    "browser-sync": "^2.26.12",
-    "clean-css-cli": "^4.3.0",
-    "del": "^3.0.0",
-    "express": "^4.17.1",
     "foreach-cli": "^1.8.1",
-    "gh-pages": "^2.2.0",
-    "github-assistant": "^0.3.0",
+    "github-assistant": "^0.3.4",
     "husky": "^6.0.0",
-    "ip": "^1.1.5",
-    "load-json-file": "^6.2.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^8.0.0",
     "npm-run-all": "^4.1.5",
-    "nunjucks": "^3.2.1",
     "postcss-banner": "^3.0.1",
     "postcss-clean": "^1.1.0",
     "postcss-cli": "^7.1.0",
-    "signale": "^1.4.0",
     "standard-version": "9.3.0",
-    "start-server-and-test": "^1.10.11",
     "stylelint": "^13.3.0",
-    "stylelint-scss": "^3.16.0",
-    "write-yaml": "^1.0.0",
-    "yargs": "^12.0.2"
-  },
-  "directories": {
-    "doc": "docs",
-    "test": "test"
+    "stylelint-scss": "^3.16.0"
   },
   "dependencies": {},
   "engines": {
     "node": ">=8.12.0"
   },
   "browserslist": [
-    "last 2 versions",
-    "IE 11"
+    "last 2 versions"
   ]
 }
