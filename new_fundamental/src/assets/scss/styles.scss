@@ -1,0 +1,320 @@
+$brand-color-black: #1A1126;
+$brand-color-purple: #7B5CB2;
+$brand-color-blue: #1A9ABF;
+$brand-color-light-blue:#1A9ABF;
+$brand-color-silver:  #F0F0F1;
+$brand-color-dark-aqua:#007EA3;
+$brand-color-darkest-blue:#052E69;
+$text-color: #fff;
+$text-color-accent: #61A1FE;
+$text-color-dark: #052E69;
+// --sapBackgroundContrastColor: ;
+// --sapTextColor: #f5f6f7;
+// --sapLinkColor: ;
+// --textColor: #fff;
+// --sapTextSecondaryColor: #c4c4c4;
+// --successColor: #30914c;
+
+body, html, ul,ol {
+padding: 0;
+margin: 0;
+font-size:inherit; font-weight:inherit;
+list-style:none;
+text-decoration:none; 
+color:inherit; 
+}
+
+html {
+scroll-behavior: smooth;
+
+}
+
+
+//mixing for different sizes
+@mixin for-size($size) {
+@if $size == max_width_599 {
+  @media (max-width: 599px) { @content; }
+} @else if $size == min_width_600 {
+  @media (min-width: 600px) { @content; }
+} @else if $size == min_width_900  {
+  @media (min-width: 900px) { @content; }
+} @else if $size == min_width_1200 {
+  @media (min-width: 1200px) { @content; }
+} @else if $size == min_width_1800  {
+  @media (min-width: 1800px) { @content; }
+}
+}
+
+.fd_container {
+width: 100%;
+height: 100vh;
+display: flex;
+position: relative;
+
+overflow: hidden;
+
+
+
+}
+
+.fd_background_silver {
+background-color:  $brand-color-silver;
+
+padding: 3rem 2rem;
+
+
+}
+
+//fonts
+.fd_h1-mobile {
+  font-family: '72-Bold';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 130%;
+/* or 36px */
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: #000000;
+}
+
+.fd_h2-mobile {
+  font-family: '72-Bold';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 140%;
+/* identical to box height, or 34px */
+text-align: center;
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: #000000;
+}
+
+.fd_h3-mobile {
+  font-family: '72-Bold';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 140%;
+/* or 25px */
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: $brand-color-black;
+
+}
+.fd_h4-mobile {
+  font-family: '72';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  /* identical to box height, or 96px */
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  
+  /* Aqua / 400 */
+  color: $brand-color-dark-aqua;
+  
+}
+
+.fd_h5-mobile {
+  font-family: '72-Italic';
+font-style: italic;
+font-weight: 400;
+font-size: 16px;
+line-height: 160%;
+/* or 26px */
+text-align: center;
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: #000000;
+
+} .fd_h6-mobile {
+  font-family: '72-Light';
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 140%;
+/* or 22px */
+text-align: right;
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: #000000;
+}
+
+
+.fd_p-mobile {
+  /* Mobile/Paragraph */
+font-family: '72-Light';
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 140%;
+/* or 22px */
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: $brand-color-black;
+}
+
+
+@media only screen and (min-width: 980px) {
+  .fd_background_silver {
+    padding-left: 15rem;
+    padding-right: 15rem;
+    padding-bottom: 10rem;
+  }
+
+//fonts
+
+.fd_h1-desktop {
+  font-family: '72-Bold';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 130%;
+/* or 62px */
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: $brand-color-black;;
+
+}
+
+.fd_h2-desktop {
+  font-family: '72-Bold';
+font-style: normal;
+font-weight: 700;
+font-size: 42px;
+line-height: 120%;
+/* or 50px */
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: $brand-color-black;
+
+}
+  .fd_h3-desktop {
+    font-family: '72-Bold';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 130%;
+/* or 31px */
+font-feature-settings: 'pnum' on, 'lnum' on;
+
+color: $brand-color-black;
+  }
+  .fd_h4-desktop {
+    font-family: '72';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 100%;
+    /* identical to box height, or 96px */
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    
+    /* Aqua / 400 */
+    color: $brand-color-dark-aqua;
+    
+  }
+  .fd_h5-desktop {
+    font-family: '72-Italic';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 160%;
+    /* or 38px */
+    text-align: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    
+    color: #000000;
+    
+  }
+.fd_h6-dektop {
+  font-family: '72-Light';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 140%;
+  /* or 22px */
+  text-align: right;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  
+  color: #000000;
+}
+
+
+  .fd_p-desktop{
+    font-family: '72-Light';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+line-height: 140%;
+  }
+
+  .fd_li-desktop{
+    font-family: '72-Light';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    /* or 22px */
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: $brand-color-black;
+
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+*:not(svg, path) {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+}
+@media only screen and (orientation: landscape), (orientation: portrait) {
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+}
+@media (prefers-reduced-motion: no-preference) {
+html {
+  scroll-behavior: smooth;
+}
+}
+
+/*the rotation of the coming coon circles */
+
+#text{
+
+animation: rotate 20s infinite linear;
+transform-origin: center;
+transform-box: fill-box;
+    
+  }
+  @keyframes rotate {
+    from {
+      transform:rotateZ(0deg);
+    }
+    to {
+       transform:rotateZ(360deg);
+    }
+  } 
+
+h3 {
+font-family: "72";
+}
+p, a{
+font-family: "Source Sans 3", "Arial", sans-serif;
+
+}
+
+.fd-app-container {
+height: 100vh;
+overflow-y: scroll;
+position: relative;
+margin: 0;
+padding: 0;
+}
+
+
+
