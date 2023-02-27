@@ -23,6 +23,22 @@
           <a @click="goto('versatile')">Versatile </a>
           
         </li>
+        <li>
+          <a @click="goto('getstarted')">Get Started </a>
+          
+        </li>
+        <li>
+          <a @click="goto('conference')">Fundamental Conference </a>
+          
+        </li>
+        <li>
+          <a @click="goto('blogs')">Blog Posts </a>
+          
+        </li>
+        <li>
+          <a @click="goto('connect')">Connect With Us </a>
+          
+        </li>
       </ul>
 
       <div
@@ -91,17 +107,62 @@
             >Purpose</a
           >
         </li>
+        <li>
+          <a
+            @click="gotomob('libraries')"
+
+            class="fd-nav__link"
+            aria-label="Fundamental Libraries"
+            >Fundamental Libraries</a
+          >
+        </li>
        <li>
           <a
             @click="gotomob('versatile')"
 
             class="fd-nav__link"
-            aria-label="Agenda"
+            aria-label="Versatile"
             >Versatile</a
           >
         </li>
        
+        <li>
+          <a
+            @click="gotomob('getstarted')"
+
+            class="fd-nav__link"
+            aria-label="Get Started"
+            >Get Started</a
+          >
+        </li>
        
+        <li>
+          <a
+            @click="gotomob('conference')"
+
+            class="fd-nav__link"
+            aria-label="Fundamental Conference"
+            >Fundamental Conf</a
+          >
+        </li>
+        <li>
+          <a
+            @click="gotomob('blogs')"
+
+            class="fd-nav__link"
+            aria-label="Blog Posts"
+            >Blog Posts</a
+          >
+        </li>
+        <li>
+          <a
+            @click="gotomob('connect')"
+
+            class="fd-nav__link"
+            aria-label="Connect with Us"
+            >Connect With Us</a
+          >
+        </li>
       </ul>
     </transition>
   </header>
@@ -155,9 +216,12 @@ Using High-contrast themes in every interface evolution ensures meeting the high
 </section>
   <FDUsage />
   <FDTestimonial />
+  <section ref="blogs">
   <FDBlogs id="header" />
+</section>
+  <section ref="connect">
   <FDConnect />
- 
+</section>
 
   <FDFooter />
 </template>
