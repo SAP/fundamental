@@ -128,7 +128,7 @@
   <FDVideo
     title="Consistent and Custom"
     image="ConsistencyAndCustomVideo.gif"
-    description="Offering a visual layer to meet applications and products where they are and help them seamlessly convert to the consistency and visual standards of SAP Design without compromising the underlying structure."
+    description="Fundamental Library offers a visual layer to meet applications and products where they are and help them seamlessly convert to the consistency and visual standards of SAP Design without compromising the underlying structure."
   />
   <FDVideoRight
     title="Accessible"
