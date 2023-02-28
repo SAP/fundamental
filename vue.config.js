@@ -1,5 +1,3 @@
-const { defineConfig } = require("@vue/cli-service");
-const { HotModuleReplacementPlugin } = require("webpack");
 module.exports = {
 
 

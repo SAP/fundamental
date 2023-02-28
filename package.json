@@ -4,11 +4,11 @@
   "description": "Fiori Fundamentals is a Design System and HTML/CSS Component Library used to build modern Product User Experiences with the SAP look and feel. Learn more about this project at - http://sap.github.io/fundamental/",
   "main": "index.js",
   "scripts": {
-    "build": "npm run style:remove && npm run style:compile && npm run style:rename && npm run style:postCSS && npm run style:assets",
+    "build": "npm run style:remove && npm run style:compile && npm run style:rename && npm run style:postCSS && npm run style:assets && vue-cli-service build",
     "build:prod": "npm run build && npm run style:less && npm run style:minify",
     "lint:fix": "stylelint './scss/**/*.scss' --fix",
     "lint:pre-commit": "printf \"running pre-commit lint...\"  && npm run lint && printf \"done!\n\"",
-    "lint": "stylelint './scss/**/*.scss'",
+    "lint": "stylelint './scss/**/*.scss' && vue-cli-service lint",
     "release:create": "create-release",
     "release": "./scripts/publish-release.sh",
     "style:assets": "./scripts/copy-assets.sh",
@@ -19,7 +19,8 @@
     "style:remove": "if [ -d dist/ ]; then rm -rf dist/; fi",
     "style:rename": "mv dist/all.css dist/fiori-fundamentals.css && mv dist/all-ie11.css dist/fiori-fundamentals-ie11.css",
     "prepare": "husky install",
-    "std-version": "standard-version --infile ./CHANGELOG.md --releaseCommitMessageFormat \"chore(release): version {{currentTag}} build ${TRAVIS_BUILD_NUMBER} [ci skip]\" --header \"\""
+    "std-version": "standard-version --infile ./CHANGELOG.md --releaseCommitMessageFormat \"chore(release): version {{currentTag}} build ${TRAVIS_BUILD_NUMBER} [ci skip]\" --header \"\"",
+    "serve": "vue-cli-service serve"
   },
   "repository": {
     "type": "git",
@@ -47,7 +48,41 @@
     "postcss-cli": "^7.1.0",
     "standard-version": "9.5.0",
     "stylelint": "^13.3.0",
-    "stylelint-scss": "^3.16.0"
+    "stylelint-scss": "^3.16.0",
+    "@sap-theming/theming-base-content": "^11.1.48",
+    "core-js": "^3.8.3",
+    "eslint": "^8.34.0",
+    "fundamental-styles": "^0.26.5",
+    "gsap": "^3.11.4",
+    "simple-code-editor": "^1.2.2",
+    "vue": "^3.2.13",
+    "vue-code-highlight": "^0.7.8",
+    "vue-router": "^4.1.6",
+    "vue3-carousel": "^0.2.9",
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "sass": "^1.58.3",
+    "sass-loader": "^10.1.1",
+    "webpack": "^5.75.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
   },
   "engines": {
     "node": ">=8.12.0"
