@@ -6,6 +6,7 @@
         :src="require(`@/assets/images/${image}`)"
         class="fd-structure__image"
         aria-label="`Graphics `"
+        alt="Image of {{ title }}"
       />
       <div class="fd-structure__pwrap">
         <h2 class="fd_h2-mobile fd_h2-desktop">{{ title }}</h2>

@@ -1,5 +1,5 @@
 <template>
-    <section class="fd-getStarted fd_background_silver">
+   
        
        <h2 class="fd_h2-desktop fd_h2-mobile">
 Getting Started
@@ -14,7 +14,7 @@ Getting Started
 
    
 </div>
-    </section>
+
    
     
     </template>

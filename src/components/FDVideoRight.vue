@@ -2,11 +2,11 @@
   <section class="fd-video fd_background_silver" role="region">
     <div class="fd-video__wrap">
       <h2 class="fd_h2-mobile fd_h2-desktop">{{ title }}</h2>
-      <img
-        :src="require(`@/assets/images/${image}`)"
-        class="fd-video__image"
-        aria-label="`Graphics `"
-      />
+      <video controls autoplay class="fd-video__image" ref="video"  >
+          <source    :src="require(`@/assets/images/${image}`)"
+
+ type="video/mp4">
+          </video>
       <div class="fd-video__pwrap">
         <h2 class="fd_h2-mobile fd_h2-desktop">{{ title }}</h2>
         <p class="fd-video__paragraph fd_p-mobile fd_p-desktop" aria-label="`Paragraph description`">

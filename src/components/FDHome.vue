@@ -1,6 +1,6 @@
 <template>
 <section class="fd-home fd_background_silver">
-    <div class="fd-home__wrapper">
+    <div class="fd-home__wrapper ">
     <div class="fd-home__text">
         <span v-html="svgs.fundamental_logo" aria-hidden="true" class="fd-home__icon"> </span>
         <h1 class="fd-home__title fd_h1-mobile fd_h1-desktop">
@@ -21,7 +21,7 @@
     </div>
     </div>
    
-    <img src="@/assets/images/FLBanner-Desktop.png" class="fd-home__image"/> 
+    <img src="@/assets/images/FLBanner-Desktop.png" class="fd-home__image" alt="Fundamental Library Banner"/> 
 </div>
 </section>
 

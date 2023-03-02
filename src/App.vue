@@ -11,32 +11,27 @@
       </div>
 
       <ul v-if="!mobile" class="fd-nav__right">
-        <li>
-          <a @click="goto('purpose')">Purpose </a>
+        <li
+           @click="goto('purpose')">Purpose 
           
         </li>
-        <li>
-          <a @click="goto('libraries')">Fundamental Libraries </a>
+        <li
+          @click="goto('libraries')">Fundamental Libraries 
           
         </li>
-        <li>
-          <a @click="goto('versatile')">Versatile </a>
+        <li @click="goto('versatile')">Versatile 
           
         </li>
-        <li>
-          <a @click="goto('getstarted')">Get Started </a>
+        <li @click="goto('getstarted')">Get Started 
           
         </li>
-        <li>
-          <a @click="goto('conference')">Fundamental Conference </a>
+        <li @click="goto('conference')">Fundamental Conference 
           
         </li>
-        <li>
-          <a @click="goto('blogs')">Blog Posts </a>
+        <li @click="goto('blogs')">Blog Posts
           
         </li>
-        <li>
-          <a @click="goto('connect')">Connect With Us </a>
+        <li @click="goto('connect')">Connect With Us 
           
         </li>
       </ul>
@@ -172,7 +167,7 @@
 
   <FDHeader />
   <FDHome />
-  <section ref="purpose">
+  <section ref="purpose" class="fd-purpose fd_background_silver">
   <FDPurpose />
 </section>
 <section ref="libraries">
@@ -188,12 +183,12 @@
 
   <FDVideo
     title="Consistent and Custom"
-    image="ConsistencyAndCustomVideo.gif"
+    image="ConsistencyAndCustomVideo.mp4"
     description="Fundamental Library offers a visual layer to meet applications and products where they are and help them seamlessly convert to the consistency and visual standards of SAP Design without compromising the underlying structure."
   />
   <FDVideoRight
     title="Accessible"
-    image="AccessibilityVideo.gif"
+    image="AccessibilityVideo.mp4"
     description="Fundamental Libraries use proper semantic HTML tags such as button and anchor tags. By using the right HTML markup, the browsers cover about 80% of the accessibility requirements and the Fundamentals team aims to cover the rest by employing ARIA attributes.
 
 Using High-contrast themes in every interface evolution ensures meeting the highest accessibility standards and a consisten experience across ability levels."
@@ -203,7 +198,7 @@ Using High-contrast themes in every interface evolution ensures meeting the high
   <FDVersatile />
 </section>
 
-<section ref="getstarted">
+<section ref="getstarted" class="fd-getStarted fd_background_silver">
   <FDGetStarted />
 </section>
  <section ref="conference">
@@ -393,17 +388,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @media screen and (min-width: 980px) {
-//   FDHeader {
-//     display: none;
-// //   }
-// }
+  .fd-purpose{
+       
+        display: flex;
+        flex-direction: column;
+        display: flex;
+        gap: 24px;
+        text-align: center;
+        align-items: center; 
+    
+    }
+.fd-getStarted{
+      display: flex;
+      flex-direction: column;
+    align-items: left;
+    gap:24px;}
 
 .fd-main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  // background-image: url("@/assets/images/HomePageBackground_whole.png");
+
 
   &__backToTop {
     bottom: 1vh;
@@ -460,14 +465,15 @@ z-index: 9999;
         list-style: circle;
         color:#1A9ABF;
         font-size: 20px;
-        a {
-          
-          border:none;
+        border:none;
           list-style: circle;
           color:#1A9ABF;
           width: 40px;
-   
-        }
+          font-family: '72';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+      
       }
       li:hover{
         list-style: disc;
@@ -488,13 +494,13 @@ z-index: 9999;
     opacity: 0;
   }
 
-  .fd-nav__mobile-inner-enter-active {
-    transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02) 0.15s;
-  }
+  // .fd-nav__mobile-inner-enter-active {
+  //   transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02) 0.15s;
+  // }
 
-  .fd-nav__mobile-inner-leave-active {
-    transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
-  }
+  // .fd-nav__mobile-inner-leave-active {
+  //   transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+  // }
 
   .fd-nav__mobile-inner-enter-from {
     opacity: 0;

@@ -6,6 +6,7 @@
           target="_blank"
           rel="noreferrer"
           hreflang="en"
+          alt="Link to: {{ buttonName }}"
           class="fd-button-lib"
           ><span v-html="svgs.arrow"> </span>{{buttonName}}</a
         >

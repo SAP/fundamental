@@ -29,7 +29,7 @@
             <div class="fd-versatile__showcase  " id="showcase" >
      
               <div class="fd-card" role="region" aria-label="Card Anatomy in Fundamental Library Styles">
-            <a class="fd-card__header" tabindex="0">
+            <div class="fd-card__header" tabindex="0">
                 <span
                     class="fd-avatar fd-avatar--s fd-avatar--circle fd-avatar--thumbnail fd-card__avatar"
                     style="background-image: url('alain.png')"
@@ -44,7 +44,7 @@
                         <div class="fd-card__subtitle">Sales Executive</div>
                     </div>
                 </div>
-            </a>
+            </div>
           
             <div class="fd-card__content" role="group" aria-label="Card Content">
                 <ul class="fd-list fd-list--no-border" role="list">
@@ -108,7 +108,7 @@
     <span v-html="svgs.angular" aria-hidden="true"> </span> Core</button>
           </div>
             
-          <CodeEditor   width="auto" read_only="true" font_size="11px" :copy_code="true" class="github_dark"
+          <CodeEditor   width="auto" :read_only="true" font_size="11px" :copy_code="true" class="github_dark"
           :language_selector="false" :languages="[['javascript', 'HTML']]" :wrap_code="true" border_radius="35px" height="500px" 
         :value=modelValue >
             </CodeEditor>

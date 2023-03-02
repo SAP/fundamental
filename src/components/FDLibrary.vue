@@ -1,7 +1,7 @@
 <template >
 
     <div class="fd-library">
-        <img :src="require(`@/assets/images/${img}`)"/>
+        <img :src="require(`@/assets/images/${img}`)" alt="Image of {{ title }}"/>
             <h3 class=" fd_h3-mobile fd_h3-desktop">{{ title }} </h3>
             <div class="fd-library__paragraph">
             <p class="fd_p-mobile fd_p-desktop" >{{ description }}</p>

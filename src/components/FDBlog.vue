@@ -1,14 +1,15 @@
 <template >
 
 <div class="fd-blog">
-    <img :src="require(`@/assets/images/${image}`)"/>
+    <img :src="require(`@/assets/images/${image}`)" alt="Image of {{ title }}"/>
     <div class="fd-blog__container">
         <h3 class="fd-blog__title fd_h3-mobile fd_h3-desktop">{{title}}</h3>
         <p class="fd-blog__paragraph fd_p-mobile fd_p-desktop" >{{description}}</p>
         <a class="fd_p-mobile fd_p-desktop" :href="url"
           rel="noopener noreferrer"
           target="_blank"
-          hreflang="en">
+          hreflang="en" 
+          alt="Link to Blog Post">
     Read more <span v-html="svgs.horizontal_arrow" aria-hidden="true"> </span></a>
         
     </div>
