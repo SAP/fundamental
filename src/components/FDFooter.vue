@@ -2,7 +2,7 @@
     <footer class="fd-footer" id="footer" role="contentinfo">
       <div class="fd-footer__left">
         <div class="fd-footer__left-about">
-          <h6>About</h6>
+          <h5>About</h5>
           <a href="https://sap.github.io/fundamental/"
           rel="noopener noreferrer"
           target="_blank"
@@ -12,7 +12,7 @@
         </div>
 
         <div class="fd-footer__left-libraries">
-          <h6>Our libraries</h6>
+          <h5>Our libraries</h5>
           <a href="https://sap.github.io/fundamental-styles/?path=/docs/introduction--overview"
           rel="noopener noreferrer"
           target="_blank"
@@ -34,7 +34,7 @@
         </div>
 
         <div class="fd-footer__left-resources">
-          <h6>Resources</h6>
+          <h5>Resources</h5>
           <a href="https://community.sap.com/search/?ct=blog&q=fundamental+library"
           rel="noopener noreferrer"
           target="_blank"
@@ -49,7 +49,7 @@
         >
         </div>
         <div class="fd-footer__left-connect">
-          <h6>Connect</h6>
+          <h5>Connect</h5>
           <a
           href="https://ui-fundamentals.slack.com/archives/CFE1121S6"
           rel="noopener noreferrer"
@@ -193,7 +193,7 @@
   text-align: left;
   gap:12px;
 
-  h6 {
+  h5 {
 
 font-family: '72';
 font-style: normal;
@@ -302,7 +302,7 @@ color: #1A9ABF;
       }
       &-about, &-libraries, &-resources, &-connect{
 
-  h6 {
+  h5 {
 
 
 font-size: 20px;

@@ -9,7 +9,8 @@
           rel="noopener noreferrer"
           target="_blank"
           hreflang="en" 
-          alt="Link to Blog Post">
+          aria-describedby="Link to the Blog"
+          aria-label="Link to the Blog">
     Read more <span v-html="svgs.horizontal_arrow" aria-hidden="true"> </span></a>
         
     </div>
