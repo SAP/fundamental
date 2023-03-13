@@ -1,7 +1,7 @@
 <template>
   <section class="fd-structure fd_background_silver" role="region">
     <div class="fd-structure__wrap">
-      <h2 class="fd_h2-mobile fd_h2-desktop">{{ title }}</h2>
+      <h2 class="fd_h2">{{ title }}</h2>
       <img
         :src="require(`@/assets/images/${image}`)"
         class="fd-structure__image"
@@ -9,8 +9,11 @@
         alt="Image of {{ title }}"
       />
       <div class="fd-structure__pwrap">
-        <h2 class="fd_h2-mobile fd_h2-desktop">{{ title }}</h2>
-        <p class="fd-structure__paragraph fd_p-mobile fd_p-desktop" aria-label="`Paragraph description`">
+        <h2 class="fd_h2">{{ title }}</h2>
+        <p
+          class="fd_p"
+          aria-label="`Paragraph description`"
+        >
           {{ description }}
         </p>
 
@@ -51,7 +54,6 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/styles.scss";
 .fd-structure {
-
   gap: 3.5rem;
   display: flex;
   flex-direction: column;
@@ -64,7 +66,6 @@ export default {
     h2 {
       visibility: visible;
       text-align: left;
-    
     }
   }
   &__pwrap {
@@ -75,7 +76,6 @@ export default {
       visibility: hidden;
       display: none;
       text-align: left;
-     
     }
   }
 
@@ -83,8 +83,10 @@ export default {
     filter: drop-shadow(0px 0px 2px rgba(91, 115, 139, 0.16))
       drop-shadow(0px 8px 16px rgba(91, 115, 139, 0.16));
     border-radius: 24px;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
   }
-
 
   a {
     box-sizing: border-box;
@@ -101,7 +103,7 @@ export default {
     border: 2px solid #007ea3;
     border-radius: 6px;
     text-decoration: none;
-    font-family: "72";
+    font-family: "72", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
@@ -124,7 +126,6 @@ export default {
 
 @media only screen and (min-width: 980px) {
   .fd-structure {
-
     gap: 3.5rem;
     display: flex;
     flex-direction: column;
@@ -155,14 +156,12 @@ export default {
     }
 
     &__image {
-      width: 50%;
-      height: 50%;
+    width:58%;
+    height:50%;
+      aspect-ratio: auto;
     }
 
-    &__paragraph {
-      // font-size: clamp(0.5rem, 1.5vw, 1.5rem);
-      // line-height: clamp(100%, 4.5vh, 160%);
-    }
+   
     a {
       box-sizing: border-box;
 
@@ -178,7 +177,7 @@ export default {
       border: 2px solid #2fa3c4;
       border-radius: 6px;
       text-decoration: none;
-      font-family: "72";
+      font-family: "72", Arial, Helvetica, sans-serif;
       font-style: normal;
       font-weight: 400;
       font-size: 1rem;

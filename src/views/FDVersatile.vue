@@ -1,166 +1,198 @@
-<template  >
-    <section class="fd-versatile fd_background_silver horizon">
-        <div class="fd-versatile__left">
-            <h2 class="fd_h2-mobile fd_h2-desktop"> Versatile</h2>
-            <p class="fd_p-mobile fd_p-desktop">The Fundamental Library is a versatile tool that can readily accommodate new technologies while also providing support for existing ones with ease of use to fit any developer’s project needs.</p>
-            <div class="fd-versatile__buttons">
-                <div class="fd-versatile__buttons-left">
-                    <button data-set-theme="horizon" @click="themeSwitcher(1); themeName=1 " >Horizon</button> 
-                    <button data-set-theme="quartz-light" @click="themeSwitcher(2); themeName=2"> Quartz</button>
-                </div>
-                <div class="fd-versatile__buttons-right">
-                <span  v-html="svgs.sun" ></span>
-
-            
-  
-        <label class="fd-versatile__toggle">
-  <input type="checkbox" v-model="toggle" name="toggle" @change="ToggleTheme()">
-  <span class="slider round"></span>
-</label>
-
-  
-
-
-                
-                <span  v-html="svgs.moon"></span>
-                </div>
-            </div>
-           
-            <div class="fd-versatile__showcase  " id="showcase" >
-     
-              <div class="fd-card" role="region" aria-label="Card Anatomy in Fundamental Library Styles">
-            <div class="fd-card__header" tabindex="0">
-                <span
-                    class="fd-avatar fd-avatar--s fd-avatar--circle fd-avatar--thumbnail fd-card__avatar"
-                    style="background-image: url('alain.png')"
-                    role="img"
-                    aria-label="Alain Chevalier"></span>
-                <div class="fd-card__header-text">
-                    <div class="fd-card__title-area">
-                        <div class="fd-card__title">Alain Chevalier</div>
-                        <span class="fd-object-status fd-card__counter">6 of 12</span>
-                    </div>
-                    <div class="fd-card__subtitle-area">
-                        <div class="fd-card__subtitle">Sales Executive</div>
-                    </div>
-                </div>
-            </div>
-          
-            <div class="fd-card__content" role="group" aria-label="Card Content">
-                <ul class="fd-list fd-list--no-border" role="list">
-                    <li role="listitem" tabindex="0" class="fd-list__item">
-                        <i role="presentation" class="fd-list__icon sap-icon--cart"></i>
-                        <span class="fd-list__title">List item 1</span>
-                    </li>
-                    <li role="listitem" tabindex="0" class="fd-list__item">
-                        <i role="presentation" class="fd-list__icon sap-icon--wrench"></i>
-                        <span class="fd-list__title">List item 2</span>
-                    </li>
-                    <li role="listitem" tabindex="0" class="fd-list__item">
-                        <i role="presentation" class="fd-list__icon sap-icon--leads"></i>
-                        <span class="fd-list__title">List item 3</span>
-                    </li>
-                    <li role="listitem" tabindex="0" class="fd-list__item">
-                        <i role="presentation" class="fd-list__icon sap-icon--batch-payments"></i>
-                        <span class="fd-list__title">List item 4</span>
-                    </li>
-                    <li role="listitem" tabindex="0" class="fd-list__item">
-                        <i role="presentation" class="fd-list__icon sap-icon--retail-store"></i>
-                        <span class="fd-list__title">List item 3</span>
-                    </li>
-                    <li role="listitem" tabindex="0" class="fd-list__item">
-                        <i role="presentation" class="fd-list__icon sap-icon--travel-expense"></i>
-                        <span class="fd-list__title">List item 4</span>
-                    </li>
-                </ul>
-            </div>
-
-
-            <div class="fd-bar fd-bar--footer fd-card__bar-footer">
-                <div class="fd-bar__right">
-                    <div class="fd-bar__element">
-                        <button aria-label="button" class="fd-button fd-button--emphasized fd-button--compact">Save</button>
-                    </div>
-                    <div class="fd-bar__element">
-                        <button aria-label="button" class="fd-button fd-button--transparent fd-button--compact">Cancel</button>
-                    </div>
-
-                  
-                </div>
-            </div>
-        </div>
-            </div>
-     
-            </div>
-            
-        
-<!-- right  side -->
-        <div class="fd-versatile__right">
-          <div class="fd-versatile__right-buttons">
-            <button 
-       
-          @click="switchCode()"
+<template>
+  <section class="fd-versatile fd_background_silver horizon">
+    <div class="fd-versatile__left">
+      <h2 class="fd_h2">Versatile</h2>
+      <p class="fd_p">
+        The Fundamental Library is a versatile tool that can readily accommodate
+        new technologies while also providing support for existing ones with
+        ease of use to fit any developer’s project needs.
+      </p>
+      <div class="fd-versatile__buttons">
+        <div class="fd-versatile__buttons-left">
+          <button
+            data-set-theme="horizon"
+            @click="
+              themeSwitcher(1);
+              themeName = 1;
+            "
           >
-    <span v-html="svgs.styles" aria-hidden="true"> </span> Styles</button>
-    <button 
-         
-          @click="switchCode1()" >
-    <span v-html="svgs.angular" aria-hidden="true"> </span> Core</button>
+            Horizon
+          </button>
+          <button
+            data-set-theme="quartz-light"
+            @click="
+              themeSwitcher(2);
+              themeName = 2;
+            "
+          >
+            Quartz
+          </button>
+        </div>
+        <div class="fd-versatile__buttons-right">
+          <span v-html="svgs.sun"></span>
+
+          <label class="fd-versatile__toggle">
+            <input
+              type="checkbox"
+              v-model="toggle"
+              name="toggle"
+              @change="ToggleTheme()"
+            />
+            <span class="slider round"></span>
+          </label>
+
+          <span v-html="svgs.moon"></span>
+        </div>
+      </div>
+
+      <div class="fd-versatile__showcase" id="showcase">
+        <div
+          class="fd-card"
+          role="region"
+          aria-label="Card Anatomy in Fundamental Library Styles"
+        >
+          <div class="fd-card__header" tabindex="0">
+            <span
+              class="fd-avatar fd-avatar--s fd-avatar--circle fd-avatar--thumbnail fd-card__avatar"
+              style="background-image: url('alain.png')"
+              role="img"
+              aria-label="Alain Chevalier"
+            ></span>
+            <div class="fd-card__header-text">
+              <div class="fd-card__title-area">
+                <div class="fd-card__title">Alain Chevalier</div>
+                <span class="fd-object-status fd-card__counter">6 of 12</span>
+              </div>
+              <div class="fd-card__subtitle-area">
+                <div class="fd-card__subtitle">Sales Executive</div>
+              </div>
+            </div>
           </div>
-            
-          <CodeEditor   width="auto" :read_only="true" font_size="11px" :copy_code="true" class="github_dark"
-          :language_selector="false" :languages="[['javascript', 'HTML']]" :wrap_code="true" border_radius="35px" height="500px" 
-        :value=modelValue >
-            </CodeEditor>
-       
-          
-         
-   
+
+          <div class="fd-card__content" role="group" aria-label="Card Content">
+            <ul class="fd-list fd-list--no-border" role="list">
+              <li role="listitem" tabindex="0" class="fd-list__item">
+                <i role="presentation" class="fd-list__icon sap-icon--cart"></i>
+                <span class="fd-list__title">List item 1</span>
+              </li>
+              <li role="listitem" tabindex="0" class="fd-list__item">
+                <i
+                  role="presentation"
+                  class="fd-list__icon sap-icon--wrench"
+                ></i>
+                <span class="fd-list__title">List item 2</span>
+              </li>
+              <li role="listitem" tabindex="0" class="fd-list__item">
+                <i
+                  role="presentation"
+                  class="fd-list__icon sap-icon--leads"
+                ></i>
+                <span class="fd-list__title">List item 3</span>
+              </li>
+              <li role="listitem" tabindex="0" class="fd-list__item">
+                <i
+                  role="presentation"
+                  class="fd-list__icon sap-icon--batch-payments"
+                ></i>
+                <span class="fd-list__title">List item 4</span>
+              </li>
+              <li role="listitem" tabindex="0" class="fd-list__item">
+                <i
+                  role="presentation"
+                  class="fd-list__icon sap-icon--retail-store"
+                ></i>
+                <span class="fd-list__title">List item 3</span>
+              </li>
+              <li role="listitem" tabindex="0" class="fd-list__item">
+                <i
+                  role="presentation"
+                  class="fd-list__icon sap-icon--travel-expense"
+                ></i>
+                <span class="fd-list__title">List item 4</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="fd-bar fd-bar--footer fd-card__bar-footer">
+            <div class="fd-bar__right">
+              <div class="fd-bar__element">
+                <button
+                  aria-label="button"
+                  class="fd-button fd-button--emphasized fd-button--compact"
+                >
+                  Save
+                </button>
+              </div>
+              <div class="fd-bar__element">
+                <button
+                  aria-label="button"
+                  class="fd-button fd-button--transparent fd-button--compact"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-        
-            
 
-   
- 
-    </section>
-              
-     
-         </template>
-         
-         
- <script >
- 
- import svgs from "@/assets/js/svg.js";
+    <!-- right  side -->
+    <div class="fd-versatile__right">
+      <div class="fd-versatile__right-buttons">
+        <button @click="switchCode()">
+          <span v-html="svgs.styles" aria-hidden="true"> </span> Styles
+        </button>
+        <button @click="switchCode1()">
+          <span v-html="svgs.angular" aria-hidden="true"> </span> Core
+        </button>
+      </div>
 
- import CodeEditor from 'simple-code-editor';
+      <CodeEditor
+        width="auto"
+        :read_only="true"
+        font_size="11px"
+        :copy_code="true"
+        class="github_dark"
+        :language_selector="false"
+        :languages="[['javascript', 'HTML']]"
+        :wrap_code="true"
+        border_radius="35px"
+        height="500px"
+        :value="modelValue"
+        :tabindex="1"
+      >
+      </CodeEditor>
+    </div>
+  </section>
+</template>
 
- function initialState (){
+<script>
+import svgs from "@/assets/js/svg.js";
+
+import CodeEditor from "simple-code-editor";
+
+function initialState() {
   return {
-   css:{}
-  }
+    css: {},
+  };
 }
 
- 
-     export default {
-       
-     
-       name: "FDVersatile",
-       components: {
-      CodeEditor,
-   
-    
- 
-       },
+export default {
+  name: "FDVersatile",
+  components: {
+    CodeEditor,
+  },
 
-
-       data() {
-         return {
-           svgs,
-          isLoadingArray : [  `<div class="fd-card" role="region" aria-label="Card Anatomy Example 1">
+  data() {
+    return {
+      svgs,
+      isLoadingArray: [
+        `<div class="fd-card" role="region" aria-label="Card Anatomy Example 1">
             <a class="fd-card__header" tabindex="0">
                 <span
                     class="fd-avatar fd-avatar--s fd-avatar--circle fd-avatar--thumbnail fd-card__avatar"
-                    style="background-image: url('/assets/images/alain.png')"
+                    style="background-image: url('/assets/images/alain.avif')"
                     role="img"
                     aria-label="Alain Chevalier"></span>
                 <div class="fd-card__header-text">
@@ -217,8 +249,8 @@
                 </div>
             </div>
         </div>`,
-      
-    `<fd-card>
+
+        `<fd-card>
     <fd-card-header>
         <h2 fd-card-title>Card Title</h2>
     </fd-card-header>
@@ -313,12 +345,13 @@
             </li>
         </ul>
     </fd-card-content>
-</fd-card>`],
-    modelValue: `<div class="fd-card" role="region" aria-label="Card Anatomy Example 1">
+</fd-card>`,
+      ],
+      modelValue: `<div class="fd-card" role="region" aria-label="Card Anatomy Example 1">
             <a class="fd-card__header" tabindex="0">
                 <span
                     class="fd-avatar fd-avatar--s fd-avatar--circle fd-avatar--thumbnail fd-card__avatar"
-                    style="background-image: url('/assets/images/alain.png')"
+                    style="background-image: url('/assets/images/alain.avif')"
                     role="img"
                     aria-label="Alain Chevalier"></span>
                 <div class="fd-card__header-text">
@@ -374,150 +407,137 @@
                   
                 </div>
             </div>
-        </div>`, 
+        </div>`,
 
-     themeName:1,
-    css: {},
-    toggle: false,
+      themeName: 1,
+      css: {},
+      toggle: false,
+    };
+  },
 
-
-           
-         };
-       },
-    
-   
-
-       methods: {
-        switchCode() {
-  
+  methods: {
+    switchCode() {
       this.modelValue = this.isLoadingArray[0];
-    
-        },
-        switchCode1() {
-  
-  this.modelValue = this.isLoadingArray[1];
-
-
     },
-  
+    switchCode1() {
+      this.modelValue = this.isLoadingArray[1];
+    },
 
-   
-    async themeSwitcher (themeName)  {
+    async themeSwitcher(themeName) {
       let css = undefined;
       switch (themeName) {
-        case 1: 
-        css=(await import("@sap-theming/theming-base-content/content/Base/baseLib/sap_horizon/css_variables.css")).default;
- 
-        console.log("horizon");
-        themeName==1;
-        break;
+        case 1:
+          css = (
+            await import(
+              "@sap-theming/theming-base-content/content/Base/baseLib/sap_horizon/css_variables.css"
+            )
+          ).default;
+         
+  
+          console.log("horizon");
+          themeName == 1;
+          break;
         case 2:
-        css= (await import("@sap-theming/theming-base-content/content/Base/baseLib/sap_fiori_3/css_variables.css")).default; 
-        console.log("fiori");
-        themeName===2;
-        break;
-      
+          css = (
+            await import(
+              "@sap-theming/theming-base-content/content/Base/baseLib/sap_fiori_3/css_variables.css"
+            )
+          ).default;
+          console.log("fiori");
+          themeName === 2;
+          break;
       }
-return css;
+      return css;
     },
 
-    async ToggleTheme () {
+    async ToggleTheme() {
       let css = undefined;
-      if (this.themeName===1 && this.toggle===false) 
-        {
-            console.log(this.themeName)
-            css=(await import("@sap-theming/theming-base-content/content/Base/baseLib/sap_horizon/css_variables.css")).default;
+      if (this.themeName === 1 && this.toggle === false) {
+        console.log(this.themeName);
+        css = (
+          await import(
+            "@sap-theming/theming-base-content/content/Base/baseLib/sap_horizon/css_variables.css"
+          )
+          
+        ).default;
         console.log("horizon light");
-       
-        Object.assign(this.css, initialState());
 
-        
-        }
-        else if (this.themeName===1 && this.toggle===true) 
-        {
-            css=(await import("@sap-theming/theming-base-content/content/Base/baseLib/sap_horizon_dark/css_variables.css")).default;
+        Object.assign(this.css, initialState());
+      } else if (this.themeName === 1 && this.toggle === true) {
+        css = (
+          await import(
+            "@sap-theming/theming-base-content/content/Base/baseLib/sap_horizon_dark/css_variables.css"
+          )
+        ).default;
         console.log("horizon dark");
         Object.assign(this.$data, initialState());
-        }
-
-         else if (this.themeName===2 && this.toggle===false) 
-        {console.log(this.themeName)
-            css=(await import("@sap-theming/theming-base-content/content/Base/baseLib/sap_fiori_3/css_variables.css")).default;
+      } else if (this.themeName === 2 && this.toggle === false) {
+        console.log(this.themeName);
+        css = (
+          await import(
+            "@sap-theming/theming-base-content/content/Base/baseLib/sap_fiori_3/css_variables.css"
+          )
+        ).default;
         console.log("quartz light");
         Object.assign(this.$data, initialState());
-        }
-
-        else if (this.themeName===2 && this.toggle===true) {
-            css=(await import("@sap-theming/theming-base-content/content/Base/baseLib/sap_fiori_3_dark/css_variables.css")).default;
+      } else if (this.themeName === 2 && this.toggle === true) {
+        css = (
+          await import(
+            "@sap-theming/theming-base-content/content/Base/baseLib/sap_fiori_3_dark/css_variables.css"
+          )
+        ).default;
         console.log("quartz dark");
         Object.assign(this.$data, initialState());
-    
-        }
-    
-        else {
-            css=null;
-            console("null");
-        }
-     
-       
-        
-       
-return css;
+      } else {
+        css = null;
+        console("null");
+      }
+
+      return css;
     },
-   
-  
-  
-       }
-     };
-         </script>
+  },
+};
+</script>
 
-   
-
-         
-         <style lang="scss" scoped>
-  
-
-
-
-   
-
- .fd-versatile__toggle {
+<style lang="scss" scoped>
+.fd-versatile__toggle {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
 }
 
-.fd-versatile__toggle input { 
+.fd-versatile__toggle input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 .slider {
   position: absolute;
-    cursor: pointer;
-    top: 2;
-    left: 1px;
-    right: 0;
-    bottom: 2px;
-    transition: 0.4s;
+  cursor: pointer;
+  top: 2;
+  left: 1px;
+  right: 0;
+  bottom: 2px;
+  transition: 0.4s;
 }
 
 .slider:before {
   position: absolute;
-  content: "-";
-    text-align: center;
-    color:#475E75;
+  content: "_";
+  font-size: 14px;
+  font-weight: 800;
+
+  text-align: center;
+  color: #475e75;
   height: 26px;
-  width: 30px;
+  width: 34px;
 
   bottom: 2px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
-
-
 
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
@@ -533,30 +553,30 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
- .fd-versatile {
+.fd-versatile {
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+
+  &__toggle {
     display: flex;
-            flex-direction: column;;
-            gap:3%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2px 8px 2px 2px;
+    gap: 10px;
 
-    &__toggle {
-        display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 2px 8px 2px 2px;
-gap: 10px;
+    width: 48px;
+    height: 28px;
 
-width: 48px;
-height: 28px;
+    /* Grey/Grey 7 */
+    background: #475e75;
+    border-radius: 15px;
 
-/* Grey/Grey 7 */
-background: #475E75;
-border-radius: 15px;
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-border:0;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    border: 0;
 
     &-element {
       input {
@@ -566,7 +586,7 @@ border:0;
       label {
         display: flex;
         cursor: pointer;
-        font-family: "Ubuntu";
+        font-family: "72", Arial, Helvetica, sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 0.875rem;
@@ -604,187 +624,185 @@ border:0;
     }
   }
 
-    
-    &__left{
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 
-        display: flex;
-        flex-direction: column;
-        gap:24px;
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: transparent;
+  }
+
+  &__buttons-left {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid #82deff;
+    gap: 36px;
+    background: transparent;
+
+    button {
+      font-family: "72", Arial, Helvetica, sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 160%;
+      /* identical to box height, or 26px */
+      font-feature-settings: "pnum" on, "lnum" on;
+
+      color: #007ea3;
+      border: 0;
+
+      background: transparent;
+      &:active {
+        border-bottom: 4px solid rgba(75, 181, 211, 0.7);
+        background: transparent;
+      }
     }
+  }
 
+  &__buttons-right {
+    display: flex;
+    flex-direction: row;
+    width: 107px;
 
-    &__buttons{
-        display: flex;
-        flex-direction:column;
-        gap:15px;
-    }
-
-  
-
-
-    &__buttons-left {
-        display: flex;
-        flex-direction: row;
-        width:100%;
-border-bottom: 1px solid #82DEFF;
-gap: 36px;
-
-
-button {
-    font-family: '72';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 160%;
-/* identical to box height, or 26px */
-font-feature-settings: 'pnum' on, 'lnum' on;
-
-color: #007EA3;
-border: 0;
-
-&:active {
-    border-bottom: 4px solid rgba(75, 181, 211, 0.7);
-
-}
-
-}
-
-    }
-
-    &__buttons-right {
-        display: flex;
-        flex-direction: row;
-        width: 107px;
-       
-        align-items: center;
-       
-        span {
-          
-        
+    align-items: center;
+    background: transparent;
+    span {
       width: 24px;
       height: 24px;
       color: #007ea3;
-    
-        }
+    }
+  }
+
+  &__showcase {
+    left: 0px;
+    top: 0px;
+    padding: 28px;
+    /* Grey/Grey 1 */
+    background: #FAFCFF;
+    /* Shadows/Grey/Level 1 */
+    box-shadow: 0px 0px 2px rgba(91, 115, 139, 0.16),
+      0px 8px 16px rgba(91, 115, 139, 0.16);
+    border-radius: 24px;
+    z-index: 10;
+
+    // &::after{
+    //    left:10rem;
+    //    bottom:15rem;
+    //    z-index: 5;
+    //    content: '';
+    //    position: absolute;
+
+    //     width: 300px;
+    // height: 304px;
+    // transform: skew(20deg);
+    // // transform: matrix(-1, 0, 0, 1, 0, 0);
+    //  background: linear-gradient(180deg, #57BDD2 0%, rgba(130, 222, 255, 0.65) 100%);
+
+    // }
+  }
+
+  &__right-buttons {
+    display: flex;
+    flex-direction: row;
+
+    button {
+      border: none;
+      width: 107px;
+      background: transparent;
+    }
+  }
+
+  &__right-code {
+    width: 310px;
+    height: 442px;
+    left: 0px;
+    top: 142px;
+
+    /* Grey/Grey 7 */
+    background: #475e75;
+    /* Shadows/Grey/Level 1 */
+    box-shadow: 0px 0px 2px rgba(91, 115, 139, 0.16),
+      0px 8px 16px rgba(91, 115, 139, 0.16);
+    border-radius: 35px;
+  }
+}
+.fd_h2 {
+  text-align: left;
+}
+.fd_p {
+  width: 100%;
+}
+
+@media only screen and (min-width: 980px) {
+  .fd-versatile {
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+
+    &__left {
+      width: 50%;
     }
 
-    &__showcase {
-     
-
-left: 0px;
-top: 0px;
-padding: 28px;
-/* Grey/Grey 1 */
-background: #F5F6F7;
-/* Shadows/Grey/Level 1 */
-box-shadow: 0px 0px 2px rgba(91, 115, 139, 0.16), 0px 8px 16px rgba(91, 115, 139, 0.16);
-border-radius: 24px;
-z-index: 10;
-
-// &::after{
-//    left:10rem;
-//    bottom:15rem;
-//    z-index: 5;
-//    content: '';
-//    position: absolute;
-   
-//     width: 300px;
-// height: 304px;
-// transform: skew(20deg);
-// // transform: matrix(-1, 0, 0, 1, 0, 0);
-//  background: linear-gradient(180deg, #57BDD2 0%, rgba(130, 222, 255, 0.65) 100%);
-
-
-// }
+    &__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 50%;
     }
 
-
-
-    &__right-buttons{
+    &__buttons {
       display: flex;
       flex-direction: row;
+      gap: 5%;
+    }
+    &__right-buttons {
+      gap: 3%;
 
       button {
-        border:none;
-        width:107px;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+        width: 100px;
+      }
+      span {
+        width: 84px;
+        height: 84px;
+      }
+    }
+    &__buttons-left {
+      border-bottom: 2px solid #82deff;
+      button {
+        font-size: 24px;
+      }
+    }
+    &__buttons-right {
+      width: 147px;
+      gap: 5%;
+      align-items: center;
+      justify-content: center;
+      span {
+        width: 48px;
+        height: 48px;
       }
     }
 
-    &__right-code {
-      width: 310px;
-height: 442px;
-left: 0px;
-top: 142px;
-
-/* Grey/Grey 7 */
-background: #475E75;
-/* Shadows/Grey/Level 1 */
-box-shadow: 0px 0px 2px rgba(91, 115, 139, 0.16), 0px 8px 16px rgba(91, 115, 139, 0.16);
-border-radius: 35px;
+    &__toggle {
     }
-
- }
- .fd_h2-mobile {
+  }
+  .fd_h2 {
     text-align: left;
- }
- .fd_p-mobile {
-    width: 100%;
- }
- 
- 
-         @media only screen and (min-width: 980px) {
-
-        .fd-versatile {
-            display: flex;
-            flex-direction: row;
-            gap:3%;
-
-            &__left {
-                width: 50%;
-            }
-
-            &__right {
-                display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 50%;
-            }
-            &__right-buttons {
-                gap: 3%;
-          
-        button {
-
-            display: flex;
-    flex-direction: column;
-    gap: 0px;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-    width: 100px;
-        }
-        span {
-          
-        
-      width: 84px;
-      height: 84px;
-    
-    
-        }
-    }
-        }
- .fd_h2-desktop {
-    text-align: left;
- }
- .fd_p-desktop {
+  }
+  .fd_p {
     width: 80%;
- }
- 
-
- 
-     
-         }
- 
-        
-         </style>
-
-
+  }
+}
+</style>

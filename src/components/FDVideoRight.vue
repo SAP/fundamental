@@ -1,15 +1,15 @@
 <template>
   <section class="fd-video fd_background_silver" role="region">
     <div class="fd-video__wrap">
-      <h2 class="fd_h2-mobile fd_h2-desktop">{{ title }}</h2>
-      <video controls autoplay class="fd-video__image" ref="video"  >
-          <source    :src="require(`@/assets/images/${image}`)"
-
- type="video/mp4">
-          </video>
+      <h2 class="fd_h2">{{ title }}</h2>
+      <keep-alive>
+      <video controls autoplay muted loop playsinline class="fd-video__image" ref="video" preload="none">
+        <source :src="require(`@/assets/images/${image}`)" type="video/mp4" />
+      </video>
+    </keep-alive>
       <div class="fd-video__pwrap">
-        <h2 class="fd_h2-mobile fd_h2-desktop">{{ title }}</h2>
-        <p class="fd-video__paragraph fd_p-mobile fd_p-desktop" aria-label="`Paragraph description`">
+        <h2 class="fd_h2">{{ title }}</h2>
+        <p class="fd_p" aria-label="`Paragraph description`">
           {{ description }}
         </p>
       </div>
@@ -18,8 +18,6 @@
 </template>
 
 <script>
-
-
 export default {
   props: {
     image: String,
@@ -31,9 +29,7 @@ export default {
   name: "FDStructure",
   components: {},
   data() {
-    return {
-
-    };
+    return {};
   },
 };
 </script>
@@ -41,7 +37,6 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/styles.scss";
 .fd-video {
-
   gap: 3.5rem;
   display: flex;
   flex-direction: column;
@@ -53,10 +48,6 @@ export default {
     gap: 2.25rem;
     h2 {
       visibility: visible;
-      // font-family: "72-Bold";
-      // font-weight: 700;
-      // font-size: clamp(1.5rem, 3.5vw, 4.5rem);
-      // line-height: 130%;
     }
   }
   &__pwrap {
@@ -67,10 +58,6 @@ export default {
       visibility: hidden;
       display: none;
       text-align: left;
-      // font-family: "72-Bold";
-      // font-weight: 700;
-      // font-size: clamp(1.5rem, 3.5vw, 4.5rem);
-      // line-height: 130%;
     }
   }
 
@@ -79,23 +66,10 @@ export default {
       drop-shadow(0px 8px 16px rgba(91, 115, 139, 0.16));
     border-radius: 24px;
   }
-
-  &__paragraph {
-    // font-family: "72-Light";
-    // font-style: normal;
-    // font-weight: 400;
-    // font-size: clamp(1rem, 2.5vw, 2.5rem);
-    // line-height: 160%;
-    // /* or 26px */
-    // font-feature-settings: "pnum" on, "lnum" on;
-    // color: #000000;
-  }
-
 }
 
 @media only screen and (min-width: 980px) {
   .fd-video {
-
     gap: 3.5rem;
     display: flex;
     flex-direction: column;
@@ -110,7 +84,6 @@ export default {
       h2 {
         visibility: hidden;
         display: none;
-     
       }
     }
     &__pwrap {
@@ -132,11 +105,7 @@ export default {
       height: 50%;
     }
 
-    &__paragraph {
-      // font-size: clamp(0.5rem, 1.5vw, 1.5rem);
-      // line-height: clamp(100%, 4.5vh, 160%);
-    }
-    
+   
   }
 }
 </style>

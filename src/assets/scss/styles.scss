@@ -1,20 +1,59 @@
-$brand-color-black: #1A1126;
-$brand-color-purple: #7B5CB2;
-$brand-color-blue: #1A9ABF;
-$brand-color-light-blue:#1A9ABF;
-$brand-color-silver: #F0F0F1;
-$brand-color-dark-aqua:#007EA3;
-$brand-color-darkest-blue:#052E69;
+$brand-color-black: #1a1126;
+$brand-color-purple: #7b5cb2;
+$brand-color-blue: #1a9abf;
+$brand-color-light-blue: #1a9abf;
+$brand-color-silver: #FAFCFF;
+$brand-color-dark-aqua: #007EA3;
+$brand-color-darkest-blue: #052e69;
 $text-color: #fff;
-$text-color-accent: #61A1FE;
-$text-color-dark: #052E69;
+$text-color-accent: #61a1fe;
+$text-color-dark: #052e69;
 // --sapBackgroundContrastColor: ;
 // --sapTextColor: #f5f6f7;
 // --sapLinkColor: ;
 // --textColor: #fff;
 // --sapTextSecondaryColor: #c4c4c4;
 // --successColor: #30914c;
+@font-face {
+  font-family: "SAP-icons"; 
+  src: url("~@sap-theming/theming-base-content/content/Base/baseLib/sap_horizon/fonts/SAP-icons.woff") format("woff");     
+  font-weight: normal;     
+  font-style: normal;   
+  font-display: swap;  }
 
+  @font-face {    
+    font-family: "72";   
+    src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/SAP-icons.woff") format("woff");    
+    font-weight: normal;  
+    font-style: normal; 
+    font-display: swap;   }
+
+    @font-face {    
+      font-family: "72";   
+      src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Regular.woff") format("woff"); 
+      src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Regular.woff2") format("woff2");
+      src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Regular.ttf") format("truetype");     
+      font-weight: normal;  
+      font-style: normal;  
+      font-display: swap;  }
+
+      @font-face {    
+        font-family: "72-Light";   
+        src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Light.woff") format("woff"); 
+        src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Light.woff2") format("woff2");
+        src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Light.ttf") format("truetype");     
+        font-weight: normal;  
+        font-style: normal;   
+        font-display: swap; }
+
+        @font-face {    
+          font-family: "72-Bold";   
+          src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Bold.woff") format("woff"); 
+          src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Bold.woff2") format("woff2");
+          src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Bold.ttf") format("truetype");     
+          font-weight: normal;  
+          font-style: normal; 
+          font-display: swap;   }
 body,
 html,
 ul,
@@ -30,9 +69,7 @@ ol {
 
 html {
   scroll-behavior: smooth;
-
 }
-
 
 //mixing for different sizes
 @mixin for-size($size) {
@@ -40,27 +77,19 @@ html {
     @media (max-width: 599px) {
       @content;
     }
-  }
-
-  @else if $size==min_width_600 {
+  } @else if $size==min_width_600 {
     @media (min-width: 600px) {
       @content;
     }
-  }
-
-  @else if $size==min_width_900 {
+  } @else if $size==min_width_900 {
     @media (min-width: 900px) {
       @content;
     }
-  }
-
-  @else if $size==min_width_1200 {
+  } @else if $size==min_width_1200 {
     @media (min-width: 1200px) {
       @content;
     }
-  }
-
-  @else if $size==min_width_1800 {
+  } @else if $size==min_width_1800 {
     @media (min-width: 1800px) {
       @content;
     }
@@ -74,113 +103,103 @@ html {
   position: relative;
 
   overflow: hidden;
-
-
-
 }
 
 .fd_background_silver {
   background-color: $brand-color-silver;
 
   padding: 3rem 2rem;
-
-
 }
 
 //fonts
-.fd_h1-mobile {
-  font-family: '72-Bold';
+.fd_h1{
+  font-family: "72-Bold", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
   line-height: 130%;
   /* or 36px */
-  font-feature-settings: 'pnum'on, 'lnum'on;
+  font-feature-settings: "pnum" on, "lnum" on;
 
   color: #000000;
 }
 
-.fd_h2-mobile {
-  font-family: '72-Bold';
+.fd_h2 {
+  font-family: "72-Bold";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 140%;
   /* identical to box height, or 34px */
   text-align: center;
-  font-feature-settings: 'pnum'on, 'lnum'on;
+  font-feature-settings: "pnum" on, "lnum" on;
 
   color: #000000;
 }
 
-.fd_h3-mobile {
-  font-family: '72-Bold';
+.fd_h3 {
+  font-family: "72-Bold",Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 140%;
   /* or 25px */
-  font-feature-settings: 'pnum'on, 'lnum'on;
+  font-feature-settings: "pnum" on, "lnum" on;
 
   color: $brand-color-black;
-
 }
 
-.fd_h4-mobile {
-  font-family: '72';
+.fd_h4 {
+  font-family: "72",Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
   /* identical to box height, or 96px */
-  font-feature-settings: 'pnum'on, 'lnum'on;
+  font-feature-settings: "pnum" on, "lnum" on;
 
   /* Aqua / 400 */
   color: $brand-color-dark-aqua;
-
 }
 
-.fd_h5-mobile {
-  font-family: '72-Italic';
+.fd_h5 {
+  font-family: "72-Italic", Arial, Helvetica, sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 16px;
   line-height: 160%;
   /* or 26px */
   text-align: center;
-  font-feature-settings: 'pnum'on, 'lnum'on;
+  font-feature-settings: "pnum" on, "lnum" on;
 
   color: #000000;
-
 }
 
-.fd_h6-mobile {
-  font-family: '72-Light';
+.fd_h6 {
+  font-family: "72-Light",Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
   line-height: 140%;
   /* or 22px */
   text-align: right;
-  font-feature-settings: 'pnum'on, 'lnum'on;
+  font-feature-settings: "pnum" on, "lnum" on;
 
   color: #000000;
 }
 
-
-.fd_p-mobile {
+.fd_p {
   /* Mobile/Paragraph */
-  font-family: '72-Light';
+  font-family: "72-Light",Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
   line-height: 140%;
   /* or 22px */
-  font-feature-settings: 'pnum'on, 'lnum'on;
+  font-feature-settings: "pnum" on, "lnum" on;
 
   color: $brand-color-black;
 }
-
 
 @media only screen and (min-width: 980px) {
   .fd_background_silver {
@@ -191,89 +210,83 @@ html {
 
   //fonts
 
-  .fd_h1-desktop {
-    font-family: '72-Bold';
+  .fd_h1 {
+    font-family: "72-Bold", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 48px;
     line-height: 130%;
     /* or 62px */
-    font-feature-settings: 'pnum'on, 'lnum'on;
+    font-feature-settings: "pnum" on, "lnum" on;
 
     color: $brand-color-black;
-    ;
-
   }
 
-  .fd_h2-desktop {
-    font-family: '72-Bold';
+  .fd_h2 {
+    font-family: "72-Bold", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 42px;
     line-height: 120%;
     /* or 50px */
-    font-feature-settings: 'pnum'on, 'lnum'on;
+    font-feature-settings: "pnum" on, "lnum" on;
 
     color: $brand-color-black;
-
   }
 
-  .fd_h3-desktop {
-    font-family: '72-Bold';
+  .fd_h3 {
+    font-family: "72-Bold",Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 130%;
     /* or 31px */
-    font-feature-settings: 'pnum'on, 'lnum'on;
+    font-feature-settings: "pnum" on, "lnum" on;
 
     color: $brand-color-black;
   }
 
-  .fd_h4-desktop {
-    font-family: '72';
+  .fd_h4 {
+    font-family: "72", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
     line-height: 100%;
     /* identical to box height, or 96px */
-    font-feature-settings: 'pnum'on, 'lnum'on;
+    font-feature-settings: "pnum" on, "lnum" on;
 
     /* Aqua / 400 */
     color: $brand-color-dark-aqua;
-
   }
 
-  .fd_h5-desktop {
-    font-family: '72-Italic';
+  .fd_h5 {
+    font-family: "72-Italic", Arial, Helvetica, sans-serif;
     font-style: italic;
     font-weight: 400;
     font-size: 24px;
     line-height: 160%;
     /* or 38px */
     text-align: center;
-    font-feature-settings: 'pnum'on, 'lnum'on;
+    font-feature-settings: "pnum" on, "lnum" on;
 
     color: #000000;
-
   }
 
   .fd_h6-dektop {
-    font-family: '72-Light';
+    font-family: "72-Light", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
     line-height: 140%;
     /* or 22px */
     text-align: right;
-    font-feature-settings: 'pnum'on, 'lnum'on;
+    font-feature-settings: "pnum" on, "lnum" on;
 
     color: #000000;
   }
 
-
-  .fd_p-desktop {
-    font-family: '72-Light';
+  .fd_p {
+    font-family: "72-Light", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
@@ -281,17 +294,15 @@ html {
   }
 
   .fd_li-desktop {
-    font-family: '72-Light';
+    font-family: "72-Light",Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 16px;
     /* or 22px */
-    font-feature-settings: 'pnum'on, 'lnum'on;
+    font-feature-settings: "pnum" on, "lnum" on;
     color: $brand-color-black;
-
   }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   *:not(svg, path) {
@@ -301,8 +312,7 @@ html {
   }
 }
 
-@media only screen and (orientation: landscape),
-(orientation: portrait) {
+@media only screen and (orientation: landscape), (orientation: portrait) {
   html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -318,11 +328,9 @@ html {
 /*the rotation of the coming coon circles */
 
 #text {
-
   animation: rotate 20s infinite linear;
   transform-origin: center;
   transform-box: fill-box;
-
 }
 
 @keyframes rotate {
@@ -336,13 +344,12 @@ html {
 }
 
 h3 {
-  font-family: "72";
+  font-family: "72", 'Arial';
 }
 
 p,
 a {
-  font-family: "Source Sans 3", "Arial", sans-serif;
-
+  font-family: "72","Source Sans 3", "Arial", sans-serif;
 }
 
 .fd-app-container {
@@ -354,7 +361,6 @@ a {
 }
 
 img {
-
   width: auto;
   height: auto;
 }

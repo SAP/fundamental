@@ -11,29 +11,13 @@
       </div>
 
       <ul v-if="!mobile" class="fd-nav__right">
-        <li
-           @click="goto('purpose')">Purpose 
-          
-        </li>
-        <li
-          @click="goto('libraries')">Fundamental Libraries 
-          
-        </li>
-        <li @click="goto('versatile')">Versatile 
-          
-        </li>
-        <li @click="goto('getstarted')">Get Started 
-          
-        </li>
-        <li @click="goto('conference')">Fundamental Conference 
-          
-        </li>
-        <li @click="goto('blogs')">Blog Posts
-          
-        </li>
-        <li @click="goto('connect')">Connect With Us 
-          
-        </li>
+        <li @click="goto('purpose')">Purpose</li>
+        <li @click="goto('libraries')">Fundamental Libraries</li>
+        <li @click="goto('versatile')">Versatile</li>
+        <li @click="goto('getstarted')">Get Started</li>
+        <li @click="goto('conference')">Fundamental Conference</li>
+        <li @click="goto('blogs')">Blog Posts</li>
+        <li @click="goto('connect')">Connect With Us</li>
       </ul>
 
       <div
@@ -96,7 +80,6 @@
         <li>
           <a
             @click="gotomob('purpose')"
-
             class="fd-nav__link"
             aria-label="Purpose"
             >Purpose</a
@@ -105,36 +88,32 @@
         <li>
           <a
             @click="gotomob('libraries')"
-
             class="fd-nav__link"
             aria-label="Fundamental Libraries"
             >Fundamental Libraries</a
           >
         </li>
-       <li>
+        <li>
           <a
             @click="gotomob('versatile')"
-
             class="fd-nav__link"
             aria-label="Versatile"
             >Versatile</a
           >
         </li>
-       
+
         <li>
           <a
             @click="gotomob('getstarted')"
-
             class="fd-nav__link"
             aria-label="Get Started"
             >Get Started</a
           >
         </li>
-       
+
         <li>
           <a
             @click="gotomob('conference')"
-
             class="fd-nav__link"
             aria-label="Fundamental Conference"
             >Fundamental Conf</a
@@ -143,7 +122,6 @@
         <li>
           <a
             @click="gotomob('blogs')"
-
             class="fd-nav__link"
             aria-label="Blog Posts"
             >Blog Posts</a
@@ -152,7 +130,6 @@
         <li>
           <a
             @click="gotomob('connect')"
-
             class="fd-nav__link"
             aria-label="Connect with Us"
             >Connect With Us</a
@@ -164,96 +141,115 @@
 
   <main id="main" class="fd-main"></main>
 
-
   <FDHeader />
   <FDHome />
   <section ref="purpose" class="fd-purpose fd_background_silver">
-  <FDPurpose />
-</section>
-<section ref="libraries">
-  <FDLibraries />
+    <FDPurpose />
+  </section>
+  <section ref="libraries">
+    <FDLibraries />
   </section>
   <section ref="design standard">
-  <FDStructure
-    title="SAP Design Standard"
-    image="SAPDesign.png"
-    description="Fundamental Libraries follow the SAP Design guidelines for all component libraries and layout configurations to bring full alignment with an industry standard visual language."
-    url="https://experience.sap.com/fiori-design/"
-  />
+    <FDStructure
+      title="SAP Design Standard"
+      image="SAPDesign.avif"
+      description="Fundamental Libraries follow the SAP Design guidelines for all component libraries and layout configurations to bring full alignment with an industry standard visual language."
+      url="https://experience.sap.com/fiori-design/"
+    />
 
-  <FDVideo
-    title="Consistent and Custom"
-    image="ConsistencyAndCustomVideo.mp4"
-    description="Fundamental Library offers a visual layer to meet applications and products where they are and help them seamlessly convert to the consistency and visual standards of SAP Design without compromising the underlying structure."
-  />
-  <FDVideoRight
-    title="Accessible"
-    image="AccessibilityVideo.mp4"
-    description="Fundamental Libraries use proper semantic HTML tags such as button and anchor tags. By using the right HTML markup, the browsers cover about 80% of the accessibility requirements and the Fundamentals team aims to cover the rest by employing ARIA attributes.
+    <FDVideo
+      title="Consistent and Custom"
+      image="ConsistencyAndCustomVideo.mp4"
+      description="Fundamental Library offers a visual layer to meet applications and products where they are and help them seamlessly convert to the consistency and visual standards of SAP Design without compromising the underlying structure."
+    />
+    <FDVideoRight
+      title="Accessible"
+      image="AccessibilityVideo.mp4"
+      description="Fundamental Libraries use proper semantic HTML tags such as button and anchor tags. By using the right HTML markup, the browsers cover about 80% of the accessibility requirements and the Fundamentals team aims to cover the rest by employing ARIA attributes.
 
 Using High-contrast themes in every interface evolution ensures meeting the highest accessibility standards and a consisten experience across ability levels."
-  />
-</section>
-  <section ref="versatile" >
-  <FDVersatile />
-</section>
+    />
+  </section>
+  <section ref="versatile">
+    <FDVersatile />
+  </section>
 
-<section ref="getstarted" class="fd-getStarted fd_background_silver">
-  <FDGetStarted />
-</section>
- <section ref="conference">
-  <FDStructure
-    title="Fundamental Conference"
-    image="FundConf.png"
-    description="Connect with the Fundamentals community through our annual conference featuring insightful sessions by industry professionals using and collaborating with the Fundamental Libraries in their work. Revisit past sessions to listen to key insights, applicable strategies, and thought leadership from some of the brightest minds in the industry."
-    url="https://fundamentalconf.com/"
-  />
-</section>
+  <section ref="getstarted" class="fd-getStarted fd_background_silver">
+    <FDGetStarted />
+  </section>
+  <section ref="conference">
+    <FDStructure
+      title="Fundamental Conference"
+      image="FundConf.avif"
+      description="Connect with the Fundamentals community through our annual conference featuring insightful sessions by industry professionals using and collaborating with the Fundamental Libraries in their work. Revisit past sessions to listen to key insights, applicable strategies, and thought leadership from some of the brightest minds in the industry."
+      url="https://fundamentalconf.com/"
+    />
+  </section>
   <FDUsage />
   <FDTestimonial />
   <section ref="blogs">
-  <FDBlogs id="header" />
-</section>
+    <FDBlogs id="header" />
+  </section>
   <section ref="connect">
-  <FDConnect />
-</section>
+    <FDConnect />
+  </section>
 
   <FDFooter />
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue'
 import FDHeader from "@/components/FDHeader.vue";
 import FDHome from "@/components/FDHome.vue";
 import FDPurpose from "@/components/FDPurpose.vue";
 import FDGetStarted from "./views/FDGetStarted.vue";
 import FDFooter from "@/components/FDFooter.vue";
-import FDVideo from "@/components/FDVideo.vue";
 import FDStructure from "@/components/FDStructure.vue";
 import FDConnect from "./views/FDConnect.vue";
-import FDBlogs from "./views/FDBlogs.vue";
+
 import FDLibraries from "./views/FDLibraries.vue";
-import FDVideoRight from "@/components/FDVideoRight.vue";
+
 import FDTestimonial from "./views/FDTestimonial.vue";
 import FDUsage from "./views/FDUsage.vue";
 import FDVersatile from "./views/FDVersatile.vue";
 import svgs from "@/assets/js/svg.js";
 
-// import info from "@/assets/js/info.json";
 
 export default {
   el: "#team",
   components: {
+
+    FDBlogs: defineAsyncComponent({
+      loader: () => import('./views/FDBlogs.vue'),
+      delay:200,
+      timeout:3000,
+    }
+      
+    ),
+    FDVideo: defineAsyncComponent({
+      loader: () => import("@/components/FDVideo.vue"),
+      delay:20000,
+      timeout:30000,
+    }
+      
+    ),
+    FDVideoRight: defineAsyncComponent({
+      loader: () => import("@/components/FDVideoRight.vue"),
+      delay:20000,
+      timeout:30000,
+    }
+      
+    ),
+
     FDHeader,
     FDHome,
     FDPurpose,
-    FDVideo,
+    
     FDStructure,
     FDGetStarted,
     FDConnect,
-    FDBlogs,
     FDFooter,
     FDLibraries,
-    FDVideoRight,
     FDTestimonial,
     FDUsage,
     FDVersatile,
@@ -277,38 +273,29 @@ export default {
       svgs,
     };
   },
-  mounted() {
-    this.lastScrollPosition = window.pageYOffset;
-    window.addEventListener("scroll", this.onScroll);
-    const viewportMeta = document.createElement("meta");
-    viewportMeta.name = "viewport";
-    viewportMeta.content = "width=device-width, initial-scale=1";
-    document.head.appendChild(viewportMeta);
-    //  this.goto();
-  },
 
-  scrollBehavior(to, from, savedPosition) {
-    return new Promise((resolve) => {
-      if (savedPosition) {
-        // create an Observer instance
-        const resizeObserver = new ResizeObserver((entries) => {
-          if (
-            entries[0].target.clientHeight >=
-            savedPosition.top + screen.height
-          ) {
-            resolve(savedPosition);
-            resizeObserver.disconnect();
-          }
-        });
 
-        // start observing a DOM node
-        resizeObserver.observe(document.body);
-      } else {
-        resolve({ top: 0 });
-      }
-    });
-  },
+  
+  //   return new Promise((resolve) => {
+  //     if (savedPosition) {
+  //       // create an Observer instance
+  //       const resizeObserver = new ResizeObserver((entries) => {
+  //         if (
+  //           entries[0].target.clientHeight >=
+  //           savedPosition.top + screen.height
+  //         ) {
+  //           resolve(savedPosition);
+  //           resizeObserver.disconnect();
+  //         }
+  //       });
 
+  //       // start observing a DOM node
+  //       resizeObserver.observe(document.body);
+  //     } else {
+  //       resolve({ top: 0 });
+  //     }
+  //   });
+  // },
 
   created() {
     window.addEventListener("scroll", this.onScroll);
@@ -317,17 +304,17 @@ export default {
   },
 
   methods: {
-     //scrolls to the particular section of the page and closes the mobile dropdown navigation
-    gotomob(refName,e) {
+    //scrolls to the particular section of the page and closes the mobile dropdown navigation
+    gotomob(refName, e) {
       if (!this.$el.contains(e)) {
         this.mobileNav = !this.mobileNav;
-        console.log("closed passed")
-      document.documentElement.style.overflow = "auto"}
+        console.log("closed passed");
+        document.documentElement.style.overflow = "auto";
+      }
       var element = this.$refs[refName];
       console.log(element);
       var top = element.offsetTop;
       window.scrollTo(0, top);
-      
     },
     //scrolls to the particular section of the page
     goto(refName) {
@@ -335,34 +322,9 @@ export default {
       console.log(element);
       var top = element.offsetTop;
       window.scrollTo(0, top);
-      
     },
 
-    onScroll() {
-      if (window.pageYOffset < 0) {
-        return;
-      }
-      if (Math.abs(window.pageYOffset - this.lastScrollPosition) < 60) {
-        return;
-      }
-      this.scrollValue = window.scrollY;
-      this.showNavbar = window.pageYOffset < this.lastScrollPosition;
-      this.lastScrollPosition = window.pageYOffset;
-    },
 
-    handleScroll: function () {
-      if (this.scTimer) return;
-      this.scTimer = setTimeout(() => {
-        this.scY = window.scrollY;
-        clearTimeout(this.scTimer);
-        this.scTimer = 0;
-      }, 100);
-      if (this.scTimer) {
-        document.documentElement.style.overflow = "hidden";
-      } else document.documentElement.style.overflow = "auto";
-    },
-
-   
 
     // this hides also the scrolling part when the dropdown is open
     toggleMobileNav() {
@@ -382,33 +344,32 @@ export default {
       this.mobileNav = false;
       return;
     },
-   
   },
 };
 </script>
 
 <style lang="scss" scoped>
-  .fd-purpose{
-       
-        display: flex;
-        flex-direction: column;
-        display: flex;
-        gap: 24px;
-        text-align: center;
-        align-items: center; 
-    
-    }
-.fd-getStarted{
-      display: flex;
-      flex-direction: column;
-    align-items: left;
-    gap:24px;}
+@import "@/assets/scss/styles.scss";
+
+.fd-purpose {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  gap: 24px;
+  text-align: center;
+  align-items: center;
+}
+.fd-getStarted {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 24px;
+}
 
 .fd-main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
 
   &__backToTop {
     bottom: 1vh;
@@ -447,43 +408,40 @@ nav#navbar.fd-nav.hidden-navbar {
 }
 
 .fd-nav {
- position:absolute;
- top:58%;
- left: 3%;
- z-index: 9999;
- &__icon {
-     visibility: hidden;
+  position: absolute;
+  top: 37%;
+  left: 3%;
+  z-index: 9999;
+  &__icon {
+    visibility: hidden;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+
+    li {
+      list-style: circle;
+      color: #1a9abf;
+      font-size: 20px;
+      border: none;
+      list-style: circle;
+      color: #1a9abf;
+      padding-top: 0.9rem;
+      font-family: "72", Arial, Helvetica, sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
     }
-
-    &__right {
-      display: flex;
-flex-direction: column;
-z-index: 9999;
-
-
-      li {
-        list-style: circle;
-        color:#1A9ABF;
-        font-size: 20px;
-        border:none;
-          list-style: circle;
-          color:#1A9ABF;
-          width: 40px;
-          font-family: '72';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-      
-      }
-      li:hover{
-        list-style: disc;
-        // content: "•"; 
-        color:#1A9ABF;
-   width: 1em; 
-}
+    li:hover {
+      list-style: disc;
+      // content: "•";
+      color: #1a9abf;
+      width: 1em;
     }
+  }
 
- 
   .fd-nav__mobile-enter-active,
   .fd-nav__mobile-leave-active {
     transition: opacity 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
@@ -511,11 +469,11 @@ z-index: 9999;
     transform: scale(0.8);
   }
 
-  
   &__right {
     display: flex;
     gap: 0.5rem;
     width: 10rem;
+    position: absolute;
   }
 
   &__left {
@@ -569,7 +527,7 @@ z-index: 9999;
   }
 
   &__link {
-    color:#1A9ABF;
+    color: #1a9abf;
     outline: none;
     position: relative;
     min-width: 10rem;
@@ -579,7 +537,7 @@ z-index: 9999;
     outline-offset: 1.25rem;
     transition: all 0.3s ease-in-out;
     border: 0.125rem solid transparent;
-    font-family: "Ubuntu", Arial, Helvetica, sans-serif;
+    font-family: "72", Arial, Helvetica, sans-serif;
 
     &::after {
       left: 0;
@@ -633,7 +591,6 @@ z-index: 9999;
 
 @media (max-width: 980px) {
   .fd-nav {
-
     display: flex;
     padding: 1rem;
     height: 3.75rem;
@@ -645,12 +602,11 @@ z-index: 9999;
     right: 0;
     position: absolute;
     top: 0;
-  background: rgba(255, 255, 255, 0.45);
-  /* Nav Background Blur */
-  backdrop-filter: blur(8px);
-  transform: translate3d(0, 0, 0);
-  transition: 0.1s all ease-out;
-
+    background: rgba(255, 255, 255, 0.45);
+    /* Nav Background Blur */
+    backdrop-filter: blur(8px);
+    transform: translate3d(0, 0, 0);
+    transition: 0.1s all ease-out;
 
     &__left {
       a:focus {
