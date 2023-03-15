@@ -16,7 +16,7 @@
         >
           {{ description }}
         </p>
-
+   
         <a
           :href="url"
           :aria-label="`URL of {{title}}`"
@@ -25,6 +25,7 @@
           hreflang="en"
           ><span v-html="svgs.arrow"> </span>Get Inspired</a
         >
+      
       </div>
     </div>
   </section>
@@ -33,12 +34,14 @@
 <script>
 import svgs from "@/assets/js/svg.js";
 
+
 export default {
   props: {
     image: String,
     title: String,
     description: String,
     url: String,
+    
   },
 
   name: "FDStructure",
@@ -46,6 +49,8 @@ export default {
   data() {
     return {
       svgs,
+
+ 
     };
   },
 };
@@ -193,14 +198,14 @@ export default {
         background: #e3eeff;
         border-color: #054569;
         color: #054569;
-        box-shadow: 1.54842px 3.09685px 9.29055px rgba(123, 92, 178, 0.35);
+      
       }
 
       &:focus {
-        outline: 0.125rem solid #7352ad;
+    
         outline-offset: 0.0625rem;
         background: #e3eeff;
-        border-color: #2865be;
+        border-color: #007ea3;
       }
 
       span {

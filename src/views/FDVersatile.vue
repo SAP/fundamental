@@ -659,7 +659,11 @@ input:checked + .slider:before {
 
       background: transparent;
       &:active {
-        border-bottom: 4px solid rgba(75, 181, 211, 0.7);
+        border-bottom: 4px solid  #82deff;
+        background: transparent;
+      }
+      &:hover {
+        border-bottom: 4px solid  #82deff;
         background: transparent;
       }
     }
@@ -676,7 +680,10 @@ input:checked + .slider:before {
       width: 24px;
       height: 24px;
       color: #007ea3;
-    }
+    
+      }
+     
+    
   }
 
   &__showcase {

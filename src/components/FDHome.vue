@@ -132,7 +132,7 @@ export default {
       width: auto;
       height: 2.625rem;
 
-      border: 1px solid #1a9abf;
+      border: 2px solid #1a9abf;
       border-radius: 6px;
       background: white;
 
@@ -151,6 +151,28 @@ export default {
       letter-spacing: 0.01em;
 
       color: #1a9abf;
+      &:hover {
+      background: #e3eeff;
+      border-color: #054569;
+      color: #054569;
+
+    }
+
+    &:focus {
+      border-color: 0.125rem solid #7352ad;
+      outline-offset: 0.0625rem;
+      background: #e3eeff;
+      
+    }
+
+    span {
+      width: 24px;
+      height: 24px;
+      color: #007ea3;
+      &:hover {
+        color: #054569;
+      }
+    }
     }
   }
   &__image {

@@ -63,6 +63,15 @@ export default {
     width: 24px;
     height: 24px;
     color: #007ea3;
+    &:hover {
+      color:#007EA3;
+    }
+
+   &:active{
+      color:#1a9abf;
+    }
+
+
   }
 }
 
@@ -96,14 +105,14 @@ export default {
       background: #e3eeff;
       border-color: #054569;
       color: #054569;
-      box-shadow: 1.54842px 3.09685px 9.29055px rgba(123, 92, 178, 0.35);
+     
     }
 
     &:focus {
-      outline: 0.125rem solid #7352ad;
-      outline-offset: 0.0625rem;
+     
+
       background: #e3eeff;
-      border-color: #2865be;
+      border-color:  #054569;
     }
 
     span {

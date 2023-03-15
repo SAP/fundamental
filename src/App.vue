@@ -11,13 +11,13 @@
       </div>
 
       <ul v-if="!mobile" class="fd-nav__right">
-        <li @click="goto('purpose')">Purpose</li>
-        <li @click="goto('libraries')">Fundamental Libraries</li>
-        <li @click="goto('versatile')">Versatile</li>
-        <li @click="goto('getstarted')">Get Started</li>
-        <li @click="goto('conference')">Fundamental Conference</li>
-        <li @click="goto('blogs')">Blog Posts</li>
-        <li @click="goto('connect')">Connect With Us</li>
+        <li @click="goto('purpose')"> Purpose</li>
+        <li @click="goto('libraries')"> Fundamental Libraries</li>
+        <li @click="goto('versatile')"> Versatile</li>
+        <li @click="goto('getstarted')"> Get Started</li>
+        <li @click="goto('conference')"> Fundamental Conference</li>
+        <li @click="goto('blogs')"> Blog Posts</li>
+        <li @click="goto('connect')"> Contact Us</li>
       </ul>
 
       <div
@@ -422,24 +422,75 @@ nav#navbar.fd-nav.hidden-navbar {
     z-index: 9999;
 
     li {
-      list-style: circle;
-      color: #1a9abf;
-      font-size: 20px;
-      border: none;
-      list-style: circle;
-      color: #1a9abf;
-      padding-top: 0.9rem;
-      font-family: "72", Arial, Helvetica, sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 24px;
+      list-style: circle; 
+    /* color: #1a9abf; */
+    /* font-size: 20px; */
+    /* border: none; */
+    /* list-style: circle; */
+    /* color: #1a9abf; */
+    padding-top: 0.9rem;
+    font-family: "72", Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    list-style: none;
+    /* content: counter(li-counter); */
+    color: #1a9abf;
+    
     }
-    li:hover {
-      list-style: disc;
-      // content: "•";
-      color: #1a9abf;
-      width: 1em;
+    li:before {
+    
+    /* content: counter(li-counter); */
+    content: "";
+  color: #1a9abf;
+  font-weight: bold;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #1a9abf;
+  border-radius: 50px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+ 
+  
+ 
+    }li:hover {
+      color:#007EA3;
+      text-decoration: underline;
     }
+
+    li:active{
+      color:#1a9abf;
+    }
+
+    li:hover::before {
+
+  
+  content: "";
+  background: #007EA3;
+  border-color:#007EA3 ;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  transition: 0.5 ease-in ;
+
+
+    }
+
+    li:active::before {
+
+  
+content: "";
+background: #1a9abf;
+border-radius: 50%;
+width: 20px;
+height: 20px;
+transition: 0.5 ease-in ;
+
+
+  }
+    
   }
 
   .fd-nav__mobile-enter-active,
@@ -549,14 +600,19 @@ nav#navbar.fd-nav.hidden-navbar {
       position: absolute;
       transform: scale(0);
       transform-origin: center;
-      background-color: #c5a4fa;
+      background-color: #007EA3;;
       transition: opacity 300ms, transform 300ms;
     }
 
     &:hover {
-      color: #c5a4fa;
+      color: #007EA3;;
+      text-decoration: underline;
       &::after {
         transform: scale(1);
+      }
+
+      &:active {
+        color:#007EA3;
       }
     }
 
