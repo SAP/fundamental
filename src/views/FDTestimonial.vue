@@ -13,11 +13,16 @@
         <Pagination />
       </template>
     </Carousel>
+
+
   </section>
 </template>
 
 <script>
-import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
+// import { Carousel, Navigation, Pagination, Slide } from "vue-carousel-style";
+import { Carousel, Slide, Pagination, Navigation } from 'vue-carousel-style'
+
+
 
 export default {
   name: "FDTestimonial",
@@ -26,6 +31,7 @@ export default {
     Slide,
     Navigation,
     Pagination,
+  
   },
   data() {
     return {
@@ -56,7 +62,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/styles.scss";
-@import "vue3-carousel/dist/carousel.css";
+@import 'vue-carousel-style/dist/carousel.css';
 
 .fd-testimonial {
   display: flex;
