@@ -88,7 +88,7 @@ export default {
   &__buttons {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     justify-content: center;
     align-items: center;
 
@@ -223,7 +223,7 @@ export default {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding: 12px 16px;
+        padding: 12px 7px;
         gap: 0.375rem;
         border: 0.125rem solid transparent;
 

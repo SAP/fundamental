@@ -19,13 +19,7 @@ module.exports = {
     devtool: false,
     optimization: {
       splitChunks: {
-        cacheGroups: {
-          defaultVendors: {
-            test: /[\\/]node_modules[\\/]/,
-          priority: -10,
-            reuseExistingChunk: true,
-          },
-        },
+        
            
         chunks: 'all',
         minSize: 15000,
