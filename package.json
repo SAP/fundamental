@@ -4,7 +4,6 @@
   "description": "Fiori Fundamentals is a Design System and HTML/CSS Component Library used to build modern Product User Experiences with the SAP look and feel. Learn more about this project at - http://sap.github.io/fundamental/",
   "main": "index.js",
   "scripts": {
-    "build": "npm run style:remove && npm run style:compile && npm run style:rename && npm run style:postCSS && npm run style:assets",
     "build:prod": "npm run build && npm run style:less && npm run style:minify",
     "lint:fix": "stylelint './scss/**/*.scss' --fix",
     "lint:pre-commit": "printf \"running pre-commit lint...\"  && npm run lint && printf \"done!\n\"",
@@ -19,7 +18,11 @@
     "style:remove": "if [ -d dist/ ]; then rm -rf dist/; fi",
     "style:rename": "mv dist/all.css dist/fiori-fundamentals.css && mv dist/all-ie11.css dist/fiori-fundamentals-ie11.css",
     "prepare": "husky install",
-    "std-version": "standard-version --infile ./CHANGELOG.md --releaseCommitMessageFormat \"chore(release): version {{currentTag}} build ${TRAVIS_BUILD_NUMBER} [ci skip]\" --header \"\""
+    "std-version": "standard-version --infile ./CHANGELOG.md --releaseCommitMessageFormat \"chore(release): version {{currentTag}} build ${TRAVIS_BUILD_NUMBER} [ci skip]\" --header \"\"",
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development"
   },
   "repository": {
     "type": "git",
@@ -33,6 +36,19 @@
   "author": "",
   "license": "Apache-2.0",
   "homepage": "https://sap.github.io/fundamental/",
+  "dependencies": {
+    "@angular/animations": "^16.2.0",
+    "@angular/common": "^16.2.0",
+    "@angular/compiler": "^16.2.0",
+    "@angular/core": "^16.2.0",
+    "@angular/forms": "^16.2.0",
+    "@angular/platform-browser": "^16.2.0",
+    "@angular/platform-browser-dynamic": "^16.2.0",
+    "@angular/router": "^16.2.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.13.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
@@ -47,12 +63,20 @@
     "postcss-cli": "^7.1.0",
     "standard-version": "9.5.0",
     "stylelint": "^13.3.0",
-    "stylelint-scss": "^3.16.0"
+    "stylelint-scss": "^3.16.0",
+    "@angular-devkit/build-angular": "^16.2.6",
+    "@angular/cli": "^16.2.6",
+    "@angular/compiler-cli": "^16.2.0",
+    "@types/jasmine": "~4.3.0",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.1.3"
   },
   "engines": {
     "node": ">=8.12.0"
-  },
-  "browserslist": [
-    "last 2 versions"
-  ]
+  }
 }
