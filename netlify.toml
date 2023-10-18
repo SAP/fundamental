@@ -6,11 +6,11 @@
 #    that is where we will look for package.json/.nvmrc/etc not repo root!
 
 [build]
-  environment = { NODE_VERSION = "14.17.0" }
-  publish = "docs/_site"
-  command = "npm run docs"
+#  environment = { NODE_VERSION = "14.17.0" }
+  publish = "dist"
+  command = "npm run build"
 
 # Production context: All deploys to the main
 # repository branch will inherit these settings.
 [context.production]
-  command = "npm run docs"
+  command = "npm run build"
