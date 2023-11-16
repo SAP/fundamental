@@ -1,17 +1,140 @@
-html{
-    font-size: 1rem;
+:root {
+  --color-card-background: #cff1ff;
+}
+
+html {
+  font-size: 1rem;
 }
 
 * {
-    font-family: '72', sans-serif;
-    text-decoration: none;
-    border: none;
-    scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
+  font-family: "72", sans-serif;
+  text-decoration: none;
+  border: none;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: #FAFCFF;
-    margin: 0;
+  background: #fafcff;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "SAP-icons";
+  src: url("~@sap-theming/theming-base-content/content/Base/baseLib/sap_horizon/fonts/SAP-icons.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.fl-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fl-header-image {
+  width: 13.78rem;
+  height: 3.94rem;
+}
+
+.fl-text {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 400;
+  text-align: left;
+  line-height: 2rem;
+  color:#001F28;
+}
+
+.fl-button {
+  border: 0.125rem solid #004d5f;
+  background-color: transparent;
+  color: #004d5f;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  transition: 0.2s;
+  box-shadow:
+  2.3px 2.3px 4.5px rgba(0, 0, 0, 0.045),
+  6.4px 6.4px 12.5px rgba(0, 0, 0, 0.065),
+  15.4px 15.4px 30.1px rgba(0, 0, 0, 0.085),
+  51px 51px 100px rgba(0, 0, 0, 0.13)
+;
+
+  &--secondary {
+    border: none;
+    border-radius: none;
+    position: relative;
+    padding: none;
+    font-weight: 600;
+    box-shadow:none;
+    text-decoration: none;
+  }
+
+  &--secondary:hover{
+    border: none;
+    color: #001f28;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &--secondary::after{
+    content:'';
+    position: absolute;
+    background-color:#001f28;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    left:0;
+    bottom: -10px;
+    opacity: 0;
+    transition: 0.2s;
+    pointer-events: none;
+    
+  }
+  &--secondary:hover::after{
+    opacity: 1;
+  }
+
+}
+.fl-button:hover {
+  border: 0.125rem solid #001f28;
+  color: #001f28;
+  background-color: #f9fdff;
+  cursor: pointer;
+}
+
+.fl-button:focus{
+  border: 0.125rem solid #00677F;
+  color: #F9FDFF;
+  background-color: #00677F;
+  cursor: pointer;
+}
+
+.fl-button--secondary:focus{
+  border: none;
+  color: #001f28;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.fl-intropurpose-title {
+  font-weight: 700;
+  color: #00677f;
+  margin-left: clamp(0.6rem, 5vw, 2rem);
+}
+
+.fl-title {
+  font-size: clamp(3.5rem, 8vw, 10rem);
+  font-weight: 700;
+  color: #00829f;
+
+  &--big {
+    font-size: clamp(3.125rem, 10vw, 14.375rem);
+  }
+
+  &--light {
+    color: #cff1ff;
+  }
 }

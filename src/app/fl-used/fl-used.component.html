@@ -1,0 +1,18 @@
+<div class="fl-used">
+    <div class="fl-title fl-title--light">
+      <span>Used by</span>
+      <span>Many</span>
+    </div>
+    <div class="fl-used-boxbuttons">
+      <div class="fl-used-box">
+        <p>{{currentQuote.text}}</p>
+        <p class="author">{{currentQuote.author}}</p>
+      </div>
+      <div class="fl-used-buttons">
+        <a  class="fl-usedbutton" (click)="navigate('previous')"><span></span></a>
+        <span class="fl-used-quotecount">{{currentQuoteIndex + 1}}/{{quotes.length}}</span>
+        <a class="fl-usedbutton fl-usedbutton--secondary" (click)="navigate('next')"><span></span></a>
+        
+      </div>
+    </div>
+  </div>
