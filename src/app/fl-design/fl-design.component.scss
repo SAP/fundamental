@@ -1,98 +1,49 @@
 .fl-design {
+
     background-color: #fafcff;
     width: auto;
-    height: 43.75rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    padding: 0 1.25rem;
     position: relative;
-    padding-top: 6.25rem;
-  
-    .fl-title {
-      margin-left: clamp(1.25rem, 3vw, 5rem);
-      line-height: 4.375rem;
-      letter-spacing: 0px;
-      text-align: left;
-      margin-top: clamp(3.5rem, 4vh, 5rem);
+    top: 0;
+    justify-content: center;
+}
+
+@media (width > 550px){
+
+    .fl-design{
+        p{
+            width: 80vw;
+        }
     }
-    .fl-text {
-      margin-left: clamp(1.25rem, 3vw, 5rem);
-      padding-top: 1.5625rem;
-      padding-right: 3.125rem;
+}
+@media (width > 800px){
+
+    .fl-design{
+        p{
+            width: 60vw;
+        }
+        row-gap: 2.5rem;
     }
-    .fl-button {
-      margin-left: clamp(1.25rem, 3vw, 5rem);
-      margin-top: 1.5625rem;
+}
+@media (width > 1300px){
+
+    .fl-design{
+        p{
+            width: 50vw;
+        }
+        row-gap: 3rem;
     }
-  }
-  .fl-design-up {
-    width: 15rem;
-    height: 8rem;
-  }
-  .fl-design-down {
-    margin-top: 0.5rem;
-    width: 20rem;
-    height: 8rem;
-    float: right;
-  }
-  
-  @media (500px <= width <= 900px) {
-    .fl-design {
-      .fl-text {
-        padding-right: clamp(20vw, 30vw, 40vw);
-        padding-top: 2rem;
-      }
+}
+@media (width > 1600px){
+
+    .fl-design{
+        p{
+            width: 40vw;
+        }
+        row-gap: 3.5rem;
     }
-    .fl-design-up {
-      width: 35vw;
-      height: 15vh;
-      padding-left: 1.3rem;
-    }
-    .fl-design-down {
-      width: 50vw;
-      height: 20vh;
-      padding-right: 2rem;
-    }
-  }
-  @media (901px <= width <= 1150px) {
-    .fl-design {
-      .fl-text {
-        padding-right: clamp(40vw, 50vw, 70vw);
-        padding-top: 3rem;
-      }
-  
-      .fl-button {
-        margin-top: 2.8rem;
-      }
-    }
-  
-    .fl-design-up {
-      width: 40vw;
-      height: 15vh;
-      padding-left: 2rem;
-    }
-    .fl-design-down {
-      width: 50vw;
-      height: 20vh;
-      padding-right: 3rem;
-    }
-  }
-  @media (width >= 1150px) {
-    .fl-design {
-      .fl-text {
-        padding-right: clamp(50vw, 60vw, 70vw);
-        padding-top: 4.2rem;
-      }
-      .p6-button {
-        font-size: 1.25rem;
-        margin-top: 4rem;
-      }
-    }
-    .fl-design-up {
-      width: 35vw;
-      height: 18vh;
-      padding-left: 2rem;
-    }
-    .fl-design-down {
-      width: 50vw;
-      height: 20vh;
-      padding-right: 3rem;
-    }
-  }
+}

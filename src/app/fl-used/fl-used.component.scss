@@ -1,22 +1,24 @@
 .fl-used {
     background-color: #001e31;
     width: auto;
-    height: auto;
-    padding: 12.25rem 0.625rem 17.5rem 0.625rem;
-    
-    .fl-title {
-      margin-bottom: 1.25rem;
-      margin-left: 0.625rem;
-    }
-  
+    height: 100vh;
+    padding: 0 1.25rem;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+
     .fl-title span {
       display: block;
     }
     .fl-text {
       font-style: italic;
       text-align: center;
-      line-height: 2.1rem;
+      line-height: 1.5rem;
     }
+
   }
   
   .fl-used-box {
@@ -28,13 +30,16 @@
     background-color: #cff1ff;
     margin: 3.125rem auto 0;
     padding: 10%;
-    &__quote {
+
+    }
+    .author{
       margin: 2rem auto 0;
       font-size: clamp(0.875rem, 2vw, 1.125rem);
       font-weight: 400;
       text-align: center;
     }
-  }
+  
+  
   
   .fl-used-buttons {
     display: flex;
@@ -71,14 +76,7 @@
     }
     
   }
-  .fl-usedbutton:disabled{
-    opacity: 1;
-    pointer-events: none;
-  }
-  .fl-usedbutton--secondary:disabled{
-    opacity: 1;
-    pointer-events: none;
-  }
+ 
   .fl-usedbutton--secondary:hover{
     cursor: pointer;
     background-color: #f9fdff30;
@@ -103,19 +101,15 @@
       align-items: center;
       height: 60rem;
       padding: 0rem 0rem;
-      position: relative;
-  
-      .fl-title {
-        margin-left: 0rem;
-        margin-right: 0rem;
-      }
+      position: sticky;
+      top: 0;
   
       .fl-title span {
         display: block;
       }
     }
   
-    .fl-used-boxbuttons {
+    .fl-used-container {
       width: 50vw;
     }
   

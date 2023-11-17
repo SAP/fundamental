@@ -59,64 +59,65 @@ body {
   2.3px 2.3px 4.5px rgba(0, 0, 0, 0.045),
   6.4px 6.4px 12.5px rgba(0, 0, 0, 0.065),
   15.4px 15.4px 30.1px rgba(0, 0, 0, 0.085),
-  51px 51px 100px rgba(0, 0, 0, 0.13)
-;
+  51px 51px 100px rgba(0, 0, 0, 0.13);
 
-  &--secondary {
-    border: none;
-    border-radius: none;
-    position: relative;
-    padding: none;
-    font-weight: 600;
-    box-shadow:none;
-    text-decoration: none;
-  }
-
-  &--secondary:hover{
-    border: none;
+  &:hover {
+    border: 0.125rem solid #001f28;
     color: #001f28;
-    background-color: transparent;
+    background-color: #f9fdff;
+    cursor: pointer;
+  }
+  
+  &:focus{
+    border: 0.125rem solid #00677F;
+    color: #F9FDFF;
+    background-color: #00677F;
     cursor: pointer;
   }
 
-  &--secondary::after{
-    content:'';
-    position: absolute;
-    background-color:#001f28;
-    height: 3px;
-    width: 100%;
-    position: absolute;
-    left:0;
-    bottom: -10px;
-    opacity: 0;
-    transition: 0.2s;
-    pointer-events: none;
+  &--secondary {
+    border-color: transparent;
+    border-radius: 0;
+    position: relative;
+    font-weight: 600;
+    box-shadow:none;
+    text-decoration: none;
+  
+    &::after{
+      content:'';
+      position: absolute;
+      background-color:#001f28;
+      height: 0.125rem;
+      width: 4rem;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: 0.2s;
+      pointer-events: none;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &:hover {
+      border-color: transparent;
+      color: #001f28;
+      background-color: transparent;
+      cursor: pointer;
+    }
     
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: transparent;
+      color: #001f28;
+      background-color: transparent;
+      cursor: pointer;
+    }
   }
-  &--secondary:hover::after{
-    opacity: 1;
-  }
-
-}
-.fl-button:hover {
-  border: 0.125rem solid #001f28;
-  color: #001f28;
-  background-color: #f9fdff;
-  cursor: pointer;
-}
-
-.fl-button:focus{
-  border: 0.125rem solid #00677F;
-  color: #F9FDFF;
-  background-color: #00677F;
-  cursor: pointer;
-}
-
-.fl-button--secondary:focus{
-  border: none;
-  color: #001f28;
-  background-color: transparent;
-  cursor: pointer;
 }
 
 .fl-intropurpose-title {
