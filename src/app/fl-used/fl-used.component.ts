@@ -22,10 +22,10 @@ export class FlUsedComponent implements OnInit{
   }
 
   navigate(direction: 'previous' | 'next') {
-    if (direction === 'previous' && this.currentQuoteIndex > 0) {
-      this.currentQuoteIndex--;
-    } else if (direction === 'next' && this.currentQuoteIndex < this.quotes.length - 1) {
-      this.currentQuoteIndex++;
+    if (direction === 'previous') {
+      this.currentQuoteIndex = (this.currentQuoteIndex - 1 + this.quotes.length) % this.quotes.length;
+    } else if (direction === 'next') {
+      this.currentQuoteIndex = (this.currentQuoteIndex + 1) % this.quotes.length;
     }
 
     this.updateCurrentQuote();
