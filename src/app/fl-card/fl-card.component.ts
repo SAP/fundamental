@@ -17,4 +17,7 @@ export class FlCardComponent {
 
   @Input()
   paragraph: string = '';
+
+  @Input()
+  logoname: string= " "
 }

@@ -1,6 +1,6 @@
 
 .fl-libraries {
-  position: sticky;
+  position: relative;
   top: 0;
   height: auto;
   min-height: 100vh;
@@ -14,7 +14,23 @@
     margin-right: 1.1875rem;
     margin-left: 5vw;
   }
-  @media (width >= 500px) {
+  @media (500px <= width <= 899px) {
+    position: sticky;
+    top: 0;
+    .fl-title {
+      flex-direction: row;
+      column-gap: clamp(1rem, 2vw, 3rem);
+    }
+  }
+  @media (900px <= width <= 1114px){
+    .fl-title {
+      flex-direction: row;
+      column-gap: clamp(1rem, 2vw, 3rem);
+    }
+  }
+  @media (width >= 1115px){
+    position: sticky;
+    top: 0;
     .fl-title {
       flex-direction: row;
       column-gap: clamp(1rem, 2vw, 3rem);
