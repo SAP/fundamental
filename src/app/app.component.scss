@@ -1,0 +1,58 @@
+
+.fl-libraries {
+  position: relative;
+  top: 0;
+  height: auto;
+  min-height: 100vh;
+  background-color: #fafcff;
+  .fl-title {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    padding-top: 2rem;
+    margin-right: 1.1875rem;
+    margin-left: 5vw;
+  }
+  @media (500px <= width <= 899px) {
+    position: sticky;
+    top: 0;
+    .fl-title {
+      flex-direction: row;
+      column-gap: clamp(1rem, 2vw, 3rem);
+    }
+  }
+  @media (900px <= width <= 1114px){
+    .fl-title {
+      flex-direction: row;
+      column-gap: clamp(1rem, 2vw, 3rem);
+    }
+  }
+  @media (width >= 1115px){
+    position: sticky;
+    top: 0;
+    .fl-title {
+      flex-direction: row;
+      column-gap: clamp(1rem, 2vw, 3rem);
+    }
+  }
+}
+.fl-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 5vw 5vw;
+ 
+}
+@media (width >= 1115px){
+  .fl-cards{
+    flex-direction: row;
+    column-gap: 2rem;
+  }
+}
+
+
+
+
+
+
