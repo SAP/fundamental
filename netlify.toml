@@ -7,10 +7,10 @@
 
 [build]
 #  environment = { NODE_VERSION = "14.17.0" }
-  publish = "dist"
-  command = "npm run build"
+  publish = "dist/fundamental"
+  command = "ng build "
 
 # Production context: All deploys to the main
 # repository branch will inherit these settings.
 [context.production]
-  command = "npm run build"
+  command = "ng build --configuration=production"
