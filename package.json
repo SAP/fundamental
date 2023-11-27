@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:prod": "npm run build && npm run style:less && npm run style:minify",
+    "deploy": "ng build --base-href=https://sap.github.io/fundamental/ && npx angular-cli-ghpages --dir=dist/fundamental",
     "lint:fix": "stylelint './scss/**/*.scss' --fix",
     "lint:pre-commit": "printf \"running pre-commit lint...\"  && npm run lint && printf \"done!\n\"",
     "lint": "stylelint './scss/**/*.scss'",
