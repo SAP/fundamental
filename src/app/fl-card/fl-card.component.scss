@@ -11,12 +11,8 @@
     2.3px 2.3px 4.5px rgba(0, 0, 0, 0.045),
     6.4px 6.4px 12.5px rgba(0, 0, 0, 0.065),
     15.4px 15.4px 30.1px rgba(0, 0, 0, 0.085),
-    51px 51px 100px rgba(0, 0, 0, 0.13)
-  ;
+    51px 51px 100px rgba(0, 0, 0, 0.13);
 
-  @media (max-width: 430px) {
-    gap: 1rem;
-    padding: 1.5rem 1rem;
     img {
         height: 3.75rem;
         
@@ -28,6 +24,49 @@
         color: #003543;
         text-align: center;
         
+    }
+
+    p {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        color: #004E5E;
+        text-align: center;
+    }
+
+    a {
+        background-color: transparent;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+        color: #004D5F;
+        padding: 1rem 1.5rem;
+        border: 0.0625rem solid #00677F;
+        border-radius: 2rem;
+        transition: 0.2s;
+
+        &:hover {
+            color: #001F28;
+            border-color: #001F28;
+            background-color: #F9FDFF;
+        }
+
+        &:focus {
+            border: 0.125rem solid #00677F;
+            color: #F9FDFF;
+            background-color: #00677F;
+            cursor: pointer;
+        }
+
+        
+    }
+
+  @media (max-width: 430px) {
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+
+    h2{
+        font-size: 1.1rem;
+        line-height: 1rem;
     }
 
     p {
@@ -38,87 +77,10 @@
         display: none;
     }
 
-    a {
-        background-color: transparent;
-        font-size: 1rem;
-        line-height: 1.25rem;
-        font-weight: 700;
-        color: #004D5F;
-        padding: 1rem 1.5rem;
-        border: 0.0625rem solid #00677F;
-        border-radius: 2rem;
-        transition: 0.2s;
-
-        &:hover {
-            color: #001F28;
-            border-color: #001F28;
-            background-color: #F9FDFF;
-        }
-
-        &:focus {
-            border: 0.125rem solid #00677F;
-            color: #F9FDFF;
-            background-color: #00677F;
-            cursor: pointer;
-        }
-
-        
-    }
-
   }
 
-  
-
-    img {
-        height: 3.75rem;
-        
-    }
-
-    h2 {
-        font-size: 1.5rem;
-        line-height: 1.875rem;
-        color: #003543;
-        text-align: center;
-        
-    }
-
-    p {
-        font-size: 0.875rem;
-        line-height: 1.375rem;
-        color: #004E5E;
-        text-align: center;
-    }
-
-    a {
-        background-color: transparent;
-        font-size: 1rem;
-        line-height: 1.25rem;
-        font-weight: 700;
-        color: #004D5F;
-        padding: 1rem 1.5rem;
-        border: 0.0625rem solid #00677F;
-        border-radius: 2rem;
-        transition: 0.2s;
-
-        &:hover {
-            color: #001F28;
-            border-color: #001F28;
-            background-color: #F9FDFF;
-        }
-
-        &:focus {
-            border: 0.125rem solid #00677F;
-            color: #F9FDFF;
-            background-color: #00677F;
-            cursor: pointer;
-        }
-
-        
-    }
-}
-
-@media (min-width: 900px) {
-    .fl-card {
+  @media (min-width: 900px) {
+    
         gap: 2.75rem;
         padding: 2.25rem;
         align-items: flex-start;
@@ -137,7 +99,9 @@
             line-height: 1.875rem;
             text-align: left;
         }
-    
     }
+
 }
+
+
 
