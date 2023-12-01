@@ -1,10 +1,13 @@
 
+
 .fl-libraries {
-  position: relative;
+  position: sticky;
   top: 0;
   height: auto;
   min-height: 100vh;
+  width: auto;
   background-color: #fafcff;
+  z-index: 2;
   .fl-title {
     display: flex;
     flex-direction: column;
@@ -13,6 +16,12 @@
     padding-top: 2rem;
     margin-right: 1.1875rem;
     margin-left: 5vw;
+  }
+  @media (50px <= width <=430px){
+
+    .fl-title{
+      padding-top: 1.5rem;
+    }
   }
   @media (500px <= width <= 899px) {
     position: sticky;
@@ -44,7 +53,7 @@
   padding: 5vw 5vw;
  
 }
-@media (width >= 1115px){
+@media (width >= 900px){
   .fl-cards{
     flex-direction: row;
     column-gap: 2rem;
