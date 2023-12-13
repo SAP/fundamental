@@ -10,23 +10,25 @@ import { FlUsedComponent } from './fl-used/fl-used.component';
 import { FlConferenceComponent } from './fl-conference/fl-conference.component';
 import { FlDesignComponent } from './fl-design/fl-design.component';
 import { FlFooterComponent } from './fl-footer/fl-footer.component';
+import { FlLanguageComponent } from "./fl-language/fl-language.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FlCardComponent,
-    FlIntroComponent,
-    FlPurposeComponent,
-    FlUsedComponent,
-    FlConferenceComponent,
-    FlDesignComponent,
-    FlFooterComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        FlCardComponent,
+        FlIntroComponent,
+        FlPurposeComponent,
+        FlUsedComponent,
+        FlConferenceComponent,
+        FlDesignComponent,
+        FlFooterComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FlLanguageComponent
+    ]
 })
 export class AppModule { }
