@@ -1,0 +1,90 @@
+<!-- <nav class="dropdown">
+    <button class="select"
+            (click)="menuOpen.set(!menuOpen())"
+            [class.select-clicked]="menuOpen()"
+            aria-haspopup="true"
+            aria-expanded="menuOpen()">
+        <img class="globe" src="./assets/images/Icon.webp" width="16" height="16" alt="language globe" aria-label="Select language"/>
+        <span class="selected">{{ activeLanguage }}</span>
+        <div class="caret" [class.caret-rotate]="menuOpen()">
+            <span aria-hidden="true"></span>
+        </div>
+    </button>
+
+    <ul class="menu" [class.menu-open]="menuOpen()" role="menu">
+        @for (language of languages; track trackByCode) {
+            <li role="menuitem"
+                [class.active]="activeLocale === language.code"
+                tabindex="-1">
+                <a [href]="language.url" [title]="language.name">
+                  {{ language.name }}
+                </a>
+            </li>
+        }
+    </ul>
+</nav> -->
+<!-- Desktop -->
+<!-- <nav class="fl-language" aria-label="Language selection">
+    <button [fdPopoverTrigger]="popover" class="fl-language__button" id="flLanguageButton" aria-haspopup="true" aria-controls="flLanguageList" aria-expanded="false">
+        <i class="fl-language__button-globe sap-icon sap-icon--world" aria-hidden="true"></i>
+        <span class="fl-language__button-lang">English</span>
+        <i class="fl-language__button-arrow sap-icon sap-icon--navigation-down-arrow" aria-hidden="true"></i>
+    </button>
+    <fd-popover #popover>
+        <ul class="fl-language__list" id="flLanguageList" role="menu" aria-labelledby="flLanguageButton">
+            <li class="fl-language__list-item" role="none">
+                <a class="fl-language__list-item-link" role="menuitem">English</a>
+            </li>
+            <li class="fl-language__list-item" role="none">
+                <a class="fl-language__list-item-link" role="menuitem">French</a>
+            </li>
+            <li class="fl-language__list-item" role="none">
+                <a class="fl-language__list-item-link" role="menuitem">German</a>
+            </li>
+        </ul>
+    </fd-popover>
+</nav> -->
+
+<fd-popover  [noArrow]="false">
+    <fd-popover-control>
+        <button  class="fl-language__button" id="flLanguageButton" aria-haspopup="true" aria-controls="flLanguageList" aria-expanded="false">
+            <i class="fl-language__button-globe sap-icon sap-icon--world" aria-hidden="true"></i>
+            <span class="fl-language__button-lang">English</span>
+            <i class="fl-language__button-arrow sap-icon sap-icon--navigation-down-arrow" aria-hidden="true"></i>
+        </button>
+    </fd-popover-control>
+    <fd-popover-body>
+        <ul class="fl-language__list" id="flLanguageList" role="menu" aria-labelledby="flLanguageButton">
+            <li class="fl-language__list-item" role="none">
+                <a class="fl-language__list-item-link" role="menuitem">English</a>
+            </li>
+            <li class="fl-language__list-item" role="none">
+                <a class="fl-language__list-item-link" role="menuitem">French</a>
+            </li>
+            <li class="fl-language__list-item" role="none">
+                <a class="fl-language__list-item-link" role="menuitem">German</a>
+            </li>
+        </ul>
+    </fd-popover-body>
+</fd-popover>
+<!-- mobile -->
+<!-- <nav class="fl-language" aria-label="Language selection">
+    <button class="fl-language__button" aria-haspopup="true" aria-expanded="false" aria-label="Select Language">
+        <i class="fl-language__button-globe sap-icon sap-icon--world" aria-hidden="true"></i>
+    </button>
+    <header class="fl-language__header">
+        <h2 class="fl-language__title" id="flLanguageMenu">Languages</h2>
+        <button class="fl-language__close-btn" aria-label="Close language selection"></button>
+    </header>
+    <ul class="fl-language__list" role="menu" aria-labelledby="flLanguageMenu">
+        <li class="fl-language__list-item" role="none">
+            <a class="fl-language__list-item-link" role="menuitem">English</a>
+        </li>
+        <li class="fl-language__list-item" role="none">
+            <a class="fl-language__list-item-link" role="menuitem">French</a>
+        </li>
+        <li class="fl-language__list-item" role="none">
+            <a class="fl-language__list-item-link" role="menuitem">German</a>
+        </li>
+    </ul>
+</nav> -->

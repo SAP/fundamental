@@ -1,6 +1,12 @@
 :root {
-  --color-card-background: #cff1ff;
+  --fl-brand-color: #00677F;
+  --fl-brand-alt-color: #CFF1FF;
+  --fl-text-color: #001F28;
+  --fl-white-color: #FFFFFF;
+  --fl-black-color: #000000;
+  --fl-background-color: #FAFCFF;
 }
+
 
 html {
   font-size: 1rem;
@@ -16,7 +22,7 @@ html {
 }
 
 body {
-  background: #fafcff;
+  background: var(--fl-background-color);
   margin: 0;
 }
 
@@ -28,12 +34,48 @@ body {
   font-style: normal;
   font-display: swap;
 }
-.fl-header {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+@font-face {
+  font-family: "72";
+  src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Regular-full.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: "72";
+  src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Bold-full.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "72";
+  src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Light-full.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "72";
+  src: url("~@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts/72-Semibold-full.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+// .fl-header {
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// @media (width <= 420px){
+// .fl-header{
+//   width: 100%;
+//   display: flex;
+// }
+
+// }
 
 .fl-text {
   font-size: clamp(1rem, 2vw, 1.5rem);
@@ -66,7 +108,7 @@ body {
     background-color: #f9fdff;
     cursor: pointer;
   }
-  
+
   &:focus{
     border: 0.125rem solid #00677F;
     color: #F9FDFF;
@@ -81,7 +123,7 @@ body {
     font-weight: 600;
     box-shadow:none;
     text-decoration: none;
-  
+
     &::after{
       content:'';
       position: absolute;
@@ -93,7 +135,7 @@ body {
       transition: 0.2s;
       pointer-events: none;
       left: 25%;
-     
+
     }
 
     &:hover {
@@ -102,7 +144,7 @@ body {
       background-color: transparent;
       cursor: pointer;
     }
-    
+
     &:hover::after {
       width: 50%;
     }
@@ -138,11 +180,11 @@ body {
 }
 
 .sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0); 
+  clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
-  white-space: nowrap; 
+  white-space: nowrap;
   width: 1px;
 }

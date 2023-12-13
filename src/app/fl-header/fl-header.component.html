@@ -1,0 +1,17 @@
+<header class="fd-bar fl-header" role="banner">
+    <div class="fd-bar__left">
+        <div class="fd-bar__element" *ngIf="isSmallScreen">
+            <img class="fl-header__logo" src="./assets/images/headerlogo.webp" alt="Fundamental Library Logo" loading="lazy"/>
+        </div>
+    </div>
+    <div class="fd-bar__middle" *ngIf="!isSmallScreen">
+        <div class="fd-bar__element">
+            <img class="fl-header__logo" src="./assets/images/headerlogo.webp" alt="Fundamental Library Logo" loading="lazy"/>
+        </div>
+    </div>
+    <div class="fd-bar__right">
+        <div class="fd-bar__element">
+            <fl-language aria-label="Language Switcher"/>
+        </div>
+    </div>
+</header>
