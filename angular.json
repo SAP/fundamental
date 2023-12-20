@@ -4,6 +4,13 @@
   "newProjectRoot": "projects",
   "projects": {
     "fd": {
+      "i18n":{
+        "sourceLocale":"en-US",
+        "locales": {
+          "fr-CA": "src/locale/messages.fr.xlf",
+          "de-DE": "src/locale/messages.de.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,6 +24,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": [
+              "fr-CA"
+            ],
             "outputPath": "dist/fundamental",
             "index": "src/index.html",
             "main": "src/main.ts",
