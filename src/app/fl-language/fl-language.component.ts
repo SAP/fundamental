@@ -13,7 +13,9 @@ import { TranslateService } from '@ngx-translate/core';
 export class FlLanguageComponent {
   @ViewChild('dropdown') dropdown!: ElementRef;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private translate: TranslateService) {
+    this.translate.setDefaultLang('en');
+  }
 
   ngAfterViewInit() {
     const select = this.dropdown.nativeElement.querySelector('.select');
@@ -36,18 +38,22 @@ export class FlLanguageComponent {
       }
     });
 
-    options.forEach((option: HTMLElement) => {
+    options.forEach((option: HTMLElement, index: number) => {
       option.addEventListener('click', () => {
         selected.innerText = option.innerText;
-
-        this.renderer.removeClass(caret, 'caret-rotate');
-        this.renderer.removeClass(menu, 'menu-open');
 
         options.forEach((opt: HTMLElement) => {
           this.renderer.removeClass(opt, 'active');
         });
+
+        this.translate.use(this.getLanguageCode(index));
       });
     });
+  }
+
+  private getLanguageCode(index: number): string {
+    const languageCodes = ['en', 'fr', 'de'];
+    return languageCodes[index];
   }
 
   @HostListener('document:click', ['$event'])

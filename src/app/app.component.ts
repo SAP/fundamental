@@ -7,11 +7,14 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  title = 'fd';
+  constructor(private translate: TranslateService) {
+   
+    translate.setDefaultLang('en');
 
-  constructor(private titleService: Title){
-    this.titleService.setTitle($localize `${this.title}`);
+    
+    const browserLang = translate.getBrowserLang() || 'en'; 
+    translate.use(browserLang.match(/en|fr|de/) ? browserLang : 'en');
   }
-
 }
