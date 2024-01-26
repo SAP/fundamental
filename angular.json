@@ -5,11 +5,17 @@
   "projects": {
     "fd": {
       "i18n":{
-        "sourceLocale":"en-US",
-        "locales": {
-          "fr-CA": "src/locale/messages.fr.xlf",
-          "de-DE": "src/locale/messages.de.xlf"
-        }
+        "sourceLocale": "en",
+  "locales": {
+    "fr": {
+      "translation": "src/locale/messages.fr.xlf",
+      "baseHref": "fr"
+    },
+    "de": {
+      "translation": "src/locale/messages.de.xlf",
+      "baseHref": "de"
+    }
+  }
       },
       "projectType": "application",
       "schematics": {
@@ -24,12 +30,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "localize": [
-              "fr-CA"
-            ],
-            "outputPath": "dist/fundamental",
+            "outputPath": "dist/fundamental",  
             "index": "src/index.html",
             "main": "src/main.ts",
+            "localize": true,
             "polyfills": [
               "zone.js"
             ],
@@ -67,6 +71,16 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            }, 
+            "german":{
+              "localize": ["de"]
+              
+              
+            },
+            "french":{
+              "localize": ["fr"]
+              
+              
             }
           },
           "defaultConfiguration": "production"
@@ -79,7 +93,14 @@
             },
             "development": {
               "buildTarget": "fd:build:development"
-            }
+            },
+             "german":{
+              "buildTarget": "fd:build:german"
+             },
+             "french":{
+              "buildTarget": "fd:build:french"
+             }
+             
           },
           "defaultConfiguration": "development"
         },
