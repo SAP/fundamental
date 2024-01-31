@@ -1,0 +1,760 @@
+Subject: [PATCH] fix: fixed language switches and deploy
+---
+Index: .github/workflows/gh-pages-deploy.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.github/workflows/gh-pages-deploy.yml b/.github/workflows/gh-pages-deploy.yml
+--- a/.github/workflows/gh-pages-deploy.yml	(revision c6ecdc2636fafc122a6228ad620d49d6db50d26f)
++++ b/.github/workflows/gh-pages-deploy.yml	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
+@@ -16,12 +16,12 @@
+       uses: actions/setup-node@v3
+       with:
+         node-version: 18
+-          
++
+     - name: Install dependencies
+       run: npm install
+-      
++
+     - name: Build
+-      run: npm run build --base-href=https://sap.github.io/fundamental/
++      run: npm run build:deploy
+ 
+     - name: Deploy
+       if: success()
+Index: angular.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/angular.json b/angular.json
+--- a/angular.json	(revision c6ecdc2636fafc122a6228ad620d49d6db50d26f)
++++ b/angular.json	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
+@@ -4,18 +4,12 @@
+   "newProjectRoot": "projects",
+   "projects": {
+     "fd": {
+-      "i18n":{
++      "i18n": {
+         "sourceLocale": "en",
+-  "locales": {
+-    "fr": {
+-      "translation": "src/locale/messages.fr.xlf",
+-      "baseHref": "fr"
+-    },
+-    "de": {
+-      "translation": "src/locale/messages.de.xlf",
+-      "baseHref": "de"
+-    }
+-  }
++        "locales": {
++          "fr": "src/locale/messages.fr.xlf",
++          "de": "src/locale/messages.de.xlf"
++        }
+       },
+       "projectType": "application",
+       "schematics": {
+@@ -30,7 +24,7 @@
+         "build": {
+           "builder": "@angular-devkit/build-angular:browser",
+           "options": {
+-            "outputPath": "dist/fundamental",  
++            "outputPath": "dist/fundamental",
+             "index": "src/index.html",
+             "main": "src/main.ts",
+             "localize": true,
+@@ -62,7 +56,13 @@
+                   "maximumError": "400kb"
+                 }
+               ],
+-              "outputHashing": "all"
++              "outputHashing": "all",
++              "fileReplacements": [
++                {
++                  "replace": "src/environments/environments.ts",
++                  "with": "src/environments/environments.prod.ts"
++                }
++              ]
+             },
+             "development": {
+               "buildOptimizer": false,
+@@ -70,17 +70,18 @@
+               "vendorChunk": true,
+               "extractLicenses": false,
+               "sourceMap": true,
+-              "namedChunks": true
+-            }, 
+-            "german":{
+-              "localize": ["de"]
+-              
+-              
++              "namedChunks": true,
++              "localize": ["en"]
++            },
++            "german": {
++              "localize": [
++                "de"
++              ]
+             },
+-            "french":{
+-              "localize": ["fr"]
+-              
+-              
++            "french": {
++              "localize": [
++                "fr"
++              ]
+             }
+           },
+           "defaultConfiguration": "production"
+@@ -92,15 +93,17 @@
+               "buildTarget": "fd:build:production"
+             },
+             "development": {
+-              "buildTarget": "fd:build:development"
++              "buildTarget": "fd:build:development",
++              "port": 4200
+             },
+-             "german":{
+-              "buildTarget": "fd:build:german"
+-             },
+-             "french":{
+-              "buildTarget": "fd:build:french"
+-             }
+-             
++            "french": {
++              "buildTarget": "fd:build:french",
++              "port": 4201
++            },
++            "german": {
++              "buildTarget": "fd:build:german",
++              "port": 4202
++            }
+           },
+           "defaultConfiguration": "development"
+         },
+Index: create-redirect-page.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/create-redirect-page.js b/create-redirect-page.js
+new file mode 100644
+--- /dev/null	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
++++ b/create-redirect-page.js	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
+@@ -0,0 +1,21 @@
++require('fs').writeFileSync('dist/fundamental/index.html', `
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8">
++  <title>Fundamental Library</title>
++</head>
++<body>
++<noscript>
++  <p>Please enable JavaScript to use this page.</p>
++</noscript>
++<script>
++  const languageCodes = ['en', 'fr', 'de'];
++  const defaultLanguage = 'en';
++  const browserLanguage = navigator.language ? (languageCodes.find((availableLangCode) => navigator.language.startsWith(availableLangCode)) || defaultLanguage) : defaultLanguage;
++
++  location.href = \`\${location.href}/\${browserLanguage}\`;
++</script>
++</body>
++</html>
++`);
+Index: package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package.json b/package.json
+--- a/package.json	(revision c6ecdc2636fafc122a6228ad620d49d6db50d26f)
++++ b/package.json	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
+@@ -22,7 +22,8 @@
+     "std-version": "standard-version --infile ./CHANGELOG.md --releaseCommitMessageFormat \"chore(release): version {{currentTag}} build ${TRAVIS_BUILD_NUMBER} [ci skip]\" --header \"\"",
+     "ng": "ng",
+     "start": "ng serve",
+-    "build": "ng build --base-href=https://sap.github.io/fundamental/",
++    "build": "ng build && create-redirect-page.js",
++    "build:deploy": "ng build --base-href=https://sap.github.io/fundamental/ && node create-redirect-page.js",
+     "watch": "ng build --watch --configuration development"
+   },
+   "repository": {
+Index: src/app/app.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/app/app.component.ts b/src/app/app.component.ts
+--- a/src/app/app.component.ts	(revision c6ecdc2636fafc122a6228ad620d49d6db50d26f)
++++ b/src/app/app.component.ts	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
+@@ -1,6 +1,4 @@
+-import { Component, OnInit } from '@angular/core';
+-import { Title } from '@angular/platform-browser';
+-import { TranslateService } from '@ngx-translate/core';
++import { Component } from '@angular/core';
+ 
+ @Component({
+   selector: 'app-root',
+@@ -9,12 +7,4 @@
+ })
+ 
+ export class AppComponent {
+-  constructor(private translate: TranslateService) {
+-   
+-    translate.setDefaultLang('en');
+-
+-    
+-    const browserLang = translate.getBrowserLang() || 'en'; 
+-    translate.use(browserLang.match(/en|fr|de/) ? browserLang : 'en');
+-  }
+ }
+Index: src/app/app.module.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/app/app.module.ts b/src/app/app.module.ts
+--- a/src/app/app.module.ts	(revision c6ecdc2636fafc122a6228ad620d49d6db50d26f)
++++ b/src/app/app.module.ts	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
+@@ -1,8 +1,6 @@
+ import { NgModule } from '@angular/core';
+ import { BrowserModule } from '@angular/platform-browser';
+-import { HttpClientModule, HttpClient } from '@angular/common/http';
+-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
++import { HttpClientModule } from '@angular/common/http';
+ import { AppRoutingModule } from './app-routing.module';
+ import { AppComponent } from './app.component';
+ import { FlCardComponent } from './fl-card/fl-card.component';
+@@ -14,10 +12,6 @@
+ import { FlFooterComponent } from './fl-footer/fl-footer.component';
+ import { FlLanguageComponent } from "./fl-language/fl-language.component";
+ 
+-export function HttpLoaderFactory(http: HttpClient) {
+-  return new TranslateHttpLoader(http, './locale/', '.xlf');
+-}
+-
+ @NgModule({
+     declarations: [
+         AppComponent,
+@@ -35,14 +29,7 @@
+         BrowserModule,
+         AppRoutingModule,
+         HttpClientModule,
+-        FlLanguageComponent,
+-        TranslateModule.forRoot({
+-          loader: {
+-            provide: TranslateLoader,
+-            useFactory: HttpLoaderFactory,
+-            deps: [HttpClient],
+-          },
+-        }),
++        FlLanguageComponent
+     ]
+ })
+ export class AppModule { }
+Index: src/app/fl-language/fl-language.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/app/fl-language/fl-language.component.html b/src/app/fl-language/fl-language.component.html
+--- a/src/app/fl-language/fl-language.component.html	(revision c6ecdc2636fafc122a6228ad620d49d6db50d26f)
++++ b/src/app/fl-language/fl-language.component.html	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
+@@ -1,15 +1,21 @@
+-<div #dropdown class="dropdown">
+-
+-    <div class="select">
++<div class="dropdown">
++    <div class="select"
++         (click)="menuOpen.set(!menuOpen())"
++         [class.select-clicked]="menuOpen()"
++    >
+       <img class="globe" src="./assets/images/Icon.webp" width="16" height="16" alt="language globe" />
+-      <span class="selected">English</span>
+-      <div class="caret"><span></span></div>
++      <span class="selected">{{ activeLanguage }}</span>
++      <div class="caret" [class.caret-rotate]="menuOpen()"><span></span></div>
+     </div>
+ 
+-    <ul class="menu">
+-      <li class="active">English</li>
+-      <li>Français</li>
+-      <li>Deutsch</li>
++    <ul class="menu" [class.menu-open]="menuOpen()">
++      @for (language of languages; track language.code) {
++        <li [class.active]="activeLocale === language.code">
++          <a [href]="language.url" [title]="language.name">
++            {{ language.name }}
++          </a>
++        </li>
++      }
+     </ul>
+ 
+ </div>
+Index: src/app/fl-language/fl-language.component.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/app/fl-language/fl-language.component.scss b/src/app/fl-language/fl-language.component.scss
+--- a/src/app/fl-language/fl-language.component.scss	(revision c6ecdc2636fafc122a6228ad620d49d6db50d26f)
++++ b/src/app/fl-language/fl-language.component.scss	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
+@@ -1,137 +1,133 @@
+-.dropdown{
+-    display:flex;
+-    flex-direction: column;
+-    row-gap: 0.5rem;
++.dropdown {
++  display: flex;
++  flex-direction: column;
++  row-gap: 0.5rem;
+ }
+ 
+-.select{
+-    background: transparent;
+-    display: flex;
+-    border: 0.0625rem solid #00677F;
+-    background-color: transparent;
+-    color: #00677F;
+-    font-size: 0.80rem;
+-    font-weight: 600;
+-    line-height: 1rem;
+-    border-radius: 2rem;
+-    padding: 0.5rem 1rem;
+-    cursor: pointer;
+-    transition: 0.2s;
+-    width: 7rem;
+-    justify-content: space-evenly;
+-  }
++.select {
++  display: flex;
++  border: 0.0625rem solid #00677F;
++  background-color: transparent;
++  color: #00677F;
++  font-size: 0.80rem;
++  font-weight: 600;
++  line-height: 1rem;
++  border-radius: 2rem;
++  padding: 0.5rem 1rem;
++  cursor: pointer;
++  transition: 0.2s;
++  width: 7rem;
++  justify-content: space-evenly;
++}
+ 
+-.select:hover{
+-    background:#E1E2E5;
++.select:hover {
++  background: #E1E2E5;
+ }
+-.select:active{
+-    color: #001F28;
+-    background-color: #F9FDFF;
+-    border: 0.0625rem solid #001F28;
++
++.select:active {
++  color: #001F28;
++  background-color: #F9FDFF;
++  border: 0.0625rem solid #001F28;
+ }
+ 
+-.caret{
+-      span {
+-        font-family: "SAP-icons";
+-    }
++.caret {
++  span {
++    font-family: "SAP-icons";
++  }
+ }
+-.caret-rotate{
+-    transform: rotate(180deg);
++
++.caret-rotate {
++  transform: rotate(180deg);
+ }
+ 
+-.menu{
+-    width: 8rem;
+-    height: 6rem;
+-    display: flex;
+-    flex-direction: column;
+-    list-style-type: none;
+-    background: #F9FDFF;
+-    border: 1px solid #BFC8CC;
+-    border-radius: 1rem;
+-    padding-top: 0.5rem;
+-    padding-left: 0.5rem;
+-    padding-right: 0.5rem;
+-    padding-bottom: 1rem;
+-    justify-content: space-evenly;
+-    transition: 0.2s;
+-    opacity:0;
+-    display:none;
+-    z-index:1;
+-    
++.menu {
++  width: 8rem;
++  height: 6rem;
++  flex-direction: column;
++  list-style-type: none;
++  background: #F9FDFF;
++  border: 1px solid #BFC8CC;
++  border-radius: 1rem;
++  padding: 0.5rem 0.5rem 1rem;
++  justify-content: space-evenly;
++  transition: 0.2s;
++  opacity: 0;
++  display: none;
++  z-index: 1;
+ 
+-}
+-.menu li{
+-    padding: 0.5rem 0.5rem;
+-    border-radius: 0.5rem;
+-    cursor: pointer;
+-
+-    &:hover{
++  li {
++    a {
++      display: block;
++      padding: 0.5rem 0.5rem;
++      border-radius: 0.5rem;
++      cursor: pointer;
++      text-decoration: none;
++      color: black;
++      &:hover {
++        color: black;
+         background: #E1E2E5;
++      }
++      &:visited {
++        color: black;
++      }
+     }
++  }
+ }
+-.menu-open{
+-    display: block;
+-    opacity:1;
+-    position: absolute;
+-    top: 3.81rem;
+-    right: 4.05vw;
++
++.menu-open {
++  display: block;
++  opacity: 1;
++  position: absolute;
++  top: 3.81rem;
++  right: 4.05vw;
+ 
+ }
+ 
+ @media (max-width: 600px) {
+-    .select{
+-        width: auto;
+-        padding: 0.5rem;
+-    }
+-    .selected, .caret {
+-      display: none;
+-      border-radius: 50%;
+-      padding: 0.5rem;
+-    }
+-    .select.select-clicked{
+-        width: 1rem;
+-        padding: 0.5rem;
+-        border-radius: 50%;
+-    }
++  .select {
++    width: auto;
++    padding: 0.5rem;
++  }
++  .selected, .caret {
++    display: none;
++    border-radius: 50%;
++    padding: 0.5rem;
++  }
++  .select.select-clicked {
++    width: 1rem;
++    padding: 0.5rem;
++    border-radius: 50%;
++  }
+ 
+-    .menu{
+-        
+-        display: flex;
+-        flex-direction: column;
+-        list-style-type: none;
+-        background: #00677F;
+-        color: white;
+-        border: 1px solid #BFC8CC;
+-        border-radius: 1rem;
+-        padding-top: 0.5rem;
+-        padding-left: 0.5rem;
+-        padding-right: 0.5rem;
+-        padding-bottom: 1rem;
+-        justify-content: space-evenly;
+-        transition: 0.2s;
+-        opacity:0;
+-        display:none;
+-        z-index:1;
+-        
+-    
+-    }
+-    .menu li{
+-        padding: 0.5rem 0.5rem;
+-        border-radius: 0.5rem;
+-        cursor: pointer;
+-    
+-        &:hover{
+-            background: #00829F;
+-        }
++  .menu {
++    flex-direction: column;
++    list-style-type: none;
++    background: #00677F;
++    color: white;
++    border: 1px solid #BFC8CC;
++    border-radius: 1rem;
++    padding: 0.5rem 0.5rem 1rem;
++    justify-content: space-evenly;
++    transition: 0.2s;
++    opacity: 0;
++    display: none;
++    z-index: 1;
++
++    li a {
++      padding: 0.5rem 0.5rem;
++      border-radius: 0.5rem;
++      cursor: pointer;
++
++      &:hover {
++        background: #00829F;
++      }
+     }
++  }
+ 
+-    .menu-open{
+-       
+-        opacity: 1;
+-        display: flex;
+-        height: 10rem;
+-        width: 88%;
+-    
+-    }
+-
+-  }
++  .menu-open {
++    opacity: 1;
++    display: flex;
++    height: 10rem;
++    width: 88%;
++  }
++}
+Index: src/app/fl-language/fl-language.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/app/fl-language/fl-language.component.ts b/src/app/fl-language/fl-language.component.ts
+--- a/src/app/fl-language/fl-language.component.ts	(revision c6ecdc2636fafc122a6228ad620d49d6db50d26f)
++++ b/src/app/fl-language/fl-language.component.ts	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
+@@ -1,73 +1,29 @@
+-import { Component, ElementRef, HostListener, Renderer2, ViewChild } from '@angular/core';
+-import { CommonModule } from '@angular/common';
+-import { TranslateService } from '@ngx-translate/core';
++import { Component, ElementRef, HostListener, inject, LOCALE_ID, signal } from '@angular/core';
++import { environments } from "../../environments/environments";
+ 
+ @Component({
+   selector: 'fl-language',
+-  standalone: true,
+-  imports: [CommonModule],
+   templateUrl: './fl-language.component.html',
+-  styleUrl: './fl-language.component.scss'
++  styleUrl: './fl-language.component.scss',
++  standalone: true
+ })
+ 
+ export class FlLanguageComponent {
+-  @ViewChild('dropdown') dropdown!: ElementRef;
+-
+-  constructor(private renderer: Renderer2, private translate: TranslateService) {
+-    this.translate.setDefaultLang('en');
+-  }
+-
+-  ngAfterViewInit() {
+-    const select = this.dropdown.nativeElement.querySelector('.select');
+-    const caret = this.dropdown.nativeElement.querySelector('.caret');
+-    const menu = this.dropdown.nativeElement.querySelector('.menu');
+-    const options = this.dropdown.nativeElement.querySelectorAll('.menu li');
+-    const selected = this.dropdown.nativeElement.querySelector('.selected');
+-
+-    select.addEventListener('click', () => {
+-      const isMenuOpen = menu.classList.contains('menu-open');
+-
+-      if (isMenuOpen) {
+-        this.renderer.removeClass(select, 'select-clicked');
+-        this.renderer.removeClass(caret, 'caret-rotate');
+-        this.renderer.removeClass(menu, 'menu-open');
+-      } else {
+-        this.renderer.addClass(select, 'select-clicked');
+-        this.renderer.addClass(caret, 'caret-rotate');
+-        this.renderer.addClass(menu, 'menu-open');
+-      }
+-    });
+-
+-    options.forEach((option: HTMLElement, index: number) => {
+-      option.addEventListener('click', () => {
+-        selected.innerText = option.innerText;
+-
+-        options.forEach((opt: HTMLElement) => {
+-          this.renderer.removeClass(opt, 'active');
+-        });
+-
+-        this.translate.use(this.getLanguageCode(index));
+-      });
+-    });
+-  }
+-
+-  private getLanguageCode(index: number): string {
+-    const languageCodes = ['en', 'fr', 'de'];
+-    return languageCodes[index];
+-  }
++  protected menuOpen = signal(false);
++  protected languages = environments.languages;
++  protected activeLocale = inject(LOCALE_ID);
++  protected activeLanguage = this.languages.find(l => l.code === this.activeLocale)?.name;
++  protected elementRef = inject(ElementRef);
+ 
+   @HostListener('document:click', ['$event'])
+   onClickOutside(event: Event) {
+     const clickedElement = event.target as HTMLElement;
++    if (!this.elementRef.nativeElement.contains(clickedElement)) {
++      this.menuOpen.set(false);
++    }
++  }
+ 
+-    if (!this.dropdown.nativeElement.contains(clickedElement)) {
+-      const select = this.dropdown.nativeElement.querySelector('.select');
+-      const caret = this.dropdown.nativeElement.querySelector('.caret');
+-      const menu = this.dropdown.nativeElement.querySelector('.menu');
+-
+-      this.renderer.removeClass(select, 'select-clicked');
+-      this.renderer.removeClass(caret, 'caret-rotate');
+-      this.renderer.removeClass(menu, 'menu-open');
+-    }
+-  }
+-}
+\ No newline at end of file
++  changeLanguage(lang: {url: string}): void {
++    window.location.href = lang.url;
++  }
++}
+Index: src/environments/environments.prod.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/environments/environments.prod.ts b/src/environments/environments.prod.ts
+new file mode 100644
+--- /dev/null	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
++++ b/src/environments/environments.prod.ts	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
+@@ -0,0 +1,12 @@
++const languages = [
++  { name: 'English', code: 'en', url: '/fundamental/en' },
++  { name: 'Français', code: 'fr', url: '/fundamental/fr' },
++  { name: 'Deutsch', code: 'de', url: '/fundamental/de' }
++];
++
++const languageCodes = languages.map(l => l.code);
++
++export const environments = {
++  languages,
++  languageCodes
++}
+Index: src/environments/environments.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/environments/environments.ts b/src/environments/environments.ts
+new file mode 100644
+--- /dev/null	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
++++ b/src/environments/environments.ts	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
+@@ -0,0 +1,12 @@
++const languages = [
++  { name: 'English', code: 'en', url: 'http://localhost:4200' },
++  { name: 'Français', code: 'fr', url: 'http://localhost:4201' },
++  { name: 'Deutsch', code: 'de', url: 'http://localhost:4202' }
++];
++
++const languageCodes = languages.map(l => l.code);
++
++export const environments = {
++  languages,
++  languageCodes
++}
+Index: src/styles.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/styles.scss b/src/styles.scss
+--- a/src/styles.scss	(revision c6ecdc2636fafc122a6228ad620d49d6db50d26f)
++++ b/src/styles.scss	(revision 80d20e0f0c5ffbd63f61f536a7ccc3a2d371ce98)
+@@ -73,7 +73,7 @@
+     background-color: #f9fdff;
+     cursor: pointer;
+   }
+-  
++
+   &:focus{
+     border: 0.125rem solid #00677F;
+     color: #F9FDFF;
+@@ -88,7 +88,7 @@
+     font-weight: 600;
+     box-shadow:none;
+     text-decoration: none;
+-  
++
+     &::after{
+       content:'';
+       position: absolute;
+@@ -100,7 +100,7 @@
+       transition: 0.2s;
+       pointer-events: none;
+       left: 25%;
+-     
++
+     }
+ 
+     &:hover {
+@@ -109,7 +109,7 @@
+       background-color: transparent;
+       cursor: pointer;
+     }
+-    
++
+     &:hover::after {
+       width: 50%;
+     }
+@@ -145,11 +145,11 @@
+ }
+ 
+ .sr-only:not(:focus):not(:active) {
+-  clip: rect(0 0 0 0); 
++  clip: rect(0 0 0 0);
+   clip-path: inset(50%);
+   height: 1px;
+   overflow: hidden;
+   position: absolute;
+-  white-space: nowrap; 
++  white-space: nowrap;
+   width: 1px;
+ }

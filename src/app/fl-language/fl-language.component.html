@@ -1,15 +1,21 @@
-<div #dropdown class="dropdown">
-
-    <div class="select">
+<div class="dropdown">
+    <div class="select"
+         (click)="menuOpen.set(!menuOpen())"
+         [class.select-clicked]="menuOpen()"
+    >
       <img class="globe" src="./assets/images/Icon.webp" width="16" height="16" alt="language globe" />
-      <span class="selected">English</span>
-      <div class="caret"><span></span></div>
+      <span class="selected">{{ activeLanguage }}</span>
+      <div class="caret" [class.caret-rotate]="menuOpen()"><span></span></div>
     </div>
 
-    <ul class="menu">
-      <li class="active">English</li>
-      <li>Français</li>
-      <li>Deutsch</li>
+    <ul class="menu" [class.menu-open]="menuOpen()">
+      @for (language of languages; track language.code) {
+        <li [class.active]="activeLocale === language.code">
+          <a [href]="language.url" [title]="language.name">
+            {{ language.name }}
+          </a>
+        </li>
+      }
     </ul>
 
 </div>

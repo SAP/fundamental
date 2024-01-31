@@ -22,7 +22,8 @@
     "std-version": "standard-version --infile ./CHANGELOG.md --releaseCommitMessageFormat \"chore(release): version {{currentTag}} build ${TRAVIS_BUILD_NUMBER} [ci skip]\" --header \"\"",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href=https://sap.github.io/fundamental/",
+    "build": "ng build && create-redirect-page.js",
+    "build:deploy": "ng build --base-href=https://sap.github.io/fundamental/ && node create-redirect-page.js",
     "watch": "ng build --watch --configuration development"
   },
   "repository": {

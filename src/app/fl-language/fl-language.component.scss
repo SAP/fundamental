@@ -1,137 +1,133 @@
-.dropdown{
-    display:flex;
-    flex-direction: column;
-    row-gap: 0.5rem;
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
 }
 
-.select{
-    background: transparent;
-    display: flex;
-    border: 0.0625rem solid #00677F;
-    background-color: transparent;
-    color: #00677F;
-    font-size: 0.80rem;
-    font-weight: 600;
-    line-height: 1rem;
-    border-radius: 2rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: 0.2s;
-    width: 7rem;
-    justify-content: space-evenly;
+.select {
+  display: flex;
+  border: 0.0625rem solid #00677F;
+  background-color: transparent;
+  color: #00677F;
+  font-size: 0.80rem;
+  font-weight: 600;
+  line-height: 1rem;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 7rem;
+  justify-content: space-evenly;
+}
+
+.select:hover {
+  background: #E1E2E5;
+}
+
+.select:active {
+  color: #001F28;
+  background-color: #F9FDFF;
+  border: 0.0625rem solid #001F28;
+}
+
+.caret {
+  span {
+    font-family: "SAP-icons";
   }
-
-.select:hover{
-    background:#E1E2E5;
-}
-.select:active{
-    color: #001F28;
-    background-color: #F9FDFF;
-    border: 0.0625rem solid #001F28;
 }
 
-.caret{
-      span {
-        font-family: "SAP-icons";
-    }
-}
-.caret-rotate{
-    transform: rotate(180deg);
+.caret-rotate {
+  transform: rotate(180deg);
 }
 
-.menu{
-    width: 8rem;
-    height: 6rem;
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    background: #F9FDFF;
-    border: 1px solid #BFC8CC;
-    border-radius: 1rem;
-    padding-top: 0.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-bottom: 1rem;
-    justify-content: space-evenly;
-    transition: 0.2s;
-    opacity:0;
-    display:none;
-    z-index:1;
-    
+.menu {
+  width: 8rem;
+  height: 6rem;
+  flex-direction: column;
+  list-style-type: none;
+  background: #F9FDFF;
+  border: 1px solid #BFC8CC;
+  border-radius: 1rem;
+  padding: 0.5rem 0.5rem 1rem;
+  justify-content: space-evenly;
+  transition: 0.2s;
+  opacity: 0;
+  display: none;
+  z-index: 1;
 
-}
-.menu li{
-    padding: 0.5rem 0.5rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-
-    &:hover{
+  li {
+    a {
+      display: block;
+      padding: 0.5rem 0.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      &:hover {
+        color: black;
         background: #E1E2E5;
+      }
+      &:visited {
+        color: black;
+      }
     }
+  }
 }
-.menu-open{
-    display: block;
-    opacity:1;
-    position: absolute;
-    top: 3.81rem;
-    right: 4.05vw;
+
+.menu-open {
+  display: block;
+  opacity: 1;
+  position: absolute;
+  top: 3.81rem;
+  right: 4.05vw;
 
 }
 
 @media (max-width: 600px) {
-    .select{
-        width: auto;
-        padding: 0.5rem;
-    }
-    .selected, .caret {
-      display: none;
-      border-radius: 50%;
-      padding: 0.5rem;
-    }
-    .select.select-clicked{
-        width: 1rem;
-        padding: 0.5rem;
-        border-radius: 50%;
-    }
-
-    .menu{
-        
-        display: flex;
-        flex-direction: column;
-        list-style-type: none;
-        background: #00677F;
-        color: white;
-        border: 1px solid #BFC8CC;
-        border-radius: 1rem;
-        padding-top: 0.5rem;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        padding-bottom: 1rem;
-        justify-content: space-evenly;
-        transition: 0.2s;
-        opacity:0;
-        display:none;
-        z-index:1;
-        
-    
-    }
-    .menu li{
-        padding: 0.5rem 0.5rem;
-        border-radius: 0.5rem;
-        cursor: pointer;
-    
-        &:hover{
-            background: #00829F;
-        }
-    }
-
-    .menu-open{
-       
-        opacity: 1;
-        display: flex;
-        height: 10rem;
-        width: 88%;
-    
-    }
-
+  .select {
+    width: auto;
+    padding: 0.5rem;
   }
+  .selected, .caret {
+    display: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+  }
+  .select.select-clicked {
+    width: 1rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+
+  .menu {
+    flex-direction: column;
+    list-style-type: none;
+    background: #00677F;
+    color: white;
+    border: 1px solid #BFC8CC;
+    border-radius: 1rem;
+    padding: 0.5rem 0.5rem 1rem;
+    justify-content: space-evenly;
+    transition: 0.2s;
+    opacity: 0;
+    display: none;
+    z-index: 1;
+
+    li a {
+      padding: 0.5rem 0.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+
+      &:hover {
+        background: #00829F;
+      }
+    }
+  }
+
+  .menu-open {
+    opacity: 1;
+    display: flex;
+    height: 10rem;
+    width: 88%;
+  }
+}

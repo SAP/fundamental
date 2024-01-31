@@ -4,18 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "fd": {
-      "i18n":{
+      "i18n": {
         "sourceLocale": "en",
-  "locales": {
-    "fr": {
-      "translation": "src/locale/messages.fr.xlf",
-      "baseHref": "fr"
-    },
-    "de": {
-      "translation": "src/locale/messages.de.xlf",
-      "baseHref": "de"
-    }
-  }
+        "locales": {
+          "fr": "src/locale/messages.fr.xlf",
+          "de": "src/locale/messages.de.xlf"
+        }
       },
       "projectType": "application",
       "schematics": {
@@ -30,22 +24,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/fundamental",  
+            "outputPath": "dist/fundamental",
             "index": "src/index.html",
             "main": "src/main.ts",
             "localize": true,
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -62,7 +49,13 @@
                   "maximumError": "400kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environments.ts",
+                  "with": "src/environments/environments.prod.ts"
+                }
+              ]
             },
             "development": {
               "buildOptimizer": false,
@@ -70,17 +63,14 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
-            }, 
-            "german":{
-              "localize": ["de"]
-              
-              
+              "namedChunks": true,
+              "localize": ["en"]
             },
-            "french":{
+            "german": {
+              "localize": ["de"]
+            },
+            "french": {
               "localize": ["fr"]
-              
-              
             }
           },
           "defaultConfiguration": "production"
@@ -92,15 +82,17 @@
               "buildTarget": "fd:build:production"
             },
             "development": {
-              "buildTarget": "fd:build:development"
+              "buildTarget": "fd:build:development",
+              "port": 4200
             },
-             "german":{
-              "buildTarget": "fd:build:german"
-             },
-             "french":{
-              "buildTarget": "fd:build:french"
-             }
-             
+            "french": {
+              "buildTarget": "fd:build:french",
+              "port": 4201
+            },
+            "german": {
+              "buildTarget": "fd:build:german",
+              "port": 4202
+            }
           },
           "defaultConfiguration": "development"
         },
@@ -113,19 +105,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }
