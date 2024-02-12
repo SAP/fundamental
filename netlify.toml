@@ -8,9 +8,32 @@
 [build]
 #  environment = { NODE_VERSION = "18.18.2" }
   publish = "dist/fundamental"
-  command = "ng build "
+  command = "ng build"
 
 # Production context: All deploys to the main
 # repository branch will inherit these settings.
 [context.production]
   command = "ng build --configuration=production"
+
+[[redirects]]
+  from = "/products"
+  to = "/en/products"
+  status = 301
+  conditions = {Language = ["en"]}
+
+[[redirects]]
+  from = "/products"
+  to = "/fr/products"
+  status = 301
+  conditions = {Language = ["fr"]}
+
+[[redirects]]
+  from = "/products"
+  to = "/de/products"
+  status = 301
+  conditions = {Language = ["de"]}
+
+[[redirects]]
+  from = "/products"
+  to = "/products"
+  status = 200
