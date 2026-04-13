@@ -3,7 +3,7 @@ name: GH Pages
 on:
   push:
     branches:
-    - main
+      - main
 
 jobs:
   deploy:
@@ -11,18 +11,18 @@ jobs:
     permissions:
       contents: write
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4.1.1
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
 
-    - name: Build
-      run: |
-        mkdir -p dist/fundamental/assets/images
-        cp src/index.html dist/fundamental/
-        cp src/assets/images/headerlogo.webp dist/fundamental/assets/images/
+      - name: Build
+        run: |
+          mkdir -p dist/fundamental/assets/images
+          cp src/index.html dist/fundamental/
+          cp src/assets/images/headerlogo.webp dist/fundamental/assets/images/
 
-    - name: Deploy
-      if: success()
-      uses: peaceiris/actions-gh-pages@v3.9.3
-      with:
-        github_token: ${{ secrets.GHPAGE }}
-        publish_dir: dist/fundamental
+      - name: Deploy
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist/fundamental
