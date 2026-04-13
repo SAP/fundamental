@@ -12,22 +12,17 @@ jobs:
       contents: write
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4.1.1
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
-          
-    - name: Install dependencies
-      run: npm install
-      
     - name: Build
-      run: npm run build --base-href=https://sap.github.io/fundamental/
+      run: |
+        mkdir -p dist/fundamental/assets/images
+        cp src/index.html dist/fundamental/
+        cp src/assets/images/headerlogo.webp dist/fundamental/assets/images/
 
     - name: Deploy
       if: success()
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v3.9.3
       with:
         github_token: ${{ secrets.GHPAGE }}
         publish_dir: dist/fundamental

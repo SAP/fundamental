@@ -1,92 +1,14 @@
 {
-  "name": "fiori-fundamentals",
+  "name": "fundamental",
   "version": "1.7.11-rc.2",
-  "description": "Fiori Fundamentals is a Design System and HTML/CSS Component Library used to build modern Product User Experiences with the SAP look and feel. Learn more about this project at - http://sap.github.io/fundamental/",
-  "main": "index.js",
-  "scripts": {
-    "build:prod": "npm run build && npm run style:less && npm run style:minify",
-    "deploy": "ng build --base-href=https://sap.github.io/fundamental/ && npx angular-cli-ghpages --dir=dist/fundamental",
-    "lint:fix": "stylelint './scss/**/*.scss' --fix",
-    "lint:pre-commit": "printf \"running pre-commit lint...\"  && npm run lint && printf \"done!\n\"",
-    "lint": "stylelint './scss/**/*.scss'",
-    "release:create": "create-release",
-    "release": "./scripts/publish-release.sh",
-    "style:assets": "./scripts/copy-assets.sh",
-    "style:compile": "node-sass -q --output-style expanded --precision 5 scss/ --output dist/",
-    "style:less": " mv dist/fundamentals-ie11.less.css less/fiori-fundamentals-ie11.less && mv dist/fundamentals.less.css less/fiori-fundamentals.less && ./scripts/less.js",
-    "style:minify": "foreach -t -g \"dist/*.css\" -x \"cleancss -O1 specialComments:1 #{path} -o #{dir}/#{name}.min.css\" --no-c && foreach -t -g \"dist/components/*.css\" -x \"cleancss -O1 specialComments:1 #{path} -o #{dir}/#{name}.min.css\" --no-c",
-    "style:postCSS": "postcss --config config/postcss.config.js  --replace dist/**/*.css && postcss --config config/postcss.config.js  --replace dist/*.css",
-    "style:remove": "if [ -d dist/ ]; then rm -rf dist/; fi",
-    "style:rename": "mv dist/all.css dist/fiori-fundamentals.css && mv dist/all-ie11.css dist/fiori-fundamentals-ie11.css",
-    "prepare": "husky install",
-    "std-version": "standard-version --infile ./CHANGELOG.md --releaseCommitMessageFormat \"chore(release): version {{currentTag}} build ${TRAVIS_BUILD_NUMBER} [ci skip]\" --header \"\"",
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --base-href=https://sap.github.io/fundamental/",
-    "watch": "ng build --watch --configuration development"
-  },
+  "description": "Landing page for the Fundamental Library ecosystem — sap.github.io/fundamental/",
+  "license": "Apache-2.0",
+  "homepage": "https://sap.github.io/fundamental/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SAP/fundamental.git"
   },
-  "files": [
-    "/dist",
-    "/less",
-    "/scss"
-  ],
-  "author": "",
-  "license": "Apache-2.0",
-  "homepage": "https://sap.github.io/fundamental/",
-  "dependencies": {
-    "@angular/animations": "^17.0.4",
-    "@angular/common": "^17.0.4",
-    "@angular/compiler": "^17.0.4",
-    "@angular/core": "^17.0.4",
-    "@angular/forms": "^17.0.4",
-    "@angular/platform-browser": "^17.0.4",
-    "@angular/platform-browser-dynamic": "^17.0.4",
-    "@angular/router": "^17.0.4",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.14.2"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "^17.0.3",
-    "@angular/cli": "^17.0.3",
-    "@angular/compiler-cli": "^17.0.4",
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
-    "@commitlint/travis-cli": "^12.1.4",
-    "@sap-theming/theming-base-content": "^11.8.0",
-    "@types/jasmine": "~4.3.0",
-    "angular-cli-ghpages": "1.0.7",
-    "autoprefixer": "^10.4.16",
-    "foreach-cli": "^1.8.1",
-    "github-assistant": "^0.3.4",
-    "husky": "^8.0.3",
-    "jasmine-core": "~4.6.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "node-sass": "^8.0.0",
-    "postcss-banner": "^3.0.1",
-    "postcss-clean": "^1.1.0",
-    "postcss-cli": "^7.1.0",
-    "standard-version": "9.5.0",
-    "stylelint": "^13.3.0",
-    "stylelint-scss": "^3.16.0",
-    "typescript": "~5.2.2"
-  },
-  "engines": {
-    "node": ">=8.12.0"
-  },
   "bugs": {
     "url": "https://github.com/SAP/fundamental/issues"
-  },
-  "directories": {
-    "doc": "docs"
-  },
-  "keywords": []
+  }
 }

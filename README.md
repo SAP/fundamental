@@ -87,7 +87,7 @@ If you encounter an issue, you can create a [ticket](https://github.com/SAP/fund
 
 ## Contributing
 
-If you want to contribute, please check the [Contribution Guidelines](https://github.com/SAP/fundamental/wiki/Contribution-Guidelines). Also check the [Development Guidelines](https://github.com/SAP/fundamental/wiki/Development-Guidelines) and [Visual Testing Guide](https://github.com/SAP/fundamental/wiki/Visual-Testing).
+If you want to contribute, please check the [SAP Contribution Guidelines](https://github.com/SAP/.github/blob/main/CONTRIBUTING.md), the [Contribution Guidelines](https://github.com/SAP/fundamental/wiki/Contribution-Guidelines). Also check the [Development Guidelines](https://github.com/SAP/fundamental/wiki/Development-Guidelines) and [Visual Testing Guide](https://github.com/SAP/fundamental/wiki/Visual-Testing).
 
 
 ## Versioning
