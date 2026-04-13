@@ -1,16 +1,11 @@
-# Global settings applied to the whole site.
-#
-# “publish” is the directory to publish (relative to root of your repo),
-# “command” is your build command,
-# “base” is directory to change to before starting build. if you set base:
-#    that is where we will look for package.json/.nvmrc/etc not repo root!
-
 [build]
-#  environment = { NODE_VERSION = "20.11.1" }
   publish = "dist/fundamental"
-  command = "ng build "
+  command = "mkdir -p dist/fundamental/assets/images && cp src/index.html dist/fundamental/ && cp src/assets/images/headerlogo.webp dist/fundamental/assets/images/"
 
-# Production context: All deploys to the main
-# repository branch will inherit these settings.
 [context.production]
-  command = "ng build --configuration=production"
+  command = "mkdir -p dist/fundamental/assets/images && cp src/index.html dist/fundamental/ && cp src/assets/images/headerlogo.webp dist/fundamental/assets/images/"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
